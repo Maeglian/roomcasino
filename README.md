@@ -1,4 +1,4 @@
-# vegas-winner
+# roomcasino
 
 ## Project setup
 ```
