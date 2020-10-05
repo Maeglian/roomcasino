@@ -446,6 +446,7 @@ export default {
     position: relative;
     order: 1;
     display: flex;
+    align-items: center;
     width: 100%;
     padding: 16px;
     font-size: 12px;
@@ -607,7 +608,7 @@ export default {
     z-index: 10;
     order: 2;
     width: 100%;
-    padding: 0 16px;
+    padding: 0 16px 10px;
     background-color: var(--color-bg);
 
     @media(min-width: $screen-m) {

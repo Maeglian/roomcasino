@@ -77,25 +77,26 @@ export default {
 .Jackpots {
   max-width: 100%;
   margin-bottom: 30px;
-  padding: 20px 16px;
+  padding: 20px 0;
   background-image: url('./../assets/img/jackpot-bg_460.png');
   background-position: right top;
   background-size: auto 100%;
   background-repeat: no-repeat;
 
   @media(min-width: $screen-m) {
+    padding: 46px 0;
     margin-bottom: 38px;
     background-image: url('./../assets/img/jackpot-bg_768.png');
   }
 
   @media(min-width: $screen-l) {
-    padding: 50px 25px 50px 16px;
+    padding: 50px 0 50px 0;
     background-image: url('./../assets/img/jackpot-bg_960.png');
   }
 
   @media(min-width: $screen-xl) {
     margin-bottom: 80px;
-    padding: 90px 60px 90px 16px;
+    padding: 90px 0 90px 0;
     background-image: url('./../assets/img/jackpot-bg_1248.png');
   }
 

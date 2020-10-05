@@ -95,7 +95,7 @@ export default {
 <style lang="scss">
 .Tournament {
   margin-bottom: 30px;
-  padding: 20px 16px;
+  padding: 20px 0;
   max-width: 100%;
   background-image: url('./../assets/img/tournament-bg_460.png');
   background-position: right top;
