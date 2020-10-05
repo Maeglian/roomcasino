@@ -607,6 +607,7 @@ export default {
     z-index: 10;
     order: 2;
     width: 100%;
+    padding: 0 16px;
     background-color: var(--color-bg);
 
     @media(min-width: $screen-m) {
@@ -618,6 +619,7 @@ export default {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       grid-gap: 10px;
+      padding: 0;
       background-color: transparent;
     }
   }
