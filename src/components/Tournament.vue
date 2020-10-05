@@ -172,7 +172,6 @@ export default {
   }
 
   &-Table {
-    display: inline-block;
     width: 100%;
     font-size: 12px;
 
@@ -195,15 +194,15 @@ export default {
   }
 
   &-More {
-    display: inline-block;
+    display: block;
     padding: 15px 0;
+    width: 100px;
     font-size: 12px;
     font-weight: 700;
     color: var(--color-text-ghost);
     text-transform: uppercase;
     cursor: pointer;
-    margin-left: 100%;
-    transform: translateX(-100%);
+    margin-left: auto;
     white-space: nowrap;
   }
 }
