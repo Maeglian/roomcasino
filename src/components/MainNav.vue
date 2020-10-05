@@ -159,7 +159,7 @@ export default {
     margin-right: auto;
     padding-left: 16px;
 
-    @media(min-width: $screen-s) {
+    @media(min-width: $screen-m) {
       height: auto;
     }
 
