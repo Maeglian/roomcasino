@@ -103,7 +103,7 @@
       <div class="Title Title--type-h2 Cards-Title">
         New games
       </div>
-      <div class="Cards-Items NewGames-Cards">
+      <div class="Cards-Items BestGames-Cards NewGames-Cards">
         <Card v-for="(game, i) in newGames"
               :key="i"
               :img="game.img"
@@ -111,18 +111,28 @@
               overlay
         />
       </div>
+      <div class="BestGames-Btn">
+        <button class="Btn Btn--color" @click="showMoreGames()">
+          Load more games
+        </button>
+      </div>
     </section>
     <section class="LiveGames Cards">
       <div class="Title Title--type-h2 Cards-Title">
         Live games
       </div>
-      <div class="Cards-Items NewGames-Cards">
+      <div class="Cards-Items BestGames-Cards NewGames-Cards">
         <Card v-for="(game, i) in liveGames"
               :key="i"
               :img="game.img"
               :badge="game.badge"
               overlay
         />
+      </div>
+      <div class="BestGames-Btn">
+        <button class="Btn Btn--color" @click="showMoreGames()">
+          Load more games
+        </button>
       </div>
     </section>
   </fragment>
