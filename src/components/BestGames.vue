@@ -57,13 +57,13 @@
               :class="[ providersListIsOpen ? 'Arrow--up' : 'Arrow--down' ]"
             ></i>
           </button>
-          <div  v-if="width > 767 || providersListIsOpen" class="BestGames-Providers">
+          <div v-if="width > 767" class="BestGames-Providers">
             <button
               v-for="(item, i) in providersToShow"
               :key="providers[i].name"
               class="BestGames-Provider"
               :class="{'BestGames-Provider--active': providerActive.name === providers[i].name}"
-              @click="onChooseProvider(i)"
+              @click="onChooseProvider(providers[i].name)"
             >
               <img
                 v-if="providers[i].icon"
@@ -73,11 +73,35 @@
               >
               {{ providers[i].name }}
             </button>
-            <button v-if="width > 767" class="BestGames-Provider BestGames-Provider--more">
+            <button
+              v-if="width > 767"
+              class="BestGames-Provider BestGames-Provider--more"
+              :class="{'BestGames-Provider--active': providersListIsOpen}"
+              @click="providersListIsOpen = !providersListIsOpen"
+            >
               ...
             </button>
           </div>
           <Search class="BestGames-Search" />
+          <transition name="slide-up">
+            <div v-if="providersListIsOpen" class="BestGames-MoreProviders">
+              <button
+                v-for="(item, i) in moreProviders"
+                :key="i"
+                class="BestGames-AddProvider"
+                :class="{'BestGames-Provider--active': providerActive.name === item.name}"
+                @click="onChooseProvider(item.name)"
+              >
+                <img
+                  v-if="item.icon"
+                  class="BestGames-ProviderIcon"
+                  :src="require(`@/assets/img/${item.icon}.svg`)"
+                  alt=""
+                >
+                {{ item.name }}
+              </button>
+            </div>
+          </transition>
         </div>
       <div class="Title Title--type-h2 Cards-Title">
         The best games
@@ -203,6 +227,154 @@ export default {
         {
           name: 'Microgaming',
           icon: 'microgaming',
+        },
+        {
+          name: '1x2 gambing',
+          icon: 'gaming_book',
+        },
+        {
+          name: 'Amatic',
+          icon: 'amatic',
+        },
+        {
+          name: 'Belatra',
+          icon: 'belatra',
+        },
+        {
+          name: 'Spinometal',
+          icon: 'spinometal',
+        },
+        {
+          name: 'Booming games',
+          icon: 'booming',
+        },
+        {
+          name: 'Egt',
+          icon: 'egt',
+        },
+        {
+          name: 'Endorphina',
+          icon: 'endorphina',
+        },
+        {
+          name: 'Netent',
+          icon: 'netent',
+        },
+        {
+          name: "Play'n go",
+          icon: 'go',
+        },
+        {
+          name: 'Microgaming',
+          icon: 'microgaming',
+        },
+        {
+          name: '1x2 gambing',
+          icon: 'gaming_book',
+        },
+        {
+          name: 'Amatic',
+          icon: 'amatic',
+        },
+        {
+          name: 'Belatra',
+          icon: 'belatra',
+        },
+        {
+          name: 'Spinometal',
+          icon: 'spinometal',
+        },
+        {
+          name: 'Booming games',
+          icon: 'booming',
+        },
+        {
+          name: 'Egt',
+          icon: 'egt',
+        },
+        {
+          name: 'Endorphina',
+          icon: 'endorphina',
+        },
+        {
+          name: 'Netent',
+          icon: 'netent',
+        },
+        {
+          name: "Play'n go",
+          icon: 'go',
+        },
+        {
+          name: 'Microgaming',
+          icon: 'microgaming',
+        },
+        {
+          name: '1x2 gambing',
+          icon: 'gaming_book',
+        },
+        {
+          name: 'Amatic',
+          icon: 'amatic',
+        },
+        {
+          name: 'Belatra',
+          icon: 'belatra',
+        },
+        {
+          name: 'Spinometal',
+          icon: 'spinometal',
+        },
+        {
+          name: 'Booming games',
+          icon: 'booming',
+        },
+        {
+          name: 'Egt',
+          icon: 'egt',
+        },
+        {
+          name: 'Endorphina',
+          icon: 'endorphina',
+        },
+        {
+          name: 'Netent',
+          icon: 'netent',
+        },
+        {
+          name: "Play'n go",
+          icon: 'go',
+        },
+        {
+          name: 'Microgaming',
+          icon: 'microgaming',
+        },
+        {
+          name: '1x2 gambing',
+          icon: 'gaming_book',
+        },
+        {
+          name: 'Amatic',
+          icon: 'amatic',
+        },
+        {
+          name: 'Belatra',
+          icon: 'belatra',
+        },
+        {
+          name: 'Spinometal',
+          icon: 'spinometal',
+        },
+        {
+          name: 'Booming games',
+          icon: 'booming',
+        },
+        {
+          name: 'Egt',
+          icon: 'egt',
+        },
+        {
+          name: 'Endorphina',
+          icon: 'endorphina',
         },
       ],
       providersToShow: 4,
@@ -335,6 +507,10 @@ export default {
         return '';
       });
     },
+    moreProviders() {
+      if (this.width < 768) return this.providers;
+      return this.providers.slice(this.providersToShow, this.providers.length + 1);
+    },
   },
   methods: {
     ...mapActions(['getGames']),
@@ -343,9 +519,9 @@ export default {
       this.tabActive = this.tabs[i];
       this.getGames(this.makeQuery());
     },
-    onChooseProvider(i) {
-      this.providerActive = this.providers[i];
-      if (this.width < 768) this.providersListIsOpen = false;
+    onChooseProvider(name) {
+      this.providerActive = this.providers.find((item) => item.name === name);
+      this.providersListIsOpen = false;
     },
     onClickOutside(e) {
       if (e.target.className !== 'BestGames-ChosenTab') this.providersListIsOpen = false;
@@ -602,48 +778,62 @@ export default {
   }
 
   &-Providers {
+    grid-column: 1/7;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px;
+    padding: 0;
+  }
+
+  &-MoreProviders {
     position: absolute;
     left: 0;
     top: 100px;
     z-index: 10;
-    order: 2;
+    column-count: 2;
     width: 100%;
     padding: 0 16px 10px;
-    background-color: var(--color-bg);
+    background-color: var(--color-body);
+
+    @media(min-width: $screen-s) {
+      column-count: 3;
+    }
 
     @media(min-width: $screen-m) {
-      position: relative;
-      left: initial;
-      top: initial;
-      order: 1;
-      grid-column: 1/7;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-gap: 10px;
-      padding: 0;
-      background-color: transparent;
+      top: 50px;
+      column-count: 5;
     }
+
+    @media(min-width: $screen-l) {
+      top: 70px;
+    }
+  }
+
+  &-AddProvider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.18;
+    text-transform: uppercase;
+    color: var(--color-text-ghost);
+    cursor: pointer;
   }
 
   &-Provider {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px 0;
-    font-size: 12px;
+    padding: 10px 5px;
+    font-size: 9px;
     font-weight: 700;
     line-height: 1.18;
+    color: var(--color-text-main);
     text-transform: uppercase;
-    color: var(--color-text-ghost);
-
-    @media(min-width: $screen-m) {
-      border: 2px solid var(--color-border-ghost);
-      color: var(--color-text-main);
-      text-transform: uppercase;
-      cursor: pointer;
-      padding: 10px 5px;
-      font-size: 9px;
-    }
+    border: 2px solid var(--color-border-ghost);
+    cursor: pointer;
 
     @media(min-width: $screen-l) {
       padding: 15px 10px;
