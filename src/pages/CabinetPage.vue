@@ -37,7 +37,6 @@ export default {
   }
 
   &-Title {
-    margin-bottom: 30px;
     font-size: 18px;
     font-weight: 700;
     line-height: 1.242;
@@ -47,6 +46,14 @@ export default {
     @media (min-width: $screen-s) {
       font-size: 34px;
     }
+  }
+
+  &-Subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.86;
+    text-transform: capitalize;
+    color: var(--color-text-main);
   }
 
   &-Content {
@@ -81,13 +88,11 @@ export default {
   }
 
   &-Cell {
-    display: block;
     width: 50%;
     padding: 15px;
     font-size: 9px;
     font-weight: 700;
     line-height: 1.26;
-    text-transform: uppercase;
     color: var(--color-text-main);
     background: var(--color-bg);
 
@@ -95,6 +100,7 @@ export default {
       display: table-cell;
       width: 100%;
       font-size: 12px;
+      vertical-align: middle;
     }
   }
 
@@ -143,6 +149,30 @@ export default {
 
     &:hover {
       border: 2px solid var(--color-main1);
+    }
+  }
+
+  &-Submit {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--color-text-main);
+    background: var(--color-bg-lighter);
+
+    @media (min-width: $screen-m) {
+      font-size: 12px;
+    }
+  }
+
+  [type="text"] {
+    color: var(--color-text-main);
+    background: var(--color-bg);
+    border: none;
+
+    &::placeholder {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--color-text-ghost);
     }
   }
 
