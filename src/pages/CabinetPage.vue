@@ -79,6 +79,7 @@ export default {
   &-Table {
     @media (min-width: $screen-m) {
       display: table;
+      border-spacing: 0 4px;
     }
   }
 
@@ -108,8 +109,6 @@ export default {
       display: table-cell;
       width: 100%;
       font-size: 12px;
-      background-clip: padding-box;
-      border-bottom: 4px solid transparent;
     }
   }
 
