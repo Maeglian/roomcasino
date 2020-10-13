@@ -16,59 +16,59 @@
         <Counter class="Tournament-Counter" enddate="2020-11-01" />
       </div>
       <div class="Tournament-Table">
-        <div class="Table">
+        <div class="Table TableBordered">
           <div class="Table-Row">
-            <div class="Table-Cell Table-Th">
+            <div class="Table-Cell TableBordered-Cell TableBordered-Th">
               #
             </div>
-            <div class="Table-Cell Table-Th">
+            <div class="Table-Cell TableBordered-Cell TableBordered-Th">
               Name
             </div>
-            <div class="Table-Cell Table-Th">
+            <div class="Table-Cell TableBordered-Cell TableBordered-Th">
               Points
             </div>
           </div>
           <div class="Table-Row">
-            <div class="Table-Cell">
+            <div class="Table-Cell TableBordered-Cell">
               1
             </div>
-            <div class="Table-Cell">
+            <div class="Table-Cell TableBordered-Cell">
               Natacool
             </div>
-            <div class="Table-Cell Tournament-Points">
+            <div class="Table-Cell TableBordered-Cell Tournament-Points">
               3422
             </div>
           </div>
           <div class="Table-Row">
-            <div class="Table-Cell">
+            <div class="Table-Cell TableBordered-Cell">
               3
             </div>
-            <div class="Table-Cell">
+            <div class="Table-Cell TableBordered-Cell">
               Fire Lighting 12
             </div>
-            <div class="Table-Cell Tournament-Points">
+            <div class="Table-Cell TableBordered-Cell Tournament-Points">
               2210
             </div>
           </div>
           <div class="Table-Row">
-            <div class="Table-Cell">
+            <div class="Table-Cell TableBordered-Cell">
               4
             </div>
-            <div class="Table-Cell">
+            <div class="Table-Cell TableBordered-Cell">
               Dakamu
             </div>
-            <div class="Table-Cell Tournament-Points">
+            <div class="Table-Cell TableBordered-Cell Tournament-Points">
               1012
             </div>
           </div>
           <div class="Table-Row" >
-            <div class="Table-Cell">
+            <div class="Table-Cell TableBordered-Cell">
               4
             </div>
-            <div class="Table-Cell">
+            <div class="Table-Cell TableBordered-Cell">
               Ioana Juliana
             </div>
-            <div class="Table-Cell Tournament-Points">
+            <div class="Table-Cell TableBordered-Cell Tournament-Points">
               840
             </div>
           </div>

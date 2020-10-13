@@ -8,6 +8,11 @@
 
   &-Cell {
     display: table-cell;
+  }
+}
+
+.TableBordered {
+  &-Cell {
     padding: 10px;
     font-weight: 700;
     text-transform: uppercase;

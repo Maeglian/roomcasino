@@ -4,64 +4,64 @@
       <div class="Title Title--type-h2 Winners-Title">
         Latest winners
       </div>
-      <div class="Table Winners-Table">
+      <div class="Table TableBordered Winners-Table">
         <div class="Table-Row">
-          <div class="Table-Cell Winners-Avatar">
+          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" src="@/assets/img/game1.png" alt="">
           </div>
-          <div class="Table-Cell Winners-Name">
+          <div class="Table-Cell TableBordered-Cell Winners-Name">
               wild98 just won<br/>
               in <span class="Winners-Game">Golden Ticket</span>
           </div>
-          <div class="Table-Cell Winners-Money">
+          <div class="Table-Cell TableBordered-Cell Winners-Money">
             € 11.574.60
           </div>
         </div>
         <div class="Table-Row">
-          <div class="Table-Cell Winners-Avatar">
+          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" src="@/assets/img/game2.png" alt="">
           </div>
-          <div class="Table-Cell Winners-Name">
+          <div class="Table-Cell TableBordered-Cell Winners-Name">
             Dakamu just won<br/>
             in <span class="Winners-Game">Ozwins Jackpot</span>
           </div>
-          <div class="Table-Cell Winners-Money">
+          <div class="Table-Cell TableBordered-Cell Winners-Money">
             € 8.474.25
           </div>
         </div>
         <div class="Table-Row">
-          <div class="Table-Cell Winners-Avatar">
+          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" src="@/assets/img/game3.png" alt="">
           </div>
-          <div class="Table-Cell Winners-Name">
+          <div class="Table-Cell TableBordered-Cell Winners-Name">
             Ioana Juliana just won<br/>
             in <span class="Winners-Game">Dawn of Egypt</span>
           </div>
-          <div class="Table-Cell Winners-Money">
+          <div class="Table-Cell TableBordered-Cell Winners-Money">
             € 6.274.48
           </div>
         </div>
         <div class="Table-Row">
-          <div class="Table-Cell Winners-Avatar">
+          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" src="@/assets/img/game4.png" alt="">
           </div>
-          <div class="Table-Cell Winners-Name">
+          <div class="Table-Cell TableBordered-Cell Winners-Name">
             Strike just won<br/>
             in <span class="Winners-Game">Treasure heroes</span>
           </div>
-          <div class="Table-Cell Winners-Money">
+          <div class="Table-Cell TableBordered-Cell Winners-Money">
             € 1.933.29
           </div>
         </div>
         <div class="Table-Row">
-          <div class="Table-Cell Winners-Avatar">
+          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" src="@/assets/img/game5.png" alt="">
           </div>
-          <div class="Table-Cell Winners-Name">
+          <div class="Table-Cell TableBordered-Cell Winners-Name">
             Farisha just won<br/>
             in <span class="Winners-Game">Wild Robo Factory</span>
           </div>
-          <div class="Table-Cell Winners-Money">
+          <div class="Table-Cell TableBordered-Cell Winners-Money">
             € 843.90
           </div>
         </div>
@@ -71,64 +71,64 @@
       <div class="Title Title--type-h2 Winners-Title">
         Latest winners
       </div>
-      <div class="Table Winners-Table">
+      <div class="Table Table--bordered Winners-Table">
         <div class="Table-Row">
-          <div class="Table-Cell Winners-Avatar">
+          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" src="@/assets/img/game1.png" alt="">
           </div>
-          <div class="Table-Cell Winners-Name">
+          <div class="Table-Cell TableBordered-Cell Winners-Name">
             wild98 just won<br/>
             in <span class="Winners-Game">Golden Ticket</span>
           </div>
-          <div class="Table-Cell Winners-Money">
+          <div class="Table-Cell TableBordered-Cell Winners-Money">
             € 11.574.60
           </div>
         </div>
         <div class="Table-Row">
-          <div class="Table-Cell Winners-Avatar">
+          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" src="@/assets/img/game2.png" alt="">
           </div>
-          <div class="Table-Cell Winners-Name">
+          <div class="Table-Cell TableBordered-Cell Winners-Name">
             Dakamu just won<br/>
             in <span class="Winners-Game">Ozwins Jackpot</span>
           </div>
-          <div class="Table-Cell Winners-Money">
+          <div class="Table-Cell TableBordered-Cell Winners-Money">
             € 8.474.25
           </div>
         </div>
         <div class="Table-Row">
-          <div class="Table-Cell Winners-Avatar">
+          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" src="@/assets/img/game3.png" alt="">
           </div>
-          <div class="Table-Cell Winners-Name">
+          <div class="Table-Cell TableBordered-Cell Winners-Name">
             Ioana Juliana just won<br/>
             in <span class="Winners-Game">Dawn of Egypt</span>
           </div>
-          <div class="Table-Cell Winners-Money">
+          <div class="Table-Cell TableBordered-Cell Winners-Money">
             € 6.274.48
           </div>
         </div>
         <div class="Table-Row">
-          <div class="Table-Cell Winners-Avatar">
+          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" src="@/assets/img/game4.png" alt="">
           </div>
-          <div class="Table-Cell Winners-Name">
+          <div class="Table-Cell TableBordered-Cell Winners-Name">
             Strike just won<br/>
             in <span class="Winners-Game">Treasure heroes</span>
           </div>
-          <div class="Table-Cell Winners-Money">
+          <div class="Table-Cell TableBordered-Cell Winners-Money">
             € 1.933.29
           </div>
         </div>
         <div class="Table-Row">
-          <div class="Table-Cell Winners-Avatar">
+          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" src="@/assets/img/game5.png" alt="">
           </div>
-          <div class="Table-Cell Winners-Name">
+          <div class="Table-Cell TableBordered-Cell Winners-Name">
             Farisha just won<br/>
             in <span class="Winners-Game">Wild Robo Factory</span>
           </div>
-          <div class="Table-Cell Winners-Money">
+          <div class="Table-Cell TableBordered-Cell Winners-Money">
             € 843.90
           </div>
         </div>
