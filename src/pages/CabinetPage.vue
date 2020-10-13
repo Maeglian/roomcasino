@@ -71,6 +71,7 @@ export default {
     padding-right: 16px;
 
     @media (min-width: $screen-l) {
+      padding-top: 46px;
       padding-left: 46px;
       padding-right: 0;
     }
