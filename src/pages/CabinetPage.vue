@@ -4,12 +4,7 @@
   <div class="CabinetPage-Wrapper">
     <CabinetMenu />
     <div class="CabinetPage-Content">
-      <div class="CabinetPage-Title">
-        {{ title }}
-      </div>
-      <div class="CabinetPage-PageContent">
-        <router-view />
-      </div>
+      <router-view />
     </div>
   </div>
 </section>
@@ -24,16 +19,6 @@ export default {
   components: {
     CabinetMenu,
     CabinetTopbar,
-  },
-  computed: {
-    title() {
-      switch (this.$route.path) {
-        case '/cabinet/balance':
-          return 'Balance';
-        default:
-          return '';
-      }
-    },
   },
 };
 </script>

@@ -1,5 +1,8 @@
 <template>
-  <div class="BalancePage">
+  <div class="Cabinet-Page BalancePage">
+    <div class="CabinetPage-Title">
+      {{ title }}
+    </div>
     <div class="Table CabinetPage-Table BalancePage-Table">
       <div class="Table-Row CabinetPage-Row">
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">
@@ -120,6 +123,13 @@
 <script>
 export default {
   name: 'BalancePage',
+  props: {
+    title: {
+      type: String,
+      required: false,
+      default: '',
+    },
+  },
 };
 </script>
 
