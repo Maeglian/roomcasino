@@ -3,6 +3,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 const HomePage = () => import(/* webpackChunkName: "homePage" */ '@/pages/HomePage.vue');
+const CabinetPage = () => import(/* webpackChunkName: "cabinetPage" */ '@/pages/CabinetPage.vue');
+const BalancePage = () => import(/* webpackChunkName: "cabinetPage" */ '@/pages/BalancePage.vue');
 const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
 
 /*
@@ -25,6 +27,20 @@ const routes = [
     path: '/',
     name: 'HomePage',
     component: HomePage,
+  },
+  {
+    path: '/cabinet',
+    name: 'CabinetPage',
+    component: CabinetPage,
+    children: [
+      {
+        path: 'balance',
+        component: BalancePage,
+        props: {
+          title: 'Balance',
+        },
+      },
+    ],
   },
   // {
   //   path: '/bonus-policy',
