@@ -1,6 +1,6 @@
 <template>
-  <div class="Cabinet-Page BalancePage">
-    <div class="CabinetPage-Title">
+  <div class="BalancePage">
+    <div class="CabinetPage-Title BalancePage-Title">
       {{ title }}
     </div>
     <div class="Table CabinetPage-Table BalancePage-Table">
@@ -135,6 +135,10 @@ export default {
 
 <style lang="scss">
 .BalancePage {
+  &-Title {
+    margin-bottom: 30px;
+  }
+
   &-DepositBtn {
     margin-right: 4px;
 
@@ -149,6 +153,7 @@ export default {
 
   &-Cell {
     order: 1;
+    text-transform: uppercase;
 
     @media(min-width: $screen-m) {
       order: 0;
@@ -170,6 +175,10 @@ export default {
     @media(min-width: $screen-m) {
       padding-left: 15px;
       text-align: left;
+    }
+
+    @media(min-width: $screen-xl) {
+      white-space: nowrap;
     }
   }
 
