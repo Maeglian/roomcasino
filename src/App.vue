@@ -1,22 +1,13 @@
 <template>
   <div id="app">
-    <MainNav />
     <router-view />
-    <Footer />
   </div>
 </template>
-
 <script>
-import MainNav from '@/components/MainNav.vue';
-import Footer from '@/components/Footer.vue';
 import { mapMutations } from 'vuex';
 
 export default {
   name: 'App',
-  components: {
-    MainNav,
-    Footer,
-  },
   created() {
     this.updateWidth();
     window.addEventListener('resize', this.updateWidth);
@@ -40,6 +31,7 @@ export default {
   --color-breadcrumbs: #404454;
   --color-overlay: rgba(7, 52, 165, 0.8);
   --color-border: rgba(88, 92, 131, 0.3);
+  --color-hover: #C40916;
   --color-faded: rgba(255, 255, 255, 0.5);
   --color-more-faded: rgba(255, 255, 255, 0.4);
   --color-most-faded: rgba(255, 255, 255, 0.2);

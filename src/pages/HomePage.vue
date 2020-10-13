@@ -1,5 +1,6 @@
 <template>
   <fragment>
+    <MainNav />
     <Hero />
     <BestGames />
     <Jackpots />
@@ -9,6 +10,7 @@
 <!--    <Promotions />-->
 <!--    <Questions />-->
 <!--    <Banner class="Banner&#45;&#45;bottom" v-bind="banner2" />-->
+    <Footer />
   </fragment>
 </template>
 
@@ -18,6 +20,8 @@ import BestGames from '@/components/BestGames.vue';
 import Jackpots from '@/components/Jackpots.vue';
 import Tournament from '@/components/Tournament.vue';
 import Winners from '@/components/Winners.vue';
+import MainNav from '@/components/MainNav.vue';
+import Footer from '@/components/Footer.vue';
 // import Promotions from '@/components/Promotions.vue';
 // import Questions from '@/components/Questions.vue';
 // import Banner from '@/components/Banner.vue';
@@ -25,11 +29,13 @@ import Winners from '@/components/Winners.vue';
 export default {
   name: 'HomePage',
   components: {
+    MainNav,
     Hero,
     BestGames,
     Jackpots,
     Tournament,
     Winners,
+    Footer,
     // Promotions,
     // Questions,
     // Banner,
