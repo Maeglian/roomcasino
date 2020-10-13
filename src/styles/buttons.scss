@@ -37,6 +37,15 @@ button {
 
   &--color {
     background: var(--color-main2);
+
+    &:hover {
+      background: var(--color-hover);
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    border: 2px solid var(--color-main2);
   }
 
   &--centered {
