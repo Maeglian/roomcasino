@@ -339,6 +339,7 @@ export default {
 
   &-Item {
     position: relative;
+    height: 100%;
     overflow: hidden;
 
     @media(min-width: $screen-l) {
