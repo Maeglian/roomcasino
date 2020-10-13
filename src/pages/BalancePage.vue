@@ -1,5 +1,5 @@
 <template>
-  <div class="BalancePage">
+  <div class="CabinetPage BalancePage">
     <div class="CabinetPage-Title BalancePage-Title">
       {{ title }}
     </div>

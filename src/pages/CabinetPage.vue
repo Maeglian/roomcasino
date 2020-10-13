@@ -25,6 +25,9 @@ export default {
 
 <style lang="scss">
 .CabinetPage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   padding: 0;
 
   &-Wrapper {
@@ -37,6 +40,7 @@ export default {
   }
 
   &-Title {
+    margin-right: auto;
     font-size: 18px;
     font-weight: 700;
     line-height: 1.242;

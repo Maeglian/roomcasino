@@ -1,5 +1,5 @@
 <template>
-  <div class="BonusesPage">
+  <div class="CabinetPage BonusesPage">
     <div class="CabinetPage-Title BonusesPage-Title">
       {{ title }}
     </div>
@@ -126,15 +126,6 @@ export default {
 
 <style lang="scss">
 .BonusesPage {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-
-  &-Title {
-    margin-right: auto;
-  }
-
   &-Bonuses {
     display: flex;
     align-items: center;
