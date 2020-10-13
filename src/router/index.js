@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 const HomePage = () => import(/* webpackChunkName: "homePage" */ '@/pages/HomePage.vue');
 const CabinetPage = () => import(/* webpackChunkName: "cabinetPage" */ '@/pages/CabinetPage.vue');
 const BalancePage = () => import(/* webpackChunkName: "cabinetPage" */ '@/pages/BalancePage.vue');
+const BonusesPage = () => import(/* webpackChunkName: "bonusesPage" */ '@/pages/BonusesPage.vue');
 const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
 
 /*
@@ -38,6 +39,13 @@ const routes = [
         component: BalancePage,
         props: {
           title: 'Balance',
+        },
+      },
+      {
+        path: 'bonuses',
+        component: BonusesPage,
+        props: {
+          title: 'Bonuses',
         },
       },
     ],
