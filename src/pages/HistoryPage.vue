@@ -15,29 +15,6 @@
       </router-link>
     </div>
     <router-view :key="$route.path" />
-    <div class="Table CabinetPage-Table HistoryPage-Table">
-      <div class="Table-Row CabinetPage-Row">
-        <div class="Table-Cell HistoryPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Date
-        </div>
-        <div class="Table-Cell HistoryPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Title
-        </div>
-        <div class="Table-Cell HistoryPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Stage
-        </div>
-        <div class="Table-Cell HistoryPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Amount
-        </div>
-        <div class="Table-Cell HistoryPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Wager
-        </div>
-        <div class="Table-Cell HistoryPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Valid until
-        </div>
-      </div>
-
-    </div>
   </div>
 </template>
 

@@ -1,16 +1,26 @@
 <template>
   <div class="HistoryPage-Content">
     <CabinetFilters :filters="filters" @set-value="setValue" />
+    <CabinetTable
+      :cols="columns"
+      :rows="rows"
+      :pagination-options="{
+        enabled: true,
+        rowsPerPage: 6,
+      }"
+    />
   </div>
 </template>
 
 <script>
 import CabinetFilters from '@/components/CabinetFilters.vue';
+import CabinetTable from '@/components/CabinetTable.vue';
 
 export default {
   name: 'HistoryContent',
   components: {
     CabinetFilters,
+    CabinetTable,
   },
   data() {
     return {
@@ -32,7 +42,6 @@ export default {
           'EUR - Euro',
         ],
       };
-
       const actions = {
         name: 'action',
         type: 'dropdown',
@@ -41,7 +50,6 @@ export default {
           'Affiliatere ward',
         ],
       };
-
       const status = {
         name: 'status',
         type: 'dropdown',
@@ -70,10 +78,342 @@ export default {
 
       return [];
     },
+    columns() {
+      const transactionColumns = [
+        {
+          label: 'Date',
+          field: 'date',
+        },
+        {
+          label: 'Payment system',
+          field: 'payment',
+        },
+        {
+          label: 'Action',
+          field: 'action',
+        },
+        {
+          label: 'Status',
+          field: 'status',
+        },
+        {
+          label: 'Amount',
+          field: 'amount',
+        },
+      ];
+      const gamesColumns = [
+        {
+          label: 'Date',
+          field: 'date',
+        },
+        {
+          label: 'Game name',
+          field: 'name',
+        },
+        {
+          label: 'Bet sum',
+          field: 'bet',
+        },
+        {
+          label: 'Win',
+          field: 'win',
+        },
+      ];
+      const bonusColumns = [
+        {
+          label: 'Date',
+          field: 'date',
+        },
+        {
+          label: 'Title',
+          field: 'title',
+        },
+        {
+          label: 'Stage',
+          field: 'stage',
+        },
+        {
+          label: 'Amount',
+          field: 'amount',
+        },
+        {
+          label: 'Wager',
+          field: 'wager',
+        },
+        {
+          label: 'Valid until',
+          field: 'validUntil',
+        },
+      ];
+
+      if (this.$route.path === '/cabinet/history/game') return gamesColumns;
+      if (this.$route.path === '/cabinet/history/bonus') return bonusColumns;
+
+      return transactionColumns;
+    },
+    rows() {
+      const transactionRows = [
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Credit card',
+          action: 'Affiliatere ward',
+          status: 'Discarded',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Credit card',
+          action: 'Affiliatere ward',
+          status: 'Discarded',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Credit card',
+          action: 'Affiliatere ward',
+          status: 'Discarded',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Credit card',
+          action: 'Affiliatere ward',
+          status: 'Discarded',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          payment: 'Yandex money',
+          action: 'Deposit',
+          status: 'Accepted',
+          amount: '316.00 USD',
+        },
+      ];
+      const gamesRows = [
+        {
+          date: '10 Jun 2020, 16:33:48',
+          name: 'Dynamite Riches',
+          bet: '36.0 USD',
+          win: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          name: 'Dynamite Riches',
+          bet: '36.0 USD',
+          win: '0 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          name: 'Dynamite Riches',
+          bet: '36.0 USD',
+          win: '0 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          name: 'Dynamite Riches',
+          bet: '36.0 USD',
+          win: '0 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          name: 'Dynamite Riches',
+          bet: '36.0 USD',
+          win: '0 USD',
+        },
+
+      ];
+      const bonusRows = [
+        {
+          date: '10 Jun 2020, 16:33:48',
+          title: 'Dynamite Riches',
+          stage: 'Dynamite Riches',
+          amount: '316.00 USD',
+          wager: '316.00 USD',
+          validUntil: '316.00 USD',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          title: 'Dynamite Riches',
+          stage: 'Dynamite Riches',
+          amount: '316.00 USD',
+          wager: '316.00 USD',
+          validUntil: '0',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          title: 'Dynamite Riches',
+          stage: 'Dynamite Riches',
+          amount: '316.00 USD',
+          wager: '316.00 USD',
+          validUntil: '0',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          title: 'Dynamite Riches',
+          stage: 'Dynamite Riches',
+          amount: '316.00 USD',
+          wager: '316.00 USD',
+          validUntil: '0',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          title: 'Dynamite Riches',
+          stage: 'Dynamite Riches',
+          amount: '316.00 USD',
+          wager: '316.00 USD',
+          validUntil: '0',
+        },
+        {
+          date: '10 Jun 2020, 16:33:48',
+          title: 'Dynamite Riches',
+          stage: 'Dynamite Riches',
+          amount: '316.00 USD',
+          wager: '316.00 USD',
+          validUntil: '0',
+        },
+      ];
+
+      if (this.$route.path === '/cabinet/history/game') return gamesRows;
+      if (this.$route.path === '/cabinet/history/bonus') return bonusRows;
+
+      return transactionRows;
+    },
   },
   methods: {
     setValue(value) {
-      console.log(value);
       const { name, val } = value;
       this.filterValues[name] = val;
     },
