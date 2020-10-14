@@ -96,6 +96,7 @@ export default {
     }
 
     &.router-link-active {
+      padding: 10px 5px 6px 5px;
       border-bottom: 4px solid var(--color-main1);
       color: var(--color-main1);
 
