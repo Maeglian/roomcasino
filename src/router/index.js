@@ -6,6 +6,8 @@ const HomePage = () => import(/* webpackChunkName: "homePage" */ '@/pages/HomePa
 const CabinetPage = () => import(/* webpackChunkName: "cabinetPage" */ '@/pages/CabinetPage.vue');
 const BalancePage = () => import(/* webpackChunkName: "cabinetPage" */ '@/pages/BalancePage.vue');
 const BonusesPage = () => import(/* webpackChunkName: "bonusesPage" */ '@/pages/BonusesPage.vue');
+const HistoryPage = () => import(/* webpackChunkName: "historyPage" */ '@/pages/HistoryPage.vue');
+const HistoryContent = () => import(/* webpackChunkName: "historyContent" */ '@/components/HistoryContent.vue');
 const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
 
 /*
@@ -47,6 +49,28 @@ const routes = [
         props: {
           title: 'Bonuses',
         },
+      },
+      {
+        path: 'history',
+        component: HistoryPage,
+        props: {
+          title: 'History',
+        },
+        redirect: 'history/transactions',
+        children: [
+          {
+            path: 'transactions',
+            component: HistoryContent,
+          },
+          {
+            path: 'game',
+            component: HistoryContent,
+          },
+          {
+            path: 'bonus',
+            component: HistoryContent,
+          },
+        ],
       },
     ],
   },

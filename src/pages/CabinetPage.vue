@@ -33,6 +33,7 @@ export default {
   &-Wrapper {
     display: flex;
     flex-direction: column;
+    max-width: 100%;
 
     @media(min-width: $screen-l) {
       flex-direction: row;
@@ -61,12 +62,13 @@ export default {
   }
 
   &-Content {
-    flex-grow: 1;
+    max-width: 100%;
     padding-left: 16px;
     padding-bottom: 30px;
     padding-right: 16px;
 
     @media (min-width: $screen-l) {
+      width: 100%;
       padding-top: 46px;
       padding-left: 46px;
       padding-right: 0;
@@ -114,6 +116,7 @@ export default {
     @media (min-width: $screen-m) {
       display: table-cell;
       font-size: 10px;
+      text-transform: uppercase;
       color: var(--color-text-ghost);
     }
   }
@@ -227,6 +230,71 @@ export default {
       text-transform: uppercase;
       color: var(--color-text-ghost);
       white-space: nowrap;
+    }
+  }
+
+  &-Tabs {
+    display: flex;
+    width: 100%;
+
+    @media (min-width: $screen-m) {
+      width: auto;
+    }
+  }
+
+  &-Tab {
+    position: relative;
+    margin-right: 4px;
+    padding: 14px 22px;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-text-main);
+    background: var(--color-bg);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.router-link-active {
+      color: var(--color-main1);
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 50px;
+        height: 4px;
+        background: var(--color-main1);
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &-Dropdown {
+    flex-grow: 1;
+
+    &--currency {
+      width: 230px;
+    }
+  }
+
+  &-Datepicker {
+    flex-grow: 1;
+
+    .Datepicker-Inner {
+      right: 0;
+
+      @media(min-width: $screen-xs) {
+        left: 0;
+        right: initial;
+      }
+
+      @media(min-width: $screen-xl) {
+        left: initial;
+        right: 0;
+      }
     }
   }
 }
