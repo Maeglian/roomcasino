@@ -1,0 +1,64 @@
+.Datepicker {
+  background: var(--color-bg);
+
+  > div {
+    height: 100%;
+  }
+
+  &-Input {
+    width: 100%;
+    height: 100%;
+    padding-left: 16px;
+    font-weight: 700;
+  }
+
+  &-Inner {
+    width: 292px;
+    margin-top: 4px;
+    color: var(--color-text-main);
+
+    &.vdp-datepicker__calendar {
+      background: var(--color-bg);
+      border: none;
+    }
+
+    .cell {
+      background: var(--color-bg);
+    }
+
+    .day__month_btn {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .day-header {
+      color: var(--color-text-ghost);
+    }
+  }
+
+  .vdp-datepicker__calendar .cell.selected {
+    background: var(--color-main1);
+
+    &:hover {
+      background: var(--color-main1);
+    }
+  }
+
+  .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover, .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover, .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {
+    border-color: var(--color-main1);
+  }
+
+  .vdp-datepicker__calendar header .prev:not(.disabled):hover, .vdp-datepicker__calendar header .next:not(.disabled):hover, .vdp-datepicker__calendar header .up:not(.disabled):hover {
+    background: var(--color-main1);
+  }
+
+  .vdp-datepicker__calendar header .prev:after {
+    border-right-color: var(--color-text-ghost);
+  }
+
+  .vdp-datepicker__calendar header .next:after {
+    border-left-color: var(--color-text-ghost);
+  }
+}
+
+
