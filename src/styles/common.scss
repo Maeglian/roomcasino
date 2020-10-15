@@ -126,6 +126,26 @@ a {
   }
 }
 
+.PrevNext {
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid var(--color-border-ghost);
+  border-left: 2px solid var(--color-border-ghost);
+  outline: none;
+
+  &:focus, &:active {
+    border-color: var(--color-main1);
+  }
+
+  &-Prev {
+    transform: translateY(-3px) rotate(45deg);
+  }
+
+  &-Next {
+    transform: translateY(-4px) rotate(225deg);
+  }
+}
+
 .Badge {
   width: 16px;
   height: 16px;
