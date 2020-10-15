@@ -1,38 +1,53 @@
 <template>
-  <div class="Table CabinetTable">
-    <div class="Table-Header CabinetTable-Header">
-      <div
-        v-for="col in cols"
-        :key="col.field"
-        class="Table-Cell CabinetTable-Cell CabinetTable-Th"
-      >
-        {{ col.label }}
+  <div class="CabinetTable">
+    <div class="CabinetTable-Table Table">
+      <div class="Table-Header CabinetTable-Header">
+        <div
+          v-for="col in cols"
+          :key="col.field"
+          class="Table-Cell CabinetTable-Cell CabinetTable-Th"
+        >
+          {{ col.label }}
+        </div>
       </div>
-    </div>
-    <div
-      v-for="(row, i) in rows"
-      :key="i"
-      class="Table-Row CabinetTable-Row"
-    >
       <div
-        v-for="col in cols"
-        :key="row[col.field]"
-        class="Table-Cell CabinetTable-Cell"
-        :class="{
+        v-for="(row, i) in rows"
+        :key="i"
+        class="Table-Row CabinetTable-Row"
+      >
+        <div
+          v-for="(col, j) in cols"
+          :key="`${i}_${j}_${row[col.field]}`"
+          class="Table-Cell CabinetTable-Cell"
+          :class="{
           'CabinetTable-Cell--accepted': row[col.field] === 'Accepted',
           'CabinetTable-Cell--discarded': row[col.field] === 'Discarded'
         }"
-      >
-        <div class="CabinetTable-Label">
-          {{ col.label }}
+        >
+          <div class="CabinetTable-Label">
+            {{ col.label }}
+          </div>
+          {{ row[col.field] }}
         </div>
-        {{ row[col.field] }}
       </div>
+    </div>
+    <div class="CabinetTable-Footer">
+      <button class="CabinetTable-ShowMore">
+        Show more
+      </button>
+      <BasePagination
+        class="CabinetTable-Pagination"
+        v-if="pagination.enabled"
+        :pagination="pagination"
+        @changePage="$emit('changePage', $event)"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import BasePagination from '@/components/BasePagination.vue';
+
 export default {
   name: 'CabinetTable',
   props: {
@@ -44,13 +59,16 @@ export default {
       type: Array,
       isRequired: true,
     },
-    paginationOptions: {
+    pagination: {
       type: Object,
       isRequired: false,
       default: () => ({
         enabled: false,
       }),
     },
+  },
+  components: {
+    BasePagination,
   },
   computed: {
 
@@ -60,10 +78,12 @@ export default {
 
 <style lang="scss">
 .CabinetTable {
-  @media (min-width: $screen-m) {
-    display: table;
-    border-spacing: 0 4px;
-    table-layout: fixed;
+  &-Table {
+    @media (min-width: $screen-m) {
+      display: table;
+      border-spacing: 0 4px;
+      table-layout: fixed;
+    }
   }
 
   &-Row {
@@ -138,6 +158,28 @@ export default {
     @media (min-width: $screen-m) {
       display: none;
     }
+  }
+
+  &-Footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-bg);
+  }
+
+  &-ShowMore {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-main1);
+  }
+
+  &-Pagination {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-ghost);
   }
 }
 

@@ -3,11 +3,14 @@
     <CabinetFilters :filters="filters" @set-value="setValue" />
     <CabinetTable
       :cols="columns"
-      :rows="rows"
-      :pagination-options="{
+      :rows="rowsInPage"
+      :pagination="{
         enabled: true,
-        rowsPerPage: 6,
+        currentPage: currentPage,
+        totalPages: totalPages,
+        count: rows.length,
       }"
+      @changePage="currentPage = $event"
     />
   </div>
 </template>
@@ -26,6 +29,8 @@ export default {
     return {
       activeFilters: [],
       filterValues: {},
+      rowsPerPage: 6,
+      currentPage: 1,
     };
   },
   computed: {
@@ -154,7 +159,7 @@ export default {
     rows() {
       const transactionRows = [
         {
-          date: '10 Jun 2020, 16:33:48',
+          date: '11 Jun 2020, 16:33:48',
           payment: 'Yandex money',
           action: 'Deposit',
           status: 'Accepted',
@@ -315,7 +320,7 @@ export default {
           amount: '316.00 USD',
         },
         {
-          date: '10 Jun 2020, 16:33:48',
+          date: '18 Jun 2020, 16:33:48',
           payment: 'Yandex money',
           action: 'Deposit',
           status: 'Accepted',
@@ -410,6 +415,15 @@ export default {
       if (this.$route.path === '/cabinet/history/bonus') return bonusRows;
 
       return transactionRows;
+    },
+    rowsInPage() {
+      const start = this.rowsPerPage * (this.currentPage - 1);
+      const end = start + this.rowsPerPage;
+
+      return this.rows.slice(start, end);
+    },
+    totalPages() {
+      return Math.ceil(this.rows.length / this.rowsPerPage);
     },
   },
   methods: {
