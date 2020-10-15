@@ -8,6 +8,7 @@ const BalancePage = () => import(/* webpackChunkName: "cabinetPage" */ '@/pages/
 const BonusesPage = () => import(/* webpackChunkName: "bonusesPage" */ '@/pages/BonusesPage.vue');
 const HistoryPage = () => import(/* webpackChunkName: "historyPage" */ '@/pages/HistoryPage.vue');
 const HistoryContent = () => import(/* webpackChunkName: "historyContent" */ '@/components/HistoryContent.vue');
+const VerificationPage = () => import(/* webpackChunkName: "verificationPage" */ '@/pages/VerificationPage.vue');
 const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
 
 /*
@@ -71,6 +72,13 @@ const routes = [
             component: HistoryContent,
           },
         ],
+      },
+      {
+        path: 'verification',
+        component: VerificationPage,
+        props: {
+          title: 'Verification',
+        },
       },
     ],
   },
