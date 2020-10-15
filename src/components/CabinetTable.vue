@@ -32,7 +32,11 @@
       </div>
     </div>
     <div class="CabinetTable-Footer">
-      <button class="CabinetTable-ShowMore">
+      <button
+        v-if="this.pagination.totalPages > 1"
+        class="CabinetTable-ShowMore"
+        @click="$emit('showMore')"
+      >
         Show more
       </button>
       <BasePagination
@@ -69,9 +73,6 @@ export default {
   },
   components: {
     BasePagination,
-  },
-  computed: {
-
   },
 };
 </script>
