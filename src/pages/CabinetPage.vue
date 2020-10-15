@@ -35,6 +35,18 @@ export default {
     color: var(--color-text-main);
   }
 
+  &-Header {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 4px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 55px;
+    color: var(--color-text-main);
+    background: var(--color-bg);
+  }
+
   &-Wrapper {
     display: flex;
     flex-direction: column;
