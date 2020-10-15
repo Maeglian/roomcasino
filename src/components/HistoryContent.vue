@@ -11,7 +11,7 @@
         count: rows.length,
       }"
       @changePage="currentPage = $event"
-      @showMore="rowsPerPage *= 2"
+      @showMore="rowsPerPage += rowsPerPage"
     />
   </div>
 </template>
