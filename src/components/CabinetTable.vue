@@ -1,7 +1,10 @@
 <template>
   <div class="CabinetTable">
+    <div v-if="title" class="CabinetTable-Title">
+      {{ title }}
+    </div>
     <div class="CabinetTable-Table Table">
-      <div class="Table-Header CabinetTable-Header">
+      <div v-if="cols" class="Table-Header CabinetTable-Header">
         <div
           v-for="col in cols"
           :key="col.field"
@@ -15,20 +18,34 @@
         :key="i"
         class="Table-Row CabinetTable-Row"
       >
-        <div
-          v-for="(col, j) in cols"
-          :key="`${i}_${j}_${row[col.field]}`"
-          class="Table-Cell CabinetTable-Cell"
-          :class="{
-          'CabinetTable-Cell--accepted': row[col.field] === 'Accepted',
-          'CabinetTable-Cell--discarded': row[col.field] === 'Discarded'
-        }"
-        >
-          <div class="CabinetTable-Label">
-            {{ col.label }}
+        <template v-if="cols">
+          <div
+            v-for="(col, j) in cols"
+            :key="`${i}_${j}_${row[col.field]}`"
+            class="Table-Cell CabinetTable-Cell"
+            :class="{
+            'CabinetTable-Cell--accepted': row[col.field] === 'Accepted',
+            'CabinetTable-Cell--discarded': row[col.field] === 'Discarded'
+          }"
+          >
+            <div class="CabinetTable-Label">
+              {{ col.label }}
+            </div>
+            {{ row[col.field] }}
           </div>
-          {{ row[col.field] }}
-        </div>
+        </template>
+        <template v-else>
+          <div
+            v-for="(col, j) in row"
+            :key="`${i}_${j}_${col}`"
+            class="Table-Cell CabinetTable-Cell"
+            :class="{
+            'CabinetTable-Cell--accepted': col    === 'Current',
+          }"
+          >
+            {{ col }}
+          </div>
+        </template>
       </div>
     </div>
     <div class="CabinetTable-Footer">
@@ -55,13 +72,17 @@ import BasePagination from '@/components/BasePagination.vue';
 export default {
   name: 'CabinetTable',
   props: {
-    cols: {
-      type: Array,
-      isRequired: true,
-    },
     rows: {
       type: Array,
       isRequired: true,
+    },
+    cols: {
+      type: Array,
+      isRequired: false,
+    },
+    title: {
+      type: String,
+      isRequired: false,
     },
     pagination: {
       type: Object,
@@ -85,6 +106,17 @@ export default {
       border-spacing: 0 4px;
       table-layout: fixed;
     }
+  }
+
+  &-Title {
+    width: 100%;
+    height: 55px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 55px;
+    color: var(--color-text-main);
+    background: var(--color-bg);
   }
 
   &-Row {
