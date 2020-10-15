@@ -30,9 +30,15 @@ export default {
   align-items: center;
   padding: 0;
 
+  &-Link {
+    font-weight: 700;
+    color: var(--color-text-main);
+  }
+
   &-Wrapper {
     display: flex;
     flex-direction: column;
+    width: 100%;
     max-width: 100%;
 
     @media(min-width: $screen-l) {
@@ -62,13 +68,14 @@ export default {
   }
 
   &-Content {
+    width: 100%;
     max-width: 100%;
     padding-left: 16px;
     padding-bottom: 30px;
     padding-right: 16px;
 
     @media (min-width: $screen-l) {
-      width: 100%;
+      width: 974px / $screen-xl * 100%;
       padding-top: 46px;
       padding-left: 46px;
       padding-right: 8px;
