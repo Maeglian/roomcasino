@@ -17,7 +17,9 @@
       >
         <a @click="onChangePage(1)">1</a>
       </li>
-      <li v-if="hasFirstEllipsis"><span class="Pagination-Ellipsis">&hellip;</span></li>
+      <li v-if="hasFirstEllipsis" class="Pagination-Item">
+        <span class="Pagination-Ellipsis">&hellip;</span>
+      </li>
       <li
         class="Pagination-Item"
         :class="{
@@ -29,7 +31,9 @@
       >
         <a @click="onChangePage(page)">{{ page }}</a>
       </li>
-      <li v-if="hasLastEllipsis"><span class="Pagination-Ellipsis">&hellip;</span></li>
+      <li v-if="hasLastEllipsis" class="Pagination-Item">
+        <span class="Pagination-Ellipsis">&hellip;</span>
+      </li>
       <li v-if="hasLast"
         class="Pagination-Item"
         :class="{ 'Pagination-Item--active': isActive(this.pagination.totalPages) }"
