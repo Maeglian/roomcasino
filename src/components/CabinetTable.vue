@@ -163,17 +163,28 @@ export default {
 
   &-Footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     padding: 15px;
     background-color: var(--color-bg);
+
+    @media (min-width: $screen-s) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &-ShowMore {
+    margin-bottom: 20px;
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-main1);
+
+    @media (min-width: $screen-s) {
+      margin-bottom: 0;
+    }
   }
 
   &-Pagination {
