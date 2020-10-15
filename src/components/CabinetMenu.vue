@@ -101,7 +101,7 @@ export default {
       color: var(--color-main1);
 
       @media(min-width: $screen-l) {
-        padding-left: 29px;
+        padding: 10px 5px 10px 29px;
         border-left: 8px solid var(--color-main1);
         border-bottom: none;
       }
