@@ -29,11 +29,13 @@
       <div class="MainNav-Login">
         <button
           class="Btn Btn--text MainNav-Btn"
+          @click="showRegistrationDialog('login')"
         >
           Login
         </button>
         <button
           class="Btn MainNav-Btn"
+          @click="showRegistrationDialog('registration')"
         >
           Register
         </button>
@@ -53,17 +55,22 @@
         </div>
       </div>
     </transition>
+    <modal name="registration">
+      <AuthDialog @close="hideRegistrationDialog()" />
+    </modal>
   </nav>
 </template>
 
 <script>
 import NavItem from '@/components/NavItem.vue';
+import AuthDialog from '@/components/AuthDialog.vue';
 import { mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'MainNav',
   components: {
     NavItem,
+    AuthDialog,
   },
   data() {
     return {
@@ -120,6 +127,14 @@ export default {
     toggleNav() {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
+    },
+    showRegistrationDialog(authType) {
+      this.$modal.show(AuthDialog,
+        { authType },
+        { width: 418, height: 'auto' });
+    },
+    hideRegistrationDialog() {
+      this.$modal.hide('registration');
     },
   },
 };
