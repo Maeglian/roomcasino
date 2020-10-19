@@ -43,6 +43,7 @@ export default {
     font-size: 14px;
     font-weight: 700;
     line-height: 55px;
+    text-transform: capitalize;
     color: var(--color-text-main);
     background: var(--color-bg);
   }
@@ -249,45 +250,6 @@ export default {
       text-transform: uppercase;
       color: var(--color-text-ghost);
       white-space: nowrap;
-    }
-  }
-
-  &-Tabs {
-    display: flex;
-    width: 100%;
-
-    @media (min-width: $screen-m) {
-      width: auto;
-    }
-  }
-
-  &-Tab {
-    position: relative;
-    margin-right: 4px;
-    padding: 14px 22px;
-    font-size: 10px;
-    font-weight: 700;
-    text-align: center;
-    color: var(--color-text-main);
-    background: var(--color-bg);
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &.router-link-active {
-      color: var(--color-main1);
-
-      &:after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        width: 50px;
-        height: 4px;
-        background: var(--color-main1);
-        transform: translateX(-50%);
-      }
     }
   }
 

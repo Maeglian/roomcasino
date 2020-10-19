@@ -3,14 +3,14 @@
     <div class="CabinetPage-Title HistoryPage-Title">
       {{ title }}
     </div>
-    <div class="CabinetPage-Tabs">
-        <router-link to="/cabinet/history/transactions" class="CabinetPage-Tab">
+    <div class="Tabs">
+        <router-link to="/cabinet/history/transactions" class="Tabs-Tab">
         Transactions History
       </router-link>
-      <router-link to="/cabinet/history/game" class="CabinetPage-Tab">
+      <router-link to="/cabinet/history/game" class="Tabs-Tab">
         Game History
       </router-link>
-      <router-link to="/cabinet/history/bonus" class="CabinetPage-Tab">
+      <router-link to="/cabinet/history/bonus" class="Tabs-Tab">
         Bonus History
       </router-link>
     </div>
