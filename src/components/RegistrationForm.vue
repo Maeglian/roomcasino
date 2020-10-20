@@ -20,7 +20,7 @@
           class="AuthDialog-Field AuthDialog-Dropdown"
           :items="field.items"
           :key="field.name"
-          @set-dropdown-value="$data[field.name] = $event"
+          @set-dropdown-value="$data.formFields[field.name] = $event"
         />
       </template>
       <div class="AuthDialog-Row" v-else-if="field.type === 'radio'" :key="field.name">
@@ -36,12 +36,21 @@
             :label="value"
             type="radio"
             :value="value"
-            :checked="$data[field.name] === value"
-            @onInput="$data[field.name] = $event"
+            :checked="$data.formFields[field.name] === value"
+            @onInput="$data.formFields[field.name] = $event"
           />
         </div>
       </div>
       <template v-else-if="field.type === 'date'">
+        <Datepicker
+          :key="field.name"
+          format="dd - MM - yyyy"
+          class="AuthDialog-Field Datepicker CabinetPage-Datepicker"
+          calendar-class="Datepicker-Inner"
+          input-class="AuthDialog-Input Datepicker-Input"
+          :placeholder="field.placeholder"
+          @selected="$data.formFields[field.name] = $event"
+        />
       </template>
       <template v-else-if="field.type === 'checkbox'">
         <BaseCheckbox
@@ -49,8 +58,8 @@
           blockClass="AuthDialog"
           :key="field.name"
           :label="field.label"
-          :checked="$data[field.name]"
-          @onInput="$data[field.name] = $event"
+          :checked="$data.formFields[field.name]"
+          @onInput="$data.formFields[field.name] = $event"
         />
       </template>
       <template v-else>
@@ -59,8 +68,8 @@
           :key="field.name"
           :inputType="field.type"
           :placeholder="field.placeholder"
-          :value="$data[field.name]"
-          @onInput="$data[field.name] = $event"
+          :value="$data.formFields[field.name]"
+          @onInput="$data.formFields[field.name] = $event"
         />
       </template>
     </template>
@@ -79,6 +88,8 @@
 import BaseInput from '@/components/BaseInput.vue';
 import BaseCheckbox from '@/components/BaseCheckbox.vue';
 import BaseDropdown from '@/components/BaseDropdown.vue';
+import { mapActions } from 'vuex';
+import Datepicker from 'vuejs-datepicker';
 
 export default {
   name: 'RegistrationForm',
@@ -86,6 +97,7 @@ export default {
     BaseInput,
     BaseDropdown,
     BaseCheckbox,
+    Datepicker,
   },
   data() {
     return {
@@ -169,19 +181,21 @@ export default {
           required: true,
         },
       ],
-      email: '',
-      password: '',
-      currency: '',
-      country: '',
-      firstName: '',
-      lastName: '',
-      birthDate: '',
-      gender: 'Male',
-      city: '',
-      address: '',
-      postalCode: '',
-      promos: true,
-      terms: true,
+      formFields: {
+        email: '',
+        password: '',
+        currency: '',
+        country: '',
+        firstName: '',
+        lastName: '',
+        birthDate: '',
+        gender: 'Male',
+        city: '',
+        address: '',
+        postalCode: '',
+        promos: true,
+        terms: true,
+      },
     };
   },
   computed: {
@@ -191,6 +205,7 @@ export default {
     },
   },
   methods: {
+    ...mapActions(['registerUser']),
     showNextStep() {
       if (this.step !== 4) this.step += 1;
     },
@@ -199,6 +214,9 @@ export default {
     },
     onClickSubmitBtn() {
       if (this.step === 1) this.step = 2;
+      else {
+        this.registerUser(this.formFields);
+      }
     },
   },
 };
@@ -224,6 +242,7 @@ export default {
     width: 100%;
     height: 55px;
     margin-bottom: 4px;
+    background: transparent;
     border: 2px solid var(--color-border-ghost);
 
     &--2col {
@@ -237,6 +256,8 @@ export default {
   }
 
   &-Input {
+    width: 100%;
+    height: 100%;
     padding: 20px;
     color: var(--color-text-main);
     background: transparent;
@@ -247,6 +268,10 @@ export default {
       text-transform: uppercase;
       color: var(--color-text-ghost);
     }
+  }
+
+  &-Datepicker {
+    border: none;
   }
 
   &-Dropdown {
