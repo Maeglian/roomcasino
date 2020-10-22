@@ -10,7 +10,8 @@
       blockClass="AuthDialog"
       :inputType="field.type"
       :placeholder="field.placeholder"
-      :value="field.value"
+      v-model="$data.formFields[field.name]"
+      :v="$v.formFields[field.name]"
     />
     <div class="AuthDialog-Link">
       <a href="#" class="AuthDialog-Link">Forgot Password?</a>
@@ -24,6 +25,7 @@
 
 <script>
 import BaseInput from '@/components/BaseInput.vue';
+import { email, required } from 'vuelidate/lib/validators';
 
 export default {
   name: 'LoginForm',
@@ -44,7 +46,17 @@ export default {
           placeholder: 'Enter your password',
         },
       ],
+      formFields: {
+        email: '',
+        password: '',
+      },
     };
+  },
+  validations: {
+    formFields: {
+      email: { required, email },
+      password: { required },
+    },
   },
 };
 </script>

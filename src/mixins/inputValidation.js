@@ -1,22 +1,13 @@
-import { required } from 'vuelidate/lib/validators';
-
 export default {
-  data() {
-    return {
-      val: '',
-    };
-  },
-  validations: {
+  computed: {
     val: {
-      required,
-    },
-  },
-  methods: {
-    onInput(e) {
-      if (this.type === 'checkbox') this.val = e.target.checked;
-      else this.val = e.target.value;
-      this.$v.val.$touch();
-      this.$emit('onInput', this.val);
+      get() {
+        return this.value;
+      },
+      set(value) {
+        if (this.v) this.v.$touch();
+        this.$emit('input', value);
+      },
     },
   },
 };

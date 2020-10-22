@@ -34,6 +34,7 @@ export default {
   --color-hover: #C40916;
   --color-accept: #67B12D;
   --color-discard: #CC1F1F;
+  --color-error: #EB1C2A;
   --color-border-ghost: rgba(110, 115, 130, 0.5);
   --color-faded: rgba(255, 255, 255, 0.5);
   --color-more-faded: rgba(255, 255, 255, 0.4);

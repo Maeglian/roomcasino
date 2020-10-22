@@ -7,7 +7,7 @@
         :type="type"
         :checked="checked"
         :value="value"
-        @change="onInput($event)"
+        @change="onChange($event)"
       />
       <div
         class="BaseCheckbox-Label"
@@ -19,8 +19,6 @@
 </template>
 
 <script>
-import inputValidation from '@/mixins/inputValidation';
-
 export default {
   name: 'BaseCheckbox',
   props: {
@@ -50,18 +48,24 @@ export default {
       default: '',
     },
     value: {
-      type: String,
-      isRequired: false,
-      default: '',
+      type: [String, Boolean],
+      isRequired: true,
     },
   },
-  mixins: [inputValidation],
   computed: {
     classObject() {
       if (this.type === 'radio') {
         return `BaseCheckbox-Label BaseCheckbox-Label--radio ${this.blockClass}-Label--radio`;
       }
       return `${this.blockClass}-Label`;
+    },
+  },
+  methods: {
+    onChange(e) {
+      let val;
+      if (this.type === 'checkbox') val = e.target.checked;
+      else val = e.target.value;
+      this.$emit('change', val);
     },
   },
 };
