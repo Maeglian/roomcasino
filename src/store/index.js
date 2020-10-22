@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import API_HOST from '../config';
 
 Vue.use(Vuex);
 
@@ -12,6 +13,7 @@ export default new Vuex.Store({
     jackpots: [],
     gamesAreLoading: false,
     errors: {},
+    user: {},
   },
 
   getters: {
@@ -43,6 +45,9 @@ export default new Vuex.Store({
     setJackpots: (state, payload) => {
       state.jackpots = payload;
     },
+    setUser: (state, payload) => {
+      state.user = payload;
+    },
   },
 
   actions: {
@@ -63,6 +68,15 @@ export default new Vuex.Store({
         // eslint-disable-next-line no-underscore-dangle
         const res = await axios.get('https://games.netdnstrace1.com/?daily_jackpot=true');
         commit('setJackpots', res.data);
+      } catch (e) {
+        commit('pushErrors', e);
+      }
+    },
+    async registerUser({ commit }, payload) {
+      try {
+        // eslint-disable-next-line no-underscore-dangle
+        const res = await axios.post(`${API_HOST}/register`, payload);
+        commit('setUser', res.data);
       } catch (e) {
         commit('pushErrors', e);
       }
