@@ -14,13 +14,13 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: set git username and email
         run: |
           git config --global user.email "misaeva@wakeapp.ru"
           git config --global user.name "misaeva"
       - name: deploy to gh-pages
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+
         run: |
           npm i
           NODE_ENV=production npm run build
