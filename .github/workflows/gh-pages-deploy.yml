@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
@@ -18,6 +19,8 @@ jobs:
           git config --global user.email "misaeva@wakeapp.ru"
           git config --global user.name "misaeva"
       - name: deploy to gh-pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm i
           NODE_ENV=production npm run build
@@ -25,4 +28,4 @@ jobs:
           git init
           git add -A
           git commit -m "🚀 Deploy id ${GITHUB_RUN_ID}"
-          git push -f "https://github.com/Maeglian/roomcasino.git" master:gh-pages
+          git push -f "https://github.com/${GITHUB_REPOSITORY}.git" master:gh-pages
