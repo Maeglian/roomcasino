@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
-      - name: setup git auth
+      - name: set git username and email
         run: |
           git config --global user.email "misaeva@wakeapp.ru"
           git config --global user.name "misaeva"
@@ -25,4 +25,4 @@ jobs:
           git init
           git add -A
           git commit -m "🚀 Deploy id ${GITHUB_RUN_ID}"
-          git push -f "https://github.com/${GITHUB_REPOSITORY}.git" master:gh-pages
+          git push -f "git@github.com:Maeglian/${GITHUB_REPOSITORY}.git" master:gh-pages
