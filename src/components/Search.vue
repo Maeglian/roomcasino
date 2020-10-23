@@ -5,7 +5,7 @@
     v-click-outside="onClickOutside"
   >
     <svg class="Icon Search-Icon">
-      <use xlink:href="@/assets/img/icon-sprite.svg#search"></use>
+      <use xlink:href="@/assets/img/icons.svg#search"></use>
     </svg>
     <input type="text" class="Search-Input" placeholder="Find game">
   </div>
