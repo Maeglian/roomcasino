@@ -15,8 +15,8 @@ jobs:
           node-version: '12'
       - name: setup git auth
         run: |
-          git config --global user.email $email
-          git config --global user.name $username
+          git config --global user.email "misaeva@wakeapp.ru"
+          git config --global user.name "misaeva"
       - name: deploy to gh-pages
         run: |
           npm i
