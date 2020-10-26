@@ -22,12 +22,22 @@
       Passwords are not the same
     </div>
     <div class="BaseInput-Wrapper">
+      <svg
+        v-if="icon"
+        class="BaseInput-Icon"
+        :class="`${blockClass}-Icon ${blockClass}-Icon--${icon}`"
+      >
+        <use :xlink:href="require('@/assets/img/icons.svg') + `#${icon}`"></use>
+      </svg>
       <input
         :class="[
           'BaseInput-Input',
           `${blockClass}-Field`,
           `${blockClass}-Input`,
-          {'BaseInput-Input--error': v.$error}
+          {'BaseInput-Input--error': v.$error},
+          {'BaseInput-Input--withVisibility': toggleVisibility},
+          [toggleVisibility ? `${blockClass}-Input--withVisibility`: ''],
+          [icon ? `${blockClass}-Input--withIcon`: ''],
           ]"
         :type="type"
         :placeholder="customPlaceholder ? '' : placeholder"
@@ -36,6 +46,10 @@
       <svg
         v-if="toggleVisibility"
         class="BaseInput-Visible"
+        :class="[
+          [toggleVisibility ? `${blockClass}-Visible`: ''],
+          [toggleVisibility && passwordVisible ? `${blockClass}-Visible--isVisible`: ''],
+        ]"
         @click="passwordVisible = !passwordVisible"
       >
         <use xlink:href="@/assets/img/icons.svg#visible"></use>
@@ -74,6 +88,11 @@ export default {
       default: 'text',
     },
     placeholder: {
+      type: String,
+      isRequired: false,
+      default: '',
+    },
+    icon: {
       type: String,
       isRequired: false,
       default: '',
@@ -151,14 +170,9 @@ export default {
     }
   }
 
-  &-Visible {
+  &-Visible, &-Icon {
     position: absolute;
-    right: 22px;
     z-index: 2;
-    top: calc(50% - 5.5px);
-    width: 19px;
-    height: 11px;
-    cursor: pointer;
   }
 }
 </style>
