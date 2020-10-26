@@ -95,6 +95,12 @@ export default {
     }
   }
 
+  &-Text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--color-text-ghost);
+  }
+
   &-Table {
     @media (min-width: $screen-m) {
       display: table;

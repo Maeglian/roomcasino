@@ -12,6 +12,7 @@ const VerificationPage = () => import(/* webpackChunkName: "verificationPage" */
 const ProfilePage = () => import(/* webpackChunkName: "profilePage" */ '@/pages/ProfilePage.vue');
 const ProfileInfo = () => import(/* webpackChunkName: "profileInfo" */ '@/components/ProfileInfo.vue');
 const ProfileSecurity = () => import(/* webpackChunkName: "profileSecurity" */ '@/components/ProfileSecurity.vue');
+const LimitsPage = () => import(/* webpackChunkName: "limitsPage" */ '@/pages/LimitsPage.vue');
 const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
 
 /*
@@ -100,6 +101,13 @@ const routes = [
             component: ProfileSecurity,
           },
         ],
+      },
+      {
+        path: 'limits',
+        component: LimitsPage,
+        props: {
+          title: 'Gambling limits',
+        },
       },
     ],
   },
