@@ -78,6 +78,7 @@
           v-model="field.value"
           :v="$v[`fieldsStep${step}`][name].value"
           :required="field.required"
+          :custom-placeholder="true"
         />
       </template>
     </template>

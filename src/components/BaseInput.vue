@@ -8,11 +8,18 @@
       Can't be blank
     </div>
     <div
-      v-if="v.email === false"
+    v-if="v.email === false"
+    class="BaseInput-Error"
+    :class="`${blockClass}-Error`"
+  >
+    Email must be valid
+  </div>
+    <div
+      v-if="v.sameAsPassword === false"
       class="BaseInput-Error"
       :class="`${blockClass}-Error`"
     >
-      Email must be valid
+      Passwords are not the same
     </div>
     <div class="BaseInput-Wrapper">
       <input
@@ -22,10 +29,22 @@
           `${blockClass}-Input`,
           {'BaseInput-Input--error': v.$error}
           ]"
-        :type="inputType"
+        :type="type"
+        :placeholder="customPlaceholder ? '' : placeholder"
         v-model="val"
       />
-      <span v-if="!v.required" class="BaseInput-Placeholder" :class="`${blockClass}-Placeholder`">
+      <svg
+        v-if="toggleVisibility"
+        class="BaseInput-Visible"
+        @click="passwordVisible = !passwordVisible"
+      >
+        <use xlink:href="@/assets/img/icons.svg#visible"></use>
+      </svg>
+      <span
+        v-if="customPlaceholder && !v.required"
+        class="BaseInput-Placeholder"
+        :class="`${blockClass}-Placeholder`"
+      >
         {{ placeholder }}
         <span v-if="required" class="BaseInput-Placeholder--required">*</span>
       </span>
@@ -59,7 +78,17 @@ export default {
       isRequired: false,
       default: '',
     },
+    customPlaceholder: {
+      type: Boolean,
+      isRequired: false,
+      default: false,
+    },
     required: {
+      type: Boolean,
+      isRequired: false,
+      default: false,
+    },
+    toggleVisibility: {
       type: Boolean,
       isRequired: false,
       default: false,
@@ -70,6 +99,17 @@ export default {
     },
   },
   mixins: [inputValidation],
+  data() {
+    return {
+      passwordVisible: false,
+    };
+  },
+  computed: {
+    type() {
+      if (this.passwordVisible) return 'text';
+      return this.inputType;
+    },
+  },
 };
 </script>
 
@@ -82,6 +122,7 @@ export default {
   &-Input {
     position: relative;
     z-index: 1;
+    width: 100%;
 
     &.BaseInput-Input--error {
       border: 2px solid rgba(235, 28, 42, 0.3);
@@ -108,6 +149,16 @@ export default {
     &--required {
       color: var(--color-error);
     }
+  }
+
+  &-Visible {
+    position: absolute;
+    right: 22px;
+    z-index: 2;
+    top: calc(50% - 5.5px);
+    width: 19px;
+    height: 11px;
+    cursor: pointer;
   }
 }
 </style>
