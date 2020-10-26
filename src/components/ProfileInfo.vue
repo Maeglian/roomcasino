@@ -43,7 +43,7 @@
       </label>
     </div>
     <div class="CabinetForm-Row CabinetForm-Row--right">
-      <button type="submit" class="Btn ProfileInfo-Btn">
+      <button type="submit" class="Btn ProfilePage-Btn">
         Save changes
       </button>
     </div>
@@ -127,12 +127,6 @@ export default {
 
   &-Subscriptions {
     margin-bottom: 18px;
-  }
-
-  &-Btn {
-    padding: 20px 30px;
-    font-size: 12px;
-    background: rgba(235, 28, 42, 0.4);
   }
 }
 </style>

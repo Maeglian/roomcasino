@@ -3,11 +3,11 @@
     <div class="CabinetPage-Title ProfilePage-Title">
       {{ title }}
     </div>
-    <div class="CabinetPage-Tabs">
-      <router-link to="/cabinet/profile/general" class="CabinetPage-Tab">
+    <div class="Tabs">
+      <router-link to="/cabinet/profile/general" class="Tabs-Tab">
         General
       </router-link>
-      <router-link to="/cabinet/profile/security" class="CabinetPage-Tab">
+      <router-link to="/cabinet/profile/security" class="Tabs-Tab">
         Security
       </router-link>
     </div>
@@ -37,6 +37,20 @@ export default {
     @media (min-width: $screen-m) {
       margin-top: 24px;
     }
+  }
+
+  &-Title {
+    margin-bottom: 36px;
+
+    @media (min-width: $screen-m) {
+      margin-bottom: 0;
+    }
+  }
+
+  &-Btn {
+    padding: 20px 30px;
+    font-size: 12px;
+    background: rgba(235, 28, 42, 0.4);
   }
 }
 
