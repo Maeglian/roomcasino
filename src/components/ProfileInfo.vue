@@ -5,43 +5,44 @@
       General Info
     </div>
     <div class="ProfileInfo-Fields">
-      <div v-for="field in fields" :key="field.label" class="ProfileInfo-Row">
+      <template v-for="field in fields">
         <CabinetInput
+          :key="field.label"
           :label="field.label"
           :value="field.value"
           :type="field.type"
           :verified="field.verified"
         />
-      </div>
+      </template>
     </div>
     <div class="CabinetPage-Header">
       Subscriptions
     </div>
     <div class="ProfileInfo-Subscriptions">
-      <label class="ProfileInfo-Row">
+      <label class="CabinetForm-Row">
         <input
-          class="ProfileInfo-Checkbox"
+          class="CabinetForm-Checkbox"
           type="checkbox"
         />
-        <div class="ProfileInfo-Custom">
+        <div class="CabinetForm-Custom">
         </div>
-        <div class="ProfileInfo-CustomLabel ProfileInfo-Field ProfileInfo-Label">
+        <div class="CabinetForm-CustomLabel CabinetForm-Field CabinetForm-Label">
           Send promos by e-mail
         </div>
       </label>
-      <label class="ProfileInfo-Row">
+      <label class="CabinetForm-Row">
         <input
-          class="ProfileInfo-Checkbox"
+          class="CabinetForm-Checkbox"
           type="checkbox"
         />
-        <div class="ProfileInfo-Custom">
+        <div class="CabinetForm-Custom">
         </div>
-        <div class="ProfileInfo-CustomLabel ProfileInfo-Field ProfileInfo-Label">
+        <div class="CabinetForm-CustomLabel CabinetForm-Field CabinetForm-Label">
           Send promos by sms
         </div>
       </label>
     </div>
-    <div class="ProfileInfo-Row ProfileInfo-Row--right">
+    <div class="CabinetForm-Row CabinetForm-Row--right">
       <button type="submit" class="Btn ProfileInfo-Btn">
         Save changes
       </button>
@@ -124,26 +125,14 @@ export default {
     margin-bottom: 24px;
   }
 
+  &-Subscriptions {
+    margin-bottom: 18px;
+  }
+
   &-Btn {
     padding: 20px 30px;
     font-size: 12px;
     background: rgba(235, 28, 42, 0.4);
-  }
-
-  &-Verified {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    display: flex;
-    align-items: center;
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--color-text-ghost);
-  }
-
-  &-Icon {
-    margin-left: 10px;
   }
 }
 </style>
