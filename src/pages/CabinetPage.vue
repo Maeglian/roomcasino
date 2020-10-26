@@ -223,8 +223,12 @@ export default {
   }
 
   &-AddBtn {
-    position: relative;
-    content: "+";
+    display: flex;
+    align-items: center;
+  }
+
+  &-AddBtnPlus {
+    display: inline-block;
     width: 40px;
     height: 40px;
     font-size: 25px;
@@ -240,17 +244,21 @@ export default {
       line-height: 55px;
     }
 
-    &:after {
-      content: "Add currency";
-      position: absolute;
-      top: 0;
-      left: calc(100% + 15px);
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--color-text-ghost);
-      white-space: nowrap;
+    &--left {
+      margin-right: 13px;
     }
+
+    &--right {
+      margin-left: 13px;
+    }
+  }
+
+  &-AddBtnText {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-ghost);
+    white-space: nowrap;
   }
 
   &-Dropdown {

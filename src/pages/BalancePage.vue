@@ -115,7 +115,12 @@
       </div>
     </div>
     <button class="CabinetPage-AddBtn">
-      +
+      <span class="CabinetPage-AddBtnPlus CabinetPage-AddBtnPlus--left">
+        +
+      </span>
+      <span class="CabinetPage-AddBtnText">
+        Add currency
+      </span>
     </button>
   </div>
 </template>
