@@ -9,6 +9,9 @@ const BonusesPage = () => import(/* webpackChunkName: "bonusesPage" */ '@/pages/
 const HistoryPage = () => import(/* webpackChunkName: "historyPage" */ '@/pages/HistoryPage.vue');
 const HistoryContent = () => import(/* webpackChunkName: "historyContent" */ '@/components/HistoryContent.vue');
 const VerificationPage = () => import(/* webpackChunkName: "verificationPage" */ '@/pages/VerificationPage.vue');
+const ProfilePage = () => import(/* webpackChunkName: "profilePage" */ '@/pages/ProfilePage.vue');
+const ProfileInfo = () => import(/* webpackChunkName: "profileInfo" */ '@/components/ProfileInfo.vue');
+const ProfileSecurity = () => import(/* webpackChunkName: "profileSecurity" */ '@/components/ProfileSecurity.vue');
 const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
 
 /*
@@ -79,6 +82,24 @@ const routes = [
         props: {
           title: 'Verification',
         },
+      },
+      {
+        path: 'profile',
+        component: ProfilePage,
+        props: {
+          title: 'User Profile',
+        },
+        redirect: 'profile/general',
+        children: [
+          {
+            path: 'general',
+            component: ProfileInfo,
+          },
+          {
+            path: 'security',
+            component: ProfileSecurity,
+          },
+        ],
       },
     ],
   },
