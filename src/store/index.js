@@ -11,6 +11,13 @@ export default new Vuex.Store({
     width: 0,
     games: [],
     jackpots: [],
+    limits: [
+      {
+        name: 'Loss limits',
+        limitAmount: 5,
+        period: 'daily',
+      },
+    ],
     gamesAreLoading: false,
     errors: {},
     user: {},
@@ -47,6 +54,9 @@ export default new Vuex.Store({
     },
     setUser: (state, payload) => {
       state.user = payload;
+    },
+    addLimits: (state, payload) => {
+      state.limits.push(payload);
     },
   },
 
