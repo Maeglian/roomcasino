@@ -1,21 +1,21 @@
 <template>
   <div class="BaseInput">
     <div
-      v-if="v.required === false && v.$dirty"
+      v-if="v && v.required === false && v.$dirty"
       class="BaseInput-Error"
       :class="`${blockClass}-Error`"
     >
       Can't be blank
     </div>
     <div
-    v-if="v.email === false"
+    v-if="v && v.email === false"
     class="BaseInput-Error"
     :class="`${blockClass}-Error`"
   >
     Email must be valid
   </div>
     <div
-      v-if="v.sameAsPassword === false"
+      v-if="v && v.sameAsPassword === false"
       class="BaseInput-Error"
       :class="`${blockClass}-Error`"
     >
@@ -34,7 +34,7 @@
           'BaseInput-Input',
           `${blockClass}-Field`,
           `${blockClass}-Input`,
-          {'BaseInput-Input--error': v.$error},
+          {'BaseInput-Input--error': v && v.$error},
           {'BaseInput-Input--withVisibility': toggleVisibility},
           [toggleVisibility ? `${blockClass}-Input--withVisibility`: ''],
           [icon ? `${blockClass}-Input--withIcon`: ''],
@@ -43,6 +43,13 @@
         :placeholder="customPlaceholder ? '' : placeholder"
         v-model="val"
       />
+      <span
+        v-if="clarification"
+        class="BaseInput-Сlarification"
+        :class="`${blockClass}-Сlarification`"
+      >
+        {{ clarification }}
+      </span>
       <svg
         v-if="toggleVisibility"
         class="BaseInput-Visible"
@@ -55,7 +62,7 @@
         <use xlink:href="@/assets/img/icons.svg#visible"></use>
       </svg>
       <span
-        v-if="customPlaceholder && !v.required"
+        v-if="customPlaceholder && v && !v.required"
         class="BaseInput-Placeholder"
         :class="`${blockClass}-Placeholder`"
       >
@@ -78,7 +85,7 @@ export default {
       default: '',
     },
     value: {
-      type: String,
+      type: [String, Number],
       isRequired: false,
       default: '',
     },
@@ -88,6 +95,11 @@ export default {
       default: 'text',
     },
     placeholder: {
+      type: String,
+      isRequired: false,
+      default: '',
+    },
+    clarification: {
       type: String,
       isRequired: false,
       default: '',
@@ -136,12 +148,14 @@ export default {
 .BaseInput {
   &-Wrapper {
     position: relative;
+    height: 100%;
   }
 
   &-Input {
     position: relative;
     z-index: 1;
     width: 100%;
+    height: 100%;
 
     &.BaseInput-Input--error {
       border: 2px solid rgba(235, 28, 42, 0.3);
@@ -170,7 +184,7 @@ export default {
     }
   }
 
-  &-Visible, &-Icon {
+  &-Visible, &-Icon, &-Сlarification {
     position: absolute;
     z-index: 2;
   }
