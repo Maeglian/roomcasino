@@ -108,6 +108,11 @@ export default {
     }
   }
 
+  &-Section {
+    margin-bottom: 4px;
+    background: var(--color-bg);
+  }
+
   &-Row {
     display: flex;
     flex-wrap: wrap;
@@ -268,7 +273,7 @@ export default {
   }
 
   &-Dropdown {
-    flex-grow: 1;
+    height: 55px;
 
     &--currency {
       width: 230px;

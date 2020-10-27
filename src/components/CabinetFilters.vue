@@ -23,7 +23,7 @@
         </div>
         <template v-if="filter.type === 'dropdown'">
           <BaseDropdown
-            class="CabinetPage-Dropdown"
+            class="CabinetPage-Dropdown CabinetFilters-Dropdown"
             :class="`CabinetPage-Dropdown--${filter.name}`"
             :items="filter.values"
             @set-dropdown-value="setValue({ name: filter.name, val: $event })"
@@ -174,6 +174,10 @@ export default {
     color: var(--color-main1);
     background-color: var(--color-bg-lighter);
     cursor: pointer;
+  }
+
+  &-Dropdown {
+    flex-grow: 1;
   }
 }
 
