@@ -14,13 +14,22 @@ export default new Vuex.Store({
     limits: [
       {
         name: 'Loss limits',
-        limitAmount: 5,
-        period: 'daily',
+        limits: [
+          {
+            limitAmount: 5,
+            currentPeriod: 'daily',
+          },
+          {
+            limitAmount: 25,
+            currentPeriod: 'weekly',
+          },
+        ],
       },
     ],
     gamesAreLoading: false,
     errors: {},
     user: {},
+    currency: 'eur',
   },
 
   getters: {
@@ -56,7 +65,15 @@ export default new Vuex.Store({
       state.user = payload;
     },
     addLimits: (state, payload) => {
-      state.limits.push(payload);
+      let limit = state.limits.find((lim) => lim.name === payload.name);
+      if (!limit) {
+        limit = {
+          name: payload.name,
+          limits: [],
+        };
+        state.limits.push(limit);
+      }
+      limit.limits.push(payload.content);
     },
   },
 

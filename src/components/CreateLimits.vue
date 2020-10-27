@@ -20,12 +20,13 @@
         class="CreateLimits-Amount"
         blockClass="CreateLimits"
         v-model="limitAmount"
-        clarification="eur"
+        :clarification="currency"
       />
       <BaseDropdown
         class="CreateLimits-Period"
         v-model="currentPeriod"
         :items="periods"
+        @set-dropdown-value="currentPeriod = $event"
       />
     </div>
     <button
@@ -40,7 +41,7 @@
 <script>
 import BaseDropdown from '@/components/BaseDropdown.vue';
 import BaseInput from '@/components/BaseInput.vue';
-import { mapMutations } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'CreateLimits',
@@ -85,18 +86,23 @@ export default {
       currentPeriod: 'daily',
     };
   },
+  computed: {
+    ...mapState(['currency']),
+  },
   methods: {
     ...mapMutations(['addLimits']),
     onAddLimit() {
       const limit = {
         name: this.currentLimitType,
+        content: {},
       };
 
       this.limitOptions[this.currentLimitType].fields.forEach((field) => {
-        limit[field] = this[field];
+        limit.content[field] = this[field];
       });
 
       this.addLimits(limit);
+      this.$emit('close');
     },
   },
 };
