@@ -105,6 +105,9 @@ export default new Vuex.Store({
       state.token = token;
       state.user = user;
     },
+    removeAuthError(state) {
+      state.authError = '';
+    },
     logout(state) {
       state.status = '';
       state.token = '';

@@ -86,9 +86,6 @@
         </div>
       </div>
     </transition>
-    <modal name="registration">
-      <AuthDialog @close="hideRegistrationDialog()" />
-    </modal>
   </nav>
 </template>
 
@@ -101,7 +98,6 @@ export default {
   name: 'MainNav',
   components: {
     NavItem,
-    AuthDialog,
   },
   data() {
     return {
@@ -152,7 +148,7 @@ export default {
     window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
-    ...mapMutations(['openNav', 'closeNav']),
+    ...mapMutations(['openNav', 'closeNav', 'removeAuthError']),
     onScroll() {
       this.documentIsScrolled = window.scrollY > 0;
     },
@@ -163,10 +159,14 @@ export default {
     showRegistrationDialog(authType) {
       this.$modal.show(AuthDialog,
         { authType },
-        { width: 418, height: 'auto' });
+        { width: 418, height: 'auto' },
+        {
+          'before-close': this.afterCloseAuthDialog,
+        });
     },
-    hideRegistrationDialog() {
-      this.$modal.hide('registration');
+    afterCloseAuthDialog() {
+      console.log(1);
+      this.removeAuthError();
     },
   },
 };
