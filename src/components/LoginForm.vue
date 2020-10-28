@@ -5,19 +5,25 @@
       Welcome back
     </div>
     <BaseInput
-      v-for="field in fields"
-      :key="field.name"
+      v-for="(field, name) in fields"
+      :key="name"
       blockClass="AuthDialog"
       :inputType="field.type"
       :placeholder="field.placeholder"
-      v-model="$data.formFields[field.name]"
-      :v="$v.formFields[field.name]"
+      v-model="field.value"
+      :v="$v.fields[name].value"
+
     />
     <div class="AuthDialog-Link">
       <a href="#" class="AuthDialog-Link">Forgot Password?</a>
     </div>
   </div>
-  <button type="submit" class="Btn Btn--full AuthDialog-Btn">
+  <button
+    type="submit"
+    class="Btn Btn--full AuthDialog-Btn"
+    :disabled="$v.fields.$error"
+    @click="onClickLoginBtn()"
+  >
     Login
   </button>
 </div>
@@ -26,6 +32,7 @@
 <script>
 import BaseInput from '@/components/BaseInput.vue';
 import { email, required } from 'vuelidate/lib/validators';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'LoginForm',
@@ -34,28 +41,35 @@ export default {
   },
   data() {
     return {
-      fields: [
-        {
-          name: 'email',
+      fields: {
+        email: {
+          value: '',
           type: 'email',
           placeholder: 'Enter your email',
         },
-        {
-          name: 'password',
+        password: {
+          value: '',
           type: 'password',
           placeholder: 'Enter your password',
         },
-      ],
-      formFields: {
-        email: '',
-        password: '',
       },
     };
   },
   validations: {
-    formFields: {
-      email: { required, email },
-      password: { required },
+    fields: {
+      email: { value: { required, email } },
+      password: { value: { required } },
+    },
+  },
+  methods: {
+    ...mapActions(['login']),
+    onClickLoginBtn() {
+      const payload = {};
+      // eslint-disable-next-line no-restricted-syntax
+      for (const key in this.fields) {
+        if (this.fields[key].value) payload[key] = this.fields[key].value;
+      }
+      this.login(payload);
     },
   },
 };
