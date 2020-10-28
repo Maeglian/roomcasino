@@ -7,6 +7,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    status: '',
+    token: localStorage.getItem('token') || '',
     navIsOpen: false,
     width: 0,
     games: [],
@@ -28,11 +30,18 @@ export default new Vuex.Store({
     ],
     gamesAreLoading: false,
     errors: {},
-    user: {},
+    user: {
+      email: 'vasiapupkin@wakeapp.ru',
+      country: 'RU',
+      currency: 'USD',
+      balance: 0,
+    },
     currency: 'eur',
   },
 
   getters: {
+    isLoggedIn: (state) => !!state.token,
+    authStatus: (state) => state.status,
     gamesLimited: (state) => (limit) => state.games.slice(0, limit),
   },
 
@@ -61,9 +70,6 @@ export default new Vuex.Store({
     setJackpots: (state, payload) => {
       state.jackpots = payload;
     },
-    setUser: (state, payload) => {
-      state.user = payload;
-    },
     addLimits: (state, payload) => {
       let limit = state.limits.find((lim) => lim.name === payload.name);
       if (!limit) {
@@ -74,6 +80,21 @@ export default new Vuex.Store({
         state.limits.push(limit);
       }
       limit.limits.push(payload.content);
+    },
+    authRequest(state){
+      state.status = 'loading';
+    },
+    authError(state) {
+      state.status = 'error';
+    },
+    authSuccess(state, token, user) {
+      state.status = 'success';
+      state.token = token;
+      state.user = user;
+    },
+    logout(state) {
+      state.status = '';
+      state.token = '';
     },
   },
 
@@ -100,10 +121,37 @@ export default new Vuex.Store({
       }
     },
     async registerUser({ commit }, payload) {
+      commit('authRequest');
       try {
         // eslint-disable-next-line no-underscore-dangle
-        const res = await axios.post(`${API_HOST}/register`, payload);
-        commit('setUser', res.data);
+        await axios.post(`${API_HOST}/register`, payload);
+      } catch (e) {
+        commit('authError', e);
+      }
+    },
+
+    async login({ commit }, payload) {
+      commit('authRequest');
+      try {
+        const res = await axios.post(`${API_HOST}/login`, payload);
+        const { token } = res.data;
+        localStorage.setItem('token', token);
+        axios.defaults.headers.common['X-Auth-Token'] = token;
+        const user = await axios.get(`${API_HOST}/getProfile`);
+        commit('authSuccess', token, user.data);
+      } catch (e) {
+        commit('authError', e);
+        localStorage.removeItem('token');
+      }
+    },
+
+    async logout({ commit }) {
+      try {
+        // eslint-disable-next-line no-underscore-dangle
+        await axios.post(`${API_HOST}/logout`);
+        commit('logout');
+        localStorage.removeItem('token');
+        delete axios.defaults.headers.common['X-Auth-Token'];
       } catch (e) {
         commit('pushErrors', e);
       }
