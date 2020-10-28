@@ -98,7 +98,7 @@
 import BaseInput from '@/components/BaseInput.vue';
 import BaseCheckbox from '@/components/BaseCheckbox.vue';
 import BaseDropdown from '@/components/BaseDropdown.vue';
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import Datepicker from 'vuejs-datepicker';
 import { required, email } from 'vuelidate/lib/validators';
 
@@ -129,24 +129,20 @@ export default {
         currency: {
           value: '',
           type: 'dropdown',
-          items: [
-            'EUR', 'USD', 'RUB',
-          ],
+          items: [],
         },
         country: {
           value: '',
           type: 'dropdown',
-          items: [
-            'USA', 'Canada', 'France', 'Germany', 'Norway', 'Russia', 'Ukraine', 'China', 'Japan',
-          ],
+          items: [],
         },
         receiveEmailPromos: {
-          value: '',
+          value: true,
           type: 'checkbox',
           label: 'Receive Email Promos',
         },
         confirmAgeAndTerms: {
-          value: '',
+          value: true,
           name: 'confirmAgeAndTerms',
           type: 'checkbox',
           label: 'I am 18 years old and I accept the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>',
@@ -198,6 +194,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(['countriesNames', 'currencyNames']),
     fields() {
       if (this.step === 1) {
         return this.fieldsStep1;
@@ -229,9 +226,9 @@ export default {
     },
     onClickSubmitBtn() {
       const payload = {};
-      // eslint-disable-next-line no-restricted-syntax
+      // eslint-disable-next-line guard-for-in,no-restricted-syntax
       for (const key in this.fieldsStep1) {
-        if (this.fieldsStep1[key].value) payload[key] = this.fieldsStep1[key].value;
+        payload[key] = this.fieldsStep1[key].value;
       }
       payload.wlSlug = 'roomcasino';
 
@@ -248,9 +245,13 @@ export default {
   },
   created() {
     // eslint-disable-next-line prefer-destructuring
-    this.fieldsStep1.currency.value = this.fieldsStep1.currency.items[0];
+    this.fieldsStep1.currency.items = this.currencyNames;
     // eslint-disable-next-line prefer-destructuring
-    this.fieldsStep1.country.value = this.fieldsStep1.country.items[0];
+    this.fieldsStep1.currency.value = this.currencyNames[0];
+    // eslint-disable-next-line prefer-destructuring
+    this.fieldsStep1.country.items = this.countriesNames;
+    // eslint-disable-next-line prefer-destructuring
+    this.fieldsStep1.country.value = this.countriesNames[0];
   },
 };
 </script>

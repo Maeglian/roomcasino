@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import { mapMutations } from 'vuex';
+import { mapActions, mapMutations } from 'vuex';
 
 export default {
   name: 'App',
@@ -17,9 +17,12 @@ export default {
       }
       throw err;
     }));
+    this.getCountriesList();
+    this.getCurrencyList();
   },
   methods: {
     ...mapMutations(['setWidth']),
+    ...mapActions(['getCountriesList', 'getCurrencyList']),
     updateWidth() {
       this.setWidth(window.innerWidth);
     },

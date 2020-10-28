@@ -8,6 +8,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     status: '',
+    countriesList: {},
+    currencyList: {},
     token: localStorage.getItem('token') || '',
     navIsOpen: false,
     width: 0,
@@ -43,6 +45,8 @@ export default new Vuex.Store({
     isLoggedIn: (state) => !!state.token,
     authStatus: (state) => state.status,
     gamesLimited: (state) => (limit) => state.games.slice(0, limit),
+    countriesNames: (state) => Object.values(state.countriesList),
+    currencyNames: (state) => Object.values(state.currencyList),
   },
 
   mutations: {
@@ -63,6 +67,12 @@ export default new Vuex.Store({
     },
     setGames: (state, payload) => {
       state.games = payload;
+    },
+    setCountriesList: (state, payload) => {
+      state.countriesList = payload;
+    },
+    setCurrencyList: (state, payload) => {
+      state.currencyList = payload;
     },
     pushErrors: (state, payload) => {
       state.errors = { ...state.errors, payload };
@@ -152,6 +162,26 @@ export default new Vuex.Store({
         commit('logout');
         localStorage.removeItem('token');
         delete axios.defaults.headers.common['X-Auth-Token'];
+      } catch (e) {
+        commit('pushErrors', e);
+      }
+    },
+
+    async getCountriesList({ commit }) {
+      try {
+        // eslint-disable-next-line no-underscore-dangle
+        const res = await axios.get(`${API_HOST}/countryList`);
+        console.log(res.data.data.countryList);
+        commit('setCountriesList', res.data.data.countryList);
+      } catch (e) {
+        commit('pushErrors', e);
+      }
+    },
+    async getCurrencyList({ commit }) {
+      try {
+        // eslint-disable-next-line no-underscore-dangle
+        const res = await axios.get(`${API_HOST}/currencyList`);
+        commit('setCurrencyList', res.data.data.currencyList);
       } catch (e) {
         commit('pushErrors', e);
       }
