@@ -55,7 +55,7 @@
           calendar-class="Datepicker-Inner"
           input-class="AuthDialog-Input Datepicker-Input"
           :placeholder="field.placeholder"
-          @selected="field.value = $event"
+          @selected="onSelectDate($event, name, step)"
         />
       </div>
       <template v-else-if="field.type === 'checkbox'">
@@ -98,9 +98,13 @@
 import BaseInput from '@/components/BaseInput.vue';
 import BaseCheckbox from '@/components/BaseCheckbox.vue';
 import BaseDropdown from '@/components/BaseDropdown.vue';
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions, mapGetters, mapState } from 'vuex';
 import Datepicker from 'vuejs-datepicker';
-import { required, email } from 'vuelidate/lib/validators';
+import {
+  required, email, minLength, maxLength, helpers,
+} from 'vuelidate/lib/validators';
+
+const passwordCheck = helpers.regex('passwordCheck', /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).{8,}$/);
 
 export default {
   name: 'RegistrationForm',
@@ -168,9 +172,9 @@ export default {
           required: true,
         },
         gender: {
-          value: 'Male',
+          value: 'male',
           type: 'radio',
-          values: ['Male', 'Female'],
+          values: ['male', 'female'],
         },
         city: {
           value: '',
@@ -194,7 +198,8 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['countriesNames', 'currencyNames']),
+    ...mapState(['countriesList']),
+    ...mapGetters(['currencyNames', 'countriesNames']),
     fields() {
       if (this.step === 1) {
         return this.fieldsStep1;
@@ -205,15 +210,51 @@ export default {
   validations: {
     fieldsStep1: {
       email: { value: { required, email } },
-      password: { value: { required } },
+      password: {
+        value: {
+          required,
+          maxLength: maxLength(100),
+          passwordCheck,
+        },
+      },
     },
     fieldsStep2: {
-      firstName: { value: { required } },
-      lastName: { value: { required } },
+      firstName: {
+        value: {
+          required,
+          minLength: minLength(1),
+          maxLength: maxLength(100),
+        },
+      },
+      lastName: {
+        value: {
+          required,
+          minLength: minLength(1),
+          maxLength: maxLength(100),
+        },
+      },
       birthDate: { value: { required } },
-      city: { value: { required } },
-      address: { value: { required } },
-      postalCode: { value: { required } },
+      city: {
+        value: {
+          required,
+          minLength: minLength(1),
+          maxLength: maxLength(100),
+        },
+      },
+      address: {
+        value: {
+          required,
+          minLength: minLength(1),
+          maxLength: maxLength(500),
+        },
+      },
+      postalCode: {
+        value: {
+          required,
+          minLength: minLength(1),
+          maxLength: maxLength(100),
+        },
+      },
     },
   },
   methods: {
@@ -224,13 +265,13 @@ export default {
     showPreviousStep() {
       if (this.step !== 1) this.step -= 1;
     },
+    onSelectDate(dateStr, field, step) {
+      const date = new Date(dateStr).toISOString();
+      const fieldStep = `fieldsStep${step}`;
+      this[fieldStep][field].value = date;
+    },
     onClickSubmitBtn() {
       const payload = {};
-      // eslint-disable-next-line guard-for-in,no-restricted-syntax
-      for (const key in this.fieldsStep1) {
-        payload[key] = this.fieldsStep1[key].value;
-      }
-      payload.wlSlug = 'roomcasino';
 
       if (this.step === 1) {
         this.$v.fieldsStep1.$touch();
@@ -239,6 +280,20 @@ export default {
       } else {
         this.$v.fieldsStep2.$touch();
         if (this.$v.fieldsStep2.$error) return;
+        // eslint-disable-next-line guard-for-in,no-restricted-syntax
+        for (const key in this.fieldsStep1) {
+          if (key === 'country') {
+            // eslint-disable-next-line max-len
+            const entry = Object.entries(this.countriesList).find((i) => i[1] === this.fieldsStep1.country.value);
+            // eslint-disable-next-line prefer-destructuring
+            payload.country = entry[0];
+          } else payload[key] = this.fieldsStep1[key].value;
+        }
+        // eslint-disable-next-line guard-for-in,no-restricted-syntax
+        for (const key in this.fieldsStep2) {
+          payload[key] = this.fieldsStep2[key].value;
+        }
+        payload.wlSlug = 'roomcasino';
         this.registerUser(payload);
       }
     },

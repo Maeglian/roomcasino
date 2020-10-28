@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable max-len -->
   <div class="BaseInput">
     <div
       v-if="v && v.required === false && v.$dirty"
@@ -11,15 +12,36 @@
     v-if="v && v.email === false"
     class="BaseInput-Error"
     :class="`${blockClass}-Error`"
-  >
-    Email must be valid
-  </div>
+    >
+      Email must be valid
+    </div>
     <div
       v-if="v && v.sameAsPassword === false"
       class="BaseInput-Error"
       :class="`${blockClass}-Error`"
     >
       Passwords are not the same
+    </div>
+    <div
+      v-if="v && v.minLength === false"
+      class="BaseInput-Error"
+      :class="`${blockClass}-Error`"
+    >
+      Must have at least {{ v.$params.minLength.min }} characters
+    </div>
+    <div
+      v-if="v && v.maxLength === false"
+      class="BaseInput-Error"
+      :class="`${blockClass}-Error`"
+    >
+      Must not be more than {{ v.$params.maxLength.max }} characters
+    </div>
+    <div
+      v-if="v && v.passwordCheck === false"
+      class="BaseInput-Error"
+      :class="`${blockClass}-Error`"
+    >
+      Password must be at least 8 characters and have one number, one small letter and one capital letter
     </div>
     <div class="BaseInput-Wrapper">
       <svg
