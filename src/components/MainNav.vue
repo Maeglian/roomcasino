@@ -26,7 +26,38 @@
           Tournaments
         </router-link>
       </div>
-      <div class="MainNav-Login">
+      <div v-if="isLoggedIn" class="MainNav-UserSection">
+        <router-link class="MainNav-UserInfo" to="/cabinet/balance">
+          <div class="MainNav-User">
+            <span class="MainNav-UserName">
+              {{ user.firstName || 'Vasia' }}
+            </span>
+            <span class="MainNav-Spent">
+              8 {{ user.currency }} /
+            </span>
+            <span class="MainNav-Left">
+               25 {{ user.currency}}
+            </span>
+          </div>
+          <div class="MainNav-UserBalance">
+            {{ user.balance }} {{ user.currency }}
+          </div>
+        </router-link>
+        <div class="MainNav-UserLvl">
+          2
+        </div>
+        <div class="MainNav-UserMessages">
+          <svg class="MainNav-UserMessagesIcon">
+            <use xlink:href="@/assets/img/icons.svg#messages"></use>
+          </svg>
+        </div>
+        <button
+          class="Btn MainNav-Btn"
+        >
+          Deposit
+        </button>
+      </div>
+      <div v-else class="MainNav-Login">
         <button
           class="Btn Btn--text MainNav-Btn"
           @click="showRegistrationDialog('login')"
@@ -64,7 +95,7 @@
 <script>
 import NavItem from '@/components/NavItem.vue';
 import AuthDialog from '@/components/AuthDialog.vue';
-import { mapMutations, mapState } from 'vuex';
+import { mapMutations, mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'MainNav',
@@ -111,7 +142,8 @@ export default {
     };
   },
   computed: {
-    ...mapState(['navIsOpen']),
+    ...mapState(['navIsOpen', 'user']),
+    ...mapGetters(['isLoggedIn']),
   },
   created() {
     window.addEventListener('scroll', this.onScroll, { passive: true });
@@ -228,8 +260,9 @@ export default {
   &-Links {
     display: none;
 
-    @media(min-width: $screen-m) {
+    @media(min-width: $screen-l) {
       display: flex;
+      margin-right: auto;
     }
   }
 
@@ -282,6 +315,88 @@ export default {
     @media(min-width: $screen-xl) {
       padding: 30px;
       font-size: 12px;
+    }
+  }
+
+  &-UserSection {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  &-UserInfo {
+    display: none;
+
+    @media(min-width: $screen-m) {
+      display: block;
+      margin-right: 12px;
+      text-align: right;
+    }
+  }
+
+  &-User {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  &-UserName {
+    color: var(--color-main1);
+  }
+
+  &-Spent {
+    color: var(--color-text-ghost);
+  }
+
+  &-Left {
+    color: var(--color-text-main);
+  }
+
+  &-UserBalance {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-text-main);
+  }
+
+  &-UserLvl {
+    display: none;
+
+    @media(min-width: $screen-m) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 31px;
+      margin-right: 26px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--color-text-main);
+      background: url(../assets/img/level.png) no-repeat;
+    }
+  }
+
+  &-UserMessages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    background: linear-gradient(356.88deg, rgba(6, 14, 42, 0) -13.82%, #060E2A 105.97%);
+    border-radius: 50%;
+
+    @media(min-width: $screen-m) {
+      margin-right: 30px;
+      background: transparent;
+    }
+  }
+
+  &-UserMessagesIcon {
+    width: 14px;
+    height: 16px;
+
+    @media(min-width: $screen-l) {
+      width: 21.4px;
+      height: 24.8px;
     }
   }
 }
