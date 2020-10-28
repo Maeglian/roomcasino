@@ -14,6 +14,9 @@
       :v="$v.fields[name].value"
 
     />
+    <div v-if="authError" class="AuthDialog-Error">
+      {{ authError }}
+    </div>
     <div class="AuthDialog-Link">
       <a href="#" class="AuthDialog-Link">Forgot Password?</a>
     </div>
@@ -32,7 +35,7 @@
 <script>
 import BaseInput from '@/components/BaseInput.vue';
 import { email, required } from 'vuelidate/lib/validators';
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'LoginForm',
@@ -60,6 +63,9 @@ export default {
       email: { value: { required, email } },
       password: { value: { required } },
     },
+  },
+  computed: {
+    ...mapState(['authError']),
   },
   methods: {
     ...mapActions(['login']),

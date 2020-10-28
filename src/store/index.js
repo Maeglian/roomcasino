@@ -11,6 +11,7 @@ export default new Vuex.Store({
     countriesList: {},
     currencyList: {},
     token: localStorage.getItem('token') || '',
+    authError: '',
     navIsOpen: false,
     width: 0,
     games: [],
@@ -93,9 +94,11 @@ export default new Vuex.Store({
     },
     authRequest(state) {
       state.status = 'loading';
+      state.authError = '';
     },
-    authError(state) {
+    authError(state, message) {
       state.status = 'error';
+      state.authError = message;
     },
     authSuccess(state, token, user) {
       state.status = 'success';
@@ -144,11 +147,14 @@ export default new Vuex.Store({
       commit('authRequest');
       try {
         const res = await axios.post(`${API_HOST}/login`, payload);
-        const { token } = res.data;
-        localStorage.setItem('token', token);
-        axios.defaults.headers.common['X-Auth-Token'] = token;
-        const user = await axios.get(`${API_HOST}/getProfile`);
-        commit('authSuccess', token, user.data);
+        if (res.data.code === 10002) commit('authError', res.data.message);
+        else {
+          const { token } = res.data;
+          localStorage.setItem('token', token);
+          axios.defaults.headers.common['X-Auth-Token'] = token;
+          const user = await axios.get(`${API_HOST}/getProfile`);
+          commit('authSuccess', token, user.data);
+        }
       } catch (e) {
         commit('authError', e);
         localStorage.removeItem('token');

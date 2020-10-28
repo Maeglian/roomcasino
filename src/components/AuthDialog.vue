@@ -48,7 +48,6 @@ export default {
     };
   },
   mounted() {
-    console.log(this.props);
     if (this.authType === 'login') this.isRegistration = false;
   },
 };
@@ -121,6 +120,12 @@ export default {
 
   &-Btn {
     margin-top: auto;
+  }
+
+  &-Error {
+    margin-bottom: 5px;
+    font-size: 10px;
+    color: var(--color-error);
   }
 }
 </style>
