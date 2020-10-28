@@ -81,7 +81,7 @@ export default new Vuex.Store({
       }
       limit.limits.push(payload.content);
     },
-    authRequest(state){
+    authRequest(state) {
       state.status = 'loading';
     },
     authError(state) {

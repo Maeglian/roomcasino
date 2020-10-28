@@ -11,14 +11,12 @@ export default {
   created() {
     this.updateWidth();
     window.addEventListener('resize', this.updateWidth);
-    this.$http.interceptors.response.use(undefined, (err) => {
-      return new Promise(function () {
-        if (err.status === 401) {
-          this.$store.dispatch('logout');
-        }
-        throw err;
-      });
-    });
+    this.$http.interceptors.response.use(undefined, (err) => new Promise(function () {
+      if (err.status === 401) {
+        this.$store.dispatch('logout');
+      }
+      throw err;
+    }));
   },
   methods: {
     ...mapMutations(['setWidth']),
