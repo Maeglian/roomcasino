@@ -36,6 +36,11 @@ export default new Vuex.Store({
     user: {},
     currency: 'eur',
     billingSession: {},
+    fakeBillingSession: {
+      userId: '745401784207522284',
+      sessionId: '4535276ee35ae8fc1f59269f13008486b912f554a361513ca833b6bc0c6800e1',
+      merchantId: '100300999',
+    },
   },
 
   getters: {
