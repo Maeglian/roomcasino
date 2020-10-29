@@ -1,11 +1,12 @@
 <template>
   <modal
     name="cashier"
+    height="95%"
     @opened="initializeCashier()"
-    shiftY="0.1"
+    :shiftY="0.5"
     draggable
   >
-    <div id="cashier"></div>
+    <div id="cashier" class="CashierForm"></div>
   </modal>
 </template>
 
@@ -26,6 +27,7 @@ export default {
         userId: this.fakeBillingSession.userId,
         sessionId: this.fakeBillingSession.sessionId,
         environment: 'test',
+        containerHeight: '95vh',
       }, (api) => {
         api.on({
           cashierInitLoad: () => console.log('Cashier init load'),
@@ -56,5 +58,15 @@ export default {
 </script>
 
 <style lang="scss">
+//#cashier {
+//  background: var(--color-body) !important;
+//}
 
+.CashierForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 </style>
