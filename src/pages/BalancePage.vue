@@ -49,7 +49,12 @@
           316.00 Usd
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns">
-          <button class="Btn Btn--color CabinetPage-Btn BalancePage-DepositBtn">Deposit</button>
+          <button
+            class="Btn Btn--color CabinetPage-Btn BalancePage-DepositBtn"
+            @click="$modal.show('cashier')"
+          >
+            Deposit
+          </button>
           <button class="Btn Btn--outline CabinetPage-Btn">Cashout</button>
         </div>
       </div>
@@ -79,7 +84,12 @@
           316.00 Usd
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns">
-          <button class="Btn Btn--color CabinetPage-Btn BalancePage-DepositBtn">Deposit</button>
+          <button
+            class="Btn Btn--color CabinetPage-Btn BalancePage-DepositBtn"
+            @click="$modal.show('cashier')"
+          >
+            Deposit
+          </button>
           <button class="Btn Btn--outline CabinetPage-Btn">Cashout</button>
         </div>
       </div>
@@ -109,7 +119,12 @@
           316.00 Usd
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns">
-          <button class="Btn Btn--color CabinetPage-Btn BalancePage-DepositBtn">Deposit</button>
+          <button
+            class="Btn Btn--color CabinetPage-Btn BalancePage-DepositBtn"
+            @click="$modal.show('cashier')"
+          >
+            Deposit
+          </button>
           <button class="Btn Btn--outline CabinetPage-Btn">Cashout</button>
         </div>
       </div>

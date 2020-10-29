@@ -20,7 +20,7 @@
             <div class="Hero-Text">
               €100 <span class="Colored">+</span> 55 Free  Spins
             </div>
-            <button class="Btn Hero-Btn">
+            <button class="Btn Hero-Btn" @click="$modal.show('cashier')">
               Deposit now
             </button>
           </div>
@@ -38,7 +38,7 @@
             <div class="Hero-Text">
               €100 <span class="Colored">+</span> 55 Free  Spins
             </div>
-            <button class="Btn Hero-Btn">
+            <button class="Btn Hero-Btn" @click="$modal.show('cashier')">
               Deposit now
             </button>
           </div>
