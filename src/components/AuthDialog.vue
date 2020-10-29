@@ -17,10 +17,13 @@
       </a>
     </div>
     <template v-if="isRegistration">
-      <RegistrationForm />
+      <RegistrationForm
+        @close="$emit('close')"
+        @redirectLogin="isRegistration = false"
+      />
     </template>
     <template v-else>
-      <LoginForm />
+      <LoginForm @close="$emit('close')" />
     </template>
   </div>
 </template>

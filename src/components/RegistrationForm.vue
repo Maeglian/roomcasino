@@ -82,6 +82,9 @@
         />
       </template>
     </template>
+    <div v-if="authError" class="AuthDialog-Error">
+      {{ authError }}
+    </div>
   </div>
   <button
     type="submit"
@@ -198,7 +201,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['countriesList']),
+    ...mapState(['countriesList', 'authError']),
     ...mapGetters(['currencyNames', 'countriesNames']),
     fields() {
       if (this.step === 1) {
@@ -294,7 +297,9 @@ export default {
           payload[key] = this.fieldsStep2[key].value;
         }
         payload.wlSlug = 'roomcasino';
-        this.registerUser(payload);
+        this.registerUser(payload).then(() => {
+          if (!this.authError) this.$emit('redirectLogin');
+        });
       }
     },
   },

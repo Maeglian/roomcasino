@@ -149,7 +149,10 @@ export default new Vuex.Store({
       commit('authRequest');
       try {
         // eslint-disable-next-line no-underscore-dangle
-        await axios.post(`${API_HOST}/register`, payload);
+        const res = await axios.post(`${API_HOST}/register`, payload);
+        if (res.data.code === 10001) {
+          commit('authError', res.data.message);
+        }
       } catch (e) {
         commit('authError', e);
       }
