@@ -173,6 +173,7 @@ export default new Vuex.Store({
         } else {
           const { token } = res.data.data;
           commit('setToken', token);
+          localStorage.setItem('token', token);
           axios.defaults.headers.common['X-Auth-Token'] = token;
         }
       } catch (e) {
