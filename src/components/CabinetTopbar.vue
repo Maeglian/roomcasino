@@ -22,10 +22,10 @@
     </div>
     <div class="CabinetTopbar-User">
       <div class="CabinetTopbar-UserName">
-        Vasia Pupkin
+        {{ user.firstName || '' }} {{ user.lastName || user.email }}
       </div>
       <div class="CabinetTopbar-UserBalance">
-        514.00 <span class="CabnetTopbar-Currency">eur</span>
+        {{ user.balance }} <span class="CabnetTopbar-Currency">{{ user.currency }}</span>
       </div>
     </div>
     <button class="CabinetTopbar-Btn Btn Btn--color">
@@ -35,8 +35,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'CabinetTopbar',
+  computed: {
+    ...mapState(['user']),
+  },
 };
 </script>
 
