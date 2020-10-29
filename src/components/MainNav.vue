@@ -157,6 +157,7 @@ export default {
       else this.openNav();
     },
     showRegistrationDialog(authType) {
+      this.removeAuthError();
       this.$modal.show(AuthDialog,
         { authType },
         { width: 418, height: 'auto' },
@@ -165,7 +166,6 @@ export default {
         });
     },
     afterCloseAuthDialog() {
-      console.log(1);
       this.removeAuthError();
     },
   },
