@@ -28,17 +28,25 @@
         {{ user.balance }} <span class="CabnetTopbar-Currency">{{ user.currency }}</span>
       </div>
     </div>
-    <button class="CabinetTopbar-Btn Btn Btn--color">
+    <button
+      class="CabinetTopbar-Btn Btn Btn--color"
+      @click="$modal.show('cashier')"
+    >
       Deposit
     </button>
+    <CashierForm />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
+import CashierForm from '@/components/CashierForm.vue';
 
 export default {
   name: 'CabinetTopbar',
+  components: {
+    CashierForm,
+  },
   computed: {
     ...mapState(['user']),
   },
