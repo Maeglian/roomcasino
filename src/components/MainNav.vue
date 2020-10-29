@@ -30,7 +30,7 @@
         <router-link class="MainNav-UserInfo" to="/cabinet/balance">
           <div class="MainNav-User">
             <span class="MainNav-UserName">
-              {{ user.firstName || 'Vasia' }}
+              {{ user.firstName || user.email }}
             </span>
             <span class="MainNav-Spent">
               8 {{ user.currency }} /
