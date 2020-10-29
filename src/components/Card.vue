@@ -1,12 +1,12 @@
 <template>
   <div class="Card">
     <div v-if="overlay" class="Card-Overlay">
-      <a href="#" class="Card-Link">
+      <button class="Card-Link" @click="$emit('playDemo')">
         Play for fun
-      </a>
-      <a href="#" class="Card-Footer">
+      </button>
+      <button class="Card-Footer" @click="$emit('play')">
         Play Now
-      </a>
+      </button>
     </div>
     <div v-if="badge" class="Card-Badge" :class="{'Card-Badge--text': badge !== 'best'}">
       <svg

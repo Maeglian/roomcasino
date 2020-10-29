@@ -110,13 +110,15 @@
       <template v-else>
         <div class="Cards-Items BestGames-Cards">
           <Card v-for="(game, i) in gamesLimited(gamesShowed)"
-                :key="i"
-                img="game3.png"
-                :badge="badges[i]"
-                overlay
+            :key="i"
+            img="game3.png"
+            :badge="badges[i]"
+            @play="startGame({ gameId: game.gameId, returnUrl: '/' })"
+            @playDemo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
+            overlay
           />
         </div>
-        <div class="BestGames-Btn">
+        <div v-if="games.length > gamesShowed" class="BestGames-Btn">
           <button class="Btn Btn--color" @click="showMoreGames()">
             Load more games
           </button>
@@ -129,10 +131,10 @@
       </div>
       <div class="Cards-Items BestGames-Cards NewGames-Cards">
         <Card v-for="(game, i) in newGames"
-              :key="i"
-              :img="game.img"
-              :badge="game.badge"
-              overlay
+          :key="i"
+          :img="game.img"
+          :badge="game.badge"
+          overlay
         />
       </div>
       <div class="BestGames-Btn">
@@ -147,10 +149,10 @@
       </div>
       <div class="Cards-Items BestGames-Cards NewGames-Cards">
         <Card v-for="(game, i) in liveGames"
-              :key="i"
-              :img="game.img"
-              :badge="game.badge"
-              overlay
+          :key="i"
+          :img="game.img"
+          :badge="game.badge"
+          overlay
         />
       </div>
       <div class="BestGames-Btn">
@@ -513,7 +515,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['getGames']),
+    ...mapActions(['getGames', 'startGame']),
     onChooseTab(i) {
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];

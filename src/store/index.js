@@ -234,5 +234,18 @@ export default new Vuex.Store({
         commit('pushErrors', e);
       }
     },
+
+    async startGame({ commit }, payload) {
+      try {
+        const res = await axios.post(`${API_HOST}/startGame`, payload);
+        const { url } = res.data.data;
+        const a = document.createElement('a');
+        a.href = url;
+        a.setAttribute('target', '_blank');
+        a.click();
+      } catch (e) {
+        commit('pushErrors', e);
+      }
+    },
   },
 });
