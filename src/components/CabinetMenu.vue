@@ -90,6 +90,7 @@ export default {
     font-weight: 700;
     color: var(--color-text-main);
     text-transform: uppercase;
+    cursor: pointer;
 
     &:last-child {
       margin-right: 0;
