@@ -37,9 +37,9 @@ export default new Vuex.Store({
     currency: 'eur',
     billingSession: {},
     fakeBillingSession: {
-      userId: '745401784207522284',
-      sessionId: '4535276ee35ae8fc1f59269f13008486b912f554a361513ca833b6bc0c6800e1',
-      merchantId: '100300999',
+      userId: '123',
+      sessionId: '123',
+      merchantId: '1000',
     },
   },
 
@@ -123,14 +123,14 @@ export default new Vuex.Store({
   },
 
   actions: {
-    async getGames({ commit }, query) {
+    async getGames({ commit }, query = '') {
       commit('gamesAreLoading');
       try {
         // eslint-disable-next-line no-underscore-dangle
         // const res = await axios.get(`https://games.netdnstrace1.com/?liveCasinoOnly=true&${query}`);
-        const res = await axios.get(`${API_HOST}/getGameList?${query}`);
+        const res = await axios.get(`${API_HOST}/getGameList${query}`);
         console.log(res);
-        commit('setGames', res.data);
+        commit('setGames', res.data.data);
       } catch (e) {
         commit('pushErrors', e);
       } finally {

@@ -183,6 +183,7 @@ export default {
         merchantId: this.fakeBillingSession.merchantId,
         userId: this.fakeBillingSession.userId,
         sessionId: this.fakeBillingSession.sessionId,
+        environment: 'test',
       }, (api) => {
         api.on({
           cashierInitLoad: () => console.log('Cashier init load'),
