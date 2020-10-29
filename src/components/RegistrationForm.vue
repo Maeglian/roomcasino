@@ -217,7 +217,7 @@ export default {
       password: {
         value: {
           required,
-          maxLength: maxLength(100),
+          maxLength: maxLength(32),
           passwordCheck,
         },
       },
