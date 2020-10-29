@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
-import API_HOST from '../config';
+import { API_HOST, BILLING_PROVIDER_ID } from '../config';
 
 Vue.use(Vuex);
 
@@ -33,18 +33,9 @@ export default new Vuex.Store({
     ],
     gamesAreLoading: false,
     errors: {},
-    user: {
-      email: 'vasiapupkin@wakeapp.ru',
-      country: 'RU',
-      currency: 'USD',
-      balance: 0,
-    },
+    user: {},
     currency: 'eur',
-    billingSession: {
-      userId: '745401784207522284',
-      sessionId: '91685de5f9171a0f1535fa637f4732033f455d1fac4d25150733d91f4ce166cc',
-      merchantId: '100300999',
-    },
+    billingSession: {},
   },
 
   getters: {
@@ -111,6 +102,9 @@ export default new Vuex.Store({
     setUser(state, user) {
       state.user = user;
     },
+    setBillingSession(state, payload) {
+      state.billingSession = payload;
+    },
     authSuccess(state) {
       state.status = 'success';
     },
@@ -128,7 +122,9 @@ export default new Vuex.Store({
       commit('gamesAreLoading');
       try {
         // eslint-disable-next-line no-underscore-dangle
-        const res = await axios.get(`https://games.netdnstrace1.com/?liveCasinoOnly=true&${query}`);
+        // const res = await axios.get(`https://games.netdnstrace1.com/?liveCasinoOnly=true&${query}`);
+        const res = await axios.get(`${API_HOST}/getGameList?${query}`);
+        console.log(res);
         commit('setGames', res.data);
       } catch (e) {
         commit('pushErrors', e);
@@ -218,6 +214,17 @@ export default new Vuex.Store({
         // eslint-disable-next-line no-underscore-dangle
         const res = await axios.get(`${API_HOST}/currencyList`);
         commit('setCurrencyList', res.data.data.currencyList);
+      } catch (e) {
+        commit('pushErrors', e);
+      }
+    },
+    async getBillingSession({ commit }) {
+      try {
+        // eslint-disable-next-line no-underscore-dangle
+        const res = await axios.post(`${API_HOST}/getBillingSession`, {
+          bpId: BILLING_PROVIDER_ID,
+        });
+        commit('setBillingSession', res.data.data);
       } catch (e) {
         commit('pushErrors', e);
       }

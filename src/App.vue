@@ -21,10 +21,11 @@ export default {
     this.getCountriesList();
     this.getCurrencyList();
     this.getProfile();
+    this.getBillingSession();
   },
   methods: {
     ...mapMutations(['setWidth']),
-    ...mapActions(['getCountriesList', 'getCurrencyList', 'getProfile', 'logout']),
+    ...mapActions(['getCountriesList', 'getCurrencyList', 'getProfile', 'getBillingSession', 'logout']),
     updateWidth() {
       this.setWidth(window.innerWidth);
     },
