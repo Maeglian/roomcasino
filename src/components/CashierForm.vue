@@ -3,6 +3,7 @@
     name="cashier"
     height="95%"
     @opened="initializeCashier()"
+    @closed="onCloseCashierForm()"
     :shiftY="0.5"
     draggable
   >
@@ -12,15 +13,17 @@
 
 <script>
 import _PaymentIQCashier from 'paymentiq-cashier-bootstrapper';
-import { mapState } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'CashierForm',
   computed: {
-    ...mapState(['billingSession', 'fakeBillingSession']),
+    ...mapState(['billingSession', 'fakeBillingSession', 'shouldCashout']),
   },
   methods: {
+    ...mapMutations(['setCashoutFalse']),
     initializeCashier() {
+      const method = this.shouldCashout ? 'withdrawal' : 'deposit';
       // eslint-disable-next-line no-unused-vars
       const CashierInstance = new _PaymentIQCashier('#cashier', {
         merchantId: this.fakeBillingSession.merchantId,
@@ -28,6 +31,7 @@ export default {
         sessionId: this.fakeBillingSession.sessionId,
         environment: 'test',
         containerHeight: '95vh',
+        method,
       }, (api) => {
         api.on({
           cashierInitLoad: () => console.log('Cashier init load'),
@@ -52,6 +56,9 @@ export default {
           }
         `);
       });
+    },
+    onCloseCashierForm() {
+      if (this.shouldCashout) this.setCashoutFalse();
     },
   },
 };

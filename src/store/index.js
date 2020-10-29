@@ -10,6 +10,7 @@ export default new Vuex.Store({
     status: '',
     countriesList: {},
     currencyList: {},
+    shouldCashout: false,
     token: localStorage.getItem('token') || '',
     authError: '',
     navIsOpen: false,
@@ -119,6 +120,12 @@ export default new Vuex.Store({
     logout(state) {
       state.status = '';
       state.token = '';
+    },
+    setCashoutTrue(state) {
+      state.shouldCashout = true;
+    },
+    setCashoutFalse(state) {
+      state.shouldCashout = false;
     },
   },
 

@@ -55,7 +55,12 @@
           >
             Deposit
           </button>
-          <button class="Btn Btn--outline CabinetPage-Btn">Cashout</button>
+          <button
+            class="Btn Btn--outline CabinetPage-Btn"
+            @click="onClickCashout()"
+          >
+            Cashout
+          </button>
         </div>
       </div>
       <div class="Table-Row CabinetPage-Row">
@@ -90,7 +95,12 @@
           >
             Deposit
           </button>
-          <button class="Btn Btn--outline CabinetPage-Btn">Cashout</button>
+          <button
+            class="Btn Btn--outline CabinetPage-Btn"
+            @click="onClickCashout()"
+          >
+            Cashout
+          </button>
         </div>
       </div>
       <div class="Table-Row CabinetPage-Row">
@@ -125,7 +135,12 @@
           >
             Deposit
           </button>
-          <button class="Btn Btn--outline CabinetPage-Btn">Cashout</button>
+          <button
+            class="Btn Btn--outline CabinetPage-Btn"
+            @click="onClickCashout()"
+          >
+            Cashout
+          </button>
         </div>
       </div>
     </div>
@@ -141,6 +156,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   name: 'BalancePage',
   props: {
@@ -148,6 +165,13 @@ export default {
       type: String,
       required: false,
       default: '',
+    },
+  },
+  methods: {
+    ...mapMutations(['setCashoutTrue']),
+    onClickCashout() {
+      this.setCashoutTrue();
+      this.$modal.show('cashier');
     },
   },
 };
