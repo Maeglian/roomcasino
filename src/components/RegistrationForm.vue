@@ -49,13 +49,14 @@
           Can't be blank
         </div>
         <Datepicker
-          format="dd - MM - yyyy"
+          format="yyyy.MM.dd"
           class="AuthDialog-Field Datepicker CabinetPage-Datepicker"
           :class="{'AuthDialog-Field--error': $v[`fieldsStep${step}`][name].$error}"
           calendar-class="Datepicker-Inner"
           input-class="AuthDialog-Input Datepicker-Input"
           :placeholder="field.placeholder"
           @selected="onSelectDate($event, name, step)"
+          typeable
         />
       </div>
       <template v-else-if="field.type === 'checkbox'">
@@ -171,7 +172,7 @@ export default {
         birthDate: {
           value: '',
           type: 'date',
-          placeholder: 'DD - MM - YYYY',
+          placeholder: 'YYYY.MM.DD',
           required: true,
         },
         gender: {
