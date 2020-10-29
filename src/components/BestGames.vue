@@ -111,7 +111,7 @@
         <div class="Cards-Items BestGames-Cards">
           <Card v-for="(game, i) in gamesLimited(gamesShowed)"
                 :key="i"
-                :imgUrl="`https://aws-origin.image-tech-storage.com/gameRes/sq/200/${game.item_title}.jpg`"
+                img="game3.png"
                 :badge="badges[i]"
                 overlay
           />
@@ -555,7 +555,7 @@ export default {
     },
   },
   created() {
-    this.getGames(this.makeQuery());
+    this.getGames();
   },
 };
 </script>
