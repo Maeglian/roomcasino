@@ -36,18 +36,26 @@
     </svg>
     Gambling limits
   </router-link>
-  <router-link class="CabinetMenu-NavLink" to="/cabinet/exit">
+  <div class="CabinetMenu-NavLink" @click="onClickExitBtn()">
     <svg class="CabinetMenu-NavIcon" width="22" height="18" >
       <use xlink:href="@/assets/img/icons.svg#exit"></use>
     </svg>
     Exit
-  </router-link>
+  </div>
 </nav>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'CabinetMenu',
+  methods: {
+    ...mapActions(['logout']),
+    onClickExitBtn() {
+      this.logout().then(() => this.$router.push('/'));
+    },
+  },
 };
 </script>
 
