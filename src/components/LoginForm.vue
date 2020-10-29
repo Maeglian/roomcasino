@@ -68,14 +68,16 @@ export default {
     ...mapState(['authError']),
   },
   methods: {
-    ...mapActions(['login']),
+    ...mapActions(['authorize']),
     onClickLoginBtn() {
       const payload = {};
       // eslint-disable-next-line no-restricted-syntax
       for (const key in this.fields) {
         if (this.fields[key].value) payload[key] = this.fields[key].value;
       }
-      this.login(payload);
+      this.authorize(payload).then(() => {
+        if (!this.authError) this.$emit('close');
+      });
     },
   },
 };

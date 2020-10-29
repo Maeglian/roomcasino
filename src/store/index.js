@@ -40,6 +40,11 @@ export default new Vuex.Store({
       balance: 0,
     },
     currency: 'eur',
+    billingSession: {
+      userId: '745401784207522284',
+      sessionId: '91685de5f9171a0f1535fa637f4732033f455d1fac4d25150733d91f4ce166cc',
+      merchantId: '100300999',
+    },
   },
 
   getters: {
@@ -100,10 +105,14 @@ export default new Vuex.Store({
       state.status = 'error';
       state.authError = message;
     },
-    authSuccess(state, token, user) {
-      state.status = 'success';
+    setToken(state, token) {
       state.token = token;
+    },
+    setUser(state, user) {
       state.user = user;
+    },
+    authSuccess(state) {
+      state.status = 'success';
     },
     removeAuthError(state) {
       state.authError = '';
@@ -146,21 +155,36 @@ export default new Vuex.Store({
       }
     },
 
-    async login({ commit }, payload) {
+    async authorize({ state, commit, dispatch }, payload) {
       commit('authRequest');
+      await dispatch('login', payload);
+      if (!state.authError) await dispatch('getProfile');
+      if (!state.authError) commit('authSuccess');
+    },
+
+    async login({ commit }, payload) {
       try {
         const res = await axios.post(`${API_HOST}/login`, payload);
-        if (res.data.code === 10002) commit('authError', res.data.message);
-        else {
-          const { token } = res.data;
-          localStorage.setItem('token', token);
+        if (res.data.code === 10002) {
+          commit('authError', res.data.message);
+        } else {
+          const { token } = res.data.data;
+          commit('setToken', token);
           axios.defaults.headers.common['X-Auth-Token'] = token;
-          const user = await axios.get(`${API_HOST}/getProfile`);
-          commit('authSuccess', token, user.data);
         }
       } catch (e) {
         commit('authError', e);
         localStorage.removeItem('token');
+      }
+    },
+
+    async getProfile({ commit }) {
+      try {
+        const res = await axios.get(`${API_HOST}/getProfile`);
+        const user = res.data.data;
+        commit('setUser', user);
+      } catch (e) {
+        commit('authError', e);
       }
     },
 
@@ -180,7 +204,6 @@ export default new Vuex.Store({
       try {
         // eslint-disable-next-line no-underscore-dangle
         const res = await axios.get(`${API_HOST}/countryList`);
-        console.log(res.data.data.countryList);
         commit('setCountriesList', res.data.data.countryList);
       } catch (e) {
         commit('pushErrors', e);
