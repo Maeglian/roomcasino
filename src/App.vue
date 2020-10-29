@@ -5,24 +5,26 @@
 </template>
 <script>
 import { mapActions, mapMutations } from 'vuex';
+import axios from 'axios';
 
 export default {
   name: 'App',
   created() {
     this.updateWidth();
     window.addEventListener('resize', this.updateWidth);
-    this.$http.interceptors.response.use(undefined, (err) => new Promise(function () {
+    axios.interceptors.response.use(undefined, (err) => new Promise(function () {
       if (err.status === 401) {
-        this.$store.dispatch('logout');
+        this.logout();
       }
       throw err;
     }));
     this.getCountriesList();
     this.getCurrencyList();
+    this.getProfile();
   },
   methods: {
     ...mapMutations(['setWidth']),
-    ...mapActions(['getCountriesList', 'getCurrencyList']),
+    ...mapActions(['getCountriesList', 'getCurrencyList', 'getProfile', 'logout']),
     updateWidth() {
       this.setWidth(window.innerWidth);
     },
