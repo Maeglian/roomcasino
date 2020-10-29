@@ -1,14 +1,19 @@
 <template>
   <div id="app">
     <router-view />
+    <CashierForm />
   </div>
 </template>
 <script>
 import { mapActions, mapMutations } from 'vuex';
 import axios from 'axios';
+import CashierForm from '@/components/CashierForm.vue';
 
 export default {
   name: 'App',
+  components: {
+    CashierForm,
+  },
   created() {
     this.updateWidth();
     window.addEventListener('resize', this.updateWidth);

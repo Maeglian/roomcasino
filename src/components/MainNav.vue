@@ -53,7 +53,7 @@
         </div>
         <button
           class="Btn MainNav-Btn"
-          @click="$modal.show('cashier');"
+          @click="$modal.show('cashier')"
         >
           Deposit
         </button>
@@ -87,7 +87,6 @@
         </div>
       </div>
     </transition>
-    <CashierForm />
   </nav>
 </template>
 
@@ -95,13 +94,11 @@
 import NavItem from '@/components/NavItem.vue';
 import AuthDialog from '@/components/AuthDialog.vue';
 import { mapMutations, mapState, mapGetters } from 'vuex';
-import CashierForm from '@/components/CashierForm.vue';
 
 export default {
   name: 'MainNav',
   components: {
     NavItem,
-    CashierForm,
   },
   data() {
     return {
