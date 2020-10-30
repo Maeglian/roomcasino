@@ -13,11 +13,10 @@
 
 <script>
 import _PaymentIQCashier from 'paymentiq-cashier-bootstrapper';
-import { mapMutations, mapState } from 'vuex';
+import { mapActions, mapMutations, mapState } from 'vuex';
 
 const mode = process.env.NODE_ENV;
 const billingSession = (mode === 'production') ? 'billingSession' : 'fakeBillingSession';
-console.log(mode);
 
 export default {
   name: 'CashierForm',
@@ -26,6 +25,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setCashoutFalse']),
+    ...mapActions(['getBillingSession']),
     initializeCashier() {
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
       // eslint-disable-next-line no-unused-vars
@@ -33,7 +33,7 @@ export default {
         merchantId: this[billingSession].merchantId,
         userId: this[billingSession].userId,
         sessionId: this[billingSession].sessionId,
-        environment: mode === 'production' ? 'production' : 'test',
+        environment: 'test',
         containerHeight: '95vh',
         method,
       }, (api) => {
@@ -64,6 +64,9 @@ export default {
     onCloseCashierForm() {
       if (this.shouldCashout) this.setCashoutFalse();
     },
+  },
+  created() {
+    this.getBillingSession();
   },
 };
 </script>
