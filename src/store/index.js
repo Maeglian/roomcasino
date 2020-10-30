@@ -142,7 +142,6 @@ export default new Vuex.Store({
         // eslint-disable-next-line no-underscore-dangle
         // const res = await axios.get(`https://games.netdnstrace1.com/?liveCasinoOnly=true&${query}`);
         const res = await axios.get(`${API_HOST}/getGameList${query}`);
-        console.log(res);
         commit('setGames', res.data.data);
       } catch (e) {
         commit('pushErrors', e);
