@@ -198,8 +198,6 @@ export default {
 
   &-Placeholder {
     position: absolute;
-    top: 0;
-    left: 0;
 
     &--required {
       color: var(--color-error);
