@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import { mapActions, mapMutations } from 'vuex';
+import { mapActions, mapMutations, mapGetters } from 'vuex';
 import axios from 'axios';
 import CashierForm from '@/components/CashierForm.vue';
 
@@ -25,8 +25,13 @@ export default {
     }));
     this.getCountriesList();
     this.getCurrencyList();
-    this.getProfile();
-    this.getBillingSession();
+    if (this.isLoggedIn) {
+      this.getProfile();
+      this.getBillingSession();
+    }
+  },
+  computed: {
+    ...mapGetters(['isLoggedIn']),
   },
   methods: {
     ...mapMutations(['setWidth']),
