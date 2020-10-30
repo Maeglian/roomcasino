@@ -137,6 +137,14 @@ export default new Vuex.Store({
     updateBalance(state, payload) {
       state.user.balance += Number(payload);
     },
+    setActiveUserAccount(state, currency) {
+      if (state.user.accountList) {
+        state.user.accountList.forEach((acc) => {
+          if (acc.currency === currency) acc.active = true;
+          else acc.active = false;
+        });
+      }
+    },
   },
 
   actions: {
@@ -259,6 +267,15 @@ export default new Vuex.Store({
         a.href = url;
         a.setAttribute('target', '_blank');
         a.click();
+      } catch (e) {
+        commit('pushErrors', e);
+      }
+    },
+
+    async setActiveAccount({ commit }, payload) {
+      try {
+        const res = await axios.post(`${API_HOST}/setActiveAccount`, payload);
+        commit('setActiveUserAccount', res.data.data.currency);
       } catch (e) {
         commit('pushErrors', e);
       }

@@ -35,8 +35,9 @@
               class="CabinetPage-Checkbox"
               type="radio"
               name="account"
-              checked="acc.active"
+              :checked="acc.active"
               :value="acc.currency"
+              @change="setActiveAccount({ currency: $event.target.value})"
             >
             <span class="CabinetPage-Checkmark CabinetPage-Checkmark--radio"></span>
           </label>
@@ -100,7 +101,7 @@
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex';
+import { mapMutations, mapState, mapActions } from 'vuex';
 
 export default {
   name: 'BalancePage',
@@ -140,6 +141,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setCashoutTrue']),
+    ...mapActions(['setActiveAccount']),
     onClickCashout() {
       this.setCashoutTrue();
       this.$modal.show('cashier');
