@@ -42,4 +42,4 @@ jobs:
           target: ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
           strip_components: 1
       - name: Print Info
-        run: echo http://${BRANCH_NAME}.sandbox.roomcasino.com/"
+        run: echo "http://${BRANCH_NAME}.sandbox.roomcasino.com/"
