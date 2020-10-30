@@ -13,7 +13,7 @@ const ProfilePage = () => import(/* webpackChunkName: "profilePage" */ '@/pages/
 const ProfileInfo = () => import(/* webpackChunkName: "profileInfo" */ '@/components/ProfileInfo.vue');
 const ProfileSecurity = () => import(/* webpackChunkName: "profileSecurity" */ '@/components/ProfileSecurity.vue');
 const LimitsPage = () => import(/* webpackChunkName: "limitsPage" */ '@/pages/LimitsPage.vue');
-const page404 = () => import(/* webpackChunkName: "404" */ '@/pages/404.vue');
+const NotFound = () => import(/* webpackChunkName: "notFound" */ '@/pages/NotFound.vue');
 
 /*
 const BonusPolicy = () => import(/!* webpackChunkName: "bonusPolicy" *!/ '@/pages/BonusPolicy.vue');
@@ -178,7 +178,7 @@ const routes = [
   // },
   {
     path: '*',
-    component: page404,
+    component: NotFound,
   },
 ];
 
