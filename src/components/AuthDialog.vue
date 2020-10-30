@@ -4,14 +4,14 @@
       <a
         class="Tabs-Tab AuthDialog-Tab"
         :class="{'Tabs-Tab--active': isRegistration }"
-        @click="isRegistration = true"
+        @click="toggleRegistration()"
       >
         Sign up
       </a>
       <a
         class="Tabs-Tab AuthDialog-Tab"
         :class="{'Tabs-Tab--active': !isRegistration }"
-        @click="isRegistration = false"
+        @click="toggleRegistration('login')"
       >
         Login
       </a>
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 const RegistrationForm = () => import('@/components/RegistrationForm.vue');
 const LoginForm = () => import('@/components/LoginForm.vue');
 
@@ -49,6 +51,15 @@ export default {
     return {
       isRegistration: true,
     };
+  },
+  methods: {
+    ...mapMutations(['removeAuthError']),
+
+    toggleRegistration(type) {
+      this.removeAuthError();
+      if (type === 'login') this.isRegistration = false;
+      else this.isRegistration = true;
+    },
   },
   mounted() {
     if (this.authType === 'login') this.isRegistration = false;
