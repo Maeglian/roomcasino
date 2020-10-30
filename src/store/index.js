@@ -3,7 +3,6 @@ import Vuex from 'vuex';
 import axios from 'axios';
 import { BILLING_PROVIDER_ID } from '../config';
 
-// eslint-disable-next-line prefer-destructuring
 const API_HOST = process.env.VUE_APP_API_HOST;
 
 Vue.use(Vuex);
@@ -64,6 +63,12 @@ export default new Vuex.Store({
       delete info.accountList;
       return info;
     },
+    curencyAccounts: (state) => Object.keys(state.currencyList).filter((cur) => {
+      if (state.user.accountList) {
+        return !state.user.accountList.some((acc) => acc.currency === cur);
+      }
+      return cur;
+    }),
   },
 
   mutations: {

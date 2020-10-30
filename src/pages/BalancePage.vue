@@ -88,7 +88,7 @@
         </div>
         <div class="AddCurrency-Content">
           <div
-            v-for="cur in currencyList"
+            v-for="cur in curencyAccounts"
             :key="cur"
             class="AddCurrency-Currency"
           >
@@ -101,7 +101,9 @@
 </template>
 
 <script>
-import { mapMutations, mapState, mapActions } from 'vuex';
+import {
+  mapMutations, mapState, mapActions, mapGetters,
+} from 'vuex';
 
 export default {
   name: 'BalancePage',
@@ -134,7 +136,8 @@ export default {
     };
   },
   computed: {
-    ...mapState(['user', 'currencyList']),
+    ...mapState(['user']),
+    ...mapGetters(['curencyAccounts']),
     userAccounts() {
       return this.user.accountList || this.fakeUserAccounts;
     },
