@@ -57,6 +57,13 @@ export default new Vuex.Store({
     gamesLimited: (state) => (limit) => state.games.slice(0, limit),
     countriesNames: (state) => Object.values(state.countriesList),
     currencyNames: (state) => Object.values(state.currencyList),
+    userInfo: (state) => {
+      const info = { ...state.user };
+      const countryName = state.countriesList[info.country];
+      info.country = countryName;
+      delete info.accountList;
+      return info;
+    },
   },
 
   mutations: {

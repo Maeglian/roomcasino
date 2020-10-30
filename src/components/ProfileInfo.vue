@@ -5,13 +5,13 @@
       General Info
     </div>
     <div class="ProfileInfo-Fields">
-      <template v-for="field in fields">
+      <template v-for="(val, name) in fields">
         <CabinetInput
-          :key="field.label"
-          :label="field.label"
-          :value="field.value"
-          :type="field.type"
-          :verified="field.verified"
+          :key="name"
+          :label="name"
+          :value="val"
+          type="text"
+          :verified="name === 'mobile'"
         />
       </template>
     </div>
@@ -53,51 +53,11 @@
 
 <script>
 import CabinetInput from '@/components/CabinetInput.vue';
+import { mapGetters } from 'vuex';
 
-const fields = [
-  {
-    label: 'First name',
-    value: 'Fillyp',
-  },
-  {
-    label: 'Last name',
-    value: 'Fillypkin',
-  },
-  {
-    label: 'Date of birth',
-    value: 'Fillypkin',
-  },
-  {
-    label: 'Gender',
-    value: 'Male',
-  },
-  {
-    label: 'Email',
-    value: 'fillypkfillypk@gmail.com',
-    type: 'email',
-  },
-  {
-    label: 'Country',
-    value: 'Finland',
-  },
-  {
-    label: 'City',
-    value: 'Finland',
-  },
-  {
-    label: 'Address',
-    value: '-',
-  },
-  {
-    label: 'Postal code',
-    value: '864520',
-  },
-  {
-    label: 'Mobile phone',
-    value: '+3588****89',
-    verified: true,
-  },
-];
+const mode = process.env.NODE_ENV;
+const devLocal = process.env.VUE_APP_DEV_LOCAL;
+const info = (devLocal || mode === 'production') ? 'real' : 'fake';
 
 export default {
   name: 'ProfileInfo',
@@ -106,8 +66,25 @@ export default {
   },
   data() {
     return {
-      fields,
+      fakeFields: {
+        email: 'fillypkfillypk@gmail.com',
+        firstName: 'Fillyp',
+        lastName: 'Fillypkin',
+        birthDate: '1979-01-04',
+        gender: 'male',
+        country: 'RUS',
+        city: 'Moscow',
+        address: '-',
+        postalCode: '864520',
+        mobile: '+3588****89',
+      },
     };
+  },
+  computed: {
+    ...mapGetters(['userInfo']),
+    fields() {
+      return (info === 'real') ? this.userInfo : this.fakeFields;
+    },
   },
   filters: {
     formatLabel(str) {
