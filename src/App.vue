@@ -27,7 +27,6 @@ export default {
     this.getCurrencyList();
     if (this.isLoggedIn) {
       this.getProfile();
-      this.getBillingSession();
     }
   },
   computed: {
@@ -35,7 +34,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setWidth']),
-    ...mapActions(['getCountriesList', 'getCurrencyList', 'getProfile', 'getBillingSession', 'logout']),
+    ...mapActions(['getCountriesList', 'getCurrencyList', 'getProfile', 'logout']),
     updateWidth() {
       this.setWidth(window.innerWidth);
     },
