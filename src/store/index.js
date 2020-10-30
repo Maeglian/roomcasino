@@ -48,6 +48,10 @@ export default new Vuex.Store({
   },
 
   getters: {
+    activeAccount: (state) => {
+      if (state.user.accountList) return state.user.accountList.find((acc) => acc.active === true);
+      return {};
+    },
     isLoggedIn: (state) => !!state.token,
     authStatus: (state) => state.status,
     gamesLimited: (state) => (limit) => state.games.slice(0, limit),

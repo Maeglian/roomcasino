@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable max-len -->
   <nav class="MainNav" :class="{'MainNav--bg': documentIsScrolled}">
     <div class="MainNav-Overlay" v-if="navIsOpen" @click="toggleNav()"></div>
     <div class="MainNav-TopBar">
@@ -33,14 +34,14 @@
               {{ user.firstName || user.email }}
             </span>
             <span class="MainNav-Spent">
-              8 {{ user.currency }} /
+              8 {{ activeAccount.currency || user.currency }} /
             </span>
             <span class="MainNav-Left">
-               25 {{ user.currency}}
+               25 {{ activeAccount.currency || user.currency}}
             </span>
           </div>
           <div class="MainNav-UserBalance">
-            {{ user.balance }} {{ user.currency }}
+            {{ activeAccount.balance || user.balance }} {{ activeAccount.currency || user.currency }}
           </div>
         </router-link>
         <div class="MainNav-UserLvl">
@@ -141,7 +142,7 @@ export default {
   },
   computed: {
     ...mapState(['navIsOpen', 'user']),
-    ...mapGetters(['isLoggedIn']),
+    ...mapGetters(['isLoggedIn', 'activeAccount']),
   },
   created() {
     window.addEventListener('scroll', this.onScroll, { passive: true });
