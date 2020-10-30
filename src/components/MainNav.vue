@@ -41,7 +41,7 @@
             </span>
           </div>
           <div class="MainNav-UserBalance">
-            {{ activeAccount.balance || user.balance }} {{ activeAccount.currency || user.currency }}
+            {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }} {{ activeAccount.currency || user.currency }}
           </div>
         </router-link>
         <div class="MainNav-UserLvl">

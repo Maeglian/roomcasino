@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable max-len -->
   <div class="CabinetTopbar">
     <router-link class="CabinetTopbar-Logo" to="/">
       <img src="@/assets/img/logo.svg" />
@@ -25,7 +26,7 @@
         {{ user.firstName || '' }} {{ user.lastName || user.email }}
       </div>
       <div class="CabinetTopbar-UserBalance">
-        {{ user.balance }} <span class="CabnetTopbar-Currency">{{ user.currency }}</span>
+        {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }} <span class="CabnetTopbar-Currency">{{ activeAccount.currency || user.currency }}</span>
       </div>
     </div>
     <button
@@ -38,12 +39,13 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 
 export default {
   name: 'CabinetTopbar',
   computed: {
     ...mapState(['user']),
+    ...mapGetters(['activeAccount']),
   },
 };
 </script>
