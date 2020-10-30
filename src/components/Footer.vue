@@ -44,11 +44,10 @@
     </nav>
     <div class="Footer-Disclaimer">
       <div class="Footer-Text">
-        This site’s operations are regulated by the Malta Gaming Authority and is operated by SkillOnNet Ltd, Office 1/5297 Level G, Quantum House,
-        75, Abate Rigord Street, Ta’ Xbiex, XBX 1120, Malta, under the gaming license issued by the Malta Gaming Authority (license number MGA/CRP/171/2009/01) issued on 1 August 2018
+        Copyright © 2020 www.roomcasino.com is owned and operated by _ a company registered and established under the laws of _. _ is licensed and regulated by _ (license no. _). _‘s registration number is _ and its registered address is _ It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.
         <br/>
         <br/>
-        <u>Gambling can be addictive, please play responsibly</u>
+        If you have any questions or suggestions about our site, please contact us <a class="Footer-Contact" href="mailto:contact@roomcasino.com">contact@roomcasino.com</a>
       </div>
       <div class="Footer-Icons">
         <svg class="Icon Footer-Icon" width="25" height="25">
@@ -206,6 +205,10 @@ export default {
       height: 20px;
       border-radius: 50%;
     }
+  }
+
+  &-Contact {
+    color: var(--color-text-main);
   }
 }
 </style>
