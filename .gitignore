@@ -3,6 +3,7 @@ node_modules
 /dist
 package-lock.json
 src/assets/img/originals
+.github/workflows/gh-pages-deploy.yml
 
 # local env files
 .env.local

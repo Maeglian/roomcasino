@@ -1,7 +1,10 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
-import { API_HOST, BILLING_PROVIDER_ID } from '../config';
+import { BILLING_PROVIDER_ID } from '../config';
+
+// eslint-disable-next-line prefer-destructuring
+const API_HOST = process.env.VUE_APP_API_HOST;
 
 Vue.use(Vuex);
 
@@ -126,6 +129,9 @@ export default new Vuex.Store({
     },
     setCashoutFalse(state) {
       state.shouldCashout = false;
+    },
+    updateBalance(state, payload) {
+      state.user.balance += Number(payload);
     },
   },
 
