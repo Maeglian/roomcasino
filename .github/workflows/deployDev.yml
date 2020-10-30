@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - '!master'
-  workflow_dispatch:
-    branches:
-      - '!master'
+    workflow_dispatch
 
 env:
   DEPLOY_PATH: /www/roomcasino/dev
