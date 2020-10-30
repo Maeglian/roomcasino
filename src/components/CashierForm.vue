@@ -84,5 +84,9 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  .vm--modal {
+    overflow: auto !important;
+  }
 }
 </style>
