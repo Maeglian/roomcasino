@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setCashoutFalse']),
-    ...mapActions(['getBillingSession']),
+    ...mapActions(['getBillingSession', 'getProfile']),
     initializeCashier() {
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
       // eslint-disable-next-line no-unused-vars
@@ -40,7 +40,10 @@ export default {
         api.on({
           cashierInitLoad: () => console.log('Cashier init load'),
           update: (data) => console.log('The passed in data was set', data),
-          success: (data) => console.log('Transaction was completed successfully', data),
+          success: (data) => {
+            console.log('Transaction was completed successfully', data);
+            this.getProfile();
+          },
           failure: (data) => console.log('Transaction failed', data),
           isLoading: (data) => console.log('Data is loading', data),
           doneLoading: (data) => console.log('Data has been successfully downloaded', data),
