@@ -114,7 +114,7 @@
             img="game3.png"
             :badge="badges[i]"
             @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
-            @playDemo="onClickStartGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
+            @playDemo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
             overlay
           />
         </div>

@@ -154,6 +154,7 @@ export default {
     color: var(--color-text-main);
     border: 2px solid var(--color-text-main);
     opacity: 0.7;
+    cursor: pointer;
 
     @media(max-width: $screen-l) {
       padding: 8px;
@@ -178,6 +179,7 @@ export default {
     text-transform: uppercase;
     color: var(--color-text-main);
     background-color: var(--color-badge);
+    cursor: pointer;
 
     @media(max-width: $screen-l) {
       font-size: 14px;
