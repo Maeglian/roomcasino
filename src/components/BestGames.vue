@@ -113,8 +113,8 @@
             :key="i"
             img="game3.png"
             :badge="badges[i]"
-            @play="startGame({ gameId: game.gameId, returnUrl: '/' })"
-            @playDemo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
+            @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
+            @playDemo="onClickStartGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
             overlay
           />
         </div>
@@ -169,6 +169,7 @@ import { mapState, mapGetters, mapActions } from 'vuex';
 import Search from '@/components/Search.vue';
 import Loader from '@/components/Loader.vue';
 import Card from '@/components/Card.vue';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'BestGames',
@@ -177,6 +178,7 @@ export default {
     Loader,
     Card,
   },
+  mixins: [showAuthDialog],
   data() {
     return {
       providersListIsOpen: false,
@@ -500,7 +502,7 @@ export default {
   },
   computed: {
     ...mapState(['width', 'games', 'gamesAreLoading']),
-    ...mapGetters(['gamesLimited']),
+    ...mapGetters(['gamesLimited', 'isLoggedIn']),
     badges() {
       return this.games.map(() => {
         const random = Math.floor(Math.random() * 4) + 1;
@@ -554,6 +556,11 @@ export default {
     },
     showMoreGames() {
       this.gamesShowed += this.gamesToShow;
+    },
+    onClickStartGame(payload) {
+      if (!this.isLoggedIn) {
+        this.showRegistrationDialog('login');
+      } else this.startGame(payload);
     },
   },
   created() {
