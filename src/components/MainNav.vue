@@ -92,14 +92,15 @@
 
 <script>
 import NavItem from '@/components/NavItem.vue';
-import AuthDialog from '@/components/AuthDialog.vue';
 import { mapMutations, mapState, mapGetters } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'MainNav',
   components: {
     NavItem,
   },
+  mixins: [showAuthDialog],
   data() {
     return {
       documentIsScrolled: false,
@@ -149,25 +150,13 @@ export default {
     window.removeEventListener('scroll', this.onScroll);
   },
   methods: {
-    ...mapMutations(['openNav', 'closeNav', 'removeAuthError']),
+    ...mapMutations(['openNav', 'closeNav']),
     onScroll() {
       this.documentIsScrolled = window.scrollY > 0;
     },
     toggleNav() {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
-    },
-    showRegistrationDialog(authType) {
-      this.removeAuthError();
-      this.$modal.show(AuthDialog,
-        { authType },
-        { width: 418, height: 'auto' },
-        {
-          'before-close': this.afterCloseAuthDialog,
-        });
-    },
-    afterCloseAuthDialog() {
-      this.removeAuthError();
     },
   },
 };
