@@ -41,9 +41,12 @@ jobs:
           key: ${{ secrets.DEPLOY_SERVER_KEY }}
           source: ${{ env.BUILD_SCRIPT_OUTPUT }}
           target: ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
-      - name: Install pm2
-        run: npm i pm2
-      - name: Run pm2
-        run: $START_SCRIPT
+      - name: Start server
+        shell: bash
+        run: pwd cd ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
+        - name: Install pm2
+          run: npm i pm2
+        - name: Run pm2
+          run: $START_SCRIPT
       - name: Print Info
         run: echo "http://${BRANCH_NAME}.sandbox.roomcasino.com/"
