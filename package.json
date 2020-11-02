@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:sandbox": "vue-cli-service build --VUE_APP_MODE=sandbox",
+    "build:sandbox": "vue-cli-service build --mode sandbox",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
