@@ -49,7 +49,7 @@ jobs:
           key: ${{ secrets.DEPLOY_SERVER_KEY }}
           port: ${{ secrets.DEPLOY_SERVER_PORT }}
           script: |
-            cd ~${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
+            cd ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
             npm i pm2
             pm2 start ecosystem.config.js
       - name: Print Info
