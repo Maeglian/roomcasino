@@ -15,9 +15,7 @@
 import _PaymentIQCashier from 'paymentiq-cashier-bootstrapper';
 import { mapActions, mapMutations, mapState } from 'vuex';
 
-const mode = process.env.NODE_ENV;
-const devLocal = process.env.VUE_APP_DEV_LOCAL;
-const billingSession = (devLocal || mode === 'production') ? 'billingSession' : 'fakeBillingSession';
+const billingSession = (process.env.VUE_APP_MODE === 'sandbox') ? 'fakeBillingSession' : 'billingSession';
 
 export default {
   name: 'CashierForm',

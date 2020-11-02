@@ -2,13 +2,13 @@ name: deployDev
 
 on:
   push:
-    branches:
-      - '!master'
+    ignore-branches:
+      - 'master'
   workflow_dispatch:
 
 env:
   DEPLOY_PATH: /www/roomcasino/dev
-  BUILD_SCRIPT: npm run build --mode staging
+  BUILD_SCRIPT: npm run build:sandbox
   BUILD_SCRIPT_OUTPUT: dist
 
 jobs:

@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
-import { BILLING_PROVIDER_ID } from '../config';
+import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX } from '../config';
 
-const API_HOST = process.env.VUE_APP_API_HOST;
+const API_HOST = (process.env.VUE_APP_MODE === 'sandbox') ? API_HOST_SANDBOX : API_HOST_PROD;
 
 Vue.use(Vuex);
 
