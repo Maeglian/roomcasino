@@ -44,10 +44,10 @@ jobs:
       - name: Start server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
+          host: ${{ secrets.DEPLOY_SERVER_HOST }}
+          username: ${{ secrets.DEPLOY_SERVER_USERNAME }}
+          key: ${{ secrets.DEPLOY_SERVER_KEY }}
+          port: ${{ secrets.DEPLOY_SERVER_PORT }}
           script: |
             cd ~/${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
             npm i pm2
