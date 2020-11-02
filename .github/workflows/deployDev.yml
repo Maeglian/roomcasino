@@ -55,6 +55,6 @@ jobs:
           port: ${{ secrets.DEPLOY_SERVER_PORT }}
           script: |
             cd ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
-            pm2 start ecosystem.config.js
+            pm2 restart ecosystem.config.js
       - name: Print Info
         run: echo "http://${BRANCH_NAME}.sandbox.roomcasino.com/"
