@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import store from '@/store';
 
 const HomePage = () => import(/* webpackChunkName: "homePage" */ '@/pages/HomePage.vue');
 const CabinetPage = () => import(/* webpackChunkName: "cabinetPage" */ '@/pages/CabinetPage.vue');
@@ -40,6 +41,9 @@ const routes = [
     path: '/cabinet',
     name: 'CabinetPage',
     component: CabinetPage,
+    meta: {
+      requiresAuth: true,
+    },
     children: [
       {
         path: 'balance',
@@ -189,6 +193,18 @@ const router = new VueRouter({
     return { x: 0, y: 0 };
   },
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    if (store.getters.isLoggedIn) {
+      next();
+      return;
+    }
+    next('/');
+  } else {
+    next();
+  }
 });
 
 export default router;
