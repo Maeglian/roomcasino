@@ -42,15 +42,15 @@ jobs:
           source: ${{ env.BUILD_SCRIPT_OUTPUT }}
           target: ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
       - name: Start server
-          uses: appleboy/ssh-action@master
-          with:
-            host: ${{ secrets.SSH_HOST }}
-            username: ${{ secrets.SSH_USERNAME }}
-            key: ${{ secrets.SSH_KEY }}
-            port: ${{ secrets.SSH_PORT }}
-            script: |
-              cd ~/${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
-              npm i pm2
-              pm2 start ecosystem.config.js
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ~/${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
+            npm i pm2
+            pm2 start ecosystem.config.js
       - name: Print Info
         run: echo "http://${BRANCH_NAME}.sandbox.roomcasino.com/"
