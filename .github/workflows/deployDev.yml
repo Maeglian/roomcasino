@@ -10,6 +10,7 @@ env:
   DEPLOY_PATH: /www/roomcasino/dev
   BUILD_SCRIPT: npm run build:sandbox
   BUILD_SCRIPT_OUTPUT: dist
+  START_SCRIPT: pm2 start ecosystem.config.js
 
 jobs:
   deploy:
@@ -27,6 +28,8 @@ jobs:
       # Устанавливаем зависимости для сборки
       - name: Install Dependencies
         run: npm i
+      - name: Install pm2
+        run: npm i pm2
       # Собираем приложение
       - name: Build Appliction
         run: $BUILD_SCRIPT
@@ -40,6 +43,6 @@ jobs:
           key: ${{ secrets.DEPLOY_SERVER_KEY }}
           source: ${{ env.BUILD_SCRIPT_OUTPUT }}
           target: ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
-          strip_components: 1
+          script: ${{ env.START_SCRIPT }}
       - name: Print Info
         run: echo "http://${BRANCH_NAME}.sandbox.roomcasino.com/"
