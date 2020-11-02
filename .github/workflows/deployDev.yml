@@ -9,7 +9,7 @@ on:
 env:
   DEPLOY_PATH: /www/roomcasino/dev
   BUILD_SCRIPT: npm run build:sandbox
-  BUILD_SCRIPT_OUTPUT: dist
+  BUILD_SCRIPT_OUTPUT: .nuxt
   START_SCRIPT: pm2 start ecosystem.config.js
 
 jobs:
