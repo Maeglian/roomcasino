@@ -28,8 +28,6 @@ jobs:
       # Устанавливаем зависимости для сборки
       - name: Install Dependencies
         run: npm i
-      - name: Install pm2
-        run: npm i pm2
       # Собираем приложение
       - name: Build Appliction
         run: $BUILD_SCRIPT
@@ -44,5 +42,9 @@ jobs:
           source: ${{ env.BUILD_SCRIPT_OUTPUT }}
           target: ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
           script: ${{ env.START_SCRIPT }}
+      - name: Install pm2
+        run: npm i pm2
+      - name: Run pm2
+        run: $START_SCRIPT
       - name: Print Info
         run: echo "http://${BRANCH_NAME}.sandbox.roomcasino.com/"
