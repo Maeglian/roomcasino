@@ -2,7 +2,7 @@ name: deployDev
 
 on:
   push:
-    ignore-branches:
+    branches-ignore:
       - 'master'
   workflow_dispatch:
 
