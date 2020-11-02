@@ -20,7 +20,7 @@ export default {
     axios.interceptors.response.use(undefined, (err) => new Promise(() => {
       // eslint-disable-next-line no-underscore-dangle,max-len
       if (err.response.status === 401 && err.response.config && !err.response.config.__isRetryRequest) {
-        this.$store.commit('logout');
+        this.$store.dispatch('logout', true);
       }
       throw err;
     }));
@@ -34,7 +34,7 @@ export default {
     ...mapGetters(['isLoggedIn']),
   },
   methods: {
-    ...mapMutations(['setWidth', 'logout']),
+    ...mapMutations(['setWidth']),
     ...mapActions(['getCountriesList', 'getCurrencyList', 'getProfile']),
     updateWidth() {
       this.setWidth(window.innerWidth);
