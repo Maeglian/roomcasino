@@ -34,10 +34,11 @@ jobs:
           port: ${{ secrets.DEPLOY_SERVER_PORT }}
           script: |
             cd ${{ env.DEPLOY_PATH }}
+            rm -rf ${{ env.BRANCH_NAME }}
             git clone https://github.com/wakeapp/roomcasino.git ${{ env.BRANCH_NAME }}
             cd ${{ env.BRANCH_NAME }}
             npm i
-            nom run build
+            npm run build
             ls
             pm2 start ecosystem.config.js
       - name: Print Info
