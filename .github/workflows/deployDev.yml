@@ -32,7 +32,9 @@ jobs:
       - name: Build Appliction
         run: $BUILD_SCRIPT
       - name: Copy ecosystem.config
-        run: cp ecosystem.config.js ${{ env.BUILD_SCRIPT_OUTPUT }}
+        run: |
+        cp ecosystem.config.js ${{ env.BUILD_SCRIPT_OUTPUT }}
+        ls
       # Доставляем собранное приложение на сервер
       - name: Deploy to Server
         uses: appleboy/scp-action@master
