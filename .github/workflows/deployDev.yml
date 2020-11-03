@@ -41,6 +41,6 @@ jobs:
             cd ${{ env.BRANCH_NAME }}
             npm i
             npm run build
-            pm2 start ecosystem.config.js
+            pm2 restart node_modules/nuxt/bin/nuxt.js -i max
       - name: Print Info
         run: echo "http://${BRANCH_NAME}.sandbox.roomcasino.com/"
