@@ -27,7 +27,7 @@ jobs:
         shell: bash
         run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g' | sed 's/\./_/g' | sed 's/[A-Z]/\L&/g')"
       # Доставляем приложение на сервер и запускаем его
-      - name: Start server
+      - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.DEPLOY_SERVER_HOST }}
@@ -37,7 +37,7 @@ jobs:
           script: |
             cd ${{ env.DEPLOY_PATH }}
             rm -rf ${{ env.BRANCH_NAME }}
-            git clone 'https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ env.REPOSIRORY_NAME }}' {{ env.BRANCH_NAME }} --branch {{ env.BRANCH_NAME }}
+            git clone 'https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ env.REPOSIRORY_NAME }}' ${{ env.BRANCH_NAME }} --branch ${{ env.BRANCH_NAME }}
             cd ${{ env.BRANCH_NAME }}
             npm i
             npm run build
