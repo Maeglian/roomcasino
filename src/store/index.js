@@ -229,14 +229,14 @@ export default new Vuex.Store({
       }
     },
 
-    async logout({ commit }, isAuthError) {
+    async logout({ commit }, isAuthError = false) {
       try {
         // eslint-disable-next-line no-underscore-dangle
         if (!isAuthError) await axios.post(`${API_HOST}/logout`);
         commit('logout');
-        this.$route.push('/');
         localStorage.removeItem('token');
         delete axios.defaults.headers.common['X-Auth-Token'];
+        this.$route.push('/');
       } catch (e) {
         commit('pushErrors', e);
       }
