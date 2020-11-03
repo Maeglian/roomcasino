@@ -11,7 +11,7 @@ env:
   BUILD_SCRIPT: npm run build:sandbox
   BUILD_SCRIPT_OUTPUT: .nuxt
   START_SCRIPT: pm2 start ecosystem.config.js
-  REPOSIRORY_NAME: /wakeapp/roomcasino.git
+  REPOSIRORY_NAME: wakeapp/roomcasino.git
 
 jobs:
   deploy:
