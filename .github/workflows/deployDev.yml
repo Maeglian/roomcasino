@@ -37,7 +37,7 @@ jobs:
           script: |
             cd ${{ env.DEPLOY_PATH }}
             rm -rf ${{ env.BRANCH_NAME }}
-            git clone 'https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ env.REPOSIRORY_NAME }}' ${GITHUB_REF#refs/heads/} --branch ${GITHUB_REF#refs/heads/}
+            git clone 'https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ env.REPOSIRORY_NAME }}' {{ env.BRANCH_NAME }} --branch {{ env.BRANCH_NAME }}
             cd ${{ env.BRANCH_NAME }}
             npm i
             npm run build
