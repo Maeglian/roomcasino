@@ -15,6 +15,7 @@
     "core-js": "^3.6.5",
     "js-cookie": "^2.2.1",
     "nuxt": "^2.14.6",
+    "nuxt-start": "^2.14.7",
     "v-click-outside": "^3.1.1",
     "vue-fragment": "^1.5.1",
     "vue-js-modal": "^2.0.0-rc.6",
