@@ -20,9 +20,10 @@ export default {
   mounted() {
     this.updateWidth();
     window.addEventListener('resize', this.updateWidth);
-    axios.interceptors.response.use(undefined, (err) => new Promise(function () {
-      if (err.status === 401) {
-        this.logout();
+    axios.interceptors.response.use(undefined, (err) => new Promise(() => {
+      // eslint-disable-next-line no-underscore-dangle,max-len
+      if (err.response.status === 401 && err.response.config && !err.response.config.__isRetryRequest) {
+        this.$store.dispatch('logout', true);
       }
       throw err;
     }));
@@ -39,7 +40,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setWidth']),
-    ...mapActions(['getCountriesList', 'getCurrencyList', 'getProfile', 'logout']),
+    ...mapActions(['getCountriesList', 'getCurrencyList', 'getProfile']),
     updateWidth() {
       this.setWidth(window.innerWidth);
     },
