@@ -5,7 +5,7 @@ module.exports = {
       exec_mode: 'cluster',
       instances: 'max',
       watch: false,
-      script: 'run start',
+      script: './node_modules/.bin/nuxt start',
       args: 'start'
     }
   ]
