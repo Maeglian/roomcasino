@@ -16,6 +16,7 @@ import CabinetTopbar from '@/components/cabinet/CabinetTopbar.vue';
 
 export default {
   name: 'CabinetPage',
+  middleware: 'auth',
   components: {
     CabinetMenu,
     CabinetTopbar,
