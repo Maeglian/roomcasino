@@ -44,11 +44,12 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    ['@nuxtjs/dotenv', { filename: '.env.' + process.env.ENV }],
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@nuxtjs/style-resources',
+    '@nuxtjs/style-resources', '@nuxtjs/dotenv'
   ],
 
   styleResources: {
