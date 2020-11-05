@@ -9,9 +9,9 @@ on:
 env:
   DEPLOY_PATH: /www/roomcasino
   DEPLOY_DIR: dev
-  BUILD_SCRIPT: npm run build
+  BUILD_SCRIPT: npm run build:sandbox
   BUILD_SCRIPT_OUTPUT: .nuxt
-  START_SCRIPT: pm2 restart node_modules/nuxt-start/bin/nuxt-start.js --name roomcasino-sandbox -i max
+  START_SCRIPT: PORT=3001 pm2 restart node_modules/nuxt-start/bin/nuxt-start.js --name roomcasino-sandbox -i max
   REPOSIRORY_NAME: wakeapp/roomcasino.git
 
 jobs:
