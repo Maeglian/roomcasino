@@ -1,44 +1,75 @@
 <template>
-  <div>
-    <router-link
-      v-for="item in items"
-      :key="item.name"
-      class="Nav-Item"
-      :class="[item.highlighted || (listIsOpen && item.children) ? 'Nav-Item--highlighted' : '' ]"
+  <li class="Nav-Item" :class="className">
+    <NuxtLink
+      v-if="!item.children"
       :to="item.url"
     >
       <div class="Nav-Name" @click="$emit('click')">
-        <svg
+        <img
           v-if="item.icon"
           class="Icon Nav-Icon"
-          :width="item.iconDimensions[0]"
-          :height="item.iconDimensions[1]">
-          <use :xlink:href="require('@/assets/img/icons.svg') + `#${item.icon}`"></use>
-        </svg>
+          :src="require(`@/assets/img/${item.icon}`)"
+        />
+        {{ item.name }}
+      </div>
+    </NuxtLink>
+    <div v-else-if="item.children && width >= 960"
+         class="Nav-Item"
+         :class="className"
+    >
+      <div class="Nav-Name">
+        <img
+          v-if="item.icon"
+          class="Icon Nav-Icon"
+          :src="require(`@/assets/img/${item.icon}`)"
+        />
         {{ item.name }}
         <i
-          class="Nav-Arrow Arrow"
-          :class="[ listIsOpen ? 'Arrow--up' : 'Arrow--down' ]"
-          v-if="item.children"
+          class="Nav-Arrow ThinArrow"
+          :class="[ listIsOpen ? 'ThinArrow--up' : 'ThinArrow--down', `Nav-Arrow--${item.name}` ]"
           @click="listIsOpen = !listIsOpen"
         ></i>
-        <transition name="slide-up">
-          <ul v-if="item.children" v-show="listIsOpen" class="Nav-List">
-            <NavItem v-if="item.children" :items="item.children" />
-          </ul>
-        </transition>
       </div>
-    </router-link>
-  </div>
+      <transition name="slide-up">
+        <ul
+          v-show="listIsOpen"
+          class="Nav-List"
+          :class="`Nav-List--${item.name}`"
+          v-click-outside="onClickOutside"
+        >
+          <NavItem
+            v-for="child in item.children"
+            :key="child.name"
+            :className="className"
+            :item="child"
+          />
+        </ul>
+      </transition>
+    </div>
+    <template v-else-if="item.children">
+      <NavItem
+        v-for="child in item.children"
+        :key="child.name"
+        :className="className"
+        :item="child"
+      />
+    </template>
+  </li>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'NavItem',
   props: {
-    items: {
-      type: Array,
+    item: {
+      type: Object,
       required: true,
+    },
+    className: {
+      type: String,
+      required: false,
     },
   },
   data() {
@@ -46,29 +77,32 @@ export default {
       listIsOpen: false,
     };
   },
+  computed: {
+    ...mapState(['width']),
+  },
+  methods: {
+    onClickOutside(e) {
+      if (!e.target.closest('.Nav-List') && !e.target.closest('.Nav-Arrow')) {
+        this.listIsOpen = false;
+      }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .Nav {
-  &-List {
-    background-color: #1D2047;
-  }
-
-  &-Icon {
-    margin-right: 16px;
-    stroke: var(--color-text-ghost);
-    fill: var(--color-text-ghost);
-  }
-
   &-Item {
+    position: relative;
+    white-space: nowrap;
     cursor: pointer;
   }
 
-  &-Item:hover {
-    .Nav-Icon {
-      stroke: var(--color-main1);
-      fill: var(--color-main1);
+  &-Icon {
+    margin-right: 12px;
+
+    @media(min-width: $screen-xs) {
+      display: none;
     }
   }
 
@@ -76,22 +110,54 @@ export default {
     position: relative;
     display: flex;
     align-items: center;
-    padding: 8px 0 8px 16px;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 700;
     text-transform: uppercase;
-    color: var(--color-text-ghost);
-
+    color: var(--color-text-main);
     &:hover {
       color: var(--color-main1);
-      background-color: #242857;
     }
   }
 
   &-Arrow {
+    margin-left: 6px;
+  }
+
+  &-List {
     position: absolute;
-    top: 50%;
-    right: 10px;
+    right: 0;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      right: 10px;
+      width: 10px;
+      height: 10px;
+      background: var(--color-bg);
+      transform: rotate(45deg);
+    }
+
+    .Nav-Icon {
+      @media(min-width: $screen-m) {
+        display: block;
+      }
+    }
+
+    .Nav-Item {
+      display: inline-block;
+      margin-right: 0;
+      margin-bottom: 4px;
+      padding: 26px 50px 20px 43px;
+      background-color: var(--color-bg);
+
+      &:after {
+        display: none;
+      }
+    }
   }
 }
 </style>

@@ -12,79 +12,35 @@
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
         </router-link>
       </div>
-      <div class="Nav MainNav-Links">
-        <router-link class="MainNav-Link" to="/">
-          Lobby
-        </router-link>
-        <router-link class="MainNav-Link" to="/">
-          Categories
-        </router-link>
-        <router-link class="MainNav-Link" to="/">
-          Promotions
-        </router-link>
-        <router-link class="MainNav-Link" to="/">
-          Tournaments
-        </router-link>
-      </div>
-      <div v-if="isLoggedIn" class="MainNav-UserSection">
-        <NuxtLink class="MainNav-UserInfo" to="/cabinet/balance">
-          <div class="MainNav-User">
-            <span class="MainNav-UserName">
-              {{ user.firstName || user.email }}
-            </span>
-            <span class="MainNav-Spent">
-              8 {{ activeAccount.currency || user.currency }} /
-            </span>
-            <span class="MainNav-Left">
-               25 {{ activeAccount.currency || user.currency}}
-            </span>
-          </div>
-          <div class="MainNav-UserBalance">
-            {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }} {{ activeAccount.currency || user.currency }}
-          </div>
-        </NuxtLink>
-        <div class="MainNav-UserLvl">
-          2
-        </div>
-        <div class="MainNav-UserMessages">
-          <svg class="MainNav-UserMessagesIcon">
-            <use xlink:href="@/assets/img/icons.svg#messages"></use>
-          </svg>
-        </div>
-        <button
-          class="Btn MainNav-Btn"
-          @click="$modal.show('cashier')"
-        >
-          Deposit
-        </button>
-      </div>
-      <div v-else class="MainNav-Login">
-        <button
-          class="Btn Btn--text MainNav-Btn"
-          @click="showRegistrationDialog('login')"
-        >
-          Login
-        </button>
-        <button
-          class="Btn MainNav-Btn"
-          @click="showRegistrationDialog('registration')"
-        >
-          Register
-        </button>
-      </div>
+      <nav v-if="width >= 960" class="Nav MainNav-Links">
+        <ul class="MainNav-List">
+          <NavItem
+            v-for="item in navItems"
+            :key="item.name"
+            :className="'MainNav-Link'"
+            :item="item"
+          />
+        </ul>
+      </nav>
+      <AuthSection />
     </div>
-    <transition name="slide-left">
+    <transition v-if="width < 960" name="slide-left">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
         <div class="AsideMenu-Header">
-          <div class="AsideMenu-Close" @click="toggleNav()"></div>
-          <img class="AsideMenu-Logo" src="@/assets/img/logo.svg" />
-        </div>
-        <div class="AsideMenu-Form">
-          <div id="son_embeded"></div>
+          <router-link class="AsideMenu-Logo" to="/">
+            <img class="AsideMenu-Logo" src="@/assets/img/logo.svg" />
+          </router-link>
+          <div class="Close AsideMenu-Close" @click="toggleNav()"></div>
         </div>
         <div class="AsideMenu-List">
-          <NavItem :items="navItems" @click="navIsOpen = !navIsOpen" />
+          <NavItem
+            v-for="item in navItems"
+            :key="item.name"
+            :className="'AsideMenu-Link'"
+            :item="item"
+          />
         </div>
+        <AuthSection class="AsideMenu-AuthSection AuthSection--aside" />
       </div>
     </transition>
   </nav>
@@ -92,56 +48,60 @@
 
 <script>
 import NavItem from '@/components/homepage/NavItem.vue';
-import { mapMutations, mapState, mapGetters } from 'vuex';
-import showAuthDialog from '@/mixins/showAuthDialog';
+import AuthSection from '@/components/homepage/AuthSection.vue';
+import { mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'MainNav',
   components: {
     NavItem,
+    AuthSection,
   },
-  mixins: [showAuthDialog],
   data() {
     return {
       documentIsScrolled: false,
       topBarIsScrolled: false,
       navItems: [
         {
-          name: 'promotion',
-          url: '/promotions',
-          icon: 'gift',
-          iconDimensions: [19, 20],
+          name: 'Lobby',
+          url: '#',
+          icon: 'lobby_nav.svg',
         },
         {
-          name: 'vip rewards',
-          url: '/vip',
-          icon: 'jewel',
-          iconDimensions: [19, 18],
+          name: 'Categories',
+          url: '#',
+          icon: 'categories_nav.svg',
         },
         {
-          name: 'about us',
-          url: '/about-us',
-          icon: 'about',
-          iconDimensions: [19, 19],
+          name: 'Promotions',
+          url: '#',
+          icon: 'promotions_nav.svg',
         },
         {
-          name: 'payment methods',
-          url: '/payment-methods',
-          icon: 'payment',
-          iconDimensions: [19, 16],
-        },
-        {
-          name: 'faq',
-          url: '/faq',
-          icon: 'faq',
-          iconDimensions: [19, 19],
+          name: 'Tournaments',
+          children: [
+            {
+              name: 'Daily tournament',
+              url: '#',
+              icon: 'tournament_nav.svg',
+            },
+            {
+              name: 'Weekly lottery',
+              url: '#',
+              icon: 'tournament_nav.svg',
+            },
+            {
+              name: 'Live tournament',
+              url: '#',
+              icon: 'tournament_nav.svg',
+            },
+          ],
         },
       ],
     };
   },
   computed: {
-    ...mapState(['navIsOpen', 'user']),
-    ...mapGetters(['isLoggedIn', 'activeAccount']),
+    ...mapState(['navIsOpen', 'width']),
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll, { passive: true });
@@ -251,9 +211,13 @@ export default {
     display: none;
 
     @media(min-width: $screen-l) {
-      display: flex;
+      display: block;
       margin-right: auto;
     }
+  }
+
+  &-List {
+    display: flex;
   }
 
   &-Link {
@@ -286,109 +250,6 @@ export default {
       font-size: 12px;
     }
   }
-
-  &-Login {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-  }
-
-  &-Btn {
-    display: none;
-
-    @media(min-width: $screen-m) {
-      display: block;
-      padding: 25px;
-      font-size: 10px;
-    }
-
-    @media(min-width: $screen-xl) {
-      padding: 30px;
-      font-size: 12px;
-    }
-  }
-
-  &-UserSection {
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-  }
-
-  &-UserInfo {
-    display: none;
-
-    @media(min-width: $screen-m) {
-      display: block;
-      margin-right: 12px;
-      text-align: right;
-    }
-  }
-
-  &-User {
-    font-size: 12px;
-    font-weight: 700;
-  }
-
-  &-UserName {
-    color: var(--color-main1);
-  }
-
-  &-Spent {
-    color: var(--color-text-ghost);
-  }
-
-  &-Left {
-    color: var(--color-text-main);
-  }
-
-  &-UserBalance {
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--color-text-main);
-  }
-
-  &-UserLvl {
-    display: none;
-
-    @media(min-width: $screen-m) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 28px;
-      height: 31px;
-      margin-right: 26px;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--color-text-main);
-      background: url(../../assets/img/level.png) no-repeat;
-    }
-  }
-
-  &-UserMessages {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    margin-right: 16px;
-    background: linear-gradient(356.88deg, rgba(6, 14, 42, 0) -13.82%, #060E2A 105.97%);
-    border-radius: 50%;
-
-    @media(min-width: $screen-m) {
-      margin-right: 30px;
-      background: transparent;
-    }
-  }
-
-  &-UserMessagesIcon {
-    width: 14px;
-    height: 16px;
-
-    @media(min-width: $screen-l) {
-      width: 21.4px;
-      height: 24.8px;
-    }
-  }
 }
 
 .AsideMenu {
@@ -397,90 +258,74 @@ export default {
   left: 0;
   bottom: 0;
   z-index: 4;
-  min-width: 308px;
-  padding: 30px 0;
-  background-color: var(--color-bg-nav);
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  height: 100%;
+  padding-top: 18px;
+  background-color: var(--color-body);
   overflow-y: auto;
   scrollbar-width: thin;
 
+  @media(min-width: $screen-xs) {
+    align-items: center;
+  }
+
   &-Header {
     display: flex;
-    margin-bottom: 26px;
-    padding: 0 16px;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+    padding-right: 18px;
+    padding-left: 18px;
   }
 
   &-Close {
     width: 20px;
     height: 20px;
-    margin-right: 16px;
-    cursor: pointer;
-
-    &:before, &:after {
-      content: '';
-      position: absolute;
-      left: 20px;
-      width: 3px;
-      height: 20px;
-      background-color: var(--color-text-main);
-    }
-
-    &:before {
-      transform: rotate(45deg);
-    }
-
-    &:after {
-      transform: rotate(-45deg);
-    }
-  }
-
-  &-Form {
-    padding: 16px;
-    border-top: 1px solid rgba(39, 43, 95, 0.5);
-    border-bottom: 1px solid rgba(39, 43, 95, 0.5);
   }
 
   &-List {
-    width: 100%;
-    padding-top: 18px;
+    order: 1;
+    padding-right: 18px;
+    padding-left: 18px;
   }
 
-  .a-son-container .a-login-embeded {
-    width: auto !important;
-  }
+  &-Link {
+    display: block;
+    margin-bottom: 35px;
 
-  .a-control {
-    height: auto !important;
-    padding: 18px 16px 19px !important;
-    color: var(--color-text-main) !important;
-    background-color: var(--color-form) !important;
-    border-radius: 8px !important;
+    @media(min-width: $screen-s){
+      font-size: 22px;
+    }
 
-    &::placeholder {
-      color: var(--color-text-ghost) !important;
+    @media(min-width: $screen-xs){
+      text-align: center;
+
+      .Nav-Name {
+        justify-content: center;
+      }
     }
   }
 
-  .a-btn {
-    padding: 14px !important;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.24;
-    border-radius: 8px !important;
-  }
+  &-AuthSection {
+    order: 2;
+    margin-top: auto;
 
-  .a-btn-login {
-    color: var(--color-main2) !important;
-    background: transparent !important;
-    border: 1px solid var(--color-main2) !important;
-
-    &:hover {
-      background: var(--color-main2) !important;
-      color: var(--color-bg-nav) !important;
+    @media(min-width: $screen-xs) {
+      width: 288px;
+      margin-bottom: 158px;
     }
   }
 
-  .a-son-container .text-center {
-    text-align: right !important;
+  &-AuthSection.AuthSection--authenticated {
+    margin-top: 0;
+
+    @media(min-width: $screen-xs) {
+      width: 100%;
+      margin-top: auto;
+      margin-bottom: 0;
+    }
   }
 }
 </style>
