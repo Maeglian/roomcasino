@@ -55,9 +55,7 @@
 import CabinetInput from '@/components/cabinet/CabinetInput.vue';
 import { mapGetters } from 'vuex';
 
-const mode = process.env.NODE_ENV;
-const devLocal = process.env.VUE_APP_DEV_LOCAL;
-const info = (devLocal || mode === 'production') ? 'real' : 'fake';
+const info = (process.env.NUXT_ENV_MODE === 'sandbox') ? 'fake' : 'real';
 
 export default {
   name: 'ProfileInfo',
