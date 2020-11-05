@@ -1,0 +1,32 @@
+{
+  "name": "roomcasino",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "build:sandbox": "ENV=sandbox nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cookieparser": "^0.1.0",
+    "core-js": "^3.6.5",
+    "js-cookie": "^2.2.1",
+    "nuxt": "^2.14.6",
+    "nuxt-start": "^2.14.7",
+    "v-click-outside": "^3.1.1",
+    "vue-js-modal": "^2.0.0-rc.6",
+    "vue-marquee-text-component": "^1.1.1",
+    "vuejs-datepicker": "^1.6.2",
+    "vuelidate": "^0.7.5"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.14.7",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "sass": "^1.28.0",
+    "sass-loader": "^10.0.4"
+  }
+}

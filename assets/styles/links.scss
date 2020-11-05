@@ -1,0 +1,16 @@
+.Link {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.24;
+  color: var(--color-text-main);
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-main1);
+  }
+}
+
+.router-link-exact-active {
+  color: var(--color-main1);
+}
