@@ -193,8 +193,6 @@ export default {
 }
 
 .AuthSection--aside {
-  width: 100%;
-
   &.AuthSection--authenticated {
     order: 0;
 
