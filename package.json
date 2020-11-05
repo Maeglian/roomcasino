@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "ENV=sandbox nuxt",
+    "dev": "nuxt",
     "build": "nuxt build",
     "build:sandbox": "ENV=sandbox nuxt build",
     "start": "nuxt start",
@@ -17,7 +17,6 @@
     "nuxt": "^2.14.6",
     "nuxt-start": "^2.14.7",
     "v-click-outside": "^3.1.1",
-    "vue-fragment": "^1.5.1",
     "vue-js-modal": "^2.0.0-rc.6",
     "vue-marquee-text-component": "^1.1.1",
     "vuejs-datepicker": "^1.6.2",

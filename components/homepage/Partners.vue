@@ -34,14 +34,8 @@
 </template>
 
 <script>
-// import MarqueeText from 'vue-marquee-text-component';
-const MarqueeText = () => import('vue-marquee-text-component');
-
 export default {
   name: 'Partners',
-  components: {
-    MarqueeText,
-  },
 };
 </script>
 
