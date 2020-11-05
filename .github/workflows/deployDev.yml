@@ -40,7 +40,7 @@ jobs:
             git clone 'https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ env.REPOSIRORY_NAME }}' ${{ env.BRANCH_NAME }} --branch ${{ env.BRANCH_NAME }}
             cd ${{ env.BRANCH_NAME }}
             npm i
-            npm run build
+            ${{ env.BUILD_SCRIPT }}
             pm2 restart node_modules/nuxt-start/bin/nuxt-start.js --name roomcasino -i max
       - name: Print Info
         run: echo "http://${BRANCH_NAME}.sandbox.roomcasino.com/"
