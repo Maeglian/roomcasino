@@ -7,7 +7,8 @@ on:
   workflow_dispatch:
 
 env:
-  DEPLOY_PATH: /www/roomcasino/dev
+  DEPLOY_PATH: /www/roomcasino
+  DEPLOY_DIR: dev
   BUILD_SCRIPT: npm run build:sandbox
   BUILD_SCRIPT_OUTPUT: .nuxt
   START_SCRIPT: pm2 restart node_modules/nuxt-start/bin/nuxt-start.js --name roomcasino-sandbox -i max
@@ -36,11 +37,11 @@ jobs:
           port: ${{ secrets.DEPLOY_SERVER_PORT }}
           script: |
             cd ${{ env.DEPLOY_PATH }}
-            rm -rf ${{ env.BRANCH_NAME }}
-            git clone 'https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ env.REPOSIRORY_NAME }}' ${{ env.BRANCH_NAME }} --branch ${{ env.BRANCH_NAME }}
-            cd ${{ env.BRANCH_NAME }}
+            rm -rf ${{ env.DEPLOY_DIR }}
+            git clone 'https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ env.REPOSIRORY_NAME }}' ${{ env.DEPLOY_DIR }} --branch ${{ env.BRANCH_NAME }}
+            cd ${{ env.DEPLOY_DIR }}
             npm i
             ${{ env.BUILD_SCRIPT }}
             ${{ env.START_SCRIPT }}
       - name: Print Info
-        run: echo "http://${BRANCH_NAME}.sandbox.roomcasino.com/"
+        run: echo "http://${{ env.DEPLOY_DIR }}.sandbox.roomcasino.com/"

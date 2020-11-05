@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt --port 8080",
-    "build": "NUXT_ENV_MODE=production nuxt build",
-    "build:sandbox": "NUXT_ENV_MODE=sandbox nuxt generate",
+    "build": "NUXT_ENV_MODE=sandbox nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
