@@ -235,7 +235,7 @@ export const actions = {
       // eslint-disable-next-line no-underscore-dangle
       if (!isAuthError) await axios.post(`${API_HOST}/logout`);
       commit('logout');
-      localStorage.removeItem('token');
+      Cookie.remove('token');
       delete axios.defaults.headers.common['X-Auth-Token'];
       this.$route.push('/');
     } catch (e) {
