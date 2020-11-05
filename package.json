@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
-    "build:sandbox": "ENV=sandbox nuxt build",
+    "build": "NUXT_ENV_MODE=production nuxt build",
+    "build:sandbox": "NUXT_ENV_MODE=sandbox nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
@@ -24,7 +24,6 @@
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.7",
-    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/style-resources": "^1.0.0",
     "sass": "^1.28.0",
     "sass-loader": "^10.0.4"
