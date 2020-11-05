@@ -11,7 +11,7 @@ env:
   DEPLOY_DIR: prod
   BUILD_SCRIPT: npm run build
   BUILD_SCRIPT_OUTPUT: .nuxt
-  START_SCRIPT: pm2 start node_modules/nuxt-start/bin/nuxt-start.js --name roomcasino -i max
+  START_SCRIPT: pm2 restart node_modules/nuxt-start/bin/nuxt-start.js --name roomcasino -i max
   REPOSIRORY_NAME: wakeapp/roomcasino.git
 
 jobs:
