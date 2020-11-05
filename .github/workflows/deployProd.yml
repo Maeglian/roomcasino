@@ -41,6 +41,6 @@ jobs:
             cd ${{ env.BRANCH_NAME }}
             npm i
             ${{ env.BUILD_SCRIPT }}
-            ${{ START_SCRIPT }}
+            ${{ env.START_SCRIPT }}
       - name: Print Info
         run: echo "http://${BRANCH_NAME}.sandbox.roomcasino.com/"
