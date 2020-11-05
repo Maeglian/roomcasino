@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable max-len -->
   <div class="BaseInput">
     <div
       v-if="v && v.required === false && v.$dirty"

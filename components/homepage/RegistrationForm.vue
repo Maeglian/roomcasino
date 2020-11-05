@@ -1,5 +1,4 @@
 <template>
-<!-- eslint-disable max-len -->
 <div class="AuthDialog-Registration AuthDialog-Form">
   <div class="AuthDialog-Content" :class="{'AuthDialog-Content--step1': step === 1}">
     <div v-if="step === 1" class="AuthDialog-RegistrationHeader">
@@ -48,16 +47,18 @@
         >
           Can't be blank
         </div>
-        <Datepicker
-          format="yyyy.MM.dd"
-          class="AuthDialog-Field Datepicker CabinetPage-Datepicker"
-          :class="{'AuthDialog-Field--error': $v[`fieldsStep${step}`][name].$error}"
-          calendar-class="Datepicker-Inner"
-          input-class="AuthDialog-Input Datepicker-Input"
-          :placeholder="field.placeholder"
-          @selected="onSelectDate($event, name, step)"
-          typeable
-        />
+        <client-only>
+          <Datepicker
+            format="yyyy.MM.dd"
+            class="AuthDialog-Field Datepicker CabinetPage-Datepicker"
+            :class="{'AuthDialog-Field--error': $v[`fieldsStep${step}`][name].$error}"
+            calendar-class="Datepicker-Inner"
+            input-class="AuthDialog-Input Datepicker-Input"
+            :placeholder="field.placeholder"
+            @selected="onSelectDate($event, name, step)"
+            typeable
+          />
+        </client-only>
       </div>
       <template v-else-if="field.type === 'checkbox'">
         <BaseCheckbox

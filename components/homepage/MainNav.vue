@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable max-len -->
   <nav class="MainNav" :class="{'MainNav--bg': documentIsScrolled}">
     <div class="MainNav-Overlay" v-if="navIsOpen" @click="toggleNav()"></div>
     <div class="MainNav-TopBar">

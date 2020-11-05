@@ -1,5 +1,5 @@
 <template>
-  <fragment>
+  <div>
     <router-link
       v-for="item in items"
       :key="item.name"
@@ -29,7 +29,7 @@
         </transition>
       </div>
     </router-link>
-  </fragment>
+  </div>
 </template>
 
 <script>

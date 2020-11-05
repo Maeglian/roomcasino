@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable max-len -->
   <div class="CabinetTopbar">
     <router-link class="CabinetTopbar-Logo" to="/">
       <img src="@/assets/img/logo.svg" />

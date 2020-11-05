@@ -1,17 +1,13 @@
 <template>
-  <fragment>
+  <div>
     <MainNav />
     <Hero />
     <BestGames />
     <Jackpots />
-    <!--    <Banner v-bind="banner1" />-->
     <Tournament />
     <Winners />
-    <!--    <Promotions />-->
-    <!--    <Questions />-->
-    <!--    <Banner class="Banner&#45;&#45;bottom" v-bind="banner2" />-->
     <Footer />
-  </fragment>
+  </div>
 </template>
 
 <script>

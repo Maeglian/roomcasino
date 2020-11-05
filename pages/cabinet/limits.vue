@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable max-len -->
   <div class="CabinetPage LimitsPage">
     <div class="CabinetPage-Title LimitsPage-Title">
       Gambling limits

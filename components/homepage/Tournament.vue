@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable max-len -->
   <section class="Tournament">
     <div class="Wrapper">
       <div class="Title Title--type-h1 Tournament-Title">

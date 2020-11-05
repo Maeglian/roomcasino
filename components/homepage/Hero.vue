@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable max-len -->
   <section class="Hero">
     <div class="Hero-Slider">
       <VueSlider v-bind="options">

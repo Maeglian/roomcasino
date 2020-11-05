@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable max-len -->
   <section class="Footer">
     <Partners class="Footer-Partners" />
     <nav class="Nav Footer-Nav">

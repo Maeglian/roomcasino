@@ -1,108 +1,90 @@
 <template>
-  <!-- eslint-disable max-len -->
-  <fragment>
+  <div>
     <section class="BestGames Cards">
-<!--          <button-->
-<!--            class="BestGames-Tab BestGames-Tab&#45;&#45;active BestGames-ChosenTab"-->
-<!--            :class="{'BestGames-ChosenTab&#45;&#45;opened': listIsOpen}"-->
-<!--            @click="listIsOpen = !listIsOpen"-->
-<!--          >-->
-<!--            <svg-->
-<!--              class="Icon"-->
-<!--              :class="`BestGames-Icon&#45;&#45;${tabActive.icon}`"-->
-<!--            >-->
-<!--              <use :xlink:href="require('@/assets/img/icons.svg') + `#${tabActive.icon}`"></use>-->
-<!--            </svg>-->
-<!--            {{tabActive.name}}-->
-<!--            <i-->
-<!--              class="Arrow Tab-Arrow"-->
-<!--              :class="[ listIsOpen ? 'Arrow&#45;&#45;up' : 'Arrow&#45;&#45;down' ]"-->
-<!--            ></i>-->
-<!--          </button>-->
-        <div v-if="width > 767"
-         class="BestGames-Tabs"
+      <div v-if="width > 767"
+       class="BestGames-Tabs"
+      >
+        <button
+          v-for="(tab, i) in tabs"
+          :key="tab.name"
+          class="BestGames-Tab"
+          :class="{'BestGames-Tab--active': tabActive.name === tab.name}"
+          @click="onChooseTab(i)"
         >
-          <button
-            v-for="(tab, i) in tabs"
-            :key="tab.name"
-            class="BestGames-Tab"
-            :class="{'BestGames-Tab--active': tabActive.name === tab.name}"
-            @click="onChooseTab(i)"
+          <svg
+            :class="`BestGames-Icon BestGames-Icon--${tab.icon}`"
           >
-            <svg
-              :class="`BestGames-Icon BestGames-Icon--${tab.icon}`"
-            >
-              <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
-            </svg>
-            <div class="BestGames-Name">
-              {{tab.name}}
-            </div>
-          </button>
-        </div>
-        <div class="BestGames-ProvidersMenu" v-click-outside="onClickOutside">
+            <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
+          </svg>
+          <div class="BestGames-Name">
+            {{tab.name}}
+          </div>
+        </button>
+      </div>
+      <div class="BestGames-ProvidersMenu" v-click-outside="onClickOutside">
+        <button
+          class="BestGames-Tab BestGames-ChosenTab"
+          :class="{'BestGames-ChosenTab--opened': providersListIsOpen}"
+          @click="providersListIsOpen = !providersListIsOpen"
+        >
+          <img
+            v-if="providerActive.icon"
+            class="BestGames-ProviderIcon"
+            :src="require(`@/assets/img/${providerActive.icon}.svg`)"
+            alt=""
+          >
+          {{providerActive.name}}
+          <i
+            class="Arrow Tab-Arrow"
+            :class="[ providersListIsOpen ? 'Arrow--up' : 'Arrow--down' ]"
+          ></i>
+        </button>
+        <div v-if="width > 767" class="BestGames-Providers">
           <button
-            class="BestGames-Tab BestGames-ChosenTab"
-            :class="{'BestGames-ChosenTab--opened': providersListIsOpen}"
-            @click="providersListIsOpen = !providersListIsOpen"
+            v-for="(item, i) in providersToShow"
+            :key="providers[i].name"
+            class="BestGames-Provider"
+            :class="{'BestGames-Provider--active': providerActive.name === providers[i].name}"
+            @click="onChooseProvider(providers[i].name)"
           >
             <img
-              v-if="providerActive.icon"
+              v-if="providers[i].icon"
               class="BestGames-ProviderIcon"
-              :src="require(`@/assets/img/${providerActive.icon}.svg`)"
+              :src="require(`@/assets/img/${providers[i].icon}.svg`)"
               alt=""
             >
-            {{providerActive.name}}
-            <i
-              class="Arrow Tab-Arrow"
-              :class="[ providersListIsOpen ? 'Arrow--up' : 'Arrow--down' ]"
-            ></i>
+            {{ providers[i].name }}
           </button>
-          <div v-if="width > 767" class="BestGames-Providers">
+          <button
+            v-if="width > 767"
+            class="BestGames-Provider BestGames-Provider--more"
+            :class="{'BestGames-Provider--active': providersListIsOpen}"
+            @click="providersListIsOpen = !providersListIsOpen"
+          >
+            ...
+          </button>
+        </div>
+        <Search class="BestGames-Search" />
+        <transition name="slide-up">
+          <div v-if="providersListIsOpen" class="BestGames-MoreProviders">
             <button
-              v-for="(item, i) in providersToShow"
-              :key="providers[i].name"
-              class="BestGames-Provider"
-              :class="{'BestGames-Provider--active': providerActive.name === providers[i].name}"
-              @click="onChooseProvider(providers[i].name)"
+              v-for="(item, i) in moreProviders"
+              :key="i"
+              class="BestGames-AddProvider"
+              :class="{'BestGames-Provider--active': providerActive.name === item.name}"
+              @click="onChooseProvider(item.name)"
             >
               <img
-                v-if="providers[i].icon"
+                v-if="item.icon"
                 class="BestGames-ProviderIcon"
-                :src="require(`@/assets/img/${providers[i].icon}.svg`)"
+                :src="require(`@/assets/img/${item.icon}.svg`)"
                 alt=""
               >
-              {{ providers[i].name }}
-            </button>
-            <button
-              v-if="width > 767"
-              class="BestGames-Provider BestGames-Provider--more"
-              :class="{'BestGames-Provider--active': providersListIsOpen}"
-              @click="providersListIsOpen = !providersListIsOpen"
-            >
-              ...
+              {{ item.name }}
             </button>
           </div>
-          <Search class="BestGames-Search" />
-          <transition name="slide-up">
-            <div v-if="providersListIsOpen" class="BestGames-MoreProviders">
-              <button
-                v-for="(item, i) in moreProviders"
-                :key="i"
-                class="BestGames-AddProvider"
-                :class="{'BestGames-Provider--active': providerActive.name === item.name}"
-                @click="onChooseProvider(item.name)"
-              >
-                <img
-                  v-if="item.icon"
-                  class="BestGames-ProviderIcon"
-                  :src="require(`@/assets/img/${item.icon}.svg`)"
-                  alt=""
-                >
-                {{ item.name }}
-              </button>
-            </div>
-          </transition>
-        </div>
+        </transition>
+      </div>
       <div class="Title Title--type-h2 Cards-Title">
         The best games
       </div>
@@ -161,7 +143,7 @@
         </button>
       </div>
     </section>
-  </fragment>
+  </div>
 </template>
 
 <script>

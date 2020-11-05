@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable max-len -->
   <div class="CreateLimits">
     <div class="CabinetPage-Header CabinetPage-Section">
       Create limits

@@ -1,5 +1,4 @@
 <template>
-  <!-- eslint-disable max-len -->
   <div class="CabinetPage VerificationPage">
     <div class="CabinetPage-Title VerificationPage-Title">
       Verification
