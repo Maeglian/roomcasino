@@ -115,6 +115,7 @@ import {
 const Datepicker = () => import('vuejs-datepicker');
 
 const passwordCheck = helpers.regex('passwordCheck', /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).{8,}$/);
+const ageCheck = (value) => value === true;
 
 export default {
   name: 'RegistrationForm',
@@ -227,6 +228,7 @@ export default {
           passwordCheck,
         },
       },
+      confirmAgeAndTerms: { value: { ageCheck } },
     },
     fieldsStep2: {
       firstName: {
