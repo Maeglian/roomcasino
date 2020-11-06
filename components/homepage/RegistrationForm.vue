@@ -1,5 +1,9 @@
 <template>
-<div class="AuthDialog-Registration AuthDialog-Form">
+<form
+  class="AuthDialog-Registration
+  AuthDialog-Form"
+  @submit.prevent="onSubmitForm"
+>
   <div class="AuthDialog-Content" :class="{'AuthDialog-Content--step1': step === 1}">
     <div v-if="step === 1" class="AuthDialog-RegistrationHeader">
       <div class="AuthDialog-Title">
@@ -92,11 +96,10 @@
     type="submit"
     :disabled="this.$v[`fieldsStep${step}`].$error"
     class="Btn Btn--full AuthDialog-Btn"
-    @click="onClickSubmitBtn()"
   >
     Sign up
   </button>
-</div>
+</form>
 </template>
 
 <script>
@@ -277,7 +280,7 @@ export default {
       const fieldStep = `fieldsStep${step}`;
       this[fieldStep][field].value = date;
     },
-    onClickSubmitBtn() {
+    onSubmitForm() {
       const payload = {};
 
       if (this.step === 1) {
