@@ -19,7 +19,7 @@
             <div class="Hero-Text">
               €100 <span class="Colored">+</span> 55 Free  Spins
             </div>
-            <button class="Btn Hero-Btn" @click="$modal.show('cashier')">
+            <button class="Btn Hero-Btn" @click="onClickDeposit()">
               Deposit now
             </button>
           </div>
@@ -37,7 +37,7 @@
             <div class="Hero-Text">
               €100 <span class="Colored">+</span> 55 Free  Spins
             </div>
-            <button class="Btn Hero-Btn" @click="$modal.show('cashier')">
+            <button class="Btn Hero-Btn" @click="onClickDeposit()">
               Deposit now
             </button>
           </div>
@@ -141,7 +141,8 @@
 <script>
 import VueSlider from '@/components/homepage/Slider.vue';
 import Prizes from '@/components/homepage/Prizes.vue';
-import { mapMutations, mapState } from 'vuex';
+import { mapMutations, mapState, mapGetters } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'Hero',
@@ -149,6 +150,7 @@ export default {
     VueSlider,
     Prizes,
   },
+  mixins: [showAuthDialog],
   data() {
     return {
       options: {
@@ -214,6 +216,7 @@ export default {
   },
   computed: {
     ...mapState(['navIsOpen']),
+    ...mapGetters(['isLoggedIn']),
   },
   methods: {
     ...mapMutations(['openNav', 'closeNav']),
@@ -221,6 +224,10 @@ export default {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
     },
+    onClickDeposit() {
+      if (!this.isLoggedIn) this.showRegistrationDialog('login');
+      else this.$modal.show('cashier');
+    }
   },
 };
 </script>
