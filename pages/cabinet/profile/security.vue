@@ -33,23 +33,41 @@
         <BaseInput
           class="ProfilePage-Row"
           blockClass="ProfilePage"
-          inputType="password"
-          v-model="newPassword"
-          :v="$v.newPassword"
+          :inputType="newPassword.inputType"
+          v-model="newPassword.value"
+          :v="$v.newPassword.value"
           placeholder="New password"
-          :toggleVisibility="true"
           icon="password"
-        />
+        >
+          <template v-slot:afterInput-absolute>
+            <svg
+              class="BaseInput-Visible ProfilePage-Visible"
+              :class="{'ProfilePage-Visible--isVisible': newPassword.inputType === 'text'}"
+              @click="toggleVisibility('newPassword')"
+            >
+              <use xlink:href="@/assets/img/icons.svg#visible"></use>
+            </svg>
+          </template>
+        </BaseInput>
         <BaseInput
           class="ProfilePage-Row"
           blockClass="ProfilePage"
-          inputType="password"
-          v-model="confirmPassword"
-          :v="$v.confirmPassword"
+          :inputType="confirmPassword.inputType"
+          v-model="confirmPassword.value"
+          :v="$v.confirmPassword.value"
           placeholder="Password confirm"
-          :toggleVisibility="true"
           icon="password"
-        />
+        >
+          <template v-slot:afterInput-absolute>
+            <svg
+              class="ProfilePage-Visible"
+              :class="{'ProfilePage-Visible--isVisible': confirmPassword.inputType === 'text'}"
+              @click="toggleVisibility('confirmPassword')"
+            >
+              <use xlink:href="@/assets/img/icons.svg#visible"></use>
+            </svg>
+          </template>
+        </BaseInput>
         <button type="submit" class="Btn Btn--full ProfilePage-Btn">Update</button>
       </form>
     </div>
@@ -142,8 +160,14 @@ export default {
     return {
       rows,
       oldPassword: '',
-      newPassword: '',
-      confirmPassword: '',
+      newPassword: {
+        value: '',
+        inputType: 'password',
+      },
+      confirmPassword: {
+        value: '',
+        inputType: 'password',
+      },
       qrCode: '',
     };
   },
@@ -151,13 +175,21 @@ export default {
     oldPassword: {
       required,
     },
-    newPassword: {
+    newPassword: { value: {
       required,
-    },
-    confirmPassword: {
-      sameAsPassword: sameAs('newPassword'),
-    },
+    }},
+    confirmPassword: {  value: {
+      sameAsPassword: sameAs(function() { return this.newPassword.value })
+    }},
   },
+  methods: {
+    toggleVisibility(el) {
+      console.log(el);
+      this[el].inputType === 'password'
+        ? this[el].inputType = 'text'
+        : this[el].inputType = 'password';
+    }
+  }
 };
 </script>
 
@@ -261,6 +293,8 @@ export default {
   }
 
   &-Visible {
+    position: absolute;
+    z-index: 2;
     right: 22px;
     top: calc(50% - 5.5px);
     width: 19px;
