@@ -59,7 +59,6 @@
             v-if="width > 767"
             class="BestGames-Provider BestGames-Provider--more"
             :class="{'BestGames-Provider--active': providersListIsOpen}"
-            @click="providersListIsOpen = !providersListIsOpen"
           >
             ...
           </button>
@@ -783,6 +782,7 @@ export default {
     z-index: 10;
     column-count: 2;
     width: 100%;
+    max-height: 2000px;
     padding: 0 16px 10px;
     background-color: var(--color-body);
 
