@@ -93,7 +93,7 @@
         <div class="Cards-Items BestGames-Cards">
           <Card v-for="(game, i) in gamesLimited(gamesShowed)"
             :key="i"
-            img="game3.png"
+            :imgUrl="game.imageUrl"
             :badge="badges[i]"
             @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
             @playDemo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
