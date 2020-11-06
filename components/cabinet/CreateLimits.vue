@@ -19,8 +19,13 @@
         class="CreateLimits-Amount"
         blockClass="CreateLimits"
         v-model="limitAmount"
-        :clarification="currency"
-      />
+      >
+        <template v-slot:afterInput-absolute>
+          <span class="CreateLimits-InputCurrency">
+            {{ currency }}
+          </span>
+        </template>
+      </BaseInput>
       <BaseDropdown
         class="CreateLimits-Period"
         v-model="currentPeriod"
@@ -134,7 +139,9 @@ export default {
     padding: 0 50px 0 16px;
   }
 
-  &-Сlarification {
+  &-InputCurrency {
+    position: absolute;
+    z-index: 2;
     right: 16px;
     font-size: 10px;
     font-weight: 700;
