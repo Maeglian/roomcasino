@@ -29,6 +29,7 @@
     "sass-loader": "^10.0.4"
   },
   "browserslist": [
-    "defaults"
+    "defaults",
+    "last 2 safari version"
   ]
 }
