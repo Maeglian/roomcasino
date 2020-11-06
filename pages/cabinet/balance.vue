@@ -139,13 +139,15 @@ export default {
     ...mapMutations(['setCashoutTrue']),
     ...mapActions(['setActiveAccount']),
     onClickDeposit(currency) {
-      this.setActiveAccount({ currency });
-      this.$modal.show('cashier');
+      this.setActiveAccount({ currency }).then(() => {
+        this.$modal.show('cashier');
+      });
     },
     onClickCashout(currency) {
-      this.setActiveAccount({ currency });
-      this.setCashoutTrue();
-      this.$modal.show('cashier');
+      this.setActiveAccount({ currency }).then(() => {
+        this.setCashoutTrue();
+        this.$modal.show('cashier');
+      });
     },
   },
 };
