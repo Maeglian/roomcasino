@@ -56,32 +56,12 @@
           `${blockClass}-Field`,
           `${blockClass}-Input`,
           {'BaseInput-Input--error': v && v.$error},
-          {'BaseInput-Input--withVisibility': toggleVisibility},
-          [toggleVisibility ? `${blockClass}-Input--withVisibility`: ''],
           [icon ? `${blockClass}-Input--withIcon`: ''],
           ]"
-        :type="type"
+        :type="inputType"
         :placeholder="customPlaceholder ? '' : placeholder"
         v-model="val"
       />
-      <span
-        v-if="clarification"
-        class="BaseInput-Сlarification"
-        :class="`${blockClass}-Сlarification`"
-      >
-        {{ clarification }}
-      </span>
-      <svg
-        v-if="toggleVisibility"
-        class="BaseInput-Visible"
-        :class="[
-          [toggleVisibility ? `${blockClass}-Visible`: ''],
-          [toggleVisibility && passwordVisible ? `${blockClass}-Visible--isVisible`: ''],
-        ]"
-        @click="passwordVisible = !passwordVisible"
-      >
-        <use xlink:href="@/assets/img/icons.svg#visible"></use>
-      </svg>
       <span
         v-if="customPlaceholder && v && !v.required"
         class="BaseInput-Placeholder"
@@ -90,7 +70,9 @@
         {{ placeholder }}
         <span v-if="required" class="BaseInput-Placeholder--required">*</span>
       </span>
+      <slot name="afterInput-absolute"></slot>
     </div>
+    <slot name="afterInput-relative"></slot>
   </div>
 </template>
 
@@ -120,11 +102,6 @@ export default {
       isRequired: false,
       default: '',
     },
-    clarification: {
-      type: String,
-      isRequired: false,
-      default: '',
-    },
     icon: {
       type: String,
       isRequired: false,
@@ -140,28 +117,12 @@ export default {
       isRequired: false,
       default: false,
     },
-    toggleVisibility: {
-      type: Boolean,
-      isRequired: false,
-      default: false,
-    },
     v: {
       type: Object,
       required: false,
     },
   },
   mixins: [inputValidation],
-  data() {
-    return {
-      passwordVisible: false,
-    };
-  },
-  computed: {
-    type() {
-      if (this.passwordVisible) return 'text';
-      return this.inputType;
-    },
-  },
 };
 </script>
 
@@ -203,7 +164,7 @@ export default {
     }
   }
 
-  &-Visible, &-Icon, &-Сlarification {
+  &-Icon {
     position: absolute;
     z-index: 2;
   }
