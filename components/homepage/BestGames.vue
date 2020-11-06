@@ -94,7 +94,6 @@
           <Card v-for="(game, i) in gamesLimited(gamesShowed)"
             :key="i"
             :imgUrl="game.imageUrl"
-            :badge="badges[i]"
             @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
             @playDemo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
             overlay
@@ -112,37 +111,38 @@
         New games
       </div>
       <div class="Cards-Items BestGames-Cards NewGames-Cards">
-        <Card v-for="(game, i) in newGames"
+        <Card v-for="(game, i) in fakedNewGames"
           :key="i"
-          :img="game.img"
-          :badge="game.badge"
+          :imgUrl="game.imageUrl"
+          @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
+          @playDemo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
           overlay
         />
       </div>
-      <div class="BestGames-Btn">
-        <button class="Btn Btn--color" @click="showMoreGames()">
-          Load more games
-        </button>
-      </div>
+<!--      <div class="BestGames-Btn">-->
+<!--        <button class="Btn Btn&#45;&#45;color" @click="showMoreGames()">-->
+<!--          Load more games-->
+<!--        </button>-->
+<!--      </div>-->
     </section>
-    <section class="LiveGames Cards">
-      <div class="Title Title--type-h2 Cards-Title">
-        Live games
-      </div>
-      <div class="Cards-Items BestGames-Cards NewGames-Cards">
-        <Card v-for="(game, i) in liveGames"
-          :key="i"
-          :img="game.img"
-          :badge="game.badge"
-          overlay
-        />
-      </div>
-      <div class="BestGames-Btn">
-        <button class="Btn Btn--color" @click="showMoreGames()">
-          Load more games
-        </button>
-      </div>
-    </section>
+<!--    <section class="LiveGames Cards">-->
+<!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
+<!--        Live games-->
+<!--      </div>-->
+<!--      <div class="Cards-Items BestGames-Cards NewGames-Cards">-->
+<!--        <Card v-for="(game, i) in liveGames"-->
+<!--          :key="i"-->
+<!--          :img="game.img"-->
+<!--          :badge="game.badge"-->
+<!--          overlay-->
+<!--        />-->
+<!--      </div>-->
+<!--      <div class="BestGames-Btn">-->
+<!--        <button class="Btn Btn&#45;&#45;color" @click="showMoreGames()">-->
+<!--          Load more games-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    </section>-->
   </div>
 </template>
 
@@ -484,7 +484,7 @@ export default {
   },
   computed: {
     ...mapState(['width', 'games', 'gamesAreLoading']),
-    ...mapGetters(['gamesLimited', 'isLoggedIn']),
+    ...mapGetters(['gamesLimited', 'fakedNewGames', 'isLoggedIn']),
     badges() {
       return this.games.map(() => {
         const random = Math.floor(Math.random() * 4) + 1;
