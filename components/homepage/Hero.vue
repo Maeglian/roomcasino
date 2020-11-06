@@ -19,8 +19,8 @@
             <div class="Hero-Text">
               €100 <span class="Colored">+</span> 55 Free  Spins
             </div>
-            <button class="Btn Hero-Btn" @click="onClickDeposit()">
-              Deposit now
+            <button class="Btn Hero-Btn" @click="onClickBtn()">
+              {{ isLoggedIn ? 'Deposit now' : 'Sign up'}}
             </button>
           </div>
         </div>
@@ -37,8 +37,8 @@
             <div class="Hero-Text">
               €100 <span class="Colored">+</span> 55 Free  Spins
             </div>
-            <button class="Btn Hero-Btn" @click="onClickDeposit()">
-              Deposit now
+            <button class="Btn Hero-Btn" @click="onClickBtn()">
+              {{ isLoggedIn ? 'Deposit now' : 'Sign up'}}
             </button>
           </div>
         </div>
@@ -224,8 +224,8 @@ export default {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
     },
-    onClickDeposit() {
-      if (!this.isLoggedIn) this.showRegistrationDialog('login');
+    onClickBtn() {
+      if (!this.isLoggedIn) this.showRegistrationDialog('registration');
       else this.$modal.show('cashier');
     }
   },
