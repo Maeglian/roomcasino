@@ -155,46 +155,46 @@ export default {
       // ],
       winners: [
         {
-          img: 'card1.png',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/sword_of_khans.jpg',
           badge: 'best',
           sum: '€ 11.574.60',
           text: 'Wild98 just won',
         },
         {
-          img: 'card2.png',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/ravens_eye.jpg',
           badge: 'best',
           sum: '€ 8.200.66',
           text: 'Luliana just won',
         },
         {
-          img: 'card3.png',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/well_of_wonders.jpg',
           badge: 'best',
           sum: '€ 6.483.67',
           text: 'Farisha just won',
         },
         {
-          img: 'card1.png',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/jin_chans_pond_of_riches.jpg',
+          badge: 'best',
+          sum: '€ 8.200.66',
+          text: 'Luliana just won',
+        },
+        {
+          imgUrl: 'https://static.egamings.com/games/thunderkick/midas_golden_touch.jpg',
+          badge: 'best',
+          sum: '€ 6.483.67',
+          text: 'Farisha just won',
+        },
+        {
+          imgUrl: 'https://static.egamings.com/games/thunderkick/riders_of_the_storm.jpg',
           badge: 'best',
           sum: '€ 11.574.60',
           text: 'Wild98 just won',
-        },
-        {
-          img: 'card2.png',
-          badge: 'best',
-          sum: '€ 8.200.66',
-          text: 'Luliana just won',
-        },
-        {
-          img: 'card3.png',
-          badge: 'best',
-          sum: '€ 6.483.67',
-          text: 'Farisha just won',
         },
       ],
     };
   },
   computed: {
-    ...mapState(['navIsOpen']),
+    ...mapState(['navIsOpen', 'games']),
     ...mapGetters(['isLoggedIn']),
   },
   methods: {

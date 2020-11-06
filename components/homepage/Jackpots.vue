@@ -32,37 +32,37 @@ export default {
     return {
       jackpots: [
         {
-          img: 'card1.png',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/falcon_huntress.jpg',
           badge: 'best',
           sum: '€ 11.574.60',
           text: 'Wild98 just won',
         },
         {
-          img: 'card2.png',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/crystal_quest_1_deep_jungle.jpg',
           badge: 'best',
           sum: '€ 8.200.66',
           text: 'Luliana just won',
         },
         {
-          img: 'card3.png',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/tiger_rush.jpg',
           badge: 'best',
           sum: '€ 6.483.67',
           text: 'Farisha just won',
         },
         {
-          img: 'card1.png',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/beat_the_beast_krakens_lair.jpg',
           badge: 'best',
           sum: '€ 11.574.60',
           text: 'Wild98 just won',
         },
         {
-          img: 'card2.png',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/pink_elephants_2.jpg',
           badge: 'best',
           sum: '€ 8.200.66',
           text: 'Luliana just won',
         },
         {
-          img: 'card3.png',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/spectra.jpg',
           badge: 'best',
           sum: '€ 6.483.67',
           text: 'Farisha just won',

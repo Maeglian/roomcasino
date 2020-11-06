@@ -8,7 +8,7 @@
         v-for="(item, i) in items"
         :key="i"
         :badge="item.badge"
-        :img="item.img"
+        :imgUrl="item.imgUrl"
         :sum="item.sum"
         :text="item.text"
       />
