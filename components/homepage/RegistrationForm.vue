@@ -328,8 +328,9 @@ export default {
   }
 
   &-Content--step1 {
-    background-image: url('../../assets/img/auth-bg1.png');
+    background-image: url('../../assets/img/auth-bg1-large.png');
     background-repeat: no-repeat;
+    background-position: top right;
 
     @media(min-width: $screen-m) {
       background-image: url('../../assets/img/auth-bg1-large.png');
