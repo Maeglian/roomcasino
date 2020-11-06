@@ -398,6 +398,7 @@ export default {
   }
 
   &-Placeholder {
+    top: 0;
     left: 20px;
     font-weight: 700;
     line-height: 55px;
