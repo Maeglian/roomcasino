@@ -51,6 +51,7 @@ export const getters = {
   },
   isLoggedIn: (state) => !!state.token,
   authStatus: (state) => state.status,
+  fakedNewGames: (state) => [...state.games].reverse().slice(0, 12),
   gamesLimited: (state) => (limit) => state.games.slice(0, limit),
   countriesNames: (state) => Object.values(state.countriesList),
   currencyNames: (state) => Object.values(state.currencyList),
