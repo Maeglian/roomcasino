@@ -57,13 +57,13 @@
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns">
           <button
             class="Btn Btn--color CabinetPage-Btn BalancePage-DepositBtn"
-            @click="$modal.show('cashier')"
+            @click="onClickDeposit(acc.currency)"
           >
             Deposit
           </button>
           <button
             class="Btn Btn--outline CabinetPage-Btn"
-            @click="onClickCashout()"
+            @click="onClickCashout(acc.currency)"
           >
             Cashout
           </button>
@@ -138,7 +138,12 @@ export default {
   methods: {
     ...mapMutations(['setCashoutTrue']),
     ...mapActions(['setActiveAccount']),
-    onClickCashout() {
+    onClickDeposit(currency) {
+      this.setActiveAccount({ currency });
+      this.$modal.show('cashier');
+    },
+    onClickCashout(currency) {
+      this.setActiveAccount({ currency });
       this.setCashoutTrue();
       this.$modal.show('cashier');
     },
