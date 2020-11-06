@@ -1,5 +1,5 @@
 <template>
-<div class="AuthDialog-Login AuthDialog-Form">
+<form class="AuthDialog-Login AuthDialog-Form" @submit.prevent="onSubmitForm">
   <div class="AuthDialog-Content">
     <div class="AuthDialog-Title AuthDialog-LoginTitle">
       Welcome back
@@ -25,11 +25,10 @@
     type="submit"
     class="Btn Btn--full AuthDialog-Btn"
     :disabled="$v.fields.$error"
-    @click="onClickLoginBtn()"
   >
     Login
   </button>
-</div>
+</form>
 </template>
 
 <script>
@@ -69,7 +68,7 @@ export default {
   },
   methods: {
     ...mapActions(['authorize']),
-    onClickLoginBtn() {
+    onSubmitForm() {
       const payload = {};
       // eslint-disable-next-line no-restricted-syntax
       for (const key in this.fields) {
