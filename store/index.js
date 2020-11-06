@@ -186,15 +186,21 @@ export const actions = {
   },
   async registerUser({ commit }, payload) {
     commit('authRequest');
-    try {
-      // eslint-disable-next-line no-underscore-dangle
-      const res = await axios.post(`${API_HOST}/register`, payload);
-      if (res.data.code === 10001) {
-        commit('authError', res.data.message);
-      }
-    } catch (e) {
-      commit('authError', e);
-    }
+    const res = await axios.post(`${API_HOST}/register`, payload, {
+      transformResponse: [(data) => {
+        let res;
+
+        try {
+          res = JSON.parse(data);
+        } catch (error) {
+          throw Error(`[requestClient] Error parsing response JSON data - ${JSON.stringify(error)}`)
+        }
+
+        if (res.code === 0) {
+          return res.data;
+        } else commit('authError', res.message);
+      }],
+    });
   },
 
   async authorize({ state, commit, dispatch }, payload) {
