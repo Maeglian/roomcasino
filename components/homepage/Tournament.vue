@@ -12,7 +12,7 @@
         <div class="Btn Tournament-Btn">
           Participate
         </div>
-        <Counter class="Tournament-Counter" enddate="2020-11-01" />
+        <Counter class="Tournament-Counter" enddate="2020-12-01" />
       </div>
       <div class="Tournament-Table">
         <div class="Table TableBordered">
