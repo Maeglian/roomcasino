@@ -5,64 +5,16 @@
         Latest winners
       </div>
       <div class="Table TableBordered Winners-Table">
-        <div class="Table-Row">
+        <div v-for="item in items" :key="item.name" class="Table-Row">
           <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" src="@/assets/img/game1.png" alt="">
+            <img class="Winners-Avatar" :src="item.imgUrl" alt="">
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Name">
-              wild98 just won<br/>
-              in <span class="Winners-Game">Golden Ticket</span>
+              {{ item.name }} just won<br/>
+              in <span class="Winners-Game">{{ item.game }}</span>
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Money">
-            € 11.574.60
-          </div>
-        </div>
-        <div class="Table-Row">
-          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" src="@/assets/img/game2.png" alt="">
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Name">
-            Dakamu just won<br/>
-            in <span class="Winners-Game">Ozwins Jackpot</span>
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Money">
-            € 8.474.25
-          </div>
-        </div>
-        <div class="Table-Row">
-          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" src="@/assets/img/game3.png" alt="">
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Name">
-            Ioana Juliana just won<br/>
-            in <span class="Winners-Game">Dawn of Egypt</span>
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Money">
-            € 6.274.48
-          </div>
-        </div>
-        <div class="Table-Row">
-          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" src="@/assets/img/game4.png" alt="">
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Name">
-            Strike just won<br/>
-            in <span class="Winners-Game">Treasure heroes</span>
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Money">
-            € 1.933.29
-          </div>
-        </div>
-        <div class="Table-Row">
-          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" src="@/assets/img/game5.png" alt="">
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Name">
-            Farisha just won<br/>
-            in <span class="Winners-Game">Wild Robo Factory</span>
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Money">
-            € 843.90
+            € {{ item.sum }}
           </div>
         </div>
       </div>
@@ -72,64 +24,16 @@
         Latest winners
       </div>
       <div class="Table Table--bordered Winners-Table">
-        <div class="Table-Row">
+        <div v-for="item in items" :key="2 + item.name" class="Table-Row">
           <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" src="@/assets/img/game1.png" alt="">
+            <img class="Winners-Avatar" :src="item.imgUrl" alt="">
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Name">
-            wild98 just won<br/>
-            in <span class="Winners-Game">Golden Ticket</span>
+            {{ item.name }} just won<br/>
+            in <span class="Winners-Game">{{ item.game }}</span>
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Money">
-            € 11.574.60
-          </div>
-        </div>
-        <div class="Table-Row">
-          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" src="@/assets/img/game2.png" alt="">
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Name">
-            Dakamu just won<br/>
-            in <span class="Winners-Game">Ozwins Jackpot</span>
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Money">
-            € 8.474.25
-          </div>
-        </div>
-        <div class="Table-Row">
-          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" src="@/assets/img/game3.png" alt="">
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Name">
-            Ioana Juliana just won<br/>
-            in <span class="Winners-Game">Dawn of Egypt</span>
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Money">
-            € 6.274.48
-          </div>
-        </div>
-        <div class="Table-Row">
-          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" src="@/assets/img/game4.png" alt="">
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Name">
-            Strike just won<br/>
-            in <span class="Winners-Game">Treasure heroes</span>
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Money">
-            € 1.933.29
-          </div>
-        </div>
-        <div class="Table-Row">
-          <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" src="@/assets/img/game5.png" alt="">
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Name">
-            Farisha just won<br/>
-            in <span class="Winners-Game">Wild Robo Factory</span>
-          </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Money">
-            € 843.90
+            € {{ item.sum }}
           </div>
         </div>
       </div>
@@ -140,6 +44,42 @@
 <script>
 export default {
   name: 'Winners',
+  data() {
+    return {
+      items: [
+        {
+          name: 'Wild98',
+          game: 'Divine Lotus',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/divine_lotus.jpg',
+          sum: '11.574.60',
+        },
+        {
+          name: 'Dakamu',
+          game: 'Jin Chan\'s Pond of Riches',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/jin_chans_pond_of_riches.jpg',
+          sum: '8.474.25',
+        },
+        {
+          name: 'Ioana Juliana',
+          game: 'Dragon Horn',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/dragon_horn.jpg',
+          sum: '6.274.48',
+        },
+        {
+          name: 'Strike',
+          game: 'Sword of Khans',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/sword_of_khans.jpg',
+          sum: '1.933.29',
+        },
+        {
+          name: 'Farisha',
+          game: 'Ravens Eye',
+          imgUrl: 'https://static.egamings.com/games/thunderkick/ravens_eye.jpg',
+          sum: '843.90',
+        },
+      ],
+    }
+  }
 };
 </script>
 
