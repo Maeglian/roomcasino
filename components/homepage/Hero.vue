@@ -1,48 +1,28 @@
 <template>
   <section class="Hero">
     <div class="Hero-Slider">
-      <VueSlider v-bind="options">
-        <div class="Hero-Item">
-          <picture class="Hero-Image">
-            <source media="(max-width: 460px)" :srcset="require('@/assets/img/hero-bg-joker_mobile.png')">
-            <source media="(max-width: 768px)" :srcset="require('@/assets/img/hero-bg-joker_768.jpg')">
-            <source media="(max-width: 960px)" :srcset="require('@/assets/img/hero-bg-joker_960.jpg')">
-            <source media="(max-width: 1248px)" :srcset="require('@/assets/img/hero-bg-joker.jpg')">
-            <img srcset="@/assets/img/joker_1920.jpg" alt="">
-          </picture>
-          <div class="Hero-Content">
-            <div class="Title Title--type-h1 Hero-Title">
-              Sign up <span class="Colored">&</span> get <br/>
-              welcome<br>
-              bonus
-            </div>
-            <div class="Hero-Text">
-              €100 <span class="Colored">+</span> 55 Free  Spins
-            </div>
-            <button class="Btn Hero-Btn" @click="onClickBtn()">
-              {{ isLoggedIn ? 'Deposit now' : 'Sign up'}}
-            </button>
+      <div class="Hero-Item">
+        <picture class="Hero-Image">
+          <source media="(max-width: 460px)" :srcset="require('@/assets/img/hero-bg-joker_mobile.png')">
+          <source media="(max-width: 768px)" :srcset="require('@/assets/img/hero-bg-joker_768.jpg')">
+          <source media="(max-width: 960px)" :srcset="require('@/assets/img/hero-bg-joker_960.jpg')">
+          <source media="(max-width: 1248px)" :srcset="require('@/assets/img/hero-bg-joker.jpg')">
+          <img srcset="@/assets/img/joker_1920.jpg" alt="">
+        </picture>
+        <div class="Hero-Content">
+          <div class="Title Title--type-h1 Hero-Title">
+            Sign up <span class="Colored">&</span> get <br/>
+            welcome<br>
+            bonus
           </div>
+          <div class="Hero-Text">
+            €100 <span class="Colored">+</span> 55 Free  Spins
+          </div>
+          <button class="Btn Hero-Btn" @click="onClickBtn()">
+            {{ isLoggedIn ? 'Deposit now' : 'Sign up'}}
+          </button>
         </div>
-        <div class="Hero-Item">
-          <div class="Hero-Image">
-            <img src="@/assets/img/hero-bg.jpg" alt="">
-          </div>
-          <div class="Hero-Content">
-            <div class="Title Title--type-h1 Hero-Title">
-              Sign up <span class="Colored">&</span> get <br/>
-              welcome<br>
-              bonus
-            </div>
-            <div class="Hero-Text">
-              €100 <span class="Colored">+</span> 55 Free  Spins
-            </div>
-            <button class="Btn Hero-Btn" @click="onClickBtn()">
-              {{ isLoggedIn ? 'Deposit now' : 'Sign up'}}
-            </button>
-          </div>
-        </div>
-      </VueSlider>
+      </div>
       <nav class="Hero-Nav">
         <button class="Hero-NavItem" @click="toggleNav()">
           <svg class="Hero-NavIcon Toggle Toggle--colored">
@@ -147,7 +127,6 @@ import showAuthDialog from '@/mixins/showAuthDialog';
 export default {
   name: 'Hero',
   components: {
-    VueSlider,
     Prizes,
   },
   mixins: [showAuthDialog],
