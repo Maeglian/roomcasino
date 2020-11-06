@@ -1,24 +1,19 @@
 <template>
   <div class="CabinetTopbar">
-    <router-link class="CabinetTopbar-Logo" to="/">
+    <NuxtLink class="CabinetTopbar-Logo" to="/">
       <img src="@/assets/img/logo.svg" />
-    </router-link>
-    <button class="CabinetTopbar-Toggle">
-      <svg class="Toggle">
-        <use xlink:href="@/assets/img/icons.svg#toggle"></use>
-      </svg>
-    </button>
-    <router-link
+    </NuxtLink>
+    <NuxtLink
       class="CabinetTopbar-Link CabinetTopbar-Profile"
-      to="/cabinet/profile"
+      to="/cabinet/profile/general"
     >
       Profile
-    </router-link>
+    </NuxtLink>
     <div class="Nav CabinetTopbar-Nav">
-      <router-link class="CabinetTopbar-Link" to="/" exact>Home</router-link>
-      <router-link class="CabinetTopbar-Link" to="#">All games</router-link>
-      <router-link class="CabinetTopbar-Link" to="#">Promotions</router-link>
-      <router-link class="CabinetTopbar-Link" to="#">Tournaments</router-link>
+      <NuxtLink class="CabinetTopbar-Link" to="/" exact>Home</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" to="#">All games</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" to="#">Promotions</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" to="#">Tournaments</NuxtLink>
     </div>
     <div class="CabinetTopbar-User">
       <div class="CabinetTopbar-UserName">
@@ -83,14 +78,6 @@ export default {
       width: 274px / $screen-xl * 100%;
       height: 66px;
       margin-right: 46px;
-    }
-  }
-
-  &-Toggle {
-    margin-right: 10px;
-
-    @media(min-width: $screen-l) {
-      display: none;
     }
   }
 
