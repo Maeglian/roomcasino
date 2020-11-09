@@ -69,7 +69,7 @@ export default {
         },
         {
           name: 'Categories',
-          url: '#',
+          url: '/category',
           icon: 'categories_nav.svg',
         },
         {
