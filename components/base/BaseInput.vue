@@ -42,34 +42,20 @@
     >
       Password must be at least 8 characters and have one number, one small letter and one capital letter
     </div>
-    <div class="BaseInput-Wrapper">
-      <svg
-        v-if="icon"
-        class="BaseInput-Icon"
-        :class="`${blockClass}-Icon ${blockClass}-Icon--${icon}`"
-      >
-        <use :xlink:href="require('@/assets/img/icons.svg') + `#${icon}`"></use>
-      </svg>
+    <slot name="beforeInput-relative"></slot>
+    <div class="BaseInput-Wrapper" :class="wrapperClass">
+      <slot name="beforeInput-absolute"></slot>
       <input
+        :id="inputId"
         :class="[
+          inputClass,
           'BaseInput-Input',
-          `${blockClass}-Field`,
-          `${blockClass}-Input`,
           {'BaseInput-Input--error': v && v.$error},
-          [icon ? `${blockClass}-Input--withIcon`: ''],
           ]"
         :type="inputType"
-        :placeholder="customPlaceholder ? '' : placeholder"
+        :placeholder="placeholder"
         v-model="val"
       />
-      <span
-        v-if="customPlaceholder && v && !v.required"
-        class="BaseInput-Placeholder"
-        :class="`${blockClass}-Placeholder`"
-      >
-        {{ placeholder }}
-        <span v-if="required" class="BaseInput-Placeholder--required">*</span>
-      </span>
       <slot name="afterInput-absolute"></slot>
     </div>
     <slot name="afterInput-relative"></slot>
@@ -77,8 +63,6 @@
 </template>
 
 <script>
-import inputValidation from '@/mixins/inputValidation';
-
 export default {
   name: 'BaseInput',
   props: {
@@ -89,6 +73,21 @@ export default {
     },
     value: {
       type: [String, Number],
+      isRequired: false,
+      default: '',
+    },
+    inputId: {
+      type: String,
+      isRequired: false,
+      default: '',
+    },
+    inputClass: {
+      type: String,
+      isRequired: false,
+      default: '',
+    },
+    wrapperClass: {
+      type: String,
       isRequired: false,
       default: '',
     },
@@ -122,7 +121,17 @@ export default {
       required: false,
     },
   },
-  mixins: [inputValidation],
+  computed: {
+    val: {
+      get() {
+        return this.value;
+      },
+      set(value) {
+        if (this.v) this.v.$touch();
+        this.$emit('input', value);
+      },
+    },
+  },
 };
 </script>
 
@@ -154,19 +163,6 @@ export default {
     margin-bottom: 5px;
     font-size: 10px;
     color: var(--color-error);
-  }
-
-  &-Placeholder {
-    position: absolute;
-
-    &--required {
-      color: var(--color-error);
-    }
-  }
-
-  &-Icon {
-    position: absolute;
-    z-index: 2;
   }
 }
 </style>
