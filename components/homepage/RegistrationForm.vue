@@ -34,14 +34,15 @@
         >
           <BaseCheckbox
             class="AuthDialog-Checkbox"
-            blockClass="AuthDialog"
+            labelClass="AuthDialog-Label AuthDialog-Label--radio"
             :name="name"
-            :label="value"
-            :value="value"
+            v-model="field.value"
             type="radio"
-            :checked="field.value === value"
+            :value="value"
             @change="field.value = $event"
-          />
+          >
+            {{ value }}
+          </BaseCheckbox>
         </div>
       </div>
       <div v-else-if="field.type === 'date'" class="AuthDialog-Datepicker" :key="name">
@@ -67,25 +68,33 @@
       <template v-else-if="field.type === 'checkbox'">
         <BaseCheckbox
           class="AuthDialog-Checkbox"
-          blockClass="AuthDialog"
+          labelClass="AuthDialog-Label"
           :key="name"
-          :label="field.label"
-          :checked="field.value"
+          v-model="field.value"
           @change="field.value = $event"
-        />
+        >
+          <span v-html="field.label"></span>
+        </BaseCheckbox>
       </template>
       <template v-else>
         <BaseInput
           class="AuthDialog-Wrapper"
-          blockClass="AuthDialog"
           :key="name"
           :inputType="field.type"
-          :placeholder="field.placeholder"
+          inputClass="AuthDialog-Field AuthDialog-Input"
           v-model="field.value"
           :v="$v[`fieldsStep${step}`][name].value"
-          :required="field.required"
-          :custom-placeholder="true"
-        />
+        >
+          <template v-slot:beforeInput-absolute>
+            <span
+              v-if="field.required && !$v[`fieldsStep${step}`][name].value.required"
+              class="AuthDialog-Placeholder"
+            >
+              {{ field.placeholder }}
+              <span class="AuthDialog-Placeholder--required">*</span>
+            </span>
+          </template>
+        </BaseInput>
       </template>
     </template>
     <div v-if="authError" class="AuthDialog-Error">
@@ -158,7 +167,6 @@ export default {
         },
         confirmAgeAndTerms: {
           value: true,
-          name: 'confirmAgeAndTerms',
           type: 'checkbox',
           label: 'I am 18 years old and I accept the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>',
         },
@@ -171,7 +179,7 @@ export default {
           required: true,
         },
         lastName: {
-          name: 'lastName',
+          value: '',
           type: 'text',
           placeholder: 'Last Name',
           required: true,
@@ -403,11 +411,16 @@ export default {
   }
 
   &-Placeholder {
+    position: absolute;
     top: 0;
     left: 20px;
     font-weight: 700;
     line-height: 55px;
     text-transform: uppercase;
+
+    &--required {
+      color: var(--color-error);
+    }
   }
 
   &-Error {
