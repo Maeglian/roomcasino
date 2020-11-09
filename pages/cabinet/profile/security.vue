@@ -23,22 +23,38 @@
         </div>
         <BaseInput
           class="ProfilePage-Row"
-          blockClass="ProfilePage"
           inputType="password"
+          inputClass="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           v-model="oldPassword"
           :v="$v.oldPassword"
           placeholder="Old password"
           icon="password"
-        />
+        >
+          <template v-slot:beforeInput-absolute>
+            <svg
+              class="ProfilePage-Icon ProfilePage-Icon--password"
+            >
+              <use xlink:href="@/assets/img/icons.svg#password"></use>
+            </svg>
+          </template>
+        </BaseInput>
         <BaseInput
           class="ProfilePage-Row"
           blockClass="ProfilePage"
           :inputType="newPassword.inputType"
+          inputClass="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           v-model="newPassword.value"
           :v="$v.newPassword.value"
           placeholder="New password"
           icon="password"
         >
+          <template v-slot:beforeInput-absolute>
+            <svg
+              class="ProfilePage-Icon ProfilePage-Icon--password"
+            >
+              <use xlink:href="@/assets/img/icons.svg#password"></use>
+            </svg>
+          </template>
           <template v-slot:afterInput-absolute>
             <svg
               class="BaseInput-Visible ProfilePage-Visible"
@@ -53,11 +69,18 @@
           class="ProfilePage-Row"
           blockClass="ProfilePage"
           :inputType="confirmPassword.inputType"
+          inputClass="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           v-model="confirmPassword.value"
           :v="$v.confirmPassword.value"
           placeholder="Password confirm"
-          icon="password"
         >
+          <template v-slot:beforeInput-absolute>
+            <svg
+              class="ProfilePage-Icon ProfilePage-Icon--password"
+            >
+              <use xlink:href="@/assets/img/icons.svg#password"></use>
+            </svg>
+          </template>
           <template v-slot:afterInput-absolute>
             <svg
               class="ProfilePage-Visible"
@@ -305,6 +328,11 @@ export default {
     &--isVisible {
       fill: var(--color-main1);
     }
+  }
+
+  &-Icon {
+    position: absolute;
+    z-index: 2;
   }
 
   &-Icon--password {

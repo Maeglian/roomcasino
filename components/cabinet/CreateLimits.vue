@@ -17,7 +17,7 @@
     >
       <BaseInput
         class="CreateLimits-Amount"
-        blockClass="CreateLimits"
+        inputClass="CreateLimits-Input"
         v-model="limitAmount"
       >
         <template v-slot:afterInput-absolute>
