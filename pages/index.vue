@@ -1,6 +1,5 @@
 <template>
   <div>
-    <MainNav />
     <Hero />
     <BestGames />
     <Jackpots />
@@ -16,7 +15,6 @@ import BestGames from '@/components/homepage/BestGames.vue';
 import Jackpots from '@/components/homepage/Jackpots.vue';
 import Tournament from '@/components/homepage/Tournament.vue';
 import Winners from '@/components/homepage/Winners.vue';
-import MainNav from '@/components/homepage/MainNav.vue';
 import Footer from '@/components/homepage/Footer.vue';
 // import Promotions from '@/components/Promotions.vue';
 // import Questions from '@/components/Questions.vue';
@@ -24,8 +22,8 @@ import Footer from '@/components/homepage/Footer.vue';
 
 export default {
   name: 'HomePage',
+  layout: 'page',
   components: {
-    MainNav,
     Hero,
     BestGames,
     Jackpots,
