@@ -68,7 +68,6 @@
 </template>
 
 <script>
-import CabinetInput from '@/components/cabinet/CabinetInput.vue';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 import { mapGetters } from 'vuex';
@@ -79,7 +78,6 @@ const info = 'fake';
 export default {
   name: 'ProfileInfo',
   components: {
-    CabinetInput,
     BaseInput,
     BaseCheckbox
   },
