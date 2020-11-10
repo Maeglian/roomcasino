@@ -8,9 +8,9 @@
             <use xlink:href="@/assets/img/icons.svg#toggle"></use>
           </svg>
         </button>
-        <router-link class="MainNav-Logo" to="/">
+        <NuxtLink class="MainNav-Logo" to="/">
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
-        </router-link>
+        </NuxtLink>
       </div>
       <nav v-if="width >= 960" class="Nav MainNav-Links">
         <ul class="MainNav-List">
@@ -22,7 +22,7 @@
           />
         </ul>
       </nav>
-      <AuthSection />
+      <AuthSection class="MainNav-AuthSection"/>
     </div>
     <transition v-if="width < 960" name="slide-left">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
@@ -248,6 +248,14 @@ export default {
 
     @media(min-width: $screen-xl) {
       font-size: 12px;
+    }
+  }
+
+  &-AuthSection {
+    display: none;
+
+    @media(min-width: $screen-s) {
+      display: block;
     }
   }
 }
