@@ -3,15 +3,14 @@
     <NuxtLink
       v-if="!item.children"
       :to="item.url"
+      class="Nav-Name"
     >
-      <div class="Nav-Name" @click="$emit('click')">
-        <img
-          v-if="item.icon"
-          class="Icon Nav-Icon"
-          :src="require(`@/assets/img/${item.icon}`)"
-        />
-        {{ item.name }}
-      </div>
+      <img
+        v-if="item.icon"
+        class="Icon Nav-Icon"
+        :src="require(`@/assets/img/${item.icon}`)"
+      />
+      {{ item.name }}
     </NuxtLink>
     <div v-else-if="item.children && width >= 960"
          class="Nav-Item"
@@ -114,7 +113,12 @@ export default {
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-text-main);
+
     &:hover {
+      color: var(--color-main1);
+    }
+
+    &.nuxt-link-exact-active {
       color: var(--color-main1);
     }
   }
