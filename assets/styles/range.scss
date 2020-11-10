@@ -1,0 +1,52 @@
+$themeColor: var(--color-main1);
+$bgColor: var(--color-bg-lighter);
+$railBorderRadius: 0;
+$tooltipArrow: 0;
+$tooltipBorderRadius: 4px;
+$tooltipPadding: 0;
+$tooltipFontSize: 10px;
+
+@import '~vue-slider-component/lib/theme/default.scss';
+
+.vue-slider {
+  width: calc(100% - 24px) !important;
+}
+
+.vue-slider-dot-tooltip {
+  visibility: visible !important;
+}
+
+.vue-slider-dot-handle {
+  visibility: hidden !important;
+}
+
+.vue-slider-rail {
+  height: 3px !important;
+}
+
+.vue-slider-dot-tooltip {
+  top: 20px !important;
+}
+
+.vue-slider-dot-tooltip-inner {
+  width: 24px;
+  height: 24px;
+
+  @media(min-width: $screen-l) {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.vue-slider-dot-tooltip-text {
+  font-weight: 700;
+  line-height: 24px;
+
+  @media(min-width: $screen-l) {
+    line-height: 28px;
+  }
+
+  @media(max-width: $screen-xl) {
+    font-size: 11px;
+  }
+}
