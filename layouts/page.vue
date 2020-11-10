@@ -2,16 +2,14 @@
   <div>
     <MainNav />
     <Nuxt />
+    <client-only>
+      <CashierForm />
+    </client-only>
   </div>
 </template>
 
 <script>
-import MainNav from '@/components/homepage/MainNav';
-
 export default {
-  name: 'Page',
-  components: {
-    MainNav,
-  },
+  name: 'MainMenuPage',
 };
 </script>
