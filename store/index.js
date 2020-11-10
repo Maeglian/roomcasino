@@ -11,6 +11,171 @@ export const state = () => ({
   countriesList: {},
   currencyList: {},
   shouldCashout: false,
+  providers: [
+    {
+      name: 'All providers',
+    },
+    {
+      name: 'Netent',
+      icon: 'netent',
+    },
+    {
+      name: "Play'n go",
+      icon: 'go',
+    },
+    {
+      name: 'Microgaming',
+      icon: 'microgaming',
+    },
+    {
+      name: '1x2 gambing',
+      icon: 'gaming_book',
+    },
+    {
+      name: 'Amatic',
+      icon: 'amatic',
+    },
+    {
+      name: 'Belatra',
+      icon: 'belatra',
+    },
+    {
+      name: 'Spinometal',
+      icon: 'spinometal',
+    },
+    {
+      name: 'Booming games',
+      icon: 'booming',
+    },
+    {
+      name: 'Egt',
+      icon: 'egt',
+    },
+    {
+      name: 'Endorphina',
+      icon: 'endorphina',
+    },
+    {
+      name: 'Netent',
+      icon: 'netent',
+    },
+    {
+      name: "Play'n go",
+      icon: 'go',
+    },
+    {
+      name: 'Microgaming',
+      icon: 'microgaming',
+    },
+    {
+      name: '1x2 gambing',
+      icon: 'gaming_book',
+    },
+    {
+      name: 'Amatic',
+      icon: 'amatic',
+    },
+    {
+      name: 'Belatra',
+      icon: 'belatra',
+    },
+    {
+      name: 'Spinometal',
+      icon: 'spinometal',
+    },
+    {
+      name: 'Booming games',
+      icon: 'booming',
+    },
+    {
+      name: 'Egt',
+      icon: 'egt',
+    },
+    {
+      name: 'Endorphina',
+      icon: 'endorphina',
+    },
+    {
+      name: 'Netent',
+      icon: 'netent',
+    },
+    {
+      name: "Play'n go",
+      icon: 'go',
+    },
+    {
+      name: 'Microgaming',
+      icon: 'microgaming',
+    },
+    {
+      name: '1x2 gambing',
+      icon: 'gaming_book',
+    },
+    {
+      name: 'Amatic',
+      icon: 'amatic',
+    },
+    {
+      name: 'Belatra',
+      icon: 'belatra',
+    },
+    {
+      name: 'Spinometal',
+      icon: 'spinometal',
+    },
+    {
+      name: 'Booming games',
+      icon: 'booming',
+    },
+    {
+      name: 'Egt',
+      icon: 'egt',
+    },
+    {
+      name: 'Endorphina',
+      icon: 'endorphina',
+    },
+    {
+      name: 'Netent',
+      icon: 'netent',
+    },
+    {
+      name: "Play'n go",
+      icon: 'go',
+    },
+    {
+      name: 'Microgaming',
+      icon: 'microgaming',
+    },
+    {
+      name: '1x2 gambing',
+      icon: 'gaming_book',
+    },
+    {
+      name: 'Amatic',
+      icon: 'amatic',
+    },
+    {
+      name: 'Belatra',
+      icon: 'belatra',
+    },
+    {
+      name: 'Spinometal',
+      icon: 'spinometal',
+    },
+    {
+      name: 'Booming games',
+      icon: 'booming',
+    },
+    {
+      name: 'Egt',
+      icon: 'egt',
+    },
+    {
+      name: 'Endorphina',
+      icon: 'endorphina',
+    },
+  ],
   token: null,
   authError: '',
   navIsOpen: false,
@@ -51,6 +216,7 @@ export const getters = {
   },
   isLoggedIn: (state) => !!state.token,
   authStatus: (state) => state.status,
+  providersList: (state) => (startIndex) => state.providers.slice(startIndex, state.providers.length + 1),
   fakedNewGames: (state) => [...state.games].reverse().slice(0, 12),
   gamesLimited: (state) => (limit) => state.games.slice(0, limit),
   countriesNames: (state) => Object.values(state.countriesList),

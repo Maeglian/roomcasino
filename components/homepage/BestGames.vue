@@ -21,69 +21,7 @@
           </div>
         </button>
       </div>
-      <div class="BestGames-ProvidersMenu" v-click-outside="onClickOutside">
-        <button
-          class="BestGames-Tab BestGames-ChosenTab"
-          :class="{'BestGames-ChosenTab--opened': providersListIsOpen}"
-          @click="providersListIsOpen = !providersListIsOpen"
-        >
-          <img
-            v-if="providerActive.icon"
-            class="BestGames-ProviderIcon"
-            :src="require(`@/assets/img/${providerActive.icon}.svg`)"
-            alt=""
-          >
-          {{providerActive.name}}
-          <i
-            class="Arrow Tab-Arrow"
-            :class="[ providersListIsOpen ? 'Arrow--up' : 'Arrow--down' ]"
-          ></i>
-        </button>
-        <div v-if="width > 767" class="BestGames-Providers">
-          <button
-            v-for="(item, i) in providersToShow"
-            :key="providers[i].name"
-            class="BestGames-Provider"
-            :class="{'BestGames-Provider--active': providerActive.name === providers[i].name}"
-            @click="onChooseProvider(providers[i].name)"
-          >
-            <img
-              v-if="providers[i].icon"
-              class="BestGames-ProviderIcon"
-              :src="require(`@/assets/img/${providers[i].icon}.svg`)"
-              alt=""
-            >
-            {{ providers[i].name }}
-          </button>
-          <button
-            v-if="width > 767"
-            class="BestGames-Provider BestGames-Provider--more"
-            :class="{'BestGames-Provider--active': providersListIsOpen}"
-          >
-            ...
-          </button>
-        </div>
-        <Search class="BestGames-Search" />
-        <transition name="slide-up">
-          <div v-if="providersListIsOpen" class="BestGames-MoreProviders">
-            <button
-              v-for="(item, i) in moreProviders"
-              :key="i"
-              class="BestGames-AddProvider"
-              :class="{'BestGames-Provider--active': providerActive.name === item.name}"
-              @click="onChooseProvider(item.name)"
-            >
-              <img
-                v-if="item.icon"
-                class="BestGames-ProviderIcon"
-                :src="require(`@/assets/img/${item.icon}.svg`)"
-                alt=""
-              >
-              {{ item.name }}
-            </button>
-          </div>
-        </transition>
-      </div>
+      <ProvidersMenu :providerActive="providerActive" @chooseProvider="providerActive = $event" />
       <div class="Title Title--type-h2 Cards-Title">
         The best games
       </div>
@@ -147,22 +85,21 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
-import Search from '@/components/homepage/Search.vue';
-import Loader from '@/components/homepage/Loader.vue';
-import Card from '@/components/homepage/Card.vue';
+import Loader from '@/components/homepage/Loader';
+import Card from '@/components/homepage/Card';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import ProvidersMenu from '~/components/ProvidersMenu';
 
 export default {
   name: 'BestGames',
   components: {
-    Search,
+    ProvidersMenu,
     Loader,
     Card,
   },
   mixins: [showAuthDialog],
   data() {
     return {
-      providersListIsOpen: false,
       tabs: [
         {
           name: 'All games',
@@ -197,172 +134,6 @@ export default {
         name: 'All games',
         icon: 'star',
       },
-      providers: [
-        {
-          name: 'All providers',
-        },
-        {
-          name: 'Netent',
-          icon: 'netent',
-        },
-        {
-          name: "Play'n go",
-          icon: 'go',
-        },
-        {
-          name: 'Microgaming',
-          icon: 'microgaming',
-        },
-        {
-          name: '1x2 gambing',
-          icon: 'gaming_book',
-        },
-        {
-          name: 'Amatic',
-          icon: 'amatic',
-        },
-        {
-          name: 'Belatra',
-          icon: 'belatra',
-        },
-        {
-          name: 'Spinometal',
-          icon: 'spinometal',
-        },
-        {
-          name: 'Booming games',
-          icon: 'booming',
-        },
-        {
-          name: 'Egt',
-          icon: 'egt',
-        },
-        {
-          name: 'Endorphina',
-          icon: 'endorphina',
-        },
-        {
-          name: 'Netent',
-          icon: 'netent',
-        },
-        {
-          name: "Play'n go",
-          icon: 'go',
-        },
-        {
-          name: 'Microgaming',
-          icon: 'microgaming',
-        },
-        {
-          name: '1x2 gambing',
-          icon: 'gaming_book',
-        },
-        {
-          name: 'Amatic',
-          icon: 'amatic',
-        },
-        {
-          name: 'Belatra',
-          icon: 'belatra',
-        },
-        {
-          name: 'Spinometal',
-          icon: 'spinometal',
-        },
-        {
-          name: 'Booming games',
-          icon: 'booming',
-        },
-        {
-          name: 'Egt',
-          icon: 'egt',
-        },
-        {
-          name: 'Endorphina',
-          icon: 'endorphina',
-        },
-        {
-          name: 'Netent',
-          icon: 'netent',
-        },
-        {
-          name: "Play'n go",
-          icon: 'go',
-        },
-        {
-          name: 'Microgaming',
-          icon: 'microgaming',
-        },
-        {
-          name: '1x2 gambing',
-          icon: 'gaming_book',
-        },
-        {
-          name: 'Amatic',
-          icon: 'amatic',
-        },
-        {
-          name: 'Belatra',
-          icon: 'belatra',
-        },
-        {
-          name: 'Spinometal',
-          icon: 'spinometal',
-        },
-        {
-          name: 'Booming games',
-          icon: 'booming',
-        },
-        {
-          name: 'Egt',
-          icon: 'egt',
-        },
-        {
-          name: 'Endorphina',
-          icon: 'endorphina',
-        },
-        {
-          name: 'Netent',
-          icon: 'netent',
-        },
-        {
-          name: "Play'n go",
-          icon: 'go',
-        },
-        {
-          name: 'Microgaming',
-          icon: 'microgaming',
-        },
-        {
-          name: '1x2 gambing',
-          icon: 'gaming_book',
-        },
-        {
-          name: 'Amatic',
-          icon: 'amatic',
-        },
-        {
-          name: 'Belatra',
-          icon: 'belatra',
-        },
-        {
-          name: 'Spinometal',
-          icon: 'spinometal',
-        },
-        {
-          name: 'Booming games',
-          icon: 'booming',
-        },
-        {
-          name: 'Egt',
-          icon: 'egt',
-        },
-        {
-          name: 'Endorphina',
-          icon: 'endorphina',
-        },
-      ],
-      providersToShow: 4,
       providerActive: {
         name: 'All providers',
       },
@@ -492,10 +263,6 @@ export default {
         return '';
       });
     },
-    moreProviders() {
-      if (this.width < 768) return this.providers;
-      return this.providers.slice(this.providersToShow, this.providers.length + 1);
-    },
   },
   methods: {
     ...mapActions(['getGames', 'startGame']),
@@ -503,13 +270,6 @@ export default {
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
       this.getGames(this.makeQuery());
-    },
-    onChooseProvider(name) {
-      this.providerActive = this.providers.find((item) => item.name === name);
-      this.providersListIsOpen = false;
-    },
-    onClickOutside(e) {
-      if (e.target.className !== 'BestGames-ChosenTab') this.providersListIsOpen = false;
     },
     makeQuery() {
       let query = `appName=${this.$skin}&lang=en&platform=desktop`;

@@ -43,15 +43,20 @@
           </div>
       </div>
     </div>
+    <ProvidersMenu :providerActive="providerActive" @chooseProvider="providerActive = $event" />
   </section>
 </template>
 
 <script>
 import { mapState } from 'vuex';
+import ProvidersMenu from '@/components/ProvidersMenu';
 
 export default {
   name: "CategoryPage",
   layout: 'page',
+  components: {
+    ProvidersMenu
+  },
   data() {
     return {
       filters: {
@@ -95,7 +100,10 @@ export default {
           type: 'dropdown',
           values: ['All rating', 'High', 'Medium-High']
         },
-      }
+      },
+      providerActive: {
+        name: 'All providers',
+      },
     }
   },
   computed: {
@@ -152,6 +160,15 @@ export default {
 
     @media(min-width: $screen-m) {
       flex-direction: row;
+      margin-bottom: 6px;
+    }
+
+    @media(min-width: $screen-l) {
+      margin-bottom: 7px;
+    }
+
+    @media(min-width: $screen-xl) {
+      margin-bottom: 10px;
     }
   }
 }
