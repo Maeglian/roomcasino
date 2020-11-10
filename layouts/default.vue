@@ -8,44 +8,9 @@
 </template>
 
 <script>
-import { mapActions, mapMutations, mapGetters, mapState } from 'vuex';
-import axios from 'axios';
-const CashierForm = () => import('@/components/CashierForm.vue');
-
 export default {
-  name: 'App',
-  components: {
-    CashierForm,
-  },
-  mounted() {
-    this.updateWidth();
-    window.addEventListener('resize', this.updateWidth);
-    axios.interceptors.response.use(undefined, (err) => new Promise(() => {
-      // eslint-disable-next-line no-underscore-dangle,max-len
-      if (err.response.status === 401 && err.response.config && !err.response.config.__isRetryRequest) {
-        this.$store.dispatch('logout', true);
-      }
-      throw err;
-    }));
-    this.getCountriesList();
-    this.getCurrencyList();
-    if (this.isLoggedIn) {
-      axios.defaults.headers.common['X-Auth-Token'] = this.token;
-      this.getProfile();
-    }
-  },
-  computed: {
-    ...mapState(['token']),
-    ...mapGetters(['isLoggedIn']),
-  },
-  methods: {
-    ...mapMutations(['setWidth']),
-    ...mapActions(['getCountriesList', 'getCurrencyList', 'getProfile']),
-    updateWidth() {
-      this.setWidth(window.innerWidth);
-    },
-  },
-};
+  name: 'Page',
+}
 </script>
 
 <style>
