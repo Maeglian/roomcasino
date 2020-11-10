@@ -8,7 +8,7 @@
         <div class="CategoriesFilter-Title ">
           {{ filter.title }}
         </div>
-        <div
+        <button
           v-if="filter.type === 'dropdown'"
           class="CategoriesFilter-Footer"
           @click="toggleFilterDropdown(name)">
@@ -19,7 +19,7 @@
             class="ThinArrow"
             :class="[ filter.isOpen ? 'ThinArrow--up' : 'ThinArrow--down' ]"
           ></i>
-        </div>
+        </button>
         <div
           v-if="filter.type === 'range'"
           class="CategoriesFilter-Footer CategoriesFilter-Footer--center"
@@ -43,7 +43,12 @@
           </div>
       </div>
     </div>
-    <ProvidersMenu :providerActive="providerActive" @chooseProvider="providerActive = $event" />
+    <ProvidersMenu
+      class="CategoryPage-ProvidersMenu"
+      :providerActive="providerActive"
+      :insideFilters="true"
+      @chooseProvider="providerActive = $event"
+    />
   </section>
 </template>
 
@@ -171,6 +176,10 @@ export default {
       margin-bottom: 10px;
     }
   }
+
+  &-ProvidersMenu {
+    order: 0;
+  }
 }
 
 .CategoriesFilter {
@@ -208,12 +217,14 @@ export default {
 
 
   &-Title {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    width: 120px;
+    width: 90px;
     height: 100%;
     margin-right: 4px;
-    padding: 0 10px 0 16px;
+    padding-left: 16px;
+    padding-right: 10px;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
@@ -250,6 +261,10 @@ export default {
 
     @media(min-width: $screen-m) {
       height: auto;
+      padding: 0;
+    }
+
+    &--full {
       padding: 0;
     }
 
@@ -315,6 +330,15 @@ export default {
 
     @media(min-width: $screen-l) {
       font-size: 14px;
+    }
+  }
+
+  &-ChosenProvider {
+    display: flex;
+    height: 100%;
+
+    .ThinArrow {
+      margin-left: auto;
     }
   }
 }

@@ -88,7 +88,7 @@ import { mapState, mapGetters, mapActions } from 'vuex';
 import Loader from '@/components/homepage/Loader';
 import Card from '@/components/homepage/Card';
 import showAuthDialog from '@/mixins/showAuthDialog';
-import ProvidersMenu from '~/components/ProvidersMenu';
+import ProvidersMenu from '@/components/ProvidersMenu';
 
 export default {
   name: 'BestGames',
@@ -368,36 +368,6 @@ export default {
     }
   }
 
-  &-ChosenTab {
-    position: relative;
-    order: 1;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 16px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.242;
-    text-transform: uppercase;
-    color: var(--color-text-main);
-    border: none;
-
-    @media(min-width: $screen-m) {
-      display: none;
-    }
-
-    .Arrow {
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      margin-top: -2px;
-    }
-
-    .Arrow--up {
-      margin-top: -8px;
-    }
-  }
-
   &-Name {
     font-size: 9px;
     font-weight: 700;
@@ -489,151 +459,6 @@ export default {
         width: 26px;
         height: 25px;
       }
-    }
-  }
-
-  &-ProvidersMenu {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 24px;
-
-    @media(min-width: $screen-m) {
-      flex-direction: initial;
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      grid-gap: 10px;
-      margin-bottom: 34px;
-    }
-
-    @media(min-width: $screen-l) {
-      margin-bottom: 40px;
-    }
-
-    @media(min-width: $screen-xl) {
-      margin-bottom: 60px;
-    }
-  }
-
-  &-Search {
-    order: 0;
-    margin-bottom: 8px;
-    width: 100%;
-
-    @media(min-width: $screen-m) {
-      order: 2;
-      width: auto;
-      margin-bottom: 0;
-    }
-  }
-
-  &-Providers {
-    grid-column: 1/7;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 10px;
-    padding: 0;
-  }
-
-  &-MoreProviders {
-    position: absolute;
-    left: 0;
-    top: 100px;
-    z-index: 10;
-    column-count: 2;
-    width: 100%;
-    max-height: 2000px;
-    padding: 0 16px 10px;
-    background-color: var(--color-body);
-
-    @media(min-width: $screen-s) {
-      column-count: 3;
-    }
-
-    @media(min-width: $screen-m) {
-      top: 50px;
-      column-count: 5;
-    }
-
-    @media(min-width: $screen-l) {
-      top: 70px;
-    }
-  }
-
-  &-AddProvider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.18;
-    text-transform: uppercase;
-    color: var(--color-text-ghost);
-    cursor: pointer;
-  }
-
-  &-Provider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 5px;
-    font-size: 9px;
-    font-weight: 700;
-    line-height: 1.18;
-    color: var(--color-text-main);
-    text-transform: uppercase;
-    border: 2px solid var(--color-border-ghost);
-    cursor: pointer;
-
-    @media(min-width: $screen-l) {
-      padding: 15px 10px;
-      font-size: 10px;
-    }
-
-    @media(min-width: $screen-xl) {
-      padding: 17px 10px;
-      font-size: 12px;
-    }
-
-    &--active {
-      display: none;
-      color: var(--color-main1);
-
-      @media(min-width: $screen-m) {
-        display: flex;
-      }
-    }
-
-    &--more {
-      justify-self: start;
-      padding: 10px;
-      font-size: 9px;
-      letter-spacing: 0.08em;
-
-      @media(min-width: $screen-l) {
-        padding: 15px;
-        font-size: 10px;
-      }
-
-      @media(min-width: $screen-xl) {
-        padding: 17px 20px;
-        font-size: 14px;
-      }
-    }
-  }
-
-  &-ProviderIcon {
-    width: 10px;
-    margin-right: 10px;
-
-    @media(min-width: $screen-m) {
-      width: auto;
-      margin-right: 3px;
-    }
-
-    @media(min-width: $screen-l) {
-      margin-right: 6px;
     }
   }
 
