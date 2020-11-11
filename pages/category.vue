@@ -66,6 +66,7 @@
       </BaseDropdownContainer>
       <Search class="ProvidersSection-Search CategoryPage-Search" />
     </div>
+    <Games :games="games" :gamesToShow="30" />
   </section>
 </template>
 
@@ -74,6 +75,7 @@ import { mapState } from 'vuex';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import BaseDropdownContainer from '@/components/base/BaseDropdownContainer';
 import Search from '@/components/Search';
+import Games from '@/components/Games';
 
 export default {
   name: "CategoryPage",
@@ -82,6 +84,7 @@ export default {
     ProvidersMenu,
     Search,
     BaseDropdownContainer,
+    Games
   },
   data() {
     return {
@@ -133,7 +136,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['width']),
+    ...mapState(['width', 'games']),
   },
   methods: {
     onClickOutside(e) {
@@ -159,6 +162,16 @@ export default {
 
 <style lang="scss">
 .CategoryPage {
+  margin-bottom: 60px;
+
+  @media(min-width: $screen-m) {
+    margin-bottom: 80px;
+  }
+
+  @media(min-width: $screen-xl) {
+    margin-bottom: 100px;
+  }
+
   &-Title {
     margin-top: 16px;
     margin-bottom: 28px;
@@ -200,19 +213,9 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 8px;
 
     @media(min-width: $screen-m) {
       flex-direction: row;
-      margin-bottom: 6px;
-    }
-
-    @media(min-width: $screen-l) {
-      margin-bottom: 7px;
-    }
-
-    @media(min-width: $screen-xl) {
-      margin-bottom: 10px;
     }
   }
 
@@ -253,6 +256,18 @@ export default {
 
     @media(min-width: $screen-xl) {
       height: 50px;
+    }
+  }
+
+  &-ProvidersSection {
+    margin-bottom: 32px;
+
+    @media(min-width: $screen-m) {
+      margin-bottom: 30px;
+    }
+
+    @media(min-width: $screen-l) {
+      margin-bottom: 40px;
     }
   }
 }

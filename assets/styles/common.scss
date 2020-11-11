@@ -251,7 +251,6 @@ a {
 
   &-Search {
     position: relative;
-    margin-bottom: 8px;
     width: 100%;
 
     @media(min-width: $screen-m) {
@@ -260,7 +259,6 @@ a {
       bottom: 0;
       width: calc(100% / 7 - 10px);
       height: 100%;
-      margin-bottom: 0;
     }
   }
 }
