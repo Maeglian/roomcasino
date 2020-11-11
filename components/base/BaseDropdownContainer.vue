@@ -11,29 +11,44 @@ export default {
     outerClass: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     innerClass: {
       type: String,
       required: false,
-      default: ''
+      default: '',
     },
     beforeWidth: {
       type: Number,
       required: false,
+    },
+    overlay: {
+      type: Boolean,
+      required: false,
+      default: false,
     }
   },
   data() {
     return {
       isOpen: false,
+      height: 0,
+      topOffset: 0,
     }
   },
   computed: {
     ...mapState(['width']),
   },
+  mounted() {
+    const coords = this.$refs.outer.getBoundingClientRect();
+    console.log(coords);
+    this.height = coords.height;
+    this.topOffset = coords.bottom + pageYOffset;
+  },
   methods: {
     onOpen() {
       this.isOpen = !this.isOpen;
+      if (this.overlay && this.isOpen) document.body.style.overflow = "hidden";
+      if (this.overlay && !this.isOpen) document.body.style.overflow = "auto";
     },
     onClickOutside(e) {
       if (!e.target.closest('BaseDropdownContainer')) {
@@ -42,6 +57,20 @@ export default {
     }
   },
   render(h) {
+    const overlay = this.overlay && this.isOpen
+      ? h('div', {
+        attrs: {
+          class: 'BaseDropdownContainer-Overlay'
+        },
+        style: {
+          top: `${this.topOffset}px`
+        },
+        on: {
+          click: this.onOpen,
+        }
+      })
+      : null;
+
     const outer = h('button',{
       slot: 'outerContent',
       attrs: {
@@ -49,7 +78,8 @@ export default {
       },
       on: {
         click: this.onOpen,
-      }
+      },
+      ref: 'outer',
     },
       [ this.$slots.outerContent]
     );
@@ -57,6 +87,9 @@ export default {
     const inner = this.isOpen || this.width >= this.beforeWidth ? h('div', {
       attrs: {
         class: `${this.innerClass} BaseDropdownContainer-Inner`
+      },
+      style: {
+        top: `${this.height}px`
       },
     }, this.$slots.default) : null;
 
@@ -68,7 +101,7 @@ export default {
         name: 'clickOutside',
         value: this.onClickOutside
       }]
-    }, [outer, inner]);
+    }, [overlay, outer, inner]);
   },
 }
 </script>
@@ -76,6 +109,16 @@ export default {
 <style lang="scss">
 .BaseDropdownContainer {
   position: relative;
+
+  &-Overlay {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(6, 8, 30, 0.9);
+    z-index: 1;
+  }
 
   &-Inner {
     position: absolute;

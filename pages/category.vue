@@ -9,6 +9,7 @@
         innerClass="CategoryPage-FiltersDropdown"
         :beforeWidth.num="768"
         class="CategoryPage-Filters"
+        overlay
       >
         <template v-slot:outerContent>
           Filtered by
@@ -220,11 +221,9 @@ export default {
   }
 
   &-FiltersDropdown {
-    top: 54px;
-
     @media(min-width: $screen-m) {
       position: relative;
-      top: auto;
+      top: auto !important;
       display: flex;
       flex-wrap: wrap;
     }
