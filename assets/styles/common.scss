@@ -263,6 +263,91 @@ a {
   }
 }
 
+.Page {
+  margin-top: -75px;
+  padding: 0;
+
+  &-Header {
+    padding-top: 60px;
+    padding-bottom: 34px;
+
+    @media(min-width: $screen-m) {
+      padding-top: 100px;
+      padding-bottom: 37px;
+    }
+
+    @media(min-width: $screen-l) {
+      padding-top: 120px;
+      padding-bottom: 57px;
+    }
+
+    @media(min-width: $screen-xl) {
+      padding-bottom: 97px;
+    }
+  }
+
+  &-Title {
+    margin-bottom: 21px;
+
+    text-align: center;
+  }
+
+  &-Text {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+
+    @media(min-width: $screen-m) {
+      width: 550px;
+    }
+  }
+
+  &-Subtitle {
+    margin-bottom: 34px;
+    text-align: center;
+
+    @media(min-width: $screen-m) {
+      width: 550px;
+      margin-bottom: 24px;
+    }
+
+    @media(min-width: $screen-l) {
+      margin-bottom: 34px;
+    }
+
+    @media(min-width: $screen-xl) {
+      margin-bottom: 38px;
+    }
+  }
+
+  &-Card {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media(min-width: $screen-s) {
+      width: calc(50% - 8px);
+    }
+  }
+
+  &-Cards {
+    margin-bottom: 36px;
+
+    @media(min-width: $screen-s) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    @media(min-width: $screen-l) {
+      margin-bottom: 80px;
+    }
+  }
+}
+
 .v_slider__list {
   margin-bottom: 0;
 }
