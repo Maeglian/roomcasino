@@ -5,7 +5,6 @@
     <Jackpots />
     <Tournament />
     <Winners />
-    <Footer />
   </div>
 </template>
 
@@ -29,7 +28,6 @@ export default {
     Jackpots,
     Tournament,
     Winners,
-    Footer,
     // Promotions,
     // Questions,
     // Banner,

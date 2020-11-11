@@ -2,6 +2,7 @@
   <div>
     <MainNav />
     <Nuxt />
+    <Footer />
     <client-only>
       <CashierForm />
     </client-only>
