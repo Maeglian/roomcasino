@@ -45,6 +45,14 @@ button {
     }
   }
 
+  &--dark {
+    background: var(--color-bg-lighter);
+
+    &:hover {
+      background: var(--color-main1);
+    }
+  }
+
   &--outline {
     background: transparent;
     border: 2px solid var(--color-main2);
