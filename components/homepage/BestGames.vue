@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="BestGames Cards">
+    <section class="BestGames">
       <div v-if="width > 767"
        class="BestGames-Tabs"
       >
@@ -22,7 +22,7 @@
         </button>
       </div>
       <div class="ProvidersSection BestGames-Providers">
-        <Search class="ProvidersSection-Search" />
+        <Search class="ProvidersSection-Search BestGames-Search" />
         <ProvidersMenu :providerActive="providerActive" @chooseProvider="providerActive = $event" />
       </div>
       <div class="Title Title--type-h2 Cards-Title">
@@ -30,58 +30,20 @@
       </div>
       <Loader v-if="gamesAreLoading" />
       <template v-else>
-        <div class="Cards-Items BestGames-Cards">
-          <Card v-for="(game, i) in gamesLimited(gamesShowed)"
-            :key="i"
-            :imgUrl="game.imageUrl"
-            @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
-            @playDemo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
-            overlay
-          />
-        </div>
-        <div v-if="games.length > gamesShowed" class="BestGames-Btn">
-          <button class="Btn Btn--color" @click="showMoreGames()">
-            Load more games
-          </button>
-        </div>
+        <Games class="BestGames-Cards" :games="games" :gamesToShow="24" btnClass="Btn--dark" />
       </template>
     </section>
-    <section class="NewGames Cards">
+    <section class="NewGames">
       <div class="Title Title--type-h2 Cards-Title">
         New games
       </div>
-      <div class="Cards-Items BestGames-Cards NewGames-Cards">
-        <Card v-for="(game, i) in fakedNewGames"
-          :key="i"
-          :imgUrl="game.imageUrl"
-          @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
-          @playDemo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
-          overlay
-        />
-      </div>
-<!--      <div class="BestGames-Btn">-->
-<!--        <button class="Btn Btn&#45;&#45;color" @click="showMoreGames()">-->
-<!--          Load more games-->
-<!--        </button>-->
-<!--      </div>-->
+      <Games class="BestGames-Cards NewGames-Cards" :games="fakedNewGames" :gamesToShow="12" btnClass="Btn--dark" />
     </section>
-<!--    <section class="LiveGames Cards">-->
+<!--    <section class="LiveGames">-->
 <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
 <!--        Live games-->
 <!--      </div>-->
-<!--      <div class="Cards-Items BestGames-Cards NewGames-Cards">-->
-<!--        <Card v-for="(game, i) in liveGames"-->
-<!--          :key="i"-->
-<!--          :img="game.img"-->
-<!--          :badge="game.badge"-->
-<!--          overlay-->
-<!--        />-->
-<!--      </div>-->
-<!--      <div class="BestGames-Btn">-->
-<!--        <button class="Btn Btn&#45;&#45;color" @click="showMoreGames()">-->
-<!--          Load more games-->
-<!--        </button>-->
-<!--      </div>-->
+<!--      <Games class="BestGames-Cards NewGames-Cards" :games="liveGames" :gamesToShow="12" btnClass="Btn--dark" />-->
 <!--    </section>-->
   </div>
 </template>
@@ -142,19 +104,6 @@ export default {
       providerActive: {
         name: 'All providers',
       },
-      vcoConfig: {
-        handler: this.handler,
-        middleware: this.middleware,
-        events: ['dblclick', 'click'],
-        // Note: The default value is true, but in case you want to activate / deactivate
-        //       this directive dynamically use this attribute.
-        isActive: true,
-        // Note: The default value is true. See "Detecting Iframe Clicks" section
-        //       to understand why this behaviour is behind a flag.
-        detectIFrame: true,
-      },
-      gamesToShow: 24,
-      gamesShowed: 24,
       newGames: [
         {
           img: 'game1.png',
@@ -259,58 +208,15 @@ export default {
   },
   computed: {
     ...mapState(['width', 'games', 'gamesAreLoading']),
-    ...mapGetters(['gamesLimited', 'fakedNewGames', 'isLoggedIn']),
-    badges() {
-      return this.games.map(() => {
-        const random = Math.floor(Math.random() * 4) + 1;
-        if (random === 1) return 'best';
-        if (random === 2) return 'new';
-        return '';
-      });
-    },
+    ...mapGetters(['fakedNewGames', 'isLoggedIn']),
   },
   methods: {
-    ...mapActions(['getGames', 'startGame']),
+    ...mapActions(['getGames']),
     onChooseTab(i) {
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
-      this.getGames(this.makeQuery());
+      this.getGames();
     },
-    makeQuery() {
-      let query = `appName=${this.$skin}&lang=en&platform=desktop`;
-      switch (this.tabActive.name) {
-        case 'New games':
-          query += '&is_new=true';
-          break;
-        case 'Roulette':
-          query += '&categories=Roulette';
-          break;
-        case 'Card games':
-          query += '&categories=Card Games';
-          break;
-        case 'Live games':
-          query += '&categories=Live Casino';
-          break;
-        case 'Slots':
-          query += '&categories=Slot';
-          break;
-        default:
-          query += '&is_most_popular=true';
-      }
-
-      return query;
-    },
-    showMoreGames() {
-      this.gamesShowed += this.gamesToShow;
-    },
-    onClickStartGame(payload) {
-      if (!this.isLoggedIn) {
-        this.showRegistrationDialog('login');
-      } else this.startGame(payload);
-    },
-  },
-  created() {
-    this.getGames();
   },
 };
 </script>
@@ -507,6 +413,14 @@ export default {
 
     @media(min-width: $screen-xl) {
       margin-bottom: 60px;
+    }
+  }
+
+  &-Search {
+    margin-bottom: 8px;
+
+    @media(min-width: $screen-m) {
+      margin-bottom: 0;
     }
   }
 }
