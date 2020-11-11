@@ -89,6 +89,7 @@
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
 import Loader from '@/components/homepage/Loader';
+import Search from '@/components/Search';
 import Card from '@/components/homepage/Card';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
@@ -97,6 +98,7 @@ export default {
   name: 'BestGames',
   components: {
     ProvidersMenu,
+    Search,
     Loader,
     Card,
   },

@@ -73,7 +73,7 @@
 import { mapState } from 'vuex';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import BaseDropdownContainer from '@/components/base/BaseDropdownContainer';
-import Search from '~/components/homepage/Search';
+import Search from '@/components/Search';
 
 export default {
   name: "CategoryPage",

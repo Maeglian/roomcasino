@@ -100,7 +100,6 @@
 <script>
 import { mapState, mapGetters } from 'vuex';
 import toggleDropdown from '@/mixins/toggleDropdown';
-import Search from '@/components/homepage/Search';
 
 export default {
   name: 'ProvidersMenu',
@@ -115,9 +114,6 @@ export default {
       required: false,
       default: false,
     }
-  },
-  components: {
-    Search,
   },
   data() {
     return {
