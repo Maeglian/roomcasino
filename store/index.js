@@ -207,6 +207,40 @@ export const state = () => ({
     sessionId: '123',
     merchantId: '1000',
   },
+  tournaments: [
+    {
+      title: 'Weekly<br/> tournament',
+      subtitle: '€ 500 <span class="Colored">+</span> 500 Free Spins',
+      image: 'promotion1.png',
+      announce: 'Weekly tournament',
+      enddate: '2021-01-01',
+      text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+    },
+    {
+      title: 'Roomcasino<br/> friday party',
+      subtitle: '<span class="Colored">7 000</span> Free Spins<br/> every day',
+      image: 'promotion2.png',
+      announce: 'Friday party',
+      enddate: '2021-01-01',
+      text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+    },
+    {
+      title: 'Summer deluxe<br/> tournament',
+      subtitle: '<span class="Colored">€ 50 000</span> every<br/> 5th day!',
+      image: 'promotion5.png',
+      announce: 'Summer deluxe tournament',
+      enddate: '2021-01-01',
+      text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+    },
+    {
+      title: 'Two day<br/> tournament',
+      subtitle: '<span class="Colored">7 000</span> Free Spins<br/> every day',
+      image: 'promotion6.png',
+      announce: 'Two day tournament',
+      enddate: '2021-01-01',
+      text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+    },
+  ],
 });
 
 export const getters = {
