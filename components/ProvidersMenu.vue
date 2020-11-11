@@ -71,7 +71,6 @@
         ...
       </button>
     </div>
-    <Search class="ProvidersMenu-Search" />
     <transition name="slide-up">
       <div
         v-if="isOpen"
@@ -151,22 +150,12 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 24px;
 
   @media(min-width: $screen-m) {
     flex-direction: initial;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-gap: 10px;
-    margin-bottom: 34px;
-  }
-
-  @media(min-width: $screen-l) {
-    margin-bottom: 40px;
-  }
-
-  @media(min-width: $screen-xl) {
-    margin-bottom: 60px;
   }
 
   &-Providers {
@@ -175,12 +164,24 @@ export default {
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 10px;
     padding: 0;
+
+    @media(min-width: $screen-m) {
+      height: 32px;
+    }
+
+    @media(min-width: $screen-l) {
+      height: 42px;
+    }
+
+    @media(min-width: $screen-xl) {
+      height: 50px;
+    }
   }
 
   &-MoreProviders {
     position: absolute;
     left: 0;
-    top: 100px;
+    top: 55px;
     z-index: 10;
     column-count: 2;
     width: 100%;
@@ -223,7 +224,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 5px;
+    padding: 0 5px;
     font-size: 9px;
     font-weight: 700;
     line-height: 1.18;
@@ -233,12 +234,12 @@ export default {
     cursor: pointer;
 
     @media(min-width: $screen-l) {
-      padding: 15px 10px;
+      padding: 0 10px;
       font-size: 10px;
     }
 
     @media(min-width: $screen-xl) {
-      padding: 17px 10px;
+      padding: 0 10px;
       font-size: 12px;
     }
 
@@ -253,17 +254,17 @@ export default {
 
     &--more {
       justify-self: start;
-      padding: 10px;
+      padding: 0 10px;
       font-size: 9px;
       letter-spacing: 0.08em;
 
       @media(min-width: $screen-l) {
-        padding: 15px;
+        padding: 0 15px;
         font-size: 10px;
       }
 
       @media(min-width: $screen-xl) {
-        padding: 17px 20px;
+        padding: 0 20px;
         font-size: 14px;
       }
     }
@@ -283,16 +284,6 @@ export default {
     }
   }
 
-  &-Search {
-    margin-bottom: 8px;
-    width: 100%;
-
-    @media(min-width: $screen-m) {
-      width: auto;
-      margin-bottom: 0;
-    }
-  }
-
   &-Filter {
     @media(min-width: $screen-m) {
       &.CategoriesFilter {
@@ -303,7 +294,6 @@ export default {
 
   &-ChosenProvider {
     position: relative;
-    order: 1;
     display: flex;
     align-items: center;
     width: 100%;

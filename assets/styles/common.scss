@@ -246,6 +246,25 @@ a {
   }
 }
 
+.ProvidersSection {
+  position: relative;
+
+  &-Search {
+    position: relative;
+    margin-bottom: 8px;
+    width: 100%;
+
+    @media(min-width: $screen-m) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: calc(100% / 7 - 10px);
+      height: 100%;
+      margin-bottom: 0;
+    }
+  }
+}
+
 .v_slider__list {
   margin-bottom: 0;
 }

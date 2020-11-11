@@ -3,32 +3,44 @@
     <div class="Title Title--type-h1 Page-Title CategoryPage-Title">
       Game category
     </div>
-    <div class="CategoryPage-Filters">
-      <div v-for="(filter, name) in filters" class="CategoriesFilter" v-click-outside="onClickOutside">
-        <div class="CategoriesFilter-Title ">
-          {{ filter.title }}
-        </div>
-        <button
-          v-if="filter.type === 'dropdown'"
-          class="CategoriesFilter-Footer"
-          @click="toggleFilterDropdown(name)">
-          <div class="CategoriesFilter-Default">
-            {{ filter.defaultValue }}
+    <div class="ProvidersSection CategoryPage-ProvidersSection">
+      <BaseDropdownContainer
+        outerClass="CategoryPage-FiltersTitle"
+        innerClass="CategoryPage-FiltersDropdown"
+        :beforeWidth.num="768"
+        class="CategoryPage-Filters"
+      >
+        <template v-slot:outerContent>
+          Filtered by
+          <svg class="CabinetFilters-Icon" width="13" height="15">
+            <use xlink:href="@/assets/img/icons.svg#filters"></use>
+          </svg>
+        </template>
+        <div v-for="(filter, name) in filters" class="CategoriesFilter" v-click-outside="onClickOutside">
+          <div class="CategoriesFilter-Title ">
+            {{ filter.title }}
           </div>
-          <i
-            class="ThinArrow"
-            :class="[ filter.isOpen ? 'ThinArrow--up' : 'ThinArrow--down' ]"
-          ></i>
-        </button>
-        <div
-          v-if="filter.type === 'range'"
-          class="CategoriesFilter-Footer CategoriesFilter-Footer--center"
-        >
-          <VueRange
-            class="CategoriesFilter-Range"
-            v-model="filter.value"
-          />
-        </div>
+          <button
+            v-if="filter.type === 'dropdown'"
+            class="CategoriesFilter-Footer"
+            @click="toggleFilterDropdown(name)">
+            <div class="CategoriesFilter-Default">
+              {{ filter.defaultValue }}
+            </div>
+            <i
+              class="ThinArrow"
+              :class="[ filter.isOpen ? 'ThinArrow--up' : 'ThinArrow--down' ]"
+            ></i>
+          </button>
+          <div
+            v-if="filter.type === 'range'"
+            class="CategoriesFilter-Footer CategoriesFilter-Footer--center"
+          >
+            <VueRange
+              class="CategoriesFilter-Range"
+              v-model="filter.value"
+            />
+          </div>
           <div v-if="filter.type === 'dropdown'" v-show="filter.isOpen" class="CategoriesFilter-Inner">
             <BaseCheckbox
               class="CategoriesFilter-Checkbox"
@@ -41,26 +53,35 @@
               {{ val }}
             </BaseCheckbox>
           </div>
-      </div>
+        </div>
+        <ProvidersMenu
+          class="CategoryPage-ProvidersMenu"
+          :providerActive="providerActive"
+          :insideFilters="true"
+          @chooseProvider="providerActive = $event"
+        />
+        <button class="CategoriesFilter-Submit">
+          Filter
+        </button>
+      </BaseDropdownContainer>
+      <Search class="ProvidersSection-Search CategoryPage-Search" />
     </div>
-    <ProvidersMenu
-      class="CategoryPage-ProvidersMenu"
-      :providerActive="providerActive"
-      :insideFilters="true"
-      @chooseProvider="providerActive = $event"
-    />
   </section>
 </template>
 
 <script>
 import { mapState } from 'vuex';
 import ProvidersMenu from '@/components/ProvidersMenu';
+import BaseDropdownContainer from '@/components/base/BaseDropdownContainer';
+import Search from '~/components/homepage/Search';
 
 export default {
   name: "CategoryPage",
   layout: 'page',
   components: {
-    ProvidersMenu
+    ProvidersMenu,
+    Search,
+    BaseDropdownContainer,
   },
   data() {
     return {
@@ -158,10 +179,28 @@ export default {
     }
   }
 
+  &-FiltersTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 16px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-main);
+    background: var(--color-bg);
+
+    @media(min-width: $screen-m) {
+      display: none;
+    }
+  }
+
   &-Filters {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 8px;
 
     @media(min-width: $screen-m) {
       flex-direction: row;
@@ -177,8 +216,44 @@ export default {
     }
   }
 
+  &-FiltersDropdown {
+    top: 54px;
+
+    @media(min-width: $screen-m) {
+      position: relative;
+      top: auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
   &-ProvidersMenu {
-    order: 0;
+    @media(min-width: $screen-m) {
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    @media(min-width: $screen-l) {
+      margin-top: 7px;
+    }
+
+    @media(min-width: $screen-xl) {
+      margin-top: 10px;
+    }
+  }
+
+  &-Search {
+    @media(min-width: $screen-m) {
+      height: 32px;
+    }
+
+    @media(min-width: $screen-l) {
+      height: 42px;
+    }
+
+    @media(min-width: $screen-xl) {
+      height: 50px;
+    }
   }
 }
 
@@ -195,26 +270,25 @@ export default {
     justify-content: center;
     min-width: 100px;
     width: auto;
-    margin-right: 6px;
+    margin-left: 6px;
     margin-bottom: 0;
     padding: 0 16px;
     background-color: var(--color-bg);
 
-    &:last-child {
-      margin-right: 0;
+    &:first-child {
+      margin-left: 0;
     }
   }
 
   @media(min-width: $screen-l) {
     height: 80px;
-    margin-right: 7px;
+    margin-left: 7px;
     padding: 0 18px;
   }
 
   @media(min-width: $screen-xl) {
     height: 96px;
   }
-
 
   &-Title {
     flex-shrink: 0;
@@ -258,6 +332,7 @@ export default {
     height: 100%;
     padding: 0 16px;
     background-color: var(--color-bg);
+    outline: none;
 
     @media(min-width: $screen-m) {
       height: auto;
@@ -270,6 +345,14 @@ export default {
 
     &--center {
       justify-content: center;
+    }
+
+    &:focus-visible {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
+
+    &:-moz-focusring {
+
     }
   }
 
@@ -339,6 +422,22 @@ export default {
 
     .ThinArrow {
       margin-left: auto;
+    }
+  }
+
+  &-Submit {
+    width: 100%;
+    height: 55px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 55px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-main1);
+    background: var(--color-bg-lighter);
+
+    @media(min-width: $screen-m) {
+      display: none;
     }
   }
 }

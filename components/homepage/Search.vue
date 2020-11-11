@@ -37,7 +37,6 @@ export default {
 
 <style lang="scss">
 .Search {
-  position: relative;
   display: flex;
   border: 2px solid var(--color-border);
   cursor: pointer;

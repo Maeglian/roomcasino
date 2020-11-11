@@ -21,7 +21,10 @@
           </div>
         </button>
       </div>
-      <ProvidersMenu :providerActive="providerActive" @chooseProvider="providerActive = $event" />
+      <div class="ProvidersSection BestGames-Providers">
+        <Search class="ProvidersSection-Search" />
+        <ProvidersMenu :providerActive="providerActive" @chooseProvider="providerActive = $event" />
+      </div>
       <div class="Title Title--type-h2 Cards-Title">
         The best games
       </div>
@@ -486,6 +489,22 @@ export default {
       @media(min-width: $screen-l) {
         font-size: 16px;
       }
+    }
+  }
+
+  &-Providers {
+    margin-bottom: 24px;
+
+    @media(min-width: $screen-m) {
+      margin-bottom: 34px;
+    }
+
+    @media(min-width: $screen-l) {
+      margin-bottom: 40px;
+    }
+
+    @media(min-width: $screen-xl) {
+      margin-bottom: 60px;
     }
   }
 }
