@@ -81,7 +81,7 @@
 </template>
 
 <script>
-import Counter from '@/components/homepage/Counter.vue';
+import Counter from '@/components/Counter.vue';
 
 export default {
   name: 'Tournament',
