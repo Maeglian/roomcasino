@@ -74,7 +74,7 @@ export default {
         },
         {
           name: 'Promotions',
-          url: '#',
+          url: '/promotions',
           icon: 'promotions_nav.svg',
         },
         {
