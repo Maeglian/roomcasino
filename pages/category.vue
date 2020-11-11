@@ -222,10 +222,15 @@ export default {
 
   &-FiltersDropdown {
     @media(min-width: $screen-m) {
-      position: relative;
       top: auto !important;
       display: flex;
       flex-wrap: wrap;
+    }
+
+    &.BaseDropdownContainer-Inner {
+      @media(min-width: $screen-m) {
+        position: relative;
+      }
     }
   }
 
