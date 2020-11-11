@@ -8,7 +8,7 @@
         <div class="Counter-Count">
           {{currentTime.days}}
         </div>
-        <div class="Counter-Desc">
+        <div class="Counter-Text">
           Days
         </div>
       </div>
@@ -16,7 +16,7 @@
         <div class="Counter-Count">
           {{currentTime.hours}}
         </div>
-        <div class="Counter-Desc">
+        <div class="Counter-Text">
           Hours
         </div>
       </div>
@@ -24,7 +24,7 @@
         <div class="Counter-Count">
           {{currentTime.minutes}}
         </div>
-        <div class="Counter-Desc">
+        <div class="Counter-Text">
           Minutes
         </div>
       </div>
@@ -32,7 +32,7 @@
         <div class="Counter-Count">
           {{currentTime.seconds}}
         </div>
-        <div class="Counter-Desc">
+        <div class="Counter-Text">
           Seconds
         </div>
       </div>
@@ -98,11 +98,15 @@ export default {
 <style lang="scss">
 .Counter {
   &-Text {
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 300;
     line-height: 1.66;
     text-transform: uppercase;
     color: var(--color-text-ghost);
+
+    @media(min-width: $screen-l) {
+      font-size: 10px;
+    }
   }
 
   &-Content {
@@ -111,8 +115,12 @@ export default {
 
   &-Item {
     position: relative;
-    margin-right: 32px;
+    margin-right: 27px;
     text-align: center;
+
+    @media(min-width: $screen-xl) {
+      margin-right: 31px;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -121,12 +129,18 @@ export default {
     &:after {
       content: ":";
       position: absolute;
-      top: 2px;
-      right: -21px;
-      font-size: 24px;
+      top: 0;
+      right: -17px;
+      font-size: 21px;
       font-weight: 700;
       line-height: 1.18;
       color: var(--color-text-ghost);
+
+      @media(min-width: $screen-xl) {
+        top: 2px;
+        right: -18px;
+        font-size: 24px;
+      }
     }
 
     &:last-child:after {
@@ -136,30 +150,18 @@ export default {
 
   &-Count {
     position: relative;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1.18;
     color: var(--color-text-main);
     z-index: 1;
 
     @media(min-width: $screen-l) {
-      font-size: 24px;
+      font-size: 26px;
     }
 
     @media(min-width: $screen-xl) {
       font-size: 30px;
-    }
-  }
-
-  &-Desc {
-    font-size: 10px;
-    font-weight: 300;
-    line-height: 1.18;
-    text-transform: uppercase;
-    color: var(--color-text-ghost);
-
-    @media(min-width: $screen-xl) {
-      font-size: 9px;
     }
   }
 }
