@@ -1,5 +1,5 @@
 <template>
-  <section class="Page CategoryPage">
+  <section class="CategoryPage">
     <div class="Title Title--type-h1 Page-Title CategoryPage-Title">
       Game category
     </div>
