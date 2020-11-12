@@ -16,9 +16,9 @@ window.onNuxtReady((app) => {
   }));
   app.$store.dispatch('getCountriesList');
   app.$store.dispatch('getCurrencyList');
-  app.$store.dispatch('getGames');
   if (app.$store.getters.isLoggedIn) {
     axios.defaults.headers.common['X-Auth-Token'] = app.$store.state.token;
     app.$store.dispatch('getProfile');
   }
+  app.$store.dispatch('getGames');
 });
