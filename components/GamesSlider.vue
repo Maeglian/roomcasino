@@ -18,8 +18,8 @@
 
 <script>
 /* eslint-disable max-len */
-import Card from '~/components/Card.vue';
-import VueSlider from '~/components/homepage/Slider';
+import Card from '@/components/Card';
+import VueSlider from '@/components/Slider';
 
 export default {
   name: 'Prizes',

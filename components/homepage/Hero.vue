@@ -119,8 +119,8 @@
 </template>
 
 <script>
-import VueSlider from '@/components/homepage/Slider.vue';
-import GamesSlider from '@/components/GamesSlider.vue';
+import VueSlider from '@/components/Slider';
+import GamesSlider from '@/components/GamesSlider';
 import { mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
