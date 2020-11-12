@@ -265,7 +265,16 @@ a {
 
 .Page {
   margin-top: -75px;
+  margin-bottom: 60px;
   padding: 0;
+
+  @media(min-width: $screen-l) {
+    margin-bottom: 80px;
+  }
+
+  @media(min-width: $screen-xl) {
+    margin-bottom: 88px;
+  }
 
   &-Header {
     padding-top: 60px;
@@ -295,6 +304,8 @@ a {
   &-Text {
     margin-right: auto;
     margin-left: auto;
+    padding-right: 16px;
+    padding-left: 16px;
     text-align: center;
 
     @media(min-width: $screen-m) {
@@ -307,7 +318,6 @@ a {
     text-align: center;
 
     @media(min-width: $screen-m) {
-      width: 550px;
       margin-bottom: 24px;
     }
 
@@ -345,6 +355,40 @@ a {
     @media(min-width: $screen-l) {
       margin-bottom: 80px;
     }
+  }
+
+  &-Blocks {
+    @media(min-width: $screen-m) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+    }
+
+    @media(min-width: $screen-l) {
+      grid-gap: 12px;
+    }
+
+    @media(min-width: $screen-xl) {
+      grid-gap: 16px;
+    }
+  }
+
+  &-Block {
+    display: flex;
+    margin-bottom: 8px;
+    padding: 24px;
+    background: var(--color-bg);
+
+    @media(min-width: $screen-m) {
+      margin-bottom: 0;
+      padding: 30px;
+    }
+  }
+
+  &-Number {
+    margin-right: 16px;
+    font-size: 14px;
+    color: var(--color-text-main);
   }
 }
 
