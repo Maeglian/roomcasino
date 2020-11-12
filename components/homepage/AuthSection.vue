@@ -8,10 +8,10 @@
               {{ user.firstName || user.email }}
             </span>
             <span class="AuthSection-Spent">
-              8 {{ activeAccount.currency || user.currency }} /
+              8 PC /
             </span>
             <span class="AuthSection-Left">
-               25 {{ activeAccount.currency || user.currency}}
+               25 PC
             </span>
           </div>
           <div class="AuthSection-UserBalance">
