@@ -50,7 +50,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
-import Loader from '@/components/homepage/Loader';
+import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import Card from '@/components/Card';
 import showAuthDialog from '@/mixins/showAuthDialog';
