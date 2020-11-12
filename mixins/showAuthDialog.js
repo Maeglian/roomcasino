@@ -1,7 +1,10 @@
 import AuthDialog from '@/components/homepage/AuthDialog.vue';
-import { mapMutations } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 
 export default {
+  computed: {
+    ...mapGetters(['isLoggedIn']),
+  },
   methods: {
     ...mapMutations(['removeAuthError']),
     showRegistrationDialog(authType) {
@@ -16,5 +19,9 @@ export default {
     afterCloseAuthDialog() {
       this.removeAuthError();
     },
+    onClickBtn() {
+      if (!this.isLoggedIn) this.showRegistrationDialog('registration');
+      else this.$modal.show('cashier');
+    }
   },
 };

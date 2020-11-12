@@ -121,7 +121,7 @@
 <script>
 import VueSlider from '@/components/homepage/Slider.vue';
 import Prizes from '@/components/homepage/Prizes.vue';
-import { mapMutations, mapState, mapGetters } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
@@ -195,7 +195,6 @@ export default {
   },
   computed: {
     ...mapState(['navIsOpen', 'games']),
-    ...mapGetters(['isLoggedIn']),
   },
   methods: {
     ...mapMutations(['openNav', 'closeNav']),
@@ -203,10 +202,6 @@ export default {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
     },
-    onClickBtn() {
-      if (!this.isLoggedIn) this.showRegistrationDialog('registration');
-      else this.$modal.show('cashier');
-    }
   },
 };
 </script>
