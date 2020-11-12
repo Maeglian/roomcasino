@@ -2,10 +2,6 @@ button {
   padding: 0;
   background: none;
   border: none;
-
-  &:not(:focus) {
-    outline: none;
-  }
 }
 
 .Btn {
