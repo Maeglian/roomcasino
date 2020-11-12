@@ -59,7 +59,7 @@
       </nav>
     </div>
     <div class="Hero-Footer">
-      <Prizes class="Hero-Winners" :items="winners" title="Last winners" />
+      <GamesSlider class="Hero-Winners" :items="winners" title="Last winners" />
       <div class="Advantages Hero-Advantages">
         <div class="Advantages-Item">
           <div class="Advantages-Icon">
@@ -120,14 +120,14 @@
 
 <script>
 import VueSlider from '@/components/homepage/Slider.vue';
-import Prizes from '@/components/homepage/Prizes.vue';
+import GamesSlider from '@/components/GamesSlider.vue';
 import { mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'Hero',
   components: {
-    Prizes,
+    GamesSlider,
   },
   mixins: [showAuthDialog],
   data() {

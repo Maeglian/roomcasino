@@ -6,7 +6,7 @@
           Our <span class="Colored">Jasckpot</span> <br/>
           in Roomcasino
         </div>
-        <Prizes class="Jackpots-Winners" :items="jackpots" title="Daily jackpots" />
+        <GamesSlider class="Jackpots-Winners" :items="jackpots" title="Daily jackpots" />
       </div>
       <div class="Jackpots-Mega">
         <div class="Jackpots-Text">
@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import Prizes from '@/components/homepage/Prizes.vue';
+import GamesSlider from '@/components/GamesSlider.vue';
 
 export default {
   name: 'Jackpots',
   components: {
-    Prizes,
+    GamesSlider,
   },
   data() {
     return {
