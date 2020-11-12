@@ -64,7 +64,7 @@ export default {
       navItems: [
         {
           name: 'Lobby',
-          url: '#',
+          url: '/',
           icon: 'lobby_nav.svg',
         },
         {
