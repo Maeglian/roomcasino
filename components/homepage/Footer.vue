@@ -2,40 +2,40 @@
   <section class="Footer">
     <Partners class="Footer-Partners" />
     <nav class="Nav Footer-Nav">
-      <router-link class="Footer-Logo" to="/">
+      <NuxtLink class="Footer-Logo" to="/">
         <img src="@/assets/img/logo.svg" />
-      </router-link>
+      </NuxtLink>
       <div class="Footer-Links">
-        <router-link class="Link Footer-Link" to="/promotions">
+        <NuxtLink class="Link Footer-Link" to="/promotions">
           Promotion
-        </router-link>
-        <router-link class="Link Footer-Link" to="/vip">
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/vip">
           VIP rewards
-        </router-link>
-        <router-link class="Link Footer-Link" to="/payment-methods">
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/payment-methods">
           Payment methods
-        </router-link>
-        <router-link class="Link Footer-Link" to="/payment-options">
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/payment-options">
           Payment options
-        </router-link>
-        <router-link class="Link Footer-Link" to="/responsible-gamings">
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/responsible-gamings">
           Responsible gaming
-        </router-link>
-        <router-link class="Link Footer-Link" to="/terms-and-conditions">
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/terms-and-conditions">
           Terms and conditions
-        </router-link>
-        <router-link class="Link Footer-Link" to="/bonus-policy">
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/bonus-policy">
           Bonus policy
-        </router-link>
-        <router-link class="Link Footer-Link" to="/privacy-policy">
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/privacy-policy">
           Privacy policy
-        </router-link>
-        <router-link class="Link Footer-Link" to="/about-us">
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/about-us">
           About us
-        </router-link>
-        <router-link class="Link Footer-Link" to="/faq">
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/faq">
           Faq
-        </router-link>
+        </NuxtLink>
       </div>
       <div class="Footer-Lang">
         <img src="@/assets/img/eng.png" alt="">
@@ -123,6 +123,10 @@ export default {
 
     &:last-child {
       margin-right: 0;
+    }
+
+    &.nuxt-link-exact-active {
+      color: var(--color-main1);
     }
 
     @media(min-width: $screen-m) {
