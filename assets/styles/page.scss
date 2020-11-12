@@ -1,0 +1,135 @@
+.Page {
+  margin-top: -75px;
+  margin-bottom: 60px;
+  padding: 0;
+
+  @media(min-width: $screen-l) {
+    margin-bottom: 80px;
+  }
+
+  @media(min-width: $screen-xl) {
+    margin-bottom: 88px;
+  }
+
+  &-Header {
+    padding-top: 60px;
+    padding-bottom: 34px;
+
+    @media(min-width: $screen-m) {
+      padding-top: 100px;
+      padding-bottom: 37px;
+    }
+
+    @media(min-width: $screen-l) {
+      padding-top: 120px;
+      padding-bottom: 57px;
+    }
+
+    @media(min-width: $screen-xl) {
+      padding-bottom: 97px;
+    }
+  }
+
+  &-Title {
+    margin-bottom: 21px;
+
+    text-align: center;
+  }
+
+  &-Text {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 16px;
+    padding-left: 16px;
+    text-align: center;
+
+    @media(min-width: $screen-m) {
+      width: 550px;
+    }
+  }
+
+  &-Subtitle {
+    margin-bottom: 34px;
+    text-align: center;
+
+    @media(min-width: $screen-m) {
+      margin-bottom: 24px;
+    }
+
+    @media(min-width: $screen-l) {
+      margin-bottom: 34px;
+    }
+
+    @media(min-width: $screen-xl) {
+      margin-bottom: 38px;
+    }
+  }
+
+  &-Card {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media(min-width: $screen-s) {
+      width: calc(50% - 8px);
+    }
+  }
+
+  &-Cards {
+    margin-bottom: 36px;
+
+    @media(min-width: $screen-s) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    @media(min-width: $screen-l) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &-Blocks {
+    @media(min-width: $screen-m) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+    }
+
+    @media(min-width: $screen-l) {
+      grid-gap: 12px;
+    }
+
+    @media(min-width: $screen-xl) {
+      grid-gap: 16px;
+    }
+  }
+
+  &-Block {
+    display: flex;
+    margin-bottom: 8px;
+    padding: 24px;
+    background: var(--color-bg);
+
+    @media(min-width: $screen-m) {
+      margin-bottom: 0;
+      padding: 30px;
+    }
+  }
+
+  &-Number {
+    margin-right: 16px;
+    font-size: 14px;
+    color: var(--color-text-main);
+  }
+
+  &--full {
+    min-width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+}
