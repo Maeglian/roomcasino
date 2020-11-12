@@ -100,7 +100,7 @@ export default {
     background-image: url('../../assets/img/jackpot-bg_1248.png');
   }
 
-  @media(min-width: $screen-xxl) {
+  @media(min-width: $screen-xxxl) {
     background-image: url('../../assets/img/jackpot-bg_1920.png');
   }
 
