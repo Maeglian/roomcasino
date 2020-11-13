@@ -198,6 +198,7 @@ export const state = () => ({
     },
   ],
   gamesAreLoading: false,
+  winnersAreLoading: false,
   errors: {},
   user: {},
   currency: 'eur',
@@ -241,6 +242,141 @@ export const state = () => ({
       text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
     },
   ],
+  currentTournamentWinners: [
+    {
+      id: 1,
+      name: 'Natacool',
+      points: 3422,
+      prize: '$ 10 000, 00',
+    },
+    {
+      id: 2,
+      name: 'Fire lightning 12',
+      points: 2210,
+      prize: '$ 5 000, 00',
+    },
+    {
+      id: 3,
+      name: 'Dakamu',
+      points: 1012,
+      prize: '$ 3 000, 00',
+    },
+    {
+      id: 4,
+      name: 'Ioana Juliana',
+      points: 840,
+      prize: '520 CP',
+    },
+    {
+      id: 5,
+      name: 'Fire lightning 11',
+      points: 720,
+      prize: '500 CP',
+    },
+    {
+      id: 6,
+      name: 'Dakamu',
+      points: 640,
+      prize: '500 CP',
+    },
+    {
+      id: 7,
+      name: 'Natacool',
+      points: 530,
+      prize: '500 CP',
+    },
+    {
+      id: 8,
+      name: 'Ioana Juliana',
+      points: 420,
+      prize: '500 CP',
+    },
+    {
+      id: 9,
+      name: 'Zzdeb',
+      points: 380,
+      prize: '500 CP',
+    },
+    {
+      id: 10,
+      name: 'Fire ligtning',
+      points: 260,
+      prize: '500 CP',
+    },
+  ],
+  previousTournamentWinners: [
+    {
+      id: 1,
+      name: 'Thunderbird',
+      points: 3850,
+      prize: '$ 12 000, 00',
+    },
+    {
+      id: 2,
+      name: 'Fire lightning 12',
+      points: 2210,
+      prize: '$ 5 000, 00',
+    },
+    {
+      id: 3,
+      name: 'Dakamu',
+      points: 1012,
+      prize: '$ 3 000, 00',
+    },
+    {
+      id: 4,
+      name: 'Ioana Juliana',
+      points: 840,
+      prize: '520 CP',
+    },
+    {
+      id: 5,
+      name: 'Fire lightning 11',
+      points: 720,
+      prize: '500 CP',
+    },
+    {
+      id: 6,
+      name: 'Dakamu',
+      points: 640,
+      prize: '500 CP',
+    },
+    {
+      id: 7,
+      name: 'Natacool',
+      points: 530,
+      prize: '500 CP',
+    },
+    {
+      id: 8,
+      name: 'Ioana Juliana',
+      points: 420,
+      prize: '500 CP',
+    },
+    {
+      id: 9,
+      name: 'Zzdeb',
+      points: 380,
+      prize: '500 CP',
+    },
+    {
+      id: 10,
+      name: 'Fire ligtning',
+      points: 260,
+      prize: '500 CP',
+    },
+  ],
+  terms: [
+    'You begin to participate in the VIP program after making your first deposit.',
+    'CP is credited at the rate of 1 CP for every $ 12.5, 12.5 EUR, 15 CAD, 15 AUD, 15 NZD, 125 NOK, 325 CZK, 200 ZAR, 50 PLN bids.',
+    'Exchange CP - 1 $, 1 EUR, 1.25 CAD, 1.25 AUD, 1.25 NZD, 10 NOK, 25 CZK, 17 ZAR, 4 PLN for 100 CP.',
+    'All free spins are issued with a wager x10. All cash prizes are issued with wagering x1.',
+    'Funds received when exchanging CP for real money are charged with wager x1.',
+    'All prizes and free spins will be issued within 24 hours after the player has reached the VIP level.',
+    'All prizes and free spins will be issued within 24 hours after the player has reached the VIP level.',
+    'RoomCasino reserves the right to change the terms of the VIP program at any time.',
+    'All free spins are issued with a wager x10. All cash prizes are issued with wagering x1.'
+  ],
 });
 
 export const getters = {
@@ -253,6 +389,7 @@ export const getters = {
   providersList: (state) => (startIndex) => state.providers.slice(startIndex, state.providers.length + 1),
   fakedNewGames: (state) => [...state.games].reverse().slice(0, 12),
   gamesLimited: (state) => (limit) => state.games.slice(0, limit),
+  limitedTournamentWinners: (state) => (limit) => state.currentTournamentWinners.slice(0, limit),
   countriesNames: (state) => Object.values(state.countriesList),
   currencyNames: (state) => Object.values(state.currencyList),
   userInfo: (state) => {
