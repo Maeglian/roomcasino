@@ -59,7 +59,12 @@
       </nav>
     </div>
     <div class="Hero-Footer">
-      <GamesSlider class="Hero-Winners" :items="winners" title="Last winners" />
+      <GamesSlider
+        class="Hero-Winners GamesSlider--winners"
+        :items="winners"
+        :sliderOptions="winnersSliderOptions"
+        title="Last winners"
+      />
       <div class="Advantages Hero-Advantages">
         <div class="Advantages-Item">
           <div class="Advantages-Icon">
@@ -155,42 +160,48 @@ export default {
       // ],
       winners: [
         {
-          imgUrl: 'https://static.egamings.com/games/thunderkick/sword_of_khans.jpg',
+          imageUrl: 'https://static.egamings.com/games/thunderkick/sword_of_khans.jpg',
           badge: 'best',
           sum: '€ 11.574.60',
           text: 'Wild98 just won',
         },
         {
-          imgUrl: 'https://static.egamings.com/games/thunderkick/ravens_eye.jpg',
+          imageUrl: 'https://static.egamings.com/games/thunderkick/ravens_eye.jpg',
           badge: 'best',
           sum: '€ 8.200.66',
           text: 'Luliana just won',
         },
         {
-          imgUrl: 'https://static.egamings.com/games/thunderkick/well_of_wonders.jpg',
+          imageUrl: 'https://static.egamings.com/games/thunderkick/well_of_wonders.jpg',
           badge: 'best',
           sum: '€ 6.483.67',
           text: 'Farisha just won',
         },
         {
-          imgUrl: 'https://static.egamings.com/games/thunderkick/jin_chans_pond_of_riches.jpg',
+          imageUrl: 'https://static.egamings.com/games/thunderkick/jin_chans_pond_of_riches.jpg',
           badge: 'best',
           sum: '€ 8.200.66',
           text: 'Luliana just won',
         },
         {
-          imgUrl: 'https://static.egamings.com/games/thunderkick/midas_golden_touch.jpg',
+          imageUrl: 'https://static.egamings.com/games/thunderkick/midas_golden_touch.jpg',
           badge: 'best',
           sum: '€ 6.483.67',
           text: 'Farisha just won',
         },
         {
-          imgUrl: 'https://static.egamings.com/games/thunderkick/riders_of_the_storm.jpg',
+          imageUrl: 'https://static.egamings.com/games/thunderkick/riders_of_the_storm.jpg',
           badge: 'best',
           sum: '€ 11.574.60',
           text: 'Wild98 just won',
         },
       ],
+      winnersSliderOptions: {
+        items: 3,
+        loop: true,
+        nav: true,
+        margin: 10,
+      },
     };
   },
   computed: {

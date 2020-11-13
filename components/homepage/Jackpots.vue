@@ -3,10 +3,15 @@
     <div class="Wrapper Jackpots-Wrapper">
       <div class="Jackpots-Daily">
         <div class="Title Title--type-h1 Jackpots-Title">
-          Our <span class="Colored">Jasckpot</span> <br/>
+          Our <span class="Colored">Jackpot</span> <br/>
           in Roomcasino
         </div>
-        <GamesSlider class="Jackpots-Winners" :items="jackpots" title="Daily jackpots" />
+        <GamesSlider
+          class="Jackpots-Winners GamesSlider--winners"
+          :items="jackpots"
+          :sliderOptions="winnersSliderOptions"
+          title="Daily jackpots"
+        />
       </div>
       <div class="Jackpots-Mega">
         <div class="Jackpots-Text">
@@ -32,42 +37,48 @@ export default {
     return {
       jackpots: [
         {
-          imgUrl: 'https://static.egamings.com/games/thunderkick/falcon_huntress.jpg',
+          imageUrl: 'https://static.egamings.com/games/thunderkick/falcon_huntress.jpg',
           badge: 'best',
           sum: '€ 11.574.60',
           text: 'Wild98 just won',
         },
         {
-          imgUrl: 'https://static.egamings.com/games/thunderkick/crystal_quest_1_deep_jungle.jpg',
+          imageUrl: 'https://static.egamings.com/games/thunderkick/crystal_quest_1_deep_jungle.jpg',
           badge: 'best',
           sum: '€ 8.200.66',
           text: 'Luliana just won',
         },
         {
-          imgUrl: 'https://static.egamings.com/games/thunderkick/tiger_rush.jpg',
+          imageUrl: 'https://static.egamings.com/games/thunderkick/tiger_rush.jpg',
           badge: 'best',
           sum: '€ 6.483.67',
           text: 'Farisha just won',
         },
         {
-          imgUrl: 'https://static.egamings.com/games/thunderkick/beat_the_beast_krakens_lair.jpg',
+          imageUrl: 'https://static.egamings.com/games/thunderkick/beat_the_beast_krakens_lair.jpg',
           badge: 'best',
           sum: '€ 11.574.60',
           text: 'Wild98 just won',
         },
         {
-          imgUrl: 'https://static.egamings.com/games/thunderkick/pink_elephants_2.jpg',
+          imageUrl: 'https://static.egamings.com/games/thunderkick/pink_elephants_2.jpg',
           badge: 'best',
           sum: '€ 8.200.66',
           text: 'Luliana just won',
         },
         {
-          imgUrl: 'https://static.egamings.com/games/thunderkick/spectra.jpg',
+          imageUrl: 'https://static.egamings.com/games/thunderkick/spectra.jpg',
           badge: 'best',
           sum: '€ 6.483.67',
           text: 'Farisha just won',
         },
       ],
+      winnersSliderOptions: {
+        items: 3,
+        loop: true,
+        nav: true,
+        margin: 10,
+      },
     };
   },
 };
