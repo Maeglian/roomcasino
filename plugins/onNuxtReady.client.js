@@ -1,10 +1,9 @@
 import axios from 'axios';
+import { throttle } from './../utils/helpers'
 
 window.onNuxtReady((app) => {
   console.log(app.$store);
-  const updateWidth = () => {
-    app.$store.commit('setWidth', window.innerWidth);
-  };
+  const updateWidth = throttle(() => app.$store.commit('setWidth', window.innerWidth), 150);
   updateWidth();
   window.addEventListener('resize', updateWidth);
   axios.interceptors.response.use(undefined, (err) => new Promise(() => {
