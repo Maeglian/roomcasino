@@ -10,6 +10,7 @@ export const state = () => ({
   status: '',
   countriesList: {},
   currencyList: {},
+  categories: [],
   shouldCashout: false,
   providers: [
     {
@@ -414,6 +415,9 @@ export const mutations = {
   closeNav: (state) => {
     state.navIsOpen = false;
   },
+  setCategories: (state, payload) => {
+    state.categories = payload;
+  },
   setWidth: (state, payload) => {
     state.width = payload;
   },
@@ -601,6 +605,15 @@ export const actions = {
       // eslint-disable-next-line no-underscore-dangle
       const res = await axios.get(`${API_HOST}/currencyList`);
       commit('setCurrencyList', res.data.data.currencyList);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+  async getCategoriesList({ commit }) {
+    try {
+      // eslint-disable-next-line no-underscore-dangle
+      const res = await axios.get(`${API_HOST}/categoryList`);
+      commit('setCategories', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
     }
