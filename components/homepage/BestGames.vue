@@ -42,18 +42,18 @@
         <div v-if="width > 767" class="BestGames-Providers">
           <button
             v-for="(item, i) in providersToShow"
-            :key="providers[i].name"
+            :key="fakeProviders[i].name"
             class="BestGames-Provider"
-            :class="{'BestGames-Provider--active': providerActive.name === providers[i].name}"
-            @click="onChooseProvider(providers[i].name)"
+            :class="{'BestGames-Provider--active': providerActive.name === fakeProviders[i].name}"
+            @click="onChooseProvider(fakeProviders[i].name)"
           >
             <img
-              v-if="providers[i].icon"
+              v-if="fakeProviders[i].icon"
               class="BestGames-ProviderIcon"
-              :src="require(`@/assets/img/${providers[i].icon}.svg`)"
+              :src="require(`@/assets/img/${fakeProviders[i].icon}.svg`)"
               alt=""
             >
-            {{ providers[i].name }}
+            {{ fakeProviders[i].name }}
           </button>
           <button
             v-if="width > 767"
@@ -197,6 +197,15 @@ export default {
         name: 'All games',
         icon: 'star',
       },
+      fakeProviders: [
+        {
+          name: 'All providers',
+        },
+        {
+          name: 'Thunderkick',
+          icon: 'thunderkick',
+        },
+      ],
       providers: [
         {
           name: 'All providers',
@@ -362,7 +371,7 @@ export default {
           icon: 'endorphina',
         },
       ],
-      providersToShow: 4,
+      providersToShow: 2,
       providerActive: {
         name: 'All providers',
       },
@@ -493,7 +502,7 @@ export default {
       });
     },
     moreProviders() {
-      if (this.width < 768) return this.providers;
+      if (this.width < 768) return this.fakeProviders;
       return this.providers.slice(this.providersToShow, this.providers.length + 1);
     },
   },
@@ -505,7 +514,7 @@ export default {
       this.getGames(this.makeQuery());
     },
     onChooseProvider(name) {
-      this.providerActive = this.providers.find((item) => item.name === name);
+      this.providerActive = this.fakeProviders.find((item) => item.name === name);
       this.providersListIsOpen = false;
     },
     onClickOutside(e) {
@@ -869,6 +878,7 @@ export default {
 
     @media(min-width: $screen-m) {
       width: auto;
+      max-width: 20px;
       margin-right: 3px;
     }
 
