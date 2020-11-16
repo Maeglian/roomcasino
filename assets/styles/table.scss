@@ -1,19 +1,6 @@
-.Table {
-  display: table;
-  width: 100%;
-
-  &-Row {
-    display: table-row;
-  }
-
-  &-Cell {
-    display: table-cell;
-  }
-}
-
 .TableBordered {
   &-Cell {
-    padding: 10px;
+    padding: 7px;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-text-ghost);
@@ -24,9 +11,34 @@
       padding-right: 0;
       text-align: right;
     }
+
+    @media(min-width: $screen-m) {
+      padding: 10px;
+    }
   }
 
   &-Th {
     color: var(--color-text-main);
+  }
+}
+
+.Table {
+  display: table;
+  width: 100%;
+
+  &-Row {
+    display: table-row;
+  }
+
+  &-Cell {
+    display: table-cell;
+
+    &--enlighted {
+      color: var(--color-main1);
+    }
+
+    &--rightAlign {
+      text-align: right;
+    }
   }
 }
