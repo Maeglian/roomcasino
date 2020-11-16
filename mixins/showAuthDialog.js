@@ -11,7 +11,7 @@ export default {
       this.removeAuthError();
       this.$modal.show(AuthDialog,
         { authType },
-        { width: 418, height: 'auto', adaptive: true },
+        { width: 418, height: 'auto', adaptive: true, scrollable: true },
         {
           'before-close': this.afterCloseAuthDialog,
         });
