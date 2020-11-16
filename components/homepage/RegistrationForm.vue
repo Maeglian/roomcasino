@@ -66,7 +66,7 @@
           errorClass="AuthDialog-Error"
           :key="itemName"
           :inputType="item.type"
-          :inputClass="[$v[`fieldsStep${step}`][name].$dirty && $v[`fieldsStep${step}`][name].$invalid ? 'BaseInput-Input--error AuthDialog-Field AuthDialog-Input' : 'AuthDialog-Field AuthDialog-Input']"
+          :inputClass="$v[`fieldsStep${step}`][name].parts.$dirty && $v[`fieldsStep${step}`][name].$invalid ? 'BaseInput-Input--error AuthDialog-Field AuthDialog-Input' : 'AuthDialog-Field AuthDialog-Input'"
           v-model="item.value"
           :v="$v[`fieldsStep${step}`][name].parts[itemName].value"
         >
@@ -139,7 +139,7 @@ import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapActions, mapGetters, mapState } from 'vuex';
 import moment from 'moment';
 import {
-  required, email, minLength, maxLength, numeric, between, helpers,
+  required, email, minLength, maxLength, numeric, helpers,
 } from 'vuelidate/lib/validators';
 
 const Datepicker = () => import('vuejs-datepicker');
@@ -265,7 +265,6 @@ export default {
           required: true,
           autocorrect: "off",
           autocomplete: "postal-code",
-          pattern: "\d*"
         },
       },
     };
@@ -362,6 +361,7 @@ export default {
       postalCode: {
         value: {
           required,
+          numeric,
           minLength: minLength(1),
           maxLength: maxLength(100),
         },

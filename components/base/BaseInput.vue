@@ -42,6 +42,13 @@
     >
       Must be at least 8 chars with 1 number, 1 small letter and 1 capital letter
     </div>
+    <div
+      v-if="v && v.numeric === false"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      Must be numeric
+    </div>
     <slot name="beforeInput-relative"></slot>
     <div class="BaseInput-Wrapper" :class="wrapperClass">
       <slot name="beforeInput-absolute"></slot>
@@ -57,7 +64,6 @@
         v-model="val"
         :autocorrect="autocorrect"
         :autocomplete="autocomplete"
-        :pattern="pattern"
       />
       <slot name="afterInput-absolute"></slot>
     </div>
@@ -112,10 +118,6 @@ export default {
       isRequired: false,
     },
     autocomplete: {
-      type: String,
-      isRequired: false,
-    },
-    pattern: {
       type: String,
       isRequired: false,
     },
