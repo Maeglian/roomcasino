@@ -4,7 +4,8 @@
     <div class="AuthDialog-Title AuthDialog-LoginTitle">
       Welcome back
     </div>
-    <BaseInput
+    <div class="AuthDialog-Fields">
+      <BaseInput
       v-for="(field, name) in fields"
       :key="name"
       class="AuthDialog-Row"
@@ -16,11 +17,12 @@
       :v="$v.fields[name].value"
 
     />
-    <div v-if="authError" class="AuthDialog-Error">
-      {{ authError }}
-    </div>
-    <div class="AuthDialog-Link">
-      <a href="#" class="AuthDialog-Link">Forgot Password?</a>
+      <div class="AuthDialog-Link">
+        <a href="#" class="AuthDialog-Link">Forgot Password?</a>
+      </div>
+      <div v-if="authError" class="AuthDialog-Error AuthDialog-Error--login">
+        {{ authError }}
+      </div>
     </div>
   </div>
   <button

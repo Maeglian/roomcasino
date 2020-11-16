@@ -117,7 +117,7 @@
         </BaseInput>
       </template>
     </template>
-    <div v-if="authError" class="AuthDialog-Error">
+    <div v-if="authError" class="AuthDialog-Error AuthDialog-Error--registration">
       {{ authError }}
     </div>
   </div>
@@ -460,10 +460,6 @@ export default {
     }
   }
 
-  &-Datepicker {
-    border: none;
-  }
-
   &-Dropdown {
     border: 2px solid var(--color-border-ghost);
   }
@@ -495,15 +491,6 @@ export default {
     &--required {
       color: var(--color-error);
     }
-  }
-
-  &-Error {
-    position: absolute;
-    top: -13px;
-    left: 0;
-    margin-bottom: 5px;
-    font-size: 10px;
-    color: var(--color-error);
   }
 
   &-Row {
