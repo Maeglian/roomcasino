@@ -61,6 +61,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'vip',
   layout: 'page',
@@ -149,7 +151,10 @@ export default {
         'All free spins are issued with a wager x10. All cash prizes are issued with wagering x1.'
       ]
     }
-  }
+  },
+  computed: {
+    ...mapState(['terms']),
+  },
 }
 </script>
 

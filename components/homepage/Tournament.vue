@@ -27,54 +27,21 @@
               Points
             </div>
           </div>
-          <div class="Table-Row">
+          <div v-for="(winner, i) in limitedTournamentWinners(this.winnersToShow)" :key="winner.id" class="Table-Row">
             <div class="Table-Cell TableBordered-Cell">
-              1
+              {{ i + 1}}
             </div>
             <div class="Table-Cell TableBordered-Cell">
-              Natacool
+              {{ winner.name }}
             </div>
             <div class="Table-Cell TableBordered-Cell Tournament-Points">
-              3422
-            </div>
-          </div>
-          <div class="Table-Row">
-            <div class="Table-Cell TableBordered-Cell">
-              3
-            </div>
-            <div class="Table-Cell TableBordered-Cell">
-              Fire Lighting 12
-            </div>
-            <div class="Table-Cell TableBordered-Cell Tournament-Points">
-              2210
-            </div>
-          </div>
-          <div class="Table-Row">
-            <div class="Table-Cell TableBordered-Cell">
-              4
-            </div>
-            <div class="Table-Cell TableBordered-Cell">
-              Dakamu
-            </div>
-            <div class="Table-Cell TableBordered-Cell Tournament-Points">
-              1012
-            </div>
-          </div>
-          <div class="Table-Row" >
-            <div class="Table-Cell TableBordered-Cell">
-              4
-            </div>
-            <div class="Table-Cell TableBordered-Cell">
-              Ioana Juliana
-            </div>
-            <div class="Table-Cell TableBordered-Cell Tournament-Points">
-              840
+              {{ winner.points }}
             </div>
           </div>
         </div>
-        <button class="Tournament-More">
+        <NuxtLink class="Tournament-More" to="/daily-tournament">
           Show more
-        </button>
+        </NuxtLink>
       </div>
     </div>
   </section>
@@ -82,12 +49,21 @@
 
 <script>
 import Counter from '@/components/Counter.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Tournament',
   components: {
     Counter,
   },
+  data() {
+    return {
+      winnersToShow: 4,
+    }
+  },
+  computed: {
+    ...mapGetters(['limitedTournamentWinners']),
+  }
 };
 </script>
 
