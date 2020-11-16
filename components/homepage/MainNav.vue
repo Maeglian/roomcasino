@@ -82,7 +82,7 @@ export default {
           children: [
             {
               name: 'Daily tournament',
-              url: '#',
+              url: '/daily-tournament',
               icon: 'tournament_nav.svg',
             },
             {
