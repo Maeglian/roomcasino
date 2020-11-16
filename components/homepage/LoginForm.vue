@@ -7,6 +7,8 @@
     <BaseInput
       v-for="(field, name) in fields"
       :key="name"
+      class="AuthDialog-Row"
+      errorClass="AuthDialog-Error"
       :inputType="field.type"
       inputClass="AuthDialog-Field AuthDialog-Input"
       :placeholder="field.placeholder"
