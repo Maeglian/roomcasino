@@ -145,6 +145,7 @@ export default {
       this.numItemReal = this.el.slides.length;
       // Присваиваем класс слайдам
       for (let i = 0; i < this.numItemReal; ++i) {
+        if(!this.el.slides[i]) break;
         this.el.slides[i].classList.add('v_slider__item');
       }
       // Добавляем клоны
@@ -212,6 +213,7 @@ export default {
       }
     },
     reload() {
+      if (!this.el.slides.length) return;
       // вычисляем брейкпоинты
       if (this.responsive) {
         this.breakpoints = Object.keys(this.responsive);
@@ -236,11 +238,13 @@ export default {
       }
       // Устанавливаем размеры
       for (let i = 0; i < this.numItemAll; ++i) {
+        if(!this.el.slides[i]) break;
         this.el.slides[i].style.width = `${this.width.slide}px`;
         this.el.slides[i].style.marginRight = `${this.settings.margin}px`;
       }
       // Удаляем активные слайды
       for (let i = 0; i < this.numItemAll - 1; ++i) {
+        if(!this.el.slides[i]) break;
         this.el.slides[i].classList.remove('active');
       }
       // Устанавливаем трек и назначаем активные слайды
@@ -270,6 +274,7 @@ export default {
     setSlide(n, transition = true) {
       // Удаляем активный слайд
       for (let i = 0; i < this.numItemAll - 1; ++i) {
+        if(!this.el.slides[i]) break;
         this.el.slides[i].classList.remove('active', 'super');
       }
       // Перелистывание слайдера
