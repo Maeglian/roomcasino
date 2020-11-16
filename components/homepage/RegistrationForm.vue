@@ -94,7 +94,7 @@
       </template>
       <template v-else>
         <BaseInput
-          class="AuthDialog-Wrapper AuthDialog-Row"
+          class="AuthDialog-Row"
           :key="name"
           :inputType="field.type"
           inputClass="AuthDialog-Field AuthDialog-Input"
@@ -188,12 +188,12 @@ export default {
           items: [],
         },
         receiveEmailPromos: {
-          value: true,
+          value: false,
           type: 'checkbox',
           label: 'Receive Email Promos',
         },
         confirmAgeAndTerms: {
-          value: true,
+          value: false,
           type: 'checkbox',
           label: 'I am 18 years old and I accept the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>',
         },
