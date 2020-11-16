@@ -3,44 +3,44 @@
     <div
       v-if="v && v.required === false && v.$dirty"
       class="BaseInput-Error"
-      :class="`${blockClass}-Error`"
+      :class="errorClass"
     >
       Can't be blank
     </div>
     <div
     v-if="v && v.email === false"
     class="BaseInput-Error"
-    :class="`${blockClass}-Error`"
+    :class="errorClass"
     >
       Email must be valid
     </div>
     <div
       v-if="v && v.sameAsPassword === false"
       class="BaseInput-Error"
-      :class="`${blockClass}-Error`"
+      :class="errorClass"
     >
       Passwords are not the same
     </div>
     <div
       v-if="v && v.minLength === false"
       class="BaseInput-Error"
-      :class="`${blockClass}-Error`"
+      :class="errorClass"
     >
       Must have at least {{ v.$params.minLength.min }} characters
     </div>
     <div
       v-if="v && v.maxLength === false"
       class="BaseInput-Error"
-      :class="`${blockClass}-Error`"
+      :class="errorClass"
     >
       Must not be more than {{ v.$params.maxLength.max }} characters
     </div>
     <div
       v-if="v && v.passwordCheck === false"
       class="BaseInput-Error"
-      :class="`${blockClass}-Error`"
+      :class="errorClass"
     >
-      Password must be at least 8 characters and have one number, one small letter and one capital letter
+      Must be at least 8 chars with 1 number, 1 small letter and 1 capital letter
     </div>
     <slot name="beforeInput-relative"></slot>
     <div class="BaseInput-Wrapper" :class="wrapperClass">
@@ -69,11 +69,6 @@
 export default {
   name: 'BaseInput',
   props: {
-    blockClass: {
-      type: String,
-      isRequired: false,
-      default: '',
-    },
     value: {
       type: [String, Number],
       isRequired: false,
@@ -93,29 +88,24 @@ export default {
       isRequired: false,
       default: '',
     },
+    errorClass: {
+      type: String,
+      isRequired: false,
+      default: '',
+    },
     inputType: {
       type: String,
       isRequired: false,
       default: 'text',
     },
-    placeholder: {
-      type: String,
-      isRequired: false,
-    },
-    icon: {
-      type: String,
-      isRequired: false,
-      default: '',
-    },
-    customPlaceholder: {
-      type: Boolean,
-      isRequired: false,
-      default: false,
-    },
     required: {
       type: Boolean,
       isRequired: false,
       default: false,
+    },
+    placeholder: {
+      type: String,
+      isRequired: false,
     },
     autocorrect: {
       type: String,
@@ -150,8 +140,11 @@ export default {
 
 <style lang="scss">
 .BaseInput {
+  position: relative;
+
   &-Wrapper {
     position: relative;
+    width: 100%;
     height: 100%;
   }
 
@@ -173,7 +166,6 @@ export default {
   }
 
   &-Error {
-    margin-bottom: 5px;
     font-size: 10px;
     color: var(--color-error);
   }
