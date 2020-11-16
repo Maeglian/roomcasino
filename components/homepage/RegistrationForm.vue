@@ -83,6 +83,9 @@
           :inputType="field.type"
           inputClass="AuthDialog-Field AuthDialog-Input"
           v-model="field.value"
+          :autocorrect="field.autocorrect || undefined"
+          :autocomplete="field.autocomplete || undefined"
+          :pattern="field.pattern || undefined"
           :v="$v[`fieldsStep${step}`][name].value"
         >
           <template v-slot:beforeInput-absolute>
@@ -143,6 +146,9 @@ export default {
           type: 'email',
           placeholder: 'Your email',
           required: true,
+          autocapitalize: "off",
+          autocorrect: "off",
+          autocomplete: 'email',
         },
         password: {
           value: '',
@@ -177,12 +183,14 @@ export default {
           type: 'text',
           placeholder: 'First Name',
           required: true,
+          autocorrect: "off",
         },
         lastName: {
           value: '',
           type: 'text',
           placeholder: 'Last Name',
           required: true,
+          autocorrect: "off",
         },
         birthDate: {
           value: '',
@@ -200,18 +208,25 @@ export default {
           type: 'text',
           placeholder: 'City',
           required: true,
+          autocorrect: "off",
+          autocomplete: 'address-level2',
         },
         address: {
           value: '',
           type: 'text',
           placeholder: 'Address',
           required: true,
+          autocorrect: "off",
+          autocomplete: "address-line1"
         },
         postalCode: {
           value: '',
           type: 'text',
           placeholder: 'Postal code',
           required: true,
+          autocorrect: "off",
+          autocomplete: "postal-code",
+          pattern: "\d*"
         },
       },
     };

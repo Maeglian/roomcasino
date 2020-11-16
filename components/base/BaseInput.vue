@@ -55,6 +55,9 @@
         :type="inputType"
         :placeholder="placeholder"
         v-model="val"
+        :autocorrect="autocorrect"
+        :autocomplete="autocomplete"
+        :pattern="pattern"
       />
       <slot name="afterInput-absolute"></slot>
     </div>
@@ -79,7 +82,6 @@ export default {
     inputId: {
       type: String,
       isRequired: false,
-      default: '',
     },
     inputClass: {
       type: String,
@@ -99,7 +101,6 @@ export default {
     placeholder: {
       type: String,
       isRequired: false,
-      default: '',
     },
     icon: {
       type: String,
@@ -115,6 +116,18 @@ export default {
       type: Boolean,
       isRequired: false,
       default: false,
+    },
+    autocorrect: {
+      type: String,
+      isRequired: false,
+    },
+    autocomplete: {
+      type: String,
+      isRequired: false,
+    },
+    pattern: {
+      type: String,
+      isRequired: false,
     },
     v: {
       type: Object,
