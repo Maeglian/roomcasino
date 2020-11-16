@@ -26,7 +26,7 @@ jobs:
       # Чтобы избежать конфиликтов с URL, меняем точки на _, а слеши на минусы
       - name: Get branch name
         shell: bash
-        run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/} | sed 's/\//-/g' | sed 's/\./_/g' | sed 's/[A-Z]/\L&/g'" >> $GITHUB_ENV
+        run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/} | sed 's/\//-/g' | sed 's/\./_/g' | sed 's/[A-Z]/\L&/g'" >> $GITHUB_ENV | echo "$BRANCH_NAME"
       # Доставляем приложение на сервер и запускаем его
       - name: Deploy to server
         uses: appleboy/ssh-action@master
