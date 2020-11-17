@@ -3,6 +3,7 @@
     <MainNav />
     <Nuxt />
     <Footer />
+    <NotificationsPanel />
     <client-only>
       <CashierForm />
     </client-only>

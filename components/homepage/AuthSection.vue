@@ -24,10 +24,11 @@
         <div class="AuthSection-UserLvl">
           2
         </div>
-        <div class="AuthSection-UserMessages">
+        <div class="AuthSection-UserMessages" @click="toggleNotificationsPanel">
           <svg class="AuthSection-UserMessagesIcon">
             <use xlink:href="@/assets/img/icons.svg#messages"></use>
           </svg>
+          <div v-show="isNewNotifications" class="AuthSection-UserMessagesNew"></div>
         </div>
       </div>
       <button
@@ -55,16 +56,23 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'AuthSection',
   mixins: [showAuthDialog],
   computed: {
-    ...mapState(['user']),
-    ...mapGetters(['isLoggedIn', 'activeAccount']),
+    ...mapState(['user', 'notificationsPanelIsOpen']),
+    ...mapGetters(['isLoggedIn', 'activeAccount', 'isNewNotifications']),
   },
+  methods: {
+    ...mapMutations(['openNotificationsPanel', 'closeNotificationsPanel']),
+    toggleNotificationsPanel() {
+      if (this.notificationsPanelIsOpen) this.closeNotificationsPanel();
+      else this.openNotificationsPanel();
+    },
+  }
 };
 </script>
 
@@ -166,6 +174,8 @@ export default {
   }
 
   &-UserMessages {
+    flex-shrink: 0;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,10 +184,29 @@ export default {
     margin-right: 16px;
     background: linear-gradient(356.88deg, rgba(6, 14, 42, 0) -13.82%, #060E2A 105.97%);
     border-radius: 50%;
+    cursor: pointer;
 
     @media(min-width: $screen-m) {
       margin-right: 30px;
       background: transparent;
+    }
+  }
+
+  &-UserMessagesNew {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    background: var(--color-error);
+    border: 1px solid var(--color-body);
+    border-radius: 50%;
+
+    @media(min-width: $screen-l) {
+      top: 5px;
+      right: 5px;
+      width: 14px;
+      height: 14px;
     }
   }
 

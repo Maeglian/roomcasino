@@ -180,6 +180,7 @@ export const state = () => ({
   token: null,
   authError: '',
   navIsOpen: false,
+  notificationsPanelIsOpen: false,
   width: 0,
   games: [],
   jackpots: [],
@@ -243,6 +244,61 @@ export const state = () => ({
       text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
     },
   ],
+  notifications: {
+    promotions: [
+      {
+        title: 'First deposit bonus',
+        icon: 'bonus.png',
+        text: '100% of the deposit amount. <strong>€100 <span class="Colored">+</span> 55 free spins!</strong>',
+        btnText: 'Get bonus',
+      },
+      {
+        title: 'On your second deposit',
+        icon: 'bonus.png',
+        text: '55% of the deposit amount. <strong>€100 <span class="Colored">+</span> 100 free spins!</strong>',
+        btnText: 'Get bonus',
+      },
+      {
+        title: 'Third deposit bonus',
+        icon: 'bonus.png',
+        text: '100% of the deposit amount.<br/> Up to <strong>€100!</strong>',
+        btnText: 'Get bonus',
+      },
+      {
+        title: 'Thuesday free spins',
+        icon: 'bonus-ball.png',
+        text: 'Up to <strong>100 free spins</strong> every Tuesday!',
+        btnText: 'Get bonus',
+      },
+      {
+        title: 'Weekend reload',
+        icon: 'bonus-weekend.png',
+        text: '40% of the deposit amount.<br/> Up to <strong>€150!</strong>',
+        btnText: 'Get bonus',
+      },
+      {
+        title: 'Bonus for high rollers',
+        icon: 'bonus-spades.png',
+        text: '30% of the deposit amount.<br/> Up to <strong>€550</strong> on your first deposit of <strong>€300 </strong>',
+        btnText: 'Get bonus',
+      },
+    ],
+    notifications: [],
+    tournaments: [
+      {
+        title: 'Weekly tournament',
+        icon: 'bonus-cup.png',
+        text: '<strong>€1000</strong> weekly prize fund for playing table games!',
+        btnText: 'Learn more',
+      },
+      {
+        title: 'Friday party',
+        icon: 'bonus-diamond.png',
+        text: '<strong>€500</strong> free spins up for grabs every 5 days!',
+        btnText: 'Learn more',
+      },
+    ],
+  },
   currentTournamentWinners: [
     {
       id: 1,
@@ -406,6 +462,7 @@ export const getters = {
     }
     return cur;
   }),
+  isNewNotifications: (state) => !Object.values(state.notifications).every((arr) => !arr.length),
 };
 
 export const mutations = {
@@ -414,6 +471,12 @@ export const mutations = {
   },
   closeNav: (state) => {
     state.navIsOpen = false;
+  },
+  openNotificationsPanel: (state) => {
+    state.notificationsPanelIsOpen = true;
+  },
+  closeNotificationsPanel: (state) => {
+    state.notificationsPanelIsOpen = false;
   },
   setCategories: (state, payload) => {
     state.categories = payload;
