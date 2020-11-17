@@ -2,116 +2,140 @@
   <div>
     <MainNav/>
     <section class="SupportPage">
-      <h1 class="SupportPage-Title Title">
+      <h1 class="SupportPage-Title Title Title--type-h1">
         Terms & Conditions
       </h1>
+      <div class="SupportPage-Updated">
+        Last Updated: <span>June 10, 2020</span>
+      </div>
+      <p class="Text">
+        Depositing money on is very simple and straightforward. We offer a variety of options for you to
+        choose from so that you don’t feel like you’re forced into using a service you don’t feel comfortable with. Pick
+        your preferred method, deposit money, and start to play online casino games. The deposit methods on our platform
+        include Visa, MasterCard, Maestro, Neosurf, Paysafecard, ecoPayz, Bitcoin, Ethereum, Bitcoin Cash, Dogecoin,
+        Litecoin, and Tether. As you can see, we cover different types of payments that include bank cards e-wallets and
+        cryptocurrencies. The minimum amount you can deposit is 010 and the maximum will depend on the particular method
+        you’re using. Generally, it will vary between 01,000 and 010,000.
+      </p>
+      <h4 class="Title">Agreement to these Terms</h4>
       <ul class="SupportPage-List">
         <li class="SupportPage-Item">
-          <h4 class="Title">Introduction</h4>
-          <p class="Text">
-            This Privacy Policy, which was last updated on 04/06/2020, sets out the data processing practices carried
-            out by Roomcasino. Here at BacanaPlay we like making things simple and easy for our customers and that
-            includes being clear, transparent and open about what we collect, and how and why we use the data we
-            collect, so this page goes into great detail.
-          </p>
-          <p class="Text">
-            Our Policy explains how we use your personal data, whether you are just visiting, making a deposit or
-            playing one of our games. This policy includes information you may not already know about your data privacy
-            rights, circumstances in which we share and obtain information about you and how we use it to personalize
-            the marketing you receive, so please take time to read all the sections carefully.
-          </p>
-          <p class="Text">
-            If we make any material updates to this Policy, we will inform you.
-          </p>
-          <p class="Text">
-            Please note that all our employees undertake regular training on Information Security and are required to
-            comply with confidentially obligations as well as internal policies and procedures whenever they handle your
-            information.
-          </p>
-          <p class="Text">
-            We hope you will find this page helpful, but should you have any concerns or questions, regarding Data
-            Protection, please feel free to contact our Data Protection Officer at dpo@roomcasino.com.
-          </p>
-        </li>
-        <li class="SupportPage-Item">
-          <h4 class="Title">
-            Our Privacy Policy Promise
-          </h4>
-          <p class="Text">
-            Our Privacy Policy Promise
-            Roomcasino will always value and respect the privacy of each and every one of its customers. Your privacy is
-            important both to you and to us and we make the following promise to you:
-          </p>
-          <p class="Text">
-            Roomcasino is committed to protecting your privacy. We believe in using your personal information to make
-            things simpler and better for you. We will always keep your personal information safe. We’ll be clear and
-            open
-            with you about why we collect your personal information and how we use it. Where you have choices or rights,
-            we’ll explain them to you and respect your wishes.
-          </p>
-        </li>
-        <li class="SupportPage-Item">
-          <h4 class="Title">HOW WE USE YOUR INFORMATION</h4>
-          <p class="Text">
-            We process the Personal Information we collect from you in order to deliver our services. In particular, we
-            will use your data for the following purposes:
-          </p>
           <ul class="SupportPage-InnerList" type="a">
             <li class="SupportPage-InnerItem">
               <p class="Text">
-                Processing your bets and transactions. This includes your use of credit card and online payment systems;
+                The maximum winnings that will be paid out resulting from a free bonus or free spins without deposit
+                (eg. the 20 free spins upon registration, Wednesday Free Spins Drops, Second Chance Spins, Friday
+                Loyalty Bonus (exception VIP players who have specifically been set on a VIP Cashback Deal as part of
+                their Friday Loyalty Bonus)) will be 100 EUR/USD/CAD/AUD/NZD/USDT, 1,000 NOK, 0.3 BCH, 3 LTC, 0.3 ETH,
+                30,000 DOGE, 400 PLN, or 6,000 RUB. In regards to BTC players, the maximum winnings that will be paid
+                out resulting from a free bonus or free spins without deposit will be 30 mBTC. Any winnings exceeding
+                this amount will be forfeited.
               </p>
             </li>
             <li class="SupportPage-InnerItem">
               <p class="Text">
-                Providing you with gaming and other ancillary services that you seek from our Website;
-              </p>
-            </li>
-            <li class="SupportPage-InnerItem">
-              <p class="Text">
-                Providing registered players with information about our promotional offers, or providing promotional
-                information from our selected business partners, associates and affiliates (only if players specifically
-                consented to receiving such marketing material);
-              </p>
-            </li>
-            <li class="SupportPage-InnerItem">
-              <p class="Text">
-                Monitoring and investigating transactions for the purpose of preventing fraud, terms abuse, money
-                laundering and other illegal or irregular gaming activities;
+                The Wagering Requirements for Free and Registration bonuses are forty (40) times the Bonus sum awarded
+                to you, unless stated otherwise in the supplemental Terms and Conditions. (For Registration bonuses,
+                extra spins, free spins and free bonuses which require NO deposit, note that no winnings at all may be
+                withdrawn/transferred until you have transferred at least 20 EUR/USD/CAD/AUD/NZD/USDT, 200 NOK, 1,000
+                RUB, 0.20 BCH, 0.25 LTC, 10,000 Dogecoin, 2,000 JPY, 80 PLN, 0.2 ETH, or 0.006 BTC (or currency
+                equivalent) into your Player Account. In addition, no winnings accrued in connection with any Free Bonus
+                may be withdrawn/transferred until the wagering requirements have been met.)
               </p>
             </li>
           </ul>
         </li>
         <li class="SupportPage-Item">
-          <h4 class="Title">OBTAINING PERSONAL INFORMATION</h4>
+          <ul class="SupportPage-InnerList" type="a">
+            <li class="SupportPage-InnerItem">
+              <p class="Text">
+                For no deposit bonus withdrawals, we reserve the right to request a KYC. Regarding the KYC (Know Your
+                Customer), the following documents may be needed for verification: One government approved identity card
+                (ID card, passport and driver's license) with a picture, as well as proof of residency such as a utility
+                bill (which is not older than 2 months). If your deposit method was via a credit card we will require a
+                scanned copy of the credit card (front and back) which you used.
+              </p>
+            </li>
+            <li class="SupportPage-InnerItem">
+              <p class="Text">
+                General bonus terms and <a href="#" class="SupportPage-Link">conditions apply</a>.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="SupportPage-Item">
           <p class="Text">
-            We shall not collect any Personal Information about you without your knowledge. We may, however,
-            automatically
-            collect certain data about you where you would have provided such information through the use of our
-            services
-            and through your interactions with us.
+            In order to receive any no deposit free spins as part of the registration process, you need to verify your
+            account via email. On some occasions, a SMS verification will be required.
           </p>
+        </li>
+        <li class="SupportPage-Item">
           <p class="Text">
-            We may also lawfully receive certain Personal Information from online vendors and service providers, such as
-            fraud prevention companies. In addition, we retain the right to engage the services of third-party providers
-            to render technical support, so as to process your online transactions and source gaming content.
-          </p>
-          <p class="Text">
-            Please understand that we may be granted access to any information you may provide to such vendors, service
-            providers and third-party e-commerce services. Rest assured that we will use and safeguard any Personal
-            Information so obtained, as set out in this Policy. Any information that you provide will only be disclosed
-            to
-            third parties outside the Company in accordance with this Privacy Policy, and we shall take any necessary
-            steps to ensure that our agreements with third-party service providers always protect your private
-            information.
+            Players from the following countries are not eligible for the no deposit free spins: Albania (AL) Algeria
+            (DZ) Angola (AO) Austria (AT) Bahrain (BH) Bangladesh (BD) Belarus (BY) Benin (BJ) Bosnia and Herzegovina
+            (BA) Botswana (BW) Bulgaria (BG) Burundi (BI) Cameroon (CM) Cape Verde (CV) Chad (TD) Comoros (KM) Croatia
+            (HR) Czech Republic (CZ) Côte d'Ivoire (CI) Djibouti (DJ) Egypt (EG) Equatorial Guinea (GQ) Eritrea (ER)
+            Ethiopia (ET) Finland (FI) Gabon (GA) Gambia (GM) Georgia (GE) Germany (DE) Ghana (GH) Greece (GR) Guinea
+            (GN) Guinea-Bissau (GW) Hungary (HU) India (IN) Indonesia (ID) Iran (IR) Iraq (IQ) Islamic Republic of (IR)
+            Japan (JA) Jordan (JO) Kazakhstan (KZ) Kenya (KE) Kuwait (KW) Lebanon (LB) Lesotho (LS) Liberia (LR)
+            Republic of North Macedonia (MK) Madagascar (MG) Malawi (MW) Malaysia (MY) Mali (ML) Mauritania (MR)
+            Mauritius (MU) Moldova Republic of (MD) Mongolia (MN) Montenegro (ME) Morocco (MA) Mozambique (MZ) Myanmar
+            (MM) Namibia (NA) Nepal (NP) Netherlands (NL) Niger (NE) Nigeria (NG) Oman (OM) Pakistan (PK) Palestine
+            State of (PS) Philippines (PH) Poland (PL) Portugal (PT) Romania (RO) Russia (RU) Rwanda (RW) Sao Tome and
+            Principe (ST) Senegal (SN) Serbia (RS) Seychelles (SC) Sierra Leone (SL) Slovakia (SK) Slovenia (SI) Somalia
+            (SO) South Sudan (SS) Sudan (SD) Sri Lanka (LK) Swaziland (SZ) Sweden (SE) Syrian Arab Republic (SY)
+            Tanzania United Republic of (TZ) Thailand (TH) Togo (TG) Tunisia (TN) Uganda (UG) Ukraine (UA) United Arab
+            Emirates (AE) United Kingdom (GB) Vietnam (VN) Yemen (YE) Zambia (ZM) and Zimbabwe (ZW).
           </p>
         </li>
       </ul>
+      <h4 class="Title">Agreement to these Terms</h4>
+      <ul class="SupportPage-List">
+        <li class="SupportPage-Item">
+          <p class="Text">
+            When it comes to the 180 additional Free Spins that are a part of the welcome package. A minimum of 20
+            UR/USD/CAD/AUD/USDT/NZD, 200 NOK, 1,000 RUB, 0.15 BCH, 0.75 LTC, 10,000 Dogecoin, 0.15 ETH, 80 PLN, 2,000
+            JPY, 19 USDT, or 0.006 BTC is required to receive the free spins. You also need to wager the amount once
+            within 24 hours.
+          </p>
+        </li>
+        <li class="SupportPage-Item">
+          <p class="Text">
+            To activate your free spins you must access and open the game within 1 day of them being credited, otherwise
+            they will expir.
+          </p>
+        </li>
+        <li class="SupportPage-Item">
+          <p class="Text">
+            Kindly note that you have to have made 4 deposits prior to participating in the Wednesday Free Spins
+            promotion
+            to be eligible for the free spins. These 4 deposits do not include the ones that are needed for claiming the
+            promotional offer.
+          </p>
+        </li>
+        <li class="SupportPage-Item">
+          <p class="Text">
+            When it comes to the 180 additional Free Spins that are a part of the welcome package. A minimum of 20
+            UR/USD/CAD/AUD/USDT/NZD, 200 NOK, 1,000 RUB, 0.15 BCH, 0.75 LTC, 10,000 Dogecoin, 0.15 ETH, 80 PLN, 2,000
+            JPY, 19 USDT, or 0.006 BTC is required to receive the free spins. You also need to wager the amount once
+            within 24 hours.
+          </p>
+        </li>
+      </ul>
+      <h4 class="Title">Agreement to these Terms</h4>
+      <p class="Text">
+        Depositing money on is very simple and straightforward. We offer a variety of options for you to choose from so
+        that you don’t feel like you’re forced into using a service you don’t feel comfortable with. Pick your preferred
+        method, deposit money, and start to play online casino games. The deposit methods on our platform include Visa,
+        MasterCard, Maestro, Neosurf, Paysafecard, ecoPayz, Bitcoin, Ethereum, Bitcoin Cash, Dogecoin, Litecoin, and
+        Tether. As you can see, we cover different types of payments that include bank cards e-wallets and
+        cryptocurrencies. The minimum amount you can deposit is $10 and the maximum will depend on the particular method
+        you’re using. Generally, it will vary between $1,000 and $10,000.
+      </p>
     </section>
     <Footer/>
   </div>
 </template>
-
 <script>
 export default {
   name: "privacy-policy"
@@ -121,5 +145,41 @@ export default {
 <style lang="scss" scoped>
 
 @import '@/assets/styles/support-page';
+
+.SupportPage-Title {
+  margin-bottom: 6px;
+
+  @media(max-width: $screen-xxs) {
+    margin-bottom: 4px;
+  }
+}
+
+.SupportPage-Updated {
+  margin-bottom: 32px;
+}
+
+.SupportPage-Item {
+  padding-left: 35px;
+
+  &::before {
+    top: 2.3px;
+  }
+
+  @media(max-width: $screen-xxs) {
+    padding-left: 19px;
+  }
+}
+
+.SupportPage-InnerItem {
+  padding-left: 22px;
+
+  @media(max-width: $screen-l) {
+    padding-left: 19px;
+  }
+
+  @media(max-width: $screen-m) {
+    padding-left: 6px;
+  }
+}
 
 </style>

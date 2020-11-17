@@ -1,12 +1,12 @@
 <template>
   <div>
     <MainNav/>
-    <section class="PrivacyPolicyPage Page">
-      <h1 class="PrivacyPolicyPage-Title Title">
+    <section class="SupportPage">
+      <h1 class="SupportPage-Title Title Title--type-h1">
         Privacy Policy
       </h1>
-      <ul class="PrivacyPolicyPage-List">
-        <li class="PrivacyPolicyPage-Item">
+      <ul class="SupportPage-List">
+        <li class="SupportPage-Item">
           <h4 class="Title">Introduction</h4>
           <p class="Text">
             This Privacy Policy, which was last updated on 04/06/2020, sets out the data processing practices carried
@@ -33,7 +33,7 @@
             Protection, please feel free to contact our Data Protection Officer at dpo@roomcasino.com.
           </p>
         </li>
-        <li class="PrivacyPolicyPage-Item">
+        <li class="SupportPage-Item">
           <h4 class="Title">
             Our Privacy Policy Promise
           </h4>
@@ -50,31 +50,31 @@
             we’ll explain them to you and respect your wishes.
           </p>
         </li>
-        <li class="PrivacyPolicyPage-Item">
+        <li class="SupportPage-Item">
           <h4 class="Title">HOW WE USE YOUR INFORMATION</h4>
           <p class="Text">
             We process the Personal Information we collect from you in order to deliver our services. In particular, we
             will use your data for the following purposes:
           </p>
-          <ul class="PrivacyPolicyPage-InnerList" type="a">
-            <li class="PrivacyPolicyPage-InnerItem">
+          <ul class="SupportPage-InnerList" type="a">
+            <li class="SupportPage-InnerItem">
               <p class="Text">
                 Processing your bets and transactions. This includes your use of credit card and online payment systems;
               </p>
             </li>
-            <li class="PrivacyPolicyPage-InnerItem">
+            <li class="SupportPage-InnerItem">
               <p class="Text">
                 Providing you with gaming and other ancillary services that you seek from our Website;
               </p>
             </li>
-            <li class="PrivacyPolicyPage-InnerItem">
+            <li class="SupportPage-InnerItem">
               <p class="Text">
                 Providing registered players with information about our promotional offers, or providing promotional
                 information from our selected business partners, associates and affiliates (only if players specifically
                 consented to receiving such marketing material);
               </p>
             </li>
-            <li class="PrivacyPolicyPage-InnerItem">
+            <li class="SupportPage-InnerItem">
               <p class="Text">
                 Monitoring and investigating transactions for the purpose of preventing fraud, terms abuse, money
                 laundering and other illegal or irregular gaming activities;
@@ -82,7 +82,7 @@
             </li>
           </ul>
         </li>
-        <li class="PrivacyPolicyPage-Item">
+        <li class="SupportPage-Item">
           <h4 class="Title">OBTAINING PERSONAL INFORMATION</h4>
           <p class="Text">
             We shall not collect any Personal Information about you without your knowledge. We may, however,
@@ -120,53 +120,6 @@ export default {
 
 <style lang="scss" scoped>
 
-.PrivacyPolicyPage {
-  padding: 30px 120px 60px;
-}
-
-.PrivacyPolicyPage-Title {
-  margin-bottom: 45px;
-}
-
-.PrivacyPolicyPage-List {
-  counter-reset: list1;
-  color: #FFFFFF;
-}
-
-.PrivacyPolicyPage-Item {
-  position: relative;
-  font-size: 14px;
-  margin-bottom: 30px;
-
-  &::before {
-    position: absolute;
-    top: -1px;
-    left: 0;
-    counter-increment: list1;
-    content: counter(list1) ".";
-    font-weight: 700;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  h4 {
-    padding-left: 1.2em;
-  }
-}
-
-.PrivacyPolicyPage-InnerList {
-  list-style-type: lower-alpha;
-  padding-left: 16px;
-
-  li {
-
-    &::marker {
-      font-weight: 700;
-    }
-  }
-}
-
+@import '@/assets/styles/support-page';
 
 </style>
