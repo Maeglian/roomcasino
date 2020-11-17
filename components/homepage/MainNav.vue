@@ -126,7 +126,7 @@ export default {
 .MainNav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10;
 
   &-Overlay {
     content: "";
@@ -302,6 +302,7 @@ export default {
   &-Link {
     display: block;
     margin-bottom: 35px;
+    font-size: 14px;
 
     @media(min-width: $screen-s){
       font-size: 22px;

@@ -109,7 +109,6 @@ export default {
     position: relative;
     display: flex;
     align-items: center;
-    font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-text-main);
