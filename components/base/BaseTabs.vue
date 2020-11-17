@@ -31,7 +31,6 @@ export default {
 <style lang="scss">
 .BaseTabs {
   display: flex;
-  width: 100%;
   max-width: 100%;
   height: 55px;
 
