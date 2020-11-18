@@ -24,9 +24,7 @@
             v-for="item in limit.limits"
             :key="item.currentPeriod"
             class="LimitsPage-Limit"
-            :title="item.currentPeriod"
-            :limitAmount="item.limitAmount"
-            :isActive="true"
+            :item="item"
           />
         </template>
       </div>

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX } from '../config';
+import moment from 'moment';
 
 const API_HOST = (process.env.NUXT_ENV_MODE === 'sandbox') ? API_HOST_SANDBOX : API_HOST_PROD;
 
@@ -189,12 +190,59 @@ export const state = () => ({
       name: 'Loss limits',
       limits: [
         {
+          limitState: 1,
           limitAmount: 5,
           currentPeriod: 'daily',
+          type: 'loss',
+          end: moment().endOf('day'),
         },
         {
+          limitState: 19,
           limitAmount: 25,
+          type: 'loss',
           currentPeriod: 'weekly',
+          end: moment().endOf('week'),
+        },
+        {
+          limitState: 50,
+          limitAmount: 120,
+          type: 'session',
+        },
+        {
+          limitState: 7,
+          limitAmount: 14,
+          type: 'wager',
+          currentPeriod: 'weekly',
+          end: moment().endOf('week'),
+        },
+        {
+          limitState: 7,
+          limitAmount: 20,
+          type: 'cooling',
+          currentPeriod: 'weekly',
+          end: moment().endOf('week'),
+        },
+        {
+          limitState: 67,
+          limitAmount: 100,
+          type: 'deposit',
+          currentPeriod: 'daily',
+          end: moment().endOf('day'),
+        },
+        {
+          limitState: 10,
+          limitAmount: 50,
+          type: 'deposit',
+          currentPeriod: 'weekly',
+          end: moment().endOf('week'),
+        },
+        {
+          type: 'reality_check',
+          period: 'every 60 min',
+        },
+        {
+          type: 'self_exclusion',
+          period: '6 month',
         },
       ],
     },
