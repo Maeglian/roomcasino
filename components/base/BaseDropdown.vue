@@ -9,29 +9,27 @@
       @keyup.enter="onSelectValueKeyboard()"
       tabindex="0"
     >
-      {{ activeItem }}
+      {{ activeItem || placeholder || items[0] }}
       <i
         class="ThinArrow"
         :class="[ isOpen ? 'ThinArrow--up' : 'ThinArrow--down' ]"
       ></i>
     </button>
     <ul v-show="isOpen" class="BaseDropdown-Inner" aria-label="submenu">
-          <li
-            v-for="(item, i) in filteredItems"
-            :key="item"
-            class="BaseDropdown-Item BaseDropdown-DropdownItem"
-            :class="{'BaseDropdown-DropdownItem--highlighted': activeItemIndex === i}"
-            @click="onSelectValue(item)"
-          >
-            {{ item }}
-          </li>
+      <li
+        v-for="(item, i) in filteredItems"
+        :key="item"
+        class="BaseDropdown-Item BaseDropdown-DropdownItem"
+        :class="{'BaseDropdown-DropdownItem--highlighted': activeItemIndex === i}"
+        @click="onSelectValue(item)"
+      >
+        {{ item }}
+      </li>
       </ul>
   </div>
 </template>
 
 <script>
-/* eslint-disable no-plusplus */
-
 export default {
   name: 'BaseDropdown',
   props: {
@@ -39,11 +37,15 @@ export default {
       type: Array,
       isRequired: true,
     },
+    placeholder: {
+      type: String,
+      isRequired: false,
+    },
   },
   data() {
     return {
       isOpen: false,
-      activeItem: this.items[0],
+      activeItem: '',
       activeItemIndex: -1,
     };
   },
