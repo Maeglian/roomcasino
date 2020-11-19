@@ -2,26 +2,15 @@
   <div class="Modal">
     <div class="Close Modal-Close" @click="$emit('close')"></div>
     <div class="AuthDialog">
-      <div class="Tabs AuthDialog-Tabs">
-        <a
-          class="Tabs-Tab AuthDialog-Tab"
-          :class="{'Tabs-Tab--active': isRegistration }"
-          @click="toggleRegistration()"
-        >
-          Sign up
-        </a>
-        <a
-          class="Tabs-Tab AuthDialog-Tab"
-          :class="{'Tabs-Tab--active': !isRegistration }"
-          @click="toggleRegistration('login')"
-        >
-          Login
-        </a>
-      </div>
-      <template v-if="isRegistration">
+      <BaseTabs
+        class="AuthDialog-Tabs"
+        :items="tabs"
+        :currentItem="activeTab"
+        @chooseTab="activeTab = $event" />
+      <template v-if="activeTab === 'registration'">
         <RegistrationForm
           @close="$emit('close')"
-          @redirectLogin="isRegistration = false"
+          @redirectLogin="activeTab = 'login'"
         />
       </template>
       <template v-else>
@@ -33,6 +22,7 @@
 
 <script>
 import { mapMutations } from 'vuex';
+import BaseTabs from '@/components/base/BaseTabs';
 
 const RegistrationForm = () => import('@/components/homepage/RegistrationForm.vue');
 const LoginForm = () => import('@/components/homepage/LoginForm.vue');
@@ -49,23 +39,34 @@ export default {
   components: {
     LoginForm,
     RegistrationForm,
+    BaseTabs
   },
   data() {
     return {
-      isRegistration: true,
+      tabs: [
+        {
+          value: 'registration',
+          name: 'Sign up'
+        },
+        {
+          value: 'login',
+          name: 'Login'
+        },
+
+      ],
+      activeTab: 'registration',
     };
   },
   methods: {
     ...mapMutations(['removeAuthError']),
 
-    toggleRegistration(type) {
+    toggleRegistration(e) {
       this.removeAuthError();
-      if (type === 'login') this.isRegistration = false;
-      else this.isRegistration = true;
+      this.activeTab = e;
     },
   },
   mounted() {
-    if (this.authType === 'login') this.isRegistration = false;
+    this.activeTab = this.authType;
   },
 };
 </script>
@@ -80,6 +81,8 @@ export default {
 
   &-Tabs {
     margin-bottom: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
   }
 
   &-Tab {
