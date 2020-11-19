@@ -73,8 +73,9 @@ export default {
   methods: {
     ...mapActions(['authorize']),
     onSubmitForm() {
+      this.$v.fields.$touch();
+      if (this.$v.fields.$error) return;
       const payload = {};
-      // eslint-disable-next-line no-restricted-syntax
       for (const key in this.fields) {
         if (this.fields[key].value) payload[key] = this.fields[key].value;
       }
@@ -100,7 +101,7 @@ export default {
   }
 
   &-Link {
-    margin-top: 16px;
+    margin-top: 24px;
     font-size: 12px;
     color: var(--color-main1);
     text-align: right;
