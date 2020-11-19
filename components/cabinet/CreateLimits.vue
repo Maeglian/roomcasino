@@ -131,6 +131,7 @@ export default {
 
   &-Period {
     width: 130px;
+    font-size: 10px;
   }
 
   &-Amount {
@@ -155,6 +156,7 @@ export default {
 
   &-Btn {
     margin-top: 4px;
+    font-size: 12px;
   }
 }
 </style>

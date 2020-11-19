@@ -23,6 +23,7 @@
           class="AuthDialog-Field AuthDialog-Dropdown AuthDialog-Row"
           :items="field.items"
           :key="name"
+          :placeholder="field.placeholder"
           @set-dropdown-value="field.value = $event"
         />
       </template>
@@ -180,11 +181,13 @@ export default {
         currency: {
           value: '',
           type: 'dropdown',
+          placeholder: 'currency',
           items: [],
         },
         country: {
           value: '',
           type: 'dropdown',
+          placeholder: 'country',
           items: [],
         },
         receiveEmailPromos: {
@@ -195,7 +198,7 @@ export default {
         confirmAgeAndTerms: {
           value: false,
           type: 'checkbox',
-          label: 'I am 18 years old and I accept the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>',
+          label: 'I am 18 years old and I accept the <a class="AuthDialog-RegistrationLink" href="/terms">Terms&nbsp;and&nbsp;Conditions</a> and <a class="AuthDialog-RegistrationLink" href="/privacy-policy">Privacy&nbsp;Policy</a>',
         },
       },
       fieldsStep2: {
@@ -461,6 +464,7 @@ export default {
   }
 
   &-Dropdown {
+    font-size: 12px;
     border: 2px solid var(--color-border-ghost);
   }
 
@@ -493,16 +497,9 @@ export default {
     }
   }
 
-  &-Row {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 12px;
-  }
-
-  a {
+  &-RegistrationLink {
     color: var(--color-text-main);
+    text-decoration: underline;
   }
 }
 </style>
