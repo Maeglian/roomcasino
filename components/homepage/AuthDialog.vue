@@ -113,6 +113,7 @@ export default {
   }
 
   &-Content {
+    position: relative;
     flex-grow: 1;
     padding-right: 14px;
     padding-bottom: 25px;
@@ -123,6 +124,10 @@ export default {
       padding-right: 24px;
       padding-left: 24px;
     }
+  }
+
+  &-Fields {
+    position: relative;
   }
 
   &-Text {
@@ -137,9 +142,29 @@ export default {
   }
 
   &-Error {
+    position: absolute;
+    top: -13px;
+    left: 0;
     margin-bottom: 5px;
     font-size: 10px;
     color: var(--color-error);
+
+    &--registration {
+      top: initial;
+      left: 14px;
+      bottom: 5px;
+      font-size: 12px;
+
+      @media(min-width: $screen-s) {
+        left: 24px;
+      }
+    }
+
+    &--login {
+      top: initial;
+      bottom: 5px;
+      font-size: 12px;
+    }
   }
 }
 </style>
