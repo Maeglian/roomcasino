@@ -27,9 +27,9 @@
     <transition v-if="width < 960" name="slide-left">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
         <div class="AsideMenu-Header">
-          <router-link class="AsideMenu-Logo" to="/">
+          <NuxtLink class="AsideMenu-Logo" to="/">
             <img class="AsideMenu-Logo" src="@/assets/img/logo.svg" />
-          </router-link>
+          </NuxtLink>
           <div class="Close AsideMenu-Close" @click="toggleNav()"></div>
         </div>
         <div class="AsideMenu-List">
@@ -254,7 +254,7 @@ export default {
   &-AuthSection {
     display: none;
 
-    @media(min-width: $screen-s) {
+    @media(min-width: $screen-xs) {
       display: block;
     }
   }

@@ -23,40 +23,6 @@
           </button>
         </div>
       </div>
-      <nav class="Hero-Nav">
-        <button class="Hero-NavItem" @click="toggleNav()">
-          <svg class="Hero-NavIcon Toggle Toggle--colored">
-            <use xlink:href="@/assets/img/icons.svg#toggle"></use>
-          </svg>
-          <div class="Hero-NavName">
-            Menu
-          </div>
-        </button>
-        <router-link class="Hero-NavItem" to="/">
-          <svg width="17" height="16">
-            <use xlink:href="@/assets/img/icons.svg#promotions"></use>
-          </svg>
-          <div class="Hero-NavName">
-            Promotions
-          </div>
-        </router-link>
-        <router-link class="Hero-NavItem" to="/">
-          <svg width="18" height="15" >
-            <use xlink:href="@/assets/img/icons.svg#deposit"></use>
-          </svg>
-          <div class="Hero-NavName">
-            Deposit
-          </div>
-        </router-link>
-        <router-link class="Hero-NavItem" to="/">
-          <svg width="16" height="14">
-            <use xlink:href="@/assets/img/icons.svg#support"></use>
-          </svg>
-          <div class="Hero-NavName">
-            Support
-          </div>
-        </router-link>
-      </nav>
     </div>
     <div class="Hero-Footer">
       <GamesSlider
