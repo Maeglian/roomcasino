@@ -8,6 +8,7 @@
       @keyup.down="onArrowDown()"
       @keyup.enter="onSelectValueKeyboard()"
       tabindex="0"
+      type="button"
     >
       {{ activeItem || placeholder || items[0] }}
       <i
@@ -75,9 +76,9 @@ export default {
     onArrowUp() {
       if (this.activeItemIndex > -1) this.activeItemIndex--;
     },
-    onClickOutside(e) {
-      if (e.target.className !== 'BaseDropdown') this.isOpen = false;
-    },
+    onClickOutside() {
+      this.isOpen = false;
+    }
   },
 };
 </script>
