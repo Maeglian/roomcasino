@@ -12,7 +12,7 @@
     class="BaseInput-Error"
     :class="errorClass"
     >
-      Email must be valid
+      No valid email address
     </div>
     <div
       v-if="v && v.sameAsPassword === false"
