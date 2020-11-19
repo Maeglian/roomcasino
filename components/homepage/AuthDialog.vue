@@ -1,30 +1,33 @@
 <template>
-  <div class="AuthDialog">
-    <div class="Tabs AuthDialog-Tabs">
-      <a
-        class="Tabs-Tab AuthDialog-Tab"
-        :class="{'Tabs-Tab--active': isRegistration }"
-        @click="toggleRegistration()"
-      >
-        Sign up
-      </a>
-      <a
-        class="Tabs-Tab AuthDialog-Tab"
-        :class="{'Tabs-Tab--active': !isRegistration }"
-        @click="toggleRegistration('login')"
-      >
-        Login
-      </a>
+  <div class="Modal">
+    <div class="Close Modal-Close" @click="$emit('close')"></div>
+    <div class="AuthDialog">
+      <div class="Tabs AuthDialog-Tabs">
+        <a
+          class="Tabs-Tab AuthDialog-Tab"
+          :class="{'Tabs-Tab--active': isRegistration }"
+          @click="toggleRegistration()"
+        >
+          Sign up
+        </a>
+        <a
+          class="Tabs-Tab AuthDialog-Tab"
+          :class="{'Tabs-Tab--active': !isRegistration }"
+          @click="toggleRegistration('login')"
+        >
+          Login
+        </a>
+      </div>
+      <template v-if="isRegistration">
+        <RegistrationForm
+          @close="$emit('close')"
+          @redirectLogin="isRegistration = false"
+        />
+      </template>
+      <template v-else>
+        <LoginForm @close="$emit('close')" />
+      </template>
     </div>
-    <template v-if="isRegistration">
-      <RegistrationForm
-        @close="$emit('close')"
-        @redirectLogin="isRegistration = false"
-      />
-    </template>
-    <template v-else>
-      <LoginForm @close="$emit('close')" />
-    </template>
   </div>
 </template>
 
@@ -69,6 +72,7 @@ export default {
 
 <style lang="scss">
 .AuthDialog {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 585px;

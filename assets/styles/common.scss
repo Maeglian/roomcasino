@@ -182,6 +182,15 @@ a {
   }
 }
 
+.Modal {
+  position: relative;
+
+  &-Close {
+    margin-left: auto;
+    margin-bottom: 5px;
+  }
+}
+
 .Badge {
   width: 16px;
   height: 16px;
@@ -276,6 +285,7 @@ a {
 }
 
 .vm--modal {
+  background: transparent !important;
   overflow: initial !important;
 }
 

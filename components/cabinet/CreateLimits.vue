@@ -1,5 +1,7 @@
 <template>
-  <div class="CreateLimits">
+  <div class="Modal">
+    <div class="Close Modal-Close" @click="$emit('close')"></div>
+      <div class="CreateLimits">
     <div class="CabinetPage-Header CabinetPage-Section">
       Create limits
     </div>
@@ -39,6 +41,7 @@
     >
       Add limits
     </button>
+  </div>
   </div>
 </template>
 

@@ -82,19 +82,22 @@
       </span>
     </button>
     <modal name="addCurrency" width="348" height="auto">
-      <div class="AddCurrency">
-        <div class="CabinetPage-Header AddCurrency-Header">
-          Add Currency
-        </div>
-        <div class="AddCurrency-Content">
-          <div
-            v-for="cur in curencyAccounts"
-            :key="cur"
-            class="AddCurrency-Currency"
-          >
-            {{ cur }}
+      <div class="Modal">
+        <div class="Close Modal-Close" @click="$modal.hide('addCurrency')"></div>
+          <div class="AddCurrency">
+            <div class="CabinetPage-Header AddCurrency-Header">
+              Add Currency
+            </div>
+            <div class="AddCurrency-Content">
+              <div
+                v-for="cur in curencyAccounts"
+                :key="cur"
+                class="AddCurrency-Currency"
+              >
+                {{ cur }}
+              </div>
+            </div>
           </div>
-        </div>
       </div>
     </modal>
   </div>
