@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MainNav/>
+
     <section class="SupportPage">
       <h1 class="SupportPage-Title Title Title--type-h1">
         Terms & Conditions
@@ -133,24 +133,23 @@
         you’re using. Generally, it will vary between $1,000 and $10,000.
       </p>
     </section>
-    <Footer/>
+
   </div>
 </template>
 <script>
 export default {
-  name: "privacy-policy"
+  name: "TermsPage",
+  layout: 'page',
 }
 </script>
 
-<style lang="scss" scoped>
-
-@import '@/assets/styles/support-page';
+<style lang="scss">
 
 .SupportPage-Title {
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 
-  @media(max-width: $screen-xxs) {
-    margin-bottom: 4px;
+  @media(min-width: $screen-xxs) {
+    margin-bottom: 6px;
   }
 }
 
@@ -159,26 +158,26 @@ export default {
 }
 
 .SupportPage-Item {
-  padding-left: 35px;
+  padding-left: 19px;
 
   &::before {
     top: 2.3px;
   }
 
-  @media(max-width: $screen-xxs) {
-    padding-left: 19px;
+  @media(min-width: $screen-xxs) {
+    padding-left: 35px;
   }
 }
 
 .SupportPage-InnerItem {
-  padding-left: 22px;
+  padding-left: 6px;
 
-  @media(max-width: $screen-l) {
+  @media(min-width: $screen-m) {
     padding-left: 19px;
   }
 
-  @media(max-width: $screen-m) {
-    padding-left: 6px;
+  @media(min-width: $screen-l) {
+    padding-left: 22px;
   }
 }
 

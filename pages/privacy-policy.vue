@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MainNav/>
+
     <section class="SupportPage">
       <h1 class="SupportPage-Title Title Title--type-h1">
         Privacy Policy
@@ -108,18 +108,17 @@
         </li>
       </ul>
     </section>
-    <Footer/>
+
   </div>
 </template>
 
 <script>
 export default {
-  name: "privacy-policy"
+  name: "PrivacyPolicyPage",
+  layout: 'page',
 }
 </script>
 
-<style lang="scss" scoped>
-
-@import '@/assets/styles/support-page';
+<style lang="scss">
 
 </style>

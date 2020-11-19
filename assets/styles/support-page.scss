@@ -1,24 +1,25 @@
 .SupportPage {
-  padding: 30px 120px 60px;
+  padding: 20px 16px 30px;
 
-  @media(max-width: $screen-l) {
-    padding: 30px 16px 40px;
-  }
-
-  @media(max-width: $screen-m) {
+  @media(min-width: $screen-s) {
     padding: 25px 16px 35px;
   }
 
-  @media(max-width: $screen-s) {
-    padding: 20px 16px 30px;
+  @media(min-width: $screen-m) {
+    padding: 30px 16px 40px;
   }
+
+  @media(min-width: $screen-l) {
+    padding: 30px 120px 60px;
+  }
+
 }
 
 .SupportPage-Title {
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 
-  @media(max-width: $screen-m) {
-    margin-bottom: 30px;
+  @media(min-width: $screen-m) {
+    margin-bottom: 45px;
   }
 }
 
