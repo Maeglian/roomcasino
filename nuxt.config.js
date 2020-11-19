@@ -23,14 +23,6 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '@/assets/styles/common.scss',
-    '@/assets/styles/buttons.scss',
-    '@/assets/styles/datepicker.scss',
-    '@/assets/styles/links.scss',
-    '@/assets/styles/table.scss',
-    '@/assets/styles/text.scss',
-    '@/assets/styles/transitions.scss',
-    '@/assets/styles/variables.scss',
     '@/assets/styles/main.scss',
   ],
 
