@@ -47,7 +47,6 @@ export default {
     align-items: center;
     position: relative;
     margin-right: 4px;
-    font-size: inherit;
     font-weight: 700;
     text-align: center;
     text-transform: inherit;
