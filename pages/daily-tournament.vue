@@ -418,14 +418,11 @@ export default {
   &-Tabs {
     width: 100%;
     margin-bottom: 4px;
+    font-size: 11px;
+    text-transform: uppercase;
 
-    .BaseTabs-Tab {
-      font-size: 11px;
-      text-transform: uppercase;
-
-      @media(min-width: $screen-m) {
-        font-size: 12px;
-      }
+    @media(min-width: $screen-m) {
+      font-size: 12px;
     }
   }
 

@@ -146,6 +146,7 @@ export default {
   }
 
   &-Tabs {
+    font-size: 10px;
     margin-bottom: 4px;
 
     @media(min-width: $screen-l) {

@@ -7,7 +7,9 @@
       :class="{'BaseTabs-Tab--active': currentItem === tab.value}"
       @click="$emit('chooseTab', tab.value)"
     >
-      {{ tab.name }}
+      <div class="BaseTabs-Name">
+        {{ tab.name }}
+      </div>
     </button>
   </div>
 </template>
@@ -45,9 +47,10 @@ export default {
     align-items: center;
     position: relative;
     margin-right: 4px;
-    font-size: 10px;
+    font-size: inherit;
     font-weight: 700;
     text-align: center;
+    text-transform: inherit;
     color: var(--color-text-main);
     background: var(--color-bg);
     cursor: pointer;
@@ -59,17 +62,27 @@ export default {
     &.nuxt-link-exact-active, &--active {
       color: var(--color-main1);
 
-      &:after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        width: 50px;
-        height: 4px;
-        background: var(--color-main1);
-        transform: translateX(-50%);
+      .BaseTabs-Name {
+        &:after {
+          content: '';
+          position: absolute;
+          z-index: 10;
+          left: -15px;
+          bottom: 0;
+          width: calc(100% + 30px);
+          height: 4px;
+          background: var(--color-main1);
+        }
       }
     }
+  }
+
+  &-Name {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 }
 
