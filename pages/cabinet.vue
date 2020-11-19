@@ -275,6 +275,7 @@ export default {
 
   &-Dropdown {
     height: 55px;
+    font-size: 10px;
 
     &--currency {
       width: 230px;

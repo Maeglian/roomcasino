@@ -15,8 +15,7 @@
         :class="[ isOpen ? 'ThinArrow--up' : 'ThinArrow--down' ]"
       ></i>
     </button>
-    <transition name="slide-up">
-      <ul v-show="isOpen" class="BaseDropdown-Inner" aria-label="submenu">
+    <ul v-show="isOpen" class="BaseDropdown-Inner" aria-label="submenu">
           <li
             v-for="(item, i) in filteredItems"
             :key="item"
@@ -27,7 +26,6 @@
             {{ item }}
           </li>
       </ul>
-    </transition>
   </div>
 </template>
 
@@ -96,7 +94,6 @@ export default {
     align-items: center;
     height: 100%;
     padding: 0 16px;
-    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-text-main);
