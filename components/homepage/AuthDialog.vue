@@ -6,7 +6,7 @@
         class="AuthDialog-Tabs"
         :items="tabs"
         :currentItem="activeTab"
-        @chooseTab="activeTab = $event" />
+        @chooseTab="toggleRegistration" />
       <template v-if="activeTab === 'registration'">
         <RegistrationForm
           @close="$emit('close')"
@@ -123,7 +123,7 @@ export default {
     position: relative;
     flex-grow: 1;
     padding-right: 14px;
-    padding-bottom: 25px;
+    padding-bottom: 29px;
     padding-left: 14px;
     background: url('../../assets/img/auth-bg.png');
 
@@ -135,6 +135,18 @@ export default {
 
   &-Fields {
     position: relative;
+  }
+
+  &-Row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &-Text {
