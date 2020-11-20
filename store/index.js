@@ -187,64 +187,106 @@ export const state = () => ({
   jackpots: [],
   limits: [
     {
-      name: 'Loss limits',
+      name: 'loss limits',
       limits: [
         {
+          isMoney: true,
           limitState: 1,
           limitAmount: 5,
-          currentPeriod: 'daily',
+          name: 'daily limit',
           type: 'loss',
-          end: moment().endOf('day'),
+          reset: moment().endOf('day'),
         },
         {
+          isMoney: true,
           limitState: 19,
           limitAmount: 25,
           type: 'loss',
-          currentPeriod: 'weekly',
-          end: moment().endOf('week'),
+          name: 'weekly limit',
+          reset: moment().endOf('week'),
         },
+      ]
+    },
+    {
+      name: 'session limit',
+      limits: [
         {
-          limitState: 50,
-          limitAmount: 120,
+          isMoney: false,
+          limitState: 30,
+          limitAmount: 80,
+          name: 'time spent of gambling',
           type: 'session',
         },
+      ]
+    },
+    {
+      name: 'wager limits',
+      limits: [
         {
+          isMoney: true,
           limitState: 7,
           limitAmount: 14,
           type: 'wager',
-          currentPeriod: 'weekly',
-          end: moment().endOf('week'),
+          name: 'weekly limit',
+          reset: moment().endOf('week'),
         },
+      ]
+    },
+    {
+      name: 'cooling off',
+      limits: [
         {
+          isMoney: true,
           limitState: 7,
           limitAmount: 20,
           type: 'cooling',
-          currentPeriod: 'weekly',
-          end: moment().endOf('week'),
+          name: 'time spent gambling',
+          reset: moment().endOf('week'),
         },
+      ]
+    },
+    {
+      name: 'reality check',
+      limits: [
         {
+          isMoney: false,
+          type: 'reality_check',
+          name: 'notification',
+          period: 'every 60 min',
+        },
+      ]
+    },
+    {
+      name: 'deposit limits',
+      limits: [
+        {
+          isMoney: true,
           limitState: 67,
           limitAmount: 100,
           type: 'deposit',
-          currentPeriod: 'daily',
-          end: moment().endOf('day'),
+          name: 'daily limit',
+          reset: moment().endOf('day'),
         },
         {
+          isMoney: true,
           limitState: 10,
           limitAmount: 50,
           type: 'deposit',
-          currentPeriod: 'weekly',
-          end: moment().endOf('week'),
+          name: 'weekly limit',
+          reset: moment().endOf('week'),
         },
+      ]
+    },
+    {
+      name: 'self exclusion',
+      limits: [
         {
-          type: 'reality_check',
-          period: 'every 60 min',
-        },
-        {
+          isMoney: false,
           type: 'self_exclusion',
+          name: 'blocked address',
           period: '6 month',
         },
-      ],
+      ]
     },
   ],
   gamesAreLoading: false,

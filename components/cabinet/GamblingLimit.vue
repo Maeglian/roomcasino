@@ -2,13 +2,13 @@
   <div class="GamblingLimit" :style="{'--color': color, '--offset': strokeOffset}">
     <div class="GamblingLimit-Header">
       <div class="GamblingLimit-Title">
-        {{ item.type }}
+        {{ item.name }}
       </div>
       <div class="GamblingLimit-Edit">
         ...
       </div>
     </div>
-    <div v-if="item.end" class="GamblingLimit-State">
+    <div v-if="item.isMoney" class="GamblingLimit-State">
       <div class="GamblingLimit-Scale">
         <svg class="GamblingLimit-Circle">
           <circle class="GamblingLimit-CircleBg" cx="20" cy="20" r="17"></circle>
@@ -21,11 +21,34 @@
           </circle>
         </svg>
       </div>
-      <Counter class="GamblingLimit-Counter" :enddate="item.end" />
+      <Counter class="GamblingLimit-Counter" :minFormat="true" :enddate="item.reset" />
     </div>
-    <div class="GamblingLimit-Footer">
-      <div class="GamblingLimit-Left">
-        {{ item.limitState }} of {{ item.limitAmount }} {{ item.currency }} left
+    <div v-if="item.type === 'session'" class="GamblingLimit-LineScale">
+      <div
+        class="GamblingLimit-LineScale GamblingLimit-LineScale--spent"
+        :style="{'width': `${item.limitState / item.limitAmount * 100}%`}"
+      >
+        <svg class="GamblingLimit-SessionIcon">
+          <use xlink:href="@/assets/img/icons.svg#clock"></use>
+        </svg>
+        {{ item.limitState }} min
+      </div>
+      {{ sessionLeft }} min
+    </div>
+    <div v-else class="GamblingLimit-Footer">
+      <div class="GamblingLimit-Details">
+        <template v-if="item.isMoney">
+        {{ item.limitState }} of {{ item.limitAmount }} EUR {{ item.currency }} left
+        </template>
+        <template v-if="item.period" class="GamblingLimit-Left">
+          <svg v-if="item.type === 'reality_check'" class="GamblingLimit-Icon GamblingLimit-RealityIcon">
+            <use xlink:href="@/assets/img/icons.svg#clock"></use>
+          </svg>
+          <svg v-if="item.type === 'self_exclusion'" class="GamblingLimit-Icon GamblingLimit-BlockedIcon">
+            <use xlink:href="@/assets/img/icons.svg#trash"></use>
+          </svg>
+          {{ item.period }}
+        </template>
       </div>
       <div
         class="GamblingLimit-Active"
@@ -59,7 +82,7 @@ export default {
     ...mapState(['currency']),
     color() {
       switch(this.item.type) {
-        case 'daily':
+        case 'loss':
           return '#8733F3';
         case 'wager':
           return '#335DF3';
@@ -68,7 +91,7 @@ export default {
         case 'deposit':
           return '#33C5F3'
         default:
-          return '#8733F3';
+          return '#F3B233';
       }
     },
     isActive() {
@@ -78,6 +101,9 @@ export default {
     strokeOffset() {
       return this.item.limitState / this.item.limitAmount * circleLength;
     },
+    sessionLeft() {
+      return this.item.limitAmount - this.item.limitState;
+    }
   },
 };
 </script>
@@ -93,7 +119,7 @@ export default {
     align-items: center;
   }
 
-  &-Header, &-Counter {
+  &-Header {
     margin-bottom: 16px;
   }
 
@@ -110,17 +136,11 @@ export default {
     color: var(--color-text-ghost);
   }
 
-  &-Footer {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--color-text-main);
-  }
-
   &-Scale {
     position: relative;
     width: 40px;
     height: 40px;
+    margin-right: 15px;
   }
 
   &-Circle {
@@ -144,6 +164,89 @@ export default {
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
     animation: donut 1.5s ease;
+  }
+
+  &-State {
+    display: flex;
+    align-items: center;
+    margin-bottom: 27px;
+  }
+
+  &-Footer {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-main);
+  }
+
+  &-Details {
+    display: flex;
+    align-items: center;
+  }
+
+  &-Icon {
+    margin-right: 7px;
+  }
+
+  &-RealityIcon {
+    width: 15px;
+    height: 15px;
+    fill: var(--color-main1);
+    stroke: var(--color-bg);
+  }
+
+  &-BlockedIcon {
+    width: 12px;
+    height: 13px;
+  }
+
+  &-SessionIcon {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    fill: var(--color-bg);
+    stroke: var(--color-main1);
+  }
+
+  &-LineScale {
+    position: relative;
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--color-main1);
+    background: var(--color-bg-lighter);
+    border-radius: 1000px;
+
+    &--spent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      justify-content: flex-start;
+      padding-left: 10px;
+      padding-right: 0;
+      height: 100%;
+      color: var(--color-bg);
+      background: var(--color-main1);
+    }
+  }
+
+  &-Active {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -11px;
+      top: 3px;
+      width: 5px;
+      height: 5px;
+      background: var(--color);
+      border-radius: 50%;
+    }
   }
 }
 

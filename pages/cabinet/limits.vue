@@ -16,17 +16,17 @@
         Do you want to track your activity, loss limits or limit deposits? Your account can be set with all limits. It'll help you to get an overview of your gambling. All restriction takes effect instantly.
       </div>
       <div v-else class="LimitsPage-Limits">
-        <template v-for="limit in limits">
+        <div class="LimitsPage-LimitType" v-for="limit in limits">
           <div class="LimitsPage-Header" :key="limit.name">
             {{ limit.name}}
           </div>
           <GamblingLimit
-            v-for="item in limit.limits"
-            :key="item.currentPeriod"
+            v-for="(item, i) in limit.limits"
+            :key="i"
             class="LimitsPage-Limit"
             :item="item"
           />
-        </template>
+        </div>
       </div>
     </div>
     <modal name="createLimits" width="400" height="auto" adaptive>
@@ -77,17 +77,22 @@ export default {
   }
 
   &-Limits {
-    display: flex;
-    flex-flow: column wrap;
+    @media (min-width: $screen-m) {
+      column-count: 2;
+      column-gap: 8px;
+    }
+
+    @media (min-width: $screen-xl) {
+      column-count: 3;
+    }
   }
 
   &-Limit {
-    width: 33%;
     margin-bottom: 4px;
+    break-inside: avoid;
   }
 
   &-Header {
-    width: 33%;
     height: 55px;
     margin-bottom: 4px;
     padding: 0 16px;
