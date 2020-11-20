@@ -1,6 +1,6 @@
 <template>
-  <div class="Counter">
-    <div class="Counter-Text">
+  <div class="Counter" :class="{'Counter--min': minFormat}">
+    <div v-if="!minFormat" class="Counter-Text">
       Time left until finish
     </div>
     <div class="Counter-Content">
@@ -9,7 +9,7 @@
           {{currentTime.days}}
         </div>
         <div class="Counter-Text">
-          Days
+          {{ minFormat ? 'd' : 'Days' }}
         </div>
       </div>
       <div class="Counter-Item Counter-Hours">
@@ -17,7 +17,7 @@
           {{currentTime.hours}}
         </div>
         <div class="Counter-Text">
-          Hours
+          {{ minFormat ? 'h' : 'Hours' }}
         </div>
       </div>
       <div class="Counter-Item Counter-Minutes">
@@ -25,7 +25,7 @@
           {{currentTime.minutes}}
         </div>
         <div class="Counter-Text">
-          Minutes
+          {{ minFormat ? 'm' : 'Minutes' }}
         </div>
       </div>
       <div class="Counter-Item Counter-Seconds">
@@ -33,9 +33,12 @@
           {{currentTime.seconds}}
         </div>
         <div class="Counter-Text">
-          Seconds
+          {{ minFormat ? 's' : 'Seconds' }}
         </div>
       </div>
+    </div>
+    <div v-if="minFormat" class="Counter-AdditionalText">
+      Until resset
     </div>
   </div>
 </template>
@@ -44,6 +47,11 @@
 export default {
   name: 'Counter',
   props: {
+    minFormat: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     enddate: {
       type: String,
       required: true,
@@ -163,6 +171,42 @@ export default {
     @media(min-width: $screen-xl) {
       font-size: 30px;
     }
+  }
+
+  &-AdditionalText {
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--color-text-ghost);
+    text-transform: capitalize;
+  }
+}
+
+.Counter--min {
+  .Counter-Item {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 16px;
+
+    &:after {
+      top: -1px;
+      right: -10px;
+      font-size: 16px;
+      color: var(--color-text-main);
+    }
+  }
+
+  .Counter-Count {
+    margin-right: 2px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .Counter-Text {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: lowercase;
+    color: var(--color-text-main);
   }
 }
 </style>
