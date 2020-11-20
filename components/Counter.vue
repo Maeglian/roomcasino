@@ -64,7 +64,7 @@ export default {
   data() {
     return {
       currentTime: {
-        days: '00',
+        days: '0',
         hours: '00',
         minutes: '00',
         seconds: '00',
@@ -84,7 +84,7 @@ export default {
       if (t > 0) {
         this.currentTime = {
           total: t,
-          days: String(days).padStart(2, '0'),
+          days: String(days),
           hours: String(hours).padStart(2, '0'),
           minutes: String(minutes).padStart(2, '0'),
           seconds: String(seconds).padStart(2, '0'),
@@ -92,7 +92,7 @@ export default {
         setTimeout(this.countdown, this.speed);
       } else {
         this.currentTime = {
-          days: '00',
+          days: '0',
           hours: '00',
           minutes: '00',
           seconds: '00',
