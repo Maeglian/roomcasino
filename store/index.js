@@ -193,17 +193,17 @@ export const state = () => ({
           isMoney: true,
           limitState: 1,
           limitAmount: 5,
-          name: 'daily limit',
+          title: 'daily limit',
           type: 'loss',
-          reset: moment().endOf('day'),
+          reset: moment().endOf('day').format(),
         },
         {
           isMoney: true,
           limitState: 19,
           limitAmount: 25,
           type: 'loss',
-          name: 'weekly limit',
-          reset: moment().endOf('week'),
+          title: 'weekly limit',
+          reset: moment().endOf('week').format(),
         },
       ]
     },
@@ -214,7 +214,7 @@ export const state = () => ({
           isMoney: false,
           limitState: 30,
           limitAmount: 80,
-          name: 'time spent of gambling',
+          title: 'time spent of gambling',
           type: 'session',
         },
       ]
@@ -227,8 +227,8 @@ export const state = () => ({
           limitState: 7,
           limitAmount: 14,
           type: 'wager',
-          name: 'weekly limit',
-          reset: moment().endOf('week'),
+          title: 'weekly limit',
+          reset: moment().endOf('week').format(),
         },
       ]
     },
@@ -240,8 +240,8 @@ export const state = () => ({
           limitState: 7,
           limitAmount: 20,
           type: 'cooling',
-          name: 'time spent gambling',
-          reset: moment().endOf('week'),
+          title: 'time spent gambling',
+          reset: moment().endOf('week').format(),
         },
       ]
     },
@@ -251,7 +251,7 @@ export const state = () => ({
         {
           isMoney: false,
           type: 'reality_check',
-          name: 'notification',
+          title: 'notification',
           period: 'every 60 min',
         },
       ]
@@ -264,16 +264,16 @@ export const state = () => ({
           limitState: 67,
           limitAmount: 100,
           type: 'deposit',
-          name: 'daily limit',
-          reset: moment().endOf('day'),
+          title: 'daily limit',
+          reset: moment().endOf('day').format(),
         },
         {
           isMoney: true,
           limitState: 10,
           limitAmount: 50,
           type: 'deposit',
-          name: 'weekly limit',
-          reset: moment().endOf('week'),
+          title: 'weekly limit',
+          reset: moment().endOf('week').format(),
         },
       ]
     },
@@ -283,7 +283,7 @@ export const state = () => ({
         {
           isMoney: false,
           type: 'self_exclusion',
-          name: 'blocked address',
+          title: 'blocked address',
           period: '6 month',
         },
       ]

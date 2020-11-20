@@ -87,9 +87,12 @@ export default {
     }
   }
 
+  &-LimitType {
+    break-inside: avoid;
+  }
+
   &-Limit {
     margin-bottom: 4px;
-    break-inside: avoid;
   }
 
   &-Header {

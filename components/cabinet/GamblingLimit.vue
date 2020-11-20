@@ -2,7 +2,7 @@
   <div class="GamblingLimit" :style="{'--color': color, '--offset': strokeOffset}">
     <div class="GamblingLimit-Header">
       <div class="GamblingLimit-Title">
-        {{ item.name }}
+        {{ item.title }}
       </div>
       <div class="GamblingLimit-Edit">
         ...

@@ -11,10 +11,10 @@
       @set-dropdown-value="currentLimitType = $event"
     />
     <div class="CabinetPage-Section CabinetPage-Text CreateLimits-Text">
-      {{ limitOptions[currentLimitType].text }}
+      {{ limits[currentLimitType].text }}
     </div>
     <div
-      v-if="currentLimitType === 'Loss limits' || currentLimitType === 'Wager limits' || currentLimitType === 'Deposit limits'"
+      v-if="currentLimitType === 'loss' || currentLimitType === 'wager' || currentLimitType === 'deposit'"
       class="CreateLimits-Row"
     >
       <BaseInput
@@ -49,6 +49,7 @@
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import BaseInput from '@/components/base/BaseInput.vue';
 import { mapMutations, mapState } from 'vuex';
+import moment from 'moment';
 
 export default {
   name: 'CreateLimits',
@@ -58,43 +59,67 @@ export default {
   },
   data() {
     return {
-      limitTypes: ['Loss limits', 'Wager limits', 'Deposit limits', 'Session limit', 'Self exclusion', 'Reality check'],
-      limitOptions: {
-        'Loss limits': {
+      limits: {
+        loss: {
+          name: 'Loss limits',
           text: 'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
-          fields: ['limitAmount', 'currentPeriod'],
+          fields: ['limitState', 'limitAmount', 'currentPeriod', 'isMoney', 'reset', 'title'],
         },
-        'Wager limits': {
+        wager: {
           name: 'Wager limits',
           text: 'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or mounth.',
-          fields: ['limitAmount', 'currentPeriod'],
+          fields: ['limitState', 'limitAmount', 'currentPeriod', 'isMoney', 'reset', 'title'],
         },
-        'Deposit limits': {
+        deposit: {
           name: 'Deposit limits',
           text: 'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or mounth.',
-          fields: ['limitAmount', 'currentPeriod'],
+          fields: ['limitState', 'limitAmount', 'currentPeriod', 'isMoney', 'reset', 'title'],
         },
-        'Session limit': {
+        session: {
           name: 'Session limit',
+          title: 'time spent gambling',
           text: 'The restriction takes effect instantly. If you hit the limit, you will beautomatically logged out of your  account.',
+          fields: ['limitState', 'isMoney', 'title'],
         },
-        'Self exclusion': {
+        self_exclusion: {
           name: 'Self exclusion',
+          title: 'blocked address',
           text: 'You can set a self-exclusion limit for a definite or an indefinite period of time.  During the set period you will not be able to log into your account. To be excluded from gambiling on our site for an indefinite period of time, please, contact our support team via live-chat.',
+          fields: ['isMoney', 'title'],
         },
-        'Reality check': {
+        reality_check: {
           name: 'Reality check',
+          title: 'notification',
           text: 'Do you want to track your activity? We\'llsend you  an hourly notification in-game to remnd you of how much you have spent at the Casino. It\'ll help you to get an overview of your gambing and perhaps consider pausing play for a while. You can get the notification every 15,30,45 and 60 minutes.',
+          fields: ['isMoney', 'title'],
         },
       },
-      currentLimitType: 'Loss limits',
+      currentLimitType: 'loss',
       limitAmount: 0,
       periods: ['daily', 'weekly', 'monthly'],
       currentPeriod: 'daily',
+      limitState: 0,
     };
   },
   computed: {
     ...mapState(['currency']),
+    limitTypes() {
+      return Object.keys(this.limits);
+    },
+    isMoney() {
+      if (this.currentLimitType === 'session' || this.currentLimitType === 'self_exclusion' || this.currentLimitType === 'reality_check') return false;
+      return true;
+    },
+    reset() {
+      let date;
+      if (this.currentPeriod === 'daily') date = moment().add(1, 'days');
+      if (this.currentPeriod === 'weekly') date = moment().add(7, 'days');
+      if (this.currentPeriod === 'monthly') date = moment().add(30, 'days');
+      return moment(date).format();
+    },
+    title() {
+      return this.limits[this.currentLimitType].title || `${this.currentPeriod} limit`;
+    },
   },
   methods: {
     ...mapMutations(['addLimits']),
@@ -104,9 +129,13 @@ export default {
         content: {},
       };
 
-      this.limitOptions[this.currentLimitType].fields.forEach((field) => {
+      limit.content.type = this.currentLimitType;
+
+      this.limits[this.currentLimitType].fields.forEach((field) => {
         limit.content[field] = this[field];
       });
+
+      console.log(limit);
 
       this.addLimits(limit);
       this.$emit('close');
