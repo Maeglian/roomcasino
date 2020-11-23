@@ -20,7 +20,7 @@
       <BaseInput
         class="CreateLimits-Amount"
         inputClass="CreateLimits-Input"
-        v-model="limitAmount"
+        v-model.number="limitAmount"
       >
         <template v-slot:afterInput-absolute>
           <span class="CreateLimits-InputCurrency">
@@ -35,6 +35,30 @@
         @set-dropdown-value="currentPeriod = $event"
       />
     </div>
+    <BaseInput
+      v-if="currentLimitType === 'session'"
+      class="CreateLimits-Row CreateLimits-Amount"
+      inputClass="CreateLimits-Input"
+      v-model.number="limitAmount"
+    >
+      <template v-slot:afterInput-absolute>
+    <span class="CreateLimits-InputCurrency">
+      min
+    </span>
+      </template>
+    </BaseInput>
+    <BaseDropdown
+      v-if="currentLimitType === 'reality_check'"
+      class="CreateLimits-Row CabinetPage-Dropdown CabinetPage-Section"
+      :items="realityCheckPeriods"
+      @set-dropdown-value="period = $event"
+    />
+    <BaseDropdown
+      v-if="currentLimitType === 'self_exclusion'"
+      class="CreateLimits-Row CabinetPage-Dropdown CabinetPage-Section"
+      :items="selfExclusionPeriods"
+      @set-dropdown-value="period = $event"
+    />
     <button
       class="Btn Btn--full Btn--color CreateLimits-Btn"
       @click="onAddLimit()"
@@ -79,25 +103,28 @@ export default {
           name: 'Session limit',
           title: 'time spent gambling',
           text: 'The restriction takes effect instantly. If you hit the limit, you will beautomatically logged out of your  account.',
-          fields: ['limitState', 'isMoney', 'title'],
+          fields: ['limitState', 'limitAmount', 'isMoney', 'title'],
         },
         self_exclusion: {
           name: 'Self exclusion',
           title: 'blocked address',
           text: 'You can set a self-exclusion limit for a definite or an indefinite period of time.  During the set period you will not be able to log into your account. To be excluded from gambiling on our site for an indefinite period of time, please, contact our support team via live-chat.',
-          fields: ['isMoney', 'title'],
+          fields: ['isMoney', 'title', 'period'],
         },
         reality_check: {
           name: 'Reality check',
           title: 'notification',
           text: 'Do you want to track your activity? We\'llsend you  an hourly notification in-game to remnd you of how much you have spent at the Casino. It\'ll help you to get an overview of your gambing and perhaps consider pausing play for a while. You can get the notification every 15,30,45 and 60 minutes.',
-          fields: ['isMoney', 'title'],
+          fields: ['isMoney', 'title', 'period'],
         },
       },
       currentLimitType: 'loss',
       limitAmount: 0,
       periods: ['daily', 'weekly', 'monthly'],
       currentPeriod: 'daily',
+      realityCheckPeriods: ['none', '30 min', '60 min', '120 min'],
+      selfExclusionPeriods: ['none', '1 day', '1 week', '1 month', '6 month', '1 year'],
+      period: 'none',
       limitState: 0,
     };
   },
@@ -125,7 +152,7 @@ export default {
     ...mapMutations(['addLimits']),
     onAddLimit() {
       const limit = {
-        name: this.currentLimitType,
+        name: this.limits[this.currentLimitType].name,
         content: {},
       };
 
@@ -134,8 +161,6 @@ export default {
       this.limits[this.currentLimitType].fields.forEach((field) => {
         limit.content[field] = this[field];
       });
-
-      console.log(limit);
 
       this.addLimits(limit);
       this.$emit('close');
