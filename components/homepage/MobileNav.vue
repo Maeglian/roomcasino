@@ -32,7 +32,7 @@
         <div v-show="isNewNotifications" class="MobileNav-MessagesNew"></div>
       </div>
       <div class="MobileNav-Name">
-        Deposit
+        Notification
       </div>
     </div>
     <button class="MobileNav-Item">
@@ -88,6 +88,10 @@ export default {
 
   &-Item {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &-Messages {
@@ -110,13 +114,18 @@ export default {
   &-MessagesNew {
     position: absolute;
     top: -2px;
-    right: 8px;
+    right: -2px;
     width: 8px;
     height: 8px;
     background: var(--color-error);
     border: 1px solid var(--color-body);
     border-radius: 50%;
   }
+}
+
+.MobileNav-Icon {
+  width: 17px;
+  height: 17px;
 }
 
 </style>
