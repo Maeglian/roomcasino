@@ -10,13 +10,13 @@
     </div>
     <div class="GamblingLimit-Content">
       <div v-if="editMenuIsOpen" class="GamblingLimit-EditMenu" v-click-outside="onClickOutside">
-        <div class="GamblingLimit-EditMenuItem">
+        <div class="GamblingLimit-EditMenuItem" @click="onClickEdit">
           <svg class="GamblingLimit-EditMenuIcon GamblingLimit-EditIcon">
             <use xlink:href="@/assets/img/icons.svg#edit"></use>
           </svg>
           Edit limit
         </div>
-        <div class="GamblingLimit-EditMenuItem">
+        <div class="GamblingLimit-EditMenuItem" @click="onDeleteLimit">
           <svg class="GamblingLimit-EditMenuIcon GamblingLimit-DeleteIcon">
             <use xlink:href="@/assets/img/icons.svg#delete"></use>
           </svg>
@@ -79,6 +79,7 @@
 <script>
 import { mapState } from 'vuex';
 import Counter from '@/components/Counter';
+import CreateLimits from '@/components/cabinet/CreateLimits';
 
 const circleLength = 106.8;
 
@@ -93,6 +94,7 @@ export default {
   },
   components: {
     Counter,
+    CreateLimits,
   },
   data() {
     return {
@@ -128,8 +130,22 @@ export default {
   },
   methods: {
     onClickOutside(e) {
-      console.log(this.$refs.edit);
       if (e.target !== this.$refs.edit) this.editMenuIsOpen = false;
+    },
+    onClickEdit() {
+      this.$modal.show(CreateLimits,
+        { isEdit: true, item: this.item, onUpdateLimit: this.onUpdateLimit },
+        { width: 400, height: 'auto', adaptive: true },
+        {
+          'update-limit': (e) => this.$emit('update-limit', e),
+        });
+    },
+    onUpdateLimit(payload) {
+      this.$emit('updateLimit', payload)
+    },
+    onDeleteLimit() {
+      this.$emit('deleteLimit');
+      this.editMenuIsOpen = false;
     }
   }
 };

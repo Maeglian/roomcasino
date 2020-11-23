@@ -3,9 +3,15 @@
     <div class="Close Modal-Close" @click="$emit('close')"></div>
       <div class="CreateLimits">
     <div class="CabinetPage-Header CabinetPage-Section">
-      Create limits
+      <template v-if="isEdit">
+        Edit {{ item.type }} limits
+      </template>
+      <template v-else>
+        Create limits
+      </template>
     </div>
     <BaseDropdown
+      v-if="!isEdit"
       class="CabinetPage-Dropdown CabinetPage-Section"
       :items="limitTypes"
       @set-dropdown-value="currentLimitType = $event"
@@ -19,6 +25,7 @@
     >
       <BaseInput
         class="CreateLimits-Amount"
+        inputType="text"
         inputClass="CreateLimits-Input"
         v-model.number="limitAmount"
       >
@@ -37,6 +44,7 @@
     </div>
     <BaseInput
       v-if="currentLimitType === 'session'"
+      inputType="text"
       class="CreateLimits-Row CreateLimits-Amount"
       inputClass="CreateLimits-Input"
       v-model.number="limitAmount"
@@ -51,19 +59,26 @@
       v-if="currentLimitType === 'reality_check'"
       class="CreateLimits-Row CabinetPage-Dropdown CabinetPage-Section"
       :items="realityCheckPeriods"
+      v-model="period"
       @set-dropdown-value="period = $event"
     />
     <BaseDropdown
       v-if="currentLimitType === 'self_exclusion'"
       class="CreateLimits-Row CabinetPage-Dropdown CabinetPage-Section"
       :items="selfExclusionPeriods"
+      v-model="period"
       @set-dropdown-value="period = $event"
     />
     <button
       class="Btn Btn--full Btn--color CreateLimits-Btn"
-      @click="onAddLimit()"
+      @click="onClickLimitBtn()"
     >
-      Add limits
+      <template v-if="isEdit">
+        Save limits
+      </template>
+      <template v-else>
+        Add limits
+      </template>
     </button>
   </div>
   </div>
@@ -77,6 +92,22 @@ import moment from 'moment';
 
 export default {
   name: 'CreateLimits',
+  props: {
+    isEdit: {
+      type: Boolean,
+      isRequired: false,
+      default: false
+    },
+    item: {
+      type: Object,
+      isRequired: false,
+      default: () => ({})
+    },
+    onUpdateLimit: {
+      type: Function,
+      isRequired: false,
+    }
+  },
   components: {
     BaseDropdown,
     BaseInput,
@@ -118,14 +149,14 @@ export default {
           fields: ['isMoney', 'title', 'period'],
         },
       },
-      currentLimitType: 'loss',
-      limitAmount: 0,
+      currentLimitType: this.item.type || 'loss',
+      limitAmount: this.item.limitAmount || 0,
       periods: ['daily', 'weekly', 'monthly'],
-      currentPeriod: 'daily',
+      currentPeriod: this.item.currentPeriod || 'daily',
       realityCheckPeriods: ['none', '30 min', '60 min', '120 min'],
       selfExclusionPeriods: ['none', '1 day', '1 week', '1 month', '6 month', '1 year'],
-      period: 'none',
-      limitState: 0,
+      period: this.item.period || 'none',
+      limitState: this.item.limitState || 0,
     };
   },
   computed: {
@@ -150,11 +181,12 @@ export default {
   },
   methods: {
     ...mapMutations(['addLimits']),
-    onAddLimit() {
+    onClickLimitBtn() {
       const limit = {
-        name: this.limits[this.currentLimitType].name,
         content: {},
       };
+
+      if (!this.isEdit) limit.name = this.limits[this.currentLimitType].name
 
       limit.content.type = this.currentLimitType;
 
@@ -162,7 +194,9 @@ export default {
         limit.content[field] = this[field];
       });
 
-      this.addLimits(limit);
+      if (this.isEdit) {
+        this.onUpdateLimit(limit);
+      } else this.addLimits(limit);
       this.$emit('close');
     },
   },
@@ -195,6 +229,9 @@ export default {
 
   &-Input {
     padding: 0 50px 0 16px;
+    color: var(--color-text-main);
+    background: var(--color-bg);
+    border: none;
   }
 
   &-InputCurrency {

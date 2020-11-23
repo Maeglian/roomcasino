@@ -16,15 +16,17 @@
         Do you want to track your activity, loss limits or limit deposits? Your account can be set with all limits. It'll help you to get an overview of your gambling. All restriction takes effect instantly.
       </div>
       <div v-else class="LimitsPage-Limits">
-        <div class="LimitsPage-LimitType" v-for="limit in limits">
-          <div class="LimitsPage-Header" :key="limit.name">
+        <div class="LimitsPage-LimitType" v-for="(limit, i) in limits">
+          <div v-if="limit.limits.length" class="LimitsPage-Header" :key="limit.name">
             {{ limit.name}}
           </div>
           <GamblingLimit
-            v-for="(item, i) in limit.limits"
-            :key="i"
+            v-for="(item, j) in limit.limits"
+            :key="j"
             class="LimitsPage-Limit"
             :item="item"
+            @updateLimit="updateLimits({ i, j, payload: $event.content })"
+            @deleteLimit="deleteLimit({ i, j })"
           />
         </div>
       </div>
@@ -37,7 +39,7 @@
 <script>
 import CreateLimits from '@/components/cabinet/CreateLimits.vue';
 import GamblingLimit from '@/components/cabinet/GamblingLimit.vue';
-import { mapState } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'LimitsPage',
@@ -49,6 +51,7 @@ export default {
     ...mapState(['limits']),
   },
   methods: {
+    ...mapMutations(['updateLimits', 'deleteLimit']),
     showCreateLimitsDialog() {
       this.$modal.show('createLimits');
     },

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Vue from 'vue';
 import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX } from '../config';
 import moment from 'moment';
 
@@ -193,6 +194,7 @@ export const state = () => ({
           isMoney: true,
           limitState: 1,
           limitAmount: 5,
+          currentPeriod: 'daily',
           title: 'daily limit',
           type: 'loss',
           reset: moment().endOf('day').format(),
@@ -201,6 +203,7 @@ export const state = () => ({
           isMoney: true,
           limitState: 19,
           limitAmount: 25,
+          currentPeriod: 'weekly',
           type: 'loss',
           title: 'weekly limit',
           reset: moment().endOf('week').format(),
@@ -226,6 +229,7 @@ export const state = () => ({
           isMoney: true,
           limitState: 7,
           limitAmount: 14,
+          currentPeriod: 'weekly',
           type: 'wager',
           title: 'weekly limit',
           reset: moment().endOf('week').format(),
@@ -263,6 +267,7 @@ export const state = () => ({
           isMoney: true,
           limitState: 67,
           limitAmount: 100,
+          currentPeriod: 'daily',
           type: 'deposit',
           title: 'daily limit',
           reset: moment().endOf('day').format(),
@@ -271,6 +276,7 @@ export const state = () => ({
           isMoney: true,
           limitState: 10,
           limitAmount: 50,
+          currentPeriod: 'weekly',
           type: 'deposit',
           title: 'weekly limit',
           reset: moment().endOf('week').format(),
@@ -649,6 +655,12 @@ export const mutations = {
         else acc.active = false;
       });
     }
+  },
+  updateLimits(state, { i, j, payload }) {
+    Vue.set(state.limits[i].limits, j, payload);
+  },
+  deleteLimit(state, { i, j }) {
+    state.limits[i].limits = [...state.limits[i].limits.slice(0, j), ...state.limits[i].limits.slice(j + 1)];
   },
 };
 
