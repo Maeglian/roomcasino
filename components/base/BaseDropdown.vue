@@ -38,15 +38,21 @@ export default {
       type: Array,
       isRequired: true,
     },
+    activeItem: {
+      type: String,
+      isRequired: false,
+    },
     placeholder: {
       type: String,
       isRequired: false,
     },
   },
+  model: {
+    prop: 'activeItem',
+  },
   data() {
     return {
       isOpen: false,
-      activeItem: '',
       activeItemIndex: -1,
     };
   },
