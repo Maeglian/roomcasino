@@ -31,7 +31,7 @@ export default {
   --color-faded: rgba(255, 255, 255, 0.5);
   --color-more-faded: rgba(255, 255, 255, 0.4);
   --color-most-faded: rgba(255, 255, 255, 0.2);
-  --color-bg: #0E152F;
+  --color-bg: #0e152f;
   --color-bg-lighter: #1B2138;
   --color-bg-darker: rgba(39, 43, 95, 0.5);
   --color-bg-nav: #151841;

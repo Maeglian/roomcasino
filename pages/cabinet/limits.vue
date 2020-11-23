@@ -40,12 +40,14 @@
 import CreateLimits from '@/components/cabinet/CreateLimits.vue';
 import GamblingLimit from '@/components/cabinet/GamblingLimit.vue';
 import { mapMutations, mapState } from 'vuex';
+import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
 
 export default {
   name: 'LimitsPage',
   components: {
     CreateLimits,
     GamblingLimit,
+    ConfirmDialog
   },
   computed: {
     ...mapState(['limits']),

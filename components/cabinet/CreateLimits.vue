@@ -1,92 +1,102 @@
 <template>
   <div class="Modal">
     <div class="Close Modal-Close" @click="$emit('close')"></div>
-      <div class="CreateLimits">
-    <div class="CabinetPage-Header CabinetPage-Section">
-      <template v-if="isEdit">
-        Edit {{ item.type }} limits
-      </template>
-      <template v-else>
-        Create limits
-      </template>
-    </div>
-    <BaseDropdown
-      v-if="!isEdit"
-      class="CabinetPage-Dropdown CabinetPage-Section"
-      :items="limitTypes"
-      @set-dropdown-value="currentLimitType = $event"
-    />
-    <div class="CabinetPage-Section CabinetPage-Text CreateLimits-Text">
-      {{ limits[currentLimitType].text }}
-    </div>
-    <div
-      v-if="currentLimitType === 'loss' || currentLimitType === 'wager' || currentLimitType === 'deposit'"
-      class="CreateLimits-Row"
-    >
+    <div v-if="!isConfirm" class="CreateLimits">
+      <div class="CabinetPage-Header CabinetPage-Section">
+        <template v-if="isEdit">
+          Edit {{ item.type }} limits
+        </template>
+        <template v-else>
+          Create limits
+        </template>
+      </div>
+      <BaseDropdown
+        v-if="!isEdit"
+        class="CabinetPage-Dropdown CabinetPage-Section"
+        :items="limitTypes"
+        @set-dropdown-value="currentLimitType = $event"
+      />
+      <div class="CabinetPage-Section CabinetPage-Text CreateLimits-Text">
+        {{ limits[currentLimitType].text }}
+      </div>
+      <div
+        v-if="currentLimitType === 'loss' || currentLimitType === 'wager' || currentLimitType === 'deposit'"
+        class="CreateLimits-Row"
+      >
+        <BaseInput
+          class="CreateLimits-Amount"
+          inputType="text"
+          inputClass="CreateLimits-Input"
+          v-model.number="limitAmount"
+        >
+          <template v-slot:afterInput-absolute>
+            <span class="CreateLimits-InputCurrency">
+              {{ currency }}
+            </span>
+          </template>
+        </BaseInput>
+        <BaseDropdown
+          class="CreateLimits-Period"
+          v-model="currentPeriod"
+          :items="periods"
+          @set-dropdown-value="currentPeriod = $event"
+        />
+      </div>
       <BaseInput
-        class="CreateLimits-Amount"
+        v-if="currentLimitType === 'session'"
         inputType="text"
+        class="CreateLimits-Row CreateLimits-Amount"
         inputClass="CreateLimits-Input"
         v-model.number="limitAmount"
       >
         <template v-slot:afterInput-absolute>
-          <span class="CreateLimits-InputCurrency">
-            {{ currency }}
-          </span>
+      <span class="CreateLimits-InputCurrency">
+        min
+      </span>
         </template>
       </BaseInput>
       <BaseDropdown
-        class="CreateLimits-Period"
-        v-model="currentPeriod"
-        :items="periods"
-        @set-dropdown-value="currentPeriod = $event"
+        v-if="currentLimitType === 'reality_check'"
+        class="CreateLimits-Row CabinetPage-Dropdown CabinetPage-Section"
+        :items="realityCheckPeriods"
+        v-model="period"
+        @set-dropdown-value="period = $event"
+      />
+      <BaseDropdown
+        v-if="currentLimitType === 'self_exclusion'"
+        class="CreateLimits-Row CabinetPage-Dropdown CabinetPage-Section"
+        :items="selfExclusionPeriods"
+        v-model="period"
+        @set-dropdown-value="period = $event"
+      />
+      <button
+        class="Btn Btn--full Btn--color CreateLimits-Btn"
+        @click="onClickLimitBtn()"
+      >
+        <template v-if="isEdit">
+          Save limits
+        </template>
+        <template v-else>
+          Add limits
+        </template>
+      </button>
+    </div>
+    <div v-else>
+      <ConfirmDialog
+        title="Confirm limit update"
+        :text="`Are you sure you want to set ${currentLimitType} limit to ${limitAmount}?`"
+        okBtnText="set limit"
+        @cancel="$emit('close')"
+        @ok="onClickLimitBtn"
       />
     </div>
-    <BaseInput
-      v-if="currentLimitType === 'session'"
-      inputType="text"
-      class="CreateLimits-Row CreateLimits-Amount"
-      inputClass="CreateLimits-Input"
-      v-model.number="limitAmount"
-    >
-      <template v-slot:afterInput-absolute>
-    <span class="CreateLimits-InputCurrency">
-      min
-    </span>
-      </template>
-    </BaseInput>
-    <BaseDropdown
-      v-if="currentLimitType === 'reality_check'"
-      class="CreateLimits-Row CabinetPage-Dropdown CabinetPage-Section"
-      :items="realityCheckPeriods"
-      v-model="period"
-      @set-dropdown-value="period = $event"
-    />
-    <BaseDropdown
-      v-if="currentLimitType === 'self_exclusion'"
-      class="CreateLimits-Row CabinetPage-Dropdown CabinetPage-Section"
-      :items="selfExclusionPeriods"
-      v-model="period"
-      @set-dropdown-value="period = $event"
-    />
-    <button
-      class="Btn Btn--full Btn--color CreateLimits-Btn"
-      @click="onClickLimitBtn()"
-    >
-      <template v-if="isEdit">
-        Save limits
-      </template>
-      <template v-else>
-        Add limits
-      </template>
-    </button>
-  </div>
   </div>
 </template>
 
 <script>
-import BaseDropdown from '@/components/base/BaseDropdown.vue';
-import BaseInput from '@/components/base/BaseInput.vue';
+import BaseDropdown from '@/components/base/BaseDropdown';
+import BaseInput from '@/components/base/BaseInput';
+import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
 import { mapMutations, mapState } from 'vuex';
 import moment from 'moment';
 
@@ -111,9 +121,11 @@ export default {
   components: {
     BaseDropdown,
     BaseInput,
+    ConfirmDialog
   },
   data() {
     return {
+      isConfirm: false,
       limits: {
         loss: {
           name: 'Loss limits',
@@ -182,6 +194,11 @@ export default {
   methods: {
     ...mapMutations(['addLimits']),
     onClickLimitBtn() {
+      if (this.isEdit && !this.isConfirm) {
+        this.isConfirm = true;
+        return;
+      }
+
       const limit = {
         content: {},
       };

@@ -16,7 +16,7 @@
           </svg>
           Edit limit
         </div>
-        <div class="GamblingLimit-EditMenuItem" @click="onDeleteLimit">
+        <div class="GamblingLimit-EditMenuItem" @click="onClickDelete">
           <svg class="GamblingLimit-EditMenuIcon GamblingLimit-DeleteIcon">
             <use xlink:href="@/assets/img/icons.svg#delete"></use>
           </svg>
@@ -73,6 +73,18 @@
         </div>
       </div>
     </div>
+<!--    <modal name="delete" width="400" height="auto" adaptive>-->
+<!--      <div class="Modal">-->
+<!--        <div class="Close Modal-Close" @click="$modal.hide('delete')"></div>-->
+<!--          <ConfirmDialog-->
+<!--            title="Delete limit"-->
+<!--            :text="`Are you sure you want to delete ${item.type} limit?`"-->
+<!--            okBtnText="delete limit"-->
+<!--            @cancel="$modal.hide('delete')"-->
+<!--            @ok="onDeleteLimit"-->
+<!--          />-->
+<!--      </div>-->
+<!--    </modal>-->
   </div>
 </template>
 
@@ -80,6 +92,7 @@
 import { mapState } from 'vuex';
 import Counter from '@/components/Counter';
 import CreateLimits from '@/components/cabinet/CreateLimits';
+import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
 
 const circleLength = 106.8;
 
@@ -95,6 +108,7 @@ export default {
   components: {
     Counter,
     CreateLimits,
+    ConfirmDialog,
   },
   data() {
     return {
@@ -141,11 +155,31 @@ export default {
         });
     },
     onUpdateLimit(payload) {
-      this.$emit('updateLimit', payload)
+      this.$emit('updateLimit', payload);
+      this.$modal.hide('delete');
+    },
+    onClickCancelDelete() {
+      this.$modal.hide('delete');
     },
     onDeleteLimit() {
       this.$emit('deleteLimit');
       this.editMenuIsOpen = false;
+    },
+    onCloseDeleteConfirmDialog() {
+      this.$emit('close')
+    },
+    onClickDelete() {
+      this.$modal.show(ConfirmDialog,
+        {
+          title: 'Delete limit',
+          text: `Are you sure you want to delete ${this.item.type} limit?`,
+          okBtnText: 'delete limit',
+          closeBtn: true,
+          onCancel: this.onCloseDeleteConfirmDialog,
+          onOk: this.onDeleteLimit
+        },
+        { width: 400, height: 'auto', adaptive: true },
+      );
     }
   }
 };
