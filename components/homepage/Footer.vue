@@ -15,23 +15,23 @@
         <NuxtLink class="Link Footer-Link" to="/payment-methods">
           Payment methods
         </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/payment-options">
-          Payment options
+        <NuxtLink class="Link Footer-Link" to="/about-us">
+          About us
         </NuxtLink>
         <NuxtLink class="Link Footer-Link" to="/responsible-gamings">
           Responsible gaming
         </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/terms-and-conditions">
-          Terms and conditions
-        </NuxtLink>
         <NuxtLink class="Link Footer-Link" to="/bonus-policy">
           Bonus policy
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/payment-options">
+          Payment options
         </NuxtLink>
         <NuxtLink class="Link Footer-Link" to="/privacy-policy">
           Privacy policy
         </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/about-us">
-          About us
+        <NuxtLink class="Link Footer-Link" to="/terms-and-conditions">
+          Terms and conditions
         </NuxtLink>
         <NuxtLink class="Link Footer-Link" to="/faq">
           Faq
