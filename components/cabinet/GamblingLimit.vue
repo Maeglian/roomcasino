@@ -4,57 +4,73 @@
       <div class="GamblingLimit-Title">
         {{ item.title }}
       </div>
-      <div class="GamblingLimit-Edit">
+      <div ref="edit" class="GamblingLimit-Edit" @click="editMenuIsOpen = !editMenuIsOpen">
         ...
       </div>
     </div>
-    <div v-if="item.isMoney" class="GamblingLimit-State">
-      <div class="GamblingLimit-Scale">
-        <svg class="GamblingLimit-Circle">
-          <circle class="GamblingLimit-CircleBg" cx="20" cy="20" r="17"></circle>
-          <circle
-            class="GamblingLimit-Progress"
-            cx="20"
-            cy="20"
-            r="17"
-          >
-          </circle>
-        </svg>
+    <div class="GamblingLimit-Content">
+      <div v-if="editMenuIsOpen" class="GamblingLimit-EditMenu" v-click-outside="onClickOutside">
+        <div class="GamblingLimit-EditMenuItem">
+          <svg class="GamblingLimit-EditMenuIcon GamblingLimit-EditIcon">
+            <use xlink:href="@/assets/img/icons.svg#edit"></use>
+          </svg>
+          Edit limit
+        </div>
+        <div class="GamblingLimit-EditMenuItem">
+          <svg class="GamblingLimit-EditMenuIcon GamblingLimit-DeleteIcon">
+            <use xlink:href="@/assets/img/icons.svg#delete"></use>
+          </svg>
+          Delete limit
+        </div>
       </div>
-      <Counter class="GamblingLimit-Counter" :minFormat="true" :enddate="item.reset" />
-    </div>
-    <div v-if="item.type === 'session'" class="GamblingLimit-LineScale">
-      <div
-        class="GamblingLimit-LineScale GamblingLimit-LineScale--spent"
-        :style="{'width': `${item.limitState / item.limitAmount * 100}%`}"
-      >
-        <svg class="GamblingLimit-SessionIcon">
-          <use xlink:href="@/assets/img/icons.svg#clock"></use>
-        </svg>
-        {{ item.limitState }} min
+      <div v-if="item.isMoney" class="GamblingLimit-State">
+        <div class="GamblingLimit-Scale">
+          <svg class="GamblingLimit-Circle">
+            <circle class="GamblingLimit-CircleBg" cx="20" cy="20" r="17"></circle>
+            <circle
+              class="GamblingLimit-Progress"
+              cx="20"
+              cy="20"
+              r="17"
+            >
+            </circle>
+          </svg>
+        </div>
+        <Counter class="GamblingLimit-Counter" :minFormat="true" :enddate="item.reset" />
       </div>
-      {{ sessionLeft }} min
-    </div>
-    <div v-else class="GamblingLimit-Footer">
-      <div class="GamblingLimit-Details">
-        <template v-if="item.isMoney">
-        {{ item.limitState }} of {{ item.limitAmount }} EUR {{ item.currency }} left
-        </template>
-        <template v-if="item.period" class="GamblingLimit-Left">
-          <svg v-if="item.type === 'reality_check'" class="GamblingLimit-Icon GamblingLimit-RealityIcon">
+      <div v-if="item.type === 'session'" class="GamblingLimit-LineScale">
+        <div
+          class="GamblingLimit-LineScale GamblingLimit-LineScale--spent"
+          :style="{'width': `${item.limitState / item.limitAmount * 100}%`}"
+        >
+          <svg class="GamblingLimit-SessionIcon">
             <use xlink:href="@/assets/img/icons.svg#clock"></use>
           </svg>
-          <svg v-if="item.type === 'self_exclusion'" class="GamblingLimit-Icon GamblingLimit-BlockedIcon">
-            <use xlink:href="@/assets/img/icons.svg#trash"></use>
-          </svg>
-          {{ item.period }}
-        </template>
+          {{ item.limitState }} min
+        </div>
+        {{ sessionLeft }} min
       </div>
-      <div
-        class="GamblingLimit-Active"
-        :class="{'GamblingLimit-Active--active': isActive}"
-      >
-        Active
+      <div v-else class="GamblingLimit-Footer">
+        <div class="GamblingLimit-Details">
+          <template v-if="item.isMoney">
+            {{ item.limitState }} of {{ item.limitAmount }} EUR {{ item.currency }} left
+          </template>
+          <template v-if="item.period" class="GamblingLimit-Left">
+            <svg v-if="item.type === 'reality_check'" class="GamblingLimit-Icon GamblingLimit-RealityIcon">
+              <use xlink:href="@/assets/img/icons.svg#clock"></use>
+            </svg>
+            <svg v-if="item.type === 'self_exclusion'" class="GamblingLimit-Icon GamblingLimit-BlockedIcon">
+              <use xlink:href="@/assets/img/icons.svg#calendar"></use>
+            </svg>
+            {{ item.period }}
+          </template>
+        </div>
+        <div
+          class="GamblingLimit-Active"
+          :class="{'GamblingLimit-Active--active': isActive}"
+        >
+          Active
+        </div>
       </div>
     </div>
   </div>
@@ -77,6 +93,11 @@ export default {
   },
   components: {
     Counter,
+  },
+  data() {
+    return {
+      editMenuIsOpen: false,
+    }
   },
   computed: {
     ...mapState(['currency']),
@@ -105,6 +126,12 @@ export default {
       return this.item.limitAmount - this.item.limitState;
     }
   },
+  methods: {
+    onClickOutside(e) {
+      console.log(this.$refs.edit);
+      if (e.target !== this.$refs.edit) this.editMenuIsOpen = false;
+    }
+  }
 };
 </script>
 
@@ -134,6 +161,47 @@ export default {
     font-size: 25px;
     font-weight: 700;
     color: var(--color-text-ghost);
+  }
+
+  &-Content {
+    position: relative;
+  }
+
+  &-EditMenu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    width: 182px;
+    padding: 25px 18px;
+    background: var(--color-bg-lighter);
+  }
+
+  &-EditMenuIcon {
+    margin-right: 10px;
+  }
+
+  &-EditMenuItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--color-text-ghost);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-EditIcon {
+    width: 15px;
+    height: 14px;
+  }
+
+  &-DeleteIcon {
+    width: 12px;
+    height: 16px;
+    margin-left: 3px;
   }
 
   &-Scale {
