@@ -4,24 +4,24 @@
       <div class="GamblingLimit-Title">
         {{ item.title }}
       </div>
-      <div ref="edit" class="GamblingLimit-Edit" @click="editMenuIsOpen = !editMenuIsOpen">
+      <button type="button" ref="edit" class="GamblingLimit-Edit" @click="editMenuIsOpen = !editMenuIsOpen">
         ...
-      </div>
+      </button>
     </div>
     <div class="GamblingLimit-Content">
       <div v-if="editMenuIsOpen" class="GamblingLimit-EditMenu" v-click-outside="onClickOutside">
-        <div class="GamblingLimit-EditMenuItem" @click="onClickEdit">
+        <button type="button" class="GamblingLimit-EditMenuItem" @click="onClickEdit">
           <svg class="GamblingLimit-EditMenuIcon GamblingLimit-EditIcon">
             <use xlink:href="@/assets/img/icons.svg#edit"></use>
           </svg>
           Edit limit
-        </div>
-        <div class="GamblingLimit-EditMenuItem" @click="onClickDelete">
+        </button>
+        <button type="button" class="GamblingLimit-EditMenuItem" @click="onClickDelete">
           <svg class="GamblingLimit-EditMenuIcon GamblingLimit-DeleteIcon">
             <use xlink:href="@/assets/img/icons.svg#delete"></use>
           </svg>
           Delete limit
-        </div>
+        </button>
       </div>
       <div v-if="item.isMoney" class="GamblingLimit-State">
         <div class="GamblingLimit-Scale">
@@ -211,6 +211,7 @@ export default {
     font-size: 25px;
     font-weight: 700;
     color: var(--color-text-ghost);
+    cursor: pointer;
   }
 
   &-Content {
@@ -237,6 +238,7 @@ export default {
     margin-bottom: 20px;
     font-size: 14px;
     color: var(--color-text-ghost);
+    cursor: pointer;
 
     &:last-child {
       margin-bottom: 0;
