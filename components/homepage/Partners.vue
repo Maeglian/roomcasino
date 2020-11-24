@@ -1,7 +1,7 @@
 <template>
   <section class="Partners">
     <client-only>
-      <marquee-text :duration="60">
+      <marquee-text :duration=durationSpeed>
         <div class="Partners-Wrapper">
           <div class="Partners-Partner Partners-Partner--visa">
             <img class ="Partners-Image" src="@/assets/img/visa.svg" />
@@ -34,8 +34,18 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
   name: 'Partners',
+
+  computed: {
+    ...mapState(['width']),
+
+    durationSpeed() {
+      return this.width > 460 ? 60 : 30
+    },
+  },
 };
 </script>
 
@@ -75,4 +85,5 @@ export default {
     }
   }
 }
+
 </style>
