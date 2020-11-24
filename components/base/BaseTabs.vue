@@ -65,7 +65,7 @@ export default {
         &:after {
           content: '';
           position: absolute;
-          z-index: 10;
+          z-index: 0;
           left: -15px;
           bottom: 0;
           width: calc(100% + 30px);
