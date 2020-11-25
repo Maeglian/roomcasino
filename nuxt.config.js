@@ -47,4 +47,7 @@ export default {
   build: {},
 
   router: { middleware: ['closeNav'] },
+  generate: {
+    fallback: 'index.html',
+  },
 };
