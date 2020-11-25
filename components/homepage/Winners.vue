@@ -21,7 +21,7 @@
     </div>
     <div class="Winners-Section">
       <div class="Title Title--type-h2 Winners-Title">
-        Latest winners
+        top winners
       </div>
       <div class="Table Table--bordered Winners-Table">
         <div v-for="item in items" :key="2 + item.name" class="Table-Row">
