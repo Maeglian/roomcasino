@@ -214,6 +214,7 @@ export default {
     text-transform: uppercase;
     color: var(--color-text-ghost);
     cursor: pointer;
+    break-inside: avoid;
   }
 
   &-Provider {
