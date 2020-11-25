@@ -83,10 +83,15 @@ export default {
 .Winners {
   display: flex;
   flex-direction: column;
+  margin-bottom: 32px;
 
   @media (min-width: $screen-s) {
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: $screen-xl) {
     margin-bottom: 80px;
   }
 
