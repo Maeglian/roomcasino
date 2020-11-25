@@ -19,7 +19,7 @@ export default {
   name: 'Search',
   data() {
     return {
-      isOpen: true,
+      isOpen: false,
     };
   },
   computed: {
