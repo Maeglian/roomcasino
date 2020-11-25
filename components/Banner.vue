@@ -1,11 +1,27 @@
 <template>
   <div class="Banner">
     <picture class="Banner-Image">
-      <source v-if="image460" media="(max-width: 460px)" :srcset="require(`@/assets/img/${image460}`)">
-      <source v-if="image768" media="(max-width: 768px)" :srcset="require(`@/assets/img/${image768}`)">
-      <source v-if="image960" media="(max-width: 960px)" :srcset="require(`@/assets/img/${image960}`)">
-      <source v-if="image1248" media="(max-width: 1248px)" :srcset="require(`@/assets/img/${image1248}`)">
-      <img :srcset="require(`@/assets/img/${image}`)" alt="" loading="lazy">
+      <source
+        v-if="image460"
+        media="(max-width: 460px)"
+        :srcset="require(`@/assets/img/${image460}`)"
+      />
+      <source
+        v-if="image768"
+        media="(max-width: 768px)"
+        :srcset="require(`@/assets/img/${image768}`)"
+      />
+      <source
+        v-if="image960"
+        media="(max-width: 960px)"
+        :srcset="require(`@/assets/img/${image960}`)"
+      />
+      <source
+        v-if="image1248"
+        media="(max-width: 1248px)"
+        :srcset="require(`@/assets/img/${image1248}`)"
+      />
+      <img :srcset="require(`@/assets/img/${image}`)" alt="" loading="lazy" />
     </picture>
     <div class="Banner-Content">
       <div class="Banner-Title">
@@ -30,23 +46,27 @@ export default {
       required: true,
     },
     image460: {
-      type: String,
+      type: [String, Boolean],
       required: false,
+      default: false,
     },
     image768: {
-      type: String,
+      type: [String, Boolean],
       required: false,
+      default: false,
     },
     image960: {
-      type: String,
+      type: [String, Boolean],
       required: false,
+      default: false,
     },
     image1248: {
-      type: String,
+      type: [String, Boolean],
       required: false,
-    }
-  }
-}
+      default: false,
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -71,11 +91,11 @@ export default {
     left: 16px;
     transform: translateY(-50%);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       left: 23px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       left: 34px;
     }
   }
@@ -85,19 +105,19 @@ export default {
     font-size: 16px;
     font-weight: 700;
     line-height: 1.25;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 18px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 25px;
       font-size: 22px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 32px;
       font-size: 28px;
     }
@@ -109,15 +129,15 @@ export default {
     line-height: 1.25;
     color: var(--color-text-main);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 14px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 18px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 20px;
     }
   }
@@ -128,14 +148,15 @@ export default {
 }
 
 .Banner--withCounter {
+
   .Banner-Title {
     margin-bottom: 6px;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 8px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 14px;
     }
   }
@@ -146,5 +167,4 @@ export default {
     height: calc(100% - 24px);
   }
 }
-
 </style>

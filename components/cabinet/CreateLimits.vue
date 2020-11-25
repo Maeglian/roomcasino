@@ -3,9 +3,7 @@
     <div class="Close Modal-Close" @click="$emit('close')"></div>
     <div v-if="!isConfirm" class="CreateLimits">
       <div class="CabinetPage-Header CabinetPage-Section">
-        <template v-if="isEdit">
-          Edit {{ item.type }} limits
-        </template>
+        <template v-if="isEdit"> Edit {{ item.type }} limits </template>
         <template v-else>
           Create limits
         </template>
@@ -20,59 +18,60 @@
         {{ limits[currentLimitType].text }}
       </div>
       <div
-        v-if="currentLimitType === 'loss' || currentLimitType === 'wager' || currentLimitType === 'deposit'"
+        v-if="
+          currentLimitType === 'loss' ||
+            currentLimitType === 'wager' ||
+            currentLimitType === 'deposit'
+        "
         class="CreateLimits-Row"
       >
         <BaseInput
-          class="CreateLimits-Amount"
-          inputType="text"
-          inputClass="CreateLimits-Input"
           v-model.number="limitAmount"
+          class="CreateLimits-Amount"
+          input-type="text"
+          input-class="CreateLimits-Input"
         >
-          <template v-slot:afterInput-absolute>
+          <template #afterInput-absolute>
             <span class="CreateLimits-InputCurrency">
               {{ currency }}
             </span>
           </template>
         </BaseInput>
         <BaseDropdown
-          class="CreateLimits-Period"
           v-model="currentPeriod"
+          class="CreateLimits-Period"
           :items="periods"
           @set-dropdown-value="currentPeriod = $event"
         />
       </div>
       <BaseInput
         v-if="currentLimitType === 'session'"
-        inputType="text"
-        class="CreateLimits-Row CreateLimits-Amount"
-        inputClass="CreateLimits-Input"
         v-model.number="limitAmount"
+        input-type="text"
+        class="CreateLimits-Row CreateLimits-Amount"
+        input-class="CreateLimits-Input"
       >
-        <template v-slot:afterInput-absolute>
-      <span class="CreateLimits-InputCurrency">
-        min
-      </span>
+        <template #afterInput-absolute>
+          <span class="CreateLimits-InputCurrency">
+            min
+          </span>
         </template>
       </BaseInput>
       <BaseDropdown
         v-if="currentLimitType === 'reality_check'"
+        v-model="period"
         class="CreateLimits-Row CabinetPage-Dropdown CabinetPage-Section"
         :items="realityCheckPeriods"
-        v-model="period"
         @set-dropdown-value="period = $event"
       />
       <BaseDropdown
         v-if="currentLimitType === 'self_exclusion'"
+        v-model="period"
         class="CreateLimits-Row CabinetPage-Dropdown CabinetPage-Section"
         :items="selfExclusionPeriods"
-        v-model="period"
         @set-dropdown-value="period = $event"
       />
-      <button
-        class="Btn Btn--full Btn--color CreateLimits-Btn"
-        @click="onClickLimitBtn()"
-      >
+      <button class="Btn Btn--full Btn--color CreateLimits-Btn" @click="onClickLimitBtn()">
         <template v-if="isEdit">
           Save limits
         </template>
@@ -85,7 +84,7 @@
       <ConfirmDialog
         title="Confirm limit update"
         :text="`Are you sure you want to set ${currentLimitType} limit to ${limitAmount}?`"
-        okBtnText="set limit"
+        ok-btn-text="set limit"
         @cancel="$emit('close')"
         @ok="onClickLimitBtn"
       />
@@ -102,26 +101,27 @@ import moment from 'moment';
 
 export default {
   name: 'CreateLimits',
+  components: {
+    BaseDropdown,
+    BaseInput,
+    ConfirmDialog,
+  },
   props: {
     isEdit: {
       type: Boolean,
       isRequired: false,
-      default: false
+      default: false,
     },
     item: {
       type: Object,
       isRequired: false,
-      default: () => ({})
+      default: () => ({}),
     },
     onUpdateLimit: {
-      type: Function,
+      type: [Function, Boolean],
       isRequired: false,
-    }
-  },
-  components: {
-    BaseDropdown,
-    BaseInput,
-    ConfirmDialog
+      default: false,
+    },
   },
   data() {
     return {
@@ -129,35 +129,41 @@ export default {
       limits: {
         loss: {
           name: 'Loss limits',
-          text: 'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
+          text:
+            'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
           fields: ['limitState', 'limitAmount', 'currentPeriod', 'isMoney', 'reset', 'title'],
         },
         wager: {
           name: 'Wager limits',
-          text: 'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or mounth.',
+          text:
+            'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or mounth.',
           fields: ['limitState', 'limitAmount', 'currentPeriod', 'isMoney', 'reset', 'title'],
         },
         deposit: {
           name: 'Deposit limits',
-          text: 'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or mounth.',
+          text:
+            'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or mounth.',
           fields: ['limitState', 'limitAmount', 'currentPeriod', 'isMoney', 'reset', 'title'],
         },
         session: {
           name: 'Session limit',
           title: 'time spent gambling',
-          text: 'The restriction takes effect instantly. If you hit the limit, you will beautomatically logged out of your  account.',
+          text:
+            'The restriction takes effect instantly. If you hit the limit, you will beautomatically logged out of your  account.',
           fields: ['limitState', 'limitAmount', 'isMoney', 'title'],
         },
         self_exclusion: {
           name: 'Self exclusion',
           title: 'blocked address',
-          text: 'You can set a self-exclusion limit for a definite or an indefinite period of time.  During the set period you will not be able to log into your account. To be excluded from gambiling on our site for an indefinite period of time, please, contact our support team via live-chat.',
+          text:
+            'You can set a self-exclusion limit for a definite or an indefinite period of time.  During the set period you will not be able to log into your account. To be excluded from gambiling on our site for an indefinite period of time, please, contact our support team via live-chat.',
           fields: ['isMoney', 'title', 'period'],
         },
         reality_check: {
           name: 'Reality check',
           title: 'notification',
-          text: 'Do you want to track your activity? We\'llsend you  an hourly notification in-game to remnd you of how much you have spent at the Casino. It\'ll help you to get an overview of your gambing and perhaps consider pausing play for a while. You can get the notification every 15,30,45 and 60 minutes.',
+          text:
+            "Do you want to track your activity? We'llsend you  an hourly notification in-game to remnd you of how much you have spent at the Casino. It'll help you to get an overview of your gambing and perhaps consider pausing play for a while. You can get the notification every 15,30,45 and 60 minutes.",
           fields: ['isMoney', 'title', 'period'],
         },
       },
@@ -177,7 +183,12 @@ export default {
       return Object.keys(this.limits);
     },
     isMoney() {
-      if (this.currentLimitType === 'session' || this.currentLimitType === 'self_exclusion' || this.currentLimitType === 'reality_check') return false;
+      if (
+        this.currentLimitType === 'session' ||
+        this.currentLimitType === 'self_exclusion' ||
+        this.currentLimitType === 'reality_check'
+      )
+        return false;
       return true;
     },
     reset() {
@@ -203,11 +214,11 @@ export default {
         content: {},
       };
 
-      if (!this.isEdit) limit.name = this.limits[this.currentLimitType].name
+      if (!this.isEdit) limit.name = this.limits[this.currentLimitType].name;
 
       limit.content.type = this.currentLimitType;
 
-      this.limits[this.currentLimitType].fields.forEach((field) => {
+      this.limits[this.currentLimitType].fields.forEach(field => {
         limit.content[field] = this[field];
       });
 
@@ -253,13 +264,13 @@ export default {
 
   &-InputCurrency {
     position: absolute;
-    z-index: 2;
     right: 16px;
+    z-index: 2;
     font-size: 10px;
     font-weight: 700;
-    text-transform: uppercase;
     line-height: 55px;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
   }
 
   &-Btn {

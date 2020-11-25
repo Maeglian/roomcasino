@@ -68,12 +68,12 @@
   &-Card {
     margin-bottom: 16px;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-
     @media(min-width: $screen-s) {
       width: calc(50% - 8px);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -82,8 +82,8 @@
 
     @media(min-width: $screen-s) {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
+      justify-content: space-between;
       margin-bottom: 50px;
     }
 

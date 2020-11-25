@@ -2,8 +2,8 @@
   <transition name="slide-right">
     <div
       v-show="notificationsPanelIsOpen"
-      class="NotificationsPanel"
       v-click-outside="onClickOutside"
+      class="NotificationsPanel"
     >
       <div class="NotificationsPanel-Header">
         <NuxtLink to="/">
@@ -14,21 +14,20 @@
       <BaseTabs
         class="NotificationsPanel-Tabs"
         :items="tabs"
-        :currentItem="activeTab"
+        :current-item="activeTab"
         @chooseTab="activeTab = $event"
       />
       <div class="NotificationsPanel-Content">
         <div v-if="!notifications[activeTab].length" class="NotificationsPanel-Empty">
           <div class="NotificationsPanel-EmptyContent">
-            <img src="~/assets/img/notification.png" alt="" class="NotificationsPanel-Image">
-            <div class="NotificationsPanel-Text">
-              No current {{ activeTab }}
-            </div>
+            <img src="~/assets/img/notification.png" alt="" class="NotificationsPanel-Image" />
+            <div class="NotificationsPanel-Text">No current {{ activeTab }}</div>
           </div>
         </div>
         <template v-else>
           <div
             v-for="item in notifications[activeTab]"
+            :key="item.title"
             class="NotificationCard NotificationsPanel-Card"
           >
             <div class="NotificationCard-Content">
@@ -37,13 +36,12 @@
                   :src="require(`~/assets/img/${item.icon}`)"
                   alt=""
                   class="NotificationCard-Icon"
-                >
+                />
                 <div class="NotificationCard-Title">
                   {{ item.title }}
                 </div>
               </div>
-              <div class="NotificationCard-Text" v-html="item.text">
-              </div>
+              <div class="NotificationCard-Text" v-html="item.text"></div>
             </div>
             <NuxtLink to="#" class="Btn Btn--dark NotificationCard-Btn">
               {{ item.btnText }}
@@ -62,22 +60,22 @@ import BaseTabs from '@/components/base/BaseTabs';
 export default {
   name: 'NotificationsPanel',
   components: {
-    BaseTabs
+    BaseTabs,
   },
   data() {
     return {
       tabs: [
         {
           value: 'promotions',
-          name: 'Promotions'
+          name: 'Promotions',
         },
         {
           value: 'tournaments',
-          name: 'Tournaments'
+          name: 'Tournaments',
         },
         {
           value: 'notifications',
-          name: 'Notifications'
+          name: 'Notifications',
         },
       ],
       activeTab: 'promotions',
@@ -90,23 +88,23 @@ export default {
     ...mapMutations(['closeNotificationsPanel']),
     onClickOutside(e) {
       if (!e.target.closest('.AuthSection-UserMessages')) this.closeNotificationsPanel();
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 .NotificationsPanel {
   position: fixed;
-  z-index: 11;
   top: 0;
   right: 0;
   bottom: 0;
+  z-index: 11;
   width: 100%;
   padding: 16px;
   background: var(--color-body);
 
-  @media(min-width: $screen-l) {
+  @media (min-width: $screen-l) {
     width: 375px;
     padding: 4px;
   }
@@ -117,17 +115,17 @@ export default {
     align-items: center;
     margin-bottom: 18px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 16px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       position: absolute;
       top: 4px;
       right: 4px;
+      justify-content: center;
       width: 55px;
       height: 55px;
-      justify-content: center;
       margin-bottom: 0;
       background: var(--color-bg);
     }
@@ -136,20 +134,20 @@ export default {
   &-Logo {
     width: 110px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       width: 172px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       display: none;
     }
   }
 
   &-Tabs {
-    font-size: 10px;
     margin-bottom: 4px;
+    font-size: 10px;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       width: calc(100% - 59px);
     }
   }
@@ -177,11 +175,11 @@ export default {
     width: 140px;
     margin-bottom: 30px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       width: auto;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       width: 140px;
     }
   }
@@ -203,11 +201,11 @@ export default {
 .NotificationCard {
   width: 100%;
 
-  @media(min-width: $screen-m) {
+  @media (min-width: $screen-m) {
     display: flex;
   }
 
-  @media(min-width: $screen-l) {
+  @media (min-width: $screen-l) {
     display: block;
   }
 
@@ -216,13 +214,13 @@ export default {
     padding: 16px;
     background: var(--color-bg);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       flex-grow: 1;
       margin-right: 6px;
       margin-bottom: 0;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-right: 0;
       margin-bottom: 6px;
     }
@@ -242,14 +240,14 @@ export default {
   &-Title {
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 16px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 12px;
     }
   }
@@ -258,11 +256,11 @@ export default {
     font-size: 12px;
     color: var(--color-text-ghost);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 16px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 12px;
     }
   }
@@ -272,13 +270,13 @@ export default {
     padding: 19px 0;
     font-size: 10px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       flex-grow: 0;
       width: 266px;
       font-size: 16px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       width: 100%;
       font-size: 10px;
     }

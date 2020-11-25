@@ -22,11 +22,11 @@ import CabinetTable from '@/components/cabinet/CabinetTable.vue';
 
 export default {
   name: 'HistoryContent',
-  layout: 'cabinet',
   components: {
     CabinetFilters,
     CabinetTable,
   },
+  layout: 'cabinet',
   async asyncData({ params }) {
     const type = params.historyType;
     const currency = {
@@ -44,10 +44,7 @@ export default {
     const actions = {
       name: 'action',
       type: 'dropdown',
-      values: [
-        'Deposit',
-        'Affiliatere ward',
-      ],
+      values: ['Deposit', 'Affiliatere ward'],
     };
     const status = {
       name: 'status',
@@ -58,17 +55,9 @@ export default {
     if (type === '/cabinet/history/transactions') {
       filters = [currency, actions, status];
     } else if (type === '/cabinet/history/game') {
-      filters = [
-        currency,
-        { name: 'from', type: 'date' },
-        { name: 'to', type: 'date' },
-      ];
+      filters = [currency, { name: 'from', type: 'date' }, { name: 'to', type: 'date' }];
     } else {
-      filters = [
-        currency,
-        status,
-        { name: 'from', type: 'date' },
-      ];
+      filters = [currency, status, { name: 'from', type: 'date' }];
     }
 
     return { filters };
@@ -861,7 +850,6 @@ export default {
           bet: '36.0 USD',
           win: '0 USD',
         },
-
       ];
       const bonusRows = [
         {
@@ -940,9 +928,9 @@ export default {
 
 <style lang="scss">
 .HistoryPage {
+
   &-Content {
     width: 100%;
   }
 }
-
 </style>

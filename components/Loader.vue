@@ -21,7 +21,9 @@ export default {
     display: inline-block;
   }
 
-  &-Spinner, &-Spinner:before, &-Spinner:after {
+  &-Spinner,
+  &-Spinner:before,
+  &-Spinner:after {
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -33,13 +35,14 @@ export default {
     position: relative;
     margin: 0 auto 60px;
     font-size: 10px;
-    text-indent: -9999em;
     color: var(--color-main1);
+    text-indent: -9999em;
     transform: translateZ(0);
-    animation-delay: -0.16s;
+    animation-delay: -.16s;
   }
 
-  &-Spinner:before, &-Spinner:after {
+  &-Spinner:before,
+  &-Spinner:after {
     content: '';
     position: absolute;
     top: 0;
@@ -47,7 +50,7 @@ export default {
 
   &-Spinner:before {
     left: -15px;
-    animation-delay: -0.32s;
+    animation-delay: -.32s;
   }
 
   &-Spinner:after {
@@ -56,11 +59,13 @@ export default {
 }
 
 @keyframes load {
+
   0%,
   80%,
   100% {
     box-shadow: 0 2.5em 0 -1.3em;
   }
+
   40% {
     box-shadow: 0 2.5em 0 0;
   }

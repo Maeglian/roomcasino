@@ -20,14 +20,9 @@
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">
           Available to cash out
         </div>
-        <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">
-        </div>
+        <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th"></div>
       </div>
-      <div
-        v-for="(acc, i) in userAccounts"
-        :key="i"
-        class="Table-Row CabinetPage-Row"
-      >
+      <div v-for="(acc, i) in userAccounts" :key="i" class="Table-Row CabinetPage-Row">
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Active">
           <label class="CabinetPage-Label">
             {{ acc.active ? 'Active' : 'Select' }}
@@ -37,8 +32,8 @@
               name="account"
               :checked="acc.active"
               :value="acc.currency"
-              @change="setActiveAccount({ currency: $event.target.value})"
-            >
+              @change="setActiveAccount({ currency: $event.target.value })"
+            />
             <span class="CabinetPage-Checkmark CabinetPage-Checkmark--radio"></span>
           </label>
         </div>
@@ -61,19 +56,13 @@
           >
             Deposit
           </button>
-          <button
-            class="Btn Btn--outline CabinetPage-Btn"
-            @click="onClickCashout(acc.currency)"
-          >
+          <button class="Btn Btn--outline CabinetPage-Btn" @click="onClickCashout(acc.currency)">
             Cashout
           </button>
         </div>
       </div>
     </div>
-    <button
-      class="CabinetPage-AddBtn"
-      @click="$modal.show('addCurrency')"
-    >
+    <button class="CabinetPage-AddBtn" @click="$modal.show('addCurrency')">
       <span class="CabinetPage-AddBtnPlus CabinetPage-AddBtnPlus--left">
         +
       </span>
@@ -84,29 +73,23 @@
     <modal name="addCurrency" width="348" height="auto">
       <div class="Modal">
         <div class="Close Modal-Close" @click="$modal.hide('addCurrency')"></div>
-          <div class="AddCurrency">
-            <div class="CabinetPage-Header AddCurrency-Header">
-              Add Currency
-            </div>
-            <div class="AddCurrency-Content">
-              <div
-                v-for="cur in curencyAccounts"
-                :key="cur"
-                class="AddCurrency-Currency"
-              >
-                {{ cur }}
-              </div>
+        <div class="AddCurrency">
+          <div class="CabinetPage-Header AddCurrency-Header">
+            Add Currency
+          </div>
+          <div class="AddCurrency-Content">
+            <div v-for="cur in curencyAccounts" :key="cur" class="AddCurrency-Currency">
+              {{ cur }}
             </div>
           </div>
+        </div>
       </div>
     </modal>
   </div>
 </template>
 
 <script>
-import {
-  mapMutations, mapState, mapActions, mapGetters,
-} from 'vuex';
+import { mapMutations, mapState, mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'BalancePage',
@@ -158,6 +141,7 @@ export default {
 
 <style lang="scss">
 .BalancePage {
+
   &-Title {
     margin-bottom: 30px;
   }
@@ -165,7 +149,7 @@ export default {
   &-DepositBtn {
     margin-right: 4px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-right: 8px;
     }
   }
@@ -178,7 +162,7 @@ export default {
     order: 1;
     text-transform: uppercase;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       order: 0;
     }
   }
@@ -187,30 +171,36 @@ export default {
     white-space: nowrap;
   }
 
-  &-Active, &-Btns {
+  &-Active,
+  &-Btns {
     order: 0;
   }
 
-  &-Btns, &-Amount, &-Cash {
+  &-Btns,
+  &-Amount,
+  &-Cash {
     padding-left: 0;
     text-align: right;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       padding-left: 15px;
       text-align: left;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       white-space: nowrap;
     }
   }
 
-  &-Currency:before, &-Amount:before, &-Locked:before, &-Cash:before {
+  &-Currency:before,
+  &-Amount:before,
+  &-Locked:before,
+  &-Cash:before {
     display: block;
     margin-bottom: 8px;
     color: var(--color-text-ghost);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: none;
     }
   }
@@ -247,9 +237,9 @@ export default {
     padding: 13px 0;
     font-size: 10px;
     font-weight: 700;
-    text-transform: uppercase;
     text-align: center;
     color: var(--color-text-main);
+    text-transform: uppercase;
     background: var(--color-bg-lighter);
     cursor: pointer;
 

@@ -7,8 +7,9 @@
         </h1>
         <div class="Page-Text Text Text--additional DailyTournamentPage-Text">
           <template v-if="width >= 768">
-            Roomcasino is constantly working to deliver the best promotions.<br/>
-            We use the latest technology and the feedback from our players to re-design our promotions. Enjoy!
+            Roomcasino is constantly working to deliver the best promotions.<br />
+            We use the latest technology and the feedback from our players to re-design our
+            promotions. Enjoy!
           </template>
           <template v-else>
             Roomcasino is constantly working to deliver the best promotions. Enjoy!
@@ -20,7 +21,7 @@
         <div class="DailyTournamentPage-Promotion">
           <div class="DailyTournamentPage-Deposit">
             <button class="Btn DailyTournamentPage-Btn" @click="onClickBtn()">
-              {{ isLoggedIn ? 'Deposit' : 'Sign up'}}
+              {{ isLoggedIn ? 'Deposit' : 'Sign up' }}
             </button>
             <Counter enddate="2020-12-31" />
           </div>
@@ -68,7 +69,7 @@
           <BaseTabs
             class="DailyTournamentPage-Tabs"
             :items="tabs"
-            :currentItem="round"
+            :current-item="round"
             @chooseTab="round = $event"
           />
           <div class="DailyTournamentPage-WinnersTable">
@@ -91,7 +92,7 @@
                 </div>
                 <div v-for="(winner, i) in winners" :key="winner.id" class="Table-Row">
                   <div class="Table-Cell TableBordered-Cell">
-                    {{ i + 1}}
+                    {{ i + 1 }}
                   </div>
                   <div class="Table-Cell TableBordered-Cell">
                     {{ winner.name }}
@@ -107,23 +108,22 @@
             </div>
           </div>
         </div>
-          <SectionsSlider
-            class="DailyTournamentPage-Slider GamesSlider"
-            :items="games"
-            :sliderOptions="sliderOptions"
-            :itemsInScreen="itemsInScreen"
-            sectionClass="DailyTournamentPage-Games"
-            title="Games in this tournament"
-          />
+        <SectionsSlider
+          class="DailyTournamentPage-Slider GamesSlider"
+          :items="games"
+          :slider-options="sliderOptions"
+          :items-in-screen="itemsInScreen"
+          section-class="DailyTournamentPage-Games"
+          title="Games in this tournament"
+        />
       </div>
       <h2 class="Title Title--type-h2 Page-Subtitle DailyTournamentPage-Subtitle">
         Agreement to these terms
       </h2>
       <div class="Page-Blocks DailyTournamentPage-Terms">
         <div v-for="(item, i) in terms" :key="`txt${i}`" class="Page-Block">
-          <div class="Page-Number">{{i + 1}}.</div>
-          <div class="Text Text--additional" v-html="item">
-          </div>
+          <div class="Page-Number">{{ i + 1 }}.</div>
+          <div class="Text Text--additional" v-html="item"></div>
         </div>
       </div>
       <h2 class="Title Title--type-h2 Page-Subtitle DailyTournamentPage-Subtitle">
@@ -136,14 +136,14 @@
           class="PromotionsCard Page-Card"
         >
           <Banner class="PromotionsCard-Banner Banner--withCounter" :image="item.image">
-            <template v-slot:title>
+            <template #title>
               <span v-html="item.title"></span>
             </template>
-            <template v-slot:subtitle>
+            <template #subtitle>
               <span v-html="item.subtitle"></span>
             </template>
-            <template v-slot:counter>
-              <Counter :enddate="item.enddate"/>
+            <template #counter>
+              <Counter :enddate="item.enddate" />
             </template>
           </Banner>
           <div class="PromotionsCard-Btns">
@@ -163,11 +163,11 @@ import showAuthDialog from '@/mixins/showAuthDialog';
 import BaseTabs from '@/components/base/BaseTabs';
 import { mapState } from 'vuex';
 import Loader from '@/components/Loader';
+
 const SectionsSlider = () => import('@/components/SectionsSlider.vue');
 
 export default {
   name: 'DailyTournamentPage',
-  layout: 'page',
   components: {
     Counter,
     BaseTabs,
@@ -175,17 +175,18 @@ export default {
     SectionsSlider,
   },
   mixins: [showAuthDialog],
+  layout: 'page',
   data() {
     return {
       winnersToShow: 10,
       tabs: [
         {
           value: 'current',
-          name: 'Current winners'
+          name: 'Current winners',
         },
         {
           value: 'prev',
-          name: 'Previous winners'
+          name: 'Previous winners',
         },
       ],
       round: 'current',
@@ -194,7 +195,7 @@ export default {
         loop: true,
         nav: true,
       },
-    }
+    };
   },
   computed: {
     ...mapState([
@@ -204,57 +205,60 @@ export default {
       'currentTournamentWinners',
       'previousTournamentWinners',
       'terms',
-      'tournaments'
+      'tournaments',
     ]),
     winners() {
-      return this.round === 'current' ? this.currentTournamentWinners : this.previousTournamentWinners;
+      return this.round === 'current'
+        ? this.currentTournamentWinners
+        : this.previousTournamentWinners;
     },
     itemsInScreen() {
       if (this.width >= 960) return 9;
       if (this.width < 960 && this.width >= 768) return 12;
       return 8;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 .DailyTournamentPage {
+
   &-Header {
     margin-bottom: 46px;
     padding-top: 172px / 320px * 100%;
     padding-bottom: 0;
+    text-align: center;
     background-image: url(../assets/img/daily-tournament-bg_460.png);
     background-repeat: no-repeat;
-    background-size: 100% auto;
     background-position: top right;
-    text-align: center;
+    background-size: 100% auto;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       padding-top: 60px;
+      text-align: initial;
       background-image: url(../assets/img/daily-tournament-bg_768.png);
       background-size: cover;
-      text-align: initial;
     }
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 122px;
       padding-top: 123px;
       background-size: auto auto;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 81px;
       background-image: url(../assets/img/daily-tournament-bg_960.png);
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 115px;
       padding-top: 147px;
       background-image: url(../assets/img/daily-tournament-bg_1248.png);
     }
 
-    @media(min-width: $screen-xxl) {
+    @media (min-width: $screen-xxl) {
       background-image: url(../assets/img/daily-tournament-bg_1920.png);
       background-size: contain;
     }
@@ -263,11 +267,11 @@ export default {
   &-Title {
     margin-bottom: 9px;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       text-align: left;
     }
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 16px;
       text-align: left;
     }
@@ -276,14 +280,14 @@ export default {
   &-Text {
     margin-bottom: 20px;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       margin-right: 0;
       margin-left: 0;
       padding: 0;
       text-align: left;
     }
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 30px;
     }
   }
@@ -294,17 +298,17 @@ export default {
     font-weight: 700;
     color: var(--color-text-main);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 36px;
       font-size: 14px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 24px;
       font-size: 18px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 71px;
       font-size: 20px;
     }
@@ -313,7 +317,7 @@ export default {
   &-Promotion {
     position: relative;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -324,7 +328,7 @@ export default {
     width: 100%;
     margin-bottom: 23px;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       width: 168px;
       margin-right: 20px;
       margin-bottom: 0;
@@ -337,7 +341,7 @@ export default {
     flex-direction: column;
     align-items: center;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       flex-direction: row;
       align-items: center;
     }
@@ -346,14 +350,14 @@ export default {
   &-Benefits {
     display: none;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       position: absolute;
       right: 0;
       bottom: 0;
       display: block;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       position: relative;
       right: auto;
       bottom: auto;
@@ -366,11 +370,7 @@ export default {
     align-items: flex-start;
     margin-bottom: 15px;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-right: 55px;
       margin-bottom: 0;
 
@@ -378,17 +378,21 @@ export default {
         margin-right: 0;
       }
     }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &-BenefitIcon {
-    margin-right: 10px;
     width: 13px;
+    margin-right: 10px;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       width: 17px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       width: 20px;
     }
   }
@@ -396,10 +400,10 @@ export default {
   &-BenefitName {
     font-size: 14px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 20px;
     }
   }
@@ -407,10 +411,10 @@ export default {
   &-BenefitAdditional {
     font-size: 9px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 12px;
     }
   }
@@ -421,7 +425,7 @@ export default {
     font-size: 11px;
     text-transform: uppercase;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 12px;
     }
   }
@@ -430,27 +434,27 @@ export default {
     padding: 21px 10px;
     font-size: 10px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 12px;
     }
   }
 
   &-Prize {
     font-size: 11px;
-    color: var(--color-main1);
     text-align: right;
+    color: var(--color-main1);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 14px;
     }
   }
 
   &-Winners {
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       width: calc(50% - 10px);
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       width: calc(50% - 25px);
     }
   }
@@ -458,11 +462,11 @@ export default {
   &-WinnersTable {
     margin-bottom: 37px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 55px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 0;
     }
   }
@@ -470,12 +474,12 @@ export default {
   &-Slider {
     width: 100%;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       width: calc(50% - 10px);
       margin-top: 25px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       width: calc(50% - 25px);
     }
 
@@ -491,29 +495,29 @@ export default {
     align-content: center;
     //height: 100%;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
-    @media(min-width: $screen-l) {
-      grid-template-columns: 1fr 1fr 1fr
+    @media (min-width: $screen-l) {
+      grid-template-columns: 1fr 1fr 1fr;
     }
   }
 
   &-Row {
     margin-bottom: 37px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 41px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       display: flex;
       justify-content: space-between;
       margin-bottom: 50px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 80px;
     }
   }
@@ -521,15 +525,15 @@ export default {
   &-Terms {
     margin-bottom: 37px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 56px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 60px;
     }
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 80px;
     }
   }

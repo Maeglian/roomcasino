@@ -24,23 +24,23 @@
 }
 
 .SupportPage-List {
-  counter-reset: list1;
-  color: var(--color-text-main);
   margin-bottom: 41px;
+  color: var(--color-text-main);
+  counter-reset: list1;
 }
 
 .SupportPage-Item {
   position: relative;
-  font-size: 14px;
   margin-bottom: 30px;
+  font-size: 14px;
 
-  &::before {
+  &:before {
+    content: counter(list1) '.';
     position: absolute;
     top: -1px;
     left: 0;
-    counter-increment: list1;
-    content: counter(list1) ".";
     font-weight: 700;
+    counter-increment: list1;
   }
 
   &:last-child {
@@ -53,12 +53,13 @@
 }
 
 .SupportPage-InnerList {
-  list-style-type: lower-alpha;
   padding-left: 16px;
+  list-style-type: lower-alpha;
 }
 
 .SupportPage-InnerItem {
   padding-left: 7px;
+
   &::marker {
     font-weight: 700;
   }

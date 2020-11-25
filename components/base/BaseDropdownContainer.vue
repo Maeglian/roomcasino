@@ -3,9 +3,9 @@ import vClickOutside from 'v-click-outside';
 import { mapState } from 'vuex';
 
 export default {
-  name: "BaseDropdownContainer",
+  name: 'BaseDropdownContainer',
   directives: {
-    clickOutside: vClickOutside.directive
+    clickOutside: vClickOutside.directive,
   },
   props: {
     outerClass: {
@@ -21,19 +21,20 @@ export default {
     beforeWidth: {
       type: Number,
       required: false,
+      default: 0,
     },
     overlay: {
       type: Boolean,
       required: false,
       default: false,
-    }
+    },
   },
   data() {
     return {
       isOpen: false,
       height: 0,
       topOffset: 0,
-    }
+    };
   },
   computed: {
     ...mapState(['width']),
@@ -47,63 +48,79 @@ export default {
   methods: {
     onOpen() {
       this.isOpen = !this.isOpen;
-      if (this.overlay && this.isOpen) document.body.style.overflow = "hidden";
-      if (this.overlay && !this.isOpen) document.body.style.overflow = "auto";
+      if (this.overlay && this.isOpen) document.body.style.overflow = 'hidden';
+      if (this.overlay && !this.isOpen) document.body.style.overflow = 'auto';
     },
     onClickOutside(e) {
       if (!e.target.closest('BaseDropdownContainer')) {
         this.isOpen = false;
       }
-    }
+    },
   },
   render(h) {
-    const overlay = this.overlay && this.isOpen
-      ? h('div', {
+    const overlay =
+      this.overlay && this.isOpen
+        ? h('div', {
+            attrs: {
+              class: 'BaseDropdownContainer-Overlay',
+            },
+            style: {
+              top: `${this.topOffset}px`,
+            },
+            on: {
+              click: this.onOpen,
+            },
+          })
+        : null;
+
+    const outer = h(
+      'button',
+      {
+        slot: 'outerContent',
         attrs: {
-          class: 'BaseDropdownContainer-Overlay'
-        },
-        style: {
-          top: `${this.topOffset}px`
+          class: this.outerClass,
         },
         on: {
           click: this.onOpen,
-        }
-      })
-      : null;
-
-    const outer = h('button',{
-      slot: 'outerContent',
-      attrs: {
-        class: this.outerClass,
+        },
+        ref: 'outer',
       },
-      on: {
-        click: this.onOpen,
-      },
-      ref: 'outer',
-    },
-      [ this.$slots.outerContent]
+      [this.$slots.outerContent],
     );
 
-    const inner = this.isOpen || this.width >= this.beforeWidth ? h('div', {
-      attrs: {
-        class: `${this.innerClass} BaseDropdownContainer-Inner`
-      },
-      style: {
-        top: `${this.height}px`
-      },
-    }, this.$slots.default) : null;
+    const inner =
+      this.isOpen || this.width >= this.beforeWidth
+        ? h(
+            'div',
+            {
+              attrs: {
+                class: `${this.innerClass} BaseDropdownContainer-Inner`,
+              },
+              style: {
+                top: `${this.height}px`,
+              },
+            },
+            this.$slots.default,
+          )
+        : null;
 
-    return h('div', {
-      attrs: {
-        class: `${this.$attrs.class} BaseDropdownContainer`,
+    return h(
+      'div',
+      {
+        attrs: {
+          class: `${this.$attrs.class} BaseDropdownContainer`,
+        },
+        directives: [
+          {
+            name: 'clickOutside',
+            value: this.onClickOutside,
+          },
+        ],
       },
-      directives: [{
-        name: 'clickOutside',
-        value: this.onClickOutside
-      }]
-    }, [overlay, outer, inner]);
+      [overlay, outer, inner],
+    );
   },
-}
+};
 </script>
 
 <style lang="scss">
@@ -111,13 +128,13 @@ export default {
   position: relative;
 
   &-Overlay {
-    content: "";
+    content: '';
     position: fixed;
-    left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(6, 8, 30, 0.9);
+    left: 0;
     z-index: 1;
+    background-color: rgba(6, 8, 30, .9);
   }
 
   &-Inner {
@@ -128,4 +145,3 @@ export default {
   }
 }
 </style>
-

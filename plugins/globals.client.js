@@ -7,4 +7,4 @@ import VueSlider from 'vue-slider-component';
 Vue.use(vClickOutside);
 Vue.use(VModal);
 Vue.component('VueRange', VueSlider);
-Vue.component('marquee-text', MarqueeText);
+Vue.component('MarqueeText', MarqueeText);

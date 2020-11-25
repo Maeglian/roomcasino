@@ -23,9 +23,10 @@ export default {
 
 <style lang="scss">
 .ProfilePage {
+
   &-Content {
-    margin-top: 18px;
     width: 100%;
+    margin-top: 18px;
 
     @media (min-width: $screen-m) {
       margin-top: 24px;
@@ -43,8 +44,7 @@ export default {
   &-Btn {
     padding: 20px 30px;
     font-size: 12px;
-    background: rgba(235, 28, 42, 0.4);
+    background: rgba(235, 28, 42, .4);
   }
 }
-
 </style>

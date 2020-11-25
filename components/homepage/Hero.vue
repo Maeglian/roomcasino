@@ -3,23 +3,30 @@
     <div class="Hero-Slider">
       <div class="Hero-Item">
         <picture class="Hero-Image">
-          <source media="(max-width: 460px)" :srcset="require('@/assets/img/hero-bg-joker_mobile.png')">
-          <source media="(max-width: 768px)" :srcset="require('@/assets/img/hero-bg-joker_768.jpg')">
-          <source media="(max-width: 960px)" :srcset="require('@/assets/img/hero-bg-joker_960.jpg')">
-          <source media="(max-width: 1248px)" :srcset="require('@/assets/img/hero-bg-joker.jpg')">
-          <img srcset="@/assets/img/joker_1920.jpg" alt="">
+          <source
+            media="(max-width: 460px)"
+            :srcset="require('@/assets/img/hero-bg-joker_mobile.png')"
+          />
+          <source
+            media="(max-width: 768px)"
+            :srcset="require('@/assets/img/hero-bg-joker_768.jpg')"
+          />
+          <source
+            media="(max-width: 960px)"
+            :srcset="require('@/assets/img/hero-bg-joker_960.jpg')"
+          />
+          <source media="(max-width: 1248px)" :srcset="require('@/assets/img/hero-bg-joker.jpg')" />
+          <img srcset="@/assets/img/joker_1920.jpg" alt="" />
         </picture>
         <div class="Hero-Content">
           <div class="Title Title--type-h1 Hero-Title">
-            Sign up <span class="Colored">&</span> get <br/>
-            welcome<br>
+            Sign up <span class="Colored">&</span> get <br />
+            welcome<br />
             bonus
           </div>
-          <div class="Hero-Text">
-            €100 <span class="Colored">+</span> 55 Free  Spins
-          </div>
+          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>
           <button class="Btn Hero-Btn" @click="onClickBtn()">
-            {{ isLoggedIn ? 'Deposit now' : 'Sign up'}}
+            {{ isLoggedIn ? 'Deposit now' : 'Sign up' }}
           </button>
         </div>
       </div>
@@ -28,13 +35,13 @@
       <GamesSlider
         class="Hero-Winners GamesSlider--winners"
         :items="winners"
-        :sliderOptions="winnersSliderOptions"
+        :slider-options="winnersSliderOptions"
         title="Last winners"
       />
       <div class="Advantages Hero-Advantages">
         <div class="Advantages-Item">
           <div class="Advantages-Icon">
-            <img src="@/assets/img/fast.svg" alt="">
+            <img src="@/assets/img/fast.svg" alt="" />
           </div>
           <div class="Advantages-Content">
             <div class="Advantages-Title">
@@ -47,7 +54,7 @@
         </div>
         <div class="Advantages-Item">
           <div class="Advantages-Icon">
-            <img src="@/assets/img/support.svg" alt="">
+            <img src="@/assets/img/support.svg" alt="" />
           </div>
           <div class="Advantages-Content">
             <div class="Advantages-Title">
@@ -60,7 +67,7 @@
         </div>
         <div class="Advantages-Item">
           <div class="Advantages-Icon">
-            <img src="@/assets/img/games.svg" alt="">
+            <img src="@/assets/img/games.svg" alt="" />
           </div>
           <div class="Advantages-Content">
             <div class="Advantages-Title">
@@ -73,7 +80,7 @@
         </div>
         <div class="Advantages-Item">
           <div class="Advantages-Icon">
-            <img src="@/assets/img/providers.svg" alt="">
+            <img src="@/assets/img/providers.svg" alt="" />
           </div>
           <div class="Advantages-Content">
             <div class="Advantages-Title">
@@ -90,7 +97,6 @@
 </template>
 
 <script>
-import VueSlider from '@/components/Slider';
 import GamesSlider from '@/components/GamesSlider';
 import { mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
@@ -204,15 +210,15 @@ export default {
     line-height: 1.24;
     color: var(--color-text-main);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 8px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 10px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 11px;
     }
   }
@@ -221,18 +227,18 @@ export default {
     font-size: 11px;
     font-weight: 700;
     line-height: 1.24;
-    text-transform: uppercase;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 8px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 10px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 11px;
     }
   }
@@ -240,22 +246,22 @@ export default {
 
 .Hero {
   position: relative;
-  max-width: 100%;
   width: 100%;
+  max-width: 100%;
   margin-top: -75px;
   margin-bottom: 26px;
-  padding-left: 0;
   padding-right: 0;
+  padding-left: 0;
 
-  @media(min-width: $screen-m) {
+  @media (min-width: $screen-m) {
     margin-bottom: 32px;
   }
 
-  @media(min-width: $screen-l) {
+  @media (min-width: $screen-l) {
     margin-bottom: 60px;
   }
 
-  @media(min-width: $screen-xl) {
+  @media (min-width: $screen-xl) {
     margin-bottom: 85px;
   }
 
@@ -263,31 +269,31 @@ export default {
     position: relative;
     margin-bottom: 12px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 0;
     }
 
     .v_slider__dots {
       position: absolute;
-      left: 180px;
       bottom: 70px;
+      left: 180px;
       width: auto;
 
-      @media(min-width: $screen-xs) {
+      @media (min-width: $screen-xs) {
         top: 220px;
         bottom: initial;
       }
 
-      @media(min-width: $screen-m) {
+      @media (min-width: $screen-m) {
         top: 240px;
       }
 
-      @media(min-width: $screen-l) {
+      @media (min-width: $screen-l) {
         top: 290px;
         left: 200px;
       }
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         top: 360px;
         left: calc(50% - 364px);
       }
@@ -299,31 +305,31 @@ export default {
     height: 100%;
     overflow: hidden;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       height: 640px;
     }
   }
 
   &-Content {
     position: absolute;
-    left: 16px;
     bottom: 80px;
+    left: 16px;
     text-align: left;
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       top: 70px;
       bottom: initial;
     }
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       top: 74px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       top: 96px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       top: 112px;
       left: calc(50% - 608px);
     }
@@ -344,7 +350,7 @@ export default {
   &-Title {
     margin-bottom: 9px;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 12px;
     }
   }
@@ -354,18 +360,18 @@ export default {
     font-size: 20px;
     font-weight: 700;
     line-height: 1.37;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 16px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 22px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 24px;
       font-size: 28px;
     }
@@ -373,14 +379,14 @@ export default {
 
   &-Nav {
     position: absolute;
-    left: 0;
     bottom: 14px;
+    left: 0;
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding: 0 16px;
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       display: none;
     }
   }
@@ -393,40 +399,40 @@ export default {
     font-size: 7px;
     font-weight: 400;
     line-height: 1.66;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
   }
 
   &-Footer {
-    padding: 0 16px;
     max-width: 100%;
+    padding: 0 16px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       position: absolute;
-      left: calc(50% - 608px);
       right: calc(50% - 608px);
       bottom: 0;
+      left: calc(50% - 608px);
       display: flex;
       align-items: flex-end;
       margin: 0 auto;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       max-width: 1248px;
       padding: 0;
     }
   }
 
   &-Winners {
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-right: 28px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-right: 48px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-right: 114px;
     }
   }
@@ -434,7 +440,7 @@ export default {
   &-Advantages {
     display: none;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: flex;
       flex-grow: 1;
     }

@@ -1,13 +1,9 @@
 <template>
-  <div
-    class="Search"
-    :class="{'Search--open': isOpen}"
-    v-click-outside="onClickOutside"
-  >
+  <div v-click-outside="onClickOutside" class="Search" :class="{ 'Search--open': isOpen }">
     <svg class="Icon Search-Icon">
       <use xlink:href="@/assets/img/icons.svg#search"></use>
     </svg>
-    <input type="text" class="Search-Input" placeholder="Find game">
+    <input type="text" class="Search-Input" placeholder="Find game" />
   </div>
 </template>
 
@@ -49,22 +45,22 @@ export default {
     height: 15px;
     fill: var(--color-main2);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       top: calc(50% - 3px);
       left: 8px;
       width: 9px;
       height: 9px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       top: calc(50% - 5px);
-      left: 12px;
       right: initial;
+      left: 12px;
       width: 15px;
       height: 15px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       left: 18px;
       width: 18px;
       height: 18px;
@@ -81,35 +77,35 @@ export default {
     background: transparent;
     border: none;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       padding: 0;
       padding-left: 20px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       padding-left: 32px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       padding-left: 50px;
     }
 
     &::placeholder {
-      color: var(--color-text-main);
       font-size: 12px;
       font-weight: 700;
       line-height: 1.242;
+      color: var(--color-text-main);
       text-transform: uppercase;
 
-      @media(min-width: $screen-m) {
+      @media (min-width: $screen-m) {
         font-size: 9px;
       }
 
-      @media(min-width: $screen-l) {
+      @media (min-width: $screen-l) {
         font-size: 10px;
       }
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         font-size: 12px;
       }
     }

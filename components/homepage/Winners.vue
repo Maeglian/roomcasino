@@ -7,15 +7,13 @@
       <div class="Table TableBordered Winners-Table">
         <div v-for="item in items" :key="item.name" class="Table-Row">
           <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" :src="item.imgUrl" alt="">
+            <img class="Winners-Avatar" :src="item.imgUrl" alt="" />
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Name">
-              {{ item.name }} just won<br/>
-              in <span class="Winners-Game">{{ item.game }}</span>
+            {{ item.name }} just won<br />
+            in <span class="Winners-Game">{{ item.game }}</span>
           </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Money">
-            € {{ item.sum }}
-          </div>
+          <div class="Table-Cell TableBordered-Cell Winners-Money">€ {{ item.sum }}</div>
         </div>
       </div>
     </div>
@@ -26,15 +24,13 @@
       <div class="Table Table--bordered Winners-Table">
         <div v-for="item in items" :key="2 + item.name" class="Table-Row">
           <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" :src="item.imgUrl" alt="">
+            <img class="Winners-Avatar" :src="item.imgUrl" alt="" />
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Name">
-            {{ item.name }} just won<br/>
+            {{ item.name }} just won<br />
             in <span class="Winners-Game">{{ item.game }}</span>
           </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Money">
-            € {{ item.sum }}
-          </div>
+          <div class="Table-Cell TableBordered-Cell Winners-Money">€ {{ item.sum }}</div>
         </div>
       </div>
     </div>
@@ -55,7 +51,7 @@ export default {
         },
         {
           name: 'Dakamu',
-          game: 'Jin Chan\'s Pond of Riches',
+          game: "Jin Chan's Pond of Riches",
           imgUrl: 'https://static.egamings.com/games/thunderkick/jin_chans_pond_of_riches.jpg',
           sum: '8.474.25',
         },
@@ -78,8 +74,8 @@ export default {
           sum: '843.90',
         },
       ],
-    }
-  }
+    };
+  },
 };
 </script>
 
@@ -88,7 +84,7 @@ export default {
   display: flex;
   flex-direction: column;
 
-  @media(min-width: $screen-s) {
+  @media (min-width: $screen-s) {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 80px;
@@ -98,16 +94,16 @@ export default {
     width: 100%;
     margin-bottom: 30px;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       width: calc(50% - 16px);
       margin-bottom: 0;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       width: calc(50% - 41px);
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       width: calc(50% - 69px);
     }
   }
@@ -117,17 +113,17 @@ export default {
   }
 
   &-Avatar {
-    padding-left: 0;
-    padding-right: 0;
     width: 64px;
     height: 64px;
+    padding-right: 0;
+    padding-left: 0;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       width: 76px;
       height: 76px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       width: 90px;
       height: 90px;
     }
@@ -140,11 +136,11 @@ export default {
     line-height: 124%;
     color: var(--color-text-ghost);
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 12px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 14px;
     }
   }
@@ -159,15 +155,15 @@ export default {
     color: var(--color-main1);
     white-space: nowrap;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 18px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 20px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 24px;
     }
   }

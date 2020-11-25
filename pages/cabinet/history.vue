@@ -26,6 +26,7 @@ export default {
 
 <style lang="scss">
 .HistoryPage {
+
   &-Title {
     margin-bottom: 36px;
 
@@ -34,5 +35,4 @@ export default {
     }
   }
 }
-
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <nav class="MainNav" :class="{'MainNav--bg': documentIsScrolled}">
-    <div class="MainNav-Overlay" v-if="navIsOpen" @click="toggleNav()"></div>
+  <nav class="MainNav" :class="{ 'MainNav--bg': documentIsScrolled }">
+    <div v-if="navIsOpen" class="MainNav-Overlay" @click="toggleNav()"></div>
     <div class="MainNav-TopBar">
       <div class="MainNav-Nav">
         <button class="MainNav-Toggle" @click="toggleNav()">
@@ -17,12 +17,12 @@
           <NavItem
             v-for="item in navItems"
             :key="item.name"
-            :className="'MainNav-Link'"
+            :class-name="'MainNav-Link'"
             :item="item"
           />
         </ul>
       </nav>
-      <AuthSection class="MainNav-AuthSection"/>
+      <AuthSection class="MainNav-AuthSection" />
     </div>
     <transition v-if="width < 960" name="slide-left">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
@@ -36,7 +36,7 @@
           <NavItem
             v-for="item in navItems"
             :key="item.name"
-            :className="'AsideMenu-Link'"
+            :class-name="'AsideMenu-Link'"
             :item="item"
           />
         </div>
@@ -129,18 +129,18 @@ export default {
   z-index: 10;
 
   &-Overlay {
-    content: "";
+    content: '';
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(6, 8, 30, 0.9);
+    left: 0;
     z-index: 2;
+    background-color: rgba(6, 8, 30, .9);
   }
 
   &--bg {
-    background: rgba(6, 14, 43, 0.5);
+    background: rgba(6, 14, 43, .5);
   }
 
   &-TopBar {
@@ -149,18 +149,18 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1248px;
     width: 100%;
+    max-width: 1248px;
     height: 60px;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
     padding-left: 16px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       height: auto;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       padding-left: 16px;
     }
   }
@@ -170,7 +170,7 @@ export default {
     align-items: center;
     margin-right: 20px;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-right: 34px;
     }
   }
@@ -180,29 +180,29 @@ export default {
     margin-right: 12px;
     cursor: pointer;
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       display: block;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       display: none;
     }
   }
 
   &-Logo {
     flex-shrink: 0;
-    vertical-align: middle;
     width: 110px;
+    vertical-align: middle;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       width: 130px;
     }
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       width: 140px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       width: 172px;
     }
   }
@@ -210,7 +210,7 @@ export default {
   &-Links {
     display: none;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       display: block;
       margin-right: auto;
     }
@@ -229,6 +229,10 @@ export default {
     color: var(--color-text-main);
     text-transform: uppercase;
 
+    @media (min-width: $screen-xl) {
+      font-size: 12px;
+    }
+
     &:after {
       content: '/';
       position: absolute;
@@ -245,16 +249,12 @@ export default {
         display: none;
       }
     }
-
-    @media(min-width: $screen-xl) {
-      font-size: 12px;
-    }
   }
 
   &-AuthSection {
     display: none;
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       display: block;
     }
   }
@@ -263,19 +263,19 @@ export default {
 .AsideMenu {
   position: fixed;
   top: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
   z-index: 4;
   display: flex;
   flex-direction: column;
   min-width: 100%;
   height: 100%;
   padding-top: 18px;
-  background-color: var(--color-body);
   overflow-y: auto;
+  background-color: var(--color-body);
   scrollbar-width: thin;
 
-  @media(min-width: $screen-xs) {
+  @media (min-width: $screen-xs) {
     align-items: center;
   }
 
@@ -304,11 +304,11 @@ export default {
     margin-bottom: 35px;
     font-size: 14px;
 
-    @media(min-width: $screen-s){
+    @media (min-width: $screen-s) {
       font-size: 22px;
     }
 
-    @media(min-width: $screen-xs){
+    @media (min-width: $screen-xs) {
       text-align: center;
 
       .Nav-Name {
@@ -321,7 +321,7 @@ export default {
     order: 2;
     margin-top: auto;
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       width: 288px;
       margin-bottom: 158px;
     }
@@ -330,7 +330,7 @@ export default {
   &-AuthSection.AuthSection--authenticated {
     margin-top: 0;
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       width: 100%;
       margin-top: auto;
       margin-bottom: 0;

@@ -17,7 +17,7 @@
       </div>
     </NuxtLink>
     <button class="MobileNav-Item" @click="$modal.show('cashier')">
-      <svg width="18" height="15" >
+      <svg width="18" height="15">
         <use xlink:href="@/assets/img/icons.svg#deposit"></use>
       </svg>
       <div class="MobileNav-Name">
@@ -44,7 +44,6 @@
       </div>
     </button>
   </nav>
-
 </template>
 
 <script>
@@ -55,7 +54,7 @@ export default {
   name: 'MobileNav',
   mixins: [showAuthDialog],
   computed: {
-    ...mapState(['navIsOpen','notificationsPanelIsOpen']),
+    ...mapState(['navIsOpen', 'notificationsPanelIsOpen']),
     ...mapGetters(['activeAccount', 'isNewNotifications']),
   },
   methods: {
@@ -68,8 +67,8 @@ export default {
       if (this.notificationsPanelIsOpen) this.closeNotificationsPanel();
       else this.openNotificationsPanel();
     },
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss">
@@ -80,9 +79,9 @@ export default {
   justify-content: space-between;
   width: 100%;
   padding: 18px 24px 14px;
-  background: linear-gradient(176.16deg, rgba(6, 14, 42, 0) 4.02%, #060E2A 97.74%);
+  background: linear-gradient(176.16deg, rgba(6, 14, 42, 0) 4.02%, #060e2a 97.74%);
 
-  @media(min-width: $screen-xs) {
+  @media (min-width: $screen-xs) {
     display: none;
   }
 
@@ -106,8 +105,8 @@ export default {
     font-size: 7px;
     font-weight: 400;
     line-height: 1.66;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
   }
 
   &-MessagesNew {
@@ -126,5 +125,4 @@ export default {
   width: 17px;
   height: 17px;
 }
-
 </style>

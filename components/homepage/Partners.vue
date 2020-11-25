@@ -1,10 +1,10 @@
 <template>
   <section class="Partners">
     <client-only>
-      <marquee-text :duration=durationSpeed>
+      <marquee-text :duration="durationSpeed">
         <div class="Partners-Wrapper">
           <div class="Partners-Partner Partners-Partner--visa">
-            <img class ="Partners-Image" src="@/assets/img/visa.svg" />
+            <img class="Partners-Image" src="@/assets/img/visa.svg" />
           </div>
           <div class="Partners-Partner Partners-Partner--maestro">
             <img class="Partners-Image" src="@/assets/img/maestro.svg" />
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import {mapState} from "vuex";
+import { mapState } from 'vuex';
 
 export default {
   name: 'Partners',
@@ -43,7 +43,7 @@ export default {
     ...mapState(['width']),
 
     durationSpeed() {
-      return this.width > 460 ? 60 : 30
+      return this.width > 460 ? 60 : 30;
     },
   },
 };
@@ -54,11 +54,11 @@ export default {
   padding-bottom: 20px;
   border-bottom: 1px solid var(--color-border);
 
-  @media(min-width: $screen-m) {
+  @media (min-width: $screen-m) {
     padding-bottom: 25px;
   }
 
-  @media(min-width: $screen-xl) {
+  @media (min-width: $screen-xl) {
     padding-bottom: 30px;
   }
 
@@ -72,18 +72,17 @@ export default {
   &-Partner {
     margin-right: 16px;
 
-    &:last-child {
-      margin-right: 0;
-    }
-
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-right: 25px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-right: 37px;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
-
 </style>

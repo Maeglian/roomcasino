@@ -4,8 +4,8 @@
       v-for="tab in items"
       :key="tab.value"
       class="BaseTabs-Tab"
-      :class="{'BaseTabs-Tab--active': currentItem === tab.value}"
-      @click="$emit('chooseTab', tab.value)"
+      :class="{ 'BaseTabs-Tab--active': currentItem === tab.value }"
+      @click="$emit('choose-tab', tab.value)"
     >
       <div class="BaseTabs-Name">
         {{ tab.name }}
@@ -25,9 +25,9 @@ export default {
     currentItem: {
       type: String,
       required: true,
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -41,16 +41,16 @@ export default {
   }
 
   &-Tab {
-    flex-grow: 1;
+    position: relative;
     display: flex;
+    flex-grow: 1;
     justify-content: center;
     align-items: center;
-    position: relative;
     margin-right: 4px;
     font-weight: 700;
     text-align: center;
-    text-transform: inherit;
     color: var(--color-text-main);
+    text-transform: inherit;
     background: var(--color-bg);
     cursor: pointer;
 
@@ -58,16 +58,18 @@ export default {
       margin-right: 0;
     }
 
-    &.nuxt-link-exact-active, &--active {
+    &.nuxt-link-exact-active,
+    &--active {
       color: var(--color-main1);
 
       .BaseTabs-Name {
+
         &:after {
           content: '';
           position: absolute;
-          z-index: 0;
-          left: -15px;
           bottom: 0;
+          left: -15px;
+          z-index: 0;
           width: calc(100% + 30px);
           height: 4px;
           background: var(--color-main1);
@@ -84,5 +86,4 @@ export default {
     height: 100%;
   }
 }
-
 </style>

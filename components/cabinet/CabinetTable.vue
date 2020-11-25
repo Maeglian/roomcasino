@@ -13,20 +13,16 @@
           {{ col.label }}
         </div>
       </div>
-      <div
-        v-for="(row, i) in rows"
-        :key="i"
-        class="Table-Row CabinetTable-Row"
-      >
+      <div v-for="(row, i) in rows" :key="i" class="Table-Row CabinetTable-Row">
         <template v-if="cols">
           <div
             v-for="(col, j) in cols"
             :key="`${i}_${j}_${row[col.field]}`"
             class="Table-Cell CabinetTable-Cell"
             :class="{
-            'CabinetTable-Cell--accepted': row[col.field] === 'Accepted',
-            'CabinetTable-Cell--discarded': row[col.field] === 'Discarded'
-          }"
+              'CabinetTable-Cell--accepted': row[col.field] === 'Accepted',
+              'CabinetTable-Cell--discarded': row[col.field] === 'Discarded',
+            }"
           >
             <div class="CabinetTable-Label">
               {{ col.label }}
@@ -40,8 +36,8 @@
             :key="`${i}_${j}_${col}`"
             class="Table-Cell CabinetTable-Cell"
             :class="{
-            'CabinetTable-Cell--accepted': col    === 'Current',
-          }"
+              'CabinetTable-Cell--accepted': col === 'Current',
+            }"
           >
             {{ col }}
           </div>
@@ -50,17 +46,17 @@
     </div>
     <div class="CabinetTable-Footer">
       <button
-        v-if="this.pagination.totalPages > 1"
+        v-if="pagination.totalPages > 1"
         class="CabinetTable-ShowMore"
-        @click="$emit('showMore')"
+        @click="$emit('show-more')"
       >
         Show more
       </button>
       <BasePagination
-        class="CabinetTable-Pagination"
         v-if="pagination.enabled"
+        class="CabinetTable-Pagination"
         :pagination="pagination"
-        @changePage="$emit('changePage', $event)"
+        @changePage="$emit('change-page', $event)"
       />
     </div>
   </div>
@@ -71,18 +67,23 @@ import BasePagination from '@/components/base/BasePagination.vue';
 
 export default {
   name: 'CabinetTable',
+  components: {
+    BasePagination,
+  },
   props: {
     rows: {
       type: Array,
-      isRequired: true,
+      required: true,
     },
     cols: {
-      type: Array,
-      isRequired: false,
+      type: [Array, Boolean],
+      required: false,
+      default: false,
     },
     title: {
-      type: String,
-      isRequired: false,
+      type: [String, Boolean],
+      required: false,
+      default: false,
     },
     pagination: {
       type: Object,
@@ -92,14 +93,12 @@ export default {
       }),
     },
   },
-  components: {
-    BasePagination,
-  },
 };
 </script>
 
 <style lang="scss">
 .CabinetTable {
+
   &-Table {
     @media (min-width: $screen-m) {
       display: table;
@@ -139,9 +138,18 @@ export default {
     font-size: 9px;
     font-weight: 700;
     line-height: 1.26;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
     background: var(--color-bg);
+
+    @media (min-width: $screen-m) {
+      display: table-cell;
+      width: 100%;
+      margin-bottom: 0;
+      padding: 15px;
+      font-size: 12px;
+      vertical-align: middle;
+    }
 
     &:nth-child(even) {
       text-align: right;
@@ -158,15 +166,6 @@ export default {
     &--discarded {
       color: var(--color-discard);
     }
-
-    @media (min-width: $screen-m) {
-      display: table-cell;
-      width: 100%;
-      margin-bottom: 0;
-      padding: 15px;
-      font-size: 12px;
-      vertical-align: middle;
-    }
   }
 
   &-Header {
@@ -180,8 +179,8 @@ export default {
   &-Th {
     display: table-cell;
     font-size: 10px;
-    text-transform: uppercase;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
   }
 
   &-Label {
@@ -211,8 +210,8 @@ export default {
     margin-bottom: 20px;
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-main1);
+    text-transform: uppercase;
 
     @media (min-width: $screen-s) {
       margin-bottom: 0;
@@ -222,9 +221,8 @@ export default {
   &-Pagination {
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
   }
 }
-
 </style>

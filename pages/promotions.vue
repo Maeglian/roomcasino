@@ -5,7 +5,8 @@
         Current promotions
       </h1>
       <div class="Page-Text Text Text--additional">
-        Roomcasino is constantly working to deliver the best promotions. We use the latest technology and the feedback from our players to re-design our promotions. Enjoy!
+        Roomcasino is constantly working to deliver the best promotions. We use the latest
+        technology and the feedback from our players to re-design our promotions. Enjoy!
       </div>
     </div>
     <section class="Page-Content">
@@ -16,10 +17,10 @@
           class="PromotionsCard Page-Card"
         >
           <Banner class="PromotionsCard-Banner" :image="item.image">
-            <template v-slot:title>
+            <template #title>
               <span v-html="item.title"></span>
             </template>
-            <template v-slot:subtitle>
+            <template #subtitle>
               <span v-html="item.subtitle"></span>
             </template>
           </Banner>
@@ -28,8 +29,7 @@
               {{ item.announce }}
             </div>
             <div class="PromotionsCard-Text Text Text--additional">
-            <span v-html="item.text">
-            </span>
+              <span v-html="item.text"> </span>
             </div>
           </div>
           <div class="PromotionsCard-Btns">
@@ -52,14 +52,14 @@
           class="PromotionsCard Page-Card"
         >
           <Banner class="PromotionsCard-Banner Banner--withCounter" :image="item.image">
-            <template v-slot:title>
+            <template #title>
               <span v-html="item.title"></span>
             </template>
-            <template v-slot:subtitle>
+            <template #subtitle>
               <span v-html="item.subtitle"></span>
             </template>
-            <template v-slot:counter>
-              <Counter :enddate="item.enddate"/>
+            <template #counter>
+              <Counter :enddate="item.enddate" />
             </template>
           </Banner>
           <div class="PromotionsCard-Footer">
@@ -67,8 +67,7 @@
               {{ item.announce }}
             </div>
             <div class="PromotionsCard-Text Text Text--additional">
-            <span v-html="item.text">
-            </span>
+              <span v-html="item.text"> </span>
             </div>
           </div>
           <div class="PromotionsCard-Btns">
@@ -92,11 +91,11 @@ import { mapState } from 'vuex';
 
 export default {
   name: 'Promotions',
-  layout: 'page',
   components: {
     Banner,
     Counter,
   },
+  layout: 'page',
   data() {
     return {
       promotions: [
@@ -105,56 +104,63 @@ export default {
           subtitle: '€ 500 <span class="Colored">+</span> 500 Free Spins',
           image: 'promotion1.png',
           announce: 'First deposit bonus',
-          text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+          text:
+            '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
         },
         {
           title: '55%<br/> of the deposit<br/> amount',
           subtitle: '€ 150 <span class="Colored">+</span> 100 Free Spins',
           image: 'promotion2.png',
           announce: 'Second deposit bonus',
-          text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+          text:
+            '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
         },
         {
           title: '100%<br/> of the deposit<br/> amount',
           subtitle: '€ 500 <span class="Colored">+</span> 500 Free Spins',
           image: 'promotion3.png',
           announce: 'First deposit bonus',
-          text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+          text:
+            '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
         },
         {
           title: '55%<br/> of the deposit<br/> amount',
           subtitle: '€ 150 <span class="Colored">+</span> 100 Free Spins',
           image: 'promotion4.png',
           announce: 'Second deposit bonus',
-          text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+          text:
+            '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
         },
         {
           title: '100%<br/> of the deposit<br/> amount',
           subtitle: '€ 500 <span class="Colored">+</span> 500 Free Spins',
           image: 'promotion5.png',
           announce: 'First deposit bonus',
-          text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+          text:
+            '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
         },
         {
           title: '55%<br/> of the deposit<br/> amount',
           subtitle: '€ 150 <span class="Colored">+</span> 100 Free Spins',
           image: 'promotion6.png',
           announce: 'Second deposit bonus',
-          text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+          text:
+            '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
         },
       ],
-    }
+    };
   },
   computed: {
     ...mapState(['tournaments']),
   },
-}
+};
 </script>
 
 <style lang="scss">
 .PromotionsPage {
+
   &-Header {
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       background-image: url(../assets/img/promotions-bg-1248.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -163,24 +169,25 @@ export default {
 }
 
 .PromotionsCard {
+
   &-Title {
     margin-bottom: 12px;
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 18px;
       font-size: 14px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 20px;
       font-size: 18px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 24px;
       font-size: 20px;
     }
@@ -189,15 +196,15 @@ export default {
   &-Banner {
     height: 168px;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       height: 184px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       height: 224px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       height: 278px;
     }
   }
@@ -207,15 +214,15 @@ export default {
     padding: 20px 16px;
     background: var(--color-bg);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       padding: 23px 27px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       padding: 23px 38px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       padding: 34px 34px 53px;
     }
   }
@@ -226,19 +233,19 @@ export default {
   }
 
   &-Btn {
-    padding-left: 0;
     padding-right: 0;
+    padding-left: 0;
   }
 
   &-Btn--small {
     width: 155px;
     margin-right: 4px;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       width: 162px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       width: 256px;
     }
   }
@@ -247,11 +254,11 @@ export default {
     flex-grow: 1;
     font-size: 10px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 12px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 16px;
     }
   }

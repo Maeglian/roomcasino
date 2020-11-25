@@ -17,9 +17,9 @@
 }
 
 .slide-up-enter-active, .slide-up-leave-active {
+  max-height: 2000px;
   transition: all .5s ease-in-out;
   transition-property: max-height;
-  max-height: 2000px;
 }
 
 .slide-up-enter, .slide-up-leave-to {

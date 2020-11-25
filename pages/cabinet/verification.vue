@@ -14,7 +14,8 @@
               Selfie & Id verification
             </div>
             <div class="VerificationPage-Text">
-              Passport, drivers license, or other official document replacing them. <a href="#" class="CabinetPage-Link">More info</a>
+              Passport, drivers license, or other official document replacing them.
+              <a href="#" class="CabinetPage-Link">More info</a>
             </div>
           </div>
         </div>
@@ -40,7 +41,8 @@
               Address verification
             </div>
             <div class="VerificationPage-Text">
-              Until bill, phone bill, or bank statement, in which your name and address are fully indicated. <a href="#" class="CabinetPage-Link">More info</a>
+              Until bill, phone bill, or bank statement, in which your name and address are fully
+              indicated. <a href="#" class="CabinetPage-Link">More info</a>
             </div>
           </div>
         </div>
@@ -64,7 +66,8 @@
               Selfie & Id verification
             </div>
             <div class="VerificationPage-Text">
-              Screenshot or photo from onlone bank, bank statement, Skrill page,etc,showing the deposit. <a href="#" class="CabinetPage-Link">More info</a>
+              Screenshot or photo from onlone bank, bank statement, Skrill page,etc,showing the
+              deposit. <a href="#" class="CabinetPage-Link">More info</a>
             </div>
           </div>
         </div>
@@ -116,6 +119,7 @@ export default {
 
 <style lang="scss">
 .VerificationPage {
+
   &-Content {
     width: 100%;
     margin-top: 36px;
@@ -132,8 +136,8 @@ export default {
   }
 
   &-Desc {
-    flex-grow: 1;
     display: flex;
+    flex-grow: 1;
     justify-content: space-between;
     margin-bottom: 4px;
     padding: 16px;
@@ -141,28 +145,28 @@ export default {
 
     @media (min-width: $screen-m) {
       justify-content: flex-start;
-      margin-bottom: 0;
       margin-right: 6px;
+      margin-bottom: 0;
       padding: 28px;
     }
   }
 
   &-Approve {
-    order: 1;
     flex-shrink: 0;
+    order: 1;
     width: 34px;
     height: 34px;
     fill: var(--color-bg-lighter);
-
-    &--approved {
-      fill: var(--color-accept);
-    }
 
     @media (min-width: $screen-m) {
       order: 0;
       width: 54px;
       height: 54px;
       margin-right: 29px;
+    }
+
+    &--approved {
+      fill: var(--color-accept);
     }
   }
 
@@ -174,9 +178,9 @@ export default {
     margin-bottom: 12px;
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase;
     line-height: 1.09;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
     &:last-child {
       margin-bottom: 0;
@@ -193,7 +197,7 @@ export default {
   &-Docs {
     position: relative;
     padding: 16px 56px 16px 16px;
-    background: rgba(27, 33, 56, 0.2);
+    background: rgba(27, 33, 56, .2);
     border: 2px dashed var(--color-bg-lighter);
 
     @media (min-width: $screen-m) {
@@ -207,9 +211,9 @@ export default {
     margin-bottom: 12px;
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase;
     line-height: 1.09;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
     white-space: nowrap;
   }
 
@@ -229,10 +233,9 @@ export default {
   &-Approved {
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase;
     line-height: 1.09;
     color: var(--color-accept);
+    text-transform: uppercase;
   }
 }
-
 </style>
