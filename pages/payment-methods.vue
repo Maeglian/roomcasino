@@ -6,7 +6,7 @@
     </h1>
     <p class="Text PaymentPage-Text">
       We are proud to be a safe multi-currency online casino. Currently, we accept the following currencies: <br>
-      Euro, US Dollars, Canadian Dollar, Australian Dollar, Ruble, Japanese Yen, Bitcoins, Bitcoin Cash, Ethereum,<br>
+      Euro, US Dollars, Canadian Dollar, Australian Dollar, Ruble, Japanese Yen, Bitcoins, Bitcoin Cash, Ethereum,
       Dogecoin, Litecoin and Theter.
     </p>
     <div class="PaymentPage-Content">
@@ -15,7 +15,7 @@
           DEPOSIT METHODS
         </h2>
         <div class="PaymentPage-List">
-          <div class="PaymentPage-Item" v-for="payment in paymentsMethods" :key="payment">
+          <div class="PaymentPage-Item" v-for="payment in paymentsMethods" :key="payment.alt">
             <div class="PaymentPage-Item-Icon">
               <img :src="require(`@/assets/img/${payment.icon}.svg`)" :alt=payment.alt>
             </div>
@@ -50,7 +50,7 @@
         </h2>
         <div class="PaymentPage-List">
           <div class="PaymentPage-Item"
-               v-for="payment in paymentsMethods" :key="payment"
+               v-for="payment in paymentsMethods" :key="payment.alt"
           >
             <div class="PaymentPage-Item-Icon">
               <img :src="require(`@/assets/img/${payment.icon}.svg`)"
@@ -87,7 +87,6 @@
 </template>
 
 <script>
-import {getters, state} from "@/store";
 import {mapState} from "vuex";
 
 export default {
@@ -109,10 +108,6 @@ export default {
   @media(min-width: $screen-m) {
     padding-top: 31px;
     padding-bottom: 70px;
-  }
-
-  @media(min-width: $screen-l) {
-
   }
 
   @media(min-width: $screen-xl) {
@@ -139,6 +134,7 @@ export default {
 
   &-Text {
     margin-bottom: 38px;
+    max-width: 284px;
 
     @media(min-width: $screen-xxs) {
       margin-bottom: 40px;
@@ -146,18 +142,12 @@ export default {
 
     @media(min-width: $screen-m) {
       margin-bottom: 30px;
-
-      br {
-        display: none;
-      }
+      max-width: 736px;
     }
 
     @media(min-width: $screen-l) {
       margin-bottom: 38px;
-
-      br {
-        display: block;
-      }
+      max-width: 778px;
     }
 
     @media(min-width: $screen-xl) {
