@@ -1,5 +1,10 @@
 <template>
-  <div v-click-outside="onClickOutside" class="Search" :class="{ 'Search--open': isOpen }">
+  <div
+    v-click-outside="onClickOutside"
+    class="Search"
+    :class="{ 'Search--open': isOpen }"
+    @click="openSearch"
+  >
     <svg class="Icon Search-Icon">
       <use xlink:href="@/assets/img/icons.svg#search"></use>
     </svg>
@@ -14,7 +19,7 @@ export default {
   name: 'Search',
   data() {
     return {
-      isOpen: false,
+      isOpen: true,
     };
   },
   computed: {
@@ -22,7 +27,7 @@ export default {
   },
   methods: {
     openSearch() {
-      if (this.width > 460) this.isOpen = true;
+      if (this.width >= 768) this.isOpen = true;
     },
     onClickOutside() {
       this.isOpen = false;
@@ -33,6 +38,7 @@ export default {
 
 <style lang="scss">
 .Search {
+  z-index: 1;
   display: flex;
   border: 2px solid var(--color-border);
   cursor: pointer;
@@ -46,14 +52,15 @@ export default {
     fill: var(--color-main2);
 
     @media (min-width: $screen-m) {
-      top: calc(50% - 3px);
-      left: 8px;
+      top: 10px;
+      right: auto;
+      left: 6px;
       width: 9px;
       height: 9px;
     }
 
     @media (min-width: $screen-l) {
-      top: calc(50% - 5px);
+      top: 12px;
       right: initial;
       left: 12px;
       width: 15px;
@@ -61,6 +68,7 @@ export default {
     }
 
     @media (min-width: $screen-xl) {
+      top: 15px;
       left: 18px;
       width: 18px;
       height: 18px;
@@ -111,27 +119,14 @@ export default {
     }
   }
 
-  //&--open {
-  //  position: absolute;
-  //  top: 0;
-  //  right: 0;
-  //  bottom: 0;
-  //  width: 100%;
-  //  cursor: initial;
-  //
-  //  .Search-Icon {
-  //    left: 20px;
-  //    fill: var(--color-text-ghost);
-  //  }
-  //
-  //  .Search-Input {
-  //    display: block;
-  //    padding: 16px 16px 17px 53px;
-  //
-  //    &::placeholder {
-  //      color: var(--color-text-ghost);
-  //    }
-  //  }
-  //}
+  &--open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: var(--color-body);
+    cursor: initial;
+  }
 }
 </style>

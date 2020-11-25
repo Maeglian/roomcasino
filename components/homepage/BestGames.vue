@@ -420,6 +420,7 @@ export default {
   }
 
   &-Search {
+    z-index: 1;
     margin-bottom: 8px;
 
     @media (min-width: $screen-m) {
