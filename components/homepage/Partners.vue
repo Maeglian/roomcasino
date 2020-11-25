@@ -1,5 +1,5 @@
 <template>
-  <section class="Partners">
+  <div class="Partners">
     <client-only>
       <marquee-text :duration="durationSpeed">
         <div class="Partners-Wrapper">
@@ -30,7 +30,7 @@
         </div>
       </marquee-text>
     </client-only>
-  </section>
+  </div>
 </template>
 
 <script>
