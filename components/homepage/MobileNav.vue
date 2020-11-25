@@ -1,7 +1,7 @@
 <template>
   <nav class="MobileNav">
     <button class="MobileNav-Item" @click="toggleNav()">
-      <svg class="MobileNav-Icon Toggle Toggle--colored">
+      <svg class="MobileNav-Toggle Toggle Toggle--colored">
         <use xlink:href="@/assets/img/icons.svg#toggle"></use>
       </svg>
       <div class="MobileNav-Name">
@@ -32,7 +32,7 @@
         <div v-show="isNewNotifications" class="MobileNav-MessagesNew"></div>
       </div>
       <div class="MobileNav-Name">
-        Deposit
+        Notification
       </div>
     </div>
     <button class="MobileNav-Item">
@@ -87,7 +87,10 @@ export default {
   }
 
   &-Item {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &-Messages {
@@ -110,13 +113,18 @@ export default {
   &-MessagesNew {
     position: absolute;
     top: -2px;
-    right: 8px;
+    right: -2px;
     width: 8px;
     height: 8px;
     background: var(--color-error);
     border: 1px solid var(--color-body);
     border-radius: 50%;
   }
+}
+
+.MobileNav-Toggle {
+  width: 17px;
+  height: 17px;
 }
 
 </style>
