@@ -1,7 +1,7 @@
 <template>
   <nav class="MobileNav">
     <button class="MobileNav-Item" @click="toggleNav()">
-      <svg class="MobileNav-Icon Toggle Toggle--colored">
+      <svg class="MobileNav-Toggle Toggle Toggle--colored">
         <use xlink:href="@/assets/img/icons.svg#toggle"></use>
       </svg>
       <div class="MobileNav-Name">
@@ -87,7 +87,6 @@ export default {
   }
 
   &-Item {
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -123,7 +122,7 @@ export default {
   }
 }
 
-.MobileNav-Icon {
+.MobileNav-Toggle {
   width: 17px;
   height: 17px;
 }
