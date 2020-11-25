@@ -1,4 +1,7 @@
+const target = process.env.NUXT_ENV_MODE === 'sandbox' ? 'static' : 'server';
+
 export default {
+  target,
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'roomcasino',
