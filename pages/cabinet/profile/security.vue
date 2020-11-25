@@ -168,7 +168,7 @@ export default {
     },
     confirmPassword: {
       value: {
-        sameAsPassword: sameAs(() => {
+        sameAsPassword: sameAs(function() {
           return this.newPassword.value;
         }),
       },
