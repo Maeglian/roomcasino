@@ -1,5 +1,5 @@
 <template>
-  <div class="BaseTabs">
+  <div class="BaseTabs" :class="{ 'BaseTabs--vertical': isVerticalForm }">
     <button
       v-for="tab in items"
       :key="tab.value"
@@ -25,6 +25,11 @@ export default {
     currentItem: {
       type: String,
       required: true,
+    },
+    isVerticalForm: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
 };
@@ -84,6 +89,67 @@ export default {
     justify-content: center;
     align-items: center;
     height: 100%;
+  }
+}
+
+.BaseTabs--vertical {
+  flex-direction: column;
+  max-width: none;
+  height: auto;
+
+  .BaseTabs-Tab {
+    justify-content: flex-start;
+    height: 55px;
+    margin-right: 0;
+    margin-bottom: 4px;
+    padding-left: 16px;
+
+    @media (min-width: $screen-m) {
+      height: 45px;
+      padding-left: 20px;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    @media (min-width: $screen-l) {
+      height: 55px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 24px;
+      padding: 2px;
+      border-width: 2px 2px 0 0;
+      border-style: solid;
+      border-color: var(--color-text-main);
+      transform: rotate(45deg);
+    }
+  }
+
+  .BaseTabs-Tab.nuxt-link-exact-active,
+  .BaseTabs-Tab--active {
+    padding-left: 16px;
+    color: var(--color-text-main);
+
+    @media (min-width: $screen-m) {
+      color: var(--color-main1);
+      border-left: 4px solid var(--color-main1);
+    }
+
+    .BaseTabs-Name {
+      position: relative;
+
+      &:after {
+        display: none;
+      }
+    }
   }
 }
 </style>
