@@ -77,7 +77,7 @@ export default {
   }
 
   &-Name {
-    position: relative;
+    position: absolute;
     display: inline-flex;
     justify-content: center;
     align-items: center;
