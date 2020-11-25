@@ -56,7 +56,7 @@
         v-if="pagination.enabled"
         class="CabinetTable-Pagination"
         :pagination="pagination"
-        @changePage="$emit('change-page', $event)"
+        @change-page="$emit('change-page', $event)"
       />
     </div>
   </div>

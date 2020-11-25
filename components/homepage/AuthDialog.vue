@@ -6,7 +6,7 @@
         class="AuthDialog-Tabs"
         :items="tabs"
         :current-item="activeTab"
-        @chooseTab="toggleRegistration"
+        @choose-tab="toggleRegistration"
       />
       <template v-if="activeTab === 'registration'">
         <RegistrationForm @close="$emit('close')" @redirectLogin="activeTab = 'login'" />

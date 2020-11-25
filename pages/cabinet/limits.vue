@@ -27,8 +27,8 @@
             :key="j"
             class="LimitsPage-Limit"
             :item="item"
-            @updateLimit="updateLimits({ i, j, payload: $event.content })"
-            @deleteLimit="deleteLimit({ i, j })"
+            @update-limit="updateLimits({ i, j, payload: $event.content })"
+            @delete-limit="deleteLimit({ i, j })"
           />
         </div>
       </div>

@@ -63,7 +63,7 @@
           class="CategoryPage-ProvidersMenu"
           :provider-active="providerActive"
           :inside-filters="true"
-          @chooseProvider="providerActive = $event"
+          @choose-provider="providerActive = $event"
         />
         <button class="CategoriesFilter-Submit">
           Filter

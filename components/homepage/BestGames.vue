@@ -21,7 +21,7 @@
         <Search class="ProvidersSection-Search BestGames-Search" />
         <ProvidersMenu
           :provider-active="providerActive"
-          @chooseProvider="providerActive = $event"
+          @choose-provider="providerActive = $event"
         />
       </div>
       <div class="Title Title--type-h2 Cards-Title">

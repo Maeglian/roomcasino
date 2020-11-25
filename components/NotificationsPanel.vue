@@ -15,12 +15,12 @@
         class="NotificationsPanel-Tabs"
         :items="tabs"
         :current-item="activeTab"
-        @chooseTab="activeTab = $event"
+        @choose-tab="activeTab = $event"
       />
       <div class="NotificationsPanel-Content">
         <div v-if="!notifications[activeTab].length" class="NotificationsPanel-Empty">
           <div class="NotificationsPanel-EmptyContent">
-            <img src="~/assets/img/notification.png" alt="" class="NotificationsPanel-Image" />
+            <img src="@/assets/img/notification.png" alt="" class="NotificationsPanel-Image" />
             <div class="NotificationsPanel-Text">No current {{ activeTab }}</div>
           </div>
         </div>

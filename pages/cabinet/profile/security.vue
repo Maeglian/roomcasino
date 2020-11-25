@@ -102,8 +102,8 @@
         totalPages: totalPages,
         count: rows.length,
       }"
-      @changePage="currentPage = $event"
-      @showMore="rowsPerPage *= 2"
+      @change-page="currentPage = $event"
+      @show-more="rowsPerPage *= 2"
     />
   </div>
 </template>
