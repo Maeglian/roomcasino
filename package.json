@@ -7,6 +7,7 @@
     "build": "NUXT_ENV_MODE=production nuxt build",
     "build:sandbox": "NUXT_ENV_MODE=sandbox nuxt generate",
     "start": "nuxt start",
+    "start:sandbox": "NUXT_ENV_MODE=sandbox nuxt start",
     "generate": "nuxt generate -c nuxt.config.generate.js",
     "lint": "npm run lint:js && npm run lint:css",
     "lintfix": "eslint --fix --ext .js,.vue . && stylelint '**/*.{scss,vue}' --fix",

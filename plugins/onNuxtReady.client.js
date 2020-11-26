@@ -1,7 +1,13 @@
 import axios from 'axios';
+import Cookie from 'js-cookie';
 import { throttle } from '../utils/helpers';
 
 window.onNuxtReady(app => {
+  if (process.env.NUXT_ENV_MODE === 'sandbox') {
+    const token = Cookie.get('token');
+    app.$store.commit('setToken', token);
+  }
+
   const updateWidth = throttle(() => app.$store.commit('setWidth', window.innerWidth), 150);
   updateWidth();
   window.addEventListener('resize', updateWidth);

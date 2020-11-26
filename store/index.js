@@ -690,15 +690,17 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit({ commit }, { req }) {
-    let token = null;
-    if (req.headers.cookie) {
-      const parsed = cookieparser.parse(req.headers.cookie);
-      try {
-        // eslint-disable-next-line prefer-destructuring
-        token = parsed.token;
-        // eslint-disable-next-line no-empty
-      } catch (e) {}
-      commit('setToken', token);
+    if (process.env.NUXT_ENV_MODE !== 'sandbox') {
+      let token = null;
+      if (req.headers.cookie) {
+        const parsed = cookieparser.parse(req.headers.cookie);
+        try {
+          // eslint-disable-next-line prefer-destructuring
+          token = parsed.token;
+          // eslint-disable-next-line no-empty
+        } catch (e) {}
+        commit('setToken', token);
+      }
     }
   },
   async getGames({ commit }, query = '') {
