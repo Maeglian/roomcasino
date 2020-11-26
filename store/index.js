@@ -847,4 +847,12 @@ export const actions = {
       commit('pushErrors', e);
     }
   },
+
+  async updateProfile({ commit }, payload) {
+    try {
+      await axios.post(`${API_HOST}/setActiveAccount`, payload);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
 };
