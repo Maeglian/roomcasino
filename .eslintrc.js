@@ -45,6 +45,7 @@ module.exports = {
       },
     ],
     'vue/no-v-html': 'off',
+    'func-names': 'off',
   },
   settings: {
     'import/core-modules': ['vue', 'vuex'],

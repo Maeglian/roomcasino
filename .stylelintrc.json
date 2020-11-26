@@ -9,13 +9,14 @@
     "selector-combinator-space-after": "always",
     "declaration-colon-space-before": "never",
     "declaration-colon-space-after": "always",
-    "rule-empty-line-before": "always-multi-line",
+    "rule-empty-line-before": ["always", {
+      "except": ["first-nested"]
+    }],
     "selector-pseudo-element-colon-notation": "single",
     "media-feature-range-operator-space-before": "always",
     "media-feature-range-operator-space-after": "always",
     "media-feature-parentheses-space-inside": "never",
     "media-feature-colon-space-after": "always",
-    "number-leading-zero": "never",
     "order/properties-order": [
       "content",
       "position",
