@@ -1,6 +1,6 @@
 <template>
   <div class="ProfileInfo ProfilePage-Content">
-    <form class="ProfileInfo-Form">
+    <form class="ProfileInfo-Form" @submit="onSubmit">
       <div class="CabinetPage-Header">
         General Info
       </div>
@@ -8,8 +8,8 @@
         <template v-for="(val, name) in fields">
           <BaseInput
             :key="name"
+            v-model="fields[name]"
             class="CabinetForm-Row"
-            :value="val"
             input-type="text"
             :input-id="name | formatLabel"
             input-class="CabinetForm-Input"
@@ -69,8 +69,8 @@ import { mapGetters } from 'vuex';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 
-// const info = (process.env.NUXT_ENV_MODE === 'sandbox') ? 'fake' : 'real';
-const info = 'fake';
+// const info = process.env.NUXT_ENV_MODE === 'sandbox' ? 'fake' : 'real';
+// const info = 'fake';
 
 export default {
   name: 'ProfileInfo',
@@ -87,6 +87,7 @@ export default {
   },
   data() {
     return {
+      fields: {},
       fakeFields: {
         email: 'fillypkfillypk@gmail.com',
         firstName: 'Fillyp',
@@ -111,11 +112,20 @@ export default {
       },
     };
   },
+  watch: {
+    userInfo: {
+      immediate: true,
+      handler() {
+        console.log(this.userInfo);
+        this.fields = { ...this.userInfo };
+      },
+    },
+  },
   computed: {
     ...mapGetters(['userInfo']),
-    fields() {
-      return info === 'real' ? this.userInfo : this.fakeFields;
-    },
+    // fields() {
+    //   return info === 'real' ? this.userInfo : this.fakeFields;
+    // },
   },
 };
 </script>
