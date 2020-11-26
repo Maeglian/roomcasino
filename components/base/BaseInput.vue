@@ -1,52 +1,24 @@
 <template>
   <div class="BaseInput">
-    <div
-      v-if="v && v.required === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
+    <div v-if="v && v.required === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
       Can't be blank
     </div>
-    <div
-    v-if="v && v.email === false"
-    class="BaseInput-Error"
-    :class="errorClass"
-    >
+    <div v-if="v && v.email === false" class="BaseInput-Error" :class="errorClass">
       No valid email address
     </div>
-    <div
-      v-if="v && v.sameAsPassword === false"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
+    <div v-if="v && v.sameAsPassword === false" class="BaseInput-Error" :class="errorClass">
       Passwords are not the same
     </div>
-    <div
-      v-if="v && v.minLength === false"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
+    <div v-if="v && v.minLength === false" class="BaseInput-Error" :class="errorClass">
       Must have at least {{ v.$params.minLength.min }} characters
     </div>
-    <div
-      v-if="v && v.maxLength === false"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
+    <div v-if="v && v.maxLength === false" class="BaseInput-Error" :class="errorClass">
       Must not be more than {{ v.$params.maxLength.max }} characters
     </div>
-    <div
-      v-if="v && v.passwordCheck === false"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
+    <div v-if="v && v.passwordCheck === false" class="BaseInput-Error" :class="errorClass">
       Must be at least 8 chars with 1 number, 1 small letter and 1 capital letter
     </div>
-    <div
-      v-if="v && v.numeric === false"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
+    <div v-if="v && v.numeric === false" class="BaseInput-Error" :class="errorClass">
       Must be numeric
     </div>
     <slot name="beforeInput-relative"></slot>
@@ -54,14 +26,10 @@
       <slot name="beforeInput-absolute"></slot>
       <input
         :id="inputId"
-        :class="[
-          inputClass,
-          'BaseInput-Input',
-          {'BaseInput-Input--error': v && v.$error},
-          ]"
+        v-model="val"
+        :class="[inputClass, 'BaseInput-Input', { 'BaseInput-Input--error': v && v.$error }]"
         :type="inputType"
         :placeholder="placeholder"
-        v-model="val"
         :autocorrect="autocorrect"
         :autocomplete="autocomplete"
       />
@@ -77,53 +45,58 @@ export default {
   props: {
     value: {
       type: [String, Number],
-      isRequired: false,
+      required: false,
       default: '',
     },
     inputId: {
-      type: String,
-      isRequired: false,
+      type: [String, Boolean],
+      required: false,
+      default: false,
     },
     inputClass: {
       type: String,
-      isRequired: false,
+      required: false,
       default: '',
     },
     wrapperClass: {
       type: String,
-      isRequired: false,
+      required: false,
       default: '',
     },
     errorClass: {
       type: String,
-      isRequired: false,
+      required: false,
       default: '',
     },
     inputType: {
       type: String,
-      isRequired: false,
+      required: false,
       default: 'text',
     },
     required: {
       type: Boolean,
-      isRequired: false,
+      required: false,
       default: false,
     },
     placeholder: {
-      type: String,
-      isRequired: false,
+      type: [String, Boolean],
+      required: false,
+      default: false,
     },
     autocorrect: {
-      type: String,
-      isRequired: false,
+      type: [String, Boolean],
+      required: false,
+      default: false,
     },
     autocomplete: {
-      type: String,
+      type: [String, Boolean],
       isRequired: false,
+      default: false,
     },
     v: {
-      type: Object,
+      type: [Object, Boolean],
       required: false,
+      default: false,
     },
   },
   computed: {
@@ -156,14 +129,14 @@ export default {
     width: 100%;
     height: 100%;
 
-    &.BaseInput-Input--error {
-      border: 2px solid rgba(235, 28, 42, 0.3);
-    }
-
     &:focus {
       + .BaseInput-Placeholder {
         display: none;
       }
+    }
+
+    &.BaseInput-Input--error {
+      border: 2px solid rgba(235, 28, 42, 0.3);
     }
   }
 

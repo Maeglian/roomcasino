@@ -1,5 +1,4 @@
-import axios from 'axios';
-
-export default function ({ store }) {
+// eslint-disable-next-line func-names
+export default function({ store }) {
   store.commit('closeNav');
 }

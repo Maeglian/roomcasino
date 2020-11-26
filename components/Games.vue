@@ -1,12 +1,13 @@
 <template>
   <div class="Games">
     <div class="Games-Items">
-      <Card v-for="(game, i) in gamesLimited"
+      <Card
+        v-for="(game, i) in gamesLimited"
         :key="i"
-        :imgUrl="game.imageUrl"
+        :img-url="game.imageUrl"
+        overlay
         @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
         @playDemo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
-        overlay
       />
     </div>
     <div v-if="games.length > gamesShowed" class="Games-Btn">
@@ -36,20 +37,20 @@ export default {
       type: String,
       required: false,
       default: '',
-    }
+    },
   },
   data() {
     return {
       gamesShowed: 0,
-    }
+    };
   },
   computed: {
     gamesLimited() {
       return this.games.slice(0, this.gamesShowed);
-    }
+    },
   },
   created() {
-    this.gamesShowed = this.gamesToShow
+    this.gamesShowed = this.gamesToShow;
   },
   methods: {
     ...mapActions(['startGame']),
@@ -61,7 +62,7 @@ export default {
         this.showRegistrationDialog('login');
       } else this.startGame(payload);
     },
-  }
+  },
 };
 </script>
 
@@ -74,15 +75,15 @@ export default {
     justify-items: center;
     margin-bottom: 20px;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       grid-template-columns: repeat(6, 1fr);
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 24px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 32px;
     }
   }

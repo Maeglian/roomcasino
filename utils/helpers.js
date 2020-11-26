@@ -4,11 +4,13 @@ export const throttle = (func, ms = 100) => {
 
   const throttledFunc = () => {
     if (isThrottled) {
+      // eslint-disable-next-line no-undef
       savedArgs = arguments;
     } else {
+      // eslint-disable-next-line no-undef
       func(arguments);
       isThrottled = true;
-      setTimeout(function() {
+      setTimeout(() => {
         isThrottled = false;
         if (savedArgs) {
           throttledFunc(...savedArgs);
@@ -16,8 +18,7 @@ export const throttle = (func, ms = 100) => {
         }
       }, ms);
     }
-  }
+  };
 
   return throttledFunc;
-}
-
+};

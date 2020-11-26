@@ -1,58 +1,63 @@
 <template>
-  <div class="BaseDropdown" v-click-outside="onClickOutside">
+  <div v-click-outside="onClickOutside" class="BaseDropdown">
     <button
       class="BaseDropdown-Item BaseDropdown-ActiveItem"
       aria-haspopup="true"
+      tabindex="0"
+      type="button"
       @click="onOpenDropdown()"
       @keyup.up="onArrowUp()"
       @keyup.down="onArrowDown()"
       @keyup.enter="onSelectValueKeyboard()"
-      tabindex="0"
-      type="button"
     >
       {{ activeItem || placeholder || items[0] }}
-      <i
-        class="ThinArrow"
-        :class="[ isOpen ? 'ThinArrow--up' : 'ThinArrow--down' ]"
-      ></i>
+      <i class="ThinArrow" :class="[isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"></i>
     </button>
     <ul v-show="isOpen" class="BaseDropdown-Inner" aria-label="submenu">
       <li
         v-for="(item, i) in filteredItems"
         :key="item"
         class="BaseDropdown-Item BaseDropdown-DropdownItem"
-        :class="{'BaseDropdown-DropdownItem--highlighted': activeItemIndex === i}"
+        :class="{ 'BaseDropdown-DropdownItem--highlighted': activeItemIndex === i }"
         @click="onSelectValue(item)"
       >
         {{ item }}
       </li>
-      </ul>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
   name: 'BaseDropdown',
+  model: {
+    prop: 'activeItem',
+  },
   props: {
     items: {
       type: Array,
-      isRequired: true,
+      required: true,
+    },
+    activeItem: {
+      type: [String, Boolean],
+      required: false,
+      default: false,
     },
     placeholder: {
-      type: String,
-      isRequired: false,
+      type: [String, Boolean],
+      required: false,
+      default: false,
     },
   },
   data() {
     return {
       isOpen: false,
-      activeItem: '',
       activeItemIndex: -1,
     };
   },
   computed: {
     filteredItems() {
-      return this.items.filter((item) => item !== this.activeItem);
+      return this.items.filter(item => item !== this.activeItem);
     },
   },
   methods: {
@@ -65,7 +70,6 @@ export default {
       }
     },
     onSelectValue(val) {
-      this.activeItem = val;
       this.$emit('set-dropdown-value', val);
       this.isOpen = false;
       this.activeItemIndex = -1;
@@ -78,7 +82,7 @@ export default {
     },
     onClickOutside() {
       this.isOpen = false;
-    }
+    },
   },
 };
 </script>
@@ -91,21 +95,24 @@ export default {
     width: 100%;
   }
 
-  &-Item, &-ActiveItem {
+  &-Item,
+  &-ActiveItem {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
     padding: 0 16px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
     background: var(--color-bg);
   }
 
   &-DropdownItem {
     padding: 22px 16px;
-    &:hover, &--highlighted {
+
+    &:hover,
+    &--highlighted {
       background: var(--color-bg-lighter);
     }
   }
@@ -119,7 +126,7 @@ export default {
     max-height: 200px;
     overflow: auto;
     scrollbar-width: thin;
-    scrollbar-color: #6A6E7F transparent;
+    scrollbar-color: #6a6e7f transparent;
 
     &::-webkit-scrollbar {
       width: 5px;
@@ -127,7 +134,7 @@ export default {
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: #6A6E7F;
+      background-color: #6a6e7f;
       border-radius: 3px;
     }
   }

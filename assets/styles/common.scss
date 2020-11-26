@@ -5,13 +5,13 @@
 }
 
 ::-moz-selection {
-  background: #b3d4fc;
   text-shadow: none;
+  background: #b3d4fc;
 }
 
 ::selection {
-  background: #b3d4fc;
   text-shadow: none;
+  background: #b3d4fc;
 }
 
 *:focus {
@@ -48,8 +48,8 @@ section, .Wrapper {
   min-width: 320px;
   max-width: 1248px;
   margin: 0 auto;
-  padding-left: 16px;
   padding-right: 16px;
+  padding-left: 16px;
 }
 
 img {
@@ -120,11 +120,11 @@ a {
 }
 
 .ThinArrow {
-  border-style: solid;
-  border-color: var(--color-text-main);
-  border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 1.5px;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  border-color: var(--color-text-main);
   cursor: pointer;
 
   &--up {
@@ -186,8 +186,8 @@ a {
   position: relative;
 
   &-Close {
-    margin-left: auto;
     margin-bottom: 5px;
+    margin-left: auto;
   }
 }
 
@@ -228,10 +228,10 @@ a {
   }
 
   &-Tab {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     margin-right: 4px;
     padding-right: 22px;
     padding-left: 22px;
@@ -252,8 +252,8 @@ a {
       &:after {
         content: '';
         position: absolute;
-        left: 50%;
         bottom: 0;
+        left: 50%;
         width: 50px;
         height: 4px;
         background: var(--color-main1);
@@ -285,10 +285,10 @@ a {
 }
 
 .vm--modal {
-  background: transparent !important;
   overflow: initial !important;
+  background: transparent !important;
 }
 
 .vm--overlay {
-  background: rgba(9, 5, 2, 0.8) !important;
+  background: rgba(9, 5, 2, .8) !important;
 }
