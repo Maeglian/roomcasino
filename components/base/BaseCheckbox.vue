@@ -51,7 +51,8 @@ export default {
     },
     value: {
       type: [String, Number, Boolean],
-      required: true,
+      required: false,
+      default: false,
     },
   },
   computed: {
