@@ -122,7 +122,6 @@ export default {
 
 <style lang="scss">
 .ProfileInfo {
-
   &-Fields {
     margin-bottom: 24px;
   }
@@ -133,7 +132,6 @@ export default {
 }
 
 .CabinetForm {
-
   &-Row {
     position: relative;
     display: flex;

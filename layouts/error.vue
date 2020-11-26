@@ -39,7 +39,6 @@ export default {
 
 <style lang="scss">
 .ErrorPage {
-
   &-Title {
     margin-bottom: 12px;
     line-height: 1.27;

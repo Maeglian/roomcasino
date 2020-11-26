@@ -165,7 +165,6 @@ export default {
 
 <style lang="scss">
 .VipPage {
-
   &-Header {
     @media (min-width: $screen-m) {
       background-image: url(../assets/img/vip-bg-1248.png);
@@ -199,7 +198,6 @@ export default {
   }
 
   &-Status {
-
     &:last-child {
       @media (min-width: $screen-m) {
         grid-column-start: 2;

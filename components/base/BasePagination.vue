@@ -133,7 +133,6 @@ export default {
 
 <style lang="scss">
 .Pagination {
-
   &-Pages {
     display: flex;
   }
@@ -147,7 +146,6 @@ export default {
     }
 
     &--disabled {
-
       .PrevNext:focus,
       .PrevNext:active {
         color: var(--color-border-ghost);

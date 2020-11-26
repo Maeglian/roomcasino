@@ -148,7 +148,6 @@ export default {
 }
 
 .Banner--withCounter {
-
   .Banner-Title {
     margin-bottom: 6px;
 

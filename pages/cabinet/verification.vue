@@ -119,7 +119,6 @@ export default {
 
 <style lang="scss">
 .VerificationPage {
-
   &-Content {
     width: 100%;
     margin-top: 36px;
@@ -197,7 +196,7 @@ export default {
   &-Docs {
     position: relative;
     padding: 16px 56px 16px 16px;
-    background: rgba(27, 33, 56, .2);
+    background: rgba(27, 33, 56, 0.2);
     border: 2px dashed var(--color-bg-lighter);
 
     @media (min-width: $screen-m) {

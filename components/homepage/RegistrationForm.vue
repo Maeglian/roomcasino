@@ -404,7 +404,6 @@ export default {
 
 <style lang="scss">
 .AuthDialog {
-
   &-RegistrationHeader {
     margin-bottom: 34px;
     padding-top: 34px;
@@ -427,7 +426,7 @@ export default {
     border: 2px solid var(--color-border-ghost);
 
     &--error {
-      border-color: rgba(235, 28, 42, .3);
+      border-color: rgba(235, 28, 42, 0.3);
     }
   }
 

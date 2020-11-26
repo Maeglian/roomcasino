@@ -375,7 +375,6 @@ export default {
 }
 
 @keyframes donut {
-
   from {
     stroke-dashoffset: 106.8;
   }

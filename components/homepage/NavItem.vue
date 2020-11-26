@@ -77,7 +77,6 @@ export default {
 
 <style lang="scss">
 .Nav {
-
   &-Item {
     position: relative;
     white-space: nowrap;

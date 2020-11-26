@@ -68,7 +68,6 @@ export default {
 
 <style lang="scss">
 .Games {
-
   &-Items {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -223,7 +223,6 @@ export default {
 
 <style lang="scss">
 .DailyTournamentPage {
-
   &-Header {
     margin-bottom: 46px;
     padding-top: 172px / 320px * 100%;

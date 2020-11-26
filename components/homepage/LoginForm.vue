@@ -84,7 +84,6 @@ export default {
 
 <style lang="scss">
 .AuthDialog {
-
   &-LoginTitle {
     margin-top: 34px;
     margin-bottom: 28px;

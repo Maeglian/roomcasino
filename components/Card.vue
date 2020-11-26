@@ -72,7 +72,6 @@ export default {
   position: relative;
 
   &:hover {
-
     .Card-Overlay {
       height: 100%;
     }
@@ -109,7 +108,6 @@ export default {
   }
 
   &-Image {
-
     img {
       width: 100%;
       object-fit: cover;
@@ -149,7 +147,7 @@ export default {
     width: 100%;
     height: 0;
     background-color: var(--color-overlay);
-    transition: all .2s ease;
+    transition: all 0.2s ease;
   }
 
   &-Link {
@@ -164,7 +162,7 @@ export default {
     text-transform: uppercase;
     border: 2px solid var(--color-text-main);
     cursor: pointer;
-    opacity: .7;
+    opacity: 0.7;
 
     @media (max-width: $screen-l) {
       padding: 8px;

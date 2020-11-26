@@ -114,7 +114,6 @@ export default {
 
 <style lang="scss">
 .BonusesPage {
-
   &-Bonuses {
     display: flex;
     align-items: center;

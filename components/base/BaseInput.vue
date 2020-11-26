@@ -130,14 +130,13 @@ export default {
     height: 100%;
 
     &:focus {
-
       + .BaseInput-Placeholder {
         display: none;
       }
     }
 
     &.BaseInput-Input--error {
-      border: 2px solid rgba(235, 28, 42, .3);
+      border: 2px solid rgba(235, 28, 42, 0.3);
     }
   }
 

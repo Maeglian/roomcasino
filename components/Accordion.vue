@@ -84,7 +84,7 @@ export default {
       font-size: 30px;
       font-weight: 400;
       color: var(--color-text-main);
-      transition: transform .1s ease;
+      transition: transform 0.1s ease;
 
       @media (min-width: $screen-m) {
         top: -15px;
@@ -92,7 +92,6 @@ export default {
     }
 
     &--active {
-
       &:after {
         color: var(--color-main1);
         transform: rotate(45deg);

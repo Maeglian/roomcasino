@@ -105,7 +105,6 @@ export default {
 
 <style lang="scss">
 .Counter {
-
   &-Text {
     font-size: 8px;
     font-weight: 300;
@@ -183,7 +182,6 @@ export default {
 }
 
 .Counter--min {
-
   .Counter-Item {
     display: flex;
     align-items: flex-end;

@@ -66,7 +66,6 @@ export default {
 
 <style lang="scss">
 .LimitsPage {
-
   &-Content {
     width: 100%;
     margin-top: 36px;

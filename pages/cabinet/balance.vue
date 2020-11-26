@@ -141,7 +141,6 @@ export default {
 
 <style lang="scss">
 .BalancePage {
-
   &-Title {
     margin-bottom: 30px;
   }

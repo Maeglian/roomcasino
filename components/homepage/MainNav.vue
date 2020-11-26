@@ -136,11 +136,11 @@ export default {
     bottom: 0;
     left: 0;
     z-index: 2;
-    background-color: rgba(6, 8, 30, .9);
+    background-color: rgba(6, 8, 30, 0.9);
   }
 
   &--bg {
-    background: rgba(6, 14, 43, .5);
+    background: rgba(6, 14, 43, 0.5);
   }
 
   &-TopBar {

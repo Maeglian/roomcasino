@@ -38,7 +38,7 @@ export default {
     color: var(--color-main1);
     text-indent: -9999em;
     transform: translateZ(0);
-    animation-delay: -.16s;
+    animation-delay: -0.16s;
   }
 
   &-Spinner:before,
@@ -50,7 +50,7 @@ export default {
 
   &-Spinner:before {
     left: -15px;
-    animation-delay: -.32s;
+    animation-delay: -0.32s;
   }
 
   &-Spinner:after {
@@ -59,7 +59,6 @@ export default {
 }
 
 @keyframes load {
-
   0%,
   80%,
   100% {

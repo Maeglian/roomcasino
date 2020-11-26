@@ -187,7 +187,6 @@ export default {
 
 <style lang="scss">
 .ProfilePage {
-
   &-Auth {
     margin-bottom: 24px;
 

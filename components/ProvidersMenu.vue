@@ -246,7 +246,7 @@ export default {
       justify-self: start;
       padding: 0 10px;
       font-size: 9px;
-      letter-spacing: .08em;
+      letter-spacing: 0.08em;
 
       @media (min-width: $screen-l) {
         padding: 0 15px;
@@ -276,7 +276,6 @@ export default {
 
   &-Filter {
     @media (min-width: $screen-m) {
-
       &.CategoriesFilter {
         display: none;
       }

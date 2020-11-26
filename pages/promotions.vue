@@ -158,7 +158,6 @@ export default {
 
 <style lang="scss">
 .PromotionsPage {
-
   &-Header {
     @media (min-width: $screen-m) {
       background-image: url(../assets/img/promotions-bg-1248.png);
@@ -169,7 +168,6 @@ export default {
 }
 
 .PromotionsCard {
-
   &-Title {
     margin-bottom: 12px;
     font-size: 12px;

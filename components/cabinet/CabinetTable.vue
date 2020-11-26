@@ -98,7 +98,6 @@ export default {
 
 <style lang="scss">
 .CabinetTable {
-
   &-Table {
     @media (min-width: $screen-m) {
       display: table;

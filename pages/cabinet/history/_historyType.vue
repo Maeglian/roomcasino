@@ -928,7 +928,6 @@ export default {
 
 <style lang="scss">
 .HistoryPage {
-
   &-Content {
     width: 100%;
   }

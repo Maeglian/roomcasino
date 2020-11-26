@@ -57,7 +57,6 @@ export default {
 
 <style lang="scss">
 .HomePage {
-
   &-Banner {
     margin-bottom: 20px;
 

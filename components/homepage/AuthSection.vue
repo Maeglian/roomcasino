@@ -73,7 +73,6 @@ export default {
 
 <style lang="scss">
 .AuthSection {
-
   &-Login {
     display: none;
 
@@ -218,7 +217,6 @@ export default {
 }
 
 .AuthSection--aside {
-
   &.AuthSection--authenticated {
     order: 0;
 

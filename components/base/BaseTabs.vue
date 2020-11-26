@@ -68,7 +68,6 @@ export default {
       color: var(--color-main1);
 
       .BaseTabs-Name {
-
         &:after {
           content: '';
           position: absolute;
