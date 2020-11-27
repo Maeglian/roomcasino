@@ -70,7 +70,7 @@
             class="DailyTournamentPage-Tabs"
             :items="tabs"
             :current-item="round"
-            @chooseTab="round = $event"
+            @choose-tab="round = $event"
           />
           <div class="DailyTournamentPage-WinnersTable">
             <Loader v-if="winnersAreLoading" />
