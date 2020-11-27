@@ -70,6 +70,7 @@
                 : 'AuthDialog-Field AuthDialog-Input'
             "
             :v="$v[`fieldsStep${step}`][name].children[itemName].value"
+            :inputmode="item.inputmode"
           >
             <template #beforeInput-absolute>
               <span
