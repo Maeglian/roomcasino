@@ -113,6 +113,12 @@ export default {
       },
     };
   },
+  computed: {
+    ...mapGetters(['userInfo']),
+    // fields() {
+    //   return info === 'real' ? this.userInfo : this.fakeFields;
+    // },
+  },
   watch: {
     userInfo: {
       immediate: true,
@@ -121,12 +127,6 @@ export default {
         this.fields = { ...this.userInfo };
       },
     },
-  },
-  computed: {
-    ...mapGetters(['userInfo']),
-    // fields() {
-    //   return info === 'real' ? this.userInfo : this.fakeFields;
-    // },
   },
   methods: {
     ...mapActions(['updateProfile']),
