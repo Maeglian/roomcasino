@@ -22,3 +22,16 @@ export const throttle = (func, ms = 100) => {
 
   return throttledFunc;
 };
+
+export const getObjValuesFromLocalStorage = obj => {
+  for (const key in obj) {
+    const storedValue = localStorage.getItem(key);
+    if (storedValue) obj[key].value = JSON.parse(storedValue);
+  }
+};
+
+export const writeObjValuesToLocalStorage = obj => {
+  for (const key in obj) {
+    localStorage.setItem(key, JSON.stringify(obj[key].value));
+  }
+};
