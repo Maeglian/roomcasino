@@ -1,5 +1,12 @@
 <template>
   <div v-click-outside="onClickOutside" class="BaseDropdown">
+    <div
+      v-if="v && v.required === false && v.$dirty"
+      class="BaseDropdown-Error"
+      :class="errorClass"
+    >
+      Can't be blank
+    </div>
     <button
       class="BaseDropdown-Item BaseDropdown-ActiveItem"
       aria-haspopup="true"
@@ -44,6 +51,16 @@ export default {
       default: false,
     },
     placeholder: {
+      type: [String, Boolean],
+      required: false,
+      default: false,
+    },
+    v: {
+      type: [Object, Boolean],
+      required: false,
+      default: false,
+    },
+    errorClass: {
       type: [String, Boolean],
       required: false,
       default: false,
@@ -137,6 +154,11 @@ export default {
       background-color: #6a6e7f;
       border-radius: 3px;
     }
+  }
+
+  &-Error {
+    font-size: 10px;
+    color: var(--color-error);
   }
 }
 </style>
