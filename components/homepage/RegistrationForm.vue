@@ -111,9 +111,10 @@
             :input-type="field.type"
             input-class="AuthDialog-Field AuthDialog-Input"
             error-class="AuthDialog-Error"
-            :autocorrect="field.autocorrect || undefined"
-            :autocomplete="field.autocomplete || undefined"
-            :pattern="field.pattern || undefined"
+            :autocorrect="field.autocorrect"
+            :autocomplete="field.autocomplete"
+            :pattern="field.pattern"
+            :inputmode="field.inputmode"
             :v="$v[`fieldsStep${step}`][name].value"
           >
             <template #beforeInput-absolute>
@@ -178,6 +179,7 @@ export default {
           autocapitalize: 'off',
           autocorrect: 'off',
           autocomplete: 'email',
+          inputmode: 'email',
         },
         password: {
           value: '',
@@ -233,21 +235,21 @@ export default {
               type: 'text',
               placeholder: 'DD',
               required: true,
-              inputmode: 'verbatim',
+              inputmode: 'numeric',
             },
             month: {
               value: '',
               type: 'text',
               placeholder: 'MM',
               required: true,
-              inputmode: 'verbatim',
+              inputmode: 'numeric',
             },
             year: {
               value: '',
               type: 'text',
               placeholder: 'YYYY',
               required: true,
-              inputmode: 'verbatim',
+              inputmode: 'numeric',
             },
           },
           type: 'date',
@@ -280,6 +282,7 @@ export default {
           required: true,
           autocorrect: 'off',
           autocomplete: 'postal-code',
+          inputmode: 'numeric',
         },
       },
     };
