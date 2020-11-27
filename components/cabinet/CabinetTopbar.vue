@@ -8,9 +8,9 @@
     </NuxtLink>
     <div class="Nav CabinetTopbar-Nav">
       <NuxtLink class="CabinetTopbar-Link" to="/" exact>Home</NuxtLink>
-      <NuxtLink class="CabinetTopbar-Link" to="#">All games</NuxtLink>
-      <NuxtLink class="CabinetTopbar-Link" to="#">Promotions</NuxtLink>
-      <NuxtLink class="CabinetTopbar-Link" to="#">Tournaments</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" to="/category">All games</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" to="/promotions">Promotions</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" to="/tournaments">Tournaments</NuxtLink>
     </div>
     <div class="CabinetTopbar-User">
       <div class="CabinetTopbar-UserName">
