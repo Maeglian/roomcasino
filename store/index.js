@@ -549,6 +549,15 @@ export const state = () => ({
     'RoomCasino reserves the right to change the terms of the VIP program at any time.',
     'All free spins are issued with a wager x10. All cash prizes are issued with wagering x1.',
   ],
+  paymentsMethods: [
+    {icon: 'visa', alt: 'visa', type: 'Credit Card', fee: '2.5%', progressTime: 'Instant', limits: 'Min $/€ 10 - Max $/€ 4,000'},
+    {icon: 'bitcoin', alt: 'bitcoin', type: 'Online Currency', fee: 'Free', progressTime: '1-5 banking days', limits: 'Min. 0.001 BTC - Max. 10 BTC'},
+    {icon: 'maestro', alt: 'maestro', type: 'Credit Card', fee: '2.5%', progressTime: 'Instant', limits: 'Min $/€ 10 - Max $/€ 4,000'},
+    {icon: 'coinspaid', alt: 'coinspaid', type: 'Online Currency', fee: 'Free', progressTime: '1-3 banking days', limits: 'Min. 20 USDT - Max. 4,000 USDT'},
+    {icon: 'skrill', alt: 'skrill', type: 'Credit Card', fee: '2.5%', progressTime: 'Instant', limits: 'Min $/€ 10 - Max $/€ 5,000'},
+    {icon: 'maestro', alt: 'maestro', type: 'Credit Card', fee: '2.5%', progressTime: 'Instant', limits: 'Min $/€ 10 - Max $/€ 4,000'},
+    {icon: 'coinspaid', alt: 'coinspaid', type: 'Online Currency', fee: 'Free', progressTime: '1-3 banking days', limits: 'Min. 20 USDT - Max. 4,000 USDT'},
+  ]
 });
 
 export const getters = {
