@@ -19,6 +19,7 @@
         <template v-if="field.type === 'dropdown'">
           <BaseDropdown
             :key="name"
+            v-model="field.value"
             class="AuthDialog-Field AuthDialog-Dropdown AuthDialog-Row"
             :items="field.items"
             :placeholder="field.placeholder"
@@ -193,7 +194,7 @@ export default {
           value: false,
           type: 'checkbox',
           label:
-            'I am 18 years old and I accept the <a class="AuthDialog-RegistrationLink" href="/terms">Terms&nbsp;and&nbsp;Conditions</a> and <a class="AuthDialog-RegistrationLink" href="/privacy-policy">Privacy&nbsp;Policy</a>',
+            'I am 18 years old and I accept the<br/> <a class="AuthDialog-RegistrationLink" href="/terms">Terms&nbsp;and&nbsp;Conditions</a> and <a class="AuthDialog-RegistrationLink" href="/privacy-policy">Privacy&nbsp;Policy</a>',
         },
       },
       fieldsStep2: {
@@ -366,9 +367,7 @@ export default {
   },
   created() {
     this.fieldsStep1.currency.items = this.currencyNames;
-    this.fieldsStep1.currency.value = this.currencyNames[0];
     this.fieldsStep1.country.items = this.countriesNames;
-    this.fieldsStep1.country.value = this.countriesNames[0];
   },
   methods: {
     ...mapActions(['registerUser']),
