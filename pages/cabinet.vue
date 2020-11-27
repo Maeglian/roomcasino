@@ -202,17 +202,10 @@ export default {
     }
   }
 
-  [type='text'] {
+  &-Input {
     color: var(--color-text-main);
     background: var(--color-bg);
     border: none;
-
-    &::placeholder {
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--color-text-ghost);
-      text-transform: uppercase;
-    }
   }
 
   [type='radio'] {
