@@ -16,7 +16,7 @@
       Must not be more than {{ v.$params.maxLength.max }} characters
     </div>
     <div v-if="v && v.passwordCheck === false" class="BaseInput-Error" :class="errorClass">
-      Must be at least 8 chars with 1 number, 1 small letter and 1 capital letter
+      Must be 8+ chars with 1 number, 1 small and 1 capital letter
     </div>
     <div v-if="v && v.numeric === false" class="BaseInput-Error" :class="errorClass">
       Must be numeric
@@ -134,6 +134,11 @@ export default {
     z-index: 1;
     width: 100%;
     height: 100%;
+    font-size: 16px;
+
+    @media (min-width: $screen-s) {
+      font-size: initial;
+    }
 
     &:focus {
       + .BaseInput-Placeholder {

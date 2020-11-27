@@ -74,7 +74,7 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 585px;
-  background: var(--color-body);
+  background: var(--color-bg);
 
   &-Tabs {
     margin-bottom: 4px;

@@ -449,6 +449,10 @@ export default {
     color: var(--color-text-main);
     background: transparent;
 
+    @media (min-width: $screen-s) {
+      font-size: 12px;
+    }
+
     &::placeholder {
       font-size: 12px;
       font-weight: 700;
