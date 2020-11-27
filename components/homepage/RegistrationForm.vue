@@ -21,8 +21,11 @@
             :key="name"
             v-model="field.value"
             class="AuthDialog-Field AuthDialog-Dropdown AuthDialog-Row"
+            :class="{ 'AuthDialog-Field--error': $v[`fieldsStep${step}`][name].value.$error }"
             :items="field.items"
             :placeholder="field.placeholder"
+            error-class="AuthDialog-Error"
+            :v="$v[`fieldsStep${step}`][name].value"
             @set-dropdown-value="field.value = $event"
           />
         </template>
@@ -86,8 +89,15 @@
             :key="name"
             v-model="field.value"
             class="AuthDialog-Checkbox AuthDialog-Row"
+            :class="{
+              Wibro:
+                $v[`fieldsStep${step}`][name] &&
+                $v[`fieldsStep${step}`][name].$dirty &&
+                $v[`fieldsStep${step}`][name].$error,
+            }"
             label-class="AuthDialog-Label"
             @change="field.value = $event"
+            @animationend="$v[`fieldsStep${step}`][name].$reset()"
           >
             <span v-html="field.label"></span>
           </BaseCheckbox>
@@ -121,11 +131,7 @@
         {{ authError }}
       </div>
     </div>
-    <button
-      type="submit"
-      :disabled="this.$v[`fieldsStep${step}`].$error"
-      class="Btn Btn--full AuthDialog-Btn"
-    >
+    <button type="submit" class="Btn Btn--full AuthDialog-Btn">
       Sign up
     </button>
   </form>
@@ -138,6 +144,7 @@ import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapActions, mapGetters, mapState } from 'vuex';
 import moment from 'moment';
 import { required, email, minLength, maxLength, numeric, helpers } from 'vuelidate/lib/validators';
+import { getObjValuesFromLocalStorage, writeObjValuesToLocalStorage } from '@/utils/helpers';
 
 const passwordCheck = helpers.regex('passwordCheck', /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).{8,}$/);
 const termsCheck = value => value === true;
@@ -178,12 +185,14 @@ export default {
           type: 'dropdown',
           placeholder: 'currency',
           items: [],
+          required: true,
         },
         country: {
           value: '',
           type: 'dropdown',
           placeholder: 'country',
           items: [],
+          required: true,
         },
         receiveEmailPromos: {
           value: false,
@@ -217,21 +226,24 @@ export default {
           parts: {
             day: {
               value: '',
-              type: 'number',
+              type: 'text',
               placeholder: 'DD',
               required: true,
+              inputmode: 'verbatim',
             },
             month: {
               value: '',
-              type: 'number',
+              type: 'text',
               placeholder: 'MM',
               required: true,
+              inputmode: 'verbatim',
             },
             year: {
               value: '',
-              type: 'number',
+              type: 'text',
               placeholder: 'YYYY',
               required: true,
+              inputmode: 'verbatim',
             },
           },
           type: 'date',
@@ -301,6 +313,16 @@ export default {
           passwordCheck,
         },
       },
+      currency: {
+        value: {
+          required,
+        },
+      },
+      country: {
+        value: {
+          required,
+        },
+      },
       confirmAgeAndTerms: { value: { termsCheck } },
     },
     fieldsStep2: {
@@ -366,8 +388,14 @@ export default {
     },
   },
   created() {
+    getObjValuesFromLocalStorage(this.fieldsStep1);
+    getObjValuesFromLocalStorage(this.fieldsStep2);
     this.fieldsStep1.currency.items = this.currencyNames;
     this.fieldsStep1.country.items = this.countriesNames;
+  },
+  beforeDestroy() {
+    writeObjValuesToLocalStorage(this.fieldsStep1);
+    writeObjValuesToLocalStorage(this.fieldsStep2);
   },
   methods: {
     ...mapActions(['registerUser']),
@@ -418,17 +446,6 @@ export default {
     }
   }
 
-  &-Field {
-    width: 100%;
-    height: 55px;
-    background: transparent;
-    border: 2px solid var(--color-border-ghost);
-
-    &--error {
-      border-color: rgba(235, 28, 42, 0.3);
-    }
-  }
-
   &-Col {
     margin-right: 4px;
 
@@ -466,6 +483,17 @@ export default {
     border: 2px solid var(--color-border-ghost);
   }
 
+  &-Field {
+    width: 100%;
+    height: 55px;
+    background: transparent;
+    border: 2px solid var(--color-border-ghost);
+
+    &--error {
+      border-color: rgba(235, 28, 42, 0.3);
+    }
+  }
+
   &-Checkbox {
     margin-top: 15px;
   }
@@ -488,7 +516,7 @@ export default {
     top: 0;
     left: 20px;
     font-weight: 700;
-    line-height: 55px;
+    line-height: 58px;
     text-transform: uppercase;
 
     &--required {
