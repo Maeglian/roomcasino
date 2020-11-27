@@ -49,32 +49,32 @@
           </div>
         </div>
         <div v-else-if="field.type === 'date'" :key="field.value" class="AuthDialog-Row">
-          <template v-if="!$v[`fieldsStep${step}`][name].parts.$invalid">
-            <div v-if="!$v[`fieldsStep${step}`][name].value.dateCheck" class="AuthDialog-Error">
+          <template v-if="!$v[`fieldsStep${step}`][name].children.$invalid">
+            <div v-if="!$v[name].dateCheck" class="AuthDialog-Error">
               Date is invalid
             </div>
-            <div v-else-if="!$v[`fieldsStep${step}`][name].value.ageCheck" class="AuthDialog-Error">
+            <div v-else-if="!$v[name].ageCheck" class="AuthDialog-Error">
               You are under age of 18
             </div>
           </template>
           <BaseInput
-            v-for="(item, itemName) in field.parts"
+            v-for="(item, itemName) in field.children"
             :key="itemName"
             v-model="item.value"
             class="AuthDialog-Col"
             error-class="AuthDialog-Error"
             :input-type="item.type"
             :input-class="
-              $v[`fieldsStep${step}`][name].parts.$dirty && $v[`fieldsStep${step}`][name].$invalid
+              $v[`fieldsStep${step}`][name].children.$dirty && $v[name].$invalid
                 ? 'BaseInput-Input--error AuthDialog-Field AuthDialog-Input'
                 : 'AuthDialog-Field AuthDialog-Input'
             "
-            :v="$v[`fieldsStep${step}`][name].parts[itemName].value"
+            :v="$v[`fieldsStep${step}`][name].children[itemName].value"
           >
             <template #beforeInput-absolute>
               <span
                 v-if="
-                  item.required && !$v[`fieldsStep${step}`][name].parts[itemName].value.required
+                  item.required && !$v[`fieldsStep${step}`][name].children[itemName].value.required
                 "
                 class="AuthDialog-Placeholder"
               >
@@ -144,7 +144,11 @@ import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapActions, mapGetters, mapState } from 'vuex';
 import moment from 'moment';
 import { required, email, minLength, maxLength, numeric, helpers } from 'vuelidate/lib/validators';
-import { getObjValuesFromLocalStorage, writeObjValuesToLocalStorage } from '@/utils/helpers';
+import {
+  getObjValuesFromLocalStorage,
+  writeObjValuesToLocalStorage,
+  deleteObjValuesFromLocalStorage,
+} from '@/utils/helpers';
 
 const passwordCheck = helpers.regex('passwordCheck', /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).{8,}$/);
 const termsCheck = value => value === true;
@@ -222,8 +226,7 @@ export default {
           autocorrect: 'off',
         },
         birthDate: {
-          value: '',
-          parts: {
+          children: {
             day: {
               value: '',
               type: 'text',
@@ -286,10 +289,10 @@ export default {
     birthDate() {
       const {
         birthDate: {
-          parts: { day, month, year },
+          children: { day, month, year },
         },
       } = this.fieldsStep2;
-      return `${year.value}-${month.value}-${day.value}`;
+      return `${year.value}-${month.value.padStart(2, '0')}-${day.value.padStart(2, '0')}`;
     },
     fields() {
       if (this.step === 1) {
@@ -298,12 +301,11 @@ export default {
       return this.fieldsStep2;
     },
   },
-  watch: {
-    birthDate() {
-      this.fieldsStep2.birthDate.value = this.birthDate;
-    },
-  },
   validations: {
+    birthDate: {
+      dateCheck,
+      ageCheck,
+    },
     fieldsStep1: {
       email: { value: { required, email } },
       password: {
@@ -341,11 +343,7 @@ export default {
         },
       },
       birthDate: {
-        value: {
-          dateCheck,
-          ageCheck,
-        },
-        parts: {
+        children: {
           day: {
             value: {
               required,
@@ -418,10 +416,15 @@ export default {
           } else payload[key] = this.fieldsStep1[key].value;
         }
         for (const key in this.fieldsStep2) {
-          payload[key] = this.fieldsStep2[key].value;
+          if (key === 'birthDate') payload[key] = this.birthDate;
+          else payload[key] = this.fieldsStep2[key].value;
         }
         this.registerUser(payload).then(() => {
-          if (!this.authError) this.$emit('redirect-login');
+          if (!this.authError) {
+            deleteObjValuesFromLocalStorage(this.fieldsStep1);
+            deleteObjValuesFromLocalStorage(this.fieldsStep2);
+            this.$emit('redirect-login');
+          }
         });
       }
     },
