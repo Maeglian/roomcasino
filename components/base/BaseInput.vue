@@ -32,6 +32,7 @@
         :placeholder="placeholder"
         :autocorrect="autocorrect"
         :autocomplete="autocomplete"
+        :disabled="disabled"
       />
       <slot name="afterInput-absolute"></slot>
     </div>
@@ -90,6 +91,11 @@ export default {
     },
     autocomplete: {
       type: [String, Boolean],
+      isRequired: false,
+      default: false,
+    },
+    disabled: {
+      type: Boolean,
       isRequired: false,
       default: false,
     },

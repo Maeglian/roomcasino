@@ -848,9 +848,10 @@ export const actions = {
     }
   },
 
-  async updateProfile({ commit }, payload) {
+  async updateProfile({ commit, dispatch }, payload) {
     try {
-      await axios.post(`${API_HOST}/setActiveAccount`, payload);
+      await axios.put(`${API_HOST}/updateProfile`, payload);
+      dispatch('getProfile');
     } catch (e) {
       commit('pushErrors', e);
     }

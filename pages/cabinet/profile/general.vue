@@ -1,6 +1,6 @@
 <template>
   <div class="ProfileInfo ProfilePage-Content">
-    <form class="ProfileInfo-Form" @submit="onSubmit">
+    <form class="ProfileInfo-Form" @submit.prevent="onSubmit">
       <div class="CabinetPage-Header">
         General Info
       </div>
@@ -10,6 +10,7 @@
             :key="name"
             v-model="fields[name]"
             class="CabinetForm-Row"
+            :disabled="name === 'email'"
             input-type="text"
             :input-id="name | formatLabel"
             input-class="CabinetForm-Input"
@@ -65,7 +66,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 
@@ -126,6 +127,19 @@ export default {
     // fields() {
     //   return info === 'real' ? this.userInfo : this.fakeFields;
     // },
+  },
+  methods: {
+    ...mapActions(['updateProfile']),
+    onSubmit() {
+      const payload = {};
+      for (const field in this.fields) {
+        payload[field] = this.fields[field];
+      }
+
+      payload.receiveEmailPromos = this.subscriptions.byEmail.value;
+      payload.receiveSmsPromos = this.subscriptions.bySms.value;
+      this.updateProfile(payload);
+    },
   },
 };
 </script>
@@ -201,6 +215,18 @@ export default {
     font-weight: 700;
     color: var(--color-text-main);
     background: var(--color-bg);
+    border: none;
+
+    &:disabled {
+      color: var(--color-text-ghost);
+    }
+
+    &::placeholder {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--color-text-ghost);
+      text-transform: uppercase;
+    }
 
     &--verified {
       padding-right: 92px;
