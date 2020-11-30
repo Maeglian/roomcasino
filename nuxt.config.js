@@ -3,8 +3,29 @@ const target =
     ? 'static'
     : 'server';
 
+const mode =
+  process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
+    ? 'spa'
+    : 'universal';
+
+const plugins =
+  process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
+    ? [
+        '@/plugins/globals',
+        '@/plugins/globals.client',
+        '@/plugins/onNuxtReady.client',
+        '@/plugins/stageClientInit.client',
+      ]
+    : [
+        '@/plugins/globals',
+        '@/plugins/globals.client',
+        '@/plugins/onNuxtReady.client',
+        '@/plugins/stageClientInit.client',
+      ];
+
 export default {
   target,
+  mode,
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'roomcasino',
@@ -31,7 +52,7 @@ export default {
   css: ['@/assets/styles/main.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['@/plugins/globals', '@/plugins/globals.client', '@/plugins/onNuxtReady.client'],
+  plugins,
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
