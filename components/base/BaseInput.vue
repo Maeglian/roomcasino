@@ -55,7 +55,11 @@
       <input
         :id="inputId"
         v-model="val"
-        :class="[inputClass, 'BaseInput-Input', { 'BaseInput-Input--error': v && v.$error }]"
+        :class="[
+          inputClass,
+          'BaseInput-Input',
+          { 'BaseInput-Input--error': shouldDisplayValidation && v && v.$error },
+        ]"
         :type="inputType"
         :placeholder="placeholder"
         :autocorrect="autocorrect"
