@@ -6,6 +6,7 @@
     "dev": "nuxt --port 8080",
     "build": "NUXT_ENV_MODE=production nuxt build",
     "build:sandbox": "NUXT_ENV_MODE=sandbox nuxt generate",
+    "build:stage": "nuxt generate",
     "start": "nuxt start",
     "start:sandbox": "NUXT_ENV_MODE=sandbox nuxt start",
     "generate": "nuxt generate -c nuxt.config.generate.js",
