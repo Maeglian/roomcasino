@@ -3,10 +3,7 @@ const target =
     ? 'static'
     : 'server';
 
-const mode =
-  process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
-    ? 'spa'
-    : 'universal';
+const ssr = !(process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage');
 
 const plugins =
   process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
@@ -25,7 +22,7 @@ const plugins =
 
 export default {
   target,
-  mode,
+  ssr,
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'roomcasino',
