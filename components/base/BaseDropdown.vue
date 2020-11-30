@@ -104,7 +104,7 @@ export default {
     padding: 0 16px;
     font-weight: 700;
     color: var(--color-text-main);
-    text-transform: uppercase;
+    text-transform: inherit;
     background: var(--color-bg);
   }
 

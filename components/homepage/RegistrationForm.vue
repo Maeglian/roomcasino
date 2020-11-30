@@ -451,6 +451,7 @@ export default {
 
   &-Dropdown {
     font-size: 12px;
+    text-transform: uppercase;
     border: 2px solid var(--color-border-ghost);
   }
 
