@@ -1,24 +1,52 @@
 <template>
   <div class="BaseInput">
-    <div v-if="v && v.required === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
+    <div
+      v-if="shouldDisplayValidation && v && v.required === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
       Can't be blank
     </div>
-    <div v-if="v && v.email === false" class="BaseInput-Error" :class="errorClass">
+    <div
+      v-if="shouldDisplayValidation && v && v.email === false"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
       No valid email address
     </div>
-    <div v-if="v && v.sameAsPassword === false" class="BaseInput-Error" :class="errorClass">
+    <div
+      v-if="shouldDisplayValidation && v && v.sameAsPassword === false"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
       Passwords are not the same
     </div>
-    <div v-if="v && v.minLength === false" class="BaseInput-Error" :class="errorClass">
+    <div
+      v-if="shouldDisplayValidation && v && v.minLength === false"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
       Must have at least {{ v.$params.minLength.min }} characters
     </div>
-    <div v-if="v && v.maxLength === false" class="BaseInput-Error" :class="errorClass">
+    <div
+      v-if="shouldDisplayValidation && v && v.maxLength === false"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
       Must not be more than {{ v.$params.maxLength.max }} characters
     </div>
-    <div v-if="v && v.passwordCheck === false" class="BaseInput-Error" :class="errorClass">
+    <div
+      v-if="shouldDisplayValidation && v && v.passwordCheck === false"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
       Must be at least 8 chars with 1 number, 1 small letter and 1 capital letter
     </div>
-    <div v-if="v && v.numeric === false" class="BaseInput-Error" :class="errorClass">
+    <div
+      v-if="shouldDisplayValidation && v && v.numeric === false"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
       Must be numeric
     </div>
     <slot name="beforeInput-relative"></slot>
@@ -98,6 +126,11 @@ export default {
       type: Boolean,
       isRequired: false,
       default: false,
+    },
+    shouldDisplayValidation: {
+      type: Boolean,
+      isRequired: false,
+      default: true,
     },
     v: {
       type: [Object, Boolean],
