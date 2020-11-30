@@ -160,6 +160,7 @@ export default {
     BaseButton,
   },
   mixins: [tablePagination],
+  middleware: 'clearUpdateProfileError',
   data() {
     return {
       rows,

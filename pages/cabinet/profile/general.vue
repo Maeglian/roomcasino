@@ -86,6 +86,7 @@ export default {
       return arr.join('');
     },
   },
+  middleware: 'clearUpdateProfileError',
   data() {
     return {
       fields: {},
