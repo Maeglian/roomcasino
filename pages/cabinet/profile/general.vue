@@ -285,5 +285,11 @@ export default {
     color: var(--color-text-ghost);
     text-transform: uppercase;
   }
+
+  &-Error {
+    position: absolute;
+    top: -13px;
+    left: 0;
+  }
 }
 </style>
