@@ -13,12 +13,7 @@ const plugins =
         '@/plugins/onNuxtReady.client',
         '@/plugins/stageClientInit.client',
       ]
-    : [
-        '@/plugins/globals',
-        '@/plugins/globals.client',
-        '@/plugins/onNuxtReady.client',
-        '@/plugins/stageClientInit.client',
-      ];
+    : ['@/plugins/globals', '@/plugins/globals.client', '@/plugins/onNuxtReady.client'];
 
 export default {
   target,
