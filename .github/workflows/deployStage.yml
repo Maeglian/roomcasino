@@ -1,4 +1,4 @@
-name: deploySandbox
+name: deployStage
 
 on:
   push:
