@@ -42,6 +42,7 @@ export default {
 
   &-Btn {
     height: 55px;
+    margin-left: auto;
     font-size: 12px;
   }
 }
