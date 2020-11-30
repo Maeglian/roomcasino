@@ -783,7 +783,7 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit({ commit }, { req }) {
-    if (process.env.NUXT_ENV_MODE !== 'sandbox') {
+    if (process.env.NUXT_ENV_MODE !== 'sandbox' && process.env.NUXT_ENV_MODE !== 'stage') {
       let token = null;
       if (req.headers.cookie) {
         const parsed = cookieparser.parse(req.headers.cookie);

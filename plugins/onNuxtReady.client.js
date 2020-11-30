@@ -3,7 +3,7 @@ import Cookie from 'js-cookie';
 import { throttle } from '../utils/helpers';
 
 window.onNuxtReady(app => {
-  if (process.env.NUXT_ENV_MODE === 'sandbox') {
+  if (process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage') {
     const token = Cookie.get('token');
     app.$store.commit('setToken', token);
   }
