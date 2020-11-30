@@ -175,6 +175,7 @@ export default {
 
   &-Dropdown {
     flex-grow: 1;
+    text-transform: uppercase;
   }
 }
 </style>

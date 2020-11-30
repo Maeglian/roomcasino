@@ -277,6 +277,8 @@ export default {
 
   &-Datepicker {
     flex-grow: 1;
+    color: var(--color-text-main);
+    background: var(--color-bg);
 
     .Datepicker-Inner {
       right: 0;
