@@ -96,6 +96,9 @@
             </svg>
           </template>
         </BaseInput>
+        <div v-if="updateProfileError" class="Error ProfilePage-Error">
+          {{ updateProfileError }}
+        </div>
         <BaseButton
           class="Btn Btn--full Btn--darkColor ProfilePage-Btn"
           :is-loading="passwordIsUpdating"
@@ -126,7 +129,7 @@ import BaseInput from '@/components/base/BaseInput.vue';
 import BaseButton from '@/components/base/BaseButton.vue';
 import { required, sameAs } from 'vuelidate/lib/validators';
 import { passwordCheck } from '@/utils/formCheckers';
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapMutations, mapState } from 'vuex';
 
 const rows = [
   ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Current'],
@@ -174,7 +177,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['passwordIsUpdating']),
+    ...mapState(['passwordIsUpdating', 'updateProfileError']),
   },
   validations: {
     oldPassword: { required },
@@ -193,6 +196,7 @@ export default {
     },
   },
   methods: {
+    ...mapMutations(['clearUpdateProfileError']),
     ...mapActions(['updatePassword']),
     toggleVisibility(el) {
       this[el].inputType === 'password'
@@ -200,6 +204,7 @@ export default {
         : (this[el].inputType = 'password');
     },
     onSubmitPasswordForm() {
+      this.clearUpdateProfileError();
       if (this.$v.$invalid) {
         this.shouldDisplayPasswordFormErrors = true;
         this.$v.$touch();
@@ -209,6 +214,14 @@ export default {
         oldPassword: this.oldPassword,
         newPassword: this.newPassword.value,
         confirmPassword: this.confirmPassword.value,
+      }).then(() => {
+        if (!this.updateProfileError) {
+          this.oldPassword = '';
+          this.newPassword.value = '';
+          this.confirmPassword.value = '';
+          this.$v.$reset();
+          this.shouldDisplayPasswordFormErrors = false;
+        }
       });
     },
   },
@@ -264,6 +277,10 @@ export default {
 
   &-Row {
     margin-top: 12px;
+
+    &:last-of-type {
+      margin-bottom: 12px;
+    }
   }
 
   &-QrForm {
@@ -341,8 +358,8 @@ export default {
     height: 16px;
   }
 
-  &-Btn {
-    margin-top: 4px;
+  &-Error {
+    font-size: 12px;
   }
 }
 </style>
