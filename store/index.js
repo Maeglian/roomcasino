@@ -8,6 +8,27 @@ const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : AP
 const Cookie = process.client ? require('js-cookie') : undefined;
 const cookieparser = process.server ? require('cookieparser') : undefined;
 
+const reqConfig = (func, funcName) => ({
+  transformResponse: [
+    data => {
+      let res;
+
+      try {
+        res = JSON.parse(data);
+      } catch (error) {
+        throw Error(`[requestClient] Error parsing response JSON data - ${JSON.stringify(error)}`);
+      }
+
+      console.log(res);
+
+      if (res.code === 0) {
+        return res.data;
+      }
+      func(funcName, res.message);
+    },
+  ],
+});
+
 export const state = () => ({
   status: '',
   countriesList: {},
@@ -608,6 +629,7 @@ export const state = () => ({
     },
   ],
   passwordIsUpdating: false,
+  updateProfileError: '',
 });
 
 export const getters = {
@@ -751,6 +773,12 @@ export const mutations = {
   setPasswordIsUpdated(state) {
     state.passwordIsUpdating = false;
   },
+  setUpdateProfileError(state, payload) {
+    state.updateProfileError = payload;
+  },
+  clearUpdateProfileError(state) {
+    state.updateProfileError = '';
+  },
 };
 
 export const actions = {
@@ -783,26 +811,7 @@ export const actions = {
   },
   async registerUser({ commit }, payload) {
     commit('authRequest');
-    await axios.post(`${API_HOST}/register`, payload, {
-      transformResponse: [
-        data => {
-          let res;
-
-          try {
-            res = JSON.parse(data);
-          } catch (error) {
-            throw Error(
-              `[requestClient] Error parsing response JSON data - ${JSON.stringify(error)}`,
-            );
-          }
-
-          if (res.code === 0) {
-            return res.data;
-          }
-          commit('authError', res.message);
-        },
-      ],
-    });
+    await axios.post(`${API_HOST}/register`, payload, reqConfig(commit, 'authError'));
   },
 
   async authorize({ state, commit, dispatch }, payload) {
@@ -925,7 +934,11 @@ export const actions = {
   async updatePassword({ commit }, payload) {
     try {
       commit('setPasswordIsUpdating');
-      await axios.put(`${API_HOST}/updatePassword`, payload);
+      await axios.put(
+        `${API_HOST}/updatePassword`,
+        payload,
+        reqConfig(commit, 'setUpdateProfileError'),
+      );
     } catch (e) {
       commit('pushErrors', e);
     } finally {
