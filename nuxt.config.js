@@ -1,4 +1,7 @@
-const target = process.env.NUXT_ENV_MODE === 'sandbox' ? 'static' : 'server';
+const target =
+  process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
+    ? 'static'
+    : 'server';
 
 export default {
   target,
