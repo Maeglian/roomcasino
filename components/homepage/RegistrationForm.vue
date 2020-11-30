@@ -136,16 +136,8 @@ import BaseInput from '@/components/base/BaseInput.vue';
 import BaseCheckbox from '@/components/base/BaseCheckbox.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapActions, mapGetters, mapState } from 'vuex';
-import moment from 'moment';
-import { required, email, minLength, maxLength, numeric, helpers } from 'vuelidate/lib/validators';
-
-const passwordCheck = helpers.regex('passwordCheck', /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).{8,}$/);
-const termsCheck = value => value === true;
-const ageCheck = value => moment(value).add(18, 'years') < moment();
-const dateCheck = value =>
-  moment(value, 'YYYY-MM-DD', true).isValid() &&
-  moment(value) < moment() &&
-  moment(value).year() > 1900;
+import { required, email, minLength, maxLength, numeric } from 'vuelidate/lib/validators';
+import { passwordCheck, termsCheck, ageCheck, dateCheck } from '@/utils/formCheckers';
 
 export default {
   name: 'RegistrationForm',
