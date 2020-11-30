@@ -33,9 +33,6 @@
         <NuxtLink class="Link Footer-Link" to="/privacy-policy">
           Privacy policy
         </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/terms-and-conditions">
-          Terms and conditions
-        </NuxtLink>
         <NuxtLink class="Link Footer-Link" to="/faq">
           Faq
         </NuxtLink>
