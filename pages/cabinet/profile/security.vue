@@ -101,7 +101,7 @@
         </div>
         <BaseButton
           class="Btn Btn--full Btn--darkColor ProfilePage-Btn"
-          :is-loading="passwordIsUpdating"
+          :is-loading="profileIsUpdating"
         >
           Update
         </BaseButton>
@@ -178,7 +178,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['passwordIsUpdating', 'updateProfileError']),
+    ...mapState(['profileIsUpdating', 'updateProfileError']),
   },
   validations: {
     oldPassword: { required },

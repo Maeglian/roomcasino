@@ -628,7 +628,7 @@ export const state = () => ({
       limits: 'Min. 20 USDT - Max. 4,000 USDT',
     },
   ],
-  passwordIsUpdating: false,
+  profileIsUpdating: false,
   updateProfileError: '',
 });
 
@@ -767,10 +767,10 @@ export const mutations = {
       ...state.limits[i].limits.slice(j + 1),
     ];
   },
-  setPasswordIsUpdating(state) {
+  setProfileIsUpdating(state) {
     state.passwordIsUpdating = true;
   },
-  setPasswordIsUpdated(state) {
+  setProfileIsUpdated(state) {
     state.passwordIsUpdating = false;
   },
   setUpdateProfileError(state, payload) {
@@ -924,16 +924,23 @@ export const actions = {
 
   async updateProfile({ commit, dispatch }, payload) {
     try {
-      await axios.put(`${API_HOST}/updateProfile`, payload);
+      commit('setProfileIsUpdating');
+      await axios.put(
+        `${API_HOST}/updateProfile`,
+        payload,
+        reqConfig(commit, 'setUpdateProfileError'),
+      );
       dispatch('getProfile');
     } catch (e) {
       commit('pushErrors', e);
+    } finally {
+      commit('setProfileIsUpdated');
     }
   },
 
   async updatePassword({ commit }, payload) {
     try {
-      commit('setPasswordIsUpdating');
+      commit('setProfileIsUpdating');
       await axios.put(
         `${API_HOST}/updatePassword`,
         payload,
@@ -942,7 +949,7 @@ export const actions = {
     } catch (e) {
       commit('pushErrors', e);
     } finally {
-      commit('setPasswordIsUpdated');
+      commit('setProfileIsUpdated');
     }
   },
 };
