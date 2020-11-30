@@ -54,6 +54,10 @@ button {
     }
   }
 
+  &--darkColor {
+    background: rgba(235, 28, 42, 0.4);
+  }
+
   &--outline {
     background: transparent;
     border: 2px solid var(--color-main2);
