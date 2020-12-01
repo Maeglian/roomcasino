@@ -18,17 +18,15 @@
         effect instantly.
       </div>
       <div v-else class="LimitsPage-Limits">
-        <div v-for="(limit, i) in limitsByTypes" :key="limit.name" class="LimitsPage-LimitType">
+        <div v-for="limit in limitsByTypes" :key="limit.name" class="LimitsPage-LimitType">
           <div v-if="limit.limits.length" class="LimitsPage-Header">
             {{ limit.name }}
           </div>
           <GamblingLimit
-            v-for="(item, j) in limit.limits"
-            :key="j"
+            v-for="item in limit.limits"
+            :key="item.type"
             class="LimitsPage-Limit"
             :item="item"
-            @update-limit="updateLimits({ i, j, payload: $event.content })"
-            @delete-limit="deleteLimit({ i, j })"
           />
         </div>
       </div>
@@ -41,7 +39,7 @@
 <script>
 import CreateLimits from '@/components/cabinet/CreateLimits.vue';
 import GamblingLimit from '@/components/cabinet/GamblingLimit.vue';
-import { mapMutations, mapState, mapGetters } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'LimitsPage',
@@ -57,7 +55,6 @@ export default {
     // },
   },
   methods: {
-    ...mapMutations(['updateLimits', 'deleteLimit']),
     showCreateLimitsDialog() {
       this.$modal.show('createLimits');
     },

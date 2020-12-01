@@ -156,11 +156,8 @@ export default {
     onClickEdit() {
       this.$modal.show(
         CreateLimits,
-        { isEdit: true, item: this.item, onUpdateLimit: this.onUpdateLimit },
+        { isEdit: true, item: this.item },
         { width: 400, height: 'auto', adaptive: true },
-        {
-          'update-limit': e => this.$emit('update-limit', e),
-        },
       );
     },
     onUpdateLimit(payload) {
