@@ -93,7 +93,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import { LIMIT_PERIODS } from '@/config';
 import Counter from '@/components/Counter';
 import CreateLimits from '@/components/cabinet/CreateLimits';
@@ -149,6 +149,7 @@ export default {
     },
   },
   methods: {
+    ...mapActions(['deleteLimit', 'getLimits']),
     onClickOutside(e) {
       if (e.target !== this.$refs.edit) this.editMenuIsOpen = false;
     },
@@ -170,7 +171,10 @@ export default {
       this.$modal.hide('delete');
     },
     onDeleteLimit() {
-      this.$emit('delete-limit');
+      this.deleteLimit({
+        type: this.item.type,
+        period: this.item.period,
+      }).then(() => this.getLimits());
       this.editMenuIsOpen = false;
     },
     onCloseDeleteConfirmDialog() {
