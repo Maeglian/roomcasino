@@ -1,32 +1,38 @@
 <template>
   <div class="BaseInput">
-    <div v-if="v && v.required === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
+    <div
+      v-if="shouldDisplayValidation && v && v.required === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
       Can't be blank
     </div>
-    <div v-if="v && v.email === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
+
+    <div v-if="shouldDisplayValidation && v && v.email === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
       No valid email address
     </div>
     <div
-      v-if="v && v.sameAsPassword === false && v.$dirty"
+      v-if="shouldDisplayValidation && v && v.sameAsPassword === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
       Passwords are not the same
     </div>
-    <div v-if="v && v.minLength === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
+    <div v-if="shouldDisplayValidation && v && v.minLength === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
       Must have at least {{ v.$params.minLength.min }} characters
     </div>
-    <div v-if="v && v.maxLength === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
+    <div v-if="shouldDisplayValidation && v && v.maxLength === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
       Must not be more than {{ v.$params.maxLength.max }} characters
     </div>
     <div
-      v-if="v && v.passwordCheck === false && v.$dirty"
+      v-if="shouldDisplayValidation && v && v.passwordCheck === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
       Must be 8+ chars with 1 number, 1 small and 1 capital letter
     </div>
-    <div v-if="v && v.numeric === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
+    <div v-if="shouldDisplayValidation && v && v.numeric === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
+
       Must be numeric
     </div>
     <slot name="beforeInput-relative"></slot>
@@ -35,7 +41,11 @@
       <input
         :id="inputId"
         v-model="val"
-        :class="[inputClass, 'BaseInput-Input', { 'BaseInput-Input--error': v && v.$error }]"
+        :class="[
+          inputClass,
+          'BaseInput-Input',
+          { 'BaseInput-Input--error': shouldDisplayValidation && v && v.$error },
+        ]"
         :type="inputType"
         :placeholder="placeholder"
         :autocorrect="autocorrect"
@@ -112,6 +122,11 @@ export default {
       type: Boolean,
       isRequired: false,
       default: false,
+    },
+    shouldDisplayValidation: {
+      type: Boolean,
+      isRequired: false,
+      default: true,
     },
     v: {
       type: [Object, Boolean],

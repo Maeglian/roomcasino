@@ -1,4 +1,4 @@
-name: deploySandbox
+name: deployStage
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 
 env:
   DEPLOY_PATH: /www/roomcasino
-  BUILD_SCRIPT: npm run build:sandbox
+  BUILD_SCRIPT: npm run build:stage
   BUILD_SCRIPT_OUTPUT: dist
 
 jobs:

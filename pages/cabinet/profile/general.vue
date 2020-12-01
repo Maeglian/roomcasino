@@ -6,7 +6,30 @@
       </div>
       <div class="ProfileInfo-Fields">
         <template v-for="(val, name) in fields">
+          <div v-if="name === 'country'" :key="name" class="CabinetForm-Row">
+            <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
+              {{ name }}
+            </label>
+            <BaseDropdown
+              v-model="fields[name]"
+              class="CabinetForm-Row CabinetForm-Dropdown"
+              :items="countriesNames"
+              @set-dropdown-value="fields[name] = $event"
+            />
+          </div>
+          <div v-else-if="name === 'gender'" :key="name" class="CabinetForm-Row">
+            <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
+              {{ name }}
+            </label>
+            <BaseDropdown
+              v-model="fields[name]"
+              class="CabinetForm-Row CabinetForm-Dropdown"
+              :items="['male', 'female']"
+              @set-dropdown-value="fields[name] = $event"
+            />
+          </div>
           <BaseInput
+            v-else
             :key="name"
             v-model="fields[name]"
             class="CabinetForm-Row"
@@ -30,13 +53,6 @@
               </div>
             </template>
           </BaseInput>
-          <!--        <CabinetInput-->
-          <!--          :key="name"-->
-          <!--          :label="name"-->
-          <!--          :value="val"-->
-          <!--          type="text"-->
-          <!--          :verified="name === 'mobile'"-->
-          <!--        />-->
         </template>
       </div>
       <div class="CabinetPage-Header">
@@ -56,17 +72,22 @@
           {{ item.text }}
         </BaseCheckbox>
       </div>
-      <div class="CabinetForm-Row CabinetForm-Row--right">
-        <button type="submit" class="Btn ProfilePage-Btn">
+      <div class="CabinetForm-Row">
+        <div v-if="updateProfileError" class="Error ProfilePage-Error">
+          {{ updateProfileError }}
+        </div>
+        <BaseButton class="Btn Btn--darkColor ProfilePage-Btn" :is-loading="profileIsUpdating">
           Save changes
-        </button>
+        </BaseButton>
       </div>
     </form>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions, mapState, mapMutations } from 'vuex';
+import BaseButton from '@/components/base/BaseButton.vue';
+import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 
@@ -78,6 +99,8 @@ export default {
   components: {
     BaseInput,
     BaseCheckbox,
+    BaseButton,
+    BaseDropdown,
   },
   filters: {
     formatLabel(str) {
@@ -86,6 +109,7 @@ export default {
       return arr.join('');
     },
   },
+  middleware: 'clearUpdateProfileError',
   data() {
     return {
       fields: {},
@@ -114,7 +138,8 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['userInfo']),
+    ...mapState(['profileIsUpdating', 'updateProfileError', 'countriesList']),
+    ...mapGetters(['userInfo', 'countriesNames']),
     // fields() {
     //   return info === 'real' ? this.userInfo : this.fakeFields;
     // },
@@ -129,11 +154,15 @@ export default {
     },
   },
   methods: {
+    ...mapMutations(['clearUpdateProfileError']),
     ...mapActions(['updateProfile']),
     onSubmit() {
       const payload = {};
-      for (const field in this.fields) {
-        payload[field] = this.fields[field];
+      for (const key in this.fields) {
+        if (key === 'country') {
+          const entry = Object.entries(this.countriesList).find(i => i[1] === this.fields.country);
+          payload.country = entry[0];
+        } else payload[key] = this.fields[key];
       }
 
       payload.receiveEmailPromos = this.subscriptions.byEmail.value;
@@ -284,6 +313,17 @@ export default {
     font-weight: 700;
     color: var(--color-text-ghost);
     text-transform: uppercase;
+  }
+
+  &-Error {
+    position: absolute;
+    top: -13px;
+    left: 0;
+  }
+
+  &-Dropdown {
+    font-size: 12px;
+    text-transform: capitalize;
   }
 }
 </style>

@@ -41,9 +41,9 @@ export default {
   }
 
   &-Btn {
-    padding: 20px 30px;
+    height: 55px;
+    margin-left: auto;
     font-size: 12px;
-    background: rgba(235, 28, 42, 0.4);
   }
 }
 </style>

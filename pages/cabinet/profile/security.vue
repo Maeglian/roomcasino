@@ -22,7 +22,7 @@
           <button type="submit" class="ProfilePage-Send">Send</button>
         </form>
       </div>
-      <form class="ProfilePage-Password">
+      <form class="CabinetForm ProfilePage-Password" @submit.prevent="onSubmitPasswordForm">
         <div class="CabinetPage-Header">
           Password change
         </div>
@@ -30,10 +30,12 @@
           v-model="oldPassword"
           class="ProfilePage-Row"
           input-type="password"
+          error-class="CabinetForm-Error"
           input-class="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           :v="$v.oldPassword"
           placeholder="Old password"
           icon="password"
+          :should-display-validation="shouldDisplayPasswordFormErrors"
         >
           <template #beforeInput-absolute>
             <svg class="ProfilePage-Icon ProfilePage-Icon--password">
@@ -46,10 +48,12 @@
           class="ProfilePage-Row"
           block-class="ProfilePage"
           :input-type="newPassword.inputType"
+          error-class="CabinetForm-Error"
           input-class="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           :v="$v.newPassword.value"
           placeholder="New password"
           icon="password"
+          :should-display-validation="shouldDisplayPasswordFormErrors"
         >
           <template #beforeInput-absolute>
             <svg class="ProfilePage-Icon ProfilePage-Icon--password">
@@ -71,9 +75,11 @@
           class="ProfilePage-Row"
           block-class="ProfilePage"
           :input-type="confirmPassword.inputType"
+          error-class="CabinetForm-Error"
           input-class="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           :v="$v.confirmPassword.value"
           placeholder="Password confirm"
+          :should-display-validation="shouldDisplayPasswordFormErrors"
         >
           <template #beforeInput-absolute>
             <svg class="ProfilePage-Icon ProfilePage-Icon--password">
@@ -90,7 +96,15 @@
             </svg>
           </template>
         </BaseInput>
-        <button type="submit" class="Btn Btn--full ProfilePage-Btn">Update</button>
+        <div v-if="updateProfileError" class="Error ProfilePage-Error">
+          {{ updateProfileError }}
+        </div>
+        <BaseButton
+          class="Btn Btn--full Btn--darkColor ProfilePage-Btn"
+          :is-loading="profileIsUpdating"
+        >
+          Update
+        </BaseButton>
       </form>
     </div>
     <CabinetTable
@@ -112,7 +126,10 @@
 import tablePagination from '@/mixins/tablePagination';
 import CabinetTable from '@/components/cabinet/CabinetTable.vue';
 import BaseInput from '@/components/base/BaseInput.vue';
+import BaseButton from '@/components/base/BaseButton.vue';
 import { required, sameAs } from 'vuelidate/lib/validators';
+import { passwordCheck } from '@/utils/formCheckers';
+import { mapActions, mapMutations, mapState } from 'vuex';
 
 const rows = [
   ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Current'],
@@ -140,8 +157,10 @@ export default {
   components: {
     CabinetTable,
     BaseInput,
+    BaseButton,
   },
   mixins: [tablePagination],
+  middleware: 'clearUpdateProfileError',
   data() {
     return {
       rows,
@@ -155,15 +174,18 @@ export default {
         inputType: 'password',
       },
       qrCode: '',
+      shouldDisplayPasswordFormErrors: false,
     };
   },
+  computed: {
+    ...mapState(['profileIsUpdating', 'updateProfileError']),
+  },
   validations: {
-    oldPassword: {
-      required,
-    },
+    oldPassword: { required },
     newPassword: {
       value: {
         required,
+        passwordCheck,
       },
     },
     confirmPassword: {
@@ -175,11 +197,33 @@ export default {
     },
   },
   methods: {
+    ...mapMutations(['clearUpdateProfileError']),
+    ...mapActions(['updatePassword']),
     toggleVisibility(el) {
-      console.log(el);
       this[el].inputType === 'password'
         ? (this[el].inputType = 'text')
         : (this[el].inputType = 'password');
+    },
+    onSubmitPasswordForm() {
+      this.clearUpdateProfileError();
+      if (this.$v.$invalid) {
+        this.shouldDisplayPasswordFormErrors = true;
+        this.$v.$touch();
+        return;
+      }
+      this.updatePassword({
+        oldPassword: this.oldPassword,
+        newPassword: this.newPassword.value,
+        confirmPassword: this.confirmPassword.value,
+      }).then(() => {
+        if (!this.updateProfileError) {
+          this.oldPassword = '';
+          this.newPassword.value = '';
+          this.confirmPassword.value = '';
+          this.$v.$reset();
+          this.shouldDisplayPasswordFormErrors = false;
+        }
+      });
     },
   },
 };
@@ -233,7 +277,11 @@ export default {
   }
 
   &-Row {
-    margin-bottom: 4px;
+    margin-top: 12px;
+
+    &:last-of-type {
+      margin-bottom: 12px;
+    }
   }
 
   &-QrForm {
@@ -309,6 +357,10 @@ export default {
     left: 16px;
     width: 13px;
     height: 16px;
+  }
+
+  &-Error {
+    font-size: 12px;
   }
 }
 </style>
