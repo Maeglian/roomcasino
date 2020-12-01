@@ -22,3 +22,7 @@ export const throttle = (func, ms = 100) => {
 
   return throttledFunc;
 };
+
+export const findValInArr = (val, arr) => {
+  return arr.find(item => item.value === val);
+};
