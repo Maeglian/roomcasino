@@ -1,5 +1,5 @@
 <template>
-  <label class="BaseCheckbox">
+  <label class="BaseCheckbox" @animationend="$emit('animationend')">
     <input
       name="name"
       class="BaseCheckbox-Checkbox"
