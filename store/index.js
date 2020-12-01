@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Vue from 'vue';
 import moment from 'moment';
-import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX } from '../config';
+import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX, LIMIT_TYPES } from '../config';
 
 const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : API_HOST_PROD;
 
@@ -207,7 +207,7 @@ export const state = () => ({
   width: 0,
   games: [],
   jackpots: [],
-  limits: [
+  fakeLimits: [
     {
       name: 'loss limits',
       limits: [
@@ -328,11 +328,11 @@ export const state = () => ({
       ],
     },
   ],
+  limits: [],
   gamesAreLoading: false,
   winnersAreLoading: false,
   errors: {},
   user: {},
-  currency: 'eur',
   billingSession: {},
   fakeBillingSession: {
     userId: '123',
@@ -637,8 +637,20 @@ export const getters = {
     if (state.user.accountList) return state.user.accountList.find(acc => acc.active === true);
     return {};
   },
+  accountList: state => {
+    if (state.user.accountList) return state.user.accountList;
+    return [];
+  },
   isLoggedIn: state => !!state.token,
   authStatus: state => state.status,
+  limitsByTypes: state =>
+    LIMIT_TYPES.map(limit => {
+      const limits = state.limits.filter(l => l.type === limit.value);
+      return {
+        name: limit.name,
+        limits,
+      };
+    }),
   providersList: state => startIndex =>
     state.providers.slice(startIndex, state.providers.length + 1),
   fakedNewGames: state => [...state.games].reverse().slice(0, 12),
@@ -702,6 +714,9 @@ export const mutations = {
   },
   setJackpots: (state, payload) => {
     state.jackpots = payload;
+  },
+  setLimits: (state, payload) => {
+    state.limits = payload;
   },
   addLimits: (state, payload) => {
     let limit = state.limits.find(lim => lim.name === payload.name);
@@ -950,6 +965,24 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setProfileIsUpdated');
+    }
+  },
+
+  async getLimits({ commit }) {
+    try {
+      const res = await axios.get(`${API_HOST}/limit`);
+      const limits = res.data.data;
+      commit('setLimits', limits);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async addLimits({ commit }, payload) {
+    try {
+      await axios.put(`${API_HOST}/limit`, payload);
+    } catch (e) {
+      commit('pushErrors', e);
     }
   },
 };
