@@ -146,13 +146,13 @@ export default {
             'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or mounth.',
           fields: ['type', 'period', 'currencyLimitList'],
         },
-        sessionLimit: {
-          name: 'Session limit',
-          title: 'time spent gambling',
-          text:
-            'The restriction takes effect instantly. If you hit the limit, you will be automatically logged out of your  account.',
-          fields: ['type', 'limitState', 'limitAmount', 'isMoney', 'title'],
-        },
+        // sessionLimit: {
+        //   name: 'Session limit',
+        //   title: 'time spent gambling',
+        //   text:
+        //     'The restriction takes effect instantly. If you hit the limit, you will be automatically logged out of your  account.',
+        //   fields: ['type', 'limitState', 'limitAmount', 'isMoney', 'title'],
+        // },
         // self_exclusion: {
         //   name: 'Self exclusion',
         //   title: 'blocked address',
@@ -170,10 +170,16 @@ export default {
       },
       type: findValInArr(this.item.type, LIMIT_TYPES) || findValInArr('depositLimit', LIMIT_TYPES),
       limitAmount: this.item.limitAmount || 0,
-      currencyLimitList: [{}],
+      currencyLimitList: [
+        {
+          currency: '',
+          value: 0,
+        },
+      ],
+      limitTypes: LIMIT_TYPES,
       periods: LIMIT_PERIODS,
       period:
-        findValInArr(this.item.period, LIMIT_PERIODS) || findValInArr('dailyLimit', LIMIT_PERIODS),
+        findValInArr(this.item.period, LIMIT_PERIODS) || findValInArr('dayLimit', LIMIT_PERIODS),
       realityCheckPeriods: ['none', '30 min', '60 min', '120 min'],
       selfExclusionPeriods: ['none', '1 day', '1 week', '1 month', '6 month', '1 year'],
       limitState: this.item.limitState || 0,
@@ -185,14 +191,14 @@ export default {
   },
   computed: {
     ...mapGetters(['activeAccount', 'accountList']),
-    limitTypes() {
-      return Object.entries(this.limits).map(entry => {
-        return {
-          value: entry[0],
-          name: entry[1].name,
-        };
-      });
-    },
+    // limitTypes() {
+    //   return Object.entries(this.limits).map(entry => {
+    //     return {
+    //       value: entry[0],
+    //       name: entry[1].name,
+    //     };
+    //   });
+    // },
     isMoney() {
       if (
         this.type.value === 'sessionLimit' ||
@@ -229,6 +235,8 @@ export default {
       const payload = {};
 
       this.limits[this.type.value].fields.forEach(field => {
+        console.log(field);
+        console.log(this[field].value || this[field]);
         payload[field] = this[field].value || this[field];
       });
 
