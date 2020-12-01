@@ -300,9 +300,14 @@ export default {
     height: 55px;
     padding-right: 16px;
     padding-left: 16px;
+    font-size: 16px;
     color: var(--color-text-main);
     background: var(--color-bg);
     border: none;
+
+    @media (min-width: $screen-m) {
+      font-size: 12px;
+    }
 
     &::placeholder {
       font-size: 10px;
