@@ -11,7 +11,11 @@
       @keyup.enter="onSelectValueKeyboard()"
     >
       {{ activeItem.name || activeItem || placeholder || items[0].name || items[0] }}
-      <i class="ThinArrow" :class="[isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"></i>
+      <i
+        v-if="items.length > 1"
+        class="ThinArrow"
+        :class="[isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"
+      ></i>
     </button>
     <ul v-show="isOpen" class="BaseDropdown-Inner" aria-label="submenu">
       <li
