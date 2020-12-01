@@ -978,9 +978,17 @@ export const actions = {
     }
   },
 
-  async addLimits({ commit }, payload) {
+  async addLimit({ commit }, payload) {
     try {
       await axios.put(`${API_HOST}/limit`, payload);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async deleteLimit({ commit }, payload) {
+    try {
+      await axios.delete(`${API_HOST}/limit?type=${payload.type}&period=${payload.period}`);
     } catch (e) {
       commit('pushErrors', e);
     }
