@@ -8,7 +8,11 @@
       Can't be blank
     </div>
 
-    <div v-if="shouldDisplayValidation && v && v.email === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
+    <div
+      v-if="shouldDisplayValidation && v && v.email === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
       No valid email address
     </div>
     <div
@@ -18,10 +22,18 @@
     >
       Passwords are not the same
     </div>
-    <div v-if="shouldDisplayValidation && v && v.minLength === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
+    <div
+      v-if="shouldDisplayValidation && v && v.minLength === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
       Must have at least {{ v.$params.minLength.min }} characters
     </div>
-    <div v-if="shouldDisplayValidation && v && v.maxLength === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
+    <div
+      v-if="shouldDisplayValidation && v && v.maxLength === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
       Must not be more than {{ v.$params.maxLength.max }} characters
     </div>
     <div
@@ -31,8 +43,11 @@
     >
       Must be 8+ chars with 1 number, 1 small and 1 capital letter
     </div>
-    <div v-if="shouldDisplayValidation && v && v.numeric === false && v.$dirty" class="BaseInput-Error" :class="errorClass">
-
+    <div
+      v-if="shouldDisplayValidation && v && v.numeric === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
       Must be numeric
     </div>
     <slot name="beforeInput-relative"></slot>
