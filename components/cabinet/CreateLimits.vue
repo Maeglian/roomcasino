@@ -3,7 +3,7 @@
     <div class="Close Modal-Close" @click="$emit('close')"></div>
     <div v-if="!isConfirm" class="CreateLimits">
       <div class="CabinetPage-Header CabinetPage-Section">
-        <template v-if="isEdit"> Edit {{ item.type }} limits </template>
+        <template v-if="isEdit"> Edit {{ type.name }} </template>
         <template v-else>
           Create limits
         </template>
@@ -24,25 +24,21 @@
         "
         class="CreateLimits-Row"
       >
-        <div class="CreateLimits-Col">
-          <BaseInput
-            v-for="acc in currencyLimitList"
-            :key="acc.currency"
-            v-model.number="acc.value"
-            class="CreateLimits-Amount CreateLimits-Field"
-            input-type="text"
-            input-class="CreateLimits-Input"
-          >
-            <template #afterInput-absolute>
-              <span class="CreateLimits-InputCurrency">
-                {{ acc.currency }}
-              </span>
-            </template>
-          </BaseInput>
-        </div>
+        <BaseInput
+          v-model.number="currencyLimitList[0].value"
+          class="CreateLimits-Amount"
+          input-type="text"
+          input-class="CreateLimits-Input"
+        >
+          <template #afterInput-absolute>
+            <span class="CreateLimits-InputCurrency">
+              {{ currencyLimitList[0].currency }}
+            </span>
+          </template>
+        </BaseInput>
         <BaseDropdown
           v-model="period"
-          class="CreateLimits-Period CreateLimits-Field"
+          class="CreateLimits-Period"
           :items="periods"
           @set-dropdown-value="period = $event"
         />
@@ -99,7 +95,8 @@
 import BaseDropdown from '@/components/base/BaseDropdown';
 import BaseInput from '@/components/base/BaseInput';
 import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
-import { LIMIT_PERIODS } from '@/config';
+import { LIMIT_PERIODS, LIMIT_TYPES } from '@/config';
+import { findValInArr } from '@/utils/helpers';
 import { mapActions, mapGetters } from 'vuex';
 import moment from 'moment';
 
@@ -167,22 +164,24 @@ export default {
         //   name: 'Reality check',
         //   title: 'notification',
         //   text:
-        //     "Do you want to track your activity? We'llsend you  an hourly notification in-game to remnd you of how much you have spent at the Casino. It'll help you to get an overview of your gambing and perhaps consider pausing play for a while. You can get the notification every 15,30,45 and 60 minutes.",
+        //     "Do you want to track your activity? We'll send you  an hourly notification in-game to remind you of how much you have spent at the Casino. It'll help you to get an overview of your gambing and perhaps consider pausing play for a while. You can get the notification every 15,30,45 and 60 minutes.",
         //   fields: ['isMoney', 'title', 'period'],
         // },
       },
-      type: this.item.type || { value: 'depositLimit', name: 'Deposit limits' },
+      type: findValInArr(this.item.type, LIMIT_TYPES) || findValInArr('depositLimit', LIMIT_TYPES),
       limitAmount: this.item.limitAmount || 0,
-      currencyLimitList: [],
+      currencyLimitList: [{}],
       periods: LIMIT_PERIODS,
-      period: this.item.period || {
-        name: 'daily',
-        value: 'dayLimit',
-      },
+      period:
+        findValInArr(this.item.period, LIMIT_PERIODS) || findValInArr('dailyLimit', LIMIT_PERIODS),
       realityCheckPeriods: ['none', '30 min', '60 min', '120 min'],
       selfExclusionPeriods: ['none', '1 day', '1 week', '1 month', '6 month', '1 year'],
       limitState: this.item.limitState || 0,
     };
+  },
+  created() {
+    this.currencyLimitList[0].currency = this.activeAccount.currency;
+    this.currencyLimitList[0].value = this.item.targetValue || 0;
   },
   computed: {
     ...mapGetters(['activeAccount', 'accountList']),
@@ -214,19 +213,11 @@ export default {
       return this.limits[this.type.value].title || `${this.currentPeriod} limit`;
     },
   },
-  watch: {
-    accountList: {
-      immediate: true,
-      handler() {
-        if (this.accountList.length) {
-          this.currencyLimitList = this.accountList.map(acc => ({
-            currency: acc.currency,
-            value: 0,
-          }));
-        }
-      },
-    },
-  },
+  // watch: {
+  //   accountList: {
+  //     immediate: true,
+  //   },
+  // },
   methods: {
     ...mapActions(['addLimit', 'getLimits']),
     onClickLimitBtn() {
@@ -268,13 +259,6 @@ export default {
   &-Row {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  &-Col {
-    flex-grow: 1;
-  }
-
-  &-Field {
     height: 55px;
     margin-bottom: 4px;
   }
