@@ -18,7 +18,7 @@
         effect instantly.
       </div>
       <div v-else class="LimitsPage-Limits">
-        <div v-for="(limit, i) in limits" :key="limit.name" class="LimitsPage-LimitType">
+        <div v-for="(limit, i) in limitsByTypes" :key="limit.name" class="LimitsPage-LimitType">
           <div v-if="limit.limits.length" class="LimitsPage-Header">
             {{ limit.name }}
           </div>
@@ -41,7 +41,7 @@
 <script>
 import CreateLimits from '@/components/cabinet/CreateLimits.vue';
 import GamblingLimit from '@/components/cabinet/GamblingLimit.vue';
-import { mapMutations, mapState } from 'vuex';
+import { mapMutations, mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'LimitsPage',
@@ -51,6 +51,10 @@ export default {
   },
   computed: {
     ...mapState(['limits']),
+    ...mapGetters(['limitsByTypes']),
+    // limits() {
+    //   return this.fakeLimits;
+    // },
   },
   methods: {
     ...mapMutations(['updateLimits', 'deleteLimit']),
