@@ -144,7 +144,6 @@ import BaseInput from '@/components/base/BaseInput.vue';
 import BaseCheckbox from '@/components/base/BaseCheckbox.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapActions, mapGetters, mapState } from 'vuex';
-import moment from 'moment';
 import { required, email, minLength, maxLength, numeric } from 'vuelidate/lib/validators';
 import {
   getObjValuesFromLocalStorage,
@@ -382,7 +381,7 @@ export default {
       },
     },
   },
-  created() {
+  mounted() {
     getObjValuesFromLocalStorage(this.fieldsStep1);
     getObjValuesFromLocalStorage(this.fieldsStep2);
     this.fieldsStep1.currency.items = this.currencyNames;
