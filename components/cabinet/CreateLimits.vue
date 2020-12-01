@@ -228,7 +228,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['addLimits', 'getLimits']),
+    ...mapActions(['addLimit', 'getLimits']),
     onClickLimitBtn() {
       if (!this.isConfirm) {
         this.isConfirm = true;
@@ -241,7 +241,7 @@ export default {
         payload[field] = this[field].value || this[field];
       });
 
-      this.addLimits(payload).then(() => {
+      this.addLimit(payload).then(() => {
         this.getLimits();
         this.isConfirm = false;
         this.$emit('close');
