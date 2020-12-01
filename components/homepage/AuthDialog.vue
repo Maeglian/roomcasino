@@ -9,7 +9,7 @@
         @choose-tab="toggleRegistration"
       />
       <template v-if="activeTab === 'registration'">
-        <RegistrationForm @close="$emit('close')" @redirectLogin="activeTab = 'login'" />
+        <RegistrationForm @close="$emit('close')" @redirect-login="activeTab = 'login'" />
       </template>
       <template v-else>
         <LoginForm @close="$emit('close')" />
@@ -74,7 +74,7 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 585px;
-  background: var(--color-body);
+  background: var(--color-bg);
 
   &-Tabs {
     margin-bottom: 4px;

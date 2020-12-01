@@ -21,8 +21,11 @@
             :key="name"
             v-model="field.value"
             class="AuthDialog-Field AuthDialog-Dropdown AuthDialog-Row"
+            :class="{ 'AuthDialog-Field--error': $v[`fieldsStep${step}`][name].value.$error }"
             :items="field.items"
             :placeholder="field.placeholder"
+            error-class="AuthDialog-Error"
+            :v="$v[`fieldsStep${step}`][name].value"
             @set-dropdown-value="field.value = $event"
           />
         </template>
@@ -46,32 +49,33 @@
           </div>
         </div>
         <div v-else-if="field.type === 'date'" :key="field.value" class="AuthDialog-Row">
-          <template v-if="!$v[`fieldsStep${step}`][name].parts.$invalid">
-            <div v-if="!$v[`fieldsStep${step}`][name].value.dateCheck" class="AuthDialog-Error">
+          <template v-if="!$v[`fieldsStep${step}`][name].children.$invalid">
+            <div v-if="!$v[name].dateCheck" class="AuthDialog-Error">
               Date is invalid
             </div>
-            <div v-else-if="!$v[`fieldsStep${step}`][name].value.ageCheck" class="AuthDialog-Error">
+            <div v-else-if="!$v[name].ageCheck" class="AuthDialog-Error">
               You are under age of 18
             </div>
           </template>
           <BaseInput
-            v-for="(item, itemName) in field.parts"
+            v-for="(item, itemName) in field.children"
             :key="itemName"
             v-model="item.value"
             class="AuthDialog-Col"
             error-class="AuthDialog-Error"
             :input-type="item.type"
             :input-class="
-              $v[`fieldsStep${step}`][name].parts.$dirty && $v[`fieldsStep${step}`][name].$invalid
+              $v[`fieldsStep${step}`][name].children.$dirty && $v[name].$invalid
                 ? 'BaseInput-Input--error AuthDialog-Field AuthDialog-Input'
                 : 'AuthDialog-Field AuthDialog-Input'
             "
-            :v="$v[`fieldsStep${step}`][name].parts[itemName].value"
+            :v="$v[`fieldsStep${step}`][name].children[itemName].value"
+            :inputmode="item.inputmode"
           >
             <template #beforeInput-absolute>
               <span
                 v-if="
-                  item.required && !$v[`fieldsStep${step}`][name].parts[itemName].value.required
+                  item.required && !$v[`fieldsStep${step}`][name].children[itemName].value.required
                 "
                 class="AuthDialog-Placeholder"
               >
@@ -86,8 +90,15 @@
             :key="name"
             v-model="field.value"
             class="AuthDialog-Checkbox AuthDialog-Row"
+            :class="{
+              Wibro:
+                $v[`fieldsStep${step}`][name] &&
+                $v[`fieldsStep${step}`][name].$dirty &&
+                $v[`fieldsStep${step}`][name].$error,
+            }"
             label-class="AuthDialog-Label"
             @change="field.value = $event"
+            @animationend="$v[`fieldsStep${step}`][name].$reset()"
           >
             <span v-html="field.label"></span>
           </BaseCheckbox>
@@ -100,9 +111,10 @@
             :input-type="field.type"
             input-class="AuthDialog-Field AuthDialog-Input"
             error-class="AuthDialog-Error"
-            :autocorrect="field.autocorrect || undefined"
-            :autocomplete="field.autocomplete || undefined"
-            :pattern="field.pattern || undefined"
+            :autocorrect="field.autocorrect"
+            :autocomplete="field.autocomplete"
+            :pattern="field.pattern"
+            :inputmode="field.inputmode"
             :v="$v[`fieldsStep${step}`][name].value"
           >
             <template #beforeInput-absolute>
@@ -121,11 +133,7 @@
         {{ authError }}
       </div>
     </div>
-    <button
-      type="submit"
-      :disabled="this.$v[`fieldsStep${step}`].$error"
-      class="Btn Btn--full AuthDialog-Btn"
-    >
+    <button type="submit" class="Btn Btn--full AuthDialog-Btn">
       Sign up
     </button>
   </form>
@@ -137,6 +145,11 @@ import BaseCheckbox from '@/components/base/BaseCheckbox.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapActions, mapGetters, mapState } from 'vuex';
 import { required, email, minLength, maxLength, numeric } from 'vuelidate/lib/validators';
+import {
+  getObjValuesFromLocalStorage,
+  writeObjValuesToLocalStorage,
+  deleteObjValuesFromLocalStorage,
+} from '@/utils/helpers';
 import { passwordCheck, termsCheck, ageCheck, dateCheck } from '@/utils/formCheckers';
 
 export default {
@@ -158,6 +171,7 @@ export default {
           autocapitalize: 'off',
           autocorrect: 'off',
           autocomplete: 'email',
+          inputmode: 'email',
         },
         password: {
           value: '',
@@ -170,12 +184,14 @@ export default {
           type: 'dropdown',
           placeholder: 'currency',
           items: [],
+          required: true,
         },
         country: {
           value: '',
           type: 'dropdown',
           placeholder: 'country',
           items: [],
+          required: true,
         },
         receiveEmailPromos: {
           value: false,
@@ -205,25 +221,27 @@ export default {
           autocorrect: 'off',
         },
         birthDate: {
-          value: '',
-          parts: {
+          children: {
             day: {
               value: '',
-              type: 'number',
+              type: 'text',
               placeholder: 'DD',
               required: true,
+              inputmode: 'tel',
             },
             month: {
               value: '',
-              type: 'number',
+              type: 'text',
               placeholder: 'MM',
               required: true,
+              inputmode: 'tel',
             },
             year: {
               value: '',
-              type: 'number',
+              type: 'text',
               placeholder: 'YYYY',
               required: true,
+              inputmode: 'tel',
             },
           },
           type: 'date',
@@ -256,6 +274,7 @@ export default {
           required: true,
           autocorrect: 'off',
           autocomplete: 'postal-code',
+          inputmode: 'numeric',
         },
       },
     };
@@ -266,10 +285,10 @@ export default {
     birthDate() {
       const {
         birthDate: {
-          parts: { day, month, year },
+          children: { day, month, year },
         },
       } = this.fieldsStep2;
-      return `${year.value}-${month.value}-${day.value}`;
+      return `${year.value}-${month.value.padStart(2, '0')}-${day.value.padStart(2, '0')}`;
     },
     fields() {
       if (this.step === 1) {
@@ -278,12 +297,11 @@ export default {
       return this.fieldsStep2;
     },
   },
-  watch: {
-    birthDate() {
-      this.fieldsStep2.birthDate.value = this.birthDate;
-    },
-  },
   validations: {
+    birthDate: {
+      dateCheck,
+      ageCheck,
+    },
     fieldsStep1: {
       email: { value: { required, email } },
       password: {
@@ -291,6 +309,16 @@ export default {
           required,
           maxLength: maxLength(32),
           passwordCheck,
+        },
+      },
+      currency: {
+        value: {
+          required,
+        },
+      },
+      country: {
+        value: {
+          required,
         },
       },
       confirmAgeAndTerms: { value: { termsCheck } },
@@ -311,11 +339,7 @@ export default {
         },
       },
       birthDate: {
-        value: {
-          dateCheck,
-          ageCheck,
-        },
-        parts: {
+        children: {
           day: {
             value: {
               required,
@@ -357,9 +381,15 @@ export default {
       },
     },
   },
-  created() {
+  mounted() {
+    getObjValuesFromLocalStorage(this.fieldsStep1);
+    getObjValuesFromLocalStorage(this.fieldsStep2);
     this.fieldsStep1.currency.items = this.currencyNames;
     this.fieldsStep1.country.items = this.countriesNames;
+  },
+  beforeDestroy() {
+    writeObjValuesToLocalStorage(this.fieldsStep1);
+    writeObjValuesToLocalStorage(this.fieldsStep2);
   },
   methods: {
     ...mapActions(['registerUser']),
@@ -382,10 +412,15 @@ export default {
           } else payload[key] = this.fieldsStep1[key].value;
         }
         for (const key in this.fieldsStep2) {
-          payload[key] = this.fieldsStep2[key].value;
+          if (key === 'birthDate') payload[key] = this.birthDate;
+          else payload[key] = this.fieldsStep2[key].value;
         }
         this.registerUser(payload).then(() => {
-          if (!this.authError) this.$emit('redirect-login');
+          if (!this.authError) {
+            deleteObjValuesFromLocalStorage(this.fieldsStep1);
+            deleteObjValuesFromLocalStorage(this.fieldsStep2);
+            this.$emit('redirect-login');
+          }
         });
       }
     },
@@ -410,17 +445,6 @@ export default {
     }
   }
 
-  &-Field {
-    width: 100%;
-    height: 55px;
-    background: transparent;
-    border: 2px solid var(--color-border-ghost);
-
-    &--error {
-      border-color: rgba(235, 28, 42, 0.3);
-    }
-  }
-
   &-Col {
     margin-right: 4px;
 
@@ -441,6 +465,10 @@ export default {
     color: var(--color-text-main);
     background: transparent;
 
+    @media (min-width: $screen-s) {
+      font-size: 12px;
+    }
+
     &::placeholder {
       font-size: 12px;
       font-weight: 700;
@@ -453,6 +481,17 @@ export default {
     font-size: 12px;
     text-transform: uppercase;
     border: 2px solid var(--color-border-ghost);
+  }
+
+  &-Field {
+    width: 100%;
+    height: 55px;
+    background: transparent;
+    border: 2px solid var(--color-border-ghost);
+
+    &--error {
+      border-color: rgba(235, 28, 42, 0.3);
+    }
   }
 
   &-Checkbox {
@@ -477,7 +516,7 @@ export default {
     top: 0;
     left: 20px;
     font-weight: 700;
-    line-height: 55px;
+    line-height: 58px;
     text-transform: uppercase;
 
     &--required {
