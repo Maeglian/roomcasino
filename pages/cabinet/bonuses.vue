@@ -12,7 +12,7 @@
       </span>
     </button>
     <button class="BonusesPage-All">
-      <svg class="BonusesPage-AllIcon" width="16" height="16" >
+      <svg class="BonusesPage-AllIcon" width="16" height="16">
         <use xlink:href="@/assets/img/icons.svg#promotions"></use>
       </svg>
       See all bonuses
@@ -28,8 +28,7 @@
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
           Max prize
         </div>
-        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
-        </div>
+        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th"></div>
       </div>
       <div class="Table-Row CabinetPage-Row">
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Bonus">
@@ -40,17 +39,14 @@
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Max">
           <div class="BonusesPage-CellWrapper">
-            <svg class="BonusesPage-Icon" width="16" height="16" >
+            <svg class="BonusesPage-Icon" width="16" height="16">
               <use xlink:href="@/assets/img/icons.svg#promotions"></use>
             </svg>
             15.00 USD + 55 free spins
           </div>
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">
-          <button
-            class="Btn Btn--color CabinetPage-Btn"
-            @click="$modal.show('cashier')"
-          >
+          <button class="Btn Btn--color CabinetPage-Btn" @click="$modal.show('cashier')">
             Deposit
           </button>
         </div>
@@ -64,17 +60,14 @@
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Max">
           <div class="BonusesPage-CellWrapper">
-            <svg class="BonusesPage-Icon" width="16" height="16" >
+            <svg class="BonusesPage-Icon" width="16" height="16">
               <use xlink:href="@/assets/img/icons.svg#promotions"></use>
             </svg>
             15.00 USD + 55 free spins
           </div>
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">
-          <button
-            class="Btn Btn--color CabinetPage-Btn"
-            @click="$modal.show('cashier')"
-          >
+          <button class="Btn Btn--color CabinetPage-Btn" @click="$modal.show('cashier')">
             Deposit
           </button>
         </div>
@@ -88,17 +81,14 @@
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Max">
           <div class="BonusesPage-CellWrapper">
-            <svg class="BonusesPage-Icon" width="16" height="16" >
+            <svg class="BonusesPage-Icon" width="16" height="16">
               <use xlink:href="@/assets/img/icons.svg#promotions"></use>
             </svg>
             15.00 USD + 55 free spins
           </div>
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">
-          <button
-            class="Btn Btn--color CabinetPage-Btn"
-            @click="$modal.show('cashier')"
-          >
+          <button class="Btn Btn--color CabinetPage-Btn" @click="$modal.show('cashier')">
             Deposit
           </button>
         </div>
@@ -108,11 +98,7 @@
       Receive a bonus
     </div>
     <form class="BonusesPage-Form CabinetPage-Form">
-      <input
-        type="text"
-        class="BonusesPage-Input CabinetPage-Input"
-        placeholder="Promo code"
-      />
+      <input type="text" class="BonusesPage-Input CabinetPage-Input" placeholder="Promo code" />
       <button class="BonusesPage-Submit CabinetPage-Submit" type="submit">
         Add
       </button>
@@ -131,12 +117,12 @@ export default {
   &-Bonuses {
     display: flex;
     align-items: center;
-    color: var(--color-text-ghost);
-    white-space: nowrap;
     font-size: 10px;
+    color: var(--color-text-ghost);
     text-transform: uppercase;
+    white-space: nowrap;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-right: 4px;
     }
   }
@@ -150,27 +136,27 @@ export default {
     margin-left: 15px;
     background: var(--color-bg-lighter);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       width: 55px;
       height: 55px;
     }
   }
 
   &-All {
-    order: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    order: 1;
     width: 100%;
     margin-bottom: 28px;
     padding: 22px 0;
     font-size: 10px;
-    text-transform: uppercase;
-    color: var(--color-main1);
     text-align: center;
+    color: var(--color-main1);
+    text-transform: uppercase;
     background: var(--color-bg-lighter);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       order: 0;
       align-self: stretch;
       width: auto;
@@ -182,7 +168,7 @@ export default {
   &-AllIcon {
     margin-right: 8px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-right: 10px;
     }
   }
@@ -190,7 +176,7 @@ export default {
   &-Table {
     margin-top: 24px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 48px;
     }
   }
@@ -198,19 +184,20 @@ export default {
   &-Cell {
     text-transform: uppercase;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       white-space: nowrap;
     }
   }
 
-  &-Bonus, &-Max {
+  &-Bonus,
+  &-Max {
     text-transform: capitalize;
   }
 
   &-Icon {
     margin-right: 8px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-right: 12px;
     }
   }
@@ -220,10 +207,11 @@ export default {
     align-items: center;
   }
 
-  &-Min, &-Deposit {
+  &-Min,
+  &-Deposit {
     text-align: right;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       text-align: left;
     }
   }
@@ -234,7 +222,7 @@ export default {
     margin-bottom: 8px;
     color: var(--color-text-ghost);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: none;
     }
   }
@@ -246,11 +234,11 @@ export default {
   }
 
   &-Form {
-    order: 1;
     display: flex;
+    order: 1;
     width: 100%;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       width: 616px / $screen-xl * 100%;
     }
   }
@@ -264,7 +252,7 @@ export default {
   &-Submit {
     width: 84px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       width: 122px;
     }
   }

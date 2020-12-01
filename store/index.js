@@ -1,11 +1,33 @@
 import axios from 'axios';
-import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX } from '../config';
+import Vue from 'vue';
 import moment from 'moment';
+import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX } from '../config';
 
-const API_HOST = (process.env.NUXT_ENV_MODE === 'sandbox') ? API_HOST_SANDBOX : API_HOST_PROD;
+const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : API_HOST_PROD;
 
 const Cookie = process.client ? require('js-cookie') : undefined;
 const cookieparser = process.server ? require('cookieparser') : undefined;
+
+const reqConfig = (func, funcName) => ({
+  transformResponse: [
+    data => {
+      let res;
+
+      try {
+        res = JSON.parse(data);
+      } catch (error) {
+        throw Error(`[requestClient] Error parsing response JSON data - ${JSON.stringify(error)}`);
+      }
+
+      console.log(res);
+
+      if (res.code === 0) {
+        return res.data;
+      }
+      func(funcName, res.message);
+    },
+  ],
+});
 
 export const state = () => ({
   status: '',
@@ -193,19 +215,25 @@ export const state = () => ({
           isMoney: true,
           limitState: 1,
           limitAmount: 5,
-          name: 'daily limit',
+          currentPeriod: 'daily',
+          title: 'daily limit',
           type: 'loss',
-          reset: moment().endOf('day'),
+          reset: moment()
+            .endOf('day')
+            .format(),
         },
         {
           isMoney: true,
           limitState: 19,
           limitAmount: 25,
+          currentPeriod: 'weekly',
           type: 'loss',
-          name: 'weekly limit',
-          reset: moment().endOf('week'),
+          title: 'weekly limit',
+          reset: moment()
+            .endOf('week')
+            .format(),
         },
-      ]
+      ],
     },
     {
       name: 'session limit',
@@ -214,10 +242,10 @@ export const state = () => ({
           isMoney: false,
           limitState: 30,
           limitAmount: 80,
-          name: 'time spent of gambling',
+          title: 'time spent of gambling',
           type: 'session',
         },
-      ]
+      ],
     },
     {
       name: 'wager limits',
@@ -226,11 +254,14 @@ export const state = () => ({
           isMoney: true,
           limitState: 7,
           limitAmount: 14,
+          currentPeriod: 'weekly',
           type: 'wager',
-          name: 'weekly limit',
-          reset: moment().endOf('week'),
+          title: 'weekly limit',
+          reset: moment()
+            .endOf('week')
+            .format(),
         },
-      ]
+      ],
     },
     {
       name: 'cooling off',
@@ -240,10 +271,12 @@ export const state = () => ({
           limitState: 7,
           limitAmount: 20,
           type: 'cooling',
-          name: 'time spent gambling',
-          reset: moment().endOf('week'),
+          title: 'time spent gambling',
+          reset: moment()
+            .endOf('week')
+            .format(),
         },
-      ]
+      ],
     },
     {
       name: 'reality check',
@@ -251,10 +284,10 @@ export const state = () => ({
         {
           isMoney: false,
           type: 'reality_check',
-          name: 'notification',
+          title: 'notification',
           period: 'every 60 min',
         },
-      ]
+      ],
     },
     {
       name: 'deposit limits',
@@ -263,19 +296,25 @@ export const state = () => ({
           isMoney: true,
           limitState: 67,
           limitAmount: 100,
+          currentPeriod: 'daily',
           type: 'deposit',
-          name: 'daily limit',
-          reset: moment().endOf('day'),
+          title: 'daily limit',
+          reset: moment()
+            .endOf('day')
+            .format(),
         },
         {
           isMoney: true,
           limitState: 10,
           limitAmount: 50,
+          currentPeriod: 'weekly',
           type: 'deposit',
-          name: 'weekly limit',
-          reset: moment().endOf('week'),
+          title: 'weekly limit',
+          reset: moment()
+            .endOf('week')
+            .format(),
         },
-      ]
+      ],
     },
     {
       name: 'self exclusion',
@@ -283,10 +322,10 @@ export const state = () => ({
         {
           isMoney: false,
           type: 'self_exclusion',
-          name: 'blocked address',
+          title: 'blocked address',
           period: '6 month',
         },
-      ]
+      ],
     },
   ],
   gamesAreLoading: false,
@@ -307,7 +346,8 @@ export const state = () => ({
       image: 'promotion1.png',
       announce: 'Weekly tournament',
       enddate: '2021-01-01',
-      text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+      text:
+        '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
     },
     {
       title: 'Roomcasino<br/> friday party',
@@ -315,7 +355,8 @@ export const state = () => ({
       image: 'promotion2.png',
       announce: 'Friday party',
       enddate: '2021-01-01',
-      text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+      text:
+        '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
     },
     {
       title: 'Summer deluxe<br/> tournament',
@@ -323,7 +364,8 @@ export const state = () => ({
       image: 'promotion5.png',
       announce: 'Summer deluxe tournament',
       enddate: '2021-01-01',
-      text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+      text:
+        '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
     },
     {
       title: 'Two day<br/> tournament',
@@ -331,7 +373,8 @@ export const state = () => ({
       image: 'promotion6.png',
       announce: 'Two day tournament',
       enddate: '2021-01-01',
-      text: '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>'
+      text:
+        '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
     },
   ],
   notifications: {
@@ -339,13 +382,15 @@ export const state = () => ({
       {
         title: 'First deposit bonus',
         icon: 'bonus.png',
-        text: '100% of the deposit amount. <strong>€100 <span class="Colored">+</span> 55 free spins!</strong>',
+        text:
+          '100% of the deposit amount. <strong>€100 <span class="Colored">+</span> 55 free spins!</strong>',
         btnText: 'Get bonus',
       },
       {
         title: 'On your second deposit',
         icon: 'bonus.png',
-        text: '55% of the deposit amount. <strong>€100 <span class="Colored">+</span> 100 free spins!</strong>',
+        text:
+          '55% of the deposit amount. <strong>€100 <span class="Colored">+</span> 100 free spins!</strong>',
         btnText: 'Get bonus',
       },
       {
@@ -369,7 +414,8 @@ export const state = () => ({
       {
         title: 'Bonus for high rollers',
         icon: 'bonus-spades.png',
-        text: '30% of the deposit amount.<br/> Up to <strong>€550</strong> on your first deposit of <strong>€300 </strong>',
+        text:
+          '30% of the deposit amount.<br/> Up to <strong>€550</strong> on your first deposit of <strong>€300 </strong>',
         btnText: 'Get bonus',
       },
     ],
@@ -522,50 +568,112 @@ export const state = () => ({
     'All prizes and free spins will be issued within 24 hours after the player has reached the VIP level.',
     'All prizes and free spins will be issued within 24 hours after the player has reached the VIP level.',
     'RoomCasino reserves the right to change the terms of the VIP program at any time.',
-    'All free spins are issued with a wager x10. All cash prizes are issued with wagering x1.'
+    'All free spins are issued with a wager x10. All cash prizes are issued with wagering x1.',
   ],
+  paymentsMethods: [
+    {
+      icon: 'visa',
+      alt: 'visa',
+      type: 'Credit Card',
+      fee: '2.5%',
+      progressTime: 'Instant',
+      limits: 'Min $/€ 10 - Max $/€ 4,000',
+    },
+    {
+      icon: 'bitcoin',
+      alt: 'bitcoin',
+      type: 'Online Currency',
+      fee: 'Free',
+      progressTime: '1-5 banking days',
+      limits: 'Min. 0.001 BTC - Max. 10 BTC',
+    },
+    {
+      icon: 'maestro',
+      alt: 'maestro',
+      type: 'Credit Card',
+      fee: '2.5%',
+      progressTime: 'Instant',
+      limits: 'Min $/€ 10 - Max $/€ 4,000',
+    },
+    {
+      icon: 'coinspaid',
+      alt: 'coinspaid',
+      type: 'Online Currency',
+      fee: 'Free',
+      progressTime: '1-3 banking days',
+      limits: 'Min. 20 USDT - Max. 4,000 USDT',
+    },
+    {
+      icon: 'skrill',
+      alt: 'skrill',
+      type: 'Credit Card',
+      fee: '2.5%',
+      progressTime: 'Instant',
+      limits: 'Min $/€ 10 - Max $/€ 5,000',
+    },
+    {
+      icon: 'maestro',
+      alt: 'maestro',
+      type: 'Credit Card',
+      fee: '2.5%',
+      progressTime: 'Instant',
+      limits: 'Min $/€ 10 - Max $/€ 4,000',
+    },
+    {
+      icon: 'coinspaid',
+      alt: 'coinspaid',
+      type: 'Online Currency',
+      fee: 'Free',
+      progressTime: '1-3 banking days',
+      limits: 'Min. 20 USDT - Max. 4,000 USDT',
+    },
+  ],
+  profileIsUpdating: false,
+  updateProfileError: '',
 });
 
 export const getters = {
-  activeAccount: (state) => {
-    if (state.user.accountList) return state.user.accountList.find((acc) => acc.active === true);
+  activeAccount: state => {
+    if (state.user.accountList) return state.user.accountList.find(acc => acc.active === true);
     return {};
   },
-  isLoggedIn: (state) => !!state.token,
-  authStatus: (state) => state.status,
-  providersList: (state) => (startIndex) => state.providers.slice(startIndex, state.providers.length + 1),
-  fakedNewGames: (state) => [...state.games].reverse().slice(0, 12),
-  gamesLimited: (state) => (limit) => state.games.slice(0, limit),
-  limitedTournamentWinners: (state) => (limit) => state.currentTournamentWinners.slice(0, limit),
-  countriesNames: (state) => Object.values(state.countriesList),
-  currencyNames: (state) => Object.values(state.currencyList),
-  userInfo: (state) => {
+  isLoggedIn: state => !!state.token,
+  authStatus: state => state.status,
+  providersList: state => startIndex =>
+    state.providers.slice(startIndex, state.providers.length + 1),
+  fakedNewGames: state => [...state.games].reverse().slice(0, 12),
+  gamesLimited: state => limit => state.games.slice(0, limit),
+  limitedTournamentWinners: state => limit => state.currentTournamentWinners.slice(0, limit),
+  countriesNames: state => Object.values(state.countriesList),
+  currencyNames: state => Object.values(state.currencyList),
+  userInfo: state => {
     const info = { ...state.user };
     const countryName = state.countriesList[info.country];
     info.country = countryName;
     delete info.accountList;
     return info;
   },
-  curencyAccounts: (state) => Object.keys(state.currencyList).filter((cur) => {
-    if (state.user.accountList) {
-      return !state.user.accountList.some((acc) => acc.currency === cur);
-    }
-    return cur;
-  }),
-  isNewNotifications: (state) => !Object.values(state.notifications).every((arr) => !arr.length),
+  curencyAccounts: state =>
+    Object.keys(state.currencyList).filter(cur => {
+      if (state.user.accountList) {
+        return !state.user.accountList.some(acc => acc.currency === cur);
+      }
+      return cur;
+    }),
+  isNewNotifications: state => !Object.values(state.notifications).every(arr => !arr.length),
 };
 
 export const mutations = {
-  openNav: (state) => {
+  openNav: state => {
     state.navIsOpen = true;
   },
-  closeNav: (state) => {
+  closeNav: state => {
     state.navIsOpen = false;
   },
-  openNotificationsPanel: (state) => {
+  openNotificationsPanel: state => {
     state.notificationsPanelIsOpen = true;
   },
-  closeNotificationsPanel: (state) => {
+  closeNotificationsPanel: state => {
     state.notificationsPanelIsOpen = false;
   },
   setCategories: (state, payload) => {
@@ -574,10 +682,10 @@ export const mutations = {
   setWidth: (state, payload) => {
     state.width = payload;
   },
-  gamesAreLoading: (state) => {
+  gamesAreLoading: state => {
     state.gamesAreLoading = true;
   },
-  gamesAreLoaded: (state) => {
+  gamesAreLoaded: state => {
     state.gamesAreLoading = false;
   },
   setGames: (state, payload) => {
@@ -596,7 +704,7 @@ export const mutations = {
     state.jackpots = payload;
   },
   addLimits: (state, payload) => {
-    let limit = state.limits.find((lim) => lim.name === payload.name);
+    let limit = state.limits.find(lim => lim.name === payload.name);
     if (!limit) {
       limit = {
         name: payload.name,
@@ -644,25 +752,48 @@ export const mutations = {
   },
   setActiveUserAccount(state, currency) {
     if (state.user.accountList) {
-      state.user.accountList.forEach((acc) => {
+      state.user.accountList.forEach(acc => {
         if (acc.currency === currency) acc.active = true;
         else acc.active = false;
       });
     }
   },
+  updateLimits(state, { i, j, payload }) {
+    Vue.set(state.limits[i].limits, j, payload);
+  },
+  deleteLimit(state, { i, j }) {
+    state.limits[i].limits = [
+      ...state.limits[i].limits.slice(0, j),
+      ...state.limits[i].limits.slice(j + 1),
+    ];
+  },
+  setProfileIsUpdating(state) {
+    state.passwordIsUpdating = true;
+  },
+  setProfileIsUpdated(state) {
+    state.passwordIsUpdating = false;
+  },
+  setUpdateProfileError(state, payload) {
+    state.updateProfileError = payload;
+  },
+  clearUpdateProfileError(state) {
+    state.updateProfileError = '';
+  },
 };
 
 export const actions = {
   async nuxtServerInit({ commit }, { req }) {
-    let token = null;
-    if (req.headers.cookie) {
-      const parsed = cookieparser.parse(req.headers.cookie);
-      try {
-        token = parsed.token;
-      } catch (e) {
-
+    if (process.env.NUXT_ENV_MODE !== 'sandbox' && process.env.NUXT_ENV_MODE !== 'stage') {
+      let token = null;
+      if (req.headers.cookie) {
+        const parsed = cookieparser.parse(req.headers.cookie);
+        try {
+          // eslint-disable-next-line prefer-destructuring
+          token = parsed.token;
+          // eslint-disable-next-line no-empty
+        } catch (e) {}
+        commit('setToken', token);
       }
-      commit('setToken', token);
     }
   },
   async getGames({ commit }, query = '') {
@@ -680,21 +811,7 @@ export const actions = {
   },
   async registerUser({ commit }, payload) {
     commit('authRequest');
-    const res = await axios.post(`${API_HOST}/register`, payload, {
-      transformResponse: [(data) => {
-        let res;
-
-        try {
-          res = JSON.parse(data);
-        } catch (error) {
-          throw Error(`[requestClient] Error parsing response JSON data - ${JSON.stringify(error)}`)
-        }
-
-        if (res.code === 0) {
-          return res.data;
-        } else commit('authError', res.message);
-      }],
-    });
+    await axios.post(`${API_HOST}/register`, payload, reqConfig(commit, 'authError'));
   },
 
   async authorize({ state, commit, dispatch }, payload) {
@@ -804,5 +921,35 @@ export const actions = {
       commit('pushErrors', e);
     }
   },
-};
 
+  async updateProfile({ commit, dispatch }, payload) {
+    try {
+      commit('setProfileIsUpdating');
+      await axios.put(
+        `${API_HOST}/updateProfile`,
+        payload,
+        reqConfig(commit, 'setUpdateProfileError'),
+      );
+      dispatch('getProfile');
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setProfileIsUpdated');
+    }
+  },
+
+  async updatePassword({ commit }, payload) {
+    try {
+      commit('setProfileIsUpdating');
+      await axios.put(
+        `${API_HOST}/updatePassword`,
+        payload,
+        reqConfig(commit, 'setUpdateProfileError'),
+      );
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setProfileIsUpdated');
+    }
+  },
+};

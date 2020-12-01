@@ -3,30 +3,25 @@
     <NuxtLink class="CabinetTopbar-Logo" to="/">
       <img src="@/assets/img/logo.svg" />
     </NuxtLink>
-    <NuxtLink
-      class="CabinetTopbar-Link CabinetTopbar-Profile"
-      to="/cabinet/profile/general"
-    >
+    <NuxtLink class="CabinetTopbar-Link CabinetTopbar-Profile" to="/cabinet/profile/general">
       Profile
     </NuxtLink>
     <div class="Nav CabinetTopbar-Nav">
       <NuxtLink class="CabinetTopbar-Link" to="/" exact>Home</NuxtLink>
-      <NuxtLink class="CabinetTopbar-Link" to="#">All games</NuxtLink>
-      <NuxtLink class="CabinetTopbar-Link" to="#">Promotions</NuxtLink>
-      <NuxtLink class="CabinetTopbar-Link" to="#">Tournaments</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" to="/category">All games</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" to="/promotions">Promotions</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" to="/tournaments">Tournaments</NuxtLink>
     </div>
     <div class="CabinetTopbar-User">
       <div class="CabinetTopbar-UserName">
         {{ user.firstName || '' }} {{ user.lastName || user.email }}
       </div>
       <div class="CabinetTopbar-UserBalance">
-        {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }} <span class="CabnetTopbar-Currency">{{ activeAccount.currency || user.currency }}</span>
+        {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }}
+        <span class="CabnetTopbar-Currency">{{ activeAccount.currency || user.currency }}</span>
       </div>
     </div>
-    <button
-      class="CabinetTopbar-Btn Btn Btn--color"
-      @click="$modal.show('cashier')"
-    >
+    <button class="CabinetTopbar-Btn Btn Btn--color" @click="$modal.show('cashier')">
       Deposit
     </button>
   </div>
@@ -61,7 +56,7 @@ export default {
   text-transform: uppercase;
   background: var(--color-bg);
 
-  @media(min-width: $screen-l) {
+  @media (min-width: $screen-l) {
     padding: 0;
     background: var(--color-body);
   }
@@ -70,19 +65,19 @@ export default {
     display: none;
     background: var(--color-bg);
 
-    @media(min-width: $screen-l) {
-      flex-shrink: 0;
+    @media (min-width: $screen-l) {
       display: flex;
+      flex-shrink: 0;
       align-items: center;
-      padding-left: 37px;
       width: 274px / $screen-xl * 100%;
       height: 66px;
       margin-right: 46px;
+      padding-left: 37px;
     }
   }
 
   &-Profile {
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       display: none;
     }
   }
@@ -90,7 +85,7 @@ export default {
   &-Nav {
     display: none;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       display: flex;
     }
   }
@@ -107,10 +102,10 @@ export default {
   &-User {
     display: none;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       display: flex;
-      margin-left: auto;
       margin-right: 32px;
+      margin-left: auto;
       color: var(--color-text-main);
     }
   }
@@ -128,12 +123,11 @@ export default {
     padding: 11px 18px;
     font-size: 10px;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       align-self: stretch;
       margin-left: 0;
       padding: 22px 30px;
     }
   }
 }
-
 </style>

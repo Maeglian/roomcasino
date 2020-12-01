@@ -3,13 +3,13 @@
     <div class="Wrapper Jackpots-Wrapper">
       <div class="Jackpots-Daily">
         <div class="Title Title--type-h1 Jackpots-Title">
-          Our <span class="Colored">Jackpot</span> <br/>
+          Our <span class="Colored">Jackpot</span> <br />
           in Roomcasino
         </div>
         <GamesSlider
           class="Jackpots-Winners GamesSlider--winners"
           :items="jackpots"
-          :sliderOptions="winnersSliderOptions"
+          :slider-options="winnersSliderOptions"
           title="Daily jackpots"
         />
       </div>
@@ -90,28 +90,28 @@ export default {
   margin-bottom: 30px;
   padding: 20px 0;
   background-image: url('../../assets/img/jackpot-bg_460.png');
+  background-repeat: no-repeat;
   background-position: right top;
   background-size: auto 100%;
-  background-repeat: no-repeat;
 
-  @media(min-width: $screen-m) {
-    padding: 46px 0;
+  @media (min-width: $screen-m) {
     margin-bottom: 38px;
+    padding: 46px 0;
     background-image: url('../../assets/img/jackpot-bg_768.png');
   }
 
-  @media(min-width: $screen-l) {
+  @media (min-width: $screen-l) {
     padding: 50px 0 50px 0;
     background-image: url('../../assets/img/jackpot-bg_960.png');
   }
 
-  @media(min-width: $screen-xl) {
+  @media (min-width: $screen-xl) {
     margin-bottom: 80px;
     padding: 90px 0 90px 0;
     background-image: url('../../assets/img/jackpot-bg_1248.png');
   }
 
-  @media(min-width: $screen-xxxl) {
+  @media (min-width: $screen-xxxl) {
     background-image: url('../../assets/img/jackpot-bg_1920.png');
   }
 
@@ -119,7 +119,7 @@ export default {
     display: flex;
     flex-direction: column;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       flex-direction: row;
       align-items: center;
     }
@@ -128,25 +128,25 @@ export default {
   &-Title {
     margin-bottom: 14px;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 24px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 30px;
     }
   }
 
   &-Winners {
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-right: 64px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-right: 86px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-right: 126px;
     }
   }
@@ -155,8 +155,8 @@ export default {
     position: relative;
     flex-grow: 1;
     order: 0;
-    padding: 17px 10px;
     margin-bottom: 24px;
+    padding: 17px 10px;
     text-align: center;
     border: 8px dotted var(--color-main1);
     //background: url('./../assets/img/circle-min.png');
@@ -173,16 +173,16 @@ export default {
     //  background: var(--color-bg);
     //}
 
-    @media(min-width: $screen-m ) {
+    @media (min-width: $screen-m) {
       border-width: 9px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       padding: 22px 10px;
       border-width: 13px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       padding: 35px 10px;
       border-width: 18px;
     }
@@ -191,7 +191,7 @@ export default {
   &-Daily {
     order: 1;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       order: 0;
     }
   }
@@ -199,14 +199,14 @@ export default {
   &-Text {
     font-size: 14px;
     font-weight: 400;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 20px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 24px;
     }
   }
@@ -217,15 +217,15 @@ export default {
     color: var(--color-main1);
     white-space: nowrap;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 40px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 62px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 84px;
     }
   }

@@ -5,8 +5,7 @@
         class="Pagination-Item"
         :class="{ 'Pagination-Item--disabled': pagination.currentPage === 1 }"
       >
-        <a
-           @click="onChangePage( pagination.currentPage - 1 )">
+        <a @click="onChangePage(pagination.currentPage - 1)">
           <button class="PrevNext PrevNext-Prev"></button>
         </a>
       </li>
@@ -21,33 +20,33 @@
         <span class="Pagination-Ellipsis">&hellip;</span>
       </li>
       <li
+        v-for="page in pages"
+        :key="page"
         class="Pagination-Item"
         :class="{
           'Pagination-Item--active': isActive(page),
           'Pagination-Item--disabled': page === '...',
         }"
-        v-for="page in pages"
-        :key="page"
       >
         <a @click="onChangePage(page)">{{ page }}</a>
       </li>
       <li v-if="hasLastEllipsis" class="Pagination-Item">
         <span class="Pagination-Ellipsis">&hellip;</span>
       </li>
-      <li v-if="hasLast"
+      <li
+        v-if="hasLast"
         class="Pagination-Item"
-        :class="{ 'Pagination-Item--active': isActive(this.pagination.totalPages) }"
+        :class="{ 'Pagination-Item--active': isActive(pagination.totalPages) }"
       >
-        <a
-          @click="onChangePage(pagination.totalPages)"
-        >
-          {{pagination.totalPages}}
+        <a @click="onChangePage(pagination.totalPages)">
+          {{ pagination.totalPages }}
         </a>
       </li>
       <li>
         <a
           :class="{ 'Pagination-Item--disabled': pagination.currentPage === pagination.totalPages }"
-           @click="onChangePage( pagination.currentPage + 1 )">
+          @click="onChangePage(pagination.currentPage + 1)"
+        >
           <button class="PrevNext PrevNext-Next"></button>
         </a>
       </li>
@@ -66,23 +65,27 @@ export default {
   },
   computed: {
     pages() {
-      return this.pagination.totalPages === undefined
-        ? []
-        : this.pageLinks();
+      return this.pagination.totalPages === undefined ? [] : this.pageLinks();
     },
     hasFirst() {
       return this.pagination.currentPage >= 4 || this.pagination.totalPages < 10;
     },
     hasLast() {
       // eslint-disable-next-line max-len
-      return this.pagination.currentPage <= this.pagination.totalPages - 3 || this.pagination.totalPages < 10;
+      return (
+        this.pagination.currentPage <= this.pagination.totalPages - 3 ||
+        this.pagination.totalPages < 10
+      );
     },
     hasFirstEllipsis() {
       return this.pagination.currentPage >= 4 && this.pagination.totalPages >= 10;
     },
     hasLastEllipsis() {
       // eslint-disable-next-line max-len
-      return this.pagination.currentPage <= this.pagination.totalPages - 3 && this.pagination.totalPages >= 10;
+      return (
+        this.pagination.currentPage <= this.pagination.totalPages - 3 &&
+        this.pagination.totalPages >= 10
+      );
     },
     shouldShowPagination() {
       if (this.pagination.totalPages === undefined) {
@@ -100,13 +103,15 @@ export default {
       return currentPage === page;
     },
     onChangePage(page) {
-      if (page === '...'
-        || page === this.pagination.currentPage
-        || page > this.pagination.totalPages
-        || page < 1) {
+      if (
+        page === '...' ||
+        page === this.pagination.currentPage ||
+        page > this.pagination.totalPages ||
+        page < 1
+      ) {
         return;
       }
-      this.$emit('changePage', page);
+      this.$emit('change-page', page);
     },
     pageLinks() {
       const pages = [];
@@ -141,12 +146,12 @@ export default {
     }
 
     &--disabled {
-      .PrevNext:focus, .PrevNext:active {
+      .PrevNext:focus,
+      .PrevNext:active {
         color: var(--color-border-ghost);
         border-color: var(--color-border-ghost);
       }
     }
   }
 }
-
 </style>
