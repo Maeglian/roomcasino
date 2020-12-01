@@ -24,7 +24,7 @@
           </div>
           <GamblingLimit
             v-for="item in limit.limits"
-            :key="item.type"
+            :key="`${limit.name}_${item.period}`"
             class="LimitsPage-Limit"
             :item="item"
           />
