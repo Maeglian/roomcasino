@@ -142,6 +142,7 @@ export default {
       return true;
     },
     strokeOffset() {
+      if (this.item.targetValue === 0) return circleLength;
       return (this.item.value / this.item.targetValue) * circleLength;
     },
     sessionLeft() {
