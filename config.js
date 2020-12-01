@@ -4,7 +4,7 @@ export const API_HOST_PROD = 'https://dev.aramuz.net/frontapi/roomcasino';
 
 export const LIMIT_TYPES = [
   { name: 'Deposit limits', value: 'depositLimit' },
-  { name: 'Session limits', value: 'sessionLimit' },
+  // { name: 'Session limits', value: 'sessionLimit' },
 ];
 
 export const LIMIT_PERIODS = [
