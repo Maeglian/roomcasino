@@ -160,10 +160,6 @@ export default {
         { width: 400, height: 'auto', adaptive: true },
       );
     },
-    onUpdateLimit(payload) {
-      this.$emit('update-limit', payload);
-      this.$modal.hide('delete');
-    },
     onClickCancelDelete() {
       this.$modal.hide('delete');
     },
@@ -174,9 +170,6 @@ export default {
       }).then(() => this.getLimits());
       this.editMenuIsOpen = false;
     },
-    onCloseDeleteConfirmDialog() {
-      this.$emit('close');
-    },
     onClickDelete() {
       this.$modal.show(
         ConfirmDialog,
@@ -185,7 +178,6 @@ export default {
           text: `Are you sure you want to delete ${this.item.type} limit?`,
           okBtnText: 'delete limit',
           closeBtn: true,
-          onCancel: this.onCloseDeleteConfirmDialog,
           onOk: this.onDeleteLimit,
         },
         { width: 400, height: 'auto', adaptive: true },
