@@ -832,8 +832,11 @@ export const actions = {
   async authorize({ state, commit, dispatch }, payload) {
     commit('authRequest');
     await dispatch('login', payload);
-    if (!state.authError) await dispatch('getProfile');
-    if (!state.authError) commit('authSuccess');
+    if (!state.authError) {
+      commit('authSuccess');
+      dispatch('getProfile');
+      dispatch('getLimits');
+    }
   },
 
   async login({ commit }, payload) {
