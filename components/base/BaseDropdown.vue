@@ -10,18 +10,18 @@
       @keyup.down="onArrowDown()"
       @keyup.enter="onSelectValueKeyboard()"
     >
-      {{ activeItem || placeholder || items[0] }}
+      {{ activeItem.name || activeItem || placeholder || items[0].name || items[0] }}
       <i class="ThinArrow" :class="[isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"></i>
     </button>
     <ul v-show="isOpen" class="BaseDropdown-Inner" aria-label="submenu">
       <li
         v-for="(item, i) in filteredItems"
-        :key="item"
+        :key="item.name || item"
         class="BaseDropdown-Item BaseDropdown-DropdownItem"
         :class="{ 'BaseDropdown-DropdownItem--highlighted': activeItemIndex === i }"
         @click="onSelectValue(item)"
       >
-        {{ item }}
+        {{ item.name || item }}
       </li>
     </ul>
   </div>
@@ -39,7 +39,7 @@ export default {
       required: true,
     },
     activeItem: {
-      type: [String, Boolean],
+      type: [String, Object, Boolean],
       required: false,
       default: false,
     },
@@ -57,7 +57,9 @@ export default {
   },
   computed: {
     filteredItems() {
-      return this.items.filter(item => item !== this.activeItem);
+      return this.items.filter(
+        item => item !== this.activeItem || item.value !== this.activeItem.value,
+      );
     },
   },
   methods: {
