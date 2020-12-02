@@ -823,12 +823,10 @@ export const actions = {
       }
     }
   },
-  async getGames({ commit }, query = '') {
+  async getGames({ commit }, payload = {}) {
     commit('gamesAreLoading');
     try {
-      // eslint-disable-next-line no-underscore-dangle
-      // const res = await axios.get(`https://games.netdnstrace1.com/?liveCasinoOnly=true&${query}`);
-      const res = await axios.get(`${API_HOST}/getGameList${query}`);
+      const res = await axios.get(`${API_HOST}/getGameList`, { params: payload });
       commit('setGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
