@@ -64,7 +64,7 @@
           class="CategoryPage-ProvidersMenu"
           :provider-active="providerActive"
           :inside-filters="true"
-          @choose-provider="providerActive = $event"
+          @choose-provider="onChooseProvider"
         />
         <button class="CategoriesFilter-Submit">
           Filter
@@ -149,6 +149,12 @@ export default {
   },
   computed: {
     ...mapState(['width', 'games', 'gameProducerList']),
+    gamesParams() {
+      const params = {};
+      if (this.providerActive.name !== 'All providers')
+        params.gameProducer = this.providerActive.name;
+      return params;
+    },
   },
   created() {
     this.getGames();
@@ -161,6 +167,10 @@ export default {
           this.filters[key].isOpen = false;
         }
       }
+    },
+    onChooseProvider(e) {
+      this.providerActive = e;
+      this.getGames(this.gamesParams);
     },
     toggleFilterDropdown(name) {
       if (this.width < 768) {
