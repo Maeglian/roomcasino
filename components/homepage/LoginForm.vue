@@ -24,9 +24,13 @@
         </div>
       </div>
     </div>
-    <button type="submit" class="Btn Btn--full AuthDialog-Btn" :disabled="$v.fields.$error">
-      Login
-    </button>
+    <BaseButton
+      class="BaseButton--full AuthDialog-Btn"
+      :is-loading="authStatus === 'loading'"
+      :disabled="$v.$error"
+    >
+      Sign up
+    </BaseButton>
   </form>
 </template>
 
@@ -63,7 +67,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(['authError']),
+    ...mapState(['authError', 'authStatus']),
   },
   methods: {
     ...mapActions(['authorize']),
