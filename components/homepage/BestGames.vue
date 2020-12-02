@@ -22,7 +22,7 @@
         <ProvidersMenu
           v-if="gameProducerList.length"
           :provider-active="providerActive"
-          @choose-provider="providerActive = $event"
+          @choose-provider="onChooseProvider"
         />
       </div>
       <div class="Title Title--type-h2 Cards-Title">
@@ -59,7 +59,7 @@ import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
-import { DEFAULT_PROVIDER } from '@/config';
+import { DEFAULT_PROVIDER, GAME_TYPES } from '@/config';
 
 export default {
   name: 'BestGames',
@@ -71,40 +71,8 @@ export default {
   mixins: [showAuthDialog],
   data() {
     return {
-      tabs: [
-        {
-          name: 'All games',
-          icon: 'star',
-        },
-        {
-          name: 'Top games',
-          icon: 'crown',
-        },
-        {
-          name: 'Live casino',
-          icon: 'live',
-        },
-        {
-          name: 'Slots games',
-          icon: 'slots',
-        },
-        {
-          name: 'Roulette',
-          icon: 'roulette',
-        },
-        {
-          name: 'Table games',
-          icon: 'table',
-        },
-        {
-          name: 'Card games',
-          icon: 'cards',
-        },
-      ],
-      tabActive: {
-        name: 'All games',
-        icon: 'star',
-      },
+      tabs: GAME_TYPES,
+      tabActive: GAME_TYPES[0],
       providerActive: DEFAULT_PROVIDER,
       newGames: [
         {
@@ -211,13 +179,24 @@ export default {
   computed: {
     ...mapState(['width', 'games', 'gamesAreLoading', 'gameProducerList']),
     ...mapGetters(['fakedNewGames', 'isLoggedIn']),
+    gamesParams() {
+      const params = {};
+      if (this.tabActive.type) params.type = this.tabActive.type;
+      if (this.providerActive.name !== 'All providers')
+        params.gameProducer = this.providerActive.name;
+      return params;
+    },
   },
   methods: {
     ...mapActions(['getGames']),
     onChooseTab(i) {
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
-      this.getGames();
+      this.getGames(this.gamesParams);
+    },
+    onChooseProvider(e) {
+      this.providerActive = e;
+      this.getGames(this.gamesParams);
     },
   },
 };
