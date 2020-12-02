@@ -53,7 +53,7 @@ export default {
       default: false,
     },
     enddate: {
-      type: String,
+      type: [Date, String],
       required: true,
     },
     speed: {

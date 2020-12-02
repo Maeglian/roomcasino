@@ -28,6 +28,7 @@ window.onNuxtReady(app => {
   if (app.$store.getters.isLoggedIn) {
     axios.defaults.headers.common['X-Auth-Token'] = app.$store.state.token;
     app.$store.dispatch('getProfile');
+    app.$store.dispatch('getLimits');
   }
   app.$store.dispatch('getGames');
 });

@@ -32,7 +32,7 @@
               name="account"
               :checked="acc.active"
               :value="acc.currency"
-              @change="setActiveAccount({ currency: $event.target.value })"
+              @change="onChangeAccount"
             />
             <span class="CabinetPage-Checkmark CabinetPage-Checkmark--radio"></span>
           </label>
@@ -123,7 +123,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setCashoutTrue']),
-    ...mapActions(['setActiveAccount']),
+    ...mapActions(['setActiveAccount', 'getLimits']),
     onClickDeposit(currency) {
       this.setActiveAccount({ currency }).then(() => {
         this.$modal.show('cashier');
@@ -134,6 +134,9 @@ export default {
         this.setCashoutTrue();
         this.$modal.show('cashier');
       });
+    },
+    onChangeAccount(e) {
+      this.setActiveAccount({ currency: e.target.value }).then(() => this.getLimits());
     },
   },
 };

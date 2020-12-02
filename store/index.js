@@ -1,7 +1,13 @@
 import axios from 'axios';
 import Vue from 'vue';
 import moment from 'moment';
-import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX, DEFAULT_PROVIDER } from '../config';
+import {
+  BILLING_PROVIDER_ID,
+  API_HOST_PROD,
+  API_HOST_SANDBOX,
+  LIMIT_TYPES,
+  DEFAULT_PROVIDER,
+} from '../config';
 
 const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : API_HOST_PROD;
 
@@ -208,7 +214,7 @@ export const state = () => ({
   width: 0,
   games: [],
   jackpots: [],
-  limits: [
+  fakeLimits: [
     {
       name: 'loss limits',
       limits: [
@@ -329,11 +335,11 @@ export const state = () => ({
       ],
     },
   ],
+  limits: [],
   gamesAreLoading: false,
   winnersAreLoading: false,
   errors: {},
   user: {},
-  currency: 'eur',
   billingSession: {},
   fakeBillingSession: {
     userId: '123',
@@ -638,10 +644,24 @@ export const getters = {
     if (state.user.accountList) return state.user.accountList.find(acc => acc.active === true);
     return {};
   },
+  accountList: state => {
+    if (state.user.accountList) return state.user.accountList;
+    return [];
+  },
   isLoggedIn: state => !!state.token,
   authStatus: state => state.status,
   slicedGameProducerList: state => startIndex =>
     state.gameProducerList.slice(startIndex, state.providers.length + 1),
+  limitsByTypes: state =>
+    LIMIT_TYPES.map(limit => {
+      const limits = state.limits.filter(l => l.type === limit.value);
+      return {
+        name: limit.name,
+        limits,
+      };
+    }),
+  providersList: state => startIndex =>
+    state.providers.slice(startIndex, state.providers.length + 1),
   fakedNewGames: state => [...state.games].reverse().slice(0, 12),
   gamesLimited: state => limit => state.games.slice(0, limit),
   limitedTournamentWinners: state => limit => state.currentTournamentWinners.slice(0, limit),
@@ -706,6 +726,9 @@ export const mutations = {
   },
   setJackpots: (state, payload) => {
     state.jackpots = payload;
+  },
+  setLimits: (state, payload) => {
+    state.limits = payload;
   },
   addLimits: (state, payload) => {
     let limit = state.limits.find(lim => lim.name === payload.name);
@@ -821,8 +844,11 @@ export const actions = {
   async authorize({ state, commit, dispatch }, payload) {
     commit('authRequest');
     await dispatch('login', payload);
-    if (!state.authError) await dispatch('getProfile');
-    if (!state.authError) commit('authSuccess');
+    if (!state.authError) {
+      commit('authSuccess');
+      dispatch('getProfile');
+      dispatch('getLimits');
+    }
   },
 
   async login({ commit }, payload) {
@@ -962,6 +988,32 @@ export const actions = {
       // eslint-disable-next-line no-underscore-dangle
       const res = await axios.get(`${API_HOST}/gameProducerList`);
       commit('setGameProducerList', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async getLimits({ commit }) {
+    try {
+      const res = await axios.get(`${API_HOST}/limit`);
+      const limits = res.data.data;
+      commit('setLimits', limits);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async addLimit({ commit }, payload) {
+    try {
+      await axios.put(`${API_HOST}/limit`, payload);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async deleteLimit({ commit }, payload) {
+    try {
+      await axios.delete(`${API_HOST}/limit?type=${payload.type}&period=${payload.period}`);
     } catch (e) {
       commit('pushErrors', e);
     }

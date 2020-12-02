@@ -269,6 +269,7 @@ export default {
   &-Dropdown {
     height: 55px;
     font-size: 10px;
+    text-transform: uppercase;
 
     &--currency {
       width: 230px;
