@@ -82,7 +82,7 @@
     <div v-else>
       <ConfirmDialog
         title="Confirm limit update"
-        :text="`Are you sure you want to set ${type.name}?`"
+        :text="`Are you sure you want to set ${type.name}? ${limits[type.value].editRules}`"
         ok-btn-text="set limit"
         @cancel="$emit('close')"
         @ok="onClickLimitBtn"
@@ -95,7 +95,7 @@
 import BaseDropdown from '@/components/base/BaseDropdown';
 import BaseInput from '@/components/base/BaseInput';
 import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
-import { LIMIT_PERIODS, LIMIT_TYPES } from '@/config';
+import { LIMIT_PERIODS, LIMIT_TYPES, LIMIT_DETAILS } from '@/config';
 import { findValInArr } from '@/utils/helpers';
 import { mapActions, mapGetters } from 'vuex';
 import moment from 'moment';
@@ -127,47 +127,7 @@ export default {
   data() {
     return {
       isConfirm: false,
-      limits: {
-        // loss: {
-        //   name: 'Loss limits',
-        //   text:
-        //     'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
-        //   fields: ['limitState', 'limitAmount', 'currentPeriod', 'isMoney', 'reset', 'title'],
-        // },
-        // wager: {
-        //   name: 'Wager limits',
-        //   text:
-        //     'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or mounth.',
-        //   fields: ['limitState', 'limitAmount', 'currentPeriod', 'isMoney', 'reset', 'title'],
-        // },
-        depositLimit: {
-          name: 'Deposit limits',
-          text:
-            'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or mounth.',
-          fields: ['type', 'period', 'currencyLimitList'],
-        },
-        // sessionLimit: {
-        //   name: 'Session limit',
-        //   title: 'time spent gambling',
-        //   text:
-        //     'The restriction takes effect instantly. If you hit the limit, you will be automatically logged out of your  account.',
-        //   fields: ['type', 'limitState', 'limitAmount', 'isMoney', 'title'],
-        // },
-        // self_exclusion: {
-        //   name: 'Self exclusion',
-        //   title: 'blocked address',
-        //   text:
-        //     'You can set a self-exclusion limit for a definite or an indefinite period of time.  During the set period you will not be able to log into your account. To be excluded from gambiling on our site for an indefinite period of time, please, contact our support team via live-chat.',
-        //   fields: ['isMoney', 'title', 'period'],
-        // },
-        // reality_check: {
-        //   name: 'Reality check',
-        //   title: 'notification',
-        //   text:
-        //     "Do you want to track your activity? We'll send you  an hourly notification in-game to remind you of how much you have spent at the Casino. It'll help you to get an overview of your gambing and perhaps consider pausing play for a while. You can get the notification every 15,30,45 and 60 minutes.",
-        //   fields: ['isMoney', 'title', 'period'],
-        // },
-      },
+      limits: LIMIT_DETAILS,
       type: findValInArr(this.item.type, LIMIT_TYPES) || findValInArr('depositLimit', LIMIT_TYPES),
       limitAmount: this.item.limitAmount || 0,
       currencyLimitList: [
@@ -214,9 +174,6 @@ export default {
       if (this.currentPeriod === 'weekly') date = moment().add(7, 'days');
       if (this.currentPeriod === 'monthly') date = moment().add(30, 'days');
       return moment(date).format();
-    },
-    title() {
-      return this.limits[this.type.value].title || `${this.currentPeriod} limit`;
     },
   },
   // watch: {

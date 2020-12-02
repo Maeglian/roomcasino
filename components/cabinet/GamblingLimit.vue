@@ -94,7 +94,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import { LIMIT_PERIODS } from '@/config';
+import { LIMIT_PERIODS, LIMIT_DETAILS } from '@/config';
 import Counter from '@/components/Counter';
 import CreateLimits from '@/components/cabinet/CreateLimits';
 import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
@@ -176,7 +176,9 @@ export default {
         ConfirmDialog,
         {
           title: 'Delete limit',
-          text: `Are you sure you want to delete ${this.item.type} limit?`,
+          text: `Are you sure you want to delete ${this.item.type} limit? ${
+            LIMIT_DETAILS[this.item.type].deleteRules
+          }`,
           okBtnText: 'delete limit',
           closeBtn: true,
           onOk: this.onDeleteLimit,
