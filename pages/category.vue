@@ -60,6 +60,7 @@
           </div>
         </div>
         <ProvidersMenu
+          v-if="gameProducerList.length"
           class="CategoryPage-ProvidersMenu"
           :provider-active="providerActive"
           :inside-filters="true"
@@ -81,6 +82,7 @@ import ProvidersMenu from '@/components/ProvidersMenu';
 import BaseDropdownContainer from '@/components/base/BaseDropdownContainer';
 import Search from '@/components/Search';
 import Games from '@/components/Games';
+import { DEFAULT_PROVIDER } from '@/config';
 
 export default {
   name: 'CategoryPage',
@@ -142,13 +144,11 @@ export default {
           values: ['All rating', 'High', 'Medium-High'],
         },
       },
-      providerActive: {
-        name: 'All providers',
-      },
+      providerActive: DEFAULT_PROVIDER,
     };
   },
   computed: {
-    ...mapState(['width', 'games']),
+    ...mapState(['width', 'games', 'gameProducerList']),
   },
   methods: {
     onClickOutside(e) {

@@ -10,9 +10,9 @@
           @click="onOpen"
         >
           <img
-            v-if="providerActive.icon"
+            v-if="!providerActive.noIcon"
             class="ProvidersMenu-ProviderIcon"
-            :src="require(`@/assets/img/${providerActive.icon}.svg`)"
+            :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"
             alt=""
           />
           <span class="CategoriesFilter-Default">
@@ -29,9 +29,9 @@
       @click="onOpen"
     >
       <img
-        v-if="providerActive.icon"
+        v-if="!providerActive.noIcon"
         class="ProvidersMenu-ProviderIcon"
-        :src="require(`@/assets/img/${providerActive.icon}.svg`)"
+        :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"
         alt=""
       />
       <span class="ProvidersMenu-ActiveProvider">
@@ -42,21 +42,23 @@
     <div v-if="width > 767" class="ProvidersMenu-Providers">
       <button
         v-for="(item, i) in providersToShow"
-        :key="providers[i].name"
+        :key="gameProducerList[i].name"
         class="ProvidersMenu-Provider"
-        :class="{ 'BestGames-Provider--active': providerActive.name === providers[i].name }"
-        @click="onChooseProvider(providers[i].name)"
+        :class="{
+          'ProvidersMenu-Provider--active': providerActive.name === gameProducerList[i].name,
+        }"
+        @click="onChooseProvider(gameProducerList[i])"
       >
         <img
-          v-if="providers[i].icon"
+          v-if="!gameProducerList[i].noIcon"
           class="ProvidersMenu-ProviderIcon"
-          :src="require(`@/assets/img/${providers[i].icon}.svg`)"
+          :src="require(`@/assets/img/${gameProducerList[i].name.toLowerCase()}.svg`)"
           alt=""
         />
-        {{ providers[i].name }}
+        {{ gameProducerList[i].name }}
       </button>
       <button
-        v-if="width > 767"
+        v-if="width > 767 && showMoreProviders"
         class="ProvidersMenu-Provider ProvidersMenu-Provider--more"
         :class="{ 'ProvidersMenu-Provider--active': isOpen }"
         @click="onOpen"
@@ -75,12 +77,12 @@
           :key="i"
           class="ProvidersMenu-AddProvider"
           :class="{ 'ProvidersMenu-Provider--active': providerActive.name === item.name }"
-          @click="onChooseProvider(item.name)"
+          @click="onChooseProvider(item)"
         >
           <img
-            v-if="item.icon"
+            v-if="!item.noIcon"
             class="ProvidersMenu-ProviderIcon"
-            :src="require(`@/assets/img/${item.icon}.svg`)"
+            :src="require(`@/assets/img/${item.name.toLowerCase()}.svg`)"
             alt=""
           />
           {{ item.name }}
@@ -108,22 +110,22 @@ export default {
       default: false,
     },
   },
-  data() {
-    return {
-      providersToShow: 4,
-    };
-  },
   computed: {
-    ...mapState(['width', 'providers']),
-    ...mapGetters(['providersList']),
+    ...mapState(['width', 'gameProducerList']),
+    ...mapGetters(['slicedGameProducerList']),
+    providersToShow() {
+      return this.gameProducerList.length > 3 ? 4 : this.gameProducerList.length;
+    },
+    showMoreProviders() {
+      return this.gameProducerList.length > this.providersToShow;
+    },
     moreProviders() {
-      if (this.width < 768) return this.providers;
-      return this.providersList(this.providersToShow);
+      if (this.width < 768) return this.gameProducerList;
+      return this.slicedGameProducerList(this.providersToShow);
     },
   },
   methods: {
-    onChooseProvider(name) {
-      const provider = this.providers.find(item => item.name === name);
+    onChooseProvider(provider) {
       this.$emit('choose-provider', provider);
       this.isOpen = false;
     },
@@ -266,6 +268,7 @@ export default {
 
     @media (min-width: $screen-m) {
       width: auto;
+      height: 14px;
       margin-right: 3px;
     }
 

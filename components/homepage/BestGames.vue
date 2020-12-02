@@ -20,6 +20,7 @@
       <div class="ProvidersSection BestGames-Providers">
         <Search class="ProvidersSection-Search BestGames-Search" />
         <ProvidersMenu
+          v-if="gameProducerList.length"
           :provider-active="providerActive"
           @choose-provider="providerActive = $event"
         />
@@ -58,6 +59,7 @@ import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
+import { DEFAULT_PROVIDER } from '@/config';
 
 export default {
   name: 'BestGames',
@@ -103,9 +105,7 @@ export default {
         name: 'All games',
         icon: 'star',
       },
-      providerActive: {
-        name: 'All providers',
-      },
+      providerActive: DEFAULT_PROVIDER,
       newGames: [
         {
           img: 'game1.png',
@@ -209,7 +209,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['width', 'games', 'gamesAreLoading']),
+    ...mapState(['width', 'games', 'gamesAreLoading', 'gameProducerList']),
     ...mapGetters(['fakedNewGames', 'isLoggedIn']),
   },
   methods: {

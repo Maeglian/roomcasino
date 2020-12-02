@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Vue from 'vue';
 import moment from 'moment';
-import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX } from '../config';
+import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX, DEFAULT_PROVIDER } from '../config';
 
 const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : API_HOST_PROD;
 
@@ -30,7 +30,7 @@ const reqConfig = (func, funcName) => ({
 });
 
 export const state = () => ({
-  gameProducerList: [],
+  gameProducerList: [DEFAULT_PROVIDER],
   status: '',
   countriesList: {},
   currencyList: {},
@@ -640,8 +640,8 @@ export const getters = {
   },
   isLoggedIn: state => !!state.token,
   authStatus: state => state.status,
-  providersList: state => startIndex =>
-    state.providers.slice(startIndex, state.providers.length + 1),
+  slicedGameProducerList: state => startIndex =>
+    state.gameProducerList.slice(startIndex, state.providers.length + 1),
   fakedNewGames: state => [...state.games].reverse().slice(0, 12),
   gamesLimited: state => limit => state.games.slice(0, limit),
   limitedTournamentWinners: state => limit => state.currentTournamentWinners.slice(0, limit),
@@ -666,7 +666,7 @@ export const getters = {
 
 export const mutations = {
   setGameProducerList: (state, payload) => {
-    state.gameProducerList = payload;
+    state.gameProducerList = [...state.gameProducerList, ...payload];
   },
   openNav: state => {
     state.navIsOpen = true;
