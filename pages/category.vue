@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import BaseDropdownContainer from '@/components/base/BaseDropdownContainer';
 import Search from '@/components/Search';
@@ -150,7 +150,11 @@ export default {
   computed: {
     ...mapState(['width', 'games', 'gameProducerList']),
   },
+  created() {
+    this.getGames();
+  },
   methods: {
+    ...mapActions(['getGames']),
     onClickOutside(e) {
       if (!e.target.closest('.CategoriesFilter')) {
         for (const key in this.filters) {

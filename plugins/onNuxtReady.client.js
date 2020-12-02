@@ -30,5 +30,4 @@ window.onNuxtReady(app => {
     app.$store.dispatch('getProfile');
     app.$store.dispatch('getLimits');
   }
-  app.$store.dispatch('getGames');
 });
