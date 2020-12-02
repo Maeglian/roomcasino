@@ -60,27 +60,32 @@
           </div>
         </div>
         <ProvidersMenu
+          v-if="gameProducerList.length"
           class="CategoryPage-ProvidersMenu"
           :provider-active="providerActive"
           :inside-filters="true"
-          @choose-provider="providerActive = $event"
+          @choose-provider="onChooseProvider"
         />
         <button class="CategoriesFilter-Submit">
           Filter
         </button>
       </BaseDropdownContainer>
-      <Search class="ProvidersSection-Search CategoryPage-Search" />
+      <Search
+        class="ProvidersSection-Search CategoryPage-Search"
+        :class="{ 'CategoryPage-Search--firstLayer': width >= 768 && !this.filters.rating.isOpen }"
+      />
     </div>
     <Games :games="games" :games-to-show="30" />
   </section>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import BaseDropdownContainer from '@/components/base/BaseDropdownContainer';
 import Search from '@/components/Search';
 import Games from '@/components/Games';
+import { DEFAULT_PROVIDER } from '@/config';
 
 export default {
   name: 'CategoryPage',
@@ -142,21 +147,33 @@ export default {
           values: ['All rating', 'High', 'Medium-High'],
         },
       },
-      providerActive: {
-        name: 'All providers',
-      },
+      providerActive: DEFAULT_PROVIDER,
     };
   },
   computed: {
-    ...mapState(['width', 'games']),
+    ...mapState(['width', 'games', 'gameProducerList']),
+    gamesParams() {
+      const params = {};
+      if (this.providerActive.name !== 'All providers')
+        params.gameProducer = this.providerActive.name;
+      return params;
+    },
+  },
+  created() {
+    this.getGames();
   },
   methods: {
+    ...mapActions(['getGames']),
     onClickOutside(e) {
       if (!e.target.closest('.CategoriesFilter')) {
         for (const key in this.filters) {
           this.filters[key].isOpen = false;
         }
       }
+    },
+    onChooseProvider(e) {
+      this.providerActive = e;
+      this.getGames(this.gamesParams);
     },
     toggleFilterDropdown(name) {
       if (this.width < 768) {
@@ -271,6 +288,10 @@ export default {
 
     @media (min-width: $screen-xl) {
       height: 50px;
+    }
+
+    &--firstLayer {
+      z-index: 1;
     }
   }
 

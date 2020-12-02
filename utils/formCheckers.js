@@ -5,6 +5,9 @@ export const passwordCheck = helpers.regex(
   'passwordCheck',
   /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).{8,}$/,
 );
+
+export const checkIfPositiveNumbers = helpers.regex('limitCheck', /^[0-9]\d*$/);
+
 export const termsCheck = value => value === true;
 export const ageCheck = value => moment(value).add(18, 'years') < moment();
 export const dateCheck = value =>

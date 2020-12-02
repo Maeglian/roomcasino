@@ -20,28 +20,36 @@
       <div class="ProvidersSection BestGames-Providers">
         <Search class="ProvidersSection-Search BestGames-Search" />
         <ProvidersMenu
+          v-if="gameProducerList.length"
           :provider-active="providerActive"
-          @choose-provider="providerActive = $event"
+          @choose-provider="onChooseProvider"
         />
       </div>
       <div class="Title Title--type-h2 Cards-Title">
         The best games
       </div>
       <Loader v-if="gamesAreLoading" />
-      <template v-else>
+      <template v-else-if="games.length">
         <Games class="BestGames-Cards" :games="games" :games-to-show="24" btn-class="Btn--dark" />
       </template>
+      <p v-else class="Text Text--center">
+        Nothing was found
+      </p>
     </section>
     <section class="NewGames">
       <div class="Title Title--type-h2 Cards-Title">
         New games
       </div>
       <Games
+        v-if="fakedNewGames.length"
         class="BestGames-Cards NewGames-Cards"
         :games="fakedNewGames"
         :games-to-show="12"
         btn-class="Btn--dark"
       />
+      <p v-else class="Text Text--center">
+        Nothing was found
+      </p>
     </section>
     <!--    <section class="LiveGames">-->
     <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
@@ -58,6 +66,7 @@ import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
+import { DEFAULT_PROVIDER, GAME_TYPES } from '@/config';
 
 export default {
   name: 'BestGames',
@@ -69,43 +78,9 @@ export default {
   mixins: [showAuthDialog],
   data() {
     return {
-      tabs: [
-        {
-          name: 'All games',
-          icon: 'star',
-        },
-        {
-          name: 'Top games',
-          icon: 'crown',
-        },
-        {
-          name: 'Live casino',
-          icon: 'live',
-        },
-        {
-          name: 'Slots games',
-          icon: 'slots',
-        },
-        {
-          name: 'Roulette',
-          icon: 'roulette',
-        },
-        {
-          name: 'Table games',
-          icon: 'table',
-        },
-        {
-          name: 'Card games',
-          icon: 'cards',
-        },
-      ],
-      tabActive: {
-        name: 'All games',
-        icon: 'star',
-      },
-      providerActive: {
-        name: 'All providers',
-      },
+      tabs: GAME_TYPES,
+      tabActive: GAME_TYPES[0],
+      providerActive: DEFAULT_PROVIDER,
       newGames: [
         {
           img: 'game1.png',
@@ -209,15 +184,29 @@ export default {
     };
   },
   computed: {
-    ...mapState(['width', 'games', 'gamesAreLoading']),
+    ...mapState(['width', 'games', 'gamesAreLoading', 'gameProducerList']),
     ...mapGetters(['fakedNewGames', 'isLoggedIn']),
+    gamesParams() {
+      const params = {};
+      if (this.tabActive.type) params.type = this.tabActive.type;
+      if (this.providerActive.name !== 'All providers')
+        params.gameProducer = this.providerActive.name;
+      return params;
+    },
+  },
+  created() {
+    this.getGames();
   },
   methods: {
     ...mapActions(['getGames']),
     onChooseTab(i) {
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
-      this.getGames();
+      this.getGames(this.gamesParams);
+    },
+    onChooseProvider(e) {
+      this.providerActive = e;
+      this.getGames(this.gamesParams);
     },
   },
 };
