@@ -38,6 +38,8 @@ const reqConfig = (func, funcName) => ({
 export const state = () => ({
   gameProducerList: [DEFAULT_PROVIDER],
   status: '',
+  authStatus: '',
+  registrationStatus: '',
   countriesList: {},
   currencyList: {},
   categories: [],
@@ -652,6 +654,7 @@ export const getters = {
   authStatus: state => state.status,
   slicedGameProducerList: state => startIndex =>
     state.gameProducerList.slice(startIndex, state.providers.length + 1),
+  registrationSuccess: state => state.registrationStatus === 'success',
   limitsByTypes: state =>
     LIMIT_TYPES.map(limit => {
       const limits = state.limits.filter(l => l.type === limit.value);
@@ -742,12 +745,31 @@ export const mutations = {
     limit.limits.push(payload.content);
   },
   authRequest(state) {
-    state.status = 'loading';
+    state.authStatus = 'loading';
+    state.authError = '';
+  },
+  registrationRequest(state) {
+    state.registrationStatus = 'loading';
     state.authError = '';
   },
   authError(state, message) {
-    state.status = 'error';
+    state.authStatus = 'error';
     state.authError = message;
+  },
+  registrationError(state, message) {
+    state.registrationStatus = 'error';
+    state.authError = message;
+  },
+  authSuccess(state) {
+    state.authStatus = 'success';
+    state.authError = '';
+  },
+  registrationSuccess(state) {
+    state.registrationStatus = 'success';
+    state.authError = '';
+  },
+  clearRegistrationStatus(state) {
+    state.registrationStatus = '';
   },
   setToken(state, token) {
     state.token = token;
@@ -757,9 +779,6 @@ export const mutations = {
   },
   setBillingSession(state, payload) {
     state.billingSession = payload;
-  },
-  authSuccess(state) {
-    state.status = 'success';
   },
   removeAuthError(state) {
     state.authError = '';
@@ -834,9 +853,22 @@ export const actions = {
       commit('gamesAreLoaded');
     }
   },
-  async registerUser({ commit }, payload) {
-    commit('authRequest');
-    await axios.post(`${API_HOST}/register`, payload, reqConfig(commit, 'authError'));
+
+  async registerUser({ state, commit, dispatch }, payload) {
+    commit('registrationRequest');
+    const res = await axios.post(
+      `${API_HOST}/register`,
+      payload,
+      reqConfig(commit, 'registrationError'),
+    );
+    if (!state.authError) {
+      commit('registrationSuccess');
+      const { token } = res.data;
+      commit('setToken', token);
+      Cookie.set('token', token);
+      axios.defaults.headers.common['X-Auth-Token'] = token;
+      dispatch('getProfile');
+    }
   },
 
   async authorize({ state, commit, dispatch }, payload) {
