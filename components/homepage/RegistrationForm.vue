@@ -133,9 +133,13 @@
         {{ authError }}
       </div>
     </div>
-    <button type="submit" class="Btn Btn--full AuthDialog-Btn">
+    <BaseButton
+      class="BaseButton--full AuthDialog-Btn"
+      :is-loading="authStatus === 'loading'"
+      :disabled="$v.$error"
+    >
       Sign up
-    </button>
+    </BaseButton>
   </form>
 </template>
 
@@ -151,6 +155,8 @@ import {
   deleteObjValuesFromLocalStorage,
 } from '@/utils/helpers';
 import { passwordCheck, termsCheck, ageCheck, dateCheck } from '@/utils/formCheckers';
+import RegistrationBonus from '@/components/homepage/RegistrationBonus';
+import BaseButton from '@/components/base/BaseButton';
 
 export default {
   name: 'RegistrationForm',
@@ -158,6 +164,7 @@ export default {
     BaseInput,
     BaseDropdown,
     BaseCheckbox,
+    BaseButton,
   },
   data() {
     return {
@@ -280,7 +287,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['countriesList', 'authError']),
+    ...mapState(['width', 'countriesList', 'authStatus', 'authError']),
     ...mapGetters(['currencyNames', 'countriesNames']),
     birthDate() {
       const {
@@ -419,7 +426,17 @@ export default {
           if (!this.authError) {
             deleteObjValuesFromLocalStorage(this.fieldsStep1);
             deleteObjValuesFromLocalStorage(this.fieldsStep2);
-            this.$emit('redirect-login');
+            this.$emit('close');
+            this.$modal.show(
+              RegistrationBonus,
+              {},
+              {
+                reset: true,
+                width: this.width > 360 ? 328 : 288,
+                height: 'auto',
+                adaptive: true,
+              },
+            );
           }
         });
       }
