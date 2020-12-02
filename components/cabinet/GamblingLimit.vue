@@ -54,7 +54,8 @@
       <div v-else class="GamblingLimit-Footer">
         <div class="GamblingLimit-Details">
           <template v-if="item.type === 'depositLimit'">
-            {{ item.value }} of {{ item.targetValue }} {{ activeAccount.currency }} left
+            {{ item.targetValue - item.value }} of {{ item.targetValue }}
+            {{ activeAccount.currency }} left
           </template>
           <template v-else class="GamblingLimit-Left">
             <svg
@@ -142,8 +143,8 @@ export default {
       return true;
     },
     strokeOffset() {
-      if (this.item.targetValue === 0) return circleLength;
-      return (this.item.value / this.item.targetValue) * circleLength;
+      if (this.item.targetValue <= 0) return 0;
+      return ((this.item.targetValue - this.item.value) / this.item.targetValue) * circleLength;
     },
     sessionLeft() {
       return this.item.limitAmount - this.item.limitState;
