@@ -36,7 +36,10 @@
             <NuxtLink to="#" class="Btn PromotionsCard-Btn PromotionsCard-Btn--small">
               Get bonus
             </NuxtLink>
-            <NuxtLink to="#" class="Btn Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large">
+            <NuxtLink
+              to="/bonus-terms"
+              class="Btn Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
+            >
               Bonus terms & conditions
             </NuxtLink>
           </div>
