@@ -70,7 +70,10 @@
           Filter
         </button>
       </BaseDropdownContainer>
-      <Search class="ProvidersSection-Search CategoryPage-Search" />
+      <Search
+        class="ProvidersSection-Search CategoryPage-Search"
+        :class="{ 'CategoryPage-Search--firstLayer': width >= 768 && !this.filters.rating.isOpen }"
+      />
     </div>
     <Games :games="games" :games-to-show="30" />
   </section>
@@ -285,6 +288,10 @@ export default {
 
     @media (min-width: $screen-xl) {
       height: 50px;
+    }
+
+    &--firstLayer {
+      z-index: 1;
     }
   }
 
