@@ -30,6 +30,7 @@ const reqConfig = (func, funcName) => ({
 });
 
 export const state = () => ({
+  gameProducerList: [],
   status: '',
   countriesList: {},
   currencyList: {},
@@ -664,6 +665,9 @@ export const getters = {
 };
 
 export const mutations = {
+  setGameProducerList: (state, payload) => {
+    state.gameProducerList = payload;
+  },
   openNav: state => {
     state.navIsOpen = true;
   },
@@ -950,6 +954,16 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setProfileIsUpdated');
+    }
+  },
+
+  async getGameProducerList({ commit }) {
+    try {
+      // eslint-disable-next-line no-underscore-dangle
+      const res = await axios.get(`${API_HOST}/gameProducerList`);
+      commit('setGameProducerList', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
     }
   },
 };
