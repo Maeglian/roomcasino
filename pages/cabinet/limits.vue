@@ -13,20 +13,20 @@
     </button>
     <div class="LimitsPage-Content">
       <div v-if="!limits.length" class="LimitsPage-Text CabinetPage-Text">
-        Do you want to track your activity, loss limits or limit deposits? Your account can be set with all limits. It'll help you to get an overview of your gambling. All restriction takes effect instantly.
+        Do you want to track your activity, loss limits or limit deposits? Your account can be set
+        with all limits. It'll help you to get an overview of your gambling. All restriction takes
+        effect instantly.
       </div>
       <div v-else class="LimitsPage-Limits">
-        <div class="LimitsPage-LimitType" v-for="(limit, i) in limits">
-          <div v-if="limit.limits.length" class="LimitsPage-Header" :key="limit.name">
-            {{ limit.name}}
+        <div v-for="limit in limitsByTypes" :key="limit.name" class="LimitsPage-LimitType">
+          <div v-if="limit.limits.length" class="LimitsPage-Header">
+            {{ limit.name }}
           </div>
           <GamblingLimit
-            v-for="(item, j) in limit.limits"
-            :key="j"
+            v-for="item in limit.limits"
+            :key="`${limit.name}_${item.period}`"
             class="LimitsPage-Limit"
             :item="item"
-            @updateLimit="updateLimits({ i, j, payload: $event.content })"
-            @deleteLimit="deleteLimit({ i, j })"
           />
         </div>
       </div>
@@ -39,21 +39,22 @@
 <script>
 import CreateLimits from '@/components/cabinet/CreateLimits.vue';
 import GamblingLimit from '@/components/cabinet/GamblingLimit.vue';
-import { mapMutations, mapState } from 'vuex';
-import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'LimitsPage',
   components: {
     CreateLimits,
     GamblingLimit,
-    ConfirmDialog
   },
   computed: {
     ...mapState(['limits']),
+    ...mapGetters(['limitsByTypes']),
+    // limits() {
+    //   return this.fakeLimits;
+    // },
   },
   methods: {
-    ...mapMutations(['updateLimits', 'deleteLimit']),
     showCreateLimitsDialog() {
       this.$modal.show('createLimits');
     },
@@ -107,9 +108,9 @@ export default {
     font-size: 14px;
     font-weight: 700;
     line-height: 55px;
-    background: var(--color-bg);
-    text-transform: capitalize;
     color: var(--color-text-main);
+    text-transform: capitalize;
+    background: var(--color-bg);
   }
 }
 </style>

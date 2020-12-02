@@ -5,88 +5,97 @@
     </div>
     <div class="ProvidersSection CategoryPage-ProvidersSection">
       <BaseDropdownContainer
-        outerClass="CategoryPage-FiltersTitle"
-        innerClass="CategoryPage-FiltersDropdown"
-        :beforeWidth.num="768"
+        outer-class="CategoryPage-FiltersTitle"
+        inner-class="CategoryPage-FiltersDropdown"
+        :before-width="768"
         class="CategoryPage-Filters"
         overlay
       >
-        <template v-slot:outerContent>
+        <template #outerContent>
           Filtered by
           <svg class="CabinetFilters-Icon" width="13" height="15">
             <use xlink:href="@/assets/img/icons.svg#filters"></use>
           </svg>
         </template>
-        <div v-for="(filter, name) in filters" class="CategoriesFilter" v-click-outside="onClickOutside">
+        <div
+          v-for="(filter, name) in filters"
+          :key="name"
+          v-click-outside="onClickOutside"
+          class="CategoriesFilter"
+        >
           <div class="CategoriesFilter-Title ">
             {{ filter.title }}
           </div>
           <button
             v-if="filter.type === 'dropdown'"
             class="CategoriesFilter-Footer"
-            @click="toggleFilterDropdown(name)">
+            @click="toggleFilterDropdown(name)"
+          >
             <div class="CategoriesFilter-Default">
               {{ filter.defaultValue }}
             </div>
-            <i
-              class="ThinArrow"
-              :class="[ filter.isOpen ? 'ThinArrow--up' : 'ThinArrow--down' ]"
-            ></i>
+            <i class="ThinArrow" :class="[filter.isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"></i>
           </button>
           <div
             v-if="filter.type === 'range'"
             class="CategoriesFilter-Footer CategoriesFilter-Footer--center"
           >
-            <VueRange
-              class="CategoriesFilter-Range"
-              v-model="filter.value"
-            />
+            <VueRange v-model="filter.value" class="CategoriesFilter-Range" />
           </div>
-          <div v-if="filter.type === 'dropdown'" v-show="filter.isOpen" class="CategoriesFilter-Inner">
+          <div
+            v-if="filter.type === 'dropdown'"
+            v-show="filter.isOpen"
+            class="CategoriesFilter-Inner"
+          >
             <BaseCheckbox
-              class="CategoriesFilter-Checkbox"
-              labelClass="CategoriesFilter-Label"
               v-for="val in filter.values"
-              v-model="filter.value"
-              :value="val"
               :key="val"
+              v-model="filter.value"
+              class="CategoriesFilter-Checkbox"
+              label-class="CategoriesFilter-Label"
+              :value="val"
             >
               {{ val }}
             </BaseCheckbox>
           </div>
         </div>
         <ProvidersMenu
+          v-if="gameProducerList.length"
           class="CategoryPage-ProvidersMenu"
-          :providerActive="providerActive"
-          :insideFilters="true"
-          @chooseProvider="providerActive = $event"
+          :provider-active="providerActive"
+          :inside-filters="true"
+          @choose-provider="onChooseProvider"
         />
         <button class="CategoriesFilter-Submit">
           Filter
         </button>
       </BaseDropdownContainer>
-      <Search class="ProvidersSection-Search CategoryPage-Search" />
+      <Search
+        class="ProvidersSection-Search CategoryPage-Search"
+        :class="{ 'CategoryPage-Search--firstLayer': width >= 768 && !filters.rating.isOpen }"
+      />
     </div>
-    <Games :games="games" :gamesToShow="30" />
+    <Games :games="games" :games-to-show="30" />
   </section>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import BaseDropdownContainer from '@/components/base/BaseDropdownContainer';
 import Search from '@/components/Search';
 import Games from '@/components/Games';
+import { DEFAULT_PROVIDER } from '@/config';
 
 export default {
-  name: "CategoryPage",
-  layout: 'page',
+  name: 'CategoryPage',
   components: {
     ProvidersMenu,
     Search,
     BaseDropdownContainer,
-    Games
+    Games,
   },
+  layout: 'page',
   data() {
     return {
       filters: {
@@ -97,8 +106,15 @@ export default {
           defaultValue: 'All games',
           type: 'dropdown',
           values: [
-            'All games', 'Popular', 'New', 'Table games', 'Exclusive', 'Live Casino', 'Top winners', 'Jackpots'
-          ]
+            'All games',
+            'Popular',
+            'New',
+            'Table games',
+            'Exclusive',
+            'Live Casino',
+            'Top winners',
+            'Jackpots',
+          ],
         },
         hit: {
           title: 'Hit rate',
@@ -120,7 +136,7 @@ export default {
           isOpen: false,
           defaultValue: 'All line',
           type: 'dropdown',
-          values: [1, 5, 9, 10, 15, 20, 25]
+          values: [1, 5, 9, 10, 15, 20, 25],
         },
         rating: {
           title: 'Volatility rating',
@@ -128,24 +144,36 @@ export default {
           isOpen: false,
           defaultValue: 'All rating',
           type: 'dropdown',
-          values: ['All rating', 'High', 'Medium-High']
+          values: ['All rating', 'High', 'Medium-High'],
         },
       },
-      providerActive: {
-        name: 'All providers',
-      },
-    }
+      providerActive: DEFAULT_PROVIDER,
+    };
   },
   computed: {
-    ...mapState(['width', 'games']),
+    ...mapState(['width', 'games', 'gameProducerList']),
+    gamesParams() {
+      const params = {};
+      if (this.providerActive.name !== 'All providers')
+        params.gameProducer = this.providerActive.name;
+      return params;
+    },
+  },
+  created() {
+    this.getGames();
   },
   methods: {
+    ...mapActions(['getGames']),
     onClickOutside(e) {
       if (!e.target.closest('.CategoriesFilter')) {
         for (const key in this.filters) {
           this.filters[key].isOpen = false;
         }
       }
+    },
+    onChooseProvider(e) {
+      this.providerActive = e;
+      this.getGames(this.gamesParams);
     },
     toggleFilterDropdown(name) {
       if (this.width < 768) {
@@ -156,20 +184,20 @@ export default {
         }
       }
       this.filters[name].isOpen = !this.filters[name].isOpen;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 .CategoryPage {
   margin-bottom: 60px;
 
-  @media(min-width: $screen-m) {
+  @media (min-width: $screen-m) {
     margin-bottom: 80px;
   }
 
-  @media(min-width: $screen-xl) {
+  @media (min-width: $screen-xl) {
     margin-bottom: 100px;
   }
 
@@ -178,16 +206,16 @@ export default {
     margin-bottom: 28px;
     text-align: center;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       margin-top: 42px;
       margin-bottom: 40px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-top: 56px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-top: 64px;
       margin-bottom: 60px;
     }
@@ -201,11 +229,11 @@ export default {
     padding: 0 16px;
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
     background: var(--color-bg);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: none;
     }
   }
@@ -215,62 +243,66 @@ export default {
     flex-direction: column;
     width: 100%;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       flex-direction: row;
     }
   }
 
   &-FiltersDropdown {
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       top: auto !important;
       display: flex;
       flex-wrap: wrap;
     }
 
     &.BaseDropdownContainer-Inner {
-      @media(min-width: $screen-m) {
+      @media (min-width: $screen-m) {
         position: relative;
       }
     }
   }
 
   &-ProvidersMenu {
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       width: 100%;
       margin-top: 6px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-top: 7px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-top: 10px;
     }
   }
 
   &-Search {
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       height: 32px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       height: 42px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       height: 50px;
+    }
+
+    &--firstLayer {
+      z-index: 1;
     }
   }
 
   &-ProvidersSection {
     margin-bottom: 32px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 30px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 40px;
     }
   }
@@ -278,19 +310,19 @@ export default {
 
 .CategoriesFilter {
   position: relative;
-  flex-grow: 1;
   display: flex;
+  flex-grow: 1;
   width: 100%;
   height: 60px;
   margin-bottom: 4px;
 
-  @media(min-width: $screen-m) {
+  @media (min-width: $screen-m) {
     flex-direction: column;
     justify-content: center;
-    min-width: 100px;
     width: auto;
-    margin-left: 6px;
+    min-width: 100px;
     margin-bottom: 0;
+    margin-left: 6px;
     padding: 0 16px;
     background-color: var(--color-bg);
 
@@ -299,32 +331,32 @@ export default {
     }
   }
 
-  @media(min-width: $screen-l) {
+  @media (min-width: $screen-l) {
     height: 80px;
     margin-left: 7px;
     padding: 0 18px;
   }
 
-  @media(min-width: $screen-xl) {
+  @media (min-width: $screen-xl) {
     height: 96px;
   }
 
   &-Title {
-    flex-shrink: 0;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     width: 90px;
     height: 100%;
     margin-right: 4px;
-    padding-left: 16px;
     padding-right: 10px;
+    padding-left: 16px;
     font-size: 10px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
     background-color: var(--color-bg);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       width: auto;
       height: auto;
       margin-right: 0;
@@ -333,12 +365,12 @@ export default {
       font-size: 9px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 14px;
       font-size: 10px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 12px;
     }
   }
@@ -353,9 +385,13 @@ export default {
     background-color: var(--color-bg);
     outline: none;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       height: auto;
       padding: 0;
+    }
+
+    &:focus-visible {
+      outline: -webkit-focus-ring-color auto 1px;
     }
 
     &--full {
@@ -366,12 +402,7 @@ export default {
       justify-content: center;
     }
 
-    &:focus-visible {
-      outline: -webkit-focus-ring-color auto 1px;
-    }
-
     &:-moz-focusring {
-
     }
   }
 
@@ -379,15 +410,15 @@ export default {
     font-size: 12px;
     color: var(--color-text-ghost);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 10px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 12px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 14px;
     }
   }
@@ -401,11 +432,11 @@ export default {
     padding: 20px 16px;
     background-color: var(--color-bg);
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       top: 87px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       top: 103px;
     }
   }
@@ -422,15 +453,15 @@ export default {
     font-size: 12px;
     color: var(--color-text-ghost);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 10px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 12px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 14px;
     }
   }
@@ -451,11 +482,11 @@ export default {
     font-weight: 700;
     line-height: 55px;
     text-align: center;
-    text-transform: uppercase;
     color: var(--color-main1);
+    text-transform: uppercase;
     background: var(--color-bg-lighter);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: none;
     }
   }

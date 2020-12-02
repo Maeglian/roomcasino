@@ -1,7 +1,6 @@
 <script>
-import VueSlider from '~/components/Slider';
-import Card from '~/components/Card';
-import { mapState } from 'vuex';
+import VueSlider from '@/components/Slider.vue';
+import Card from '@/components/Card.vue';
 
 export default {
   name: 'SectionsSlider',
@@ -31,50 +30,63 @@ export default {
       }),
     },
     title: {
-      type: String,
+      type: [String, Boolean],
       required: false,
+      default: false,
     },
   },
   render(h) {
-    if(!this.items.length) return null;
+    if (!this.items.length) return null;
     const itemsInSlide = this.itemsInScreen;
     const n = Math.ceil(this.items.length / itemsInSlide);
     const sections = [...Array(n).keys()];
 
-    const divs = h(VueSlider,{
-      props: this.sliderOptions
-    }, sections.map((section, i) => {
-      const items = this.items.slice(i * itemsInSlide, i * itemsInSlide + itemsInSlide);
+    const divs = h(
+      VueSlider,
+      {
+        props: this.sliderOptions,
+      },
+      sections.map((section, i) => {
+        const items = this.items.slice(i * itemsInSlide, i * itemsInSlide + itemsInSlide);
 
-      return h('div', {
-          attrs: {
-            class: `${this.sectionClass} GamesSlider-Section`
-          }
-        }, items.map((item) => {
-          return h(Card, {
-            props: {
-              imgUrl: item.imageUrl
-            }
-          })
-        })
-      )
-    }));
+        return h(
+          'div',
+          {
+            attrs: {
+              class: `${this.sectionClass} GamesSlider-Section`,
+            },
+          },
+          items.map(item => {
+            return h(Card, {
+              props: {
+                imgUrl: item.imageUrl,
+              },
+            });
+          }),
+        );
+      }),
+    );
 
     const title = this.title
-      ? h('div', {
-          attrs: {
-            class: 'Title GamesSlider-Title'
-          }
-        }, this.title)
+      ? h(
+          'div',
+          {
+            attrs: {
+              class: 'Title GamesSlider-Title',
+            },
+          },
+          this.title,
+        )
       : null;
-
-
-    return h('div', {
+    return h(
+      'div',
+      {
         attrs: {
-          class: 'Games-Slider'
-        }
-      }, [title, divs]);
-  }
-}
+          class: 'Games-Slider',
+        },
+      },
+      [title, divs],
+    );
+  },
+};
 </script>
-

@@ -1,12 +1,12 @@
 <template>
-  <div class="Counter" :class="{'Counter--min': minFormat}">
+  <div class="Counter" :class="{ 'Counter--min': minFormat }">
     <div v-if="!minFormat" class="Counter-Text">
       Time left until finish
     </div>
     <div class="Counter-Content">
       <div class="Counter-Item Counter-Days">
         <div class="Counter-Count">
-          {{currentTime.days}}
+          {{ currentTime.days }}
         </div>
         <div class="Counter-Text">
           {{ minFormat ? 'd' : 'Days' }}
@@ -14,7 +14,7 @@
       </div>
       <div class="Counter-Item Counter-Hours">
         <div class="Counter-Count">
-          {{currentTime.hours}}
+          {{ currentTime.hours }}
         </div>
         <div class="Counter-Text">
           {{ minFormat ? 'h' : 'Hours' }}
@@ -22,7 +22,7 @@
       </div>
       <div class="Counter-Item Counter-Minutes">
         <div class="Counter-Count">
-          {{currentTime.minutes}}
+          {{ currentTime.minutes }}
         </div>
         <div class="Counter-Text">
           {{ minFormat ? 'm' : 'Minutes' }}
@@ -30,7 +30,7 @@
       </div>
       <div class="Counter-Item Counter-Seconds">
         <div class="Counter-Count">
-          {{currentTime.seconds}}
+          {{ currentTime.seconds }}
         </div>
         <div class="Counter-Text">
           {{ minFormat ? 's' : 'Seconds' }}
@@ -53,7 +53,7 @@ export default {
       default: false,
     },
     enddate: {
-      type: String,
+      type: [Date, String],
       required: true,
     },
     speed: {
@@ -109,10 +109,10 @@ export default {
     font-size: 8px;
     font-weight: 300;
     line-height: 1.66;
-    text-transform: uppercase;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 10px;
     }
   }
@@ -126,7 +126,7 @@ export default {
     margin-right: 27px;
     text-align: center;
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-right: 31px;
     }
 
@@ -135,7 +135,7 @@ export default {
     }
 
     &:after {
-      content: ":";
+      content: ':';
       position: absolute;
       top: 0;
       right: -17px;
@@ -144,7 +144,7 @@ export default {
       line-height: 1.18;
       color: var(--color-text-ghost);
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         top: 2px;
         right: -18px;
         font-size: 24px;
@@ -158,17 +158,17 @@ export default {
 
   &-Count {
     position: relative;
+    z-index: 1;
     font-size: 24px;
     font-weight: 700;
     line-height: 1.18;
     color: var(--color-text-main);
-    z-index: 1;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 26px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 30px;
     }
   }
@@ -205,8 +205,8 @@ export default {
     font-size: 10px;
     font-weight: 700;
     line-height: 1.2;
-    text-transform: lowercase;
     color: var(--color-text-main);
+    text-transform: lowercase;
   }
 }
 </style>

@@ -1,45 +1,30 @@
 <template>
   <li class="Nav-Item" :class="className">
-    <NuxtLink
-      v-if="!item.children"
-      :to="item.url"
-      class="Nav-Name"
-    >
-      <img
-        v-if="item.icon"
-        class="Icon Nav-Icon"
-        :src="require(`@/assets/img/${item.icon}`)"
-      />
+    <NuxtLink v-if="!item.children" :to="item.url" class="Nav-Name">
+      <img v-if="item.icon" class="Icon Nav-Icon" :src="require(`@/assets/img/${item.icon}`)" />
       {{ item.name }}
     </NuxtLink>
-    <div v-else-if="item.children && width >= 960"
-         class="Nav-Item"
-         :class="className"
-    >
+    <div v-else-if="item.children && width >= 960" class="Nav-Item" :class="className">
       <div class="Nav-Name">
-        <img
-          v-if="item.icon"
-          class="Icon Nav-Icon"
-          :src="require(`@/assets/img/${item.icon}`)"
-        />
+        <img v-if="item.icon" class="Icon Nav-Icon" :src="require(`@/assets/img/${item.icon}`)" />
         {{ item.name }}
         <i
           class="Nav-Arrow ThinArrow"
-          :class="[ listIsOpen ? 'ThinArrow--up' : 'ThinArrow--down', `Nav-Arrow--${item.name}` ]"
+          :class="[listIsOpen ? 'ThinArrow--up' : 'ThinArrow--down', `Nav-Arrow--${item.name}`]"
           @click="listIsOpen = !listIsOpen"
         ></i>
       </div>
       <transition name="slide-up">
         <ul
           v-show="listIsOpen"
+          v-click-outside="onClickOutside"
           class="Nav-List"
           :class="`Nav-List--${item.name}`"
-          v-click-outside="onClickOutside"
         >
           <NavItem
             v-for="child in item.children"
             :key="child.name"
-            :className="className"
+            :class-name="className"
             :item="child"
           />
         </ul>
@@ -49,7 +34,7 @@
       <NavItem
         v-for="child in item.children"
         :key="child.name"
-        :className="className"
+        :class-name="className"
         :item="child"
       />
     </template>
@@ -67,8 +52,9 @@ export default {
       required: true,
     },
     className: {
-      type: String,
+      type: [String, Boolean],
       required: false,
+      default: false,
     },
   },
   data() {
@@ -100,7 +86,7 @@ export default {
   &-Icon {
     margin-right: 12px;
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       display: none;
     }
   }
@@ -110,8 +96,8 @@ export default {
     display: flex;
     align-items: center;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
     &:hover {
       color: var(--color-main1);
@@ -128,8 +114,8 @@ export default {
 
   &-List {
     position: absolute;
-    right: 0;
     top: 60px;
+    right: 0;
     display: flex;
     flex-direction: column;
 
@@ -145,7 +131,7 @@ export default {
     }
 
     .Nav-Icon {
-      @media(min-width: $screen-m) {
+      @media (min-width: $screen-m) {
         display: block;
       }
     }

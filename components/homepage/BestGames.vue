@@ -1,50 +1,62 @@
 <template>
   <div>
     <section class="BestGames">
-      <div v-if="width > 767"
-       class="BestGames-Tabs"
-      >
+      <div v-if="width > 767" class="BestGames-Tabs">
         <button
           v-for="(tab, i) in tabs"
           :key="tab.name"
           class="BestGames-Tab"
-          :class="{'BestGames-Tab--active': tabActive.name === tab.name}"
+          :class="{ 'BestGames-Tab--active': tabActive.name === tab.name }"
           @click="onChooseTab(i)"
         >
-          <svg
-            :class="`BestGames-Icon BestGames-Icon--${tab.icon}`"
-          >
+          <svg :class="`BestGames-Icon BestGames-Icon--${tab.icon}`">
             <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
           </svg>
           <div class="BestGames-Name">
-            {{tab.name}}
+            {{ tab.name }}
           </div>
         </button>
       </div>
       <div class="ProvidersSection BestGames-Providers">
         <Search class="ProvidersSection-Search BestGames-Search" />
-        <ProvidersMenu :providerActive="providerActive" @chooseProvider="providerActive = $event" />
+        <ProvidersMenu
+          v-if="gameProducerList.length"
+          :provider-active="providerActive"
+          @choose-provider="onChooseProvider"
+        />
       </div>
       <div class="Title Title--type-h2 Cards-Title">
         The best games
       </div>
       <Loader v-if="gamesAreLoading" />
-      <template v-else>
-        <Games class="BestGames-Cards" :games="games" :gamesToShow="24" btnClass="Btn--dark" />
+      <template v-else-if="games.length">
+        <Games class="BestGames-Cards" :games="games" :games-to-show="24" btn-class="Btn--dark" />
       </template>
+      <p v-else class="Text Text--center">
+        Nothing was found
+      </p>
     </section>
     <section class="NewGames">
       <div class="Title Title--type-h2 Cards-Title">
         New games
       </div>
-      <Games class="BestGames-Cards NewGames-Cards" :games="fakedNewGames" :gamesToShow="12" btnClass="Btn--dark" />
+      <Games
+        v-if="fakedNewGames.length"
+        class="BestGames-Cards NewGames-Cards"
+        :games="fakedNewGames"
+        :games-to-show="12"
+        btn-class="Btn--dark"
+      />
+      <p v-else class="Text Text--center">
+        Nothing was found
+      </p>
     </section>
-<!--    <section class="LiveGames">-->
-<!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
-<!--        Live games-->
-<!--      </div>-->
-<!--      <Games class="BestGames-Cards NewGames-Cards" :games="liveGames" :gamesToShow="12" btnClass="Btn--dark" />-->
-<!--    </section>-->
+    <!--    <section class="LiveGames">-->
+    <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
+    <!--        Live games-->
+    <!--      </div>-->
+    <!--      <Games class="BestGames-Cards NewGames-Cards" :games="liveGames" :gamesToShow="12" btnClass="Btn--dark" />-->
+    <!--    </section>-->
   </div>
 </template>
 
@@ -52,9 +64,9 @@
 import { mapState, mapGetters, mapActions } from 'vuex';
 import Loader from '@/components/Loader';
 import Search from '@/components/Search';
-import Card from '@/components/Card';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
+import { DEFAULT_PROVIDER, GAME_TYPES } from '@/config';
 
 export default {
   name: 'BestGames',
@@ -62,48 +74,13 @@ export default {
     ProvidersMenu,
     Search,
     Loader,
-    Card,
   },
   mixins: [showAuthDialog],
   data() {
     return {
-      tabs: [
-        {
-          name: 'All games',
-          icon: 'star',
-        },
-        {
-          name: 'Top games',
-          icon: 'crown',
-        },
-        {
-          name: 'Live casino',
-          icon: 'live',
-        },
-        {
-          name: 'Slots games',
-          icon: 'slots',
-        },
-        {
-          name: 'Roulette',
-          icon: 'roulette',
-        },
-        {
-          name: 'Table games',
-          icon: 'table',
-        },
-        {
-          name: 'Card games',
-          icon: 'cards',
-        },
-      ],
-      tabActive: {
-        name: 'All games',
-        icon: 'star',
-      },
-      providerActive: {
-        name: 'All providers',
-      },
+      tabs: GAME_TYPES,
+      tabActive: GAME_TYPES[0],
+      providerActive: DEFAULT_PROVIDER,
       newGames: [
         {
           img: 'game1.png',
@@ -207,15 +184,29 @@ export default {
     };
   },
   computed: {
-    ...mapState(['width', 'games', 'gamesAreLoading']),
+    ...mapState(['width', 'games', 'gamesAreLoading', 'gameProducerList']),
     ...mapGetters(['fakedNewGames', 'isLoggedIn']),
+    gamesParams() {
+      const params = {};
+      if (this.tabActive.type) params.type = this.tabActive.type;
+      if (this.providerActive.name !== 'All providers')
+        params.gameProducer = this.providerActive.name;
+      return params;
+    },
+  },
+  created() {
+    this.getGames();
   },
   methods: {
     ...mapActions(['getGames']),
     onChooseTab(i) {
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
-      this.getGames();
+      this.getGames(this.gamesParams);
+    },
+    onChooseProvider(e) {
+      this.providerActive = e;
+      this.getGames(this.gamesParams);
     },
   },
 };
@@ -226,7 +217,7 @@ export default {
   &-Tabs {
     display: none;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       grid-gap: 10px;
@@ -256,15 +247,15 @@ export default {
   &-Tab {
     padding: 13px 11px;
     line-height: 1.18;
-    background-color: var(--color-bg);
     white-space: nowrap;
+    background-color: var(--color-bg);
     cursor: pointer;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       padding: 20px 10px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       padding: 20px 13px;
     }
 
@@ -273,7 +264,7 @@ export default {
       padding-bottom: 11px;
       border-bottom: 2px solid var(--color-main1);
 
-      @media(min-width: $screen-m) {
+      @media (min-width: $screen-m) {
         padding-bottom: 18px;
       }
     }
@@ -283,18 +274,18 @@ export default {
     font-size: 9px;
     font-weight: 700;
     line-height: 1.242;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 9px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 10px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 12px;
     }
   }
@@ -303,20 +294,20 @@ export default {
     margin-bottom: 10px;
 
     &--star {
-        width: 18px;
-        height: 17px;
+      width: 18px;
+      height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 25px;
         height: 23px;
       }
     }
 
     &--crown {
-        width: 18px;
-        height: 17px;
+      width: 18px;
+      height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 22px;
         height: 22px;
       }
@@ -326,7 +317,7 @@ export default {
       width: 17px;
       height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 23px;
         height: 23px;
       }
@@ -336,27 +327,27 @@ export default {
       width: 34px;
       height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 46px;
         height: 23px;
       }
     }
 
     &--roulette {
-        width: 17px;
-        height: 17px;
+      width: 17px;
+      height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 22px;
         height: 22px;
       }
     }
 
     &--table {
-        width: 17px;
-        height: 17px;
+      width: 17px;
+      height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 22px;
         height: 22px;
       }
@@ -366,7 +357,7 @@ export default {
       width: 18px;
       height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 26px;
         height: 25px;
       }
@@ -376,11 +367,11 @@ export default {
   &-Cards {
     margin-bottom: 20px;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 24px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 32px;
     }
   }
@@ -389,12 +380,12 @@ export default {
     text-align: center;
 
     .Btn {
-      @media(min-width: $screen-m) {
+      @media (min-width: $screen-m) {
         padding: 17px 20px;
         font-size: 14px;
       }
 
-      @media(min-width: $screen-l) {
+      @media (min-width: $screen-l) {
         font-size: 16px;
       }
     }
@@ -403,23 +394,24 @@ export default {
   &-Providers {
     margin-bottom: 24px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 34px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 40px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 60px;
     }
   }
 
   &-Search {
+    z-index: 1;
     margin-bottom: 8px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 0;
     }
   }
@@ -428,15 +420,15 @@ export default {
 .Cards {
   margin-bottom: 32px;
 
-  @media(min-width: $screen-m) {
+  @media (min-width: $screen-m) {
     margin-bottom: 38px;
   }
 
-  @media(min-width: $screen-l) {
+  @media (min-width: $screen-l) {
     margin-bottom: 50px;
   }
 
-  @media(min-width: $screen-xl) {
+  @media (min-width: $screen-xl) {
     margin-bottom: 60px;
   }
 
@@ -450,7 +442,7 @@ export default {
     grid-gap: 10px;
     justify-items: center;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       grid-template-columns: repeat(6, 1fr);
     }
   }

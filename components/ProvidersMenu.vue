@@ -1,5 +1,5 @@
 <template>
-  <div class="ProvidersMenu" v-click-outside="onClickOutside">
+  <div v-click-outside="onClickOutside" class="ProvidersMenu">
     <div v-if="insideFilters" class="CategoriesFilter ProvidersMenu-Filter">
       <div class="CategoriesFilter-Title">
         Providers
@@ -10,62 +10,57 @@
           @click="onOpen"
         >
           <img
-            v-if="providerActive.icon"
+            v-if="!providerActive.noIcon"
             class="ProvidersMenu-ProviderIcon"
-            :src="require(`@/assets/img/${providerActive.icon}.svg`)"
+            :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"
             alt=""
-          >
+          />
           <span class="CategoriesFilter-Default">
             {{ providerActive.name }}
           </span>
-          <i
-            class="ThinArrow"
-            :class="[ isOpen ? 'ThinArrow--up' : 'ThinArrow--down' ]"
-          ></i>
+          <i class="ThinArrow" :class="[isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"></i>
         </button>
       </div>
     </div>
     <button
       v-else
       class="ProvidersMenu-ChosenProvider"
-      :class="{'BestGames-ChosenTab--opened': isOpen}"
+      :class="{ 'BestGames-ChosenTab--opened': isOpen }"
       @click="onOpen"
     >
       <img
-        v-if="providerActive.icon"
+        v-if="!providerActive.noIcon"
         class="ProvidersMenu-ProviderIcon"
-        :src="require(`@/assets/img/${providerActive.icon}.svg`)"
+        :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"
         alt=""
-      >
+      />
       <span class="ProvidersMenu-ActiveProvider">
-        {{providerActive.name}}
+        {{ providerActive.name }}
       </span>
-      <i
-        class="Arrow Tab-Arrow"
-        :class="[ isOpen ? 'Arrow--up' : 'Arrow--down' ]"
-      ></i>
+      <i class="Arrow Tab-Arrow" :class="[isOpen ? 'Arrow--up' : 'Arrow--down']"></i>
     </button>
-    <div
-      v-if="width > 767" class="ProvidersMenu-Providers">
+    <div v-if="width > 767" class="ProvidersMenu-Providers">
       <button
         v-for="(item, i) in providersToShow"
-        :key="providers[i].name"
+        :key="gameProducerList[i].name"
         class="ProvidersMenu-Provider"
-        :class="{'BestGames-Provider--active': providerActive.name === providers[i].name}"
-        @click="onChooseProvider(providers[i].name)"
+        :class="{
+          'ProvidersMenu-Provider--active': providerActive.name === gameProducerList[i].name,
+        }"
+        @click="onChooseProvider(gameProducerList[i])"
       >
         <img
-          v-if="providers[i].icon"
+          v-if="!gameProducerList[i].noIcon"
           class="ProvidersMenu-ProviderIcon"
-          :src="require(`@/assets/img/${providers[i].icon}.svg`)"
+          :src="require(`@/assets/img/${gameProducerList[i].name.toLowerCase()}.svg`)"
           alt=""
-        >
-        {{ providers[i].name }}
+        />
+        {{ gameProducerList[i].name }}
       </button>
       <button
-        v-if="width > 767"
+        v-if="width > 767 && showMoreProviders"
         class="ProvidersMenu-Provider ProvidersMenu-Provider--more"
-        :class="{'ProvidersMenu-Provider--active': isOpen}"
+        :class="{ 'ProvidersMenu-Provider--active': isOpen }"
         @click="onOpen"
       >
         ...
@@ -75,21 +70,21 @@
       <div
         v-if="isOpen"
         class="ProvidersMenu-MoreProviders"
-        :class="{'ProvidersMenu-MoreProviders--top': insideFilters}"
-        >
+        :class="{ 'ProvidersMenu-MoreProviders--top': insideFilters }"
+      >
         <button
           v-for="(item, i) in moreProviders"
           :key="i"
           class="ProvidersMenu-AddProvider"
-          :class="{'ProvidersMenu-Provider--active': providerActive.name === item.name}"
-          @click="onChooseProvider(item.name)"
+          :class="{ 'ProvidersMenu-Provider--active': providerActive.name === item.name }"
+          @click="onChooseProvider(item)"
         >
           <img
-            v-if="item.icon"
+            v-if="!item.noIcon"
             class="ProvidersMenu-ProviderIcon"
-            :src="require(`@/assets/img/${item.icon}.svg`)"
+            :src="require(`@/assets/img/${item.name.toLowerCase()}.svg`)"
             alt=""
-          >
+          />
           {{ item.name }}
         </button>
       </div>
@@ -113,31 +108,31 @@ export default {
       type: Boolean,
       required: false,
       default: false,
-    }
-  },
-  data() {
-    return {
-      providersToShow: 4,
-    }
+    },
   },
   computed: {
-    ...mapState(['width', 'providers']),
-    ...mapGetters(['providersList']),
+    ...mapState(['width', 'gameProducerList']),
+    ...mapGetters(['slicedGameProducerList']),
+    providersToShow() {
+      return this.gameProducerList.length > 3 ? 4 : this.gameProducerList.length;
+    },
+    showMoreProviders() {
+      return this.gameProducerList.length > this.providersToShow;
+    },
     moreProviders() {
-      if (this.width < 768) return this.providers;
-      return this.providersList(this.providersToShow);
+      if (this.width < 768) return this.gameProducerList;
+      return this.slicedGameProducerList(this.providersToShow);
     },
   },
   methods: {
-    onChooseProvider(name) {
-      const provider = this.providers.find((item) => item.name === name);
-      this.$emit('chooseProvider', provider);
+    onChooseProvider(provider) {
+      this.$emit('choose-provider', provider);
       this.isOpen = false;
     },
     onClickOutside(e) {
       if (e.target.className !== 'BestGames-ChosenTab') this.isOpen = false;
     },
-  }
+  },
 };
 </script>
 
@@ -147,9 +142,9 @@ export default {
   display: flex;
   flex-direction: column;
 
-  @media(min-width: $screen-m) {
-    flex-direction: initial;
+  @media (min-width: $screen-m) {
     display: grid;
+    flex-direction: initial;
     grid-template-columns: repeat(7, 1fr);
     grid-gap: 10px;
   }
@@ -161,40 +156,40 @@ export default {
     grid-gap: 10px;
     padding: 0;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       height: 32px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       height: 42px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       height: 50px;
     }
   }
 
   &-MoreProviders {
     position: absolute;
-    left: 0;
     top: 55px;
+    left: 0;
     z-index: 10;
-    column-count: 2;
     width: 100%;
     max-height: 2000px;
     padding: 0 16px 10px;
+    column-count: 2;
     background-color: var(--color-body);
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       column-count: 3;
     }
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       top: 50px;
       column-count: 5;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       top: 70px;
     }
 
@@ -211,8 +206,8 @@ export default {
     font-size: 12px;
     font-weight: 700;
     line-height: 1.18;
-    text-transform: uppercase;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
     cursor: pointer;
     break-inside: avoid;
   }
@@ -230,12 +225,12 @@ export default {
     border: 2px solid var(--color-border-ghost);
     cursor: pointer;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       padding: 0 10px;
       font-size: 10px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       padding: 0 10px;
       font-size: 12px;
     }
@@ -244,7 +239,7 @@ export default {
       display: none;
       color: var(--color-main1);
 
-      @media(min-width: $screen-m) {
+      @media (min-width: $screen-m) {
         display: flex;
       }
     }
@@ -255,12 +250,12 @@ export default {
       font-size: 9px;
       letter-spacing: 0.08em;
 
-      @media(min-width: $screen-l) {
+      @media (min-width: $screen-l) {
         padding: 0 15px;
         font-size: 10px;
       }
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         padding: 0 20px;
         font-size: 14px;
       }
@@ -271,18 +266,19 @@ export default {
     width: 10px;
     margin-right: 10px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       width: auto;
+      height: 14px;
       margin-right: 3px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-right: 6px;
     }
   }
 
   &-Filter {
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       &.CategoriesFilter {
         display: none;
       }
@@ -298,7 +294,7 @@ export default {
     background: var(--color-bg);
     border: none;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: none;
     }
 
@@ -318,8 +314,8 @@ export default {
     font-size: 12px;
     font-weight: 700;
     line-height: 1.242;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
   }
 }
 </style>

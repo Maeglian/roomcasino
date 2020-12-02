@@ -8,57 +8,62 @@
         <div class="ProfilePage-QrContent">
           <img class="ProfilePage-Code" src="@/assets/img/qr.png" />
           <div class="ProfilePage-Text">
-            Install a code-generating app such as Google Authenticator or Authy on your phone.<br/>
+            Install a code-generating app such as Google Authenticator or Authy on your phone.<br />
             Scan the QR code. Enter the received code below.
           </div>
         </div>
         <form class="ProfilePage-QrForm">
-          <input class="ProfilePage-Input" type="text" placeholder="Type it here" v-model="qrCode"/>
+          <input
+            v-model="qrCode"
+            class="ProfilePage-Input"
+            type="text"
+            placeholder="Type it here"
+          />
           <button type="submit" class="ProfilePage-Send">Send</button>
         </form>
       </div>
-      <form class="ProfilePage-Password">
+      <form class="CabinetForm ProfilePage-Password" @submit.prevent="onSubmitPasswordForm">
         <div class="CabinetPage-Header">
           Password change
         </div>
         <BaseInput
-          class="ProfilePage-Row"
-          inputType="password"
-          inputClass="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           v-model="oldPassword"
+          class="ProfilePage-Row"
+          input-type="password"
+          error-class="CabinetForm-Error"
+          input-class="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           :v="$v.oldPassword"
           placeholder="Old password"
           icon="password"
+          :should-display-validation="shouldDisplayPasswordFormErrors"
         >
-          <template v-slot:beforeInput-absolute>
-            <svg
-              class="ProfilePage-Icon ProfilePage-Icon--password"
-            >
+          <template #beforeInput-absolute>
+            <svg class="ProfilePage-Icon ProfilePage-Icon--password">
               <use xlink:href="@/assets/img/icons.svg#password"></use>
             </svg>
           </template>
         </BaseInput>
         <BaseInput
-          class="ProfilePage-Row"
-          blockClass="ProfilePage"
-          :inputType="newPassword.inputType"
-          inputClass="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           v-model="newPassword.value"
+          class="ProfilePage-Row"
+          block-class="ProfilePage"
+          :input-type="newPassword.inputType"
+          error-class="CabinetForm-Error"
+          input-class="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           :v="$v.newPassword.value"
           placeholder="New password"
           icon="password"
+          :should-display-validation="shouldDisplayPasswordFormErrors"
         >
-          <template v-slot:beforeInput-absolute>
-            <svg
-              class="ProfilePage-Icon ProfilePage-Icon--password"
-            >
+          <template #beforeInput-absolute>
+            <svg class="ProfilePage-Icon ProfilePage-Icon--password">
               <use xlink:href="@/assets/img/icons.svg#password"></use>
             </svg>
           </template>
-          <template v-slot:afterInput-absolute>
+          <template #afterInput-absolute>
             <svg
               class="BaseInput-Visible ProfilePage-Visible"
-              :class="{'ProfilePage-Visible--isVisible': newPassword.inputType === 'text'}"
+              :class="{ 'ProfilePage-Visible--isVisible': newPassword.inputType === 'text' }"
               @click="toggleVisibility('newPassword')"
             >
               <use xlink:href="@/assets/img/icons.svg#visible"></use>
@@ -66,32 +71,40 @@
           </template>
         </BaseInput>
         <BaseInput
-          class="ProfilePage-Row"
-          blockClass="ProfilePage"
-          :inputType="confirmPassword.inputType"
-          inputClass="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           v-model="confirmPassword.value"
+          class="ProfilePage-Row"
+          block-class="ProfilePage"
+          :input-type="confirmPassword.inputType"
+          error-class="CabinetForm-Error"
+          input-class="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           :v="$v.confirmPassword.value"
           placeholder="Password confirm"
+          :should-display-validation="shouldDisplayPasswordFormErrors"
         >
-          <template v-slot:beforeInput-absolute>
-            <svg
-              class="ProfilePage-Icon ProfilePage-Icon--password"
-            >
+          <template #beforeInput-absolute>
+            <svg class="ProfilePage-Icon ProfilePage-Icon--password">
               <use xlink:href="@/assets/img/icons.svg#password"></use>
             </svg>
           </template>
-          <template v-slot:afterInput-absolute>
+          <template #afterInput-absolute>
             <svg
               class="ProfilePage-Visible"
-              :class="{'ProfilePage-Visible--isVisible': confirmPassword.inputType === 'text'}"
+              :class="{ 'ProfilePage-Visible--isVisible': confirmPassword.inputType === 'text' }"
               @click="toggleVisibility('confirmPassword')"
             >
               <use xlink:href="@/assets/img/icons.svg#visible"></use>
             </svg>
           </template>
         </BaseInput>
-        <button type="submit" class="Btn Btn--full ProfilePage-Btn">Update</button>
+        <div v-if="updateProfileError" class="Error ProfilePage-Error">
+          {{ updateProfileError }}
+        </div>
+        <BaseButton
+          class="Btn Btn--full Btn--darkColor ProfilePage-Btn"
+          :is-loading="profileIsUpdating"
+        >
+          Update
+        </BaseButton>
       </form>
     </div>
     <CabinetTable
@@ -103,8 +116,8 @@
         totalPages: totalPages,
         count: rows.length,
       }"
-      @changePage="currentPage = $event"
-      @showMore="rowsPerPage *= 2"
+      @change-page="currentPage = $event"
+      @show-more="rowsPerPage *= 2"
     />
   </div>
 </template>
@@ -113,72 +126,41 @@
 import tablePagination from '@/mixins/tablePagination';
 import CabinetTable from '@/components/cabinet/CabinetTable.vue';
 import BaseInput from '@/components/base/BaseInput.vue';
+import BaseButton from '@/components/base/BaseButton.vue';
 import { required, sameAs } from 'vuelidate/lib/validators';
+import { passwordCheck } from '@/utils/formCheckers';
+import { mapActions, mapMutations, mapState } from 'vuex';
 
 const rows = [
-  [
-    '10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Current',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '20.131.10.20', 'UA', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Current',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '20.131.10.20', 'UA', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Current',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '20.131.10.20', 'UA', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
-  [
-    '10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed',
-  ],
+  ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Current'],
+  ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'UA', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Current'],
+  ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'UA', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Current'],
+  ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'UA', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
+  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
 ];
 
 export default {
   name: 'ProfileSecurity',
-  mixins: [tablePagination],
   components: {
     CabinetTable,
     BaseInput,
+    BaseButton,
   },
+  mixins: [tablePagination],
+  middleware: 'clearUpdateProfileError',
   data() {
     return {
       rows,
@@ -192,27 +174,58 @@ export default {
         inputType: 'password',
       },
       qrCode: '',
+      shouldDisplayPasswordFormErrors: false,
     };
   },
+  computed: {
+    ...mapState(['profileIsUpdating', 'updateProfileError']),
+  },
   validations: {
-    oldPassword: {
-      required,
+    oldPassword: { required },
+    newPassword: {
+      value: {
+        required,
+        passwordCheck,
+      },
     },
-    newPassword: { value: {
-      required,
-    }},
-    confirmPassword: {  value: {
-      sameAsPassword: sameAs(function() { return this.newPassword.value })
-    }},
+    confirmPassword: {
+      value: {
+        sameAsPassword: sameAs(function() {
+          return this.newPassword.value;
+        }),
+      },
+    },
   },
   methods: {
+    ...mapMutations(['clearUpdateProfileError']),
+    ...mapActions(['updatePassword']),
     toggleVisibility(el) {
-      console.log(el);
       this[el].inputType === 'password'
-        ? this[el].inputType = 'text'
-        : this[el].inputType = 'password';
-    }
-  }
+        ? (this[el].inputType = 'text')
+        : (this[el].inputType = 'password');
+    },
+    onSubmitPasswordForm() {
+      this.clearUpdateProfileError();
+      if (this.$v.$invalid) {
+        this.shouldDisplayPasswordFormErrors = true;
+        this.$v.$touch();
+        return;
+      }
+      this.updatePassword({
+        oldPassword: this.oldPassword,
+        newPassword: this.newPassword.value,
+        confirmPassword: this.confirmPassword.value,
+      }).then(() => {
+        if (!this.updateProfileError) {
+          this.oldPassword = '';
+          this.newPassword.value = '';
+          this.confirmPassword.value = '';
+          this.$v.$reset();
+          this.shouldDisplayPasswordFormErrors = false;
+        }
+      });
+    },
+  },
 };
 </script>
 
@@ -239,8 +252,8 @@ export default {
   }
 
   &-QrContent {
-    flex-grow: 1;
     display: flex;
+    flex-grow: 1;
     align-items: center;
     margin-bottom: 4px;
     padding: 16px;
@@ -264,7 +277,11 @@ export default {
   }
 
   &-Row {
-    margin-bottom: 4px;
+    margin-top: 12px;
+
+    &:last-of-type {
+      margin-bottom: 12px;
+    }
   }
 
   &-QrForm {
@@ -283,9 +300,14 @@ export default {
     height: 55px;
     padding-right: 16px;
     padding-left: 16px;
+    font-size: 16px;
     color: var(--color-text-main);
     background: var(--color-bg);
     border: none;
+
+    @media (min-width: $screen-m) {
+      font-size: 12px;
+    }
 
     &::placeholder {
       font-size: 10px;
@@ -310,16 +332,16 @@ export default {
     margin-left: 4px;
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
     background: var(--color-bg-lighter);
   }
 
   &-Visible {
     position: absolute;
-    z-index: 2;
-    right: 22px;
     top: calc(50% - 5.5px);
+    right: 22px;
+    z-index: 2;
     width: 19px;
     height: 11px;
     cursor: pointer;
@@ -336,11 +358,14 @@ export default {
   }
 
   &-Icon--password {
-    left: 16px;
     top: calc(50% - 8px);
+    left: 16px;
     width: 13px;
     height: 16px;
   }
-}
 
+  &-Error {
+    font-size: 12px;
+  }
+}
 </style>

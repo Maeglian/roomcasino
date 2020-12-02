@@ -8,7 +8,8 @@
           Page you were looking for was not found
         </h1>
         <div class="Text Text--additional ErrorPage-Text">
-          Sorry, we coudn't find the page you were looking for. We suggest that you return to main page.
+          Sorry, we coudn't find the page you were looking for. We suggest that you return to main
+          page.
         </div>
       </template>
       <template v-else>
@@ -25,9 +26,14 @@
 
 <script>
 export default {
-  props: ['error'],
+  name: 'ErrorPage',
   layout: 'error',
-  name: 'error.vue',
+  props: {
+    error: {
+      type: Object,
+      default: () => {},
+    },
+  },
 };
 </script>
 
@@ -39,7 +45,7 @@ export default {
     text-align: center;
     color: var(--color-text-main);
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       width: 559px / $screen-xl * 100%;
       margin-bottom: 17px;
     }
@@ -52,7 +58,7 @@ export default {
     align-items: center;
     padding-top: 32px;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       padding-top: 75px;
       background-image: url(../assets/img/notfound-bg.png);
       background-repeat: no-repeat;
@@ -65,7 +71,7 @@ export default {
     width: 210px;
     margin-bottom: 24px;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       width: auto;
       margin-bottom: 32px;
     }
@@ -74,7 +80,7 @@ export default {
   &-Text {
     text-align: center;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       width: 559px / $screen-xl * 100%;
       margin-bottom: 44px;
     }
@@ -84,10 +90,9 @@ export default {
     width: 100%;
     margin-top: 38px;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       width: auto;
     }
   }
 }
-
 </style>

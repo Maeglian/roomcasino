@@ -4,10 +4,8 @@
 
 <script>
 export default {
-  name: "CloseComponent",
-}
+  name: 'CloseComponent',
+};
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

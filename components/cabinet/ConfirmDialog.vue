@@ -9,7 +9,7 @@
         {{ text }}
       </div>
       <div class="ConfirmDialog-Btns">
-        <button class="Btn Btn--dark ConfirmDialog-Btn" @click="$emit('close')">
+        <button class="Btn Btn--dark ConfirmDialog-Btn" @click="onClickCancel">
           Cancel
         </button>
         <button class="Btn Btn--color ConfirmDialog-Btn" @click="onClickOk">
@@ -42,23 +42,31 @@ export default {
       default: false,
     },
     onCancel: {
-      type: Function,
+      type: [Function, Boolean],
       required: false,
+      default: false,
     },
     onOk: {
-      type: Function,
+      type: [Function, Boolean],
       required: false,
-    }
+      default: false,
+    },
   },
   methods: {
+    onClickCancel() {
+      if (this.onCancel) this.onCancel.call(this);
+      else this.$emit('cancel');
+
+      this.$emit('close');
+    },
     onClickOk() {
       if (this.onOk) this.onOk();
       else this.$emit('ok');
 
       this.$emit('close');
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -67,7 +75,6 @@ export default {
 
   &-Text {
     padding: 16px 16px 35px;
-
   }
 
   &-Btns {
@@ -82,5 +89,4 @@ export default {
     padding-left: 0;
   }
 }
-
 </style>

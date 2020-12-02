@@ -5,7 +5,9 @@
         Play vip style roomcasino
       </h1>
       <div class="Page-Text Text Text--additional">
-        You can also change your CPs for money in just one click! You will still keep your status and will be able to keep moving up the levels. Play and get all the privileges RoomCasino’s VIP club has to offer.
+        You can also change your CPs for money in just one click! You will still keep your status
+        and will be able to keep moving up the levels. Play and get all the privileges RoomCasino’s
+        VIP club has to offer.
       </div>
     </div>
     <section class="Page-Content">
@@ -13,24 +15,28 @@
         Vip statuses
       </h2>
       <div class="VipPage-Statuses">
-        <div v-for="status in statuses" :key="`status${status.level}`" class="StatusCard VipPage-Status">
+        <div
+          v-for="status in statuses"
+          :key="`status${status.level}`"
+          class="StatusCard VipPage-Status"
+        >
           <div class="StatusCard-Content">
-            <div class="StatusCard-Lvl StatusCard-Text">
-              Level {{ status.level }}
-            </div>
+            <div class="StatusCard-Lvl StatusCard-Text">Level {{ status.level }}</div>
             <div class="StatusCard-Name">
               {{ status.name }}
             </div>
             <div v-if="!status.passed" class="StatusCard-Condition">
-             <span v-if="status.points" class="StatusCard-Points"> {{ status.points }} PC / </span> {{ status.condition}} PC
+              <span v-if="status.points" class="StatusCard-Points"> {{ status.points }} PC / </span>
+              {{ status.condition }} PC
             </div>
             <div v-if="status.passed" class="StatusCard-Text StatusCard-Passed">
               Level passed
             </div>
             <div v-else class="StatusCard-Progress">
-              <div v-if="status.points"
-                   class="StatusCard-Scale"
-                   :style="{width: `${status.points / status.condition * 100}%`}"
+              <div
+                v-if="status.points"
+                class="StatusCard-Scale"
+                :style="{ width: `${(status.points / status.condition) * 100}%` }"
               ></div>
             </div>
           </div>
@@ -39,7 +45,7 @@
               :src="require(`@/assets/img/lvl${status.level}.png`)"
               :alt="`level ${status.level} icon`"
               class="StatusCard-Badge"
-            >
+            />
             <div class="StatusCard-Reward">
               {{ status.prize }}
             </div>
@@ -51,9 +57,8 @@
       </h2>
       <div class="Page-Blocks VipPage-Terms">
         <div v-for="(item, i) in terms" :key="`txt${i}`" class="Page-Block">
-          <div class="Page-Number">{{i + 1}}.</div>
-          <div class="Text Text--additional" v-html="item">
-          </div>
+          <div class="Page-Number">{{ i + 1 }}.</div>
+          <div class="Text Text--additional" v-html="item"></div>
         </div>
       </div>
     </section>
@@ -64,7 +69,7 @@
 import { mapState } from 'vuex';
 
 export default {
-  name: 'vip',
+  name: 'Vip',
   layout: 'page',
   data() {
     return {
@@ -148,20 +153,20 @@ export default {
         'All prizes and free spins will be issued within 24 hours after the player has reached the VIP level.',
         'All prizes and free spins will be issued within 24 hours after the player has reached the VIP level.',
         'RoomCasino reserves the right to change the terms of the VIP program at any time.',
-        'All free spins are issued with a wager x10. All cash prizes are issued with wagering x1.'
-      ]
-    }
+        'All free spins are issued with a wager x10. All cash prizes are issued with wagering x1.',
+      ],
+    };
   },
   computed: {
     ...mapState(['terms']),
   },
-}
+};
 </script>
 
 <style lang="scss">
 .VipPage {
   &-Header {
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       background-image: url(../assets/img/vip-bg-1248.png);
       background-repeat: no-repeat;
       background-size: cover;
@@ -171,22 +176,22 @@ export default {
   &-Statuses {
     margin-bottom: 40px;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 11px;
     }
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       grid-template-columns: 1fr 1fr 1fr;
       margin-bottom: 60px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 69px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       grid-gap: 14px;
       margin-bottom: 80px;
     }
@@ -194,7 +199,7 @@ export default {
 
   &-Status {
     &:last-child {
-      @media(min-width: $screen-m) {
+      @media (min-width: $screen-m) {
         grid-column-start: 2;
       }
     }
@@ -209,18 +214,18 @@ export default {
   padding: 24px 0 30px 24px;
   background: var(--color-bg);
 
-  @media(min-width: $screen-m) {
+  @media (min-width: $screen-m) {
     height: 145px;
     margin-bottom: 0;
     padding: 30px 0 24px 16px;
   }
 
-  @media(min-width: $screen-l) {
+  @media (min-width: $screen-l) {
     height: 162px;
     padding: 21px 0 30px 24px;
   }
 
-  @media(min-width: $screen-xl) {
+  @media (min-width: $screen-xl) {
     height: 228px;
     padding: 45px 0 50px 30px;
   }
@@ -237,14 +242,14 @@ export default {
   &-Text {
     font-size: 10px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 12px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 14px;
     }
   }
@@ -253,14 +258,14 @@ export default {
     margin-bottom: 8px;
     font-size: 14px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 16px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 20px;
     }
   }
@@ -268,24 +273,20 @@ export default {
   &-Condition {
     font-size: 9px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 10px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 12px;
     }
   }
 
   &-Points {
     color: var(--color-text-ghost);
-  }
-
-  &-Rewards {
-    text-align: center;
   }
 
   &-Passed {
@@ -301,15 +302,15 @@ export default {
     background: var(--color-bg-lighter);
     border-radius: 12px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       width: 110px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       width: 127px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       width: 159px;
     }
   }
@@ -333,19 +334,19 @@ export default {
     width: 66px;
     margin: 0 30px;
 
-    @media(min-width: $screen-m) {
-      margin: 0 24px;
+    @media (min-width: $screen-m) {
       width: 52px;
+      margin: 0 24px;
     }
 
-    @media(min-width: $screen-l) {
-      margin: 0 36px;
+    @media (min-width: $screen-l) {
       width: 66px;
+      margin: 0 36px;
     }
 
-    @media(min-width: $screen-xl) {
-      margin: 0 50px;
+    @media (min-width: $screen-xl) {
       width: 82px;
+      margin: 0 50px;
     }
   }
 
@@ -353,17 +354,16 @@ export default {
     margin-top: auto;
     font-size: 10px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-main1);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 12px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 14px;
     }
   }
 }
-
 </style>

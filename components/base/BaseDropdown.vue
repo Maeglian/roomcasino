@@ -1,54 +1,74 @@
 <template>
-  <div class="BaseDropdown" v-click-outside="onClickOutside">
+  <div v-click-outside="onClickOutside" class="BaseDropdown">
+    <div
+      v-if="v && v.required === false && v.$dirty"
+      class="BaseDropdown-Error"
+      :class="errorClass"
+    >
+      Can't be blank
+    </div>
     <button
       class="BaseDropdown-Item BaseDropdown-ActiveItem"
       aria-haspopup="true"
+      tabindex="0"
+      type="button"
       @click="onOpenDropdown()"
       @keyup.up="onArrowUp()"
       @keyup.down="onArrowDown()"
       @keyup.enter="onSelectValueKeyboard()"
-      tabindex="0"
-      type="button"
     >
-      {{ activeItem || placeholder || items[0] }}
+      {{ activeItem.name || activeItem || placeholder || items[0].name || items[0] }}
       <i
+        v-if="items.length > 1"
         class="ThinArrow"
-        :class="[ isOpen ? 'ThinArrow--up' : 'ThinArrow--down' ]"
+        :class="[isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"
       ></i>
     </button>
     <ul v-show="isOpen" class="BaseDropdown-Inner" aria-label="submenu">
       <li
         v-for="(item, i) in filteredItems"
-        :key="item"
+        :key="item.name || item"
         class="BaseDropdown-Item BaseDropdown-DropdownItem"
-        :class="{'BaseDropdown-DropdownItem--highlighted': activeItemIndex === i}"
+        :class="{ 'BaseDropdown-DropdownItem--highlighted': activeItemIndex === i }"
         @click="onSelectValue(item)"
       >
-        {{ item }}
+        {{ item.name || item }}
       </li>
-      </ul>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
   name: 'BaseDropdown',
+  model: {
+    prop: 'activeItem',
+  },
   props: {
     items: {
       type: Array,
-      isRequired: true,
+      required: true,
     },
     activeItem: {
-      type: String,
-      isRequired: false,
+      type: [String, Object, Boolean],
+      required: false,
+      default: false,
     },
     placeholder: {
-      type: String,
-      isRequired: false,
+      type: [String, Boolean],
+      required: false,
+      default: false,
     },
-  },
-  model: {
-    prop: 'activeItem',
+    v: {
+      type: [Object, Boolean],
+      required: false,
+      default: false,
+    },
+    errorClass: {
+      type: [String, Boolean],
+      required: false,
+      default: false,
+    },
   },
   data() {
     return {
@@ -58,7 +78,9 @@ export default {
   },
   computed: {
     filteredItems() {
-      return this.items.filter((item) => item !== this.activeItem);
+      return this.items.filter(
+        item => item !== this.activeItem || item.value !== this.activeItem.value,
+      );
     },
   },
   methods: {
@@ -71,7 +93,6 @@ export default {
       }
     },
     onSelectValue(val) {
-      this.activeItem = val;
       this.$emit('set-dropdown-value', val);
       this.isOpen = false;
       this.activeItemIndex = -1;
@@ -84,7 +105,7 @@ export default {
     },
     onClickOutside() {
       this.isOpen = false;
-    }
+    },
   },
 };
 </script>
@@ -97,21 +118,24 @@ export default {
     width: 100%;
   }
 
-  &-Item, &-ActiveItem {
+  &-Item,
+  &-ActiveItem {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
     padding: 0 16px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: inherit;
     background: var(--color-bg);
   }
 
   &-DropdownItem {
     padding: 22px 16px;
-    &:hover, &--highlighted {
+
+    &:hover,
+    &--highlighted {
       background: var(--color-bg-lighter);
     }
   }
@@ -125,7 +149,7 @@ export default {
     max-height: 200px;
     overflow: auto;
     scrollbar-width: thin;
-    scrollbar-color: #6A6E7F transparent;
+    scrollbar-color: #6a6e7f transparent;
 
     &::-webkit-scrollbar {
       width: 5px;
@@ -133,9 +157,14 @@ export default {
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: #6A6E7F;
+      background-color: #6a6e7f;
       border-radius: 3px;
     }
+  }
+
+  &-Error {
+    font-size: 10px;
+    color: var(--color-error);
   }
 }
 </style>

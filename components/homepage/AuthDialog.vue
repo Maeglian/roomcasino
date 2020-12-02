@@ -5,13 +5,11 @@
       <BaseTabs
         class="AuthDialog-Tabs"
         :items="tabs"
-        :currentItem="activeTab"
-        @chooseTab="toggleRegistration" />
+        :current-item="activeTab"
+        @choose-tab="toggleRegistration"
+      />
       <template v-if="activeTab === 'registration'">
-        <RegistrationForm
-          @close="$emit('close')"
-          @redirectLogin="activeTab = 'login'"
-        />
+        <RegistrationForm @close="$emit('close')" @redirect-login="activeTab = 'login'" />
       </template>
       <template v-else>
         <LoginForm @close="$emit('close')" />
@@ -29,6 +27,11 @@ const LoginForm = () => import('@/components/homepage/LoginForm.vue');
 
 export default {
   name: 'AuthDialog',
+  components: {
+    LoginForm,
+    RegistrationForm,
+    BaseTabs,
+  },
   props: {
     authType: {
       type: String,
@@ -36,26 +39,23 @@ export default {
       default: 'registration',
     },
   },
-  components: {
-    LoginForm,
-    RegistrationForm,
-    BaseTabs
-  },
   data() {
     return {
       tabs: [
         {
           value: 'registration',
-          name: 'Sign up'
+          name: 'Sign up',
         },
         {
           value: 'login',
-          name: 'Login'
+          name: 'Login',
         },
-
       ],
       activeTab: 'registration',
     };
+  },
+  mounted() {
+    this.activeTab = this.authType;
   },
   methods: {
     ...mapMutations(['removeAuthError']),
@@ -64,9 +64,6 @@ export default {
       this.removeAuthError();
       this.activeTab = e;
     },
-  },
-  mounted() {
-    this.activeTab = this.authType;
   },
 };
 </script>
@@ -77,7 +74,7 @@ export default {
   display: flex;
   flex-direction: column;
   min-height: 585px;
-  background: var(--color-body);
+  background: var(--color-bg);
 
   &-Tabs {
     margin-bottom: 4px;
@@ -96,8 +93,8 @@ export default {
   }
 
   &-Form {
-    flex-grow: 1;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     height: 100%;
   }
@@ -106,8 +103,8 @@ export default {
     font-size: 20px;
     font-weight: 700;
     line-height: 1.2;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
   }
 
   &-Subtitle {
@@ -115,8 +112,8 @@ export default {
     font-size: 17px;
     font-weight: 700;
     line-height: 1.2;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
   }
 
   &-Content {
@@ -127,7 +124,7 @@ export default {
     padding-left: 14px;
     background: url('../../assets/img/auth-bg.png');
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       padding-right: 24px;
       padding-left: 24px;
     }
@@ -170,11 +167,11 @@ export default {
 
     &--registration {
       top: initial;
-      left: 14px;
       bottom: 5px;
+      left: 14px;
       font-size: 12px;
 
-      @media(min-width: $screen-s) {
+      @media (min-width: $screen-s) {
         left: 24px;
       }
     }

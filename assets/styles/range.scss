@@ -13,6 +13,7 @@ $tooltipFontSize: 10px;
 }
 
 .vue-slider-dot-tooltip {
+  top: 20px !important;
   visibility: visible !important;
 }
 
@@ -22,10 +23,6 @@ $tooltipFontSize: 10px;
 
 .vue-slider-rail {
   height: 3px !important;
-}
-
-.vue-slider-dot-tooltip {
-  top: 20px !important;
 }
 
 .vue-slider-dot-tooltip-inner {
