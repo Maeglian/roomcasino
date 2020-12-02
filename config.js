@@ -4,6 +4,42 @@ export const API_HOST_PROD = 'https://dev.aramuz.net/frontapi/roomcasino';
 
 export const DEFAULT_PROVIDER = { name: 'All providers', noIcon: true };
 
+export const GAME_TYPES = [
+  {
+    name: 'All games',
+    icon: 'star',
+  },
+  {
+    name: 'Top games',
+    icon: 'crown',
+  },
+  {
+    name: 'Live casino',
+    type: 'live',
+    icon: 'live',
+  },
+  {
+    name: 'Slots games',
+    type: 'slots',
+    icon: 'slots',
+  },
+  {
+    name: 'Roulette',
+    type: 'roulette',
+    icon: 'roulette',
+  },
+  {
+    name: 'Table games',
+    type: 'table',
+    icon: 'table',
+  },
+  {
+    name: 'Card games',
+    type: 'card',
+    icon: 'cards',
+  },
+];
+
 export const LIMIT_TYPES = [
   { name: 'Deposit limits', value: 'depositLimit' },
   // { name: 'Session limits', value: 'sessionLimit' },
