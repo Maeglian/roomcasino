@@ -39,7 +39,6 @@ export const state = () => ({
   gameProducerList: [DEFAULT_PROVIDER],
   status: '',
   authStatus: '',
-  registrationStatus: '',
   countriesList: {},
   currencyList: {},
   categories: [],
@@ -654,7 +653,6 @@ export const getters = {
   authStatus: state => state.status,
   slicedGameProducerList: state => startIndex =>
     state.gameProducerList.slice(startIndex, state.providers.length + 1),
-  registrationSuccess: state => state.registrationStatus === 'success',
   limitsByTypes: state =>
     LIMIT_TYPES.map(limit => {
       const limits = state.limits.filter(l => l.type === limit.value);
@@ -748,28 +746,13 @@ export const mutations = {
     state.authStatus = 'loading';
     state.authError = '';
   },
-  registrationRequest(state) {
-    state.registrationStatus = 'loading';
-    state.authError = '';
-  },
   authError(state, message) {
     state.authStatus = 'error';
-    state.authError = message;
-  },
-  registrationError(state, message) {
-    state.registrationStatus = 'error';
     state.authError = message;
   },
   authSuccess(state) {
     state.authStatus = 'success';
     state.authError = '';
-  },
-  registrationSuccess(state) {
-    state.registrationStatus = 'success';
-    state.authError = '';
-  },
-  clearRegistrationStatus(state) {
-    state.registrationStatus = '';
   },
   setToken(state, token) {
     state.token = token;
@@ -855,19 +838,20 @@ export const actions = {
   },
 
   async registerUser({ state, commit, dispatch }, payload) {
-    commit('registrationRequest');
-    const res = await axios.post(
-      `${API_HOST}/register`,
-      payload,
-      reqConfig(commit, 'registrationError'),
-    );
-    if (!state.authError) {
-      commit('registrationSuccess');
-      const { token } = res.data;
-      commit('setToken', token);
-      Cookie.set('token', token);
-      axios.defaults.headers.common['X-Auth-Token'] = token;
-      dispatch('getProfile');
+    commit('authRequest');
+    try {
+      const res = await axios.post(`${API_HOST}/register`, payload, reqConfig(commit, 'authError'));
+      if (!state.authError) {
+        commit('authSuccess');
+        const { token } = res.data;
+        commit('setToken', token);
+        Cookie.set('token', token);
+        axios.defaults.headers.common['X-Auth-Token'] = token;
+        dispatch('getProfile');
+      }
+    } catch (e) {
+      commit('authError', e);
+      Cookie.remove('token');
     }
   },
 
