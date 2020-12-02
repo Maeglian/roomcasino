@@ -79,4 +79,8 @@ p {
     line-height: 1.66;
     color: var(--color-text-ghost);
   }
+
+  &--center {
+    text-align: center;
+  }
 }
