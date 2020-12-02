@@ -4,7 +4,7 @@
       <div class="CabinetPage-Header">
         General Info
       </div>
-      <div class="ProfileInfo-Fields">
+      <div v-if="Object.keys(fields).length" class="ProfileInfo-Fields">
         <template v-for="(val, name) in fields">
           <div v-if="name === 'country'" :key="name" class="CabinetForm-Row">
             <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">

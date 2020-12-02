@@ -669,11 +669,15 @@ export const getters = {
   countriesNames: state => Object.values(state.countriesList),
   currencyNames: state => Object.values(state.currencyList),
   userInfo: state => {
-    const info = { ...state.user };
-    const countryName = state.countriesList[info.country];
-    info.country = countryName;
-    delete info.accountList;
-    return info;
+    if (Object.keys(state.user).length) {
+      const info = { ...state.user };
+      const countryName = state.countriesList[info.country];
+      info.country = countryName;
+      delete info.accountList;
+      return info;
+    }
+
+    return {};
   },
   curencyAccounts: state =>
     Object.keys(state.currencyList).filter(cur => {
