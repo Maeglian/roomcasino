@@ -76,7 +76,7 @@
         <div v-if="updateProfileError" class="Error ProfilePage-Error">
           {{ updateProfileError }}
         </div>
-        <BaseButton class="Btn Btn--darkColor ProfilePage-Btn" :is-loading="profileIsUpdating">
+        <BaseButton class="BaseButton--darkColor ProfilePage-Btn" :is-loading="profileIsUpdating">
           Save changes
         </BaseButton>
       </div>
