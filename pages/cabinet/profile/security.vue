@@ -312,7 +312,7 @@ export default {
     &::placeholder {
       font-size: 10px;
       font-weight: 700;
-      line-height: 55px;
+      line-height: 20px;
       color: var(--color-text-ghost);
       text-transform: uppercase;
     }
