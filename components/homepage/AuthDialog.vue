@@ -165,6 +165,7 @@ export default {
     margin-bottom: 5px;
     font-size: 10px;
     color: var(--color-error);
+    text-transform: initial;
 
     &--registration {
       top: initial;
