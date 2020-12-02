@@ -151,7 +151,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .SupportPage-Title {
   margin-bottom: 4px;
 
