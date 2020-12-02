@@ -157,6 +157,7 @@ export default {
     ...mapMutations(['clearUpdateProfileError']),
     ...mapActions(['updateProfile']),
     onSubmit() {
+      if (JSON.stringify(this.fields) === JSON.stringify(this.userInfo)) return;
       const payload = {};
       for (const key in this.fields) {
         if (key === 'country') {
