@@ -241,11 +241,15 @@ export default {
   &-Input {
     height: 100%;
     padding: 0 16px;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--color-text-main);
     background: var(--color-bg);
     border: none;
+
+    @media (min-width: $screen-s) {
+      font-size: 12px;
+    }
 
     &:disabled {
       color: var(--color-text-ghost);

@@ -203,9 +203,14 @@ export default {
   }
 
   &-Input {
+    font-size: 16px;
     color: var(--color-text-main);
     background: var(--color-bg);
     border: none;
+
+    @media (min-width: $screen-s) {
+      font-size: 12px;
+    }
   }
 
   [type='radio'] {

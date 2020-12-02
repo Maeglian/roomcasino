@@ -305,7 +305,7 @@ export default {
     background: var(--color-bg);
     border: none;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-s) {
       font-size: 12px;
     }
 
