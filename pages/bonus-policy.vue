@@ -16,7 +16,7 @@
         </p>
       </div>
       <ul class="SupportPage-List">
-        <h4 class="Title">General Terms</h4>
+        <div class="Title">General Terms</div>
         <li class="SupportPage-Item">
           <p class="Text">
             First Deposit/Welcome Bonus can only be claimed once every 72 hours across all Casinos
@@ -276,7 +276,7 @@
           </p>
         </li>
 
-        <h4 class="Title">Wagering Requirements</h4>
+        <div class="Title">Wagering Requirements</div>
 
         <li class="SupportPage-Item">
           <p class="Text">
@@ -452,7 +452,7 @@
           </p>
         </li>
 
-        <h4 class="Title">Irregular Play/Fair Play</h4>
+        <div class="Title">Irregular Play/Fair Play</div>
 
         <li class="SupportPage-Item">
           <p class="Text">
@@ -552,6 +552,10 @@ export default {
 <style lang="scss" scoped>
 table {
   color: var(--color-text-ghost);
+}
+
+.Title {
+  margin-bottom: 20px;
 }
 
 .SupportPage-Item {
