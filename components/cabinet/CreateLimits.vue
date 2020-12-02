@@ -28,7 +28,9 @@
           v-model.number="currencyLimitList[0].value"
           class="CreateLimits-Amount"
           input-type="text"
+          error-class="CreateLimits-Error"
           input-class="CreateLimits-Input"
+          :v="$v.currencyLimitList.$each.$iter[0].value"
         >
           <template #afterInput-absolute>
             <span class="CreateLimits-InputCurrency">
@@ -99,6 +101,7 @@ import { LIMIT_PERIODS, LIMIT_TYPES, LIMIT_DETAILS } from '@/config';
 import { findValInArr } from '@/utils/helpers';
 import { mapActions, mapGetters } from 'vuex';
 import moment from 'moment';
+import { checkIfPositiveNumbers } from '@/utils/formCheckers';
 
 export default {
   name: 'CreateLimits',
@@ -145,6 +148,13 @@ export default {
       limitState: this.item.limitState || 0,
     };
   },
+  validations: {
+    currencyLimitList: {
+      $each: {
+        value: { checkIfPositiveNumbers },
+      },
+    },
+  },
   created() {
     this.currencyLimitList[0].currency = this.activeAccount.currency;
     this.currencyLimitList[0].value = this.item.targetValue || 0;
@@ -184,6 +194,9 @@ export default {
   methods: {
     ...mapActions(['addLimit', 'getLimits']),
     onClickLimitBtn() {
+      this.$v.$touch();
+      if (this.$v.$error) return;
+
       if (!this.isConfirm) {
         this.isConfirm = true;
         return;
@@ -255,6 +268,13 @@ export default {
     line-height: 55px;
     color: var(--color-text-ghost);
     text-transform: uppercase;
+  }
+
+  &-Error {
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    z-index: 2;
   }
 
   &-Btn {
