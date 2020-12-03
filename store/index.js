@@ -342,6 +342,7 @@ export const state = () => ({
   errors: {},
   profileIsLoading: false,
   user: {},
+  accountIsAdding: false,
   billingSession: {},
   fakeBillingSession: {
     userId: '123',
@@ -758,6 +759,12 @@ export const mutations = {
     state.authStatus = 'success';
     state.authError = '';
   },
+  accountIsAdding(state) {
+    state.accountisAdding = true;
+  },
+  accountIsAdded(state) {
+    state.accountisAdding = false;
+  },
   setToken(state, token) {
     state.token = token;
   },
@@ -970,10 +977,21 @@ export const actions = {
     }
   },
 
-  async setActiveAccount({ commit }, payload) {
+  async setActiveAccount({ commit, dispatch }, payload) {
+    commit('accountIsAdding');
     try {
-      const res = await axios.post(`${API_HOST}/setActiveAccount`, payload);
-      commit('setActiveUserAccount', res.data.data.currency);
+      await axios.post(`${API_HOST}/setActiveAccount`, payload);
+      await dispatch('getProfile');
+      commit('accountIsAdded');
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async createAccount({ commit }, payload) {
+    try {
+      const res = await axios.post(`${API_HOST}/createAccount`, payload);
+      commit('setActiveUserAccount', res.data);
     } catch (e) {
       commit('pushErrors', e);
     }
