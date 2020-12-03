@@ -99,3 +99,8 @@ export const LIMIT_PERIODS = [
     value: 'monthLimit',
   },
 ];
+
+export const PROFILE_LABELS = {
+  receiveEmails: 'Send promos by e-mail',
+  receiveSmsPromos: 'Send promos by sms',
+};
