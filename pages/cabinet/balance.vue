@@ -81,7 +81,12 @@
             Add Currency
           </div>
           <div class="AddCurrency-Content">
-            <div v-for="cur in curencyAccounts" :key="cur" class="AddCurrency-Currency">
+            <div
+              v-for="cur in currencyAccounts"
+              :key="cur"
+              class="AddCurrency-Currency"
+              @click="onChooseCurrency(cur)"
+            >
               {{ cur }}
             </div>
           </div>
@@ -118,15 +123,15 @@ export default {
     };
   },
   computed: {
-    ...mapState(['user']),
-    ...mapGetters(['curencyAccounts']),
+    ...mapState(['user', 'accountIsAdding']),
+    ...mapGetters(['currencyAccounts']),
     userAccounts() {
       return this.user.accountList || this.fakeUserAccounts;
     },
   },
   methods: {
     ...mapMutations(['setCashoutTrue']),
-    ...mapActions(['setActiveAccount', 'getLimits']),
+    ...mapActions(['setActiveAccount', 'getLimits', 'createAccount', 'getProfile']),
     onClickDeposit(currency) {
       this.setActiveAccount({ currency }).then(() => {
         this.$modal.show('cashier');
@@ -140,6 +145,13 @@ export default {
     },
     onChangeAccount(e) {
       this.setActiveAccount({ currency: e.target.value }).then(() => this.getLimits());
+    },
+    onChooseCurrency(cur) {
+      this.createAccount({ currency: cur }).then(() => {
+        this.getProfile();
+        this.getLimits();
+        this.$modal.hide('addCurrency');
+      });
     },
   },
 };

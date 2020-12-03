@@ -342,7 +342,6 @@ export const state = () => ({
   errors: {},
   profileIsLoading: false,
   user: {},
-  accountIsAdding: false,
   billingSession: {},
   fakeBillingSession: {
     userId: '123',
@@ -680,7 +679,7 @@ export const getters = {
 
     return {};
   },
-  curencyAccounts: state =>
+  currencyAccounts: state =>
     state.currencyList.filter(cur => {
       if (state.user.accountList) {
         return !state.user.accountList.some(acc => acc.currency === cur);
@@ -758,12 +757,6 @@ export const mutations = {
   authSuccess(state) {
     state.authStatus = 'success';
     state.authError = '';
-  },
-  accountIsAdding(state) {
-    state.accountisAdding = true;
-  },
-  accountIsAdded(state) {
-    state.accountisAdding = false;
   },
   setToken(state, token) {
     state.token = token;
@@ -990,8 +983,7 @@ export const actions = {
 
   async createAccount({ commit }, payload) {
     try {
-      const res = await axios.post(`${API_HOST}/createAccount`, payload);
-      commit('setActiveUserAccount', res.data);
+      await axios.post(`${API_HOST}/createAccount`, payload);
     } catch (e) {
       commit('pushErrors', e);
     }
