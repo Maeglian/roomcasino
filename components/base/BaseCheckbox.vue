@@ -96,17 +96,12 @@ export default {
 
   &-Label {
     position: relative;
-    position: relative;
     display: block;
-    padding-left: 41px;
-    line-height: 17px;
     color: var(--color-text-ghost);
 
     &:before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
       width: 17px;
       height: 17px;
       border: 1px solid var(--color-text-ghost);
