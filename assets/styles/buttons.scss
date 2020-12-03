@@ -11,28 +11,31 @@ button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 15px;
-  font-size: 16px;
-  font-weight: 700;
-  text-align: center;
-  color: var(--color-text-main);
-  text-transform: uppercase;
   text-decoration: none;
-  background: var(--color-main1);
+  text-align: center;
   border: none;
   cursor: pointer;
 
-  @media(min-width: $screen-m) {
-    font-size: 14px;
-  }
-
-  @media(min-width: $screen-l) {
-    padding: 22px 30px;
-  }
-
-  @media(min-width: $screen-xl) {
-    padding: 25px 45px;
+  &--common {
+    padding: 20px 15px;
     font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+    background: var(--color-main1);
+
+    @media(min-width: $screen-m) {
+      font-size: 14px;
+    }
+
+    @media(min-width: $screen-l) {
+      padding: 22px 30px;
+    }
+
+    @media(min-width: $screen-xl) {
+      padding: 25px 45px;
+      font-size: 16px;
+    }
   }
 
   &--text {
