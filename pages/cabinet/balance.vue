@@ -73,7 +73,7 @@
         Add currency
       </span>
     </button>
-    <modal name="addCurrency" width="348" height="auto" @before-close="clearServerError()">
+    <modal name="addCurrency" width="348" height="auto" @before-close="beforeCloseModal">
       <div class="Modal">
         <div class="Close Modal-Close" @click="$modal.hide('addCurrency')"></div>
         <div class="AddCurrency">
@@ -160,6 +160,9 @@ export default {
         this.getLimits();
         this.$modal.hide('addCurrency');
       });
+    },
+    beforeCloseModal() {
+      if (this.serverError) this.clearServerError();
     },
   },
 };
