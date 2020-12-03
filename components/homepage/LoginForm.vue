@@ -29,7 +29,7 @@
       :is-loading="authStatus === 'loading'"
       :disabled="$v.$error"
     >
-      Sign up
+      Login
     </BaseButton>
   </form>
 </template>
