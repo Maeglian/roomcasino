@@ -158,10 +158,6 @@ export default {
       },
     },
   },
-  created() {
-    this.currencyLimitList[0].currency = this.activeAccount.currency;
-    this.currencyLimitList[0].value = this.item.targetValue || 0;
-  },
   computed: {
     ...mapGetters(['activeAccount', 'accountList']),
     // limitTypes() {
@@ -188,6 +184,10 @@ export default {
       if (this.currentPeriod === 'monthly') date = moment().add(30, 'days');
       return moment(date).format();
     },
+  },
+  created() {
+    this.currencyLimitList[0].currency = this.activeAccount.currency;
+    this.currencyLimitList[0].value = this.item.targetValue || 0;
   },
   // watch: {
   //   accountList: {

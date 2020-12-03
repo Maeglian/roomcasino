@@ -72,7 +72,7 @@
       </BaseDropdownContainer>
       <Search
         class="ProvidersSection-Search CategoryPage-Search"
-        :class="{ 'CategoryPage-Search--firstLayer': width >= 768 && !this.filters.rating.isOpen }"
+        :class="{ 'CategoryPage-Search--firstLayer': width >= 768 && !filters.rating.isOpen }"
       />
     </div>
     <Games :games="games" :games-to-show="30" btn-class="Btn--common" />

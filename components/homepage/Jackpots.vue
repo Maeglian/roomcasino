@@ -158,23 +158,28 @@ export default {
     margin-bottom: 24px;
     padding: 17px 10px;
     text-align: center;
-    border: 8px dotted var(--color-main1);
-    //background: url('./../assets/img/circle-min.png');
-    //background-size: 20px;
-    //background-repeat: round;
-    //
-    //&:before {
-    //  content: "";
-    //  position: absolute;
-    //  top: 20px;
-    //  left: 20px;
-    //  right: 20px;
-    //  bottom: 20px;
-    //  background: var(--color-bg);
-    //}
+    border-width: 28px;
+    border-style: solid;
+    border-color: var(--color-main1);
+    border-image-source: url(../../assets/img/dotted-border.png);
+    border-image-slice: 209 223;
+    border-image-width: 20px;
+    border-image-repeat: repeat;
+
+    @media (min-width: $screen-xs) {
+      border-image-slice: 214 223;
+      border-image-width: 25px;
+    }
+
+    @media (min-width: $screen-s) {
+      border-image-slice: 218 219;
+      border-image-width: 27px;
+    }
 
     @media (min-width: $screen-m) {
       border-width: 9px;
+      border-image-slice: 197 200;
+      border-image-width: 24px;
     }
 
     @media (min-width: $screen-l) {
@@ -185,6 +190,8 @@ export default {
     @media (min-width: $screen-xl) {
       padding: 35px 10px;
       border-width: 18px;
+      border-image-slice: 230 232;
+      border-image-width: 47px;
     }
   }
 
