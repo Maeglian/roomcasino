@@ -40,7 +40,7 @@ export const state = () => ({
   status: '',
   authStatus: '',
   countriesList: {},
-  currencyList: {},
+  currencyList: [],
   categories: [],
   shouldCashout: false,
   providers: [
@@ -668,7 +668,6 @@ export const getters = {
   gamesLimited: state => limit => state.games.slice(0, limit),
   limitedTournamentWinners: state => limit => state.currentTournamentWinners.slice(0, limit),
   countriesNames: state => Object.values(state.countriesList),
-  currencyNames: state => Object.values(state.currencyList),
   userInfo: state => {
     if (Object.keys(state.user).length) {
       const info = { ...state.user };
@@ -681,7 +680,7 @@ export const getters = {
     return {};
   },
   curencyAccounts: state =>
-    Object.keys(state.currencyList).filter(cur => {
+    state.currencyList.filter(cur => {
       if (state.user.accountList) {
         return !state.user.accountList.some(acc => acc.currency === cur);
       }
