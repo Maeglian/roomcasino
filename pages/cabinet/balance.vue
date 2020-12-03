@@ -73,22 +73,30 @@
         Add currency
       </span>
     </button>
-    <modal name="addCurrency" width="348" height="auto">
+    <modal name="addCurrency" width="348" height="auto" @before-close="clearServerError()">
       <div class="Modal">
         <div class="Close Modal-Close" @click="$modal.hide('addCurrency')"></div>
         <div class="AddCurrency">
           <div class="CabinetPage-Header AddCurrency-Header">
             Add Currency
           </div>
-          <div class="AddCurrency-Content">
-            <div
-              v-for="cur in currencyAccounts"
-              :key="cur"
-              class="AddCurrency-Currency"
-              @click="onChooseCurrency(cur)"
-            >
-              {{ cur }}
+          <div v-if="currencyAccounts.length" class="AddCurrency-Content">
+            <div class="AddCurrency-Currencies">
+              <div
+                v-for="cur in currencyAccounts"
+                :key="cur"
+                class="AddCurrency-Currency"
+                @click="onChooseCurrency(cur)"
+              >
+                {{ cur }}
+              </div>
             </div>
+            <div v-if="serverError" class="Error">
+              {{ serverError }}
+            </div>
+          </div>
+          <div v-else class="AddCurrency-Text">
+            No more currency to add
           </div>
         </div>
       </div>
@@ -123,14 +131,14 @@ export default {
     };
   },
   computed: {
-    ...mapState(['user', 'accountIsAdding']),
+    ...mapState(['user', 'serverError']),
     ...mapGetters(['currencyAccounts']),
     userAccounts() {
       return this.user.accountList || this.fakeUserAccounts;
     },
   },
   methods: {
-    ...mapMutations(['setCashoutTrue']),
+    ...mapMutations(['setCashoutTrue', 'clearServerError']),
     ...mapActions(['setActiveAccount', 'getLimits', 'createAccount', 'getProfile']),
     onClickDeposit(currency) {
       this.setActiveAccount({ currency }).then(() => {
@@ -242,7 +250,7 @@ export default {
 .AddCurrency {
   background: var(--color-body);
 
-  &-Content {
+  &-Currencies {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 4px;
@@ -264,6 +272,12 @@ export default {
       padding: 11px 0;
       border: 2px solid var(--color-main1);
     }
+  }
+
+  &-Text {
+    padding: 25px;
+    font-size: 14px;
+    color: var(--color-text-ghost);
   }
 }
 </style>

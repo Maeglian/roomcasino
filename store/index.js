@@ -14,7 +14,7 @@ const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : AP
 const Cookie = process.client ? require('js-cookie') : undefined;
 const cookieparser = process.server ? require('cookieparser') : undefined;
 
-const reqConfig = (func, funcName) => ({
+const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
   transformResponse: [
     data => {
       let res;
@@ -36,6 +36,7 @@ const reqConfig = (func, funcName) => ({
 });
 
 export const state = () => ({
+  serverError: '',
   gameProducerList: [DEFAULT_PROVIDER],
   status: '',
   authStatus: '',
@@ -690,6 +691,12 @@ export const getters = {
 };
 
 export const mutations = {
+  setServerError: (state, message) => {
+    state.serverError = message;
+  },
+  clearServerError: state => {
+    state.serverError = '';
+  },
   setGameProducerList: (state, payload) => {
     state.gameProducerList = [...state.gameProducerList, ...payload];
   },
@@ -982,8 +989,9 @@ export const actions = {
   },
 
   async createAccount({ commit }, payload) {
+    commit('clearServerError');
     try {
-      await axios.post(`${API_HOST}/createAccount`, payload);
+      await axios.post(`${API_HOST}/createAccount`, payload, reqConfig(commit));
     } catch (e) {
       commit('pushErrors', e);
     }
