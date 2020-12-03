@@ -1,77 +1,81 @@
 <template>
   <div class="ProfileInfo ProfilePage-Content">
-    <form class="ProfileInfo-Form" @submit.prevent="onSubmit">
+    <Loader v-if="profileIsLoading" />
+    <form v-else class="ProfileInfo-Form" @submit.prevent="onSubmit">
       <div class="CabinetPage-Header">
         General Info
       </div>
-      <Loader v-if="profileIsLoading" />
-      <div v-else class="ProfileInfo-Fields">
+      <div class="ProfileInfo-Fields">
         <template v-for="(val, name) in fields">
-          <div v-if="name === 'country'" :key="name" class="CabinetForm-Row">
-            <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
-              {{ name }}
-            </label>
-            <BaseDropdown
-              v-model="fields[name]"
-              class="CabinetForm-Row CabinetForm-Dropdown"
-              :items="countriesNames"
-              @set-dropdown-value="fields[name] = $event"
-            />
-          </div>
-          <div v-else-if="name === 'gender'" :key="name" class="CabinetForm-Row">
-            <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
-              {{ name }}
-            </label>
-            <BaseDropdown
-              v-model="fields[name]"
-              class="CabinetForm-Row CabinetForm-Dropdown"
-              :items="['male', 'female']"
-              @set-dropdown-value="fields[name] = $event"
-            />
-          </div>
-          <BaseInput
-            v-else
-            :key="name"
-            v-model="fields[name]"
-            class="CabinetForm-Row"
-            :disabled="name === 'email'"
-            input-type="text"
-            :input-id="name | formatLabel"
-            input-class="CabinetForm-Input"
-            wrapper-class="CabinetForm-Wrapper"
-          >
-            <template #beforeInput-relative>
+          <template v-if="name !== 'receiveEmails' && name !== 'receiveSmsPromos'">
+            <div v-if="name === 'country'" :key="name" class="CabinetForm-Row">
               <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
                 {{ name }}
               </label>
-            </template>
-            <template v-if="name === 'mobile'" #afterInput-absolute>
-              <div class="CabinetForm-Verified">
-                Verify
-                <svg class="CabinetForm-Icon" width="17" height="17">
-                  <use xlink:href="@/assets/img/icons.svg#verify"></use>
-                </svg>
-              </div>
-            </template>
-          </BaseInput>
+              <BaseDropdown
+                v-model="fields[name]"
+                class="CabinetForm-Row CabinetForm-Dropdown"
+                :items="countriesNames"
+                @set-dropdown-value="fields[name] = $event"
+              />
+            </div>
+            <div v-else-if="name === 'gender'" :key="name" class="CabinetForm-Row">
+              <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
+                {{ name }}
+              </label>
+              <BaseDropdown
+                v-model="fields[name]"
+                class="CabinetForm-Row CabinetForm-Dropdown"
+                :items="['male', 'female']"
+                @set-dropdown-value="fields[name] = $event"
+              />
+            </div>
+            <BaseInput
+              v-else
+              :key="name"
+              v-model="fields[name]"
+              class="CabinetForm-Row"
+              :disabled="name === 'email'"
+              input-type="text"
+              :input-id="name | formatLabel"
+              input-class="CabinetForm-Input"
+              wrapper-class="CabinetForm-Wrapper"
+            >
+              <template #beforeInput-relative>
+                <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
+                  {{ name }}
+                </label>
+              </template>
+              <template v-if="name === 'mobile'" #afterInput-absolute>
+                <div class="CabinetForm-Verified">
+                  Verify
+                  <svg class="CabinetForm-Icon" width="17" height="17">
+                    <use xlink:href="@/assets/img/icons.svg#verify"></use>
+                  </svg>
+                </div>
+              </template>
+            </BaseInput>
+          </template>
         </template>
       </div>
       <div class="CabinetPage-Header">
         Subscriptions
       </div>
       <div class="ProfileInfo-Subscriptions">
-        <BaseCheckbox
-          v-for="(item, name) in subscriptions"
-          :key="name"
-          v-model="item.value"
-          type="checkbox"
-          class="CabinetForm-Row"
-          input-class="CabinetForm-Checkbox"
-          label-class="CabinetForm-CheckboxLabel CabinetForm-Field CabinetForm-Label"
-          @change="item.value = $event"
-        >
-          {{ item.text }}
-        </BaseCheckbox>
+        <template v-for="(item, name) in fields">
+          <BaseCheckbox
+            v-if="name === 'receiveEmails' || name === 'receiveSmsPromos'"
+            :key="name"
+            v-model="fields[name]"
+            type="checkbox"
+            class="CabinetForm-Row"
+            input-class="CabinetForm-Checkbox"
+            label-class="CabinetForm-CheckboxLabel CabinetForm-Field CabinetForm-Label"
+            @change="item = $event"
+          >
+            {{ profileLabels[name] }}
+          </BaseCheckbox>
+        </template>
       </div>
       <div class="CabinetForm-Row">
         <div v-if="updateProfileError" class="Error ProfilePage-Error">
@@ -90,6 +94,7 @@ import { mapGetters, mapActions, mapState, mapMutations } from 'vuex';
 import BaseButton from '@/components/base/BaseButton.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import Loader from '@/components/Loader';
+import { PROFILE_LABELS } from '@/config';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 
@@ -116,6 +121,8 @@ export default {
   data() {
     return {
       fields: {},
+      promosFields: {},
+      profileLabels: PROFILE_LABELS,
       fakeFields: {
         email: 'fillypkfillypk@gmail.com',
         firstName: 'Fillyp',
@@ -128,30 +135,25 @@ export default {
         postalCode: '864520',
         mobile: '+3588****89',
       },
-      subscriptions: {
-        byEmail: {
-          value: true,
-          text: 'Send promos by e-mail',
-        },
-        bySms: {
-          value: true,
-          text: 'Send promos by sms',
-        },
-      },
     };
   },
   computed: {
-    ...mapState(['profileIsLoading', 'profileIsUpdating', 'updateProfileError', 'countriesList']),
+    ...mapState([
+      'user',
+      'profileIsLoading',
+      'profileIsUpdating',
+      'updateProfileError',
+      'countriesList',
+    ]),
     ...mapGetters(['userInfo', 'countriesNames']),
     // fields() {
     //   return info === 'real' ? this.userInfo : this.fakeFields;
     // },
   },
   watch: {
-    userInfo: {
+    user: {
       immediate: true,
       handler() {
-        console.log(this.userInfo);
         this.fields = { ...this.userInfo };
       },
     },
@@ -160,7 +162,12 @@ export default {
     ...mapMutations(['clearUpdateProfileError']),
     ...mapActions(['updateProfile']),
     onSubmit() {
-      if (JSON.stringify(this.fields) === JSON.stringify(this.userInfo)) return;
+      console.log(JSON.stringify(this.promosFields), JSON.stringify(this.userPromosInfo));
+      if (
+        JSON.stringify(this.fields) === JSON.stringify(this.userInfo) &&
+        JSON.stringify(this.promosFields) === JSON.stringify(this.userPromosInfo)
+      )
+        return;
       const payload = {};
       for (const key in this.fields) {
         if (key === 'country') {
@@ -169,8 +176,6 @@ export default {
         } else payload[key] = this.fields[key];
       }
 
-      payload.receiveEmailPromos = this.subscriptions.byEmail.value;
-      payload.receiveSmsPromos = this.subscriptions.bySms.value;
       this.updateProfile(payload);
     },
   },
