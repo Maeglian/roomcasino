@@ -109,6 +109,10 @@ export default {
     }
   }
 
+  &-Btn--login {
+    background: none;
+  }
+
   &-Sections {
     display: flex;
     align-items: center;

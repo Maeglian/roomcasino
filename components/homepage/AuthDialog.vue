@@ -156,6 +156,8 @@ export default {
   &-Btn {
     height: 68px;
     margin-top: auto;
+    text-transform: uppercase;
+    background: var(--color-main1);
   }
 
   &-Error {
