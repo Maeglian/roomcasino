@@ -37,7 +37,7 @@
               Get bonus
             </NuxtLink>
             <NuxtLink
-              to="#"
+              to="/bonus-terms"
               class="Btn Btn--common Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
             >
               Bonus terms & conditions
