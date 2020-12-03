@@ -711,10 +711,10 @@ export const mutations = {
   setWidth: (state, payload) => {
     state.width = payload;
   },
-  gamesAreLoading: state => {
+  setGamesAreLoading: state => {
     state.gamesAreLoading = true;
   },
-  gamesAreLoaded: state => {
+  setGamesAreLoaded: state => {
     state.gamesAreLoading = false;
   },
   setGames: (state, payload) => {
@@ -746,15 +746,15 @@ export const mutations = {
     }
     limit.limits.push(payload.content);
   },
-  authRequest(state) {
+  setAuthRequest(state) {
     state.authStatus = 'loading';
     state.authError = '';
   },
-  authError(state, message) {
+  setAuthError(state, message) {
     state.authStatus = 'error';
     state.authError = message;
   },
-  authSuccess(state) {
+  setAuthSuccess(state) {
     state.authStatus = 'success';
     state.authError = '';
   },
@@ -836,23 +836,23 @@ export const actions = {
     }
   },
   async getGames({ commit }, payload = {}) {
-    commit('gamesAreLoading');
+    commit('setGamesAreLoading');
     try {
       const res = await axios.get(`${API_HOST}/getGameList`, { params: payload });
       commit('setGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
     } finally {
-      commit('gamesAreLoaded');
+      commit('setGamesAreLoaded');
     }
   },
 
   async registerUser({ state, commit, dispatch }, payload) {
-    commit('authRequest');
+    commit('setAuthRequest');
     try {
       const res = await axios.post(`${API_HOST}/register`, payload, reqConfig(commit, 'authError'));
       if (!state.authError) {
-        commit('authSuccess');
+        commit('setAuthSuccess');
         const { token } = res.data;
         commit('setToken', token);
         Cookie.set('token', token);
@@ -860,16 +860,16 @@ export const actions = {
         dispatch('getProfile');
       }
     } catch (e) {
-      commit('authError', e);
+      commit('setAuthError', e);
       Cookie.remove('token');
     }
   },
 
   async authorize({ state, commit, dispatch }, payload) {
-    commit('authRequest');
+    commit('setAuthRequest');
     await dispatch('login', payload);
     if (!state.authError) {
-      commit('authSuccess');
+      commit('setAuthSuccess');
       dispatch('getProfile');
       dispatch('getLimits');
     }
@@ -879,7 +879,7 @@ export const actions = {
     try {
       const res = await axios.post(`${API_HOST}/login`, payload);
       if (res.data.code === 10002) {
-        commit('authError', res.data.message);
+        commit('setAuthError', res.data.message);
       } else {
         const { token } = res.data.data;
         commit('setToken', token);
@@ -887,7 +887,7 @@ export const actions = {
         axios.defaults.headers.common['X-Auth-Token'] = token;
       }
     } catch (e) {
-      commit('authError', e);
+      commit('setAuthError', e);
       Cookie.remove('token');
     }
   },
@@ -899,7 +899,7 @@ export const actions = {
       const user = res.data.data;
       commit('setUser', user);
     } catch (e) {
-      commit('authError', e);
+      commit('setAuthError', e);
     } finally {
       commit('setProfileIsLoaded');
     }
