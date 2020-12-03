@@ -100,7 +100,7 @@
           {{ updateProfileError }}
         </div>
         <BaseButton
-          class="BaseButton--full BaseButton--darkColor ProfilePage-Btn"
+          class="Btn Btn--full Btn--darkColor ProfilePage-Btn"
           :is-loading="profileIsUpdating"
         >
           Update
