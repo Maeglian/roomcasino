@@ -4,7 +4,8 @@
       <div class="CabinetPage-Header">
         General Info
       </div>
-      <div v-if="Object.keys(fields).length" class="ProfileInfo-Fields">
+      <Loader v-if="profileIsLoading" />
+      <div v-else class="ProfileInfo-Fields">
         <template v-for="(val, name) in fields">
           <div v-if="name === 'country'" :key="name" class="CabinetForm-Row">
             <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
@@ -88,6 +89,7 @@
 import { mapGetters, mapActions, mapState, mapMutations } from 'vuex';
 import BaseButton from '@/components/base/BaseButton.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
+import Loader from '@/components/Loader';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 
@@ -101,6 +103,7 @@ export default {
     BaseCheckbox,
     BaseButton,
     BaseDropdown,
+    Loader,
   },
   filters: {
     formatLabel(str) {
@@ -138,7 +141,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['profileIsUpdating', 'updateProfileError', 'countriesList']),
+    ...mapState(['profileIsLoading', 'profileIsUpdating', 'updateProfileError', 'countriesList']),
     ...mapGetters(['userInfo', 'countriesNames']),
     // fields() {
     //   return info === 'real' ? this.userInfo : this.fakeFields;

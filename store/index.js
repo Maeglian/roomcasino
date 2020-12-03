@@ -340,6 +340,7 @@ export const state = () => ({
   gamesAreLoading: false,
   winnersAreLoading: false,
   errors: {},
+  profileIsLoading: false,
   user: {},
   billingSession: {},
   fakeBillingSession: {
@@ -761,6 +762,12 @@ export const mutations = {
   setToken(state, token) {
     state.token = token;
   },
+  setProfileIsLoading(state) {
+    state.profileIsLoading = true;
+  },
+  setProfileIsLoaded(state) {
+    state.profileIsLoading = false;
+  },
   setUser(state, user) {
     state.user = user;
   },
@@ -887,12 +894,15 @@ export const actions = {
   },
 
   async getProfile({ commit }) {
+    commit('setProfileIsLoading');
     try {
       const res = await axios.get(`${API_HOST}/getProfile`);
       const user = res.data.data;
       commit('setUser', user);
     } catch (e) {
       commit('authError', e);
+    } finally {
+      commit('setProfileIsLoaded');
     }
   },
 
