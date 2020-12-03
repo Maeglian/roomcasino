@@ -7,7 +7,7 @@
         :img-url="game.imageUrl"
         overlay
         @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
-        @playDemo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
+        @play-demo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
       />
     </div>
     <div v-if="games.length > gamesShowed" class="Games-Btn">
@@ -20,9 +20,11 @@
 
 <script>
 import { mapActions } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'Games',
+  mixins: [showAuthDialog],
   props: {
     games: {
       type: Array,

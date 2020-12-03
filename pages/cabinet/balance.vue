@@ -91,7 +91,7 @@
                 {{ cur }}
               </div>
             </div>
-            <div v-if="serverError" class="Error">
+            <div v-if="serverError" class="AddCurrency-Error Error">
               {{ serverError }}
             </div>
           </div>
@@ -281,6 +281,11 @@ export default {
     padding: 25px;
     font-size: 14px;
     color: var(--color-text-ghost);
+  }
+
+  &-Error {
+    padding-top: 20px;
+    font-size: 14px;
   }
 }
 </style>
