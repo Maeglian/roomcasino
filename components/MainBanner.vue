@@ -33,10 +33,10 @@
       <div v-if="text" class="MainBanner-Text">
         {{ text }}
       </div>
-      <button v-if="btn" class="Btn MainBanner-Btn" @click="btn.onClickBtn">
+      <button v-if="btn" class="Btn Btn--common MainBanner-Btn" @click="btn.onClickBtn">
         {{ btn.text }}
       </button>
-      <NuxtLink v-if="btnLink" :to="btnLink.url" class="Btn MainBanner-Btn">
+      <NuxtLink v-if="btnLink" :to="btnLink.url" class="Btn Btn--common MainBanner-Btn">
         {{ btnLink.text }}
       </NuxtLink>
     </div>

@@ -9,10 +9,10 @@
         {{ text }}
       </div>
       <div class="ConfirmDialog-Btns">
-        <button class="Btn Btn--dark ConfirmDialog-Btn" @click="onClickCancel">
+        <button class="Btn Btn--common Btn--dark ConfirmDialog-Btn" @click="onClickCancel">
           Cancel
         </button>
-        <button class="Btn Btn--color ConfirmDialog-Btn" @click="onClickOk">
+        <button class="Btn Btn--common Btn--color ConfirmDialog-Btn" @click="onClickOk">
           Yes, {{ okBtnText }}
         </button>
       </div>

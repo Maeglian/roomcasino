@@ -51,12 +51,15 @@
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns">
           <button
-            class="Btn Btn--color CabinetPage-Btn BalancePage-DepositBtn"
+            class="Btn Btn--common Btn--color CabinetPage-Btn BalancePage-DepositBtn"
             @click="onClickDeposit(acc.currency)"
           >
             Deposit
           </button>
-          <button class="Btn Btn--outline CabinetPage-Btn" @click="onClickCashout(acc.currency)">
+          <button
+            class="Btn Btn--common Btn--outline CabinetPage-Btn"
+            @click="onClickCashout(acc.currency)"
+          >
             Cashout
           </button>
         </div>

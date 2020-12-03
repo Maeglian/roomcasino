@@ -33,10 +33,13 @@
             </div>
           </div>
           <div class="PromotionsCard-Btns">
-            <NuxtLink to="#" class="Btn PromotionsCard-Btn PromotionsCard-Btn--small">
+            <NuxtLink to="#" class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small">
               Get bonus
             </NuxtLink>
-            <NuxtLink to="#" class="Btn Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large">
+            <NuxtLink
+              to="#"
+              class="Btn Btn--common Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
+            >
               Bonus terms & conditions
             </NuxtLink>
           </div>
@@ -71,10 +74,13 @@
             </div>
           </div>
           <div class="PromotionsCard-Btns">
-            <button class="Btn PromotionsCard-Btn PromotionsCard-Btn--small">
+            <button class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small">
               Deposit
             </button>
-            <NuxtLink to="#" class="Btn Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large">
+            <NuxtLink
+              to="#"
+              class="Btn Btn--common Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
+            >
               Terms & conditions
             </NuxtLink>
           </div>

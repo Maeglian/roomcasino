@@ -72,7 +72,10 @@
         :items="selfExclusionPeriods"
         @set-dropdown-value="period = $event"
       />
-      <button class="Btn Btn--full Btn--color CreateLimits-Btn" @click="onClickLimitBtn">
+      <button
+        class="Btn Btn--common Btn--full Btn--color CreateLimits-Btn"
+        @click="onClickLimitBtn"
+      >
         <template v-if="isEdit">
           Save limits
         </template>

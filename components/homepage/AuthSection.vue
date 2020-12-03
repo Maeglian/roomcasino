@@ -32,18 +32,24 @@
           <div v-show="isNewNotifications" class="AuthSection-UserMessagesNew"></div>
         </div>
       </div>
-      <button class="Btn AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
+      <button
+        class="Btn Btn--common AuthSection-Btn AuthSection-Btn--deposit"
+        @click="$modal.show('cashier')"
+      >
         Deposit
       </button>
     </div>
     <div v-else class="AuthSection-Login">
       <button
-        class="Btn Btn--text AuthSection-Btn AuthSection-Btn--login"
+        class="Btn Btn--common Btn--text AuthSection-Btn AuthSection-Btn--login"
         @click="showRegistrationDialog('login')"
       >
         Login
       </button>
-      <button class="Btn AuthSection-Btn" @click="showRegistrationDialog('registration')">
+      <button
+        class="Btn Btn--common AuthSection-Btn"
+        @click="showRegistrationDialog('registration')"
+      >
         Register
       </button>
     </div>

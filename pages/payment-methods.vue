@@ -38,7 +38,7 @@
               </div>
             </div>
             <div class="PaymentPage-Item-BtnBox">
-              <a href="" class="Btn PaymentPage-Item-Btn">DEPOSIT</a>
+              <a href="" class="Btn Btn--common PaymentPage-Item-Btn">DEPOSIT</a>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@
               </div>
             </div>
             <div class="PaymentPage-Item-BtnBox">
-              <a href="" class="Btn PaymentPage-Item-Btn">DEPOSIT</a>
+              <a href="" class="Btn Btn--common PaymentPage-Item-Btn">DEPOSIT</a>
             </div>
           </div>
         </div>

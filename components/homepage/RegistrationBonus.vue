@@ -16,7 +16,7 @@
           For yours first deposit! Use advantage of RoomСasino Welcome Bonus.
         </div>
       </div>
-      <button type="btn" class="Btn Btn--full" @click="onClickBtn">
+      <button type="btn" class="Btn Btn--common Btn--full" @click="onClickBtn">
         Deposit
       </button>
     </div>

@@ -43,7 +43,7 @@
               </div>
               <div class="NotificationCard-Text" v-html="item.text"></div>
             </div>
-            <NuxtLink to="#" class="Btn Btn--dark NotificationCard-Btn">
+            <NuxtLink to="#" class="Btn Btn--common Btn--dark NotificationCard-Btn">
               {{ item.btnText }}
             </NuxtLink>
           </div>

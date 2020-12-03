@@ -20,7 +20,7 @@
         </div>
         <div class="DailyTournamentPage-Promotion">
           <div class="DailyTournamentPage-Deposit">
-            <button class="Btn DailyTournamentPage-Btn" @click="onClickBtn()">
+            <button class="Btn Btn--common DailyTournamentPage-Btn" @click="onClickBtn()">
               {{ isLoggedIn ? 'Deposit' : 'Sign up' }}
             </button>
             <Counter enddate="2020-12-31" />
@@ -147,7 +147,10 @@
             </template>
           </Banner>
           <div class="PromotionsCard-Btns">
-            <NuxtLink to="#" class="Btn Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large">
+            <NuxtLink
+              to="#"
+              class="Btn Btn--common Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
+            >
               More Info
             </NuxtLink>
           </div>
