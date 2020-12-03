@@ -75,7 +75,7 @@
         :class="{ 'CategoryPage-Search--firstLayer': width >= 768 && !this.filters.rating.isOpen }"
       />
     </div>
-    <Games :games="games" :games-to-show="30" />
+    <Games :games="games" :games-to-show="30" btn-class="Btn--common" />
   </section>
 </template>
 
