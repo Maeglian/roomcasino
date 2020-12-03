@@ -1,9 +1,7 @@
 <template>
   <div class="GamblingLimit" :style="{ '--color': color, '--offset': strokeOffset }">
     <div class="GamblingLimit-Header">
-      <div class="GamblingLimit-Title">
-        {{ item.title }}
-      </div>
+      <div class="GamblingLimit-Title">{{ title }} limit</div>
       <button
         ref="edit"
         type="button"
@@ -28,14 +26,18 @@
           Delete limit
         </button>
       </div>
-      <div v-if="item.isMoney" class="GamblingLimit-State">
+      <div v-if="item.type === 'depositLimit'" class="GamblingLimit-State">
         <div class="GamblingLimit-Scale">
           <svg class="GamblingLimit-Circle">
             <circle class="GamblingLimit-CircleBg" cx="20" cy="20" r="17"></circle>
             <circle class="GamblingLimit-Progress" cx="20" cy="20" r="17"></circle>
           </svg>
         </div>
-        <Counter class="GamblingLimit-Counter" :min-format="true" :enddate="item.reset" />
+        <Counter
+          class="GamblingLimit-Counter"
+          :min-format="true"
+          :enddate="new Date(item.refreshAt * 1000)"
+        />
       </div>
       <div v-if="item.type === 'session'" class="GamblingLimit-LineScale">
         <div
@@ -51,10 +53,11 @@
       </div>
       <div v-else class="GamblingLimit-Footer">
         <div class="GamblingLimit-Details">
-          <template v-if="item.isMoney">
-            {{ item.limitState }} of {{ item.limitAmount }} EUR {{ item.currency }} left
+          <template v-if="item.type === 'depositLimit'">
+            {{ item.targetValue - item.value }} of {{ item.targetValue }}
+            {{ activeAccount.currency }} left
           </template>
-          <template v-if="item.period" class="GamblingLimit-Left">
+          <template v-else class="GamblingLimit-Left">
             <svg
               v-if="item.type === 'reality_check'"
               class="GamblingLimit-Icon GamblingLimit-RealityIcon"
@@ -91,7 +94,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
+import { LIMIT_PERIODS, LIMIT_DETAILS } from '@/config';
 import Counter from '@/components/Counter';
 import CreateLimits from '@/components/cabinet/CreateLimits';
 import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
@@ -116,69 +120,68 @@ export default {
     };
   },
   computed: {
-    ...mapState(['currency']),
+    ...mapGetters(['activeAccount']),
+    title() {
+      return LIMIT_PERIODS.find(period => period.value === this.item.period).name;
+    },
     color() {
       switch (this.item.type) {
-        case 'loss':
+        case 'lossLimit':
           return '#8733F3';
-        case 'wager':
+        case 'wagerLimit':
           return '#335DF3';
-        case 'cooling':
+        case 'coolingLimit':
           return '#EB1C2A';
-        case 'deposit':
+        case 'depositLimit':
           return '#33C5F3';
         default:
           return '#F3B233';
       }
     },
     isActive() {
-      if (this.item.end) return new Date(this.item.end) > new Date();
+      if (this.item.refreshAt) return new Date(this.item.refreshAt) > new Date();
       return true;
     },
     strokeOffset() {
-      return (this.item.limitState / this.item.limitAmount) * circleLength;
+      if (this.item.targetValue <= 0) return 0;
+      return ((this.item.targetValue - this.item.value) / this.item.targetValue) * circleLength;
     },
     sessionLeft() {
       return this.item.limitAmount - this.item.limitState;
     },
   },
   methods: {
+    ...mapActions(['deleteLimit', 'getLimits']),
     onClickOutside(e) {
       if (e.target !== this.$refs.edit) this.editMenuIsOpen = false;
     },
     onClickEdit() {
       this.$modal.show(
         CreateLimits,
-        { isEdit: true, item: this.item, onUpdateLimit: this.onUpdateLimit },
+        { isEdit: true, item: this.item },
         { width: 400, height: 'auto', adaptive: true },
-        {
-          'update-limit': e => this.$emit('update-limit', e),
-        },
       );
-    },
-    onUpdateLimit(payload) {
-      this.$emit('update-limit', payload);
-      this.$modal.hide('delete');
     },
     onClickCancelDelete() {
       this.$modal.hide('delete');
     },
     onDeleteLimit() {
-      this.$emit('delete-limit');
+      this.deleteLimit({
+        type: this.item.type,
+        period: this.item.period,
+      }).then(() => this.getLimits());
       this.editMenuIsOpen = false;
-    },
-    onCloseDeleteConfirmDialog() {
-      this.$emit('close');
     },
     onClickDelete() {
       this.$modal.show(
         ConfirmDialog,
         {
           title: 'Delete limit',
-          text: `Are you sure you want to delete ${this.item.type} limit?`,
+          text: `Are you sure you want to delete ${this.item.type} limit? ${
+            LIMIT_DETAILS[this.item.type].deleteRules
+          }`,
           okBtnText: 'delete limit',
           closeBtn: true,
-          onCancel: this.onCloseDeleteConfirmDialog,
           onOk: this.onDeleteLimit,
         },
         { width: 400, height: 'auto', adaptive: true },

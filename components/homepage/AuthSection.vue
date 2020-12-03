@@ -38,7 +38,7 @@
     </div>
     <div v-else class="AuthSection-Login">
       <button
-        class="Btn Btn--text AuthSection-Btn AuthSection-Btn--login"
+        class="Btn AuthSection-Btn AuthSection-Btn--login"
         @click="showRegistrationDialog('login')"
       >
         Login
@@ -73,6 +73,8 @@ export default {
 
 <style lang="scss">
 .AuthSection {
+  height: 100%;
+
   &-Login {
     display: none;
 
@@ -84,16 +86,31 @@ export default {
   }
 
   &-Btn {
+    display: block;
+    height: 100%;
+    padding: 0 15px;
+    font-size: 10px;
+    text-transform: uppercase;
+    background: var(--color-main1);
+
     @media (min-width: $screen-m) {
-      display: block;
-      padding: 25px;
-      font-size: 10px;
+      height: 58px;
+    }
+
+    @media (min-width: $screen-l) {
+      height: 64px;
+      padding: 0 25px;
     }
 
     @media (min-width: $screen-xl) {
-      padding: 30px;
+      height: 76px;
+      padding: 0 30px;
       font-size: 12px;
     }
+  }
+
+  &-Btn--login {
+    background: none;
   }
 
   &-Sections {
@@ -104,6 +121,7 @@ export default {
   &-UserSection {
     display: flex;
     align-items: center;
+    height: 100%;
     padding-right: 18px;
     padding-left: 18px;
     text-transform: uppercase;
@@ -219,6 +237,7 @@ export default {
 .AuthSection--aside {
   &.AuthSection--authenticated {
     order: 0;
+    height: auto;
 
     @media (min-width: $screen-xs) {
       order: 1;
@@ -233,9 +252,15 @@ export default {
     display: block;
     width: 100%;
     padding: 18px 0;
+    font-size: 14px;
+
+    @media (min-width: $screen-xs) {
+      height: auto;
+      padding: 0;
+    }
 
     @media (min-width: $screen-m) {
-      font-size: 18px;
+      font-size: 22px;
     }
   }
 
@@ -254,6 +279,7 @@ export default {
   .AuthSection-UserSection {
     display: block;
     order: 0;
+    height: auto;
     margin-bottom: 20px;
 
     @media (min-width: $screen-xs) {

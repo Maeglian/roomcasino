@@ -25,7 +25,7 @@
             bonus
           </div>
           <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>
-          <button class="Btn Hero-Btn" @click="onClickBtn()">
+          <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
             {{ isLoggedIn ? 'Deposit now' : 'Sign up' }}
           </button>
         </div>

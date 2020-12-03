@@ -46,7 +46,10 @@
           </div>
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">
-          <button class="Btn Btn--color CabinetPage-Btn" @click="$modal.show('cashier')">
+          <button
+            class="Btn Btn--common Btn--color CabinetPage-Btn"
+            @click="$modal.show('cashier')"
+          >
             Deposit
           </button>
         </div>
@@ -67,7 +70,10 @@
           </div>
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">
-          <button class="Btn Btn--color CabinetPage-Btn" @click="$modal.show('cashier')">
+          <button
+            class="Btn Btn--common Btn--color CabinetPage-Btn"
+            @click="$modal.show('cashier')"
+          >
             Deposit
           </button>
         </div>
@@ -88,7 +94,10 @@
           </div>
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">
-          <button class="Btn Btn--color CabinetPage-Btn" @click="$modal.show('cashier')">
+          <button
+            class="Btn Btn--common Btn--color CabinetPage-Btn"
+            @click="$modal.show('cashier')"
+          >
             Deposit
           </button>
         </div>

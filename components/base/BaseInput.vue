@@ -50,6 +50,13 @@
     >
       Must be numeric
     </div>
+    <div
+      v-if="shouldDisplayValidation && v && v.checkIfPositiveNumbers === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      Input 0 or positive number
+    </div>
     <slot name="beforeInput-relative"></slot>
     <div class="BaseInput-Wrapper" :class="wrapperClass">
       <slot name="beforeInput-absolute"></slot>
@@ -178,11 +185,6 @@ export default {
     z-index: 1;
     width: 100%;
     height: 100%;
-    font-size: 16px;
-
-    @media (min-width: $screen-s) {
-      font-size: initial;
-    }
 
     &:focus {
       + .BaseInput-Placeholder {

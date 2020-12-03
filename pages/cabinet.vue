@@ -203,9 +203,14 @@ export default {
   }
 
   &-Input {
+    font-size: 16px;
     color: var(--color-text-main);
     background: var(--color-bg);
     border: none;
+
+    @media (min-width: $screen-s) {
+      font-size: 12px;
+    }
   }
 
   [type='radio'] {
@@ -269,6 +274,7 @@ export default {
   &-Dropdown {
     height: 55px;
     font-size: 10px;
+    text-transform: uppercase;
 
     &--currency {
       width: 230px;

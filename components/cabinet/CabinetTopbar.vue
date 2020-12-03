@@ -122,6 +122,7 @@ export default {
     margin-left: auto;
     padding: 11px 18px;
     font-size: 10px;
+    text-transform: uppercase;
 
     @media (min-width: $screen-l) {
       align-self: stretch;

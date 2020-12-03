@@ -305,14 +305,14 @@ export default {
     background: var(--color-bg);
     border: none;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-s) {
       font-size: 12px;
     }
 
     &::placeholder {
       font-size: 10px;
       font-weight: 700;
-      line-height: 55px;
+      line-height: 20px;
       color: var(--color-text-ghost);
       text-transform: uppercase;
     }

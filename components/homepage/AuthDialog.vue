@@ -73,7 +73,6 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 585px;
   background: var(--color-bg);
 
   &-Tabs {
@@ -119,6 +118,7 @@ export default {
   &-Content {
     position: relative;
     flex-grow: 1;
+    min-height: 518px;
     padding-right: 14px;
     padding-bottom: 29px;
     padding-left: 14px;
@@ -154,7 +154,10 @@ export default {
   }
 
   &-Btn {
+    height: 68px;
     margin-top: auto;
+    text-transform: uppercase;
+    background: var(--color-main1);
   }
 
   &-Error {
@@ -164,6 +167,7 @@ export default {
     margin-bottom: 5px;
     font-size: 10px;
     color: var(--color-error);
+    text-transform: initial;
 
     &--registration {
       top: initial;

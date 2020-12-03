@@ -15,6 +15,7 @@ export default {
 
 <style lang="scss">
 .Loader {
+  padding-top: 15px;
   text-align: center;
 
   &-Image {

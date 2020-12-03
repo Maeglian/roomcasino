@@ -9,7 +9,7 @@
         € 500 <span class="Colored">+</span> 500 Free Spins every day!
       </div>
       <div class="Tournament-Participate">
-        <div class="Btn Tournament-Btn">
+        <div class="Btn Btn--common Tournament-Btn">
           Participate
         </div>
         <Counter class="Tournament-Counter" enddate="2020-12-01" />

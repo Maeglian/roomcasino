@@ -38,7 +38,6 @@ export default {
 
 <style lang="scss">
 .Search {
-  z-index: 1;
   display: flex;
   border: 2px solid var(--color-border);
   cursor: pointer;
@@ -121,7 +120,6 @@ export default {
 
   &--open {
     position: absolute;
-    top: 0;
     right: 0;
     bottom: 0;
     width: 100%;

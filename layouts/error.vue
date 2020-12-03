@@ -17,7 +17,7 @@
           An error occurred
         </h1>
       </template>
-      <NuxtLink to="/" class="Btn ErrorPage-Btn">
+      <NuxtLink to="/" class="Btn Btn--common ErrorPage-Btn">
         Go to the home page
       </NuxtLink>
     </div>

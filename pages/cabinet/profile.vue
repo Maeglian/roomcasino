@@ -43,7 +43,10 @@ export default {
   &-Btn {
     height: 55px;
     margin-left: auto;
+    padding-right: 30px;
+    padding-left: 30px;
     font-size: 12px;
+    text-transform: uppercase;
   }
 }
 </style>

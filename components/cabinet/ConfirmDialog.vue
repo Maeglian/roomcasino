@@ -9,10 +9,10 @@
         {{ text }}
       </div>
       <div class="ConfirmDialog-Btns">
-        <button class="Btn Btn--dark ConfirmDialog-Btn" @click="$emit('close')">
+        <button class="Btn Btn--common Btn--dark ConfirmDialog-Btn" @click="onClickCancel">
           Cancel
         </button>
-        <button class="Btn Btn--color ConfirmDialog-Btn" @click="onClickOk">
+        <button class="Btn Btn--common Btn--color ConfirmDialog-Btn" @click="onClickOk">
           Yes, {{ okBtnText }}
         </button>
       </div>
@@ -53,6 +53,12 @@ export default {
     },
   },
   methods: {
+    onClickCancel() {
+      if (this.onCancel) this.onCancel.call(this);
+      else this.$emit('cancel');
+
+      this.$emit('close');
+    },
     onClickOk() {
       if (this.onOk) this.onOk();
       else this.$emit('ok');

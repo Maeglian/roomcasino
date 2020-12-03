@@ -46,3 +46,7 @@ export const deleteObjValuesFromLocalStorage = obj => {
     localStorage.removeItem(key);
   }
 };
+
+export const findValInArr = (val, arr) => {
+  return arr.find(item => item.value === val);
+};

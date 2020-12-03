@@ -1,7 +1,13 @@
 import axios from 'axios';
 import Vue from 'vue';
 import moment from 'moment';
-import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX } from '../config';
+import {
+  BILLING_PROVIDER_ID,
+  API_HOST_PROD,
+  API_HOST_SANDBOX,
+  LIMIT_TYPES,
+  DEFAULT_PROVIDER,
+} from '../config';
 
 const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : API_HOST_PROD;
 
@@ -30,7 +36,9 @@ const reqConfig = (func, funcName) => ({
 });
 
 export const state = () => ({
+  gameProducerList: [DEFAULT_PROVIDER],
   status: '',
+  authStatus: '',
   countriesList: {},
   currencyList: {},
   categories: [],
@@ -207,7 +215,7 @@ export const state = () => ({
   width: 0,
   games: [],
   jackpots: [],
-  limits: [
+  fakeLimits: [
     {
       name: 'loss limits',
       limits: [
@@ -328,11 +336,12 @@ export const state = () => ({
       ],
     },
   ],
+  limits: [],
   gamesAreLoading: false,
   winnersAreLoading: false,
   errors: {},
+  profileIsLoading: false,
   user: {},
-  currency: 'eur',
   billingSession: {},
   fakeBillingSession: {
     userId: '123',
@@ -637,8 +646,22 @@ export const getters = {
     if (state.user.accountList) return state.user.accountList.find(acc => acc.active === true);
     return {};
   },
+  accountList: state => {
+    if (state.user.accountList) return state.user.accountList;
+    return [];
+  },
   isLoggedIn: state => !!state.token,
   authStatus: state => state.status,
+  slicedGameProducerList: state => startIndex =>
+    state.gameProducerList.slice(startIndex, state.providers.length + 1),
+  limitsByTypes: state =>
+    LIMIT_TYPES.map(limit => {
+      const limits = state.limits.filter(l => l.type === limit.value);
+      return {
+        name: limit.name,
+        limits,
+      };
+    }),
   providersList: state => startIndex =>
     state.providers.slice(startIndex, state.providers.length + 1),
   fakedNewGames: state => [...state.games].reverse().slice(0, 12),
@@ -647,11 +670,15 @@ export const getters = {
   countriesNames: state => Object.values(state.countriesList),
   currencyNames: state => Object.values(state.currencyList),
   userInfo: state => {
-    const info = { ...state.user };
-    const countryName = state.countriesList[info.country];
-    info.country = countryName;
-    delete info.accountList;
-    return info;
+    if (Object.keys(state.user).length) {
+      const info = { ...state.user };
+      const countryName = state.countriesList[info.country];
+      info.country = countryName;
+      delete info.accountList;
+      return info;
+    }
+
+    return {};
   },
   curencyAccounts: state =>
     Object.keys(state.currencyList).filter(cur => {
@@ -664,6 +691,9 @@ export const getters = {
 };
 
 export const mutations = {
+  setGameProducerList: (state, payload) => {
+    state.gameProducerList = [...state.gameProducerList, ...payload];
+  },
   openNav: state => {
     state.navIsOpen = true;
   },
@@ -703,6 +733,9 @@ export const mutations = {
   setJackpots: (state, payload) => {
     state.jackpots = payload;
   },
+  setLimits: (state, payload) => {
+    state.limits = payload;
+  },
   addLimits: (state, payload) => {
     let limit = state.limits.find(lim => lim.name === payload.name);
     if (!limit) {
@@ -715,24 +748,31 @@ export const mutations = {
     limit.limits.push(payload.content);
   },
   authRequest(state) {
-    state.status = 'loading';
+    state.authStatus = 'loading';
     state.authError = '';
   },
   authError(state, message) {
-    state.status = 'error';
+    state.authStatus = 'error';
     state.authError = message;
+  },
+  authSuccess(state) {
+    state.authStatus = 'success';
+    state.authError = '';
   },
   setToken(state, token) {
     state.token = token;
+  },
+  setProfileIsLoading(state) {
+    state.profileIsLoading = true;
+  },
+  setProfileIsLoaded(state) {
+    state.profileIsLoading = false;
   },
   setUser(state, user) {
     state.user = user;
   },
   setBillingSession(state, payload) {
     state.billingSession = payload;
-  },
-  authSuccess(state) {
-    state.status = 'success';
   },
   removeAuthError(state) {
     state.authError = '';
@@ -796,12 +836,10 @@ export const actions = {
       }
     }
   },
-  async getGames({ commit }, query = '') {
+  async getGames({ commit }, payload = {}) {
     commit('gamesAreLoading');
     try {
-      // eslint-disable-next-line no-underscore-dangle
-      // const res = await axios.get(`https://games.netdnstrace1.com/?liveCasinoOnly=true&${query}`);
-      const res = await axios.get(`${API_HOST}/getGameList${query}`);
+      const res = await axios.get(`${API_HOST}/getGameList`, { params: payload });
       commit('setGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
@@ -809,16 +847,33 @@ export const actions = {
       commit('gamesAreLoaded');
     }
   },
-  async registerUser({ commit }, payload) {
+
+  async registerUser({ state, commit, dispatch }, payload) {
     commit('authRequest');
-    await axios.post(`${API_HOST}/register`, payload, reqConfig(commit, 'authError'));
+    try {
+      const res = await axios.post(`${API_HOST}/register`, payload, reqConfig(commit, 'authError'));
+      if (!state.authError) {
+        commit('authSuccess');
+        const { token } = res.data;
+        commit('setToken', token);
+        Cookie.set('token', token);
+        axios.defaults.headers.common['X-Auth-Token'] = token;
+        dispatch('getProfile');
+      }
+    } catch (e) {
+      commit('authError', e);
+      Cookie.remove('token');
+    }
   },
 
   async authorize({ state, commit, dispatch }, payload) {
     commit('authRequest');
     await dispatch('login', payload);
-    if (!state.authError) await dispatch('getProfile');
-    if (!state.authError) commit('authSuccess');
+    if (!state.authError) {
+      commit('authSuccess');
+      dispatch('getProfile');
+      dispatch('getLimits');
+    }
   },
 
   async login({ commit }, payload) {
@@ -839,12 +894,15 @@ export const actions = {
   },
 
   async getProfile({ commit }) {
+    commit('setProfileIsLoading');
     try {
       const res = await axios.get(`${API_HOST}/getProfile`);
       const user = res.data.data;
       commit('setUser', user);
     } catch (e) {
       commit('authError', e);
+    } finally {
+      commit('setProfileIsLoaded');
     }
   },
 
@@ -950,6 +1008,42 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setProfileIsUpdated');
+    }
+  },
+
+  async getGameProducerList({ commit }) {
+    try {
+      // eslint-disable-next-line no-underscore-dangle
+      const res = await axios.get(`${API_HOST}/gameProducerList`);
+      commit('setGameProducerList', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async getLimits({ commit }) {
+    try {
+      const res = await axios.get(`${API_HOST}/limit`);
+      const limits = res.data.data;
+      commit('setLimits', limits);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async addLimit({ commit }, payload) {
+    try {
+      await axios.put(`${API_HOST}/limit`, payload);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async deleteLimit({ commit }, payload) {
+    try {
+      await axios.delete(`${API_HOST}/limit?type=${payload.type}&period=${payload.period}`);
+    } catch (e) {
+      commit('pushErrors', e);
     }
   },
 };
