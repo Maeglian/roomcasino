@@ -450,7 +450,9 @@ export default {
   }
 
   &-Label {
+    padding-left: 30px;
     font-size: 12px;
+    line-height: 17px;
     color: var(--color-text-ghost);
 
     @media (min-width: $screen-m) {
@@ -463,6 +465,11 @@ export default {
 
     @media (min-width: $screen-l) {
       font-size: 14px;
+    }
+
+    &:before {
+      top: 0;
+      left: 0;
     }
   }
 
