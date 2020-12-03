@@ -96,7 +96,7 @@
                 $v[`fieldsStep${step}`][name].$dirty &&
                 $v[`fieldsStep${step}`][name].$error,
             }"
-            label-class="AuthDialog-Label"
+            label-class="AuthDialog-Label AuthDialog-CheckboxLabel"
             @change="field.value = $event"
             @animationend="$v[`fieldsStep${step}`][name].$reset()"
           >
@@ -514,6 +514,16 @@ export default {
 
   &-Checkbox {
     margin-top: 15px;
+  }
+
+  &-CheckboxLabel {
+    padding-left: 41px;
+    line-height: 17px;
+
+    &:before {
+      top: 0;
+      left: 0;
+    }
   }
 
   &-Label,
