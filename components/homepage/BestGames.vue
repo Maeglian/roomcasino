@@ -30,7 +30,12 @@
       </div>
       <Loader v-if="gamesAreLoading" />
       <template v-else-if="games.length">
-        <Games class="BestGames-Cards" :games="games" :games-to-show="24" btn-class="Btn--dark" />
+        <Games
+          class="BestGames-Cards"
+          :games="games"
+          :games-to-show="24"
+          btn-class="Btn--common Btn--dark"
+        />
       </template>
       <p v-else class="Text Text--center">
         Nothing was found
@@ -45,7 +50,7 @@
         class="BestGames-Cards NewGames-Cards"
         :games="fakedNewGames"
         :games-to-show="12"
-        btn-class="Btn--dark"
+        :btn-class="'Btn--common Btn--dark'"
       />
       <p v-else class="Text Text--center">
         Nothing was found
