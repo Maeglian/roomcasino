@@ -36,6 +36,10 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  historyListIsLoading: '',
+  transactionHistoryList: [],
+  gameHistoryList: [],
+  bonusHistoryList: [],
   serverError: '',
   gameProducerList: [DEFAULT_PROVIDER],
   status: '',
@@ -680,7 +684,11 @@ export const getters = {
 
     return {};
   },
-  currencyAccounts: state =>
+  currencyAccounts: state => {
+    if (state.user.accountList) return state.user.accountList.map(acc => acc.currency);
+    return [];
+  },
+  moreCurrencyAccounts: state =>
     state.currencyList.filter(cur => {
       if (state.user.accountList) {
         return !state.user.accountList.some(acc => acc.currency === cur);
@@ -696,6 +704,21 @@ export const mutations = {
   },
   clearServerError: state => {
     state.serverError = '';
+  },
+  setTransactionHistoryList: (state, payload) => {
+    state.transactionHistoryList = payload;
+  },
+  setGameHistoryList: (state, payload) => {
+    state.gameHistoryList = payload;
+  },
+  setBonusHistoryList: (state, payload) => {
+    state.bonusHistoryList = payload;
+  },
+  setHistoryListIsLoading: state => {
+    state.historyListIsLoading = true;
+  },
+  setHistoryListIsLoaded: state => {
+    state.historyListIsLoading = false;
   },
   setGameProducerList: (state, payload) => {
     state.gameProducerList = [...state.gameProducerList, ...payload];
@@ -838,6 +861,7 @@ export const actions = {
           token = parsed.token;
           // eslint-disable-next-line no-empty
         } catch (e) {}
+        axios.defaults.headers.common['X-Auth-Token'] = token;
         commit('setToken', token);
       }
     }
@@ -1061,6 +1085,45 @@ export const actions = {
       await axios.delete(`${API_HOST}/limit?type=${payload.type}&period=${payload.period}`);
     } catch (e) {
       commit('pushErrors', e);
+    }
+  },
+
+  async getTransactionHistoryList({ commit }) {
+    try {
+      commit('clearServerError');
+      commit('setHistoryListIsLoading');
+      const res = await axios.get(`${API_HOST}/getTransactionHistoryList`, reqConfig(commit));
+      if (!state.serverError) commit('setTransactionHistoryList', res.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setHistoryListIsLoaded');
+    }
+  },
+
+  async getBonusHistoryList({ commit }) {
+    try {
+      commit('clearServerError');
+      commit('setHistoryListIsLoading');
+      const res = await axios.get(`${API_HOST}/bonusHistoryList`, reqConfig(commit));
+      if (!state.serverError) commit('setBonusHistoryList', res.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setHistoryListIsLoaded');
+    }
+  },
+
+  async getGameHistoryList({ commit }) {
+    try {
+      commit('clearServerError');
+      commit('setHistoryListIsLoading');
+      const res = await axios.get(`${API_HOST}/getGameHistoryList`, reqConfig(commit));
+      if (!state.serverError) commit('setGameHistoryList', res.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setHistoryListIsLoaded');
     }
   },
 };
