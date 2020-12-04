@@ -845,7 +845,7 @@ export const actions = {
   async getGames({ commit }, payload = {}) {
     commit('setGamesAreLoading');
     try {
-      const res = await axios.get(`${API_HOST}/getGameList`, { params: payload });
+      const res = await axios.get(`${API_HOST}/gameList`, { params: payload });
       commit('setGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
