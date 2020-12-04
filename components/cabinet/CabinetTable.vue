@@ -28,7 +28,7 @@
               <div class="CabinetTable-Label">
                 {{ col.label }}
               </div>
-              {{ row[col.field] }}
+              {{ col.format ? col.format(row[col.field]) : row[col.field] }}
             </div>
           </template>
           <template v-else>

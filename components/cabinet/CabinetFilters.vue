@@ -21,9 +21,11 @@
             <BaseDropdown
               class="CabinetPage-Dropdown CabinetFilters-Dropdown"
               :class="`CabinetPage-Dropdown--${name}`"
-              :active-item="filter.value"
+              :active-item="
+                name === 'currency' ? (filter.value ? filter.value : activeCurrency) : filter.value
+              "
               :items="name === 'currency' ? currencyAccounts : filter.values"
-              @set-dropdown-value="setValue({ name, val: $event })"
+              @set-dropdown-value="setValue({ name, type: filter.type, payload: $event })"
             />
           </template>
           <template v-if="filter.type === 'date'">
@@ -33,7 +35,7 @@
               class="Datepicker CabinetPage-Datepicker"
               calendar-class="Datepicker-Inner"
               input-class="Datepicker-Input"
-              @selected="setValue({ name, val: $event })"
+              @selected="setValue({ name, type: filter.type, payload: $event })"
             />
           </template>
         </div>
@@ -48,6 +50,7 @@
 <script>
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapGetters, mapState } from 'vuex';
+import moment from 'moment';
 
 const Datepicker = () => import('vuejs-datepicker');
 
@@ -70,10 +73,14 @@ export default {
   },
   computed: {
     ...mapState(['width']),
-    ...mapGetters(['currencyAccounts']),
+    ...mapGetters(['currencyAccounts', 'activeCurrency']),
   },
   methods: {
-    setValue(val) {
+    setValue({ name, type, payload }) {
+      const val = { name };
+      if (type === 'date') val.val = moment(payload).unix();
+      else val.val = payload;
+      console.log(val.val);
       this.$emit('set-value', val);
     },
     openfiltersMenu() {
