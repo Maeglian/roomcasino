@@ -104,3 +104,141 @@ export const PROFILE_LABELS = {
   receiveEmails: 'Send promos by e-mail',
   receiveSmsPromos: 'Send promos by sms',
 };
+
+export const HISTORY_TABLES = {
+  transaction: {
+    cols: [
+      {
+        label: 'Date',
+        field: 'actionTime',
+      },
+      {
+        label: 'Payment system',
+        field: 'paymentSystem',
+      },
+      {
+        label: 'Action',
+        field: 'action',
+      },
+      {
+        label: 'Status',
+        field: 'status',
+      },
+      {
+        label: 'Amount',
+        field: 'amount',
+      },
+      {
+        label: 'Currency',
+        field: 'currency',
+      },
+    ],
+    filters: {
+      currency: {
+        type: 'dropdown',
+        value: '',
+      },
+      status: {
+        type: 'dropdown',
+        values: [
+          { name: 'Done', value: 'done' },
+          { name: 'Waiting', value: 'wait' },
+          { name: 'Cancelled', value: 'cancel' },
+        ],
+        value: '',
+      },
+      from: {
+        type: 'date',
+        value: '',
+      },
+    },
+  },
+  game: {
+    cols: [
+      {
+        label: 'Date',
+        field: 'actionTime',
+      },
+      {
+        label: 'Game name',
+        field: 'name',
+      },
+      {
+        label: 'Bet sum',
+        field: 'betSum',
+      },
+      {
+        label: 'Win',
+        field: 'winSum',
+      },
+      {
+        label: 'Currency',
+        field: 'currency',
+      },
+    ],
+    filters: {
+      currency: {
+        type: 'dropdown',
+        value: '',
+      },
+      from: {
+        type: 'date',
+        value: '',
+      },
+    },
+  },
+  bonus: {
+    cols: [
+      {
+        label: 'Date',
+        field: 'actionTime',
+      },
+      {
+        label: 'Title',
+        field: 'title',
+      },
+      {
+        label: 'Status',
+        field: 'status',
+      },
+      {
+        label: 'Amount',
+        field: 'amount',
+      },
+      {
+        label: 'Currency',
+        field: 'currency',
+      },
+      {
+        label: 'Wager',
+        field: 'wagerRemains',
+      },
+      {
+        label: 'Valid until',
+        field: 'expireAt',
+      },
+    ],
+    filters: {
+      currency: {
+        type: 'dropdown',
+        value: '',
+      },
+      status: {
+        type: 'dropdown',
+        values: [
+          { name: 'Active', value: 'active' },
+          { name: 'Run out', value: 'runOut' },
+          { name: 'Waiting', value: 'hold' },
+          { name: 'Paused', value: 'pause' },
+          { name: 'Cancelled', value: 'cancel' },
+          { name: 'Finished', value: 'wagerDone' },
+        ],
+        value: '',
+      },
+      from: {
+        type: 'date',
+        value: '',
+      },
+    },
+  },
+};
