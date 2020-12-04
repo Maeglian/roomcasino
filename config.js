@@ -146,16 +146,17 @@ export const HISTORY_TABLES = {
     filters: {
       currency: {
         type: 'dropdown',
-        value: '',
+        value: { name: 'All currencies', value: '' },
       },
       status: {
         type: 'dropdown',
         values: [
+          { name: 'All statuses', value: '' },
           { name: 'Done', value: 'done' },
           { name: 'Waiting', value: 'wait' },
           { name: 'Cancelled', value: 'cancel' },
         ],
-        value: { name: 'Done', value: 'done' },
+        value: { name: 'All statuses', value: '' },
       },
       from: {
         type: 'date',
@@ -192,7 +193,7 @@ export const HISTORY_TABLES = {
     filters: {
       currency: {
         type: 'dropdown',
-        value: '',
+        value: { name: 'All currencies', value: '' },
       },
       from: {
         type: 'date',
@@ -237,11 +238,12 @@ export const HISTORY_TABLES = {
     filters: {
       currency: {
         type: 'dropdown',
-        value: '',
+        value: { name: 'All currencies', value: '' },
       },
       status: {
         type: 'dropdown',
         values: [
+          { name: 'All statuses', value: '' },
           { name: 'Active', value: 'active' },
           { name: 'Run out', value: 'runOut' },
           { name: 'Waiting', value: 'hold' },
@@ -249,7 +251,7 @@ export const HISTORY_TABLES = {
           { name: 'Cancelled', value: 'cancel' },
           { name: 'Finished', value: 'wagerDone' },
         ],
-        value: { name: 'Active', value: 'active' },
+        value: { name: 'All statuses', value: '' },
       },
       from: {
         type: 'date',

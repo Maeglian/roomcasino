@@ -69,9 +69,9 @@ export default {
     filterPayload() {
       const payload = {};
       for (const key in this.filters) {
-        if (this.filters[key].value)
-          payload[key] = this.filters[key].value.value || this.filters[key].value;
-        if (key === 'currency' && !this.filters[key].value) payload.currency = this.activeCurrency;
+        if (typeof this.filters[key].value === 'object') {
+          if (this.filters[key].value.value) payload[key] = this.filters[key].value.value;
+        } else if (this.filters[key].value) payload[key] = this.filters[key].value;
       }
 
       payload.limit = this.limit;

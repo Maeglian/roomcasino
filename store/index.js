@@ -690,7 +690,15 @@ export const getters = {
     return {};
   },
   currencyAccounts: state => {
-    if (state.user.accountList) return state.user.accountList.map(acc => acc.currency);
+    if (state.user.accountList) {
+      const currencies = state.user.accountList.map(acc => ({
+        name: acc.currency,
+        value: acc.currency,
+      }));
+      currencies.unshift({ name: 'All currencies', value: '' });
+
+      return currencies;
+    }
     return [];
   },
   moreCurrencyAccounts: state =>

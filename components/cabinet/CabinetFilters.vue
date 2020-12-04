@@ -21,9 +21,7 @@
             <BaseDropdown
               class="CabinetPage-Dropdown CabinetFilters-Dropdown"
               :class="`CabinetPage-Dropdown--${name}`"
-              :active-item="
-                name === 'currency' ? (filter.value ? filter.value : activeCurrency) : filter.value
-              "
+              :active-item="filter.value"
               :items="name === 'currency' ? currencyAccounts : filter.values"
               @set-dropdown-value="setValue({ name, type: filter.type, payload: $event })"
             />
