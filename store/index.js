@@ -647,6 +647,11 @@ export const state = () => ({
 });
 
 export const getters = {
+  // eslint-disable-next-line no-shadow
+  activeCurrency: (state, getters) => {
+    if (state.user.accountList) return getters.activeAccount.currency;
+    return {};
+  },
   activeAccount: state => {
     if (state.user.accountList) return state.user.accountList.find(acc => acc.active === true);
     return {};
