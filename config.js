@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const BILLING_PROVIDER_ID = 'devcode';
 export const API_HOST_SANDBOX = 'http://az-44.sandbox.aramuz.net/frontapi/roomcasino';
 export const API_HOST_PROD = 'https://dev.aramuz.net/frontapi/roomcasino';
@@ -111,6 +113,9 @@ export const HISTORY_TABLES = {
       {
         label: 'Date',
         field: 'actionTime',
+        format(x) {
+          return moment.unix(x).format('DD MMM YYYY, H:mm:ss');
+        },
       },
       {
         label: 'Payment system',
@@ -145,11 +150,11 @@ export const HISTORY_TABLES = {
           { name: 'Waiting', value: 'wait' },
           { name: 'Cancelled', value: 'cancel' },
         ],
-        value: '',
+        value: 'done',
       },
       from: {
         type: 'date',
-        value: '',
+        value: moment().unix(),
       },
     },
   },
@@ -158,6 +163,9 @@ export const HISTORY_TABLES = {
       {
         label: 'Date',
         field: 'actionTime',
+        format(x) {
+          return moment.unix(x).format('DD MMM YYYY, H:mm:ss');
+        },
       },
       {
         label: 'Game name',
@@ -183,7 +191,7 @@ export const HISTORY_TABLES = {
       },
       from: {
         type: 'date',
-        value: '',
+        value: moment().unix(),
       },
     },
   },
@@ -192,6 +200,9 @@ export const HISTORY_TABLES = {
       {
         label: 'Date',
         field: 'actionTime',
+        format(x) {
+          return moment.unix(x).format('DD MMM YYYY, H:mm:ss');
+        },
       },
       {
         label: 'Title',
@@ -233,11 +244,11 @@ export const HISTORY_TABLES = {
           { name: 'Cancelled', value: 'cancel' },
           { name: 'Finished', value: 'wagerDone' },
         ],
-        value: '',
+        value: 'active',
       },
       from: {
         type: 'date',
-        value: '',
+        value: moment().unix(),
       },
     },
   },
