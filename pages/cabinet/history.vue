@@ -4,7 +4,7 @@
       History
     </div>
     <div class="Tabs">
-      <NuxtLink to="/cabinet/history/transactions" class="Tabs-Tab">
+      <NuxtLink to="/cabinet/history/transaction" class="Tabs-Tab">
         Transactions History
       </NuxtLink>
       <NuxtLink to="/cabinet/history/game" class="Tabs-Tab">

@@ -1,14 +1,15 @@
 <template>
   <div class="HistoryPage-Content">
-    <CabinetFilters :filters="filters" @set-value="setValue" />
+    <CabinetFilters :key="$route.path" :filters="filters" @set-value="setValue" />
     <CabinetTable
       :cols="columns"
       :rows="rowsInPage"
+      :loading="historyListIsLoading"
       :pagination="{
         enabled: true,
         currentPage: currentPage,
         totalPages: totalPages,
-        count: rows.length,
+        count: historyList.length,
       }"
       @changePage="currentPage = $event"
       @showMore="rowsPerPage += rowsPerPage"
@@ -19,6 +20,8 @@
 <script>
 import CabinetFilters from '@/components/cabinet/CabinetFilters.vue';
 import CabinetTable from '@/components/cabinet/CabinetTable.vue';
+import { mapActions, mapState, mapGetters } from 'vuex';
+import { HISTORY_TABLES } from '@/config';
 
 export default {
   name: 'HistoryContent',
@@ -27,900 +30,73 @@ export default {
     CabinetTable,
   },
   layout: 'cabinet',
-  async asyncData({ params }) {
-    const type = params.historyType;
-    const currency = {
-      name: 'currency',
-      type: 'dropdown',
-      values: [
-        'SEK - Swedish krona',
-        'CNY - Chinese Renminbi Yuan',
-        'BTC - Bitcoin',
-        'CAD - Canadian dollar',
-        'USD - American dollar',
-        'EUR - Euro',
-      ],
-    };
-    const actions = {
-      name: 'action',
-      type: 'dropdown',
-      values: ['Deposit', 'Affiliatere ward'],
-    };
-    const status = {
-      name: 'status',
-      type: 'dropdown',
-      values: ['Accepted', 'Discarded'],
-    };
-    let filters;
-    if (type === '/cabinet/history/transactions') {
-      filters = [currency, actions, status];
-    } else if (type === '/cabinet/history/game') {
-      filters = [currency, { name: 'from', type: 'date' }, { name: 'to', type: 'date' }];
-    } else {
-      filters = [currency, status, { name: 'from', type: 'date' }];
-    }
-
-    return { filters };
-  },
   data() {
     return {
       activeFilters: [],
-      filterValues: {},
       rowsPerPage: 6,
       currentPage: 1,
+      columns: HISTORY_TABLES[this.$route.params.historyType].cols,
+      filters: HISTORY_TABLES[this.$route.params.historyType].filters,
     };
   },
   computed: {
-    columns() {
-      const transactionColumns = [
-        {
-          label: 'Date',
-          field: 'date',
-        },
-        {
-          label: 'Payment system',
-          field: 'payment',
-        },
-        {
-          label: 'Action',
-          field: 'action',
-        },
-        {
-          label: 'Status',
-          field: 'status',
-        },
-        {
-          label: 'Amount',
-          field: 'amount',
-        },
-      ];
-      const gamesColumns = [
-        {
-          label: 'Date',
-          field: 'date',
-        },
-        {
-          label: 'Game name',
-          field: 'name',
-        },
-        {
-          label: 'Bet sum',
-          field: 'bet',
-        },
-        {
-          label: 'Win',
-          field: 'win',
-        },
-      ];
-      const bonusColumns = [
-        {
-          label: 'Date',
-          field: 'date',
-        },
-        {
-          label: 'Title',
-          field: 'title',
-        },
-        {
-          label: 'Stage',
-          field: 'stage',
-        },
-        {
-          label: 'Amount',
-          field: 'amount',
-        },
-        {
-          label: 'Wager',
-          field: 'wager',
-        },
-        {
-          label: 'Valid until',
-          field: 'validUntil',
-        },
-      ];
-
-      if (this.$route.path === '/cabinet/history/game') return gamesColumns;
-      if (this.$route.path === '/cabinet/history/bonus') return bonusColumns;
-
-      return transactionColumns;
-    },
-    rows() {
-      const transactionRows = [
-        {
-          date: '11 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '18 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '11 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '18 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '11 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '18 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '11 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Credit card',
-          action: 'Affiliatere ward',
-          status: 'Discarded',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-        {
-          date: '18 Jun 2020, 16:33:48',
-          payment: 'Yandex money',
-          action: 'Deposit',
-          status: 'Accepted',
-          amount: '316.00 USD',
-        },
-      ];
-      const gamesRows = [
-        {
-          date: '10 Jun 2020, 16:33:48',
-          name: 'Dynamite Riches',
-          bet: '36.0 USD',
-          win: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          name: 'Dynamite Riches',
-          bet: '36.0 USD',
-          win: '0 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          name: 'Dynamite Riches',
-          bet: '36.0 USD',
-          win: '0 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          name: 'Dynamite Riches',
-          bet: '36.0 USD',
-          win: '0 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          name: 'Dynamite Riches',
-          bet: '36.0 USD',
-          win: '0 USD',
-        },
-      ];
-      const bonusRows = [
-        {
-          date: '10 Jun 2020, 16:33:48',
-          title: 'Dynamite Riches',
-          stage: 'Dynamite Riches',
-          amount: '316.00 USD',
-          wager: '316.00 USD',
-          validUntil: '316.00 USD',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          title: 'Dynamite Riches',
-          stage: 'Dynamite Riches',
-          amount: '316.00 USD',
-          wager: '316.00 USD',
-          validUntil: '0',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          title: 'Dynamite Riches',
-          stage: 'Dynamite Riches',
-          amount: '316.00 USD',
-          wager: '316.00 USD',
-          validUntil: '0',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          title: 'Dynamite Riches',
-          stage: 'Dynamite Riches',
-          amount: '316.00 USD',
-          wager: '316.00 USD',
-          validUntil: '0',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          title: 'Dynamite Riches',
-          stage: 'Dynamite Riches',
-          amount: '316.00 USD',
-          wager: '316.00 USD',
-          validUntil: '0',
-        },
-        {
-          date: '10 Jun 2020, 16:33:48',
-          title: 'Dynamite Riches',
-          stage: 'Dynamite Riches',
-          amount: '316.00 USD',
-          wager: '316.00 USD',
-          validUntil: '0',
-        },
-      ];
-
-      if (this.$route.path === '/cabinet/history/game') return gamesRows;
-      if (this.$route.path === '/cabinet/history/bonus') return bonusRows;
-
-      return transactionRows;
+    ...mapState([
+      'transactionHistoryList',
+      'gameHistoryList',
+      'bonusHistoryList',
+      'historyListIsLoading',
+    ]),
+    ...mapGetters(['currencyAccounts']),
+    historyList() {
+      switch (this.$route.params.historyType) {
+        case 'game':
+          return this.gameHistoryList;
+        case 'bonus':
+          return this.bonusHistoryList;
+        default:
+          return this.transactionHistoryList;
+      }
     },
     rowsInPage() {
       const start = this.rowsPerPage * (this.currentPage - 1);
       const end = start + this.rowsPerPage;
 
-      return this.rows.slice(start, end);
+      return this.historyList.slice(start, end);
     },
     totalPages() {
-      return Math.ceil(this.rows.length / this.rowsPerPage);
+      if (!this.historyList.length) return 0;
+      return Math.ceil(this.historyList.length / this.rowsPerPage);
     },
   },
+  watch: {
+    $route() {
+      this.getData();
+    },
+  },
+  created() {
+    this.getData();
+  },
   methods: {
+    ...mapActions(['getTransactionHistoryList', 'getBonusHistoryList', 'getGameHistoryList']),
     setValue(value) {
       const { name, val } = value;
-      this.filterValues[name] = val;
+      this.filters[name].value = val;
+    },
+    getData() {
+      // const actionType = `get${this.$route.params.historyType[0].toUpperCase()}${this.$route.params.historyType.slice(
+      //   1,
+      // )}`;
+      // console.log(actionType);
+      switch (this.$route.params.historyType) {
+        case 'game':
+          this.getGameHistoryList();
+          break;
+        case 'bonus':
+          this.getBonusHistoryList();
+          break;
+        default:
+          this.getTransactionHistoryList();
+      }
     },
   },
 };

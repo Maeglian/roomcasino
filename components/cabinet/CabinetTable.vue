@@ -13,36 +13,38 @@
           {{ col.label }}
         </div>
       </div>
-      <div v-for="(row, i) in rows" :key="i" class="Table-Row CabinetTable-Row">
-        <template v-if="cols">
-          <div
-            v-for="(col, j) in cols"
-            :key="`${i}_${j}_${row[col.field]}`"
-            class="Table-Cell CabinetTable-Cell"
-            :class="{
-              'CabinetTable-Cell--accepted': row[col.field] === 'Accepted',
-              'CabinetTable-Cell--discarded': row[col.field] === 'Discarded',
-            }"
-          >
-            <div class="CabinetTable-Label">
-              {{ col.label }}
+      <template v-if="rows.length">
+        <div v-for="(row, i) in rows" :key="i" class="Table-Row CabinetTable-Row">
+          <template v-if="cols">
+            <div
+              v-for="(col, j) in cols"
+              :key="`${i}_${j}_${row[col.field]}`"
+              class="Table-Cell CabinetTable-Cell"
+              :class="{
+                'CabinetTable-Cell--accepted': row[col.field] === 'Accepted',
+                'CabinetTable-Cell--discarded': row[col.field] === 'Discarded',
+              }"
+            >
+              <div class="CabinetTable-Label">
+                {{ col.label }}
+              </div>
+              {{ row[col.field] }}
             </div>
-            {{ row[col.field] }}
-          </div>
-        </template>
-        <template v-else>
-          <div
-            v-for="(col, j) in row"
-            :key="`${i}_${j}_${col}`"
-            class="Table-Cell CabinetTable-Cell"
-            :class="{
-              'CabinetTable-Cell--accepted': col === 'Current',
-            }"
-          >
-            {{ col }}
-          </div>
-        </template>
-      </div>
+          </template>
+          <template v-else>
+            <div
+              v-for="(col, j) in row"
+              :key="`${i}_${j}_${col}`"
+              class="Table-Cell CabinetTable-Cell"
+              :class="{
+                'CabinetTable-Cell--accepted': col === 'Current',
+              }"
+            >
+              {{ col }}
+            </div>
+          </template>
+        </div>
+      </template>
     </div>
     <div class="CabinetTable-Footer">
       <button

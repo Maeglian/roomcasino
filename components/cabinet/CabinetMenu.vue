@@ -12,7 +12,7 @@
       </svg>
       Bonuses
     </NuxtLink>
-    <NuxtLink class="CabinetMenu-NavLink" to="/cabinet/history/transactions">
+    <NuxtLink class="CabinetMenu-NavLink" to="/cabinet/history/transaction">
       <svg class="CabinetMenu-NavIcon" width="22" height="20">
         <use xlink:href="@/assets/img/icons.svg#history"></use>
       </svg>

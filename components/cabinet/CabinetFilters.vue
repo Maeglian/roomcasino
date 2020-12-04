@@ -13,16 +13,17 @@
     </div>
     <transition name="slide-up">
       <div v-if="width >= 1248 || filtersMenuIsOpen" class="CabinetFilters-Filters">
-        <div v-for="filter in filters" :key="filter.name" class="CabinetFilters-Filter">
+        <div v-for="(filter, name) in filters" :key="name" class="CabinetFilters-Filter">
           <div class="CabinetFilters-Name">
-            {{ filter.name }}
+            {{ name }}
           </div>
           <template v-if="filter.type === 'dropdown'">
             <BaseDropdown
               class="CabinetPage-Dropdown CabinetFilters-Dropdown"
-              :class="`CabinetPage-Dropdown--${filter.name}`"
-              :items="filter.values"
-              @set-dropdown-value="setValue({ name: filter.name, val: $event })"
+              :class="`CabinetPage-Dropdown--${name}`"
+              :active-item="filter.value"
+              :items="name === 'currency' ? currencyAccounts : filter.values"
+              @set-dropdown-value="setValue({ name, val: $event })"
             />
           </template>
           <template v-if="filter.type === 'date'">
@@ -32,7 +33,7 @@
               class="Datepicker CabinetPage-Datepicker"
               calendar-class="Datepicker-Inner"
               input-class="Datepicker-Input"
-              @selected="setValue({ name: filter.name, val: $event })"
+              @selected="setValue({ name, val: $event })"
             />
           </template>
         </div>
@@ -46,7 +47,7 @@
 
 <script>
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
-import { mapState } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 
 const Datepicker = () => import('vuejs-datepicker');
 
@@ -58,7 +59,7 @@ export default {
   },
   props: {
     filters: {
-      type: Array,
+      type: Object,
       required: true,
     },
   },
@@ -69,6 +70,10 @@ export default {
   },
   computed: {
     ...mapState(['width']),
+    ...mapGetters(['currencyAccounts']),
+  },
+  created() {
+    console.log(this.currencyAccounts);
   },
   methods: {
     setValue(val) {
