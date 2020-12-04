@@ -80,10 +80,10 @@
           <div class="CabinetPage-Header AddCurrency-Header">
             Add Currency
           </div>
-          <div v-if="currencyAccounts.length" class="AddCurrency-Content">
+          <div v-if="moreCurrencyAccounts.length" class="AddCurrency-Content">
             <div class="AddCurrency-Currencies">
               <div
-                v-for="cur in currencyAccounts"
+                v-for="cur in moreCurrencyAccounts"
                 :key="cur"
                 class="AddCurrency-Currency"
                 @click="onChooseCurrency(cur)"
@@ -132,7 +132,7 @@ export default {
   },
   computed: {
     ...mapState(['user', 'serverError']),
-    ...mapGetters(['currencyAccounts']),
+    ...mapGetters(['moreCurrencyAccounts']),
     userAccounts() {
       return this.user.accountList || this.fakeUserAccounts;
     },
