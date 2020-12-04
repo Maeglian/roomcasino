@@ -30,7 +30,7 @@
         :key="item.name || item"
         class="BaseDropdown-Item BaseDropdown-DropdownItem"
         :class="{ 'BaseDropdown-DropdownItem--highlighted': activeItemIndex === i }"
-        @click="onSelectValue(item.value || item)"
+        @click="onSelectValue(item)"
       >
         {{ item.name || item }}
       </li>
@@ -51,7 +51,8 @@ export default {
     },
     activeItem: {
       type: [String, Object, Boolean],
-      required: true,
+      required: false,
+      default: '',
     },
     placeholder: {
       type: [String, Boolean],
