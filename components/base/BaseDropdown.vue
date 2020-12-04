@@ -78,9 +78,10 @@ export default {
   },
   computed: {
     filteredItems() {
-      return this.items.filter(
-        item => item !== this.activeItem || item.value !== this.activeItem.value,
-      );
+      return this.items.filter(item => {
+        if (item.name) return item.value !== this.activeItem.value;
+        return item !== this.activeItem;
+      });
     },
   },
   methods: {
