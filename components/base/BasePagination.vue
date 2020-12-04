@@ -42,7 +42,7 @@
           {{ pagination.totalPages }}
         </a>
       </li>
-      <li>
+      <li class="Pagination-Item">
         <a
           :class="{ 'Pagination-Item--disabled': pagination.currentPage === pagination.totalPages }"
           @click="onChangePage(pagination.currentPage + 1)"
@@ -135,11 +135,17 @@ export default {
 .Pagination {
   &-Pages {
     display: flex;
+    align-items: center;
   }
 
   &-Item {
     margin-right: 15px;
     line-height: 1;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     &--active {
       color: var(--color-main1);
