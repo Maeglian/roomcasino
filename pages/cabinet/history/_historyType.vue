@@ -1,6 +1,11 @@
 <template>
   <div class="HistoryPage-Content">
-    <CabinetFilters :key="$route.path" :filters="filters" @set-value="setValue" />
+    <CabinetFilters
+      :key="$route.path"
+      :filters="filters"
+      @set-value="setValue"
+      @filter="onFilter"
+    />
     <CabinetTable
       :cols="columns"
       :rows="rowsInPage"
@@ -78,25 +83,29 @@ export default {
   },
   methods: {
     ...mapActions(['getTransactionHistoryList', 'getBonusHistoryList', 'getGameHistoryList']),
+    getData(payload = {}) {
+      switch (this.$route.params.historyType) {
+        case 'game':
+          this.getGameHistoryList(payload);
+          break;
+        case 'bonus':
+          this.getBonusHistoryList(payload);
+          break;
+        default:
+          this.getTransactionHistoryList(payload);
+      }
+    },
     setValue(value) {
       const { name, val } = value;
       this.filters[name].value = val;
     },
-    getData() {
-      // const actionType = `get${this.$route.params.historyType[0].toUpperCase()}${this.$route.params.historyType.slice(
-      //   1,
-      // )}`;
-      // console.log(actionType);
-      switch (this.$route.params.historyType) {
-        case 'game':
-          this.getGameHistoryList();
-          break;
-        case 'bonus':
-          this.getBonusHistoryList();
-          break;
-        default:
-          this.getTransactionHistoryList();
+    onFilter() {
+      const payload = {};
+      for (const key in this.filters) {
+        if (this.filters[key].value) payload[key] = this.filters[key].value;
       }
+
+      this.getData(payload);
     },
   },
 };

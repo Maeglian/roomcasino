@@ -1088,11 +1088,14 @@ export const actions = {
     }
   },
 
-  async getTransactionHistoryList({ commit }) {
+  async getTransactionHistoryList({ commit }, payload = {}) {
     try {
       commit('clearServerError');
       commit('setHistoryListIsLoading');
-      const res = await axios.get(`${API_HOST}/getTransactionHistoryList`, reqConfig(commit));
+      const res = await axios.get(`${API_HOST}/getTransactionHistoryList`, {
+        ...{ params: payload },
+        ...reqConfig(commit),
+      });
       if (!state.serverError) commit('setTransactionHistoryList', res.data);
     } catch (e) {
       commit('pushErrors', e);
@@ -1101,11 +1104,14 @@ export const actions = {
     }
   },
 
-  async getBonusHistoryList({ commit }) {
+  async getBonusHistoryList({ commit }, payload = {}) {
     try {
       commit('clearServerError');
       commit('setHistoryListIsLoading');
-      const res = await axios.get(`${API_HOST}/bonusHistoryList`, reqConfig(commit));
+      const res = await axios.get(`${API_HOST}/bonusHistoryList`, {
+        ...{ params: payload },
+        ...reqConfig(commit),
+      });
       if (!state.serverError) commit('setBonusHistoryList', res.data);
     } catch (e) {
       commit('pushErrors', e);
@@ -1114,11 +1120,14 @@ export const actions = {
     }
   },
 
-  async getGameHistoryList({ commit }) {
+  async getGameHistoryList({ commit }, payload = {}) {
     try {
       commit('clearServerError');
       commit('setHistoryListIsLoading');
-      const res = await axios.get(`${API_HOST}/getGameHistoryList`, reqConfig(commit));
+      const res = await axios.get(`${API_HOST}/getGameHistoryList`, {
+        ...{ params: payload },
+        ...reqConfig(commit),
+      });
       if (!state.serverError) commit('setGameHistoryList', res.data);
     } catch (e) {
       commit('pushErrors', e);

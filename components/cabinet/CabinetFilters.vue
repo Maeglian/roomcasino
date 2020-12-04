@@ -37,7 +37,7 @@
             />
           </template>
         </div>
-        <button class="CabinetFilters-Submit">
+        <button class="CabinetFilters-Submit" @click="$emit('filter')">
           Filter
         </button>
       </div>
@@ -71,9 +71,6 @@ export default {
   computed: {
     ...mapState(['width']),
     ...mapGetters(['currencyAccounts']),
-  },
-  created() {
-    console.log(this.currencyAccounts);
   },
   methods: {
     setValue(val) {
