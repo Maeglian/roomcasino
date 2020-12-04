@@ -30,7 +30,7 @@
         :key="item.name || item"
         class="BaseDropdown-Item BaseDropdown-DropdownItem"
         :class="{ 'BaseDropdown-DropdownItem--highlighted': activeItemIndex === i }"
-        @click="onSelectValue(item.name || item)"
+        @click="onSelectValue(item.value || item)"
       >
         {{ item.name || item }}
       </li>
