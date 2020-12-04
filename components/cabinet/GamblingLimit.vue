@@ -39,17 +39,17 @@
           :enddate="new Date(item.refreshAt * 1000)"
         />
       </div>
-      <div v-if="item.type === 'session'" class="GamblingLimit-LineScale">
+      <div v-if="item.type === 'sessionLimit'" class="GamblingLimit-LineScale">
         <div
           class="GamblingLimit-LineScale GamblingLimit-LineScale--spent"
-          :style="{ width: `${(item.limitState / item.limitAmount) * 100}%` }"
+          :style="{ width: `${(item.value / item.period) * 100}%` }"
         >
           <svg class="GamblingLimit-SessionIcon">
             <use xlink:href="@/assets/img/icons.svg#clock"></use>
           </svg>
-          {{ item.limitState }} min
+          {{ item.value }} min
         </div>
-        {{ sessionLeft }} min
+        {{ item.period }} min
       </div>
       <div v-else class="GamblingLimit-Footer">
         <div class="GamblingLimit-Details">

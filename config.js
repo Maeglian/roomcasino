@@ -44,18 +44,14 @@ export const GAME_TYPES = [
 
 export const LIMIT_TYPES = [
   { name: 'Deposit limits', value: 'depositLimit' },
-  // { name: 'Session limits', value: 'sessionLimit' },
+  { name: 'Wager limits', value: 'wagerLimit' },
+  { name: 'Session limits', value: 'sessionLimit' },
 ];
 
 export const LIMIT_DETAILS = {
   // lossLimit: {
   //   text:
   //     'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
-  //   fields: ['limitState', 'limitAmount', 'currentPeriod', 'isMoney', 'reset', 'title'],
-  // },
-  // wagerLimit: {
-  //   text:
-  //     'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or mounth.',
   //   fields: ['limitState', 'limitAmount', 'currentPeriod', 'isMoney', 'reset', 'title'],
   // },
   depositLimit: {
@@ -67,12 +63,21 @@ export const LIMIT_DETAILS = {
       'Cancellation of the deposit limit takes 24 hours. After the limit is exceeded, you will receive an email notification.',
     fields: ['type', 'period', 'currencyLimitList'],
   },
-  // sessionLimit: {
-  //   title: 'time spent gambling',
-  //   text:
-  //     'The restriction takes effect instantly. If you hit the limit, you will be automatically logged out of your  account.',
-  //   fields: ['type', 'limitState', 'limitAmount', 'isMoney', 'title'],
-  // },
+  wagerLimit: {
+    text:
+      'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or mounth.',
+    editRules:
+      'You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.',
+    deleteRules:
+      'Cancellation of the deposit limit takes 24 hours. After the limit is exceeded, you will receive an email notification.',
+    fields: ['type', 'period', 'currencyLimitList'],
+  },
+  sessionLimit: {
+    title: 'time spent gambling',
+    text:
+      'The restriction takes effect instantly. If you hit the limit, you will be automatically logged out of your  account.',
+    fields: ['type', 'sessionPeriod', 'value'],
+  },
   // self_exclusion: {
   //   title: 'blocked address',
   //   text:
