@@ -516,7 +516,8 @@ export default {
     margin-top: 15px;
   }
 
-  &-CheckboxLabel {
+  &-CheckboxLabel,
+  &-Label--radio {
     padding-left: 41px;
     line-height: 17px;
 
