@@ -1,5 +1,5 @@
 <template>
-  <div v-click-outside="onClickOutside" class="BaseDropdown">
+  <div v-if="items.length" v-click-outside="onClickOutside" class="BaseDropdown">
     <div
       v-if="v && v.required === false && v.$dirty"
       class="BaseDropdown-Error"
@@ -30,7 +30,7 @@
         :key="item.name || item"
         class="BaseDropdown-Item BaseDropdown-DropdownItem"
         :class="{ 'BaseDropdown-DropdownItem--highlighted': activeItemIndex === i }"
-        @click="onSelectValue(item)"
+        @click="onSelectValue(item.name || item)"
       >
         {{ item.name || item }}
       </li>
@@ -51,8 +51,7 @@ export default {
     },
     activeItem: {
       type: [String, Object, Boolean],
-      required: false,
-      default: false,
+      required: true,
     },
     placeholder: {
       type: [String, Boolean],
