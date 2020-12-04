@@ -52,7 +52,7 @@ export default {
       'bonusHistoryList',
       'historyListIsLoading',
     ]),
-    ...mapGetters(['currencyAccounts']),
+    ...mapGetters(['currencyAccounts', 'activeCurrency']),
     needsPagination() {
       return this.historyList.length > 12;
     },
@@ -69,7 +69,9 @@ export default {
     filterPayload() {
       const payload = {};
       for (const key in this.filters) {
-        if (this.filters[key].value) payload[key] = this.filters[key].value;
+        if (this.filters[key].value)
+          payload[key] = this.filters[key].value.value || this.filters[key].value;
+        if (key === 'currency' && !this.filters[key].value) payload.currency = this.activeCurrency;
       }
 
       payload.limit = this.limit;

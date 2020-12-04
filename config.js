@@ -150,7 +150,7 @@ export const HISTORY_TABLES = {
           { name: 'Waiting', value: 'wait' },
           { name: 'Cancelled', value: 'cancel' },
         ],
-        value: 'done',
+        value: { name: 'Done', value: 'done' },
       },
       from: {
         type: 'date',
@@ -244,7 +244,7 @@ export const HISTORY_TABLES = {
           { name: 'Cancelled', value: 'cancel' },
           { name: 'Finished', value: 'wagerDone' },
         ],
-        value: 'active',
+        value: { name: 'Active', value: 'active' },
       },
       from: {
         type: 'date',
