@@ -11,13 +11,13 @@
       :rows="rowsInPage"
       :loading="historyListIsLoading"
       :pagination="{
-        enabled: true,
+        enabled: needsPagination,
         currentPage: currentPage,
         totalPages: totalPages,
         count: historyList.length,
       }"
-      @changePage="currentPage = $event"
-      @showMore="rowsPerPage += rowsPerPage"
+      @change-page="currentPage = $event"
+      @show-more="onShowMore"
     />
   </div>
 </template>
@@ -39,6 +39,7 @@ export default {
     return {
       activeFilters: [],
       rowsPerPage: 6,
+      limit: 6,
       currentPage: 1,
       columns: HISTORY_TABLES[this.$route.params.historyType].cols,
       filters: HISTORY_TABLES[this.$route.params.historyType].filters,
@@ -52,6 +53,9 @@ export default {
       'historyListIsLoading',
     ]),
     ...mapGetters(['currencyAccounts']),
+    needsPagination() {
+      return this.historyList.length > 12;
+    },
     historyList() {
       switch (this.$route.params.historyType) {
         case 'game':
@@ -62,7 +66,17 @@ export default {
           return this.transactionHistoryList;
       }
     },
+    filterPayload() {
+      const payload = {};
+      for (const key in this.filters) {
+        if (this.filters[key].value) payload[key] = this.filters[key].value;
+      }
+
+      payload.limit = this.limit;
+      return payload;
+    },
     rowsInPage() {
+      if (!this.needsPagination) return this.historyList;
       const start = this.rowsPerPage * (this.currentPage - 1);
       const end = start + this.rowsPerPage;
 
@@ -76,6 +90,9 @@ export default {
   watch: {
     $route() {
       this.getData();
+    },
+    historyList() {
+      if (this.historyList.length > 12) this.rowsPerPage = 12;
     },
   },
   created() {
@@ -100,12 +117,11 @@ export default {
       this.filters[name].value = val;
     },
     onFilter() {
-      const payload = {};
-      for (const key in this.filters) {
-        if (this.filters[key].value) payload[key] = this.filters[key].value;
-      }
-
-      this.getData(payload);
+      this.getData(this.filterPayload);
+    },
+    onShowMore() {
+      this.limit += this.rowsPerPage;
+      this.getData(this.filterPayload);
     },
   },
 };

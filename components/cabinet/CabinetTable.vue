@@ -21,8 +21,8 @@
               :key="`${i}_${j}_${row[col.field]}`"
               class="Table-Cell CabinetTable-Cell"
               :class="{
-                'CabinetTable-Cell--accepted': row[col.field] === 'Accepted',
-                'CabinetTable-Cell--discarded': row[col.field] === 'Discarded',
+                'CabinetTable-Cell--accepted': row[col.field] === 'done',
+                'CabinetTable-Cell--discarded': row[col.field] === 'cancel',
               }"
             >
               <div class="CabinetTable-Label">
@@ -47,11 +47,7 @@
       </template>
     </div>
     <div class="CabinetTable-Footer">
-      <button
-        v-if="pagination.totalPages > 1"
-        class="CabinetTable-ShowMore"
-        @click="$emit('show-more')"
-      >
+      <button class="CabinetTable-ShowMore" @click="$emit('show-more')">
         Show more
       </button>
       <BasePagination
@@ -213,6 +209,7 @@ export default {
     font-weight: 700;
     color: var(--color-main1);
     text-transform: uppercase;
+    cursor: pointer;
 
     @media (min-width: $screen-s) {
       margin-bottom: 0;
