@@ -287,8 +287,8 @@ export default {
     };
   },
   computed: {
-    ...mapState(['width', 'countriesList', 'authStatus', 'authError']),
-    ...mapGetters(['currencyNames', 'countriesNames']),
+    ...mapState(['width', 'currencyList', 'countriesList', 'authStatus', 'authError']),
+    ...mapGetters(['countriesNames']),
     birthDate() {
       const {
         birthDate: {
@@ -391,7 +391,7 @@ export default {
   mounted() {
     getObjValuesFromLocalStorage(this.fieldsStep1);
     getObjValuesFromLocalStorage(this.fieldsStep2);
-    this.fieldsStep1.currency.items = this.currencyNames;
+    this.fieldsStep1.currency.items = this.currencyList;
     this.fieldsStep1.country.items = this.countriesNames;
   },
   beforeDestroy() {
