@@ -9,11 +9,17 @@ const plugins =
   process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
     ? [
         '@/plugins/globals',
+        '@/plugins/axios',
         '@/plugins/globals.client',
         '@/plugins/onNuxtReady.client',
         '@/plugins/stageClientInit.client',
       ]
-    : ['@/plugins/globals', '@/plugins/globals.client', '@/plugins/onNuxtReady.client'];
+    : [
+        '@/plugins/globals',
+        '@/plugins/axios',
+        '@/plugins/globals.client',
+        '@/plugins/onNuxtReady.client',
+      ];
 
 export default {
   target,

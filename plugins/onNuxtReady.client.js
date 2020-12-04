@@ -2,6 +2,10 @@ import axios from 'axios';
 import { throttle } from '../utils/helpers';
 
 window.onNuxtReady(app => {
+  if (app.$store.getters.isLoggedIn) {
+    app.$store.dispatch('getProfile');
+    app.$store.dispatch('getLimits');
+  }
   const updateWidth = throttle(() => app.$store.commit('setWidth', window.innerWidth), 150);
   updateWidth();
   window.addEventListener('resize', updateWidth);
@@ -25,9 +29,4 @@ window.onNuxtReady(app => {
   app.$store.dispatch('getCurrencyList');
   app.$store.dispatch('getCategoriesList');
   app.$store.dispatch('getGameProducerList');
-  if (app.$store.getters.isLoggedIn) {
-    axios.defaults.headers.common['X-Auth-Token'] = app.$store.state.token;
-    app.$store.dispatch('getProfile');
-    app.$store.dispatch('getLimits');
-  }
 });
