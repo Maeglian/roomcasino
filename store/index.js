@@ -1,13 +1,7 @@
 import axios from 'axios';
 import Vue from 'vue';
 import moment from 'moment';
-import {
-  BILLING_PROVIDER_ID,
-  API_HOST_PROD,
-  API_HOST_SANDBOX,
-  LIMIT_TYPES,
-  DEFAULT_PROVIDER,
-} from '../config';
+import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX, DEFAULT_PROVIDER } from '../config';
 
 const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : API_HOST_PROD;
 
@@ -664,14 +658,22 @@ export const getters = {
   authStatus: state => state.status,
   slicedGameProducerList: state => startIndex =>
     state.gameProducerList.slice(startIndex, state.providers.length + 1),
-  limitsByTypes: state =>
-    LIMIT_TYPES.map(limit => {
-      const limits = state.limits.filter(l => l.type === limit.value);
-      return {
-        name: limit.name,
-        limits,
-      };
-    }),
+  limitsByTypes: state => {
+    const ll = state.limits.reduce((namedLimits, limit) => {
+      const namedlimit = namedLimits.find(l => l.name === l.type);
+      if (namedlimit) namedlimit.limits.push(limit);
+      else {
+        namedLimits.push({
+          name: limit.type,
+          limits: [limit],
+        });
+      }
+      return namedLimits;
+    }, []);
+
+    console.log(ll);
+    return ll;
+  },
   providersList: state => startIndex =>
     state.providers.slice(startIndex, state.providers.length + 1),
   fakedNewGames: state => [...state.games].reverse().slice(0, 12),

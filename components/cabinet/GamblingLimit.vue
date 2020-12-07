@@ -1,7 +1,7 @@
 <template>
   <div class="GamblingLimit" :style="{ '--color': color, '--offset': strokeOffset }">
     <div class="GamblingLimit-Header">
-      <div class="GamblingLimit-Title">{{ title }} limit</div>
+      <div class="GamblingLimit-Title">{{ title }}</div>
       <button
         ref="edit"
         type="button"
@@ -42,14 +42,14 @@
       <div v-if="item.type === 'sessionLimit'" class="GamblingLimit-LineScale">
         <div
           class="GamblingLimit-LineScale GamblingLimit-LineScale--spent"
-          :style="{ width: `${(item.value / item.period) * 100}%` }"
+          :style="{ width: `${(item.value / item.targetValue) * 100}%` }"
         >
           <svg class="GamblingLimit-SessionIcon">
             <use xlink:href="@/assets/img/icons.svg#clock"></use>
           </svg>
-          {{ item.value }} min
+          {{ item.value || 0 }} min
         </div>
-        {{ item.period }} min
+        {{ item.targetValue }} min
       </div>
       <div v-else class="GamblingLimit-Footer">
         <div class="GamblingLimit-Details">
@@ -122,7 +122,9 @@ export default {
   computed: {
     ...mapGetters(['activeAccount']),
     title() {
-      return LIMIT_PERIODS.find(period => period.value === this.item.period).name;
+      return this.item.type === 'depositLimit' || this.item.type === 'wagerLimit'
+        ? `${LIMIT_PERIODS.find(period => period.value === this.item.period).name} limit`
+        : LIMIT_DETAILS[this.item.type].title;
     },
     color() {
       switch (this.item.type) {

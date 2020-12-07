@@ -76,7 +76,7 @@ export const LIMIT_DETAILS = {
     title: 'time spent gambling',
     text:
       'The restriction takes effect instantly. If you hit the limit, you will be automatically logged out of your  account.',
-    fields: ['type', 'sessionPeriod', 'value'],
+    fields: ['type', 'value'],
   },
   // self_exclusion: {
   //   title: 'blocked address',
