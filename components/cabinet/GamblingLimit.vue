@@ -26,7 +26,12 @@
           Delete limit
         </button>
       </div>
-      <div v-if="item.type === 'depositLimit'" class="GamblingLimit-State">
+      <div
+        v-if="
+          item.type === 'depositLimit' || item.type === 'wagerLimit' || item.type === 'lossLimit'
+        "
+        class="GamblingLimit-State"
+      >
         <div class="GamblingLimit-Scale">
           <svg class="GamblingLimit-Circle">
             <circle class="GamblingLimit-CircleBg" cx="20" cy="20" r="17"></circle>
@@ -135,7 +140,7 @@ export default {
         case 'coolingLimit':
           return '#EB1C2A';
         case 'depositLimit':
-          return '#33C5F3';
+          return '#0CA649';
         default:
           return '#F3B233';
       }
