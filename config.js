@@ -45,15 +45,16 @@ export const GAME_TYPES = [
 export const LIMIT_TYPES = [
   { name: 'Deposit limits', value: 'depositLimit' },
   { name: 'Wager limits', value: 'wagerLimit' },
+  { name: 'Loss limits', value: 'lossLimit' },
   { name: 'Session limits', value: 'sessionLimit' },
 ];
 
 export const LIMIT_DETAILS = {
-  // lossLimit: {
-  //   text:
-  //     'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
-  //   fields: ['limitState', 'limitAmount', 'currentPeriod', 'isMoney', 'reset', 'title'],
-  // },
+  lossLimit: {
+    text:
+      'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
+    fields: ['type', 'period', 'currencyLimitList'],
+  },
   depositLimit: {
     text:
       'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or mounth.',
@@ -146,16 +147,17 @@ export const HISTORY_TABLES = {
     filters: {
       currency: {
         type: 'dropdown',
-        value: '',
+        value: { name: 'All currencies', value: '' },
       },
       status: {
         type: 'dropdown',
         values: [
+          { name: 'All statuses', value: '' },
           { name: 'Done', value: 'done' },
           { name: 'Waiting', value: 'wait' },
           { name: 'Cancelled', value: 'cancel' },
         ],
-        value: { name: 'Done', value: 'done' },
+        value: { name: 'All statuses', value: '' },
       },
       from: {
         type: 'date',
@@ -192,7 +194,7 @@ export const HISTORY_TABLES = {
     filters: {
       currency: {
         type: 'dropdown',
-        value: '',
+        value: { name: 'All currencies', value: '' },
       },
       from: {
         type: 'date',
@@ -237,11 +239,12 @@ export const HISTORY_TABLES = {
     filters: {
       currency: {
         type: 'dropdown',
-        value: '',
+        value: { name: 'All currencies', value: '' },
       },
       status: {
         type: 'dropdown',
         values: [
+          { name: 'All statuses', value: '' },
           { name: 'Active', value: 'active' },
           { name: 'Run out', value: 'runOut' },
           { name: 'Waiting', value: 'hold' },
@@ -249,7 +252,7 @@ export const HISTORY_TABLES = {
           { name: 'Cancelled', value: 'cancel' },
           { name: 'Finished', value: 'wagerDone' },
         ],
-        value: { name: 'Active', value: 'active' },
+        value: { name: 'All statuses', value: '' },
       },
       from: {
         type: 'date',
