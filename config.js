@@ -45,15 +45,16 @@ export const GAME_TYPES = [
 export const LIMIT_TYPES = [
   { name: 'Deposit limits', value: 'depositLimit' },
   { name: 'Wager limits', value: 'wagerLimit' },
+  { name: 'Loss limits', value: 'lossLimit' },
   { name: 'Session limits', value: 'sessionLimit' },
 ];
 
 export const LIMIT_DETAILS = {
-  // lossLimit: {
-  //   text:
-  //     'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
-  //   fields: ['limitState', 'limitAmount', 'currentPeriod', 'isMoney', 'reset', 'title'],
-  // },
+  lossLimit: {
+    text:
+      'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
+    fields: ['type', 'period', 'currencyLimitList'],
+  },
   depositLimit: {
     text:
       'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or mounth.',
