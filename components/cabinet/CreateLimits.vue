@@ -47,7 +47,7 @@
       </div>
       <BaseInput
         v-if="type.value === 'sessionLimit'"
-        v-model.number="sessionPeriod"
+        v-model.number="value"
         input-type="text"
         class="CreateLimits-Field CreateLimits-Amount CreateLimits-Row"
         input-class="CreateLimits-Input"
@@ -150,7 +150,6 @@ export default {
       selfExclusionPeriods: ['none', '1 day', '1 week', '1 month', '6 month', '1 year'],
       limitState: this.item.limitState || 0,
       value: 0,
-      sessionPeriod: (this.item.type === 'sessionLimit' && this.item.period) || 0,
     };
   },
   validations: {
@@ -210,11 +209,10 @@ export default {
       const payload = {};
 
       this.limits[this.type.value].fields.forEach(field => {
-        let name;
-        if (field === 'sessionPeriod') name = 'period';
-        else name = field;
-        payload[name] = this[field].value || this[field];
+        payload[field] = this[field].value || this[field];
       });
+
+      if (this.type.value === 'sessionLimit') payload.period = 'noLimit';
 
       this.addLimit(payload).then(() => {
         this.getLimits();
