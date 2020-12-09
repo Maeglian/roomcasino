@@ -229,7 +229,7 @@ export const actions = {
 
   async getProfile({ commit }) {
     try {
-      const res = await axios.get(`${API_HOST}/getProfile`);
+      const res = await axios.get(`${API_HOST}/profile`);
       const user = res.data.data;
       commit('setUser', user);
     } catch (e) {
@@ -271,7 +271,7 @@ export const actions = {
   async getBillingSession({ commit }) {
     try {
       // eslint-disable-next-line no-underscore-dangle
-      const res = await axios.post(`${API_HOST}/getBillingSession`, {
+      const res = await axios.post(`${API_HOST}/billingSession`, {
         bpId: BILLING_PROVIDER_ID,
       });
       commit('setBillingSession', res.data.data);
