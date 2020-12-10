@@ -47,15 +47,20 @@
       </template>
     </div>
     <div class="CabinetTable-Footer">
-      <button v-if="showMoreBtn" class="CabinetTable-ShowMore" @click="$emit('show-more')">
-        Show more
-      </button>
-      <BasePagination
-        v-if="pagination.enabled"
-        class="CabinetTable-Pagination"
-        :pagination="pagination"
-        @change-page="$emit('change-page', $event)"
-      />
+      <template v-if="rows.length">
+        <button v-if="showMoreBtn" class="CabinetTable-ShowMore" @click="$emit('show-more')">
+          Show more
+        </button>
+        <BasePagination
+          v-if="pagination.enabled"
+          class="CabinetTable-Pagination"
+          :pagination="pagination"
+          @change-page="$emit('change-page', $event)"
+        />
+      </template>
+      <span v-else class="CabinetTable-Info">
+        No data available
+      </span>
     </div>
   </div>
 </template>
@@ -225,6 +230,12 @@ export default {
     margin-left: auto;
     font-size: 12px;
     font-weight: 700;
+    color: var(--color-text-ghost);
+    text-transform: uppercase;
+  }
+
+  &-Info {
+    font-size: 10px;
     color: var(--color-text-ghost);
     text-transform: uppercase;
   }
