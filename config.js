@@ -260,4 +260,28 @@ export const HISTORY_TABLES = {
       },
     },
   },
+  session: {
+    cols: [
+      {
+        label: 'Started at',
+        field: 'startedAt',
+      },
+      {
+        label: 'Ip',
+        field: 'clientIp',
+      },
+      {
+        label: 'Country',
+        field: 'country',
+      },
+      {
+        label: 'User Agent',
+        field: 'userAgent',
+      },
+      {
+        label: 'Closed At',
+        field: 'closedAt',
+      },
+    ],
+  },
 };
