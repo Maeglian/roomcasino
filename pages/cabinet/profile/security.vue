@@ -111,6 +111,7 @@
       title="Session History"
       :rows="rowsInPage"
       :show-more-btn="sessionHistoryList.length > rowsPerPage && !needsPagination"
+      :loading="historyListIsLoading"
       :pagination="{
         enabled: needsPagination,
         currentPage: currentPage,
@@ -159,7 +160,12 @@ export default {
     };
   },
   computed: {
-    ...mapState(['profileIsUpdating', 'updateProfileError', 'sessionHistoryList']),
+    ...mapState([
+      'profileIsUpdating',
+      'updateProfileError',
+      'sessionHistoryList',
+      'historyListIsLoading',
+    ]),
     needsPagination() {
       return this.rowsPerPage >= 12;
     },

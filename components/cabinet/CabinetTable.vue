@@ -1,77 +1,82 @@
 <template>
   <div class="CabinetTable">
-    <div v-if="title" class="CabinetTable-Title">
-      {{ title }}
-    </div>
-    <div class="CabinetTable-Table Table">
-      <div v-if="cols" class="Table-Header CabinetTable-Header">
-        <div
-          v-for="col in cols"
-          :key="col.field"
-          class="Table-Cell CabinetTable-Cell CabinetTable-Th"
-        >
-          {{ col.label }}
-        </div>
+    <Loader v-if="loading" />
+    <template v-else>
+      <div v-if="title" class="CabinetTable-Title">
+        {{ title }}
       </div>
-      <template v-if="rows.length">
-        <div v-for="(row, i) in rows" :key="i" class="Table-Row CabinetTable-Row">
-          <template v-if="cols">
-            <div
-              v-for="(col, j) in cols"
-              :key="`${i}_${j}_${row[col.field]}`"
-              class="Table-Cell CabinetTable-Cell"
-              :class="{
-                'CabinetTable-Cell--accepted': row[col.field] === 'done',
-                'CabinetTable-Cell--discarded': row[col.field] === 'cancel',
-              }"
-            >
-              <div class="CabinetTable-Label">
-                {{ col.label }}
-              </div>
-              {{ col.format ? col.format(row[col.field]) : row[col.field] }}
-            </div>
-          </template>
-          <template v-else>
-            <div
-              v-for="(col, j) in row"
-              :key="`${i}_${j}_${col}`"
-              class="Table-Cell CabinetTable-Cell"
-              :class="{
-                'CabinetTable-Cell--accepted': col === 'Current',
-              }"
-            >
-              {{ col }}
-            </div>
-          </template>
+      <div class="CabinetTable-Table Table">
+        <div v-if="cols" class="Table-Header CabinetTable-Header">
+          <div
+            v-for="col in cols"
+            :key="col.field"
+            class="Table-Cell CabinetTable-Cell CabinetTable-Th"
+          >
+            {{ col.label }}
+          </div>
         </div>
-      </template>
-    </div>
-    <div class="CabinetTable-Footer">
-      <template v-if="rows.length">
-        <button v-if="showMoreBtn" class="CabinetTable-ShowMore" @click="$emit('show-more')">
-          Show more
-        </button>
-        <BasePagination
-          v-if="pagination.enabled"
-          class="CabinetTable-Pagination"
-          :pagination="pagination"
-          @change-page="$emit('change-page', $event)"
-        />
-      </template>
-      <span v-else class="CabinetTable-Info">
-        No data available
-      </span>
-    </div>
+        <template v-if="rows.length">
+          <div v-for="(row, i) in rows" :key="i" class="Table-Row CabinetTable-Row">
+            <template v-if="cols">
+              <div
+                v-for="(col, j) in cols"
+                :key="`${i}_${j}_${row[col.field]}`"
+                class="Table-Cell CabinetTable-Cell"
+                :class="{
+                  'CabinetTable-Cell--accepted': row[col.field] === 'done',
+                  'CabinetTable-Cell--discarded': row[col.field] === 'cancel',
+                }"
+              >
+                <div class="CabinetTable-Label">
+                  {{ col.label }}
+                </div>
+                {{ col.format ? col.format(row[col.field]) : row[col.field] }}
+              </div>
+            </template>
+            <template v-else>
+              <div
+                v-for="(col, j) in row"
+                :key="`${i}_${j}_${col}`"
+                class="Table-Cell CabinetTable-Cell"
+                :class="{
+                  'CabinetTable-Cell--accepted': col === 'Current',
+                }"
+              >
+                {{ col }}
+              </div>
+            </template>
+          </div>
+        </template>
+      </div>
+      <div class="CabinetTable-Footer">
+        <template v-if="rows.length">
+          <button v-if="showMoreBtn" class="CabinetTable-ShowMore" @click="$emit('show-more')">
+            Show more
+          </button>
+          <BasePagination
+            v-if="pagination.enabled"
+            class="CabinetTable-Pagination"
+            :pagination="pagination"
+            @change-page="$emit('change-page', $event)"
+          />
+        </template>
+        <span v-else class="CabinetTable-Info">
+          No data available
+        </span>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
 import BasePagination from '@/components/base/BasePagination.vue';
+import Loader from '@/components/Loader';
 
 export default {
   name: 'CabinetTable',
   components: {
     BasePagination,
+    Loader,
   },
   props: {
     rows: {
@@ -92,6 +97,11 @@ export default {
       type: Boolean,
       required: false,
       default: true,
+    },
+    loading: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
     pagination: {
       type: Object,
