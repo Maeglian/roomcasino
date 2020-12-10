@@ -111,46 +111,25 @@
       title="Session History"
       :rows="rowsInPage"
       :pagination="{
-        enabled: true,
+        enabled: needsPagination,
         currentPage: currentPage,
         totalPages: totalPages,
-        count: rows.length,
+        count: sessionHistoryList.length,
       }"
       @change-page="currentPage = $event"
-      @show-more="rowsPerPage *= 2"
+      @show-more="onShowMoreSessionHistory"
     />
   </div>
 </template>
 
 <script>
-import tablePagination from '@/mixins/tablePagination';
 import CabinetTable from '@/components/cabinet/CabinetTable.vue';
 import BaseInput from '@/components/base/BaseInput.vue';
 import BaseButton from '@/components/base/BaseButton.vue';
 import { required, sameAs } from 'vuelidate/lib/validators';
 import { passwordCheck } from '@/utils/formCheckers';
 import { mapActions, mapMutations, mapState } from 'vuex';
-
-const rows = [
-  ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Current'],
-  ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'UA', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Current'],
-  ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'UA', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Current'],
-  ['10 Jun 2020, 16:33:48', '213.131.10.121', 'DE', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'UA', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-  ['10 Jun 2020, 16:33:48', '20.131.10.20', 'FI', 'Macintosh; Intel Mac OS X 10_14_6', 'Closed'],
-];
+import { HISTORY_TABLES } from '@/config';
 
 export default {
   name: 'ProfileSecurity',
@@ -159,11 +138,9 @@ export default {
     BaseInput,
     BaseButton,
   },
-  mixins: [tablePagination],
   middleware: 'clearUpdateProfileError',
   data() {
     return {
-      rows,
       oldPassword: '',
       newPassword: {
         value: '',
@@ -175,10 +152,25 @@ export default {
       },
       qrCode: '',
       shouldDisplayPasswordFormErrors: false,
+      sessionHistoryCols: HISTORY_TABLES.session.cols,
+      rowsPerPage: 6,
+      currentPage: 1,
     };
   },
   computed: {
-    ...mapState(['profileIsUpdating', 'updateProfileError']),
+    ...mapState(['profileIsUpdating', 'updateProfileError', 'sessionHistoryList']),
+    needsPagination() {
+      return this.rowsPerPage >= 12;
+    },
+    rowsInPage() {
+      const start = this.rowsPerPage * (this.currentPage - 1);
+      const end = start + this.rowsPerPage;
+
+      return this.sessionHistoryList.slice(start, end);
+    },
+    totalPages() {
+      return Math.ceil(this.sessionHistoryList.length / this.rowsPerPage);
+    },
   },
   validations: {
     oldPassword: { required },
@@ -196,9 +188,12 @@ export default {
       },
     },
   },
+  created() {
+    this.getSessionHistoryList();
+  },
   methods: {
     ...mapMutations(['clearUpdateProfileError']),
-    ...mapActions(['updatePassword']),
+    ...mapActions(['updatePassword', 'getSessionHistoryList']),
     toggleVisibility(el) {
       this[el].inputType === 'password'
         ? (this[el].inputType = 'text')
@@ -224,6 +219,9 @@ export default {
           this.shouldDisplayPasswordFormErrors = false;
         }
       });
+    },
+    onShowMoreSessionHistory() {
+      this.rowsPerPage += this.rowsPerPage;
     },
   },
 };
