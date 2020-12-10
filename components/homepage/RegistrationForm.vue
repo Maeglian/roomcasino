@@ -134,7 +134,7 @@
       </div>
     </div>
     <BaseButton
-      class="BaseButton--full AuthDialog-Btn"
+      class="Btn--full AuthDialog-Btn"
       :is-loading="authStatus === 'loading'"
       :disabled="$v.$error"
     >
