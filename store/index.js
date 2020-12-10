@@ -34,6 +34,7 @@ export const state = () => ({
   transactionHistoryList: [],
   gameHistoryList: [],
   bonusHistoryList: [],
+  sessionHistoryList: [],
   serverError: '',
   gameProducerList: [DEFAULT_PROVIDER],
   status: '',
@@ -729,6 +730,9 @@ export const mutations = {
   setBonusHistoryList: (state, payload) => {
     state.bonusHistoryList = payload;
   },
+  setSessionHistoryList: (state, payload) => {
+    state.sessionHistoryList = payload;
+  },
   setHistoryListIsLoading: state => {
     state.historyListIsLoading = true;
   },
@@ -1144,6 +1148,22 @@ export const actions = {
         ...reqConfig(commit),
       });
       if (!state.serverError) commit('setGameHistoryList', res.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setHistoryListIsLoaded');
+    }
+  },
+
+  async getSessionHistoryList({ commit }, payload = {}) {
+    try {
+      commit('clearServerError');
+      commit('setHistoryListIsLoading');
+      const res = await axios.get(`${API_HOST}/sessionHistory`, {
+        ...{ params: payload },
+        ...reqConfig(commit),
+      });
+      if (!state.serverError) commit('setSessionHistoryList', res.data);
     } catch (e) {
       commit('pushErrors', e);
     } finally {
