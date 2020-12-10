@@ -71,9 +71,9 @@
         </button>
       </BaseDropdownContainer>
       <Search
+        v-model="searched"
         class="ProvidersSection-Search CategoryPage-Search"
         :class="{ 'CategoryPage-Search--firstLayer': width >= 768 && !filters.rating.isOpen }"
-        @search="onSearch"
       />
     </div>
     <Loader v-if="gamesAreLoading" />

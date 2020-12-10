@@ -9,11 +9,11 @@
       <use xlink:href="@/assets/img/icons.svg#search"></use>
     </svg>
     <input
-      v-model="search"
       type="text"
       class="Search-Input"
       placeholder="Find game"
-      @input="$emit('search', search)"
+      :value="value"
+      @input="$emit('input', $event.target.value)"
     />
   </div>
 </template>
@@ -23,10 +23,16 @@ import { mapState } from 'vuex';
 
 export default {
   name: 'Search',
+  props: {
+    value: {
+      type: String,
+      required: false,
+      default: '',
+    },
+  },
   data() {
     return {
       isOpen: false,
-      search: '',
     };
   },
   computed: {

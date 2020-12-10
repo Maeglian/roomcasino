@@ -12,9 +12,4 @@ export default {
       return this.searched ? this.gamesSearched(this.searched) : this.games;
     },
   },
-  methods: {
-    onSearch(text) {
-      this.searched = text;
-    },
-  },
 };

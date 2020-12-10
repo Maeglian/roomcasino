@@ -18,7 +18,7 @@
         </button>
       </div>
       <div class="ProvidersSection BestGames-Providers">
-        <Search class="ProvidersSection-Search BestGames-Search" @search="onSearch" />
+        <Search v-model="searched" class="ProvidersSection-Search BestGames-Search" />
         <ProvidersMenu
           v-if="gameProducerList.length"
           :provider-active="providerActive"
