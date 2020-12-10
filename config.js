@@ -134,6 +134,11 @@ export const HISTORY_TABLES = {
       {
         label: 'Status',
         field: 'status',
+        colClasses(x) {
+          if (x === 'done') return 'CabinetTable-Cell--success';
+          if (x === 'cancel') return 'CabinetTable-Cell--error';
+          return '';
+        },
       },
       {
         label: 'Amount',
@@ -281,6 +286,12 @@ export const HISTORY_TABLES = {
       {
         label: 'Closed At',
         field: 'closedAt',
+        colClasses(x) {
+          return x ? 'CabinetTable-Cell--disabled' : 'CabinetTable-Cell--success';
+        },
+        format(x) {
+          return x ? 'Closed' : 'Current';
+        },
       },
     ],
   },

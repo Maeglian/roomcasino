@@ -109,6 +109,7 @@
     </div>
     <CabinetTable
       title="Session History"
+      :cols="sessionHistoryCols"
       :rows="rowsInPage"
       :show-more-btn="sessionHistoryList.length > rowsPerPage && !needsPagination"
       :loading="historyListIsLoading"

@@ -22,10 +22,7 @@
                 v-for="(col, j) in cols"
                 :key="`${i}_${j}_${row[col.field]}`"
                 class="Table-Cell CabinetTable-Cell"
-                :class="{
-                  'CabinetTable-Cell--accepted': row[col.field] === 'done',
-                  'CabinetTable-Cell--discarded': row[col.field] === 'cancel',
-                }"
+                :class="col.colClasses ? col.colClasses(row[col.field]) : ''"
               >
                 <div class="CabinetTable-Label">
                   {{ col.label }}
@@ -182,6 +179,18 @@ export default {
 
     &--discarded {
       color: var(--color-discard);
+    }
+
+    &--success {
+      color: var(--color-accept);
+    }
+
+    &--error {
+      color: var(--color-discard);
+    }
+
+    &--disabled {
+      color: var(--color-text-ghost-lighter);
     }
   }
 
