@@ -58,7 +58,13 @@
       </div>
       <div v-else class="GamblingLimit-Footer">
         <div class="GamblingLimit-Details">
-          <template v-if="item.type === 'depositLimit'">
+          <template
+            v-if="
+              item.type === 'depositLimit' ||
+                item.type === 'wagerLimit' ||
+                item.type === 'lossLimit'
+            "
+          >
             {{ item.targetValue - item.value }} of {{ item.targetValue }}
             {{ activeAccount.currency }} left
           </template>
@@ -79,7 +85,7 @@
           </template>
         </div>
         <div class="GamblingLimit-Active" :class="{ 'GamblingLimit-Active--active': isActive }">
-          Active
+          {{ isActive ? 'Active' : 'Disabled' }}
         </div>
       </div>
     </div>
@@ -101,6 +107,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 import { LIMIT_PERIODS, LIMIT_DETAILS } from '@/config';
+import moment from 'moment';
 import Counter from '@/components/Counter';
 import CreateLimits from '@/components/cabinet/CreateLimits';
 import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
@@ -127,7 +134,9 @@ export default {
   computed: {
     ...mapGetters(['activeAccount']),
     title() {
-      return this.item.type === 'depositLimit' || this.item.type === 'wagerLimit'
+      return this.item.type === 'depositLimit' ||
+        this.item.type === 'wagerLimit' ||
+        this.item.type === 'lossLimit'
         ? `${LIMIT_PERIODS.find(period => period.value === this.item.period).name} limit`
         : LIMIT_DETAILS[this.item.type].title;
     },
@@ -146,7 +155,7 @@ export default {
       }
     },
     isActive() {
-      if (this.item.refreshAt) return new Date(this.item.refreshAt) > new Date();
+      if (this.item.refreshAt) return this.item.refreshAt > moment().unix();
       return true;
     },
     strokeOffset() {
@@ -370,16 +379,21 @@ export default {
 
   &-Active {
     position: relative;
+    color: var(--color-text-ghost);
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 3px;
-      left: -11px;
-      width: 5px;
-      height: 5px;
-      background: var(--color);
-      border-radius: 50%;
+    &--active {
+      color: var(--color-text-main);
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: -11px;
+        width: 5px;
+        height: 5px;
+        background: var(--color);
+        border-radius: 50%;
+      }
     }
   }
 }

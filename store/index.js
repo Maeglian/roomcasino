@@ -945,7 +945,7 @@ export const actions = {
   async getProfile({ commit }) {
     commit('setProfileIsLoading');
     try {
-      const res = await axios.get(`${API_HOST}/getProfile`);
+      const res = await axios.get(`${API_HOST}/profile`);
       const user = res.data.data;
       commit('setUser', user);
     } catch (e) {
@@ -998,7 +998,7 @@ export const actions = {
   async getBillingSession({ commit }) {
     try {
       // eslint-disable-next-line no-underscore-dangle
-      const res = await axios.post(`${API_HOST}/getBillingSession`, {
+      const res = await axios.post(`${API_HOST}/billingSession`, {
         bpId: BILLING_PROVIDER_ID,
       });
       commit('setBillingSession', res.data.data);
@@ -1043,11 +1043,7 @@ export const actions = {
   async updateProfile({ commit, dispatch }, payload) {
     try {
       commit('setProfileIsUpdating');
-      await axios.put(
-        `${API_HOST}/updateProfile`,
-        payload,
-        reqConfig(commit, 'setUpdateProfileError'),
-      );
+      await axios.put(`${API_HOST}/profile`, payload, reqConfig(commit, 'setUpdateProfileError'));
       dispatch('getProfile');
     } catch (e) {
       commit('pushErrors', e);
@@ -1111,7 +1107,7 @@ export const actions = {
     try {
       commit('clearServerError');
       commit('setHistoryListIsLoading');
-      const res = await axios.get(`${API_HOST}/getTransactionHistoryList`, {
+      const res = await axios.get(`${API_HOST}/transactionHistoryList`, {
         ...{ params: payload },
         ...reqConfig(commit),
       });
@@ -1143,7 +1139,7 @@ export const actions = {
     try {
       commit('clearServerError');
       commit('setHistoryListIsLoading');
-      const res = await axios.get(`${API_HOST}/getGameHistoryList`, {
+      const res = await axios.get(`${API_HOST}/gameHistoryList`, {
         ...{ params: payload },
         ...reqConfig(commit),
       });
