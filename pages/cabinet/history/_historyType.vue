@@ -10,6 +10,7 @@
       :cols="columns"
       :rows="rowsInPage"
       :loading="historyListIsLoading"
+      :show-more-btn="!needsPagination"
       :pagination="{
         enabled: needsPagination,
         currentPage: currentPage,

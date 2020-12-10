@@ -110,6 +110,7 @@
     <CabinetTable
       title="Session History"
       :rows="rowsInPage"
+      :show-more-btn="sessionHistoryList.length > rowsPerPage && !needsPagination"
       :pagination="{
         enabled: needsPagination,
         currentPage: currentPage,

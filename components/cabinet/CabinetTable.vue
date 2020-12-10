@@ -47,7 +47,7 @@
       </template>
     </div>
     <div class="CabinetTable-Footer">
-      <button v-if="!pagination.enabled" class="CabinetTable-ShowMore" @click="$emit('show-more')">
+      <button v-if="showMoreBtn" class="CabinetTable-ShowMore" @click="$emit('show-more')">
         Show more
       </button>
       <BasePagination
@@ -82,6 +82,11 @@ export default {
       type: [String, Boolean],
       required: false,
       default: false,
+    },
+    showMoreBtn: {
+      type: Boolean,
+      required: false,
+      default: true,
     },
     pagination: {
       type: Object,
