@@ -16,6 +16,9 @@
         {{ badge }}
       </template>
     </div>
+    <svg v-if="crypto" class="Card-Icon Card-Icon--crypto">
+      <use xlink:href="@/assets/img/icons.svg#bitcoin"></use>
+    </svg>
     <div class="Card-Image">
       <img v-if="img" :src="require(`@/assets/img/${img}`)" alt="" loading="lazy" />
       <img v-else :src="imgUrl" alt="" loading="lazy" />
@@ -50,6 +53,11 @@ export default {
     },
     sum: {
       type: [String, Boolean],
+      required: false,
+      default: false,
+    },
+    crypto: {
+      type: Boolean,
       required: false,
       default: false,
     },
@@ -105,6 +113,15 @@ export default {
   &-Icon--best {
     width: 30px;
     height: 30px;
+  }
+
+  &-Icon--crypto {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
   }
 
   &-Image {
