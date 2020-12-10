@@ -8,7 +8,13 @@
     <svg class="Icon Search-Icon">
       <use xlink:href="@/assets/img/icons.svg#search"></use>
     </svg>
-    <input type="text" class="Search-Input" placeholder="Find game" />
+    <input
+      v-model="search"
+      type="text"
+      class="Search-Input"
+      placeholder="Find game"
+      @input="$emit('search', search)"
+    />
   </div>
 </template>
 
@@ -20,6 +26,7 @@ export default {
   data() {
     return {
       isOpen: false,
+      search: '',
     };
   },
   computed: {
