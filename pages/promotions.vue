@@ -33,9 +33,12 @@
             </div>
           </div>
           <div class="PromotionsCard-Btns">
-            <NuxtLink to="#" class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small">
-              Get bonus
-            </NuxtLink>
+            <button
+              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
+              @click="onClickBtn()"
+            >
+              {{ isLoggedIn ? 'Get bonus' : 'Sign up' }}
+            </button>
             <NuxtLink
               to="/bonus-terms"
               class="Btn Btn--common Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
@@ -74,8 +77,11 @@
             </div>
           </div>
           <div class="PromotionsCard-Btns">
-            <button class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small">
-              Deposit
+            <button
+              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
+              @click="onClickBtn()"
+            >
+              {{ isLoggedIn ? 'Deposit' : 'Sign up' }}
             </button>
             <NuxtLink
               to="#"
@@ -94,6 +100,7 @@
 import Banner from '@/components/Banner';
 import Counter from '@/components/Counter';
 import { mapState } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'Promotions',
@@ -101,6 +108,7 @@ export default {
     Banner,
     Counter,
   },
+  mixins: [showAuthDialog],
   layout: 'page',
   data() {
     return {
