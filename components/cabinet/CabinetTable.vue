@@ -1,12 +1,12 @@
 <template>
   <div class="CabinetTable">
-    <Loader v-if="loading" />
+    <Loader v-if="loading && !rows.length" />
     <template v-else>
       <div v-if="title" class="CabinetTable-Title">
         {{ title }}
       </div>
       <div class="CabinetTable-Table Table">
-        <div v-if="cols" class="Table-Header CabinetTable-Header">
+        <div v-if="cols && thead" class="Table-Header CabinetTable-Header">
           <div
             v-for="col in cols"
             :key="col.field"
@@ -82,6 +82,11 @@ export default {
     },
     cols: {
       type: [Array, Boolean],
+      required: false,
+      default: false,
+    },
+    thead: {
+      type: Boolean,
       required: false,
       default: false,
     },

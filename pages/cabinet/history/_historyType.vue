@@ -8,6 +8,7 @@
     />
     <CabinetTable
       :cols="columns"
+      thead
       :rows="rowsInPage"
       :loading="historyListIsLoading"
       :show-more-btn="!needsPagination"
