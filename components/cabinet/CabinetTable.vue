@@ -47,7 +47,7 @@
       </template>
     </div>
     <div class="CabinetTable-Footer">
-      <button class="CabinetTable-ShowMore" @click="$emit('show-more')">
+      <button v-if="!pagination.enabled" class="CabinetTable-ShowMore" @click="$emit('show-more')">
         Show more
       </button>
       <BasePagination
@@ -217,6 +217,7 @@ export default {
   }
 
   &-Pagination {
+    margin-left: auto;
     font-size: 12px;
     font-weight: 700;
     color: var(--color-text-ghost);
