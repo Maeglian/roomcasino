@@ -18,7 +18,7 @@
         </button>
       </div>
       <div class="ProvidersSection BestGames-Providers">
-        <Search class="ProvidersSection-Search BestGames-Search" />
+        <Search class="ProvidersSection-Search BestGames-Search" @search="onSearch" />
         <ProvidersMenu
           v-if="gameProducerList.length"
           :provider-active="providerActive"
@@ -29,10 +29,10 @@
         The best games
       </div>
       <Loader v-if="gamesAreLoading" />
-      <template v-else-if="games.length">
+      <template v-else-if="filteredGames.length">
         <Games
           class="BestGames-Cards"
-          :games="games"
+          :games="filteredGames"
           :games-to-show="24"
           btn-class="Btn--common Btn--dark"
         />
@@ -70,6 +70,7 @@ import { mapState, mapGetters, mapActions } from 'vuex';
 import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import search from '@/mixins/search';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import { DEFAULT_PROVIDER, GAME_TYPES } from '@/config';
 
@@ -80,7 +81,7 @@ export default {
     Search,
     Loader,
   },
-  mixins: [showAuthDialog],
+  mixins: [showAuthDialog, search],
   data() {
     return {
       tabs: GAME_TYPES,
@@ -205,11 +206,13 @@ export default {
   methods: {
     ...mapActions(['getGames']),
     onChooseTab(i) {
+      this.searched = '';
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
       this.getGames(this.gamesParams);
     },
     onChooseProvider(e) {
+      this.searched = '';
       this.providerActive = e;
       this.getGames(this.gamesParams);
     },

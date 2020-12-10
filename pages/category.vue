@@ -73,9 +73,21 @@
       <Search
         class="ProvidersSection-Search CategoryPage-Search"
         :class="{ 'CategoryPage-Search--firstLayer': width >= 768 && !filters.rating.isOpen }"
+        @search="onSearch"
       />
     </div>
-    <Games :games="games" :games-to-show="30" btn-class="Btn--common" />
+    <Loader v-if="gamesAreLoading" />
+    <template v-else-if="filteredGames.length">
+      <Games
+        class="BestGames-Cards"
+        :games="filteredGames"
+        :games-to-show="24"
+        btn-class="Btn--common Btn--dark"
+      />
+    </template>
+    <p v-else class="Text Text--center">
+      Nothing was found
+    </p>
   </section>
 </template>
 
@@ -85,6 +97,7 @@ import ProvidersMenu from '@/components/ProvidersMenu';
 import BaseDropdownContainer from '@/components/base/BaseDropdownContainer';
 import Search from '@/components/Search';
 import Games from '@/components/Games';
+import search from '@/mixins/search';
 import { DEFAULT_PROVIDER } from '@/config';
 
 export default {
@@ -95,6 +108,7 @@ export default {
     BaseDropdownContainer,
     Games,
   },
+  mixins: [search],
   layout: 'page',
   data() {
     return {
@@ -151,7 +165,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['width', 'games', 'gameProducerList']),
+    ...mapState(['width', 'games', 'gameProducerList', 'gamesAreLoading']),
     gamesParams() {
       const params = {};
       if (this.providerActive.name !== 'All providers')
