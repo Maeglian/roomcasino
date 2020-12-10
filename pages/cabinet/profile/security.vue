@@ -127,32 +127,22 @@
 
 <script>
 import CabinetTable from '@/components/cabinet/CabinetTable.vue';
-import BaseInput from '@/components/base/BaseInput.vue';
-import BaseButton from '@/components/base/BaseButton.vue';
-import { required, sameAs } from 'vuelidate/lib/validators';
-import { passwordCheck } from '@/utils/formCheckers';
 import { mapActions, mapMutations, mapState } from 'vuex';
+import changePassword from '@/mixins/changePassword';
+import { required, sameAs } from 'vuelidate/lib/validators';
 import { HISTORY_TABLES } from '@/config';
+import { passwordCheck } from '@/utils/formCheckers';
 
 export default {
   name: 'ProfileSecurity',
   components: {
     CabinetTable,
-    BaseInput,
-    BaseButton,
   },
+  mixins: [changePassword],
   middleware: 'clearUpdateProfileError',
   data() {
     return {
       oldPassword: '',
-      newPassword: {
-        value: '',
-        inputType: 'password',
-      },
-      confirmPassword: {
-        value: '',
-        inputType: 'password',
-      },
       qrCode: '',
       shouldDisplayPasswordFormErrors: false,
       sessionHistoryCols: HISTORY_TABLES.session.cols,
@@ -202,11 +192,6 @@ export default {
   methods: {
     ...mapMutations(['clearUpdateProfileError']),
     ...mapActions(['updatePassword', 'getSessionHistoryList']),
-    toggleVisibility(el) {
-      this[el].inputType === 'password'
-        ? (this[el].inputType = 'text')
-        : (this[el].inputType = 'password');
-    },
     onSubmitPasswordForm() {
       this.clearUpdateProfileError();
       if (this.$v.$invalid) {
