@@ -28,7 +28,10 @@
       </div>
       <div
         v-if="
-          item.type === 'depositLimit' || item.type === 'wagerLimit' || item.type === 'lossLimit'
+          item.type === 'depositLimit' ||
+            item.type === 'wagerLimit' ||
+            item.type === 'lossLimit' ||
+            item.type === 'coolingOffLimit'
         "
         class="GamblingLimit-State"
       >
@@ -44,18 +47,23 @@
           :enddate="new Date(item.refreshAt * 1000)"
         />
       </div>
-      <div v-if="item.type === 'sessionLimit'" class="GamblingLimit-LineScale">
-        <div
-          class="GamblingLimit-LineScale GamblingLimit-LineScale--spent"
-          :style="{ width: `${(item.value / item.targetValue) * 100}%` }"
-        >
-          <svg class="GamblingLimit-SessionIcon">
-            <use xlink:href="@/assets/img/icons.svg#clock"></use>
-          </svg>
-          {{ item.value || 0 }} min
+      <template v-if="item.type === 'sessionLimit'">
+        <div class="GamblingLimit-ValuesScale">
+          <div>
+            <svg class="GamblingLimit-SessionIcon">
+              <use xlink:href="@/assets/img/icons.svg#clock"></use>
+            </svg>
+            {{ item.value || 0 }} min
+          </div>
+          <div>{{ item.targetValue }} min</div>
         </div>
-        {{ item.targetValue }} min
-      </div>
+        <div class="GamblingLimit-LineScale">
+          <div
+            class="GamblingLimit-LineScale GamblingLimit-LineScale--spent"
+            :style="{ width: `${(item.value / item.targetValue) * 100}%` }"
+          ></div>
+        </div>
+      </template>
       <div v-else class="GamblingLimit-Footer">
         <div class="GamblingLimit-Details">
           <template
@@ -67,6 +75,9 @@
           >
             {{ item.targetValue - item.value }} of {{ item.targetValue }}
             {{ activeAccount.currency }} left
+          </template>
+          <template v-if="item.type === 'coolingOffLimit'">
+            {{ item.targetValue / 86400 }} days
           </template>
           <template v-else class="GamblingLimit-Left">
             <svg
@@ -146,7 +157,7 @@ export default {
           return '#8733F3';
         case 'wagerLimit':
           return '#335DF3';
-        case 'coolingLimit':
+        case 'coolingOffLimit':
           return '#EB1C2A';
         case 'depositLimit':
           return '#0CA649';
@@ -159,6 +170,10 @@ export default {
       return true;
     },
     strokeOffset() {
+      if (this.item.type === 'coolingOffLimit') {
+        const secsToRefresh = moment.unix(this.item.refreshAt).diff(moment(), 'seconds');
+        return (secsToRefresh / this.item.targetValue) * circleLength;
+      }
       if (this.item.targetValue <= 0) return 0;
       return ((this.item.targetValue - this.item.value) / this.item.targetValue) * circleLength;
     },
@@ -357,10 +372,6 @@ export default {
     justify-content: flex-end;
     align-items: center;
     height: 20px;
-    padding-right: 10px;
-    font-size: 8px;
-    font-weight: 700;
-    color: var(--color-main1);
     background: var(--color-bg-lighter);
     border-radius: 1000px;
 
@@ -370,10 +381,24 @@ export default {
       left: 0;
       justify-content: flex-start;
       height: 100%;
-      padding-right: 0;
-      padding-left: 10px;
-      color: var(--color-bg);
       background: var(--color-main1);
+    }
+  }
+
+  &-ValuesScale {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--color-main1);
+
+    div {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
     }
   }
 

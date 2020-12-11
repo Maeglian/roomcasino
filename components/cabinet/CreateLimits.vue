@@ -45,19 +45,30 @@
           @set-dropdown-value="period = $event"
         />
       </div>
-      <BaseInput
-        v-if="type.value === 'sessionLimit'"
-        v-model.number="value"
-        input-type="text"
-        class="CreateLimits-Field CreateLimits-Amount CreateLimits-Row"
-        input-class="CreateLimits-Input"
+      <div
+        v-if="type.value === 'sessionLimit' || type.value === 'coolingOffLimit'"
+        class="CreateLimits-Row"
       >
-        <template #afterInput-absolute>
-          <span class="CreateLimits-InputCurrency">
-            min
-          </span>
-        </template>
-      </BaseInput>
+        <BaseInput
+          v-model.number="value"
+          input-type="text"
+          class="CreateLimits-Field CreateLimits-Amount CreateLimits-Row"
+          input-class="CreateLimits-Input"
+        >
+          <template v-if="type.value === 'sessionLimit'" #afterInput-absolute>
+            <span class="CreateLimits-InputCurrency">
+              min
+            </span>
+          </template>
+        </BaseInput>
+        <BaseDropdown
+          v-if="type.value === 'coolingOffLimit'"
+          v-model="period"
+          class="CreateLimits-Period"
+          :items="periods"
+          @set-dropdown-value="period = $event"
+        />
+      </div>
       <BaseDropdown
         v-if="type.value === 'reality_check'"
         v-model="period"
@@ -100,7 +111,7 @@
 import BaseDropdown from '@/components/base/BaseDropdown';
 import BaseInput from '@/components/base/BaseInput';
 import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
-import { LIMIT_PERIODS, LIMIT_TYPES, LIMIT_DETAILS } from '@/config';
+import { LIMIT_PERIODS, LIMIT_TYPES, LIMIT_DETAILS, LIMIT_COOL_PERIODS } from '@/config';
 import { findValInArr } from '@/utils/helpers';
 import { mapActions, mapGetters } from 'vuex';
 import moment from 'moment';
@@ -156,6 +167,19 @@ export default {
     currencyLimitList: {
       $each: {
         value: { checkIfPositiveNumbers },
+      },
+    },
+  },
+  watch: {
+    type: {
+      immediate: true,
+      handler() {
+        if (this.type.value === 'coolingOffLimit') {
+          this.period = this.item.period
+            ? findValInArr(this.item.period, LIMIT_COOL_PERIODS)
+            : findValInArr('dayLimit', LIMIT_COOL_PERIODS);
+          this.periods = LIMIT_COOL_PERIODS;
+        }
       },
     },
   },
