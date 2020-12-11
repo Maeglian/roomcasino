@@ -1,7 +1,13 @@
 import axios from 'axios';
 import Vue from 'vue';
 import moment from 'moment';
-import { BILLING_PROVIDER_ID, API_HOST_PROD, API_HOST_SANDBOX, DEFAULT_PROVIDER } from '../config';
+import {
+  BILLING_PROVIDER_ID,
+  API_HOST_PROD,
+  API_HOST_SANDBOX,
+  DEFAULT_PROVIDER,
+  LIMIT_DETAILS,
+} from '../config';
 
 const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : API_HOST_PROD;
 
@@ -664,7 +670,7 @@ export const getters = {
       if (namedlimit) namedlimit.limits.push(limit);
       else {
         namedLimits.push({
-          name: limit.type,
+          name: LIMIT_DETAILS[limit.type].name,
           limits: [limit],
         });
       }

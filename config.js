@@ -47,15 +47,18 @@ export const LIMIT_TYPES = [
   { name: 'Wager limits', value: 'wagerLimit' },
   { name: 'Loss limits', value: 'lossLimit' },
   { name: 'Session limits', value: 'sessionLimit' },
+  { name: 'Cooling off', value: 'coolingOffLimit' },
 ];
 
 export const LIMIT_DETAILS = {
   lossLimit: {
+    name: 'Loss limits',
     text:
       'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
     fields: ['type', 'period', 'currencyLimitList'],
   },
   depositLimit: {
+    name: 'Deposit limits',
     text:
       'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or mounth.',
     editRules:
@@ -65,6 +68,7 @@ export const LIMIT_DETAILS = {
     fields: ['type', 'period', 'currencyLimitList'],
   },
   wagerLimit: {
+    name: 'Wager limits',
     text:
       'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or mounth.',
     editRules:
@@ -74,18 +78,28 @@ export const LIMIT_DETAILS = {
     fields: ['type', 'period', 'currencyLimitList'],
   },
   sessionLimit: {
+    name: 'Session limit',
     title: 'time spent gambling',
     text:
       'The restriction takes effect instantly. If you hit the limit, you will be automatically logged out of your  account.',
     fields: ['type', 'value'],
   },
+  coolingOffLimit: {
+    name: 'Cooling off',
+    title: 'time spent gambling',
+    text:
+      'Feel the need to stay away from the casino for some time? You can set a cooling-off limit for a certain period of time. The restriction takes effect instantly. You won’t be able to make deposits and play during the specified period, also you will be excluded from all advertising offers. After the set period expires, you’ll receive a notification email saying your account is active again.',
+    fields: ['type', 'period', 'value'],
+  },
   // self_exclusion: {
+  // name: 'Self exclusion',
   //   title: 'blocked address',
   //   text:
   //     'You can set a self-exclusion limit for a definite or an indefinite period of time.  During the set period you will not be able to log into your account. To be excluded from gambiling on our site for an indefinite period of time, please, contact our support team via live-chat.',
   //   fields: ['isMoney', 'title', 'period'],
   // },
   // reality_check: {
+  // name: 'Reality check',
   //   title: 'notification',
   //   text:
   //     "Do you want to track your activity? We'll send you  an hourly notification in-game to remind you of how much you have spent at the Casino. It'll help you to get an overview of your gambing and perhaps consider pausing play for a while. You can get the notification every 15,30,45 and 60 minutes.",
