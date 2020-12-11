@@ -122,6 +122,21 @@ export const LIMIT_PERIODS = [
   },
 ];
 
+export const LIMIT_COOL_PERIODS = [
+  {
+    name: 'days',
+    value: 'dayLimit',
+  },
+  {
+    name: 'weeks',
+    value: 'weekLimit',
+  },
+  {
+    name: 'months',
+    value: 'monthLimit',
+  },
+];
+
 export const PROFILE_LABELS = {
   receiveEmails: 'Send promos by e-mail',
   receiveSmsPromos: 'Send promos by sms',
