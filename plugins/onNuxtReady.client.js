@@ -2,6 +2,7 @@ import axios from 'axios';
 import { throttle } from '../utils/helpers';
 
 window.onNuxtReady(app => {
+  if (app.$route.query.cxd) localStorage.setItem('cxd', app.$route.query.cxd);
   if (app.$store.getters.isLoggedIn) {
     app.$store.dispatch('getProfile');
     app.$store.dispatch('getLimits');
