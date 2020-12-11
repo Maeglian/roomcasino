@@ -422,6 +422,7 @@ export default {
           if (key === 'birthDate') payload[key] = this.birthDate;
           else payload[key] = this.fieldsStep2[key].value;
         }
+        if (localStorage.getItem('cxd')) payload.cxd = localStorage.getItem('cxd');
         this.registerUser(payload).then(() => {
           if (!this.authError) {
             deleteObjValuesFromLocalStorage(this.fieldsStep1);
