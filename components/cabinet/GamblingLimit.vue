@@ -28,7 +28,10 @@
       </div>
       <div
         v-if="
-          item.type === 'depositLimit' || item.type === 'wagerLimit' || item.type === 'lossLimit'
+          item.type === 'depositLimit' ||
+            item.type === 'wagerLimit' ||
+            item.type === 'lossLimit' ||
+            item.type === 'coolingOffLimit'
         "
         class="GamblingLimit-State"
       >
@@ -67,6 +70,9 @@
           >
             {{ item.targetValue - item.value }} of {{ item.targetValue }}
             {{ activeAccount.currency }} left
+          </template>
+          <template v-if="item.type === 'coolingOffLimit'">
+            {{ item.targetValue / 86400 }} days
           </template>
           <template v-else class="GamblingLimit-Left">
             <svg
@@ -146,7 +152,7 @@ export default {
           return '#8733F3';
         case 'wagerLimit':
           return '#335DF3';
-        case 'coolingLimit':
+        case 'coolingOffLimit':
           return '#EB1C2A';
         case 'depositLimit':
           return '#0CA649';
@@ -159,6 +165,10 @@ export default {
       return true;
     },
     strokeOffset() {
+      if (this.item.type === 'coolingOffLimit') {
+        const secsToRefresh = moment.unix(this.item.refreshAt).diff(moment(), 'seconds');
+        return (secsToRefresh / this.item.targetValue) * circleLength;
+      }
       if (this.item.targetValue <= 0) return 0;
       return ((this.item.targetValue - this.item.value) / this.item.targetValue) * circleLength;
     },
