@@ -17,7 +17,9 @@
           :v="$v.fields[name].value"
         />
         <div class="AuthDialog-Link">
-          <a href="#" class="AuthDialog-Link">Forgot Password?</a>
+          <NuxtLink to="/passwordRestore" class="AuthDialog-Link" @click.native="$emit('close')">
+            Forgot Password?
+          </NuxtLink>
         </div>
         <div v-if="authError" class="AuthDialog-Error AuthDialog-Error--login">
           {{ authError }}
