@@ -189,6 +189,7 @@ export default {
   },
   beforeRouteLeave(from, to, next) {
     this.showSuccessMessage = false;
+    this.clearServerError();
     next();
   },
 };
