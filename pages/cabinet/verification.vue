@@ -20,14 +20,16 @@
           </div>
         </div>
         <div class="VerificationPage-Docs">
-          <div class="VerificationPage-Close">
-            <div class="Close"></div>
-          </div>
-          <div class="VerificationPage-DocsTitle">
-            Uploaded documents
-          </div>
-          <div class="VerificationPage-Name">
-            Michelle Harris.pdf
+          <div class="VerificationPage-DocsContent">
+            <div class="VerificationPage-Close">
+              <div class="Close"></div>
+            </div>
+            <div class="VerificationPage-DocsTitle">
+              Uploaded documents
+            </div>
+            <div class="VerificationPage-Name">
+              Michelle Harris.pdf
+            </div>
           </div>
         </div>
       </div>
@@ -47,13 +49,24 @@
           </div>
         </div>
         <div class="VerificationPage-Docs">
-          <div class="VerificationPage-Close">
-            <div class="Close"></div>
-          </div>
-          <div class="VerificationPage-Text">
-            Dpor file here or <a href="#" class="CabinetPage-Link">browse</a>
-            jpg. png. Max size 2MB
-          </div>
+          <client-only>
+            <vueDropzone
+              id="dropzone"
+              ref="myVueDropzone"
+              :options="dropzoneOptions"
+              :use-custom-slot="true"
+            >
+              <div class="VerificationPage-DocsContent">
+                <div class="VerificationPage-Close">
+                  <div class="Close"></div>
+                </div>
+                <div class="VerificationPage-Text">
+                  Dpor file here or <span class="CabinetPage-Link">browse</span>
+                  jpg. png. Max size 2MB
+                </div>
+              </div>
+            </vueDropzone>
+          </client-only>
         </div>
       </div>
       <div class="VerificationPage-Item">
@@ -72,13 +85,24 @@
           </div>
         </div>
         <div class="VerificationPage-Docs">
-          <div class="VerificationPage-Close">
-            <div class="Close"></div>
-          </div>
-          <div class="VerificationPage-Text">
-            Dpor file here or <a href="#" class="CabinetPage-Link">browse</a>
-            jpg. png. Max size 2MB
-          </div>
+          <client-only>
+            <vueDropzone
+              id="dropzone2"
+              ref="myVueDropzone2"
+              :options="dropzoneOptions"
+              :use-custom-slot="true"
+            >
+              <div class="VerificationPage-DocsContent">
+                <div class="VerificationPage-Close">
+                  <div class="Close"></div>
+                </div>
+                <div class="VerificationPage-Text">
+                  Dpor file here or <span class="CabinetPage-Link">browse</span>
+                  jpg. png. Max size 2MB
+                </div>
+              </div>
+            </vueDropzone>
+          </client-only>
         </div>
       </div>
       <div class="VerificationPage-Item">
@@ -96,14 +120,16 @@
           </div>
         </div>
         <div class="VerificationPage-Docs">
-          <div class="VerificationPage-Close">
-            <div class="Close"></div>
-          </div>
-          <div class="VerificationPage-DocsTitle">
-            Phone number
-          </div>
-          <div class="VerificationPage-Name">
-            +3585****289
+          <div class="VerificationPage-DocsContent">
+            <div class="VerificationPage-Close">
+              <div class="Close"></div>
+            </div>
+            <div class="VerificationPage-DocsTitle">
+              Phone number
+            </div>
+            <div class="VerificationPage-Name">
+              +3585****289
+            </div>
           </div>
         </div>
       </div>
@@ -112,8 +138,29 @@
 </template>
 
 <script>
+import { API_HOST_PROD, API_HOST_SANDBOX } from '@/config';
+
+const vue2Dropzone = () => import('vue2-dropzone');
+
+const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : API_HOST_PROD;
+
 export default {
   name: 'VerificationPage',
+  components: {
+    vueDropzone: vue2Dropzone,
+  },
+  data() {
+    return {
+      dropzoneOptions: {
+        url: `${API_HOST}/document`,
+        maxFilesize: 2,
+        thumbnailHeight: 100,
+        thumbnailMethod: 'contain',
+        acceptedFiles: '.png, .jpg',
+        addRemoveLinks: true,
+      },
+    };
+  },
 };
 </script>
 
@@ -195,13 +242,20 @@ export default {
 
   &-Docs {
     position: relative;
-    padding: 16px 56px 16px 16px;
     background: rgba(27, 33, 56, 0.2);
     border: 2px dashed var(--color-bg-lighter);
 
     @media (min-width: $screen-m) {
       flex-shrink: 0;
       width: 324px;
+    }
+  }
+
+  &-DocsContent {
+    height: 100%;
+    padding: 16px 56px 16px 16px;
+
+    @media (min-width: $screen-m) {
       padding: 28px 68px 28px 66px;
     }
   }
