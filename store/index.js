@@ -36,7 +36,9 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
-  historyListIsLoading: '',
+  pageDataIsLoading: false,
+  userDocumentList: [],
+  historyListIsLoading: false,
   transactionHistoryList: [],
   gameHistoryList: [],
   bonusHistoryList: [],
@@ -728,6 +730,15 @@ export const getters = {
 };
 
 export const mutations = {
+  setPageDataIsLoading: state => {
+    state.pageDataIsLoading = true;
+  },
+  setPageDataIsLoaded: state => {
+    state.pageDataIsLoading = false;
+  },
+  setUserDocumentList: (state, payload) => {
+    state.userDocumentList = payload;
+  },
   setServerError: (state, message) => {
     state.serverError = message;
   },
@@ -1177,6 +1188,18 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setHistoryListIsLoaded');
+    }
+  },
+
+  async getUserDocumentList({ commit }) {
+    try {
+      commit('setPageDataIsLoading');
+      const res = await axios.get(`${API_HOST}/document`);
+      commit('setUserDocumentList', res.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setPageDataIsLoaded');
     }
   },
 };
