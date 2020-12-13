@@ -36,6 +36,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  pageDataIsLoading: false,
   historyListIsLoading: '',
   transactionHistoryList: [],
   gameHistoryList: [],
@@ -728,6 +729,12 @@ export const getters = {
 };
 
 export const mutations = {
+  setPageDataIsLoading: state => {
+    state.pageDataIsLoading = true;
+  },
+  setPageDataIsLoaded: state => {
+    state.pageDataIsLoading = false;
+  },
   setServerError: (state, message) => {
     state.serverError = message;
   },
@@ -1177,6 +1184,32 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setHistoryListIsLoaded');
+    }
+  },
+
+  async restorePassword({ commit }, payload) {
+    try {
+      commit('setPageDataIsLoading');
+      await axios.post(`${API_HOST}/passwordRestore`, payload, reqConfig(commit, 'setServerError'));
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setPageDataIsLoaded');
+    }
+  },
+
+  async confirmRestorePassword({ commit }, payload) {
+    try {
+      commit('setPageDataIsLoading');
+      await axios.post(
+        `${API_HOST}/passwordRestoreConfirm`,
+        payload,
+        reqConfig(commit, 'setServerError'),
+      );
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setPageDataIsLoaded');
     }
   },
 };
