@@ -1195,7 +1195,7 @@ export const actions = {
     try {
       commit('setPageDataIsLoading');
       const res = await axios.get(`${API_HOST}/document`);
-      commit('setUserDocumentList', res.data);
+      commit('setUserDocumentList', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
     } finally {
