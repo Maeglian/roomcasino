@@ -136,13 +136,14 @@
             <div class="VerificationPage-DocsTitle">
               Uploaded documents
             </div>
-            <div
-              v-for="doc in userDocumentList"
-              :key="doc.id"
-              class="VerificationPage-Doc VerificationPage-Name"
-            >
-              {{ doc.name }}
-              <div class="VerificationPage-Close">
+            <div v-for="doc in userDocumentList" :key="doc.id" class="VerificationPage-Doc">
+              <div
+                class="VerificationPage-Name VerificationPage-DocName"
+                @click="showUserDocument(doc.id)"
+              >
+                {{ doc.name }}
+              </div>
+              <div class="VerificationPage-Close" @click="onDeleteDocument(doc.id)">
                 <div class="Close"></div>
               </div>
             </div>
@@ -153,6 +154,9 @@
               ref="myVueDropzone"
               :options="dropzoneOptions"
               :use-custom-slot="true"
+              :duplicate-check="true"
+              @vdropzone-sending="onSendRequest"
+              @vdropzone-success="onSuccessUpload"
             >
               <div class="VerificationPage-Dropzone">
                 <div class="VerificationPage-Text">
@@ -197,7 +201,7 @@
 
 <script>
 import { API_HOST_PROD, API_HOST_SANDBOX } from '@/config';
-import { mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 const vue2Dropzone = () => import('vue2-dropzone');
 
@@ -216,8 +220,6 @@ export default {
         thumbnailHeight: 100,
         thumbnailMethod: 'contain',
         acceptedFiles: '.png, .jpg',
-        addRemoveLinks: true,
-        params: file => ({ name: file.name }),
       },
     };
   },
@@ -226,6 +228,18 @@ export default {
   },
   mounted() {
     this.dropzoneOptions.headers = { 'X-Auth-Token': this.token };
+  },
+  methods: {
+    ...mapActions(['getUserDocumentList', 'showUserDocument', 'deleteUserDocument']),
+    onDeleteDocument(id) {
+      this.deleteUserDocument(id).then(() => this.getUserDocumentList());
+    },
+    onSendRequest(file, xhr, formData) {
+      formData.append('name', file.name);
+    },
+    onSuccessUpload() {
+      this.getUserDocumentList().then(() => this.$refs.myVueDropzone.removeAllFiles());
+    },
   },
 };
 </script>
@@ -295,6 +309,10 @@ export default {
     justify-content: space-between;
     align-items: center;
     min-height: 24px;
+  }
+
+  &-DocName {
+    cursor: pointer;
   }
 
   &-Name {

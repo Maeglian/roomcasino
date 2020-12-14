@@ -1202,4 +1202,33 @@ export const actions = {
       commit('setPageDataIsLoaded');
     }
   },
+
+  async showUserDocument({ commit }, id) {
+    try {
+      const res = await axios.get(`${API_HOST}/document/${id}`);
+      let url;
+      const blob = new Blob(res.data);
+      console.log(blob);
+      const reader = new FileReader();
+      reader.readAsArrayBuffer(blob);
+
+      reader.addEventListener('load', e => {
+        url = e.target.result;
+      });
+
+      console.log(url);
+      window.open(url, 'Image');
+      // commit('setUserDocumentList', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async deleteUserDocument({ commit }, id) {
+    try {
+      await axios.delete(`${API_HOST}/document/${id}`);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
 };
