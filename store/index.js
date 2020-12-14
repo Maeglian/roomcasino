@@ -920,7 +920,11 @@ export const actions = {
   async registerUser({ state, commit, dispatch }, payload) {
     commit('setAuthRequest');
     try {
-      const res = await axios.post(`${API_HOST}/register`, payload, reqConfig(commit, 'authError'));
+      const res = await axios.post(
+        `${API_HOST}/register`,
+        payload,
+        reqConfig(commit, 'setAuthError'),
+      );
       if (!state.authError) {
         commit('setAuthSuccess');
         const { token } = res.data;
