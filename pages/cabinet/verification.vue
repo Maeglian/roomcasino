@@ -139,6 +139,7 @@
 
 <script>
 import { API_HOST_PROD, API_HOST_SANDBOX } from '@/config';
+import { mapState } from 'vuex';
 
 const vue2Dropzone = () => import('vue2-dropzone');
 
@@ -158,8 +159,15 @@ export default {
         thumbnailMethod: 'contain',
         acceptedFiles: '.png, .jpg',
         addRemoveLinks: true,
+        params: file => ({ name: file.name }),
       },
     };
+  },
+  computed: {
+    ...mapState(['token']),
+  },
+  mounted() {
+    this.dropzoneOptions.headers = { 'X-Auth-Token': this.token };
   },
 };
 </script>
