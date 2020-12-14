@@ -137,10 +137,7 @@
               Uploaded documents
             </div>
             <div v-for="doc in userDocumentList" :key="doc.id" class="VerificationPage-Doc">
-              <div
-                class="VerificationPage-Name VerificationPage-DocName"
-                @click="showUserDocument(doc.id)"
-              >
+              <div class="VerificationPage-DocName" @click="showUserDocument(doc.id)">
                 {{ doc.name }}
               </div>
               <div class="VerificationPage-Close" @click="onDeleteDocument(doc.id)">
@@ -309,9 +306,17 @@ export default {
     justify-content: space-between;
     align-items: center;
     min-height: 24px;
+    margin-bottom: 15px;
   }
 
   &-DocName {
+    margin-right: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.09;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+    word-break: break-word;
     cursor: pointer;
   }
 
@@ -337,6 +342,8 @@ export default {
 
   &-Docs {
     position: relative;
+    display: flex;
+    flex-direction: column;
     background: rgba(27, 33, 56, 0.2);
     border: 2px dashed var(--color-bg-lighter);
 
@@ -362,7 +369,10 @@ export default {
   }
 
   &-Dropzone {
+    display: flex;
+    align-items: center;
     width: 100%;
+    height: 100%;
     padding: 16px 56px 16px 16px;
     cursor: pointer;
 
@@ -402,6 +412,10 @@ export default {
     &--pending {
       color: var(--color-main1);
     }
+  }
+
+  .dropzone {
+    flex-grow: 1;
   }
 }
 </style>
