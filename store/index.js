@@ -1205,20 +1205,9 @@ export const actions = {
 
   async showUserDocument({ commit }, id) {
     try {
-      const res = await axios.get(`${API_HOST}/document/${id}`);
-      let url;
-      const blob = new Blob(res.data);
-      console.log(blob);
-      const reader = new FileReader();
-      reader.readAsArrayBuffer(blob);
-
-      reader.addEventListener('load', e => {
-        url = e.target.result;
-      });
-
-      console.log(url);
+      const res = await axios.get(`${API_HOST}/document/${id}`, { responseType: 'blob' });
+      const url = URL.createObjectURL(res.data);
       window.open(url, 'Image');
-      // commit('setUserDocumentList', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
     }
