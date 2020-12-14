@@ -4,51 +4,149 @@
       Verification
     </div>
     <div class="VerificationPage-Content">
+      <!--      <div class="VerificationPage-Item">-->
+      <!--        <div class="VerificationPage-Desc">-->
+      <!--          <svg class="VerificationPage-Approve VerificationPage-Approve&#45;&#45;approved">-->
+      <!--            <use xlink:href="@/assets/img/icons.svg#approve"></use>-->
+      <!--          </svg>-->
+      <!--          <div class="VerificationPage-Title">-->
+      <!--            <div class="VerificationPage-Name">-->
+      <!--              Selfie & Id verification-->
+      <!--            </div>-->
+      <!--            <div class="VerificationPage-Text">-->
+      <!--              Passport, drivers license, or other official document replacing them.-->
+      <!--              <a href="#" class="CabinetPage-Link">More info</a>-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        <div class="VerificationPage-Docs">-->
+      <!--          <div class="VerificationPage-DocsContent">-->
+      <!--            <div class="VerificationPage-Close">-->
+      <!--              <div class="Close"></div>-->
+      <!--            </div>-->
+      <!--            <div class="VerificationPage-DocsTitle">-->
+      <!--              Uploaded documents-->
+      <!--            </div>-->
+      <!--            <div class="VerificationPage-Name">-->
+      <!--              Michelle Harris.pdf-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <!--      <div class="VerificationPage-Item">-->
+      <!--        <div class="VerificationPage-Desc">-->
+      <!--          <svg class="VerificationPage-Approve">-->
+      <!--            <use xlink:href="@/assets/img/icons.svg#approve"></use>-->
+      <!--          </svg>-->
+      <!--          <div class="VerificationPage-Title">-->
+      <!--            <div class="VerificationPage-Name">-->
+      <!--              Address verification-->
+      <!--            </div>-->
+      <!--            <div class="VerificationPage-Text">-->
+      <!--              Until bill, phone bill, or bank statement, in which your name and address are fully-->
+      <!--              indicated. <a href="#" class="CabinetPage-Link">More info</a>-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        <div class="VerificationPage-Docs">-->
+      <!--          <client-only>-->
+      <!--            <vueDropzone-->
+      <!--              id="dropzone"-->
+      <!--              ref="myVueDropzone"-->
+      <!--              :options="dropzoneOptions"-->
+      <!--              :use-custom-slot="true"-->
+      <!--            >-->
+      <!--              <div class="VerificationPage-DocsContent">-->
+      <!--                <div class="VerificationPage-Close">-->
+      <!--                  <div class="Close"></div>-->
+      <!--                </div>-->
+      <!--                <div class="VerificationPage-Text">-->
+      <!--                  Dpor file here or <span class="CabinetPage-Link">browse</span>-->
+      <!--                  jpg. png. Max size 2MB-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--            </vueDropzone>-->
+      <!--          </client-only>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <!--      <div class="VerificationPage-Item">-->
+      <!--        <div class="VerificationPage-Desc">-->
+      <!--          <svg class="VerificationPage-Approve">-->
+      <!--            <use xlink:href="@/assets/img/icons.svg#approve"></use>-->
+      <!--          </svg>-->
+      <!--          <div class="VerificationPage-Title">-->
+      <!--            <div class="VerificationPage-Name">-->
+      <!--              Selfie & Id verification-->
+      <!--            </div>-->
+      <!--            <div class="VerificationPage-Text">-->
+      <!--              Screenshot or photo from onlone bank, bank statement, Skrill page,etc,showing the-->
+      <!--              deposit. <a href="#" class="CabinetPage-Link">More info</a>-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        <div class="VerificationPage-Docs">-->
+      <!--          <client-only>-->
+      <!--            <vueDropzone-->
+      <!--              id="dropzone2"-->
+      <!--              ref="myVueDropzone2"-->
+      <!--              :options="dropzoneOptions"-->
+      <!--              :use-custom-slot="true"-->
+      <!--            >-->
+      <!--              <div class="VerificationPage-DocsContent">-->
+      <!--                <div class="VerificationPage-Close">-->
+      <!--                  <div class="Close"></div>-->
+      <!--                </div>-->
+      <!--                <div class="VerificationPage-Text">-->
+      <!--                  Dpor file here or <span class="CabinetPage-Link">browse</span>-->
+      <!--                  jpg. png. Max size 2MB-->
+      <!--                </div>-->
+      <!--              </div>-->
+      <!--            </vueDropzone>-->
+      <!--          </client-only>-->
+      <!--        </div>-->
+      <!--      </div>-->
       <div class="VerificationPage-Item">
         <div class="VerificationPage-Desc">
-          <svg class="VerificationPage-Approve VerificationPage-Approve--approved">
+          <svg
+            class="VerificationPage-Approve"
+            :class="{ 'VerificationPage-Approve--pending': userDocumentList.length }"
+          >
             <use xlink:href="@/assets/img/icons.svg#approve"></use>
           </svg>
           <div class="VerificationPage-Title">
             <div class="VerificationPage-Name">
-              Selfie & Id verification
+              Documents verification
             </div>
             <div class="VerificationPage-Text">
-              Passport, drivers license, or other official document replacing them.
-              <a href="#" class="CabinetPage-Link">More info</a>
+              Passport, drivers license, or other official documents replacing them / until bill,
+              phone bill, or bank statement, in which your name and address are fully indicated /
+              screenshot or photo from online bank, bank statement, Skrill page, etc, showing the
+              deposit.
+            </div>
+            <div
+              v-if="userDocumentList.length"
+              class="VerificationPage-Approved VerificationPage-Approved--pending"
+            >
+              Waiting for approve
             </div>
           </div>
         </div>
         <div class="VerificationPage-Docs">
-          <div class="VerificationPage-DocsContent">
-            <div class="VerificationPage-Close">
-              <div class="Close"></div>
-            </div>
+          <div v-if="userDocumentList.length" class="VerificationPage-DocsContent">
             <div class="VerificationPage-DocsTitle">
               Uploaded documents
             </div>
-            <div class="VerificationPage-Name">
-              Michelle Harris.pdf
+            <div
+              v-for="doc in userDocumentList"
+              :key="doc.id"
+              class="VerificationPage-Doc VerificationPage-Name"
+            >
+              {{ doc.name }}
+              <div class="VerificationPage-Close">
+                <div class="Close"></div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="VerificationPage-Item">
-        <div class="VerificationPage-Desc">
-          <svg class="VerificationPage-Approve">
-            <use xlink:href="@/assets/img/icons.svg#approve"></use>
-          </svg>
-          <div class="VerificationPage-Title">
-            <div class="VerificationPage-Name">
-              Address verification
-            </div>
-            <div class="VerificationPage-Text">
-              Until bill, phone bill, or bank statement, in which your name and address are fully
-              indicated. <a href="#" class="CabinetPage-Link">More info</a>
-            </div>
-          </div>
-        </div>
-        <div class="VerificationPage-Docs">
           <client-only>
             <vueDropzone
               id="dropzone"
@@ -56,49 +154,9 @@
               :options="dropzoneOptions"
               :use-custom-slot="true"
             >
-              <div class="VerificationPage-DocsContent">
-                <div class="VerificationPage-Close">
-                  <div class="Close"></div>
-                </div>
+              <div class="VerificationPage-Dropzone">
                 <div class="VerificationPage-Text">
-                  Dpor file here or <span class="CabinetPage-Link">browse</span>
-                  jpg. png. Max size 2MB
-                </div>
-              </div>
-            </vueDropzone>
-          </client-only>
-        </div>
-      </div>
-      <div class="VerificationPage-Item">
-        <div class="VerificationPage-Desc">
-          <svg class="VerificationPage-Approve">
-            <use xlink:href="@/assets/img/icons.svg#approve"></use>
-          </svg>
-          <div class="VerificationPage-Title">
-            <div class="VerificationPage-Name">
-              Selfie & Id verification
-            </div>
-            <div class="VerificationPage-Text">
-              Screenshot or photo from onlone bank, bank statement, Skrill page,etc,showing the
-              deposit. <a href="#" class="CabinetPage-Link">More info</a>
-            </div>
-          </div>
-        </div>
-        <div class="VerificationPage-Docs">
-          <client-only>
-            <vueDropzone
-              id="dropzone2"
-              ref="myVueDropzone2"
-              :options="dropzoneOptions"
-              :use-custom-slot="true"
-            >
-              <div class="VerificationPage-DocsContent">
-                <div class="VerificationPage-Close">
-                  <div class="Close"></div>
-                </div>
-                <div class="VerificationPage-Text">
-                  Dpor file here or <span class="CabinetPage-Link">browse</span>
-                  jpg. png. Max size 2MB
+                  Drop file here or browse jpg. png. Max size 2MB
                 </div>
               </div>
             </vueDropzone>
@@ -121,14 +179,14 @@
         </div>
         <div class="VerificationPage-Docs">
           <div class="VerificationPage-DocsContent">
-            <div class="VerificationPage-Close">
-              <div class="Close"></div>
-            </div>
             <div class="VerificationPage-DocsTitle">
               Phone number
             </div>
-            <div class="VerificationPage-Name">
+            <div class="VerificationPage-Name VerificationPage-Doc">
               +3585****289
+              <div class="VerificationPage-Close">
+                <div class="Close"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -164,7 +222,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['token']),
+    ...mapState(['token', 'userDocumentList']),
   },
   mounted() {
     this.dropzoneOptions.headers = { 'X-Auth-Token': this.token };
@@ -219,6 +277,10 @@ export default {
       margin-right: 29px;
     }
 
+    &--pending {
+      fill: var(--color-main1);
+    }
+
     &--approved {
       fill: var(--color-accept);
     }
@@ -226,6 +288,13 @@ export default {
 
   &-Title {
     margin-right: 25px;
+  }
+
+  &-Doc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 24px;
   }
 
   &-Name {
@@ -260,8 +329,24 @@ export default {
   }
 
   &-DocsContent {
-    height: 100%;
+    width: 100%;
+    //padding: 16px 56px 16px 16px;
+    padding: 16px;
+
+    @media (min-width: $screen-m) {
+      //padding: 28px 68px 28px 66px;
+      padding: 28px 16px 28px 66px;
+    }
+
+    + .dropzone {
+      border-top: 2px dashed var(--color-bg-lighter);
+    }
+  }
+
+  &-Dropzone {
+    width: 100%;
     padding: 16px 56px 16px 16px;
+    cursor: pointer;
 
     @media (min-width: $screen-m) {
       padding: 28px 68px 28px 66px;
@@ -279,9 +364,6 @@ export default {
   }
 
   &-Close {
-    position: absolute;
-    top: 16px;
-    right: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -292,11 +374,16 @@ export default {
   }
 
   &-Approved {
+    margin-top: 12px;
     font-size: 12px;
     font-weight: 700;
     line-height: 1.09;
     color: var(--color-accept);
     text-transform: uppercase;
+
+    &--pending {
+      color: var(--color-main1);
+    }
   }
 }
 </style>
