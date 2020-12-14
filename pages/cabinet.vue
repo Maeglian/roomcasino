@@ -34,6 +34,7 @@ export default {
   &-Link {
     font-weight: 700;
     color: var(--color-text-main);
+    cursor: pointer;
   }
 
   &-Header {
