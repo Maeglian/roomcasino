@@ -71,4 +71,8 @@
 
 .SupportPage-Link {
   color: var(--color-main1);
+
+  &:hover {
+    color: var( --color-text-main);
+  }
 }
