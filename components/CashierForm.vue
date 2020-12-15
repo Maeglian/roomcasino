@@ -48,7 +48,7 @@ export default {
                 borderRadius: '0', 
               }, 
               inputbackground: { 
-                color: '#1B2138', 
+                color: '#1B2138',
               }, 
               labels: { 
                 color: '#fff', 
@@ -141,10 +141,6 @@ export default {
               #cashier h3.tab { 
                 color: #ffffff!important; 
               } 
-              #cashier .saved-account-number, #cashier #hosted-fields-container, #cashier .loading-fields-container { 
-                margin-right: 20px!important; 
-                margin-left: 20px!important; 
-              } 
               #cashier section.payment-method { 
                 margin-bottom: 0; 
               } 
@@ -169,9 +165,9 @@ export default {
                 padding: 0px; 
               } 
               #cashier .predefinedvalue.active { 
-                background: #1B2138!important; 
+                background: #1B2138; 
                 color: #fff!important; 
-                border: 2px solid #F3B233 !important; 
+                border: 2px solid #F3B233; 
               } 
               #cashier .predefinedvalue { 
                 border-radius: 0; 
@@ -181,8 +177,8 @@ export default {
                 padding: 15px 10px!important; 
               } 
               #cashier .predefinedvalues-btn { 
-                flex-grow: 0!important; 
-                flex-shrink: 0!important; 
+                flex-grow: 0; 
+                flex-shrink: 0; 
               } 
               #cashier .submit-button { 
                 background: #EB1C2A; 
@@ -243,11 +239,6 @@ export default {
               #cashier .btn:disabled:after { 
                 border-radius: 0; 
               } 
-              #cashier .input.input-prefix-wrapper { 
-                background: white!important; 
-                padding-left: 10px!important; 
-                padding-right: 10px!important; 
-              } 
               #cashier .input.input-prefix-wrapper .input-container { 
                 text-align: left; 
                 display: flex!important; 
@@ -257,7 +248,7 @@ export default {
               #cashier .input.input-prefix-wrapper span { 
                 text-align: right!important; 
                 color: #ffffff!important; 
-                width: auto!important; 
+                width: auto; 
                 padding: 0!important; 
                 border-radius: 0!important; 
                 font-weight: 400!important; 
@@ -273,10 +264,8 @@ export default {
               .account-options-container { 
                 display: none !important; 
               } 
-              #cashier .label, #cashier h5, #cashier label:not(.input-label-float) { 
-                color: #ffffff; 
-                font-size: 12px !important; 
-                padding: 17px 12px 17px 18px; 
+              .transaction-overview-row { 
+                padding: 17px 12px 17px 18px !important; 
               } 
               .set-amount .predefinedvalues { 
                 grid-template-columns: 1fr 1fr 1fr !important; 
