@@ -37,7 +37,8 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 
 export const state = () => ({
   pageDataIsLoading: false,
-  historyListIsLoading: '',
+  userDocumentList: [],
+  historyListIsLoading: false,
   transactionHistoryList: [],
   gameHistoryList: [],
   bonusHistoryList: [],
@@ -735,6 +736,9 @@ export const mutations = {
   setPageDataIsLoaded: state => {
     state.pageDataIsLoading = false;
   },
+  setUserDocumentList: (state, payload) => {
+    state.userDocumentList = payload;
+  },
   setServerError: (state, message) => {
     state.serverError = message;
   },
@@ -920,7 +924,11 @@ export const actions = {
   async registerUser({ state, commit, dispatch }, payload) {
     commit('setAuthRequest');
     try {
-      const res = await axios.post(`${API_HOST}/register`, payload, reqConfig(commit, 'authError'));
+      const res = await axios.post(
+        `${API_HOST}/register`,
+        payload,
+        reqConfig(commit, 'setAuthError'),
+      );
       if (!state.authError) {
         commit('setAuthSuccess');
         const { token } = res.data;
@@ -1210,6 +1218,36 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setPageDataIsLoaded');
+    }
+  },
+
+  async getUserDocumentList({ commit }) {
+    try {
+      commit('setPageDataIsLoading');
+      const res = await axios.get(`${API_HOST}/document`);
+      commit('setUserDocumentList', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setPageDataIsLoaded');
+    }
+  },
+
+  async showUserDocument({ commit }, id) {
+    try {
+      const res = await axios.get(`${API_HOST}/document/${id}`, { responseType: 'blob' });
+      const url = URL.createObjectURL(res.data);
+      window.open(url, 'Image');
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async deleteUserDocument({ commit }, id) {
+    try {
+      await axios.delete(`${API_HOST}/document/${id}`);
+    } catch (e) {
+      commit('pushErrors', e);
     }
   },
 };

@@ -1,0 +1,55 @@
+.dropzone {
+  width: 100%;
+  height: 100%;
+}
+
+.dz-message {
+  height: 100%;
+}
+
+.dz-started {
+  .dz-message {
+    display: none;
+  }
+}
+
+.dz-preview {
+  position: relative;
+  padding: 20px;
+}
+
+.dz-error {
+  .dz-success-mark {
+    display: none;
+  }
+}
+
+.dz-details {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.339;
+  color: var(--color-text-ghost);
+}
+
+.dz-error-message {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.339;
+  color: var(--color-error);
+}
+
+.dz-filename {
+  word-break: break-word;
+}
+
+.dz-success-mark, .dz-error-mark {
+  display: none;
+}
+
+.dz-remove {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.09;
+  color: var(--color-text-main);
+  text-transform: uppercase;
+}
