@@ -178,9 +178,7 @@ export default {
       immediate: true,
       handler() {
         if (this.type.value === 'coolingOffLimit') {
-          this.period = this.item.period
-            ? findValInArr(this.item.period, LIMIT_COOL_PERIODS)
-            : findValInArr('dayLimit', LIMIT_COOL_PERIODS);
+          this.period = findValInArr('dayLimit', LIMIT_COOL_PERIODS);
           this.periods = LIMIT_COOL_PERIODS;
         }
       },
