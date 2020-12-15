@@ -2,9 +2,10 @@
   <modal
     name="cashier"
     height="95%"
+    width="400px"
     :shift-y="0.5"
     draggable
-    :adaptive="true"
+    adaptive
     @opened="initializeCashier()"
     @closed="onCloseCashierForm()"
   >
@@ -41,6 +42,7 @@ export default {
             containerHeight: '95vh',
             method,
             predefinedAmounts: [100,200,300,500,1000],
+            containerWidth: '100%',
             theme: { 
               input: { 
                 color: '#fff', 
