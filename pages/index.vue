@@ -6,16 +6,22 @@
     <Tournament />
     <Winners />
     <MainBanner class="HomePage-Banner" v-bind="banner1" />
+    <Iframe
+      v-model="hasGameUrl"
+      :url="gameUrlForIframe"
+    />
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import Hero from '@/components/homepage/Hero.vue';
 import BestGames from '@/components/homepage/BestGames.vue';
 import Jackpots from '@/components/homepage/Jackpots.vue';
 import Tournament from '@/components/homepage/Tournament.vue';
 import Winners from '@/components/homepage/Winners.vue';
 import MainBanner from '@/components/MainBanner.vue';
+import Iframe from '@/components/Iframe.vue';
 // import Promotions from '@/components/Promotions.vue';
 // import Questions from '@/components/Questions.vue';
 // import Banner from '@/components/Banner.vue';
@@ -51,6 +57,12 @@ export default {
         },
       },
     };
+  },
+  computed: {
+    ...mapState(['gameUrlForIframe']),
+    hasGameUrl() {
+      return this.gameUrlForIframe.length > 0;
+    },
   },
 };
 </script>
