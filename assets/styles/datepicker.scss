@@ -13,6 +13,10 @@
     color: inherit;
     background: inherit;
     border: none;
+
+    &::placeholder {
+      color: var(--color-text-ghost);
+    }
   }
 
   &-Inner {
@@ -61,6 +65,18 @@
 
   .vdp-datepicker__calendar header .next:after {
     border-left-color: var(--color-text-ghost);
+  }
+
+  .vdp-datepicker__clear-button {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+
+    i {
+      font-size: 30px;
+      font-style: normal;
+    }
   }
 }
 

@@ -76,8 +76,8 @@
             {{ item.targetValue - item.value }} of {{ item.targetValue }}
             {{ activeAccount.currency }} left
           </template>
-          <template v-if="item.type === 'coolingOffLimit'">
-            {{ item.targetValue / 86400 }} days
+          <template v-else-if="item.type === 'coolingOffLimit'">
+            {{ item.targetValue / 86400 }} {{ item.targetValue > 86400 ? 'days' : 'day' }}
           </template>
           <template v-else class="GamblingLimit-Left">
             <svg
@@ -208,7 +208,7 @@ export default {
         ConfirmDialog,
         {
           title: 'Delete limit',
-          text: `Are you sure you want to delete ${this.item.type} limit? ${
+          text: `Are you sure you want to delete ${LIMIT_DETAILS[this.item.type].name}? ${
             LIMIT_DETAILS[this.item.type].deleteRules
           }`,
           okBtnText: 'delete limit',
