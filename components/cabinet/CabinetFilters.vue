@@ -28,11 +28,12 @@
           </template>
           <template v-if="filter.type === 'date'">
             <Datepicker
-              :value="new Date()"
               format="dd.MM.yyyy"
+              placeholder="dd.mm.yyyy"
               class="Datepicker CabinetPage-Datepicker"
               calendar-class="Datepicker-Inner"
               input-class="Datepicker-Input"
+              :clear-button="true"
               @selected="setValue({ name, type: filter.type, payload: $event })"
             />
           </template>

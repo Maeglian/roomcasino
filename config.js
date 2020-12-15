@@ -195,7 +195,7 @@ export const HISTORY_TABLES = {
       },
       from: {
         type: 'date',
-        value: moment().unix(),
+        value: '',
       },
     },
   },
