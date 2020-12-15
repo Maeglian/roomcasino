@@ -77,7 +77,7 @@
             {{ activeAccount.currency }} left
           </template>
           <template v-else-if="item.type === 'coolingOffLimit'">
-            {{ item.targetValue / 86400 }} days
+            {{ item.targetValue / 86400 }} {{ item.targetValue > 86400 ? 'days' : 'day' }}
           </template>
           <template v-else class="GamblingLimit-Left">
             <svg
