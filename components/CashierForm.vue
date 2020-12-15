@@ -169,7 +169,7 @@ export default {
               #cashier .predefinedvalue.active { 
                 background: #1B2138; 
                 color: #fff!important; 
-                border: 2px solid #F3B233; 
+                border: 2px solid #F3B233 !important; 
               } 
               #cashier .predefinedvalue { 
                 border-radius: 0; 
