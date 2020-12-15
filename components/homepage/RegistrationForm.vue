@@ -1,121 +1,162 @@
 <template>
-<form
-  class="AuthDialog-Registration
+  <form
+    class="AuthDialog-Registration
   AuthDialog-Form"
-  @submit.prevent="onSubmitForm"
->
-  <div class="AuthDialog-Content" :class="{'AuthDialog-Content--step1': step === 1}">
-    <div v-if="step === 1" class="AuthDialog-RegistrationHeader">
-      <div class="AuthDialog-Title">
-        Sign up <span class="Colored">&</span> get<br/>
-        welcome bonus
-      </div>
-      <div class="AuthDialog-Subtitle">
-        € 100 <span class="Colored">+</span> 55 free spins
-      </div>
-    </div>
-    <div v-if="step === 2" class="AuthDialog-Text">
-      Please, fill the information below!
-    </div>
-    <template v-for="(field, name) in fields">
-      <template v-if="field.type === 'dropdown'">
-        <BaseDropdown
-          class="AuthDialog-Field AuthDialog-Dropdown"
-          :items="field.items"
-          :key="name"
-          @set-dropdown-value="field.value = $event"
-        />
-      </template>
-      <div v-else-if="field.type === 'radio'" class="AuthDialog-Row" :key="name">
-        <div
-          v-for="value in field.values"
-          class="AuthDialog-Radio AuthDialog-Field AuthDialog-Field--2col"
-          :key="value"
-        >
-          <BaseCheckbox
-            class="AuthDialog-Checkbox"
-            blockClass="AuthDialog"
-            :name="name"
-            :label="value"
-            :value="value"
-            type="radio"
-            :checked="field.value === value"
-            @change="field.value = $event"
-          />
-        </div>
-      </div>
-      <div v-else-if="field.type === 'date'" class="AuthDialog-Datepicker" :key="name">
-        <div
-          v-if="field.required && $v[`fieldsStep${step}`][name].value.$dirty && $v[`fieldsStep${step}`][name].value.required === false"
-          class="AuthDialog-Error"
-        >
-          Can't be blank
-        </div>
-        <client-only>
-          <Datepicker
-            format="yyyy.MM.dd"
-            class="AuthDialog-Field Datepicker CabinetPage-Datepicker"
-            :class="{'AuthDialog-Field--error': $v[`fieldsStep${step}`][name].$error}"
-            calendar-class="Datepicker-Inner"
-            input-class="AuthDialog-Input Datepicker-Input"
-            :placeholder="field.placeholder"
-            @selected="onSelectDate($event, name, step)"
-            typeable
-          />
-        </client-only>
-      </div>
-      <template v-else-if="field.type === 'checkbox'">
-        <BaseCheckbox
-          class="AuthDialog-Checkbox"
-          blockClass="AuthDialog"
-          :key="name"
-          :label="field.label"
-          :checked="field.value"
-          @change="field.value = $event"
-        />
-      </template>
-      <template v-else>
-        <BaseInput
-          class="AuthDialog-Wrapper"
-          blockClass="AuthDialog"
-          :key="name"
-          :inputType="field.type"
-          :placeholder="field.placeholder"
-          v-model="field.value"
-          :v="$v[`fieldsStep${step}`][name].value"
-          :required="field.required"
-          :custom-placeholder="true"
-        />
-      </template>
-    </template>
-    <div v-if="authError" class="AuthDialog-Error">
-      {{ authError }}
-    </div>
-  </div>
-  <button
-    type="submit"
-    :disabled="this.$v[`fieldsStep${step}`].$error"
-    class="Btn Btn--full AuthDialog-Btn"
+    @submit.prevent="onSubmitForm"
   >
-    Sign up
-  </button>
-</form>
+    <div class="AuthDialog-Content" :class="{ 'AuthDialog-Content--step1': step === 1 }">
+      <div v-if="step === 1" class="AuthDialog-RegistrationHeader">
+        <div class="AuthDialog-Title">
+          Sign up <span class="Colored">&</span> get<br />
+          welcome bonus
+        </div>
+        <div class="AuthDialog-Subtitle">€ 100 <span class="Colored">+</span> 55 free spins</div>
+      </div>
+      <div v-if="step === 2" class="AuthDialog-Text">
+        Please, fill the information below!
+      </div>
+      <template v-for="(field, name) in fields">
+        <template v-if="field.type === 'dropdown'">
+          <BaseDropdown
+            :key="name"
+            v-model="field.value"
+            class="AuthDialog-Field AuthDialog-Dropdown AuthDialog-Row"
+            :class="{ 'AuthDialog-Field--error': $v[`fieldsStep${step}`][name].value.$error }"
+            :items="field.items"
+            :placeholder="field.placeholder"
+            error-class="AuthDialog-Error"
+            :v="$v[`fieldsStep${step}`][name].value"
+            @set-dropdown-value="field.value = $event"
+          />
+        </template>
+        <div v-else-if="field.type === 'radio'" :key="name" class="AuthDialog-Row">
+          <div
+            v-for="value in field.values"
+            :key="value"
+            class="AuthDialog-Radio AuthDialog-Field AuthDialog-Col"
+          >
+            <BaseCheckbox
+              v-model="field.value"
+              class="AuthDialog-Checkbox"
+              label-class="AuthDialog-Label AuthDialog-Label--radio"
+              :name="name"
+              type="radio"
+              :value="value"
+              @change="field.value = $event"
+            >
+              {{ value }}
+            </BaseCheckbox>
+          </div>
+        </div>
+        <div v-else-if="field.type === 'date'" :key="field.value" class="AuthDialog-Row">
+          <template v-if="!$v[`fieldsStep${step}`][name].children.$invalid">
+            <div v-if="!$v[name].dateCheck" class="AuthDialog-Error">
+              Date is invalid
+            </div>
+            <div v-else-if="!$v[name].ageCheck" class="AuthDialog-Error">
+              You are under age of 18
+            </div>
+          </template>
+          <BaseInput
+            v-for="(item, itemName) in field.children"
+            :key="itemName"
+            v-model="item.value"
+            class="AuthDialog-Col"
+            error-class="AuthDialog-Error"
+            :input-type="item.type"
+            :input-class="
+              $v[`fieldsStep${step}`][name].children.$dirty && $v[name].$invalid
+                ? 'BaseInput-Input--error AuthDialog-Field AuthDialog-Input'
+                : 'AuthDialog-Field AuthDialog-Input'
+            "
+            :v="$v[`fieldsStep${step}`][name].children[itemName].value"
+            :inputmode="item.inputmode"
+          >
+            <template #beforeInput-absolute>
+              <span
+                v-if="
+                  item.required && !$v[`fieldsStep${step}`][name].children[itemName].value.required
+                "
+                class="AuthDialog-Placeholder"
+              >
+                {{ item.placeholder }}
+                <span class="AuthDialog-Placeholder--required">*</span>
+              </span>
+            </template>
+          </BaseInput>
+        </div>
+        <template v-else-if="field.type === 'checkbox'">
+          <BaseCheckbox
+            :key="name"
+            v-model="field.value"
+            class="AuthDialog-Checkbox AuthDialog-Row"
+            :class="{
+              Wibro:
+                $v[`fieldsStep${step}`][name] &&
+                $v[`fieldsStep${step}`][name].$dirty &&
+                $v[`fieldsStep${step}`][name].$error,
+            }"
+            label-class="AuthDialog-Label AuthDialog-CheckboxLabel"
+            @change="field.value = $event"
+            @animationend="$v[`fieldsStep${step}`][name].$reset()"
+          >
+            <span v-html="field.label"></span>
+          </BaseCheckbox>
+        </template>
+        <template v-else>
+          <BaseInput
+            :key="name"
+            v-model="field.value"
+            class="AuthDialog-Row"
+            :input-type="field.type"
+            input-class="AuthDialog-Field AuthDialog-Input"
+            error-class="AuthDialog-Error"
+            :autocorrect="field.autocorrect"
+            :autocomplete="field.autocomplete"
+            :pattern="field.pattern"
+            :inputmode="field.inputmode"
+            :v="$v[`fieldsStep${step}`][name].value"
+          >
+            <template #beforeInput-absolute>
+              <span
+                v-if="field.required && !$v[`fieldsStep${step}`][name].value.required"
+                class="AuthDialog-Placeholder"
+              >
+                {{ field.placeholder }}
+                <span class="AuthDialog-Placeholder--required">*</span>
+              </span>
+            </template>
+          </BaseInput>
+        </template>
+      </template>
+      <div v-if="authError" class="AuthDialog-Error AuthDialog-Error--registration">
+        {{ authError }}
+      </div>
+    </div>
+    <BaseButton
+      class="Btn--full AuthDialog-Btn"
+      :is-loading="authStatus === 'loading'"
+      :disabled="$v.$error"
+    >
+      Sign up
+    </BaseButton>
+  </form>
 </template>
 
 <script>
 import BaseInput from '@/components/base/BaseInput.vue';
 import BaseCheckbox from '@/components/base/BaseCheckbox.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { mapActions, mapGetters, mapState } from 'vuex';
+import { required, email, minLength, maxLength, numeric } from 'vuelidate/lib/validators';
 import {
-  required, email, minLength, maxLength, helpers,
-} from 'vuelidate/lib/validators';
-
-const Datepicker = () => import('vuejs-datepicker');
-
-const passwordCheck = helpers.regex('passwordCheck', /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9]).{8,}$/);
-const ageCheck = (value) => value === true;
+  getObjValuesFromLocalStorage,
+  writeObjValuesToLocalStorage,
+  deleteObjValuesFromLocalStorage,
+} from '@/utils/helpers';
+import { passwordCheck, termsCheck, ageCheck, dateCheck } from '@/utils/formCheckers';
+import RegistrationBonus from '@/components/homepage/RegistrationBonus';
+import BaseButton from '@/components/base/BaseButton';
 
 export default {
   name: 'RegistrationForm',
@@ -123,7 +164,7 @@ export default {
     BaseInput,
     BaseDropdown,
     BaseCheckbox,
-    Datepicker,
+    BaseButton,
   },
   data() {
     return {
@@ -134,6 +175,10 @@ export default {
           type: 'email',
           placeholder: 'Your email',
           required: true,
+          autocapitalize: 'off',
+          autocorrect: 'off',
+          autocomplete: 'email',
+          inputmode: 'email',
         },
         password: {
           value: '',
@@ -144,23 +189,27 @@ export default {
         currency: {
           value: '',
           type: 'dropdown',
+          placeholder: 'currency',
           items: [],
+          required: true,
         },
         country: {
           value: '',
           type: 'dropdown',
+          placeholder: 'country',
           items: [],
+          required: true,
         },
         receiveEmailPromos: {
-          value: true,
+          value: false,
           type: 'checkbox',
           label: 'Receive Email Promos',
         },
         confirmAgeAndTerms: {
-          value: true,
-          name: 'confirmAgeAndTerms',
+          value: false,
           type: 'checkbox',
-          label: 'I am 18 years old and I accept the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a>',
+          label:
+            'I am 18 years old and I accept the<br/> <a class="AuthDialog-RegistrationLink" href="/terms">Terms&nbsp;and&nbsp;Conditions</a> and <a class="AuthDialog-RegistrationLink" href="/privacy-policy">Privacy&nbsp;Policy</a>',
         },
       },
       fieldsStep2: {
@@ -169,18 +218,40 @@ export default {
           type: 'text',
           placeholder: 'First Name',
           required: true,
+          autocorrect: 'off',
         },
         lastName: {
-          name: 'lastName',
+          value: '',
           type: 'text',
           placeholder: 'Last Name',
           required: true,
+          autocorrect: 'off',
         },
         birthDate: {
-          value: '',
+          children: {
+            day: {
+              value: '',
+              type: 'text',
+              placeholder: 'DD',
+              required: true,
+              inputmode: 'tel',
+            },
+            month: {
+              value: '',
+              type: 'text',
+              placeholder: 'MM',
+              required: true,
+              inputmode: 'tel',
+            },
+            year: {
+              value: '',
+              type: 'text',
+              placeholder: 'YYYY',
+              required: true,
+              inputmode: 'tel',
+            },
+          },
           type: 'date',
-          placeholder: 'YYYY.MM.DD',
-          required: true,
         },
         gender: {
           value: 'male',
@@ -192,25 +263,40 @@ export default {
           type: 'text',
           placeholder: 'City',
           required: true,
+          autocorrect: 'off',
+          autocomplete: 'address-level2',
         },
         address: {
           value: '',
           type: 'text',
           placeholder: 'Address',
           required: true,
+          autocorrect: 'off',
+          autocomplete: 'address-line1',
         },
         postalCode: {
           value: '',
           type: 'text',
           placeholder: 'Postal code',
           required: true,
+          autocorrect: 'off',
+          autocomplete: 'postal-code',
+          inputmode: 'numeric',
         },
       },
     };
   },
   computed: {
-    ...mapState(['countriesList', 'authError']),
-    ...mapGetters(['currencyNames', 'countriesNames']),
+    ...mapState(['width', 'currencyList', 'countriesList', 'authStatus', 'authError']),
+    ...mapGetters(['countriesNames']),
+    birthDate() {
+      const {
+        birthDate: {
+          children: { day, month, year },
+        },
+      } = this.fieldsStep2;
+      return `${year.value}-${month.value.padStart(2, '0')}-${day.value.padStart(2, '0')}`;
+    },
     fields() {
       if (this.step === 1) {
         return this.fieldsStep1;
@@ -219,6 +305,10 @@ export default {
     },
   },
   validations: {
+    birthDate: {
+      dateCheck,
+      ageCheck,
+    },
     fieldsStep1: {
       email: { value: { required, email } },
       password: {
@@ -228,7 +318,17 @@ export default {
           passwordCheck,
         },
       },
-      confirmAgeAndTerms: { value: { ageCheck } },
+      currency: {
+        value: {
+          required,
+        },
+      },
+      country: {
+        value: {
+          required,
+        },
+      },
+      confirmAgeAndTerms: { value: { termsCheck } },
     },
     fieldsStep2: {
       firstName: {
@@ -245,7 +345,25 @@ export default {
           maxLength: maxLength(100),
         },
       },
-      birthDate: { value: { required } },
+      birthDate: {
+        children: {
+          day: {
+            value: {
+              required,
+            },
+          },
+          month: {
+            value: {
+              required,
+            },
+          },
+          year: {
+            value: {
+              required,
+            },
+          },
+        },
+      },
       city: {
         value: {
           required,
@@ -263,25 +381,25 @@ export default {
       postalCode: {
         value: {
           required,
+          numeric,
           minLength: minLength(1),
           maxLength: maxLength(100),
         },
       },
     },
   },
+  mounted() {
+    getObjValuesFromLocalStorage(this.fieldsStep1);
+    getObjValuesFromLocalStorage(this.fieldsStep2);
+    this.fieldsStep1.currency.items = this.currencyList;
+    this.fieldsStep1.country.items = this.countriesNames;
+  },
+  beforeDestroy() {
+    writeObjValuesToLocalStorage(this.fieldsStep1);
+    writeObjValuesToLocalStorage(this.fieldsStep2);
+  },
   methods: {
     ...mapActions(['registerUser']),
-    showNextStep() {
-      if (this.step !== 4) this.step += 1;
-    },
-    showPreviousStep() {
-      if (this.step !== 1) this.step -= 1;
-    },
-    onSelectDate(dateStr, field, step) {
-      const date = new Date(dateStr).toISOString();
-      const fieldStep = `fieldsStep${step}`;
-      this[fieldStep][field].value = date;
-    },
     onSubmitForm() {
       const payload = {};
 
@@ -292,35 +410,38 @@ export default {
       } else {
         this.$v.fieldsStep2.$touch();
         if (this.$v.fieldsStep2.$error) return;
-        // eslint-disable-next-line guard-for-in,no-restricted-syntax
         for (const key in this.fieldsStep1) {
           if (key === 'country') {
-            // eslint-disable-next-line max-len
-            const entry = Object.entries(this.countriesList).find((i) => i[1] === this.fieldsStep1.country.value);
-            // eslint-disable-next-line prefer-destructuring
+            const entry = Object.entries(this.countriesList).find(
+              i => i[1] === this.fieldsStep1.country.value,
+            );
             payload.country = entry[0];
           } else payload[key] = this.fieldsStep1[key].value;
         }
-        // eslint-disable-next-line guard-for-in,no-restricted-syntax
         for (const key in this.fieldsStep2) {
-          payload[key] = this.fieldsStep2[key].value;
+          if (key === 'birthDate') payload[key] = this.birthDate;
+          else payload[key] = this.fieldsStep2[key].value;
         }
-        payload.wlSlug = 'roomcasino';
+        if (localStorage.getItem('cxd')) payload.cxd = localStorage.getItem('cxd');
         this.registerUser(payload).then(() => {
-          if (!this.authError) this.$emit('redirectLogin');
+          if (!this.authError) {
+            deleteObjValuesFromLocalStorage(this.fieldsStep1);
+            deleteObjValuesFromLocalStorage(this.fieldsStep2);
+            this.$emit('close');
+            this.$modal.show(
+              RegistrationBonus,
+              {},
+              {
+                reset: true,
+                width: this.width > 360 ? 328 : 288,
+                height: 'auto',
+                adaptive: true,
+              },
+            );
+          }
         });
       }
     },
-  },
-  created() {
-    // eslint-disable-next-line prefer-destructuring
-    this.fieldsStep1.currency.items = this.currencyNames;
-    // eslint-disable-next-line prefer-destructuring
-    this.fieldsStep1.currency.value = this.currencyNames[0];
-    // eslint-disable-next-line prefer-destructuring
-    this.fieldsStep1.country.items = this.countriesNames;
-    // eslint-disable-next-line prefer-destructuring
-    this.fieldsStep1.country.value = this.countriesNames[0];
   },
 };
 </script>
@@ -328,8 +449,8 @@ export default {
 <style lang="scss">
 .AuthDialog {
   &-RegistrationHeader {
-    padding-top: 34px;
     margin-bottom: 34px;
+    padding-top: 34px;
   }
 
   &-Content--step1 {
@@ -337,24 +458,16 @@ export default {
     background-repeat: no-repeat;
     background-position: top right;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       background-image: url('../../assets/img/auth-bg1-large.png');
     }
   }
 
-  &-Field {
-    width: 100%;
-    height: 55px;
-    margin-bottom: 4px;
-    background: transparent;
-    border: 2px solid var(--color-border-ghost);
+  &-Col {
+    margin-right: 4px;
 
-    &--2col {
-      width: calc(50% - 3px);
-    }
-
-    &--error {
-      border-color: rgba(235, 28, 42, 0.3);
+    &:last-child {
+      margin-right: 0;
     }
   }
 
@@ -367,30 +480,56 @@ export default {
     width: 100%;
     height: 100%;
     padding: 20px;
+    font-size: 16px;
     color: var(--color-text-main);
     background: transparent;
+
+    @media (min-width: $screen-s) {
+      font-size: 12px;
+    }
 
     &::placeholder {
       font-size: 12px;
       font-weight: 700;
-      text-transform: uppercase;
       color: var(--color-text-ghost);
+      text-transform: uppercase;
     }
   }
 
-  &-Datepicker {
-    border: none;
+  &-Dropdown {
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 2px solid var(--color-border-ghost);
   }
 
-  &-Dropdown {
+  &-Field {
+    width: 100%;
+    height: 55px;
+    background: transparent;
     border: 2px solid var(--color-border-ghost);
+
+    &--error {
+      border-color: rgba(235, 28, 42, 0.3);
+    }
   }
 
   &-Checkbox {
     margin-top: 15px;
   }
 
-  &-Label, &-Placeholder {
+  &-CheckboxLabel,
+  &-Label--radio {
+    padding-left: 41px;
+    line-height: 17px;
+
+    &:before {
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &-Label,
+  &-Placeholder {
     font-size: 12px;
     line-height: 1.66;
     color: var(--color-text-ghost);
@@ -403,26 +542,21 @@ export default {
   }
 
   &-Placeholder {
+    position: absolute;
     top: 0;
     left: 20px;
     font-weight: 700;
-    line-height: 55px;
+    line-height: 58px;
     text-transform: uppercase;
+
+    &--required {
+      color: var(--color-error);
+    }
   }
 
-  &-Error {
-    margin-bottom: 5px;
-    font-size: 10px;
-    color: var(--color-error);
-  }
-
-  &-Row {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  a {
+  &-RegistrationLink {
     color: var(--color-text-main);
+    text-decoration: underline;
   }
 }
 </style>

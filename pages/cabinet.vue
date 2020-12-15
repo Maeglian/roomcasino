@@ -16,11 +16,11 @@ import CabinetTopbar from '@/components/cabinet/CabinetTopbar.vue';
 
 export default {
   name: 'CabinetPage',
-  middleware: 'auth',
   components: {
     CabinetMenu,
     CabinetTopbar,
   },
+  middleware: 'auth',
 };
 </script>
 
@@ -34,6 +34,7 @@ export default {
   &-Link {
     font-weight: 700;
     color: var(--color-text-main);
+    cursor: pointer;
   }
 
   &-Header {
@@ -44,8 +45,8 @@ export default {
     font-size: 14px;
     font-weight: 700;
     line-height: 55px;
-    text-transform: capitalize;
     color: var(--color-text-main);
+    text-transform: capitalize;
     background: var(--color-bg);
   }
 
@@ -55,7 +56,7 @@ export default {
     width: 100%;
     max-width: 100%;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       flex-direction: row;
     }
   }
@@ -65,8 +66,8 @@ export default {
     font-size: 18px;
     font-weight: 700;
     line-height: 1.242;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
     @media (min-width: $screen-s) {
       font-size: 34px;
@@ -77,22 +78,22 @@ export default {
     font-size: 14px;
     font-weight: 700;
     line-height: 1.86;
-    text-transform: capitalize;
     color: var(--color-text-main);
+    text-transform: capitalize;
   }
 
   &-Content {
     width: 100%;
     max-width: 100%;
-    padding-left: 16px;
-    padding-bottom: 30px;
     padding-right: 16px;
+    padding-bottom: 30px;
+    padding-left: 16px;
 
     @media (min-width: $screen-l) {
       width: 974px / $screen-xl * 100%;
       padding-top: 46px;
-      padding-left: 46px;
       padding-right: 8px;
+      padding-left: 46px;
     }
   }
 
@@ -148,8 +149,8 @@ export default {
     @media (min-width: $screen-m) {
       display: table-cell;
       font-size: 10px;
-      text-transform: uppercase;
       color: var(--color-text-ghost);
+      text-transform: uppercase;
     }
   }
 
@@ -166,7 +167,7 @@ export default {
       padding: 5px 10px;
 
       @media (min-width: $screen-m) {
-        padding: 9px 20px;;
+        padding: 9px 20px;
       }
     }
   }
@@ -183,8 +184,8 @@ export default {
     width: 22px;
     height: 22px;
     margin-top: -11px;
-    border-radius: 50%;
     border: 2px solid var(--color-text-ghost);
+    border-radius: 50%;
 
     &:hover {
       border: 2px solid var(--color-main1);
@@ -193,8 +194,8 @@ export default {
 
   &-Submit {
     font-size: 10px;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
     background: var(--color-bg-lighter);
 
     @media (min-width: $screen-m) {
@@ -202,20 +203,18 @@ export default {
     }
   }
 
-  [type="text"] {
+  &-Input {
+    font-size: 16px;
     color: var(--color-text-main);
     background: var(--color-bg);
     border: none;
 
-    &::placeholder {
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--color-text-ghost);
+    @media (min-width: $screen-s) {
+      font-size: 12px;
     }
   }
 
-  [type="radio"] {
+  [type='radio'] {
     display: none;
 
     &:checked ~ .CabinetPage-Checkmark--radio {
@@ -223,7 +222,7 @@ export default {
     }
 
     &:checked ~ .CabinetPage-Checkmark--radio:before {
-      content: "";
+      content: '';
       position: absolute;
       top: calc(50% - 4px);
       left: calc(50% - 4px);
@@ -268,13 +267,15 @@ export default {
   &-AddBtnText {
     font-size: 10px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
     white-space: nowrap;
   }
 
   &-Dropdown {
     height: 55px;
+    font-size: 10px;
+    text-transform: uppercase;
 
     &--currency {
       width: 230px;
@@ -283,18 +284,20 @@ export default {
 
   &-Datepicker {
     flex-grow: 1;
+    color: var(--color-text-main);
+    background: var(--color-bg);
 
     .Datepicker-Inner {
       right: 0;
 
-      @media(min-width: $screen-xs) {
-        left: 0;
+      @media (min-width: $screen-xs) {
         right: initial;
+        left: 0;
       }
 
-      @media(min-width: $screen-xl) {
-        left: initial;
+      @media (min-width: $screen-xl) {
         right: 0;
+        left: initial;
       }
     }
   }

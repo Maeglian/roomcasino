@@ -2,14 +2,14 @@ name: deployDev
 
 on:
   push:
-    branches-ignore:
-      - 'master'
+    branches:
+      - 'develop'
   workflow_dispatch:
 
 env:
   DEPLOY_PATH: /www/roomcasino
   DEPLOY_DIR: dev
-  BUILD_SCRIPT: npm run build:sandbox
+  BUILD_SCRIPT: npm run build
   BUILD_SCRIPT_OUTPUT: .nuxt
   START_SCRIPT: PORT=3001 pm2 restart node_modules/nuxt-start/bin/nuxt-start.js --name roomcasino-sandbox -i max
   REPOSIRORY_NAME: wakeapp/roomcasino.git
@@ -26,7 +26,7 @@ jobs:
       # Чтобы избежать конфиликтов с URL, меняем точки на _, а слеши на минусы
       - name: Get branch name
         shell: bash
-        run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g' | sed 's/\./_/g' | sed 's/[A-Z]/\L&/g')"
+        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g' | sed 's/\./_/g' | sed 's/[A-Z]/\L&/g')" >> $GITHUB_ENV
       # Доставляем приложение на сервер и запускаем его
       - name: Deploy to server
         uses: appleboy/ssh-action@master

@@ -145,6 +145,7 @@ export default {
       this.numItemReal = this.el.slides.length;
       // Присваиваем класс слайдам
       for (let i = 0; i < this.numItemReal; ++i) {
+        if(!this.el.slides[i]) break;
         this.el.slides[i].classList.add('v_slider__item');
       }
       // Добавляем клоны
@@ -212,6 +213,7 @@ export default {
       }
     },
     reload() {
+      if (!this.el.slides.length) return;
       // вычисляем брейкпоинты
       if (this.responsive) {
         this.breakpoints = Object.keys(this.responsive);
@@ -236,11 +238,13 @@ export default {
       }
       // Устанавливаем размеры
       for (let i = 0; i < this.numItemAll; ++i) {
+        if(!this.el.slides[i]) break;
         this.el.slides[i].style.width = `${this.width.slide}px`;
         this.el.slides[i].style.marginRight = `${this.settings.margin}px`;
       }
       // Удаляем активные слайды
       for (let i = 0; i < this.numItemAll - 1; ++i) {
+        if(!this.el.slides[i]) break;
         this.el.slides[i].classList.remove('active');
       }
       // Устанавливаем трек и назначаем активные слайды
@@ -270,6 +274,7 @@ export default {
     setSlide(n, transition = true) {
       // Удаляем активный слайд
       for (let i = 0; i < this.numItemAll - 1; ++i) {
+        if(!this.el.slides[i]) break;
         this.el.slides[i].classList.remove('active', 'super');
       }
       // Перелистывание слайдера
@@ -430,11 +435,11 @@ export default {
 }
 
 .v_slider__list {
+  position: relative;
+  display: block;
+  float: left;
   width: 100%;
   min-height: 1px;
-  float: left;
-  display: block;
-  position: relative;
 }
 
 .v_slider__track {
@@ -444,14 +449,14 @@ export default {
 }
 
 .v_slider__track:after {
-  content:"";
+  content: '';
   display: block;
   clear: both;
 }
 
 .v_slider__item {
-  min-height: 1px;
   float: left;
+  min-height: 1px;
   -webkit-backface-visibility: hidden;
   -webkit-touch-callout: none;
 }
@@ -461,24 +466,24 @@ export default {
 }
 
 .v_slider__dots {
-  width: 100%;
   float: left;
-  text-align: center;
+  width: 100%;
   margin-top: 15px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .v_slider__dots li {
-  padding: 9px;
   display: inline-block;
+  padding: 9px;
   cursor: pointer;
 }
 
 .v_slider__dots li span {
+  float: left;
   width: 8px;
   height: 8px;
   background: var(--color-border-ghost);
-  float: left;
   border-radius: 50%;
 }
 
@@ -505,22 +510,22 @@ export default {
 
 .v_slider__prev {
   left: -13px;
-  background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.86107 0.655497C4.25781 0.224138 4.93877 0.224868 5.33458 0.657076L5.3815 0.708315C5.73153 1.09053 5.73153 1.67684 5.3815 2.05906L2.82237 4.85352L5.3815 7.64797C5.73153 8.03019 5.73153 8.6165 5.3815 8.99872L5.33458 9.04996C4.93876 9.48216 4.25781 9.48289 3.86107 9.05153L0.622617 5.53047C0.270654 5.14779 0.270655 4.55924 0.622618 4.17656L3.86107 0.655497Z' fill='%234A455C'/%3E%3C/svg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.86107 0.655497C4.25781 0.224138 4.93877 0.224868 5.33458 0.657076L5.3815 0.708315C5.73153 1.09053 5.73153 1.67684 5.3815 2.05906L2.82237 4.85352L5.3815 7.64797C5.73153 8.03019 5.73153 8.6165 5.3815 8.99872L5.33458 9.04996C4.93876 9.48216 4.25781 9.48289 3.86107 9.05153L0.622617 5.53047C0.270654 5.14779 0.270655 4.55924 0.622618 4.17656L3.86107 0.655497Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-position: left;
 }
 
 .v_slider__next {
   right: -14px;
-  background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.13893 9.05153C1.74219 9.48289 1.06123 9.48216 0.665424 9.04996L0.618499 8.99872C0.268468 8.6165 0.268468 8.03019 0.6185 7.64797L3.17763 4.85352L0.618499 2.05906C0.268468 1.67684 0.268468 1.09053 0.6185 0.708314L0.665423 0.657076C1.06123 0.224869 1.74219 0.224138 2.13893 0.655497L5.37738 4.17656C5.72935 4.55924 5.72935 5.14779 5.37738 5.53047L2.13893 9.05153Z' fill='%234A455C'/%3E%3C/svg%3E%0A");
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.13893 9.05153C1.74219 9.48289 1.06123 9.48216 0.665424 9.04996L0.618499 8.99872C0.268468 8.6165 0.268468 8.03019 0.6185 7.64797L3.17763 4.85352L0.618499 2.05906C0.268468 1.67684 0.268468 1.09053 0.6185 0.708314L0.665423 0.657076C1.06123 0.224869 1.74219 0.224138 2.13893 0.655497L5.37738 4.17656C5.72935 4.55924 5.72935 5.14779 5.37738 5.53047L2.13893 9.05153Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-position: right;
 }
 
 .v_slider__prev:hover,
 .v_slider__next:hover {
+  color: #04a0c5;
   border-color: #04a0c5;
-  color:#04a0c5;
   cursor: pointer;
 }
 </style>

@@ -1,393 +1,92 @@
 <template>
   <div>
-    <section class="BestGames Cards">
-      <div v-if="width > 767"
-       class="BestGames-Tabs"
-      >
+    <section class="BestGames">
+      <div v-if="width > 767" class="BestGames-Tabs">
         <button
           v-for="(tab, i) in tabs"
           :key="tab.name"
           class="BestGames-Tab"
-          :class="{'BestGames-Tab--active': tabActive.name === tab.name}"
+          :class="{ 'BestGames-Tab--active': tabActive.name === tab.name }"
           @click="onChooseTab(i)"
         >
-          <svg
-            :class="`BestGames-Icon BestGames-Icon--${tab.icon}`"
-          >
+          <svg :class="`BestGames-Icon BestGames-Icon--${tab.icon}`">
             <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
           </svg>
           <div class="BestGames-Name">
-            {{tab.name}}
+            {{ tab.name }}
           </div>
         </button>
       </div>
-      <div class="BestGames-ProvidersMenu" v-click-outside="onClickOutside">
-        <button
-          class="BestGames-Tab BestGames-ChosenTab"
-          :class="{'BestGames-ChosenTab--opened': providersListIsOpen}"
-          @click="providersListIsOpen = !providersListIsOpen"
-        >
-          <img
-            v-if="providerActive.icon"
-            class="BestGames-ProviderIcon"
-            :src="require(`@/assets/img/${providerActive.icon}.svg`)"
-            alt=""
-          >
-          {{providerActive.name}}
-          <i
-            class="Arrow Tab-Arrow"
-            :class="[ providersListIsOpen ? 'Arrow--up' : 'Arrow--down' ]"
-          ></i>
-        </button>
-        <div v-if="width > 767" class="BestGames-Providers">
-          <button
-            v-for="(item, i) in providersToShow"
-            :key="fakeProviders[i].name"
-            class="BestGames-Provider"
-            :class="{'BestGames-Provider--active': providerActive.name === fakeProviders[i].name}"
-            @click="onChooseProvider(fakeProviders[i].name)"
-          >
-            <img
-              v-if="fakeProviders[i].icon"
-              class="BestGames-ProviderIcon"
-              :src="require(`@/assets/img/${fakeProviders[i].icon}.svg`)"
-              alt=""
-            >
-            {{ fakeProviders[i].name }}
-          </button>
-          <button
-            v-if="width > 767"
-            class="BestGames-Provider BestGames-Provider--more"
-            :class="{'BestGames-Provider--active': providersListIsOpen}"
-          >
-            ...
-          </button>
-        </div>
-        <Search class="BestGames-Search" />
-        <transition name="slide-up">
-          <div v-if="providersListIsOpen" class="BestGames-MoreProviders">
-            <button
-              v-for="(item, i) in moreProviders"
-              :key="i"
-              class="BestGames-AddProvider"
-              :class="{'BestGames-Provider--active': providerActive.name === item.name}"
-              @click="onChooseProvider(item.name)"
-            >
-              <img
-                v-if="item.icon"
-                class="BestGames-ProviderIcon"
-                :src="require(`@/assets/img/${item.icon}.svg`)"
-                alt=""
-              >
-              {{ item.name }}
-            </button>
-          </div>
-        </transition>
+      <div class="ProvidersSection BestGames-Providers">
+        <Search v-model="searched" class="ProvidersSection-Search BestGames-Search" />
+        <ProvidersMenu
+          v-if="gameProducerList.length"
+          :provider-active="providerActive"
+          @choose-provider="onChooseProvider"
+        />
       </div>
       <div class="Title Title--type-h2 Cards-Title">
         The best games
       </div>
       <Loader v-if="gamesAreLoading" />
-      <template v-else>
-        <div class="Cards-Items BestGames-Cards">
-          <Card v-for="(game, i) in gamesLimited(gamesShowed)"
-            :key="i"
-            :imgUrl="game.imageUrl"
-            @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
-            @playDemo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
-            overlay
-          />
-        </div>
-        <div v-if="games.length > gamesShowed" class="BestGames-Btn">
-          <button class="Btn Btn--color" @click="showMoreGames()">
-            Load more games
-          </button>
-        </div>
+      <template v-else-if="filteredGames.length">
+        <Games
+          class="BestGames-Cards"
+          :games="filteredGames"
+          :games-to-show="24"
+          btn-class="Btn--common Btn--dark"
+        />
       </template>
+      <p v-else class="Text Text--center">
+        Nothing was found
+      </p>
     </section>
-    <section class="NewGames Cards">
+    <section class="NewGames">
       <div class="Title Title--type-h2 Cards-Title">
         New games
       </div>
-      <div class="Cards-Items BestGames-Cards NewGames-Cards">
-        <Card v-for="(game, i) in fakedNewGames"
-          :key="i"
-          :imgUrl="game.imageUrl"
-          @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
-          @playDemo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
-          overlay
-        />
-      </div>
-<!--      <div class="BestGames-Btn">-->
-<!--        <button class="Btn Btn&#45;&#45;color" @click="showMoreGames()">-->
-<!--          Load more games-->
-<!--        </button>-->
-<!--      </div>-->
+      <Games
+        v-if="fakedNewGames.length"
+        class="BestGames-Cards NewGames-Cards"
+        :games="fakedNewGames"
+        :games-to-show="12"
+        :btn-class="'Btn--common Btn--dark'"
+      />
+      <p v-else class="Text Text--center">
+        Nothing was found
+      </p>
     </section>
-<!--    <section class="LiveGames Cards">-->
-<!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
-<!--        Live games-->
-<!--      </div>-->
-<!--      <div class="Cards-Items BestGames-Cards NewGames-Cards">-->
-<!--        <Card v-for="(game, i) in liveGames"-->
-<!--          :key="i"-->
-<!--          :img="game.img"-->
-<!--          :badge="game.badge"-->
-<!--          overlay-->
-<!--        />-->
-<!--      </div>-->
-<!--      <div class="BestGames-Btn">-->
-<!--        <button class="Btn Btn&#45;&#45;color" @click="showMoreGames()">-->
-<!--          Load more games-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </section>-->
+    <!--    <section class="LiveGames">-->
+    <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
+    <!--        Live games-->
+    <!--      </div>-->
+    <!--      <Games class="BestGames-Cards NewGames-Cards" :games="liveGames" :gamesToShow="12" btnClass="Btn--dark" />-->
+    <!--    </section>-->
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex';
-import Search from '@/components/homepage/Search.vue';
-import Loader from '@/components/homepage/Loader.vue';
-import Card from '@/components/homepage/Card.vue';
+import Loader from '@/components/Loader';
+import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import search from '@/mixins/search';
+import ProvidersMenu from '@/components/ProvidersMenu';
+import { DEFAULT_PROVIDER, GAME_TYPES } from '@/config';
 
 export default {
   name: 'BestGames',
   components: {
+    ProvidersMenu,
     Search,
     Loader,
-    Card,
   },
-  mixins: [showAuthDialog],
+  mixins: [showAuthDialog, search],
   data() {
     return {
-      providersListIsOpen: false,
-      tabs: [
-        {
-          name: 'All games',
-          icon: 'star',
-        },
-        {
-          name: 'Top games',
-          icon: 'crown',
-        },
-        {
-          name: 'Live casino',
-          icon: 'live',
-        },
-        {
-          name: 'Slots games',
-          icon: 'slots',
-        },
-        {
-          name: 'Roulette',
-          icon: 'roulette',
-        },
-        {
-          name: 'Table games',
-          icon: 'table',
-        },
-        {
-          name: 'Card games',
-          icon: 'cards',
-        },
-      ],
-      tabActive: {
-        name: 'All games',
-        icon: 'star',
-      },
-      fakeProviders: [
-        {
-          name: 'All providers',
-        },
-        {
-          name: 'Thunderkick',
-          icon: 'thunderkick',
-        },
-      ],
-      providers: [
-        {
-          name: 'All providers',
-        },
-        {
-          name: 'Netent',
-          icon: 'netent',
-        },
-        {
-          name: "Play'n go",
-          icon: 'go',
-        },
-        {
-          name: 'Microgaming',
-          icon: 'microgaming',
-        },
-        {
-          name: '1x2 gambing',
-          icon: 'gaming_book',
-        },
-        {
-          name: 'Amatic',
-          icon: 'amatic',
-        },
-        {
-          name: 'Belatra',
-          icon: 'belatra',
-        },
-        {
-          name: 'Spinometal',
-          icon: 'spinometal',
-        },
-        {
-          name: 'Booming games',
-          icon: 'booming',
-        },
-        {
-          name: 'Egt',
-          icon: 'egt',
-        },
-        {
-          name: 'Endorphina',
-          icon: 'endorphina',
-        },
-        {
-          name: 'Netent',
-          icon: 'netent',
-        },
-        {
-          name: "Play'n go",
-          icon: 'go',
-        },
-        {
-          name: 'Microgaming',
-          icon: 'microgaming',
-        },
-        {
-          name: '1x2 gambing',
-          icon: 'gaming_book',
-        },
-        {
-          name: 'Amatic',
-          icon: 'amatic',
-        },
-        {
-          name: 'Belatra',
-          icon: 'belatra',
-        },
-        {
-          name: 'Spinometal',
-          icon: 'spinometal',
-        },
-        {
-          name: 'Booming games',
-          icon: 'booming',
-        },
-        {
-          name: 'Egt',
-          icon: 'egt',
-        },
-        {
-          name: 'Endorphina',
-          icon: 'endorphina',
-        },
-        {
-          name: 'Netent',
-          icon: 'netent',
-        },
-        {
-          name: "Play'n go",
-          icon: 'go',
-        },
-        {
-          name: 'Microgaming',
-          icon: 'microgaming',
-        },
-        {
-          name: '1x2 gambing',
-          icon: 'gaming_book',
-        },
-        {
-          name: 'Amatic',
-          icon: 'amatic',
-        },
-        {
-          name: 'Belatra',
-          icon: 'belatra',
-        },
-        {
-          name: 'Spinometal',
-          icon: 'spinometal',
-        },
-        {
-          name: 'Booming games',
-          icon: 'booming',
-        },
-        {
-          name: 'Egt',
-          icon: 'egt',
-        },
-        {
-          name: 'Endorphina',
-          icon: 'endorphina',
-        },
-        {
-          name: 'Netent',
-          icon: 'netent',
-        },
-        {
-          name: "Play'n go",
-          icon: 'go',
-        },
-        {
-          name: 'Microgaming',
-          icon: 'microgaming',
-        },
-        {
-          name: '1x2 gambing',
-          icon: 'gaming_book',
-        },
-        {
-          name: 'Amatic',
-          icon: 'amatic',
-        },
-        {
-          name: 'Belatra',
-          icon: 'belatra',
-        },
-        {
-          name: 'Spinometal',
-          icon: 'spinometal',
-        },
-        {
-          name: 'Booming games',
-          icon: 'booming',
-        },
-        {
-          name: 'Egt',
-          icon: 'egt',
-        },
-        {
-          name: 'Endorphina',
-          icon: 'endorphina',
-        },
-      ],
-      providersToShow: 2,
-      providerActive: {
-        name: 'All providers',
-      },
-      vcoConfig: {
-        handler: this.handler,
-        middleware: this.middleware,
-        events: ['dblclick', 'click'],
-        // Note: The default value is true, but in case you want to activate / deactivate
-        //       this directive dynamically use this attribute.
-        isActive: true,
-        // Note: The default value is true. See "Detecting Iframe Clicks" section
-        //       to understand why this behaviour is behind a flag.
-        detectIFrame: true,
-      },
-      gamesToShow: 24,
-      gamesShowed: 24,
+      tabs: GAME_TYPES,
+      tabActive: GAME_TYPES[0],
+      providerActive: DEFAULT_PROVIDER,
       newGames: [
         {
           img: 'game1.png',
@@ -491,70 +190,32 @@ export default {
     };
   },
   computed: {
-    ...mapState(['width', 'games', 'gamesAreLoading']),
-    ...mapGetters(['gamesLimited', 'fakedNewGames', 'isLoggedIn']),
-    badges() {
-      return this.games.map(() => {
-        const random = Math.floor(Math.random() * 4) + 1;
-        if (random === 1) return 'best';
-        if (random === 2) return 'new';
-        return '';
-      });
-    },
-    moreProviders() {
-      if (this.width < 768) return this.fakeProviders;
-      return this.providers.slice(this.providersToShow, this.providers.length + 1);
-    },
-  },
-  methods: {
-    ...mapActions(['getGames', 'startGame']),
-    onChooseTab(i) {
-      this.gamesShowed = this.gamesToShow;
-      this.tabActive = this.tabs[i];
-      this.getGames(this.makeQuery());
-    },
-    onChooseProvider(name) {
-      this.providerActive = this.fakeProviders.find((item) => item.name === name);
-      this.providersListIsOpen = false;
-    },
-    onClickOutside(e) {
-      if (e.target.className !== 'BestGames-ChosenTab') this.providersListIsOpen = false;
-    },
-    makeQuery() {
-      let query = `appName=${this.$skin}&lang=en&platform=desktop`;
-      switch (this.tabActive.name) {
-        case 'New games':
-          query += '&is_new=true';
-          break;
-        case 'Roulette':
-          query += '&categories=Roulette';
-          break;
-        case 'Card games':
-          query += '&categories=Card Games';
-          break;
-        case 'Live games':
-          query += '&categories=Live Casino';
-          break;
-        case 'Slots':
-          query += '&categories=Slot';
-          break;
-        default:
-          query += '&is_most_popular=true';
-      }
-
-      return query;
-    },
-    showMoreGames() {
-      this.gamesShowed += this.gamesToShow;
-    },
-    onClickStartGame(payload) {
-      if (!this.isLoggedIn) {
-        this.showRegistrationDialog('login');
-      } else this.startGame(payload);
+    ...mapState(['width', 'games', 'gamesAreLoading', 'gameProducerList']),
+    ...mapGetters(['fakedNewGames', 'isLoggedIn']),
+    gamesParams() {
+      const params = {};
+      if (this.tabActive.type) params.type = this.tabActive.type;
+      if (this.providerActive.name !== 'All providers')
+        params.gameProducer = this.providerActive.name;
+      return params;
     },
   },
   created() {
     this.getGames();
+  },
+  methods: {
+    ...mapActions(['getGames']),
+    onChooseTab(i) {
+      this.searched = '';
+      this.gamesShowed = this.gamesToShow;
+      this.tabActive = this.tabs[i];
+      this.getGames(this.gamesParams);
+    },
+    onChooseProvider(e) {
+      this.searched = '';
+      this.providerActive = e;
+      this.getGames(this.gamesParams);
+    },
   },
 };
 </script>
@@ -564,7 +225,7 @@ export default {
   &-Tabs {
     display: none;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       grid-gap: 10px;
@@ -594,15 +255,15 @@ export default {
   &-Tab {
     padding: 13px 11px;
     line-height: 1.18;
-    background-color: var(--color-bg);
     white-space: nowrap;
+    background-color: var(--color-bg);
     cursor: pointer;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       padding: 20px 10px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       padding: 20px 13px;
     }
 
@@ -611,39 +272,9 @@ export default {
       padding-bottom: 11px;
       border-bottom: 2px solid var(--color-main1);
 
-      @media(min-width: $screen-m) {
+      @media (min-width: $screen-m) {
         padding-bottom: 18px;
       }
-    }
-  }
-
-  &-ChosenTab {
-    position: relative;
-    order: 1;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 16px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.242;
-    text-transform: uppercase;
-    color: var(--color-text-main);
-    border: none;
-
-    @media(min-width: $screen-m) {
-      display: none;
-    }
-
-    .Arrow {
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      margin-top: -2px;
-    }
-
-    .Arrow--up {
-      margin-top: -8px;
     }
   }
 
@@ -651,18 +282,18 @@ export default {
     font-size: 9px;
     font-weight: 700;
     line-height: 1.242;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       font-size: 9px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       font-size: 10px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 12px;
     }
   }
@@ -671,20 +302,20 @@ export default {
     margin-bottom: 10px;
 
     &--star {
-        width: 18px;
-        height: 17px;
+      width: 18px;
+      height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 25px;
         height: 23px;
       }
     }
 
     &--crown {
-        width: 18px;
-        height: 17px;
+      width: 18px;
+      height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 22px;
         height: 22px;
       }
@@ -694,7 +325,7 @@ export default {
       width: 17px;
       height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 23px;
         height: 23px;
       }
@@ -704,27 +335,27 @@ export default {
       width: 34px;
       height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 46px;
         height: 23px;
       }
     }
 
     &--roulette {
-        width: 17px;
-        height: 17px;
+      width: 17px;
+      height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 22px;
         height: 22px;
       }
     }
 
     &--table {
-        width: 17px;
-        height: 17px;
+      width: 17px;
+      height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 22px;
         height: 22px;
       }
@@ -734,167 +365,21 @@ export default {
       width: 18px;
       height: 17px;
 
-      @media(min-width: $screen-xl) {
+      @media (min-width: $screen-xl) {
         width: 26px;
         height: 25px;
       }
     }
   }
 
-  &-ProvidersMenu {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 24px;
-
-    @media(min-width: $screen-m) {
-      flex-direction: initial;
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      grid-gap: 10px;
-      margin-bottom: 34px;
-    }
-
-    @media(min-width: $screen-l) {
-      margin-bottom: 40px;
-    }
-
-    @media(min-width: $screen-xl) {
-      margin-bottom: 60px;
-    }
-  }
-
-  &-Search {
-    order: 0;
-    margin-bottom: 8px;
-    width: 100%;
-
-    @media(min-width: $screen-m) {
-      order: 2;
-      width: auto;
-      margin-bottom: 0;
-    }
-  }
-
-  &-Providers {
-    grid-column: 1/7;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 10px;
-    padding: 0;
-  }
-
-  &-MoreProviders {
-    position: absolute;
-    left: 0;
-    top: 100px;
-    z-index: 10;
-    column-count: 2;
-    width: 100%;
-    max-height: 2000px;
-    padding: 0 16px 10px;
-    background-color: var(--color-body);
-
-    @media(min-width: $screen-s) {
-      column-count: 3;
-    }
-
-    @media(min-width: $screen-m) {
-      top: 50px;
-      column-count: 5;
-    }
-
-    @media(min-width: $screen-l) {
-      top: 70px;
-    }
-  }
-
-  &-AddProvider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1.18;
-    text-transform: uppercase;
-    color: var(--color-text-ghost);
-    cursor: pointer;
-  }
-
-  &-Provider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 5px;
-    font-size: 9px;
-    font-weight: 700;
-    line-height: 1.18;
-    color: var(--color-text-main);
-    text-transform: uppercase;
-    border: 2px solid var(--color-border-ghost);
-    cursor: pointer;
-
-    @media(min-width: $screen-l) {
-      padding: 15px 10px;
-      font-size: 10px;
-    }
-
-    @media(min-width: $screen-xl) {
-      padding: 17px 10px;
-      font-size: 12px;
-    }
-
-    &--active {
-      display: none;
-      color: var(--color-main1);
-
-      @media(min-width: $screen-m) {
-        display: flex;
-      }
-    }
-
-    &--more {
-      justify-self: start;
-      padding: 10px;
-      font-size: 9px;
-      letter-spacing: 0.08em;
-
-      @media(min-width: $screen-l) {
-        padding: 15px;
-        font-size: 10px;
-      }
-
-      @media(min-width: $screen-xl) {
-        padding: 17px 20px;
-        font-size: 14px;
-      }
-    }
-  }
-
-  &-ProviderIcon {
-    width: 10px;
-    margin-right: 10px;
-
-    @media(min-width: $screen-m) {
-      width: auto;
-      max-width: 20px;
-      margin-right: 3px;
-    }
-
-    @media(min-width: $screen-l) {
-      margin-right: 6px;
-    }
-  }
-
   &-Cards {
     margin-bottom: 20px;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 24px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 32px;
     }
   }
@@ -903,14 +388,39 @@ export default {
     text-align: center;
 
     .Btn {
-      @media(min-width: $screen-m) {
+      @media (min-width: $screen-m) {
         padding: 17px 20px;
         font-size: 14px;
       }
 
-      @media(min-width: $screen-l) {
+      @media (min-width: $screen-l) {
         font-size: 16px;
       }
+    }
+  }
+
+  &-Providers {
+    margin-bottom: 24px;
+
+    @media (min-width: $screen-m) {
+      margin-bottom: 34px;
+    }
+
+    @media (min-width: $screen-l) {
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &-Search {
+    z-index: 1;
+    margin-bottom: 8px;
+
+    @media (min-width: $screen-m) {
+      margin-bottom: 0;
     }
   }
 }
@@ -918,15 +428,15 @@ export default {
 .Cards {
   margin-bottom: 32px;
 
-  @media(min-width: $screen-m) {
+  @media (min-width: $screen-m) {
     margin-bottom: 38px;
   }
 
-  @media(min-width: $screen-l) {
+  @media (min-width: $screen-l) {
     margin-bottom: 50px;
   }
 
-  @media(min-width: $screen-xl) {
+  @media (min-width: $screen-xl) {
     margin-bottom: 60px;
   }
 
@@ -940,7 +450,7 @@ export default {
     grid-gap: 10px;
     justify-items: center;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       grid-template-columns: repeat(6, 1fr);
     }
   }

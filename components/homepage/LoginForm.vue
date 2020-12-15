@@ -1,34 +1,39 @@
 <template>
-<form class="AuthDialog-Login AuthDialog-Form" @submit.prevent="onSubmitForm">
-  <div class="AuthDialog-Content">
-    <div class="AuthDialog-Title AuthDialog-LoginTitle">
-      Welcome back
+  <form class="AuthDialog-Login AuthDialog-Form" @submit.prevent="onSubmitForm">
+    <div class="AuthDialog-Content">
+      <div class="AuthDialog-Title AuthDialog-LoginTitle">
+        Welcome back
+      </div>
+      <div class="AuthDialog-Fields">
+        <BaseInput
+          v-for="(field, name) in fields"
+          :key="name"
+          v-model="field.value"
+          class="AuthDialog-Row"
+          error-class="AuthDialog-Error"
+          :input-type="field.type"
+          input-class="AuthDialog-Field AuthDialog-Input"
+          :placeholder="field.placeholder"
+          :v="$v.fields[name].value"
+        />
+        <div class="AuthDialog-Link">
+          <NuxtLink to="/passwordRestore" class="AuthDialog-Link" @click.native="$emit('close')">
+            Forgot Password?
+          </NuxtLink>
+        </div>
+        <div v-if="authError" class="AuthDialog-Error AuthDialog-Error--login">
+          {{ authError }}
+        </div>
+      </div>
     </div>
-    <BaseInput
-      v-for="(field, name) in fields"
-      :key="name"
-      blockClass="AuthDialog"
-      :inputType="field.type"
-      :placeholder="field.placeholder"
-      v-model="field.value"
-      :v="$v.fields[name].value"
-
-    />
-    <div v-if="authError" class="AuthDialog-Error">
-      {{ authError }}
-    </div>
-    <div class="AuthDialog-Link">
-      <a href="#" class="AuthDialog-Link">Forgot Password?</a>
-    </div>
-  </div>
-  <button
-    type="submit"
-    class="Btn Btn--full AuthDialog-Btn"
-    :disabled="$v.fields.$error"
-  >
-    Login
-  </button>
-</form>
+    <BaseButton
+      class="BaseButton--full AuthDialog-Btn"
+      :is-loading="authStatus === 'loading'"
+      :disabled="$v.$error"
+    >
+      Login
+    </BaseButton>
+  </form>
 </template>
 
 <script>
@@ -64,13 +69,14 @@ export default {
     },
   },
   computed: {
-    ...mapState(['authError']),
+    ...mapState(['authError', 'authStatus']),
   },
   methods: {
     ...mapActions(['authorize']),
     onSubmitForm() {
+      this.$v.fields.$touch();
+      if (this.$v.fields.$error) return;
       const payload = {};
-      // eslint-disable-next-line no-restricted-syntax
       for (const key in this.fields) {
         if (this.fields[key].value) payload[key] = this.fields[key].value;
       }
@@ -89,19 +95,19 @@ export default {
     margin-bottom: 28px;
     text-align: center;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-top: 48px;
       margin-bottom: 42px;
     }
   }
 
   &-Link {
-    margin-top: 16px;
+    margin-top: 24px;
     font-size: 12px;
-    color: var(--color-main1);
     text-align: right;
+    color: var(--color-main1);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-top: 24px;
     }
   }

@@ -1,36 +1,43 @@
 button {
+  margin: 0;
   padding: 0;
+  font-size: inherit;
+  font-family: inherit;
   background: none;
   border: none;
-
-  &:not(:focus) {
-    outline: none;
-  }
 }
 
 .Btn {
-  display: inline-block;
-  padding: 20px 15px;
-  font-size: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
   text-align: center;
   color: var(--color-text-main);
-  background: var(--color-main1);
+  text-decoration: none;
   border: none;
   cursor: pointer;
 
-  @media(min-width: $screen-m) {
-    font-size: 14px;
-  }
+  &--common {
+    padding: 20px 15px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+    background: var(--color-main1);
 
-  @media(min-width: $screen-l) {
-    padding: 22px 30px;
-  }
+    @media(min-width: $screen-m) {
+      font-size: 14px;
+    }
 
-  @media(min-width: $screen-xl) {
-    padding: 25px 45px;
+    @media(min-width: $screen-l) {
+      padding: 22px 30px;
+    }
+
+    @media(min-width: $screen-xl) {
+      padding: 25px 45px;
+      font-size: 16px;
+    }
   }
 
   &--text {
@@ -43,6 +50,18 @@ button {
     &:hover {
       background: var(--color-hover);
     }
+  }
+
+  &--dark {
+    background: var(--color-bg-lighter);
+
+    &:hover {
+      background: var(--color-main1);
+    }
+  }
+
+  &--darkColor {
+    background: rgba(235, 28, 42, 0.4);
   }
 
   &--outline {

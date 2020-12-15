@@ -1,5 +1,5 @@
 <template>
-  <div class="AuthSection" :class="{'AuthSection--authenticated': isLoggedIn}">
+  <div class="AuthSection" :class="{ 'AuthSection--authenticated': isLoggedIn }">
     <div v-if="isLoggedIn" class="AuthSection-UserSection">
       <div class="AuthSection-Sections">
         <NuxtLink class="AuthSection-UserInfo" to="/cabinet/balance">
@@ -8,46 +8,42 @@
               {{ user.firstName || user.email }}
             </span>
             <span class="AuthSection-Spent">
-              8 {{ activeAccount.currency || user.currency }} /
+              8 PC /
             </span>
             <span class="AuthSection-Left">
-               25 {{ activeAccount.currency || user.currency}}
+              25 PC
             </span>
           </div>
           <div class="AuthSection-UserBalance">
             <div class="AuthSection-UserBalanceText">
               Your balance
             </div>
-            {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }} {{ activeAccount.currency || user.currency }}
+            {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }}
+            {{ activeAccount.currency || user.currency }}
           </div>
         </NuxtLink>
         <div class="AuthSection-UserLvl">
           2
         </div>
-        <div class="AuthSection-UserMessages">
+        <div class="AuthSection-UserMessages" @click="toggleNotificationsPanel">
           <svg class="AuthSection-UserMessagesIcon">
             <use xlink:href="@/assets/img/icons.svg#messages"></use>
           </svg>
+          <div v-show="isNewNotifications" class="AuthSection-UserMessagesNew"></div>
         </div>
       </div>
-      <button
-        class="Btn AuthSection-Btn AuthSection-Btn--deposit"
-        @click="$modal.show('cashier')"
-      >
+      <button class="Btn AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
         Deposit
       </button>
     </div>
     <div v-else class="AuthSection-Login">
       <button
-        class="Btn Btn--text AuthSection-Btn AuthSection-Btn--login"
+        class="Btn AuthSection-Btn AuthSection-Btn--login"
         @click="showRegistrationDialog('login')"
       >
         Login
       </button>
-      <button
-        class="Btn AuthSection-Btn"
-        @click="showRegistrationDialog('registration')"
-      >
+      <button class="Btn AuthSection-Btn" @click="showRegistrationDialog('registration')">
         Register
       </button>
     </div>
@@ -55,25 +51,34 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'AuthSection',
   mixins: [showAuthDialog],
   computed: {
-    ...mapState(['user']),
-    ...mapGetters(['isLoggedIn', 'activeAccount']),
+    ...mapState(['user', 'notificationsPanelIsOpen']),
+    ...mapGetters(['isLoggedIn', 'activeAccount', 'isNewNotifications']),
+  },
+  methods: {
+    ...mapMutations(['openNotificationsPanel', 'closeNotificationsPanel']),
+    toggleNotificationsPanel() {
+      if (this.notificationsPanelIsOpen) this.closeNotificationsPanel();
+      else this.openNotificationsPanel();
+    },
   },
 };
 </script>
 
 <style lang="scss">
 .AuthSection {
+  height: 100%;
+
   &-Login {
     display: none;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: flex;
       align-items: center;
       margin-left: auto;
@@ -81,16 +86,31 @@ export default {
   }
 
   &-Btn {
-    @media(min-width: $screen-m) {
-      display: block;
-      padding: 25px;
-      font-size: 10px;
+    display: block;
+    height: 100%;
+    padding: 0 15px;
+    font-size: 10px;
+    text-transform: uppercase;
+    background: var(--color-main1);
+
+    @media (min-width: $screen-m) {
+      height: 58px;
     }
 
-    @media(min-width: $screen-xl) {
-      padding: 30px;
+    @media (min-width: $screen-l) {
+      height: 64px;
+      padding: 0 25px;
+    }
+
+    @media (min-width: $screen-xl) {
+      height: 76px;
+      padding: 0 30px;
       font-size: 12px;
     }
+  }
+
+  &-Btn--login {
+    background: none;
   }
 
   &-Sections {
@@ -101,11 +121,12 @@ export default {
   &-UserSection {
     display: flex;
     align-items: center;
+    height: 100%;
     padding-right: 18px;
     padding-left: 18px;
     text-transform: uppercase;
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       padding: 0;
     }
   }
@@ -113,7 +134,7 @@ export default {
   &-UserInfo {
     display: none;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: block;
       margin-right: 12px;
       text-align: right;
@@ -155,7 +176,7 @@ export default {
     background: url(../../assets/img/level.png) no-repeat;
     background-size: cover;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: flex;
       width: 28px;
       height: 31px;
@@ -166,18 +187,39 @@ export default {
   }
 
   &-UserMessages {
+    position: relative;
     display: flex;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
     width: 40px;
     height: 40px;
     margin-right: 16px;
-    background: linear-gradient(356.88deg, rgba(6, 14, 42, 0) -13.82%, #060E2A 105.97%);
+    background: linear-gradient(356.88deg, rgba(6, 14, 42, 0) -13.82%, #060e2a 105.97%);
     border-radius: 50%;
+    cursor: pointer;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-right: 30px;
       background: transparent;
+    }
+  }
+
+  &-UserMessagesNew {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    background: var(--color-error);
+    border: 1px solid var(--color-body);
+    border-radius: 50%;
+
+    @media (min-width: $screen-l) {
+      top: 5px;
+      right: 5px;
+      width: 14px;
+      height: 14px;
     }
   }
 
@@ -185,7 +227,7 @@ export default {
     width: 14px;
     height: 16px;
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       width: 21.4px;
       height: 24.8px;
     }
@@ -195,8 +237,9 @@ export default {
 .AuthSection--aside {
   &.AuthSection--authenticated {
     order: 0;
+    height: auto;
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       order: 1;
     }
   }
@@ -209,9 +252,15 @@ export default {
     display: block;
     width: 100%;
     padding: 18px 0;
+    font-size: 14px;
 
-    @media(min-width: $screen-m) {
-      font-size: 18px;
+    @media (min-width: $screen-xs) {
+      height: auto;
+      padding: 0;
+    }
+
+    @media (min-width: $screen-m) {
+      font-size: 22px;
     }
   }
 
@@ -219,20 +268,21 @@ export default {
     justify-content: space-between;
     padding: 0 32px 18px;
 
-    @media(min-width: $screen-xs) {
-      flex-shrink: 0;
+    @media (min-width: $screen-xs) {
       flex-grow: 1;
+      flex-shrink: 0;
       padding: 25px;
       background: var(--color-bg-lighter);
     }
   }
 
   .AuthSection-UserSection {
-    order: 0;
     display: block;
+    order: 0;
+    height: auto;
     margin-bottom: 20px;
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       display: flex;
       align-items: stretch;
       margin-bottom: 0;
@@ -244,7 +294,7 @@ export default {
     font-size: 12px;
     color: var(--color-text-ghost);
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       display: none;
     }
   }
@@ -263,7 +313,7 @@ export default {
     flex-direction: column;
     text-align: left;
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       margin-right: auto;
     }
   }
@@ -275,16 +325,16 @@ export default {
   .AuthSection-User {
     order: 1;
 
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       font-size: 14px;
     }
   }
 
   .AuthSection-Btn--deposit {
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       width: auto;
-      padding-left: 70px;
       padding-right: 70px;
+      padding-left: 70px;
     }
   }
 
@@ -297,17 +347,17 @@ export default {
     color: var(--color-text-main);
     background-size: cover;
 
-    &:after {
-      content: 'LV';
-    }
-
-    @media(min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
       width: 50px;
       height: 56px;
 
       &:after {
         display: none;
       }
+    }
+
+    &:after {
+      content: 'LV';
     }
   }
 

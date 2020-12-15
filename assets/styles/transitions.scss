@@ -7,10 +7,19 @@
   opacity: 0;
 }
 
+.slide-right-enter-active, .slide-right-leave-active {
+  transition: all .5s ease;
+}
+
+.slide-right-enter, .slide-right-leave-to {
+  transform: translate(100%, 0);
+  opacity: 0;
+}
+
 .slide-up-enter-active, .slide-up-leave-active {
+  max-height: 2000px;
   transition: all .5s ease-in-out;
   transition-property: max-height;
-  max-height: 2000px;
 }
 
 .slide-up-enter, .slide-up-leave-to {

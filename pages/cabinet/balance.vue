@@ -20,14 +20,9 @@
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">
           Available to cash out
         </div>
-        <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">
-        </div>
+        <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th"></div>
       </div>
-      <div
-        v-for="(acc, i) in userAccounts"
-        :key="i"
-        class="Table-Row CabinetPage-Row"
-      >
+      <div v-for="(acc, i) in userAccounts" :key="i" class="Table-Row CabinetPage-Row">
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Active">
           <label class="CabinetPage-Label">
             {{ acc.active ? 'Active' : 'Select' }}
@@ -37,8 +32,8 @@
               name="account"
               :checked="acc.active"
               :value="acc.currency"
-              @change="setActiveAccount({ currency: $event.target.value})"
-            >
+              @change="onChangeAccount"
+            />
             <span class="CabinetPage-Checkmark CabinetPage-Checkmark--radio"></span>
           </label>
         </div>
@@ -56,13 +51,13 @@
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns">
           <button
-            class="Btn Btn--color CabinetPage-Btn BalancePage-DepositBtn"
+            class="Btn Btn--common Btn--color CabinetPage-Btn BalancePage-DepositBtn"
             @click="onClickDeposit(acc.currency)"
           >
             Deposit
           </button>
           <button
-            class="Btn Btn--outline CabinetPage-Btn"
+            class="Btn Btn--common Btn--outline CabinetPage-Btn"
             @click="onClickCashout(acc.currency)"
           >
             Cashout
@@ -70,10 +65,7 @@
         </div>
       </div>
     </div>
-    <button
-      class="CabinetPage-AddBtn"
-      @click="$modal.show('addCurrency')"
-    >
+    <button class="CabinetPage-AddBtn" @click="$modal.show('addCurrency')">
       <span class="CabinetPage-AddBtnPlus CabinetPage-AddBtnPlus--left">
         +
       </span>
@@ -81,18 +73,30 @@
         Add currency
       </span>
     </button>
-    <modal name="addCurrency" width="348" height="auto">
-      <div class="AddCurrency">
-        <div class="CabinetPage-Header AddCurrency-Header">
-          Add Currency
-        </div>
-        <div class="AddCurrency-Content">
-          <div
-            v-for="cur in curencyAccounts"
-            :key="cur"
-            class="AddCurrency-Currency"
-          >
-            {{ cur }}
+    <modal name="addCurrency" width="348" height="auto" @before-close="beforeCloseModal">
+      <div class="Modal">
+        <div class="Close Modal-Close" @click="$modal.hide('addCurrency')"></div>
+        <div class="AddCurrency">
+          <div class="CabinetPage-Header AddCurrency-Header">
+            Add Currency
+          </div>
+          <div v-if="moreCurrencyAccounts.length" class="AddCurrency-Content">
+            <div class="AddCurrency-Currencies">
+              <div
+                v-for="cur in moreCurrencyAccounts"
+                :key="cur"
+                class="AddCurrency-Currency"
+                @click="onChooseCurrency(cur)"
+              >
+                {{ cur }}
+              </div>
+            </div>
+            <div v-if="serverError" class="AddCurrency-Error Error">
+              {{ serverError }}
+            </div>
+          </div>
+          <div v-else class="AddCurrency-Text">
+            No more currency to add
           </div>
         </div>
       </div>
@@ -101,9 +105,7 @@
 </template>
 
 <script>
-import {
-  mapMutations, mapState, mapActions, mapGetters,
-} from 'vuex';
+import { mapMutations, mapState, mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'BalancePage',
@@ -129,15 +131,15 @@ export default {
     };
   },
   computed: {
-    ...mapState(['user']),
-    ...mapGetters(['curencyAccounts']),
+    ...mapState(['user', 'serverError']),
+    ...mapGetters(['moreCurrencyAccounts']),
     userAccounts() {
       return this.user.accountList || this.fakeUserAccounts;
     },
   },
   methods: {
-    ...mapMutations(['setCashoutTrue']),
-    ...mapActions(['setActiveAccount']),
+    ...mapMutations(['setCashoutTrue', 'clearServerError']),
+    ...mapActions(['setActiveAccount', 'getLimits', 'createAccount', 'getProfile']),
     onClickDeposit(currency) {
       this.setActiveAccount({ currency }).then(() => {
         this.$modal.show('cashier');
@@ -148,6 +150,19 @@ export default {
         this.setCashoutTrue();
         this.$modal.show('cashier');
       });
+    },
+    onChangeAccount(e) {
+      this.setActiveAccount({ currency: e.target.value }).then(() => this.getLimits());
+    },
+    onChooseCurrency(cur) {
+      this.createAccount({ currency: cur }).then(() => {
+        this.getProfile();
+        this.getLimits();
+        this.$modal.hide('addCurrency');
+      });
+    },
+    beforeCloseModal() {
+      if (this.serverError) this.clearServerError();
     },
   },
 };
@@ -162,7 +177,7 @@ export default {
   &-DepositBtn {
     margin-right: 4px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-right: 8px;
     }
   }
@@ -175,7 +190,7 @@ export default {
     order: 1;
     text-transform: uppercase;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       order: 0;
     }
   }
@@ -184,30 +199,36 @@ export default {
     white-space: nowrap;
   }
 
-  &-Active, &-Btns {
+  &-Active,
+  &-Btns {
     order: 0;
   }
 
-  &-Btns, &-Amount, &-Cash {
+  &-Btns,
+  &-Amount,
+  &-Cash {
     padding-left: 0;
     text-align: right;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       padding-left: 15px;
       text-align: left;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       white-space: nowrap;
     }
   }
 
-  &-Currency:before, &-Amount:before, &-Locked:before, &-Cash:before {
+  &-Currency:before,
+  &-Amount:before,
+  &-Locked:before,
+  &-Cash:before {
     display: block;
     margin-bottom: 8px;
     color: var(--color-text-ghost);
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       display: none;
     }
   }
@@ -232,7 +253,7 @@ export default {
 .AddCurrency {
   background: var(--color-body);
 
-  &-Content {
+  &-Currencies {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 4px;
@@ -244,9 +265,9 @@ export default {
     padding: 13px 0;
     font-size: 10px;
     font-weight: 700;
-    text-transform: uppercase;
     text-align: center;
     color: var(--color-text-main);
+    text-transform: uppercase;
     background: var(--color-bg-lighter);
     cursor: pointer;
 
@@ -254,6 +275,17 @@ export default {
       padding: 11px 0;
       border: 2px solid var(--color-main1);
     }
+  }
+
+  &-Text {
+    padding: 25px;
+    font-size: 14px;
+    color: var(--color-text-ghost);
+  }
+
+  &-Error {
+    padding-top: 20px;
+    font-size: 14px;
   }
 }
 </style>

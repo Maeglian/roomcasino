@@ -13,22 +13,22 @@
     </button>
     <div class="LimitsPage-Content">
       <div v-if="!limits.length" class="LimitsPage-Text CabinetPage-Text">
-        Do you want to track your activity, loss limits or limit deposits? Your account can be set with all limits. It'll help you to get an overview of your gambling. All restriction takes effect instantly.
+        Do you want to track your activity, loss limits or limit deposits? Your account can be set
+        with all limits. It'll help you to get an overview of your gambling. All restriction takes
+        effect instantly.
       </div>
       <div v-else class="LimitsPage-Limits">
-        <template v-for="limit in limits">
-          <div class="LimitsPage-Header" :key="limit.name">
-            {{ limit.name}}
+        <div v-for="limit in limitsByTypes" :key="limit.name" class="LimitsPage-LimitType">
+          <div v-if="limit.limits.length" class="LimitsPage-Header">
+            {{ limit.name }}
           </div>
           <GamblingLimit
             v-for="item in limit.limits"
-            :key="item.currentPeriod"
+            :key="`${limit.name}_${item.period}`"
             class="LimitsPage-Limit"
-            :title="item.currentPeriod"
-            :limitAmount="item.limitAmount"
-            :isActive="true"
+            :item="item"
           />
-        </template>
+        </div>
       </div>
     </div>
     <modal name="createLimits" width="400" height="auto" adaptive>
@@ -39,7 +39,7 @@
 <script>
 import CreateLimits from '@/components/cabinet/CreateLimits.vue';
 import GamblingLimit from '@/components/cabinet/GamblingLimit.vue';
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'LimitsPage',
@@ -49,6 +49,10 @@ export default {
   },
   computed: {
     ...mapState(['limits']),
+    ...mapGetters(['limitsByTypes']),
+    // limits() {
+    //   return this.fakeLimits;
+    // },
   },
   methods: {
     showCreateLimitsDialog() {
@@ -79,26 +83,34 @@ export default {
   }
 
   &-Limits {
-    display: flex;
-    flex-flow: column wrap;
+    @media (min-width: $screen-m) {
+      column-count: 2;
+      column-gap: 8px;
+    }
+
+    @media (min-width: $screen-xl) {
+      column-count: 3;
+    }
+  }
+
+  &-LimitType {
+    break-inside: avoid;
   }
 
   &-Limit {
-    width: 33%;
     margin-bottom: 4px;
   }
 
   &-Header {
-    width: 33%;
     height: 55px;
     margin-bottom: 4px;
     padding: 0 16px;
     font-size: 14px;
     font-weight: 700;
     line-height: 55px;
-    background: var(--color-bg);
-    text-transform: capitalize;
     color: var(--color-text-main);
+    text-transform: capitalize;
+    background: var(--color-bg);
   }
 }
 </style>

@@ -1,41 +1,44 @@
 <template>
-  <div class="Counter">
-    <div class="Counter-Text">
+  <div class="Counter" :class="{ 'Counter--min': minFormat }">
+    <div v-if="!minFormat" class="Counter-Text">
       Time left until finish
     </div>
     <div class="Counter-Content">
       <div class="Counter-Item Counter-Days">
         <div class="Counter-Count">
-          {{currentTime.days}}
+          {{ currentTime.days }}
         </div>
-        <div class="Counter-Desc">
-          Days
+        <div class="Counter-Text">
+          {{ minFormat ? 'd' : 'Days' }}
         </div>
       </div>
       <div class="Counter-Item Counter-Hours">
         <div class="Counter-Count">
-          {{currentTime.hours}}
+          {{ currentTime.hours }}
         </div>
-        <div class="Counter-Desc">
-          Hours
+        <div class="Counter-Text">
+          {{ minFormat ? 'h' : 'Hours' }}
         </div>
       </div>
       <div class="Counter-Item Counter-Minutes">
         <div class="Counter-Count">
-          {{currentTime.minutes}}
+          {{ currentTime.minutes }}
         </div>
-        <div class="Counter-Desc">
-          Minutes
+        <div class="Counter-Text">
+          {{ minFormat ? 'm' : 'Minutes' }}
         </div>
       </div>
       <div class="Counter-Item Counter-Seconds">
         <div class="Counter-Count">
-          {{currentTime.seconds}}
+          {{ currentTime.seconds }}
         </div>
-        <div class="Counter-Desc">
-          Seconds
+        <div class="Counter-Text">
+          {{ minFormat ? 's' : 'Seconds' }}
         </div>
       </div>
+    </div>
+    <div v-if="minFormat" class="Counter-AdditionalText">
+      Until resset
     </div>
   </div>
 </template>
@@ -44,8 +47,13 @@
 export default {
   name: 'Counter',
   props: {
+    minFormat: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     enddate: {
-      type: String,
+      type: [Date, String],
       required: true,
     },
     speed: {
@@ -56,7 +64,7 @@ export default {
   data() {
     return {
       currentTime: {
-        days: '00',
+        days: '0',
         hours: '00',
         minutes: '00',
         seconds: '00',
@@ -76,7 +84,7 @@ export default {
       if (t > 0) {
         this.currentTime = {
           total: t,
-          days: String(days).padStart(2, '0'),
+          days: String(days),
           hours: String(hours).padStart(2, '0'),
           minutes: String(minutes).padStart(2, '0'),
           seconds: String(seconds).padStart(2, '0'),
@@ -84,7 +92,7 @@ export default {
         setTimeout(this.countdown, this.speed);
       } else {
         this.currentTime = {
-          days: '00',
+          days: '0',
           hours: '00',
           minutes: '00',
           seconds: '00',
@@ -98,11 +106,15 @@ export default {
 <style lang="scss">
 .Counter {
   &-Text {
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 300;
     line-height: 1.66;
-    text-transform: uppercase;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
+
+    @media (min-width: $screen-l) {
+      font-size: 10px;
+    }
   }
 
   &-Content {
@@ -111,22 +123,32 @@ export default {
 
   &-Item {
     position: relative;
-    margin-right: 32px;
+    margin-right: 27px;
     text-align: center;
+
+    @media (min-width: $screen-xl) {
+      margin-right: 31px;
+    }
 
     &:last-child {
       margin-right: 0;
     }
 
     &:after {
-      content: ":";
+      content: ':';
       position: absolute;
-      top: 2px;
-      right: -21px;
-      font-size: 24px;
+      top: 0;
+      right: -17px;
+      font-size: 21px;
       font-weight: 700;
       line-height: 1.18;
       color: var(--color-text-ghost);
+
+      @media (min-width: $screen-xl) {
+        top: 2px;
+        right: -18px;
+        font-size: 24px;
+      }
     }
 
     &:last-child:after {
@@ -136,31 +158,55 @@ export default {
 
   &-Count {
     position: relative;
-    font-size: 30px;
+    z-index: 1;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1.18;
     color: var(--color-text-main);
-    z-index: 1;
 
-    @media(min-width: $screen-l) {
-      font-size: 24px;
+    @media (min-width: $screen-l) {
+      font-size: 26px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       font-size: 30px;
     }
   }
 
-  &-Desc {
-    font-size: 10px;
-    font-weight: 300;
-    line-height: 1.18;
-    text-transform: uppercase;
+  &-AdditionalText {
+    margin-top: 2px;
+    font-size: 12px;
     color: var(--color-text-ghost);
+    text-transform: capitalize;
+  }
+}
 
-    @media(min-width: $screen-xl) {
-      font-size: 9px;
+.Counter--min {
+  .Counter-Item {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 16px;
+
+    &:after {
+      top: -1px;
+      right: -10px;
+      font-size: 16px;
+      color: var(--color-text-main);
     }
+  }
+
+  .Counter-Count {
+    margin-right: 2px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .Counter-Text {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-main);
+    text-transform: lowercase;
   }
 }
 </style>

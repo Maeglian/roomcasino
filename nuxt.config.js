@@ -1,10 +1,35 @@
+const target =
+  process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
+    ? 'static'
+    : 'server';
+
+const ssr = !(process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage');
+
+const plugins =
+  process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
+    ? [
+        '@/plugins/globals',
+        '@/plugins/axios',
+        '@/plugins/globals.client',
+        '@/plugins/onNuxtReady.client',
+        '@/plugins/stageClientInit.client',
+      ]
+    : [
+        '@/plugins/globals',
+        '@/plugins/axios',
+        '@/plugins/globals.client',
+        '@/plugins/onNuxtReady.client',
+      ];
+
 export default {
+  target,
+  ssr,
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'roomcasino',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [
@@ -22,41 +47,29 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '@/assets/styles/common.scss',
-    '@/assets/styles/buttons.scss',
-    '@/assets/styles/datepicker.scss',
-    '@/assets/styles/links.scss',
-    '@/assets/styles/table.scss',
-    '@/assets/styles/text.scss',
-    '@/assets/styles/transitions.scss',
-    '@/assets/styles/variables.scss',
-    '@/assets/styles/main.scss',
-  ],
+  css: ['@/assets/styles/main.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [
-    '@/plugins/globals.client', '@/plugins/globals'
-  ],
+  plugins,
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: [
-
-  ],
+  buildModules: [],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [
-    '@nuxtjs/style-resources'
-  ],
+  modules: ['@nuxtjs/style-resources'],
 
   styleResources: {
     scss: ['@/assets/styles/variables.scss'],
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
+  build: {},
+
+  router: { middleware: ['closeNav'] },
+  generate: {
+    fallback: 'index.html',
   },
 };

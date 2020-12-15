@@ -2,14 +2,14 @@
   <section class="Tournament">
     <div class="Wrapper">
       <div class="Title Title--type-h1 Tournament-Title">
-        Sign up <span class="Colored">&</span> win <br/>
+        Sign up <span class="Colored">&</span> win <br />
         two day tournament
       </div>
       <div class="Title Title--type-h2 Tournament-Subtitle">
         € 500 <span class="Colored">+</span> 500 Free Spins every day!
       </div>
       <div class="Tournament-Participate">
-        <div class="Btn Tournament-Btn">
+        <div class="Btn Btn--common Tournament-Btn">
           Participate
         </div>
         <Counter class="Tournament-Counter" enddate="2020-12-01" />
@@ -27,92 +27,72 @@
               Points
             </div>
           </div>
-          <div class="Table-Row">
+          <div
+            v-for="(winner, i) in limitedTournamentWinners(winnersToShow)"
+            :key="winner.id"
+            class="Table-Row"
+          >
             <div class="Table-Cell TableBordered-Cell">
-              1
+              {{ i + 1 }}
             </div>
             <div class="Table-Cell TableBordered-Cell">
-              Natacool
+              {{ winner.name }}
             </div>
             <div class="Table-Cell TableBordered-Cell Tournament-Points">
-              3422
-            </div>
-          </div>
-          <div class="Table-Row">
-            <div class="Table-Cell TableBordered-Cell">
-              3
-            </div>
-            <div class="Table-Cell TableBordered-Cell">
-              Fire Lighting 12
-            </div>
-            <div class="Table-Cell TableBordered-Cell Tournament-Points">
-              2210
-            </div>
-          </div>
-          <div class="Table-Row">
-            <div class="Table-Cell TableBordered-Cell">
-              4
-            </div>
-            <div class="Table-Cell TableBordered-Cell">
-              Dakamu
-            </div>
-            <div class="Table-Cell TableBordered-Cell Tournament-Points">
-              1012
-            </div>
-          </div>
-          <div class="Table-Row" >
-            <div class="Table-Cell TableBordered-Cell">
-              4
-            </div>
-            <div class="Table-Cell TableBordered-Cell">
-              Ioana Juliana
-            </div>
-            <div class="Table-Cell TableBordered-Cell Tournament-Points">
-              840
+              {{ winner.points }}
             </div>
           </div>
         </div>
-        <button class="Tournament-More">
+        <NuxtLink class="Tournament-More" to="/daily-tournament">
           Show more
-        </button>
+        </NuxtLink>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import Counter from '@/components/homepage/Counter.vue';
+import Counter from '@/components/Counter.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Tournament',
   components: {
     Counter,
   },
+  data() {
+    return {
+      winnersToShow: 4,
+    };
+  },
+  computed: {
+    ...mapGetters(['limitedTournamentWinners']),
+  },
 };
 </script>
 
 <style lang="scss">
 .Tournament {
+  max-width: 100%;
   margin-bottom: 30px;
   padding: 20px 0;
-  max-width: 100%;
   background-image: url('../../assets/img/tournament-bg_460.png');
+  background-repeat: no-repeat;
   background-position: right top;
   background-size: auto 100%;
-  background-repeat: no-repeat;
 
-  @media(min-width: $screen-m) {
+  @media (min-width: $screen-m) {
     margin-bottom: 38px;
     padding: 26px 0;
     background-image: url('../../assets/img/tournament-bg_768.png');
   }
 
-  @media(min-width: $screen-l) {
+  @media (min-width: $screen-l) {
     margin-bottom: 58px;
     background-image: url('../../assets/img/tournament-bg_960.png');
   }
 
-  @media(min-width: $screen-xl) {
+  @media (min-width: $screen-xl) {
     margin-bottom: 80px;
     padding: 37px 0;
     background-image: url('../../assets/img/tournament-bg_1248.png');
@@ -125,11 +105,11 @@ export default {
   &-Subtitle {
     margin-bottom: 14px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       margin-bottom: 23px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 34px;
     }
   }
@@ -137,7 +117,7 @@ export default {
   &-Btn {
     order: 1;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       order: 0;
       margin-right: 15px;
     }
@@ -148,16 +128,16 @@ export default {
     flex-direction: column;
     margin-bottom: 19px;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       flex-direction: row;
       margin-bottom: 24px;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       margin-bottom: 28px;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 40px;
     }
   }
@@ -165,7 +145,7 @@ export default {
   &-Counter {
     margin-bottom: 15px;
 
-    @media(min-width: $screen-s) {
+    @media (min-width: $screen-s) {
       margin-bottom: 0;
     }
   }
@@ -174,15 +154,15 @@ export default {
     width: 100%;
     font-size: 12px;
 
-    @media(min-width: $screen-m) {
+    @media (min-width: $screen-m) {
       width: 50%;
     }
 
-    @media(min-width: $screen-l) {
+    @media (min-width: $screen-l) {
       width: 40%;
     }
 
-    @media(min-width: $screen-xl) {
+    @media (min-width: $screen-xl) {
       width: 32%;
     }
   }
@@ -194,15 +174,15 @@ export default {
 
   &-More {
     display: block;
-    padding: 15px 0;
     width: 100px;
+    margin-left: auto;
+    padding: 15px 0;
     font-size: 12px;
     font-weight: 700;
     color: var(--color-text-ghost);
     text-transform: uppercase;
-    cursor: pointer;
-    margin-left: auto;
     white-space: nowrap;
+    cursor: pointer;
   }
 }
 </style>

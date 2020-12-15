@@ -1,88 +1,109 @@
 <template>
   <div class="CabinetTable">
-    <div v-if="title" class="CabinetTable-Title">
-      {{ title }}
-    </div>
-    <div class="CabinetTable-Table Table">
-      <div v-if="cols" class="Table-Header CabinetTable-Header">
-        <div
-          v-for="col in cols"
-          :key="col.field"
-          class="Table-Cell CabinetTable-Cell CabinetTable-Th"
-        >
-          {{ col.label }}
+    <Loader v-if="loading && !rows.length" />
+    <template v-else>
+      <div v-if="title" class="CabinetTable-Title">
+        {{ title }}
+      </div>
+      <div class="CabinetTable-Table Table">
+        <div v-if="cols && thead" class="Table-Header CabinetTable-Header">
+          <div
+            v-for="col in cols"
+            :key="col.field"
+            class="Table-Cell CabinetTable-Cell CabinetTable-Th"
+          >
+            {{ col.label }}
+          </div>
         </div>
-      </div>
-      <div
-        v-for="(row, i) in rows"
-        :key="i"
-        class="Table-Row CabinetTable-Row"
-      >
-        <template v-if="cols">
-          <div
-            v-for="(col, j) in cols"
-            :key="`${i}_${j}_${row[col.field]}`"
-            class="Table-Cell CabinetTable-Cell"
-            :class="{
-            'CabinetTable-Cell--accepted': row[col.field] === 'Accepted',
-            'CabinetTable-Cell--discarded': row[col.field] === 'Discarded'
-          }"
-          >
-            <div class="CabinetTable-Label">
-              {{ col.label }}
-            </div>
-            {{ row[col.field] }}
-          </div>
-        </template>
-        <template v-else>
-          <div
-            v-for="(col, j) in row"
-            :key="`${i}_${j}_${col}`"
-            class="Table-Cell CabinetTable-Cell"
-            :class="{
-            'CabinetTable-Cell--accepted': col    === 'Current',
-          }"
-          >
-            {{ col }}
+        <template v-if="rows.length">
+          <div v-for="(row, i) in rows" :key="i" class="Table-Row CabinetTable-Row">
+            <template v-if="cols">
+              <div
+                v-for="(col, j) in cols"
+                :key="`${i}_${j}_${row[col.field]}`"
+                class="Table-Cell CabinetTable-Cell"
+                :class="col.colClasses ? col.colClasses(row[col.field]) : ''"
+              >
+                <div class="CabinetTable-Label">
+                  {{ col.label }}
+                </div>
+                {{ col.format ? col.format(row[col.field]) : row[col.field] }}
+              </div>
+            </template>
+            <template v-else>
+              <div
+                v-for="(col, j) in row"
+                :key="`${i}_${j}_${col}`"
+                class="Table-Cell CabinetTable-Cell"
+                :class="{
+                  'CabinetTable-Cell--accepted': col === 'Current',
+                }"
+              >
+                {{ col }}
+              </div>
+            </template>
           </div>
         </template>
       </div>
-    </div>
-    <div class="CabinetTable-Footer">
-      <button
-        v-if="this.pagination.totalPages > 1"
-        class="CabinetTable-ShowMore"
-        @click="$emit('showMore')"
-      >
-        Show more
-      </button>
-      <BasePagination
-        class="CabinetTable-Pagination"
-        v-if="pagination.enabled"
-        :pagination="pagination"
-        @changePage="$emit('changePage', $event)"
-      />
-    </div>
+      <div class="CabinetTable-Footer">
+        <template v-if="rows.length">
+          <button v-if="showMoreBtn" class="CabinetTable-ShowMore" @click="$emit('show-more')">
+            Show more
+          </button>
+          <BasePagination
+            v-if="pagination.enabled"
+            class="CabinetTable-Pagination"
+            :pagination="pagination"
+            @change-page="$emit('change-page', $event)"
+          />
+        </template>
+        <span v-else class="CabinetTable-Info">
+          No data available
+        </span>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
 import BasePagination from '@/components/base/BasePagination.vue';
+import Loader from '@/components/Loader';
 
 export default {
   name: 'CabinetTable',
+  components: {
+    BasePagination,
+    Loader,
+  },
   props: {
     rows: {
       type: Array,
-      isRequired: true,
+      required: true,
     },
     cols: {
-      type: Array,
-      isRequired: false,
+      type: [Array, Boolean],
+      required: false,
+      default: false,
+    },
+    thead: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
     title: {
-      type: String,
-      isRequired: false,
+      type: [String, Boolean],
+      required: false,
+      default: false,
+    },
+    showMoreBtn: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    loading: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
     pagination: {
       type: Object,
@@ -91,9 +112,6 @@ export default {
         enabled: false,
       }),
     },
-  },
-  components: {
-    BasePagination,
   },
 };
 </script>
@@ -139,9 +157,18 @@ export default {
     font-size: 9px;
     font-weight: 700;
     line-height: 1.26;
-    text-transform: uppercase;
     color: var(--color-text-main);
+    text-transform: uppercase;
     background: var(--color-bg);
+
+    @media (min-width: $screen-m) {
+      display: table-cell;
+      width: 100%;
+      margin-bottom: 0;
+      padding: 15px;
+      font-size: 12px;
+      vertical-align: middle;
+    }
 
     &:nth-child(even) {
       text-align: right;
@@ -159,13 +186,16 @@ export default {
       color: var(--color-discard);
     }
 
-    @media (min-width: $screen-m) {
-      display: table-cell;
-      width: 100%;
-      margin-bottom: 0;
-      padding: 15px;
-      font-size: 12px;
-      vertical-align: middle;
+    &--success {
+      color: var(--color-accept);
+    }
+
+    &--error {
+      color: var(--color-discard);
+    }
+
+    &--disabled {
+      color: var(--color-text-ghost-lighter);
     }
   }
 
@@ -180,8 +210,8 @@ export default {
   &-Th {
     display: table-cell;
     font-size: 10px;
-    text-transform: uppercase;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
   }
 
   &-Label {
@@ -211,8 +241,9 @@ export default {
     margin-bottom: 20px;
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-main1);
+    text-transform: uppercase;
+    cursor: pointer;
 
     @media (min-width: $screen-s) {
       margin-bottom: 0;
@@ -220,11 +251,17 @@ export default {
   }
 
   &-Pagination {
+    margin-left: auto;
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
+  }
+
+  &-Info {
+    font-size: 10px;
+    color: var(--color-text-ghost);
+    text-transform: uppercase;
   }
 }
-
 </style>
