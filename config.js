@@ -138,7 +138,7 @@ export const LIMIT_COOL_PERIODS = [
 ];
 
 export const PROFILE_LABELS = {
-  receiveEmails: 'Send promos by e-mail',
+  receiveEmailPromos: 'Send promos by e-mail',
   receiveSmsPromos: 'Send promos by sms',
 };
 
