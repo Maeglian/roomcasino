@@ -27,7 +27,7 @@
 <script>
 import CabinetFilters from '@/components/cabinet/CabinetFilters.vue';
 import CabinetTable from '@/components/cabinet/CabinetTable.vue';
-import { mapActions, mapState, mapGetters } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 import { HISTORY_TABLES } from '@/config';
 
 export default {
@@ -55,7 +55,6 @@ export default {
       'historyListIsLoading',
       'pageRowsCount',
     ]),
-    ...mapGetters(['currencyAccounts', 'activeCurrency']),
     needsPagination() {
       return this.historyList.length > 6;
     },

@@ -1,6 +1,6 @@
 <template>
   <div v-click-outside="onClickOutside" class="CabinetFilters">
-    <div class="CabinetFilters-Title" @click="openfiltersMenu()">
+    <div class="CabinetFilters-Title" @click="openFiltersMenu()">
       <svg class="CabinetFilters-Icon" width="13" height="15">
         <use xlink:href="@/assets/img/icons.svg#filters"></use>
       </svg>
@@ -79,10 +79,9 @@ export default {
       const val = { name };
       if (type === 'date') val.val = moment(payload).unix();
       else val.val = payload;
-      console.log(val.val);
       this.$emit('set-value', val);
     },
-    openfiltersMenu() {
+    openFiltersMenu() {
       if (this.width < 1248) this.filtersMenuIsOpen = !this.filtersMenuIsOpen;
     },
     onClickOutside(e) {
