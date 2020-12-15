@@ -53,10 +53,11 @@ export default {
       'gameHistoryList',
       'bonusHistoryList',
       'historyListIsLoading',
+      'pageRowsCount',
     ]),
     ...mapGetters(['currencyAccounts', 'activeCurrency']),
     needsPagination() {
-      return this.historyList.length > 12;
+      return this.historyList.length > 6;
     },
     historyList() {
       switch (this.$route.params.historyType) {

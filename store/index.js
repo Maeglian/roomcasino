@@ -36,6 +36,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  pageRowsCount: 0,
   pageDataIsLoading: false,
   userDocumentList: [],
   historyListIsLoading: false,
@@ -731,6 +732,9 @@ export const getters = {
 };
 
 export const mutations = {
+  setPageRowsCount: (state, payload) => {
+    state.pageRowsCount = payload;
+  },
   setPageDataIsLoading: state => {
     state.pageDataIsLoading = true;
   },
@@ -1140,7 +1144,11 @@ export const actions = {
         ...{ params: payload },
         ...reqConfig(commit),
       });
-      if (!state.serverError) commit('setTransactionHistoryList', res.data);
+      if (!state.serverError) {
+        console.log(res.headers);
+        commit('setPageRowsCount', res.headers['x-meta-count']);
+        commit('setTransactionHistoryList', res.data);
+      }
     } catch (e) {
       commit('pushErrors', e);
     } finally {
@@ -1156,7 +1164,10 @@ export const actions = {
         ...{ params: payload },
         ...reqConfig(commit),
       });
-      if (!state.serverError) commit('setBonusHistoryList', res.data);
+      if (!state.serverError) {
+        commit('setPageRowsCount', res.headers['x-meta-count']);
+        commit('setBonusHistoryList', res.data);
+      }
     } catch (e) {
       commit('pushErrors', e);
     } finally {
@@ -1172,7 +1183,10 @@ export const actions = {
         ...{ params: payload },
         ...reqConfig(commit),
       });
-      if (!state.serverError) commit('setGameHistoryList', res.data);
+      if (!state.serverError) {
+        commit('setPageRowsCount', res.headers['x-meta-count']);
+        commit('setGameHistoryList', res.data);
+      }
     } catch (e) {
       commit('pushErrors', e);
     } finally {
