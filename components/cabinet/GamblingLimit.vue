@@ -208,7 +208,7 @@ export default {
         ConfirmDialog,
         {
           title: 'Delete limit',
-          text: `Are you sure you want to delete ${this.item.type} limit? ${
+          text: `Are you sure you want to delete ${LIMIT_DETAILS[this.item.type].name}? ${
             LIMIT_DETAILS[this.item.type].deleteRules
           }`,
           okBtnText: 'delete limit',
