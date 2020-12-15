@@ -95,8 +95,8 @@ export const LIMIT_DETAILS = {
     title: 'time spent gambling',
     text:
       'Feel the need to stay away from the casino for some time? You can set a cooling-off limit for a certain period of time. The restriction takes effect instantly. You won’t be able to make deposits and play during the specified period, also you will be excluded from all advertising offers. After the set period expires, you’ll receive a notification email saying your account is active again.',
-    editRules: '',
-    deleteRules: '',
+    editRules: "Limit decrease will be applied in 24 hours after player's request.",
+    deleteRules: "Limit cancellation will be applied in 24 hours after player's request.",
     fields: ['type', 'period', 'value'],
   },
   // self_exclusion: {
