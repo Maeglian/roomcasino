@@ -7,7 +7,7 @@
       </div>
       <div class="ProfileInfo-Fields">
         <template v-for="(val, name) in fields">
-          <template v-if="name !== 'receiveEmails' && name !== 'receiveSmsPromos'">
+          <template v-if="name !== 'receiveEmailPromos' && name !== 'receiveSmsPromos'">
             <div v-if="name === 'country'" :key="name" class="CabinetForm-Row">
               <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
                 {{ name }}
@@ -64,7 +64,7 @@
       <div class="ProfileInfo-Subscriptions">
         <template v-for="(item, name) in fields">
           <BaseCheckbox
-            v-if="name === 'receiveEmails' || name === 'receiveSmsPromos'"
+            v-if="name === 'receiveEmailPromos' || name === 'receiveSmsPromos'"
             :key="name"
             v-model="fields[name]"
             type="checkbox"

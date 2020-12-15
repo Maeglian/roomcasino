@@ -702,6 +702,7 @@ export const getters = {
       const countryName = state.countriesList[info.country];
       info.country = countryName;
       delete info.accountList;
+      delete info.requirePasswordChange;
       return info;
     }
 
