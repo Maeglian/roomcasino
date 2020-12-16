@@ -4,6 +4,7 @@
       <Card
         v-for="(game, i) in gamesLimited"
         :key="i"
+        :id="game.gameId"
         :img-url="game.imageUrl"
         overlay
         @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"

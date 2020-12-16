@@ -1,9 +1,12 @@
 <template>
   <div class="Card">
     <div v-if="overlay" class="Card-Overlay">
-      <button class="Card-Link" @click="$emit('play-demo')">
+      <NuxtLink
+        :to="`/game/${id}`"
+        class="Card-Link"
+      >
         Play for fun
-      </button>
+      </NuxtLink>
       <button class="Card-Footer" @click="$emit('play')">
         Play Now
       </button>
@@ -70,6 +73,9 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    id: {
+      type: String,
     },
   },
 };
