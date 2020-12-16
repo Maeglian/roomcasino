@@ -42,8 +42,8 @@
           “Personal Limits” section
           <NuxtLink v-if="isLoggedIn" to="/cabinet/limits" class="SupportPage-Link">here</NuxtLink>
           <button v-else class="SupportPage-Link" @click="showRegistrationDialog('registration')">
-            here</button
-          >.
+            here.
+          </button>
         </p>
         <p class="Text">
           Limits can be amended at any time. A decrease in the limit will take effect immediately,
