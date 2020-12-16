@@ -10,9 +10,7 @@
     @closed="onCloseCashierForm()"
   >
     <div slot="top-right">
-      <button class="Close Modal-Close" @click="$modal.hide('cashier')">
-        CLOSE
-      </button>
+      <div class="Close Modal-Close" @click="$modal.hide('cashier')" />
     </div>
     <div id="cashier" class="CashierForm"></div>
   </modal>
