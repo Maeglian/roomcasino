@@ -289,10 +289,24 @@ export default {
               } 
               .payment-method { 
                 padding-bottom: 0 !important; 
+                border-bottom: 2px solid #ccc !important;
               } 
               .footer { 
                 display: none !important; 
               } 
+              .payment-method-label {
+                color: #fff !important;
+              }
+              .payment-method-header:hover {
+                opacity: .5 !important;
+                background: transparent !important;
+              }
+              #cashier .input-container input {
+                background: #1B2138 !important;
+              }
+              .input-wrapper {
+                margin-top: 3px !important;
+              }
           `); 
           },
         );
