@@ -703,6 +703,7 @@ export const getters = {
       const countryName = state.countriesList[info.country];
       info.country = countryName;
       delete info.accountList;
+      delete info.requirePasswordChange;
       return info;
     }
 
@@ -994,7 +995,7 @@ export const actions = {
       commit('logout');
       Cookie.remove('token');
       delete axios.defaults.headers.common['X-Auth-Token'];
-      this.$route.push('/');
+      this.$router.push('/');
     } catch (e) {
       commit('pushErrors', e);
     }

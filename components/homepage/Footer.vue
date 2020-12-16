@@ -24,6 +24,9 @@
         <NuxtLink class="Link Footer-Link" to="/bonus-policy">
           Bonus policy
         </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/responsible-gaming">
+          Responsible gaming
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" to="/privacy-policy">
           Privacy policy
         </NuxtLink>

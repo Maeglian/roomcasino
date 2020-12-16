@@ -55,6 +55,10 @@ export const LIMIT_DETAILS = {
     name: 'Loss limits',
     text:
       'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
+    editRules:
+      'You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.',
+    deleteRules:
+      'Cancellation of the loss limit takes 24 hours. After the limit is exceeded, you will receive an email notification.',
     fields: ['type', 'period', 'currencyLimitList'],
   },
   depositLimit: {
@@ -74,7 +78,7 @@ export const LIMIT_DETAILS = {
     editRules:
       'You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.',
     deleteRules:
-      'Cancellation of the deposit limit takes 24 hours. After the limit is exceeded, you will receive an email notification.',
+      'Cancellation of the wager limit takes 24 hours. After the limit is exceeded, you will receive an email notification.',
     fields: ['type', 'period', 'currencyLimitList'],
   },
   sessionLimit: {
@@ -82,6 +86,8 @@ export const LIMIT_DETAILS = {
     title: 'time spent gambling',
     text:
       'The restriction takes effect instantly. If you hit the limit, you will be automatically logged out of your  account.',
+    editRules: '',
+    deleteRules: '',
     fields: ['type', 'value'],
   },
   coolingOffLimit: {
@@ -89,6 +95,9 @@ export const LIMIT_DETAILS = {
     title: 'time spent gambling',
     text:
       'Feel the need to stay away from the casino for some time? You can set a cooling-off limit for a certain period of time. The restriction takes effect instantly. You won’t be able to make deposits and play during the specified period, also you will be excluded from all advertising offers. After the set period expires, you’ll receive a notification email saying your account is active again.',
+    editRules:
+      "Limit decrease will be applied in 24 hours after player's request. Limit increase will be applied immediately.",
+    deleteRules: "Limit cancellation will be applied in 24 hours after player's request.",
     fields: ['type', 'period', 'value'],
   },
   // self_exclusion: {
@@ -138,7 +147,7 @@ export const LIMIT_COOL_PERIODS = [
 ];
 
 export const PROFILE_LABELS = {
-  receiveEmails: 'Send promos by e-mail',
+  receiveEmailPromos: 'Send promos by e-mail',
   receiveSmsPromos: 'Send promos by sms',
 };
 
@@ -195,7 +204,7 @@ export const HISTORY_TABLES = {
       },
       from: {
         type: 'date',
-        value: moment().unix(),
+        value: '',
       },
     },
   },
