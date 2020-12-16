@@ -9,7 +9,11 @@
     @opened="initializeCashier()"
     @closed="onCloseCashierForm()"
   >
-    <div class="Close Modal-Close" @click="$modal.hide('cashier');"></div>
+    <div slot="top-right">
+      <button class="Close Modal-Close" @click="$modal.hide('cashier')">
+        CLOSE
+      </button>
+    </div>
     <div id="cashier" class="CashierForm"></div>
   </modal>
 </template>
@@ -83,16 +87,29 @@ export default {
             }, 
           },
           api => {
+            const closeIcon = document.querySelector('.Modal-Close');
+
             api.on({
               cashierInitLoad: () => console.log('Cashier init load'),
-              update: data => console.log('The passed in data was set', data),
+              update: data => {
+                closeIcon.style.display = 'none';
+                console.log('The passed in data was set', data);
+              },
               success: data => {
                 console.log('Transaction was completed successfully', data);
                 this.getProfile();
               },
               failure: data => console.log('Transaction failed', data),
               isLoading: data => console.log('Data is loading', data),
-              doneLoading: data => console.log('Data has been successfully downloaded', data),
+              doneLoading: data => {
+                console.log('Data has been successfully downloaded', data);
+                const modal = document.querySelector('.vm--modal');
+                const prevStyles = modal.style.cssText;
+                const iframeLeftPosition = modal.getBoundingClientRect().left;
+                modal.style.cssText = prevStyles + 'position: relative; top: 20px;';
+                closeIcon.style.left = `-${iframeLeftPosition}px`;
+                closeIcon.style.display = 'block';
+              },
               newProviderWindow: data => console.log('A new window / iframe has opened', data),
               paymentMethodSelect: data => console.log('Payment method was selected', data),
               paymentMethodPageEntered: data =>
