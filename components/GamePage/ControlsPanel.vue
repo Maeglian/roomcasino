@@ -1,6 +1,9 @@
 <template>
   <div class="ControlsPanel">
-		<div class="ControlsPanel-Block">
+		<div
+			v-if="!isFullScreen"
+			class="ControlsPanel-Block"
+		>
 			<p class="ControlsPanel-Title">Responsible gaming</p>
 			<img
 				:src="clockIcon"
@@ -10,15 +13,21 @@
 		</div>
 
 		<div class="ControlsPanel-Group">
-			<div class="ControlsPanel-Action">
+			<div
+				class="ControlsPanel-Action"
+				:class="{ 'ControlsPanel-Action--FullScreenMode' : isFullScreen}"
+				@click="$emit('toggleFullScreenMode')"
+			>
 				<img
 					:src="zoomIcon"
 				/>
 			</div>
 
 			<NuxtLink
+				v-if="!isFullScreen"
 				to="/"
 				class="ControlsPanel-Action"
+				@click.native="setGameUrl('')"
 			>
 				<img
 					:src="closeIcon"
@@ -29,11 +38,15 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
 export default {
+	props: {
+		isFullScreen: Boolean,
+	},
 	mounted() {
     this.$options.timer = window.setInterval(this.updateDateTime, 1000);
   },
-	 beforeDestroy() {
+	beforeDestroy() {
     window.clearTimeout(this.$options.timer);
   },
 	data: () => ({
@@ -45,13 +58,14 @@ export default {
 		seconds: 0,
 	}),
 	methods: {
+		...mapMutations(['setGameUrl']),
 		updateDateTime() {
 			const today = new Date();
 
 			this.hours = today.getHours();
 			this.minutes = today.getMinutes();
 			this.seconds = today.getSeconds();
-		}
+		},
 	},
 	computed: {
 		getCurrentTime() {
@@ -97,6 +111,12 @@ export default {
 			align-items: center;
 			justify-content: center;
 			cursor: pointer;
+
+			&--FullScreenMode {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+			}
 
 			&:not(:last-child) {
 				margin-right: 5px;

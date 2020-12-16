@@ -1,14 +1,20 @@
 <template>
   <div class="GamePage">
-		<div class="GamePage-Wrapper">
-			<GamePanel />
+		<div
+			class="GamePage-Wrapper"
+			:class="{ 'GamePage-Wrapper--Hide' : isFullScreen}"
+		>
+			<GamePanel v-if="!isFullScreen" />
 			<iframe
 				class="GamePage-Iframe"
 				:src="gameUrlForIframe"
-				width="80%"
-				height="80%"
+				:width="getIframeWidth.width"
+				:height="getIframeWidth.height"
 			/>
-			<ControlsPanel />
+			<ControlsPanel
+				@toggleFullScreenMode="toggleFullScreenMode"
+				:isFullScreen="isFullScreen"
+			/>
 			<client-only>
 				<CashierForm />
 			</client-only>
@@ -26,13 +32,28 @@ export default {
 	},
 	data: () => ({
 		url: '',
-		clockIcon: require('@/assets/img/clock.svg')
+		clockIcon: require('@/assets/img/clock.svg'),
+		isFullScreen: false,
 	}),
 	methods: {
 		...mapActions(['startGame']),
+		toggleFullScreenMode() {
+			this.isFullScreen = !this.isFullScreen;
+		},
 	},
 	computed: {
 		...mapState(['gameUrlForIframe']),
+		getIframeWidth() {
+			return this.isFullScreen ?
+			{
+				width: '100%',
+				height: '100%',
+			} :
+			{
+				width: '80%',
+				height: '80%',
+			};
+		},
 	},
 };
 </script>
@@ -43,10 +64,15 @@ export default {
 		flex-direction: column;
 
 		&-Wrapper {
-			min-width: 1248px;
+			max-width: 1248px;
 			width: 1248px;
 			height: 100vh;
 			margin: 0 auto;
+
+			&--Hide {
+				max-width: 100%;
+				width: 100%;
+			}
 		}
 
 		&-Iframe {

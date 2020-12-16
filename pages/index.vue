@@ -6,10 +6,6 @@
     <Tournament />
     <Winners />
     <MainBanner class="HomePage-Banner" v-bind="banner1" />
-    <Iframe
-      v-model="hasGameUrl"
-      :url="gameUrlForIframe"
-    />
   </div>
 </template>
 
