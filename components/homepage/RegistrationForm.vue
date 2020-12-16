@@ -479,7 +479,7 @@ export default {
   &-Input {
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 18px;
     font-size: 16px;
     color: var(--color-text-main);
     background: transparent;
