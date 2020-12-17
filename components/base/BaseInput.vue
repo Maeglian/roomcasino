@@ -51,11 +51,18 @@
       Must be numeric
     </div>
     <div
-      v-if="shouldDisplayValidation && v && v.checkIfPositiveNumbers === false && v.$dirty"
+      v-if="shouldDisplayValidation && v && v.checkIfNullOrPositiveNumbers === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
       Input 0 or positive number
+    </div>
+    <div
+      v-if="shouldDisplayValidation && v && v.checkIfPositiveNumbers === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      Input positive number
     </div>
     <slot name="beforeInput-relative"></slot>
     <div class="BaseInput-Wrapper" :class="wrapperClass">
