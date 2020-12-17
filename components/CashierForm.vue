@@ -65,7 +65,7 @@ export default {
                 color: '', 
               }, 
               buttons: { 
-                color: '#EB1C2A', 
+                color: '#F3B233', 
               }, 
               headerbackground: { 
                 color: 'rgba(5, 12, 36, 0.9);', 
@@ -123,6 +123,12 @@ export default {
               #app-container { 
                 border-radius: 0!important; 
               } 
+              #app-container > #cachier {
+                background: red !important;
+              }
+              #cachier.container.flex.flex-column.layout-vertical {
+                background: red !important;
+              }
               #cashier * { 
                 font-family: 'Montserrat', sans-serif!important; 
                 color: #ffffff; 
@@ -198,7 +204,7 @@ export default {
                 flex-shrink: 0; 
               } 
               #cashier .submit-button { 
-                background: #EB1C2A; 
+                background: #F3B233; 
                 text-transform: uppercase; 
                 border-radius: 0!important; 
                 font-size: 12px!important; 
@@ -289,7 +295,7 @@ export default {
               } 
               .payment-method { 
                 padding-bottom: 0 !important; 
-                border-bottom: 2px solid #ccc !important;
+                border-bottom: 2px solid #F3B233 !important;
               } 
               .footer { 
                 display: none !important; 
@@ -306,6 +312,17 @@ export default {
               }
               .input-wrapper {
                 margin-top: 3px !important;
+              }
+              .input {
+                border: 1px solid #F3B233 !important;
+              }
+              input.hosted-input-container.input-container {
+                border: 1px solid #F3B233 !important;
+                border-color: #F3B233 !important;
+              }
+              #hosted-field-single-iframe #frmCCNum {
+                border: 1px solid #F3B233 !important;
+                border-color: #F3B233 !important;
               }
           `); 
           },
