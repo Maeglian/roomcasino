@@ -122,12 +122,6 @@ export default {
             api.css(`
               #app-container { 
                 border-radius: 0!important; 
-              } 
-              #app-container > #cachier {
-                background: red !important;
-              }
-              #cachier.container.flex.flex-column.layout-vertical {
-                background: red !important;
               }
               #cashier * { 
                 font-family: 'Montserrat', sans-serif!important; 
