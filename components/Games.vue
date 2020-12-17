@@ -58,10 +58,7 @@ export default {
   },
   methods: {
     ...mapActions(['startGame']),
-    isMobile() {
-      return detect.mobile() || detect.tablet() || detect.phone();
-    },
-    async openGamePage({ id }) {
+    async openPage(id) {
       if (this.isMobile()) {
         const gameUrl = await this.startGame({
           gameId: id,
@@ -74,44 +71,30 @@ export default {
 
         return;
       }
-
+      
+      this.$router.push(`/game`);
       const gameUrl = await this.startGame({
         gameId: id,
         returnUrl: '/',
         demo: true,
         platform: 'desktop',
       });
-      this.$router.push(`/game`);
+    },
+    isMobile() {
+      return detect.mobile() || detect.tablet() || detect.phone();
+    },
+    openGamePage({ id }) {
+      this.openPage(id);
     },
     showMoreGames() {
       this.gamesShowed += this.gamesToShow;
     },
-    async onClickStartGame({ id }) {
+    onClickStartGame({ id }) {
       if (!this.isLoggedIn) {
         this.showRegistrationDialog('login');
         this.$router.push('/');
       } else {
-        if (this.isMobile()) {
-          const gameUrl = await this.startGame({
-            gameId: id,
-            returnUrl: '/',
-            demo: false,
-            platform: 'mobile',
-            isMobile: true,
-          });
-          window.location.href = gameUrl;
-
-          return;
-        }
-
-        const gameUrl = await this.startGame({
-          gameId: id,
-          returnUrl: '/',
-          demo: true,
-          platform: 'desktop',
-        });
-
-        this.$router.push(`/game`);
+        this.openPage(id);
       }
     },
   },

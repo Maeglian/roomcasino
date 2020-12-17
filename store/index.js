@@ -732,7 +732,9 @@ export const getters = {
 
 export const mutations = {
   setGameUrl: (state, gameUrl) => {
+    console.log(gameUrl);
     state.gameUrlForIframe = gameUrl;
+    console.log(state.gameUrlForIframe);
   },
   setPageDataIsLoading: state => {
     state.pageDataIsLoading = true;
@@ -994,7 +996,7 @@ export const actions = {
       commit('logout');
       Cookie.remove('token');
       delete axios.defaults.headers.common['X-Auth-Token'];
-      this.$route.push('/');
+      this.$router.push('/');
     } catch (e) {
       commit('pushErrors', e);
     }
@@ -1047,7 +1049,7 @@ export const actions = {
       if (payload.isMobile) {
         return url;
       }
-      
+
       commit('setGameUrl', url);
     } catch (e) {
       commit('pushErrors', e);

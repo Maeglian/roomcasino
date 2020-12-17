@@ -113,7 +113,7 @@ export default {
   computed: {
     ...mapState(['navIsOpen', 'width']),
     isGamePage() {
-      return this.$route.name === 'game-id';
+      return this.$route.name === 'game';
     },
   },
   mounted() {

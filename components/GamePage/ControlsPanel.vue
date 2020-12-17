@@ -27,7 +27,7 @@
 				v-if="!isFullScreen"
 				to="/"
 				class="ControlsPanel-Action"
-				@click.native="$emit('clearGameUrl')"
+				@click.native="setGameUrl('')"
 			>
 				<img
 					:src="closeIcon"
@@ -39,6 +39,7 @@
 
 <script>
 import { mapMutations } from 'vuex';
+
 export default {
 	props: {
 		isFullScreen: Boolean,
@@ -61,6 +62,7 @@ export default {
 		gameUrl: '',
 	}),
 	methods: {
+		...mapMutations(['setGameUrl']),
 		updateDateTime() {
 			const today = new Date();
 

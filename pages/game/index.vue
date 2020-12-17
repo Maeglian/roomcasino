@@ -13,7 +13,6 @@
 			/>
 			<ControlsPanel
 				@toggleFullScreenMode="toggleFullScreenMode"
-				@clearGameUrl="gameUrl = ''"
 				:isFullScreen="isFullScreen"
 			/>
 			<client-only>
