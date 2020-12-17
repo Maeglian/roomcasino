@@ -1,12 +1,12 @@
 <template>
   <div class="PasswordRestore">
-    <template v-if="!$route.query.code && showSuccessMessage">
+    <template v-if="showSuccessMessage">
       <div class="PasswordRestore-Thanks Colored">
         Thanks! Check your email for further instructions.
       </div>
     </template>
-    <div class="PasswordRestore-Content">
-      <template v-if="!$route.query.code && !showSuccessMessage">
+    <div v-else class="PasswordRestore-Content">
+      <template v-if="!$route.query.code">
         <h1 class="Title Colored PasswordRestore-Title">
           Enter email
         </h1>
@@ -44,7 +44,7 @@
             class="AuthDialog-Row"
             :input-type="password.newPassword.inputType"
             error-class="AuthDialog-Error"
-            input-class="AuthDialog-Field AuthDialog-Input PasswordRestore-Input--withIcon"
+            input-class="AuthDialog-Field AuthDialog-Input AuthDialog-Input--withIcon"
             :v="$v.password.newPassword.value"
             placeholder="New password"
             icon="password"
@@ -71,7 +71,7 @@
             class="AuthDialog-Row"
             :input-type="password.confirmPassword.inputType"
             error-class="AuthDialog-Error"
-            input-class="AuthDialog-Field AuthDialog-Input PasswordRestore-Input--withIcon"
+            input-class="AuthDialog-Field AuthDialog-Input AuthDialog-Input--withIcon"
             :v="$v.password.confirmPassword.value"
             placeholder="Password confirm"
           >
@@ -222,10 +222,6 @@ export default {
     @media (min-width: $screen-s) {
       width: 350px;
     }
-  }
-
-  &-Input--withIcon {
-    padding-left: 45px;
   }
 
   &-Icon {
