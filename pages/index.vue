@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import Hero from '@/components/homepage/Hero.vue';
 import BestGames from '@/components/homepage/BestGames.vue';
 import Jackpots from '@/components/homepage/Jackpots.vue';
