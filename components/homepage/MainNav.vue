@@ -56,7 +56,7 @@
 <script>
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
-import BalanceSection from '@/components/gamepage/BalanceSection.vue';
+import BalanceSection from '@/components/homepage/BalanceSection.vue';
 import { mapMutations, mapState } from 'vuex';
 
 export default {
