@@ -647,6 +647,7 @@ export const state = () => ({
   ],
   profileIsUpdating: false,
   updateProfileError: '',
+  gameUrlForIframe: '',
 });
 
 export const getters = {
@@ -702,7 +703,6 @@ export const getters = {
       const countryName = state.countriesList[info.country];
       info.country = countryName;
       delete info.accountList;
-      delete info.requirePasswordChange;
       return info;
     }
 
@@ -731,6 +731,11 @@ export const getters = {
 };
 
 export const mutations = {
+  setGameUrl: (state, gameUrl) => {
+    console.log(gameUrl);
+    state.gameUrlForIframe = gameUrl;
+    console.log(state.gameUrlForIframe);
+  },
   setPageDataIsLoading: state => {
     state.pageDataIsLoading = true;
   },
@@ -1040,10 +1045,12 @@ export const actions = {
     try {
       const res = await axios.post(`${API_HOST}/startGame`, payload);
       const { url } = res.data.data;
-      const a = document.createElement('a');
-      a.href = url;
-      a.setAttribute('target', '_blank');
-      a.click();
+
+      if (payload.isMobile) {
+        return url;
+      }
+
+      commit('setGameUrl', url);
     } catch (e) {
       commit('pushErrors', e);
     }

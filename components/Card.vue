@@ -1,10 +1,16 @@
 <template>
   <div class="Card">
     <div v-if="overlay" class="Card-Overlay">
-      <button class="Card-Link" @click="$emit('play-demo')">
+      <button
+        class="Card-Link"
+        @click="$emit('openGamePage', { id })"
+      >
         Play for fun
       </button>
-      <button class="Card-Footer" @click="$emit('play')">
+      <button
+        class="Card-Footer"
+        @click="$emit('play', { id })"
+      >
         Play Now
       </button>
     </div>
@@ -70,6 +76,9 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    id: {
+      type: String,
     },
   },
 };

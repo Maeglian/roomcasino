@@ -4,10 +4,11 @@
       <Card
         v-for="(game, i) in gamesLimited"
         :key="i"
+        :id="game.gameId"
         :img-url="game.imageUrl"
         overlay
-        @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
-        @play-demo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
+        @play="onClickStartGame"
+        @openGamePage="openGamePage"
       />
     </div>
     <div v-if="games.length > gamesShowed" class="Games-Btn">
@@ -19,8 +20,9 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import detect from '@/utils/deviceDetector';
 
 export default {
   name: 'Games',
@@ -56,13 +58,44 @@ export default {
   },
   methods: {
     ...mapActions(['startGame']),
+    async openPage(id) {
+      if (this.isMobile()) {
+        const gameUrl = await this.startGame({
+          gameId: id,
+          returnUrl: '/',
+          demo: true,
+          platform: 'mobile',
+          isMobile: true,
+        });
+        window.location.href = gameUrl;
+
+        return;
+      }
+      
+      this.$router.push(`/game`);
+      const gameUrl = await this.startGame({
+        gameId: id,
+        returnUrl: '/',
+        demo: true,
+        platform: 'desktop',
+      });
+    },
+    isMobile() {
+      return detect.mobile() || detect.tablet() || detect.phone();
+    },
+    openGamePage({ id }) {
+      this.openPage(id);
+    },
     showMoreGames() {
       this.gamesShowed += this.gamesToShow;
     },
-    onClickStartGame(payload) {
+    onClickStartGame({ id }) {
       if (!this.isLoggedIn) {
         this.showRegistrationDialog('login');
-      } else this.startGame(payload);
+        this.$router.push('/');
+      } else {
+        this.openPage(id);
+      }
     },
   },
 };
