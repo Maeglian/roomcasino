@@ -1,9 +1,15 @@
 <template>
   <div class="GamePanel">
 		<div class="GamePanel-Account">
-			<p class="GamePanel-UserFullname">{{ getFullUserName }}</p>
+			<p
+				v-if="this.isLoggedIn"
+				class="GamePanel-UserFullname"
+			>
+				{{ getFullUserName }}
+			</p>
 
 			<AttachedPopup
+				v-if="this.isLoggedIn"
 				v-model="isOpenPopup"
 				@closePopup="closePopup"
 			>
@@ -33,17 +39,38 @@
 				</ul>
 			</AttachedPopup>
 
-			<button class="Btn AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
+			<button
+				v-if="this.isLoggedIn"
+				class="Btn AuthSection-Btn AuthSection-Btn--deposit"
+				@click="$modal.show('cashier')"
+			>
         Deposit
       </button>
+
+			<div
+				v-else
+				class="AuthSection-Login"
+			>
+				<button
+					class="Btn AuthSection-Btn AuthSection-Btn--login"
+					@click="showRegistrationDialog('login')"
+				>
+					Login
+				</button>
+				<button class="Btn AuthSection-Btn" @click="showRegistrationDialog('registration')">
+					Register
+				</button>
+			</div>
 		</div>
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
+  mixins: [showAuthDialog],
 	data: () => ({
 		balance: null,
 		currency: null,

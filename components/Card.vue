@@ -1,15 +1,15 @@
 <template>
   <div class="Card">
     <div v-if="overlay" class="Card-Overlay">
-      <NuxtLink
-        :to="`/game/${id}?demo=1`"
+      <button
         class="Card-Link"
+        @click="$emit('openGamePage', { id })"
       >
         Play for fun
-      </NuxtLink>
+      </button>
       <button
         class="Card-Footer"
-        @click="$emit('play')"
+        @click="$emit('play', { id })"
       >
         Play Now
       </button>
@@ -79,6 +79,16 @@ export default {
     },
     id: {
       type: String,
+    },
+  },
+  methods: {
+    trans(e) {
+      e.preventDefault();
+      console.log('PREVENT');
+    },
+    beforeRouteEnter (to, from, next) {
+      console.log('GFTYFTY FYTFTY FYTYT FYT FTY FTY YTF ');
+      next(false);
     },
   },
 };

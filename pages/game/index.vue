@@ -7,7 +7,7 @@
 			<MainNav v-if="!isFullScreen" />
 			<iframe
 				class="GamePage-Iframe"
-				:src="gameUrl"
+				:src="gameUrlForIframe"
 				:width="getIframeWidth.width"
 				:height="getIframeWidth.height"
 			/>
@@ -26,34 +26,9 @@
 <script>
 import { mapActions, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
-import detect from '@/utils/deviceDetector';
 
 export default {
-	// ssr: false,
 	mixins: [showAuthDialog],
-	async created() {
-		const { id } = this.$route.params;
-		const { demo } = this.$route.query;
-		const isMobile = detect.mobile() || detect.tablet() || detect.phone();
-	
-		if (parseInt(demo)) {
-			this.gameUrl = await this.startGame({
-				gameId: id,
-				returnUrl: '/',
-				demo: true,
-				platform: isMobile ? 'mobile' : 'desktop',
-			});
-			
-			return;
-		}
-
-		this.gameUrl = await this.startGame({
-			gameId: id,
-			returnUrl: '/',
-			demo: false,
-			platform: isMobile ? 'mobile' : 'desktop',
-		});
-	},
 	data: () => ({
 		url: '',
 		clockIcon: require('@/assets/img/clock.svg'),

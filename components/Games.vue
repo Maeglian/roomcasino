@@ -7,7 +7,8 @@
         :id="game.gameId"
         :img-url="game.imageUrl"
         overlay
-        @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
+        @play="onClickStartGame"
+        @openGamePage="openGamePage"
       />
     </div>
     <div v-if="games.length > gamesShowed" class="Games-Btn">
@@ -19,7 +20,9 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import detect from '@/utils/deviceDetector';
 
 export default {
   name: 'Games',
@@ -54,15 +57,61 @@ export default {
     this.gamesShowed = this.gamesToShow;
   },
   methods: {
+    ...mapActions(['startGame']),
+    isMobile() {
+      return detect.mobile() || detect.tablet() || detect.phone();
+    },
+    async openGamePage({ id }) {
+      if (this.isMobile()) {
+        const gameUrl = await this.startGame({
+          gameId: id,
+          returnUrl: '/',
+          demo: true,
+          platform: 'mobile',
+          isMobile: true,
+        });
+        window.location.href = gameUrl;
+
+        return;
+      }
+
+      const gameUrl = await this.startGame({
+        gameId: id,
+        returnUrl: '/',
+        demo: true,
+        platform: 'desktop',
+      });
+      this.$router.push(`/game`);
+    },
     showMoreGames() {
       this.gamesShowed += this.gamesToShow;
     },
-    onClickStartGame(payload) {
+    async onClickStartGame({ id }) {
       if (!this.isLoggedIn) {
         this.showRegistrationDialog('login');
         this.$router.push('/');
       } else {
-        this.$router.push(`/game/${payload.gameId}?demo=0`);
+        if (this.isMobile()) {
+          const gameUrl = await this.startGame({
+            gameId: id,
+            returnUrl: '/',
+            demo: false,
+            platform: 'mobile',
+            isMobile: true,
+          });
+          window.location.href = gameUrl;
+
+          return;
+        }
+
+        const gameUrl = await this.startGame({
+          gameId: id,
+          returnUrl: '/',
+          demo: true,
+          platform: 'desktop',
+        });
+
+        this.$router.push(`/game`);
       }
     },
   },

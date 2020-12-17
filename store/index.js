@@ -647,6 +647,7 @@ export const state = () => ({
   ],
   profileIsUpdating: false,
   updateProfileError: '',
+  gameUrlForIframe: '',
 });
 
 export const getters = {
@@ -702,7 +703,6 @@ export const getters = {
       const countryName = state.countriesList[info.country];
       info.country = countryName;
       delete info.accountList;
-      delete info.requirePasswordChange;
       return info;
     }
 
@@ -731,6 +731,9 @@ export const getters = {
 };
 
 export const mutations = {
+  setGameUrl: (state, gameUrl) => {
+    state.gameUrlForIframe = gameUrl;
+  },
   setPageDataIsLoading: state => {
     state.pageDataIsLoading = true;
   },
@@ -991,7 +994,7 @@ export const actions = {
       commit('logout');
       Cookie.remove('token');
       delete axios.defaults.headers.common['X-Auth-Token'];
-      this.$router.push('/');
+      this.$route.push('/');
     } catch (e) {
       commit('pushErrors', e);
     }
@@ -1040,8 +1043,12 @@ export const actions = {
     try {
       const res = await axios.post(`${API_HOST}/startGame`, payload);
       const { url } = res.data.data;
+
+      if (payload.isMobile) {
+        return url;
+      }
       
-      return url;
+      commit('setGameUrl', url);
     } catch (e) {
       commit('pushErrors', e);
     }
