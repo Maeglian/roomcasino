@@ -2,12 +2,15 @@
   <div class="Card">
     <div v-if="overlay" class="Card-Overlay">
       <NuxtLink
-        :to="`/game/${id}`"
+        :to="`/game/${id}?demo=1`"
         class="Card-Link"
       >
         Play for fun
       </NuxtLink>
-      <button class="Card-Footer" @click="$emit('play')">
+      <button
+        class="Card-Footer"
+        @click="$emit('play')"
+      >
         Play Now
       </button>
     </div>

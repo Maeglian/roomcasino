@@ -1,9 +1,5 @@
 <template>
   <div class="GamePanel">
-    <NuxtLink class="GamePanel-Link" to="/">
-      <img class="GamePanel-Logo" src="@/assets/img/logo.svg" />
-    </NuxtLink>
-
 		<div class="GamePanel-Account">
 			<p class="GamePanel-UserFullname">{{ getFullUserName }}</p>
 
@@ -12,7 +8,8 @@
 				@closePopup="closePopup"
 			>
 				<div
-					slot="trigger" class="GamePanel-Balance"
+					slot="trigger"
+					class="GamePanel-Balance"
 					@click="togglePopup"
 				>
 					<span class="GamePanel-Balance--Value">{{ balance ? balance : activeAccount.balance }}</span>
@@ -76,13 +73,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	.GamePanel {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		text-transform: uppercase;
 		font-weight: bold;
+		height: 100%;
 
 		&-Popup {
 			color: #fff;
@@ -108,12 +106,21 @@ export default {
 		&-Account {
 			display: flex;
 			align-items: center;
+			height: 100%;
 		}
 
 		&-UserFullname {
 			margin: 0 20px 0 0;
 			font-size: 10px;
 			color: #fff;
+
+			@media (max-width: $screen-xs) {
+				font-size: 8px;
+			}
+
+			@media (max-width: $screen-xs) {
+				display: none;
+			}
 		}
 
 		&-Balance {

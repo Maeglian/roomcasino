@@ -63,7 +63,10 @@ export default {
     onClickStartGame(payload) {
       if (!this.isLoggedIn) {
         this.showRegistrationDialog('login');
-      } else this.startGame(payload);
+        this.$router.push('/');
+      } else {
+        this.$router.push(`/game/${payload.gameId}?demo=0`);
+      }
     },
   },
 };

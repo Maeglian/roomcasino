@@ -19,7 +19,7 @@
 				@click="$emit('toggleFullScreenMode')"
 			>
 				<img
-					:src="zoomIcon"
+					:src="getZoomIcon"
 				/>
 			</div>
 
@@ -27,7 +27,7 @@
 				v-if="!isFullScreen"
 				to="/"
 				class="ControlsPanel-Action"
-				@click.native="setGameUrl('')"
+				@click.native="$emit('clearGameUrl')"
 			>
 				<img
 					:src="closeIcon"
@@ -44,21 +44,23 @@ export default {
 		isFullScreen: Boolean,
 	},
 	mounted() {
-    this.$options.timer = window.setInterval(this.updateDateTime, 1000);
+    this.timer = window.setInterval(this.updateDateTime, 1000);
   },
 	beforeDestroy() {
-    window.clearTimeout(this.$options.timer);
+    window.clearInterval(this.timer);
   },
 	data: () => ({
 		clockIcon: require('@/assets/img/clock.svg'),
 		closeIcon: require('@/assets/img/ic_close.svg'),
-		zoomIcon: require('@/assets/img/zoom.svg'),
+		zoomInIcon: require('@/assets/img/zoomIn.svg'),
+		zoomOutIcon: require('@/assets/img/zoomOut.svg'),
 		hours: 0,
 		minutes: 0,
 		seconds: 0,
+		timer: null,
+		gameUrl: '',
 	}),
 	methods: {
-		...mapMutations(['setGameUrl']),
 		updateDateTime() {
 			const today = new Date();
 
@@ -75,6 +77,9 @@ export default {
 
 			return `${hours} : ${minutes} : ${seconds}`;
 		},
+		getZoomIcon() {
+			return this.isFullScreen ? this.zoomOutIcon : this.zoomInIcon;
+		},
 	},
 };
 </script>
@@ -83,6 +88,7 @@ export default {
 	.ControlsPanel {
 		display: flex;
 		justify-content: space-between;
+		padding: 0 16px;
 
 		&-Block {
 			display: flex;
@@ -92,6 +98,10 @@ export default {
 		&-Title {
 			margin: 0 14px 0 0;
 			color: #fff;
+
+			@media (max-width: $screen-xs) {
+				display: none;
+			}
 		}
 
 		&-Time {

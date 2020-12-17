@@ -52,7 +52,6 @@ export default {
 	.AttachedPopup {
 		position: relative;
 		left: 0;
-		top: 100%;
 
 		&-Popup {
 			min-width: 140px;

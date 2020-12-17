@@ -53,12 +53,6 @@ export default {
       },
     };
   },
-  computed: {
-    ...mapState(['gameUrlForIframe']),
-    hasGameUrl() {
-      return this.gameUrlForIframe.length > 0;
-    },
-  },
 };
 </script>
 

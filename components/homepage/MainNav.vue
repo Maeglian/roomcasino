@@ -1,5 +1,8 @@
 <template>
-  <nav class="MainNav" :class="{ 'MainNav--bg': documentIsScrolled }">
+  <nav
+    class="MainNav"
+    :class="{ 'MainNav--bg': documentIsScrolled }"
+  >
     <div v-if="navIsOpen" class="MainNav-Overlay" @click="toggleNav()"></div>
     <div class="MainNav-TopBar">
       <div class="MainNav-Nav">
@@ -22,7 +25,11 @@
           />
         </ul>
       </nav>
-      <AuthSection class="MainNav-AuthSection" />
+      <BalanceSection v-if="isGamePage" />
+      <AuthSection
+        v-else
+        class="MainNav-AuthSection"
+      />
     </div>
     <transition v-if="width < 960" name="slide-left">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
@@ -49,6 +56,7 @@
 <script>
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
+import BalanceSection from '@/components/gamepage/BalanceSection.vue';
 import { mapMutations, mapState } from 'vuex';
 
 export default {
@@ -56,6 +64,7 @@ export default {
   components: {
     NavItem,
     AuthSection,
+    BalanceSection,
   },
   data() {
     return {
@@ -98,10 +107,14 @@ export default {
           ],
         },
       ],
+      internalVisible: true,
     };
   },
   computed: {
     ...mapState(['navIsOpen', 'width']),
+    isGamePage() {
+      return this.$route.name === 'game-id';
+    },
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll, { passive: true });

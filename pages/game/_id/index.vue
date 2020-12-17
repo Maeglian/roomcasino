@@ -2,17 +2,18 @@
   <div class="GamePage">
 		<div
 			class="GamePage-Wrapper"
-			:class="{ 'GamePage-Wrapper--Hide' : isFullScreen}"
+			:class="{ 'GamePage-Wrapper--Hide' : isFullScreen }"
 		>
-			<GamePanel v-if="!isFullScreen" />
+			<MainNav v-if="!isFullScreen" />
 			<iframe
 				class="GamePage-Iframe"
-				:src="gameUrlForIframe"
+				:src="gameUrl"
 				:width="getIframeWidth.width"
 				:height="getIframeWidth.height"
 			/>
 			<ControlsPanel
 				@toggleFullScreenMode="toggleFullScreenMode"
+				@clearGameUrl="gameUrl = ''"
 				:isFullScreen="isFullScreen"
 			/>
 			<client-only>
@@ -24,16 +25,35 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
-	created() {
-		const { id } = this.$route.params
-		this.startGame({gameId: id, returnUrl: '/', demo: true});
+	mixins: [showAuthDialog],
+	async created() {
+		const { id } = this.$route.params;
+		const { demo } = this.$route.query;
+
+		if (parseInt(demo)) {
+			this.gameUrl = await this.startGame({
+				gameId: id,
+				returnUrl: '/',
+				demo: true,
+			});
+			
+			return;
+		}
+
+		this.gameUrl = await this.startGame({
+			gameId: id,
+			returnUrl: '/',
+			demo: false,
+		});
 	},
 	data: () => ({
 		url: '',
 		clockIcon: require('@/assets/img/clock.svg'),
 		isFullScreen: false,
+		gameUrl: '',
 	}),
 	methods: {
 		...mapActions(['startGame']),
@@ -65,9 +85,12 @@ export default {
 
 		&-Wrapper {
 			max-width: 1248px;
-			width: 1248px;
+			width: 100%;
 			height: 100vh;
 			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 
 			&--Hide {
 				max-width: 100%;
@@ -76,8 +99,9 @@ export default {
 		}
 
 		&-Iframe {
+			position: relative;
 			border: none;
-			border-radius: 15px;
+			border-radius: 12px;
 			margin: 0 auto;
 			display: block;
 		}
