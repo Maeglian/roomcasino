@@ -35,7 +35,7 @@ export default {
 		const { id } = this.$route.params;
 		const { demo } = this.$route.query;
 		const isMobile = detect.mobile() || detect.tablet() || detect.phone();
-
+	
 		if (parseInt(demo)) {
 			this.gameUrl = await this.startGame({
 				gameId: id,
