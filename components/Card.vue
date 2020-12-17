@@ -81,16 +81,6 @@ export default {
       type: String,
     },
   },
-  methods: {
-    trans(e) {
-      e.preventDefault();
-      console.log('PREVENT');
-    },
-    beforeRouteEnter (to, from, next) {
-      console.log('GFTYFTY FYTFTY FYTYT FYT FTY FTY YTF ');
-      next(false);
-    },
-  },
 };
 </script>
 
