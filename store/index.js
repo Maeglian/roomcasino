@@ -703,6 +703,7 @@ export const getters = {
       const countryName = state.countriesList[info.country];
       info.country = countryName;
       delete info.accountList;
+      delete info.requirePasswordChange;
       return info;
     }
 
@@ -732,9 +733,7 @@ export const getters = {
 
 export const mutations = {
   setGameUrl: (state, gameUrl) => {
-    console.log(gameUrl);
     state.gameUrlForIframe = gameUrl;
-    console.log(state.gameUrlForIframe);
   },
   setPageDataIsLoading: state => {
     state.pageDataIsLoading = true;
@@ -1041,14 +1040,20 @@ export const actions = {
     }
   },
 
-  async startGame({ commit }, payload) {
+  async startGame({ commit }, {
+    demo,
+    gameId,
+    platform,
+    returnUrl
+  }) {
     try {
-      const res = await axios.post(`${API_HOST}/startGame`, payload);
+      const res = await axios.post(`${API_HOST}/startGame`, {
+        demo,
+        gameId,
+        platform,
+        returnUrl
+      });
       const { url } = res.data.data;
-
-      if (payload.isMobile) {
-        return url;
-      }
 
       commit('setGameUrl', url);
     } catch (e) {

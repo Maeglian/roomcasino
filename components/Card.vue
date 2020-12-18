@@ -3,13 +3,13 @@
     <div v-if="overlay" class="Card-Overlay">
       <button
         class="Card-Link"
-        @click="$emit('openGamePage', { id })"
+        @click="$emit('openGamePage', { id, demo: true })"
       >
         Play for fun
       </button>
       <button
         class="Card-Footer"
-        @click="$emit('play', { id })"
+        @click="$emit('openGamePage', { id, demo: false })"
       >
         Play Now
       </button>
