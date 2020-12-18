@@ -29,9 +29,7 @@ import showAuthDialog from '@/mixins/showAuthDialog';
 export default {
 	mixins: [showAuthDialog],
 	mounted() {
-		if (process.browser) {
-			this.storageGameUrl = localStorage.getItem('gameUrlForIframe');
-		}
+		this.storageGameUrl = localStorage.getItem('gameUrlForIframe');
 	},
 	data: () => ({
 		clockIcon: require('@/assets/img/clock.svg'),
