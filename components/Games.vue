@@ -7,7 +7,6 @@
         :id="game.gameId"
         :img-url="game.imageUrl"
         overlay
-        @play="onClickStartGame"
         @openGamePage="openGamePage"
       />
     </div>
@@ -49,6 +48,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(['gameUrlForIframe']),
     gamesLimited() {
       return this.games.slice(0, this.gamesShowed);
     },
@@ -58,44 +58,52 @@ export default {
   },
   methods: {
     ...mapActions(['startGame']),
-    async openPage(id) {
+    async getGameUrl({
+      gameId,
+      returnUrl = `${window.location.protocol}//${window.location.host}`,
+      demo,
+      platform,
+    }) {
+      const gameUrlForIframe = await this.startGame({
+        gameId,
+        returnUrl,
+        demo,
+        platform,
+      });
+      localStorage.setItem('gameUrlForIframe', this.gameUrlForIframe);
+
+      return this.gameUrlForIframe;
+    },
+    async openGamePage({ id, demo }) {
+      if (!demo && !this.isLoggedIn) {
+        this.showRegistrationDialog('login');
+        return;
+      }
+
       if (this.isMobile()) {
-        const gameUrl = await this.startGame({
+        await this.getGameUrl({
           gameId: id,
-          returnUrl: '/',
-          demo: true,
+          demo,
           platform: 'mobile',
-          isMobile: true,
         });
-        window.location.href = gameUrl;
+        window.location.href = this.gameUrlForIframe;
 
         return;
       }
-      
+
+      localStorage.setItem('gameUrlForIframe', '');
       this.$router.push(`/game`);
-      const gameUrl = await this.startGame({
+      this.getGameUrl({
         gameId: id,
-        returnUrl: '/',
-        demo: true,
+        demo,
         platform: 'desktop',
       });
     },
     isMobile() {
       return detect.mobile() || detect.tablet() || detect.phone();
     },
-    openGamePage({ id }) {
-      this.openPage(id);
-    },
     showMoreGames() {
       this.gamesShowed += this.gamesToShow;
-    },
-    onClickStartGame({ id }) {
-      if (!this.isLoggedIn) {
-        this.showRegistrationDialog('login');
-        this.$router.push('/');
-      } else {
-        this.openPage(id);
-      }
     },
   },
 };

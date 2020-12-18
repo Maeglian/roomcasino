@@ -7,7 +7,7 @@
 			<MainNav v-if="!isFullScreen" />
 			<iframe
 				class="GamePage-Iframe"
-				:src="gameUrlForIframe"
+				:src="getGameUrl"
 				:width="getIframeWidth.width"
 				:height="getIframeWidth.height"
 			/>
@@ -28,11 +28,13 @@ import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
 	mixins: [showAuthDialog],
+	mounted() {
+		this.storageGameUrl = localStorage.getItem('gameUrlForIframe');
+	},
 	data: () => ({
-		url: '',
 		clockIcon: require('@/assets/img/clock.svg'),
 		isFullScreen: false,
-		gameUrl: '',
+		storageGameUrl: '',
 	}),
 	methods: {
 		...mapActions(['startGame']),
@@ -42,6 +44,9 @@ export default {
 	},
 	computed: {
 		...mapState(['gameUrlForIframe']),
+		getGameUrl() {
+			return this.gameUrlForIframe || this.storageGameUrl;
+		},
 		getIframeWidth() {
 			return this.isFullScreen ?
 			{
