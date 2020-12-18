@@ -2,15 +2,6 @@ import axios from 'axios';
 import { throttle } from '../utils/helpers';
 
 window.onNuxtReady(app => {
-  if (app.$route.query.cxd) localStorage.setItem('cxd', app.$route.query.cxd);
-  if (app.$store.getters.isLoggedIn) {
-    app.$store.dispatch('getProfile');
-    app.$store.dispatch('getUserDocumentList');
-    app.$store.dispatch('getLimits');
-  }
-  const updateWidth = throttle(() => app.$store.commit('setWidth', window.innerWidth), 150);
-  updateWidth();
-  window.addEventListener('resize', updateWidth);
   axios.interceptors.response.use(
     undefined,
     err =>
@@ -27,6 +18,15 @@ window.onNuxtReady(app => {
         throw err;
       }),
   );
+  if (app.$route.query.cxd) localStorage.setItem('cxd', app.$route.query.cxd);
+  if (app.$store.getters.isLoggedIn) {
+    app.$store.dispatch('getProfile');
+    app.$store.dispatch('getUserDocumentList');
+    app.$store.dispatch('getLimits');
+  }
+  const updateWidth = throttle(() => app.$store.commit('setWidth', window.innerWidth), 150);
+  updateWidth();
+  window.addEventListener('resize', updateWidth);
   app.$store.dispatch('getCountriesList');
   app.$store.dispatch('getCurrencyList');
   app.$store.dispatch('getCategoriesList');
