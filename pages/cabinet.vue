@@ -1,5 +1,6 @@
 <template>
   <section class="CabinetPage">
+    <NotificationAlerts />
     <CabinetTopbar />
     <div class="CabinetPage-Wrapper">
       <CabinetMenu />
