@@ -200,7 +200,7 @@ export default {
     this.getSessionHistoryList();
   },
   methods: {
-    ...mapMutations(['clearUpdateProfileError']),
+    ...mapMutations(['clearUpdateProfileError', 'pushNotificationAlert']),
     ...mapActions(['updatePassword', 'getSessionHistoryList']),
     toggleVisibility(el) {
       this[el].inputType === 'password'
@@ -225,6 +225,10 @@ export default {
           this.confirmPassword.value = '';
           this.$v.$reset();
           this.shouldDisplayPasswordFormErrors = false;
+          this.pushNotificationAlert({
+            type: 'success',
+            text: 'Your password was successfully changed!',
+          });
         }
       });
     },
