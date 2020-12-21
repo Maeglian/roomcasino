@@ -56,13 +56,11 @@ export default {
   @media (min-width: $screen-s) {
     top: 116px;
     right: 0;
-    width: 100%;
     margin-right: 0;
     direction: rtl;
     columns: auto;
     column-fill: auto;
     column-gap: 12px;
-    column-width: 288px;
   }
 
   &-Item {
