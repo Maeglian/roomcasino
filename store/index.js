@@ -1005,6 +1005,7 @@ export const actions = {
       commit('logout');
       Cookie.remove('token');
       delete axios.defaults.headers.common['X-Auth-Token'];
+      commit('clearNotificationAlerts');
       this.$router.push('/');
     } catch (e) {
       commit('pushErrors', e);
