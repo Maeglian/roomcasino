@@ -36,6 +36,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  notificationAlerts: [],
   pageDataIsLoading: false,
   userDocumentList: [],
   historyListIsLoading: false,
@@ -895,6 +896,15 @@ export const mutations = {
   },
   clearUpdateProfileError(state) {
     state.updateProfileError = '';
+  },
+  pushNotificationAlert(state, payload) {
+    state.notificationAlerts.push(payload);
+  },
+  deleteNotificationAlert(state, idx) {
+    state.notificationAlerts.splice(idx, 1);
+  },
+  clearNotificationAlerts(state) {
+    state.notificationAlerts = [];
   },
 };
 
