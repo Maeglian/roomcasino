@@ -72,8 +72,9 @@ export default {
       default: false,
     },
     id: {
-      type: String,
-      required: true,
+      type: [String, Boolean],
+      required: false,
+      default: false,
     },
   },
 };
