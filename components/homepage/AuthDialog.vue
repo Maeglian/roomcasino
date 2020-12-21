@@ -154,6 +154,7 @@ export default {
   }
 
   &-Btn {
+    flex-grow: 1;
     height: 68px;
     margin-top: auto;
     text-transform: uppercase;
