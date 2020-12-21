@@ -3,11 +3,11 @@
     <div class="Games-Items">
       <Card
         v-for="(game, i) in gamesLimited"
-        :key="i"
         :id="game.gameId"
+        :key="i"
         :img-url="game.imageUrl"
         overlay
-        @openGamePage="openGamePage"
+        @open-gamepage="openGamePage"
       />
     </div>
     <div v-if="games.length > gamesShowed" class="Games-Btn">
@@ -64,7 +64,7 @@ export default {
       demo,
       platform,
     }) {
-      const gameUrlForIframe = await this.startGame({
+      await this.startGame({
         gameId,
         returnUrl,
         demo,

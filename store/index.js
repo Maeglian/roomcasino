@@ -1040,18 +1040,13 @@ export const actions = {
     }
   },
 
-  async startGame({ commit }, {
-    demo,
-    gameId,
-    platform,
-    returnUrl
-  }) {
+  async startGame({ commit }, { demo, gameId, platform, returnUrl }) {
     try {
       const res = await axios.post(`${API_HOST}/startGame`, {
         demo,
         gameId,
         platform,
-        returnUrl
+        returnUrl,
       });
       const { url } = res.data.data;
 

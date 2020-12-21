@@ -1,14 +1,11 @@
 <template>
-  <div class="AttachedPopup" v-click-outside="onClickOutside">
-		<slot name="trigger" />
+  <div v-click-outside="onClickOutside" class="AttachedPopup">
+    <slot name="trigger" />
 
-		<div
-			class="AttachedPopup-Popup"
-			:class="{ 'AttachedPopup-Popup--Active': isInternalVisible }"
-		>
-			<div class="AttachedPopup-Popup--Tail"></div>
-			<slot />
-		</div>
+    <div class="AttachedPopup-Popup" :class="{ 'AttachedPopup-Popup--Active': isInternalVisible }">
+      <div class="AttachedPopup-Popup--Tail"></div>
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -16,69 +13,69 @@
 import { mapState, mapGetters } from 'vuex';
 
 export default {
-	props: {
-		value: Boolean,
-	},
-	data: () => ({
-		balance: null,
-		currency: null,
-		isInternalVisible: false,
-	}),
-	methods: {
-		onClickOutside(e) {
-      if (!e.target.closest('.AttachedPopup')) this.$emit('closePopup');
+  props: {
+    value: Boolean,
+  },
+  data: () => ({
+    balance: null,
+    currency: null,
+    isInternalVisible: false,
+  }),
+  computed: {
+    ...mapState(['user']),
+    ...mapGetters(['activeAccount']),
+    getFullUserName() {
+      const { firstName, lastName } = this.user;
+      return `${firstName} ${lastName}`;
     },
-	},
-	computed: {
-		...mapState(['user']),
-		...mapGetters(['activeAccount']),
-		getFullUserName() {
-			const { firstName, lastName } = this.user;
-			return `${firstName} ${lastName}`;
-		},
-	},
-	watch: {
-		value: {
-			immediate: true,
-			handler() {
-				this.isInternalVisible = this.value;
-			},
-		},
-	},
+  },
+  watch: {
+    value: {
+      immediate: true,
+      handler() {
+        this.isInternalVisible = this.value;
+      },
+    },
+  },
+  methods: {
+    onClickOutside(e) {
+      if (!e.target.closest('.AttachedPopup')) this.$emit('close-popup');
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-	.AttachedPopup {
-		position: relative;
-		left: 0;
+.AttachedPopup {
+  position: relative;
+  left: 0;
 
-		&-Popup {
-			min-width: 140px;
-			position: absolute;
-			right: 14%;
-    	top: 30px;
-			padding: 10px 0;
-			opacity: 0;
-			visibility: hidden;
-			transition: .2s all;
+  &-Popup {
+    position: absolute;
+    top: 30px;
+    right: 14%;
+    min-width: 140px;
+    padding: 10px 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s all;
 
-			&--Active {
-				opacity: 1;
-				visibility: visible;
-			}
+    &--Active {
+      visibility: visible;
+      opacity: 1;
+    }
 
-			&--Tail {
-				&::after {
-					content: "";
-					position: absolute;
-					right: 15px;
-					top: -21px;
-					border: 12px solid transparent;
-					border-bottom: 20px solid #10133a;
-					z-index: -1;
-				}
-			}
-		}
-	}
+    &--Tail {
+      &:after {
+        content: '';
+        position: absolute;
+        top: -21px;
+        right: 15px;
+        z-index: -1;
+        border: 12px solid transparent;
+        border-bottom: 20px solid #10133a;
+      }
+    }
+  }
+}
 </style>

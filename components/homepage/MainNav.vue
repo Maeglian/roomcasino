@@ -1,8 +1,5 @@
 <template>
-  <nav
-    class="MainNav"
-    :class="{ 'MainNav--bg': documentIsScrolled }"
-  >
+  <nav class="MainNav" :class="{ 'MainNav--bg': documentIsScrolled }">
     <div v-if="navIsOpen" class="MainNav-Overlay" @click="toggleNav()"></div>
     <div class="MainNav-TopBar">
       <div class="MainNav-Nav">
@@ -26,10 +23,7 @@
         </ul>
       </nav>
       <BalanceSection v-if="isGamePage" />
-      <AuthSection
-        v-else
-        class="MainNav-AuthSection"
-      />
+      <AuthSection v-else class="MainNav-AuthSection" />
     </div>
     <transition v-if="width < 960" name="slide-left">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
