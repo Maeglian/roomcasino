@@ -32,7 +32,7 @@
           <div v-show="isNewNotifications" class="AuthSection-UserMessagesNew"></div>
         </div>
       </div>
-      <button class="Btn AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
+      <button class="AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
         Deposit
       </button>
     </div>
@@ -112,6 +112,11 @@ export default {
 
   &-Btn--login {
     background: none;
+  }
+
+  &-Btn--deposit {
+    font-weight: 700;
+    color: var(--color-text-main);
   }
 
   &-Sections {
