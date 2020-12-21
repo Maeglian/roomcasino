@@ -86,7 +86,7 @@ export default {
   }
 
   &-Btn {
-    display: block;
+    display: none;
     height: 100%;
     padding: 0 15px;
     font-size: 10px;
@@ -94,6 +94,7 @@ export default {
     background: var(--color-main1);
 
     @media (min-width: $screen-m) {
+      display: block;
       height: 58px;
     }
 
@@ -132,18 +133,18 @@ export default {
   }
 
   &-UserInfo {
-    display: none;
-
-    @media (min-width: $screen-m) {
-      display: block;
-      margin-right: 12px;
-      text-align: right;
-    }
+    display: block;
+    margin-right: 12px;
+    text-align: right;
   }
 
   &-User {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
+
+    @media (min-width: $screen-s) {
+      font-size: 12px;
+    }
   }
 
   &-UserName {
@@ -188,7 +189,7 @@ export default {
 
   &-UserMessages {
     position: relative;
-    display: flex;
+    display: none;
     flex-shrink: 0;
     justify-content: center;
     align-items: center;
@@ -198,6 +199,10 @@ export default {
     background: linear-gradient(356.88deg, rgba(6, 14, 42, 0) -13.82%, #060e2a 105.97%);
     border-radius: 50%;
     cursor: pointer;
+
+    @media (min-width: $screen-s) {
+      display: flex;
+    }
 
     @media (min-width: $screen-m) {
       margin-right: 30px;

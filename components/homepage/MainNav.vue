@@ -257,14 +257,6 @@ export default {
       }
     }
   }
-
-  &-AuthSection {
-    display: none;
-
-    @media (min-width: $screen-xs) {
-      display: block;
-    }
-  }
 }
 
 .AsideMenu {
