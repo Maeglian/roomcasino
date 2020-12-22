@@ -78,12 +78,16 @@ export default {
   }
 
   &-PopupItem {
-    margin-bottom: 4px;
     padding: 16px 13px;
     font-size: 12px;
     background: var(--color-bg);
+    border-bottom: 4px solid var(--color-body);
     cursor: pointer;
     transition: 0.2s all;
+
+    &:last-child {
+      border-bottom: none;
+    }
 
     &:hover {
       color: var(--color-main1);
