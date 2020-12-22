@@ -22,7 +22,8 @@
           />
         </ul>
       </nav>
-      <AuthSection class="MainNav-AuthSection" />
+      <BalanceSection v-if="isGamePage" />
+      <AuthSection v-else class="MainNav-AuthSection" />
     </div>
     <transition v-if="width < 960" name="slide-left">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
@@ -49,6 +50,7 @@
 <script>
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
+import BalanceSection from '@/components/homepage/BalanceSection.vue';
 import { mapMutations, mapState } from 'vuex';
 
 export default {
@@ -56,6 +58,7 @@ export default {
   components: {
     NavItem,
     AuthSection,
+    BalanceSection,
   },
   data() {
     return {
@@ -98,10 +101,14 @@ export default {
           ],
         },
       ],
+      internalVisible: true,
     };
   },
   computed: {
     ...mapState(['navIsOpen', 'width']),
+    isGamePage() {
+      return this.$route.name === 'game';
+    },
   },
   mounted() {
     window.addEventListener('scroll', this.onScroll, { passive: true });
@@ -248,14 +255,6 @@ export default {
       &:after {
         display: none;
       }
-    }
-  }
-
-  &-AuthSection {
-    display: none;
-
-    @media (min-width: $screen-xs) {
-      display: block;
     }
   }
 }

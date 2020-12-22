@@ -43,46 +43,46 @@ export default {
             environment: 'test',
             containerHeight: '95vh',
             method,
-            predefinedAmounts: [100,200,300,500,1000],
+            predefinedAmounts: [100, 200, 300, 500, 1000],
             containerWidth: '100%',
-            theme: { 
-              input: { 
-                color: '#fff', 
-                fontSize: '12px', 
-                borderRadius: '0', 
-              }, 
-              inputbackground: { 
+            theme: {
+              input: {
+                color: '#fff',
+                fontSize: '12px',
+                borderRadius: '0',
+              },
+              inputbackground: {
                 color: '#1B2138',
-              }, 
-              labels: { 
-                color: '#fff', 
-              }, 
-              headings: { 
-                color: '#1B2138', 
-                fontSize: '12px', 
-              }, 
-              loader: { 
-                color: '', 
-              }, 
-              buttons: { 
-                color: '#EB1C2A', 
-              }, 
-              headerbackground: { 
-                color: 'rgba(5, 12, 36, 0.9);', 
-              }, 
-              background: { 
-                color: 'rgba(5, 12, 36, 0.9)', 
-              }, 
-              cashierbackground: { 
-                color: 'rgba(5, 12, 36, 0.9)', 
-              }, 
-              cardbackground: { 
-                color: 'rgba(5, 12, 36, 0.9)', 
-              }, 
-              margin: { 
-                size: '4px', 
-              }, 
-            }, 
+              },
+              labels: {
+                color: '#fff',
+              },
+              headings: {
+                color: '#1B2138',
+                fontSize: '12px',
+              },
+              loader: {
+                color: '',
+              },
+              buttons: {
+                color: '#EB1C2A',
+              },
+              headerbackground: {
+                color: 'rgba(5, 12, 36, 0.9);',
+              },
+              background: {
+                color: 'rgba(5, 12, 36, 0.9)',
+              },
+              cashierbackground: {
+                color: 'rgba(5, 12, 36, 0.9)',
+              },
+              cardbackground: {
+                color: 'rgba(5, 12, 36, 0.9)',
+              },
+              margin: {
+                size: '4px',
+              },
+            },
           },
           api => {
             const closeIcon = document.querySelector('.Modal-Close');
@@ -104,7 +104,7 @@ export default {
                 const modal = document.querySelector('.vm--modal');
                 const prevStyles = modal.style.cssText;
                 const iframeLeftPosition = modal.getBoundingClientRect().left;
-                modal.style.cssText = prevStyles + 'position: relative; top: 20px;';
+                modal.style.cssText = `${prevStyles}position: relative; top: 20px;`;
                 closeIcon.style.left = `-${iframeLeftPosition}px`;
                 closeIcon.style.display = 'block';
               },
@@ -307,7 +307,7 @@ export default {
               .input-wrapper {
                 margin-top: 3px !important;
               }
-          `); 
+          `);
           },
         );
       });

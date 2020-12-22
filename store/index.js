@@ -36,6 +36,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  notificationAlerts: [],
   pageDataIsLoading: false,
   userDocumentList: [],
   historyListIsLoading: false,
@@ -647,6 +648,7 @@ export const state = () => ({
   ],
   profileIsUpdating: false,
   updateProfileError: '',
+  gameUrlForIframe: '',
 });
 
 export const getters = {
@@ -731,6 +733,9 @@ export const getters = {
 };
 
 export const mutations = {
+  setGameUrl: (state, gameUrl) => {
+    state.gameUrlForIframe = gameUrl;
+  },
   setPageDataIsLoading: state => {
     state.pageDataIsLoading = true;
   },
@@ -892,6 +897,15 @@ export const mutations = {
   clearUpdateProfileError(state) {
     state.updateProfileError = '';
   },
+  pushNotificationAlert(state, payload) {
+    state.notificationAlerts.push(payload);
+  },
+  deleteNotificationAlert(state, idx) {
+    state.notificationAlerts.splice(idx, 1);
+  },
+  clearNotificationAlerts(state) {
+    state.notificationAlerts = [];
+  },
 };
 
 export const actions = {
@@ -991,6 +1005,7 @@ export const actions = {
       commit('logout');
       Cookie.remove('token');
       delete axios.defaults.headers.common['X-Auth-Token'];
+      commit('clearNotificationAlerts');
       this.$router.push('/');
     } catch (e) {
       commit('pushErrors', e);
@@ -1036,14 +1051,17 @@ export const actions = {
     }
   },
 
-  async startGame({ commit }, payload) {
+  async startGame({ commit }, { demo, gameId, platform, returnUrl }) {
     try {
-      const res = await axios.post(`${API_HOST}/startGame`, payload);
+      const res = await axios.post(`${API_HOST}/startGame`, {
+        demo,
+        gameId,
+        platform,
+        returnUrl,
+      });
       const { url } = res.data.data;
-      const a = document.createElement('a');
-      a.href = url;
-      a.setAttribute('target', '_blank');
-      a.click();
+
+      commit('setGameUrl', url);
     } catch (e) {
       commit('pushErrors', e);
     }

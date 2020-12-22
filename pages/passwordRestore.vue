@@ -122,6 +122,11 @@ export default {
     BaseInput,
     BaseButton,
   },
+  beforeRouteLeave(from, to, next) {
+    this.showSuccessMessage = false;
+    this.clearServerError();
+    next();
+  },
   layout: 'page',
   data() {
     return {
@@ -186,11 +191,6 @@ export default {
         confirmPassword: this.password.confirmPassword.value,
       });
     },
-  },
-  beforeRouteLeave(from, to, next) {
-    this.showSuccessMessage = false;
-    this.clearServerError();
-    next();
   },
 };
 </script>
