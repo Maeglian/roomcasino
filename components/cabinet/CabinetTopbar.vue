@@ -8,25 +8,27 @@
       <NuxtLink class="CabinetTopbar-Link" to="/promotions">Promotions</NuxtLink>
       <NuxtLink class="CabinetTopbar-Link" to="/tournaments">Tournaments</NuxtLink>
     </div>
-    <div class="CabinetTopbar-User">
-      <UserAccounts class="CabinetTopbar-UserAccounts" />
-      <div class="CabinetTopbar-UserDetails">
-        <div class="CabinetTopbar-UserLvl">
-          Level 2
-        </div>
-        <div class="CabinetTopbar-LvlDetails">
-          <span class="CabinetTopbar-Spent">
-            1000 pc /
-          </span>
-          <span class="CabinetTopbar-Left">
-            4 999 PC
-          </span>
+    <template v-if="Object.keys(user).length">
+      <div class="CabinetTopbar-User">
+        <UserAccounts class="CabinetTopbar-UserAccounts" />
+        <div class="CabinetTopbar-UserDetails">
+          <div class="CabinetTopbar-UserLvl">
+            Level 2
+          </div>
+          <div class="CabinetTopbar-LvlDetails">
+            <span class="CabinetTopbar-Spent">
+              1000 pc /
+            </span>
+            <span class="CabinetTopbar-Left">
+              4 999 PC
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-    <button class="CabinetTopbar-Btn Btn Btn--color" @click="$modal.show('cashier')">
-      Deposit
-    </button>
+      <button class="CabinetTopbar-Btn Btn Btn--color" @click="$modal.show('cashier')">
+        Deposit
+      </button>
+    </template>
   </div>
 </template>
 
@@ -147,7 +149,6 @@ export default {
     }
 
     @media (min-width: $screen-l) {
-      margin-left: 0;
       padding: 22px 30px;
     }
   }
