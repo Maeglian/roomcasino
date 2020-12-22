@@ -159,10 +159,9 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(['clearUpdateProfileError']),
+    ...mapMutations(['clearUpdateProfileError', 'pushNotificationAlert']),
     ...mapActions(['updateProfile']),
     onSubmit() {
-      console.log(JSON.stringify(this.promosFields), JSON.stringify(this.userPromosInfo));
       if (
         JSON.stringify(this.fields) === JSON.stringify(this.userInfo) &&
         JSON.stringify(this.promosFields) === JSON.stringify(this.userPromosInfo)
@@ -176,7 +175,13 @@ export default {
         } else payload[key] = this.fields[key];
       }
 
-      this.updateProfile(payload);
+      this.updateProfile(payload).then(() => {
+        if (!this.updateProfileError)
+          this.pushNotificationAlert({
+            type: 'success',
+            text: 'Your profile was successfully updated!',
+          });
+      });
     },
   },
 };

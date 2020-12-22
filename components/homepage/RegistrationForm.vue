@@ -494,6 +494,10 @@ export default {
       color: var(--color-text-ghost);
       text-transform: uppercase;
     }
+
+    &--withIcon {
+      padding-left: 45px;
+    }
   }
 
   &-Dropdown {
