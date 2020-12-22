@@ -53,9 +53,8 @@ export default {
   &-Popup {
     position: absolute;
     top: 30px;
-    right: 14%;
+    right: 0;
     min-width: 140px;
-    padding: 10px 0;
     visibility: hidden;
     opacity: 0;
     transition: 0.2s all;
@@ -66,14 +65,15 @@ export default {
     }
 
     &--Tail {
-      &:after {
+      &:before {
         content: '';
         position: absolute;
-        top: -21px;
-        right: 15px;
-        z-index: -1;
-        border: 12px solid transparent;
-        border-bottom: 20px solid #10133a;
+        top: -5px;
+        right: 10px;
+        width: 10px;
+        height: 10px;
+        background: var(--color-bg);
+        transform: rotate(45deg);
       }
     }
   }
