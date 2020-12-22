@@ -54,6 +54,7 @@ export default {
 
     @media (min-width: $screen-s) {
       display: block;
+      margin-right: 20px;
     }
   }
 }

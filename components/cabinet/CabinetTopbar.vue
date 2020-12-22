@@ -3,16 +3,27 @@
     <NuxtLink class="CabinetTopbar-Logo" to="/">
       <img src="@/assets/img/logo.svg" />
     </NuxtLink>
-    <NuxtLink class="CabinetTopbar-Link CabinetTopbar-Profile" to="/cabinet/profile/general">
-      Profile
-    </NuxtLink>
     <div class="Nav CabinetTopbar-Nav">
       <NuxtLink class="CabinetTopbar-Link" to="/" exact>Home</NuxtLink>
-      <NuxtLink class="CabinetTopbar-Link" to="/category">All games</NuxtLink>
       <NuxtLink class="CabinetTopbar-Link" to="/promotions">Promotions</NuxtLink>
       <NuxtLink class="CabinetTopbar-Link" to="/tournaments">Tournaments</NuxtLink>
     </div>
-    <UserAccounts class="CabinetTopbar-User" />
+    <div class="CabinetTopbar-User">
+      <UserAccounts class="CabinetTopbar-UserAccounts" />
+      <div class="CabinetTopbar-UserDetails">
+        <div class="CabinetTopbar-UserLvl">
+          Level 2
+        </div>
+        <div class="CabinetTopbar-LvlDetails">
+          <span class="CabinetTopbar-Spent">
+            1000 pc /
+          </span>
+          <span class="CabinetTopbar-Left">
+            4 999 PC
+          </span>
+        </div>
+      </div>
+    </div>
     <button class="CabinetTopbar-Btn Btn Btn--color" @click="$modal.show('cashier')">
       Deposit
     </button>
@@ -72,12 +83,6 @@ export default {
     }
   }
 
-  &-Profile {
-    @media (min-width: $screen-l) {
-      display: none;
-    }
-  }
-
   &-Nav {
     display: none;
 
@@ -96,34 +101,77 @@ export default {
   }
 
   &-User {
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 13px 0;
+    font-size: 10px;
+    line-height: 1.2;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+
+    @media (min-width: $screen-m) {
+      justify-content: flex-start;
+    }
 
     @media (min-width: $screen-l) {
-      display: flex;
-      margin-right: 32px;
-      margin-left: auto;
-      color: var(--color-text-main);
+      justify-content: flex-end;
+      margin-right: 24px;
+      padding: 0;
     }
   }
 
-  &-UserName {
-    margin-right: 20px;
+  &-UserLvl {
+    text-align: right;
+
+    @media (min-width: $screen-m) {
+      text-align: left;
+    }
   }
 
-  &-Currency {
+  &-Spent {
     color: var(--color-text-ghost);
   }
 
   &-Btn {
-    margin-left: auto;
-    padding: 11px 18px;
-    font-size: 10px;
-    text-transform: uppercase;
+    display: none;
+
+    @media (min-width: $screen-m) {
+      display: inline-flex;
+      align-self: stretch;
+      margin-left: auto;
+      padding: 0 18px;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
 
     @media (min-width: $screen-l) {
-      align-self: stretch;
       margin-left: 0;
       padding: 22px 30px;
+    }
+  }
+
+  &-UserAccounts {
+    @media (min-width: $screen-m) {
+      margin-right: 10px;
+      padding-right: 10px;
+      border-right: 1px solid var(--color-text-ghost);
+    }
+
+    .UserAccounts-Value,
+    .UserAccounts-Currency {
+      color: var(--color-main1);
+    }
+
+    .UserAccounts-Balance {
+      @media (min-width: $screen-m) {
+        text-align: right;
+      }
+    }
+
+    .AttachedPopup-Popup {
+      min-width: auto;
     }
   }
 }

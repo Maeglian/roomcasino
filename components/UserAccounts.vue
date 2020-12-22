@@ -66,7 +66,6 @@ export default {
 <style lang="scss">
 .UserAccounts {
   &-UserFullname {
-    margin-right: 20px;
     font-size: 10px;
     color: var(--color-text-main);
   }
@@ -79,6 +78,7 @@ export default {
   &-PopupItem {
     padding: 16px 13px;
     font-size: 12px;
+    white-space: nowrap;
     background: var(--color-bg);
     border-bottom: 4px solid var(--color-body);
     cursor: pointer;
