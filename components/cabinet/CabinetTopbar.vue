@@ -167,7 +167,7 @@ export default {
 
     .UserAccounts-Balance {
       @media (min-width: $screen-m) {
-        text-align: right;
+        justify-content: flex-end;
       }
     }
 
