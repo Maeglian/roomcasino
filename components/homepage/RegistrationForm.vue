@@ -570,8 +570,9 @@ export default {
 
   &-Btn--step1 {
     flex-grow: 0;
-    width: 150px;
+    width: calc(50% - 2px);
     margin-right: 4px;
+    background: var(--color-text-ghost);
   }
 
   &-Buttons {
