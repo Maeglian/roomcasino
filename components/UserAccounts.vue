@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
+import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
   name: 'UserAccounts',
@@ -48,6 +48,7 @@ export default {
     },
   },
   methods: {
+    ...mapActions(['setActiveAccount']),
     togglePopup() {
       this.isOpenPopup = !this.isOpenPopup;
     },
@@ -57,7 +58,9 @@ export default {
     selectCurrencyAccount({ balance, currency }) {
       this.balance = balance;
       this.currency = currency;
-      this.closePopup();
+      this.setActiveAccount({ currency }).then(() => {
+        this.closePopup();
+      });
     },
   },
 };
