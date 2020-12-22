@@ -173,17 +173,6 @@ export default {
     },
     value: { checkIfPositiveNumbers },
   },
-  watch: {
-    type: {
-      immediate: true,
-      handler() {
-        if (this.type.value === 'coolingOffLimit') {
-          this.period = findValInArr('dayLimit', LIMIT_COOL_PERIODS);
-          this.periods = LIMIT_COOL_PERIODS;
-        }
-      },
-    },
-  },
   computed: {
     ...mapGetters(['activeAccount', 'accountList']),
     // limitTypes() {
@@ -209,6 +198,17 @@ export default {
       if (this.currentPeriod === 'weekly') date = moment().add(7, 'days');
       if (this.currentPeriod === 'monthly') date = moment().add(30, 'days');
       return moment(date).format();
+    },
+  },
+  watch: {
+    type: {
+      immediate: true,
+      handler() {
+        if (this.type.value === 'coolingOffLimit') {
+          this.period = findValInArr('dayLimit', LIMIT_COOL_PERIODS);
+          this.periods = LIMIT_COOL_PERIODS;
+        }
+      },
     },
   },
   created() {
