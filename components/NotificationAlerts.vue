@@ -25,7 +25,7 @@
           {{ item.text }}
         </div>
       </div>
-      <div class="Close" @click="deleteNotificationAlert(i)"></div>
+      <div class="Close NotificationAlert-Close" @click="deleteNotificationAlert(i)"></div>
     </div>
   </div>
 </template>
@@ -47,20 +47,21 @@ export default {
 <style lang="scss">
 .NotificationAlerts {
   position: fixed;
-  top: 86px;
+  top: 0;
   right: 50%;
-  bottom: 0;
   z-index: 11;
-  margin-right: -144px;
+  max-height: 100%;
+  margin-top: 86px;
 
   @media (min-width: $screen-s) {
-    top: 116px;
-    right: 0;
+    right: 16px;
+    margin-top: 116px;
     margin-right: 0;
     direction: rtl;
     columns: auto;
     column-fill: auto;
     column-gap: 12px;
+    column-width: 288px;
   }
 
   &-Item {
@@ -110,6 +111,10 @@ export default {
     font-size: 12px;
     line-height: 1.34;
     color: var(--color-text-ghost);
+  }
+
+  &-Close {
+    margin-left: auto;
   }
 }
 </style>
