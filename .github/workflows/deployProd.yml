@@ -11,6 +11,7 @@ env:
   DEPLOY_DIR: prod
   BUILD_SCRIPT: npm run build
   BUILD_SCRIPT_OUTPUT: .nuxt
+  BRANCH_NAME: master
   START_SCRIPT: pm2 restart node_modules/nuxt-start/bin/nuxt-start.js --name roomcasino -i max
   REPOSIRORY_NAME: wakeapp/roomcasino.git
 
@@ -22,11 +23,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
-      # Записываем в переменные окружения имя текущей ветки
-      # Чтобы избежать конфиликтов с URL, меняем точки на _, а слеши на минусы
-      - name: Get branch name
-        shell: bash
-        run: echo "::set-env name=BRANCH_NAME::$(echo ${GITHUB_REF#refs/heads/} | sed 's/\//-/g' | sed 's/\./_/g' | sed 's/[A-Z]/\L&/g')"
       # Доставляем приложение на сервер и запускаем его
       - name: Deploy to server
         uses: appleboy/ssh-action@master

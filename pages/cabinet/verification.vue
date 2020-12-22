@@ -154,10 +154,11 @@
               :duplicate-check="true"
               @vdropzone-sending="onSendRequest"
               @vdropzone-success="onSuccessUpload"
+              @vdropzone-error="onErrorUpload"
             >
               <div class="VerificationPage-Dropzone">
                 <div class="VerificationPage-Text">
-                  Drop file here or browse jpg. png. Max size 2MB
+                  Drop file here or browse images or .pdf files. Max size 1Gb
                 </div>
               </div>
             </vueDropzone>
@@ -213,21 +214,25 @@ export default {
     return {
       dropzoneOptions: {
         url: `${API_HOST}/document`,
-        maxFilesize: 2,
+        maxFilesize: 1000,
         thumbnailHeight: 100,
         thumbnailMethod: 'contain',
-        acceptedFiles: '.png, .jpg',
+        addRemoveLinks: true,
+        acceptedFiles: 'image/*, application/pdf',
       },
     };
   },
   computed: {
     ...mapState(['token', 'userDocumentList']),
   },
+  created() {
+    this.getUserDocumentList();
+  },
   mounted() {
     this.dropzoneOptions.headers = { 'X-Auth-Token': this.token };
   },
   methods: {
-    ...mapActions(['getUserDocumentList', 'showUserDocument', 'deleteUserDocument']),
+    ...mapActions(['getUserDocumentList', 'showUserDocument', 'deleteUserDocument', 'logout']),
     onDeleteDocument(id) {
       this.deleteUserDocument(id).then(() => this.getUserDocumentList());
     },
@@ -236,6 +241,9 @@ export default {
     },
     onSuccessUpload() {
       this.getUserDocumentList().then(() => this.$refs.myVueDropzone.removeAllFiles());
+    },
+    onErrorUpload({ xhr }) {
+      if (xhr && xhr.status === 401) this.logout(true);
     },
   },
 };

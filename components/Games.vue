@@ -3,11 +3,11 @@
     <div class="Games-Items">
       <Card
         v-for="(game, i) in gamesLimited"
+        :id="game.gameId"
         :key="i"
         :img-url="game.imageUrl"
         overlay
-        @play="onClickStartGame({ gameId: game.gameId, returnUrl: '/' })"
-        @play-demo="startGame({ gameId: game.gameId, returnUrl: '/', demo: true })"
+        @open-gamepage="openGamePage"
       />
     </div>
     <div v-if="games.length > gamesShowed" class="Games-Btn">
@@ -19,8 +19,9 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import detect from '@/utils/deviceDetector';
 
 export default {
   name: 'Games',
@@ -47,6 +48,7 @@ export default {
     };
   },
   computed: {
+    ...mapState(['gameUrlForIframe']),
     gamesLimited() {
       return this.games.slice(0, this.gamesShowed);
     },
@@ -56,13 +58,52 @@ export default {
   },
   methods: {
     ...mapActions(['startGame']),
+    async getGameUrl({
+      gameId,
+      returnUrl = `${window.location.protocol}//${window.location.host}`,
+      demo,
+      platform,
+    }) {
+      await this.startGame({
+        gameId,
+        returnUrl,
+        demo,
+        platform,
+      });
+      localStorage.setItem('gameUrlForIframe', this.gameUrlForIframe);
+
+      return this.gameUrlForIframe;
+    },
+    async openGamePage({ id, demo }) {
+      if (!demo && !this.isLoggedIn) {
+        this.showRegistrationDialog('login');
+        return;
+      }
+
+      if (this.isMobile()) {
+        await this.getGameUrl({
+          gameId: id,
+          demo,
+          platform: 'mobile',
+        });
+        window.location.href = this.gameUrlForIframe;
+
+        return;
+      }
+
+      localStorage.setItem('gameUrlForIframe', '');
+      this.$router.push(`/game`);
+      this.getGameUrl({
+        gameId: id,
+        demo,
+        platform: 'desktop',
+      });
+    },
+    isMobile() {
+      return detect.mobile() || detect.tablet() || detect.phone();
+    },
     showMoreGames() {
       this.gamesShowed += this.gamesToShow;
-    },
-    onClickStartGame(payload) {
-      if (!this.isLoggedIn) {
-        this.showRegistrationDialog('login');
-      } else this.startGame(payload);
     },
   },
 };

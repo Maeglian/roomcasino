@@ -168,6 +168,7 @@ export default {
       padding: 15px;
       font-size: 12px;
       vertical-align: middle;
+      word-wrap: break-word;
     }
 
     &:nth-child(even) {

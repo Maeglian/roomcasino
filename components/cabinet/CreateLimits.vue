@@ -53,7 +53,9 @@
           v-model.number="value"
           input-type="text"
           class="CreateLimits-Field CreateLimits-Amount CreateLimits-Row"
+          error-class="CreateLimits-Error"
           input-class="CreateLimits-Input"
+          :v="$v.value"
         >
           <template v-if="type.value === 'sessionLimit'" #afterInput-absolute>
             <span class="CreateLimits-InputCurrency">
@@ -115,7 +117,7 @@ import { LIMIT_PERIODS, LIMIT_TYPES, LIMIT_DETAILS, LIMIT_COOL_PERIODS } from '@
 import { findValInArr } from '@/utils/helpers';
 import { mapActions, mapGetters } from 'vuex';
 import moment from 'moment';
-import { checkIfPositiveNumbers } from '@/utils/formCheckers';
+import { checkIfNullOrPositiveNumbers, checkIfPositiveNumbers } from '@/utils/formCheckers';
 
 export default {
   name: 'CreateLimits',
@@ -160,28 +162,16 @@ export default {
       realityCheckPeriods: ['none', '30 min', '60 min', '120 min'],
       selfExclusionPeriods: ['none', '1 day', '1 week', '1 month', '6 month', '1 year'],
       limitState: this.item.limitState || 0,
-      value: 0,
+      value: 1,
     };
   },
   validations: {
     currencyLimitList: {
       $each: {
-        value: { checkIfPositiveNumbers },
+        value: { checkIfNullOrPositiveNumbers },
       },
     },
-  },
-  watch: {
-    type: {
-      immediate: true,
-      handler() {
-        if (this.type.value === 'coolingOffLimit') {
-          this.period = this.item.period
-            ? findValInArr(this.item.period, LIMIT_COOL_PERIODS)
-            : findValInArr('dayLimit', LIMIT_COOL_PERIODS);
-          this.periods = LIMIT_COOL_PERIODS;
-        }
-      },
-    },
+    value: { checkIfPositiveNumbers },
   },
   computed: {
     ...mapGetters(['activeAccount', 'accountList']),
@@ -208,6 +198,17 @@ export default {
       if (this.currentPeriod === 'weekly') date = moment().add(7, 'days');
       if (this.currentPeriod === 'monthly') date = moment().add(30, 'days');
       return moment(date).format();
+    },
+  },
+  watch: {
+    type: {
+      immediate: true,
+      handler() {
+        if (this.type.value === 'coolingOffLimit') {
+          this.period = findValInArr('dayLimit', LIMIT_COOL_PERIODS);
+          this.periods = LIMIT_COOL_PERIODS;
+        }
+      },
     },
   },
   created() {

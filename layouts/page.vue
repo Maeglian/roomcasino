@@ -1,5 +1,6 @@
 <template>
   <div>
+    <NotificationAlerts />
     <MainNav />
     <Nuxt />
     <Footer />
