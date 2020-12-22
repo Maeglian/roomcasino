@@ -1,6 +1,9 @@
 <template>
   <div class="UserAccounts">
-    <div class="UserAccounts-UserFullname">
+    <NuxtLink v-if="$route.name === 'game'" to="/cabinet/balance" class="UserAccounts-UserFullname">
+      {{ getFullUserName }}
+    </NuxtLink>
+    <div v-else class="UserAccounts-UserFullname">
       {{ getFullUserName }}
     </div>
     <AttachedPopup v-model="isOpenPopup" @close-popup="closePopup">
