@@ -133,13 +133,18 @@
         {{ authError }}
       </div>
     </div>
-    <BaseButton
-      class="Btn--full AuthDialog-Btn"
-      :is-loading="authStatus === 'loading'"
-      :disabled="$v.$error"
-    >
-      Sign up
-    </BaseButton>
+    <div class="AuthDialog-Buttons">
+      <button v-if="step === 2" class="Btn AuthDialog-Btn AuthDialog-Btn--step1" @click="step = 1">
+        Go back
+      </button>
+      <BaseButton
+        class="AuthDialog-Btn"
+        :is-loading="authStatus === 'loading'"
+        :disabled="$v.$error"
+      >
+        Sign up
+      </BaseButton>
+    </div>
   </form>
 </template>
 
@@ -561,6 +566,17 @@ export default {
   &-RegistrationLink {
     color: var(--color-text-main);
     text-decoration: underline;
+  }
+
+  &-Btn--step1 {
+    flex-grow: 0;
+    width: calc(50% - 2px);
+    margin-right: 4px;
+    background: var(--color-text-ghost);
+  }
+
+  &-Buttons {
+    display: flex;
   }
 }
 </style>
