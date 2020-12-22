@@ -54,7 +54,6 @@ export default {
     position: absolute;
     top: 30px;
     right: 0;
-    min-width: 140px;
     visibility: hidden;
     opacity: 0;
     transition: 0.2s all;
