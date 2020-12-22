@@ -1,6 +1,6 @@
 <template>
   <div class="BalanceSection">
-    <UserAccounts class="BalanceSection-UserAccounts" />
+    <UserAccounts v-if="isLoggedIn" class="BalanceSection-UserAccounts" />
     <button
       v-if="isLoggedIn"
       class="Btn AuthSection-Btn AuthSection-Btn--deposit"

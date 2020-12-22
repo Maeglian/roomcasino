@@ -1,9 +1,9 @@
 <template>
   <div class="UserAccounts">
-    <div v-if="isLoggedIn" class="UserAccounts-UserFullname">
+    <div class="UserAccounts-UserFullname">
       {{ getFullUserName }}
     </div>
-    <AttachedPopup v-if="isLoggedIn" v-model="isOpenPopup" @close-popup="closePopup">
+    <AttachedPopup v-model="isOpenPopup" @close-popup="closePopup">
       <div slot="trigger" class="UserAccounts-Balance" @click="togglePopup">
         <span class="UserAccounts-Value">{{ balance ? balance : activeAccount.balance }}</span>
         <span class="UserAccounts-Currency">{{
@@ -14,7 +14,6 @@
           :class="{ 'Nav-Arrow--Active': isOpenPopup }"
         />
       </div>
-
       <ul class="UserAccounts-Popup">
         <li
           v-for="({ balance, currency }, idx) in user.accountList"
