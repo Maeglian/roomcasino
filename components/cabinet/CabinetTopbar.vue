@@ -12,15 +12,7 @@
       <NuxtLink class="CabinetTopbar-Link" to="/promotions">Promotions</NuxtLink>
       <NuxtLink class="CabinetTopbar-Link" to="/tournaments">Tournaments</NuxtLink>
     </div>
-    <div class="CabinetTopbar-User">
-      <div class="CabinetTopbar-UserName">
-        {{ user.firstName || '' }} {{ user.lastName || user.email }}
-      </div>
-      <div class="CabinetTopbar-UserBalance">
-        {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }}
-        <span class="CabnetTopbar-Currency">{{ activeAccount.currency || user.currency }}</span>
-      </div>
-    </div>
+    <UserAccounts class="CabinetTopbar-User" />
     <button class="CabinetTopbar-Btn Btn Btn--color" @click="$modal.show('cashier')">
       Deposit
     </button>
@@ -29,9 +21,13 @@
 
 <script>
 import { mapGetters, mapState } from 'vuex';
+import UserAccounts from '@/components/UserAccounts';
 
 export default {
   name: 'CabinetTopbar',
+  components: {
+    UserAccounts,
+  },
   computed: {
     ...mapState(['user']),
     ...mapGetters(['activeAccount']),
