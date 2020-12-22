@@ -18,6 +18,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
   transformResponse: [
     data => {
       let res;
+      let errorPayload;
 
       try {
         res = JSON.parse(data);
@@ -25,12 +26,18 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
         throw Error(`[requestClient] Error parsing response JSON data - ${JSON.stringify(error)}`);
       }
 
-      console.log(res);
-
       if (res.code === 0) {
         return res.data;
       }
-      func(funcName, res.message);
+
+      if (funcName === 'pushNotificationAlert') {
+        errorPayload = {
+          type: 'error',
+          text: res.message,
+        };
+      } else errorPayload = res.message;
+
+      func(funcName, errorPayload);
     },
   ],
 });
@@ -1072,20 +1079,25 @@ export const actions = {
   },
 
   async setActiveAccount({ commit, dispatch }, payload) {
-    commit('accountIsAdding');
     try {
-      await axios.post(`${API_HOST}/setActiveAccount`, payload);
-      await dispatch('getProfile');
-      commit('accountIsAdded');
+      await axios.post(
+        `${API_HOST}/setActiveAccount`,
+        payload,
+        reqConfig(commit, 'pushNotificationAlert'),
+      );
+      dispatch('getProfile');
+      dispatch('getLimits');
     } catch (e) {
       commit('pushErrors', e);
     }
   },
 
-  async createAccount({ commit }, payload) {
+  async createAccount({ commit, dispatch }, payload) {
     commit('clearServerError');
     try {
       await axios.post(`${API_HOST}/createAccount`, payload, reqConfig(commit));
+      dispatch('getProfile');
+      dispatch('getLimits');
     } catch (e) {
       commit('pushErrors', e);
     }
