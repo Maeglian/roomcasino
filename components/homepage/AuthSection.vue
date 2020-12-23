@@ -266,7 +266,6 @@ export default {
 
     @media (min-width: $screen-xs) {
       height: auto;
-      padding: 0;
     }
 
     @media (min-width: $screen-m) {

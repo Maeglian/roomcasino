@@ -168,6 +168,7 @@ export default {
     flex-direction: column;
     width: 100%;
     height: 0;
+    overflow: hidden;
     background-color: var(--color-overlay);
     transition: all 0.2s ease;
   }
