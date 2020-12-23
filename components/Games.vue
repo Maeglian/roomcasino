@@ -1,5 +1,13 @@
 <template>
   <div class="Games">
+    <BaseModal v-if="gameError" :width="300" :height="'auto'" @close="clearGameError">
+      <div class="Modal-Title">
+        Can't start the game
+      </div>
+      <div class="Modal-Text">
+        {{ gameError }}
+      </div>
+    </BaseModal>
     <div class="Games-Items">
       <Card
         v-for="(game, i) in gamesLimited"
@@ -19,7 +27,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import detect from '@/utils/deviceDetector';
 
@@ -48,7 +56,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['gameUrlForIframe']),
+    ...mapState(['gameUrlForIframe', 'gameError']),
     gamesLimited() {
       return this.games.slice(0, this.gamesShowed);
     },
@@ -57,6 +65,7 @@ export default {
     this.gamesShowed = this.gamesToShow;
   },
   methods: {
+    ...mapMutations(['clearGameError']),
     ...mapActions(['startGame']),
     async getGameUrl({
       gameId,
@@ -70,9 +79,13 @@ export default {
         demo,
         platform,
       });
-      localStorage.setItem('gameUrlForIframe', this.gameUrlForIframe);
 
-      return this.gameUrlForIframe;
+      if (!this.gameError) {
+        localStorage.setItem('gameUrlForIframe', this.gameUrlForIframe);
+        return this.gameUrlForIframe;
+      }
+
+      return null;
     },
     async openGamePage({ id, demo }) {
       if (!demo && !this.isLoggedIn) {
@@ -86,18 +99,19 @@ export default {
           demo,
           platform: 'mobile',
         });
-        window.location.href = this.gameUrlForIframe;
+
+        if (!this.gameError) window.location.href = this.gameUrlForIframe;
 
         return;
       }
 
-      localStorage.setItem('gameUrlForIframe', '');
-      this.$router.push(`/game`);
-      this.getGameUrl({
+      await this.getGameUrl({
         gameId: id,
         demo,
         platform: 'desktop',
       });
+
+      if (!this.gameError) this.$router.push(`/game`);
     },
     isMobile() {
       return detect.mobile() || detect.tablet() || detect.phone();
