@@ -17,7 +17,7 @@
           </div>
           <div class="CabinetTopbar-LvlDetails">
             <span class="CabinetTopbar-Spent">
-              1000 pc /
+              1000 PC /
             </span>
             <span class="CabinetTopbar-Left">
               4 999 PC
@@ -56,6 +56,7 @@ export default {
   display: flex;
   align-items: center;
   width: 100%;
+  max-width: 100%;
   padding-right: 16px;
   padding-bottom: 8px;
   padding-left: 16px;
@@ -71,17 +72,18 @@ export default {
   }
 
   &-Logo {
-    display: none;
-    background: var(--color-bg);
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    width: 120px;
+    margin-right: 15px;
 
     @media (min-width: $screen-l) {
-      display: flex;
-      flex-shrink: 0;
-      align-items: center;
       width: 274px / $screen-xl * 100%;
       height: 66px;
       margin-right: 46px;
       padding-left: 37px;
+      background: var(--color-bg);
     }
   }
 
@@ -106,7 +108,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    margin-left: auto;
     padding: 13px 0;
     font-size: 10px;
     line-height: 1.2;
@@ -115,25 +117,23 @@ export default {
 
     @media (min-width: $screen-m) {
       justify-content: flex-start;
+      margin-right: 24px;
     }
 
     @media (min-width: $screen-l) {
       justify-content: flex-end;
-      margin-right: 24px;
+
       padding: 0;
-    }
-  }
-
-  &-UserLvl {
-    text-align: right;
-
-    @media (min-width: $screen-m) {
-      text-align: left;
     }
   }
 
   &-Spent {
     color: var(--color-text-ghost);
+    white-space: nowrap;
+  }
+
+  &-Left {
+    white-space: nowrap;
   }
 
   &-Btn {
@@ -142,7 +142,6 @@ export default {
     @media (min-width: $screen-m) {
       display: inline-flex;
       align-self: stretch;
-      margin-left: auto;
       padding: 0 18px;
       font-size: 10px;
       text-transform: uppercase;
@@ -160,19 +159,31 @@ export default {
       border-right: 1px solid var(--color-text-ghost);
     }
 
+    .UserAccounts-UserFullname {
+      overflow: hidden;
+      text-align: right;
+      text-overflow: ellipsis;
+    }
+
     .UserAccounts-Value,
     .UserAccounts-Currency {
       color: var(--color-main1);
     }
 
     .UserAccounts-Balance {
-      @media (min-width: $screen-m) {
-        justify-content: flex-end;
-      }
+      justify-content: flex-end;
     }
 
     .AttachedPopup-Popup {
       min-width: auto;
+    }
+  }
+
+  &-UserDetails {
+    display: none;
+
+    @media (min-width: $screen-m) {
+      display: block;
     }
   }
 }
