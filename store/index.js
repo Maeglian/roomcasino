@@ -1059,6 +1059,7 @@ export const actions = {
       commit('setBillingSession', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      throw e;
     }
   },
 
