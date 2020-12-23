@@ -22,7 +22,7 @@
           />
         </ul>
       </nav>
-      <BalanceSection v-if="isGamePage" />
+      <GamePanel v-if="isGamePage" />
       <AuthSection v-else class="MainNav-AuthSection" />
     </div>
     <transition v-if="width < 960" name="slide-left">
@@ -50,7 +50,7 @@
 <script>
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
-import BalanceSection from '@/components/homepage/BalanceSection.vue';
+import GamePanel from '@/components/homepage/GamePanel.vue';
 import { mapMutations, mapState } from 'vuex';
 
 export default {
@@ -58,7 +58,7 @@ export default {
   components: {
     NavItem,
     AuthSection,
-    BalanceSection,
+    GamePanel,
   },
   data() {
     return {

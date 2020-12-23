@@ -1,13 +1,17 @@
 <template>
-  <div class="BalanceSection">
-    <UserAccounts v-if="isLoggedIn" class="BalanceSection-UserAccounts" />
-    <button
-      v-if="isLoggedIn"
-      class="Btn AuthSection-Btn AuthSection-Btn--deposit"
-      @click="$modal.show('cashier')"
-    >
-      Deposit
-    </button>
+  <div class="GamePanel">
+    <template v-if="isLoggedIn">
+      <NuxtLink
+        v-if="Object.keys(this.user).length"
+        to="/cabinet/balance"
+        class="GamePanel-UserFullname"
+      >
+        {{ getFullUserName }}
+      </NuxtLink>
+      <button class="Btn AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
+        Deposit
+      </button>
+    </template>
     <div v-else class="AuthSection-Login">
       <button
         class="Btn AuthSection-Btn AuthSection-Btn--login"
@@ -24,18 +28,23 @@
 
 <script>
 import showAuthDialog from '@/mixins/showAuthDialog';
-import UserAccounts from '@/components/UserAccounts';
+import { mapState } from 'vuex';
 
 export default {
-  components: {
-    UserAccounts,
-  },
+  name: 'GamePanel',
   mixins: [showAuthDialog],
+  computed: {
+    ...mapState(['user']),
+    getFullUserName() {
+      const { firstName, lastName } = this.user;
+      return `${firstName} ${lastName}`;
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-.BalanceSection {
+.GamePanel {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,18 +52,18 @@ export default {
   font-weight: bold;
   text-transform: uppercase;
 
-  &-UserAccounts {
-    display: flex;
-    align-items: center;
-    margin-right: 36px;
-  }
-
-  .UserAccounts-UserFullname {
+  &-UserFullname {
     display: none;
+    font-size: 10px;
+    color: var(--color-text-main);
 
     @media (min-width: $screen-s) {
       display: block;
       margin-right: 20px;
+    }
+
+    @media (min-width: $screen-m) {
+      margin-right: 36px;
     }
   }
 }
