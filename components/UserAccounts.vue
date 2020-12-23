@@ -1,9 +1,6 @@
 <template>
   <div class="UserAccounts">
-    <NuxtLink v-if="$route.name === 'game'" to="/cabinet/balance" class="UserAccounts-UserFullname">
-      {{ getFullUserName }}
-    </NuxtLink>
-    <div v-else class="UserAccounts-UserFullname">
+    <div class="UserAccounts-UserFullname">
       {{ getFullUserName }}
     </div>
     <AttachedPopup v-model="isOpenPopup" @close-popup="closePopup">
@@ -101,6 +98,7 @@ export default {
 
   &-Balance {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     font-size: 10px;
     cursor: pointer;
@@ -111,12 +109,12 @@ export default {
   }
 
   &-Value {
-    color: var(--color-text-main);
+    color: var(--color-main1);
   }
 
   &-Currency {
     margin-left: 3px;
-    color: var(--color-text-ghost);
+    color: var(--color-main1);
   }
 }
 

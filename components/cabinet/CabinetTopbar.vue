@@ -158,25 +158,6 @@ export default {
       padding-right: 10px;
       border-right: 1px solid var(--color-text-ghost);
     }
-
-    .UserAccounts-UserFullname {
-      overflow: hidden;
-      text-align: right;
-      text-overflow: ellipsis;
-    }
-
-    .UserAccounts-Value,
-    .UserAccounts-Currency {
-      color: var(--color-main1);
-    }
-
-    .UserAccounts-Balance {
-      justify-content: flex-end;
-    }
-
-    .AttachedPopup-Popup {
-      min-width: auto;
-    }
   }
 
   &-UserDetails {
