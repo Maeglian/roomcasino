@@ -45,7 +45,9 @@
           class="GamblingLimit-Counter"
           :min-format="true"
           :enddate="new Date(item.refreshAt * 1000)"
-        />
+        >
+          Until Reset
+        </Counter>
       </div>
       <template v-if="item.type === 'sessionLimit'">
         <div class="GamblingLimit-ValuesScale">
