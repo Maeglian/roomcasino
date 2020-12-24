@@ -19,7 +19,7 @@
         v-if="!isFullScreen"
         to="/"
         class="ControlsPanel-Action"
-        @click.native="setGameUrl('')"
+        @click.native="onCloseGame"
       >
         <img :src="closeIcon" />
       </NuxtLink>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapGetters, mapActions } from 'vuex';
 
 export default {
   props: {
@@ -46,6 +46,7 @@ export default {
     gameUrl: '',
   }),
   computed: {
+    ...mapGetters(['isLoggedIn']),
     getCurrentTime() {
       const hours = String(this.hours).length < 2 ? `0${this.hours}` : this.hours;
       const minutes = String(this.minutes).length < 2 ? `0${this.minutes}` : this.minutes;
@@ -65,12 +66,17 @@ export default {
   },
   methods: {
     ...mapMutations(['setGameUrl']),
+    ...mapActions(['getProfile']),
     updateDateTime() {
       const today = new Date();
 
       this.hours = today.getHours();
       this.minutes = today.getMinutes();
       this.seconds = today.getSeconds();
+    },
+    onCloseGame() {
+      this.setGameUrl('');
+      if (this.isLoggedIn) this.getProfile();
     },
   },
 };
