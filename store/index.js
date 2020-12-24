@@ -43,6 +43,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  deleteBonusError: '',
   bonusList: [],
   bonusListIsLoading: false,
   notificationAlerts: [],
@@ -743,6 +744,12 @@ export const getters = {
 };
 
 export const mutations = {
+  setDeleteBonusError: (state, message) => {
+    state.deleteBonusError = message;
+  },
+  clearDeleteBonusError: state => {
+    state.deleteBonusError = '';
+  },
   setBonusListIsLoading: state => {
     state.bonusListIsLoading = true;
   },
