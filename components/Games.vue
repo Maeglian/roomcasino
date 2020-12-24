@@ -8,12 +8,21 @@
         {{ gameError }}
       </div>
     </BaseModal>
+    <BaseModal v-if="depositModal" :width="300" :height="'auto'" @close="onCloseDepositModal">
+      <div class="Modal-Title">
+        Please deposit first
+      </div>
+      <div class="Modal-Text">
+        It's a pity, but your balance is 0. Deposit now!
+      </div>
+    </BaseModal>
     <div class="Games-Items">
       <Card
         v-for="(game, i) in gamesLimited"
         :id="game.gameId"
         :key="i"
         :img-url="game.imageUrl"
+        :show-demo="!isLoggedIn"
         overlay
         @open-gamepage="openGamePage"
       />
@@ -27,7 +36,7 @@
 </template>
 
 <script>
-import { mapActions, mapMutations, mapState } from 'vuex';
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import detect from '@/utils/deviceDetector';
 
@@ -53,10 +62,12 @@ export default {
   data() {
     return {
       gamesShowed: 0,
+      depositModal: false,
     };
   },
   computed: {
     ...mapState(['gameUrlForIframe', 'gameError']),
+    ...mapGetters(['activeAccount']),
     gamesLimited() {
       return this.games.slice(0, this.gamesShowed);
     },
@@ -67,6 +78,10 @@ export default {
   methods: {
     ...mapMutations(['clearGameError']),
     ...mapActions(['startGame']),
+    onCloseDepositModal() {
+      this.depositModal = false;
+      this.$modal.show('cashier');
+    },
     async getGameUrl({
       gameId,
       returnUrl = `${window.location.protocol}//${window.location.host}`,
@@ -90,6 +105,11 @@ export default {
     async openGamePage({ id, demo }) {
       if (!demo && !this.isLoggedIn) {
         this.showRegistrationDialog('login');
+        return;
+      }
+
+      if (!demo && !this.activeAccount.balance) {
+        this.depositModal = true;
         return;
       }
 
