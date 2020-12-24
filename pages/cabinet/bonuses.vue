@@ -3,20 +3,14 @@
     <div class="CabinetPage-Title BonusesPage-Title">
       Bonuses
     </div>
-    <button class="BonusesPage-Bonuses">
+    <NuxtLink to="/cabinet/history/bonus" class="BonusesPage-Bonuses">
       Bonus history
       <span class="BonusesPage-BonusesIcon">
         <svg width="16" height="16">
           <use xlink:href="@/assets/img/icons.svg#time"></use>
         </svg>
       </span>
-    </button>
-    <button class="BonusesPage-All">
-      <svg class="BonusesPage-AllIcon" width="16" height="16">
-        <use xlink:href="@/assets/img/icons.svg#promotions"></use>
-      </svg>
-      See all bonuses
-    </button>
+    </NuxtLink>
     <div class="Table CabinetPage-Table BonusesPage-Table">
       <div class="Table-Row CabinetPage-Row">
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
@@ -30,67 +24,19 @@
         </div>
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th"></div>
       </div>
-      <div class="Table-Row CabinetPage-Row">
+      <div v-for="(bonus, i) in bonuses" :key="`bonus_${i}`" class="Table-Row CabinetPage-Row">
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Bonus">
-          100% first welcome bonus
+          {{ bonus.name }}
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Min">
-          20.00 USD
+          {{ bonus.minDeposit }}
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Max">
           <div class="BonusesPage-CellWrapper">
             <svg class="BonusesPage-Icon" width="16" height="16">
               <use xlink:href="@/assets/img/icons.svg#promotions"></use>
             </svg>
-            15.00 USD + 55 free spins
-          </div>
-        </div>
-        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">
-          <button
-            class="Btn Btn--common Btn--color CabinetPage-Btn"
-            @click="$modal.show('cashier')"
-          >
-            Deposit
-          </button>
-        </div>
-      </div>
-      <div class="Table-Row CabinetPage-Row">
-        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Bonus">
-          100% first welcome bonus
-        </div>
-        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Min">
-          20.00 USD
-        </div>
-        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Max">
-          <div class="BonusesPage-CellWrapper">
-            <svg class="BonusesPage-Icon" width="16" height="16">
-              <use xlink:href="@/assets/img/icons.svg#promotions"></use>
-            </svg>
-            15.00 USD + 55 free spins
-          </div>
-        </div>
-        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">
-          <button
-            class="Btn Btn--common Btn--color CabinetPage-Btn"
-            @click="$modal.show('cashier')"
-          >
-            Deposit
-          </button>
-        </div>
-      </div>
-      <div class="Table-Row CabinetPage-Row">
-        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Bonus">
-          100% first welcome bonus
-        </div>
-        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Min">
-          20.00 USD
-        </div>
-        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Max">
-          <div class="BonusesPage-CellWrapper">
-            <svg class="BonusesPage-Icon" width="16" height="16">
-              <use xlink:href="@/assets/img/icons.svg#promotions"></use>
-            </svg>
-            15.00 USD + 55 free spins
+            {{ bonus.maxPrize }}
           </div>
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">
@@ -116,8 +62,15 @@
 </template>
 
 <script>
+import { BONUSES } from '@/config';
+
 export default {
   name: 'BonusesPage',
+  data() {
+    return {
+      bonuses: BONUSES,
+    };
+  },
 };
 </script>
 

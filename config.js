@@ -334,3 +334,21 @@ export const HISTORY_TABLES = {
     ],
   },
 };
+
+export const BONUSES = [
+  {
+    name: 'First welcome bonus',
+    minDeposit: '20.00 USD/EUR',
+    maxPrize: '100% of the deposit amount - up to 100$/€',
+  },
+  {
+    name: 'Second deposit bonus',
+    minDeposit: '20.00 USD/EUR',
+    maxPrize: '55% of the deposit amount - up to 100$/€',
+  },
+  {
+    name: 'Third deposit bonus',
+    minDeposit: '20.00 USD/EUR',
+    maxPrize: '100% of the deposit amount - up to 100$/€',
+  },
+];
