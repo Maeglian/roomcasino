@@ -43,6 +43,8 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  bonusList: [],
+  bonusListIsLoading: false,
   notificationAlerts: [],
   pageRowsCount: 0,
   pageDataIsLoading: false,
@@ -741,6 +743,15 @@ export const getters = {
 };
 
 export const mutations = {
+  setBonusListIsLoading: state => {
+    state.bonusListIsLoading = true;
+  },
+  setBonusListIsLoaded: state => {
+    state.bonusListIsLoading = false;
+  },
+  setBonusList: (state, payload) => {
+    state.bonusList = payload;
+  },
   setPageRowsCount: (state, payload) => {
     state.pageRowsCount = payload;
   },
@@ -1238,6 +1249,27 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setHistoryListIsLoaded');
+    }
+  },
+
+  async getBonusList({ commit }) {
+    commit('setBonusListIsLoading');
+    try {
+      const res = await axios.get(`${API_HOST}/bonusList`);
+      const bonuses = res.data.data;
+      commit('setBonusList', bonuses);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setBonusListIsLoaded');
+    }
+  },
+
+  async deleteBonus({ commit }, id) {
+    try {
+      await axios.delete(`${API_HOST}/bonus/${id}`);
+    } catch (e) {
+      commit('pushErrors', e);
     }
   },
 
