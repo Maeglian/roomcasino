@@ -26,6 +26,7 @@ window.onNuxtReady(app => {
   const updateWidth = throttle(() => app.$store.commit('setWidth', window.innerWidth), 150);
   updateWidth();
   window.addEventListener('resize', updateWidth);
+  app.$store.dispatch('getGames');
   app.$store.dispatch('getCountriesList');
   app.$store.dispatch('getCurrencyList');
   app.$store.dispatch('getCategoriesList');
