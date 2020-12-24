@@ -11,7 +11,7 @@
         </svg>
       </span>
     </NuxtLink>
-    <div v-if="bonuses.length" class="BonusesPage-BonusList">
+    <div v-if="bonusList.length" class="BonusesPage-BonusList">
       <div v-for="bonus in bonusList" :key="bonus.id" class="BonusesPage-Bonus Bonus">
         <div class="Bonus-Section">
           <svg class="BonusesPage-Icon--clover">
@@ -46,7 +46,10 @@
         </div>
       </div>
     </div>
-    <div class="Table CabinetPage-Table BonusesPage-Table">
+    <div
+      v-if="availableDepositBonuses.length && !bonusListIsLoading"
+      class="Table CabinetPage-Table BonusesPage-Table"
+    >
       <div class="Table-Row CabinetPage-Row">
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
           Bonus
@@ -59,9 +62,13 @@
         </div>
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th"></div>
       </div>
-      <div v-for="(bonus, i) in bonuses" :key="`bonus_${i}`" class="Table-Row CabinetPage-Row">
+      <div
+        v-for="(bonus, i) in availableDepositBonuses"
+        :key="`bonus_${i}`"
+        class="Table-Row CabinetPage-Row"
+      >
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Bonus">
-          {{ bonus.name }}
+          {{ bonus.title }}
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Min">
           {{ bonus.minDeposit }}
@@ -106,17 +113,18 @@ export default {
   components: {
     Counter,
   },
-  data() {
-    return {
-      bonuses: BONUSES,
-    };
-  },
   computed: {
     ...mapState(['bonusListIsLoading', 'bonusList']),
     ...mapGetters(['activeCurrency']),
+    availableDepositBonuses() {
+      return BONUSES.filter(bonus => !this.bonusList.some(b => b.name === bonus.name));
+    },
   },
   methods: {
     ...mapActions(['getBonusList', 'deleteBonus']),
+    onDeleteBonus() {
+      this.deleteBonus();
+    },
   },
   created() {
     this.getBonusList();
@@ -142,6 +150,14 @@ export default {
   &-BonusList {
     width: 100%;
     margin-top: 30px;
+  }
+
+  &-Bonus {
+    margin-bottom: 4px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &-BonusesIcon {
@@ -192,11 +208,6 @@ export default {
 
   &-Table {
     margin-top: 24px;
-    margin-bottom: 28px;
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 48px;
-    }
   }
 
   &-Cell {
@@ -259,7 +270,12 @@ export default {
   &-Subtitle {
     order: 1;
     width: 100%;
+    margin-top: 28px;
     margin-bottom: 12px;
+
+    @media (min-width: $screen-m) {
+      margin-top: 48px;
+    }
   }
 
   &-Form {
