@@ -28,7 +28,7 @@
         :to="{ path: '/', hash: '#games' }"
         @click.native="$modal.hide('goPlay')"
       >
-        Go play!
+        Play now
       </NuxtLink>
     </BaseModal>
   </div>
