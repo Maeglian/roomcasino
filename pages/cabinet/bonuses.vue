@@ -104,7 +104,6 @@
 </template>
 
 <script>
-import { BONUSES } from '@/config';
 import { mapActions, mapGetters, mapState } from 'vuex';
 import Counter from '@/components/Counter';
 import BonusDetails from '@/components/cabinet/BonusDetails';
@@ -116,10 +115,7 @@ export default {
   },
   computed: {
     ...mapState(['bonusListIsLoading', 'bonusList']),
-    ...mapGetters(['activeCurrency']),
-    availableDepositBonuses() {
-      return BONUSES.filter(bonus => !this.bonusList.some(b => b.name === bonus.name));
-    },
+    ...mapGetters(['activeCurrency', 'availableDepositBonuses']),
   },
   created() {
     this.getBonusList();

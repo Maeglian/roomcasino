@@ -7,6 +7,7 @@ import {
   API_HOST_SANDBOX,
   DEFAULT_PROVIDER,
   LIMIT_DETAILS,
+  BONUSES,
 } from '../config';
 
 const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : API_HOST_PROD;
@@ -665,13 +666,16 @@ export const state = () => ({
 
 export const getters = {
   // eslint-disable-next-line no-shadow
-  activeCurrency: (state, getters) => {
+  availableDepositBonuses: state => {
+    return BONUSES.filter(bonus => !state.bonusList.some(b => b.name === bonus.name));
+  },
+  activeCurrency: state => {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};
   },
   activeAccount: state => {
     if (state.user.accountList) return state.user.accountList.find(acc => acc.active === true);
-    return {};
+    return '';
   },
   accountList: state => {
     if (state.user.accountList) return state.user.accountList;

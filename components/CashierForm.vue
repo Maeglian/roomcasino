@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { mapActions, mapMutations, mapState } from 'vuex';
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 
 const billingSession =
   process.env.NUXT_ENV_MODE === 'sandbox' ? 'fakeBillingSession' : 'billingSession';
@@ -26,6 +26,7 @@ export default {
   name: 'CashierForm',
   computed: {
     ...mapState(['billingSession', 'fakeBillingSession', 'shouldCashout']),
+    ...mapGetters(['availableDepositBonuses']),
   },
   methods: {
     ...mapMutations(['setCashoutFalse']),
@@ -101,6 +102,7 @@ export default {
             success: data => {
               console.log('Transaction was completed successfully', data);
               this.getProfile();
+              if (this.availableDepositBonuses.length) this.getBonusList();
             },
             failure: data => console.log('Transaction failed', data),
             isLoading: data => console.log('Data is loading', data),
