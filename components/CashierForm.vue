@@ -1,18 +1,17 @@
 <template>
   <modal
     name="cashier"
-    height="95%"
+    :height="'auto'"
     width="400px"
-    :shift-y="0.5"
     draggable
     adaptive
     @opened="initializeCashier()"
     @closed="onCloseCashierForm()"
   >
-    <div slot="top-right">
+    <div class="Modal">
       <div class="Close Modal-Close" @click="$modal.hide('cashier')" />
+      <div id="cashier" class="CashierForm"></div>
     </div>
-    <div id="cashier" class="CashierForm"></div>
   </modal>
 </template>
 
@@ -47,46 +46,45 @@ export default {
           userId: this[billingSession].userId,
           sessionId: this[billingSession].sessionId,
           environment: 'test',
-          containerHeight: '95vh',
+          containerHeight: 'auto',
+          containerMinHeight: '700px',
           method,
+          accountDelete: false,
+          showFooter: false,
+          amount: '20',
+          font: 'Montserrat',
           predefinedAmounts: [100, 200, 300, 500, 1000],
           containerWidth: '100%',
           theme: {
             input: {
-              color: '#fff',
+              color: '#FFF',
               fontSize: '12px',
+              height: '55px',
               borderRadius: '0',
             },
             inputbackground: {
-              color: '#1B2138',
+              color: '#0E152F',
             },
             labels: {
-              color: '#fff',
+              color: '#FFF;',
             },
             headings: {
-              color: '#1B2138',
-              fontSize: '12px',
-            },
-            loader: {
-              color: '',
+              color: '#FFF;',
             },
             buttons: {
-              color: '#EB1C2A',
+              color: '#EB1C2A;',
             },
             headerbackground: {
-              color: 'rgba(5, 12, 36, 0.9);',
+              color: '#060E2A',
             },
             background: {
-              color: 'rgba(5, 12, 36, 0.9)',
+              color: '#060E2A',
             },
             cashierbackground: {
-              color: 'rgba(5, 12, 36, 0.9)',
+              color: '#060E2A',
             },
-            cardbackground: {
-              color: 'rgba(5, 12, 36, 0.9)',
-            },
-            margin: {
-              size: '4px',
+            border: {
+              radius: '0',
             },
           },
         },
@@ -96,7 +94,6 @@ export default {
           api.on({
             cashierInitLoad: () => console.log('Cashier init load'),
             update: data => {
-              closeIcon.style.display = 'none';
               console.log('The passed in data was set', data);
             },
             success: data => {
@@ -108,11 +105,6 @@ export default {
             isLoading: data => console.log('Data is loading', data),
             doneLoading: data => {
               console.log('Data has been successfully downloaded', data);
-              const modal = document.querySelector('.vm--modal');
-              const prevStyles = modal.style.cssText;
-              const iframeLeftPosition = modal.getBoundingClientRect().left;
-              modal.style.cssText = `${prevStyles}position: relative; top: 20px;`;
-              closeIcon.style.left = `-${iframeLeftPosition}px`;
               closeIcon.style.display = 'block';
             },
             newProviderWindow: data => console.log('A new window / iframe has opened', data),
@@ -121,199 +113,70 @@ export default {
               console.log('New payment method page was opened', data),
             navigate: data => console.log('Path navigation triggered', data),
           });
-          api.set({
-            config: {
-              amount: 10,
-            },
-          });
           api.css(`
-              #app-container {
-                border-radius: 0!important;
-              }
-              #cashier * {
-                font-family: 'Montserrat', sans-serif!important;
-                color: #ffffff;
-                font-size: 12px;
-              }
-              #cashier .dropdown-container {
-                border: none!important;
-                padding: 0px;
-              }
-              #cashier .dropdown-toggler {
-                background: #1B2138;
-                padding: 16px;
-                border: none;
-                border-radius: 0;
-              }
-              #cashier .tabs {
-                background: #0E152F;
-                margin-bottom: 4px;
-                height: 55px;
-                margin-top: 0px !important;
-              }
-              #cashier .tabs .tab {
-                font-size: 14px !important;
-                margin-right: 15px !important;
-                text-transform: capitalize;
-              }
-              #cashier .tabs .tab:after {
-                display: none;
-              }
-              #cashier .payment-method {
-                margin-top: 0!important;
-              }
-              #cashier h3.tab {
-                color: #ffffff!important;
-              }
-              #cashier section.payment-method {
-                margin-bottom: 0;
-              }
-              #cashier section.payment-method > * + * {
-                margin-top: 4px;
-              }
-              #cashier .set-amount {
-                display: flex;
-                flex-direction: column;
-                margin: 0;
-                background: #0E152F!important;
-                border-radius: 0!important;
-                overflow: hidden;
-              }
-              #cashier .generic-inputs-container, #cashier .credit-card-inputs-wrapper form {
-                margin: 4px;
-              }
-              #cashier .predefinedvalues {
-                justify-content: space-between!important;
-                margin-bottom: 0!important;
-                margin-top: 0!important;
-                padding: 0px;
-              }
-              #cashier .predefinedvalue.active {
-                background: #1B2138;
-                color: #fff!important;
-                border: 2px solid #F3B233 !important;
-              }
-              #cashier .predefinedvalue {
-                border-radius: 0;
-                border: 2px solid #1B2138!important;
-                color: #ffffff!important;
-                background: #1B2138!important;
-                padding: 15px 10px!important;
-              }
-              #cashier .predefinedvalues-btn {
-                flex-grow: 0;
-                flex-shrink: 0;
-              }
-              #cashier .submit-button {
-                background: #EB1C2A;
-                text-transform: uppercase;
-                border-radius: 0!important;
-                font-size: 12px!important;
-                padding: 13px!important;
-                font-weight: 700!important;
-              }
-              #cashier .payment-method-details {
-                padding: 0!important;
-              }
-              #cashier .transaction-overview-row {
-                border-color: #1B2138!important;
-              }
-              #cashier .total-container span, #cashier .total-container .label {
-                color: #ffffff!important;
-                font-weight: 400!important;
-              }
-              #cashier .overview-submit-container {
-                padding: 0;
-                background: #1B2138;
-              }
-              #cashier .transaction-overview-row span, #cashier .dropdown-toggler {
-                font-size: 12px!important;
-              }
-              #cashier .transaction-overview-row {
-                border-bottom: 2px solid;
-                margin-bottom: 0;
-              }
-              #cashier .transaction-overview {
-                border: none!important;
-              }
-              #cashier .predefinedvalues + .seperator {
-                display: none!important;
-              }
-              #cashier .set-amount .input-container {
-                margin-top: 0!important;
-                order: 1;
-              }
-              #cashier .predefinedvalues {
-                order: 0;
-              }
-              #cashier .set-amount-label {
-                order: -1;
-                margin-top: 4px;
-                padding: 0 10px;
-              }
-              #cashier .set-amount .input-border input {
-                border: 0!important;
-                background: #0E152F;
-                border-bottom: none!important;
-              }
-              #cashier .input-container input {
-                border-radius: 0!important;
-                text-align: left!important;
-              }
-              #cashier .btn:disabled:after {
-                border-radius: 0;
-              }
-              #cashier .input.input-prefix-wrapper .input-container {
-                text-align: left;
-                display: flex!important;
-                flex-direction: row-reverse!important;
-                justify-content: flex-end!important;
-              }
-              #cashier .input.input-prefix-wrapper span {
-                text-align: right!important;
-                color: #ffffff!important;
-                width: auto;
-                padding: 0!important;
-                border-radius: 0!important;
-                font-weight: 400!important;
-                display: inline-block!important;
-              }
-              .submit-button-container {
-                padding: 0;
-              }
-              .delete-account-wrapper {
-                position: relative;
-                right: 4px;
-              }
-              .account-options-container {
-                display: none !important;
-              }
-              .transaction-overview-row {
-                padding: 17px 12px 17px 18px !important;
-              }
-              .set-amount .predefinedvalues {
-                grid-template-columns: 1fr 1fr 1fr !important;
-              }
-              .payment-method {
-                padding-bottom: 0 !important;
-                border-bottom: 2px solid #ccc !important;
-              }
-              .footer {
-                display: none !important;
-              }
-              .payment-method-label {
-                color: #fff !important;
-              }
-              .payment-method-header:hover {
-                opacity: .5 !important;
-                background: transparent !important;
-              }
-              #cashier .input-container input {
-                background: #1B2138 !important;
-              }
-              .input-wrapper {
-                margin-top: 3px !important;
-              }
+            #cashier {
+              --buttons-color: #EB1C2A;
+              --button-hover-color: #c40916;
+              --labels-color: #fff;
+              --margin-size: 4px;
+              --headings-color: #fff;
+              --error-color: #EB1C2A;
+              font-family: 'Montserrat', sans-serif;
+              font-size: 12px !important;
+              font-weight: bold !important;
+              color: #fff !important;
+              text-transform: uppercase !important;
+            }
+
+            #cashier .payment-method-header {
+              padding: 25px !important;
+            }
+
+            #cashier .predefinedvalues {
+              grid-gap: 4px;
+            }
+
+            #cashier .predefinedvalues button {
+              background: #1B2138;
+              text-transform: uppercase;
+              height: 55px !important;
+              padding: 0 !important;
+            }
+
+            #cashier .set-amount .predefinedvalues button {
+              border: none;
+            }
+
+            #cashier .predefinedvalue.active {
+              background: #1B2138;
+              padding: 13px !important;
+              border: 2px solid #F3B233 !important;
+            }
+
+            #cashier .input-label-float.active {
+              margin-top: 5px !important;
+            }
+
+            #cashier .input {
+              font-weight: bold !important;
+              text-transform: uppercase !important;
+            }
+
+            #cashier .submit-button {
+              text-transform: uppercase;
+            }
+
+            #cashier .single-iframe-input-container > div:first-child {
+              margin-bottom: 4px !important;
+            }
+
+            #cashier .receipt, #cashier .status {
+              padding-bottom: 35px;
+            }
+
+            #cashier .disable-app-overlay {
+              background: #060E2A
+            }
           `);
         },
       );
@@ -332,5 +195,9 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+.Close {
+  display: none;
 }
 </style>
