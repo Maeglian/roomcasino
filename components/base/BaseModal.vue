@@ -1,11 +1,11 @@
 <template>
-  <modal v-bind="$attrs" name="baseModal" adaptive @before-close="$emit('close')">
+  <modal v-bind="$attrs" :name="name" adaptive @before-close="$emit('close')">
     <div class="Modal">
-      <div class="Close Modal-Close" @click="$modal.hide('baseModal')" />
+      <div class="Close Modal-Close" @click="$modal.hide(name)" />
       <div class="Modal-Content">
         <slot />
       </div>
-      <button class="Btn Btn--common Btn--full" @click="$modal.hide('baseModal')">
+      <button v-if="okBtn" class="Btn Btn--common Btn--full" @click="$modal.hide(name)">
         OK
       </button>
     </div>
@@ -15,8 +15,24 @@
 <script>
 export default {
   name: 'BaseModal',
+  props: {
+    okBtn: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    showOnMount: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+  },
   mounted() {
-    this.$modal.show('baseModal');
+    if (this.showOnMount) this.$modal.show(this.name);
   },
 };
 </script>
