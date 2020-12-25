@@ -79,6 +79,7 @@ export default {
   background: var(--color-bg);
 
   &-Icon {
+    flex-shrink: 0;
     width: 16px;
     height: 16px;
     margin-right: 12px;
@@ -114,6 +115,7 @@ export default {
   }
 
   &-Close {
+    flex-shrink: 0;
     margin-left: auto;
   }
 }
