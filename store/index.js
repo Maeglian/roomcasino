@@ -46,6 +46,7 @@ export const state = () => ({
   deleteBonusError: '',
   bonusList: [],
   bonusListIsLoading: false,
+  gameError: '',
   notificationAlerts: [],
   pageRowsCount: 0,
   pageDataIsLoading: false,
@@ -692,8 +693,6 @@ export const getters = {
       }
       return namedLimits;
     }, []);
-
-    console.log(ll);
     return ll;
   },
   providersList: state => startIndex =>
@@ -764,6 +763,12 @@ export const mutations = {
   },
   setGameUrl: (state, gameUrl) => {
     state.gameUrlForIframe = gameUrl;
+  },
+  setGameError: (state, message) => {
+    state.gameError = message;
+  },
+  clearGameError: state => {
+    state.gameError = '';
   },
   setPageDataIsLoading: state => {
     state.pageDataIsLoading = true;
@@ -1081,17 +1086,23 @@ export const actions = {
     }
   },
 
-  async startGame({ commit }, { demo, gameId, platform, returnUrl }) {
+  async startGame({ state, commit }, { demo, gameId, platform, returnUrl }) {
+    if (state.gameError) commit('clearGameError');
     try {
-      const res = await axios.post(`${API_HOST}/startGame`, {
-        demo,
-        gameId,
-        platform,
-        returnUrl,
-      });
-      const { url } = res.data.data;
-
-      commit('setGameUrl', url);
+      const res = await axios.post(
+        `${API_HOST}/startGame`,
+        {
+          demo,
+          gameId,
+          platform,
+          returnUrl,
+        },
+        reqConfig(commit, 'setGameError'),
+      );
+      if (!state.gameError) {
+        const { url } = res.data;
+        commit('setGameUrl', url);
+      }
     } catch (e) {
       commit('pushErrors', e);
     }
