@@ -28,6 +28,7 @@ module.exports = {
     'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
     'guard-for-in': 'off',
     'no-param-reassign': 'off',
+    'global-require': 'off',
     'import/prefer-default-export': 'off',
     'consistent-return': 'off',
     'prefer-destructuring': [

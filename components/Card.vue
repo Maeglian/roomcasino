@@ -1,10 +1,10 @@
 <template>
   <div class="Card">
     <div v-if="overlay" class="Card-Overlay">
-      <button class="Card-Link" @click="$emit('play-demo')">
+      <button v-if="showDemo" class="Card-Link" @click="$emit('open-gamepage', { id, demo: true })">
         Play for fun
       </button>
-      <button class="Card-Footer" @click="$emit('play')">
+      <button class="Card-Footer" @click="$emit('open-gamepage', { id, demo: false })">
         Play Now
       </button>
     </div>
@@ -68,6 +68,16 @@ export default {
     },
     overlay: {
       type: Boolean,
+      required: false,
+      default: false,
+    },
+    showDemo: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    id: {
+      type: [String, Boolean],
       required: false,
       default: false,
     },
@@ -163,6 +173,7 @@ export default {
     flex-direction: column;
     width: 100%;
     height: 0;
+    overflow: hidden;
     background-color: var(--color-overlay);
     transition: all 0.2s ease;
   }

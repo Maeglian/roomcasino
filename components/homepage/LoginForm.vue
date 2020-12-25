@@ -81,6 +81,7 @@ export default {
         if (this.fields[key].value) payload[key] = this.fields[key].value;
       }
       this.authorize(payload).then(() => {
+        this.$router.push('/');
         if (!this.authError) this.$emit('close');
       });
     },

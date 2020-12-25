@@ -79,7 +79,7 @@ export default {
   justify-content: space-between;
   width: 100%;
   padding: 18px 24px 14px;
-  background: linear-gradient(176.16deg, rgba(6, 14, 42, 0) 4.02%, #060e2a 97.74%);
+  background: var(--color-body);
 
   @media (min-width: $screen-xs) {
     display: none;

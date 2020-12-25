@@ -47,7 +47,11 @@
       </div>
       <div class="CabinetTable-Footer">
         <template v-if="rows.length">
-          <button v-if="showMoreBtn" class="CabinetTable-ShowMore" @click="$emit('show-more')">
+          <button
+            v-if="showMoreBtn && !loading"
+            class="CabinetTable-ShowMore"
+            @click="$emit('show-more')"
+          >
             Show more
           </button>
           <BasePagination
@@ -168,6 +172,7 @@ export default {
       padding: 15px;
       font-size: 12px;
       vertical-align: middle;
+      word-wrap: break-word;
     }
 
     &:nth-child(even) {

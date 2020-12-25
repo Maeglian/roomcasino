@@ -200,9 +200,6 @@ export default {
       return params;
     },
   },
-  created() {
-    this.getGames();
-  },
   methods: {
     ...mapActions(['getGames']),
     onChooseTab(i) {
