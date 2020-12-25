@@ -5,6 +5,7 @@
     :min-height="700"
     width="400px"
     adaptive
+    scrollable
     @opened="initializeCashier()"
     @closed="onCloseCashierForm()"
   >
