@@ -42,7 +42,7 @@
               left
             </Counter>
           </div>
-          <button class="Btn Btn--dark Bonus-Btn" @click="onDeleteBonus">Cancel</button>
+          <button class="Btn Btn--dark Bonus-Btn" @click="onDeleteBonus(bonus.id)">Cancel</button>
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from 'vuex';
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import Counter from '@/components/Counter';
 import BonusDetails from '@/components/cabinet/BonusDetails';
 
@@ -114,16 +114,22 @@ export default {
     Counter,
   },
   computed: {
-    ...mapState(['bonusListIsLoading', 'bonusList']),
+    ...mapState(['bonusListIsLoading', 'bonusList', 'deleteBonusError']),
     ...mapGetters(['activeCurrency', 'availableDepositBonuses']),
   },
   created() {
     this.getBonusList();
   },
   methods: {
+    ...mapMutations(['clearDeleteBonusError', 'pushNotificationAlert']),
     ...mapActions(['getBonusList', 'deleteBonus']),
-    onDeleteBonus() {
-      this.deleteBonus();
+    onDeleteBonus(id) {
+      this.deleteBonus(id).then(() => {
+        if (this.deleteBonusError)
+          this.pushNotificationAlert({ type: 'error', text: 'Error on cancelling bonus' });
+        else this.pushNotificationAlert({ type: 'success', text: 'Your bonus was cancelled' });
+        this.getBonusList();
+      });
     },
     showBonusDetails(bonus) {
       this.$modal.show(BonusDetails, { bonus }, { width: 400, height: 'auto', adaptive: true });

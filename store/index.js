@@ -1287,9 +1287,10 @@ export const actions = {
     }
   },
 
-  async deleteBonus({ commit }, id) {
+  async deleteBonus({ commit, state }, id) {
+    if (state.deleteBonusError) commit('clearDeleteBonusError');
     try {
-      await axios.delete(`${API_HOST}/bonus/${id}`);
+      await axios.delete(`${API_HOST}/bonus/${id}`, reqConfig(commit, 'setDeleteBonusError'));
     } catch (e) {
       commit('pushErrors', e);
     }
