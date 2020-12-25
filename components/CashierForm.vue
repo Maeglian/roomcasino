@@ -1,25 +1,43 @@
 <template>
-  <modal
-    name="cashier"
-    :height="'auto'"
-    :min-height="700"
-    width="400px"
-    adaptive
-    scrollable
-    @opened="initializeCashier()"
-    @closed="onCloseCashierForm()"
-  >
-    <div class="Modal">
-      <div class="Close Modal-Close" @click="$modal.hide('cashier')" />
-      <Loader v-if="billingSessionIsLoading || cashierIsLoading" class="CashierForm-Loader" />
-      <div id="cashier" class="CashierForm"></div>
-    </div>
-  </modal>
+  <div class="CashierForm">
+    <modal
+      name="cashier"
+      :height="'auto'"
+      :min-height="700"
+      width="400px"
+      adaptive
+      scrollable
+      @opened="initializeCashier()"
+      @closed="onCloseCashierForm()"
+    >
+      <div class="Modal">
+        <div class="Close Modal-Close" @click="$modal.hide('cashier')" />
+        <Loader v-if="billingSessionIsLoading || cashierIsLoading" class="CashierForm-Loader" />
+        <div id="cashier" class="CashierForm-Content"></div>
+      </div>
+    </modal>
+    <BaseModal name="goPlay" class="CashierForm-GoPlay" :ok-btn="false" :width="300">
+      <div class="Modal-Title">
+        Congratulations!
+      </div>
+      <div class="Modal-Text">
+        Now you can play the game.
+      </div>
+      <NuxtLink
+        class="Btn Btn--common CashierForm-Btn"
+        :to="{ path: '/', hash: '#games' }"
+        @click.native="$modal.hide('goPlay')"
+      >
+        Go play!
+      </NuxtLink>
+    </BaseModal>
+  </div>
 </template>
 
 <script>
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import Loader from '@/components/Loader';
+import BaseModal from '@/components/base/BaseModal';
 
 const billingSession =
   process.env.NUXT_ENV_MODE === 'sandbox' ? 'fakeBillingSession' : 'billingSession';
@@ -28,10 +46,12 @@ export default {
   name: 'CashierForm',
   component: {
     Loader,
+    BaseModal,
   },
   data() {
     return {
       cashierIsLoading: false,
+      depositIsDone: false,
     };
   },
   computed: {
@@ -119,6 +139,7 @@ export default {
             success: data => {
               console.log('Transaction was completed successfully', data);
               this.getProfile();
+              this.depositIsDone = true;
               if (this.availableDepositBonuses.length) this.getBonusList();
             },
             failure: data => console.log('Transaction failed', data),
@@ -207,6 +228,10 @@ export default {
       );
     },
     onCloseCashierForm() {
+      if (this.depositIsDone) {
+        this.$modal.show('goPlay');
+        this.depositIsDone = false;
+      }
       if (this.shouldCashout) this.setCashoutFalse();
     },
   },
@@ -215,13 +240,23 @@ export default {
 
 <style lang="scss">
 .CashierForm {
-  min-height: 705px;
+  &-Content {
+    min-height: 705px;
+  }
 
   &-Loader {
     position: absolute;
     top: 70px;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  &-GoPlay {
+    text-align: center;
+  }
+
+  &-Btn {
+    margin-top: 20px;
   }
 }
 </style>

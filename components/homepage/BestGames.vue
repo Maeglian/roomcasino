@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="BestGames">
+    <section id="games" class="BestGames">
       <div v-if="width > 767" class="BestGames-Tabs">
         <button
           v-for="(tab, i) in tabs"
