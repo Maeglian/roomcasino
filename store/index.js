@@ -44,6 +44,8 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  billingSessionIsLoading: false,
+  getBillingSessionError: '',
   createLimitError: '',
   deleteLimitError: '',
   deleteBonusError: '',
@@ -751,6 +753,18 @@ export const getters = {
 };
 
 export const mutations = {
+  setBillingSessionIsLoading: state => {
+    state.billingSessionIsLoading = true;
+  },
+  setBillingSessionIsLoaded: state => {
+    state.billingSessionIsLoading = false;
+  },
+  setGetBillingSessionError: (state, message) => {
+    state.billingSessionIsLoading = message;
+  },
+  clearGetBillingSessionError: state => {
+    state.billingSessionIsLoading = '';
+  },
   setCreateError: (state, message) => {
     state.deleteLimitError = message;
   },
@@ -1093,16 +1107,24 @@ export const actions = {
       commit('pushErrors', e);
     }
   },
-  async getBillingSession({ commit }) {
+  async getBillingSession({ state, commit }) {
+    if (state.getBillingSessionError) commit('clearGetBillingSessionError');
+    commit('setBillingSessionIsLoading');
     try {
       // eslint-disable-next-line no-underscore-dangle
-      const res = await axios.post(`${API_HOST}/billingSession`, {
-        bpId: BILLING_PROVIDER_ID,
-      });
-      commit('setBillingSession', res.data.data);
+      const res = await axios.post(
+        `${API_HOST}/billingSession`,
+        {
+          bpId: BILLING_PROVIDER_ID,
+        },
+        reqConfig(commit, 'setGetBillingSessionError'),
+      );
+      commit('setBillingSession', res.data);
     } catch (e) {
       commit('pushErrors', e);
       throw e;
+    } finally {
+      commit('setBillingSessionIsLoaded');
     }
   },
 
