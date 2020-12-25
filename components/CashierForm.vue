@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setCashoutFalse']),
-    ...mapActions(['getBillingSession', 'getProfile']),
+    ...mapActions(['getBillingSession', 'getBonusList', 'getProfile']),
     async initializeCashier() {
       try {
         await this.getBillingSession();
