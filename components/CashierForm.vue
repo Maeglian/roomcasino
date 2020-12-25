@@ -2,8 +2,8 @@
   <modal
     name="cashier"
     :height="'auto'"
+    :min-height="700"
     width="400px"
-    draggable
     adaptive
     @opened="initializeCashier()"
     @closed="onCloseCashierForm()"
@@ -108,16 +108,9 @@ export default {
           },
         },
         api => {
-          const closeIcon = document.querySelector('.Modal-Close');
-
           api.on({
             cashierInitLoad: () => {
               console.log('Cashier init load');
-              setTimeout(() => {
-                console.log('Giraffe!');
-              }, 100000);
-              console.log(document.querySelector('.loading'));
-              console.log(document.querySelector('.overlay-loader-container'));
             },
             update: data => {
               console.log('The passed in data was set', data);
@@ -132,7 +125,6 @@ export default {
             doneLoading: data => {
               console.log('Data has been successfully downloaded', data);
               this.cashierIsLoading = false;
-              closeIcon.style.display = 'block';
             },
             newProviderWindow: data => console.log('A new window / iframe has opened', data),
             paymentMethodSelect: data => console.log('Payment method was selected', data),
@@ -222,11 +214,7 @@ export default {
 
 <style lang="scss">
 .CashierForm {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  min-height: 705px;
 
   &-Loader {
     position: absolute;
@@ -234,9 +222,5 @@ export default {
     left: 50%;
     transform: translateX(-50%);
   }
-}
-
-.Close {
-  display: none;
 }
 </style>
