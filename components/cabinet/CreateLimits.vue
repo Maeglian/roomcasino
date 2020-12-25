@@ -115,7 +115,7 @@ import BaseInput from '@/components/base/BaseInput';
 import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
 import { LIMIT_PERIODS, LIMIT_TYPES, LIMIT_DETAILS, LIMIT_COOL_PERIODS } from '@/config';
 import { findValInArr } from '@/utils/helpers';
-import { mapActions, mapGetters } from 'vuex';
+import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
 import moment from 'moment';
 import { checkIfNullOrPositiveNumbers, checkIfPositiveNumbers } from '@/utils/formCheckers';
 
@@ -174,6 +174,7 @@ export default {
     value: { checkIfPositiveNumbers },
   },
   computed: {
+    ...mapState(['createLimitError']),
     ...mapGetters(['activeAccount', 'accountList']),
     // limitTypes() {
     //   return Object.entries(this.limits).map(entry => {
@@ -221,6 +222,7 @@ export default {
   //   },
   // },
   methods: {
+    ...mapMutations(['pushNotificationAlert']),
     ...mapActions(['addLimit', 'getLimits']),
     onClickLimitBtn() {
       this.$v.$touch();
@@ -240,9 +242,24 @@ export default {
       if (this.type.value === 'sessionLimit') payload.period = 'noLimit';
 
       this.addLimit(payload).then(() => {
-        this.getLimits();
-        this.isConfirm = false;
-        this.$emit('close');
+        if (this.createLimitError) {
+          this.pushNotificationAlert({
+            type: 'error',
+            text: this.createLimitError,
+          });
+        } else {
+          if (this.isEdit) {
+            this.pushNotificationAlert({
+              type: 'success',
+              text: `You successfully edited your limit. ${
+                LIMIT_DETAILS[this.item.type].editRules
+              }`,
+            });
+          }
+          this.getLimits();
+          this.isConfirm = false;
+          this.$emit('close');
+        }
       });
 
       // if (this.isEdit) {

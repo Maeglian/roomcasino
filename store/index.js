@@ -44,6 +44,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  createLimitError: '',
   deleteLimitError: '',
   deleteBonusError: '',
   bonusList: [],
@@ -750,6 +751,12 @@ export const getters = {
 };
 
 export const mutations = {
+  setCreateError: (state, message) => {
+    state.deleteLimitError = message;
+  },
+  clearCreateLimitError: state => {
+    state.deleteLimitError = '';
+  },
   setDeleteLimitError: (state, message) => {
     state.deleteLimitError = message;
   },
@@ -1193,9 +1200,10 @@ export const actions = {
     }
   },
 
-  async addLimit({ commit }, payload) {
+  async addLimit({ state, commit }, payload) {
+    if (state.createLimitError) commit('clearCreateLimitError');
     try {
-      await axios.put(`${API_HOST}/limit`, payload);
+      await axios.put(`${API_HOST}/limit`, payload, reqConfig(commit, 'setCreateLimitError'));
     } catch (e) {
       commit('pushErrors', e);
     }
