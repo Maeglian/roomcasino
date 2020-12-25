@@ -10,6 +10,7 @@
   >
     <div class="Modal">
       <div class="Close Modal-Close" @click="$modal.hide('cashier')" />
+      <Loader v-if="billingSessionIsLoading || cashierIsLoading" class="CashierForm-Loader" />
       <div id="cashier" class="CashierForm"></div>
     </div>
   </modal>
@@ -17,25 +18,44 @@
 
 <script>
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
+import Loader from '@/components/Loader';
 
 const billingSession =
   process.env.NUXT_ENV_MODE === 'sandbox' ? 'fakeBillingSession' : 'billingSession';
 
 export default {
   name: 'CashierForm',
+  component: {
+    Loader,
+  },
+  data() {
+    return {
+      cashierIsLoading: false,
+    };
+  },
   computed: {
-    ...mapState(['billingSession', 'fakeBillingSession', 'shouldCashout']),
+    ...mapState([
+      'billingSession',
+      'billingSessionIsLoading',
+      'getBillingSessionError',
+      'fakeBillingSession',
+      'shouldCashout',
+    ]),
     ...mapGetters(['availableDepositBonuses']),
   },
   methods: {
-    ...mapMutations(['setCashoutFalse']),
+    ...mapMutations(['setCashoutFalse', 'pushNotificationAlert']),
     ...mapActions(['getBillingSession', 'getBonusList', 'getProfile']),
     async initializeCashier() {
       try {
         await this.getBillingSession();
+        if (this.getBillingSessionError)
+          this.pushNotificationAlert({ type: 'error', text: this.getBillingSessionError });
       } catch {
         this.$modal.hide('cashier');
       }
+
+      this.cashierIsLoading = true;
 
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
       // eslint-disable-next-line no-unused-vars,no-undef
@@ -52,7 +72,6 @@ export default {
           accountDelete: false,
           showFooter: false,
           amount: '20',
-          font: 'Montserrat',
           predefinedAmounts: [100, 200, 300, 500, 1000],
           containerWidth: '100%',
           theme: {
@@ -92,7 +111,14 @@ export default {
           const closeIcon = document.querySelector('.Modal-Close');
 
           api.on({
-            cashierInitLoad: () => console.log('Cashier init load'),
+            cashierInitLoad: () => {
+              console.log('Cashier init load');
+              setTimeout(() => {
+                console.log('Giraffe!');
+              }, 100000);
+              console.log(document.querySelector('.loading'));
+              console.log(document.querySelector('.overlay-loader-container'));
+            },
             update: data => {
               console.log('The passed in data was set', data);
             },
@@ -105,6 +131,7 @@ export default {
             isLoading: data => console.log('Data is loading', data),
             doneLoading: data => {
               console.log('Data has been successfully downloaded', data);
+              this.cashierIsLoading = false;
               closeIcon.style.display = 'block';
             },
             newProviderWindow: data => console.log('A new window / iframe has opened', data),
@@ -177,6 +204,10 @@ export default {
             #cashier .disable-app-overlay {
               background: #060E2A
             }
+
+            .spinner, .spinner-label, .zebraff-walker, .loading-circle {
+              display: none !important;
+            }
           `);
         },
       );
@@ -190,11 +221,18 @@ export default {
 
 <style lang="scss">
 .CashierForm {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+
+  &-Loader {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .Close {
