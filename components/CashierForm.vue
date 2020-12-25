@@ -148,6 +148,7 @@ export default {
               --margin-size: 4px;
               --headings-color: #fff;
               --error-color: #EB1C2A;
+              --input-fontSize: 12px;
               font-family: 'Montserrat', sans-serif;
               font-size: 12px !important;
               font-weight: bold !important;
