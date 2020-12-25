@@ -25,6 +25,10 @@ import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   mixins: [showAuthDialog],
+  beforeRouteLeave(to, from, next) {
+    if (this.isLoggedIn) this.getProfile();
+    next();
+  },
   data: () => ({
     clockIcon: require('@/assets/img/clock.svg'),
     isFullScreen: false,
@@ -51,7 +55,7 @@ export default {
     this.storageGameUrl = localStorage.getItem('gameUrlForIframe');
   },
   methods: {
-    ...mapActions(['startGame']),
+    ...mapActions(['startGame', 'getProfile']),
     toggleFullScreenMode() {
       this.isFullScreen = !this.isFullScreen;
     },
