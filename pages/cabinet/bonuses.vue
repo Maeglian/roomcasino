@@ -27,7 +27,7 @@
               >&nbsp;{{ bonus.wagerAmount }} {{ activeCurrency }}</span
             >
             &nbsp;wagered
-            <svg class="Bonus-Icon" width="14" height="14 ">
+            <svg class="Bonus-Icon" width="14" height="14" @click="showBonusDetails(bonus)">
               <use xlink:href="@/assets/img/icons.svg#info"></use>
             </svg>
           </div>
@@ -107,6 +107,7 @@
 import { BONUSES } from '@/config';
 import { mapActions, mapGetters, mapState } from 'vuex';
 import Counter from '@/components/Counter';
+import BonusDetails from '@/components/cabinet/BonusDetails';
 
 export default {
   name: 'BonusesPage',
@@ -120,14 +121,17 @@ export default {
       return BONUSES.filter(bonus => !this.bonusList.some(b => b.name === bonus.name));
     },
   },
+  created() {
+    this.getBonusList();
+  },
   methods: {
     ...mapActions(['getBonusList', 'deleteBonus']),
     onDeleteBonus() {
       this.deleteBonus();
     },
-  },
-  created() {
-    this.getBonusList();
+    showBonusDetails(bonus) {
+      this.$modal.show(BonusDetails, { bonus }, { width: 400, height: 'auto', adaptive: true });
+    },
   },
 };
 </script>
@@ -410,6 +414,7 @@ export default {
     top: 16px;
     right: 16px;
     fill: var(--color-text-ghost);
+    cursor: pointer;
 
     @media (min-width: $screen-m) {
       position: relative;
