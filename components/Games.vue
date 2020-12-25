@@ -1,6 +1,13 @@
 <template>
   <div class="Games">
-    <BaseModal v-if="gameError" :width="300" :height="'auto'" @close="clearGameError">
+    <BaseModal
+      v-if="gameError"
+      name="gameError"
+      :width="300"
+      :height="'auto'"
+      show-on-mount
+      @close="clearGameError"
+    >
       <div class="Modal-Title">
         Can't start the game
       </div>
@@ -8,7 +15,7 @@
         {{ gameError }}
       </div>
     </BaseModal>
-    <BaseModal v-if="depositModal" :width="300" :height="'auto'" @close="onCloseDepositModal">
+    <BaseModal name="pleaseDeposit" :width="300" :height="'auto'" @close="onCloseDepositModal">
       <div class="Modal-Title">
         Please deposit first
       </div>
@@ -62,7 +69,6 @@ export default {
   data() {
     return {
       gamesShowed: 0,
-      depositModal: false,
     };
   },
   computed: {
@@ -109,7 +115,7 @@ export default {
       }
 
       if (!demo && !this.activeAccount.balance) {
-        this.depositModal = true;
+        this.$modal.show('pleaseDeposit');
         return;
       }
 
