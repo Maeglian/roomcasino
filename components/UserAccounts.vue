@@ -70,6 +70,7 @@ export default {
 .UserAccounts {
   &-UserFullname {
     font-size: 10px;
+    text-align: right;
     color: var(--color-text-main);
   }
 
