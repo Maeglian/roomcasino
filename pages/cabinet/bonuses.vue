@@ -47,7 +47,7 @@
       </div>
     </div>
     <div
-      v-if="availableDepositBonuses.length && !bonusListIsLoading"
+      v-if="availableDepositBonuses.length && !bonusListIsLoading && !historyListIsLoading"
       class="Table CabinetPage-Table BonusesPage-Table"
     >
       <div class="Table-Row CabinetPage-Row">
@@ -114,21 +114,23 @@ export default {
     Counter,
   },
   computed: {
-    ...mapState(['bonusListIsLoading', 'bonusList', 'deleteBonusError']),
+    ...mapState(['bonusListIsLoading', 'historyListIsLoading', 'bonusList', 'deleteBonusError']),
     ...mapGetters(['activeCurrency', 'availableDepositBonuses']),
   },
   created() {
     this.getBonusList();
+    this.getBonusHistoryList();
   },
   methods: {
     ...mapMutations(['clearDeleteBonusError', 'pushNotificationAlert']),
-    ...mapActions(['getBonusList', 'deleteBonus', 'getProfile']),
+    ...mapActions(['getBonusList', 'deleteBonus', 'getProfile', 'getBonusHistoryList']),
     onDeleteBonus(id) {
       this.deleteBonus(id).then(() => {
         if (this.deleteBonusError)
           this.pushNotificationAlert({ type: 'error', text: 'Error on cancelling bonus' });
         else this.pushNotificationAlert({ type: 'success', text: 'Your bonus was cancelled' });
         this.getBonusList();
+        this.getBonusHistoryList();
         this.getProfile();
       });
     },

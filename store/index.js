@@ -665,11 +665,12 @@ export const state = () => ({
 });
 
 export const getters = {
-  // eslint-disable-next-line no-shadow
   availableDepositBonuses: state => {
-    if (state.bonusList.length)
-      return BONUSES.filter(bonus => !state.bonusList.some(b => b.name === bonus.name));
-    return BONUSES;
+    return BONUSES.filter(
+      bonus =>
+        !state.bonusList.some(b => b.name === bonus.name) &&
+        !state.bonusHistoryList.some(b => b.title === bonus.name),
+    );
   },
   activeCurrency: state => {
     if (state.user.accountList) return getters.activeAccount.currency;
