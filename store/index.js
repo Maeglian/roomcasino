@@ -683,6 +683,9 @@ export const getters = {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};
   },
+  defaultCountryName: state => {
+    return state.countriesList[state.defaultCountry];
+  },
   activeAccount: state => {
     if (state.user.accountList) return state.user.accountList.find(acc => acc.active === true);
     return '';

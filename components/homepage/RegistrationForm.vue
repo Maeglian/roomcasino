@@ -292,8 +292,15 @@ export default {
     };
   },
   computed: {
-    ...mapState(['width', 'currencyList', 'countriesList', 'authStatus', 'authError']),
-    ...mapGetters(['countriesNames']),
+    ...mapState([
+      'width',
+      'currencyList',
+      'countriesList',
+      'authStatus',
+      'authError',
+      'defaultCurrency',
+    ]),
+    ...mapGetters(['countriesNames', 'defaultCountryName']),
     birthDate() {
       const {
         birthDate: {
@@ -397,7 +404,9 @@ export default {
     getObjValuesFromLocalStorage(this.fieldsStep1);
     getObjValuesFromLocalStorage(this.fieldsStep2);
     this.fieldsStep1.currency.items = this.currencyList;
+    this.fieldsStep1.currency.value = this.defaultCurrency;
     this.fieldsStep1.country.items = this.countriesNames;
+    this.fieldsStep1.country.value = this.defaultCountryName;
   },
   beforeDestroy() {
     writeObjValuesToLocalStorage(this.fieldsStep1);
