@@ -76,7 +76,6 @@ export default {
     },
     onCloseGame() {
       this.setGameUrl('');
-      if (this.isLoggedIn) this.getProfile();
     },
   },
 };
