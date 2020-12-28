@@ -122,13 +122,14 @@ export default {
   },
   methods: {
     ...mapMutations(['clearDeleteBonusError', 'pushNotificationAlert']),
-    ...mapActions(['getBonusList', 'deleteBonus']),
+    ...mapActions(['getBonusList', 'deleteBonus', 'getProfile']),
     onDeleteBonus(id) {
       this.deleteBonus(id).then(() => {
         if (this.deleteBonusError)
           this.pushNotificationAlert({ type: 'error', text: 'Error on cancelling bonus' });
         else this.pushNotificationAlert({ type: 'success', text: 'Your bonus was cancelled' });
         this.getBonusList();
+        this.getProfile();
       });
     },
     showBonusDetails(bonus) {
