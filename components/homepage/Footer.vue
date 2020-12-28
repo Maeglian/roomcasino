@@ -55,6 +55,7 @@
         <a class="Footer-Contact" href="mailto:support@roomcasino.com">support@roomcasino.com</a>
       </div>
       <div class="Footer-Icons">
+        <img class="Icon Footer-Icon" src="@/assets/img/curacao.svg" height="25" />
         <svg class="Icon Footer-Icon" width="25" height="25">
           <use xlink:href="@/assets/img/icons.svg#18"></use>
         </svg>
