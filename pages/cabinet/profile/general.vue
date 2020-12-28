@@ -151,7 +151,7 @@ export default {
     // },
   },
   watch: {
-    user: {
+    userInfo: {
       immediate: true,
       handler() {
         this.fields = { ...this.userInfo };
