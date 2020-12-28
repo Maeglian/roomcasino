@@ -37,10 +37,26 @@
               class="CabinetForm-Row"
               :disabled="name === 'email'"
               input-type="text"
+              error-class="ProfileInfo-Error"
               :input-id="name | formatLabel"
               input-class="CabinetForm-Input"
               wrapper-class="CabinetForm-Wrapper"
+              :v="$v.fields[name] ? $v.fields[name] : false"
             >
+              <template v-if="name === 'birthDate'" #beforeInput-absolute>
+                <div
+                  v-if="!$v.fields.birthDate.dateCheck"
+                  class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
+                >
+                  Date is invalid
+                </div>
+                <div
+                  v-else-if="!$v.fields.birthDate.ageCheck"
+                  class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
+                >
+                  You are under age of 18
+                </div>
+              </template>
               <template #beforeInput-relative>
                 <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
                   {{ name }}
@@ -95,6 +111,8 @@ import BaseButton from '@/components/base/BaseButton.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import Loader from '@/components/Loader';
 import { PROFILE_LABELS } from '@/config';
+import { maxLength, minLength, numeric, required } from 'vuelidate/lib/validators';
+import { ageCheck, dateCheck } from '@/utils/formCheckers';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 
@@ -137,6 +155,40 @@ export default {
       },
     };
   },
+  validations: {
+    fields: {
+      firstName: {
+        required,
+        minLength: minLength(1),
+        maxLength: maxLength(100),
+      },
+      lastName: {
+        required,
+        minLength: minLength(1),
+        maxLength: maxLength(100),
+      },
+      birthDate: {
+        dateCheck,
+        ageCheck,
+      },
+      city: {
+        required,
+        minLength: minLength(1),
+        maxLength: maxLength(100),
+      },
+      address: {
+        required,
+        minLength: minLength(1),
+        maxLength: maxLength(500),
+      },
+      postalCode: {
+        required,
+        numeric,
+        minLength: minLength(1),
+        maxLength: maxLength(100),
+      },
+    },
+  },
   computed: {
     ...mapState([
       'user',
@@ -162,15 +214,19 @@ export default {
     ...mapMutations(['clearUpdateProfileError', 'pushNotificationAlert']),
     ...mapActions(['updateProfile']),
     onSubmit() {
-      if (
-        JSON.stringify(this.fields) === JSON.stringify(this.userInfo) &&
-        JSON.stringify(this.promosFields) === JSON.stringify(this.userPromosInfo)
-      )
+      if (this.$v.$invalid) {
+        this.$v.$touch();
         return;
+      }
+
+      if (JSON.stringify(this.fields) === JSON.stringify(this.userInfo)) return;
       const payload = {};
       for (const key in this.fields) {
         if (key === 'country') {
-          const entry = Object.entries(this.countriesList).find(i => i[1] === this.fields.country);
+          const entry = Object.entries(this.countriesList).find(
+            item => item[1] === this.fields.country,
+          );
+
           payload.country = entry[0];
         } else payload[key] = this.fields[key];
       }
@@ -196,6 +252,21 @@ export default {
   &-Subscriptions {
     margin-bottom: 18px;
   }
+
+  &-Error {
+    position: absolute;
+    top: 2px;
+    left: 115px;
+    z-index: 2;
+
+    @media (min-width: $screen-l) {
+      left: 231px;
+    }
+
+    &--noLabel {
+      left: 5px;
+    }
+  }
 }
 
 .CabinetForm {
@@ -216,7 +287,8 @@ export default {
   }
 
   &-Label {
-    width: 105px / 320px * 100%;
+    flex-shrink: 0;
+    width: 104px;
     margin-right: 4px;
     padding: 0 16px;
     font-size: 10px;
@@ -226,11 +298,16 @@ export default {
     text-transform: uppercase;
     white-space: nowrap;
     background-color: var(--color-bg);
+
+    @media (min-width: $screen-l) {
+      width: 220px;
+    }
   }
 
   &-CheckboxLabel {
     position: relative;
-    width: 100%;
+    flex-grow: 1;
+    margin-right: 0;
     margin-left: 59px;
     padding-left: 20px;
 
