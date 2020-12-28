@@ -44,10 +44,10 @@
           {{ acc.balance }} {{ acc.currency }}
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Locked">
-          0
+          {{ acc.lockedByBonus }}
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Cash">
-          0
+          {{ acc.withdrawable }}
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns">
           <button
