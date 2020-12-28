@@ -18,6 +18,7 @@ window.onNuxtReady(app => {
         throw err;
       }),
   );
+  app.$store.dispatch('getGeoInfo');
   if (app.$route.query.cxd) localStorage.setItem('cxd', app.$route.query.cxd);
   if (app.$store.getters.isLoggedIn) {
     app.$store.dispatch('getProfile');

@@ -44,6 +44,9 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  siteIsAllowedForUser: true,
+  defaultCountry: '',
+  defaultCurrency: '',
   billingSessionIsLoading: false,
   getBillingSessionError: '',
   createLimitError: '',
@@ -754,6 +757,15 @@ export const getters = {
 };
 
 export const mutations = {
+  setSiteIsAllowedForUser: (state, payload) => {
+    state.siteIsAllowedForUser = payload;
+  },
+  setDefaultCountry: (state, payload) => {
+    state.defaultCountry = payload;
+  },
+  setDefaultCurrency: (state, payload) => {
+    state.defaultCurrency = payload;
+  },
   setBillingSessionIsLoading: state => {
     state.billingSessionIsLoading = true;
   },
@@ -1391,6 +1403,17 @@ export const actions = {
   async deleteUserDocument({ commit }, id) {
     try {
       await axios.delete(`${API_HOST}/document/${id}`);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async getGeoInfo({ commit }) {
+    try {
+      const res = await axios.get(`${API_HOST}/geoInfo`);
+      commit('setSiteIsAllowedForUser', res.data.data.allowed);
+      commit('setDefaultCountry', res.data.data.country);
+      commit('setDefaultCurrency', res.data.data.currency);
     } catch (e) {
       commit('pushErrors', e);
     }
