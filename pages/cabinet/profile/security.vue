@@ -130,7 +130,6 @@ import CabinetTable from '@/components/cabinet/CabinetTable.vue';
 import { mapActions, mapMutations, mapState } from 'vuex';
 import { required, sameAs } from 'vuelidate/lib/validators';
 import { HISTORY_TABLES } from '@/config';
-import { passwordCheck } from '@/utils/formCheckers';
 import BaseInput from '@/components/base/BaseInput';
 import BaseButton from '@/components/base/BaseButton';
 
@@ -185,7 +184,6 @@ export default {
     newPassword: {
       value: {
         required,
-        passwordCheck,
       },
     },
     confirmPassword: {

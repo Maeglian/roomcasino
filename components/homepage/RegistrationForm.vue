@@ -159,7 +159,7 @@ import {
   writeObjValuesToLocalStorage,
   deleteObjValuesFromLocalStorage,
 } from '@/utils/helpers';
-import { passwordCheck, termsCheck, ageCheck, dateCheck } from '@/utils/formCheckers';
+import { termsCheck, ageCheck, dateCheck } from '@/utils/formCheckers';
 import RegistrationBonus from '@/components/homepage/RegistrationBonus';
 import BaseButton from '@/components/base/BaseButton';
 
@@ -327,7 +327,6 @@ export default {
         value: {
           required,
           maxLength: maxLength(32),
-          passwordCheck,
         },
       },
       currency: {
