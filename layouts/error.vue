@@ -60,7 +60,7 @@ export default {
 
     @media (min-width: $screen-s) {
       padding-top: 75px;
-      background-image: url(../assets/img/notfound-bg.png);
+      background-image: url(../assets/img/notfound_bg.png);
       background-repeat: no-repeat;
       background-position: center 23px;
       background-size: contain;
@@ -69,11 +69,9 @@ export default {
 
   &-Image {
     width: 210px;
-    margin-bottom: 24px;
 
     @media (min-width: $screen-s) {
       width: auto;
-      margin-bottom: 32px;
     }
   }
 
