@@ -15,6 +15,11 @@
 <script>
 export default {
   name: 'NotAllowed',
+  middleware({ store, redirect }) {
+    if (store.state.siteIsAllowedForUser) {
+      return redirect('/');
+    }
+  },
 };
 </script>
 
