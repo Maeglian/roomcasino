@@ -40,15 +40,19 @@
     </nav>
     <div class="Footer-Disclaimer">
       <div class="Footer-Text">
-        Copyright © 2020 www.roomcasino.com is owned and operated by _ a company registered and
-        established under the laws of _. _ is licensed and regulated by _ (license no. _). _‘s
-        registration number is _ and its registered address is _ It is the player’s sole
-        responsibility to inquire about the existing laws and regulations of the given jurisdiction
-        for online gambling.
+        Copyright © 2020 www.roomcasino.com is owned and operated by DUX GROUP N.V., a company
+        registered and established under the laws of Curacao. DUX GROUP N.V. is licensed and
+        regulated by Antillephone N.V. (license no. 8048/JAZ2020-075).
+        <br />
+        DUX GROUP N.V.’s registration number is 155114 and its registered address is Perseusweg 27
+        A, Curacao.
+        <br />
+        It is the player’s sole responsibility to inquire about the existing laws and regulations of
+        the given jurisdiction for online gambling.
         <br />
         <br />
         If you have any questions or suggestions about our site, please contact us
-        <a class="Footer-Contact" href="mailto:contact@roomcasino.com">contact@roomcasino.com</a>
+        <a class="Footer-Contact" href="mailto:support@roomcasino.com">support@roomcasino.com</a>
       </div>
       <div class="Footer-Icons">
         <svg class="Icon Footer-Icon" width="25" height="25">
