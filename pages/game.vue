@@ -3,6 +3,7 @@
     <div class="GamePage-Wrapper" :class="{ 'GamePage-Wrapper--Hide': isFullScreen }">
       <MainNav v-if="!isFullScreen" />
       <iframe
+        :key="activeAccount.balance"
         class="GamePage-Iframe"
         :src="getGameUrl"
         :width="getIframeWidth.width"
@@ -17,7 +18,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapState, mapGetters } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
@@ -33,6 +34,7 @@ export default {
   }),
   computed: {
     ...mapState(['gameUrlForIframe']),
+    ...mapGetters(['activeAccount']),
     getGameUrl() {
       return this.gameUrlForIframe || this.storageGameUrl;
     },
