@@ -12,9 +12,6 @@
         :is-full-screen="isFullScreen"
         @toggle-fullscreen-mode="toggleFullScreenMode"
       />
-      <client-only>
-        <CashierForm />
-      </client-only>
     </div>
   </div>
 </template>
