@@ -1,11 +1,6 @@
 <template>
   <div class="HistoryPage-Content">
-    <CabinetFilters
-      :key="$route.path"
-      :filters="filters"
-      @set-value="setValue"
-      @filter="onFilter"
-    />
+    <CabinetFilters :filters="filters" @set-value="setValue" @filter="onFilter" />
     <CabinetTable
       :cols="columns"
       thead
@@ -39,7 +34,6 @@ export default {
   layout: 'cabinet',
   data() {
     return {
-      activeFilters: [],
       maxRowsPerPage: 12,
       limit: 6,
       currentPage: 1,
@@ -88,9 +82,6 @@ export default {
     },
   },
   watch: {
-    $route() {
-      this.getData(this.filterPayload);
-    },
     currentPage() {
       this.getData(this.filterPayload);
     },
