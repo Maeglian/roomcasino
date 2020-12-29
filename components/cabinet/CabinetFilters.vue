@@ -29,11 +29,12 @@
           <template v-if="filter.type === 'date'">
             <Datepicker
               format="dd.MM.yyyy"
-              placeholder="dd.mm.yyyy"
+              placeholder="DD.MM.YYYY"
               class="Datepicker CabinetPage-Datepicker"
               calendar-class="Datepicker-Inner"
               input-class="Datepicker-Input"
               :clear-button="true"
+              :value="formatDateFromTimestamp(filter.value)"
               @selected="setValue({ name, type: filter.type, payload: $event })"
             />
           </template>
@@ -77,8 +78,9 @@ export default {
   methods: {
     setValue({ name, type, payload }) {
       const val = { name };
-      if (type === 'date') val.val = moment(payload).unix();
-      else val.val = payload;
+      if (type === 'date') {
+        payload ? (val.val = moment(payload).unix()) : (val.val = '');
+      } else val.val = payload;
       this.$emit('set-value', val);
     },
     openFiltersMenu() {
@@ -86,6 +88,10 @@ export default {
     },
     onClickOutside(e) {
       if (e.target.className !== 'CabinetFilters') this.filtersMenuIsOpen = false;
+    },
+    formatDateFromTimestamp(date) {
+      if (date) return moment.unix(date).format('YYYY-MM-DD');
+      return null;
     },
   },
 };
