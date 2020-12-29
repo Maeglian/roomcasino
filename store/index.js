@@ -1268,7 +1268,6 @@ export const actions = {
         ...reqConfig(commit),
       });
       if (!state.serverError) {
-        console.log(res.headers);
         commit('setPageRowsCount', res.headers['x-meta-count']);
         commit('setTransactionHistoryList', res.data);
       }
@@ -1325,7 +1324,10 @@ export const actions = {
         ...{ params: payload },
         ...reqConfig(commit),
       });
-      if (!state.serverError) commit('setSessionHistoryList', res.data);
+      if (!state.serverError) {
+        commit('setPageRowsCount', res.headers['x-meta-count']);
+        commit('setSessionHistoryList', res.data);
+      }
     } catch (e) {
       commit('pushErrors', e);
     } finally {
