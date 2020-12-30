@@ -4,8 +4,12 @@
       <div class="Hero-Item">
         <picture class="Hero-Image">
           <source
+            media="(max-width: 340px)"
+            :srcset="require('@/assets/img/hero-bg-joker_320.png')"
+          />
+          <source
             media="(max-width: 460px)"
-            :srcset="require('@/assets/img/hero-bg-joker_460.jpg')"
+            :srcset="require('@/assets/img/hero-bg-joker_460.png')"
           />
           <source
             media="(max-width: 768px)"
