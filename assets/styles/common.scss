@@ -22,6 +22,14 @@
   outline: 2px solid var(--color-main1);
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: all 9999s ease-in-out 0s;
+  transition-property: background-color, color;
+}
+
 //::-webkit-scrollbar {
 //  width: 4px;
 //  background-color: #828181;
