@@ -34,11 +34,6 @@ input:-internal-autofill-selected:active {
   transition-property: background-color, color;
 }
 
-input:-internal-autofill-selected {
-  background: transparent !important;
-  color: inherit !important;
-}
-
 //::-webkit-scrollbar {
 //  width: 4px;
 //  background-color: #828181;
