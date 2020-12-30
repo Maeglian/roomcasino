@@ -200,12 +200,12 @@ export default {
 
   &-AddProvider {
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 30px;
     font-size: 12px;
     font-weight: 700;
     line-height: 1.18;
+    text-align: left;
     color: var(--color-text-ghost);
     text-transform: uppercase;
     cursor: pointer;
