@@ -35,7 +35,6 @@ export default {
     link: [
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preload', as: 'image', href: '/hero-bg-joker_mobile.png' },
       {
         rel: 'preload',
         as: 'style',
