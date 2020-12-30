@@ -25,9 +25,18 @@
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
+input:-webkit-autofill:active,
+input:-internal-autofill-selected,
+input:-internal-autofill-selected:hover,
+input:-internal-autofill-selected:focus,
+input:-internal-autofill-selected:active {
   transition: all 9999s ease-in-out 0s;
   transition-property: background-color, color;
+}
+
+input:-internal-autofill-selected {
+  background: transparent !important;
+  color: inherit !important;
 }
 
 //::-webkit-scrollbar {
