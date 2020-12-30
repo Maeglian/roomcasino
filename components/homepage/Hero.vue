@@ -3,10 +3,7 @@
     <div class="Hero-Slider">
       <div class="Hero-Item">
         <picture class="Hero-Image">
-          <source
-            media="(max-width: 460px)"
-            :srcset="require('@/assets/img/hero-bg-joker_mobile.png')"
-          />
+          <source media="(max-width: 460px)" srcset="/hero-bg-joker_mobile.png" />
           <source
             media="(max-width: 768px)"
             :srcset="require('@/assets/img/hero-bg-joker_768.jpg')"
