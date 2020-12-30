@@ -80,7 +80,11 @@ export default {
 
 <style lang="scss">
 .Footer {
-  padding-bottom: 54px;
+  padding-bottom: 70px;
+
+  @media (min-width: $screen-xs) {
+    padding-bottom: 54px;
+  }
 
   &-Nav {
     display: flex;
