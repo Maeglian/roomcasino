@@ -9,12 +9,12 @@
           class="ProvidersMenu-ChosenProvider CategoriesFilter-ChosenProvider"
           @click="onOpen"
         >
-          <img
-            v-if="!providerActive.noIcon"
-            class="ProvidersMenu-ProviderIcon"
-            :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"
-            alt=""
-          />
+          <!--          <img-->
+          <!--            v-if="!providerActive.noIcon"-->
+          <!--            class="ProvidersMenu-ProviderIcon"-->
+          <!--            :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"-->
+          <!--            alt=""-->
+          <!--          />-->
           <span class="CategoriesFilter-Default">
             {{ providerActive.name }}
           </span>
@@ -28,12 +28,12 @@
       :class="{ 'BestGames-ChosenTab--opened': isOpen }"
       @click="onOpen"
     >
-      <img
-        v-if="!providerActive.noIcon"
-        class="ProvidersMenu-ProviderIcon"
-        :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"
-        alt=""
-      />
+      <!--      <img-->
+      <!--        v-if="!providerActive.noIcon"-->
+      <!--        class="ProvidersMenu-ProviderIcon"-->
+      <!--        :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"-->
+      <!--        alt=""-->
+      <!--      />-->
       <span class="ProvidersMenu-ActiveProvider">
         {{ providerActive.name }}
       </span>
@@ -49,12 +49,12 @@
         }"
         @click="onChooseProvider(gameProducerList[i])"
       >
-        <img
-          v-if="!gameProducerList[i].noIcon"
-          class="ProvidersMenu-ProviderIcon"
-          :src="require(`@/assets/img/${gameProducerList[i].name.toLowerCase()}.svg`)"
-          alt=""
-        />
+        <!--        <img-->
+        <!--          v-if="!gameProducerList[i].noIcon"-->
+        <!--          class="ProvidersMenu-ProviderIcon"-->
+        <!--          :src="require(`@/assets/img/${gameProducerList[i].name.toLowerCase()}.svg`)"-->
+        <!--          alt=""-->
+        <!--        />-->
         {{ gameProducerList[i].name }}
       </button>
       <button
@@ -79,12 +79,12 @@
           :class="{ 'ProvidersMenu-Provider--active': providerActive.name === item.name }"
           @click="onChooseProvider(item)"
         >
-          <img
-            v-if="!item.noIcon"
-            class="ProvidersMenu-ProviderIcon"
-            :src="require(`@/assets/img/${item.name.toLowerCase()}.svg`)"
-            alt=""
-          />
+          <!--          <img-->
+          <!--            v-if="!item.noIcon"-->
+          <!--            class="ProvidersMenu-ProviderIcon"-->
+          <!--            :src="require(`@/assets/img/${item.name.toLowerCase()}.svg`)"-->
+          <!--            alt=""-->
+          <!--          />-->
           {{ item.name }}
         </button>
       </div>
