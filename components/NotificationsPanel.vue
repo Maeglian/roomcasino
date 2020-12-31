@@ -154,8 +154,12 @@ export default {
   }
 
   &-Content {
-    height: 100%;
+    height: calc(100% - 97px);
     overflow: auto;
+
+    @media (min-width: $screen-l) {
+      height: calc(100% - 63px);
+    }
   }
 
   &-Empty {
