@@ -241,7 +241,7 @@ export default {
 
 <style lang="scss">
 .GamblingLimit {
-  padding: 16px;
+  padding: 16px 16px 30px;
   background: var(--color-bg);
 
   &-Header,
@@ -263,6 +263,7 @@ export default {
   }
 
   &-Edit {
+    padding-bottom: 10px;
     font-size: 25px;
     font-weight: 700;
     color: var(--color-text-ghost);
@@ -275,11 +276,11 @@ export default {
 
   &-EditMenu {
     position: absolute;
-    top: 0;
+    top: -20px;
     right: 0;
     z-index: 2;
     width: 182px;
-    padding: 25px 18px;
+    padding: 15px;
     background: var(--color-bg-lighter);
   }
 
