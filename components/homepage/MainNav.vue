@@ -71,11 +71,6 @@ export default {
           icon: 'lobby_nav.svg',
         },
         {
-          name: 'Categories',
-          url: '/category',
-          icon: 'categories_nav.svg',
-        },
-        {
           name: 'Promotions',
           url: '/promotions',
           icon: 'promotions_nav.svg',
