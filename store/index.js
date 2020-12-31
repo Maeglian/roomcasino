@@ -1037,7 +1037,7 @@ export const actions = {
         dispatch('getProfile');
       }
     } catch (e) {
-      commit('setAuthError', e);
+      commit('pushErrors', e);
       Cookie.remove('token');
     }
   },
