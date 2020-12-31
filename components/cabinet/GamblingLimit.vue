@@ -55,7 +55,7 @@
             <svg class="GamblingLimit-SessionIcon">
               <use xlink:href="@/assets/img/icons.svg#clock"></use>
             </svg>
-            {{ item.value || 0 }} min
+            {{ sessionTime }} min
           </div>
           <div>{{ item.targetValue }} min</div>
         </div>
@@ -142,6 +142,7 @@ export default {
   data() {
     return {
       editMenuIsOpen: false,
+      sessionTime: this.item.value,
     };
   },
   computed: {
@@ -184,9 +185,23 @@ export default {
       return this.item.limitAmount - this.item.limitState;
     },
   },
+  mounted() {
+    if (this.item.type === 'sessionLimit') this.startSessionTimer();
+  },
+  destroyed() {
+    if (this.item.type === 'sessionLimit') this.stopSessionTimer();
+  },
   methods: {
     ...mapMutations(['clearDeleteLimitError', 'pushNotificationAlert']),
     ...mapActions(['deleteLimit', 'getLimits']),
+    startSessionTimer() {
+      this.timer = setInterval(() => {
+        this.sessionTime += 1;
+      }, 60000);
+    },
+    stopSessionTimer() {
+      clearInterval(this.timer);
+    },
     onClickOutside(e) {
       if (e.target !== this.$refs.edit) this.editMenuIsOpen = false;
     },
