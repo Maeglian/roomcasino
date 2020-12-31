@@ -422,7 +422,8 @@ export default {
         this.step = 2;
       } else {
         this.$v.fieldsStep2.$touch();
-        if (this.$v.fieldsStep2.$error) return;
+        this.$v.birthDate.$touch();
+        if (this.$v.fieldsStep2.$error || this.$v.birthDate.$error) return;
         for (const key in this.fieldsStep1) {
           if (key === 'country') {
             const entry = Object.entries(this.countriesList).find(
