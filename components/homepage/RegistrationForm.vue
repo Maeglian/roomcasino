@@ -300,7 +300,7 @@ export default {
       'authError',
       'defaultCurrency',
     ]),
-    ...mapGetters(['countriesNames', 'defaultCountryName']),
+    ...mapGetters(['defaultCountry']),
     birthDate() {
       const {
         birthDate: {
@@ -404,8 +404,8 @@ export default {
     getObjValuesFromLocalStorage(this.fieldsStep2);
     this.fieldsStep1.currency.items = this.currencyList;
     if (!this.fieldsStep1.currency.value) this.fieldsStep1.currency.value = this.defaultCurrency;
-    this.fieldsStep1.country.items = this.countriesNames;
-    if (!this.fieldsStep1.country.value) this.fieldsStep1.country.value = this.defaultCountryName;
+    this.fieldsStep1.country.items = this.countriesList;
+    if (!this.fieldsStep1.country.value) this.fieldsStep1.country.value = this.defaultCountry;
   },
   beforeDestroy() {
     writeObjValuesToLocalStorage(this.fieldsStep1);
@@ -426,10 +426,7 @@ export default {
         if (this.$v.fieldsStep2.$error || this.$v.birthDate.$error) return;
         for (const key in this.fieldsStep1) {
           if (key === 'country') {
-            const entry = Object.entries(this.countriesList).find(
-              i => i[1] === this.fieldsStep1.country.value,
-            );
-            payload.country = entry[0];
+            payload.country = this.fieldsStep1.country.value.code;
           } else payload[key] = this.fieldsStep1[key].value;
         }
         for (const key in this.fieldsStep2) {

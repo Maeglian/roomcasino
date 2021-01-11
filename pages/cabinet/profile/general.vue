@@ -15,7 +15,7 @@
               <BaseDropdown
                 v-model="fields[name]"
                 class="CabinetForm-Row CabinetForm-Dropdown"
-                :items="countriesNames"
+                :items="countriesList"
                 @set-dropdown-value="fields[name] = $event"
               />
             </div>
@@ -197,7 +197,7 @@ export default {
       'updateProfileError',
       'countriesList',
     ]),
-    ...mapGetters(['userInfo', 'countriesNames']),
+    ...mapGetters(['userInfo']),
     // fields() {
     //   return info === 'real' ? this.userInfo : this.fakeFields;
     // },
@@ -223,11 +223,7 @@ export default {
       const payload = {};
       for (const key in this.fields) {
         if (key === 'country') {
-          const entry = Object.entries(this.countriesList).find(
-            item => item[1] === this.fields.country,
-          );
-
-          payload.country = entry[0];
+          payload.country = this.fields.country.code;
         } else payload[key] = this.fields[key];
       }
 

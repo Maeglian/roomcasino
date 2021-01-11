@@ -68,7 +68,7 @@ export const state = () => ({
   gameProducerList: [DEFAULT_PROVIDER],
   status: '',
   authStatus: '',
-  countriesList: {},
+  countriesList: [],
   currencyList: [],
   categories: [],
   shouldCashout: false,
@@ -683,8 +683,8 @@ export const getters = {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};
   },
-  defaultCountryName: state => {
-    return state.countriesList[state.defaultCountry];
+  defaultCountry: state => {
+    return state.countriesList.find(country => country.code === state.defaultCountry);
   },
   activeAccount: state => {
     if (state.user.accountList) return state.user.accountList.find(acc => acc.active === true);
@@ -724,12 +724,10 @@ export const getters = {
     });
   },
   limitedTournamentWinners: state => limit => state.currentTournamentWinners.slice(0, limit),
-  countriesNames: state => Object.values(state.countriesList),
   userInfo: state => {
     if (Object.keys(state.user).length) {
       const info = { ...state.user };
-      const countryName = state.countriesList[info.country];
-      info.country = countryName;
+      info.country = state.countriesList.find(country => country.code === info.country);
       delete info.accountList;
       delete info.requirePasswordChange;
       return info;
@@ -1100,7 +1098,7 @@ export const actions = {
     try {
       // eslint-disable-next-line no-underscore-dangle
       const res = await axios.get(`${API_HOST}/countryList`);
-      commit('setCountriesList', res.data.data.countryList);
+      commit('setCountriesList', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
     }
