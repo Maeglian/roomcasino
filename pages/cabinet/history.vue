@@ -14,7 +14,7 @@
         Bonus History
       </NuxtLink>
     </div>
-    <Nuxt />
+    <Nuxt :key="$route.path" />
   </div>
 </template>
 

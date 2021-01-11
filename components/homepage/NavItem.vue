@@ -67,6 +67,7 @@ export default {
   },
   methods: {
     onClickOutside(e) {
+      if (!(e.target instanceof Element)) return;
       if (!e.target.closest('.Nav-List') && !e.target.closest('.Nav-Arrow')) {
         this.listIsOpen = false;
       }

@@ -1,8 +1,5 @@
 <template>
-  <nav
-    class="MainNav"
-    :class="{ 'MainNav--bg': documentIsScrolled }"
-  >
+  <nav class="MainNav" :class="{ 'MainNav--bg': documentIsScrolled }">
     <div v-if="navIsOpen" class="MainNav-Overlay" @click="toggleNav()"></div>
     <div class="MainNav-TopBar">
       <div class="MainNav-Nav">
@@ -25,11 +22,8 @@
           />
         </ul>
       </nav>
-      <BalanceSection v-if="isGamePage" />
-      <AuthSection
-        v-else
-        class="MainNav-AuthSection"
-      />
+      <GamePanel v-if="isGamePage" />
+      <AuthSection v-else class="MainNav-AuthSection" />
     </div>
     <transition v-if="width < 960" name="slide-left">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
@@ -56,7 +50,7 @@
 <script>
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
-import BalanceSection from '@/components/homepage/BalanceSection.vue';
+import GamePanel from '@/components/homepage/GamePanel.vue';
 import { mapMutations, mapState } from 'vuex';
 
 export default {
@@ -64,7 +58,7 @@ export default {
   components: {
     NavItem,
     AuthSection,
-    BalanceSection,
+    GamePanel,
   },
   data() {
     return {
@@ -75,11 +69,6 @@ export default {
           name: 'Lobby',
           url: '/',
           icon: 'lobby_nav.svg',
-        },
-        {
-          name: 'Categories',
-          url: '/category',
-          icon: 'categories_nav.svg',
         },
         {
           name: 'Promotions',
@@ -261,14 +250,6 @@ export default {
       &:after {
         display: none;
       }
-    }
-  }
-
-  &-AuthSection {
-    display: none;
-
-    @media (min-width: $screen-xs) {
-      display: block;
     }
   }
 }

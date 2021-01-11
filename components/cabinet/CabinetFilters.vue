@@ -1,6 +1,6 @@
 <template>
   <div v-click-outside="onClickOutside" class="CabinetFilters">
-    <div class="CabinetFilters-Title" @click="openfiltersMenu()">
+    <div class="CabinetFilters-Title" @click="openFiltersMenu()">
       <svg class="CabinetFilters-Icon" width="13" height="15">
         <use xlink:href="@/assets/img/icons.svg#filters"></use>
       </svg>
@@ -29,11 +29,12 @@
           <template v-if="filter.type === 'date'">
             <Datepicker
               format="dd.MM.yyyy"
-              placeholder="dd.mm.yyyy"
+              placeholder="DD.MM.YYYY"
               class="Datepicker CabinetPage-Datepicker"
               calendar-class="Datepicker-Inner"
               input-class="Datepicker-Input"
               :clear-button="true"
+              :value="formatDateFromTimestamp(filter.value)"
               @selected="setValue({ name, type: filter.type, payload: $event })"
             />
           </template>
@@ -77,16 +78,20 @@ export default {
   methods: {
     setValue({ name, type, payload }) {
       const val = { name };
-      if (type === 'date') val.val = moment(payload).unix();
-      else val.val = payload;
-      console.log(val.val);
+      if (type === 'date') {
+        payload ? (val.val = moment(payload).unix()) : (val.val = '');
+      } else val.val = payload;
       this.$emit('set-value', val);
     },
-    openfiltersMenu() {
+    openFiltersMenu() {
       if (this.width < 1248) this.filtersMenuIsOpen = !this.filtersMenuIsOpen;
     },
     onClickOutside(e) {
       if (e.target.className !== 'CabinetFilters') this.filtersMenuIsOpen = false;
+    },
+    formatDateFromTimestamp(date) {
+      if (date) return moment.unix(date).format('YYYY-MM-DD');
+      return null;
     },
   },
 };

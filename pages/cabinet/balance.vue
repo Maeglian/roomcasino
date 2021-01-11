@@ -44,10 +44,10 @@
           {{ acc.balance }} {{ acc.currency }}
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Locked">
-          0
+          {{ acc.lockedByBonus }}
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Cash">
-          0
+          {{ acc.withdrawable }}
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns">
           <button
@@ -109,32 +109,11 @@ import { mapMutations, mapState, mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'BalancePage',
-  data() {
-    return {
-      fakeUserAccounts: [
-        {
-          active: true,
-          currency: 'USD',
-          balance: '514.00',
-        },
-        {
-          active: false,
-          currency: 'EUR',
-          balance: '318.00',
-        },
-        {
-          active: false,
-          currency: 'RUB',
-          balance: '0',
-        },
-      ],
-    };
-  },
   computed: {
     ...mapState(['user', 'serverError']),
     ...mapGetters(['moreCurrencyAccounts']),
     userAccounts() {
-      return this.user.accountList || this.fakeUserAccounts;
+      return this.user.accountList;
     },
   },
   methods: {
@@ -152,12 +131,10 @@ export default {
       });
     },
     onChangeAccount(e) {
-      this.setActiveAccount({ currency: e.target.value }).then(() => this.getLimits());
+      this.setActiveAccount({ currency: e.target.value });
     },
     onChooseCurrency(cur) {
       this.createAccount({ currency: cur }).then(() => {
-        this.getProfile();
-        this.getLimits();
         this.$modal.hide('addCurrency');
       });
     },

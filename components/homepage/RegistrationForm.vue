@@ -133,13 +133,18 @@
         {{ authError }}
       </div>
     </div>
-    <BaseButton
-      class="Btn--full AuthDialog-Btn"
-      :is-loading="authStatus === 'loading'"
-      :disabled="$v.$error"
-    >
-      Sign up
-    </BaseButton>
+    <div class="AuthDialog-Buttons">
+      <button v-if="step === 2" class="Btn AuthDialog-Btn AuthDialog-Btn--step1" @click="step = 1">
+        Go back
+      </button>
+      <BaseButton
+        class="AuthDialog-Btn"
+        :is-loading="authStatus === 'loading'"
+        :disabled="$v.$error"
+      >
+        Sign up
+      </BaseButton>
+    </div>
   </form>
 </template>
 
@@ -154,7 +159,7 @@ import {
   writeObjValuesToLocalStorage,
   deleteObjValuesFromLocalStorage,
 } from '@/utils/helpers';
-import { passwordCheck, termsCheck, ageCheck, dateCheck } from '@/utils/formCheckers';
+import { termsCheck, ageCheck, dateCheck } from '@/utils/formCheckers';
 import RegistrationBonus from '@/components/homepage/RegistrationBonus';
 import BaseButton from '@/components/base/BaseButton';
 
@@ -209,7 +214,7 @@ export default {
           value: false,
           type: 'checkbox',
           label:
-            'I am 18 years old and I accept the<br/> <a class="AuthDialog-RegistrationLink" href="/terms">Terms&nbsp;and&nbsp;Conditions</a> and <a class="AuthDialog-RegistrationLink" href="/privacy-policy">Privacy&nbsp;Policy</a>',
+            'I am 18 years old and I accept the<br/> <a class="AuthDialog-RegistrationLink" href="/terms" target="_blank">Terms&nbsp;and&nbsp;Conditions</a> and <a class="AuthDialog-RegistrationLink" href="/privacy-policy" target="_blank">Privacy&nbsp;Policy</a>',
         },
       },
       fieldsStep2: {
@@ -287,8 +292,15 @@ export default {
     };
   },
   computed: {
-    ...mapState(['width', 'currencyList', 'countriesList', 'authStatus', 'authError']),
-    ...mapGetters(['countriesNames']),
+    ...mapState([
+      'width',
+      'currencyList',
+      'countriesList',
+      'authStatus',
+      'authError',
+      'defaultCurrency',
+    ]),
+    ...mapGetters(['defaultCountry']),
     birthDate() {
       const {
         birthDate: {
@@ -315,7 +327,6 @@ export default {
         value: {
           required,
           maxLength: maxLength(32),
-          passwordCheck,
         },
       },
       currency: {
@@ -392,7 +403,9 @@ export default {
     getObjValuesFromLocalStorage(this.fieldsStep1);
     getObjValuesFromLocalStorage(this.fieldsStep2);
     this.fieldsStep1.currency.items = this.currencyList;
-    this.fieldsStep1.country.items = this.countriesNames;
+    if (!this.fieldsStep1.currency.value) this.fieldsStep1.currency.value = this.defaultCurrency;
+    this.fieldsStep1.country.items = this.countriesList;
+    if (!this.fieldsStep1.country.value) this.fieldsStep1.country.value = this.defaultCountry;
   },
   beforeDestroy() {
     writeObjValuesToLocalStorage(this.fieldsStep1);
@@ -409,13 +422,11 @@ export default {
         this.step = 2;
       } else {
         this.$v.fieldsStep2.$touch();
-        if (this.$v.fieldsStep2.$error) return;
+        this.$v.birthDate.$touch();
+        if (this.$v.fieldsStep2.$error || this.$v.birthDate.$error) return;
         for (const key in this.fieldsStep1) {
           if (key === 'country') {
-            const entry = Object.entries(this.countriesList).find(
-              i => i[1] === this.fieldsStep1.country.value,
-            );
-            payload.country = entry[0];
+            payload.country = this.fieldsStep1.country.value.code;
           } else payload[key] = this.fieldsStep1[key].value;
         }
         for (const key in this.fieldsStep2) {
@@ -479,7 +490,7 @@ export default {
   &-Input {
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 18px;
     font-size: 16px;
     color: var(--color-text-main);
     background: transparent;
@@ -561,6 +572,17 @@ export default {
   &-RegistrationLink {
     color: var(--color-text-main);
     text-decoration: underline;
+  }
+
+  &-Btn--step1 {
+    flex-grow: 0;
+    width: calc(50% - 2px);
+    margin-right: 4px;
+    background: var(--color-text-ghost);
+  }
+
+  &-Buttons {
+    display: flex;
   }
 }
 </style>

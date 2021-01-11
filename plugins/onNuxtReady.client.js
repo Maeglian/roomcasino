@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { throttle } from '../utils/helpers';
 
-window.onNuxtReady(app => {
+window.onNuxtReady(({ context }) => {
   axios.interceptors.response.use(
     undefined,
     err =>
@@ -13,22 +13,25 @@ window.onNuxtReady(app => {
           // eslint-disable-next-line no-underscore-dangle
           !err.response.config.__isRetryRequest
         ) {
-          app.$store.dispatch('logout', true);
+          context.store.dispatch('logout', true);
         }
         throw err;
       }),
   );
-  if (app.$route.query.cxd) localStorage.setItem('cxd', app.$route.query.cxd);
-  if (app.$store.getters.isLoggedIn) {
-    app.$store.dispatch('getProfile');
-    app.$store.dispatch('getUserDocumentList');
-    app.$store.dispatch('getLimits');
+  context.store.dispatch('getGeoInfo').then(() => {
+    if (!context.store.state.siteIsAllowedForUser) context.redirect('/not-allowed');
+  });
+  if (context.route.query.cxd) localStorage.setItem('cxd', context.route.query.cxd);
+  if (context.store.getters.isLoggedIn) {
+    context.store.dispatch('getProfile');
+    context.store.dispatch('getLimits');
   }
-  const updateWidth = throttle(() => app.$store.commit('setWidth', window.innerWidth), 150);
+  const updateWidth = throttle(() => context.store.commit('setWidth', window.innerWidth), 150);
   updateWidth();
   window.addEventListener('resize', updateWidth);
-  app.$store.dispatch('getCountriesList');
-  app.$store.dispatch('getCurrencyList');
-  app.$store.dispatch('getCategoriesList');
-  app.$store.dispatch('getGameProducerList');
+  context.store.dispatch('getGames');
+  context.store.dispatch('getCountriesList');
+  context.store.dispatch('getCurrencyList');
+  context.store.dispatch('getCategoriesList');
+  context.store.dispatch('getGameProducerList');
 });

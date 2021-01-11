@@ -7,6 +7,7 @@ import {
   API_HOST_SANDBOX,
   DEFAULT_PROVIDER,
   LIMIT_DETAILS,
+  BONUSES,
 } from '../config';
 
 const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : API_HOST_PROD;
@@ -18,6 +19,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
   transformResponse: [
     data => {
       let res;
+      let errorPayload;
 
       try {
         res = JSON.parse(data);
@@ -25,17 +27,36 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
         throw Error(`[requestClient] Error parsing response JSON data - ${JSON.stringify(error)}`);
       }
 
-      console.log(res);
-
       if (res.code === 0) {
         return res.data;
       }
-      func(funcName, res.message);
+
+      if (funcName === 'pushNotificationAlert') {
+        errorPayload = {
+          type: 'error',
+          text: res.message,
+        };
+      } else errorPayload = res.message;
+
+      func(funcName, errorPayload);
     },
   ],
 });
 
 export const state = () => ({
+  siteIsAllowedForUser: true,
+  defaultCountry: '',
+  defaultCurrency: '',
+  billingSessionIsLoading: false,
+  getBillingSessionError: '',
+  createLimitError: '',
+  deleteLimitError: '',
+  deleteBonusError: '',
+  bonusList: [],
+  bonusListIsLoading: false,
+  gameError: '',
+  notificationAlerts: [],
+  pageRowsCount: 0,
   pageDataIsLoading: false,
   userDocumentList: [],
   historyListIsLoading: false,
@@ -47,7 +68,7 @@ export const state = () => ({
   gameProducerList: [DEFAULT_PROVIDER],
   status: '',
   authStatus: '',
-  countriesList: {},
+  countriesList: [],
   currencyList: [],
   categories: [],
   shouldCashout: false,
@@ -651,14 +672,23 @@ export const state = () => ({
 });
 
 export const getters = {
-  // eslint-disable-next-line no-shadow
-  activeCurrency: (state, getters) => {
+  availableDepositBonuses: state => {
+    return BONUSES.filter(
+      bonus =>
+        !state.bonusList.some(b => b.name === bonus.name) &&
+        !state.bonusHistoryList.some(b => b.title === bonus.name),
+    );
+  },
+  activeCurrency: state => {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};
   },
+  defaultCountry: state => {
+    return state.countriesList.find(country => country.code === state.defaultCountry);
+  },
   activeAccount: state => {
     if (state.user.accountList) return state.user.accountList.find(acc => acc.active === true);
-    return {};
+    return '';
   },
   accountList: state => {
     if (state.user.accountList) return state.user.accountList;
@@ -680,8 +710,6 @@ export const getters = {
       }
       return namedLimits;
     }, []);
-
-    console.log(ll);
     return ll;
   },
   providersList: state => startIndex =>
@@ -696,12 +724,10 @@ export const getters = {
     });
   },
   limitedTournamentWinners: state => limit => state.currentTournamentWinners.slice(0, limit),
-  countriesNames: state => Object.values(state.countriesList),
   userInfo: state => {
     if (Object.keys(state.user).length) {
       const info = { ...state.user };
-      const countryName = state.countriesList[info.country];
-      info.country = countryName;
+      info.country = state.countriesList.find(country => country.code === info.country);
       delete info.accountList;
       delete info.requirePasswordChange;
       return info;
@@ -732,8 +758,65 @@ export const getters = {
 };
 
 export const mutations = {
+  setSiteIsAllowedForUser: (state, payload) => {
+    state.siteIsAllowedForUser = payload;
+  },
+  setDefaultCountry: (state, payload) => {
+    state.defaultCountry = payload;
+  },
+  setDefaultCurrency: (state, payload) => {
+    state.defaultCurrency = payload;
+  },
+  setBillingSessionIsLoading: state => {
+    state.billingSessionIsLoading = true;
+  },
+  setBillingSessionIsLoaded: state => {
+    state.billingSessionIsLoading = false;
+  },
+  setGetBillingSessionError: (state, message) => {
+    state.billingSessionIsLoading = message;
+  },
+  clearGetBillingSessionError: state => {
+    state.billingSessionIsLoading = '';
+  },
+  setCreateError: (state, message) => {
+    state.deleteLimitError = message;
+  },
+  clearCreateLimitError: state => {
+    state.deleteLimitError = '';
+  },
+  setDeleteLimitError: (state, message) => {
+    state.deleteLimitError = message;
+  },
+  clearDeleteLimitError: state => {
+    state.deleteLimitError = '';
+  },
+  setDeleteBonusError: (state, message) => {
+    state.deleteBonusError = message;
+  },
+  clearDeleteBonusError: state => {
+    state.deleteBonusError = '';
+  },
+  setBonusListIsLoading: state => {
+    state.bonusListIsLoading = true;
+  },
+  setBonusListIsLoaded: state => {
+    state.bonusListIsLoading = false;
+  },
+  setBonusList: (state, payload) => {
+    state.bonusList = payload;
+  },
+  setPageRowsCount: (state, payload) => {
+    state.pageRowsCount = payload;
+  },
   setGameUrl: (state, gameUrl) => {
     state.gameUrlForIframe = gameUrl;
+  },
+  setGameError: (state, message) => {
+    state.gameError = message;
+  },
+  clearGameError: state => {
+    state.gameError = '';
   },
   setPageDataIsLoading: state => {
     state.pageDataIsLoading = true;
@@ -896,6 +979,15 @@ export const mutations = {
   clearUpdateProfileError(state) {
     state.updateProfileError = '';
   },
+  pushNotificationAlert(state, payload) {
+    state.notificationAlerts.push(payload);
+  },
+  deleteNotificationAlert(state, idx) {
+    state.notificationAlerts.splice(idx, 1);
+  },
+  clearNotificationAlerts(state) {
+    state.notificationAlerts = [];
+  },
 };
 
 export const actions = {
@@ -943,7 +1035,7 @@ export const actions = {
         dispatch('getProfile');
       }
     } catch (e) {
-      commit('setAuthError', e);
+      commit('pushErrors', e);
       Cookie.remove('token');
     }
   },
@@ -995,6 +1087,7 @@ export const actions = {
       commit('logout');
       Cookie.remove('token');
       delete axios.defaults.headers.common['X-Auth-Token'];
+      commit('clearNotificationAlerts');
       this.$router.push('/');
     } catch (e) {
       commit('pushErrors', e);
@@ -1005,7 +1098,7 @@ export const actions = {
     try {
       // eslint-disable-next-line no-underscore-dangle
       const res = await axios.get(`${API_HOST}/countryList`);
-      commit('setCountriesList', res.data.data.countryList);
+      commit('setCountriesList', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
     }
@@ -1028,54 +1121,69 @@ export const actions = {
       commit('pushErrors', e);
     }
   },
-  async getBillingSession({ commit }) {
+  async getBillingSession({ state, commit }) {
+    if (state.getBillingSessionError) commit('clearGetBillingSessionError');
+    commit('setBillingSessionIsLoading');
     try {
       // eslint-disable-next-line no-underscore-dangle
-      const res = await axios.post(`${API_HOST}/billingSession`, {
-        bpId: BILLING_PROVIDER_ID,
-      });
-      commit('setBillingSession', res.data.data);
+      const res = await axios.post(
+        `${API_HOST}/billingSession`,
+        {
+          bpId: BILLING_PROVIDER_ID,
+        },
+        reqConfig(commit, 'setGetBillingSessionError'),
+      );
+      commit('setBillingSession', res.data);
     } catch (e) {
       commit('pushErrors', e);
+      throw e;
+    } finally {
+      commit('setBillingSessionIsLoaded');
     }
   },
 
-  async startGame({ commit }, {
-    demo,
-    gameId,
-    platform,
-    returnUrl
-  }) {
+  async startGame({ state, commit }, { demo, gameId, platform, returnUrl }) {
+    if (state.gameError) commit('clearGameError');
     try {
-      const res = await axios.post(`${API_HOST}/startGame`, {
-        demo,
-        gameId,
-        platform,
-        returnUrl
-      });
-      const { url } = res.data.data;
-
-      commit('setGameUrl', url);
+      const res = await axios.post(
+        `${API_HOST}/startGame`,
+        {
+          demo,
+          gameId,
+          platform,
+          returnUrl,
+        },
+        reqConfig(commit, 'setGameError'),
+      );
+      if (!state.gameError) {
+        const { url } = res.data;
+        commit('setGameUrl', url);
+      }
     } catch (e) {
       commit('pushErrors', e);
     }
   },
 
   async setActiveAccount({ commit, dispatch }, payload) {
-    commit('accountIsAdding');
     try {
-      await axios.post(`${API_HOST}/setActiveAccount`, payload);
-      await dispatch('getProfile');
-      commit('accountIsAdded');
+      await axios.post(
+        `${API_HOST}/setActiveAccount`,
+        payload,
+        reqConfig(commit, 'pushNotificationAlert'),
+      );
+      dispatch('getProfile');
+      dispatch('getLimits');
     } catch (e) {
       commit('pushErrors', e);
     }
   },
 
-  async createAccount({ commit }, payload) {
+  async createAccount({ commit, dispatch }, payload) {
     commit('clearServerError');
     try {
       await axios.post(`${API_HOST}/createAccount`, payload, reqConfig(commit));
+      dispatch('getProfile');
+      dispatch('getLimits');
     } catch (e) {
       commit('pushErrors', e);
     }
@@ -1128,17 +1236,22 @@ export const actions = {
     }
   },
 
-  async addLimit({ commit }, payload) {
+  async addLimit({ state, commit }, payload) {
+    if (state.createLimitError) commit('clearCreateLimitError');
     try {
-      await axios.put(`${API_HOST}/limit`, payload);
+      await axios.put(`${API_HOST}/limit`, payload, reqConfig(commit, 'setCreateLimitError'));
     } catch (e) {
       commit('pushErrors', e);
     }
   },
 
-  async deleteLimit({ commit }, payload) {
+  async deleteLimit({ state, commit }, payload) {
+    if (state.deleteLimitError) commit('clearDeleteLimitError');
     try {
-      await axios.delete(`${API_HOST}/limit?type=${payload.type}&period=${payload.period}`);
+      await axios.delete(
+        `${API_HOST}/limit?type=${payload.type}&period=${payload.period}`,
+        reqConfig(commit, 'setDeleteLimitError'),
+      );
     } catch (e) {
       commit('pushErrors', e);
     }
@@ -1152,7 +1265,10 @@ export const actions = {
         ...{ params: payload },
         ...reqConfig(commit),
       });
-      if (!state.serverError) commit('setTransactionHistoryList', res.data);
+      if (!state.serverError) {
+        commit('setPageRowsCount', res.headers['x-meta-count']);
+        commit('setTransactionHistoryList', res.data);
+      }
     } catch (e) {
       commit('pushErrors', e);
     } finally {
@@ -1168,7 +1284,10 @@ export const actions = {
         ...{ params: payload },
         ...reqConfig(commit),
       });
-      if (!state.serverError) commit('setBonusHistoryList', res.data);
+      if (!state.serverError) {
+        commit('setPageRowsCount', res.headers['x-meta-count']);
+        commit('setBonusHistoryList', res.data);
+      }
     } catch (e) {
       commit('pushErrors', e);
     } finally {
@@ -1184,7 +1303,10 @@ export const actions = {
         ...{ params: payload },
         ...reqConfig(commit),
       });
-      if (!state.serverError) commit('setGameHistoryList', res.data);
+      if (!state.serverError) {
+        commit('setPageRowsCount', res.headers['x-meta-count']);
+        commit('setGameHistoryList', res.data);
+      }
     } catch (e) {
       commit('pushErrors', e);
     } finally {
@@ -1200,11 +1322,36 @@ export const actions = {
         ...{ params: payload },
         ...reqConfig(commit),
       });
-      if (!state.serverError) commit('setSessionHistoryList', res.data);
+      if (!state.serverError) {
+        commit('setPageRowsCount', res.headers['x-meta-count']);
+        commit('setSessionHistoryList', res.data);
+      }
     } catch (e) {
       commit('pushErrors', e);
     } finally {
       commit('setHistoryListIsLoaded');
+    }
+  },
+
+  async getBonusList({ commit }) {
+    commit('setBonusListIsLoading');
+    try {
+      const res = await axios.get(`${API_HOST}/bonusList`);
+      const bonuses = res.data.data;
+      commit('setBonusList', bonuses);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setBonusListIsLoaded');
+    }
+  },
+
+  async deleteBonus({ commit, state }, id) {
+    if (state.deleteBonusError) commit('clearDeleteBonusError');
+    try {
+      await axios.delete(`${API_HOST}/bonus/${id}`, reqConfig(commit, 'setDeleteBonusError'));
+    } catch (e) {
+      commit('pushErrors', e);
     }
   },
 
@@ -1259,6 +1406,17 @@ export const actions = {
   async deleteUserDocument({ commit }, id) {
     try {
       await axios.delete(`${API_HOST}/document/${id}`);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async getGeoInfo({ commit }) {
+    try {
+      const res = await axios.get(`${API_HOST}/geoInfo`);
+      commit('setSiteIsAllowedForUser', res.data.data.allowed);
+      commit('setDefaultCountry', res.data.data.country);
+      commit('setDefaultCurrency', res.data.data.currency);
     } catch (e) {
       commit('pushErrors', e);
     }

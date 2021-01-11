@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="BestGames">
+    <section id="games" class="BestGames">
       <div v-if="width > 767" class="BestGames-Tabs">
         <button
           v-for="(tab, i) in tabs"
@@ -25,21 +25,33 @@
           @choose-provider="onChooseProvider"
         />
       </div>
-      <div class="Title Title--type-h2 Cards-Title">
-        The best games
-      </div>
-      <Loader v-if="gamesAreLoading" />
-      <template v-else-if="filteredGames.length">
+      <div v-if="searched" class="SearchedGames">
+        <div class="Title Title--type-h2 Cards-Title">
+          Searched
+        </div>
         <Games
+          v-if="filteredGames.length"
           class="BestGames-Cards"
           :games="filteredGames"
           :games-to-show="24"
           btn-class="Btn--common Btn--dark"
         />
+        <p v-else class="Text Text--center">
+          Nothing was found
+        </p>
+      </div>
+      <div class="Title Title--type-h2 Cards-Title">
+        The best games
+      </div>
+      <Loader v-if="gamesAreLoading" />
+      <template v-else>
+        <Games
+          class="BestGames-Cards"
+          :games="games"
+          :games-to-show="24"
+          btn-class="Btn--common Btn--dark"
+        />
       </template>
-      <p v-else class="Text Text--center">
-        Nothing was found
-      </p>
     </section>
     <section class="NewGames">
       <div class="Title Title--type-h2 Cards-Title">
@@ -70,7 +82,6 @@ import { mapState, mapGetters, mapActions } from 'vuex';
 import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
-import search from '@/mixins/search';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import { DEFAULT_PROVIDER, GAME_TYPES } from '@/config';
 
@@ -81,12 +92,13 @@ export default {
     Search,
     Loader,
   },
-  mixins: [showAuthDialog, search],
+  mixins: [showAuthDialog],
   data() {
     return {
       tabs: GAME_TYPES,
       tabActive: GAME_TYPES[0],
       providerActive: DEFAULT_PROVIDER,
+      searched: '',
       newGames: [
         {
           img: 'game1.png',
@@ -191,7 +203,7 @@ export default {
   },
   computed: {
     ...mapState(['width', 'games', 'gamesAreLoading', 'gameProducerList']),
-    ...mapGetters(['fakedNewGames', 'isLoggedIn']),
+    ...mapGetters(['fakedNewGames', 'isLoggedIn', 'gamesSearched']),
     gamesParams() {
       const params = {};
       if (this.tabActive.type) params.type = this.tabActive.type;
@@ -199,9 +211,9 @@ export default {
         params.gameProducer = this.providerActive.name;
       return params;
     },
-  },
-  created() {
-    this.getGames();
+    filteredGames() {
+      return this.gamesSearched(this.searched);
+    },
   },
   methods: {
     ...mapActions(['getGames']),

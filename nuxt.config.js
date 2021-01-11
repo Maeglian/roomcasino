@@ -33,10 +33,18 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'preload',
+        as: 'style',
+        href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap',
+      },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap',
+        media: 'print',
+        onload: "this.media='all'",
       },
     ],
     script: [
@@ -66,7 +74,9 @@ export default {
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    extractCSS: true,
+  },
 
   router: { middleware: ['closeNav'] },
   generate: {

@@ -1,11 +1,13 @@
 <template>
   <section class="CabinetPage">
+    <NotificationAlerts />
     <CabinetTopbar />
     <div class="CabinetPage-Wrapper">
       <CabinetMenu />
-      <div class="CabinetPage-Content">
+      <div v-if="Object.keys(user).length" class="CabinetPage-Content">
         <Nuxt />
       </div>
+      <Loader v-else class="CabinetPage-Loader" />
     </div>
   </section>
 </template>
@@ -13,14 +15,20 @@
 <script>
 import CabinetMenu from '@/components/cabinet/CabinetMenu.vue';
 import CabinetTopbar from '@/components/cabinet/CabinetTopbar.vue';
+import { mapState } from 'vuex';
+import Loader from '@/components/Loader';
 
 export default {
   name: 'CabinetPage',
   components: {
     CabinetMenu,
     CabinetTopbar,
+    Loader,
   },
   middleware: 'auth',
+  computed: {
+    ...mapState(['user']),
+  },
 };
 </script>
 
@@ -30,6 +38,10 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   padding: 0;
+
+  &-Loader {
+    width: 100%;
+  }
 
   &-Link {
     font-weight: 700;

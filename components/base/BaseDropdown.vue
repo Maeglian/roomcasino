@@ -79,8 +79,7 @@ export default {
   computed: {
     filteredItems() {
       return this.items.filter(item => {
-        if (item.name) return item.value !== this.activeItem.value;
-        return item !== this.activeItem;
+        return item.name !== this.activeItem && item !== this.activeItem;
       });
     },
   },

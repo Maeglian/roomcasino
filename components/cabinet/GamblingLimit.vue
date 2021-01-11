@@ -45,7 +45,9 @@
           class="GamblingLimit-Counter"
           :min-format="true"
           :enddate="new Date(item.refreshAt * 1000)"
-        />
+        >
+          Until Reset
+        </Counter>
       </div>
       <template v-if="item.type === 'sessionLimit'">
         <div class="GamblingLimit-ValuesScale">
@@ -53,7 +55,7 @@
             <svg class="GamblingLimit-SessionIcon">
               <use xlink:href="@/assets/img/icons.svg#clock"></use>
             </svg>
-            {{ item.value || 0 }} min
+            {{ sessionTime }} min
           </div>
           <div>{{ item.targetValue }} min</div>
         </div>
@@ -116,7 +118,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
 import { LIMIT_PERIODS, LIMIT_DETAILS } from '@/config';
 import moment from 'moment';
 import Counter from '@/components/Counter';
@@ -140,9 +142,11 @@ export default {
   data() {
     return {
       editMenuIsOpen: false,
+      sessionTime: this.item.value,
     };
   },
   computed: {
+    ...mapState(['deleteLimitError']),
     ...mapGetters(['activeAccount']),
     title() {
       return this.item.type === 'depositLimit' ||
@@ -181,8 +185,23 @@ export default {
       return this.item.limitAmount - this.item.limitState;
     },
   },
+  mounted() {
+    if (this.item.type === 'sessionLimit') this.startSessionTimer();
+  },
+  destroyed() {
+    if (this.item.type === 'sessionLimit') this.stopSessionTimer();
+  },
   methods: {
+    ...mapMutations(['clearDeleteLimitError', 'pushNotificationAlert']),
     ...mapActions(['deleteLimit', 'getLimits']),
+    startSessionTimer() {
+      this.timer = setInterval(() => {
+        this.sessionTime += 1;
+      }, 60000);
+    },
+    stopSessionTimer() {
+      clearInterval(this.timer);
+    },
     onClickOutside(e) {
       if (e.target !== this.$refs.edit) this.editMenuIsOpen = false;
     },
@@ -200,8 +219,21 @@ export default {
       this.deleteLimit({
         type: this.item.type,
         period: this.item.period,
-      }).then(() => this.getLimits());
-      this.editMenuIsOpen = false;
+      }).then(() => {
+        if (this.deleteLimitError) {
+          this.pushNotificationAlert({
+            type: 'error',
+            text: this.deleteLimitError,
+          });
+        } else {
+          this.pushNotificationAlert({
+            type: 'success',
+            text: `Your limit will be deleted. ${LIMIT_DETAILS[this.item.type].deleteRules}`,
+          });
+          this.getLimits();
+        }
+        this.editMenuIsOpen = false;
+      });
     },
     onClickDelete() {
       this.$modal.show(
@@ -224,7 +256,7 @@ export default {
 
 <style lang="scss">
 .GamblingLimit {
-  padding: 16px;
+  padding: 16px 16px 30px;
   background: var(--color-bg);
 
   &-Header,
@@ -246,6 +278,7 @@ export default {
   }
 
   &-Edit {
+    padding-bottom: 10px;
     font-size: 25px;
     font-weight: 700;
     color: var(--color-text-ghost);
@@ -258,11 +291,11 @@ export default {
 
   &-EditMenu {
     position: absolute;
-    top: 0;
+    top: -20px;
     right: 0;
     z-index: 2;
     width: 182px;
-    padding: 25px 18px;
+    padding: 15px;
     background: var(--color-bg-lighter);
   }
 
