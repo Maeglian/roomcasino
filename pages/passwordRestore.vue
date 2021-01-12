@@ -178,9 +178,9 @@ export default {
     ...mapMutations(['clearUpdateProfileError', 'clearServerError']),
     ...mapActions(['restorePassword', 'confirmRestorePassword']),
     toggleVisibility(el) {
-      this[el].inputType === 'password'
-        ? (this[el].inputType = 'text')
-        : (this[el].inputType = 'password');
+      this.password[el].inputType === 'password'
+        ? (this.password[el].inputType = 'text')
+        : (this.password[el].inputType = 'password');
     },
     onContinue() {
       this.clearServerError();
