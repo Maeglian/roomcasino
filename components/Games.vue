@@ -34,6 +34,9 @@
         @open-gamepage="openGamePage"
       />
     </div>
+    <p v-if="!games.length" class="Text Text--center">
+      Nothing was found
+    </p>
     <div v-if="games.length > gamesShowed" class="Games-Btn">
       <button class="Btn" :class="btnClass" @click="showMoreGames()">
         Load more games

@@ -30,15 +30,11 @@
           Searched
         </div>
         <Games
-          v-if="filteredGames.length"
           class="BestGames-Cards"
           :games="filteredGames"
           :games-to-show="24"
           btn-class="Btn--common Btn--dark"
         />
-        <p v-else class="Text Text--center">
-          Nothing was found
-        </p>
       </div>
       <div class="Title Title--type-h2 Cards-Title">
         The best games
@@ -58,15 +54,11 @@
         New games
       </div>
       <Games
-        v-if="fakedNewGames.length"
         class="BestGames-Cards NewGames-Cards"
         :games="fakedNewGames"
         :games-to-show="12"
         :btn-class="'Btn--common Btn--dark'"
       />
-      <p v-else class="Text Text--center">
-        Nothing was found
-      </p>
     </section>
     <!--    <section class="LiveGames">-->
     <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
