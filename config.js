@@ -2,7 +2,8 @@ import moment from 'moment';
 
 export const BILLING_PROVIDER_ID = 'devcode';
 export const API_HOST_SANDBOX = 'http://az-44.sandbox.aramuz.net/frontapi/roomcasino';
-export const API_HOST_PROD = 'https://dev.aramuz.net/frontapi/roomcasino';
+export const API_HOST_STAGE = 'https://dev.aramuz.net/frontapi/roomcasino';
+export const API_HOST_PROD = 'https://aramuz.net/frontapi/roomcasino';
 
 export const DEFAULT_PROVIDER = { name: 'All providers', noIcon: true };
 
