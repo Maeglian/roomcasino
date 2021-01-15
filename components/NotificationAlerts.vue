@@ -48,15 +48,19 @@ export default {
 .NotificationAlerts {
   position: fixed;
   top: 0;
-  right: 50%;
+  right: 16px;
+  left: 16px;
   z-index: 11;
   max-height: 100%;
   margin-top: 86px;
 
-  @media (min-width: $screen-s) {
-    right: 16px;
+  @media (min-width: $screen-xs) {
+    left: auto;
     margin-top: 116px;
     margin-right: 0;
+  }
+
+  @media (min-width: $screen-s) {
     direction: rtl;
     columns: auto;
     column-fill: auto;
@@ -65,10 +69,14 @@ export default {
   }
 
   &-Item {
-    width: 288px;
+    width: 100%;
     margin-bottom: 4px;
-    break-inside: avoid;
     direction: ltr;
+    break-inside: avoid;
+
+    @media (min-width: $screen-xs) {
+      width: 288px;
+    }
   }
 }
 
