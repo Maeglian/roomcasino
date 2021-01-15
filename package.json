@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "nuxt --port 8080",
     "build": "NUXT_ENV_MODE=production nuxt build",
-    "build:sandbox": "NUXT_ENV_MODE=sandbox nuxt generate",
+    "build:dev": "NUXT_ENV_MODE=dev nuxt build",
     "build:stage": "NUXT_ENV_MODE=stage nuxt generate",
+    "build:sandbox": "NUXT_ENV_MODE=sandbox nuxt generate",
     "start": "nuxt start",
     "start:sandbox": "NUXT_ENV_MODE=sandbox nuxt start",
     "generate": "nuxt generate",
