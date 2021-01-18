@@ -185,6 +185,17 @@ export default {
   name: 'PrivacyPolicyPage',
   mixins: [showAuthDialog],
   layout: 'page',
+  head() {
+    return {
+      title: 'Responsible And Controlled Gambling Exclusively In Our RoomCasino',
+      meta: [
+        {
+          description:
+            'Our casino offers you responsible gambling. We have the full set of features that allow taking control over your losses. Gamble without the risk of going broke',
+        },
+      ],
+    };
+  },
 };
 </script>
 

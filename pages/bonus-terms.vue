@@ -239,6 +239,17 @@
 export default {
   name: 'TermsPage',
   layout: 'page',
+  head() {
+    return {
+      title: 'Requirements Set By The Roomcasino Portal For The Use Of Bonuses',
+      meta: [
+        {
+          description:
+            'This page details the rules under which players can use their bonuses. Acceptable terms of their validity, existing restrictions, and possible penalties',
+        },
+      ],
+    };
+  },
 };
 </script>
 

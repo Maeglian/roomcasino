@@ -87,6 +87,17 @@ import { mapState } from 'vuex';
 export default {
   name: 'PaymentMethodsPage',
   layout: 'page',
+  head() {
+    return {
+      title: 'Available Payments On Multi-currency Online Platform Roomcasino',
+      meta: [
+        {
+          description:
+            'What are the conventional and digital currencies supported by the site for carrying financial transactions? Ways to make deposits and withdrawals',
+        },
+      ],
+    };
+  },
   computed: {
     ...mapState(['paymentsMethods']),
   },
