@@ -118,11 +118,17 @@ export default {
   &-Content {
     position: relative;
     flex-grow: 1;
-    min-height: 518px;
+    height: 450px;
     padding-right: 14px;
     padding-bottom: 29px;
     padding-left: 14px;
+    overflow-y: auto;
     background: url('../../assets/img/auth-bg.png');
+
+    @media (min-width: $screen-s) {
+      height: 100%;
+      min-height: 518px;
+    }
 
     @media (min-width: $screen-s) {
       padding-right: 24px;
