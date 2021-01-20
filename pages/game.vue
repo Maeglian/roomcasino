@@ -8,6 +8,7 @@
         :src="getGameUrl"
         :width="getIframeWidth.width"
         :height="getIframeWidth.height"
+        allowFullScreen="true"
       />
       <ControlsPanel
         :is-full-screen="isFullScreen"
