@@ -79,7 +79,11 @@ export default {
     setValue({ name, type, payload }) {
       const val = { name };
       if (type === 'date') {
-        payload ? (val.val = moment(payload).unix()) : (val.val = '');
+        payload
+          ? (val.val = moment(payload)
+              .startOf('day')
+              .unix())
+          : (val.val = '');
       } else val.val = payload;
       this.$emit('set-value', val);
     },
