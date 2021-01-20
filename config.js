@@ -190,10 +190,12 @@ export const HISTORY_TABLES = {
     ],
     filters: {
       currency: {
+        label: 'currency',
         type: 'dropdown',
         value: { name: 'All currencies', value: '' },
       },
       status: {
+        label: 'status',
         type: 'dropdown',
         values: [
           { name: 'All statuses', value: '' },
@@ -204,6 +206,7 @@ export const HISTORY_TABLES = {
         value: { name: 'All statuses', value: '' },
       },
       from: {
+        label: 'until',
         type: 'date',
         value: '',
       },
@@ -237,10 +240,12 @@ export const HISTORY_TABLES = {
     ],
     filters: {
       currency: {
+        label: 'currency',
         type: 'dropdown',
         value: { name: 'All currencies', value: '' },
       },
       from: {
+        label: 'until',
         type: 'date',
         value: '',
       },
@@ -282,10 +287,12 @@ export const HISTORY_TABLES = {
     ],
     filters: {
       currency: {
+        label: 'currency',
         type: 'dropdown',
         value: { name: 'All currencies', value: '' },
       },
       status: {
+        label: 'status',
         type: 'dropdown',
         values: [
           { name: 'All statuses', value: '' },
@@ -299,6 +306,7 @@ export const HISTORY_TABLES = {
         value: { name: 'All statuses', value: '' },
       },
       from: {
+        label: 'until',
         type: 'date',
         value: '',
       },

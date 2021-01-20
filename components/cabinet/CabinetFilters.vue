@@ -15,7 +15,7 @@
       <div v-if="width >= 1248 || filtersMenuIsOpen" class="CabinetFilters-Filters">
         <div v-for="(filter, name) in filters" :key="name" class="CabinetFilters-Filter">
           <div class="CabinetFilters-Name">
-            {{ name }}
+            {{ filter.label }}
           </div>
           <template v-if="filter.type === 'dropdown'">
             <BaseDropdown
