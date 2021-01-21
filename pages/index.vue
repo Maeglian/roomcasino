@@ -52,6 +52,17 @@ export default {
       },
     };
   },
+  head() {
+    return {
+      title: 'Casino Online🤑, Only Top Slots & Games | Get Welcome Bonus from RoomCasino',
+      meta: [
+        {
+          description:
+            'Sign up to 🔥RoomСasino to reveal our complete game selection. Enjoy all types of games! Claim your desirable bonuses and free spins at once after joining',
+        },
+      ],
+    };
+  },
 };
 </script>
 

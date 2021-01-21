@@ -164,6 +164,17 @@ export default {
       ],
     };
   },
+  head() {
+    return {
+      title: 'Play Room Casino Online | Promotions + Bonuses',
+      meta: [
+        {
+          description:
+            'Room Casino grants the right to participate in twenty-five free spins on the money of the institution! Read about all current events and promotions on the Room casino website!',
+        },
+      ],
+    };
+  },
   computed: {
     ...mapState(['tournaments']),
   },

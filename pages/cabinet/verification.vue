@@ -198,12 +198,18 @@
 </template>
 
 <script>
-import { API_HOST_PROD, API_HOST_SANDBOX } from '@/config';
+import { API_HOST_PROD, API_HOST_SANDBOX, API_HOST_STAGE } from '@/config';
 import { mapActions, mapState } from 'vuex';
 
 const vue2Dropzone = () => import('vue2-dropzone');
 
-const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : API_HOST_PROD;
+const API_HOST =
+  // eslint-disable-next-line no-nested-ternary
+  process.env.NUXT_ENV_MODE === 'production'
+    ? API_HOST_PROD
+    : process.env.NUXT_ENV_MODE === 'sandbox'
+    ? API_HOST_SANDBOX
+    : API_HOST_STAGE;
 
 export default {
   name: 'VerificationPage',

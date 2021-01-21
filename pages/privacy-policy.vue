@@ -119,6 +119,17 @@
 export default {
   name: 'PrivacyPolicyPage',
   layout: 'page',
+  head() {
+    return {
+      title: 'Confidentiality Of The Personal Information Of Our Users',
+      meta: [
+        {
+          description:
+            'Respect for the privacy policy is the main aspect of the Roomcasino. We provide the reliable protection from the third parties. Collecting of the personal data needs permission',
+        },
+      ],
+    };
+  },
 };
 </script>
 

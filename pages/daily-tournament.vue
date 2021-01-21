@@ -200,6 +200,17 @@ export default {
       },
     };
   },
+  head() {
+    return {
+      title: 'Daily Tournament At Roomcasino And Other Similar Events',
+      meta: [
+        {
+          description:
+            'On this page, you will find detailed information about the tournaments held by the gaming website. List of winners and terms and conditions of the events',
+        },
+      ],
+    };
+  },
   computed: {
     ...mapState([
       'width',

@@ -157,6 +157,17 @@ export default {
       ],
     };
   },
+  head() {
+    return {
+      title: 'A VIP world to strive for. Play, exchange money for status. You dream of a Ferrari!',
+      meta: [
+        {
+          description:
+            'Once, starting with the smallest bet, losing a lot of money. You will become what you dreamed of becoming. All the doors of the world will open before you',
+        },
+      ],
+    };
+  },
   computed: {
     ...mapState(['terms']),
   },

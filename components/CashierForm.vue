@@ -42,6 +42,8 @@ import BaseModal from '@/components/base/BaseModal';
 const billingSession =
   process.env.NUXT_ENV_MODE === 'sandbox' ? 'fakeBillingSession' : 'billingSession';
 
+const environment = process.env.NUXT_ENV_MODE === 'production' ? 'production' : 'test';
+
 export default {
   name: 'CashierForm',
   component: {
@@ -86,7 +88,7 @@ export default {
           merchantId: this[billingSession].merchantId,
           userId: this[billingSession].userId,
           sessionId: this[billingSession].sessionId,
-          environment: 'test',
+          environment,
           containerHeight: 'auto',
           containerMinHeight: '700px',
           method,
