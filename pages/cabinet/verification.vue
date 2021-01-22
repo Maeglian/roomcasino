@@ -478,6 +478,10 @@ export default {
     background: var(--color-body);
   }
 
+  &-FileImg {
+    height: auto;
+  }
+
   .dropzone {
     flex-grow: 1;
   }
