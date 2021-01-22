@@ -474,12 +474,9 @@ export default {
   &-File {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     overflow: auto;
     background: var(--color-body);
-  }
-
-  &-FileImg {
-    height: auto;
   }
 
   .dropzone {
