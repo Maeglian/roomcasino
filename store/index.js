@@ -51,6 +51,9 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  originalFileIsLoading: false,
+  originalFile: null,
+  originalFileError: '',
   siteIsAllowedForUser: true,
   defaultCountry: '',
   defaultCurrency: '',
@@ -765,6 +768,24 @@ export const getters = {
 };
 
 export const mutations = {
+  setOriginalFile: (state, payload) => {
+    state.originalFile = payload;
+  },
+  clearOriginalFile: state => {
+    state.originalFile = null;
+  },
+  setOriginalFileIsLoading: state => {
+    state.originalFileIsLoading = true;
+  },
+  setOriginalFileIsLoaded: state => {
+    state.originalFileIsLoading = false;
+  },
+  setOriginalFileError: (state, payload) => {
+    state.originalFileError = payload;
+  },
+  clearOriginalFileError: state => {
+    state.originalFileError = '';
+  },
   setSiteIsAllowedForUser: (state, payload) => {
     state.siteIsAllowedForUser = payload;
   },
@@ -1401,12 +1422,16 @@ export const actions = {
   },
 
   async showUserDocument({ commit }, id) {
+    commit('setOriginalFileIsLoading');
     try {
-      const res = await axios.get(`${API_HOST}/document/${id}`, { responseType: 'blob' });
-      const url = URL.createObjectURL(res.data);
-      window.open(url, 'Image');
+      const res = await axios.get(`${API_HOST}/document/${id}`, {
+        responseType: 'blob',
+      });
+      commit('setOriginalFile', res.data);
     } catch (e) {
       commit('pushErrors', e);
+    } finally {
+      commit('setOriginalFileIsLoaded');
     }
   },
 
