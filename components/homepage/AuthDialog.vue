@@ -118,7 +118,7 @@ export default {
   &-Content {
     position: relative;
     flex-grow: 1;
-    height: 450px;
+    height: 420px;
     padding-right: 14px;
     padding-bottom: 29px;
     padding-left: 14px;
