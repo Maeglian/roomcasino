@@ -125,7 +125,7 @@ export default {
     overflow-y: auto;
     background: url('../../assets/img/auth-bg.png');
 
-    @media (min-width: $screen-s) {
+    @media (min-width: $screen-xs) {
       height: 100%;
       min-height: 518px;
     }
