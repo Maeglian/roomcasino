@@ -141,7 +141,7 @@ export default {
             success: data => {
               console.log('Transaction was completed successfully', data);
               this.getProfile();
-              if (this.$route.name !== 'game') this.depositIsDone = true;
+              if (this.$route.name !== 'game' && method !== 'withdrawal') this.depositIsDone = true;
 
               if (this.availableBonusList.length) {
                 this.getBonusList();
