@@ -49,9 +49,13 @@
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import detect from '@/utils/deviceDetector';
+import BaseModal from '@/components/base/BaseModal';
 
 export default {
   name: 'Games',
+  components: {
+    BaseModal,
+  },
   mixins: [showAuthDialog],
   props: {
     games: {

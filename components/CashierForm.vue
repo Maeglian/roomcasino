@@ -46,7 +46,7 @@ const environment = process.env.NUXT_ENV_MODE === 'production' ? 'production' : 
 
 export default {
   name: 'CashierForm',
-  component: {
+  components: {
     Loader,
     BaseModal,
   },
