@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
+import { mapActions, mapMutations, mapState } from 'vuex';
 import Loader from '@/components/Loader';
 import BaseModal from '@/components/base/BaseModal';
 
@@ -58,17 +58,17 @@ export default {
   },
   computed: {
     ...mapState([
+      'availableBonusList',
       'billingSession',
       'billingSessionIsLoading',
       'getBillingSessionError',
       'fakeBillingSession',
       'shouldCashout',
     ]),
-    ...mapGetters(['availableDepositBonuses']),
   },
   methods: {
     ...mapMutations(['setCashoutFalse', 'pushNotificationAlert']),
-    ...mapActions(['getBillingSession', 'getBonusList', 'getProfile']),
+    ...mapActions(['getBillingSession', 'getBonusList', 'getAvailableBonusList', 'getProfile']),
     async initializeCashier() {
       try {
         await this.getBillingSession();
@@ -142,7 +142,11 @@ export default {
               console.log('Transaction was completed successfully', data);
               this.getProfile();
               if (this.$route.name !== 'game') this.depositIsDone = true;
-              if (this.availableDepositBonuses.length) this.getBonusList();
+
+              if (this.availableBonusList.length) {
+                this.getBonusList();
+                this.getAvailableBonusList();
+              }
             },
             failure: data => console.log('Transaction failed', data),
             isLoading: data => console.log('Data is loading', data),

@@ -8,7 +8,6 @@ import {
   API_HOST_SANDBOX,
   DEFAULT_PROVIDER,
   LIMIT_DETAILS,
-  BONUSES,
 } from '../config';
 
 const API_HOST =
@@ -64,6 +63,8 @@ export const state = () => ({
   deleteBonusError: '',
   bonusList: [],
   bonusListIsLoading: false,
+  availableBonusList: [],
+  availableBonusListIsLoading: false,
   gameError: '',
   notificationAlerts: [],
   pageRowsCount: 0,
@@ -682,13 +683,6 @@ export const state = () => ({
 });
 
 export const getters = {
-  availableDepositBonuses: state => {
-    return BONUSES.filter(
-      bonus =>
-        !state.bonusList.some(b => b.name === bonus.name) &&
-        !state.bonusHistoryList.some(b => b.title === bonus.name),
-    );
-  },
   activeCurrency: state => {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};
@@ -833,6 +827,15 @@ export const mutations = {
   },
   setBonusList: (state, payload) => {
     state.bonusList = payload;
+  },
+  setAvailableBonusListIsLoading: state => {
+    state.availablebonusListIsLoading = true;
+  },
+  setAvailableBonusListIsLoaded: state => {
+    state.availableBonusListIsLoading = false;
+  },
+  setAvailableBonusList: (state, payload) => {
+    state.availableBonusList = payload;
   },
   setPageRowsCount: (state, payload) => {
     state.pageRowsCount = payload;
@@ -1371,6 +1374,19 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setBonusListIsLoaded');
+    }
+  },
+
+  async getAvailableBonusList({ commit }) {
+    commit('setAvailableBonusListIsLoading');
+    try {
+      const res = await axios.get(`${API_HOST}/availableBonusList`);
+      const bonuses = res.data.data;
+      commit('setAvailableBonusList', bonuses);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setAvailableBonusListIsLoaded');
     }
   },
 
