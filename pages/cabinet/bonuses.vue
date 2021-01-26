@@ -46,10 +46,8 @@
         </div>
       </div>
     </div>
-    <div
-      v-if="availableDepositBonuses.length && !bonusListIsLoading && !historyListIsLoading"
-      class="Table CabinetPage-Table BonusesPage-Table"
-    >
+    <Loader v-if="availableBonusListIsLoading" />
+    <div v-if="availableBonusList.length" class="Table CabinetPage-Table BonusesPage-Table">
       <div class="Table-Row CabinetPage-Row">
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
           Bonus
@@ -63,27 +61,31 @@
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th"></div>
       </div>
       <div
-        v-for="(bonus, i) in availableDepositBonuses"
+        v-for="(bonus, i) in availableBonusList"
         :key="`bonus_${i}`"
         class="Table-Row CabinetPage-Row"
       >
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Bonus">
-          {{ bonus.title }}
+          {{ bonus.name }}
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Min">
-          {{ bonus.minDeposit }}
+          {{ bonus.minDepositAmount }} {{ bonus.currency }}
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Max">
           <div class="BonusesPage-CellWrapper">
             <svg class="BonusesPage-Icon" width="16" height="16">
               <use xlink:href="@/assets/img/icons.svg#promotions"></use>
             </svg>
-            {{ bonus.maxPrize }}
+            {{ `${bonus.depositPercent}% of deposit` }}
+            <template v-if="bonus.maxBonusAmount">
+              {{ `, max ${bonus.maxBonusAmount} ${bonus.currency}` }}
+            </template>
           </div>
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">
           <button
             class="Btn Btn--common Btn--color CabinetPage-Btn"
+            :disabled="!bonus.available"
             @click="$modal.show('cashier')"
           >
             Deposit
@@ -107,23 +109,39 @@
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import Counter from '@/components/Counter';
 import BonusDetails from '@/components/cabinet/BonusDetails';
+import Loader from '@/components/Loader';
 
 export default {
   name: 'BonusesPage',
   components: {
     Counter,
+    Loader,
   },
   computed: {
-    ...mapState(['bonusListIsLoading', 'historyListIsLoading', 'bonusList', 'deleteBonusError']),
+    ...mapState([
+      'bonusListIsLoading',
+      'historyListIsLoading',
+      'bonusList',
+      'availableBonusListIsLoading',
+      'availableBonusList',
+      'deleteBonusError',
+    ]),
     ...mapGetters(['activeCurrency', 'availableDepositBonuses']),
   },
   created() {
     this.getBonusList();
     this.getBonusHistoryList();
+    this.getAvailableBonusList();
   },
   methods: {
     ...mapMutations(['clearDeleteBonusError', 'pushNotificationAlert']),
-    ...mapActions(['getBonusList', 'deleteBonus', 'getProfile', 'getBonusHistoryList']),
+    ...mapActions([
+      'getBonusList',
+      'getAvailableBonusList',
+      'deleteBonus',
+      'getProfile',
+      'getBonusHistoryList',
+    ]),
     onDeleteBonus(id) {
       this.deleteBonus(id).then(() => {
         if (this.deleteBonusError)
@@ -163,6 +181,7 @@ export default {
 
   &-Bonus {
     margin-bottom: 4px;
+    text-transform: capitalize;
 
     &:last-child {
       margin-bottom: 0;
@@ -227,9 +246,8 @@ export default {
     }
   }
 
-  &-Bonus,
   &-Max {
-    text-transform: capitalize;
+    text-transform: none;
   }
 
   &-Icon {

@@ -64,6 +64,8 @@ export const state = () => ({
   deleteBonusError: '',
   bonusList: [],
   bonusListIsLoading: false,
+  availableBonusList: [],
+  availableBonusListIsLoading: false,
   gameError: '',
   notificationAlerts: [],
   pageRowsCount: 0,
@@ -834,6 +836,15 @@ export const mutations = {
   setBonusList: (state, payload) => {
     state.bonusList = payload;
   },
+  setAvailableBonusListIsLoading: state => {
+    state.availablebonusListIsLoading = true;
+  },
+  setAvailableBonusListIsLoaded: state => {
+    state.availableBonusListIsLoading = false;
+  },
+  setAvailableBonusList: (state, payload) => {
+    state.availableBonusList = payload;
+  },
   setPageRowsCount: (state, payload) => {
     state.pageRowsCount = payload;
   },
@@ -1371,6 +1382,19 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setBonusListIsLoaded');
+    }
+  },
+
+  async getAvailableBonusList({ commit }) {
+    commit('setAvailableBonusListIsLoading');
+    try {
+      const res = await axios.get(`${API_HOST}/availableBonusList`);
+      const bonuses = res.data.data;
+      commit('setAvailableBonusList', bonuses);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setAvailableBonusListIsLoaded');
     }
   },
 

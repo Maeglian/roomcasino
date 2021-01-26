@@ -175,6 +175,11 @@ export default {
       font-size: 10px;
     }
 
+    &:disabled {
+      color: var(--color-text-ghost);
+      background: var(--color-faded);
+    }
+
     &.Btn--outline {
       padding: 5px 10px;
 
