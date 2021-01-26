@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
+import { mapActions, mapMutations, mapState } from 'vuex';
 import Loader from '@/components/Loader';
 import BaseModal from '@/components/base/BaseModal';
 
@@ -58,13 +58,13 @@ export default {
   },
   computed: {
     ...mapState([
+      'availableBonusList',
       'billingSession',
       'billingSessionIsLoading',
       'getBillingSessionError',
       'fakeBillingSession',
       'shouldCashout',
     ]),
-    ...mapGetters(['availableDepositBonuses']),
   },
   methods: {
     ...mapMutations(['setCashoutFalse', 'pushNotificationAlert']),

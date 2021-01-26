@@ -8,7 +8,6 @@ import {
   API_HOST_SANDBOX,
   DEFAULT_PROVIDER,
   LIMIT_DETAILS,
-  BONUSES,
 } from '../config';
 
 const API_HOST =
@@ -684,13 +683,6 @@ export const state = () => ({
 });
 
 export const getters = {
-  availableDepositBonuses: state => {
-    return BONUSES.filter(
-      bonus =>
-        !state.bonusList.some(b => b.name === bonus.name) &&
-        !state.bonusHistoryList.some(b => b.title === bonus.name),
-    );
-  },
   activeCurrency: state => {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};

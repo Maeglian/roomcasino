@@ -126,7 +126,7 @@ export default {
       'availableBonusList',
       'deleteBonusError',
     ]),
-    ...mapGetters(['activeCurrency', 'availableDepositBonuses']),
+    ...mapGetters(['activeCurrency']),
   },
   created() {
     this.getBonusList();
