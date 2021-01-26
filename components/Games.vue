@@ -15,7 +15,14 @@
         {{ gameError }}
       </div>
     </BaseModal>
-    <BaseModal name="pleaseDeposit" :width="300" :height="'auto'" @close="onCloseDepositModal">
+    <BaseModal
+      v-if="showDepositModal"
+      name="pleaseDeposit"
+      :width="300"
+      :height="'auto'"
+      show-on-mount
+      @close="onCloseDepositModal"
+    >
       <div class="Modal-Title">
         Please deposit first
       </div>
@@ -50,11 +57,13 @@ import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import detect from '@/utils/deviceDetector';
 import BaseModal from '@/components/base/BaseModal';
+import Card from '@/components/Card';
 
 export default {
   name: 'Games',
   components: {
     BaseModal,
+    Card,
   },
   mixins: [showAuthDialog],
   props: {
@@ -76,6 +85,7 @@ export default {
   data() {
     return {
       gamesShowed: 0,
+      showDepositModal: false,
     };
   },
   computed: {
@@ -92,7 +102,7 @@ export default {
     ...mapMutations(['clearGameError']),
     ...mapActions(['startGame']),
     onCloseDepositModal() {
-      this.depositModal = false;
+      this.showDepositModal = false;
       this.$modal.show('cashier');
     },
     async getGameUrl({
@@ -122,7 +132,7 @@ export default {
       }
 
       if (!demo && !this.activeAccount.balance) {
-        this.$modal.show('pleaseDeposit');
+        this.showDepositModal = true;
         return;
       }
 
