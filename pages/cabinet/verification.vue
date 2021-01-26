@@ -158,7 +158,7 @@
             >
               <div class="VerificationPage-Dropzone">
                 <div class="VerificationPage-Text">
-                  Drop file here or browse images or .pdf files. Max size 1Gb
+                  Drop file here or browse images or .pdf files. Max size 110Mb
                 </div>
               </div>
             </vueDropzone>
@@ -221,7 +221,7 @@ export default {
     return {
       dropzoneOptions: {
         url: `${API_HOST}/document`,
-        maxFilesize: 1000,
+        maxFilesize: 110,
         thumbnailHeight: 100,
         thumbnailMethod: 'contain',
         addRemoveLinks: true,
