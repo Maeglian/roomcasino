@@ -51,6 +51,13 @@
       Must be numeric
     </div>
     <div
+      v-if="shouldDisplayValidation && v && v.alphaNum === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      Must be numbers or letters
+    </div>
+    <div
       v-if="shouldDisplayValidation && v && v.checkIfNullOrPositiveNumbers === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"

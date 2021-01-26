@@ -153,7 +153,7 @@ import BaseInput from '@/components/base/BaseInput.vue';
 import BaseCheckbox from '@/components/base/BaseCheckbox.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapActions, mapGetters, mapState } from 'vuex';
-import { required, email, minLength, maxLength, numeric } from 'vuelidate/lib/validators';
+import { required, email, minLength, maxLength, alphaNum } from 'vuelidate/lib/validators';
 import {
   getObjValuesFromLocalStorage,
   writeObjValuesToLocalStorage,
@@ -392,7 +392,7 @@ export default {
       postalCode: {
         value: {
           required,
-          numeric,
+          alphaNum,
           minLength: minLength(1),
           maxLength: maxLength(100),
         },
