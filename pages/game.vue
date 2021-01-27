@@ -51,6 +51,17 @@ export default {
           };
     },
   },
+  watch: {
+    isFullScreen() {
+      const liveChat = document.getElementById('chat-widget-container');
+
+      if (this.isFullScreen) {
+        liveChat.style.display = 'none';
+      } else {
+        liveChat.style.display = '';
+      }
+    },
+  },
   mounted() {
     this.storageGameUrl = localStorage.getItem('gameUrlForIframe');
   },
