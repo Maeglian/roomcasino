@@ -27,7 +27,7 @@
           <div class="Partners-Partner">
             <img class="Partners-Image" src="@/assets/img/microgaming.svg" />
           </div>
-          <div class="Partners-Partner Partners-Partner--visa">
+          <div class="Partners-Partner">
             <img class="Partners-Image" src="@/assets/img/interac_35.png" />
           </div>
         </div>
