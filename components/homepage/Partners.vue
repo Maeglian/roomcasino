@@ -27,6 +27,9 @@
           <div class="Partners-Partner">
             <img class="Partners-Image" src="@/assets/img/microgaming.svg" />
           </div>
+          <div class="Partners-Partner Partners-Partner--visa">
+            <img class="Partners-Image" src="@/assets/img/interac_35.png" />
+          </div>
         </div>
       </marquee-text>
     </client-only>
@@ -78,10 +81,6 @@ export default {
 
     @media (min-width: $screen-xl) {
       margin-right: 37px;
-    }
-
-    &:last-child {
-      margin-right: 0;
     }
   }
 }
