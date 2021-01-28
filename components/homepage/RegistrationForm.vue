@@ -129,20 +129,32 @@
           </BaseInput>
         </template>
       </template>
-      <div v-if="authError" class="AuthDialog-Error AuthDialog-Error--registration">
+      <div v-if="authError && step === 1" class="AuthDialog-Error AuthDialog-Error--registration">
         {{ authError }}
+      </div>
+      <div
+        v-if="updateProfileError && step === 2"
+        class="AuthDialog-Error AuthDialog-Error--registration"
+      >
+        {{ updateProfileError }}
       </div>
     </div>
     <div class="AuthDialog-Buttons">
-      <button v-if="step === 2" class="Btn AuthDialog-Btn AuthDialog-Btn--step1" @click="step = 1">
-        Go back
-      </button>
       <BaseButton
+        v-if="step === 1"
         class="AuthDialog-Btn"
         :is-loading="authStatus === 'loading'"
         :disabled="$v.$error"
       >
         Sign up
+      </BaseButton>
+      <BaseButton
+        v-if="step === 2"
+        class="AuthDialog-Btn"
+        :is-loading="authStatus === 'loading'"
+        :disabled="$v.$error"
+      >
+        Save
       </BaseButton>
     </div>
   </form>
@@ -153,7 +165,7 @@ import BaseInput from '@/components/base/BaseInput.vue';
 import BaseCheckbox from '@/components/base/BaseCheckbox.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapActions, mapGetters, mapState } from 'vuex';
-import { required, email, minLength, maxLength, alphaNum } from 'vuelidate/lib/validators';
+import { required, email, minLength, maxLength, alphaNum, numeric } from 'vuelidate/lib/validators';
 import {
   getObjValuesFromLocalStorage,
   writeObjValuesToLocalStorage,
@@ -171,9 +183,16 @@ export default {
     BaseCheckbox,
     BaseButton,
   },
+  props: {
+    beforeDeposit: {
+      type: Boolean,
+      isRequired: false,
+      default: false,
+    },
+  },
   data() {
     return {
-      step: 1,
+      step: this.beforeDeposit ? 2 : 1,
       fieldsStep1: {
         email: {
           value: '',
@@ -288,6 +307,15 @@ export default {
           autocomplete: 'postal-code',
           inputmode: 'numeric',
         },
+        phoneNumber: {
+          value: '',
+          type: 'tel',
+          placeholder: 'Mobile phone',
+          required: true,
+          autocorrect: 'off',
+          autocomplete: 'tel-national',
+          inputmode: 'numeric',
+        },
       },
     };
   },
@@ -296,11 +324,13 @@ export default {
       'width',
       'currencyList',
       'countriesList',
+      'phoneCodeList',
       'authStatus',
       'authError',
       'defaultCurrency',
+      'updateProfileError',
     ]),
-    ...mapGetters(['defaultCountry']),
+    ...mapGetters(['defaultCountry', 'userInfo']),
     birthDate() {
       const {
         birthDate: {
@@ -397,8 +427,19 @@ export default {
           maxLength: maxLength(100),
         },
       },
+      phoneNumber: {
+        value: {
+          required,
+          numeric,
+          minLength: minLength(10),
+          maxLength: maxLength(14),
+        },
+      },
     },
   },
+  // created() {
+  //   if (this.beforeDeposit) this.step = 2;
+  // },
   mounted() {
     getObjValuesFromLocalStorage(this.fieldsStep1);
     getObjValuesFromLocalStorage(this.fieldsStep2);
@@ -406,49 +447,64 @@ export default {
     if (!this.fieldsStep1.currency.value) this.fieldsStep1.currency.value = this.defaultCurrency;
     this.fieldsStep1.country.items = this.countriesList;
     if (!this.fieldsStep1.country.value) this.fieldsStep1.country.value = this.defaultCountry;
+    // this.fieldsStep2.phone.items = this.phoneCodeList;
+    // if (!this.fieldsStep2.phone.value) this.fieldsStep2.phone.value = this.defaultCountry;
   },
   beforeDestroy() {
     writeObjValuesToLocalStorage(this.fieldsStep1);
     writeObjValuesToLocalStorage(this.fieldsStep2);
   },
   methods: {
-    ...mapActions(['registerUser']),
+    ...mapActions(['registerUser', 'updateProfile']),
     onSubmitForm() {
-      const payload = {};
-
       if (this.step === 1) {
         this.$v.fieldsStep1.$touch();
         if (this.$v.fieldsStep1.$error) return;
-        this.step = 2;
+
+        const regData = {};
+        for (const key in this.fieldsStep1) {
+          if (key === 'country') {
+            regData.country = this.fieldsStep1.country.value.code;
+          } else regData[key] = this.fieldsStep1[key].value;
+        }
+        if (localStorage.getItem('cxd')) regData.cxd = localStorage.getItem('cxd');
+        this.registerUser(regData).then(() => {
+          if (!this.authError) {
+            deleteObjValuesFromLocalStorage(this.fieldsStep1);
+            this.step = 2;
+          }
+        });
       } else {
         this.$v.fieldsStep2.$touch();
         this.$v.birthDate.$touch();
         if (this.$v.fieldsStep2.$error || this.$v.birthDate.$error) return;
-        for (const key in this.fieldsStep1) {
-          if (key === 'country') {
-            payload.country = this.fieldsStep1.country.value.code;
-          } else payload[key] = this.fieldsStep1[key].value;
-        }
+
+        const profileData = { ...this.userInfo };
         for (const key in this.fieldsStep2) {
-          if (key === 'birthDate') payload[key] = this.birthDate;
-          else payload[key] = this.fieldsStep2[key].value;
+          if (key === 'birthDate') profileData[key] = this.birthDate;
+          else if (key === 'phoneNumber') profileData[key] = `+${this.fieldsStep2[key].value}`;
+          else profileData[key] = this.fieldsStep2[key].value;
         }
-        if (localStorage.getItem('cxd')) payload.cxd = localStorage.getItem('cxd');
-        this.registerUser(payload).then(() => {
-          if (!this.authError) {
-            deleteObjValuesFromLocalStorage(this.fieldsStep1);
+
+        profileData.country = this.userInfo.country.code;
+
+        this.updateProfile(profileData).then(() => {
+          if (!this.updateProfileError) {
             deleteObjValuesFromLocalStorage(this.fieldsStep2);
             this.$emit('close');
-            this.$modal.show(
-              RegistrationBonus,
-              {},
-              {
-                reset: true,
-                width: this.width > 360 ? 328 : 288,
-                height: 'auto',
-                adaptive: true,
-              },
-            );
+            if (this.beforeDeposit) {
+              this.$modal.show('cashier');
+            } else
+              this.$modal.show(
+                RegistrationBonus,
+                {},
+                {
+                  reset: true,
+                  width: this.width > 360 ? 328 : 288,
+                  height: 'auto',
+                  adaptive: true,
+                },
+              );
           }
         });
       }

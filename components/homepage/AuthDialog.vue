@@ -3,13 +3,18 @@
     <div class="Close Modal-Close" @click="$emit('close')"></div>
     <div class="AuthDialog">
       <BaseTabs
+        v-if="!beforeDeposit"
         class="AuthDialog-Tabs"
         :items="tabs"
         :current-item="activeTab"
         @choose-tab="toggleRegistration"
       />
-      <template v-if="activeTab === 'registration'">
-        <RegistrationForm @close="$emit('close')" @redirect-login="activeTab = 'login'" />
+      <template v-if="beforeDeposit || activeTab === 'registration'">
+        <RegistrationForm
+          :before-deposit="beforeDeposit"
+          @close="$emit('close')"
+          @redirect-login="activeTab = 'login'"
+        />
       </template>
       <template v-else>
         <LoginForm @close="$emit('close')" />
@@ -35,8 +40,13 @@ export default {
   props: {
     authType: {
       type: String,
-      isRequired: false,
+      required: false,
       default: 'registration',
+    },
+    beforeDeposit: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   data() {

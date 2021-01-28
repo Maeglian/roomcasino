@@ -7,6 +7,7 @@
       width="400px"
       adaptive
       scrollable
+      @before-open="beforeInitializeCashier()"
       @opened="initializeCashier()"
       @closed="onCloseCashierForm()"
     >
@@ -38,6 +39,7 @@
 import { mapActions, mapMutations, mapState } from 'vuex';
 import Loader from '@/components/Loader';
 import BaseModal from '@/components/base/BaseModal';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 const billingSession =
   process.env.NUXT_ENV_MODE === 'sandbox' ? 'fakeBillingSession' : 'billingSession';
@@ -50,6 +52,7 @@ export default {
     Loader,
     BaseModal,
   },
+  mixins: [showAuthDialog],
   data() {
     return {
       cashierIsLoading: false,
@@ -69,15 +72,21 @@ export default {
   methods: {
     ...mapMutations(['setCashoutFalse', 'pushNotificationAlert']),
     ...mapActions(['getBillingSession', 'getBonusList', 'getAvailableBonusList', 'getProfile']),
-    async initializeCashier() {
+    async beforeInitializeCashier(event) {
       try {
         await this.getBillingSession();
         if (this.getBillingSessionError)
           this.pushNotificationAlert({ type: 'error', text: this.getBillingSessionError });
+
+        if (this.billingSession.needPlayerProfileData) {
+          this.showRegistrationDialog('registration', true);
+          event.cancel();
+        }
       } catch {
         this.$modal.hide('cashier');
       }
-
+    },
+    initializeCashier() {
       this.cashierIsLoading = true;
 
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';

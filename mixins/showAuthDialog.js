@@ -7,11 +7,11 @@ export default {
   },
   methods: {
     ...mapMutations(['removeAuthError']),
-    showRegistrationDialog(authType) {
+    showRegistrationDialog(authType, beforeDeposit) {
       this.removeAuthError();
       this.$modal.show(
         AuthDialog,
-        { authType },
+        { authType, beforeDeposit },
         { width: 418, height: 'auto', adaptive: true, scrollable: true },
         {
           'before-close': this.afterCloseAuthDialog,
