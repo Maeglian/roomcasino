@@ -7,7 +7,7 @@
       width="400px"
       adaptive
       scrollable
-      @opened="initializeCashier()"
+      @before-open="beforeInitializeCashier()"
       @closed="onCloseCashierForm()"
     >
       <div class="Modal">
@@ -35,9 +35,10 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
+import { mapActions, mapMutations, mapState } from 'vuex';
 import Loader from '@/components/Loader';
 import BaseModal from '@/components/base/BaseModal';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 const billingSession =
   process.env.NUXT_ENV_MODE === 'sandbox' ? 'fakeBillingSession' : 'billingSession';
@@ -46,10 +47,11 @@ const environment = process.env.NUXT_ENV_MODE === 'production' ? 'production' : 
 
 export default {
   name: 'CashierForm',
-  component: {
+  components: {
     Loader,
     BaseModal,
   },
+  mixins: [showAuthDialog],
   data() {
     return {
       cashierIsLoading: false,
@@ -58,22 +60,27 @@ export default {
   },
   computed: {
     ...mapState([
+      'availableBonusList',
       'billingSession',
       'billingSessionIsLoading',
       'getBillingSessionError',
       'fakeBillingSession',
       'shouldCashout',
     ]),
-    ...mapGetters(['availableDepositBonuses']),
   },
   methods: {
     ...mapMutations(['setCashoutFalse', 'pushNotificationAlert']),
-    ...mapActions(['getBillingSession', 'getBonusList', 'getProfile']),
-    async initializeCashier() {
+    ...mapActions(['getBillingSession', 'getBonusList', 'getAvailableBonusList', 'getProfile']),
+    async beforeInitializeCashier(event) {
       try {
         await this.getBillingSession();
         if (this.getBillingSessionError)
           this.pushNotificationAlert({ type: 'error', text: this.getBillingSessionError });
+
+        if (this.billingSession.needPlayerProfileData) {
+          this.showRegistrationDialog('registration', true);
+          event.cancel();
+        }
       } catch {
         this.$modal.hide('cashier');
       }
@@ -141,8 +148,12 @@ export default {
             success: data => {
               console.log('Transaction was completed successfully', data);
               this.getProfile();
-              if (this.$route.name !== 'game') this.depositIsDone = true;
-              if (this.availableDepositBonuses.length) this.getBonusList();
+              if (this.$route.name !== 'game' && method !== 'withdrawal') this.depositIsDone = true;
+
+              if (this.availableBonusList.length) {
+                this.getBonusList();
+                this.getAvailableBonusList();
+              }
             },
             failure: data => console.log('Transaction failed', data),
             isLoading: data => console.log('Data is loading', data),

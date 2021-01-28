@@ -111,7 +111,7 @@ import BaseButton from '@/components/base/BaseButton.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import Loader from '@/components/Loader';
 import { PROFILE_LABELS } from '@/config';
-import { maxLength, minLength, numeric, required } from 'vuelidate/lib/validators';
+import { maxLength, minLength, alphaNum, required } from 'vuelidate/lib/validators';
 import { ageCheck, dateCheck } from '@/utils/formCheckers';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
@@ -183,7 +183,7 @@ export default {
       },
       postalCode: {
         required,
-        numeric,
+        alphaNum,
         minLength: minLength(1),
         maxLength: maxLength(100),
       },

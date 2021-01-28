@@ -51,6 +51,16 @@ export default {
       {
         src: 'https://static.paymentiq.io/cashier/cashier.js',
       },
+      {
+        src: '/js/liveChat.js',
+        defer: true,
+      },
+    ],
+    noscript: [
+      {
+        innerHTML:
+          '<a href="https://www.livechatinc.com/chat-with/12226866/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>',
+      },
     ],
   },
 
@@ -76,6 +86,9 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extractCSS: true,
+    extend(config) {
+      config.resolve.alias.vue = 'vue/dist/vue.common';
+    },
   },
 
   router: { middleware: ['closeNav'] },

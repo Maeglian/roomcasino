@@ -35,14 +35,6 @@
         Notification
       </div>
     </div>
-    <button class="MobileNav-Item">
-      <svg width="16" height="14">
-        <use xlink:href="@/assets/img/icons.svg#support"></use>
-      </svg>
-      <div class="MobileNav-Name">
-        Support
-      </div>
-    </button>
   </nav>
 </template>
 
@@ -78,7 +70,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 18px 24px 14px;
+  padding: 18px 84px 14px 24px;
   background: var(--color-body);
 
   @media (min-width: $screen-xs) {

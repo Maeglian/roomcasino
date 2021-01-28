@@ -8,7 +8,6 @@ import {
   API_HOST_SANDBOX,
   DEFAULT_PROVIDER,
   LIMIT_DETAILS,
-  BONUSES,
 } from '../config';
 
 const API_HOST =
@@ -51,6 +50,9 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  originalFileIsLoading: false,
+  originalFile: null,
+  originalFileError: '',
   siteIsAllowedForUser: true,
   defaultCountry: '',
   defaultCurrency: '',
@@ -61,6 +63,8 @@ export const state = () => ({
   deleteBonusError: '',
   bonusList: [],
   bonusListIsLoading: false,
+  availableBonusList: [],
+  availableBonusListIsLoading: false,
   gameError: '',
   notificationAlerts: [],
   pageRowsCount: 0,
@@ -75,6 +79,7 @@ export const state = () => ({
   gameProducerList: [DEFAULT_PROVIDER],
   status: '',
   authStatus: '',
+  phoneCodeList: [],
   countriesList: [],
   currencyList: [],
   categories: [],
@@ -679,13 +684,6 @@ export const state = () => ({
 });
 
 export const getters = {
-  availableDepositBonuses: state => {
-    return BONUSES.filter(
-      bonus =>
-        !state.bonusList.some(b => b.name === bonus.name) &&
-        !state.bonusHistoryList.some(b => b.title === bonus.name),
-    );
-  },
   activeCurrency: state => {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};
@@ -765,6 +763,24 @@ export const getters = {
 };
 
 export const mutations = {
+  setOriginalFile: (state, payload) => {
+    state.originalFile = payload;
+  },
+  clearOriginalFile: state => {
+    state.originalFile = null;
+  },
+  setOriginalFileIsLoading: state => {
+    state.originalFileIsLoading = true;
+  },
+  setOriginalFileIsLoaded: state => {
+    state.originalFileIsLoading = false;
+  },
+  setOriginalFileError: (state, payload) => {
+    state.originalFileError = payload;
+  },
+  clearOriginalFileError: state => {
+    state.originalFileError = '';
+  },
   setSiteIsAllowedForUser: (state, payload) => {
     state.siteIsAllowedForUser = payload;
   },
@@ -812,6 +828,15 @@ export const mutations = {
   },
   setBonusList: (state, payload) => {
     state.bonusList = payload;
+  },
+  setAvailableBonusListIsLoading: state => {
+    state.availablebonusListIsLoading = true;
+  },
+  setAvailableBonusListIsLoaded: state => {
+    state.availableBonusListIsLoading = false;
+  },
+  setAvailableBonusList: (state, payload) => {
+    state.availableBonusList = payload;
   },
   setPageRowsCount: (state, payload) => {
     state.pageRowsCount = payload;
@@ -887,6 +912,9 @@ export const mutations = {
   },
   setGames: (state, payload) => {
     state.games = payload;
+  },
+  setPhoneCodeList: (state, payload) => {
+    state.phoneCodeList = payload;
   },
   setCountriesList: (state, payload) => {
     state.countriesList = payload;
@@ -1110,6 +1138,17 @@ export const actions = {
       commit('pushErrors', e);
     }
   },
+
+  async getPhoneCodeList({ commit }) {
+    try {
+      // eslint-disable-next-line no-underscore-dangle
+      const res = await axios.get(`${API_HOST}/phoneCodeList`);
+      commit('setPhoneCodeList', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
   async getCurrencyList({ commit }) {
     try {
       // eslint-disable-next-line no-underscore-dangle
@@ -1196,7 +1235,8 @@ export const actions = {
     }
   },
 
-  async updateProfile({ commit, dispatch }, payload) {
+  async updateProfile({ state, commit, dispatch }, payload) {
+    if (state.updateProfileError) commit('clearUpdateProfileError');
     try {
       commit('setProfileIsUpdating');
       await axios.put(`${API_HOST}/profile`, payload, reqConfig(commit, 'setUpdateProfileError'));
@@ -1353,6 +1393,19 @@ export const actions = {
     }
   },
 
+  async getAvailableBonusList({ commit }) {
+    commit('setAvailableBonusListIsLoading');
+    try {
+      const res = await axios.get(`${API_HOST}/availableBonusList`);
+      const bonuses = res.data.data;
+      commit('setAvailableBonusList', bonuses);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setAvailableBonusListIsLoaded');
+    }
+  },
+
   async deleteBonus({ commit, state }, id) {
     if (state.deleteBonusError) commit('clearDeleteBonusError');
     try {
@@ -1401,12 +1454,16 @@ export const actions = {
   },
 
   async showUserDocument({ commit }, id) {
+    commit('setOriginalFileIsLoading');
     try {
-      const res = await axios.get(`${API_HOST}/document/${id}`, { responseType: 'blob' });
-      const url = URL.createObjectURL(res.data);
-      window.open(url, 'Image');
+      const res = await axios.get(`${API_HOST}/document/${id}`, {
+        responseType: 'blob',
+      });
+      commit('setOriginalFile', res.data);
     } catch (e) {
       commit('pushErrors', e);
+    } finally {
+      commit('setOriginalFileIsLoaded');
     }
   },
 

@@ -137,7 +137,7 @@
               Uploaded documents
             </div>
             <div v-for="doc in userDocumentList" :key="doc.id" class="VerificationPage-Doc">
-              <div class="VerificationPage-DocName" @click="showUserDocument(doc.id)">
+              <div class="VerificationPage-DocName" @click="onClickDocument(doc.id)">
                 {{ doc.name }}
               </div>
               <div class="VerificationPage-Close" @click="onDeleteDocument(doc.id)">
@@ -158,7 +158,7 @@
             >
               <div class="VerificationPage-Dropzone">
                 <div class="VerificationPage-Text">
-                  Drop file here or browse images or .pdf files. Max size 1Gb
+                  Drop file here or browse images or .pdf files. Max size 110Mb
                 </div>
               </div>
             </vueDropzone>
@@ -199,7 +199,8 @@
 
 <script>
 import { API_HOST_PROD, API_HOST_SANDBOX, API_HOST_STAGE } from '@/config';
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapState, mapMutations } from 'vuex';
+import Loader from '@/components/Loader';
 
 const vue2Dropzone = () => import('vue2-dropzone');
 
@@ -220,7 +221,7 @@ export default {
     return {
       dropzoneOptions: {
         url: `${API_HOST}/document`,
-        maxFilesize: 1000,
+        maxFilesize: 110,
         thumbnailHeight: 100,
         thumbnailMethod: 'contain',
         addRemoveLinks: true,
@@ -229,7 +230,13 @@ export default {
     };
   },
   computed: {
-    ...mapState(['token', 'userDocumentList']),
+    ...mapState([
+      'token',
+      'userDocumentList',
+      'originalFile',
+      'originalFileIsLoading',
+      'originalFileError',
+    ]),
   },
   created() {
     this.getUserDocumentList();
@@ -238,6 +245,7 @@ export default {
     this.dropzoneOptions.headers = { 'X-Auth-Token': this.token };
   },
   methods: {
+    ...mapMutations(['clearOriginalFile', 'clearOriginalFileError']),
     ...mapActions(['getUserDocumentList', 'showUserDocument', 'deleteUserDocument', 'logout']),
     onDeleteDocument(id) {
       this.deleteUserDocument(id).then(() => this.getUserDocumentList());
@@ -250,6 +258,41 @@ export default {
     },
     onErrorUpload({ xhr }) {
       if (xhr && xhr.status === 401) this.logout(true);
+    },
+    beforeCloseModalOriginalFile() {
+      this.clearOriginalFile();
+      if (this.originalFileError) this.clearOriginalFileError();
+    },
+    onClickDocument(id) {
+      this.showUserDocument(id);
+      this.$modal.show(
+        {
+          template: `
+            <div class="Modal">
+              <div class="Close Modal-Close" @click="$emit('close')" />
+              <div class="VerificationPage-File">
+                <Loader v-if="originalFileIsLoading" />
+                <div v-else-if="originalFileError">{{ originalFileError }}</div>
+                <img class="VerificationPage-FileImg" v-else :src="createObjectURL(originalFile)" />
+              </div>
+            </div>
+          `,
+          components: { Loader },
+          computed: {
+            ...mapState(['originalFile', 'originalFileIsLoading', 'originalFileError']),
+          },
+          methods: {
+            createObjectURL(src) {
+              return URL.createObjectURL(src);
+            },
+          },
+        },
+        {},
+        { width: '90%', height: 'auto', adaptive: true, scrollable: true },
+        {
+          'before-close': this.beforeCloseModalOriginalFile,
+        },
+      );
     },
   },
 };
@@ -426,6 +469,14 @@ export default {
     &--pending {
       color: var(--color-main1);
     }
+  }
+
+  &-File {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: auto;
+    background: var(--color-body);
   }
 
   .dropzone {
