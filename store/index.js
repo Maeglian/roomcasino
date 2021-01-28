@@ -79,6 +79,7 @@ export const state = () => ({
   gameProducerList: [DEFAULT_PROVIDER],
   status: '',
   authStatus: '',
+  phoneCodeList: [],
   countriesList: [],
   currencyList: [],
   categories: [],
@@ -912,6 +913,9 @@ export const mutations = {
   setGames: (state, payload) => {
     state.games = payload;
   },
+  setPhoneCodeList: (state, payload) => {
+    state.phoneCodeList = payload;
+  },
   setCountriesList: (state, payload) => {
     state.countriesList = payload;
   },
@@ -1134,6 +1138,17 @@ export const actions = {
       commit('pushErrors', e);
     }
   },
+
+  async getPhoneCodeList({ commit }) {
+    try {
+      // eslint-disable-next-line no-underscore-dangle
+      const res = await axios.get(`${API_HOST}/phoneCodeList`);
+      commit('setPhoneCodeList', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
   async getCurrencyList({ commit }) {
     try {
       // eslint-disable-next-line no-underscore-dangle
@@ -1220,7 +1235,8 @@ export const actions = {
     }
   },
 
-  async updateProfile({ commit, dispatch }, payload) {
+  async updateProfile({ state, commit, dispatch }, payload) {
+    if (state.updateProfileError) commit('clearUpdateProfileError');
     try {
       commit('setProfileIsUpdating');
       await axios.put(`${API_HOST}/profile`, payload, reqConfig(commit, 'setUpdateProfileError'));

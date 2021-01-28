@@ -31,6 +31,7 @@ window.onNuxtReady(({ context }) => {
   window.addEventListener('resize', updateWidth);
   context.store.dispatch('getGames');
   context.store.dispatch('getCountriesList');
+  context.store.dispatch('getPhoneCodeList');
   context.store.dispatch('getCurrencyList');
   context.store.dispatch('getCategoriesList');
   context.store.dispatch('getGameProducerList');
