@@ -174,6 +174,7 @@ import {
 import { termsCheck, ageCheck, dateCheck } from '@/utils/formCheckers';
 import RegistrationBonus from '@/components/homepage/RegistrationBonus';
 import BaseButton from '@/components/base/BaseButton';
+import moment from 'moment';
 
 export default {
   name: 'RegistrationForm',
@@ -447,6 +448,18 @@ export default {
     if (!this.fieldsStep1.currency.value) this.fieldsStep1.currency.value = this.defaultCurrency;
     this.fieldsStep1.country.items = this.countriesList;
     if (!this.fieldsStep1.country.value) this.fieldsStep1.country.value = this.defaultCountry;
+    if (this.beforeDeposit) {
+      for (const key in this.fieldsStep2) {
+        if (key === 'birthDate') {
+          const date = moment(this.userInfo.birthDate);
+          console.log(date.day(), date.month(), date.year());
+          this.fieldsStep2.birthDate.children.day.value = String(date.date());
+          this.fieldsStep2.birthDate.children.month.value = String(date.month() + 1);
+          this.fieldsStep2.birthDate.children.year.value = String(date.year());
+        }
+        this.fieldsStep2[key].value = this.userInfo[key];
+      }
+    }
     // this.fieldsStep2.phone.items = this.phoneCodeList;
     // if (!this.fieldsStep2.phone.value) this.fieldsStep2.phone.value = this.defaultCountry;
   },
