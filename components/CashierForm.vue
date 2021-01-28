@@ -8,7 +8,6 @@
       adaptive
       scrollable
       @before-open="beforeInitializeCashier()"
-      @opened="initializeCashier()"
       @closed="onCloseCashierForm()"
     >
       <div class="Modal">
@@ -85,8 +84,7 @@ export default {
       } catch {
         this.$modal.hide('cashier');
       }
-    },
-    initializeCashier() {
+
       this.cashierIsLoading = true;
 
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
