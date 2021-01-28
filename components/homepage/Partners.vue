@@ -1,38 +1,43 @@
 <template>
   <div class="Partners">
-    <client-only>
-      <marquee-text :duration="durationSpeed">
-        <div class="Partners-Wrapper">
-          <div class="Partners-Partner Partners-Partner--visa">
-            <img class="Partners-Image" src="@/assets/img/visa.svg" />
-          </div>
-          <div class="Partners-Partner Partners-Partner--maestro">
-            <img class="Partners-Image" src="@/assets/img/maestro.svg" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image" src="@/assets/img/skrill.svg" />
-          </div>
-          <div class="Partners-Partner Partners-Partner--paysafe">
-            <img class="Partners-Image" src="@/assets/img/paysafe.svg" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image" src="@/assets/img/wirecard.svg" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image" src="@/assets/img/webmoney.svg" />
-          </div>
-          <div class="Partners-Partner Partners-Partner--sofort">
-            <img class="Partners-Image" src="@/assets/img/sofort.svg" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image" src="@/assets/img/microgaming.svg" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image" src="@/assets/img/interac_35.png" />
-          </div>
-        </div>
-      </marquee-text>
-    </client-only>
+    <!--    <client-only>-->
+    <!--      <marquee-text :duration="durationSpeed">-->
+    <!--        <div class="Partners-Wrapper">-->
+    <!--          <div class="Partners-Partner Partners-Partner&#45;&#45;visa">-->
+    <!--            <img class="Partners-Image" src="@/assets/img/visa.svg" />-->
+    <!--          </div>-->
+    <!--          <div class="Partners-Partner Partners-Partner&#45;&#45;maestro">-->
+    <!--            <img class="Partners-Image" src="@/assets/img/maestro.svg" />-->
+    <!--          </div>-->
+    <!--          <div class="Partners-Partner">-->
+    <!--            <img class="Partners-Image" src="@/assets/img/skrill.svg" />-->
+    <!--          </div>-->
+    <!--          <div class="Partners-Partner Partners-Partner&#45;&#45;paysafe">-->
+    <!--            <img class="Partners-Image" src="@/assets/img/paysafe.svg" />-->
+    <!--          </div>-->
+    <!--          <div class="Partners-Partner">-->
+    <!--            <img class="Partners-Image" src="@/assets/img/wirecard.svg" />-->
+    <!--          </div>-->
+    <!--          <div class="Partners-Partner">-->
+    <!--            <img class="Partners-Image" src="@/assets/img/webmoney.svg" />-->
+    <!--          </div>-->
+    <!--          <div class="Partners-Partner Partners-Partner&#45;&#45;sofort">-->
+    <!--            <img class="Partners-Image" src="@/assets/img/sofort.svg" />-->
+    <!--          </div>-->
+    <!--          <div class="Partners-Partner">-->
+    <!--            <img class="Partners-Image" src="@/assets/img/microgaming.svg" />-->
+    <!--          </div>-->
+    <!--          <div class="Partners-Partner">-->
+    <!--            <img class="Partners-Image" src="@/assets/img/interac.svg" />-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </marquee-text>-->
+    <!--    </client-only>-->
+    <div class="Partners-Wrapper">
+      <div class="Partners-Partner">
+        <img class="Partners-Image Partners-Image--interac" src="@/assets/img/interac.svg" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -82,6 +87,10 @@ export default {
     @media (min-width: $screen-xl) {
       margin-right: 37px;
     }
+  }
+
+  &-Image--interac {
+    height: 50px;
   }
 }
 </style>
