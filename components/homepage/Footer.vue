@@ -15,9 +15,6 @@
         <NuxtLink class="Link Footer-Link" to="/payment-methods">
           Payment methods
         </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/about-us">
-          About us
-        </NuxtLink>
         <NuxtLink class="Link Footer-Link" to="/terms">
           Terms and conditions
         </NuxtLink>
