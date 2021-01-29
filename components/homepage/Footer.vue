@@ -38,6 +38,12 @@
         <img src="@/assets/img/eng.png" alt="" />
       </div>
     </nav>
+    <div
+      id="“apg-034906ca-0989-44fa-8bff-6a0fdffc45bb”"
+      data-apg-seal-id="“034906ca-0989-44fa-8bff-6a0fdffc45bb”"
+      data-apg-image-size="“128”"
+      data-apg-image-type="“basic-small”"
+    ></div>
     <div class="Footer-Disclaimer">
       <div class="Footer-Text">
         Copyright © 2020 www.roomcasino.com is owned and operated by DUX GROUP N.V., a company
@@ -74,6 +80,10 @@ export default {
   name: 'Footer',
   components: {
     Partners,
+  },
+  mounted() {
+    if (process.env.NUXT_ENV_MODE === 'production')
+      window.apg_034906ca_0989_44fa_8bff_6a0fdffc45bb.init();
   },
 };
 </script>
