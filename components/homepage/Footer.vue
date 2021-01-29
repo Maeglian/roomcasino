@@ -39,10 +39,10 @@
       </div>
     </nav>
     <div
-      id="“apg-034906ca-0989-44fa-8bff-6a0fdffc45bb”"
-      data-apg-seal-id="“034906ca-0989-44fa-8bff-6a0fdffc45bb”"
-      data-apg-image-size="“128”"
-      data-apg-image-type="“basic-small”"
+      id="apg-034906ca-0989-44fa-8bff-6a0fdffc45bb"
+      data-apg-seal-id="034906ca-0989-44fa-8bff-6a0fdffc45bb"
+      data-apg-image-size="128"
+      data-apg-image-type="basic-small"
     ></div>
     <div class="Footer-Disclaimer">
       <div class="Footer-Text">
@@ -82,8 +82,7 @@ export default {
     Partners,
   },
   mounted() {
-    if (process.env.NUXT_ENV_MODE === 'production')
-      window.apg_034906ca_0989_44fa_8bff_6a0fdffc45bb.init();
+    window.apg_034906ca_0989_44fa_8bff_6a0fdffc45bb.init();
   },
 };
 </script>
