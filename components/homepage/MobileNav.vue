@@ -67,6 +67,7 @@ export default {
 .MobileNav {
   position: fixed;
   bottom: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   width: 100%;
