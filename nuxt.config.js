@@ -55,6 +55,9 @@ export default {
         src: '/js/liveChat.js',
         defer: true,
       },
+      {
+        src: 'https://034906ca-0989-44fa-8bff-6a0fdffc45bb.snippet.antillephone.com/apg-seal.js',
+      },
     ],
     noscript: [
       {
