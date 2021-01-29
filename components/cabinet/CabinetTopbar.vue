@@ -11,19 +11,19 @@
     <template v-if="Object.keys(user).length">
       <div class="CabinetTopbar-User">
         <UserAccounts class="CabinetTopbar-UserAccounts" />
-        <div class="CabinetTopbar-UserDetails">
-          <div class="CabinetTopbar-UserLvl">
-            Level 2
-          </div>
-          <div class="CabinetTopbar-LvlDetails">
-            <span class="CabinetTopbar-Spent">
-              1000 PC /
-            </span>
-            <span class="CabinetTopbar-Left">
-              4 999 PC
-            </span>
-          </div>
-        </div>
+        <!--        <div class="CabinetTopbar-UserDetails">-->
+        <!--          <div class="CabinetTopbar-UserLvl">-->
+        <!--            Level 2-->
+        <!--          </div>-->
+        <!--          <div class="CabinetTopbar-LvlDetails">-->
+        <!--            <span class="CabinetTopbar-Spent">-->
+        <!--              1000 PC /-->
+        <!--            </span>-->
+        <!--            <span class="CabinetTopbar-Left">-->
+        <!--              4 999 PC-->
+        <!--            </span>-->
+        <!--          </div>-->
+        <!--        </div>-->
       </div>
       <button class="CabinetTopbar-Btn Btn Btn--color" @click="$modal.show('cashier')">
         Deposit
