@@ -7,12 +7,12 @@
             <span class="AuthSection-UserName">
               {{ user.firstName || user.email }}
             </span>
-            <span class="AuthSection-Spent">
-              8 PC /
-            </span>
-            <span class="AuthSection-Left">
-              25 PC
-            </span>
+            <!--            <span class="AuthSection-Spent">-->
+            <!--              8 PC /-->
+            <!--            </span>-->
+            <!--            <span class="AuthSection-Left">-->
+            <!--              25 PC-->
+            <!--            </span>-->
           </div>
           <div class="AuthSection-UserBalance">
             <div class="AuthSection-UserBalanceText">
@@ -22,15 +22,15 @@
             {{ activeAccount.currency || user.currency }}
           </div>
         </NuxtLink>
-        <div class="AuthSection-UserLvl">
-          2
-        </div>
-        <div class="AuthSection-UserMessages" @click="toggleNotificationsPanel">
-          <svg class="AuthSection-UserMessagesIcon">
-            <use xlink:href="@/assets/img/icons.svg#messages"></use>
-          </svg>
-          <div v-show="isNewNotifications" class="AuthSection-UserMessagesNew"></div>
-        </div>
+        <!--        <div class="AuthSection-UserLvl">-->
+        <!--          2-->
+        <!--        </div>-->
+        <!--        <div class="AuthSection-UserMessages" @click="toggleNotificationsPanel">-->
+        <!--          <svg class="AuthSection-UserMessagesIcon">-->
+        <!--            <use xlink:href="@/assets/img/icons.svg#messages"></use>-->
+        <!--          </svg>-->
+        <!--          <div v-show="isNewNotifications" class="AuthSection-UserMessagesNew"></div>-->
+        <!--        </div>-->
       </div>
       <button class="AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
         Deposit

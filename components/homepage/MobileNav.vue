@@ -24,17 +24,17 @@
         Deposit
       </div>
     </button>
-    <div class="MobileNav-Item" @click="toggleNotificationsPanel">
-      <div class="MobileNav-Messages">
-        <svg width="12" height="14">
-          <use xlink:href="@/assets/img/icons.svg#messages"></use>
-        </svg>
-        <div v-show="isNewNotifications" class="MobileNav-MessagesNew"></div>
-      </div>
-      <div class="MobileNav-Name">
-        Notification
-      </div>
-    </div>
+    <!--    <div class="MobileNav-Item" @click="toggleNotificationsPanel">-->
+    <!--      <div class="MobileNav-Messages">-->
+    <!--        <svg width="12" height="14">-->
+    <!--          <use xlink:href="@/assets/img/icons.svg#messages"></use>-->
+    <!--        </svg>-->
+    <!--        <div v-show="isNewNotifications" class="MobileNav-MessagesNew"></div>-->
+    <!--      </div>-->
+    <!--      <div class="MobileNav-Name">-->
+    <!--        Notification-->
+    <!--      </div>-->
+    <!--    </div>-->
   </nav>
 </template>
 

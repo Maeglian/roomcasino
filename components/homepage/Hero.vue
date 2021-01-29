@@ -36,12 +36,12 @@
       </div>
     </div>
     <div class="Hero-Footer">
-      <GamesSlider
-        class="Hero-Winners GamesSlider--winners"
-        :items="winners"
-        :slider-options="winnersSliderOptions"
-        title="Last winners"
-      />
+      <!--      <GamesSlider-->
+      <!--        class="Hero-Winners GamesSlider&#45;&#45;winners"-->
+      <!--        :items="winners"-->
+      <!--        :slider-options="winnersSliderOptions"-->
+      <!--        title="Last winners"-->
+      <!--      />-->
       <div class="Advantages Hero-Advantages">
         <div class="Advantages-Item">
           <div class="Advantages-Icon">
@@ -101,15 +101,15 @@
 </template>
 
 <script>
-import GamesSlider from '@/components/GamesSlider';
+// import GamesSlider from '@/components/GamesSlider';
 import { mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'Hero',
-  components: {
-    GamesSlider,
-  },
+  // components: {
+  //   GamesSlider,
+  // },
   mixins: [showAuthDialog],
   data() {
     return {

@@ -48,57 +48,57 @@
           </div>
         </article>
       </div>
-      <h2 class="Title Title--type-h2 Page-Subtitle PromotionsPage-Subtitle">
-        Tournaments
-      </h2>
-      <div class="Page-Cards PromotionsPage-Tournaments">
-        <article
-          v-for="(item, i) in tournaments"
-          :key="`tour_${i}`"
-          class="PromotionsCard Page-Card"
-        >
-          <Banner class="PromotionsCard-Banner Banner--withCounter" :image="item.image">
-            <template #title>
-              <span v-html="item.title"></span>
-            </template>
-            <template #subtitle>
-              <span v-html="item.subtitle"></span>
-            </template>
-            <template #counter>
-              <Counter :enddate="item.enddate" />
-            </template>
-          </Banner>
-          <div class="PromotionsCard-Footer">
-            <div class="PromotionsCard-Title">
-              {{ item.announce }}
-            </div>
-            <div class="PromotionsCard-Text Text Text--additional">
-              <span v-html="item.text"> </span>
-            </div>
-          </div>
-          <div class="PromotionsCard-Btns">
-            <button
-              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
-              @click="onClickBtn()"
-            >
-              {{ isLoggedIn ? 'Deposit' : 'Sign up' }}
-            </button>
-            <NuxtLink
-              to="#"
-              class="Btn Btn--common Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
-            >
-              Terms & conditions
-            </NuxtLink>
-          </div>
-        </article>
-      </div>
+      <!--      <h2 class="Title Title&#45;&#45;type-h2 Page-Subtitle PromotionsPage-Subtitle">-->
+      <!--        Tournaments-->
+      <!--      </h2>-->
+      <!--      <div class="Page-Cards PromotionsPage-Tournaments">-->
+      <!--        <article-->
+      <!--          v-for="(item, i) in tournaments"-->
+      <!--          :key="`tour_${i}`"-->
+      <!--          class="PromotionsCard Page-Card"-->
+      <!--        >-->
+      <!--          <Banner class="PromotionsCard-Banner Banner&#45;&#45;withCounter" :image="item.image">-->
+      <!--            <template #title>-->
+      <!--              <span v-html="item.title"></span>-->
+      <!--            </template>-->
+      <!--            <template #subtitle>-->
+      <!--              <span v-html="item.subtitle"></span>-->
+      <!--            </template>-->
+      <!--            <template #counter>-->
+      <!--              <Counter :enddate="item.enddate" />-->
+      <!--            </template>-->
+      <!--          </Banner>-->
+      <!--          <div class="PromotionsCard-Footer">-->
+      <!--            <div class="PromotionsCard-Title">-->
+      <!--              {{ item.announce }}-->
+      <!--            </div>-->
+      <!--            <div class="PromotionsCard-Text Text Text&#45;&#45;additional">-->
+      <!--              <span v-html="item.text"> </span>-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--          <div class="PromotionsCard-Btns">-->
+      <!--            <button-->
+      <!--              class="Btn Btn&#45;&#45;common PromotionsCard-Btn PromotionsCard-Btn&#45;&#45;small"-->
+      <!--              @click="onClickBtn()"-->
+      <!--            >-->
+      <!--              {{ isLoggedIn ? 'Deposit' : 'Sign up' }}-->
+      <!--            </button>-->
+      <!--            <NuxtLink-->
+      <!--              to="#"-->
+      <!--              class="Btn Btn&#45;&#45;common Btn&#45;&#45;dark PromotionsCard-Btn PromotionsCard-Btn&#45;&#45;large"-->
+      <!--            >-->
+      <!--              Terms & conditions-->
+      <!--            </NuxtLink>-->
+      <!--          </div>-->
+      <!--        </article>-->
+      <!--      </div>-->
     </section>
   </section>
 </template>
 
 <script>
 import Banner from '@/components/Banner';
-import Counter from '@/components/Counter';
+// import Counter from '@/components/Counter';
 import { mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
@@ -106,7 +106,7 @@ export default {
   name: 'Promotions',
   components: {
     Banner,
-    Counter,
+    // Counter,
   },
   mixins: [showAuthDialog],
   layout: 'page',
@@ -137,30 +137,30 @@ export default {
           text:
             '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
         },
-        {
-          title: '55%<br/> of the deposit<br/> amount',
-          subtitle: '€ 150 <span class="Colored">+</span> 100 Free Spins',
-          image: 'promotion4.png',
-          announce: 'Second deposit bonus',
-          text:
-            '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
-        },
-        {
-          title: '100%<br/> of the deposit<br/> amount',
-          subtitle: '€ 500 <span class="Colored">+</span> 500 Free Spins',
-          image: 'promotion5.png',
-          announce: 'First deposit bonus',
-          text:
-            '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
-        },
-        {
-          title: '55%<br/> of the deposit<br/> amount',
-          subtitle: '€ 150 <span class="Colored">+</span> 100 Free Spins',
-          image: 'promotion6.png',
-          announce: 'Second deposit bonus',
-          text:
-            '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
-        },
+        // {
+        //   title: '55%<br/> of the deposit<br/> amount',
+        //   subtitle: '€ 150 <span class="Colored">+</span> 100 Free Spins',
+        //   image: 'promotion4.png',
+        //   announce: 'Second deposit bonus',
+        //   text:
+        //     '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
+        // },
+        // {
+        //   title: '100%<br/> of the deposit<br/> amount',
+        //   subtitle: '€ 500 <span class="Colored">+</span> 500 Free Spins',
+        //   image: 'promotion5.png',
+        //   announce: 'First deposit bonus',
+        //   text:
+        //     '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
+        // },
+        // {
+        //   title: '55%<br/> of the deposit<br/> amount',
+        //   subtitle: '€ 150 <span class="Colored">+</span> 100 Free Spins',
+        //   image: 'promotion6.png',
+        //   announce: 'Second deposit bonus',
+        //   text:
+        //     '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
+        // },
       ],
     };
   },
