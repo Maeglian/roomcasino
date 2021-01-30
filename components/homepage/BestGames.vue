@@ -55,7 +55,7 @@
         class="BestGames-Cards NewGames-Cards"
         :games="bestGames"
         :games-to-show="12"
-        btn-class="Btn--dark"
+        btn-class="Btn--common Btn--dark"
       />
     </section>
   </div>
