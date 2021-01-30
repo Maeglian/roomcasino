@@ -28,7 +28,8 @@
             welcome<br />
             bonus
           </div>
-          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>
+          <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
+          <div class="Hero-Text">100% up to 150 CAD</div>
           <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
             {{ isLoggedIn ? 'Deposit now' : 'Sign up' }}
           </button>
