@@ -36,9 +36,9 @@
           btn-class="Btn--common Btn--dark"
         />
       </div>
-      <div class="Title Title--type-h2 Cards-Title">
-        The best games
-      </div>
+      <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
+      <!--        The best games-->
+      <!--      </div>-->
       <Loader v-if="gamesAreLoading" />
       <template v-else>
         <Games

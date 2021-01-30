@@ -14,6 +14,7 @@ export const GAME_TYPES = [
   },
   {
     name: 'Top games',
+    type: 'top',
     icon: 'crown',
   },
   {
