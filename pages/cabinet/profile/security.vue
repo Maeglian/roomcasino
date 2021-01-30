@@ -1,27 +1,27 @@
 <template>
   <div class="ProfilePage-Content">
     <div class="ProfilePage-Auth">
-      <div class="ProfilePage-Qr">
-        <div class="CabinetPage-Header">
-          Two - factor authentication
-        </div>
-        <div class="ProfilePage-QrContent">
-          <img class="ProfilePage-Code" src="@/assets/img/qr.png" />
-          <div class="ProfilePage-Text">
-            Install a code-generating app such as Google Authenticator or Authy on your phone.<br />
-            Scan the QR code. Enter the received code below.
-          </div>
-        </div>
-        <form class="ProfilePage-QrForm">
-          <input
-            v-model="qrCode"
-            class="ProfilePage-Input"
-            type="text"
-            placeholder="Type it here"
-          />
-          <button type="submit" class="ProfilePage-Send">Send</button>
-        </form>
-      </div>
+      <!--      <div class="ProfilePage-Qr">-->
+      <!--        <div class="CabinetPage-Header">-->
+      <!--          Two - factor authentication-->
+      <!--        </div>-->
+      <!--        <div class="ProfilePage-QrContent">-->
+      <!--          <img class="ProfilePage-Code" src="@/assets/img/qr.png" />-->
+      <!--          <div class="ProfilePage-Text">-->
+      <!--            Install a code-generating app such as Google Authenticator or Authy on your phone.<br />-->
+      <!--            Scan the QR code. Enter the received code below.-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        <form class="ProfilePage-QrForm">-->
+      <!--          <input-->
+      <!--            v-model="qrCode"-->
+      <!--            class="ProfilePage-Input"-->
+      <!--            type="text"-->
+      <!--            placeholder="Type it here"-->
+      <!--          />-->
+      <!--          <button type="submit" class="ProfilePage-Send">Send</button>-->
+      <!--        </form>-->
+      <!--      </div>-->
       <form class="CabinetForm ProfilePage-Password" @submit.prevent="onSubmitPasswordForm">
         <div class="CabinetPage-Header">
           Password change
