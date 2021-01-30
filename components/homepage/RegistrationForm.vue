@@ -453,12 +453,13 @@ export default {
     if (this.beforeDeposit) {
       for (const key in this.fieldsStep2) {
         if (key === 'birthDate') {
-          const date = moment(this.userInfo.birthDate);
-          this.fieldsStep2.birthDate.children.day.value = String(date.date());
-          this.fieldsStep2.birthDate.children.month.value = String(date.month() + 1);
-          this.fieldsStep2.birthDate.children.year.value = String(date.year());
-        }
-        this.fieldsStep2[key].value = this.userInfo[key];
+          if (this.userInfo.birthDate) {
+            const date = moment(this.userInfo.birthDate);
+            this.fieldsStep2.birthDate.children.day.value = String(date.date());
+            this.fieldsStep2.birthDate.children.month.value = String(date.month() + 1);
+            this.fieldsStep2.birthDate.children.year.value = String(date.year());
+          }
+        } else if (this.userInfo[key]) this.fieldsStep2[key].value = this.userInfo[key];
       }
     }
     // this.fieldsStep2.phone.items = this.phoneCodeList;
