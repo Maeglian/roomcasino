@@ -126,6 +126,11 @@
                 <span class="AuthDialog-Placeholder--required">*</span>
               </span>
             </template>
+            <template v-if="name === 'phoneNumber'" #afterInput-absolute>
+              <div class="AuthDialog-PhonePlus">
+                +
+              </div>
+            </template>
           </BaseInput>
         </template>
       </template>
@@ -654,6 +659,14 @@ export default {
 
   &-Buttons {
     display: flex;
+  }
+
+  &-PhonePlus {
+    position: absolute;
+    top: 12px;
+    left: -20px;
+    font-size: 28px;
+    color: var(--color-text-ghost);
   }
 }
 </style>
