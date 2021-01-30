@@ -165,34 +165,34 @@
           </client-only>
         </div>
       </div>
-      <div class="VerificationPage-Item">
-        <div class="VerificationPage-Desc">
-          <svg class="VerificationPage-Approve VerificationPage-Approve--approved">
-            <use xlink:href="@/assets/img/icons.svg#approve"></use>
-          </svg>
-          <div class="VerificationPage-Title">
-            <div class="VerificationPage-Name">
-              Phone verification
-            </div>
-            <div class="VerificationPage-Approved">
-              Approved
-            </div>
-          </div>
-        </div>
-        <div class="VerificationPage-Docs">
-          <div class="VerificationPage-DocsContent">
-            <div class="VerificationPage-DocsTitle">
-              Phone number
-            </div>
-            <div class="VerificationPage-Name VerificationPage-Doc">
-              +3585****289
-              <div class="VerificationPage-Close">
-                <div class="Close"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!--      <div class="VerificationPage-Item">-->
+      <!--        <div class="VerificationPage-Desc">-->
+      <!--          <svg class="VerificationPage-Approve VerificationPage-Approve&#45;&#45;approved">-->
+      <!--            <use xlink:href="@/assets/img/icons.svg#approve"></use>-->
+      <!--          </svg>-->
+      <!--          <div class="VerificationPage-Title">-->
+      <!--            <div class="VerificationPage-Name">-->
+      <!--              Phone verification-->
+      <!--            </div>-->
+      <!--            <div class="VerificationPage-Approved">-->
+      <!--              Approved-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        <div class="VerificationPage-Docs">-->
+      <!--          <div class="VerificationPage-DocsContent">-->
+      <!--            <div class="VerificationPage-DocsTitle">-->
+      <!--              Phone number-->
+      <!--            </div>-->
+      <!--            <div class="VerificationPage-Name VerificationPage-Doc">-->
+      <!--              +3585****289-->
+      <!--              <div class="VerificationPage-Close">-->
+      <!--                <div class="Close"></div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
     </div>
   </div>
 </template>

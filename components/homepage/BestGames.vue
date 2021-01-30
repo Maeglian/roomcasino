@@ -49,17 +49,17 @@
         />
       </template>
     </section>
-    <section class="NewGames">
-      <div class="Title Title--type-h2 Cards-Title">
-        New games
-      </div>
-      <Games
-        class="BestGames-Cards NewGames-Cards"
-        :games="fakedNewGames"
-        :games-to-show="12"
-        :btn-class="'Btn--common Btn--dark'"
-      />
-    </section>
+    <!--    <section class="NewGames">-->
+    <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
+    <!--        New games-->
+    <!--      </div>-->
+    <!--      <Games-->
+    <!--        class="BestGames-Cards NewGames-Cards"-->
+    <!--        :games="fakedNewGames"-->
+    <!--        :games-to-show="12"-->
+    <!--        :btn-class="'Btn&#45;&#45;common Btn&#45;&#45;dark'"-->
+    <!--      />-->
+    <!--    </section>-->
     <!--    <section class="LiveGames">-->
     <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
     <!--        Live games-->
@@ -198,7 +198,7 @@ export default {
     ...mapGetters(['fakedNewGames', 'isLoggedIn', 'gamesSearched']),
     gamesParams() {
       const params = {};
-      if (this.tabActive.type) params.type = this.tabActive.type;
+      if (this.tabActive.type) params.category = this.tabActive.type;
       if (this.providerActive.name !== 'All providers')
         params.gameProducer = this.providerActive.name;
       return params;
@@ -231,7 +231,7 @@ export default {
 
     @media (min-width: $screen-m) {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       grid-gap: 10px;
       width: 100%;
       margin-bottom: 10px;

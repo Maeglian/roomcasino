@@ -2,20 +2,20 @@
   <div class="HomePage">
     <Hero />
     <BestGames />
-    <Jackpots />
-    <Tournament />
-    <Winners />
-    <MainBanner class="HomePage-Banner" v-bind="banner1" />
+    <!--    <Jackpots />-->
+    <!--    <Tournament />-->
+    <!--    <Winners />-->
+    <!--    <MainBanner class="HomePage-Banner" v-bind="banner1" />-->
   </div>
 </template>
 
 <script>
 import Hero from '@/components/homepage/Hero.vue';
 import BestGames from '@/components/homepage/BestGames.vue';
-import Jackpots from '@/components/homepage/Jackpots.vue';
-import Tournament from '@/components/homepage/Tournament.vue';
-import Winners from '@/components/homepage/Winners.vue';
-import MainBanner from '@/components/MainBanner.vue';
+// import Jackpots from '@/components/homepage/Jackpots.vue';
+// import Tournament from '@/components/homepage/Tournament.vue';
+// import Winners from '@/components/homepage/Winners.vue';
+// import MainBanner from '@/components/MainBanner.vue';
 // import Promotions from '@/components/Promotions.vue';
 // import Questions from '@/components/Questions.vue';
 // import Banner from '@/components/Banner.vue';
@@ -25,10 +25,10 @@ export default {
   components: {
     Hero,
     BestGames,
-    Jackpots,
-    Tournament,
-    Winners,
-    MainBanner,
+    // Jackpots,
+    // Tournament,
+    // Winners,
+    // MainBanner,
     // Promotions,
     // Questions,
     // Banner,

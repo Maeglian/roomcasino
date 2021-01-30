@@ -75,26 +75,26 @@ export default {
           url: '/promotions',
           icon: 'promotions_nav.svg',
         },
-        {
-          name: 'Tournaments',
-          children: [
-            {
-              name: 'Daily tournament',
-              url: '/daily-tournament',
-              icon: 'tournament_nav.svg',
-            },
-            {
-              name: 'Weekly lottery',
-              url: '#',
-              icon: 'tournament_nav.svg',
-            },
-            {
-              name: 'Live tournament',
-              url: '#',
-              icon: 'tournament_nav.svg',
-            },
-          ],
-        },
+        // {
+        //   name: 'Tournaments',
+        //   children: [
+        //     {
+        //       name: 'Daily tournament',
+        //       url: '/daily-tournament',
+        //       icon: 'tournament_nav.svg',
+        //     },
+        //     {
+        //       name: 'Weekly lottery',
+        //       url: '#',
+        //       icon: 'tournament_nav.svg',
+        //     },
+        //     {
+        //       name: 'Live tournament',
+        //       url: '#',
+        //       icon: 'tournament_nav.svg',
+        //     },
+        //   ],
+        // },
       ],
       internalVisible: true,
     };

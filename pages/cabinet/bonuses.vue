@@ -93,15 +93,15 @@
         </div>
       </div>
     </div>
-    <div class="CabinetPage-Subtitle BonusesPage-Subtitle">
-      Receive a bonus
-    </div>
-    <form class="BonusesPage-Form CabinetPage-Form">
-      <input type="text" class="BonusesPage-Input CabinetPage-Input" placeholder="Promo code" />
-      <button class="BonusesPage-Submit CabinetPage-Submit" type="submit">
-        Add
-      </button>
-    </form>
+    <!--    <div class="CabinetPage-Subtitle BonusesPage-Subtitle">-->
+    <!--      Receive a bonus-->
+    <!--    </div>-->
+    <!--    <form class="BonusesPage-Form CabinetPage-Form">-->
+    <!--      <input type="text" class="BonusesPage-Input CabinetPage-Input" placeholder="Promo code" />-->
+    <!--      <button class="BonusesPage-Submit CabinetPage-Submit" type="submit">-->
+    <!--        Add-->
+    <!--      </button>-->
+    <!--    </form>-->
   </div>
 </template>
 
