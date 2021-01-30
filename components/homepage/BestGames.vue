@@ -36,9 +36,6 @@
           btn-class="Btn--common Btn--dark"
         />
       </div>
-      <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
-      <!--        The best games-->
-      <!--      </div>-->
       <Loader v-if="gamesAreLoading" />
       <template v-else>
         <Games
@@ -49,24 +46,36 @@
         />
       </template>
     </section>
-    <!--    <section class="NewGames">-->
-    <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
-    <!--        New games-->
-    <!--      </div>-->
-    <!--      <Games-->
-    <!--        class="BestGames-Cards NewGames-Cards"-->
-    <!--        :games="fakedNewGames"-->
-    <!--        :games-to-show="12"-->
-    <!--        :btn-class="'Btn&#45;&#45;common Btn&#45;&#45;dark'"-->
-    <!--      />-->
-    <!--    </section>-->
-    <!--    <section class="LiveGames">-->
-    <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
-    <!--        Live games-->
-    <!--      </div>-->
-    <!--      <Games class="BestGames-Cards NewGames-Cards" :games="liveGames" :gamesToShow="12" btnClass="Btn--dark" />-->
-    <!--    </section>-->
+    <section class="TopGames">
+      <div class="Title Title--type-h2 Cards-Title">
+        The best games
+      </div>
+      <Loader v-if="bestGamesAreLoading" />
+      <Games
+        class="BestGames-Cards NewGames-Cards"
+        :games="bestGames"
+        :games-to-show="12"
+        btn-class="Btn--dark"
+      />
+    </section>
   </div>
+  <!--    <section class="NewGames">-->
+  <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
+  <!--        New games-->
+  <!--      </div>-->
+  <!--      <Games-->
+  <!--        class="BestGames-Cards NewGames-Cards"-->
+  <!--        :games="fakedNewGames"-->
+  <!--        :games-to-show="12"-->
+  <!--        :btn-class="'Btn&#45;&#45;common Btn&#45;&#45;dark'"-->
+  <!--      />-->
+  <!--    </section>-->
+  <!--    <section class="LiveGames">-->
+  <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
+  <!--        Live games-->
+  <!--      </div>-->
+  <!--      <Games class="BestGames-Cards NewGames-Cards" :games="liveGames" :gamesToShow="12" btnClass="Btn--dark" />-->
+  <!--    </section>-->
 </template>
 
 <script>
@@ -194,7 +203,14 @@ export default {
     };
   },
   computed: {
-    ...mapState(['width', 'games', 'gamesAreLoading', 'gameProducerList']),
+    ...mapState([
+      'width',
+      'games',
+      'bestGames',
+      'gamesAreLoading',
+      'bestGamesAreLoading',
+      'gameProducerList',
+    ]),
     ...mapGetters(['fakedNewGames', 'isLoggedIn', 'gamesSearched']),
     gamesParams() {
       const params = {};

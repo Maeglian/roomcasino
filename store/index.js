@@ -255,6 +255,7 @@ export const state = () => ({
   notificationsPanelIsOpen: false,
   width: 0,
   games: [],
+  bestGames: [],
   jackpots: [],
   fakeLimits: [
     {
@@ -379,6 +380,7 @@ export const state = () => ({
   ],
   limits: [],
   gamesAreLoading: false,
+  bestGamesAreLoading: false,
   winnersAreLoading: false,
   errors: {},
   profileIsLoading: false,
@@ -907,11 +909,20 @@ export const mutations = {
   setGamesAreLoading: state => {
     state.gamesAreLoading = true;
   },
+  setBestGamesAreLoading: state => {
+    state.bestGamesAreLoading = true;
+  },
   setGamesAreLoaded: state => {
     state.gamesAreLoading = false;
   },
+  setBestGamesAreLoaded: state => {
+    state.bestGamesAreLoading = false;
+  },
   setGames: (state, payload) => {
     state.games = payload;
+  },
+  setBestGames: (state, payload) => {
+    state.bestGames = payload;
   },
   setPhoneCodeList: (state, payload) => {
     state.phoneCodeList = payload;
@@ -1050,6 +1061,18 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setGamesAreLoaded');
+    }
+  },
+
+  async getBestGames({ commit }) {
+    commit('setBestGamesAreLoading');
+    try {
+      const res = await axios.get(`${API_HOST}/gameList`, { params: { category: 'top' } });
+      commit('setBestGames', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setBestGamesAreLoaded');
     }
   },
 
