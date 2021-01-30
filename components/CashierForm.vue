@@ -101,7 +101,7 @@ export default {
           method,
           accountDelete: false,
           showFooter: false,
-          amount: '20',
+          showAmountLimits: true,
           predefinedAmounts: [100, 200, 300, 500, 1000],
           containerWidth: '100%',
           theme: {
