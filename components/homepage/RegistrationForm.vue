@@ -446,13 +446,14 @@ export default {
     getObjValuesFromLocalStorage(this.fieldsStep2);
     this.fieldsStep1.currency.items = this.currencyList;
     if (!this.fieldsStep1.currency.value) this.fieldsStep1.currency.value = this.defaultCurrency;
+    if (!this.currencyList.includes(this.fieldsStep1.currency.value))
+      this.fieldsStep1.currency.value = this.currencyList[0];
     this.fieldsStep1.country.items = this.countriesList;
     if (!this.fieldsStep1.country.value) this.fieldsStep1.country.value = this.defaultCountry;
     if (this.beforeDeposit) {
       for (const key in this.fieldsStep2) {
         if (key === 'birthDate') {
           const date = moment(this.userInfo.birthDate);
-          console.log(date.day(), date.month(), date.year());
           this.fieldsStep2.birthDate.children.day.value = String(date.date());
           this.fieldsStep2.birthDate.children.month.value = String(date.month() + 1);
           this.fieldsStep2.birthDate.children.year.value = String(date.year());
