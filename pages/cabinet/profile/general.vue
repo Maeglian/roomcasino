@@ -45,13 +45,19 @@
             >
               <template v-if="name === 'birthDate'" #beforeInput-absolute>
                 <div
-                  v-if="!$v.fields.birthDate.dateCheck"
+                  v-if="$v.fields.birthDate.$dirty && !$v.fields.birthDate.required"
+                  class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
+                >
+                  Can't be blank
+                </div>
+                <div
+                  v-else-if="$v.fields.birthDate.$dirty && !$v.fields.birthDate.dateCheck"
                   class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
                 >
                   Date is invalid
                 </div>
                 <div
-                  v-else-if="!$v.fields.birthDate.ageCheck"
+                  v-else-if="$v.fields.birthDate.$dirty && !$v.fields.birthDate.ageCheck"
                   class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
                 >
                   You are under age of 18
@@ -187,6 +193,9 @@ export default {
         minLength: minLength(1),
         maxLength: maxLength(100),
       },
+      phoneNumber: {
+        required,
+      },
     },
   },
   computed: {
@@ -207,6 +216,7 @@ export default {
       immediate: true,
       handler() {
         this.fields = { ...this.userInfo };
+        if (!this.fields.gender) this.fields.gender = 'male';
       },
     },
   },

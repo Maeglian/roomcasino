@@ -12,16 +12,16 @@
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
         </NuxtLink>
       </div>
-      <nav v-if="width >= 960" class="Nav MainNav-Links">
-        <ul class="MainNav-List">
-          <NavItem
-            v-for="item in navItems"
-            :key="item.name"
-            :class-name="'MainNav-Link'"
-            :item="item"
-          />
-        </ul>
-      </nav>
+      <!--      <nav v-if="width >= 960" class="Nav MainNav-Links">-->
+      <!--        <ul class="MainNav-List">-->
+      <!--          <NavItem-->
+      <!--            v-for="item in navItems"-->
+      <!--            :key="item.name"-->
+      <!--            :class-name="'MainNav-Link'"-->
+      <!--            :item="item"-->
+      <!--          />-->
+      <!--        </ul>-->
+      <!--      </nav>-->
       <GamePanel v-if="isGamePage" />
       <AuthSection v-else class="MainNav-AuthSection" />
     </div>
