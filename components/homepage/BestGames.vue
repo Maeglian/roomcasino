@@ -49,8 +49,11 @@
         />
       </template>
     </section>
-    <section class="DefaultGames">
+    <section v-if="this.tabActive.name !== 'All games'" class="DefaultGames">
       <Loader v-if="defaultGamesAreLoading" />
+      <div class="Title Title--type-h2 Cards-Title">
+        All games
+      </div>
       <Games
         class="DefaultGames-Cards NewGames-Cards"
         :games="defaultGames"
