@@ -119,7 +119,7 @@ export default {
           image: 'promotion1.png',
           announce: 'First deposit bonus',
           text:
-            '<p>Make your first deposit at Roomcasino and get up to $150.</p><p>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically.</p>',
+            '<p>Make your first deposit at Roomcasino and get up to $150.</p><p>To activate the bonus - just make first deposit of $20 or more. The bonus will be credited automatically.</p>',
         },
         {
           title: '55%<br/> of the deposit<br/> amount',
@@ -127,7 +127,7 @@ export default {
           image: 'promotion2.png',
           announce: 'Second deposit bonus',
           text:
-            '<p>Make your first deposit at Roomcasino and get up to $150.</p><p>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically.</p>',
+            '<p>Make your second deposit at Roomcasino and get up to $150.</p><p>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically.</p>',
         },
         {
           title: '100%<br/> of the deposit<br/> amount',
@@ -135,7 +135,7 @@ export default {
           image: 'promotion3.png',
           announce: 'Third deposit bonus',
           text:
-            '<p>Make your first deposit at Roomcasino and get up to $150.</p><p>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically.</p>',
+            '<p>Make your third deposit at Roomcasino and get up to $150.</p><p>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically.</p>',
         },
         // {
         //   title: '55%<br/> of the deposit<br/> amount',
