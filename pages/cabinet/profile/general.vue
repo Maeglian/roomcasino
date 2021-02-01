@@ -118,7 +118,7 @@ import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import Loader from '@/components/Loader';
 import { PROFILE_LABELS } from '@/config';
 import { maxLength, minLength, alphaNum, required } from 'vuelidate/lib/validators';
-import { ageCheck, dateCheck } from '@/utils/formCheckers';
+import { ageCheck, dateCheck, phoneWithPlusCheck } from '@/utils/formCheckers';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 
@@ -195,6 +195,7 @@ export default {
       },
       phoneNumber: {
         required,
+        phoneWithPlusCheck,
       },
     },
   },
