@@ -115,7 +115,7 @@ export default {
       promotions: [
         {
           title: '100%<br/> of the deposit<br/> amount',
-          subtitle: 'up to € 150',
+          subtitle: 'up to $150',
           image: 'promotion1.png',
           announce: 'First deposit bonus',
           text:
@@ -123,7 +123,7 @@ export default {
         },
         {
           title: '55%<br/> of the deposit<br/> amount',
-          subtitle: 'up to € 150',
+          subtitle: 'up to $150',
           image: 'promotion2.png',
           announce: 'Second deposit bonus',
           text:
@@ -131,7 +131,7 @@ export default {
         },
         {
           title: '100%<br/> of the deposit<br/> amount',
-          subtitle: 'up to € 150',
+          subtitle: 'up to $150',
           image: 'promotion3.png',
           announce: 'Third deposit bonus',
           text:
