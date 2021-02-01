@@ -724,7 +724,7 @@ export const getters = {
   fakedNewGames: state => [...state.games].reverse().slice(0, 12),
   gamesLimited: state => limit => state.games.slice(0, limit),
   gamesSearched: state => text => {
-    return state.games.filter(game => {
+    return state.defaultGames.filter(game => {
       const str = text.trim().toLowerCase();
       const title = game.gameName.toLowerCase();
       return title.includes(str);
