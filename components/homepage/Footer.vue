@@ -6,12 +6,12 @@
         <img src="@/assets/img/logo.svg" />
       </NuxtLink>
       <div class="Footer-Links">
-        <NuxtLink class="Link Footer-Link" to="/promotions">
-          Promotion
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/vip">
-          VIP rewards
-        </NuxtLink>
+        <!--        <NuxtLink class="Link Footer-Link" to="/promotions">-->
+        <!--          Promotion-->
+        <!--        </NuxtLink>-->
+        <!--        <NuxtLink class="Link Footer-Link" to="/vip">-->
+        <!--          VIP rewards-->
+        <!--        </NuxtLink>-->
         <NuxtLink class="Link Footer-Link" to="/payment-methods">
           Payment methods
         </NuxtLink>
