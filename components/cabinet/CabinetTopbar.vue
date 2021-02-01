@@ -6,7 +6,7 @@
     <div class="Nav CabinetTopbar-Nav">
       <NuxtLink class="CabinetTopbar-Link" to="/" exact>Home</NuxtLink>
       <NuxtLink class="CabinetTopbar-Link" to="/promotions">Promotions</NuxtLink>
-      <NuxtLink class="CabinetTopbar-Link" to="/tournaments">Tournaments</NuxtLink>
+      <!--      <NuxtLink class="CabinetTopbar-Link" to="/tournaments">Tournaments</NuxtLink>-->
     </div>
     <template v-if="Object.keys(user).length">
       <div class="CabinetTopbar-User">
