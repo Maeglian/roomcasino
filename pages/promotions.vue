@@ -115,27 +115,27 @@ export default {
       promotions: [
         {
           title: '100%<br/> of the deposit<br/> amount',
-          subtitle: '€ 500 <span class="Colored">+</span> 500 Free Spins',
+          subtitle: 'up to $150',
           image: 'promotion1.png',
           announce: 'First deposit bonus',
           text:
-            '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
+            '<p>Make your first deposit at Roomcasino and get up to $150.</p><p>To activate the bonus - just make first deposit of $20 or more. The bonus will be credited automatically.</p>',
         },
         {
           title: '55%<br/> of the deposit<br/> amount',
-          subtitle: '€ 150 <span class="Colored">+</span> 100 Free Spins',
+          subtitle: 'up to $150',
           image: 'promotion2.png',
           announce: 'Second deposit bonus',
           text:
-            '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
+            '<p>Make your second deposit at Roomcasino and get up to $150.</p><p>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically.</p>',
         },
         {
           title: '100%<br/> of the deposit<br/> amount',
-          subtitle: '€ 500 <span class="Colored">+</span> 500 Free Spins',
+          subtitle: 'up to $150',
           image: 'promotion3.png',
-          announce: 'First deposit bonus',
+          announce: 'Third deposit bonus',
           text:
-            '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
+            '<p>Make your third deposit at Roomcasino and get up to $150.</p><p>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically.</p>',
         },
         // {
         //   title: '55%<br/> of the deposit<br/> amount',
