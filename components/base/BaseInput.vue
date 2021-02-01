@@ -48,7 +48,7 @@
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Phone number is incorrect. Must be with '+', from 10 to 14 symbols
+      Must be with '+', from 10 to 14 symbols
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.numeric === false && v.$dirty"
