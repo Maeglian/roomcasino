@@ -311,7 +311,6 @@ export default {
           required: true,
           autocorrect: 'off',
           autocomplete: 'postal-code',
-          inputmode: 'numeric',
         },
         phoneNumber: {
           value: '',
