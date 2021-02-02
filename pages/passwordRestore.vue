@@ -175,7 +175,7 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(['clearUpdateProfileError', 'clearServerError']),
+    ...mapMutations(['clearUpdateProfileError', 'clearServerError', 'pushNotificationAlert']),
     ...mapActions(['restorePassword', 'confirmRestorePassword']),
     toggleVisibility(el) {
       this.password[el].inputType === 'password'
@@ -191,7 +191,7 @@ export default {
       });
     },
     onSubmit() {
-      this.clearServerError();
+      if (this.serverError) this.clearServerError();
       this.$v.password.$touch();
       if (this.$v.password.$invalid) return;
       this.confirmRestorePassword({
@@ -205,7 +205,7 @@ export default {
             text: 'Your password was successfully updated!',
           });
           this.$router.push('/');
-          this.showRegistrationDialog();
+          this.showRegistrationDialog('login');
         }
       });
     },
