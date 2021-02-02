@@ -50,7 +50,10 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  emailConfirmError: '',
+  emailConfirmIsFetching: false,
   originalFileIsLoading: false,
+  emailIsConfirmed: false,
   originalFile: null,
   originalFileError: '',
   siteIsAllowedForUser: true,
@@ -765,6 +768,24 @@ export const getters = {
 };
 
 export const mutations = {
+  setEmailConfirmIsDone: state => {
+    state.emailConfirmIsFetching = false;
+  },
+  setEmailConfirmIsFetching: state => {
+    state.emailConfirmIsFetching = true;
+  },
+  setEmailIsConfirmed: state => {
+    state.emailIsConfirmed = true;
+  },
+  clearEmailIsConfirmed: state => {
+    state.emailIsConfirmed = false;
+  },
+  setEmailConfirmError: (state, payload) => {
+    state.emailConfirmError = payload;
+  },
+  clearEmailConfirmError: state => {
+    state.emailConfirmError = '';
+  },
   setOriginalFile: (state, payload) => {
     state.originalFile = payload;
   },
@@ -986,6 +1007,7 @@ export const mutations = {
   logout(state) {
     state.status = '';
     state.token = null;
+    state.emailIsConfirmed = false;
   },
   setCashoutTrue(state) {
     state.shouldCashout = true;
@@ -1461,6 +1483,23 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setPageDataIsLoaded');
+    }
+  },
+
+  async confirmEmail({ state, commit }, payload) {
+    if (state.emailConfirmError) commit('clearEmailConfirmError');
+    commit('setEmailConfirmIsFetching');
+    try {
+      await axios.put(
+        `${API_HOST}/emailConfirm`,
+        payload,
+        reqConfig(commit, 'setEmailConfirmError'),
+      );
+      commit('setEmailIsConfirmed');
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setEmailConfirmIsDone');
     }
   },
 
