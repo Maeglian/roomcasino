@@ -8,7 +8,7 @@
         <h4 class="Title">Introduction</h4>
         <p class="Text">
           This Privacy Policy, which was last updated on 04/06/2020, sets out the data processing
-          practices carried out by Roomcasino. Here at BacanaPlay we like making things simple and
+          practices carried out by Roomcasino. Here at Roomcasino we like making things simple and
           easy for our customers and that includes being clear, transparent and open about what we
           collect, and how and why we use the data we collect, so this page goes into great detail.
         </p>
