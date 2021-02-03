@@ -19,7 +19,7 @@
         It is a team of experienced players
       </h3>
       <p class="Text">
-        who have a rich amount of experience not only as players at the gambling table, but also
+        Who have a rich amount of experience not only as players at the gambling table, but also
         working in casino management. RoomCasino is a next-generation high-tech casino with the
         latest games that have been developed by the best experts in the industry. It provides a
         support team that is always ready to help you in any situation. Of course, it also offers
