@@ -53,6 +53,10 @@
         DUX GROUP N.V.’s registration number is 155114 and its registered address is Perseusweg 27
         A, Curacao.
         <br />
+        SCARTESU LIMITED is a subsidiary of DUX GROUP N.V., acting as an Agent on behalf of DUX
+        GROUP N.V, registered in Cyprus with registered address Boumpoulinas 1, BOUBOULINA BUILDING,
+        3rd Floor, Flat/Office 31, 1060, Nicosia, Cyprus, and registration number ΗΕ 410983.
+        <br />
         It is the player’s sole responsibility to inquire about the existing laws and regulations of
         the given jurisdiction for online gambling.
         <br />
