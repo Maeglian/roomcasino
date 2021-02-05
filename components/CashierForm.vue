@@ -102,6 +102,7 @@ export default {
           accountDelete: false,
           showFooter: false,
           showAmountLimits: true,
+          allowMobilePopup: true,
           predefinedAmounts: [100, 200, 300, 500, 1000],
           containerWidth: '100%',
           theme: {
