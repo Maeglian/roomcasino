@@ -147,10 +147,10 @@
           >
             <template #beforeInput-absolute>
               <span
-                v-if="field.required && !$v[`fieldsStep${step}`][name].value.required"
+                v-if="field.tel.required && !$v[`fieldsStep${step}`][name].tel.value.required"
                 class="AuthDialog-Placeholder"
               >
-                {{ field.placeholder }}
+                {{ field.tel.placeholder }}
                 <span class="AuthDialog-Placeholder--required">*</span>
               </span>
             </template>
