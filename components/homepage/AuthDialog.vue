@@ -83,6 +83,7 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: auto;
   background: var(--color-bg);
 
   &-Tabs {
@@ -128,16 +129,11 @@ export default {
   &-Content {
     position: relative;
     flex-grow: 1;
-    height: 420px;
+    min-height: 518px;
     padding-right: 14px;
     padding-bottom: 29px;
     padding-left: 14px;
     background: url('../../assets/img/auth-bg.png');
-
-    @media (min-width: $screen-xs) {
-      height: 100%;
-      min-height: 518px;
-    }
 
     @media (min-width: $screen-s) {
       padding-right: 24px;
