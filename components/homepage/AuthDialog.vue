@@ -132,7 +132,6 @@ export default {
     padding-right: 14px;
     padding-bottom: 29px;
     padding-left: 14px;
-    overflow-y: auto;
     background: url('../../assets/img/auth-bg.png');
 
     @media (min-width: $screen-xs) {
