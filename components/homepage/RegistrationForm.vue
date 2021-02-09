@@ -112,8 +112,8 @@
             "
             class="AuthDialog-Error"
           >
-            Must be between {{ $v[name].$params.minLength.min }} and
-            {{ $v[name].$params.maxLength.max }} symbols
+            Must be between {{ $v[name].$params.minLength.min - 1 }} and
+            {{ $v[name].$params.maxLength.max - 1 }} symbols
           </div>
           <BaseDropdown
             v-model="field.code.value"
@@ -412,7 +412,9 @@ export default {
         phoneNumber: { code, tel },
       } = this.fieldsStep2;
 
-      return code.value.phoneCode + tel.value;
+      const codeNumber = code.value.phoneCode.replace(' ', '');
+
+      return codeNumber + tel.value;
     },
     fields() {
       if (this.step === 1) {
@@ -427,8 +429,8 @@ export default {
       ageCheck,
     },
     phoneNumber: {
-      minLength: minLength(10),
-      maxLength: maxLength(14),
+      minLength: minLength(11),
+      maxLength: maxLength(15),
     },
     fieldsStep1: {
       email: { value: { required, email } },
