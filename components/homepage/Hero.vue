@@ -141,8 +141,8 @@ export default {
         },
         {
           bg: 'tournaments',
-          title: '',
-          text: 'More exciting<br/> promotions<br/> coming soon!',
+          title: 'More exciting<br/> promotions<br/> coming soon!',
+          text: '',
           btnText: 'Deposit now',
         },
       ],
