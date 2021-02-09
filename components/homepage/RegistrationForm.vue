@@ -103,6 +103,59 @@
             <span v-html="field.label"></span>
           </BaseCheckbox>
         </template>
+        <div v-else-if="field.type === 'phone'" :key="name" class="AuthDialog-Row">
+          <div
+            v-if="
+              (!$v[name].minLength || !$v[name].maxLength) &&
+                $v[`fieldsStep${step}`][name].tel.value.$dirty &&
+                !$v[`fieldsStep${step}`][name].tel.value.$invalid
+            "
+            class="AuthDialog-Error"
+          >
+            Must be between {{ $v[name].$params.minLength.min }} and
+            {{ $v[name].$params.maxLength.max }} symbols
+          </div>
+          <BaseDropdown
+            v-model="field.code.value"
+            item-name="countryCode"
+            class="AuthDialog-Field AuthDialog-Dropdown AuthDialog-Dropdown--phoneCode AuthDialog-Row"
+            :class="{ 'AuthDialog-Field--error': $v[`fieldsStep${step}`][name].code.value.$error }"
+            :items="phoneCodeList"
+            :placeholder="field.code.placeholder"
+            error-class="AuthDialog-Error"
+            :v="$v[`fieldsStep${step}`][name].code.value"
+            @set-dropdown-value="field.code.value = $event"
+          >
+            <template #default="slotProps">
+              <slot>
+                <img class="AuthDialog-CountryImg" :src="slotProps.item.countryImage" />
+                {{ slotProps.item.phoneCode }}
+              </slot>
+            </template>
+          </BaseDropdown>
+          <BaseInput
+            v-model="field.tel.value"
+            class="AuthDialog-Row"
+            :input-type="field.tel.type"
+            input-class="AuthDialog-Field AuthDialog-Input"
+            error-class="AuthDialog-Error"
+            :autocorrect="field.tel.autocorrect"
+            :autocomplete="field.tel.autocomplete"
+            :pattern="field.tel.pattern"
+            :inputmode="field.tel.inputmode"
+            :v="$v[`fieldsStep${step}`][name].tel.value"
+          >
+            <template #beforeInput-absolute>
+              <span
+                v-if="field.tel.required && !$v[`fieldsStep${step}`][name].tel.value.required"
+                class="AuthDialog-Placeholder"
+              >
+                {{ field.tel.placeholder }}
+                <span class="AuthDialog-Placeholder--required">*</span>
+              </span>
+            </template>
+          </BaseInput>
+        </div>
         <template v-else>
           <BaseInput
             :key="name"
@@ -313,13 +366,22 @@ export default {
           autocomplete: 'postal-code',
         },
         phoneNumber: {
-          value: '',
-          type: 'tel',
-          placeholder: 'Mobile phone',
-          required: true,
-          autocorrect: 'off',
-          autocomplete: 'tel-national',
-          inputmode: 'numeric',
+          type: 'phone',
+          code: {
+            value: '',
+            type: 'dropdown',
+            placeholder: 'Code',
+            required: true,
+          },
+          tel: {
+            value: '',
+            type: 'tel',
+            placeholder: 'Mobile phone',
+            required: true,
+            autocorrect: 'off',
+            autocomplete: 'tel-national',
+            inputmode: 'numeric',
+          },
         },
       },
     };
@@ -334,6 +396,7 @@ export default {
       'authError',
       'defaultCurrency',
       'updateProfileError',
+      'phoneCodeList',
     ]),
     ...mapGetters(['defaultCountry', 'userInfo']),
     birthDate() {
@@ -343,6 +406,13 @@ export default {
         },
       } = this.fieldsStep2;
       return `${year.value}-${month.value.padStart(2, '0')}-${day.value.padStart(2, '0')}`;
+    },
+    phoneNumber() {
+      const {
+        phoneNumber: { code, tel },
+      } = this.fieldsStep2;
+
+      return code.value.phoneCode + tel.value;
     },
     fields() {
       if (this.step === 1) {
@@ -355,6 +425,10 @@ export default {
     birthDate: {
       dateCheck,
       ageCheck,
+    },
+    phoneNumber: {
+      minLength: minLength(10),
+      maxLength: maxLength(14),
     },
     fieldsStep1: {
       email: { value: { required, email } },
@@ -433,11 +507,14 @@ export default {
         },
       },
       phoneNumber: {
-        value: {
-          required,
-          numeric,
-          minLength: minLength(10),
-          maxLength: maxLength(14),
+        code: {
+          value: { required },
+        },
+        tel: {
+          value: {
+            required,
+            numeric,
+          },
         },
       },
     },
@@ -445,6 +522,16 @@ export default {
   // created() {
   //   if (this.beforeDeposit) this.step = 2;
   // },
+  watch: {
+    userInfo: {
+      immediate: true,
+      handler() {
+        this.fieldsStep2.phoneNumber.code.value = this.phoneCodeList.find(
+          item => item.countryCode === this.userInfo.country.code,
+        );
+      },
+    },
+  },
   mounted() {
     getObjValuesFromLocalStorage(this.fieldsStep1);
     getObjValuesFromLocalStorage(this.fieldsStep2);
@@ -466,8 +553,6 @@ export default {
         } else if (this.userInfo[key]) this.fieldsStep2[key].value = this.userInfo[key];
       }
     }
-    // this.fieldsStep2.phone.items = this.phoneCodeList;
-    // if (!this.fieldsStep2.phone.value) this.fieldsStep2.phone.value = this.defaultCountry;
   },
   beforeDestroy() {
     writeObjValuesToLocalStorage(this.fieldsStep1);
@@ -500,7 +585,7 @@ export default {
 
         const profileData = { ...this.userInfo };
         for (const key in this.fieldsStep2) {
-          if (key === 'birthDate') profileData[key] = this.birthDate;
+          if (key === 'birthDate' || key === 'phoneNumber') profileData[key] = this[key];
           else if (key === 'phoneNumber') profileData[key] = `+${this.fieldsStep2[key].value}`;
           else profileData[key] = this.fieldsStep2[key].value;
         }
@@ -658,6 +743,25 @@ export default {
 
   &-Buttons {
     display: flex;
+  }
+
+  &-Dropdown--phoneCode {
+    width: 170px;
+    margin-right: 4px;
+
+    .BaseDropdown-Item:not(.BaseDropdown-ActiveItem) {
+      padding: 5px 5px 5px 16px;
+    }
+
+    .BaseDropdown-ActiveItem {
+      padding: 16px 10px 16px 16px;
+    }
+  }
+
+  &-CountryImg {
+    width: 20px;
+    margin-right: 15px;
+    border-radius: 50%;
   }
 
   &-PhonePlus {
