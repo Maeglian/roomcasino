@@ -17,7 +17,10 @@
       @keyup.down="onArrowDown()"
       @keyup.enter="onSelectValueKeyboard()"
     >
-      {{ activeItem.name || activeItem || placeholder || items[0].name || items[0] }}
+      <slot v-if="$scopedSlots.default" :item="activeItem ? activeItem : items[0]"></slot>
+      <template v-else>
+        {{ activeItem[itemName] || activeItem || placeholder || items[0][itemName] || items[0] }}
+      </template>
       <i
         v-if="items.length > 1"
         class="ThinArrow"
@@ -27,12 +30,15 @@
     <ul v-show="isOpen" class="BaseDropdown-Inner" aria-label="submenu">
       <li
         v-for="(item, i) in filteredItems"
-        :key="item.name || item"
+        :key="item[itemName] || item"
         class="BaseDropdown-Item BaseDropdown-DropdownItem"
         :class="{ 'BaseDropdown-DropdownItem--highlighted': activeItemIndex === i }"
         @click="onSelectValue(item)"
       >
-        {{ item.name || item }}
+        <slot v-if="$scopedSlots.default" :item="item"></slot>
+        <template v-else>
+          {{ item[itemName] || item }}
+        </template>
       </li>
     </ul>
   </div>
@@ -69,6 +75,11 @@ export default {
       required: false,
       default: false,
     },
+    itemName: {
+      type: [String, Boolean],
+      required: false,
+      default: 'name',
+    },
   },
   data() {
     return {
@@ -79,9 +90,12 @@ export default {
   computed: {
     filteredItems() {
       return this.items.filter(item => {
-        return item.name !== this.activeItem && item !== this.activeItem;
+        return item[this.itemName] !== this.activeItem && item !== this.activeItem;
       });
     },
+  },
+  mounted() {
+    console.log(this.$scopedSlots);
   },
   methods: {
     onOpenDropdown() {
@@ -129,6 +143,10 @@ export default {
     color: var(--color-text-main);
     text-transform: inherit;
     background: var(--color-bg);
+  }
+
+  &-Item {
+    cursor: pointer;
   }
 
   &-DropdownItem {
