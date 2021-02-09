@@ -55,7 +55,6 @@
 <script>
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
-import detect from '@/utils/deviceDetector';
 import BaseModal from '@/components/base/BaseModal';
 import Card from '@/components/Card';
 
@@ -89,7 +88,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['gameUrlForIframe', 'gameError']),
+    ...mapState(['gameUrlForIframe', 'gameError', 'platform']),
     ...mapGetters(['activeAccount']),
     gamesLimited() {
       return this.games.slice(0, this.gamesShowed);
@@ -109,13 +108,11 @@ export default {
       gameId,
       returnUrl = `${window.location.protocol}//${window.location.host}`,
       demo,
-      platform,
     }) {
       await this.startGame({
         gameId,
         returnUrl,
         demo,
-        platform,
       });
 
       if (!this.gameError) {
@@ -125,6 +122,7 @@ export default {
 
       return null;
     },
+
     async openGamePage({ id, demo }) {
       if (!demo && !this.isLoggedIn) {
         this.showRegistrationDialog('login');
@@ -136,28 +134,16 @@ export default {
         return;
       }
 
-      if (this.isMobile()) {
-        await this.getGameUrl({
-          gameId: id,
-          demo,
-          platform: 'mobile',
-        });
-
-        if (!this.gameError) window.location.href = this.gameUrlForIframe;
-
-        return;
-      }
-
       await this.getGameUrl({
         gameId: id,
         demo,
-        platform: 'desktop',
       });
 
-      if (!this.gameError) this.$router.push(`/game`);
-    },
-    isMobile() {
-      return detect.mobile() || detect.tablet() || detect.phone();
+      if (!this.gameError) {
+        this.platform === 'mobile'
+          ? (window.location.href = this.gameUrlForIframe)
+          : this.$router.push(`/game`);
+      }
     },
     showMoreGames() {
       this.gamesShowed += this.gamesToShow;
