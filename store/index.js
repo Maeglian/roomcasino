@@ -1136,6 +1136,7 @@ export const actions = {
       commit('setAuthSuccess');
       dispatch('getProfile');
       dispatch('getLimits');
+      dispatch('getBonusHistoryList');
     }
   },
 
