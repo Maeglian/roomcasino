@@ -1,4 +1,5 @@
 import axios from 'axios';
+import detect from '@/utils/deviceDetector';
 import { throttle } from '../utils/helpers';
 
 window.onNuxtReady(({ context }) => {
@@ -18,6 +19,9 @@ window.onNuxtReady(({ context }) => {
         throw err;
       }),
   );
+
+  const platform = detect.mobile() || detect.tablet() || detect.phone() ? 'mobile' : 'desktop';
+  context.store.commit('setPlatform', platform);
   context.store.dispatch('getGeoInfo').then(() => {
     if (!context.store.state.siteIsAllowedForUser) context.redirect('/not-allowed');
   });

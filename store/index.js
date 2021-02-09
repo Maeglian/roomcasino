@@ -50,6 +50,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  platform: 'desktop',
   emailConfirmError: '',
   emailConfirmIsFetching: false,
   originalFileIsLoading: false,
@@ -768,6 +769,9 @@ export const getters = {
 };
 
 export const mutations = {
+  setPlatform: (state, payload) => {
+    state.platform = payload;
+  },
   setEmailConfirmIsDone: state => {
     state.emailConfirmIsFetching = false;
   },
@@ -1233,7 +1237,7 @@ export const actions = {
     }
   },
 
-  async startGame({ state, commit }, { demo, gameId, platform, returnUrl }) {
+  async startGame({ state, commit }, { demo, gameId, returnUrl }) {
     if (state.gameError) commit('clearGameError');
     try {
       const res = await axios.post(
@@ -1241,7 +1245,7 @@ export const actions = {
         {
           demo,
           gameId,
-          platform,
+          platform: state.platform,
           returnUrl,
         },
         reqConfig(commit, 'setGameError'),
