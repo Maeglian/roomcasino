@@ -5,31 +5,30 @@
         <picture class="Hero-Image">
           <source
             media="(max-width: 340px)"
-            :srcset="require('@/assets/img/hero-bg-joker_320.png')"
+            :srcset="require(`@/assets/img/${slides[depositStep].bg}_320.png`)"
           />
           <source
-            media="(max-width: 460px)"
-            :srcset="require('@/assets/img/hero-bg-joker_460.png')"
+            media="(max-width: 459px)"
+            :srcset="require(`@/assets/img/${slides[depositStep].bg}_460.png`)"
           />
           <source
-            media="(max-width: 768px)"
-            :srcset="require('@/assets/img/hero-bg-joker_768.jpg')"
+            media="(max-width: 600px)"
+            :srcset="require(`@/assets/img/${slides[depositStep].bg}_600.png`)"
           />
           <source
-            media="(max-width: 960px)"
-            :srcset="require('@/assets/img/hero-bg-joker_960.jpg')"
+            media="(max-width: 900px)"
+            :srcset="require(`@/assets/img/${slides[depositStep].bg}_900.png`)"
           />
-          <source media="(max-width: 1248px)" :srcset="require('@/assets/img/hero-bg-joker.jpg')" />
-          <img srcset="@/assets/img/joker_1920.jpg" alt="" />
+          <source
+            media="(max-width: 1248px)"
+            :srcset="require(`@/assets/img/${slides[depositStep].bg}_1248.png`)"
+          />
+          <img :srcset="require(`@/assets/img/${slides[depositStep].bg}_1920.png`)" alt="" />
         </picture>
         <div class="Hero-Content">
-          <div class="Title Title--type-h1 Hero-Title">
-            Sign up <span class="Colored">&</span> get <br />
-            welcome<br />
-            bonus
-          </div>
+          <div class="Title Title--type-h1 Hero-Title" v-html="slides[depositStep].title"></div>
           <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
-          <div class="Hero-Text">100% up to 150 CAD</div>
+          <div class="Hero-Text" v-html="slides[depositStep].text"></div>
           <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
             {{ isLoggedIn ? 'Deposit now' : 'Sign up' }}
           </button>
@@ -103,7 +102,7 @@
 
 <script>
 // import GamesSlider from '@/components/GamesSlider';
-import { mapMutations, mapState } from 'vuex';
+import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
@@ -119,6 +118,34 @@ export default {
         loop: true,
         dots: true,
       },
+      slides: [
+        {
+          bg: 'joker',
+          title: 'Welcome package<br/><span class="Colored">$150</span>!',
+          text: 'Make first deposit<br/> and get up to <span class="Colored">$150</span>',
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'wolf',
+          title: 'Second deposit<br/> bonus',
+          text:
+            '55% bonus<br/> up to <span class="Colored">$150</span><br/> on your second deposit',
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'book',
+          title: 'Third deposit<br/> bonus',
+          text:
+            '100% bonus<br/> up to <span class="Colored">$150</span><br/> on your third deposit',
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'tournaments',
+          title: '',
+          text: 'More exciting<br/> promotions<br/> coming soon!',
+          btnText: 'Deposit now',
+        },
+      ],
       // slides: [
       //   {
       //     bg: 'hero-bg.jpg',
@@ -183,6 +210,7 @@ export default {
   },
   computed: {
     ...mapState(['navIsOpen', 'games']),
+    ...mapGetters(['depositStep']),
   },
   methods: {
     ...mapMutations(['openNav', 'closeNav']),
@@ -317,7 +345,7 @@ export default {
 
   &-Content {
     position: absolute;
-    bottom: 80px;
+    bottom: 0;
     left: 16px;
     text-align: left;
 
@@ -355,6 +383,14 @@ export default {
   &-Title {
     margin-bottom: 9px;
 
+    @media (min-width: $screen-xs) {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-s) {
+      margin-bottom: 9px;
+    }
+
     @media (min-width: $screen-l) {
       margin-bottom: 12px;
     }
@@ -368,8 +404,14 @@ export default {
     color: var(--color-text-main);
     text-transform: uppercase;
 
+    @media (min-width: $screen-xs) {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
     @media (min-width: $screen-m) {
       margin-bottom: 16px;
+      font-size: 20px;
     }
 
     @media (min-width: $screen-l) {

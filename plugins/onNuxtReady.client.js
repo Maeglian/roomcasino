@@ -23,6 +23,7 @@ window.onNuxtReady(({ context }) => {
   });
   if (context.route.query.cxd) localStorage.setItem('cxd', context.route.query.cxd);
   if (context.store.getters.isLoggedIn) {
+    context.store.dispatch('getBonusHistoryList');
     context.store.dispatch('getProfile');
     context.store.dispatch('getLimits');
   }
