@@ -611,7 +611,6 @@ export default {
                   width: this.width > 360 ? 328 : 288,
                   height: 'auto',
                   adaptive: true,
-                  clickToClose: false,
                 },
               );
           }
