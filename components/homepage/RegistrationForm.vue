@@ -408,11 +408,11 @@ export default {
       return `${year.value}-${month.value.padStart(2, '0')}-${day.value.padStart(2, '0')}`;
     },
     phoneNumber() {
-      if (this.step === 1) return '';
-
       const {
         phoneNumber: { code, tel },
       } = this.fieldsStep2;
+
+      if (!code.value) return '';
 
       const codeNumber = code.value.phoneCode.replace(' ', '');
 
