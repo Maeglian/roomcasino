@@ -5,7 +5,7 @@
         Thank you for registration
       </div>
       <div class="RegistrationBonus-Promo">
-        €150
+        $150
       </div>
       <!--      <div class="RegistrationBonus-PromoMin">-->
       <!--        + 55 Free spins-->
