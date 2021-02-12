@@ -50,16 +50,23 @@
         </div>
         <div v-else-if="field.type === 'date'" :key="field.value" class="AuthDialog-Row">
           <template v-if="!$v[`fieldsStep${step}`][name].children.$invalid">
-            <div v-if="!$v[name].dateCheck" class="AuthDialog-Error">
+            <div
+              v-if="!$v[name].dateCheck && $v.fieldsStep2.birthDate.children.$anyDirty"
+              class="AuthDialog-Error"
+            >
               Date is invalid
             </div>
-            <div v-else-if="!$v[name].ageCheck" class="AuthDialog-Error">
+            <div
+              v-else-if="!$v[name].ageCheck && $v.fieldsStep2.birthDate.children.$anyDirty"
+              class="AuthDialog-Error"
+            >
               You are under age of 18
             </div>
           </template>
           <BaseInput
             v-for="(item, itemName) in field.children"
             :key="itemName"
+            :ref="item.ref"
             v-model="item.value"
             class="AuthDialog-Col"
             error-class="AuthDialog-Error"
@@ -159,6 +166,7 @@
         <template v-else>
           <BaseInput
             :key="name"
+            :ref="field.ref"
             v-model="field.value"
             class="AuthDialog-Row"
             :input-type="field.type"
@@ -310,6 +318,11 @@ export default {
           required: true,
           autocorrect: 'off',
         },
+        gender: {
+          value: 'male',
+          type: 'radio',
+          values: ['male', 'female'],
+        },
         birthDate: {
           children: {
             day: {
@@ -321,6 +334,7 @@ export default {
             },
             month: {
               value: '',
+              ref: 'month',
               type: 'text',
               placeholder: 'MM',
               required: true,
@@ -328,6 +342,7 @@ export default {
             },
             year: {
               value: '',
+              ref: 'year',
               type: 'text',
               placeholder: 'YYYY',
               required: true,
@@ -336,13 +351,9 @@ export default {
           },
           type: 'date',
         },
-        gender: {
-          value: 'male',
-          type: 'radio',
-          values: ['male', 'female'],
-        },
         city: {
           value: '',
+          ref: 'city',
           type: 'text',
           placeholder: 'City',
           required: true,
@@ -534,6 +545,41 @@ export default {
           item => item.countryCode === this.userInfo.country.code,
         );
       },
+    },
+    'fieldsStep2.birthDate.children.day.value': function(val) {
+      if (this.$v.fieldsStep2.$anyDirty) {
+        if (val.length === 2) {
+          const el =
+            this.fieldsStep2.birthDate.children.month.value.length !== 2
+              ? this.$refs.month[0].$el
+              : this.fieldsStep2.birthDate.children.year.value.length !== 4
+              ? this.$refs.year[0].$el
+              : this.$refs.city[0].$el;
+          const input = el.querySelector('input');
+          input.focus();
+        }
+      }
+    },
+    'fieldsStep2.birthDate.children.month.value': function(val) {
+      if (this.$v.fieldsStep2.$anyDirty) {
+        if (val.length === 2) {
+          const el =
+            this.fieldsStep2.birthDate.children.year.value.length !== 4
+              ? this.$refs.year[0].$el
+              : this.$refs.city[0].$el;
+          const input = el.querySelector('input');
+          input.focus();
+        }
+      }
+    },
+    'fieldsStep2.birthDate.children.year.value': function(val) {
+      if (this.$v.fieldsStep2.$anyDirty) {
+        if (val.length === 4) {
+          const el = this.$refs.city[0].$el;
+          const input = el.querySelector('input');
+          input.focus();
+        }
+      }
     },
   },
   mounted() {
