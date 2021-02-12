@@ -1,25 +1,22 @@
 <template>
-  <div class="Modal">
-    <div class="Close Modal-Close" @click="$emit('close')"></div>
-    <div class="RegistrationBonus">
-      <div class="RegistrationBonus-Content">
-        <div class="RegistrationBonus-Title">
-          Thank you for registration
-        </div>
-        <div class="RegistrationBonus-Promo">
-          €150
-        </div>
-        <div class="RegistrationBonus-PromoMin">
-          + 55 Free spins
-        </div>
-        <div class="RegistrationBonus-Text">
-          For yours first deposit! Use advantage of RoomСasino Welcome Bonus.
-        </div>
+  <div class="RegistrationBonus">
+    <div class="RegistrationBonus-Content">
+      <div class="RegistrationBonus-Title">
+        Thank you for registration
       </div>
-      <button type="btn" class="Btn Btn--common Btn--full" @click="onClickBtn">
-        Deposit
-      </button>
+      <div class="RegistrationBonus-Promo">
+        €150
+      </div>
+      <!--      <div class="RegistrationBonus-PromoMin">-->
+      <!--        + 55 Free spins-->
+      <!--      </div>-->
+      <div class="RegistrationBonus-Text">
+        For your first deposit! Use advantage of Roomcasino Welcome Bonus.
+      </div>
     </div>
+    <button type="btn" class="Btn Btn--common Btn--full" @click="onClickBtn">
+      Get your bonus
+    </button>
   </div>
 </template>
 
