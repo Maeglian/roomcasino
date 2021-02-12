@@ -38,12 +38,6 @@
         <img src="@/assets/img/eng.png" alt="" />
       </div>
     </nav>
-    <div
-      id="apg-034906ca-0989-44fa-8bff-6a0fdffc45bb"
-      data-apg-seal-id="034906ca-0989-44fa-8bff-6a0fdffc45bb"
-      data-apg-image-size="128"
-      data-apg-image-type="basic-small"
-    ></div>
     <div class="Footer-Disclaimer">
       <div class="Footer-Text">
         Copyright © 2020 www.roomcasino.com is owned and operated by DUX GROUP N.V., a company
@@ -65,13 +59,20 @@
         <a class="Footer-Contact" href="mailto:support@roomcasino.com">support@roomcasino.com</a>
       </div>
       <div class="Footer-Icons">
-        <img class="Icon Footer-Icon" src="@/assets/img/curacao.svg" height="25" />
-        <svg class="Icon Footer-Icon" width="25" height="25">
-          <use xlink:href="@/assets/img/icons.svg#18"></use>
-        </svg>
-        <svg class="Icon Footer-Icon" width="56" height="25">
-          <use xlink:href="@/assets/img/icons.svg#ssl"></use>
-        </svg>
+        <div
+          id="apg-034906ca-0989-44fa-8bff-6a0fdffc45bb"
+          data-apg-seal-id="034906ca-0989-44fa-8bff-6a0fdffc45bb"
+          data-apg-image-size="128"
+          data-apg-image-type="basic-small"
+        ></div>
+        <div class="Footer-MoreIcons">
+          <svg class="Icon Footer-Icon" width="25" height="25">
+            <use xlink:href="@/assets/img/icons.svg#18"></use>
+          </svg>
+          <svg class="Icon Footer-Icon" width="56" height="25">
+            <use xlink:href="@/assets/img/icons.svg#ssl"></use>
+          </svg>
+        </div>
       </div>
     </div>
   </section>
@@ -170,30 +171,37 @@ export default {
   }
 
   &-Disclaimer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-
-    @media (min-width: $screen-m) {
-      align-items: flex-end;
+    @media (min-width: $screen-l) {
+      display: flex;
+      justify-content: space-between;
     }
   }
 
   &-Text {
+    margin-right: 20px;
     margin-bottom: 17px;
     font-size: 14px;
     line-height: 1.66;
     color: var(--color-more-faded);
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 0;
-    }
   }
 
   &-Icons {
     display: flex;
+    align-items: center;
+
+    @media (min-width: $screen-l) {
+      display: block;
+    }
+  }
+
+  &-MoreIcons {
+    display: flex;
+    align-items: center;
     margin-left: 0;
+
+    @media (min-width: $screen-l) {
+      margin-top: 15px;
+    }
 
     @media (min-width: $screen-xl) {
       margin-left: auto;
