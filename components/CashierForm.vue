@@ -103,7 +103,8 @@ export default {
           showFooter: false,
           showAmountLimits: true,
           allowMobilePopup: true,
-          predefinedAmounts: [100, 200, 300, 500, 1000],
+          amount: 50,
+          predefinedAmounts: [50, 75, 125, 250, 500],
           containerWidth: '100%',
           theme: {
             input: {
