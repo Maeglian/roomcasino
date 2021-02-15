@@ -52,6 +52,9 @@ export default {
         src: 'https://static.paymentiq.io/cashier/cashier.js',
       },
       {
+        src: 'https://dga.pragmaticplaylive.net/dgaAPI.js',
+      },
+      {
         src: '/js/liveChat.js',
         defer: true,
       },
