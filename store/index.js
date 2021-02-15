@@ -50,6 +50,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  dga: {},
   platform: 'desktop',
   emailConfirmError: '',
   emailConfirmIsFetching: false,
@@ -769,6 +770,10 @@ export const getters = {
 };
 
 export const mutations = {
+  setDgaInfo: (state, { producer, game, data }) => {
+    if (!state.dga[producer]) Vue.set(state.dga, producer, {});
+    Vue.set(state.dga[producer], game, data);
+  },
   setPlatform: (state, payload) => {
     state.platform = payload;
   },
