@@ -36,7 +36,7 @@
         :key="i"
         :game-info="game"
         :img-url="game.imageUrl"
-        :show-demo="!isLoggedIn"
+        :show-demo="true"
         overlay
         @open-gamepage="openGamePage"
       />

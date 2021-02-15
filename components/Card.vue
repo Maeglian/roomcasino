@@ -9,6 +9,7 @@
         Play for fun
       </button>
       <button
+        v-if="!gameInfo.demoOnly"
         class="Card-Footer"
         @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: false })"
       >
