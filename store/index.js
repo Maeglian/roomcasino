@@ -1237,7 +1237,7 @@ export const actions = {
     }
   },
 
-  async startGame({ state, commit }, { gameId, returnUrl }) {
+  async startGame({ state, commit }, { demo, gameId, returnUrl }) {
     if (state.gameError) commit('clearGameError');
     try {
       const res = await axios.post(
@@ -1246,8 +1246,7 @@ export const actions = {
           gameId,
           platform: state.platform,
           returnUrl,
-          demo: true,
-          demoOnly: true,
+          demo,
         },
         reqConfig(commit, 'setGameError'),
       );

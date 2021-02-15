@@ -98,7 +98,7 @@ export default {
   methods: {
     onClickCard() {
       if (this.platform !== 'mobile' || !this.isLoggedIn) return;
-      this.$emit('open-gamepage', { id: this.gameInfo.gameId, demo: false });
+      this.$emit('open-gamepage', { id: this.gameInfo.gameId, demo: true });
     },
   },
 };
