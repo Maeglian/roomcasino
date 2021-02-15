@@ -8,8 +8,13 @@
 </template>
 
 <script>
+import CashierForm from '@/components/CashierForm';
+
 export default {
   name: 'Page',
+  components: {
+    CashierForm,
+  },
 };
 </script>
 
