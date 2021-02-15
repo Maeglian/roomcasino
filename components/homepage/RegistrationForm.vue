@@ -530,9 +530,11 @@ export default {
     userInfo: {
       immediate: true,
       handler() {
-        this.fieldsStep2.phoneNumber.code.value = this.phoneCodeList.find(
-          item => item.countryCode === this.userInfo.country.code,
-        );
+        if (this.userInfo.country) {
+          this.fieldsStep2.phoneNumber.code.value = this.phoneCodeList.find(
+            item => item.countryCode === this.userInfo.country.code,
+          );
+        }
       },
     },
   },
