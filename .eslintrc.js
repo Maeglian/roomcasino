@@ -20,6 +20,7 @@ module.exports = {
   },
   plugins: ['vue', 'prettier'],
   rules: {
+    'nuxt/no-globals-in-created': 'off',
     'no-console': 'off',
     'no-plusplus': 'off',
     'max-len': 'off',
