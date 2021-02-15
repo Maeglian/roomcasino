@@ -13,7 +13,20 @@
 </template>
 
 <script>
+import NotificationAlerts from '@/components/NotificationAlerts';
+import MainNav from '@/components/homepage/MainNav';
+import MobileNav from '@/components/homepage/MobileNav';
+import NotificationsPanel from '@/components/NotificationsPanel';
+import CashierForm from '@/components/CashierForm';
+
 export default {
   name: 'MainMenuPage',
+  components: {
+    NotificationAlerts,
+    MainNav,
+    MobileNav,
+    NotificationsPanel,
+    CashierForm,
+  },
 };
 </script>
