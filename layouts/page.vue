@@ -18,6 +18,7 @@ import MainNav from '@/components/homepage/MainNav';
 import MobileNav from '@/components/homepage/MobileNav';
 import NotificationsPanel from '@/components/NotificationsPanel';
 import CashierForm from '@/components/CashierForm';
+import Footer from '@/components/homepage/Footer';
 
 export default {
   name: 'MainMenuPage',
@@ -25,6 +26,7 @@ export default {
     NotificationAlerts,
     MainNav,
     MobileNav,
+    Footer,
     NotificationsPanel,
     CashierForm,
   },
