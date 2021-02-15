@@ -82,12 +82,12 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from 'vuex';
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
-import { DEFAULT_PROVIDER, GAME_TYPES } from '@/config';
+import { DEFAULT_PROVIDER, GAME_TYPES, PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID } from '@/config';
 
 export default {
   name: 'DefaultGames',
@@ -237,7 +237,20 @@ export default {
   created() {
     this.getGames(this.gamesParams);
   },
+  mounted() {
+    window.dga.connect(PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID);
+    window.dga.onConnect = () => window.dga.available(PRAGMATIC_CASINOID);
+    window.dga.onMessage = data => {
+      console.log(data);
+      if (data.tableKey) {
+        data.tableKey.forEach(table => window.dga.subscribe(PRAGMATIC_CASINOID, table));
+      }
+
+      if (data.tableId) this.setDgaInfo({ producer: 'pragmatic', game: data.tableId, data });
+    };
+  },
   methods: {
+    ...mapMutations(['setDgaInfo']),
     ...mapActions(['getGames']),
     onChooseTab(i) {
       this.searched = '';
