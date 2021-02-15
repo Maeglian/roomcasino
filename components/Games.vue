@@ -33,8 +33,8 @@
     <div class="Games-Items">
       <Card
         v-for="(game, i) in gamesLimited"
-        :id="game.gameId"
         :key="i"
+        :game-info="game"
         :img-url="game.imageUrl"
         :show-demo="!isLoggedIn"
         overlay
