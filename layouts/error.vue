@@ -25,8 +25,13 @@
 </template>
 
 <script>
+import MainNav from '@/components/homepage/MainNav';
+
 export default {
   name: 'ErrorPage',
+  components: {
+    MainNav,
+  },
   layout: 'error',
   props: {
     error: {
