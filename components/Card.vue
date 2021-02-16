@@ -1,10 +1,17 @@
 <template>
-  <div class="Card">
-    <div v-if="overlay" class="Card-Overlay">
-      <button v-if="showDemo" class="Card-Link" @click="$emit('open-gamepage', { id, demo: true })">
+  <div class="Card" @click="onClickCard">
+    <div v-if="overlay && (!isLoggedIn || platform !== 'mobile')" class="Card-Overlay">
+      <button
+        v-if="showDemo"
+        class="Card-Link"
+        @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: true })"
+      >
         Play for fun
       </button>
-      <button class="Card-Footer" @click="$emit('open-gamepage', { id, demo: false })">
+      <button
+        class="Card-Footer"
+        @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: false })"
+      >
         Play Now
       </button>
     </div>
@@ -33,6 +40,8 @@
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex';
+
 export default {
   name: 'Card',
   props: {
@@ -76,10 +85,19 @@ export default {
       required: false,
       default: false,
     },
-    id: {
-      type: [String, Boolean],
-      required: false,
-      default: false,
+    gameInfo: {
+      type: Object,
+      required: true,
+    },
+  },
+  computed: {
+    ...mapState(['platform']),
+    ...mapGetters(['isLoggedIn']),
+  },
+  methods: {
+    onClickCard() {
+      if (this.platform !== 'mobile' || !this.isLoggedIn) return;
+      this.$emit('open-gamepage', { id: this.gameInfo.gameId, demo: false });
     },
   },
 };

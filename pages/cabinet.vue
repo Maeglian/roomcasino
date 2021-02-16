@@ -17,6 +17,7 @@ import CabinetMenu from '@/components/cabinet/CabinetMenu.vue';
 import CabinetTopbar from '@/components/cabinet/CabinetTopbar.vue';
 import { mapState } from 'vuex';
 import Loader from '@/components/Loader';
+import NotificationAlerts from '@/components/NotificationAlerts';
 
 export default {
   name: 'CabinetPage',
@@ -24,6 +25,7 @@ export default {
     CabinetMenu,
     CabinetTopbar,
     Loader,
+    NotificationAlerts,
   },
   middleware: 'auth',
   computed: {

@@ -4,7 +4,7 @@
       <img src="@/assets/img/logo.svg" />
     </NuxtLink>
     <div class="Nav CabinetTopbar-Nav">
-      <NuxtLink class="CabinetTopbar-Link" to="/" exact>Home</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" to="/" exact>Lobby</NuxtLink>
       <NuxtLink class="CabinetTopbar-Link" to="/promotions">Promotions</NuxtLink>
       <!--      <NuxtLink class="CabinetTopbar-Link" to="/tournaments">Tournaments</NuxtLink>-->
     </div>

@@ -20,6 +20,7 @@ module.exports = {
   },
   plugins: ['vue', 'prettier'],
   rules: {
+    'no-nested-ternary': 'off',
     'no-console': 'off',
     'no-plusplus': 'off',
     'max-len': 'off',

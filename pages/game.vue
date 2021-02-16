@@ -21,8 +21,14 @@
 <script>
 import { mapActions, mapState, mapGetters } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import MainNav from '@/components/homepage/MainNav';
+import ControlsPanel from '@/components/GamePage/ControlsPanel';
 
 export default {
+  components: {
+    MainNav,
+    ControlsPanel,
+  },
   mixins: [showAuthDialog],
   beforeRouteLeave(to, from, next) {
     if (this.isLoggedIn) this.getProfile();

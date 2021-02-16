@@ -11,7 +11,6 @@ import {
 } from '../config';
 
 const API_HOST =
-  // eslint-disable-next-line no-nested-ternary
   process.env.NUXT_ENV_MODE === 'production'
     ? API_HOST_PROD
     : process.env.NUXT_ENV_MODE === 'sandbox'

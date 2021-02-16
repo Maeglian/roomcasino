@@ -94,9 +94,6 @@ export default {
       });
     },
   },
-  mounted() {
-    console.log(this.$scopedSlots);
-  },
   methods: {
     onOpenDropdown() {
       this.isOpen = !this.isOpen;
