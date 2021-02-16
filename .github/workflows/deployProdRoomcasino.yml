@@ -7,12 +7,12 @@ on:
   workflow_dispatch:
 
 env:
-  DEPLOY_PATH: /www/ninecasino
+  DEPLOY_PATH: /www/roomcasino
   DEPLOY_DIR: prod
   BUILD_SCRIPT: npm run build
   BUILD_SCRIPT_OUTPUT: .nuxt
   BRANCH_NAME: master
-  START_SCRIPT: pm2 restart node_modules/nuxt-start/bin/nuxt-start.js --name ninecasino -i max
+  START_SCRIPT: PORT=3002 pm2 restart node_modules/nuxt-start/bin/nuxt-start.js --name roomcasino -i max
   REPOSIRORY_NAME: wakeapp/roomcasino.git
 
 jobs:
@@ -40,4 +40,4 @@ jobs:
             ${{ env.BUILD_SCRIPT }}
             ${{ env.START_SCRIPT }}
       - name: Print Info
-        run: echo "https://ninecasino.com/"
+        run: echo "https://roomcasino.com/"
