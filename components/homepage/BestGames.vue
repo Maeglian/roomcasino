@@ -49,7 +49,7 @@
         />
       </template>
     </section>
-    <section v-if="this.tabActive.name !== 'All games'" class="DefaultGames">
+    <section v-if="tabActive.name !== 'All games'" class="DefaultGames">
       <Loader v-if="defaultGamesAreLoading" />
       <div class="Title Title--type-h2 Cards-Title">
         All games
@@ -88,6 +88,7 @@ import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import { DEFAULT_PROVIDER, GAME_TYPES, PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID } from '@/config';
+import Games from '@/components/Games';
 
 export default {
   name: 'DefaultGames',
@@ -95,6 +96,7 @@ export default {
     ProvidersMenu,
     Search,
     Loader,
+    Games,
   },
   mixins: [showAuthDialog],
   data() {
@@ -215,7 +217,7 @@ export default {
       'gameProducerList',
       'categories',
     ]),
-    ...mapGetters(['fakedNewGames', 'isLoggedIn', 'gamesSearched']),
+    ...mapGetters(['fakedNewGames', 'isLoggedIn', 'gamesSearched', 'activeAccount']),
     gamesParams() {
       const params = {};
       if (this.tabActive.type) params.category = this.tabActive.type;
@@ -243,11 +245,16 @@ export default {
     window.dga.onMessage = data => {
       console.log(data);
       if (data.tableKey) {
-        data.tableKey.forEach(table => window.dga.subscribe(PRAGMATIC_CASINOID, table));
+        data.tableKey.forEach(table =>
+          window.dga.subscribe(PRAGMATIC_CASINOID, table, this.activeAccount.currency),
+        );
       }
 
       if (data.tableId) this.setDgaInfo({ producer: 'pragmatic', game: data.tableId, data });
     };
+  },
+  beforeDestroy() {
+    window.dga.disconnect();
   },
   methods: {
     ...mapMutations(['setDgaInfo']),
