@@ -44,11 +44,25 @@
       Must be 8+ chars with 1 number, 1 small and 1 capital letter
     </div>
     <div
+      v-if="shouldDisplayValidation && v && v.phoneWithPlusCheck === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      Must be with '+', from 10 to 14 symbols
+    </div>
+    <div
       v-if="shouldDisplayValidation && v && v.numeric === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
       Must be numeric
+    </div>
+    <div
+      v-if="shouldDisplayValidation && v && v.alphaNum === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      Must be numbers or letters
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.checkIfNullOrPositiveNumbers === false && v.$dirty"

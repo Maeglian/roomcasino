@@ -7,12 +7,12 @@
             <span class="AuthSection-UserName">
               {{ user.firstName || user.email }}
             </span>
-            <span class="AuthSection-Spent">
-              8 PC /
-            </span>
-            <span class="AuthSection-Left">
-              25 PC
-            </span>
+            <!--            <span class="AuthSection-Spent">-->
+            <!--              8 PC /-->
+            <!--            </span>-->
+            <!--            <span class="AuthSection-Left">-->
+            <!--              25 PC-->
+            <!--            </span>-->
           </div>
           <div class="AuthSection-UserBalance">
             <div class="AuthSection-UserBalanceText">
@@ -22,17 +22,17 @@
             {{ activeAccount.currency || user.currency }}
           </div>
         </NuxtLink>
-        <div class="AuthSection-UserLvl">
-          2
-        </div>
-        <div class="AuthSection-UserMessages" @click="toggleNotificationsPanel">
-          <svg class="AuthSection-UserMessagesIcon">
-            <use xlink:href="@/assets/img/icons.svg#messages"></use>
-          </svg>
-          <div v-show="isNewNotifications" class="AuthSection-UserMessagesNew"></div>
-        </div>
+        <!--        <div class="AuthSection-UserLvl">-->
+        <!--          2-->
+        <!--        </div>-->
+        <!--        <div class="AuthSection-UserMessages" @click="toggleNotificationsPanel">-->
+        <!--          <svg class="AuthSection-UserMessagesIcon">-->
+        <!--            <use xlink:href="@/assets/img/icons.svg#messages"></use>-->
+        <!--          </svg>-->
+        <!--          <div v-show="isNewNotifications" class="AuthSection-UserMessagesNew"></div>-->
+        <!--        </div>-->
       </div>
-      <button class="Btn AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
+      <button class="AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
         Deposit
       </button>
     </div>
@@ -86,7 +86,7 @@ export default {
   }
 
   &-Btn {
-    display: block;
+    display: none;
     height: 100%;
     padding: 0 15px;
     font-size: 10px;
@@ -94,6 +94,7 @@ export default {
     background: var(--color-main1);
 
     @media (min-width: $screen-m) {
+      display: block;
       height: 58px;
     }
 
@@ -111,6 +112,11 @@ export default {
 
   &-Btn--login {
     background: none;
+  }
+
+  &-Btn--deposit {
+    font-weight: 700;
+    color: var(--color-text-main);
   }
 
   &-Sections {
@@ -132,18 +138,18 @@ export default {
   }
 
   &-UserInfo {
-    display: none;
-
-    @media (min-width: $screen-m) {
-      display: block;
-      margin-right: 12px;
-      text-align: right;
-    }
+    display: block;
+    margin-right: 12px;
+    text-align: right;
   }
 
   &-User {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
+
+    @media (min-width: $screen-s) {
+      font-size: 12px;
+    }
   }
 
   &-UserName {
@@ -188,7 +194,7 @@ export default {
 
   &-UserMessages {
     position: relative;
-    display: flex;
+    display: none;
     flex-shrink: 0;
     justify-content: center;
     align-items: center;
@@ -198,6 +204,10 @@ export default {
     background: linear-gradient(356.88deg, rgba(6, 14, 42, 0) -13.82%, #060e2a 105.97%);
     border-radius: 50%;
     cursor: pointer;
+
+    @media (min-width: $screen-s) {
+      display: flex;
+    }
 
     @media (min-width: $screen-m) {
       margin-right: 30px;
@@ -256,7 +266,6 @@ export default {
 
     @media (min-width: $screen-xs) {
       height: auto;
-      padding: 0;
     }
 
     @media (min-width: $screen-m) {

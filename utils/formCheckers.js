@@ -8,6 +8,10 @@ export const passwordCheck = helpers.regex(
 
 export const checkIfNullOrPositiveNumbers = helpers.regex('limitCheck', /^[0-9]\d*$/);
 export const checkIfPositiveNumbers = helpers.regex('limitCheck', /^[1-9]\d*$/);
+export const phoneWithPlusCheck = helpers.regex(
+  'phoneCheck',
+  /^\+([- _():=+]?\d[- _():=+]?){10,14}$/,
+);
 
 export const termsCheck = value => value === true;
 export const ageCheck = value => moment(value).add(18, 'years') < moment();

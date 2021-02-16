@@ -22,6 +22,18 @@
   outline: 2px solid var(--color-main1);
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-internal-autofill-selected,
+input:-internal-autofill-selected:hover,
+input:-internal-autofill-selected:focus,
+input:-internal-autofill-selected:active {
+  transition: all 9999s ease-in-out 0s;
+  transition-property: background-color, color;
+}
+
 //::-webkit-scrollbar {
 //  width: 4px;
 //  background-color: #828181;
@@ -40,7 +52,7 @@ body {
   min-width: $screen-xxs;
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Verdana', sans-serif;
   background-color: var(--color-body);
 }
 
@@ -274,7 +286,7 @@ a {
       position: absolute;
       right: 0;
       bottom: 0;
-      width: calc(100% / 7 - 10px);
+      width: calc(100% / 6 - 10px);
       height: 100%;
     }
   }
@@ -291,6 +303,7 @@ a {
 .vm--modal {
   overflow: initial !important;
   background: transparent !important;
+  box-shadow: none !important;
 }
 
 .vm--overlay {

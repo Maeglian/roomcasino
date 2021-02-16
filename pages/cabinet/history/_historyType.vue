@@ -1,17 +1,12 @@
 <template>
   <div class="HistoryPage-Content">
-    <CabinetFilters
-      :key="$route.path"
-      :filters="filters"
-      @set-value="setValue"
-      @filter="onFilter"
-    />
+    <CabinetFilters :filters="filters" @set-value="setValue" @filter="onFilter" />
     <CabinetTable
       :cols="columns"
       thead
-      :rows="rowsInPage"
+      :rows="historyList"
       :loading="historyListIsLoading"
-      :show-more-btn="!needsPagination"
+      :show-more-btn="pageRowsCount > limit && !needsPagination"
       :pagination="{
         enabled: needsPagination,
         currentPage: currentPage,
@@ -27,7 +22,7 @@
 <script>
 import CabinetFilters from '@/components/cabinet/CabinetFilters.vue';
 import CabinetTable from '@/components/cabinet/CabinetTable.vue';
-import { mapActions, mapState, mapGetters } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 import { HISTORY_TABLES } from '@/config';
 
 export default {
@@ -39,8 +34,7 @@ export default {
   layout: 'cabinet',
   data() {
     return {
-      activeFilters: [],
-      rowsPerPage: 6,
+      maxRowsPerPage: 12,
       limit: 6,
       currentPage: 1,
       columns: HISTORY_TABLES[this.$route.params.historyType].cols,
@@ -53,10 +47,13 @@ export default {
       'gameHistoryList',
       'bonusHistoryList',
       'historyListIsLoading',
+      'pageRowsCount',
     ]),
-    ...mapGetters(['currencyAccounts', 'activeCurrency']),
+    offset() {
+      return (this.currentPage - 1) * this.limit;
+    },
     needsPagination() {
-      return this.historyList.length > 12;
+      return this.historyList.length >= this.maxRowsPerPage || this.currentPage > 1;
     },
     historyList() {
       switch (this.$route.params.historyType) {
@@ -76,31 +73,21 @@ export default {
         } else if (this.filters[key].value) payload[key] = this.filters[key].value;
       }
 
+      payload.offset = this.offset;
       payload.limit = this.limit;
       return payload;
     },
-    rowsInPage() {
-      if (!this.needsPagination) return this.historyList;
-      const start = this.rowsPerPage * (this.currentPage - 1);
-      const end = start + this.rowsPerPage;
-
-      return this.historyList.slice(start, end);
-    },
     totalPages() {
-      if (!this.historyList.length) return 0;
-      return Math.ceil(this.historyList.length / this.rowsPerPage);
+      return Math.ceil(this.pageRowsCount / this.limit);
     },
   },
   watch: {
-    $route() {
-      this.getData();
-    },
-    historyList() {
-      if (this.historyList.length > 12) this.rowsPerPage = 12;
+    currentPage() {
+      this.getData(this.filterPayload);
     },
   },
   created() {
-    this.getData();
+    this.getData(this.filterPayload);
   },
   methods: {
     ...mapActions(['getTransactionHistoryList', 'getBonusHistoryList', 'getGameHistoryList']),
@@ -124,7 +111,7 @@ export default {
       this.getData(this.filterPayload);
     },
     onShowMore() {
-      this.limit += this.rowsPerPage;
+      this.limit += this.limit;
       this.getData(this.filterPayload);
     },
   },

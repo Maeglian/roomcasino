@@ -2,7 +2,8 @@ import moment from 'moment';
 
 export const BILLING_PROVIDER_ID = 'devcode';
 export const API_HOST_SANDBOX = 'http://az-44.sandbox.aramuz.net/frontapi/roomcasino';
-export const API_HOST_PROD = 'https://dev.aramuz.net/frontapi/roomcasino';
+export const API_HOST_STAGE = 'https://dev.aramuz.net/frontapi/roomcasino';
+export const API_HOST_PROD = 'https://aramuz.net/frontapi/roomcasino';
 
 export const DEFAULT_PROVIDER = { name: 'All providers', noIcon: true };
 
@@ -13,12 +14,8 @@ export const GAME_TYPES = [
   },
   {
     name: 'Top games',
+    type: 'top',
     icon: 'crown',
-  },
-  {
-    name: 'Live casino',
-    type: 'live',
-    icon: 'live',
   },
   {
     name: 'Slots games',
@@ -189,10 +186,12 @@ export const HISTORY_TABLES = {
     ],
     filters: {
       currency: {
+        label: 'currency',
         type: 'dropdown',
         value: { name: 'All currencies', value: '' },
       },
       status: {
+        label: 'status',
         type: 'dropdown',
         values: [
           { name: 'All statuses', value: '' },
@@ -203,6 +202,7 @@ export const HISTORY_TABLES = {
         value: { name: 'All statuses', value: '' },
       },
       from: {
+        label: 'until',
         type: 'date',
         value: '',
       },
@@ -236,12 +236,14 @@ export const HISTORY_TABLES = {
     ],
     filters: {
       currency: {
+        label: 'currency',
         type: 'dropdown',
         value: { name: 'All currencies', value: '' },
       },
       from: {
+        label: 'until',
         type: 'date',
-        value: moment().unix(),
+        value: '',
       },
     },
   },
@@ -281,10 +283,12 @@ export const HISTORY_TABLES = {
     ],
     filters: {
       currency: {
+        label: 'currency',
         type: 'dropdown',
         value: { name: 'All currencies', value: '' },
       },
       status: {
+        label: 'status',
         type: 'dropdown',
         values: [
           { name: 'All statuses', value: '' },
@@ -298,8 +302,9 @@ export const HISTORY_TABLES = {
         value: { name: 'All statuses', value: '' },
       },
       from: {
+        label: 'until',
         type: 'date',
-        value: moment().unix(),
+        value: '',
       },
     },
   },
@@ -334,3 +339,24 @@ export const HISTORY_TABLES = {
     ],
   },
 };
+
+export const BONUSES = [
+  {
+    title: 'First welcome bonus',
+    name: 'First Deposit 100%',
+    minDeposit: '20.00 USD/EUR',
+    maxPrize: '100% of the deposit amount - up to 100$/€',
+  },
+  {
+    title: 'Second deposit bonus',
+    name: 'Second Deposit 55%',
+    minDeposit: '20.00 USD/EUR',
+    maxPrize: '55% of the deposit amount - up to 100$/€',
+  },
+  {
+    title: 'Third deposit bonus',
+    name: 'Third Deposit 100%',
+    minDeposit: '20.00 USD/EUR',
+    maxPrize: '100% of the deposit amount - up to 100$/€',
+  },
+];

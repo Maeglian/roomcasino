@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://roomcasino.com/</loc>
+    <lastmod>2020-12-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/fast.ced235b.svg</image:loc>
+        <image:title></image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/support.128b415.svg</image:loc>
+        <image:title></image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/games.51992a4.svg</image:loc>
+        <image:title></image:title>
+      </image:image>
+  </url>
+  <url>
+    <loc>https://roomcasino.com/vip</loc>
+    <lastmod>2020-12-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/lvl1.c80706d.png</image:loc>
+        <image:title>level 1 icon</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/lvl2.6b6b083.png</image:loc>
+        <image:title>level 2 icon</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/lvl3.6ae82d5.png</image:loc>
+        <image:title>level 3 icon</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/lvl4.821a4d0.png</image:loc>
+        <image:title>level 4 icon</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/lvl5.b43f818.png</image:loc>
+        <image:title>level 5 icon</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/lvl6.9f18038.png</image:loc>
+        <image:title>level 6 icon</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/lvl7.c322291.png</image:loc>
+        <image:title>level 7 icon</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/lvl8.703524a.png</image:loc>
+        <image:title>level 8 icon</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/lvl9.46fd2c6.png</image:loc>
+        <image:title>level 9 icon</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/lvl10.5f09798.png</image:loc>
+        <image:title>level 10 icon</image:title>
+      </image:image>
+  </url>
+  <url>
+    <loc>https://roomcasino.com/daily-tournament</loc>
+    <lastmod>2020-12-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/flower.8c86f62.svg</image:loc>
+        <image:title></image:title>
+      </image:image>
+  </url>
+  <url>
+    <loc>https://roomcasino.com/payment-methods</loc>
+    <lastmod>2020-12-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/visa.a066809.svg</image:loc>
+        <image:title>visa</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/bitcoin.d00f1e5.svg</image:loc>
+        <image:title>bitcoin</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/maestro.ce0e1d8.svg</image:loc>
+        <image:title>maestro</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/coinspaid.532ab31.svg</image:loc>
+        <image:title>coinspaid</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>https://roomcasino.com/_nuxt/img/skrill.d631736.svg</image:loc>
+        <image:title>skrill</image:title>
+      </image:image>
+  </url>
+</urlset>

@@ -89,4 +89,7 @@ sw.*
 # Vim swap files
 *.swp
 
+
+/deleted
+/assets/img/originals
 package-lock.json

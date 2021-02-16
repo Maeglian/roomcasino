@@ -137,7 +137,7 @@
               Uploaded documents
             </div>
             <div v-for="doc in userDocumentList" :key="doc.id" class="VerificationPage-Doc">
-              <div class="VerificationPage-DocName" @click="showUserDocument(doc.id)">
+              <div class="VerificationPage-DocName" @click="onClickDocument(doc.id)">
                 {{ doc.name }}
               </div>
               <div class="VerificationPage-Close" @click="onDeleteDocument(doc.id)">
@@ -154,55 +154,63 @@
               :duplicate-check="true"
               @vdropzone-sending="onSendRequest"
               @vdropzone-success="onSuccessUpload"
+              @vdropzone-error="onErrorUpload"
             >
               <div class="VerificationPage-Dropzone">
                 <div class="VerificationPage-Text">
-                  Drop file here or browse jpg. png. Max size 2MB
+                  Drop file here or browse images or .pdf files. Max size 110Mb
                 </div>
               </div>
             </vueDropzone>
           </client-only>
         </div>
       </div>
-      <div class="VerificationPage-Item">
-        <div class="VerificationPage-Desc">
-          <svg class="VerificationPage-Approve VerificationPage-Approve--approved">
-            <use xlink:href="@/assets/img/icons.svg#approve"></use>
-          </svg>
-          <div class="VerificationPage-Title">
-            <div class="VerificationPage-Name">
-              Phone verification
-            </div>
-            <div class="VerificationPage-Approved">
-              Approved
-            </div>
-          </div>
-        </div>
-        <div class="VerificationPage-Docs">
-          <div class="VerificationPage-DocsContent">
-            <div class="VerificationPage-DocsTitle">
-              Phone number
-            </div>
-            <div class="VerificationPage-Name VerificationPage-Doc">
-              +3585****289
-              <div class="VerificationPage-Close">
-                <div class="Close"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!--      <div class="VerificationPage-Item">-->
+      <!--        <div class="VerificationPage-Desc">-->
+      <!--          <svg class="VerificationPage-Approve VerificationPage-Approve&#45;&#45;approved">-->
+      <!--            <use xlink:href="@/assets/img/icons.svg#approve"></use>-->
+      <!--          </svg>-->
+      <!--          <div class="VerificationPage-Title">-->
+      <!--            <div class="VerificationPage-Name">-->
+      <!--              Phone verification-->
+      <!--            </div>-->
+      <!--            <div class="VerificationPage-Approved">-->
+      <!--              Approved-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        <div class="VerificationPage-Docs">-->
+      <!--          <div class="VerificationPage-DocsContent">-->
+      <!--            <div class="VerificationPage-DocsTitle">-->
+      <!--              Phone number-->
+      <!--            </div>-->
+      <!--            <div class="VerificationPage-Name VerificationPage-Doc">-->
+      <!--              +3585****289-->
+      <!--              <div class="VerificationPage-Close">-->
+      <!--                <div class="Close"></div>-->
+      <!--              </div>-->
+      <!--            </div>-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
     </div>
   </div>
 </template>
 
 <script>
-import { API_HOST_PROD, API_HOST_SANDBOX } from '@/config';
-import { mapActions, mapState } from 'vuex';
+import { API_HOST_PROD, API_HOST_SANDBOX, API_HOST_STAGE } from '@/config';
+import { mapActions, mapState, mapMutations } from 'vuex';
+import Loader from '@/components/Loader';
 
 const vue2Dropzone = () => import('vue2-dropzone');
 
-const API_HOST = process.env.NUXT_ENV_MODE === 'sandbox' ? API_HOST_SANDBOX : API_HOST_PROD;
+const API_HOST =
+  // eslint-disable-next-line no-nested-ternary
+  process.env.NUXT_ENV_MODE === 'production'
+    ? API_HOST_PROD
+    : process.env.NUXT_ENV_MODE === 'sandbox'
+    ? API_HOST_SANDBOX
+    : API_HOST_STAGE;
 
 export default {
   name: 'VerificationPage',
@@ -213,21 +221,32 @@ export default {
     return {
       dropzoneOptions: {
         url: `${API_HOST}/document`,
-        maxFilesize: 2,
+        maxFilesize: 110,
         thumbnailHeight: 100,
         thumbnailMethod: 'contain',
-        acceptedFiles: '.png, .jpg',
+        addRemoveLinks: true,
+        acceptedFiles: 'image/*, application/pdf',
       },
     };
   },
   computed: {
-    ...mapState(['token', 'userDocumentList']),
+    ...mapState([
+      'token',
+      'userDocumentList',
+      'originalFile',
+      'originalFileIsLoading',
+      'originalFileError',
+    ]),
+  },
+  created() {
+    this.getUserDocumentList();
   },
   mounted() {
     this.dropzoneOptions.headers = { 'X-Auth-Token': this.token };
   },
   methods: {
-    ...mapActions(['getUserDocumentList', 'showUserDocument', 'deleteUserDocument']),
+    ...mapMutations(['clearOriginalFile', 'clearOriginalFileError']),
+    ...mapActions(['getUserDocumentList', 'showUserDocument', 'deleteUserDocument', 'logout']),
     onDeleteDocument(id) {
       this.deleteUserDocument(id).then(() => this.getUserDocumentList());
     },
@@ -236,6 +255,44 @@ export default {
     },
     onSuccessUpload() {
       this.getUserDocumentList().then(() => this.$refs.myVueDropzone.removeAllFiles());
+    },
+    onErrorUpload({ xhr }) {
+      if (xhr && xhr.status === 401) this.logout(true);
+    },
+    beforeCloseModalOriginalFile() {
+      this.clearOriginalFile();
+      if (this.originalFileError) this.clearOriginalFileError();
+    },
+    onClickDocument(id) {
+      this.showUserDocument(id);
+      this.$modal.show(
+        {
+          template: `
+            <div class="Modal">
+              <div class="Close Modal-Close" @click="$emit('close')" />
+              <div class="VerificationPage-File">
+                <Loader v-if="originalFileIsLoading" />
+                <div v-else-if="originalFileError">{{ originalFileError }}</div>
+                <img class="VerificationPage-FileImg" v-else :src="createObjectURL(originalFile)" />
+              </div>
+            </div>
+          `,
+          components: { Loader },
+          computed: {
+            ...mapState(['originalFile', 'originalFileIsLoading', 'originalFileError']),
+          },
+          methods: {
+            createObjectURL(src) {
+              return URL.createObjectURL(src);
+            },
+          },
+        },
+        {},
+        { width: '90%', height: 'auto', adaptive: true, scrollable: true },
+        {
+          'before-close': this.beforeCloseModalOriginalFile,
+        },
+      );
     },
   },
 };
@@ -412,6 +469,14 @@ export default {
     &--pending {
       color: var(--color-main1);
     }
+  }
+
+  &-File {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: auto;
+    background: var(--color-body);
   }
 
   .dropzone {

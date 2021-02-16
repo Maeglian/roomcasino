@@ -24,25 +24,17 @@
         Deposit
       </div>
     </button>
-    <div class="MobileNav-Item" @click="toggleNotificationsPanel">
-      <div class="MobileNav-Messages">
-        <svg width="12" height="14">
-          <use xlink:href="@/assets/img/icons.svg#messages"></use>
-        </svg>
-        <div v-show="isNewNotifications" class="MobileNav-MessagesNew"></div>
-      </div>
-      <div class="MobileNav-Name">
-        Notification
-      </div>
-    </div>
-    <button class="MobileNav-Item">
-      <svg width="16" height="14">
-        <use xlink:href="@/assets/img/icons.svg#support"></use>
-      </svg>
-      <div class="MobileNav-Name">
-        Support
-      </div>
-    </button>
+    <!--    <div class="MobileNav-Item" @click="toggleNotificationsPanel">-->
+    <!--      <div class="MobileNav-Messages">-->
+    <!--        <svg width="12" height="14">-->
+    <!--          <use xlink:href="@/assets/img/icons.svg#messages"></use>-->
+    <!--        </svg>-->
+    <!--        <div v-show="isNewNotifications" class="MobileNav-MessagesNew"></div>-->
+    <!--      </div>-->
+    <!--      <div class="MobileNav-Name">-->
+    <!--        Notification-->
+    <!--      </div>-->
+    <!--    </div>-->
   </nav>
 </template>
 
@@ -75,11 +67,12 @@ export default {
 .MobileNav {
   position: fixed;
   bottom: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 18px 24px 14px;
-  background: linear-gradient(176.16deg, rgba(6, 14, 42, 0) 4.02%, #060e2a 97.74%);
+  padding: 18px 84px 14px 24px;
+  background: var(--color-body);
 
   @media (min-width: $screen-xs) {
     display: none;

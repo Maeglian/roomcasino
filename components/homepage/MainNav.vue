@@ -1,8 +1,5 @@
 <template>
-  <nav
-    class="MainNav"
-    :class="{ 'MainNav--bg': documentIsScrolled }"
-  >
+  <nav class="MainNav" :class="{ 'MainNav--bg': documentIsScrolled }">
     <div v-if="navIsOpen" class="MainNav-Overlay" @click="toggleNav()"></div>
     <div class="MainNav-TopBar">
       <div class="MainNav-Nav">
@@ -15,21 +12,18 @@
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
         </NuxtLink>
       </div>
-      <nav v-if="width >= 960" class="Nav MainNav-Links">
-        <ul class="MainNav-List">
-          <NavItem
-            v-for="item in navItems"
-            :key="item.name"
-            :class-name="'MainNav-Link'"
-            :item="item"
-          />
-        </ul>
-      </nav>
-      <BalanceSection v-if="isGamePage" />
-      <AuthSection
-        v-else
-        class="MainNav-AuthSection"
-      />
+      <!--      <nav v-if="width >= 960" class="Nav MainNav-Links">-->
+      <!--        <ul class="MainNav-List">-->
+      <!--          <NavItem-->
+      <!--            v-for="item in navItems"-->
+      <!--            :key="item.name"-->
+      <!--            :class-name="'MainNav-Link'"-->
+      <!--            :item="item"-->
+      <!--          />-->
+      <!--        </ul>-->
+      <!--      </nav>-->
+      <GamePanel v-if="isGamePage" />
+      <AuthSection v-else class="MainNav-AuthSection" />
     </div>
     <transition v-if="width < 960" name="slide-left">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
@@ -56,7 +50,7 @@
 <script>
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
-import BalanceSection from '@/components/homepage/BalanceSection.vue';
+import GamePanel from '@/components/homepage/GamePanel.vue';
 import { mapMutations, mapState } from 'vuex';
 
 export default {
@@ -64,7 +58,7 @@ export default {
   components: {
     NavItem,
     AuthSection,
-    BalanceSection,
+    GamePanel,
   },
   data() {
     return {
@@ -77,35 +71,30 @@ export default {
           icon: 'lobby_nav.svg',
         },
         {
-          name: 'Categories',
-          url: '/category',
-          icon: 'categories_nav.svg',
-        },
-        {
           name: 'Promotions',
           url: '/promotions',
           icon: 'promotions_nav.svg',
         },
-        {
-          name: 'Tournaments',
-          children: [
-            {
-              name: 'Daily tournament',
-              url: '/daily-tournament',
-              icon: 'tournament_nav.svg',
-            },
-            {
-              name: 'Weekly lottery',
-              url: '#',
-              icon: 'tournament_nav.svg',
-            },
-            {
-              name: 'Live tournament',
-              url: '#',
-              icon: 'tournament_nav.svg',
-            },
-          ],
-        },
+        // {
+        //   name: 'Tournaments',
+        //   children: [
+        //     {
+        //       name: 'Daily tournament',
+        //       url: '/daily-tournament',
+        //       icon: 'tournament_nav.svg',
+        //     },
+        //     {
+        //       name: 'Weekly lottery',
+        //       url: '#',
+        //       icon: 'tournament_nav.svg',
+        //     },
+        //     {
+        //       name: 'Live tournament',
+        //       url: '#',
+        //       icon: 'tournament_nav.svg',
+        //     },
+        //   ],
+        // },
       ],
       internalVisible: true,
     };
@@ -261,14 +250,6 @@ export default {
       &:after {
         display: none;
       }
-    }
-  }
-
-  &-AuthSection {
-    display: none;
-
-    @media (min-width: $screen-xs) {
-      display: block;
     }
   }
 }

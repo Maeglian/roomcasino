@@ -33,15 +33,36 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'preload',
+        as: 'style',
+        href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap',
+      },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap',
+        media: 'print',
+        onload: "this.media='all'",
       },
     ],
     script: [
       {
         src: 'https://static.paymentiq.io/cashier/cashier.js',
+      },
+      {
+        src: '/js/liveChat.js',
+        defer: true,
+      },
+      {
+        src: 'https://034906ca-0989-44fa-8bff-6a0fdffc45bb.snippet.antillephone.com/apg-seal.js',
+      },
+    ],
+    noscript: [
+      {
+        innerHTML:
+          '<a href="https://www.livechatinc.com/chat-with/12226866/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a>',
       },
     ],
   },
@@ -66,7 +87,12 @@ export default {
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    extractCSS: true,
+    extend(config) {
+      config.resolve.alias.vue = 'vue/dist/vue.common';
+    },
+  },
 
   router: { middleware: ['closeNav'] },
   generate: {

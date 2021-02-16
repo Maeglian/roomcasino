@@ -3,35 +3,44 @@
     <NuxtLink class="CabinetTopbar-Logo" to="/">
       <img src="@/assets/img/logo.svg" />
     </NuxtLink>
-    <NuxtLink class="CabinetTopbar-Link CabinetTopbar-Profile" to="/cabinet/profile/general">
-      Profile
-    </NuxtLink>
     <div class="Nav CabinetTopbar-Nav">
       <NuxtLink class="CabinetTopbar-Link" to="/" exact>Home</NuxtLink>
-      <NuxtLink class="CabinetTopbar-Link" to="/category">All games</NuxtLink>
       <NuxtLink class="CabinetTopbar-Link" to="/promotions">Promotions</NuxtLink>
-      <NuxtLink class="CabinetTopbar-Link" to="/tournaments">Tournaments</NuxtLink>
+      <!--      <NuxtLink class="CabinetTopbar-Link" to="/tournaments">Tournaments</NuxtLink>-->
     </div>
-    <div class="CabinetTopbar-User">
-      <div class="CabinetTopbar-UserName">
-        {{ user.firstName || '' }} {{ user.lastName || user.email }}
+    <template v-if="Object.keys(user).length">
+      <div class="CabinetTopbar-User">
+        <UserAccounts class="CabinetTopbar-UserAccounts" />
+        <!--        <div class="CabinetTopbar-UserDetails">-->
+        <!--          <div class="CabinetTopbar-UserLvl">-->
+        <!--            Level 2-->
+        <!--          </div>-->
+        <!--          <div class="CabinetTopbar-LvlDetails">-->
+        <!--            <span class="CabinetTopbar-Spent">-->
+        <!--              1000 PC /-->
+        <!--            </span>-->
+        <!--            <span class="CabinetTopbar-Left">-->
+        <!--              4 999 PC-->
+        <!--            </span>-->
+        <!--          </div>-->
+        <!--        </div>-->
       </div>
-      <div class="CabinetTopbar-UserBalance">
-        {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }}
-        <span class="CabnetTopbar-Currency">{{ activeAccount.currency || user.currency }}</span>
-      </div>
-    </div>
-    <button class="CabinetTopbar-Btn Btn Btn--color" @click="$modal.show('cashier')">
-      Deposit
-    </button>
+      <button class="CabinetTopbar-Btn Btn Btn--color" @click="$modal.show('cashier')">
+        Deposit
+      </button>
+    </template>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapState } from 'vuex';
+import UserAccounts from '@/components/UserAccounts';
 
 export default {
   name: 'CabinetTopbar',
+  components: {
+    UserAccounts,
+  },
   computed: {
     ...mapState(['user']),
     ...mapGetters(['activeAccount']),
@@ -47,6 +56,7 @@ export default {
   display: flex;
   align-items: center;
   width: 100%;
+  max-width: 100%;
   padding-right: 16px;
   padding-bottom: 8px;
   padding-left: 16px;
@@ -62,23 +72,18 @@ export default {
   }
 
   &-Logo {
-    display: none;
-    background: var(--color-bg);
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    width: 120px;
+    margin-right: 15px;
 
     @media (min-width: $screen-l) {
-      display: flex;
-      flex-shrink: 0;
-      align-items: center;
       width: 274px / $screen-xl * 100%;
       height: 66px;
       margin-right: 46px;
       padding-left: 37px;
-    }
-  }
-
-  &-Profile {
-    @media (min-width: $screen-l) {
-      display: none;
+      background: var(--color-bg);
     }
   }
 
@@ -100,34 +105,66 @@ export default {
   }
 
   &-User {
-    display: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    padding: 13px 0;
+    font-size: 10px;
+    line-height: 1.2;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+
+    @media (min-width: $screen-m) {
+      justify-content: flex-start;
+      margin-right: 24px;
+    }
 
     @media (min-width: $screen-l) {
-      display: flex;
-      margin-right: 32px;
-      margin-left: auto;
-      color: var(--color-text-main);
+      justify-content: flex-end;
+
+      padding: 0;
     }
   }
 
-  &-UserName {
-    margin-right: 20px;
+  &-Spent {
+    color: var(--color-text-ghost);
+    white-space: nowrap;
   }
 
-  &-Currency {
-    color: var(--color-text-ghost);
+  &-Left {
+    white-space: nowrap;
   }
 
   &-Btn {
-    margin-left: auto;
-    padding: 11px 18px;
-    font-size: 10px;
-    text-transform: uppercase;
+    display: none;
+
+    @media (min-width: $screen-m) {
+      display: inline-flex;
+      align-self: stretch;
+      padding: 0 18px;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
 
     @media (min-width: $screen-l) {
-      align-self: stretch;
-      margin-left: 0;
       padding: 22px 30px;
+    }
+  }
+
+  &-UserAccounts {
+    @media (min-width: $screen-m) {
+      margin-right: 10px;
+      padding-right: 10px;
+      border-right: 1px solid var(--color-text-ghost);
+    }
+  }
+
+  &-UserDetails {
+    display: none;
+
+    @media (min-width: $screen-m) {
+      display: block;
     }
   }
 }

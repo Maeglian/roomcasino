@@ -1,68 +1,84 @@
 <template>
   <div>
-    <section class="BestGames">
-      <div v-if="width > 767" class="BestGames-Tabs">
+    <section id="games" class="DefaultGames">
+      <div v-if="width > 767" class="DefaultGames-Tabs">
         <button
           v-for="(tab, i) in tabs"
           :key="tab.name"
-          class="BestGames-Tab"
-          :class="{ 'BestGames-Tab--active': tabActive.name === tab.name }"
+          class="DefaultGames-Tab"
+          :class="{ 'DefaultGames-Tab--active': tabActive.name === tab.name }"
           @click="onChooseTab(i)"
         >
-          <svg :class="`BestGames-Icon BestGames-Icon--${tab.icon}`">
+          <svg :class="`DefaultGames-Icon DefaultGames-Icon--${tab.icon}`">
             <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
           </svg>
-          <div class="BestGames-Name">
+          <div class="DefaultGames-Name">
             {{ tab.name }}
           </div>
         </button>
       </div>
-      <div class="ProvidersSection BestGames-Providers">
-        <Search v-model="searched" class="ProvidersSection-Search BestGames-Search" />
+      <div class="ProvidersSection DefaultGames-Providers">
+        <Search v-model="searched" class="ProvidersSection-Search DefaultGames-Search" />
         <ProvidersMenu
           v-if="gameProducerList.length"
           :provider-active="providerActive"
           @choose-provider="onChooseProvider"
         />
       </div>
-      <div class="Title Title--type-h2 Cards-Title">
-        The best games
-      </div>
-      <Loader v-if="gamesAreLoading" />
-      <template v-else-if="filteredGames.length">
+      <div v-if="searched" class="SearchedGames">
+        <div class="Title Title--type-h2 Cards-Title">
+          Searched
+        </div>
         <Games
-          class="BestGames-Cards"
+          class="DefaultGames-Cards"
           :games="filteredGames"
           :games-to-show="24"
           btn-class="Btn--common Btn--dark"
         />
+      </div>
+      <Loader v-if="gamesAreLoading" />
+      <template v-else>
+        <div class="Title Title--type-h2 Cards-Title">
+          {{ title }}
+        </div>
+        <Games
+          class="DefaultGames-Cards"
+          :games="games"
+          :games-to-show="24"
+          btn-class="Btn--common Btn--dark"
+        />
       </template>
-      <p v-else class="Text Text--center">
-        Nothing was found
-      </p>
     </section>
-    <section class="NewGames">
+    <section v-if="this.tabActive.name !== 'All games'" class="DefaultGames">
+      <Loader v-if="defaultGamesAreLoading" />
       <div class="Title Title--type-h2 Cards-Title">
-        New games
+        All games
       </div>
       <Games
-        v-if="fakedNewGames.length"
-        class="BestGames-Cards NewGames-Cards"
-        :games="fakedNewGames"
-        :games-to-show="12"
-        :btn-class="'Btn--common Btn--dark'"
+        class="DefaultGames-Cards NewGames-Cards"
+        :games="defaultGames"
+        :games-to-show="24"
+        btn-class="Btn--common Btn--dark"
       />
-      <p v-else class="Text Text--center">
-        Nothing was found
-      </p>
     </section>
-    <!--    <section class="LiveGames">-->
-    <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
-    <!--        Live games-->
-    <!--      </div>-->
-    <!--      <Games class="BestGames-Cards NewGames-Cards" :games="liveGames" :gamesToShow="12" btnClass="Btn--dark" />-->
-    <!--    </section>-->
   </div>
+  <!--    <section class="NewGames">-->
+  <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
+  <!--        New games-->
+  <!--      </div>-->
+  <!--      <Games-->
+  <!--        class="DefaultGames-Cards NewGames-Cards"-->
+  <!--        :games="fakedNewGames"-->
+  <!--        :games-to-show="12"-->
+  <!--        :btn-class="'Btn&#45;&#45;common Btn&#45;&#45;dark'"-->
+  <!--      />-->
+  <!--    </section>-->
+  <!--    <section class="LiveGames">-->
+  <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
+  <!--        Live games-->
+  <!--      </div>-->
+  <!--      <Games class="DefaultGames-Cards NewGames-Cards" :games="liveGames" :gamesToShow="12" btnClass="Btn--dark" />-->
+  <!--    </section>-->
 </template>
 
 <script>
@@ -70,23 +86,23 @@ import { mapState, mapGetters, mapActions } from 'vuex';
 import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
-import search from '@/mixins/search';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import { DEFAULT_PROVIDER, GAME_TYPES } from '@/config';
 
 export default {
-  name: 'BestGames',
+  name: 'DefaultGames',
   components: {
     ProvidersMenu,
     Search,
     Loader,
   },
-  mixins: [showAuthDialog, search],
+  mixins: [showAuthDialog],
   data() {
     return {
       tabs: GAME_TYPES,
-      tabActive: GAME_TYPES[0],
+      tabActive: GAME_TYPES[1],
       providerActive: DEFAULT_PROVIDER,
+      searched: '',
       newGames: [
         {
           img: 'game1.png',
@@ -190,18 +206,36 @@ export default {
     };
   },
   computed: {
-    ...mapState(['width', 'games', 'gamesAreLoading', 'gameProducerList']),
-    ...mapGetters(['fakedNewGames', 'isLoggedIn']),
+    ...mapState([
+      'width',
+      'games',
+      'defaultGames',
+      'gamesAreLoading',
+      'defaultGamesAreLoading',
+      'gameProducerList',
+      'categories',
+    ]),
+    ...mapGetters(['fakedNewGames', 'isLoggedIn', 'gamesSearched']),
     gamesParams() {
       const params = {};
-      if (this.tabActive.type) params.type = this.tabActive.type;
+      if (this.tabActive.type) params.category = this.tabActive.type;
       if (this.providerActive.name !== 'All providers')
         params.gameProducer = this.providerActive.name;
       return params;
     },
+    filteredGames() {
+      return this.gamesSearched(this.searched);
+    },
+    title() {
+      const selectedCategory = this.categories.find(
+        category => category.slug === this.tabActive.type,
+      );
+      if (selectedCategory) return selectedCategory.name;
+      return 'All games';
+    },
   },
   created() {
-    this.getGames();
+    this.getGames(this.gamesParams);
   },
   methods: {
     ...mapActions(['getGames']),
@@ -221,13 +255,13 @@ export default {
 </script>
 
 <style lang="scss">
-.BestGames {
+.DefaultGames {
   &-Tabs {
     display: none;
 
     @media (min-width: $screen-m) {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       grid-gap: 10px;
       width: 100%;
       margin-bottom: 10px;
@@ -246,7 +280,7 @@ export default {
     //  border-top: none;
     //  border-radius: 0 0 8px 8px;
     //
-    //  .BestGames-Tab--active {
+    //  .DefaultGames-Tab--active {
     //    display: none;
     //  }
     //}

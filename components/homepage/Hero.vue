@@ -4,8 +4,12 @@
       <div class="Hero-Item">
         <picture class="Hero-Image">
           <source
+            media="(max-width: 340px)"
+            :srcset="require('@/assets/img/hero-bg-joker_320.png')"
+          />
+          <source
             media="(max-width: 460px)"
-            :srcset="require('@/assets/img/hero-bg-joker_mobile.png')"
+            :srcset="require('@/assets/img/hero-bg-joker_460.png')"
           />
           <source
             media="(max-width: 768px)"
@@ -24,7 +28,8 @@
             welcome<br />
             bonus
           </div>
-          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>
+          <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
+          <div class="Hero-Text">100% up to 150 CAD</div>
           <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
             {{ isLoggedIn ? 'Deposit now' : 'Sign up' }}
           </button>
@@ -32,12 +37,12 @@
       </div>
     </div>
     <div class="Hero-Footer">
-      <GamesSlider
-        class="Hero-Winners GamesSlider--winners"
-        :items="winners"
-        :slider-options="winnersSliderOptions"
-        title="Last winners"
-      />
+      <!--      <GamesSlider-->
+      <!--        class="Hero-Winners GamesSlider&#45;&#45;winners"-->
+      <!--        :items="winners"-->
+      <!--        :slider-options="winnersSliderOptions"-->
+      <!--        title="Last winners"-->
+      <!--      />-->
       <div class="Advantages Hero-Advantages">
         <div class="Advantages-Item">
           <div class="Advantages-Icon">
@@ -97,15 +102,15 @@
 </template>
 
 <script>
-import GamesSlider from '@/components/GamesSlider';
+// import GamesSlider from '@/components/GamesSlider';
 import { mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'Hero',
-  components: {
-    GamesSlider,
-  },
+  // components: {
+  //   GamesSlider,
+  // },
   mixins: [showAuthDialog],
   data() {
     return {

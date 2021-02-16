@@ -1,27 +1,27 @@
 <template>
   <div class="ProfilePage-Content">
     <div class="ProfilePage-Auth">
-      <div class="ProfilePage-Qr">
-        <div class="CabinetPage-Header">
-          Two - factor authentication
-        </div>
-        <div class="ProfilePage-QrContent">
-          <img class="ProfilePage-Code" src="@/assets/img/qr.png" />
-          <div class="ProfilePage-Text">
-            Install a code-generating app such as Google Authenticator or Authy on your phone.<br />
-            Scan the QR code. Enter the received code below.
-          </div>
-        </div>
-        <form class="ProfilePage-QrForm">
-          <input
-            v-model="qrCode"
-            class="ProfilePage-Input"
-            type="text"
-            placeholder="Type it here"
-          />
-          <button type="submit" class="ProfilePage-Send">Send</button>
-        </form>
-      </div>
+      <!--      <div class="ProfilePage-Qr">-->
+      <!--        <div class="CabinetPage-Header">-->
+      <!--          Two - factor authentication-->
+      <!--        </div>-->
+      <!--        <div class="ProfilePage-QrContent">-->
+      <!--          <img class="ProfilePage-Code" src="@/assets/img/qr.png" />-->
+      <!--          <div class="ProfilePage-Text">-->
+      <!--            Install a code-generating app such as Google Authenticator or Authy on your phone.<br />-->
+      <!--            Scan the QR code. Enter the received code below.-->
+      <!--          </div>-->
+      <!--        </div>-->
+      <!--        <form class="ProfilePage-QrForm">-->
+      <!--          <input-->
+      <!--            v-model="qrCode"-->
+      <!--            class="ProfilePage-Input"-->
+      <!--            type="text"-->
+      <!--            placeholder="Type it here"-->
+      <!--          />-->
+      <!--          <button type="submit" class="ProfilePage-Send">Send</button>-->
+      <!--        </form>-->
+      <!--      </div>-->
       <form class="CabinetForm ProfilePage-Password" @submit.prevent="onSubmitPasswordForm">
         <div class="CabinetPage-Header">
           Password change
@@ -110,8 +110,8 @@
     <CabinetTable
       title="Session History"
       :cols="sessionHistoryCols"
-      :rows="rowsInPage"
-      :show-more-btn="sessionHistoryList.length > rowsPerPage && !needsPagination"
+      :rows="sessionHistoryList"
+      :show-more-btn="pageRowsCount > limit && !needsPagination"
       :loading="historyListIsLoading"
       :pagination="{
         enabled: needsPagination,
@@ -130,7 +130,6 @@ import CabinetTable from '@/components/cabinet/CabinetTable.vue';
 import { mapActions, mapMutations, mapState } from 'vuex';
 import { required, sameAs } from 'vuelidate/lib/validators';
 import { HISTORY_TABLES } from '@/config';
-import { passwordCheck } from '@/utils/formCheckers';
 import BaseInput from '@/components/base/BaseInput';
 import BaseButton from '@/components/base/BaseButton';
 
@@ -144,6 +143,9 @@ export default {
   middleware: 'clearUpdateProfileError',
   data() {
     return {
+      maxRowsPerPage: 12,
+      limit: 6,
+      currentPage: 1,
       oldPassword: '',
       newPassword: {
         value: '',
@@ -156,8 +158,6 @@ export default {
       qrCode: '',
       shouldDisplayPasswordFormErrors: false,
       sessionHistoryCols: HISTORY_TABLES.session.cols,
-      rowsPerPage: 6,
-      currentPage: 1,
     };
   },
   computed: {
@@ -166,18 +166,21 @@ export default {
       'updateProfileError',
       'sessionHistoryList',
       'historyListIsLoading',
+      'pageRowsCount',
     ]),
-    needsPagination() {
-      return this.rowsPerPage >= 12;
+    offset() {
+      return (this.currentPage - 1) * this.limit;
     },
-    rowsInPage() {
-      const start = this.rowsPerPage * (this.currentPage - 1);
-      const end = start + this.rowsPerPage;
-
-      return this.sessionHistoryList.slice(start, end);
+    needsPagination() {
+      return this.sessionHistoryList.length >= this.maxRowsPerPage || this.currentPage > 1;
     },
     totalPages() {
-      return Math.ceil(this.sessionHistoryList.length / this.rowsPerPage);
+      return Math.ceil(this.pageRowsCount / this.limit);
+    },
+  },
+  watch: {
+    currentPage() {
+      this.getData();
     },
   },
   validations: {
@@ -185,7 +188,6 @@ export default {
     newPassword: {
       value: {
         required,
-        passwordCheck,
       },
     },
     confirmPassword: {
@@ -197,11 +199,14 @@ export default {
     },
   },
   created() {
-    this.getSessionHistoryList();
+    this.getData();
   },
   methods: {
-    ...mapMutations(['clearUpdateProfileError']),
+    ...mapMutations(['clearUpdateProfileError', 'pushNotificationAlert']),
     ...mapActions(['updatePassword', 'getSessionHistoryList']),
+    getData() {
+      this.getSessionHistoryList({ limit: this.limit, offset: this.offset });
+    },
     toggleVisibility(el) {
       this[el].inputType === 'password'
         ? (this[el].inputType = 'text')
@@ -225,11 +230,16 @@ export default {
           this.confirmPassword.value = '';
           this.$v.$reset();
           this.shouldDisplayPasswordFormErrors = false;
+          this.pushNotificationAlert({
+            type: 'success',
+            text: 'Your password was successfully changed!',
+          });
         }
       });
     },
     onShowMoreSessionHistory() {
-      this.rowsPerPage += this.rowsPerPage;
+      this.limit += this.limit;
+      this.getData();
     },
   },
 };

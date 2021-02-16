@@ -9,14 +9,11 @@
         <NuxtLink class="Link Footer-Link" to="/promotions">
           Promotion
         </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/vip">
-          VIP rewards
-        </NuxtLink>
+        <!--        <NuxtLink class="Link Footer-Link" to="/vip">-->
+        <!--          VIP rewards-->
+        <!--        </NuxtLink>-->
         <NuxtLink class="Link Footer-Link" to="/payment-methods">
           Payment methods
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/about-us">
-          About us
         </NuxtLink>
         <NuxtLink class="Link Footer-Link" to="/terms">
           Terms and conditions
@@ -30,6 +27,9 @@
         <NuxtLink class="Link Footer-Link" to="/privacy-policy">
           Privacy policy
         </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/about-us">
+          About us
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" to="/faq">
           Faq
         </NuxtLink>
@@ -38,19 +38,34 @@
         <img src="@/assets/img/eng.png" alt="" />
       </div>
     </nav>
+    <div
+      id="apg-034906ca-0989-44fa-8bff-6a0fdffc45bb"
+      data-apg-seal-id="034906ca-0989-44fa-8bff-6a0fdffc45bb"
+      data-apg-image-size="128"
+      data-apg-image-type="basic-small"
+    ></div>
     <div class="Footer-Disclaimer">
       <div class="Footer-Text">
-        Copyright © 2020 www.roomcasino.com is owned and operated by _ a company registered and
-        established under the laws of _. _ is licensed and regulated by _ (license no. _). _‘s
-        registration number is _ and its registered address is _ It is the player’s sole
-        responsibility to inquire about the existing laws and regulations of the given jurisdiction
-        for online gambling.
+        Copyright © 2020 www.roomcasino.com is owned and operated by DUX GROUP N.V., a company
+        registered and established under the laws of Curacao. DUX GROUP N.V. is licensed and
+        regulated by Antillephone N.V. (license no. 8048/JAZ2020-075).
+        <br />
+        DUX GROUP N.V.’s registration number is 155114 and its registered address is Perseusweg 27
+        A, Curacao.
+        <br />
+        SCARTESU LIMITED is a subsidiary of DUX GROUP N.V., acting as an Agent on behalf of DUX
+        GROUP N.V, registered in Cyprus with registered address Boumpoulinas 1, BOUBOULINA BUILDING,
+        3rd Floor, Flat/Office 31, 1060, Nicosia, Cyprus, and registration number ΗΕ 410983.
+        <br />
+        It is the player’s sole responsibility to inquire about the existing laws and regulations of
+        the given jurisdiction for online gambling.
         <br />
         <br />
         If you have any questions or suggestions about our site, please contact us
-        <a class="Footer-Contact" href="mailto:contact@roomcasino.com">contact@roomcasino.com</a>
+        <a class="Footer-Contact" href="mailto:support@roomcasino.com">support@roomcasino.com</a>
       </div>
       <div class="Footer-Icons">
+        <img class="Icon Footer-Icon" src="@/assets/img/curacao.svg" height="25" />
         <svg class="Icon Footer-Icon" width="25" height="25">
           <use xlink:href="@/assets/img/icons.svg#18"></use>
         </svg>
@@ -70,12 +85,19 @@ export default {
   components: {
     Partners,
   },
+  mounted() {
+    window.apg_034906ca_0989_44fa_8bff_6a0fdffc45bb.init();
+  },
 };
 </script>
 
 <style lang="scss">
 .Footer {
-  padding-bottom: 54px;
+  padding-bottom: 70px;
+
+  @media (min-width: $screen-xs) {
+    padding-bottom: 54px;
+  }
 
   &-Nav {
     display: flex;

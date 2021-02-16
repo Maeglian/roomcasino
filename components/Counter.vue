@@ -37,8 +37,8 @@
         </div>
       </div>
     </div>
-    <div v-if="minFormat" class="Counter-AdditionalText">
-      Until resset
+    <div v-if="!!$slots.default" class="Counter-AdditionalText">
+      <slot />
     </div>
   </div>
 </template>
@@ -177,7 +177,6 @@ export default {
     margin-top: 2px;
     font-size: 12px;
     color: var(--color-text-ghost);
-    text-transform: capitalize;
   }
 }
 

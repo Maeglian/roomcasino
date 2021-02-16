@@ -1,10 +1,6 @@
 <template>
   <transition name="slide-right">
-    <div
-      v-show="notificationsPanelIsOpen"
-      v-click-outside="onClickOutside"
-      class="NotificationsPanel"
-    >
+    <div v-show="notificationsPanelIsOpen" v-click-outside="vcoConfig" class="NotificationsPanel">
       <div class="NotificationsPanel-Header">
         <NuxtLink to="/">
           <img class="NotificationsPanel-Logo" src="@/assets/img/logo.svg" />
@@ -79,6 +75,10 @@ export default {
         },
       ],
       activeTab: 'promotions',
+      vcoConfig: {
+        handler: this.onClickOutside,
+        detectIframe: true,
+      },
     };
   },
   computed: {
@@ -87,6 +87,7 @@ export default {
   methods: {
     ...mapMutations(['closeNotificationsPanel']),
     onClickOutside(e) {
+      if (!(e.target instanceof Element)) return;
       if (!e.target.closest('.AuthSection-UserMessages')) this.closeNotificationsPanel();
     },
   },
@@ -153,8 +154,12 @@ export default {
   }
 
   &-Content {
-    height: 100%;
+    height: calc(100% - 97px);
     overflow: auto;
+
+    @media (min-width: $screen-l) {
+      height: calc(100% - 63px);
+    }
   }
 
   &-Empty {

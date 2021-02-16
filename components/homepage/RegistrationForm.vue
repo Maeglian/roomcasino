@@ -126,20 +126,42 @@
                 <span class="AuthDialog-Placeholder--required">*</span>
               </span>
             </template>
+            <template v-if="name === 'phoneNumber'" #afterInput-absolute>
+              <div class="AuthDialog-PhonePlus">
+                +
+              </div>
+            </template>
           </BaseInput>
         </template>
       </template>
-      <div v-if="authError" class="AuthDialog-Error AuthDialog-Error--registration">
+      <div v-if="authError && step === 1" class="AuthDialog-Error AuthDialog-Error--registration">
         {{ authError }}
       </div>
+      <div
+        v-if="updateProfileError && step === 2"
+        class="AuthDialog-Error AuthDialog-Error--registration"
+      >
+        {{ updateProfileError }}
+      </div>
     </div>
-    <BaseButton
-      class="Btn--full AuthDialog-Btn"
-      :is-loading="authStatus === 'loading'"
-      :disabled="$v.$error"
-    >
-      Sign up
-    </BaseButton>
+    <div class="AuthDialog-Buttons">
+      <BaseButton
+        v-if="step === 1"
+        class="AuthDialog-Btn"
+        :is-loading="authStatus === 'loading'"
+        :disabled="$v.$error"
+      >
+        Sign up
+      </BaseButton>
+      <BaseButton
+        v-if="step === 2"
+        class="AuthDialog-Btn"
+        :is-loading="authStatus === 'loading'"
+        :disabled="$v.$error"
+      >
+        Save
+      </BaseButton>
+    </div>
   </form>
 </template>
 
@@ -148,15 +170,16 @@ import BaseInput from '@/components/base/BaseInput.vue';
 import BaseCheckbox from '@/components/base/BaseCheckbox.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapActions, mapGetters, mapState } from 'vuex';
-import { required, email, minLength, maxLength, numeric } from 'vuelidate/lib/validators';
+import { required, email, minLength, maxLength, alphaNum, numeric } from 'vuelidate/lib/validators';
 import {
   getObjValuesFromLocalStorage,
   writeObjValuesToLocalStorage,
   deleteObjValuesFromLocalStorage,
 } from '@/utils/helpers';
-import { passwordCheck, termsCheck, ageCheck, dateCheck } from '@/utils/formCheckers';
+import { termsCheck, ageCheck, dateCheck } from '@/utils/formCheckers';
 import RegistrationBonus from '@/components/homepage/RegistrationBonus';
 import BaseButton from '@/components/base/BaseButton';
+import moment from 'moment';
 
 export default {
   name: 'RegistrationForm',
@@ -166,9 +189,16 @@ export default {
     BaseCheckbox,
     BaseButton,
   },
+  props: {
+    beforeDeposit: {
+      type: Boolean,
+      isRequired: false,
+      default: false,
+    },
+  },
   data() {
     return {
-      step: 1,
+      step: this.beforeDeposit ? 2 : 1,
       fieldsStep1: {
         email: {
           value: '',
@@ -209,7 +239,7 @@ export default {
           value: false,
           type: 'checkbox',
           label:
-            'I am 18 years old and I accept the<br/> <a class="AuthDialog-RegistrationLink" href="/terms">Terms&nbsp;and&nbsp;Conditions</a> and <a class="AuthDialog-RegistrationLink" href="/privacy-policy">Privacy&nbsp;Policy</a>',
+            'I am 18 years old and I accept the<br/> <a class="AuthDialog-RegistrationLink" href="/terms" target="_blank">Terms&nbsp;and&nbsp;Conditions</a> and <a class="AuthDialog-RegistrationLink" href="/privacy-policy" target="_blank">Privacy&nbsp;Policy</a>',
         },
       },
       fieldsStep2: {
@@ -281,14 +311,31 @@ export default {
           required: true,
           autocorrect: 'off',
           autocomplete: 'postal-code',
+        },
+        phoneNumber: {
+          value: '',
+          type: 'tel',
+          placeholder: 'Mobile phone',
+          required: true,
+          autocorrect: 'off',
+          autocomplete: 'tel-national',
           inputmode: 'numeric',
         },
       },
     };
   },
   computed: {
-    ...mapState(['width', 'currencyList', 'countriesList', 'authStatus', 'authError']),
-    ...mapGetters(['countriesNames']),
+    ...mapState([
+      'width',
+      'currencyList',
+      'countriesList',
+      'phoneCodeList',
+      'authStatus',
+      'authError',
+      'defaultCurrency',
+      'updateProfileError',
+    ]),
+    ...mapGetters(['defaultCountry', 'userInfo']),
     birthDate() {
       const {
         birthDate: {
@@ -315,7 +362,6 @@ export default {
         value: {
           required,
           maxLength: maxLength(32),
-          passwordCheck,
         },
       },
       currency: {
@@ -381,63 +427,103 @@ export default {
       postalCode: {
         value: {
           required,
-          numeric,
+          alphaNum,
           minLength: minLength(1),
           maxLength: maxLength(100),
         },
       },
+      phoneNumber: {
+        value: {
+          required,
+          numeric,
+          minLength: minLength(10),
+          maxLength: maxLength(14),
+        },
+      },
     },
   },
+  // created() {
+  //   if (this.beforeDeposit) this.step = 2;
+  // },
   mounted() {
     getObjValuesFromLocalStorage(this.fieldsStep1);
     getObjValuesFromLocalStorage(this.fieldsStep2);
     this.fieldsStep1.currency.items = this.currencyList;
-    this.fieldsStep1.country.items = this.countriesNames;
+    if (!this.fieldsStep1.currency.value) this.fieldsStep1.currency.value = this.defaultCurrency;
+    if (!this.currencyList.includes(this.fieldsStep1.currency.value))
+      this.fieldsStep1.currency.value = this.currencyList[0];
+    this.fieldsStep1.country.items = this.countriesList;
+    if (!this.fieldsStep1.country.value) this.fieldsStep1.country.value = this.defaultCountry;
+    if (this.beforeDeposit) {
+      for (const key in this.fieldsStep2) {
+        if (key === 'birthDate') {
+          if (this.userInfo.birthDate) {
+            const date = moment(this.userInfo.birthDate);
+            this.fieldsStep2.birthDate.children.day.value = String(date.date());
+            this.fieldsStep2.birthDate.children.month.value = String(date.month() + 1);
+            this.fieldsStep2.birthDate.children.year.value = String(date.year());
+          }
+        } else if (this.userInfo[key]) this.fieldsStep2[key].value = this.userInfo[key];
+      }
+    }
+    // this.fieldsStep2.phone.items = this.phoneCodeList;
+    // if (!this.fieldsStep2.phone.value) this.fieldsStep2.phone.value = this.defaultCountry;
   },
   beforeDestroy() {
     writeObjValuesToLocalStorage(this.fieldsStep1);
     writeObjValuesToLocalStorage(this.fieldsStep2);
   },
   methods: {
-    ...mapActions(['registerUser']),
+    ...mapActions(['registerUser', 'updateProfile']),
     onSubmitForm() {
-      const payload = {};
-
       if (this.step === 1) {
         this.$v.fieldsStep1.$touch();
         if (this.$v.fieldsStep1.$error) return;
-        this.step = 2;
-      } else {
-        this.$v.fieldsStep2.$touch();
-        if (this.$v.fieldsStep2.$error) return;
+
+        const regData = {};
         for (const key in this.fieldsStep1) {
           if (key === 'country') {
-            const entry = Object.entries(this.countriesList).find(
-              i => i[1] === this.fieldsStep1.country.value,
-            );
-            payload.country = entry[0];
-          } else payload[key] = this.fieldsStep1[key].value;
+            regData.country = this.fieldsStep1.country.value.code;
+          } else regData[key] = this.fieldsStep1[key].value;
         }
-        for (const key in this.fieldsStep2) {
-          if (key === 'birthDate') payload[key] = this.birthDate;
-          else payload[key] = this.fieldsStep2[key].value;
-        }
-        if (localStorage.getItem('cxd')) payload.cxd = localStorage.getItem('cxd');
-        this.registerUser(payload).then(() => {
+        if (localStorage.getItem('cxd')) regData.cxd = localStorage.getItem('cxd');
+        this.registerUser(regData).then(() => {
           if (!this.authError) {
             deleteObjValuesFromLocalStorage(this.fieldsStep1);
+            this.step = 2;
+          }
+        });
+      } else {
+        this.$v.fieldsStep2.$touch();
+        this.$v.birthDate.$touch();
+        if (this.$v.fieldsStep2.$error || this.$v.birthDate.$error) return;
+
+        const profileData = { ...this.userInfo };
+        for (const key in this.fieldsStep2) {
+          if (key === 'birthDate') profileData[key] = this.birthDate;
+          else if (key === 'phoneNumber') profileData[key] = `+${this.fieldsStep2[key].value}`;
+          else profileData[key] = this.fieldsStep2[key].value;
+        }
+
+        profileData.country = this.userInfo.country.code;
+
+        this.updateProfile(profileData).then(() => {
+          if (!this.updateProfileError) {
             deleteObjValuesFromLocalStorage(this.fieldsStep2);
             this.$emit('close');
-            this.$modal.show(
-              RegistrationBonus,
-              {},
-              {
-                reset: true,
-                width: this.width > 360 ? 328 : 288,
-                height: 'auto',
-                adaptive: true,
-              },
-            );
+            if (this.beforeDeposit) {
+              this.$modal.show('cashier');
+            } else
+              this.$modal.show(
+                RegistrationBonus,
+                {},
+                {
+                  reset: true,
+                  width: this.width > 360 ? 328 : 288,
+                  height: 'auto',
+                  adaptive: true,
+                },
+              );
           }
         });
       }
@@ -479,7 +565,7 @@ export default {
   &-Input {
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 18px;
     font-size: 16px;
     color: var(--color-text-main);
     background: transparent;
@@ -561,6 +647,25 @@ export default {
   &-RegistrationLink {
     color: var(--color-text-main);
     text-decoration: underline;
+  }
+
+  &-Btn--step1 {
+    flex-grow: 0;
+    width: calc(50% - 2px);
+    margin-right: 4px;
+    background: var(--color-text-ghost);
+  }
+
+  &-Buttons {
+    display: flex;
+  }
+
+  &-PhonePlus {
+    position: absolute;
+    top: 12px;
+    left: -20px;
+    font-size: 28px;
+    color: var(--color-text-ghost);
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="PasswordRestore">
+  <div :key="componentKey" class="PasswordRestore">
     <template v-if="showSuccessMessage">
       <div class="PasswordRestore-Thanks Colored">
         Thanks! Check your email for further instructions.
@@ -112,9 +112,9 @@
 <script>
 import { required, email, sameAs } from 'vuelidate/lib/validators';
 import { mapMutations, mapState, mapActions } from 'vuex';
-import { passwordCheck } from '@/utils/formCheckers';
 import BaseInput from '@/components/base/BaseInput';
 import BaseButton from '@/components/base/BaseButton';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'PasswordRestore',
@@ -122,9 +122,16 @@ export default {
     BaseInput,
     BaseButton,
   },
+  mixins: [showAuthDialog],
+  beforeRouteLeave(from, to, next) {
+    this.showSuccessMessage = false;
+    this.clearServerError();
+    next();
+  },
   layout: 'page',
   data() {
     return {
+      componentKey: 0,
       email: '',
       password: {
         newPassword: {
@@ -139,6 +146,14 @@ export default {
       showSuccessMessage: false,
     };
   },
+  watch: {
+    $route(oldRoute, newRoute) {
+      if (oldRoute.query.code !== newRoute.query.code) {
+        if (this.serverError) this.clearServerError();
+        this.componentKey += 1;
+      }
+    },
+  },
   computed: {
     ...mapState(['serverError', 'pageDataIsLoading']),
   },
@@ -148,7 +163,6 @@ export default {
       newPassword: {
         value: {
           required,
-          passwordCheck,
         },
       },
       confirmPassword: {
@@ -161,12 +175,12 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(['clearUpdateProfileError', 'clearServerError']),
+    ...mapMutations(['clearUpdateProfileError', 'clearServerError', 'pushNotificationAlert']),
     ...mapActions(['restorePassword', 'confirmRestorePassword']),
     toggleVisibility(el) {
-      this[el].inputType === 'password'
-        ? (this[el].inputType = 'text')
-        : (this[el].inputType = 'password');
+      this.password[el].inputType === 'password'
+        ? (this.password[el].inputType = 'text')
+        : (this.password[el].inputType = 'password');
     },
     onContinue() {
       this.clearServerError();
@@ -177,20 +191,24 @@ export default {
       });
     },
     onSubmit() {
-      this.clearServerError();
+      if (this.serverError) this.clearServerError();
       this.$v.password.$touch();
       if (this.$v.password.$invalid) return;
       this.confirmRestorePassword({
         code: this.$route.query.code,
         newPassword: this.password.newPassword.value,
         confirmPassword: this.password.confirmPassword.value,
+      }).then(() => {
+        if (!this.serverError) {
+          this.pushNotificationAlert({
+            type: 'success',
+            text: 'Your password was successfully updated!',
+          });
+          this.$router.push('/');
+          this.showRegistrationDialog('login');
+        }
       });
     },
-  },
-  beforeRouteLeave(from, to, next) {
-    this.showSuccessMessage = false;
-    this.clearServerError();
-    next();
   },
 };
 </script>
