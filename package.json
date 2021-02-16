@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "nuxt --port 8080",
     "build": "NUXT_ENV_MODE=production nuxt build",
+    "build:roomcasino": "NUXT_ENV_MODE=production NUXT_ENV_SLUG=roomcasino nuxt build",
     "build:dev": "NUXT_ENV_MODE=dev nuxt build",
+    "build:devRoomcasino": "NUXT_ENV_MODE=dev NUXT_ENV_SLUG=roomcasino nuxt build",
     "build:stage": "NUXT_ENV_MODE=stage nuxt generate",
     "build:sandbox": "NUXT_ENV_MODE=sandbox nuxt generate",
     "start": "nuxt start",

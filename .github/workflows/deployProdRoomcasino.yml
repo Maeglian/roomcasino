@@ -1,4 +1,4 @@
-name: deployProd
+name: deployProdRoomcasino
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
 env:
   DEPLOY_PATH: /www/roomcasino
   DEPLOY_DIR: prod
-  BUILD_SCRIPT: npm run build
+  BUILD_SCRIPT: npm run build:roomcasino
   BUILD_SCRIPT_OUTPUT: .nuxt
   BRANCH_NAME: master
   START_SCRIPT: PORT=3002 pm2 restart node_modules/nuxt-start/bin/nuxt-start.js --name roomcasino -i max
