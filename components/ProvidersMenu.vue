@@ -145,14 +145,14 @@ export default {
   @media (min-width: $screen-m) {
     display: grid;
     flex-direction: initial;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     grid-gap: 10px;
   }
 
   &-Providers {
-    grid-column: 1/6;
+    grid-column: 1/7;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 10px;
     padding: 0;
 

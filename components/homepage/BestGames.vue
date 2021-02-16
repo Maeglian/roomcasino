@@ -281,7 +281,7 @@ export default {
 
     @media (min-width: $screen-m) {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(7, 1fr);
       grid-gap: 10px;
       width: 100%;
       margin-bottom: 10px;
