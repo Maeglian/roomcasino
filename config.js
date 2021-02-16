@@ -2,8 +2,18 @@ import moment from 'moment';
 
 export const BILLING_PROVIDER_ID = 'devcode';
 export const API_HOST_SANDBOX = 'http://az-44.sandbox.aramuz.net/frontapi/roomcasino';
-export const API_HOST_STAGE = 'https://dev.aramuz.net/frontapi/roomcasino';
-export const API_HOST_PROD = 'https://aramuz.net/frontapi/roomcasino';
+const API_HOST_STAGE_ROOMCASINO = 'https://dev.aramuz.net/frontapi/roomcasino';
+const API_HOST_STAGE_NINECASINO = 'https://dev.aramuz.net/frontapi/ninecasino';
+const API_HOST_PROD_ROOMCASINO = 'https://aramuz.net/frontapi/roomcasino';
+const API_HOST_PROD_NINECASINO = 'https://aramuz.net/frontapi/ninecasino';
+
+export const API_HOST_STAGE =
+  process.env.NUXT_ENV_SLUG === 'roomcasino'
+    ? API_HOST_STAGE_ROOMCASINO
+    : API_HOST_STAGE_NINECASINO;
+
+export const API_HOST_PROD =
+  process.env.NUXT_ENV_SLUG === 'roomcasino' ? API_HOST_PROD_ROOMCASINO : API_HOST_PROD_NINECASINO;
 
 export const DEFAULT_PROVIDER = { name: 'All providers', noIcon: true };
 
