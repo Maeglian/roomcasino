@@ -38,10 +38,31 @@
     </div>
     <div
       v-if="dga[gameInfo.gameProducer] && dga[gameInfo.gameProducer][gameInfo.gpGameId]"
-      class="Card-TableInfo"
+      class="Card-TableInfo Card-Dga"
     >
-      <div v-for="result in lastResults" :key="result.time">
-        {{ result.result }}
+      <div class="Card-Info">
+        <div class="Card-Info">
+          <img src="@/assets/img/dealer.png" class="Card-InfoIcon" />
+          <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer" class="Card-Dealer">
+            {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer.name }}
+          </div>
+        </div>
+        <div
+          v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats"
+          class="Card-Dealer"
+        >
+          {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats }}
+        </div>
+      </div>
+      <div v-if="lastResults" class="Card-Results">
+        <div
+          v-for="result in lastResults"
+          :key="result.time"
+          class="Card-Result"
+          :style="{ backgroundColor: result.color }"
+        >
+          {{ result.totalSum || result.result }}
+        </div>
       </div>
     </div>
     <div
@@ -50,11 +71,11 @@
           dga[gameInfo.gameProducer][gameInfo.gpGameId] &&
           dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits
       "
-      class="Card-Bets"
+      class="Card-Bets Card-Dga"
     >
       {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.minBet }} -
       {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.maxBet }}&nbsp;
-      {{ this.activeAccount.currency }}
+      {{ activeAccount.currency || 'EUR' }}
     </div>
   </div>
 </template>
@@ -278,21 +299,121 @@ export default {
     left: 10px;
     z-index: 1;
     padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 700;
     color: var(--color-text-main);
     background: var(--color-bg-darker);
     border-radius: 25px;
+
+    @media (min-width: $screen-m) {
+      font-size: 9px;
+    }
+
+    @media (min-width: $screen-xl) {
+      font-size: 14px;
+    }
+  }
+
+  &-Dealer {
+    margin-right: 10px;
+    font-size: 11px;
+    font-weight: 700;
+
+    @media (min-width: $screen-m) {
+      font-size: 9px;
+    }
+
+    @media (min-width: $screen-xl) {
+      font-size: 11px;
+    }
   }
 
   &-TableInfo {
     position: absolute;
-    bottom: 20px;
+    bottom: 25px;
     left: 0;
     z-index: 1;
-    display: flex;
     width: 100%;
     padding: 5px 10px;
     color: var(--color-text-main);
     background: var(--color-bg-darker);
+
+    @media (min-width: $screen-xs) {
+      bottom: 35px;
+    }
+
+    @media (min-width: $screen-m) {
+      bottom: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      bottom: 25px;
+    }
+  }
+
+  &-Info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  &-InfoIcon {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    filter: invert(100%);
+
+    @media (min-width: $screen-m) {
+      width: 10px;
+      height: 10px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &-Results {
+    display: flex;
+  }
+
+  &-Result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: 700;
+
+    @media (min-width: $screen-m) {
+      width: 15px;
+      height: 15px;
+      font-size: 9px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 20px;
+      height: 20px;
+      font-size: 14px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-Dga {
+    @media (min-width: $screen-s) {
+      display: none;
+    }
+
+    @media (min-width: $screen-m) {
+      display: initial;
+    }
   }
 }
 </style>

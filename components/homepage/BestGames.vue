@@ -246,7 +246,7 @@ export default {
       console.log(data);
       if (data.tableKey) {
         data.tableKey.forEach(table =>
-          window.dga.subscribe(PRAGMATIC_CASINOID, table, this.activeAccount.currency),
+          window.dga.subscribe(PRAGMATIC_CASINOID, table, this.activeAccount.currency || 'EUR'),
         );
       }
 
