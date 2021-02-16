@@ -38,9 +38,23 @@
     </div>
     <div
       v-if="dga[gameInfo.gameProducer] && dga[gameInfo.gameProducer][gameInfo.gpGameId]"
-      class="Card-Text"
+      class="Card-TableInfo"
     >
-      {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].totalSeatedPlayers }}
+      <div v-for="result in lastResults" :key="result.time">
+        {{ result.result }}
+      </div>
+    </div>
+    <div
+      v-if="
+        dga[gameInfo.gameProducer] &&
+          dga[gameInfo.gameProducer][gameInfo.gpGameId] &&
+          dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits
+      "
+      class="Card-Bets"
+    >
+      {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.minBet }} -
+      {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.maxBet }}&nbsp;
+      {{ this.activeAccount.currency }}
     </div>
   </div>
 </template>
@@ -98,7 +112,15 @@ export default {
   },
   computed: {
     ...mapState(['platform', 'dga']),
-    ...mapGetters(['isLoggedIn']),
+    ...mapGetters(['isLoggedIn', 'activeAccount']),
+    lastResults() {
+      return (
+        this.dga[this.gameInfo.gameProducer] &&
+        this.dga[this.gameInfo.gameProducer][this.gameInfo.gpGameId] &&
+        this.dga[this.gameInfo.gameProducer][this.gameInfo.gpGameId].last20Results &&
+        this.dga[this.gameInfo.gameProducer][this.gameInfo.gpGameId].last20Results.slice(0, 5)
+      );
+    },
   },
   methods: {
     onClickCard() {
@@ -248,6 +270,29 @@ export default {
     @media (max-width: $screen-m) {
       font-size: 12px;
     }
+  }
+
+  &-Bets {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    padding: 5px 10px;
+    color: var(--color-text-main);
+    background: var(--color-bg-darker);
+    border-radius: 25px;
+  }
+
+  &-TableInfo {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    padding: 5px 10px;
+    color: var(--color-text-main);
+    background: var(--color-bg-darker);
   }
 }
 </style>
