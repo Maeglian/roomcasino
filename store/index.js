@@ -68,6 +68,10 @@ export const state = () => ({
   bonusListIsLoading: false,
   availableBonusList: [],
   availableBonusListIsLoading: false,
+  freeSpinList: [],
+  freeSpinListIsLoading: false,
+  availableFreeSpinList: [],
+  availableFreeSpinListIsLoading: false,
   gameError: '',
   notificationAlerts: [],
   pageRowsCount: 0,
@@ -864,6 +868,24 @@ export const mutations = {
   setAvailableBonusList: (state, payload) => {
     state.availableBonusList = payload;
   },
+  setFreeSpinListIsLoading: state => {
+    state.freeSpinListIsLoading = true;
+  },
+  setFreeSpinListIsLoaded: state => {
+    state.freeSpinListIsLoading = false;
+  },
+  setFreeSpinList: (state, payload) => {
+    state.freeSpinList = payload;
+  },
+  setAvailableFreeSpinListIsLoading: state => {
+    state.availablefreeSpinListIsLoading = true;
+  },
+  setAvailableFreeSpinListIsLoaded: state => {
+    state.availableFreeSpinListIsLoading = false;
+  },
+  setAvailableFreeSpinList: (state, payload) => {
+    state.availableFreeSpinList = payload;
+  },
   setPageRowsCount: (state, payload) => {
     state.pageRowsCount = payload;
   },
@@ -1441,6 +1463,18 @@ export const actions = {
     }
   },
 
+  async getFreeSpinList({ commit }) {
+    commit('setFreeSpinListIsLoading');
+    try {
+      const res = await axios.get(`${API_HOST}/freeSpinList`);
+      commit('setFreeSpinList', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setFreeSpinListIsLoaded');
+    }
+  },
+
   async getAvailableBonusList({ commit }) {
     commit('setAvailableBonusListIsLoading');
     try {
@@ -1451,6 +1485,19 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setAvailableBonusListIsLoaded');
+    }
+  },
+
+  async getAvailableFreeSpinList({ commit }) {
+    commit('setAvailableFreeSpinListIsLoading');
+    try {
+      const res = await axios.get(`${API_HOST}/availableFreeSpinList`);
+      const bonuses = res.data.data;
+      commit('setAvailableFreeSpinList', bonuses);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setAvailableFreeSpinListIsLoaded');
     }
   },
 
