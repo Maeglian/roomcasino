@@ -53,7 +53,7 @@
               Super fast
             </div>
             <div class="Advantages-Text">
-              payouts
+              withdrawals
             </div>
           </div>
         </div>
