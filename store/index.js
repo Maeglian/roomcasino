@@ -64,6 +64,7 @@ export const state = () => ({
   createLimitError: '',
   deleteLimitError: '',
   deleteBonusError: '',
+  activateFreeSpinError: '',
   bonusList: [],
   bonusListIsLoading: false,
   availableBonusList: [],
@@ -850,6 +851,12 @@ export const mutations = {
   clearDeleteBonusError: state => {
     state.deleteBonusError = '';
   },
+  setActivateFreeSpinError: (state, message) => {
+    state.activateFreeSpinError = message;
+  },
+  clearActivateFreeSpinError: state => {
+    state.activateFreeSpinError = '';
+  },
   setBonusListIsLoading: state => {
     state.bonusListIsLoading = true;
   },
@@ -1505,6 +1512,28 @@ export const actions = {
     if (state.deleteBonusError) commit('clearDeleteBonusError');
     try {
       await axios.delete(`${API_HOST}/bonus/${id}`, reqConfig(commit, 'setDeleteBonusError'));
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async deleteFreeSpin({ commit, state }, id) {
+    if (state.deleteBonusError) commit('clearDeleteBonusError');
+    try {
+      await axios.delete(`${API_HOST}/freeSpin/${id}`, reqConfig(commit, 'setDeleteBonusError'));
+    } catch (e) {
+      commit('pushErrors', e);
+    }
+  },
+
+  async activateFreeSpin({ commit, state }, id) {
+    if (state.activateFreeSpinError) commit('clearActivateFreeSpinError');
+    try {
+      await axios.patch(
+        `${API_HOST}/freeSpin/${id}`,
+        {},
+        reqConfig(commit, 'setActivateFreeSpinError'),
+      );
     } catch (e) {
       commit('pushErrors', e);
     }
