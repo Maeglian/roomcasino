@@ -1,7 +1,26 @@
 <template>
   <div>
     <section id="games" class="DefaultGames">
-      <div v-if="width > 767" class="DefaultGames-Tabs">
+      <button
+        class="DefaultGames-ChosenTab"
+        :class="{ 'DefaultGames-ChosenTab--opened': isOpen }"
+        @click="onOpen"
+      >
+        <div class="DefaultGames-Icon">
+          <svg :class="`DefaultGames-Icon--${tabActive.icon}`">
+            <use :xlink:href="require('@/assets/img/icons.svg') + `#${tabActive.icon}`"></use>
+          </svg>
+        </div>
+        <div class="DefaultGames-Name">
+          {{ tabActive.name }}
+        </div>
+        <i class="Arrow Tab-Arrow" :class="[isOpen ? 'Arrow--up' : 'Arrow--down']"></i>
+      </button>
+      <div
+        v-if="width > 767 || isOpen"
+        v-click-outside="onClickOutsideTabs"
+        class="DefaultGames-Tabs"
+      >
         <button
           v-for="(tab, i) in tabs"
           :key="tab.name"
@@ -9,9 +28,11 @@
           :class="{ 'DefaultGames-Tab--active': tabActive.name === tab.name }"
           @click="onChooseTab(i)"
         >
-          <svg :class="`DefaultGames-Icon DefaultGames-Icon--${tab.icon}`">
-            <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
-          </svg>
+          <div class="DefaultGames-Icon">
+            <svg :class="`DefaultGames-Icon--${tab.icon}`">
+              <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
+            </svg>
+          </div>
           <div class="DefaultGames-Name">
             {{ tab.name }}
           </div>
@@ -49,7 +70,7 @@
         />
       </template>
     </section>
-    <section v-if="this.tabActive.name !== 'All games'" class="DefaultGames">
+    <section v-if="tabActive.name !== 'All games'" class="DefaultGames">
       <Loader v-if="defaultGamesAreLoading" />
       <div class="Title Title--type-h2 Cards-Title">
         All games
@@ -88,6 +109,8 @@ import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import { DEFAULT_PROVIDER, GAME_TYPES } from '@/config';
+import toggleDropdown from '@/mixins/toggleDropdown';
+import Games from '@/components/Games';
 
 export default {
   name: 'DefaultGames',
@@ -95,10 +118,12 @@ export default {
     ProvidersMenu,
     Search,
     Loader,
+    Games,
   },
-  mixins: [showAuthDialog],
+  mixins: [showAuthDialog, toggleDropdown],
   data() {
     return {
+      listIsOpen: false,
       tabs: GAME_TYPES,
       tabActive: GAME_TYPES[1],
       providerActive: DEFAULT_PROVIDER,
@@ -244,11 +269,15 @@ export default {
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
       this.getGames(this.gamesParams);
+      this.isOpen = false;
     },
     onChooseProvider(e) {
       this.searched = '';
       this.providerActive = e;
       this.getGames(this.gamesParams);
+    },
+    onClickOutsideTabs(e) {
+      if (!e.target.closest('.DefaultGames-ChosenTab')) this.isOpen = false;
     },
   },
 };
@@ -256,16 +285,26 @@ export default {
 
 <style lang="scss">
 .DefaultGames {
+  position: relative;
+
   &-Tabs {
-    display: none;
+    position: absolute;
+    top: 41px;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 0 16px 10px;
+    background-color: var(--color-body);
 
     @media (min-width: $screen-m) {
+      position: relative;
+      top: initial;
+      left: initial;
       display: grid;
+      margin-bottom: 10px;
+      padding: 0;
       grid-template-columns: repeat(6, 1fr);
       grid-gap: 10px;
-      width: 100%;
-      margin-bottom: 10px;
-      background-color: var(--color-body);
     }
 
     //@media(max-width: $screen-s) {
@@ -286,14 +325,43 @@ export default {
     //}
   }
 
+  &-ChosenTab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 16px;
+    background: var(--color-bg);
+    border: none;
+
+    @media (min-width: $screen-m) {
+      display: none;
+    }
+
+    .Arrow {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      margin-top: -2px;
+    }
+
+    .Arrow--up {
+      margin-top: -8px;
+    }
+  }
+
   &-Tab {
-    padding: 13px 11px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 16px;
     line-height: 1.18;
     white-space: nowrap;
     background-color: var(--color-bg);
     cursor: pointer;
 
     @media (min-width: $screen-m) {
+      display: block;
       padding: 20px 10px;
     }
 
@@ -302,18 +370,18 @@ export default {
     }
 
     &--active {
-      position: relative;
-      padding-bottom: 11px;
-      border-bottom: 2px solid var(--color-main1);
+      display: none;
 
       @media (min-width: $screen-m) {
+        display: initial;
         padding-bottom: 18px;
+        border-bottom: 2px solid var(--color-main1);
       }
     }
   }
 
   &-Name {
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 700;
     line-height: 1.242;
     color: var(--color-text-main);
@@ -321,6 +389,7 @@ export default {
 
     @media (min-width: $screen-m) {
       font-size: 9px;
+      color: var(--color-text-main);
     }
 
     @media (min-width: $screen-l) {
@@ -333,7 +402,13 @@ export default {
   }
 
   &-Icon {
-    margin-bottom: 10px;
+    width: 55px;
+    text-align: center;
+
+    @media (min-width: $screen-m) {
+      width: auto;
+      margin-bottom: 10px;
+    }
 
     &--star {
       width: 18px;
@@ -451,9 +526,11 @@ export default {
 
   &-Search {
     z-index: 1;
+    margin-top: 8px;
     margin-bottom: 8px;
 
     @media (min-width: $screen-m) {
+      margin-top: 0;
       margin-bottom: 0;
     }
   }

@@ -5,10 +5,7 @@
         Providers
       </div>
       <div class="CategoriesFilter-Footer CategoriesFilter-Footer--full">
-        <button
-          class="ProvidersMenu-ChosenProvider CategoriesFilter-ChosenProvider"
-          @click="onOpen"
-        >
+        <button class="DefaultGames-ChosenTab CategoriesFilter-ChosenProvider" @click="onOpen">
           <!--          <img-->
           <!--            v-if="!providerActive.noIcon"-->
           <!--            class="ProvidersMenu-ProviderIcon"-->
@@ -24,8 +21,8 @@
     </div>
     <button
       v-else
-      class="ProvidersMenu-ChosenProvider"
-      :class="{ 'BestGames-ChosenTab--opened': isOpen }"
+      class="DefaultGames-ChosenTab"
+      :class="{ 'DefaultGames-ChosenTab--opened': isOpen }"
       @click="onOpen"
     >
       <!--      <img-->
@@ -129,8 +126,8 @@ export default {
       this.$emit('choose-provider', provider);
       this.isOpen = false;
     },
-    onClickOutside(e) {
-      if (e.target.className !== 'BestGames-ChosenTab') this.isOpen = false;
+    onClickOutside() {
+      this.isOpen = false;
     },
   },
 };
@@ -171,7 +168,7 @@ export default {
 
   &-MoreProviders {
     position: absolute;
-    top: 55px;
+    top: 34px;
     left: 0;
     z-index: 10;
     width: 100%;
@@ -282,31 +279,6 @@ export default {
       &.CategoriesFilter {
         display: none;
       }
-    }
-  }
-
-  &-ChosenProvider {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 16px;
-    background: var(--color-bg);
-    border: none;
-
-    @media (min-width: $screen-m) {
-      display: none;
-    }
-
-    .Arrow {
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      margin-top: -2px;
-    }
-
-    .Arrow--up {
-      margin-top: -8px;
     }
   }
 
