@@ -1019,6 +1019,7 @@ export const mutations = {
   logout(state) {
     state.status = '';
     state.token = null;
+    state.bonusHistoryList = [];
     state.emailIsConfirmed = false;
   },
   setCashoutTrue(state) {
