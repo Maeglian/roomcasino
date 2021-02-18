@@ -37,6 +37,47 @@
     <div v-if="text" class="Card-Text">
       {{ text }}
     </div>
+    <div
+      v-if="dga[gameInfo.gameProducer] && dga[gameInfo.gameProducer][gameInfo.gpGameId]"
+      class="Card-TableInfo Card-Dga"
+    >
+      <div class="Card-Info">
+        <div class="Card-Info">
+          <img src="@/assets/img/dealer.png" class="Card-InfoIcon" />
+          <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer" class="Card-Dealer">
+            {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer.name }}
+          </div>
+        </div>
+        <div
+          v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats"
+          class="Card-Dealer"
+        >
+          {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats }}
+        </div>
+      </div>
+      <div v-if="lastResults" class="Card-Results">
+        <div
+          v-for="result in lastResults"
+          :key="result.time"
+          class="Card-Result"
+          :style="{ backgroundColor: result.color }"
+        >
+          {{ result.totalSum || result.result }}
+        </div>
+      </div>
+    </div>
+    <div
+      v-if="
+        dga[gameInfo.gameProducer] &&
+          dga[gameInfo.gameProducer][gameInfo.gpGameId] &&
+          dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits
+      "
+      class="Card-Bets Card-Dga"
+    >
+      {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.minBet }} -
+      {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.maxBet }}&nbsp;
+      {{ activeAccount.currency || 'EUR' }}
+    </div>
   </div>
 </template>
 
@@ -92,8 +133,16 @@ export default {
     },
   },
   computed: {
-    ...mapState(['platform']),
-    ...mapGetters(['isLoggedIn']),
+    ...mapState(['platform', 'dga']),
+    ...mapGetters(['isLoggedIn', 'activeAccount']),
+    lastResults() {
+      return (
+        this.dga[this.gameInfo.gameProducer] &&
+        this.dga[this.gameInfo.gameProducer][this.gameInfo.gpGameId] &&
+        this.dga[this.gameInfo.gameProducer][this.gameInfo.gpGameId].last20Results &&
+        this.dga[this.gameInfo.gameProducer][this.gameInfo.gpGameId].last20Results.slice(0, 5)
+      );
+    },
   },
   methods: {
     onClickCard() {
@@ -242,6 +291,129 @@ export default {
 
     @media (max-width: $screen-m) {
       font-size: 12px;
+    }
+  }
+
+  &-Bets {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    background: var(--color-bg-darker);
+    border-radius: 25px;
+
+    @media (min-width: $screen-m) {
+      font-size: 9px;
+    }
+
+    @media (min-width: $screen-xl) {
+      font-size: 14px;
+    }
+  }
+
+  &-Dealer {
+    margin-right: 10px;
+    font-size: 11px;
+    font-weight: 700;
+
+    @media (min-width: $screen-m) {
+      font-size: 9px;
+    }
+
+    @media (min-width: $screen-xl) {
+      font-size: 11px;
+    }
+  }
+
+  &-TableInfo {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 5px 10px;
+    color: var(--color-text-main);
+    background: var(--color-bg-darker);
+
+    @media (min-width: $screen-xs) {
+      bottom: 35px;
+    }
+
+    @media (min-width: $screen-m) {
+      bottom: 20px;
+    }
+
+    @media (min-width: $screen-xl) {
+      bottom: 25px;
+    }
+  }
+
+  &-Info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  &-InfoIcon {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    filter: invert(100%);
+
+    @media (min-width: $screen-m) {
+      width: 10px;
+      height: 10px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &-Results {
+    display: flex;
+  }
+
+  &-Result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    font-size: 14px;
+    font-weight: 700;
+
+    @media (min-width: $screen-m) {
+      width: 15px;
+      height: 15px;
+      font-size: 9px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 20px;
+      height: 20px;
+      font-size: 14px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-Dga {
+    @media (min-width: $screen-s) {
+      display: none;
+    }
+
+    @media (min-width: $screen-m) {
+      display: initial;
     }
   }
 }

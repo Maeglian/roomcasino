@@ -1,5 +1,19 @@
 import moment from 'moment';
 
+const PRAGMATIC_WS_SERVER_PROD_DOMAIN = '';
+const PRAGMATIC_WS_SERVER_DEV_DOMAIN = 'prelive-dga.pragmaticplaylive.net';
+
+export const PRAGMATIC_WS_SERVER =
+  process.env.NUXT_ENV_MODE === 'production'
+    ? PRAGMATIC_WS_SERVER_PROD_DOMAIN
+    : PRAGMATIC_WS_SERVER_DEV_DOMAIN;
+
+const PRAGMATIC_CASINOID_PROD = '';
+const PRAGMATIC_CASINOID_DEV = 'ppcdk00000005176';
+
+export const PRAGMATIC_CASINOID =
+  process.env.NUXT_ENV_MODE === 'production' ? PRAGMATIC_CASINOID_PROD : PRAGMATIC_CASINOID_DEV;
+
 export const BILLING_PROVIDER_ID = 'devcode';
 export const API_HOST_SANDBOX = 'http://az-44.sandbox.aramuz.net/frontapi/roomcasino';
 export const API_HOST_STAGE = 'https://dev.aramuz.net/frontapi/roomcasino';
@@ -20,6 +34,11 @@ export const GAME_TYPES = [
     name: 'Top games',
     type: 'top',
     icon: 'crown',
+  },
+  {
+    name: 'Live games',
+    type: 'live',
+    icon: 'live',
   },
   {
     name: 'Slots games',

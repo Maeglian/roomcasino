@@ -103,14 +103,14 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from 'vuex';
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
-import { DEFAULT_PROVIDER, GAME_TYPES } from '@/config';
-import toggleDropdown from '@/mixins/toggleDropdown';
+import { DEFAULT_PROVIDER, GAME_TYPES, PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID } from '@/config';
 import Games from '@/components/Games';
+import toggleDropdown from '@/mixins/toggleDropdown';
 
 export default {
   name: 'DefaultGames',
@@ -240,7 +240,7 @@ export default {
       'gameProducerList',
       'categories',
     ]),
-    ...mapGetters(['fakedNewGames', 'isLoggedIn', 'gamesSearched']),
+    ...mapGetters(['fakedNewGames', 'isLoggedIn', 'gamesSearched', 'activeAccount']),
     gamesParams() {
       const params = {};
       if (this.tabActive.type) params.category = this.tabActive.type;
@@ -262,7 +262,24 @@ export default {
   created() {
     this.getGames(this.gamesParams);
   },
+  mounted() {
+    window.dga.connect(PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID);
+    window.dga.onConnect = () => window.dga.available(PRAGMATIC_CASINOID);
+    window.dga.onMessage = data => {
+      if (data.tableKey) {
+        data.tableKey.forEach(table =>
+          window.dga.subscribe(PRAGMATIC_CASINOID, table, this.activeAccount.currency || 'EUR'),
+        );
+      }
+
+      if (data.tableId) this.setDgaInfo({ producer: 'pragmatic', game: data.tableId, data });
+    };
+  },
+  beforeDestroy() {
+    window.dga.disconnect();
+  },
   methods: {
+    ...mapMutations(['setDgaInfo']),
     ...mapActions(['getGames']),
     onChooseTab(i) {
       this.searched = '';
@@ -301,6 +318,7 @@ export default {
       top: initial;
       left: initial;
       display: grid;
+      grid-template-columns: repeat(7, 1fr);
       margin-bottom: 10px;
       padding: 0;
       grid-template-columns: repeat(6, 1fr);
