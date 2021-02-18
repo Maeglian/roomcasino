@@ -36,7 +36,7 @@ export const GAME_TYPES = [
     icon: 'crown',
   },
   {
-    name: 'Live casino',
+    name: 'Live games',
     type: 'live',
     icon: 'live',
   },
