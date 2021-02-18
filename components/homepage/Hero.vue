@@ -31,7 +31,7 @@
           <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
           <div class="Hero-Text">100% up to 150 CAD</div>
           <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
-            {{ isLoggedIn ? 'Deposit now' : 'Sign up' }}
+            {{ isLoggedIn ? 'Deposit now' : 'Sign in' }}
           </button>
         </div>
       </div>
@@ -50,10 +50,10 @@
           </div>
           <div class="Advantages-Content">
             <div class="Advantages-Title">
-              € 6.483.67
+              Super fast
             </div>
             <div class="Advantages-Text">
-              Fast Payouts
+              withdrawals
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@
               24/7
             </div>
             <div class="Advantages-Text">
-              Support
+              friendly chat support
             </div>
           </div>
         </div>
@@ -76,10 +76,10 @@
           </div>
           <div class="Advantages-Content">
             <div class="Advantages-Title">
-              250 K
+              More than
             </div>
             <div class="Advantages-Text">
-              Games
+              2000 Games
             </div>
           </div>
         </div>
@@ -89,10 +89,10 @@
           </div>
           <div class="Advantages-Content">
             <div class="Advantages-Title">
-              1250K
+              The widest selection
             </div>
             <div class="Advantages-Text">
-              Top providers
+              of game providers
             </div>
           </div>
         </div>
@@ -214,6 +214,7 @@ export default {
     font-weight: 700;
     line-height: 1.24;
     color: var(--color-text-main);
+    text-transform: uppercase;
 
     @media (min-width: $screen-m) {
       font-size: 8px;
@@ -233,7 +234,6 @@ export default {
     font-weight: 700;
     line-height: 1.24;
     color: var(--color-text-ghost);
-    text-transform: uppercase;
 
     @media (min-width: $screen-m) {
       font-size: 8px;

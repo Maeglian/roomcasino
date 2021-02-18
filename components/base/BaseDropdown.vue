@@ -8,6 +8,7 @@
       Can't be blank
     </div>
     <button
+      v-if="autocomplete"
       class="BaseDropdown-Item BaseDropdown-ActiveItem"
       aria-haspopup="true"
       tabindex="0"
@@ -27,6 +28,18 @@
         :class="[isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"
       ></i>
     </button>
+    <input
+      v-else
+      class="BaseDropdown-Item BaseDropdown-ActiveItem"
+      aria-haspopup="true"
+      tabindex="0"
+      :value="activeItem[itemName] || activeItem || placeholder || items[0][itemName] || items[0]"
+      @input="onInput"
+      @click="onOpenDropdown()"
+      @keyup.up="onArrowUp()"
+      @keyup.down="onArrowDown()"
+      @keyup.enter="onSelectValueKeyboard()"
+    />
     <ul v-show="isOpen" class="BaseDropdown-Inner" aria-label="submenu">
       <li
         v-for="(item, i) in filteredItems"
@@ -117,6 +130,7 @@ export default {
     onClickOutside() {
       this.isOpen = false;
     },
+    onInput() {},
   },
 };
 </script>
