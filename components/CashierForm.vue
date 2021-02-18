@@ -70,7 +70,13 @@ export default {
   },
   methods: {
     ...mapMutations(['setCashoutFalse', 'pushNotificationAlert']),
-    ...mapActions(['getBillingSession', 'getBonusList', 'getAvailableBonusList', 'getProfile']),
+    ...mapActions([
+      'getBillingSession',
+      'getBonusList',
+      'getAvailableBonusList',
+      'getProfile',
+      'getBonusHistoryList',
+    ]),
     async beforeInitializeCashier(event) {
       try {
         await this.getBillingSession();
@@ -151,6 +157,7 @@ export default {
               console.log('Transaction was completed successfully', data);
               this.getProfile();
               if (this.$route.name !== 'game' && method !== 'withdrawal') this.depositIsDone = true;
+              this.getBonusHistoryList();
 
               if (this.availableBonusList.length) {
                 this.getBonusList();

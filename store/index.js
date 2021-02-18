@@ -689,6 +689,15 @@ export const state = () => ({
 });
 
 export const getters = {
+  // eslint-disable-next-line no-shadow
+  depositStep: (state, getters) => {
+    if (!getters.isLoggedIn) return 0;
+    if (!state.bonusHistoryList.length) return 0;
+    if (state.bonusHistoryList.find(bonus => bonus.title === 'Third Deposit 100%')) return 3;
+    if (state.bonusHistoryList.find(bonus => bonus.title === 'Second Deposit 55%')) return 2;
+    if (state.bonusHistoryList.find(bonus => bonus.title === 'First Deposit 100%')) return 1;
+    return 0;
+  },
   activeCurrency: state => {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};
@@ -1010,6 +1019,7 @@ export const mutations = {
   logout(state) {
     state.status = '';
     state.token = null;
+    state.bonusHistoryList = [];
     state.emailIsConfirmed = false;
   },
   setCashoutTrue(state) {
@@ -1130,6 +1140,7 @@ export const actions = {
       commit('setAuthSuccess');
       dispatch('getProfile');
       dispatch('getLimits');
+      dispatch('getBonusHistoryList');
     }
   },
 
