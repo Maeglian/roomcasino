@@ -20,6 +20,7 @@
           <BaseDropdown
             :key="name"
             v-model="field.value"
+            autocomplete
             class="AuthDialog-Field AuthDialog-Dropdown AuthDialog-Row"
             :class="{ 'AuthDialog-Field--error': $v[`fieldsStep${step}`][name].value.$error }"
             :items="field.items"
@@ -113,18 +114,19 @@
         <div v-else-if="field.type === 'phone'" :key="name" class="AuthDialog-Row">
           <div
             v-if="
-              (!$v[name].minLength || !$v[name].maxLength) &&
+              !$v[name].phoneWithPlusCheck &&
                 $v[`fieldsStep${step}`][name].tel.value.$dirty &&
                 !$v[`fieldsStep${step}`][name].tel.value.$invalid
             "
             class="AuthDialog-Error"
           >
-            Must be between {{ $v[name].$params.minLength.min - 1 }} and
-            {{ $v[name].$params.maxLength.max - 1 }} symbols
+            Must be with '+', from 10 to 14 symbols
           </div>
           <BaseDropdown
             v-model="field.code.value"
-            item-name="countryCode"
+            autocomplete
+            item-name="phoneCode"
+            key-name="countryCode"
             class="AuthDialog-Field AuthDialog-Dropdown AuthDialog-Dropdown--phoneCode AuthDialog-Row"
             :class="{ 'AuthDialog-Field--error': $v[`fieldsStep${step}`][name].code.value.$error }"
             :items="phoneCodeList"
@@ -136,7 +138,6 @@
             <template #default="slotProps">
               <slot>
                 <img class="AuthDialog-CountryImg" :src="slotProps.item.countryImage" />
-                {{ slotProps.item.phoneCode }}
               </slot>
             </template>
           </BaseDropdown>
@@ -237,7 +238,7 @@ import {
   writeObjValuesToLocalStorage,
   deleteObjValuesFromLocalStorage,
 } from '@/utils/helpers';
-import { termsCheck, ageCheck, dateCheck } from '@/utils/formCheckers';
+import { termsCheck, ageCheck, dateCheck, phoneWithPlusCheck } from '@/utils/formCheckers';
 import RegistrationBonus from '@/components/homepage/RegistrationBonus';
 import BaseButton from '@/components/base/BaseButton';
 import moment from 'moment';
@@ -442,8 +443,7 @@ export default {
       ageCheck,
     },
     phoneNumber: {
-      minLength: minLength(11),
-      maxLength: maxLength(15),
+      phoneWithPlusCheck,
     },
     fieldsStep1: {
       email: { value: { required, email } },
@@ -797,23 +797,39 @@ export default {
     display: flex;
   }
 
+  &-CountryImg {
+    position: absolute;
+    top: 5px;
+    left: 16px;
+    width: 20px;
+    margin-right: 15px;
+    border-radius: 50%;
+  }
+
   &-Dropdown--phoneCode {
     width: 170px;
     margin-right: 4px;
 
     .BaseDropdown-Item:not(.BaseDropdown-ActiveItem) {
-      padding: 5px 5px 5px 16px;
+      position: relative;
+      justify-content: flex-start;
+      height: 30px;
+      padding: 5px 5px 5px 56px;
     }
 
     .BaseDropdown-ActiveItem {
-      padding: 16px 10px 16px 16px;
+      padding: 16px 10px 16px 56px;
     }
-  }
 
-  &-CountryImg {
-    width: 20px;
-    margin-right: 15px;
-    border-radius: 50%;
+    .BaseDropdown-Wrapper {
+      .AuthDialog-CountryImg {
+        top: 16px;
+      }
+    }
+
+    .BaseDropdown-Arrow {
+      right: 10px;
+    }
   }
 
   &-PhonePlus {
