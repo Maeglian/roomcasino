@@ -186,6 +186,10 @@ export default {
     align-items: flex-end;
     margin-right: 16px;
 
+    &:last-child {
+      margin-right: 0;
+    }
+
     &:after {
       top: -1px;
       right: -10px;
