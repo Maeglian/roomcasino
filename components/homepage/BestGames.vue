@@ -266,7 +266,6 @@ export default {
     window.dga.connect(PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID);
     window.dga.onConnect = () => window.dga.available(PRAGMATIC_CASINOID);
     window.dga.onMessage = data => {
-      console.log(data);
       if (data.tableKey) {
         data.tableKey.forEach(table =>
           window.dga.subscribe(PRAGMATIC_CASINOID, table, this.activeAccount.currency || 'EUR'),
