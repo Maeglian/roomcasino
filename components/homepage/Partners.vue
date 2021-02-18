@@ -37,6 +37,12 @@
       <div class="Partners-Partner">
         <img class="Partners-Image Partners-Image--interac" src="@/assets/img/interac.svg" />
       </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image Partners-Image--interac" src="@/assets/img/astropay.png" />
+      </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image Partners-Image--interac" src="@/assets/img/inpay.png" />
+      </div>
     </div>
   </div>
 </template>
@@ -73,7 +79,7 @@ export default {
   &-Wrapper {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
 
