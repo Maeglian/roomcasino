@@ -2,14 +2,20 @@
   <div class="Modal">
     <div class="Close Modal-Close" @click="$emit('close')"></div>
     <div class="CabinetPage-Header">
-      Test
+      {{ bonus.name }}
     </div>
     <div class="BonusDetails">
-      <div class="BonusDetails-Row">
+      <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">
           Bonus amount:
         </div>
         <div class="BonusDetails-Value">{{ bonus.amount }} {{ bonus.currency }}</div>
+      </div>
+      <div v-else class="BonusDetails-Row">
+        <div class="BonusDetails-Label">
+          Free spins awarded:
+        </div>
+        <div class="BonusDetails-Value">x{{ bonus.amount }}</div>
       </div>
       <div class="BonusDetails-Row">
         <div class="BonusDetails-Label">
@@ -36,19 +42,19 @@
         </div>
         <div class="BonusDetails-Value">{{ bonus.wager }}</div>
       </div>
-      <div class="BonusDetails-Row">
+      <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">
           Wager amount:
         </div>
         <div class="BonusDetails-Value">{{ bonus.currentWagerAmount }} {{ bonus.currency }}</div>
       </div>
-      <div class="BonusDetails-Row">
+      <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">
           Wager Amount requirement:
         </div>
         <div class="BonusDetails-Value">{{ bonus.wagerAmount }} {{ bonus.currency }}</div>
       </div>
-      <div class="BonusDetails-Row">
+      <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">
           Wagered percent:
         </div>
@@ -56,7 +62,7 @@
           {{ (bonus.currentWagerAmount / bonus.wagerAmount) * 100 }}%
         </div>
       </div>
-      <div class="BonusDetails-Row">
+      <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">
           Currency:
         </div>
@@ -101,6 +107,11 @@ export default {
     bonus: {
       type: Object,
       required: true,
+    },
+    type: {
+      type: String,
+      required: false,
+      default: 'bonus',
     },
   },
   methods: {
