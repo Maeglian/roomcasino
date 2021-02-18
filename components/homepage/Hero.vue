@@ -262,6 +262,7 @@ export default {
     font-weight: 700;
     line-height: 1.24;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
 
     @media (min-width: $screen-m) {
       font-size: 8px;
