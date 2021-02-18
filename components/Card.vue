@@ -9,6 +9,7 @@
         Play for fun
       </button>
       <button
+        v-if="!gameInfo.demoOnly"
         class="Card-Footer"
         @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: false })"
       >
@@ -97,7 +98,7 @@ export default {
   methods: {
     onClickCard() {
       if (this.platform !== 'mobile' || !this.isLoggedIn) return;
-      this.$emit('open-gamepage', { id: this.gameInfo.gameId, demo: false });
+      this.$emit('open-gamepage', { id: this.gameInfo.gameId, demo: this.gameInfo.demoOnly });
     },
   },
 };

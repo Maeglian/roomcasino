@@ -1242,10 +1242,10 @@ export const actions = {
       const res = await axios.post(
         `${API_HOST}/startGame`,
         {
-          demo,
           gameId,
           platform: state.platform,
           returnUrl,
+          demo,
         },
         reqConfig(commit, 'setGameError'),
       );
