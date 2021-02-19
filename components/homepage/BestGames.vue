@@ -319,10 +319,9 @@ export default {
       left: initial;
       display: grid;
       grid-template-columns: repeat(7, 1fr);
+      grid-gap: 10px;
       margin-bottom: 10px;
       padding: 0;
-      grid-template-columns: repeat(6, 1fr);
-      grid-gap: 10px;
     }
 
     //@media(max-width: $screen-s) {
