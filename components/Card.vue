@@ -42,15 +42,25 @@
       class="Card-TableInfo Card-Dga"
     >
       <div class="Card-Info">
+        <div
+          v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].tableOpen"
+          class="Card-DgaText Card-DgaRow"
+        >
+          {{
+            dga[gameInfo.gameProducer][gameInfo.gpGameId].tableOpen
+              ? 'Table is open'
+              : 'Table closed'
+          }}
+        </div>
         <div class="Card-Info">
           <img src="@/assets/img/dealer.png" class="Card-InfoIcon" />
-          <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer" class="Card-Dealer">
+          <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer" class="Card-DgaText">
             {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer.name }}
           </div>
         </div>
         <div
           v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats"
-          class="Card-Dealer"
+          class="Card-DgaText"
         >
           {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats }}
         </div>
@@ -315,7 +325,7 @@ export default {
     }
   }
 
-  &-Dealer {
+  &-DgaText {
     margin-right: 10px;
     font-size: 11px;
     font-weight: 700;
@@ -327,6 +337,11 @@ export default {
     @media (min-width: $screen-xl) {
       font-size: 11px;
     }
+  }
+
+  &-DgaRow {
+    width: 100%;
+    margin-bottom: 5px;
   }
 
   &-TableInfo {
@@ -354,6 +369,7 @@ export default {
 
   &-Info {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px;
