@@ -52,17 +52,17 @@
               : 'Table closed'
           }}
         </div>
-        <div class="Card-Info">
+        <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer" class="Card-Info">
           <img src="@/assets/img/dealer.png" class="Card-InfoIcon" />
-          <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer" class="Card-DgaText">
+          <div class="Card-DgaText">
             {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer.name }}
           </div>
         </div>
-        <div
-          v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats"
-          class="Card-DgaText"
-        >
-          {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats }}
+        <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats" class="Card-Info">
+          <img src="@/assets/img/chair.png" class="Card-InfoIcon" />
+          <div class="Card-DgaText">
+            {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats }}
+          </div>
         </div>
       </div>
       <div v-if="lastResults" class="Card-Results">
@@ -372,7 +372,6 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
   }
 
   &-InfoIcon {
@@ -394,6 +393,7 @@ export default {
 
   &-Results {
     display: flex;
+    margin-top: 5px;
   }
 
   &-Result {
