@@ -90,27 +90,5 @@ export default {
 </script>
 
 <style lang="scss">
-.AuthDialog {
-  &-LoginTitle {
-    margin-top: 34px;
-    margin-bottom: 28px;
-    text-align: center;
-
-    @media (min-width: $screen-m) {
-      margin-top: 48px;
-      margin-bottom: 42px;
-    }
-  }
-
-  &-Link {
-    margin-top: 24px;
-    font-size: 12px;
-    text-align: right;
-    color: var(--color-main1);
-
-    @media (min-width: $screen-m) {
-      margin-top: 24px;
-    }
-  }
-}
+@import 'AuthDialog.scss';
 </style>

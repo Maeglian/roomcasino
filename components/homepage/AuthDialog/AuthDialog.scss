@@ -1,0 +1,295 @@
+.AuthDialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background: var(--color-bg);
+
+  &-Tabs {
+    margin-bottom: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &-Tab {
+    flex-grow: 1;
+    font-size: 12px;
+    text-transform: uppercase;
+
+    &:after {
+      width: 78px;
+    }
+  }
+
+  &-Form {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &-Title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+  }
+
+  &-Subtitle {
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+  }
+
+  &-Content {
+    position: relative;
+    flex-grow: 1;
+    min-height: 518px;
+    padding-right: 14px;
+    padding-bottom: 29px;
+    padding-left: 14px;
+    background: url('~@/assets/img/auth-bg.png');
+
+    @media (min-width: $screen-s) {
+      padding-right: 24px;
+      padding-left: 24px;
+    }
+  }
+
+  &-Fields {
+    position: relative;
+  }
+
+  &-Row {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-Text {
+    margin-top: 16px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--color-text-ghost);
+  }
+
+  &-Btn {
+    flex-grow: 1;
+    height: 68px;
+    margin-top: auto;
+    text-transform: uppercase;
+    background: var(--color-main1);
+  }
+
+  &-Error {
+    position: absolute;
+    top: -13px;
+    left: 0;
+    margin-bottom: 5px;
+    font-size: 10px;
+    color: var(--color-error);
+    text-transform: initial;
+
+    &--registration {
+      top: initial;
+      bottom: 5px;
+      left: 14px;
+      font-size: 12px;
+
+      @media (min-width: $screen-s) {
+        left: 24px;
+      }
+    }
+
+    &--login {
+      top: initial;
+      bottom: 5px;
+      font-size: 12px;
+    }
+  }
+
+  &-RegistrationHeader {
+    margin-bottom: 34px;
+    padding-top: 34px;
+  }
+
+  &-Content--step1 {
+    background-image: url('~@/assets/img/auth-bg1-large.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    @media (min-width: $screen-m) {
+      background-image: url('~@/assets/img/auth-bg1-large.png');
+    }
+  }
+
+  &-Col {
+    margin-right: 4px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-Radio {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  &-Input {
+    width: 100%;
+    height: 100%;
+    padding: 18px;
+    font-size: 16px;
+    color: var(--color-text-main);
+    background: transparent;
+
+    @media (min-width: $screen-s) {
+      font-size: 12px;
+    }
+
+    &::placeholder {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--color-text-ghost);
+      text-transform: uppercase;
+    }
+
+    &--withIcon {
+      padding-left: 45px;
+    }
+  }
+
+  &-Dropdown {
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 2px solid var(--color-border-ghost);
+  }
+
+  &-Field {
+    width: 100%;
+    height: 55px;
+    background: transparent;
+    border: 2px solid var(--color-border-ghost);
+
+    &--error {
+      border-color: rgba(235, 28, 42, 0.3);
+    }
+  }
+
+  &-Checkbox {
+    margin-top: 15px;
+  }
+
+  &-CheckboxLabel,
+  &-Label--radio {
+    padding-left: 41px;
+    line-height: 17px;
+
+    &:before {
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &-Label,
+  &-Placeholder {
+    font-size: 12px;
+    line-height: 1.66;
+    color: var(--color-text-ghost);
+  }
+
+  &-Label--radio {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &-Placeholder {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-weight: 700;
+    line-height: 58px;
+    text-transform: uppercase;
+
+    &--required {
+      color: var(--color-error);
+    }
+  }
+
+  &-RegistrationLink {
+    color: var(--color-text-main);
+    text-decoration: underline;
+  }
+
+  &-Btn--step1 {
+    flex-grow: 0;
+    width: calc(50% - 2px);
+    margin-right: 4px;
+    background: var(--color-text-ghost);
+  }
+
+  &-Buttons {
+    display: flex;
+  }
+
+  &-Dropdown--phoneCode {
+    width: 170px;
+    margin-right: 4px;
+
+    .BaseDropdown-Item:not(.BaseDropdown-ActiveItem) {
+      padding: 5px 5px 5px 16px;
+    }
+
+    .BaseDropdown-ActiveItem {
+      padding: 16px 10px 16px 16px;
+    }
+  }
+
+  &-CountryImg {
+    width: 20px;
+    margin-right: 15px;
+    border-radius: 50%;
+  }
+
+  &-PhonePlus {
+    position: absolute;
+    top: 12px;
+    left: -20px;
+    font-size: 28px;
+    color: var(--color-text-ghost);
+  }
+
+  &-LoginTitle {
+    margin-top: 34px;
+    margin-bottom: 28px;
+    text-align: center;
+
+    @media (min-width: $screen-m) {
+      margin-top: 48px;
+      margin-bottom: 42px;
+    }
+  }
+
+  &-Link {
+    margin-top: 24px;
+    font-size: 12px;
+    text-align: right;
+    color: var(--color-main1);
+
+    @media (min-width: $screen-m) {
+      margin-top: 24px;
+    }
+  }
+}

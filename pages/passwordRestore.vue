@@ -146,6 +146,9 @@ export default {
       showSuccessMessage: false,
     };
   },
+  computed: {
+    ...mapState(['serverError', 'pageDataIsLoading']),
+  },
   watch: {
     $route(oldRoute, newRoute) {
       if (oldRoute.query.code !== newRoute.query.code) {
@@ -153,9 +156,6 @@ export default {
         this.componentKey += 1;
       }
     },
-  },
-  computed: {
-    ...mapState(['serverError', 'pageDataIsLoading']),
   },
   validations: {
     email: { required, email },
@@ -214,6 +214,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/components/homepage/AuthDialog/AuthDialog.scss';
+
 .PasswordRestore {
   &-Title {
     margin-bottom: 35px;
@@ -282,6 +284,17 @@ export default {
     font-weight: 700;
     text-align: center;
     color: var(--color-main1);
+  }
+
+  &-Field {
+    width: 100%;
+    height: 55px;
+    background: transparent;
+    border: 2px solid var(--color-border-ghost);
+
+    &--error {
+      border-color: rgba(235, 28, 42, 0.3);
+    }
   }
 }
 </style>
