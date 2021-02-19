@@ -288,6 +288,10 @@ export const HISTORY_TABLES = {
         field: 'status',
       },
       {
+        label: 'Type',
+        field: 'bonusType',
+      },
+      {
         label: 'Amount',
         field: 'amount',
       },
@@ -302,6 +306,9 @@ export const HISTORY_TABLES = {
       {
         label: 'Valid until',
         field: 'expireAt',
+        format(x) {
+          return moment.unix(x).format('DD MMM YYYY, H:mm:ss');
+        },
       },
     ],
     filters: {
@@ -321,6 +328,8 @@ export const HISTORY_TABLES = {
           { name: 'Paused', value: 'pause' },
           { name: 'Cancelled', value: 'cancel' },
           { name: 'Finished', value: 'wagerDone' },
+          { name: 'Not active', value: 'notActive' },
+          { name: 'Played', value: 'played' },
         ],
         value: { name: 'All statuses', value: '' },
       },
