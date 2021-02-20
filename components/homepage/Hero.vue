@@ -5,30 +5,30 @@
         <picture class="Hero-Image">
           <source
             media="(max-width: 340px)"
-            :srcset="require(`@/assets/img/${slides[depositStep].bg}_320.png`)"
+            :srcset="require(`@/assets/img/${slides[depositNum].bg}_320.png`)"
           />
           <source
             media="(max-width: 459px)"
-            :srcset="require(`@/assets/img/${slides[depositStep].bg}_460.png`)"
+            :srcset="require(`@/assets/img/${slides[depositNum].bg}_460.png`)"
           />
           <source
             media="(max-width: 600px)"
-            :srcset="require(`@/assets/img/${slides[depositStep].bg}_600.png`)"
+            :srcset="require(`@/assets/img/${slides[depositNum].bg}_600.png`)"
           />
           <source
             media="(max-width: 900px)"
-            :srcset="require(`@/assets/img/${slides[depositStep].bg}_900.png`)"
+            :srcset="require(`@/assets/img/${slides[depositNum].bg}_900.png`)"
           />
           <source
             media="(max-width: 1248px)"
-            :srcset="require(`@/assets/img/${slides[depositStep].bg}_1248.png`)"
+            :srcset="require(`@/assets/img/${slides[depositNum].bg}_1248.png`)"
           />
-          <img :srcset="require(`@/assets/img/${slides[depositStep].bg}_1920.png`)" alt="" />
+          <img :srcset="require(`@/assets/img/${slides[depositNum].bg}_1920.png`)" alt="" />
         </picture>
         <div class="Hero-Content">
-          <div class="Title Title--type-h1 Hero-Title" v-html="slides[depositStep].title"></div>
+          <div class="Title Title--type-h1 Hero-Title" v-html="slides[depositNum].title"></div>
           <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
-          <div class="Hero-Text" v-html="slides[depositStep].text"></div>
+          <div class="Hero-Text" v-html="slides[depositNum].text"></div>
           <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
             {{ isLoggedIn ? 'Deposit now' : 'Sign in' }}
           </button>
@@ -102,7 +102,7 @@
 
 <script>
 // import GamesSlider from '@/components/GamesSlider';
-import { mapGetters, mapMutations, mapState } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
@@ -209,8 +209,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['navIsOpen', 'games']),
-    ...mapGetters(['depositStep']),
+    ...mapState(['navIsOpen', 'games', 'depositNum']),
   },
   methods: {
     ...mapMutations(['openNav', 'closeNav']),

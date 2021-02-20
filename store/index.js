@@ -49,6 +49,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  depositNum: 0,
   dga: {},
   platform: 'desktop',
   emailConfirmError: '',
@@ -690,15 +691,6 @@ export const state = () => ({
 });
 
 export const getters = {
-  // eslint-disable-next-line no-shadow
-  depositStep: (state, getters) => {
-    if (!getters.isLoggedIn) return 0;
-    if (!state.bonusHistoryList.length) return 0;
-    if (state.bonusHistoryList.find(bonus => bonus.title === 'Third Deposit 100%')) return 3;
-    if (state.bonusHistoryList.find(bonus => bonus.title === 'Second Deposit 55%')) return 2;
-    if (state.bonusHistoryList.find(bonus => bonus.title === 'First Deposit 100%')) return 1;
-    return 0;
-  },
   activeCurrency: state => {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};
@@ -778,6 +770,9 @@ export const getters = {
 };
 
 export const mutations = {
+  setDepositNum: (state, payload) => {
+    state.depositNum = payload;
+  },
   setDgaInfo: (state, { producer, game, data }) => {
     if (!state.dga[producer]) Vue.set(state.dga, producer, {});
     Vue.set(state.dga[producer], game, data);
@@ -1024,7 +1019,7 @@ export const mutations = {
   logout(state) {
     state.status = '';
     state.token = null;
-    state.bonusHistoryList = [];
+    state.depositNum = 0;
     state.emailIsConfirmed = false;
   },
   setCashoutTrue(state) {
@@ -1145,7 +1140,7 @@ export const actions = {
       commit('setAuthSuccess');
       dispatch('getProfile');
       dispatch('getLimits');
-      dispatch('getBonusHistoryList');
+      dispatch('getAvailableBonusList');
     }
   },
 
@@ -1462,7 +1457,11 @@ export const actions = {
     try {
       const res = await axios.get(`${API_HOST}/availableBonusList`);
       const bonuses = res.data.data;
+      const depositNum = !bonuses.length
+        ? 3
+        : bonuses.find(bonus => bonus.available && bonus.depositNum).depositNum - 1;
       commit('setAvailableBonusList', bonuses);
+      commit('setDepositNum', depositNum);
     } catch (e) {
       commit('pushErrors', e);
     } finally {
