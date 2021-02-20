@@ -1,47 +1,35 @@
 <template>
   <div class="Partners">
-    <!--    <client-only>-->
-    <!--      <marquee-text :duration="durationSpeed">-->
-    <!--        <div class="Partners-Wrapper">-->
-    <!--          <div class="Partners-Partner Partners-Partner&#45;&#45;visa">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/visa.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner Partners-Partner&#45;&#45;maestro">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/maestro.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/skrill.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner Partners-Partner&#45;&#45;paysafe">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/paysafe.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/wirecard.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/webmoney.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner Partners-Partner&#45;&#45;sofort">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/sofort.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/microgaming.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/interac.svg" />-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </marquee-text>-->
-    <!--    </client-only>-->
-    <div class="Partners-Wrapper">
+    <client-only v-if="width < 540">
+      <marquee-text :duration="durationSpeed">
+        <div class="Partners-Wrapper">
+          <div class="Partners-Partner">
+            <img class="Partners-Image Partners-Image--interac" src="@/assets/img/interac.svg" />
+          </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image" src="@/assets/img/astropay.png" />
+          </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image" src="@/assets/img/inpay.png" />
+          </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image" src="@/assets/img/payguru.png" />
+          </div>
+        </div>
+      </marquee-text>
+    </client-only>
+    <div v-else class="Partners-Wrapper">
       <div class="Partners-Partner">
         <img class="Partners-Image Partners-Image--interac" src="@/assets/img/interac.svg" />
       </div>
       <div class="Partners-Partner">
-        <img class="Partners-Image Partners-Image--interac" src="@/assets/img/astropay.png" />
+        <img class="Partners-Image" src="@/assets/img/astropay.png" />
       </div>
       <div class="Partners-Partner">
-        <img class="Partners-Image Partners-Image--interac" src="@/assets/img/inpay.png" />
+        <img class="Partners-Image" src="@/assets/img/inpay.png" />
+      </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image" src="@/assets/img/payguru.png" />
       </div>
     </div>
   </div>
