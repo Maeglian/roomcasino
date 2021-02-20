@@ -22,6 +22,9 @@
             {{ activeAccount.currency || user.currency }}
           </div>
         </NuxtLink>
+        <NuxtLink class="AuthSection-UserInfo" to="/cabinet/balance">
+          <img src="@/assets/img/user.svg" />
+        </NuxtLink>
         <!--        <div class="AuthSection-UserLvl">-->
         <!--          2-->
         <!--        </div>-->
@@ -309,7 +312,6 @@ export default {
   }
 
   .AuthSection-UserBalance {
-    margin-bottom: 16px;
     font-size: 16px;
   }
 
@@ -322,9 +324,9 @@ export default {
     flex-direction: column;
     text-align: left;
 
-    @media (min-width: $screen-xs) {
-      margin-right: auto;
-    }
+    //@media (min-width: $screen-xs) {
+    //  margin-right: auto;
+    //}
   }
 
   .AuthSection-UserName {
