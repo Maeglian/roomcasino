@@ -1,6 +1,6 @@
 <template>
   <div class="Partners">
-    <client-only v-if="width < 540">
+    <client-only v-if="width < 360">
       <marquee-text :duration="durationSpeed">
         <div class="Partners-Wrapper">
           <div class="Partners-Partner">
@@ -12,9 +12,9 @@
           <div class="Partners-Partner">
             <img class="Partners-Image" src="@/assets/img/inpay.png" />
           </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image" src="@/assets/img/payguru.png" />
-          </div>
+          <!--          <div class="Partners-Partner">-->
+          <!--            <img class="Partners-Image" src="@/assets/img/payguru.png" />-->
+          <!--          </div>-->
         </div>
       </marquee-text>
     </client-only>
@@ -28,9 +28,9 @@
       <div class="Partners-Partner">
         <img class="Partners-Image" src="@/assets/img/inpay.png" />
       </div>
-      <div class="Partners-Partner">
-        <img class="Partners-Image" src="@/assets/img/payguru.png" />
-      </div>
+      <!--      <div class="Partners-Partner">-->
+      <!--        <img class="Partners-Image" src="@/assets/img/payguru.png" />-->
+      <!--      </div>-->
     </div>
   </div>
 </template>
