@@ -83,7 +83,12 @@ export default {
   buildModules: [],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/gtm'],
+
+  gtm: {
+    enabled: process.env.NUXT_ENV_MODE === 'production',
+    id: 'GTM-WGL6JVV',
+  },
 
   styleResources: {
     scss: ['@/assets/styles/variables.scss'],
