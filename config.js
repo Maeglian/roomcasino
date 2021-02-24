@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-const PRAGMATIC_WS_SERVER_PROD_DOMAIN = '';
+const PRAGMATIC_WS_SERVER_PROD_DOMAIN = 'dga.pragmaticplaylive.net';
 const PRAGMATIC_WS_SERVER_DEV_DOMAIN = 'prelive-dga.pragmaticplaylive.net';
 
 export const PRAGMATIC_WS_SERVER =
@@ -8,7 +8,7 @@ export const PRAGMATIC_WS_SERVER =
     ? PRAGMATIC_WS_SERVER_PROD_DOMAIN
     : PRAGMATIC_WS_SERVER_DEV_DOMAIN;
 
-const PRAGMATIC_CASINOID_PROD = '';
+const PRAGMATIC_CASINOID_PROD = 'ppcdk00000004114';
 const PRAGMATIC_CASINOID_DEV = 'ppcdk00000005176';
 
 export const PRAGMATIC_CASINOID =
