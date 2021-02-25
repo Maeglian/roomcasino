@@ -6,12 +6,17 @@
       </div>
       <div class="CategoriesFilter-Footer CategoriesFilter-Footer--full">
         <button class="DefaultGames-ChosenTab CategoriesFilter-ChosenProvider" @click="onOpen">
-          <!--          <img-->
-          <!--            v-if="!providerActive.noIcon"-->
-          <!--            class="ProvidersMenu-ProviderIcon"-->
-          <!--            :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"-->
-          <!--            alt=""-->
-          <!--          />-->
+          <img
+            v-if="!providersWithoutIcons.includes(providerActive.name)"
+            class="ProvidersMenu-ProviderIcon"
+            :src="
+              require(`@/assets/img/${providerActive.name
+                .toLowerCase()
+                .split(' ')
+                .join('')}.svg`)
+            "
+            alt=""
+          />
           <span class="CategoriesFilter-Default">
             {{ providerActive.name }}
           </span>
@@ -25,12 +30,17 @@
       :class="{ 'DefaultGames-ChosenTab--opened': isOpen }"
       @click="onOpen"
     >
-      <!--      <img-->
-      <!--        v-if="!providerActive.noIcon"-->
-      <!--        class="ProvidersMenu-ProviderIcon"-->
-      <!--        :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"-->
-      <!--        alt=""-->
-      <!--      />-->
+      <img
+        v-if="!providersWithoutIcons.includes(providerActive.name)"
+        class="ProvidersMenu-ProviderIcon"
+        :src="
+          require(`@/assets/img/${providerActive.name
+            .toLowerCase()
+            .split(' ')
+            .join('')}.svg`)
+        "
+        alt=""
+      />
       <span class="ProvidersMenu-ActiveProvider">
         {{ providerActive.name }}
       </span>
@@ -46,12 +56,17 @@
         }"
         @click="onChooseProvider(gameProducerList[i])"
       >
-        <!--        <img-->
-        <!--          v-if="!gameProducerList[i].noIcon"-->
-        <!--          class="ProvidersMenu-ProviderIcon"-->
-        <!--          :src="require(`@/assets/img/${gameProducerList[i].name.toLowerCase()}.svg`)"-->
-        <!--          alt=""-->
-        <!--        />-->
+        <img
+          v-if="!providersWithoutIcons.includes(gameProducerList[i].name)"
+          class="ProvidersMenu-ProviderIcon"
+          :src="
+            require(`@/assets/img/${gameProducerList[i].name
+              .toLowerCase()
+              .split(' ')
+              .join('')}.svg`)
+          "
+          alt=""
+        />
         {{ gameProducerList[i].name }}
       </button>
       <button
@@ -76,12 +91,17 @@
           :class="{ 'ProvidersMenu-Provider--active': providerActive.name === item.name }"
           @click="onChooseProvider(item)"
         >
-          <!--          <img-->
-          <!--            v-if="!item.noIcon"-->
-          <!--            class="ProvidersMenu-ProviderIcon"-->
-          <!--            :src="require(`@/assets/img/${item.name.toLowerCase()}.svg`)"-->
-          <!--            alt=""-->
-          <!--          />-->
+          <img
+            v-if="!providersWithoutIcons.includes(item.name)"
+            class="ProvidersMenu-ProviderIcon"
+            :src="
+              require(`@/assets/img/${item.name
+                .toLowerCase()
+                .split(' ')
+                .join('')}.svg`)
+            "
+            alt=""
+          />
           {{ item.name }}
         </button>
       </div>
@@ -106,6 +126,27 @@ export default {
       required: false,
       default: false,
     },
+  },
+  data() {
+    return {
+      providersWithoutIcons: [
+        'All providers',
+        'Big Time Gaming',
+        'Boomerang',
+        'Dice Lab',
+        'Electric Elephant',
+        'Felt Gaming',
+        'Fuga',
+        'Games Lab',
+        'High Flyer Games',
+        'Kalamba',
+        'Lightning Box',
+        'Reelplay',
+        'Silverback',
+        'Softswiss',
+        'Sthlmgaming',
+      ],
+    };
   },
   computed: {
     ...mapState(['width', 'gameProducerList']),
