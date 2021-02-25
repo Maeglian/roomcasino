@@ -183,8 +183,6 @@ export default {
     color: var(--color-text-ghost);
 
     &:before {
-      //color: var(--color-text-main);
-      //top: 1.8px;
       display: none;
     }
   }
