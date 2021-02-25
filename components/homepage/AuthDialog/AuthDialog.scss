@@ -4,6 +4,7 @@
   flex-direction: column;
   overflow: auto;
   background: var(--color-bg);
+  touch-action: none;
 
   &-Tabs {
     margin-bottom: 4px;
