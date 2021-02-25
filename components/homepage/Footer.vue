@@ -12,8 +12,8 @@
         <!--        <NuxtLink class="Link Footer-Link" to="/vip">-->
         <!--          VIP rewards-->
         <!--        </NuxtLink>-->
-        <NuxtLink class="Link Footer-Link" to="/payment-methods">
-          Payment methods
+        <NuxtLink class="Link Footer-Link" to="/aml-policy">
+          AML Policy
         </NuxtLink>
         <NuxtLink class="Link Footer-Link" to="/terms">
           Terms and conditions
@@ -32,6 +32,9 @@
         </NuxtLink>
         <NuxtLink class="Link Footer-Link" to="/faq">
           Faq
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/payment-methods">
+          Payment methods
         </NuxtLink>
       </div>
       <div class="Footer-Lang">
