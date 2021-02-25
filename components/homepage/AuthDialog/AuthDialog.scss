@@ -5,6 +5,8 @@
   overflow: auto;
   background: var(--color-bg);
   touch-action: none;
+  -ms-touch-action: none;
+  -webkit-overflow-scrolling: touch;
 
   &-Tabs {
     margin-bottom: 4px;
