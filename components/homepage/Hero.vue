@@ -345,7 +345,8 @@ export default {
 
   &-Content {
     position: absolute;
-    bottom: 45px;
+    //bottom: 45px;
+    bottom: 16%;
     left: 16px;
     text-align: left;
 
