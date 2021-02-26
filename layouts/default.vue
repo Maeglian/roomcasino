@@ -26,6 +26,7 @@ export default {
   --color-text-main: #fff;
   --color-text-ghost: #52586f;
   --color-text-ghost-lighter: #6e7382;
+  --color-text-ghost-darker: #737681;
   --color-breadcrumbs: #404454;
   --color-overlay: rgba(7, 52, 165, 0.8);
   --color-border: rgba(88, 92, 131, 0.3);

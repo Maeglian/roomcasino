@@ -38,6 +38,7 @@
         :img-url="game.imageUrl"
         :show-demo="true"
         overlay
+        show-footer
         @open-gamepage="openGamePage"
       />
     </div>

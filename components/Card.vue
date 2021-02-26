@@ -1,92 +1,118 @@
 <template>
-  <div class="Card" @click="onClickCard">
-    <div v-if="overlay && (!isLoggedIn || platform !== 'mobile')" class="Card-Overlay">
-      <button
-        v-if="showDemo"
-        class="Card-Link"
-        @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: true })"
-      >
-        Play for fun
-      </button>
-      <button
-        v-if="!gameInfo.demoOnly"
-        class="Card-Footer"
-        @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: false })"
-      >
-        Play Now
-      </button>
-    </div>
-    <div v-if="badge" class="Card-Badge" :class="{ 'Card-Badge--text': badge !== 'best' }">
-      <svg v-if="badge === 'best'" class="Card-Icon Card-Icon--best">
-        <use xlink:href="@/assets/img/icons.svg#best"></use>
+  <div class="Card">
+    <div class="Card-Main" @click="onClickCard">
+      <div v-if="overlay && (!isLoggedIn || platform !== 'mobile')" class="Card-Overlay">
+        <button
+          v-if="showDemo"
+          class="Card-Link"
+          @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: true })"
+        >
+          Play for fun
+        </button>
+        <button
+          v-if="!gameInfo.demoOnly"
+          class="Card-PlayBtn"
+          @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: false })"
+        >
+          Play Now
+        </button>
+      </div>
+      <div v-if="badge" class="Card-Badge" :class="{ 'Card-Badge--text': badge !== 'best' }">
+        <svg v-if="badge === 'best'" class="Card-Icon Card-Icon--best">
+          <use xlink:href="@/assets/img/icons.svg#best"></use>
+        </svg>
+        <template v-else>
+          {{ badge }}
+        </template>
+      </div>
+      <svg v-if="crypto" class="Card-Icon Card-Icon--crypto">
+        <use xlink:href="@/assets/img/icons.svg#bitcoin"></use>
       </svg>
-      <template v-else>
-        {{ badge }}
-      </template>
-    </div>
-    <svg v-if="crypto" class="Card-Icon Card-Icon--crypto">
-      <use xlink:href="@/assets/img/icons.svg#bitcoin"></use>
-    </svg>
-    <div class="Card-Image">
-      <img v-if="img" :src="require(`@/assets/img/${img}`)" alt="" loading="lazy" />
-      <img v-else :src="imgUrl" alt="" loading="lazy" />
-    </div>
-    <div v-if="sum" class="Card-Sum">
-      {{ sum }}
-    </div>
-    <div v-if="text" class="Card-Text">
-      {{ text }}
-    </div>
-    <div
-      v-if="dga[gameInfo.gameProducer] && dga[gameInfo.gameProducer][gameInfo.gpGameId]"
-      class="Card-TableInfo Card-Dga"
-    >
-      <div class="Card-Info">
-        <div
-          v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].tableOpen"
-          class="Card-DgaText Card-DgaRow"
-        >
-          {{
-            dga[gameInfo.gameProducer][gameInfo.gpGameId].tableOpen
-              ? 'Table is open'
-              : 'Table closed'
-          }}
-        </div>
-        <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer" class="Card-Info">
-          <img src="@/assets/img/dealer.png" class="Card-InfoIcon" />
-          <div class="Card-DgaText">
-            {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer.name }}
+      <div class="Card-Image">
+        <img v-if="img" :src="require(`@/assets/img/${img}`)" alt="" loading="lazy" />
+        <img v-else :src="imgUrl" alt="" loading="lazy" />
+      </div>
+      <div v-if="sum" class="Card-Sum">
+        {{ sum }}
+      </div>
+      <div v-if="text" class="Card-Text">
+        {{ text }}
+      </div>
+      <div
+        v-if="dga[gameInfo.gameProducer] && dga[gameInfo.gameProducer][gameInfo.gpGameId]"
+        class="Card-TableInfo Card-Dga"
+      >
+        <div class="Card-Info">
+          <div
+            v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].tableOpen"
+            class="Card-DgaText Card-DgaRow"
+          >
+            {{
+              dga[gameInfo.gameProducer][gameInfo.gpGameId].tableOpen
+                ? 'Table is open'
+                : 'Table closed'
+            }}
+          </div>
+          <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer" class="Card-Info">
+            <img src="@/assets/img/dealer.png" class="Card-InfoIcon" />
+            <div class="Card-DgaText">
+              {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer.name }}
+            </div>
+          </div>
+          <div
+            v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats"
+            class="Card-Info"
+          >
+            <img src="@/assets/img/chair.png" class="Card-InfoIcon" />
+            <div class="Card-DgaText">
+              {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats }}
+            </div>
           </div>
         </div>
-        <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats" class="Card-Info">
-          <img src="@/assets/img/chair.png" class="Card-InfoIcon" />
-          <div class="Card-DgaText">
-            {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats }}
+        <div v-if="lastResults" class="Card-Results">
+          <div
+            v-for="result in lastResults"
+            :key="result.time"
+            class="Card-Result"
+            :style="{ backgroundColor: result.color }"
+          >
+            {{ result.totalSum || result.result }}
           </div>
         </div>
       </div>
-      <div v-if="lastResults" class="Card-Results">
-        <div
-          v-for="result in lastResults"
-          :key="result.time"
-          class="Card-Result"
-          :style="{ backgroundColor: result.color }"
-        >
-          {{ result.totalSum || result.result }}
-        </div>
+      <div
+        v-if="
+          dga[gameInfo.gameProducer] &&
+            dga[gameInfo.gameProducer][gameInfo.gpGameId] &&
+            dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits
+        "
+        class="Card-Bets Card-Dga"
+      >
+        {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.minBet }} -
+        {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.maxBet }}&nbsp;
+        {{ activeAccount.currency || 'EUR' }}
       </div>
     </div>
-    <div
-      v-if="
-        dga[gameInfo.gameProducer] &&
-          dga[gameInfo.gameProducer][gameInfo.gpGameId] &&
-          dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits
-      "
-      class="Card-Bets Card-Dga"
-    >
-      {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.minBet }} -
-      {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.maxBet }}&nbsp;
-      {{ activeAccount.currency || 'EUR' }}
+    <div v-if="showFooter" class="Card-Footer">
+      <div class="Card-Provider">
+        <img
+          :src="
+            require(`@/assets/img/${gameInfo.gameProducer
+              .trim()
+              .toLowerCase()
+              .split(' ')
+              .join('')}.svg`)
+          "
+          alt=""
+          class="Card-ProviderIcon"
+        />
+        <div class="Card-ProviderName">
+          {{ gameInfo.gameProducer }}
+        </div>
+      </div>
+      <div class="Card-Name">
+        {{ gameInfo.gameName }}
+      </div>
     </div>
   </div>
 </template>
@@ -132,6 +158,11 @@ export default {
       required: false,
       default: false,
     },
+    showFooter: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     showDemo: {
       type: Boolean,
       required: false,
@@ -165,19 +196,21 @@ export default {
 
 <style lang="scss">
 .Card {
-  position: relative;
+  &-Main {
+    position: relative;
 
-  &:hover {
-    .Card-Overlay {
-      height: 100%;
-    }
+    &:hover {
+      .Card-Overlay {
+        height: 100%;
+      }
 
-    .Card-Link {
-      display: block;
-    }
+      .Card-Link {
+        display: block;
+      }
 
-    .Card-Footer {
-      display: flex;
+      .Card-PlayBtn {
+        display: flex;
+      }
     }
   }
 
@@ -281,7 +314,7 @@ export default {
     }
   }
 
-  &-Footer {
+  &-PlayBtn {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -431,6 +464,33 @@ export default {
     @media (min-width: $screen-m) {
       display: initial;
     }
+  }
+
+  &-Provider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  &-ProviderIcon {
+    height: 20px;
+    margin-right: 8px;
+  }
+
+  &-ProviderName {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-text-ghost-darker);
+    text-transform: capitalize;
+  }
+
+  &-Name {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--color-text-main);
+    text-transform: capitalize;
   }
 }
 </style>
