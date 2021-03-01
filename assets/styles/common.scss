@@ -315,3 +315,7 @@ a {
 .vm--overlay {
   background: rgba(9, 5, 2, .8) !important;
 }
+
+.vm--container.scrollable .vm--modal {
+  margin-bottom: 150px !important;
+}
