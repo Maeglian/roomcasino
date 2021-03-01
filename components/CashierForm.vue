@@ -3,7 +3,6 @@
     <modal
       name="cashier"
       :height="'auto'"
-      :min-height="700"
       width="400px"
       adaptive
       scrollable
