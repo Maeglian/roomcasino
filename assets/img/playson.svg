@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>playson color</title>
+    <desc>Created with Sketch.</desc>
+    <g id="playson-color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="playson" transform="translate(21.000000, 25.000000)">
+            <polygon id="Path" fill="#EB008B" points="3.95 0.45 3.95 23.5 28.983125 11.95"></polygon>
+            <polygon id="Path" fill="#00ADEE" points="28.983125 11.95 28.983125 35 53.966875 23.5"></polygon>
+            <polygon id="Path" fill="#00B4A4" points="28.983125 35 28.983125 58.05 53.966875 46.5"></polygon>
+            <polygon id="Path" fill="#FFE600" points="53.966875 23.5 53.966875 46.5 79 35"></polygon>
+            <polygon id="Path" fill="#EC1C24" points="3.95 23.5 3.95 46.5 28.983125 35"></polygon>
+            <polygon id="Path" fill="#FAAF40" points="3.95 46.5 3.95 69.55 28.983125 58.05"></polygon>
+        </g>
+    </g>
+</svg>

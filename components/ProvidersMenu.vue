@@ -6,12 +6,17 @@
       </div>
       <div class="CategoriesFilter-Footer CategoriesFilter-Footer--full">
         <button class="DefaultGames-ChosenTab CategoriesFilter-ChosenProvider" @click="onOpen">
-          <!--          <img-->
-          <!--            v-if="!providerActive.noIcon"-->
-          <!--            class="ProvidersMenu-ProviderIcon"-->
-          <!--            :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"-->
-          <!--            alt=""-->
-          <!--          />-->
+          <img
+            v-if="!providersWithoutIcons.includes(providerActive.name)"
+            class="ProvidersMenu-ProviderIcon"
+            :src="
+              require(`@/assets/img/${providerActive.name
+                .toLowerCase()
+                .split(' ')
+                .join('')}.svg`)
+            "
+            alt=""
+          />
           <span class="CategoriesFilter-Default">
             {{ providerActive.name }}
           </span>
@@ -25,12 +30,17 @@
       :class="{ 'DefaultGames-ChosenTab--opened': isOpen }"
       @click="onOpen"
     >
-      <!--      <img-->
-      <!--        v-if="!providerActive.noIcon"-->
-      <!--        class="ProvidersMenu-ProviderIcon"-->
-      <!--        :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"-->
-      <!--        alt=""-->
-      <!--      />-->
+      <img
+        v-if="!providersWithoutIcons.includes(providerActive.name)"
+        class="ProvidersMenu-ProviderIcon"
+        :src="
+          require(`@/assets/img/${providerActive.name
+            .toLowerCase()
+            .split(' ')
+            .join('')}.svg`)
+        "
+        alt=""
+      />
       <span class="ProvidersMenu-ActiveProvider">
         {{ providerActive.name }}
       </span>
@@ -46,12 +56,17 @@
         }"
         @click="onChooseProvider(gameProducerList[i])"
       >
-        <!--        <img-->
-        <!--          v-if="!gameProducerList[i].noIcon"-->
-        <!--          class="ProvidersMenu-ProviderIcon"-->
-        <!--          :src="require(`@/assets/img/${gameProducerList[i].name.toLowerCase()}.svg`)"-->
-        <!--          alt=""-->
-        <!--        />-->
+        <img
+          v-if="!providersWithoutIcons.includes(gameProducerList[i].name)"
+          class="ProvidersMenu-ProviderIcon"
+          :src="
+            require(`@/assets/img/${gameProducerList[i].name
+              .toLowerCase()
+              .split(' ')
+              .join('')}.svg`)
+          "
+          alt=""
+        />
         {{ gameProducerList[i].name }}
       </button>
       <button
@@ -73,15 +88,23 @@
           v-for="(item, i) in moreProviders"
           :key="i"
           class="ProvidersMenu-AddProvider"
-          :class="{ 'ProvidersMenu-Provider--active': providerActive.name === item.name }"
+          :class="{
+            'ProvidersMenu-Provider--active': providerActive.name === item.name,
+            'ProvidersMenu-Provider--noIcon': providersWithoutIcons.includes(item.name),
+          }"
           @click="onChooseProvider(item)"
         >
-          <!--          <img-->
-          <!--            v-if="!item.noIcon"-->
-          <!--            class="ProvidersMenu-ProviderIcon"-->
-          <!--            :src="require(`@/assets/img/${item.name.toLowerCase()}.svg`)"-->
-          <!--            alt=""-->
-          <!--          />-->
+          <img
+            v-if="!providersWithoutIcons.includes(item.name)"
+            class="ProvidersMenu-ProviderIcon"
+            :src="
+              require(`@/assets/img/${item.name
+                .toLowerCase()
+                .split(' ')
+                .join('')}.svg`)
+            "
+            alt=""
+          />
           {{ item.name }}
         </button>
       </div>
@@ -107,6 +130,23 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {
+      providersWithoutIcons: [
+        'All providers',
+        'Boomerang',
+        'Dice Lab',
+        'Felt Gaming',
+        'Fuga',
+        'Games Lab',
+        'High Flyer Games',
+        'Lightning Box',
+        'Reelplay',
+        'Silverback',
+        'Sthlmgaming',
+      ],
+    };
+  },
   computed: {
     ...mapState(['width', 'gameProducerList']),
     ...mapGetters(['slicedGameProducerList']),
@@ -118,7 +158,7 @@ export default {
     },
     moreProviders() {
       if (this.width < 768) return this.gameProducerList;
-      return this.slicedGameProducerList(this.providersToShow);
+      return this.slicedGameProducerList(1);
     },
   },
   methods: {
@@ -168,26 +208,34 @@ export default {
 
   &-MoreProviders {
     position: absolute;
-    top: 34px;
+    top: 38px;
     left: 0;
     z-index: 10;
     width: 100%;
     max-height: 2000px;
-    padding: 0 16px 10px;
+    padding: 10px 10px 16px;
     column-count: 2;
-    background-color: var(--color-body);
+    background-color: var(--color-bg-lighter);
+
+    @media (min-width: $screen-xs) {
+      padding: 10px 16px 16px;
+    }
 
     @media (min-width: $screen-s) {
       column-count: 3;
     }
 
     @media (min-width: $screen-m) {
-      top: 50px;
+      top: 32px;
       column-count: 5;
     }
 
     @media (min-width: $screen-l) {
-      top: 70px;
+      top: 43px;
+    }
+
+    @media (min-width: $screen-xl) {
+      top: 50px;
     }
 
     &--top {
@@ -232,6 +280,18 @@ export default {
       font-size: 12px;
     }
 
+    &--noIcon {
+      padding-left: 30px;
+
+      @media (min-width: $screen-m) {
+        padding-left: 28px;
+      }
+
+      @media (min-width: $screen-l) {
+        padding-left: 35px;
+      }
+    }
+
     &--active {
       display: none;
       color: var(--color-main1);
@@ -260,17 +320,16 @@ export default {
   }
 
   &-ProviderIcon {
-    width: 10px;
+    width: 20px;
     margin-right: 10px;
 
     @media (min-width: $screen-m) {
-      width: auto;
-      height: 14px;
+      width: 25px;
       margin-right: 3px;
     }
 
     @media (min-width: $screen-l) {
-      margin-right: 6px;
+      margin-right: 10px;
     }
   }
 

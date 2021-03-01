@@ -24,6 +24,14 @@
         Deposit
       </div>
     </button>
+    <button v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
+      <svg width="18" height="15">
+        <use xlink:href="@/assets/img/icons.svg#support"></use>
+      </svg>
+      <div class="MobileNav-Name">
+        Support
+      </div>
+    </button>
     <!--    <div class="MobileNav-Item" @click="toggleNotificationsPanel">-->
     <!--      <div class="MobileNav-Messages">-->
     <!--        <svg width="12" height="14">-->
@@ -45,9 +53,18 @@ import { mapGetters, mapMutations, mapState } from 'vuex';
 export default {
   name: 'MobileNav',
   mixins: [showAuthDialog],
+  data() {
+    return {
+      chatIsLoaded: false,
+    };
+  },
   computed: {
     ...mapState(['navIsOpen', 'notificationsPanelIsOpen']),
     ...mapGetters(['activeAccount', 'isNewNotifications']),
+  },
+  mounted() {
+    if (!window.LC_API) window.LC_API = {};
+    window.LC_API.on_after_load = () => (this.chatIsLoaded = true);
   },
   methods: {
     ...mapMutations(['openNav', 'closeNav', 'openNotificationsPanel', 'closeNotificationsPanel']),
@@ -58,6 +75,9 @@ export default {
     toggleNotificationsPanel() {
       if (this.notificationsPanelIsOpen) this.closeNotificationsPanel();
       else this.openNotificationsPanel();
+    },
+    onClickSupport() {
+      window.LC_API.open_chat_window();
     },
   },
 };
@@ -71,7 +91,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 18px 84px 14px 24px;
+  padding: 18px 24px 14px;
   background: var(--color-body);
 
   @media (min-width: $screen-xs) {
