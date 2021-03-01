@@ -27,7 +27,7 @@
     <p class="Text">
       Gaming environments are often targeted by those wishing to launder money. The speed of
       transactions and use of multiple payment processing options make gaming businesses especially
-      vulnerable to this activity
+      vulnerable to this activity.
     </p>
     <p class="Text">
       As a result, many of the initial trading and procedural decisions of the director are either
@@ -59,7 +59,7 @@
       suspicion must not be conveyed to the customer and further actions must await consents. The
       MLRO is then responsible for liaising with, submitting Suspicious Activity Reports and seeking
       consents from the NCA/UKFIU where and when appropriate. He will also ensure that appropriate
-      registers are kept for all related reporting
+      registers are kept for all related reporting.
     </p>
     <p class="Text">
       Company will implement a FULL ‘Know Your Customer’ policy. This will assist in tackling not

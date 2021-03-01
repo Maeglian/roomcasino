@@ -49,11 +49,14 @@ input:-internal-autofill-selected:active {
 //}
 
 body {
+  width: 100%;
   min-width: $screen-xxs;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', 'Verdana', sans-serif;
   background-color: var(--color-body);
+  -webkit-text-size-adjust: none
 }
 
 section, .Wrapper {
@@ -306,7 +309,7 @@ a {
   box-shadow: none !important;
   -ms-touch-action: none;
   touch-action: none;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch !important;
 }
 
 .vm--overlay {
