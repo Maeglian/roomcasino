@@ -837,11 +837,11 @@ export const mutations = {
   clearGetBillingSessionError: state => {
     state.billingSessionIsLoading = '';
   },
-  setCreateError: (state, message) => {
-    state.deleteLimitError = message;
+  setCreateLimitError: (state, message) => {
+    state.createLimitError = message;
   },
   clearCreateLimitError: state => {
-    state.deleteLimitError = '';
+    state.createLimitError = '';
   },
   setDeleteLimitError: (state, message) => {
     state.deleteLimitError = message;

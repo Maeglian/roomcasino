@@ -243,6 +243,7 @@ export default {
 
       this.addLimit(payload).then(() => {
         if (this.createLimitError) {
+          this.$emit('close');
           this.pushNotificationAlert({
             type: 'error',
             text: this.createLimitError,
