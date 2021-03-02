@@ -31,7 +31,7 @@
       <div class="AboutUsPage-Advantage">
         <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
         <div class="AboutUsPage-AdvantageText">
-          <span class="Colored">24</span><span class="Colored">7</span> support
+          <span class="Colored">24</span>/<span class="Colored">7</span> support
         </div>
       </div>
     </div>
@@ -172,6 +172,7 @@ export default {
 
   &-Advantages {
     width: 100%;
+    margin-top: 21px;
     margin-bottom: 36px;
 
     @media (min-width: $screen-m) {
