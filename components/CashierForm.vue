@@ -130,7 +130,7 @@ export default {
               color: '#FFF;',
             },
             buttons: {
-              color: '#EB1C2A;',
+              color: '#67b12d;',
             },
             headerbackground: {
               color: '#060E2A',
@@ -178,7 +178,7 @@ export default {
           });
           api.css(`
             #cashier {
-              --buttons-color: #EB1C2A;
+              --buttons-color: #67b12d;
               --button-hover-color: #c40916;
               --labels-color: #fff;
               --margin-size: 14px;
