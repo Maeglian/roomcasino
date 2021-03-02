@@ -310,6 +310,23 @@
           payment processor and will not reach your account and nor can it be returned back to you.
         </p>
       </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Internet gambling may be illegal in the jurisdiction in which you are located; if so, you
+          are not authorized to use your payment card to complete this transaction.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Cardholder's responsibility to know the laws concerning online gambling in his or her
+          country of domicile.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Participation of minors in offered on this website activities is prohibited.
+        </p>
+      </li>
     </ul>
     <h4 class="Title">WITHDRAWAL POLICY</h4>
     <ul class="SupportPage-List">
