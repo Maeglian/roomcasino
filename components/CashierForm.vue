@@ -179,7 +179,7 @@ export default {
           api.css(`
             #cashier {
               --buttons-color: #67b12d;
-              --button-hover-color: #c40916;
+              --button-hover-color: #67b12d;
               --labels-color: #fff;
               --margin-size: 14px;
               --headings-color: #fff;
