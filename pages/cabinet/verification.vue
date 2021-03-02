@@ -108,8 +108,15 @@
       <div class="VerificationPage-Item">
         <div class="VerificationPage-Desc">
           <svg
-            class="VerificationPage-Approve"
-            :class="{ 'VerificationPage-Approve--pending': userDocumentList.length }"
+            class="VerificationPage-Approve VerificationPage-Approve--large"
+            :class="[
+              {
+                'VerificationPage-Approve--pending':
+                  documentsStatus.length && documentsStatus === 'pending',
+              },
+              { 'VerificationPage-Approve--approved': documentsStatus === 'approved' },
+              { 'VerificationPage-Approve--declined': documentsStatus === 'declined' },
+            ]"
           >
             <use xlink:href="@/assets/img/icons.svg#approve"></use>
           </svg>
@@ -124,10 +131,22 @@
               deposit.
             </div>
             <div
-              v-if="userDocumentList.length"
+              v-if="documentsStatus.length && documentsStatus === 'pending'"
               class="VerificationPage-Approved VerificationPage-Approved--pending"
             >
               Waiting for approve
+            </div>
+            <div
+              v-if="documentsStatus === 'approved'"
+              class="VerificationPage-Approved VerificationPage-Approved--approved"
+            >
+              Approved
+            </div>
+            <div
+              v-if="documentsStatus === 'declined'"
+              class="VerificationPage-Approved VerificationPage-Approved--declined"
+            >
+              Disapproved
             </div>
           </div>
         </div>
@@ -137,6 +156,18 @@
               Uploaded documents
             </div>
             <div v-for="doc in userDocumentList" :key="doc.id" class="VerificationPage-Doc">
+              <svg
+                class="VerificationPage-Approve VerificationPage-Approve--min"
+                :class="[
+                  {
+                    'VerificationPage-Approve--pending': doc.status === 'pending',
+                  },
+                  { 'VerificationPage-Approve--approved': doc.status === 'approved' },
+                  { 'VerificationPage-Approve--declined': doc.status === 'disapproved' },
+                ]"
+              >
+                <use xlink:href="@/assets/img/icons.svg#approve"></use>
+              </svg>
               <div class="VerificationPage-DocName" @click="onClickDocument(doc.id)">
                 {{ doc.name }}
               </div>
@@ -237,6 +268,11 @@ export default {
       'originalFileIsLoading',
       'originalFileError',
     ]),
+    documentsStatus() {
+      if (this.userDocumentList.every(doc => doc.status === 'approved')) return 'approved';
+      if (this.userDocumentList.every(doc => doc.status === 'disapproved')) return 'declined';
+      return 'pending';
+    },
   },
   created() {
     this.getUserDocumentList();
@@ -333,17 +369,7 @@ export default {
 
   &-Approve {
     flex-shrink: 0;
-    order: 1;
-    width: 34px;
-    height: 34px;
     fill: var(--color-bg-lighter);
-
-    @media (min-width: $screen-m) {
-      order: 0;
-      width: 54px;
-      height: 54px;
-      margin-right: 29px;
-    }
 
     &--pending {
       fill: var(--color-main1);
@@ -351,6 +377,29 @@ export default {
 
     &--approved {
       fill: var(--color-accept);
+    }
+
+    &--declined {
+      fill: var(--color-error);
+    }
+
+    &--large {
+      order: 1;
+      width: 34px;
+      height: 34px;
+
+      @media (min-width: $screen-m) {
+        order: 0;
+        width: 54px;
+        height: 54px;
+        margin-right: 29px;
+      }
+    }
+
+    &--min {
+      width: 25px;
+      height: 25px;
+      margin-right: 15px;
     }
   }
 
@@ -463,11 +512,18 @@ export default {
     font-size: 12px;
     font-weight: 700;
     line-height: 1.09;
-    color: var(--color-accept);
     text-transform: uppercase;
+
+    &--approved {
+      color: var(--color-accept);
+    }
 
     &--pending {
       color: var(--color-main1);
+    }
+
+    &--declined {
+      color: var(--color-error);
     }
   }
 
