@@ -163,10 +163,11 @@ export default {
     margin-bottom: 20px;
 
     @media (min-width: $screen-s) {
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     @media (min-width: $screen-l) {
+      grid-template-columns: repeat(6, 1fr);
       margin-bottom: 24px;
     }
 

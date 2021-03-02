@@ -196,8 +196,15 @@ export default {
 
 <style lang="scss">
 .Card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
   &-Main {
     position: relative;
+    flex-grow: 1;
+    flex-basis: 150px;
 
     &:hover {
       .Card-Overlay {
@@ -246,8 +253,13 @@ export default {
   }
 
   &-Image {
+    width: 100%;
+    height: 100%;
+    background: var(--color-bg) url('~@/assets/img/wheels.png') no-repeat center center;
+
     img {
-      width: 100%;
+      min-width: 100%;
+      min-height: 100%;
       object-fit: cover;
     }
   }
@@ -325,7 +337,7 @@ export default {
     font-weight: 700;
     color: var(--color-text-main);
     text-transform: uppercase;
-    background-color: var(--color-badge);
+    background-color: var(--color-main1);
     cursor: pointer;
 
     @media (max-width: $screen-l) {
@@ -464,6 +476,13 @@ export default {
     @media (min-width: $screen-m) {
       display: initial;
     }
+  }
+
+  &-Footer {
+    flex-shrink: 0;
+    flex-basis: 65px;
+    padding-top: 10px;
+    background: var(--color-bg);
   }
 
   &-Provider {
