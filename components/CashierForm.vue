@@ -179,7 +179,7 @@ export default {
               --buttons-color: #EB1C2A;
               --button-hover-color: #c40916;
               --labels-color: #fff;
-              --margin-size: 4px;
+              --margin-size: 12px;
               --headings-color: #fff;
               --error-color: #EB1C2A;
               --input-fontSize: 12px;
