@@ -272,7 +272,7 @@ export default {
         );
       }
 
-      if (data.tableId) this.setDgaInfo({ producer: 'pragmatic', game: data.tableId, data });
+      if (data.tableId) this.setDgaInfo({ producer: 'pragmatic live', game: data.tableId, data });
     };
   },
   beforeDestroy() {
