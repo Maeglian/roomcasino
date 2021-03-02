@@ -91,7 +91,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 18px 24px 14px;
+  padding: 18px 24px 20px;
   background: var(--color-body);
 
   @media (min-width: $screen-xs) {
