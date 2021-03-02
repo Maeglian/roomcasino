@@ -1,6 +1,6 @@
 <template>
   <div class="Partners">
-    <client-only v-if="width < 360">
+    <client-only v-if="width < 590">
       <marquee-text :duration="durationSpeed">
         <div class="Partners-Wrapper">
           <div class="Partners-Partner">
@@ -12,6 +12,12 @@
           <div class="Partners-Partner">
             <img class="Partners-Image" src="@/assets/img/inpay.png" />
           </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image" src="@/assets/img/mastercard.svg" />
+          </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image" src="@/assets/img/visa.svg" />
+          </div>
           <!--          <div class="Partners-Partner">-->
           <!--            <img class="Partners-Image" src="@/assets/img/payguru.png" />-->
           <!--          </div>-->
@@ -20,13 +26,19 @@
     </client-only>
     <div v-else class="Partners-Wrapper">
       <div class="Partners-Partner">
-        <img class="Partners-Image Partners-Image--interac" src="@/assets/img/interac.svg" />
+        <img class="Partners-Image Partners-Image--height" src="@/assets/img/interac.svg" />
       </div>
       <div class="Partners-Partner">
         <img class="Partners-Image" src="@/assets/img/astropay.png" />
       </div>
       <div class="Partners-Partner">
         <img class="Partners-Image" src="@/assets/img/inpay.png" />
+      </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image Partners-Image--height" src="@/assets/img/mastercard.svg" />
+      </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image" src="@/assets/img/visa.svg" />
       </div>
       <!--      <div class="Partners-Partner">-->
       <!--        <img class="Partners-Image" src="@/assets/img/payguru.png" />-->
@@ -83,7 +95,7 @@ export default {
     }
   }
 
-  &-Image--interac {
+  &-Image--height {
     height: 50px;
   }
 }
