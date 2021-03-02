@@ -111,6 +111,8 @@ export default {
           amount: 50,
           predefinedAmounts: [50, 75, 125, 250, 500],
           containerWidth: '100%',
+          showAccounts: 'inline',
+          singlePageFlow: true,
           theme: {
             input: {
               color: '#FFF',
