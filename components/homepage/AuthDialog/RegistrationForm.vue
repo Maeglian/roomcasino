@@ -232,13 +232,19 @@ import BaseInput from '@/components/base/BaseInput.vue';
 import BaseCheckbox from '@/components/base/BaseCheckbox.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapActions, mapGetters, mapState } from 'vuex';
-import { required, email, minLength, maxLength, alphaNum, numeric } from 'vuelidate/lib/validators';
+import { required, email, minLength, maxLength, numeric } from 'vuelidate/lib/validators';
 import {
   getObjValuesFromLocalStorage,
   writeObjValuesToLocalStorage,
   deleteObjValuesFromLocalStorage,
 } from '@/utils/helpers';
-import { termsCheck, ageCheck, dateCheck, phoneWithPlusCheck } from '@/utils/formCheckers';
+import {
+  termsCheck,
+  ageCheck,
+  dateCheck,
+  phoneWithPlusCheck,
+  postalCodeCheck,
+} from '@/utils/formCheckers';
 import RegistrationBonus from '@/components/homepage/RegistrationBonus';
 import BaseButton from '@/components/base/BaseButton';
 import moment from 'moment';
@@ -516,7 +522,7 @@ export default {
       postalCode: {
         value: {
           required,
-          alphaNum,
+          postalCodeCheck,
           minLength: minLength(1),
           maxLength: maxLength(100),
         },

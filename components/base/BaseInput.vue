@@ -91,6 +91,13 @@
       Input 0 or positive number
     </div>
     <div
+      v-if="shouldDisplayValidation && v && v.postalCodeCheck === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      Must be letters, numbers or space
+    </div>
+    <div
       v-if="shouldDisplayValidation && v && v.checkIfPositiveNumbers === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"

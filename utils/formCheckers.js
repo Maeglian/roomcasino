@@ -13,6 +13,8 @@ export const phoneWithPlusCheck = helpers.regex(
   /^\+([- _():=+]?\d[- _():=+]?){10,14}$/,
 );
 
+export const postalCodeCheck = helpers.regex('postalCodeCheck', /^[1-9a-zA-Z ]*$/);
+
 export const termsCheck = value => value === true;
 export const ageCheck = value => moment(value).add(18, 'years') < moment();
 export const dateCheck = value =>
