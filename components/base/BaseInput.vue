@@ -16,11 +16,30 @@
       No valid email address
     </div>
     <div
-      v-if="shouldDisplayValidation && v && v.sameAsPassword === false && v.$dirty"
+      v-if="
+        shouldDisplayValidation &&
+          v &&
+          v.sameAsPassword === false &&
+          v.$dirty &&
+          v.$params.sameAsPassword.type !== 'not'
+      "
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Passwords are not the same
+      Password and confirm password are not the same
+    </div>
+    <div
+      v-if="
+        shouldDisplayValidation &&
+          v &&
+          v.sameAsPassword === false &&
+          v.$dirty &&
+          v.$params.sameAsPassword.type === 'not'
+      "
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      Old and new passwords are the same
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.minLength === false && v.$dirty"
