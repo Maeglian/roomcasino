@@ -16,7 +16,7 @@
         Promotions
       </div>
     </NuxtLink>
-    <button class="MobileNav-Item" @click="$modal.show('cashier')">
+    <button class="MobileNav-Item" @click="onClickBtn()">
       <svg width="18" height="15">
         <use xlink:href="@/assets/img/icons.svg#deposit"></use>
       </svg>
