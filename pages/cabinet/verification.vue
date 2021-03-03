@@ -409,7 +409,6 @@ export default {
 
   &-Doc {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     min-height: 24px;
     margin-bottom: 15px;
@@ -503,6 +502,7 @@ export default {
     align-items: center;
     width: 24px;
     height: 24px;
+    margin-left: auto;
     background: var(--color-bg-lighter);
     cursor: pointer;
   }
