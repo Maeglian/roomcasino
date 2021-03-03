@@ -1156,7 +1156,7 @@ export const actions = {
         axios.defaults.headers.common['X-Auth-Token'] = token;
       }
     } catch (e) {
-      commit('setAuthError', e);
+      commit('pushErrors', e);
       Cookie.remove('token');
     }
   },
