@@ -33,9 +33,9 @@
         <NuxtLink class="Link Footer-Link" to="/faq">
           Faq
         </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/payment-methods">
-          Payment methods
-        </NuxtLink>
+        <!--        <NuxtLink class="Link Footer-Link" to="/payment-methods">-->
+        <!--          Payment methods-->
+        <!--        </NuxtLink>-->
         <NuxtLink class="Link Footer-Link" to="/risk-warnings">
           Risk Warnings
         </NuxtLink>

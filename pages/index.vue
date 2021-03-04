@@ -58,7 +58,7 @@ export default {
       meta: [
         {
           description:
-            'Sign up to 🔥RoomСasino to reveal our complete game selection. Enjoy all types of games! Claim your desirable bonuses and free spins at once after joining',
+            'Sign up to 🔥Ninecasino to reveal our complete game selection. Enjoy all types of games! Claim your desirable bonuses and free spins at once after joining',
         },
       ],
     };
