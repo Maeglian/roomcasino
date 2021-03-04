@@ -399,7 +399,7 @@
         <p class="Text">
           In the unlikely event of a player depositing crypto currency funds to another crypto
           currency network address (such as but not limited to: sending BTC to a BCH address).
-          RoomCasino will not attempt to recover the amount unless it exceeds $5000. In such cases,
+          Ninecasino will not attempt to recover the amount unless it exceeds $5000. In such cases,
           a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to
           pursue the recovery, however it's not a guarantee to get the funds recovered.
         </p>
