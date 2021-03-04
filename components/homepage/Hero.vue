@@ -23,7 +23,11 @@
             media="(max-width: 1248px)"
             :srcset="require(`@/assets/img/${slides[depositNum].bg}_1248.png`)"
           />
-          <img :srcset="require(`@/assets/img/${slides[depositNum].bg}_1920.png`)" alt="" />
+          <img
+            :srcset="require(`@/assets/img/${slides[depositNum].bg}_1920.png`)"
+            alt=""
+            @load="setHeroBannerIsLoaded"
+          />
         </picture>
         <div class="Hero-Content">
           <div class="Title Title--type-h1 Hero-Title" v-html="slides[depositNum].title"></div>
@@ -212,7 +216,7 @@ export default {
     ...mapState(['navIsOpen', 'games', 'depositNum']),
   },
   methods: {
-    ...mapMutations(['openNav', 'closeNav']),
+    ...mapMutations(['openNav', 'closeNav', 'setHeroBannerIsLoaded']),
     toggleNav() {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();

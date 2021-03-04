@@ -1,5 +1,6 @@
 <template>
   <div>
+    <InitialLoader v-if="!initialLoading" />
     <Nuxt />
     <client-only>
       <CashierForm />
@@ -9,11 +10,17 @@
 
 <script>
 import CashierForm from '@/components/CashierForm';
+import { mapGetters } from 'vuex';
+import InitialLoader from '@/components/InitialLoader';
 
 export default {
   name: 'Page',
   components: {
     CashierForm,
+    InitialLoader,
+  },
+  computed: {
+    ...mapGetters(['initialLoading']),
   },
 };
 </script>

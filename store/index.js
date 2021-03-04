@@ -49,6 +49,20 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  initialLoadingIsDone: {
+    geoInfo: false,
+    countries: false,
+    currency: false,
+    phones: false,
+    defaultGames: false,
+    producers: false,
+  },
+  initialLoadingLoggedInIsDone: {
+    profile: false,
+    availableBonus: false,
+    limits: false,
+  },
+  heroBannerIsLoaded: false,
   depositNum: 0,
   dga: {},
   platform: 'desktop',
@@ -691,6 +705,17 @@ export const state = () => ({
 });
 
 export const getters = {
+  initialLoading: state => {
+    const initialLoading = !Object.values(state.initialLoadingIsDone).includes(false);
+    if (state.token) {
+      const initialLoadingLoggedIn = !Object.values(state.initialLoadingLoggedInIsDone).includes(
+        false,
+      );
+      return initialLoading && initialLoadingLoggedIn;
+    }
+
+    return initialLoading;
+  },
   activeCurrency: state => {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};
@@ -770,6 +795,15 @@ export const getters = {
 };
 
 export const mutations = {
+  setHeroBannerIsLoaded: state => {
+    state.heroBannerIsLoaded = true;
+  },
+  setInitialLoading: (state, field) => {
+    state.initialLoadingIsDone[field] = true;
+  },
+  setInitialLoadingLoggedIn: (state, field) => {
+    state.initialLoadingLoggedInIsDone[field] = true;
+  },
   setDepositNum: (state, payload) => {
     state.depositNum = payload;
   },

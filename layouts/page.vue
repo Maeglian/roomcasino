@@ -1,5 +1,8 @@
 <template>
   <div>
+    <InitialLoader
+      v-if="$route.path === '/' ? !heroBannerIsLoaded || !initialLoading : !initialLoading"
+    />
     <NotificationAlerts />
     <MainNav />
     <Nuxt />
@@ -19,6 +22,8 @@ import MobileNav from '@/components/homepage/MobileNav';
 import NotificationsPanel from '@/components/NotificationsPanel';
 import CashierForm from '@/components/CashierForm';
 import Footer from '@/components/homepage/Footer';
+import { mapGetters, mapState } from 'vuex';
+import InitialLoader from '@/components/InitialLoader';
 
 export default {
   name: 'MainMenuPage',
@@ -29,6 +34,11 @@ export default {
     Footer,
     NotificationsPanel,
     CashierForm,
+    InitialLoader,
+  },
+  computed: {
+    ...mapState(['heroBannerIsLoaded']),
+    ...mapGetters(['initialLoading']),
   },
 };
 </script>
