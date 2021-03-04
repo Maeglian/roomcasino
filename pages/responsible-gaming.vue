@@ -49,7 +49,7 @@
         however an increase may only occur after email confirmation and only after the previous
         limit of the same type expires, in order to avoid rash decisions. If you require further
         information or assistance regarding Personal Limits, please contact our support team at
-        contact@roomcasino.com.
+        contact@ninecasino.com.
       </p>
       <p class="Text">
         Deposit Limit. A limit on your deposits for a day, a week, or a month.
@@ -94,7 +94,7 @@
       <p class="Text">
         Setting Self-exclusion lets us know that we need to take all measures to block your access
         to your account and make sure that you receive no promotional materials. You may also
-        contact our support team at contact@roomcasino.com and inform us about your decision to stop
+        contact our support team at contact@ninecasino.com and inform us about your decision to stop
         gambling at the Website for a certain period of time or forever.
       </p>
       <p class="Text">

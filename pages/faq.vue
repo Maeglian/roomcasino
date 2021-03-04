@@ -62,14 +62,14 @@ export default {
                 "Upon registration, we will send a welcome email to your account's registered email address. In that email, you will find a link where you will be able to verify your account. Verifying your account ensures you will receive our emails so you can stay up to date and informed on all our new promotions and games!",
             },
             {
-              title: 'My game is stuck. How can I close Roomcasino?',
+              title: 'My game is stuck. How can I close Ninecasino?',
               answer:
                 'If your game is frozen in the middle of a bet, we highly recommend that you close the software using the Task Manager (Activity Monitor for Mac). Simply click simultaneously on CTRL + ALT + DEL to open the list of functions and then select Start Task Manager. That way, your game will resume when you log in to the casino again.',
             },
             {
               title: "While logging in, I received the error message 'Player already connected'",
               answer:
-                'If you are unable to log in to the download version of Roomcasino, you may not have logged out properly from the instant version. Please ensure you are logging out correctly from the instant version by clicking on the Log out button.',
+                'If you are unable to log in to the download version of Ninecasino, you may not have logged out properly from the instant version. Please ensure you are logging out correctly from the instant version by clicking on the Log out button.',
             },
             {
               title:
@@ -105,7 +105,7 @@ export default {
             {
               title: 'What methods can I use to deposit money into my account?',
               answer:
-                "Once you are ready to play with real money, you will find that depositing at Roomcasino couldn't be easier. We accept all major payment methods including credit/debit cards, Neteller, Skrill and many other e-payment options. You can find all the methods available for your country in the Deposit section of the Cashier. Availability depends on your country.",
+                "Once you are ready to play with real money, you will find that depositing at Ninecasino couldn't be easier. We accept all major payment methods including credit/debit cards, Neteller, Skrill and many other e-payment options. You can find all the methods available for your country in the Deposit section of the Cashier. Availability depends on your country.",
             },
             {
               title: 'I’ve just requested a withdrawal. Do I need to send any documentation?',
@@ -129,12 +129,12 @@ export default {
                 'If you have an active bonus in your account, you are first required to fulfil the bonus requirements before placing a withdrawal request. For your convenience, you can keep track of your bonus requirements progress in the Bonuses section of the Cashier. Once the bonus requirements have been fulfilled, you will be able to proceed with your withdrawal request.',
             },
             {
-              title: 'Can I set limits on my play at Roomcasino?',
+              title: 'Can I set limits on my play at Ninecasino?',
               answer:
                 'Yes you can. We take pride in providing a safe environment for your gaming. You can set your deposit limits under the personal settings section of the cashier. You can also set other limits on your account, such as limiting account access for specified periods of time. These can be found within the Account Limitations section. Please refer to our Responsible Gaming page for more details.',
             },
             {
-              title: 'How will I know if there are any fees for processing at Roomcasino?',
+              title: 'How will I know if there are any fees for processing at Ninecasino?',
               answer:
                 'If applicable, any fee in connection with any processing is clearly shown during the deposit/withdrawal process.',
             },
@@ -144,24 +144,24 @@ export default {
           title: 'Security',
           items: [
             {
-              title: 'Is Roomcasino a safe place to play?',
+              title: 'Is Ninecasino a safe place to play?',
               answer:
-                'Roomcasino is highly recommended thanks not only to the popularity of our games but also to the security we offer our players. The entire gaming system and internal procedures are fully certified in line with all necessary conditions as set out by licence conditions.',
+                'Ninecasino is highly recommended thanks not only to the popularity of our games but also to the security we offer our players. The entire gaming system and internal procedures are fully certified in line with all necessary conditions as set out by licence conditions.',
             },
             {
-              title: 'How safe are my personal details at Roomcasino?',
+              title: 'How safe are my personal details at Ninecasino?',
               answer:
-                'Roomcasino goes to great lengths to guarantee that your personal and financial information remains 100% secure and confidential. We employ industry standard security protocol(The connection to this site is encrypted and authenticated using TLS 1.2 (a strong protocol), ECDHE_RSA with X25519 (a strong key exchange), and AES_128_GCM (a strong cipher) to ensure that all transactions including deposits and withdrawals are carried out in a totally secure manner. This technology protects you from having your information intercepted by anyone other than Roomcasino while it is being transmitted between you and Roomcasino.',
+                'Ninecasino goes to great lengths to guarantee that your personal and financial information remains 100% secure and confidential. We employ industry standard security protocol(The connection to this site is encrypted and authenticated using TLS 1.2 (a strong protocol), ECDHE_RSA with X25519 (a strong key exchange), and AES_128_GCM (a strong cipher) to ensure that all transactions including deposits and withdrawals are carried out in a totally secure manner. This technology protects you from having your information intercepted by anyone other than Ninecasino while it is being transmitted between you and Ninecasino.',
             },
             {
-              title: 'On which platforms is Roomcasino available?',
+              title: 'On which platforms is Ninecasino available?',
               answer:
                 'You will be able to play your favourite games through a large variety of platforms. Our software is available on PC, tablets and smart phones.',
             },
             {
-              title: 'Which game providers are available at Roomcasino?',
+              title: 'Which game providers are available at Ninecasino?',
               answer:
-                "Roomcasino offers games from providers Amaya, NextGen, NetEnt, WMS, Evolution and many others, so you're guaranteed to find something you like!",
+                "Ninecasino offers games from providers Amaya, NextGen, NetEnt, WMS, Evolution and many others, so you're guaranteed to find something you like!",
             },
           ],
         },

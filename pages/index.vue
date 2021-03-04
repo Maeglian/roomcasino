@@ -43,8 +43,8 @@ export default {
         image768: 'banner1_768.png',
         image960: 'banner1_960.png',
         image1248: 'banner1_1248.png',
-        title: 'Play <span class="Colored">VIP style</span><br/> Roomcasino',
-        text: 'Your VIP level increases with every bet made at Roomcasino. The prizes are waiting!',
+        title: 'Play <span class="Colored">VIP style</span><br/> Ninecasino',
+        text: 'Your VIP level increases with every bet made at Ninecasino. The prizes are waiting!',
         btnLink: {
           text: 'More info',
           url: '/vip',

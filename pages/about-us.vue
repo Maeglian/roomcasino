@@ -4,7 +4,7 @@
       About us
     </h1>
     <div class="AboutUsPage-Text">
-      Roomcasino is a next-generation high-tech casino with the latest games that have been
+      Ninecasino is a next-generation high-tech casino with the latest games that have been
       developed by the best experts in the industry. We have played in various online casinos for
       many years. We have a huge amount of accumulated gambling experience. We know what a real
       player needs.

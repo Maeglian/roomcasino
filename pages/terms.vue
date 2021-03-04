@@ -12,7 +12,7 @@
     <ul class="SupportPage-List">
       <li class="SupportPage-Item ">
         <p class="Text">
-          The website www.roomcasino.com ("Casino", "Website", “Company”, "We", "Us", "Our") is
+          The website www.ninecasino.com ("Casino", "Website", “Company”, "We", "Us", "Our") is
           owned and operated by DUX GROUP N.V, a company registered and established under the laws
           of Curaçao, with registration number 155114 and registered address at Perseusweg 27 A,
           Curacao. All payments are made via SCARTESU LIMITED is a subsidiary of DUX GROUP N.V.,
@@ -158,7 +158,7 @@
           bonuses which you have gained or accrued during such time as the duplicate account was
           active will be forfeited by you and may be reclaimed by us, and you will return to us on
           demand any such funds which have been withdrawn from the duplicate account. If you wish to
-          open another account, you may do so by contacting the support at support@roomcasino.com.
+          open another account, you may do so by contacting the support at support@ninecasino.com.
           If a new account is opened, the old account will be closed. If you notice that you have
           more than one registered account you must notify us immediately. Failure to do so may lead
           to your account being blocked for access.
@@ -197,9 +197,9 @@
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          All information that you provide to Roomcasino.com during the term of validity of this
+          All information that you provide to Ninecasino.com during the term of validity of this
           agreement is true, complete, and correct, and that you shall immediately notify
-          Roomcasino.com of any change of such information.
+          Ninecasino.com of any change of such information.
         </p>
       </li>
       <li class="SupportPage-Item">
@@ -222,7 +222,7 @@
         <p class="Text">
           Should the user become aware of possible errors or incompleteness in the software, he/she
           agrees to refrain from taking advantage of them. Moreover, the user agrees to report any
-          error or incompleteness immediately to Roomcasino.com. Should the user fail to fulfil the
+          error or incompleteness immediately to Ninecasino.com. Should the user fail to fulfil the
           obligations stated in this clause, the Company has a right to full compensation for all
           costs related to the error or incompleteness, including any costs incurred in association
           with the respective error/incompleteness and the failed notification by the user.
@@ -230,10 +230,10 @@
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          Roomcasino.com reserves the right to retain payments, if suspicion or evidence exists of
+          Ninecasino.com reserves the right to retain payments, if suspicion or evidence exists of
           manipulation of the casino system. Criminal charges will be brought against any user or
           any other person(s), who has/have manipulated the casino system or attempted to do so.
-          Roomcasino.com reserves the right to terminate and/or change any games or events being
+          Ninecasino.com reserves the right to terminate and/or change any games or events being
           offered on the Website.
         </p>
       </li>
@@ -271,7 +271,7 @@
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          Roomcasino.com is not a financial institution and thus should not be treated as such. Your
+          Ninecasino.com is not a financial institution and thus should not be treated as such. Your
           account will not bear any interests.
         </p>
       </li>
@@ -351,7 +351,7 @@
       <li class="SupportPage-Item">
         <p class="Text">
           You acknowledge that the funds are consumed instantly and Casino does not provide for
-          refunds or cancellation. Roomcasino.com reserves the right to payout substantial wins in
+          refunds or cancellation. Ninecasino.com reserves the right to payout substantial wins in
           monthly installments.
         </p>
       </li>
@@ -523,7 +523,7 @@
       <li class="SupportPage-Item">
         <p class="Text">
           You are solely responsible for reporting and accounting for any taxes applicable to you
-          under relevant laws for any winnings that You receive from Roomcasino.com.
+          under relevant laws for any winnings that You receive from Ninecasino.com.
         </p>
       </li>
       <li class="SupportPage-Item">
@@ -572,7 +572,7 @@
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          Roomcasino.com prohibits player collusion and does not allow any kind of robots and
+          Ninecasino.com prohibits player collusion and does not allow any kind of robots and
           programmed devices to participate in game play.
         </p>
       </li>
@@ -662,7 +662,7 @@
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
-          If you breach any provision of these Terms and Conditions or Roomcasino.com has a
+          If you breach any provision of these Terms and Conditions or Ninecasino.com has a
           reasonable ground to suspect that you have breached them, Casino reserves the right not to
           open, suspend, close your account, withhold payment of your winnings and apply such funds
           on account of any damages due by you.

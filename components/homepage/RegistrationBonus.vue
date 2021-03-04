@@ -11,7 +11,7 @@
       <!--        + 55 Free spins-->
       <!--      </div>-->
       <div class="RegistrationBonus-Text">
-        For your first deposit! Use advantage of Roomcasino Welcome Bonus.
+        For your first deposit! Use advantage of Ninecasino Welcome Bonus.
       </div>
     </div>
     <button type="btn" class="Btn Btn--common Btn--full" @click="onClickBtn">

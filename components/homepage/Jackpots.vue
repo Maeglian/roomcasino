@@ -4,7 +4,7 @@
       <div class="Jackpots-Daily">
         <div class="Title Title--type-h1 Jackpots-Title">
           Our <span class="Colored">Jackpot</span> <br />
-          in Roomcasino
+          in Ninecasino
         </div>
         <GamesSlider
           class="Jackpots-Winners GamesSlider--winners"

@@ -89,7 +89,7 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Available Payments On Multi-currency Online Platform Roomcasino',
+      title: 'Available Payments On Multi-currency Online Platform Ninecasino',
       meta: [
         {
           description:

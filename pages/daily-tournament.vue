@@ -7,12 +7,12 @@
         </h1>
         <div class="Page-Text Text Text--additional DailyTournamentPage-Text">
           <template v-if="width >= 768">
-            Roomcasino is constantly working to deliver the best promotions.<br />
+            Ninecasino is constantly working to deliver the best promotions.<br />
             We use the latest technology and the feedback from our players to re-design our
             promotions. Enjoy!
           </template>
           <template v-else>
-            Roomcasino is constantly working to deliver the best promotions. Enjoy!
+            Ninecasino is constantly working to deliver the best promotions. Enjoy!
           </template>
         </div>
         <div class="DailyTournamentPage-Bonus">
@@ -202,7 +202,7 @@ export default {
   },
   head() {
     return {
-      title: 'Daily Tournament At Roomcasino And Other Similar Events',
+      title: 'Daily Tournament At Ninecasino And Other Similar Events',
       meta: [
         {
           description:

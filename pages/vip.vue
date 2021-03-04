@@ -2,7 +2,7 @@
   <section class="Page VipPage">
     <div class="Page-Header VipPage-Header">
       <h1 class="Title Title--type-h1 Page-Title VipPage-Title">
-        Play vip style roomcasino
+        Play vip style ninecasino
       </h1>
       <div class="Page-Text Text Text--additional">
         You can also change your CPs for money in just one click! You will still keep your status

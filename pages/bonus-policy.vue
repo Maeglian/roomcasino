@@ -536,7 +536,7 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Bonus Policy Of The Roomcasino Gaming Platform',
+      title: 'Bonus Policy Of The Ninecasino Gaming Platform',
       meta: [
         {
           description:

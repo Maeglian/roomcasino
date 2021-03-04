@@ -46,7 +46,7 @@
     </nav>
     <div class="Footer-Disclaimer">
       <div class="Footer-Text">
-        Copyright © 2020 www.roomcasino.com is owned and operated by DUX GROUP N.V., a company
+        Copyright © 2020 www.ninecasino.com is owned and operated by DUX GROUP N.V., a company
         registered and established under the laws of Curacao. DUX GROUP N.V. is licensed and
         regulated by Antillephone N.V. (license no. 8048/JAZ2020-075).
         <br />
@@ -62,7 +62,7 @@
         <br />
         <br />
         If you have any questions or suggestions about our site, please contact us
-        <a class="Footer-Contact" href="mailto:support@roomcasino.com">support@roomcasino.com</a>
+        <a class="Footer-Contact" href="mailto:support@ninecasino.com">support@ninecasino.com</a>
       </div>
       <div class="Footer-Icons">
         <div

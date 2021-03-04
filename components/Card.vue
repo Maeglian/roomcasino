@@ -255,7 +255,7 @@ export default {
   &-Image {
     width: 100%;
     height: 100%;
-    background: var(--color-bg) url('~@/assets/img/wheels.png') no-repeat center center;
+    background: var(--color-bg) url('~@/assets/img/dice.png') no-repeat center center;
 
     img {
       min-width: 100%;

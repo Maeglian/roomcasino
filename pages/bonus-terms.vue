@@ -236,7 +236,7 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Requirements Set By The Roomcasino Portal For The Use Of Bonuses',
+      title: 'Requirements Set By The Ninecasino Portal For The Use Of Bonuses',
       meta: [
         {
           description:
