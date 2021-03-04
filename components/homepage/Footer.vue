@@ -36,6 +36,9 @@
         <NuxtLink class="Link Footer-Link" to="/payment-methods">
           Payment methods
         </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/risk-warnings">
+          Risk Warnings
+        </NuxtLink>
       </div>
       <div class="Footer-Lang">
         <img src="@/assets/img/eng.png" alt="" />
