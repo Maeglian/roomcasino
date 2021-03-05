@@ -1,5 +1,5 @@
 <template>
-  <section class="SupportPage">
+  <section class="SupportPage SupportPage--paddings">
     <h1 class="SupportPage-Title Title Title--type-h1">
       Bonus Terms & Conditions
     </h1>
