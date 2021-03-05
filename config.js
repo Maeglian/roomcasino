@@ -16,7 +16,7 @@ export const PRAGMATIC_CASINOID =
 
 export const BILLING_PROVIDER_ID = 'devcode';
 export const API_HOST_SANDBOX = 'http://az-44.sandbox.aramuz.net/frontapi/roomcasino';
-export const API_HOST_STAGE = 'https://dev.aramuz.net/frontapi/roomcasino';
+export const API_HOST_STAGE = 'https://dev.aramuz.net/frontapi/ninecasino';
 const API_HOST_PROD_ROOMCASINO = 'https://aramuz.net/frontapi/roomcasino';
 const API_HOST_PROD_NINECASINO = 'https://aramuz.net/frontapi/ninecasino';
 
