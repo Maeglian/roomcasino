@@ -28,6 +28,7 @@ export const DEFAULT_PROVIDER = { name: 'All providers', noIcon: true };
 export const GAME_TYPES = [
   {
     name: 'All games',
+    type: 'all',
     icon: 'star',
   },
   {

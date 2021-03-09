@@ -34,6 +34,11 @@ export default {
     // Banner,
   },
   layout: 'page',
+  middleware: [
+    function({ route, redirect }) {
+      if (route.path === '/') redirect('/games/top');
+    },
+  ],
   data() {
     return {
       banner1: {
