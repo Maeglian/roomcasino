@@ -10,7 +10,7 @@
           Sign up <span class="Colored">&</span> get<br />
           welcome bonus
         </div>
-        <div class="AuthDialog-Subtitle">€ 100 <span class="Colored">+</span> 55 free spins</div>
+        <div class="AuthDialog-Subtitle"><span class="Colored">€ 150</span></div>
       </div>
       <div v-if="step === 2" class="AuthDialog-Text">
         Please, fill the information below!

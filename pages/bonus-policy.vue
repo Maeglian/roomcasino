@@ -191,7 +191,7 @@
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          Each time you place a wager at VegasWinner, you'll earn VIP Points. As your VIP Points
+          Each time you place a wager at Ninecasino, you'll earn VIP Points. As your VIP Points
           accumulate, you can redeem them for instant cash in your real money player account. If you
           have not placed a wager with money in your real balance for a continuous period of thirty
           (30) days, we will be entitled to remove all VIP Points from your player's account.
