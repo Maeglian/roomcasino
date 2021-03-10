@@ -67,7 +67,9 @@
           "
           alt=""
         />
-        {{ gameProducerList[i].name }}
+        <span class="ProvidersMenu-ProviderName">
+          {{ gameProducerList[i].name }}
+        </span>
       </button>
       <button
         v-if="width > 767 && showMoreProviders"
@@ -323,7 +325,7 @@ export default {
     width: 20px;
     margin-right: 10px;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       width: 25px;
       margin-right: 3px;
     }
@@ -331,6 +333,11 @@ export default {
     @media (min-width: $screen-l) {
       margin-right: 10px;
     }
+  }
+
+  &-ProviderName {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &-Filter {
