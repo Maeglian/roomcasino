@@ -125,8 +125,8 @@ export default {
       slides: [
         {
           bg: 'joker',
-          title: 'Welcome package<br/><span class="Colored">$150</span>!',
-          text: 'Make first deposit<br/> and get up to <span class="Colored">$150</span>',
+          title: 'Welcome package<br/><span class="Colored">$450</span>!',
+          text: 'Make first deposit<br/> and get 100% up to <span class="Colored">$150</span>',
           btnText: 'Deposit now',
         },
         {
