@@ -16,8 +16,12 @@
         </h2>
         <div class="PaymentPage-List">
           <div v-for="payment in paymentsMethods" :key="payment.alt" class="PaymentPage-Item">
-            <div class="PaymentPage-Item-Icon">
-              <img :src="require(`@/assets/img/${payment.icon}.svg`)" :alt="payment.alt" />
+            <div class="PaymentPage-Logo">
+              <img
+                class="PaymentPage-Icon"
+                :src="require(`@/assets/img/${payment.icon}.svg`)"
+                :alt="payment.alt"
+              />
             </div>
             <div class="PaymentPage-Item-Content">
               <div class="PaymentPage-Item-Info">
@@ -37,7 +41,7 @@
                 <div class="PaymentPage-Item-Text">{{ payment.limits }}</div>
               </div>
             </div>
-            <div class="PaymentPage-Item-BtnBox">
+            <div class="PaymentPage-BtnBox">
               <a href="" class="Btn Btn--common PaymentPage-Item-Btn">DEPOSIT</a>
             </div>
           </div>
@@ -50,8 +54,12 @@
         </h2>
         <div class="PaymentPage-List">
           <div v-for="payment in paymentsMethods" :key="payment.alt" class="PaymentPage-Item">
-            <div class="PaymentPage-Item-Icon">
-              <img :src="require(`@/assets/img/${payment.icon}.svg`)" :alt="payment.alt" />
+            <div class="PaymentPage-Logo">
+              <img
+                class="PaymentPage-Icon"
+                :src="require(`@/assets/img/${payment.icon}.svg`)"
+                :alt="payment.alt"
+              />
             </div>
             <div class="PaymentPage-Item-Content">
               <div class="PaymentPage-Item-Info">
@@ -71,7 +79,7 @@
                 <div class="PaymentPage-Item-Text">{{ payment.limits }}</div>
               </div>
             </div>
-            <div class="PaymentPage-Item-BtnBox">
+            <div class="PaymentPage-BtnBox">
               <a href="" class="Btn Btn--common PaymentPage-Item-Btn">DEPOSIT</a>
             </div>
           </div>
@@ -157,6 +165,68 @@ export default {
       margin-bottom: 48px;
     }
   }
+
+  &-Logo {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-right: 4px;
+    background-color: var(--color-bg);
+  }
+
+  &-BtnBox {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 4px;
+    background-color: var(--color-bg);
+
+    @media (min-width: $screen-m) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 141px;
+      height: 100%;
+      padding: 1px 16px;
+    }
+
+    @media (min-width: $screen-l) {
+      max-width: 180px;
+    }
+
+    @media (min-width: $screen-xl) {
+      max-width: 281px;
+      padding: 1px 24px;
+    }
+  }
+
+  //&-Icon {
+  //  width: 100%;
+  //  max-width: 100%;
+  //  height: 61px;
+  //  margin-bottom: 4px;
+  //  background-color: var(--color-bg);
+  //
+  //  @media (min-width: $screen-m) {
+  //    width: 114px;
+  //    height: 100%;
+  //    margin-bottom: 0;
+  //
+  //    img {
+  //      width: 50%;
+  //    }
+  //  }
+  //
+  //  @media (min-width: $screen-l) {
+  //    width: 155px;
+  //  }
+  //
+  //  @media (min-width: $screen-xl) {
+  //    width: 202px;
+  //  }
+  //}
 }
 
 .PaymentPage-Content {
@@ -195,35 +265,6 @@ export default {
   }
   @media (min-width: $screen-xl) {
     height: 114px;
-  }
-}
-
-.PaymentPage-Item-Icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 100%;
-  height: 61px;
-  margin-bottom: 4px;
-  background-color: var(--color-bg);
-
-  @media (min-width: $screen-m) {
-    width: 114px;
-    height: 100%;
-    margin-bottom: 0;
-
-    img {
-      width: 50%;
-    }
-  }
-
-  @media (min-width: $screen-l) {
-    width: 155px;
-  }
-
-  @media (min-width: $screen-xl) {
-    width: 202px;
   }
 }
 
@@ -308,31 +349,6 @@ export default {
     &:last-child {
       text-align: inherit;
     }
-  }
-}
-
-.PaymentPage-Item-BtnBox {
-  width: 100%;
-  max-width: 100%;
-  background-color: var(--color-bg);
-
-  @media (min-width: $screen-m) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 141px;
-    height: 100%;
-    padding: 1px 16px;
-  }
-
-  @media (min-width: $screen-l) {
-    max-width: 180px;
-  }
-
-  @media (min-width: $screen-xl) {
-    max-width: 281px;
-    padding: 1px 24px;
   }
 }
 

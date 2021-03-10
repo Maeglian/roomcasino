@@ -10,9 +10,124 @@
   }
 
   @media(min-width: $screen-l) {
-    padding: 30px 120px 60px;
+    padding: 30px 16px 60px;
   }
 
+  &--paddings {
+    @media(min-width: $screen-l) {
+      padding: 30px 120px 60px;
+    }
+  }
+
+  &-Introduction {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+    color: var(--color-text-ghost);
+
+    @media (min-width: $screen-m) {
+      width: 73%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 58%;
+    }
+  }
+
+  &-Card {
+    width: 100%;
+    margin-bottom: 16px;
+    background: var(--color-bg);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-CardTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+
+    @media (min-width: $screen-l) {
+      font-size: 20px;
+    }
+  }
+
+  &-CardText {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-ghost);
+  }
+
+  &-Offers {
+    @media (min-width: $screen-m) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 8px;
+    }
+
+    @media (min-width: $screen-l) {
+      grid-gap: 11px;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-gap: 14px;
+    }
+  }
+
+  &-Offer {
+    padding: 34px 30px;
+    text-align: center;
+
+    @media (min-width: $screen-m) {
+      margin-bottom: 0;
+      padding: 26px 24px;
+    }
+
+    @media (min-width: $screen-l) {
+      padding: 34px 30px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 45px 40px;
+    }
+  }
+
+  &-OfferIcon {
+    width: 62px;
+    height: 72px;
+    margin-bottom: 29px;
+
+    @media (min-width: $screen-m) {
+      width: 50px;
+      height: 58px;
+      margin-bottom: 22px;
+    }
+
+    @media (min-width: $screen-l) {
+      width: 62px;
+      height: 72px;
+      margin-bottom: 29px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 82px;
+      height: 94px;
+      margin-bottom: 38px;
+    }
+  }
+
+  &-OfferTitle {
+    margin-bottom: 14px;
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 18px;
+    }
+  }
 }
 
 .SupportPage-Title {
