@@ -509,7 +509,6 @@ export default {
     font-weight: 500;
     text-align: center;
     color: var(--color-text-main);
-    text-transform: capitalize;
   }
 }
 </style>
