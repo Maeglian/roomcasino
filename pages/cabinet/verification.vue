@@ -269,6 +269,7 @@ export default {
       'originalFileError',
     ]),
     documentsStatus() {
+      if (!this.userDocumentList.length) return 'noDocuments';
       if (this.userDocumentList.every(doc => doc.status === 'approved')) return 'approved';
       if (this.userDocumentList.every(doc => doc.status === 'disapproved')) return 'declined';
       return 'pending';
