@@ -283,7 +283,6 @@ export default {
 
   &-Row {
     display: flex;
-    flex-wrap: wrap;
     height: 55px;
     margin-bottom: 4px;
   }
