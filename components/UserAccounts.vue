@@ -48,7 +48,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['setActiveAccount']),
+    ...mapActions(['setActiveAccount', 'getBonusList', 'getAvailableBonusList']),
     togglePopup() {
       this.isOpenPopup = !this.isOpenPopup;
     },
@@ -59,6 +59,10 @@ export default {
       this.balance = balance;
       this.currency = currency;
       this.setActiveAccount({ currency }).then(() => {
+        if (this.$route.path === '/cabinet/bonuses') {
+          this.getBonusList();
+          this.getAvailableBonusList();
+        }
         this.closePopup();
       });
     },
