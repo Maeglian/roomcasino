@@ -10,8 +10,9 @@
 
 <script>
 import CashierForm from '@/components/CashierForm';
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters } from 'vuex';
 import InitialLoader from '@/components/InitialLoader';
+import liveChat from '~/mixins/liveChat';
 
 export default {
   name: 'Page',
@@ -19,15 +20,9 @@ export default {
     CashierForm,
     InitialLoader,
   },
+  mixins: [liveChat],
   computed: {
-    ...mapState(['user']),
     ...mapGetters(['initialLoading']),
-  },
-  mounted() {
-    if (!window.LC_API) window.LC_API = {};
-    window.LC_API.on_after_load = () => {
-      if (this.user.email) window.LC_API.set_visitor_email(this.user.email);
-    };
   },
 };
 </script>

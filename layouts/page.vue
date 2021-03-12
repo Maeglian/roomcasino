@@ -24,6 +24,7 @@ import CashierForm from '@/components/CashierForm';
 import Footer from '@/components/homepage/Footer';
 import { mapGetters, mapState } from 'vuex';
 import InitialLoader from '@/components/InitialLoader';
+import liveChat from '~/mixins/liveChat';
 
 export default {
   name: 'MainMenuPage',
@@ -36,6 +37,7 @@ export default {
     CashierForm,
     InitialLoader,
   },
+  mixins: [liveChat],
   computed: {
     ...mapState(['heroBannerIsLoaded']),
     ...mapGetters(['initialLoading']),
