@@ -106,6 +106,7 @@ export default {
     },
   },
   mounted() {
+    if (window.scrollY > 0) this.documentIsScrolled = true;
     window.addEventListener('scroll', this.onScroll, { passive: true });
   },
   destroyed() {
