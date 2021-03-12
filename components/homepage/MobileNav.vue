@@ -49,18 +49,8 @@ export default {
     ...mapState(['navIsOpen', 'notificationsPanelIsOpen', 'chatIsLoaded']),
     ...mapGetters(['activeAccount', 'isNewNotifications']),
   },
-  mounted() {
-    if (!window.LC_API) window.LC_API = {};
-    window.LC_API.on_after_load = () => this.setChatIsLoaded();
-  },
   methods: {
-    ...mapMutations([
-      'openNav',
-      'closeNav',
-      'openNotificationsPanel',
-      'closeNotificationsPanel',
-      'setChatIsLoaded',
-    ]),
+    ...mapMutations(['openNav', 'closeNav', 'openNotificationsPanel', 'closeNotificationsPanel']),
     toggleNav() {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
