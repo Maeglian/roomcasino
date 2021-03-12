@@ -13,7 +13,7 @@
             <img class="Partners-Image" src="@/assets/img/inpay.png" />
           </div>
           <div class="Partners-Partner">
-            <img class="Partners-Image" src="@/assets/img/mastercard.svg" />
+            <img class="Partners-Image Partners-Image--height" src="@/assets/img/mastercard.svg" />
           </div>
           <div class="Partners-Partner">
             <img class="Partners-Image" src="@/assets/img/visa.svg" />
@@ -33,9 +33,6 @@
       </div>
       <div class="Partners-Partner">
         <img class="Partners-Image" src="@/assets/img/inpay.png" />
-      </div>
-      <div class="Partners-Partner">
-        <img class="Partners-Image" src="@/assets/img/mastercard.svg" />
       </div>
       <div class="Partners-Partner">
         <img class="Partners-Image Partners-Image--height" src="@/assets/img/mastercard.svg" />
