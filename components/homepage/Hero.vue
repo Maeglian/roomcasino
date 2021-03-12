@@ -333,7 +333,7 @@ export default {
 
   &-Content {
     position: absolute;
-    bottom: 45px;
+    bottom: 7%;
     left: 16px;
     text-align: left;
 
