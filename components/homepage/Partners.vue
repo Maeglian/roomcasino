@@ -4,10 +4,10 @@
       <marquee-text :duration="durationSpeed">
         <div class="Partners-Wrapper">
           <div class="Partners-Partner">
-            <img class="Partners-Image Partners-Image--interac" src="@/assets/img/interac.svg" />
+            <img class="Partners-Image Partners-Image--height" src="@/assets/img/interac.svg" />
           </div>
           <div class="Partners-Partner">
-            <img class="Partners-Image" src="@/assets/img/astropay.svg" />
+            <img class="Partners-Image Partners-Image--height" src="@/assets/img/astropay.svg" />
           </div>
           <div class="Partners-Partner">
             <img class="Partners-Image" src="@/assets/img/inpay.png" />
@@ -29,10 +29,13 @@
         <img class="Partners-Image Partners-Image--height" src="@/assets/img/interac.svg" />
       </div>
       <div class="Partners-Partner">
-        <img class="Partners-Image" src="@/assets/img/astropay.svg" />
+        <img class="Partners-Image Partners-Image--height" src="@/assets/img/astropay.svg" />
       </div>
       <div class="Partners-Partner">
         <img class="Partners-Image" src="@/assets/img/inpay.png" />
+      </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image" src="@/assets/img/mastercard.svg" />
       </div>
       <div class="Partners-Partner">
         <img class="Partners-Image Partners-Image--height" src="@/assets/img/mastercard.svg" />
@@ -84,6 +87,7 @@ export default {
   }
 
   &-Partner {
+    flex-shrink: 0;
     margin-right: 16px;
 
     @media (min-width: $screen-m) {
