@@ -47,9 +47,7 @@
         />
       </div>
       <div v-if="searched" class="SearchedGames">
-        <div class="Title Title--type-h2 Cards-Title">
-          Searched
-        </div>
+        <div class="Title Title--type-h2 Cards-Title">Searched</div>
         <Games
           class="DefaultGames-Cards"
           :games="filteredGames"
@@ -72,9 +70,7 @@
     </section>
     <section v-if="tabActive.name !== 'All games'" class="DefaultGames">
       <Loader v-if="defaultGamesAreLoading" />
-      <div class="Title Title--type-h2 Cards-Title">
-        All games
-      </div>
+      <div class="Title Title--type-h2 Cards-Title">All games</div>
       <Games
         class="DefaultGames-Cards NewGames-Cards"
         :games="defaultGames"
@@ -253,7 +249,7 @@ export default {
     },
     title() {
       const selectedCategory = this.categories.find(
-        category => category.slug === this.tabActive.type,
+        (category) => category.slug === this.tabActive.type,
       );
       if (selectedCategory) return selectedCategory.name;
       return 'All games';
@@ -265,9 +261,9 @@ export default {
   mounted() {
     window.dga.connect(PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID);
     window.dga.onConnect = () => window.dga.available(PRAGMATIC_CASINOID);
-    window.dga.onMessage = data => {
+    window.dga.onMessage = (data) => {
       if (data.tableKey) {
-        data.tableKey.forEach(table =>
+        data.tableKey.forEach((table) =>
           window.dga.subscribe(PRAGMATIC_CASINOID, table, this.activeAccount.currency || 'EUR'),
         );
       }

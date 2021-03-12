@@ -1,8 +1,6 @@
 <template>
   <section class="SupportPage AboutUsPage">
-    <h1 class="Title Title--type-h1 Title--center AboutUsPage-Title">
-      About us
-    </h1>
+    <h1 class="Title Title--type-h1 Title--center AboutUsPage-Title">About us</h1>
     <div class="SupportPage-Introduction">
       Ninecasino is a next-generation high-tech casino with the latest games that have been
       developed by the best experts in the industry. We have played in various online casinos for
@@ -12,15 +10,11 @@
     <div class="AboutUsPage-Advantages">
       <div class="AboutUsPage-Advantage">
         <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
-        <div class="AboutUsPage-AdvantageText">
-          Prompt payouts
-        </div>
+        <div class="AboutUsPage-AdvantageText">Prompt payouts</div>
       </div>
       <div class="AboutUsPage-Advantage">
         <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
-        <div class="AboutUsPage-AdvantageText">
-          Licensed online casino
-        </div>
+        <div class="AboutUsPage-AdvantageText">Licensed online casino</div>
       </div>
       <div class="AboutUsPage-Advantage">
         <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
@@ -36,9 +30,7 @@
       </div>
     </div>
     <div class="AboutUsPage-Section">
-      <h2 class="Title Title Title--type-h2 Title--center AboutUsPage-Subtitle">
-        Our software
-      </h2>
+      <h2 class="Title Title Title--type-h2 Title--center AboutUsPage-Subtitle">Our software</h2>
       <div class="SupportPage-Introduction">
         The casino uses products that have been made by the best developers of casino software and
         games in the industry. Amatic, BetSoft, Endorphina, Ezugi, Microgaming, and SoftSwiss. Every
@@ -48,15 +40,11 @@
         ourselves as gamblers.
       </div>
     </div>
-    <h2 class="Title Title--type-h2 Title--center AboutUsPage-Subtitle">
-      What do we offer
-    </h2>
+    <h2 class="Title Title--type-h2 Title--center AboutUsPage-Subtitle">What do we offer</h2>
     <div class="SupportPage-Offers SupportPage-Cards">
       <div class="SupportPage-Offer SupportPage-Card">
         <img class="SupportPage-OfferIcon" src="@/assets/img/offer-bonus.svg" />
-        <div class="SupportPage-OfferTitle SupportPage-CardTitle">
-          Bonuses
-        </div>
+        <div class="SupportPage-OfferTitle SupportPage-CardTitle">Bonuses</div>
         <div class="SupportPage-CardText">
           Our generous "Welcome Bonus" brings an additional thrill to excite even the coldest and
           most cautious players. Just make your deposit and get back twice as much in your account.
@@ -65,9 +53,7 @@
       </div>
       <div class="SupportPage-Offer SupportPage-Card">
         <img class="SupportPage-OfferIcon" src="@/assets/img/offer-games.svg" />
-        <div class="SupportPage-OfferTitle SupportPage-CardTitle">
-          Our games
-        </div>
+        <div class="SupportPage-OfferTitle SupportPage-CardTitle">Our games</div>
         <div class="SupportPage-CardText">
           We care about our players, and we would like to offer something to satisfy every taste.
           The games which we offer were created by the best developers in the industry. It means
@@ -77,9 +63,7 @@
       </div>
       <div class="SupportPage-Offer SupportPage-Card">
         <img class="SupportPage-OfferIcon" src="@/assets/img/offer-jackpots.svg" />
-        <div class="SupportPage-OfferTitle SupportPage-CardTitle">
-          Jackpots
-        </div>
+        <div class="SupportPage-OfferTitle SupportPage-CardTitle">Jackpots</div>
         <div class="SupportPage-CardText">
           Everyone dreams about the moment when the magic word JACKPOT appears on the screen,
           signaling that someone has achieved their dream. With our progressive slots, this magic
@@ -88,9 +72,7 @@
       </div>
       <div class="SupportPage-Offer SupportPage-Card">
         <img class="SupportPage-OfferIcon" src="@/assets/img/offer-live.svg" />
-        <div class="SupportPage-OfferTitle SupportPage-CardTitle">
-          Live games
-        </div>
+        <div class="SupportPage-OfferTitle SupportPage-CardTitle">Live games</div>
         <div class="SupportPage-CardText">
           Immerse yourself in the atmosphere of a real casino without leaving your room. Our
           live-games allow you to feel like you are at the real gaming table all while remaining
@@ -99,9 +81,7 @@
       </div>
       <div class="SupportPage-Offer SupportPage-Card">
         <img class="SupportPage-OfferIcon" src="@/assets/img/offer-payment.svg" />
-        <div class="SupportPage-OfferTitle SupportPage-CardTitle">
-          Payment systems and security
-        </div>
+        <div class="SupportPage-OfferTitle SupportPage-CardTitle">Payment systems and security</div>
         <div class="SupportPage-CardText">
           No one likes to wait. We can offer our players instant deposits and payouts. Before you
           even have the chance to blink, the money will reach its destination. Choose a currency,
@@ -110,9 +90,7 @@
       </div>
       <div class="SupportPage-Offer SupportPage-Card">
         <img class="SupportPage-OfferIcon" src="@/assets/img/offer-support.svg" />
-        <div class="SupportPage-OfferTitle SupportPage-CardTitle">
-          24/7 Support
-        </div>
+        <div class="SupportPage-OfferTitle SupportPage-CardTitle">24/7 Support</div>
         <div class="SupportPage-CardText">
           Though you may encounter some problems, our team of professionals will always be there to
           help you in these situations. Since you can contact our specialists by chat or e-mail

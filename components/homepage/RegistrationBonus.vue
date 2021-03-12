@@ -1,12 +1,8 @@
 <template>
   <div class="RegistrationBonus">
     <div class="RegistrationBonus-Content">
-      <div class="RegistrationBonus-Title">
-        Thank you for registration
-      </div>
-      <div class="RegistrationBonus-Promo">
-        100% up to $150
-      </div>
+      <div class="RegistrationBonus-Title">Thank you for registration</div>
+      <div class="RegistrationBonus-Promo">100% up to $150</div>
       <!--      <div class="RegistrationBonus-PromoMin">-->
       <!--        + 55 Free spins-->
       <!--      </div>-->
@@ -14,9 +10,7 @@
         For your first deposit! Use advantage of Ninecasino Welcome Bonus.
       </div>
     </div>
-    <button type="btn" class="Btn Btn--common Btn--full" @click="onClickBtn">
-      Get your bonus
-    </button>
+    <button type="btn" class="Btn Btn--common Btn--full" @click="onClickBtn">Get your bonus</button>
   </div>
 </template>
 

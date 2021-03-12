@@ -15,9 +15,7 @@
             <!--            </span>-->
           </div>
           <div class="AuthSection-UserBalance">
-            <div class="AuthSection-UserBalanceText">
-              Your balance
-            </div>
+            <div class="AuthSection-UserBalanceText">Your balance</div>
             {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }}
             {{ activeAccount.currency || user.currency }}
           </div>

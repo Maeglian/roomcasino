@@ -1,8 +1,6 @@
 <template>
   <div class="CabinetPage BonusesPage">
-    <div class="CabinetPage-Title BonusesPage-Title">
-      Bonuses
-    </div>
+    <div class="CabinetPage-Title BonusesPage-Title">Bonuses</div>
     <NuxtLink to="/cabinet/history/bonus" class="BonusesPage-Bonuses">
       Bonus history
       <span class="BonusesPage-BonusesIcon">
@@ -49,15 +47,11 @@
     <Loader v-if="availableBonusListIsLoading" />
     <div v-if="availableBonusList.length" class="Table CabinetPage-Table BonusesPage-Table">
       <div class="Table-Row CabinetPage-Row">
-        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Bonus
-        </div>
+        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">Bonus</div>
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
           Min deposit sum
         </div>
-        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Max prize
-        </div>
+        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">Max prize</div>
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th"></div>
       </div>
       <div

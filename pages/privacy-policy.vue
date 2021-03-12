@@ -1,8 +1,6 @@
 <template>
   <section class="SupportPage SupportPage--paddings">
-    <h1 class="SupportPage-Title Title Title--type-h1">
-      Privacy Policy
-    </h1>
+    <h1 class="SupportPage-Title Title Title--type-h1">Privacy Policy</h1>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <h4 class="Title">Introduction</h4>
@@ -19,9 +17,7 @@
           information about you and how we use it to personalize the marketing you receive, so
           please take time to read all the sections carefully.
         </p>
-        <p class="Text">
-          If we make any material updates to this Policy, we will inform you.
-        </p>
+        <p class="Text">If we make any material updates to this Policy, we will inform you.</p>
         <p class="Text">
           Please note that all our employees undertake regular training on Information Security and
           are required to comply with confidentially obligations as well as internal policies and
@@ -34,9 +30,7 @@
         </p>
       </li>
       <li class="SupportPage-Item">
-        <h4 class="Title">
-          Our Privacy Policy Promise
-        </h4>
+        <h4 class="Title">Our Privacy Policy Promise</h4>
         <p class="Text">
           Our Privacy Policy Promise Ninecasino will always value and respect the privacy of each
           and every one of its customers. Your privacy is important both to you and to us and we

@@ -6,43 +6,23 @@
         <img src="@/assets/img/logo.svg" />
       </NuxtLink>
       <div class="Footer-Links">
-        <NuxtLink class="Link Footer-Link" to="/promotions">
-          Promotion
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/about-us">
-          About us
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/faq">
-          Faq
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/bitcoins">
-          About BTC
-        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/promotions"> Promotion </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/about-us"> About us </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/faq"> Faq </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/bitcoins"> About BTC </NuxtLink>
         <!--        <NuxtLink class="Link Footer-Link" to="/vip">-->
         <!--          VIP rewards-->
         <!--        </NuxtLink>-->
-        <NuxtLink class="Link Footer-Link" to="/aml-policy">
-          AML Policy
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/terms">
-          Terms and conditions
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/bonus-policy">
-          Bonus policy
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/responsible-gaming">
-          Responsible gaming
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/privacy-policy">
-          Privacy policy
-        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/aml-policy"> AML Policy </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/terms"> Terms and conditions </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/bonus-policy"> Bonus policy </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/responsible-gaming"> Responsible gaming </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/privacy-policy"> Privacy policy </NuxtLink>
 
         <!--        <NuxtLink class="Link Footer-Link" to="/payment-methods">-->
         <!--          Payment methods-->
         <!--        </NuxtLink>-->
-        <NuxtLink class="Link Footer-Link" to="/risk-warnings">
-          Risk Warnings
-        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/risk-warnings"> Risk Warnings </NuxtLink>
       </div>
       <div class="Footer-Lang">
         <img src="@/assets/img/eng.png" alt="" />

@@ -7,9 +7,7 @@
     </template>
     <div v-else class="PasswordRestore-Content">
       <template v-if="!$route.query.code">
-        <h1 class="Title Colored PasswordRestore-Title">
-          Enter email
-        </h1>
+        <h1 class="Title Colored PasswordRestore-Title">Enter email</h1>
         <form class="PasswordRestore-Form" @submit.prevent="onContinue">
           <BaseInput
             v-model="email"
@@ -35,9 +33,7 @@
         </form>
       </template>
       <template v-else>
-        <h1 class="Title Colored PasswordRestore-Title">
-          Enter your new password
-        </h1>
+        <h1 class="Title Colored PasswordRestore-Title">Enter your new password</h1>
         <form class="PasswordRestore-Form" @submit.prevent="onSubmit">
           <BaseInput
             v-model="password.newPassword.value"
@@ -167,7 +163,7 @@ export default {
       },
       confirmPassword: {
         value: {
-          sameAsPassword: sameAs(function() {
+          sameAsPassword: sameAs(function () {
             return this.password.newPassword.value;
           }),
         },

@@ -4,9 +4,7 @@
     <div v-if="!isConfirm" class="CreateLimits">
       <div class="CabinetPage-Header CabinetPage-Section">
         <template v-if="isEdit"> Edit {{ type.name }} </template>
-        <template v-else>
-          Create limits
-        </template>
+        <template v-else> Create limits </template>
       </div>
       <BaseDropdown
         v-if="!isEdit"
@@ -58,9 +56,7 @@
           :v="$v.value"
         >
           <template v-if="type.value === 'sessionLimit'" #afterInput-absolute>
-            <span class="CreateLimits-InputCurrency">
-              min
-            </span>
+            <span class="CreateLimits-InputCurrency"> min </span>
           </template>
         </BaseInput>
         <BaseDropdown
@@ -89,12 +85,8 @@
         class="Btn Btn--common Btn--full Btn--color CreateLimits-Btn"
         @click="onClickLimitBtn"
       >
-        <template v-if="isEdit">
-          Save limits
-        </template>
-        <template v-else>
-          Add limits
-        </template>
+        <template v-if="isEdit"> Save limits </template>
+        <template v-else> Add limits </template>
       </button>
     </div>
     <div v-else>
@@ -235,7 +227,7 @@ export default {
 
       const payload = {};
 
-      this.limits[this.type.value].fields.forEach(field => {
+      this.limits[this.type.value].fields.forEach((field) => {
         payload[field] = this[field].value || this[field];
       });
 

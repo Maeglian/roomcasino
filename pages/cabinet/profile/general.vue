@@ -2,9 +2,7 @@
   <div class="ProfileInfo ProfilePage-Content">
     <Loader v-if="profileIsLoading" />
     <form v-else class="ProfileInfo-Form" @submit.prevent="onSubmit">
-      <div class="CabinetPage-Header">
-        General Info
-      </div>
+      <div class="CabinetPage-Header">General Info</div>
       <div class="ProfileInfo-Fields">
         <template v-for="(val, name) in fields">
           <template v-if="name !== 'receiveEmailPromos' && name !== 'receiveSmsPromos'">
@@ -80,9 +78,7 @@
           </template>
         </template>
       </div>
-      <div class="CabinetPage-Header">
-        Subscriptions
-      </div>
+      <div class="CabinetPage-Header">Subscriptions</div>
       <div class="ProfileInfo-Subscriptions">
         <template v-for="(item, name) in fields">
           <BaseCheckbox
@@ -137,7 +133,7 @@ export default {
   filters: {
     formatLabel(str) {
       const arr = str.trim().split(' ');
-      arr.forEach(word => word.toUpperCase());
+      arr.forEach((word) => word.toUpperCase());
       return arr.join('');
     },
   },

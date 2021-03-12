@@ -61,9 +61,7 @@
         @click="onSelectValue(item)"
       >
         <slot v-if="$scopedSlots.default" :item="item"></slot>
-        <template>
-          {{ item[itemName] || item }}
-        </template>
+        {{ item[itemName] || item }}
       </li>
     </ul>
   </div>
@@ -140,7 +138,7 @@ export default {
       )
         return this.autocompletedItems;
 
-      return this.items.filter(item => {
+      return this.items.filter((item) => {
         return item[this.itemName] !== this.activeItem && item !== this.activeItem;
       });
     },
@@ -153,7 +151,7 @@ export default {
       if (this.inputVal) {
         const str = this.inputVal.trim().toLowerCase();
 
-        this.autocompletedItems = this.items.filter(item => {
+        this.autocompletedItems = this.items.filter((item) => {
           if (item[this.itemName]) return item[this.itemName].toLowerCase().includes(str);
           return item.toLowerCase().includes(str);
         });

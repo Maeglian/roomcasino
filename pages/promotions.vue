@@ -1,9 +1,7 @@
 <template>
   <section class="Page PromotionsPage">
     <div class="Page-Header PromotionsPage-Header">
-      <h1 class="Title Title--type-h1 Page-Title PromotionsPage-Title">
-        Current promotions
-      </h1>
+      <h1 class="Title Title--type-h1 Page-Title PromotionsPage-Title">Current promotions</h1>
       <div class="Page-Text Text Text--additional">
         Ninecasino is constantly working to deliver the best promotions. We use the latest
         technology and the feedback from our players to re-design our promotions. Enjoy!

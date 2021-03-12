@@ -1,8 +1,6 @@
 <template>
   <section class="SupportPage SupportPage--paddings">
-    <h1 class="SupportPage-Title Title Title--type-h1">
-      Risk Warnings
-    </h1>
+    <h1 class="SupportPage-Title Title Title--type-h1">Risk Warnings</h1>
 
     <p class="Text">
       You understand that by participating in the games, you risk losing the money deposited to your

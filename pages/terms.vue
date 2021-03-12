@@ -1,8 +1,6 @@
 <template>
   <section class="SupportPage SupportPage--paddings">
-    <h1 class="SupportPage-Title Title Title--type-h1">
-      Terms & Conditions
-    </h1>
+    <h1 class="SupportPage-Title Title Title--type-h1">Terms & Conditions</h1>
     <p class="Text">
       The following terms and conditions will enter into force on 01/31/2021. Before you start the
       game please read the Terms and Conditions section carefully. Started using the site you
@@ -10,7 +8,7 @@
     </p>
     <h4 class="Title">GENERAL</h4>
     <ul class="SupportPage-List">
-      <li class="SupportPage-Item ">
+      <li class="SupportPage-Item">
         <p class="Text">
           The website www.ninecasino.com ("Casino", "Website", “Company”, "We", "Us", "Our") is
           owned and operated by DUX GROUP N.V, a company registered and established under the laws
@@ -25,14 +23,14 @@
           Remote gaming licensing and supervision is provided by Antillephone N.V.
         </p>
       </li>
-      <li class="SupportPage-Item ">
+      <li class="SupportPage-Item">
         <p class="Text">
           These Terms and Conditions may be changed by the Casino when such need occurs. We will do
           our best to notify our players of any significant changes by email. However, we do
           recommend all players to revisit this page regularly and check for possible changes.
         </p>
       </li>
-      <li class="SupportPage-Item ">
+      <li class="SupportPage-Item">
         <p class="Text">
           These Terms and Conditions constitute a binding agreement between you and Casino. Players
           must read these Terms and Conditions entirely before registering an account. If you do not
@@ -40,7 +38,7 @@
           the Website.
         </p>
       </li>
-      <li class="SupportPage-Item ">
+      <li class="SupportPage-Item">
         <p class="Text">
           You are able to opt out from receiving offers via emails from Casino. However, we still
           reserve the right to send you important information regarding your account, despite you
@@ -512,9 +510,7 @@
         </p>
       </li>
       <li class="SupportPage-Item">
-        <p class="Text">
-          All costs that may occur upon refund procedure are on the player.
-        </p>
+        <p class="Text">All costs that may occur upon refund procedure are on the player.</p>
       </li>
     </ul>
 

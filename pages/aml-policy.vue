@@ -1,11 +1,7 @@
 <template>
   <section class="SupportPage SupportPage--paddings">
-    <h1 class="SupportPage-Title Title Title--type-h1">
-      POLICY DOCUMENT
-    </h1>
-    <h2 class="Title Title--type-h2">
-      CRIME AND DISORDER (INCORPORATING FRAUD AND AML)
-    </h2>
+    <h1 class="SupportPage-Title Title Title--type-h1">POLICY DOCUMENT</h1>
+    <h2 class="Title Title--type-h2">CRIME AND DISORDER (INCORPORATING FRAUD AND AML)</h2>
     <h4 class="Title">Section 1 – Experience</h4>
     <p class="Text">
       The Director of Dux Group N.V. (hereinafter – «Company») has lengthy experience in securing
@@ -38,21 +34,13 @@
       ALL staff will be given training in Money Laundering indicators such as (but not limited to):
     </p>
     <ul class="SupportPage-List AmlPolicyPage-List">
-      <li class="SupportPage-Item AmlPolicyPage-Item">
-        Unusual Betting Patterns
-      </li>
+      <li class="SupportPage-Item AmlPolicyPage-Item">Unusual Betting Patterns</li>
       <li class="SupportPage-Item">
         Suspicious deposit and withdrawal patterns (size and frequency)
       </li>
-      <li class="SupportPage-Item">
-        Reliability of Card Data
-      </li>
-      <li class="SupportPage-Item">
-        Customer verification issues and Identity Theft
-      </li>
-      <li class="SupportPage-Item">
-        Account linkage/multiple accounting
-      </li>
+      <li class="SupportPage-Item">Reliability of Card Data</li>
+      <li class="SupportPage-Item">Customer verification issues and Identity Theft</li>
+      <li class="SupportPage-Item">Account linkage/multiple accounting</li>
     </ul>
     <p class="Text">
       All instances of suspected Money Laundering attempts must be reported to the MLRO but that
@@ -115,15 +103,11 @@
       Company has installed Call recording technology. This has multiple benefits that include:
     </p>
     <ul class="SupportPage-List">
-      <li class="SupportPage-Item">
-        Staff Training
-      </li>
+      <li class="SupportPage-Item">Staff Training</li>
       <li class="SupportPage-Item">
         Ensuring accuracy of bet (timing and placement) and transaction data
       </li>
-      <li class="SupportPage-Item">
-        Customer and Brand Reputation Protection
-      </li>
+      <li class="SupportPage-Item">Customer and Brand Reputation Protection</li>
       <li class="SupportPage-Item">
         Implementation of robust and frequent monitoring procedures that will guard against and
         deter collusion between staff and customers

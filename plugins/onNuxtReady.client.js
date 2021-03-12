@@ -5,7 +5,7 @@ import { throttle } from '../utils/helpers';
 window.onNuxtReady(({ context }) => {
   axios.interceptors.response.use(
     undefined,
-    err =>
+    (err) =>
       new Promise(() => {
         // eslint-disable-next-line no-underscore-dangle,max-len
         if (

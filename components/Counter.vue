@@ -1,8 +1,6 @@
 <template>
   <div class="Counter" :class="{ 'Counter--min': minFormat }">
-    <div v-if="!minFormat" class="Counter-Text">
-      Time left until finish
-    </div>
+    <div v-if="!minFormat" class="Counter-Text">Time left until finish</div>
     <div class="Counter-Content">
       <div class="Counter-Item Counter-Days">
         <div class="Counter-Count">

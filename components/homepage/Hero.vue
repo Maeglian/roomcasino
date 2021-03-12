@@ -52,12 +52,8 @@
             <img src="@/assets/img/fast.svg" alt="" />
           </div>
           <div class="Advantages-Content">
-            <div class="Advantages-Title">
-              Super fast
-            </div>
-            <div class="Advantages-Text">
-              withdrawals
-            </div>
+            <div class="Advantages-Title">Super fast</div>
+            <div class="Advantages-Text">withdrawals</div>
           </div>
         </div>
         <div class="Advantages-Item">
@@ -65,12 +61,8 @@
             <img src="@/assets/img/support.svg" alt="" />
           </div>
           <div class="Advantages-Content">
-            <div class="Advantages-Title">
-              24/7
-            </div>
-            <div class="Advantages-Text">
-              friendly chat support
-            </div>
+            <div class="Advantages-Title">24/7</div>
+            <div class="Advantages-Text">friendly chat support</div>
           </div>
         </div>
         <div class="Advantages-Item">
@@ -78,12 +70,8 @@
             <img src="@/assets/img/games.svg" alt="" />
           </div>
           <div class="Advantages-Content">
-            <div class="Advantages-Title">
-              More than
-            </div>
-            <div class="Advantages-Text">
-              2000 Games
-            </div>
+            <div class="Advantages-Title">More than</div>
+            <div class="Advantages-Text">2000 Games</div>
           </div>
         </div>
         <div class="Advantages-Item">
@@ -91,12 +79,8 @@
             <img src="@/assets/img/providers.svg" alt="" />
           </div>
           <div class="Advantages-Content">
-            <div class="Advantages-Title">
-              The widest selection
-            </div>
-            <div class="Advantages-Text">
-              of game providers
-            </div>
+            <div class="Advantages-Title">The widest selection</div>
+            <div class="Advantages-Text">of game providers</div>
           </div>
         </div>
       </div>

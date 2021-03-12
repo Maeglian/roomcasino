@@ -23,9 +23,7 @@
       <!--        </form>-->
       <!--      </div>-->
       <form class="CabinetForm ProfilePage-Password" @submit.prevent="onSubmitPasswordForm">
-        <div class="CabinetPage-Header">
-          Password change
-        </div>
+        <div class="CabinetPage-Header">Password change</div>
         <BaseInput
           v-model="oldPassword"
           class="ProfilePage-Row"
@@ -189,7 +187,7 @@ export default {
       value: {
         required,
         sameAsPassword: not(
-          sameAs(function() {
+          sameAs(function () {
             return this.oldPassword;
           }),
         ),
@@ -197,7 +195,7 @@ export default {
     },
     confirmPassword: {
       value: {
-        sameAsPassword: sameAs(function() {
+        sameAsPassword: sameAs(function () {
           return this.newPassword.value;
         }),
       },

@@ -1,15 +1,9 @@
 <template>
   <div class="CabinetPage ProfilePage">
-    <div class="CabinetPage-Title ProfilePage-Title">
-      User profile
-    </div>
+    <div class="CabinetPage-Title ProfilePage-Title">User profile</div>
     <div class="Tabs">
-      <NuxtLink to="/cabinet/profile/general" class="Tabs-Tab">
-        General
-      </NuxtLink>
-      <NuxtLink to="/cabinet/profile/security" class="Tabs-Tab">
-        Security
-      </NuxtLink>
+      <NuxtLink to="/cabinet/profile/general" class="Tabs-Tab"> General </NuxtLink>
+      <NuxtLink to="/cabinet/profile/security" class="Tabs-Tab"> Security </NuxtLink>
     </div>
     <Nuxt />
   </div>

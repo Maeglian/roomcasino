@@ -1,9 +1,7 @@
 <template>
   <section class="SupportPage BitcoinsPage">
-    <h1 class="Title Title--type-h1 Title--center BitcoinsPage-Title">
-      Why you need Bitcoins?
-    </h1>
-    <div class="SupportPage-Introduction ">
+    <h1 class="Title Title--type-h1 Title--center BitcoinsPage-Title">Why you need Bitcoins?</h1>
+    <div class="SupportPage-Introduction">
       It is the new generation of online payments. Fast transactions with low fees can be sent to
       any part of the world. It can be a bit complicated to understand all cryptocurrency concepts,
       but the convenience makes it worthwhile.
@@ -26,9 +24,7 @@
       <div class="SupportPage-Card BitcoinsPage-Reason">
         <img class="BitcoinsPage-ReasonIcon" src="@/assets/img/bitcoin2.png" />
         <div class="BitcoinsPage-ReasonContent">
-          <div class="BitcoinsPage-ReasonTitle SupportPage-CardTitle">
-            Protection of you date
-          </div>
+          <div class="BitcoinsPage-ReasonTitle SupportPage-CardTitle">Protection of you date</div>
           <div class="SupportPage-CardText">
             You can start using Bitcoin without sending your personal information to anyone. Some
             crypto exchanges can ask you to pass the KYC (Know Your Client) procedure, but this
@@ -40,9 +36,7 @@
       <div class="SupportPage-Card BitcoinsPage-Reason">
         <img class="BitcoinsPage-ReasonIcon" src="@/assets/img/bitcoin3.png" />
         <div class="BitcoinsPage-ReasonContent">
-          <div class="BitcoinsPage-ReasonTitle SupportPage-CardTitle">
-            Low Fees
-          </div>
+          <div class="BitcoinsPage-ReasonTitle SupportPage-CardTitle">Low Fees</div>
           <div class="SupportPage-CardText">
             Bitcoin is the best way to send money to a person from another country. The transaction
             will be sent in less than an hour depending on the load on the Bitcoin network. Unlike
@@ -66,9 +60,7 @@
       <div class="SupportPage-Card BitcoinsPage-Reason">
         <img class="BitcoinsPage-ReasonIcon" src="@/assets/img/bitcoin5.png" />
         <div class="BitcoinsPage-ReasonContent">
-          <div class="BitcoinsPage-ReasonTitle SupportPage-CardTitle">
-            Decentralization
-          </div>
+          <div class="BitcoinsPage-ReasonTitle SupportPage-CardTitle">Decentralization</div>
           <div class="SupportPage-CardText">
             Bitcoin is an open-source product with a big community of enthusiasts that helps in the
             development etc. There is no owner of the Bitcoin blockchain network, so no one can ban
@@ -83,9 +75,7 @@
     <div class="BitcoinsPage-Steps SupportPage-Offers">
       <div class="SupportPage-Offer SupportPage-Card">
         <img class="SupportPage-OfferIcon" src="@/assets/img/step1.svg" />
-        <div class="SupportPage-OfferTitle SupportPage-CardTitle">
-          Choose your wallet
-        </div>
+        <div class="SupportPage-OfferTitle SupportPage-CardTitle">Choose your wallet</div>
         <div class="SupportPage-CardText">
           First of all, you need to choose where you want to store your Bitcoins. There are several
           ways to do it: online wallets, hardware wallets (cold wallets) or you can store them in
@@ -97,9 +87,7 @@
       </div>
       <div class="SupportPage-Offer SupportPage-Card">
         <img class="SupportPage-OfferIcon" src="@/assets/img/step2.svg" />
-        <div class="SupportPage-OfferTitle SupportPage-CardTitle">
-          Buy bitcoins
-        </div>
+        <div class="SupportPage-OfferTitle SupportPage-CardTitle">Buy bitcoins</div>
         <div class="SupportPage-CardText">
           There are two main types of cryptocurrency exchanges. The first type is just regular
           exchanges like Binance, Huobi, Coinbase, Kraken etc.

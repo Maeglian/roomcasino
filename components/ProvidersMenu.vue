@@ -1,19 +1,14 @@
 <template>
   <div v-click-outside="onClickOutside" class="ProvidersMenu">
     <div v-if="insideFilters" class="CategoriesFilter ProvidersMenu-Filter">
-      <div class="CategoriesFilter-Title">
-        Providers
-      </div>
+      <div class="CategoriesFilter-Title">Providers</div>
       <div class="CategoriesFilter-Footer CategoriesFilter-Footer--full">
         <button class="DefaultGames-ChosenTab CategoriesFilter-ChosenProvider" @click="onOpen">
           <img
             v-if="!providersWithoutIcons.includes(providerActive.name)"
             class="ProvidersMenu-ProviderIcon"
             :src="
-              require(`@/assets/img/${providerActive.name
-                .toLowerCase()
-                .split(' ')
-                .join('')}.svg`)
+              require(`@/assets/img/${providerActive.name.toLowerCase().split(' ').join('')}.svg`)
             "
             alt=""
           />

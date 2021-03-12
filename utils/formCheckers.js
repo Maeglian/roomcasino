@@ -15,9 +15,9 @@ export const phoneWithPlusCheck = helpers.regex(
 
 export const postalCodeCheck = helpers.regex('postalCodeCheck', /^[1-9a-zA-Z ]*$/);
 
-export const termsCheck = value => value === true;
-export const ageCheck = value => moment(value).add(18, 'years') < moment();
-export const dateCheck = value =>
+export const termsCheck = (value) => value === true;
+export const ageCheck = (value) => moment(value).add(18, 'years') < moment();
+export const dateCheck = (value) =>
   moment(value, 'YYYY-MM-DD', true).isValid() &&
   moment(value) < moment() &&
   moment(value).year() > 1900;

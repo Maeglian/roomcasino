@@ -39,9 +39,7 @@
             />
           </template>
         </div>
-        <button class="CabinetFilters-Submit" @click="$emit('filter')">
-          Filter
-        </button>
+        <button class="CabinetFilters-Submit" @click="$emit('filter')">Filter</button>
       </div>
     </transition>
   </div>
@@ -79,11 +77,7 @@ export default {
     setValue({ name, type, payload }) {
       const val = { name };
       if (type === 'date') {
-        payload
-          ? (val.val = moment(payload)
-              .startOf('day')
-              .unix())
-          : (val.val = '');
+        payload ? (val.val = moment(payload).startOf('day').unix()) : (val.val = '');
       } else val.val = payload;
       this.$emit('set-value', val);
     },

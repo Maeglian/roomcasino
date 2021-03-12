@@ -1,19 +1,11 @@
 <template>
   <div class="CabinetPage BalancePage">
-    <div class="CabinetPage-Title BalancePage-Title">
-      Balance
-    </div>
+    <div class="CabinetPage-Title BalancePage-Title">Balance</div>
     <div class="Table CabinetPage-Table BalancePage-Table">
       <div class="Table-Row CabinetPage-Row">
-        <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">
-          Status
-        </div>
-        <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">
-          Currency
-        </div>
-        <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">
-          Amount
-        </div>
+        <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">Status</div>
+        <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">Currency</div>
+        <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">Amount</div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">
           Locked by bonus
         </div>
@@ -66,20 +58,14 @@
       </div>
     </div>
     <button class="CabinetPage-AddBtn" @click="$modal.show('addCurrency')">
-      <span class="CabinetPage-AddBtnPlus CabinetPage-AddBtnPlus--left">
-        +
-      </span>
-      <span class="CabinetPage-AddBtnText">
-        Add currency
-      </span>
+      <span class="CabinetPage-AddBtnPlus CabinetPage-AddBtnPlus--left"> + </span>
+      <span class="CabinetPage-AddBtnText"> Add currency </span>
     </button>
     <modal name="addCurrency" width="348" height="auto" @before-close="beforeCloseModal">
       <div class="Modal">
         <div class="Close Modal-Close" @click="$modal.hide('addCurrency')"></div>
         <div class="AddCurrency">
-          <div class="CabinetPage-Header AddCurrency-Header">
-            Add Currency
-          </div>
+          <div class="CabinetPage-Header AddCurrency-Header">Add Currency</div>
           <div v-if="moreCurrencyAccounts.length" class="AddCurrency-Content">
             <div class="AddCurrency-Currencies">
               <div
@@ -95,9 +81,7 @@
               {{ serverError }}
             </div>
           </div>
-          <div v-else class="AddCurrency-Text">
-            No more currency to add
-          </div>
+          <div v-else class="AddCurrency-Text">No more currency to add</div>
         </div>
       </div>
     </modal>

@@ -14,12 +14,8 @@
         />
       </div>
       <div class="Jackpots-Mega">
-        <div class="Jackpots-Text">
-          Mega jackpot
-        </div>
-        <div class="Jackpots-Sum">
-          € 11.574.600
-        </div>
+        <div class="Jackpots-Text">Mega jackpot</div>
+        <div class="Jackpots-Sum">€ 11.574.600</div>
       </div>
     </div>
   </section>

@@ -83,8 +83,8 @@
       <div
         v-if="
           dga[gameInfo.gameProducer] &&
-            dga[gameInfo.gameProducer][gameInfo.gpGameId] &&
-            dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits
+          dga[gameInfo.gameProducer][gameInfo.gpGameId] &&
+          dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits
         "
         class="Card-Bets Card-Dga"
       >

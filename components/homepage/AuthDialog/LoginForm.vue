@@ -1,9 +1,7 @@
 <template>
   <form class="AuthDialog-Login AuthDialog-Form" @submit.prevent="onSubmitForm">
     <div class="AuthDialog-Content">
-      <div class="AuthDialog-Title AuthDialog-LoginTitle">
-        Welcome back
-      </div>
+      <div class="AuthDialog-Title AuthDialog-LoginTitle">Welcome back</div>
       <div class="AuthDialog-Fields">
         <BaseInput
           v-for="(field, name) in fields"

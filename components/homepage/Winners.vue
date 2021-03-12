@@ -1,9 +1,7 @@
 <template>
   <section class="Winners">
     <div class="Winners-Section">
-      <div class="Title Title--type-h2 Winners-Title">
-        Latest winners
-      </div>
+      <div class="Title Title--type-h2 Winners-Title">Latest winners</div>
       <div class="Table TableBordered Winners-Table">
         <div v-for="item in items" :key="item.name" class="Table-Row">
           <div class="Table-Cell TableBordered-Cell Winners-Avatar">
@@ -18,9 +16,7 @@
       </div>
     </div>
     <div class="Winners-Section">
-      <div class="Title Title--type-h2 Winners-Title">
-        top winners
-      </div>
+      <div class="Title Title--type-h2 Winners-Title">top winners</div>
       <div class="Table Table--bordered Winners-Table">
         <div v-for="item in items" :key="2 + item.name" class="Table-Row">
           <div class="Table-Cell TableBordered-Cell Winners-Avatar">

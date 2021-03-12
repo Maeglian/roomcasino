@@ -22,7 +22,7 @@ const cookieparser = process.server ? require('cookieparser') : undefined;
 
 const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
   transformResponse: [
-    data => {
+    (data) => {
       let res;
       let errorPayload;
 
@@ -287,9 +287,7 @@ export const state = () => ({
           currentPeriod: 'daily',
           title: 'daily limit',
           type: 'loss',
-          reset: moment()
-            .endOf('day')
-            .format(),
+          reset: moment().endOf('day').format(),
         },
         {
           isMoney: true,
@@ -298,9 +296,7 @@ export const state = () => ({
           currentPeriod: 'weekly',
           type: 'loss',
           title: 'weekly limit',
-          reset: moment()
-            .endOf('week')
-            .format(),
+          reset: moment().endOf('week').format(),
         },
       ],
     },
@@ -326,9 +322,7 @@ export const state = () => ({
           currentPeriod: 'weekly',
           type: 'wager',
           title: 'weekly limit',
-          reset: moment()
-            .endOf('week')
-            .format(),
+          reset: moment().endOf('week').format(),
         },
       ],
     },
@@ -341,9 +335,7 @@ export const state = () => ({
           limitAmount: 20,
           type: 'cooling',
           title: 'time spent gambling',
-          reset: moment()
-            .endOf('week')
-            .format(),
+          reset: moment().endOf('week').format(),
         },
       ],
     },
@@ -368,9 +360,7 @@ export const state = () => ({
           currentPeriod: 'daily',
           type: 'deposit',
           title: 'daily limit',
-          reset: moment()
-            .endOf('day')
-            .format(),
+          reset: moment().endOf('day').format(),
         },
         {
           isMoney: true,
@@ -379,9 +369,7 @@ export const state = () => ({
           currentPeriod: 'weekly',
           type: 'deposit',
           title: 'weekly limit',
-          reset: moment()
-            .endOf('week')
-            .format(),
+          reset: moment().endOf('week').format(),
         },
       ],
     },
@@ -705,7 +693,7 @@ export const state = () => ({
 });
 
 export const getters = {
-  initialLoading: state => {
+  initialLoading: (state) => {
     const initialLoading = !Object.values(state.initialLoadingIsDone).includes(false);
     if (state.token) {
       const initialLoadingLoggedIn = !Object.values(state.initialLoadingLoggedInIsDone).includes(
@@ -716,28 +704,28 @@ export const getters = {
 
     return initialLoading;
   },
-  activeCurrency: state => {
+  activeCurrency: (state) => {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};
   },
-  defaultCountry: state => {
-    return state.countriesList.find(country => country.code === state.defaultCountry);
+  defaultCountry: (state) => {
+    return state.countriesList.find((country) => country.code === state.defaultCountry);
   },
-  activeAccount: state => {
-    if (state.user.accountList) return state.user.accountList.find(acc => acc.active === true);
+  activeAccount: (state) => {
+    if (state.user.accountList) return state.user.accountList.find((acc) => acc.active === true);
     return '';
   },
-  accountList: state => {
+  accountList: (state) => {
     if (state.user.accountList) return state.user.accountList;
     return [];
   },
-  isLoggedIn: state => !!state.token,
-  authStatus: state => state.status,
-  slicedGameProducerList: state => startIndex =>
+  isLoggedIn: (state) => !!state.token,
+  authStatus: (state) => state.status,
+  slicedGameProducerList: (state) => (startIndex) =>
     state.gameProducerList.slice(startIndex, state.providers.length + 1),
-  limitsByTypes: state => {
+  limitsByTypes: (state) => {
     const ll = state.limits.reduce((namedLimits, limit) => {
-      const namedlimit = namedLimits.find(l => l.name === l.type);
+      const namedlimit = namedLimits.find((l) => l.name === l.type);
       if (namedlimit) namedlimit.limits.push(limit);
       else {
         namedLimits.push({
@@ -749,22 +737,22 @@ export const getters = {
     }, []);
     return ll;
   },
-  providersList: state => startIndex =>
+  providersList: (state) => (startIndex) =>
     state.providers.slice(startIndex, state.providers.length + 1),
-  fakedNewGames: state => [...state.games].reverse().slice(0, 12),
-  gamesLimited: state => limit => state.games.slice(0, limit),
-  gamesSearched: state => text => {
-    return state.defaultGames.filter(game => {
+  fakedNewGames: (state) => [...state.games].reverse().slice(0, 12),
+  gamesLimited: (state) => (limit) => state.games.slice(0, limit),
+  gamesSearched: (state) => (text) => {
+    return state.defaultGames.filter((game) => {
       const str = text.trim().toLowerCase();
       const title = game.gameName.toLowerCase();
       return title.includes(str);
     });
   },
-  limitedTournamentWinners: state => limit => state.currentTournamentWinners.slice(0, limit),
-  userInfo: state => {
+  limitedTournamentWinners: (state) => (limit) => state.currentTournamentWinners.slice(0, limit),
+  userInfo: (state) => {
     if (Object.keys(state.user).length) {
       const info = { ...state.user };
-      info.country = state.countriesList.find(country => country.code === info.country);
+      info.country = state.countriesList.find((country) => country.code === info.country);
       delete info.accountList;
       delete info.requirePasswordChange;
       return info;
@@ -772,9 +760,9 @@ export const getters = {
 
     return {};
   },
-  currencyAccounts: state => {
+  currencyAccounts: (state) => {
     if (state.user.accountList) {
-      const currencies = state.user.accountList.map(acc => ({
+      const currencies = state.user.accountList.map((acc) => ({
         name: acc.currency,
         value: acc.currency,
       }));
@@ -784,18 +772,18 @@ export const getters = {
     }
     return [];
   },
-  moreCurrencyAccounts: state =>
-    state.currencyList.filter(cur => {
+  moreCurrencyAccounts: (state) =>
+    state.currencyList.filter((cur) => {
       if (state.user.accountList) {
-        return !state.user.accountList.some(acc => acc.currency === cur);
+        return !state.user.accountList.some((acc) => acc.currency === cur);
       }
       return cur;
     }),
-  isNewNotifications: state => !Object.values(state.notifications).every(arr => !arr.length),
+  isNewNotifications: (state) => !Object.values(state.notifications).every((arr) => !arr.length),
 };
 
 export const mutations = {
-  setHeroBannerIsLoaded: state => {
+  setHeroBannerIsLoaded: (state) => {
     state.heroBannerIsLoaded = true;
   },
   setInitialLoading: (state, field) => {
@@ -814,40 +802,40 @@ export const mutations = {
   setPlatform: (state, payload) => {
     state.platform = payload;
   },
-  setEmailConfirmIsDone: state => {
+  setEmailConfirmIsDone: (state) => {
     state.emailConfirmIsFetching = false;
   },
-  setEmailConfirmIsFetching: state => {
+  setEmailConfirmIsFetching: (state) => {
     state.emailConfirmIsFetching = true;
   },
-  setEmailIsConfirmed: state => {
+  setEmailIsConfirmed: (state) => {
     state.emailIsConfirmed = true;
   },
-  clearEmailIsConfirmed: state => {
+  clearEmailIsConfirmed: (state) => {
     state.emailIsConfirmed = false;
   },
   setEmailConfirmError: (state, payload) => {
     state.emailConfirmError = payload;
   },
-  clearEmailConfirmError: state => {
+  clearEmailConfirmError: (state) => {
     state.emailConfirmError = '';
   },
   setOriginalFile: (state, payload) => {
     state.originalFile = payload;
   },
-  clearOriginalFile: state => {
+  clearOriginalFile: (state) => {
     state.originalFile = null;
   },
-  setOriginalFileIsLoading: state => {
+  setOriginalFileIsLoading: (state) => {
     state.originalFileIsLoading = true;
   },
-  setOriginalFileIsLoaded: state => {
+  setOriginalFileIsLoaded: (state) => {
     state.originalFileIsLoading = false;
   },
   setOriginalFileError: (state, payload) => {
     state.originalFileError = payload;
   },
-  clearOriginalFileError: state => {
+  clearOriginalFileError: (state) => {
     state.originalFileError = '';
   },
   setSiteIsAllowedForUser: (state, payload) => {
@@ -859,49 +847,49 @@ export const mutations = {
   setDefaultCurrency: (state, payload) => {
     state.defaultCurrency = payload;
   },
-  setBillingSessionIsLoading: state => {
+  setBillingSessionIsLoading: (state) => {
     state.billingSessionIsLoading = true;
   },
-  setBillingSessionIsLoaded: state => {
+  setBillingSessionIsLoaded: (state) => {
     state.billingSessionIsLoading = false;
   },
   setGetBillingSessionError: (state, message) => {
     state.billingSessionIsLoading = message;
   },
-  clearGetBillingSessionError: state => {
+  clearGetBillingSessionError: (state) => {
     state.billingSessionIsLoading = '';
   },
   setCreateLimitError: (state, message) => {
     state.createLimitError = message;
   },
-  clearCreateLimitError: state => {
+  clearCreateLimitError: (state) => {
     state.createLimitError = '';
   },
   setDeleteLimitError: (state, message) => {
     state.deleteLimitError = message;
   },
-  clearDeleteLimitError: state => {
+  clearDeleteLimitError: (state) => {
     state.deleteLimitError = '';
   },
   setDeleteBonusError: (state, message) => {
     state.deleteBonusError = message;
   },
-  clearDeleteBonusError: state => {
+  clearDeleteBonusError: (state) => {
     state.deleteBonusError = '';
   },
-  setBonusListIsLoading: state => {
+  setBonusListIsLoading: (state) => {
     state.bonusListIsLoading = true;
   },
-  setBonusListIsLoaded: state => {
+  setBonusListIsLoaded: (state) => {
     state.bonusListIsLoading = false;
   },
   setBonusList: (state, payload) => {
     state.bonusList = payload;
   },
-  setAvailableBonusListIsLoading: state => {
+  setAvailableBonusListIsLoading: (state) => {
     state.availablebonusListIsLoading = true;
   },
-  setAvailableBonusListIsLoaded: state => {
+  setAvailableBonusListIsLoaded: (state) => {
     state.availableBonusListIsLoading = false;
   },
   setAvailableBonusList: (state, payload) => {
@@ -916,13 +904,13 @@ export const mutations = {
   setGameError: (state, message) => {
     state.gameError = message;
   },
-  clearGameError: state => {
+  clearGameError: (state) => {
     state.gameError = '';
   },
-  setPageDataIsLoading: state => {
+  setPageDataIsLoading: (state) => {
     state.pageDataIsLoading = true;
   },
-  setPageDataIsLoaded: state => {
+  setPageDataIsLoaded: (state) => {
     state.pageDataIsLoading = false;
   },
   setUserDocumentList: (state, payload) => {
@@ -931,7 +919,7 @@ export const mutations = {
   setServerError: (state, message) => {
     state.serverError = message;
   },
-  clearServerError: state => {
+  clearServerError: (state) => {
     state.serverError = '';
   },
   setTransactionHistoryList: (state, payload) => {
@@ -946,25 +934,25 @@ export const mutations = {
   setSessionHistoryList: (state, payload) => {
     state.sessionHistoryList = payload;
   },
-  setHistoryListIsLoading: state => {
+  setHistoryListIsLoading: (state) => {
     state.historyListIsLoading = true;
   },
-  setHistoryListIsLoaded: state => {
+  setHistoryListIsLoaded: (state) => {
     state.historyListIsLoading = false;
   },
   setGameProducerList: (state, payload) => {
     state.gameProducerList = [...state.gameProducerList, ...payload];
   },
-  openNav: state => {
+  openNav: (state) => {
     state.navIsOpen = true;
   },
-  closeNav: state => {
+  closeNav: (state) => {
     state.navIsOpen = false;
   },
-  openNotificationsPanel: state => {
+  openNotificationsPanel: (state) => {
     state.notificationsPanelIsOpen = true;
   },
-  closeNotificationsPanel: state => {
+  closeNotificationsPanel: (state) => {
     state.notificationsPanelIsOpen = false;
   },
   setCategories: (state, payload) => {
@@ -973,16 +961,16 @@ export const mutations = {
   setWidth: (state, payload) => {
     state.width = payload;
   },
-  setGamesAreLoading: state => {
+  setGamesAreLoading: (state) => {
     state.gamesAreLoading = true;
   },
-  setDefaultGamesAreLoading: state => {
+  setDefaultGamesAreLoading: (state) => {
     state.defaultGamesAreLoading = true;
   },
-  setGamesAreLoaded: state => {
+  setGamesAreLoaded: (state) => {
     state.gamesAreLoading = false;
   },
-  setDefaultGamesAreLoaded: state => {
+  setDefaultGamesAreLoaded: (state) => {
     state.defaultGamesAreLoading = false;
   },
   setGames: (state, payload) => {
@@ -1010,7 +998,7 @@ export const mutations = {
     state.limits = payload;
   },
   addLimits: (state, payload) => {
-    let limit = state.limits.find(lim => lim.name === payload.name);
+    let limit = state.limits.find((lim) => lim.name === payload.name);
     if (!limit) {
       limit = {
         name: payload.name,
@@ -1067,7 +1055,7 @@ export const mutations = {
   },
   setActiveUserAccount(state, currency) {
     if (state.user.accountList) {
-      state.user.accountList.forEach(acc => {
+      state.user.accountList.forEach((acc) => {
         if (acc.currency === currency) acc.active = true;
         else acc.active = false;
       });
@@ -1493,7 +1481,7 @@ export const actions = {
       const bonuses = res.data.data;
       const depositNum = !bonuses.length
         ? 3
-        : bonuses.find(bonus => bonus.available && bonus.depositNum).depositNum - 1;
+        : bonuses.find((bonus) => bonus.available && bonus.depositNum).depositNum - 1;
       commit('setAvailableBonusList', bonuses);
       commit('setDepositNum', depositNum);
     } catch (e) {

@@ -9,23 +9,15 @@
         € 500 <span class="Colored">+</span> 500 Free Spins every day!
       </div>
       <div class="Tournament-Participate">
-        <div class="Btn Btn--common Tournament-Btn">
-          Participate
-        </div>
+        <div class="Btn Btn--common Tournament-Btn">Participate</div>
         <Counter class="Tournament-Counter" enddate="2020-12-01" />
       </div>
       <div class="Tournament-Table">
         <div class="Table TableBordered">
           <div class="Table-Row">
-            <div class="Table-Cell TableBordered-Cell TableBordered-Th">
-              #
-            </div>
-            <div class="Table-Cell TableBordered-Cell TableBordered-Th">
-              Name
-            </div>
-            <div class="Table-Cell TableBordered-Cell TableBordered-Th">
-              Points
-            </div>
+            <div class="Table-Cell TableBordered-Cell TableBordered-Th">#</div>
+            <div class="Table-Cell TableBordered-Cell TableBordered-Th">Name</div>
+            <div class="Table-Cell TableBordered-Cell TableBordered-Th">Points</div>
           </div>
           <div
             v-for="(winner, i) in limitedTournamentWinners(winnersToShow)"
@@ -43,9 +35,7 @@
             </div>
           </div>
         </div>
-        <NuxtLink class="Tournament-More" to="/daily-tournament">
-          Show more
-        </NuxtLink>
+        <NuxtLink class="Tournament-More" to="/daily-tournament"> Show more </NuxtLink>
       </div>
     </div>
   </section>

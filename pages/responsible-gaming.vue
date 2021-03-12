@@ -1,12 +1,8 @@
 <template>
   <section class="SupportPage SupportPage--paddings">
-    <h1 class="SupportPage-Title Title Title--type-h1">
-      responsible gaming
-    </h1>
+    <h1 class="SupportPage-Title Title Title--type-h1">responsible gaming</h1>
     <div class="SupportPage-Text">
-      <h4 class="Title">
-        HOW WE COMMIT TO RESPONSIBLE GAMING?
-      </h4>
+      <h4 class="Title">HOW WE COMMIT TO RESPONSIBLE GAMING?</h4>
       <p class="Text">
         Gambling at an online casino should always be aimed at entertainment. However, there is a
         certain percentage of people who lose control over themselves while gambling. Before
@@ -31,9 +27,7 @@
       </p>
     </div>
     <div class="SupportPage-Text">
-      <h4 class="Title">
-        HOW CAN I LIMIT MY SPEND OR LOSSES?
-      </h4>
+      <h4 class="Title">HOW CAN I LIMIT MY SPEND OR LOSSES?</h4>
       <p class="Text">
         To assist you in gambling responsibly we offer the Personal Limits feature. You can set
         limits on the amount you deposit, lose, wager, spend in one game, or on your account
@@ -51,9 +45,7 @@
         information or assistance regarding Personal Limits, please contact our support team at
         contact@ninecasino.com.
       </p>
-      <p class="Text">
-        Deposit Limit. A limit on your deposits for a day, a week, or a month.
-      </p>
+      <p class="Text">Deposit Limit. A limit on your deposits for a day, a week, or a month.</p>
       <p class="Text">
         Loss Limit. A limit on your losses in the casino for a day, a week, or a month. Please note
         the loss is based on the initial deposit and not winnings attributed to the deposited
@@ -61,17 +53,13 @@
         €1,000, you can still lose more than €10 of the €1,000 balance as it is based on the initial
         deposit instead of the winnings.
       </p>
-      <p class="Text">
-        Wager Limit. A limit on the wagered amount for a day, a week, or a month.
-      </p>
+      <p class="Text">Wager Limit. A limit on the wagered amount for a day, a week, or a month.</p>
       <p class="Text">
         Session Limit. A limit on the amount of time in minutes spent playing a game.
       </p>
     </div>
     <div class="SupportPage-Text">
-      <h4 class="Title">
-        NEED A BREATHER?
-      </h4>
+      <h4 class="Title">NEED A BREATHER?</h4>
       <p class="Text">
         Cooling-Off Limit. You can set a Cooling-Off Period for 1 week, 1 month, 3 months, or 6
         months. While the limit is active you cannot deposit to the Casino and you will be excluded
@@ -88,9 +76,7 @@
       </p>
     </div>
     <div class="SupportPage-Text">
-      <h4 class="Title">
-        WHAT IS SELF-EXCLUSION?
-      </h4>
+      <h4 class="Title">WHAT IS SELF-EXCLUSION?</h4>
       <p class="Text">
         Setting Self-exclusion lets us know that we need to take all measures to block your access
         to your account and make sure that you receive no promotional materials. You may also
@@ -105,9 +91,7 @@
       </p>
     </div>
     <div class="SupportPage-Text">
-      <h4 class="Title">
-        LET’S SEE SOME ID?
-      </h4>
+      <h4 class="Title">LET’S SEE SOME ID?</h4>
       <p class="Text">
         The Casino only accepts players who are at least 18 years old and uses all available methods
         to stop any attempts of minors to register and play at our Website. The Casino reserves the
@@ -137,9 +121,7 @@
       </ul>
     </div>
     <div class="SupportPage-Text">
-      <h4 class="Title">
-        WHAT IS REALITY CHECK?
-      </h4>
+      <h4 class="Title">WHAT IS REALITY CHECK?</h4>
       <p class="Text">
         Getting caught up is easy when you are having fun, therefore we will send you an hourly
         notification in-game to remind you of how much you have spent at the Casino. Regardless of
@@ -149,9 +131,7 @@
       </p>
     </div>
     <div class="SupportPage-Text">
-      <h4 class="Title">
-        SEEKING OUTSIDE HELP?
-      </h4>
+      <h4 class="Title">SEEKING OUTSIDE HELP?</h4>
       <p class="Text">
         You may contact any of the following organizations for consultation and support:
       </p>
@@ -162,14 +142,10 @@
           </a>
         </li>
         <li class="SupportPage-Item">
-          <a href="http://www.gamcare.org.uk" class="SupportPage-Link">
-            GamCare
-          </a>
+          <a href="http://www.gamcare.org.uk" class="SupportPage-Link"> GamCare </a>
         </li>
         <li class="SupportPage-Item">
-          <a href="https://www.gamblingtherapy.org" class="SupportPage-Link">
-            Gambling Therapy
-          </a>
+          <a href="https://www.gamblingtherapy.org" class="SupportPage-Link"> Gambling Therapy </a>
         </li>
       </ul>
     </div>

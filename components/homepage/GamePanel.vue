@@ -2,7 +2,7 @@
   <div class="GamePanel">
     <template v-if="isLoggedIn">
       <NuxtLink
-        v-if="Object.keys(this.user).length"
+        v-if="Object.keys(user.length)"
         to="/cabinet/balance"
         class="GamePanel-UserFullname"
       >

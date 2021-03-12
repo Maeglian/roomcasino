@@ -8,9 +8,7 @@
       show-on-mount
       @close="clearGameError"
     >
-      <div class="Modal-Title">
-        Can't start the game
-      </div>
+      <div class="Modal-Title">Can't start the game</div>
       <div class="Modal-Text">
         {{ gameError }}
       </div>
@@ -23,12 +21,8 @@
       show-on-mount
       @close="onCloseDepositModal"
     >
-      <div class="Modal-Title">
-        Please deposit first
-      </div>
-      <div class="Modal-Text">
-        It's a pity, but your balance is 0. Deposit now!
-      </div>
+      <div class="Modal-Title">Please deposit first</div>
+      <div class="Modal-Text">It's a pity, but your balance is 0. Deposit now!</div>
     </BaseModal>
     <div class="Games-Items">
       <Card
@@ -42,13 +36,9 @@
         @open-gamepage="openGamePage"
       />
     </div>
-    <p v-if="!games.length" class="Text Text--center">
-      Nothing was found
-    </p>
+    <p v-if="!games.length" class="Text Text--center">Nothing was found</p>
     <div v-if="games.length > gamesShowed" class="Games-Btn">
-      <button class="Btn" :class="btnClass" @click="showMoreGames()">
-        Load more games
-      </button>
+      <button class="Btn" :class="btnClass" @click="showMoreGames()">Load more games</button>
     </div>
   </div>
 </template>

@@ -1,8 +1,6 @@
 <template>
   <section class="SupportPage SupportPage--paddings">
-    <h1 class="SupportPage-Title Title Title--type-h1">
-      Bonus Terms & Conditions
-    </h1>
+    <h1 class="SupportPage-Title Title Title--type-h1">Bonus Terms & Conditions</h1>
     <p class="Text">
       All bonus offers are strictly limited to one per: person and their family, home address, email
       address, IP-address, telephone number, account number, credit or debit card number, e-wallet
@@ -90,9 +88,7 @@
     <p class="Text">
       Only one bonus can be activated at a time. The deposit bonuses cannot be combined.
     </p>
-    <p class="Text">
-      A player has the right to refuse from any bonuses from the Casino.
-    </p>
+    <p class="Text">A player has the right to refuse from any bonuses from the Casino.</p>
     <p class="Text">
       Delaying any game round in any game, including free spins features and bonus features, to a
       later time when you have no more wagering requirement and/or performing new deposit(s) while
@@ -128,12 +124,8 @@
       Jackpots, Spina Colada, The Dark Joker Rizes, The Royal Family, Tut's Twister, Vikings go to
       Hell, Vikings go Berzerk, Wicked Circus, Wolf Hunters (Yggdrasil), all Jackpot slots.
     </p>
-    <p class="Text">
-      All card games, roulette, poker and video pokers – 5% of the bet.
-    </p>
-    <p class="Text">
-      Games with live dealers are not involved in wagering.
-    </p>
+    <p class="Text">All card games, roulette, poker and video pokers – 5% of the bet.</p>
+    <p class="Text">Games with live dealers are not involved in wagering.</p>
     <p class="Text">
       When gambling with bonus funds, all the winnings requested for withdrawal pass a check prior
       to payment processing. The Casino reserves the right to request the user to confirm the
@@ -164,9 +156,7 @@
       bets when bonus funds have been forfeited, lost or wagering met and converted to cash. All the
       winnings gained during that play may be considered void.
     </p>
-    <p class="Text">
-      All bonuses are accrued at UTC time.
-    </p>
+    <p class="Text">All bonuses are accrued at UTC time.</p>
 
     <h4 class="Title">WELCOME PACKAGE</h4>
 

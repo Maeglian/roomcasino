@@ -1,8 +1,6 @@
 <template>
   <div class="CabinetPage VerificationPage">
-    <div class="CabinetPage-Title VerificationPage-Title">
-      Verification
-    </div>
+    <div class="CabinetPage-Title VerificationPage-Title">Verification</div>
     <div class="VerificationPage-Content">
       <!--      <div class="VerificationPage-Item">-->
       <!--        <div class="VerificationPage-Desc">-->
@@ -121,9 +119,7 @@
             <use xlink:href="@/assets/img/icons.svg#approve"></use>
           </svg>
           <div class="VerificationPage-Title">
-            <div class="VerificationPage-Name">
-              Documents verification
-            </div>
+            <div class="VerificationPage-Name">Documents verification</div>
             <div class="VerificationPage-Text">
               Passport, drivers license, or other official documents replacing them / until bill,
               phone bill, or bank statement, in which your name and address are fully indicated /
@@ -152,9 +148,7 @@
         </div>
         <div class="VerificationPage-Docs">
           <div v-if="userDocumentList.length" class="VerificationPage-DocsContent">
-            <div class="VerificationPage-DocsTitle">
-              Uploaded documents
-            </div>
+            <div class="VerificationPage-DocsTitle">Uploaded documents</div>
             <div v-for="doc in userDocumentList" :key="doc.id" class="VerificationPage-Doc">
               <svg
                 class="VerificationPage-Approve VerificationPage-Approve--min"
@@ -270,8 +264,8 @@ export default {
     ]),
     documentsStatus() {
       if (!this.userDocumentList.length) return 'noDocuments';
-      if (this.userDocumentList.every(doc => doc.status === 'approved')) return 'approved';
-      if (this.userDocumentList.every(doc => doc.status === 'disapproved')) return 'declined';
+      if (this.userDocumentList.every((doc) => doc.status === 'approved')) return 'approved';
+      if (this.userDocumentList.every((doc) => doc.status === 'disapproved')) return 'declined';
       return 'pending';
     },
   },

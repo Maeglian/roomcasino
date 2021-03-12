@@ -16,12 +16,8 @@
       </div>
     </modal>
     <BaseModal name="goPlay" class="CashierForm-GoPlay" :ok-btn="false" :width="300">
-      <div class="Modal-Title">
-        Congratulations!
-      </div>
-      <div class="Modal-Text">
-        Now you can play the game.
-      </div>
+      <div class="Modal-Title">Congratulations!</div>
+      <div class="Modal-Text">Now you can play the game.</div>
       <NuxtLink
         class="Btn Btn--common CashierForm-Btn"
         :to="{ path: '/', hash: '#games' }"
@@ -146,15 +142,15 @@ export default {
             },
           },
         },
-        api => {
+        (api) => {
           api.on({
             cashierInitLoad: () => {
               console.log('Cashier init load');
             },
-            update: data => {
+            update: (data) => {
               console.log('The passed in data was set', data);
             },
-            success: data => {
+            success: (data) => {
               console.log('Transaction was completed successfully', data);
               this.getProfile();
               if (this.$route.name !== 'game' && method !== 'withdrawal') this.depositIsDone = true;
@@ -164,17 +160,17 @@ export default {
                 this.getAvailableBonusList();
               }
             },
-            failure: data => console.log('Transaction failed', data),
-            isLoading: data => console.log('Data is loading', data),
-            doneLoading: data => {
+            failure: (data) => console.log('Transaction failed', data),
+            isLoading: (data) => console.log('Data is loading', data),
+            doneLoading: (data) => {
               console.log('Data has been successfully downloaded', data);
               this.cashierIsLoading = false;
             },
-            newProviderWindow: data => console.log('A new window / iframe has opened', data),
-            paymentMethodSelect: data => console.log('Payment method was selected', data),
-            paymentMethodPageEntered: data =>
+            newProviderWindow: (data) => console.log('A new window / iframe has opened', data),
+            paymentMethodSelect: (data) => console.log('Payment method was selected', data),
+            paymentMethodPageEntered: (data) =>
               console.log('New payment method page was opened', data),
-            navigate: data => console.log('Path navigation triggered', data),
+            navigate: (data) => console.log('Path navigation triggered', data),
           });
           api.css(`
             #cashier {

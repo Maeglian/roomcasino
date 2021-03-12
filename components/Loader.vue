@@ -1,9 +1,7 @@
 <template>
   <div class="Loader">
     <img class="Loader-Logo" src="@/assets/img/logo.svg" />
-    <div class="Loader-Spinner">
-      Loading...
-    </div>
+    <div class="Loader-Spinner">Loading...</div>
   </div>
 </template>
 

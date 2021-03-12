@@ -1,9 +1,5 @@
 <template>
-  <form
-    class="AuthDialog-Registration
-  AuthDialog-Form"
-    @submit.prevent="onSubmitForm"
-  >
+  <form class="AuthDialog-Registration AuthDialog-Form" @submit.prevent="onSubmitForm">
     <div class="AuthDialog-Content" :class="{ 'AuthDialog-Content--step1': step === 1 }">
       <div v-if="step === 1" class="AuthDialog-RegistrationHeader">
         <div class="AuthDialog-Title">
@@ -12,9 +8,7 @@
         </div>
         <div class="AuthDialog-Subtitle"><span class="Colored">€ 150</span></div>
       </div>
-      <div v-if="step === 2" class="AuthDialog-Text">
-        Please, fill the information below!
-      </div>
+      <div v-if="step === 2" class="AuthDialog-Text">Please, fill the information below!</div>
       <template v-for="(field, name) in fields">
         <template v-if="field.type === 'dropdown'">
           <BaseDropdown
@@ -115,8 +109,8 @@
           <div
             v-if="
               !$v[name].phoneWithPlusCheck &&
-                $v[`fieldsStep${step}`][name].tel.value.$dirty &&
-                !$v[`fieldsStep${step}`][name].tel.value.$invalid
+              $v[`fieldsStep${step}`][name].tel.value.$dirty &&
+              !$v[`fieldsStep${step}`][name].tel.value.$invalid
             "
             class="AuthDialog-Error"
           >
@@ -189,9 +183,7 @@
               </span>
             </template>
             <template v-if="name === 'phoneNumber'" #afterInput-absolute>
-              <div class="AuthDialog-PhonePlus">
-                +
-              </div>
+              <div class="AuthDialog-PhonePlus">+</div>
             </template>
           </BaseInput>
         </template>
@@ -549,12 +541,12 @@ export default {
       handler() {
         if (this.userInfo.country) {
           this.fieldsStep2.phoneNumber.code.value = this.phoneCodeList.find(
-            item => item.countryCode === this.userInfo.country.code,
+            (item) => item.countryCode === this.userInfo.country.code,
           );
         }
       },
     },
-    'fieldsStep2.birthDate.children.day.value': function(val) {
+    'fieldsStep2.birthDate.children.day.value': function (val) {
       if (this.$v.fieldsStep2.$anyDirty) {
         if (val.length === 2) {
           const el =
@@ -568,7 +560,7 @@ export default {
         }
       }
     },
-    'fieldsStep2.birthDate.children.month.value': function(val) {
+    'fieldsStep2.birthDate.children.month.value': function (val) {
       if (this.$v.fieldsStep2.$anyDirty) {
         if (val.length === 2) {
           const el =
@@ -580,7 +572,7 @@ export default {
         }
       }
     },
-    'fieldsStep2.birthDate.children.year.value': function(val) {
+    'fieldsStep2.birthDate.children.year.value': function (val) {
       if (this.$v.fieldsStep2.$anyDirty) {
         if (val.length === 4) {
           const el = this.$refs.city[0].$el;

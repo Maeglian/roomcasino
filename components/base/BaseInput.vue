@@ -18,10 +18,10 @@
     <div
       v-if="
         shouldDisplayValidation &&
-          v &&
-          v.sameAsPassword === false &&
-          v.$dirty &&
-          v.$params.sameAsPassword.type !== 'not'
+        v &&
+        v.sameAsPassword === false &&
+        v.$dirty &&
+        v.$params.sameAsPassword.type !== 'not'
       "
       class="BaseInput-Error"
       :class="errorClass"
@@ -31,10 +31,10 @@
     <div
       v-if="
         shouldDisplayValidation &&
-          v &&
-          v.sameAsPassword === false &&
-          v.$dirty &&
-          v.$params.sameAsPassword.type === 'not'
+        v &&
+        v.sameAsPassword === false &&
+        v.$dirty &&
+        v.$params.sameAsPassword.type === 'not'
       "
       class="BaseInput-Error"
       :class="errorClass"

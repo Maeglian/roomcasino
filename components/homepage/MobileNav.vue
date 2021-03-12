@@ -4,33 +4,25 @@
       <svg class="MobileNav-Toggle Toggle Toggle--colored">
         <use xlink:href="@/assets/img/icons.svg#toggle"></use>
       </svg>
-      <div class="MobileNav-Name">
-        Menu
-      </div>
+      <div class="MobileNav-Name">Menu</div>
     </button>
     <NuxtLink class="MobileNav-Item" to="/promotions">
       <svg width="17" height="16">
         <use xlink:href="@/assets/img/icons.svg#promotions"></use>
       </svg>
-      <div class="MobileNav-Name">
-        Promotions
-      </div>
+      <div class="MobileNav-Name">Promotions</div>
     </NuxtLink>
     <button class="MobileNav-Item" @click="onClickBtn()">
       <svg width="18" height="15">
         <use xlink:href="@/assets/img/icons.svg#deposit"></use>
       </svg>
-      <div class="MobileNav-Name">
-        Deposit
-      </div>
+      <div class="MobileNav-Name">Deposit</div>
     </button>
     <button v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
       <svg width="18" height="15">
         <use xlink:href="@/assets/img/icons.svg#support"></use>
       </svg>
-      <div class="MobileNav-Name">
-        Support
-      </div>
+      <div class="MobileNav-Name">Support</div>
     </button>
     <!--    <div class="MobileNav-Item" @click="toggleNotificationsPanel">-->
     <!--      <div class="MobileNav-Messages">-->

@@ -1,15 +1,9 @@
 <template>
   <div class="CabinetPage LimitsPage">
-    <div class="CabinetPage-Title LimitsPage-Title">
-      Gambling limits
-    </div>
+    <div class="CabinetPage-Title LimitsPage-Title">Gambling limits</div>
     <button class="CabinetPage-AddBtn" @click="showCreateLimitsDialog()">
-      <span class="CabinetPage-AddBtnText">
-        Create limits
-      </span>
-      <span class="CabinetPage-AddBtnPlus CabinetPage-AddBtnPlus--right">
-        +
-      </span>
+      <span class="CabinetPage-AddBtnText"> Create limits </span>
+      <span class="CabinetPage-AddBtnPlus CabinetPage-AddBtnPlus--right"> + </span>
     </button>
     <div class="LimitsPage-Content">
       <div v-if="!limits.length" class="LimitsPage-Text CabinetPage-Text">

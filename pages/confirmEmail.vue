@@ -16,9 +16,7 @@
           Congratulations! Your email was successfully confirmed.
         </template>
       </div>
-      <NuxtLink to="/" class="Btn Btn--common ConfirmEmailPage-Btn">
-        Go to the home page
-      </NuxtLink>
+      <NuxtLink to="/" class="Btn Btn--common ConfirmEmailPage-Btn"> Go to the home page </NuxtLink>
     </div>
   </section>
 </template>

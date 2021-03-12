@@ -16,9 +16,7 @@
         @choose-tab="onChooseTab"
       />
       <div v-if="!tabsSectionIsActive || width >= 768" class="FaqPage-Answers">
-        <button class="FaqPage-Back" @click="tabsSectionIsActive = true">
-          Back
-        </button>
+        <button class="FaqPage-Back" @click="tabsSectionIsActive = true">Back</button>
         <h2 class="Title Title--type-h1 FaqPage-SectionTitle">
           {{ items[activeItem].title }}
         </h2>
@@ -184,7 +182,7 @@ export default {
   computed: {
     ...mapState(['width']),
     tabs() {
-      return Object.entries(this.items).map(item => ({
+      return Object.entries(this.items).map((item) => ({
         name: item[1].title,
         value: item[0],
       }));

@@ -1,8 +1,6 @@
 <template>
   <section class="PaymentPage Wrapper">
-    <h1 class="Title Title--type-h1 PaymentPage-Title">
-      Payments
-    </h1>
+    <h1 class="Title Title--type-h1 PaymentPage-Title">Payments</h1>
     <p class="Text PaymentPage-Text">
       We are proud to be a safe multi-currency online casino. Currently, we accept the following
       currencies: <br />
@@ -11,9 +9,7 @@
     </p>
     <div class="PaymentPage-Content">
       <div class="PaymentPage-Deposit">
-        <h2 class="Title Title--type-h2 PaymentPage-Subtitle">
-          DEPOSIT METHODS
-        </h2>
+        <h2 class="Title Title--type-h2 PaymentPage-Subtitle">DEPOSIT METHODS</h2>
         <div class="PaymentPage-List">
           <div v-for="payment in paymentsMethods" :key="payment.alt" class="PaymentPage-Item">
             <div class="PaymentPage-Logo">
@@ -49,9 +45,7 @@
       </div>
 
       <div class="PaymentPage-Withdrawal">
-        <h2 class="Title Title--type-h2 PaymentPage-Subtitle">
-          WITHDRAWAL METHODS
-        </h2>
+        <h2 class="Title Title--type-h2 PaymentPage-Subtitle">WITHDRAWAL METHODS</h2>
         <div class="PaymentPage-List">
           <div v-for="payment in paymentsMethods" :key="payment.alt" class="PaymentPage-Item">
             <div class="PaymentPage-Logo">

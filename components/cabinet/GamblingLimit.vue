@@ -29,9 +29,9 @@
       <div
         v-if="
           item.type === 'depositLimit' ||
-            item.type === 'wagerLimit' ||
-            item.type === 'lossLimit' ||
-            item.type === 'coolingOffLimit'
+          item.type === 'wagerLimit' ||
+          item.type === 'lossLimit' ||
+          item.type === 'coolingOffLimit'
         "
         class="GamblingLimit-State"
       >
@@ -71,8 +71,8 @@
           <template
             v-if="
               item.type === 'depositLimit' ||
-                item.type === 'wagerLimit' ||
-                item.type === 'lossLimit'
+              item.type === 'wagerLimit' ||
+              item.type === 'lossLimit'
             "
           >
             {{ item.targetValue - item.value }} of {{ item.targetValue }}
@@ -152,7 +152,7 @@ export default {
       return this.item.type === 'depositLimit' ||
         this.item.type === 'wagerLimit' ||
         this.item.type === 'lossLimit'
-        ? `${LIMIT_PERIODS.find(period => period.value === this.item.period).name} limit`
+        ? `${LIMIT_PERIODS.find((period) => period.value === this.item.period).name} limit`
         : LIMIT_DETAILS[this.item.type].title;
     },
     color() {

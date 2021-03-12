@@ -56,7 +56,7 @@ export default {
               class: `${this.sectionClass} GamesSlider-Section`,
             },
           },
-          items.map(item => {
+          items.map((item) => {
             return h(Card, {
               props: {
                 imgUrl: item.imageUrl,
