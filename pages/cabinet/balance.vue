@@ -14,7 +14,7 @@
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th"></div>
       </div>
-      <div v-for="(acc, i) in userAccounts" :key="i" class="Table-Row CabinetPage-Row">
+      <div v-for="(acc, i) in sortedAccountList" :key="i" class="Table-Row CabinetPage-Row">
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Active">
           <label class="CabinetPage-Label">
             {{ acc.active ? 'Active' : 'Select' }}
@@ -94,11 +94,8 @@ import { mapMutations, mapState, mapActions, mapGetters } from 'vuex';
 export default {
   name: 'BalancePage',
   computed: {
-    ...mapState(['user', 'serverError']),
-    ...mapGetters(['moreCurrencyAccounts']),
-    userAccounts() {
-      return this.user.accountList;
-    },
+    ...mapState(['serverError']),
+    ...mapGetters(['moreCurrencyAccounts', 'sortedAccountList']),
   },
   methods: {
     ...mapMutations(['setCashoutTrue', 'clearServerError']),
