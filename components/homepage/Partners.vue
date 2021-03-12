@@ -29,7 +29,7 @@
         <img class="Partners-Image Partners-Image--height" src="@/assets/img/interac.svg" />
       </div>
       <div class="Partners-Partner">
-        <img class="Partners-Image" src="@/assets/img/astropay.png" />
+        <img class="Partners-Image" src="@/assets/img/astropay.svg" />
       </div>
       <div class="Partners-Partner">
         <img class="Partners-Image" src="@/assets/img/inpay.png" />
