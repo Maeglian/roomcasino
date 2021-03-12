@@ -6,7 +6,7 @@ export default {
   },
   watch: {
     '$store.state.user.email': function () {
-      if (this.user.email) window.LC_API.set_visitor_email(this.user.email);
+      if (process.client && this.user.email) window.LC_API.set_visitor_email(this.user.email);
     },
   },
   mounted() {
