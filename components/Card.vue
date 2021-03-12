@@ -95,17 +95,7 @@
     </div>
     <div v-if="showFooter" class="Card-Footer">
       <div class="Card-Provider">
-        <img
-          :src="
-            require(`@/assets/img/${gameInfo.gameProducer
-              .trim()
-              .toLowerCase()
-              .split(' ')
-              .join('')}.svg`)
-          "
-          alt=""
-          class="Card-ProviderIcon"
-        />
+        <img :src="gameInfo.iconUrl" alt="" class="Card-ProviderIcon" />
         <div class="Card-ProviderName">
           {{ gameInfo.gameProducer }}
         </div>
