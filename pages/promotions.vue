@@ -185,7 +185,7 @@ export default {
     @media (min-width: $screen-m) {
       background-image: url(../assets/img/promotions-bg-1248.png);
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 100% auto;
     }
   }
 }
