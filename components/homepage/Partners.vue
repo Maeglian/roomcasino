@@ -1,6 +1,6 @@
 <template>
   <div class="Partners">
-    <client-only v-if="width < 590">
+    <client-only v-if="width < 690">
       <marquee-text :duration="durationSpeed">
         <div class="Partners-Wrapper">
           <div class="Partners-Partner">
