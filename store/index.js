@@ -49,6 +49,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  chatIsLoaded: false,
   initialLoadingIsDone: {
     geoInfo: false,
     countries: false,
@@ -783,6 +784,9 @@ export const getters = {
 };
 
 export const mutations = {
+  setChatIsLoaded: (state) => {
+    state.chatIsLoaded = true;
+  },
   setHeroBannerIsLoaded: (state) => {
     state.heroBannerIsLoaded = true;
   },

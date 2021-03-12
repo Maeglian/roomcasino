@@ -45,21 +45,22 @@ import { mapGetters, mapMutations, mapState } from 'vuex';
 export default {
   name: 'MobileNav',
   mixins: [showAuthDialog],
-  data() {
-    return {
-      chatIsLoaded: false,
-    };
-  },
   computed: {
-    ...mapState(['navIsOpen', 'notificationsPanelIsOpen']),
+    ...mapState(['navIsOpen', 'notificationsPanelIsOpen', 'chatIsLoaded']),
     ...mapGetters(['activeAccount', 'isNewNotifications']),
   },
   mounted() {
     if (!window.LC_API) window.LC_API = {};
-    window.LC_API.on_after_load = () => (this.chatIsLoaded = true);
+    window.LC_API.on_after_load = () => this.setChatIsLoaded();
   },
   methods: {
-    ...mapMutations(['openNav', 'closeNav', 'openNotificationsPanel', 'closeNotificationsPanel']),
+    ...mapMutations([
+      'openNav',
+      'closeNav',
+      'openNotificationsPanel',
+      'closeNotificationsPanel',
+      'setChatIsLoaded',
+    ]),
     toggleNav() {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
