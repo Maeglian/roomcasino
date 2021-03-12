@@ -86,6 +86,7 @@ export default {
 <style lang="scss">
 .MobileNav {
   position: fixed;
+  position: -webkit-sticky;
   bottom: 0;
   z-index: 100;
   display: flex;

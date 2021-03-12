@@ -31,14 +31,9 @@
       @click="onOpen"
     >
       <img
-        v-if="!providersWithoutIcons.includes(providerActive.name)"
+        v-if="providerActive.iconUrl"
         class="ProvidersMenu-ProviderIcon"
-        :src="
-          require(`@/assets/img/${providerActive.name
-            .toLowerCase()
-            .split(' ')
-            .join('')}.svg`)
-        "
+        :src="providerActive.iconUrl"
         alt=""
       />
       <span class="ProvidersMenu-ActiveProvider">
@@ -57,17 +52,14 @@
         @click="onChooseProvider(gameProducerList[i])"
       >
         <img
-          v-if="!providersWithoutIcons.includes(gameProducerList[i].name)"
+          v-if="gameProducerList[i].iconUrl"
           class="ProvidersMenu-ProviderIcon"
-          :src="
-            require(`@/assets/img/${gameProducerList[i].name
-              .toLowerCase()
-              .split(' ')
-              .join('')}.svg`)
-          "
-          alt=""
+          :src="gameProducerList[i].iconUrl"
+          :alt="gameProducerList[i].name"
         />
-        {{ gameProducerList[i].name }}
+        <span class="ProvidersMenu-ProviderName">
+          {{ gameProducerList[i].name }}
+        </span>
       </button>
       <button
         v-if="width > 767 && showMoreProviders"
@@ -90,21 +82,11 @@
           class="ProvidersMenu-AddProvider"
           :class="{
             'ProvidersMenu-Provider--active': providerActive.name === item.name,
-            'ProvidersMenu-Provider--noIcon': providersWithoutIcons.includes(item.name),
+            'ProvidersMenu-Provider--noIcon': !item.iconUrl,
           }"
           @click="onChooseProvider(item)"
         >
-          <img
-            v-if="!providersWithoutIcons.includes(item.name)"
-            class="ProvidersMenu-ProviderIcon"
-            :src="
-              require(`@/assets/img/${item.name
-                .toLowerCase()
-                .split(' ')
-                .join('')}.svg`)
-            "
-            alt=""
-          />
+          <img v-if="item.iconUrl" class="ProvidersMenu-ProviderIcon" :src="item.iconUrl" alt="" />
           {{ item.name }}
         </button>
       </div>
@@ -323,7 +305,7 @@ export default {
     width: 20px;
     margin-right: 10px;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-l) {
       width: 25px;
       margin-right: 3px;
     }
@@ -331,6 +313,11 @@ export default {
     @media (min-width: $screen-l) {
       margin-right: 10px;
     }
+  }
+
+  &-ProviderName {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &-Filter {

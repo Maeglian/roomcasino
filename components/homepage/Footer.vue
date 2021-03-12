@@ -9,6 +9,15 @@
         <NuxtLink class="Link Footer-Link" to="/promotions">
           Promotion
         </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/about-us">
+          About us
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/faq">
+          Faq
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/bitcoins">
+          About BTC
+        </NuxtLink>
         <!--        <NuxtLink class="Link Footer-Link" to="/vip">-->
         <!--          VIP rewards-->
         <!--        </NuxtLink>-->
@@ -27,12 +36,7 @@
         <NuxtLink class="Link Footer-Link" to="/privacy-policy">
           Privacy policy
         </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/about-us">
-          About us
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/faq">
-          Faq
-        </NuxtLink>
+
         <!--        <NuxtLink class="Link Footer-Link" to="/payment-methods">-->
         <!--          Payment methods-->
         <!--        </NuxtLink>-->

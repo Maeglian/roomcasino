@@ -98,8 +98,7 @@ export default {
     border: none;
 
     @media (min-width: $screen-m) {
-      padding: 0;
-      padding-left: 20px;
+      padding: 0 5px 0 20px;
     }
 
     @media (min-width: $screen-l) {

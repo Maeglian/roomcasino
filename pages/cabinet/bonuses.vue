@@ -180,8 +180,11 @@ export default {
   }
 
   &-Bonus {
-    margin-bottom: 4px;
     text-transform: capitalize;
+
+    @media (min-width: $screen-m) {
+      margin-bottom: 4px;
+    }
 
     &:last-child {
       margin-bottom: 0;
