@@ -170,7 +170,7 @@ export default {
       default: false,
     },
     inputClass: {
-      type: [String, Boolean],
+      type: [String, Boolean, Array, Object],
       required: false,
       default: false,
     },
