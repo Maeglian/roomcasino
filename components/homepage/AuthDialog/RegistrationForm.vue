@@ -67,12 +67,18 @@
             error-class="AuthDialog-Error"
             :input-type="item.type"
             :input-class="
-              $v[`fieldsStep${step}`][name].children.$dirty && $v[name].$invalid
+              $v[`fieldsStep${step}`][name].children.$anyDirty &&
+              !$v.fieldsStep2.birthDate.children.$invalid &&
+              (!$v[name].dateCheck || !$v[name].ageCheck)
                 ? 'BaseInput-Input--error AuthDialog-Field AuthDialog-Input'
                 : 'AuthDialog-Field AuthDialog-Input'
             "
             :v="$v[`fieldsStep${step}`][name].children[itemName].value"
             :inputmode="item.inputmode"
+            :should-display-field-is-valid="
+              $v.fieldsStep2.birthDate.children.$invalid ||
+              ($v[name].dateCheck && $v[name].ageCheck)
+            "
           >
             <template #beforeInput-absolute>
               <span
@@ -139,13 +145,20 @@
             v-model="field.tel.value"
             class="AuthDialog-Row"
             :input-type="field.tel.type"
-            input-class="AuthDialog-Field AuthDialog-Input"
+            :input-class="[
+              'AuthDialog-Field AuthDialog-Input',
+              {
+                'BaseInput-Input--error':
+                  $v[`fieldsStep${step}`][name].tel.value.$dirty && $v.phoneNumber.$invalid,
+              },
+            ]"
             error-class="AuthDialog-Error"
             :autocorrect="field.tel.autocorrect"
             :autocomplete="field.tel.autocomplete"
             :pattern="field.tel.pattern"
             :inputmode="field.tel.inputmode"
             :v="$v[`fieldsStep${step}`][name].tel.value"
+            :should-display-field-is-valid="!$v.phoneNumber.$invalid"
           >
             <template #beforeInput-absolute>
               <span
@@ -172,6 +185,7 @@
             :pattern="field.pattern"
             :inputmode="field.inputmode"
             :v="$v[`fieldsStep${step}`][name].value"
+            should-display-field-is-valid
           >
             <template #beforeInput-absolute>
               <span
@@ -236,6 +250,9 @@ import {
   dateCheck,
   phoneWithPlusCheck,
   postalCodeCheck,
+  dayCheck,
+  monthCheck,
+  yearCheck,
 } from '@/utils/formCheckers';
 import RegistrationBonus from '@/components/homepage/RegistrationBonus';
 import BaseButton from '@/components/base/BaseButton';
@@ -483,16 +500,19 @@ export default {
           day: {
             value: {
               required,
+              dayCheck,
             },
           },
           month: {
             value: {
               required,
+              monthCheck,
             },
           },
           year: {
             value: {
               required,
+              yearCheck,
             },
           },
         },
@@ -548,7 +568,7 @@ export default {
     },
     'fieldsStep2.birthDate.children.day.value': function (val) {
       if (this.$v.fieldsStep2.$anyDirty) {
-        if (val.length === 2) {
+        if (val.length === 2 && !this.$v.fieldsStep2.birthDate.children.day.value.$invalid) {
           const el =
             this.fieldsStep2.birthDate.children.month.value.length !== 2
               ? this.$refs.month[0].$el
@@ -562,7 +582,7 @@ export default {
     },
     'fieldsStep2.birthDate.children.month.value': function (val) {
       if (this.$v.fieldsStep2.$anyDirty) {
-        if (val.length === 2) {
+        if (val.length === 2 && !this.$v.fieldsStep2.birthDate.children.month.value.$invalid) {
           const el =
             this.fieldsStep2.birthDate.children.year.value.length !== 4
               ? this.$refs.year[0].$el
@@ -574,7 +594,11 @@ export default {
     },
     'fieldsStep2.birthDate.children.year.value': function (val) {
       if (this.$v.fieldsStep2.$anyDirty) {
-        if (val.length === 4) {
+        if (
+          val.length === 4 &&
+          !this.$v.fieldsStep2.birthDate.children.year.value.$invalid &&
+          !this.$v.birthDate.$invalid
+        ) {
           const el = this.$refs.city[0].$el;
           const input = el.querySelector('input');
           input.focus();
