@@ -127,7 +127,7 @@
             autocomplete
             item-name="phoneCode"
             key-name="countryCode"
-            class="AuthDialog-Field AuthDialog-Dropdown AuthDialog-Dropdown--phoneCode AuthDialog-Row"
+            class="AuthDialog-Field AuthDialog-Dropdown AuthDialog-Dropdown--phoneCode"
             :class="{ 'AuthDialog-Field--error': $v[`fieldsStep${step}`][name].code.value.$error }"
             :items="phoneCodeList"
             :placeholder="field.code.placeholder"

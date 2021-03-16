@@ -255,6 +255,8 @@
   }
 
   &-Dropdown--phoneCode {
+    display: flex;
+    justify-content: space-between;
     width: 170px;
     margin-right: 4px;
 
