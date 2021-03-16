@@ -33,6 +33,7 @@ export default {
   --color-main2: #eb1c2a;
   --color-badge: #0734a5;
   --color-text-main: #fff;
+  --color-text-faded: #aeb3c7;
   --color-text-ghost: #52586f;
   --color-text-ghost-lighter: #6e7382;
   --color-text-ghost-darker: #737681;

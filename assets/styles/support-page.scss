@@ -23,7 +23,7 @@
     font-size: 14px;
     line-height: 1.6;
     text-align: center;
-    color: var(--color-text-ghost);
+    color: var(--color-text-faded);
 
     @media (min-width: $screen-m) {
       width: 73%;
@@ -60,7 +60,7 @@
   &-CardText {
     font-size: 14px;
     line-height: 1.6;
-    color: var(--color-text-ghost);
+    color: var(--color-text-faded);
   }
 
   &-Offers {

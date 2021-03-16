@@ -104,7 +104,7 @@ export default {
     font-size: 14px;
     font-weight: 400;
     line-height: 1.6;
-    color: var(--color-text-ghost);
+    color: var(--color-text-faded);
 
     @media (min-width: $screen-m) {
       padding-top: 14px;
