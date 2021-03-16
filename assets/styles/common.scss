@@ -189,7 +189,7 @@ a {
     position: absolute;
     top: 50%;
     width: 100%;
-    height: 1px;
+    height: 2px;
     background: #6A6E7F;
   }
 
@@ -210,6 +210,14 @@ a {
   &-Close {
     margin-bottom: 5px;
     margin-left: auto;
+
+    &--thick {
+
+      &:before, &:after {
+        height: 3px;
+        background: var(--color-text-main);
+      }
+    }
   }
 }
 

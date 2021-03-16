@@ -10,7 +10,7 @@
       @closed="onCloseCashierForm()"
     >
       <div class="Modal">
-        <div class="Close Modal-Close" @click="$modal.hide('cashier')" />
+        <div class="Close Modal-Close Modal-Close--thick" @click="$modal.hide('cashier')" />
         <Loader v-if="billingSessionIsLoading || cashierIsLoading" class="CashierForm-Loader" />
         <div id="cashier" class="CashierForm-Content"></div>
       </div>
