@@ -51,36 +51,100 @@
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
-          Certain games may be unavailable in certain jurisdictions, as required by policies of game
-          providers which may change from time to time. NetEnt games are unavailable for
-          Afghanistan, Albania, Algeria, Angola, Australia, Bahamas, Botswana, Belgium, Bulgaria,
-          Colombia, Croatia, Czech Republic, Denmark, Estonia, Ecuador, Ethiopia, France, Ghana,
-          Guyana, Hong Kong, Italy, Iran, Iraq, Israel, Kuwait, Latvia, Lithuania, Mexico, Namibia,
-          Nicaragua, North Korea, Pakistan, Panama, Philippines, Portugal, Romania, Singapore,
-          Spain, Sweden, Switzerland, Sudan, Syria, Taiwan, Trinidad and Tobago, Tunisia, Uganda,
-          United Kingdom, United States of America, Yemen, Zimbabwe. In addition to the above,
-          Street Fighter Video Slot is not available for the following countries: Anguilla, Antigua
-          & Barbuda, Argentina, Aruba, Barbados, Bahamas, Belize, Bermuda, Bolivia, Bonaire, Brazil,
-          British Virgin Islands, Canada, Cayman Islands, China, Chile, Clipperton Island, Columbia,
-          Costa Rica, Cuba, Curacao, Dominica, Dominican Republic, El Salvador, Greenland, Grenada,
-          Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica, Japan, Martinique, Mexico,
-          Montserrat, Navassa Island, Paraguay, Peru, Puerto Rico, Saba, Saint Barthelemy, Saint
-          Eustatius, Saint Kitts and Nevis, Saint Lucia, Saint Maarten, Saint Martin, Saint Pierre
-          and Miquelon, Saint Vincent and the Grenadines, South Korea, Suriname, Turks and Caicos
-          Islands, United States of America, Uruguay, US Virgin Islands, Venezuela. Additionally,
-          Universal Monsters (Dracula, Creature from the Black Lagoon, Phantoms Curse and The
-          Invisible Man), are only available in the following territories: Andorra, Armenia,
+          Please bear in mind some games may be unavailable in certain jurisdictions, as required by
+          the policies of game providers, which may change from time to time.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Using VPN to bypass provider’s block is strictly prohibited and may lead to confiscation
+          of winnings.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          NetEnt games are unavailable for Afghanistan, Albania, Algeria, Angola, Australia,
+          Bahamas, Botswana, Belgium, Bulgaria, Colombia, Croatia, Czech Republic, Denmark, Estonia,
+          Ecuador, Ethiopia, France, Ghana, Guyana, Hong Kong, Italy, Iran, Iraq, Israel, Kuwait,
+          Latvia, Lithuania, Mexico, Namibia, Nicaragua, North Korea, Pakistan, Panama, Philippines,
+          Portugal, Romania, Singapore, Spain, Sweden, Switzerland, Sudan, Syria, Taiwan, Trinidad
+          and Tobago, Tunisia, Uganda, United Kingdom, United States of America, Yemen, Zimbabwe.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          In addition to the above, Street Fighter Video Slot is not available for the following
+          countries: Anguilla, Antigua & Barbuda, Argentina, Aruba, Barbados, Bahamas, Belize,
+          Bermuda, Bolivia, Bonaire, Brazil, British Virgin Islands, Canada, Cayman Islands, China,
+          Chile, Clipperton Island, Columbia, Costa Rica, Cuba, Curacao, Dominica, Dominican
+          Republic, El Salvador, Greenland, Grenada, Guadeloupe, Guatemala, Guyana, Haiti, Honduras,
+          Jamaica, Japan, Martinique, Mexico, Montserrat, Navassa Island, Paraguay, Peru, Puerto
+          Rico, Saba, Saint Barthelemy, Saint Eustatius, Saint Kitts and Nevis, Saint Lucia, Saint
+          Maarten, Saint Martin, Saint Pierre and Miquelon, Saint Vincent and the Grenadines, South
+          Korea, Suriname, Turks and Caicos Islands, United States of America, Uruguay, US Virgin
+          Islands, Venezuela.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Fashion TV Video Slot is not available in the following countries: Cuba, Jordan, Turkey,
+          Saudi Arabia.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Planet of the Apes Video Slot is not available in the following territories: Azerbaijan,
+          China, India, Malaysia, Qatar, Russia, Thailand, Turkey, Ukraine.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Vikings Video Slot is not available in the additional jurisdictions: Azerbaijan, Cambodia,
+          Canada, China, France, India, Indonesia, Laos, Malaysia, Myanmar, Papua New Guinea, Qatar,
+          Russia, South Korea, Thailand, Turkey, Ukraine, United States of America.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Narcos Video Slot is not available in the following territories: Indonesia, South Korea.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Additionally, Universal Monsters (Dracula, Creature from the Black Lagoon, Phantoms Curse
+          and The Invisible Man), are only available in the following territories: Andorra, Armenia,
           Azerbaijan, Belarus, Bosnia and Herzegovina, Georgia, Iceland, Liechtenstein, Moldova,
           Monaco, Montenegro, Norway, Russia, San Marino, Serbia, Ukraine, North Macedonia, Turkey,
           Austria, Cyprus, Finland, Germany, Greece, Hungary, Ireland, Luxembourg, Malta,
-          Netherlands, Poland, Slovakia and Slovenia. Players from the following countries are not
-          eligible to win any jackpots from jackpot games offered by NetEnt (such as but not limited
-          to Mega Fortune): Australia, Azerbaijan, China, Denmark, India, Israel, Italy, Japan,
-          Malaysia, Qatar, Russia, Spain, Thailand, Tunisia, Turkey, United Arab Emirates, Ukraine.
-          The Casino will make reasonable efforts to prevent players from these countries to reach
-          the games, but if players from any of the stated countries would win the jackpot, the
-          jackpot win will be annulled. Players from Canada are not eligible to play games provided
-          by NYX.
+          Netherlands, Poland, Slovakia and Slovenia.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Players from the following countries are not eligible to win any jackpots from jackpot
+          games offered by NetEnt (such as but not limited to Mega Fortune and Arabian Nights):
+          Australia, Azerbaijan, China, Denmark, India, Israel, Italy, Japan, Malaysia, Qatar,
+          Russia, Spain, Thailand, Tunisia, Turkey, United Arab Emirates, Ukraine. The Casino will
+          make reasonable efforts to prevent players from these countries to reach the games, but if
+          players from any of the stated countries should win the jackpot, the jackpot win will be
+          annulled.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Players from Australia are not eligible to play the games from Amatic.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Players from the following countries are not eligible to play the games from Microgaming:
+          USA, Singapore, Italy, Denmark, South Africa, France, UK, Spain, Belgium, Australia,
+          Taiwan, Philippines.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Players from Canada are not eligible to play the games from NYX (NextGen).
         </p>
       </li>
     </ul>
