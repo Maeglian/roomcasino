@@ -439,9 +439,7 @@ export default {
         phoneNumber: { code, tel },
       } = this.fieldsStep2;
 
-      if (!code.value) return '';
-
-      const codeNumber = code.value.phoneCode.replace(' ', '');
+      const codeNumber = code.value ? code.value.phoneCode.replace(' ', '') : '';
 
       return codeNumber + tel.value;
     },
