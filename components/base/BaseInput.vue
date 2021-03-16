@@ -77,6 +77,27 @@
       Must be numeric
     </div>
     <div
+      v-if="shouldDisplayValidation && v && v.dayCheck === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      Day is invalid
+    </div>
+    <div
+      v-if="shouldDisplayValidation && v && v.monthCheck === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      Month is invalid
+    </div>
+    <div
+      v-if="shouldDisplayValidation && v && v.yearCheck === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      Year is invalid
+    </div>
+    <div
       v-if="shouldDisplayValidation && v && v.alphaNum === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
@@ -105,7 +126,13 @@
       Input positive number
     </div>
     <slot name="beforeInput-relative"></slot>
-    <div class="BaseInput-Wrapper" :class="wrapperClass">
+    <div
+      class="BaseInput-Wrapper"
+      :class="[
+        wrapperClass,
+        { 'BaseInput-Wrapper--valid': shouldDisplayFieldIsValid && !v.$invalid },
+      ]"
+    >
       <slot name="beforeInput-absolute"></slot>
       <input
         :id="inputId"
@@ -197,6 +224,11 @@ export default {
       isRequired: false,
       default: true,
     },
+    shouldDisplayFieldIsValid: {
+      type: Boolean,
+      isRequired: false,
+      default: false,
+    },
     v: {
       type: [Object, Boolean],
       required: false,
@@ -225,6 +257,20 @@ export default {
     position: relative;
     width: 100%;
     height: 100%;
+
+    &--valid {
+      &:after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 4px);
+        right: 18px;
+        width: 11px;
+        height: 8px;
+        background-image: url('~@/assets/img/check.svg');
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+      }
+    }
   }
 
   &-Input {
@@ -247,6 +293,13 @@ export default {
   &-Error {
     font-size: 10px;
     color: var(--color-error);
+  }
+
+  &-Check {
+    position: absolute;
+    top: calc(50% - 4px);
+    right: 18px;
+    height: 8px;
   }
 }
 </style>
