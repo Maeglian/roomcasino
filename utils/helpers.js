@@ -50,3 +50,24 @@ export const deleteObjValuesFromLocalStorage = (obj) => {
 export const findValInArr = (val, arr) => {
   return arr.find((item) => item.value === val);
 };
+
+export const searchInArr = (str, arr, itemName) => {
+  return arr
+    .filter((item) => {
+      if (item[itemName]) return item[itemName].toLowerCase().includes(str);
+      return item.toLowerCase().includes(str);
+    })
+    .sort((a, b) => {
+      console.log(
+        str,
+        a[itemName],
+        a[itemName].toLowerCase().indexOf(str),
+        b[itemName],
+        b[itemName].toLowerCase().indexOf(str),
+      );
+      if (a[itemName].toLowerCase().indexOf(str) > b[itemName].toLowerCase().indexOf(str)) return 1;
+      if (a[itemName].toLowerCase().indexOf(str) === b[itemName].toLowerCase().indexOf(str))
+        return 0;
+      return -1;
+    });
+};
