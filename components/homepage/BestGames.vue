@@ -21,12 +21,19 @@
         v-click-outside="onClickOutsideTabs"
         class="DefaultGames-Tabs"
       >
-        <button
+        <NuxtLink
           v-for="(tab, i) in tabs"
           :key="tab.name"
-          class="DefaultGames-Tab"
           :class="{ 'DefaultGames-Tab--active': tabActive.name === tab.name }"
-          @click="onChooseTab(i)"
+          :to="{
+            name: 'index-games-gameCategory',
+            params: {
+              gameCategory: tab.type,
+              producer: providerActive.name === 'All providers' ? false : providerActive.name,
+            },
+          }"
+          class="DefaultGames-Tab"
+          @click.native="onChooseTab(i)"
         >
           <div class="DefaultGames-Icon">
             <svg :class="`DefaultGames-Icon--${tab.icon}`">
@@ -36,7 +43,7 @@
           <div class="DefaultGames-Name">
             {{ tab.name }}
           </div>
-        </button>
+        </NuxtLink>
       </div>
       <div class="ProvidersSection DefaultGames-Providers">
         <Search v-model="searched" class="ProvidersSection-Search DefaultGames-Search" />
@@ -55,20 +62,15 @@
           btn-class="Btn--common Btn--dark"
         />
       </div>
-      <Loader v-if="gamesAreLoading" />
-      <template v-else>
-        <div class="Title Title--type-h2 Cards-Title">
-          {{ title }}
-        </div>
-        <Games
-          class="DefaultGames-Cards"
-          :games="games"
-          :games-to-show="24"
-          btn-class="Btn--common Btn--dark"
-        />
-      </template>
+      <div class="Title Title--type-h2 Cards-Title">
+        {{ title }}
+      </div>
+      <Nuxt />
     </section>
-    <section v-if="tabActive.name !== 'All games'" class="DefaultGames">
+    <section
+      v-if="tabActive.type !== 'all' || providerActive.name !== 'All providers'"
+      class="DefaultGames"
+    >
       <Loader v-if="defaultGamesAreLoading" />
       <div class="Title Title--type-h2 Cards-Title">All games</div>
       <Games
@@ -79,27 +81,10 @@
       />
     </section>
   </div>
-  <!--    <section class="NewGames">-->
-  <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
-  <!--        New games-->
-  <!--      </div>-->
-  <!--      <Games-->
-  <!--        class="DefaultGames-Cards NewGames-Cards"-->
-  <!--        :games="fakedNewGames"-->
-  <!--        :games-to-show="12"-->
-  <!--        :btn-class="'Btn&#45;&#45;common Btn&#45;&#45;dark'"-->
-  <!--      />-->
-  <!--    </section>-->
-  <!--    <section class="LiveGames">-->
-  <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">-->
-  <!--        Live games-->
-  <!--      </div>-->
-  <!--      <Games class="DefaultGames-Cards NewGames-Cards" :games="liveGames" :gamesToShow="12" btnClass="Btn--dark" />-->
-  <!--    </section>-->
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+import { mapState, mapGetters, mapMutations } from 'vuex';
 import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
@@ -121,109 +106,10 @@ export default {
     return {
       listIsOpen: false,
       tabs: GAME_TYPES,
-      tabActive: GAME_TYPES[1],
+      tabActive:
+        GAME_TYPES.find(game => this.$route.params.gameCategory === game.type) || GAME_TYPES[0],
       providerActive: DEFAULT_PROVIDER,
       searched: '',
-      newGames: [
-        {
-          img: 'game1.png',
-          badge: '',
-        },
-        {
-          img: 'game2.png',
-          badge: 'new',
-        },
-        {
-          img: 'game3.png',
-          badge: '',
-        },
-        {
-          img: 'game4.png',
-          badge: 'best',
-        },
-        {
-          img: 'game5.png',
-          badge: '',
-        },
-        {
-          img: 'game6.png',
-          badge: 'new',
-        },
-        {
-          img: 'game7.png',
-          badge: '',
-        },
-        {
-          img: 'game8.png',
-          badge: 'new',
-        },
-        {
-          img: 'game9.png',
-          badge: 'best',
-        },
-        {
-          img: 'game1.png',
-          badge: '',
-        },
-        {
-          img: 'game2.png',
-          badge: '',
-        },
-        {
-          img: 'game3.png',
-          badge: 'new',
-        },
-      ],
-      liveGames: [
-        {
-          img: 'game9.png',
-          badge: '',
-        },
-        {
-          img: 'game8.png',
-          badge: '',
-        },
-        {
-          img: 'game7.png',
-          badge: 'new',
-        },
-        {
-          img: 'game6.png',
-          badge: 'best',
-        },
-        {
-          img: 'game5.png',
-          badge: '',
-        },
-        {
-          img: 'game4.png',
-          badge: 'best',
-        },
-        {
-          img: 'game3.png',
-          badge: '',
-        },
-        {
-          img: 'game2.png',
-          badge: '',
-        },
-        {
-          img: 'game1.png',
-          badge: 'best',
-        },
-        {
-          img: 'game8.png',
-          badge: '',
-        },
-        {
-          img: 'game7.png',
-          badge: '',
-        },
-        {
-          img: 'game6.png',
-          badge: 'new',
-        },
-      ],
     };
   },
   computed: {
@@ -255,9 +141,6 @@ export default {
       return 'All games';
     },
   },
-  created() {
-    this.getGames(this.gamesParams);
-  },
   mounted() {
     window.dga.connect(PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID);
     window.dga.onConnect = () => window.dga.available(PRAGMATIC_CASINOID);
@@ -276,18 +159,22 @@ export default {
   },
   methods: {
     ...mapMutations(['setDgaInfo']),
-    ...mapActions(['getGames']),
     onChooseTab(i) {
       this.searched = '';
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
-      this.getGames(this.gamesParams);
       this.isOpen = false;
     },
     onChooseProvider(e) {
       this.searched = '';
       this.providerActive = e;
-      this.getGames(this.gamesParams);
+      this.$router.push({
+        name: 'index-providers-providerName',
+        params: {
+          category: this.tabActive.type,
+          providerName: e.name === 'All providers' ? 'all' : e.name,
+        },
+      });
     },
     onClickOutsideTabs(e) {
       if (!e.target.closest('.DefaultGames-ChosenTab')) this.isOpen = false;
@@ -365,6 +252,7 @@ export default {
 
   &-Tab {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
     padding: 10px 16px;
@@ -397,6 +285,7 @@ export default {
     font-size: 12px;
     font-weight: 700;
     line-height: 1.242;
+    text-align: center;
     color: var(--color-text-main);
     text-transform: uppercase;
 
