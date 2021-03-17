@@ -1,7 +1,11 @@
 <template>
   <div>
     <InitialLoader
-      v-if="$route.path === '/' ? !heroBannerIsLoaded || !initialLoading : !initialLoading"
+      v-if="
+        $route.name === 'index-games-gameCategory'
+          ? !heroBannerIsLoaded || !initialLoading
+          : !initialLoading
+      "
     />
     <NotificationAlerts />
     <MainNav />
