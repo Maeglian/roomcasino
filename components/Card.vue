@@ -100,9 +100,7 @@
           {{ gameInfo.gameProducer }}
         </div>
       </div>
-      <div class="Card-Name">
-        {{ gameInfo.gameName }}
-      </div>
+      <div class="Card-Name" v-html="linebreak(gameInfo.gameName)"></div>
     </div>
   </div>
 </template>
@@ -179,6 +177,9 @@ export default {
     onClickCard() {
       if (this.platform !== 'mobile' || !this.isLoggedIn) return;
       this.$emit('open-gamepage', { id: this.gameInfo.gameId, demo: this.gameInfo.demoOnly });
+    },
+    linebreak(value) {
+      return value.replace(': ', ': <br/>');
     },
   },
 };
