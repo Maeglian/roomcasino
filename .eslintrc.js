@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    'jest/globals': true,
   },
   extends: [
     'eslint:recommended',
@@ -17,7 +18,7 @@ module.exports = {
     parser: 'babel-eslint',
     sourceType: 'module',
   },
-  plugins: ['vue', 'prettier'],
+  plugins: ['vue', 'prettier', 'jest'],
   rules: {
     'no-return-assign': 'off',
     'nuxt/no-globals-in-created': 'off',
