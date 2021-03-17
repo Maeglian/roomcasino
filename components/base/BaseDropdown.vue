@@ -68,6 +68,8 @@
 </template>
 
 <script>
+import { searchInArr } from '@/utils/helpers';
+
 export default {
   name: 'BaseDropdown',
   model: {
@@ -151,10 +153,7 @@ export default {
       if (this.inputVal) {
         const str = this.inputVal.trim().toLowerCase();
 
-        this.autocompletedItems = this.items.filter((item) => {
-          if (item[this.itemName]) return item[this.itemName].toLowerCase().includes(str);
-          return item.toLowerCase().includes(str);
-        });
+        this.autocompletedItems = searchInArr(str, this.items, this.itemName);
       }
     },
   },
