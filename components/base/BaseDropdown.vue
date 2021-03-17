@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import { searchInArr } from '@/utils/helpers';
+import { searchInArrByString } from '@/utils/helpers';
 
 export default {
   name: 'BaseDropdown',
@@ -140,7 +140,7 @@ export default {
       )
         return this.autocompletedItems;
 
-      return this.items.filter((item) => {
+      return this.items.filter(item => {
         return item[this.itemName] !== this.activeItem && item !== this.activeItem;
       });
     },
@@ -151,9 +151,7 @@ export default {
     },
     inputVal() {
       if (this.inputVal) {
-        const str = this.inputVal.trim().toLowerCase();
-
-        this.autocompletedItems = searchInArr(str, this.items, this.itemName);
+        this.autocompletedItems = searchInArrByString(this.inputVal, this.items, this.itemName);
       }
     },
   },
