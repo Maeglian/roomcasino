@@ -167,7 +167,7 @@ export default {
   },
   computed: {
     ...mapState(['createLimitError']),
-    ...mapGetters(['activeAccount', 'accountList']),
+    ...mapGetters(['activeAccount']),
     // limitTypes() {
     //   return Object.entries(this.limits).map(entry => {
     //     return {

@@ -716,8 +716,16 @@ export const getters = {
     if (state.user.accountList) return state.user.accountList.find((acc) => acc.active === true);
     return '';
   },
-  accountList: (state) => {
-    if (state.user.accountList) return state.user.accountList;
+  sortedAccountList: (state) => {
+    if (state.user.accountList)
+      return [...state.user.accountList].sort((a, b) => b.balance - a.balance);
+    return [];
+  },
+  otherAccountList: (state) => {
+    if (state.user.accountList)
+      return [...state.user.accountList]
+        .filter((acc) => !acc.active)
+        .sort((a, b) => b.balance - a.balance);
     return [];
   },
   isLoggedIn: (state) => !!state.token,
