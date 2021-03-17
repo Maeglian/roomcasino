@@ -69,7 +69,6 @@ export default {
 <style lang="scss">
 .MobileNav {
   position: fixed;
-  position: -webkit-sticky;
   bottom: 0;
   z-index: 100;
   display: flex;
@@ -77,6 +76,7 @@ export default {
   width: 100%;
   padding: 18px 24px 20px;
   background: var(--color-body);
+  transform: translate3d(0, 0, 0);
 
   @media (min-width: $screen-xs) {
     display: none;
