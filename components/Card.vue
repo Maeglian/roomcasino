@@ -83,8 +83,8 @@
       <div
         v-if="
           dga[gameInfo.gameProducer] &&
-          dga[gameInfo.gameProducer][gameInfo.gpGameId] &&
-          dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits
+            dga[gameInfo.gameProducer][gameInfo.gpGameId] &&
+            dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits
         "
         class="Card-Bets Card-Dga"
       >
@@ -95,7 +95,7 @@
     </div>
     <div v-if="showFooter" class="Card-Footer">
       <div class="Card-Provider">
-        <img :src="gameInfo.iconUrl" alt="" class="Card-ProviderIcon" />
+        <img :src="iconUrl" alt="" class="Card-ProviderIcon" />
         <div class="Card-ProviderName">
           {{ gameInfo.gameProducer }}
         </div>
@@ -162,8 +162,15 @@ export default {
     },
   },
   computed: {
-    ...mapState(['platform', 'dga']),
+    ...mapState(['platform', 'dga', 'gameProducerList']),
     ...mapGetters(['isLoggedIn', 'activeAccount']),
+    iconUrl() {
+      const gameProducer = this.gameProducerList.find(
+        producer => producer.name.toLowerCase() === this.gameInfo.gameProducer.toLowerCase(),
+      );
+      if (gameProducer) return gameProducer.iconUrl;
+      return '';
+    },
     lastResults() {
       return (
         this.dga[this.gameInfo.gameProducer] &&
