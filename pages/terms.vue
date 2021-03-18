@@ -6,6 +6,10 @@
       game please read the Terms and Conditions section carefully. Started using the site you
       automatically confirm your acceptance of the Terms and Conditions
     </p>
+    <p class="Text">
+      Current Terms and Conditions are governed by and interpreted in accordance with the
+      legislation of Cyprus.
+    </p>
     <h4 class="Title">GENERAL</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
