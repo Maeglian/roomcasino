@@ -62,17 +62,13 @@ export const searchInArrByString = (string, arr, itemName = undefined) => {
     .sort((a, b) => {
       const aValue = a[itemName] || a;
       const bValue = b[itemName] || b;
-      return aValue.toLowerCase().indexOf(str) - bValue.toLowerCase().indexOf(str);
 
-      // console.log(
-      //   str,
-      //   a[itemName],
-      //   a[itemName].toLowerCase().indexOf(str),
-      //   b[itemName],
-      //   b[itemName].toLowerCase().indexOf(str),
-      // );
-      // if (aValue.toLowerCase().indexOf(str) > bValue.toLowerCase().indexOf(str)) return 1;
-      // if (aValue.toLowerCase().indexOf(str) === bValue.toLowerCase().indexOf(str)) return 0;
-      // return -1;
+      if (aValue.toLowerCase().indexOf(str) > bValue.toLowerCase().indexOf(str)) return 1;
+      if (aValue.toLowerCase().indexOf(str) === bValue.toLowerCase().indexOf(str)) {
+        if (aValue.toLowerCase() > bValue.toLowerCase()) return 1;
+        if (aValue.toLowerCase() === bValue.toLowerCase()) return 0;
+        return -1;
+      }
+      return -1;
     });
 };

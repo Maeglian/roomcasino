@@ -999,8 +999,9 @@ const countries = [
   },
 ];
 const numbers = ['7', '6', '5', '0', '4', '12', '120', '34', '1200', '55'];
-const names = ['Mar', 'Mary', 'Ademar', 'Maria', 'Natalia'];
+const names = ['Mar', 'Mary', 'Ademar', 'Maria', 'Natalia', 'Emarul', 'Emaria'];
 const phones = ['+36', '+5', '+25', '+87655', '+65', '+2465', '+44'];
+const phones2 = ['+735', '+15', '+560', '+250', '+43', '+580', '+51', '+77', '+5'];
 
 test('filter and sort arr by string', () => {
   const string = 'can';
@@ -1019,10 +1020,10 @@ test('filter and sort arr by string', () => {
 
   expect(sortedArr[0].code).toBe('CA');
   expect(sortedArr1[0].code).toBe('FR');
-  expect(sortedArr2).toEqual(['Mar', 'Mary', 'Maria', 'Ademar']);
-  expect(sortedArr3).toEqual(['Mar', 'Mary', 'Maria', 'Ademar']);
-  expect(sortedArr4).toEqual(['Mar', 'Mary', 'Maria', 'Ademar']);
-  expect(sortedArr5).toEqual(['Mar', 'Mary', 'Maria', 'Ademar']);
+  expect(sortedArr2).toEqual(['Mar', 'Maria', 'Mary', 'Emaria', 'Emarul', 'Ademar']);
+  expect(sortedArr3).toEqual(['Mar', 'Maria', 'Mary', 'Emaria', 'Emarul', 'Ademar']);
+  expect(sortedArr4).toEqual(['Mar', 'Maria', 'Mary', 'Emaria', 'Emarul', 'Ademar']);
+  expect(sortedArr5).toEqual(['Mar', 'Maria', 'Mary', 'Emaria', 'Emarul', 'Ademar']);
 });
 
 test('filter and sort arr by number', () => {
@@ -1040,6 +1041,8 @@ test('filter and sort arr by phoneNumber', () => {
   const string = '5';
 
   const sortedArr = searchInArr(string, phones);
+  const sortedArr2 = searchInArr(string, phones2);
 
-  expect(sortedArr).toEqual(['+5', '+25', '+65', '+87655', '+2465']);
+  expect(sortedArr).toEqual(['+5', '+25', '+65', '+2465', '+87655']);
+  expect(sortedArr2).toEqual(['+5', '+51', '+560', '+580', '+15', '+250', '+735']);
 });
