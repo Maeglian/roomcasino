@@ -90,7 +90,7 @@ export default {
   &-Input {
     width: 100%;
     height: 100%;
-    padding: 16px 12px;
+    padding: 16px 50px 16px 12px;
     font-size: 14px;
     line-height: 1.18;
     color: var(--color-text-main);
