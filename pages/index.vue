@@ -59,7 +59,7 @@ export default {
   },
   head() {
     return {
-      title: 'Casino Online🤑, Only Top Slots & Games | Get Welcome Bonus from RoomCasino',
+      title: 'Casino Online🤑, Only Top Slots & Games | Get Welcome Bonus from Ninecasino',
       meta: [
         {
           description:
