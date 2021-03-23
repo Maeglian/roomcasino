@@ -127,6 +127,7 @@ export default {
 
 <style lang="scss">
 .MainNav {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
