@@ -6,29 +6,41 @@
         <img src="@/assets/img/logo.svg" />
       </NuxtLink>
       <div class="Footer-Links">
-        <NuxtLink class="Link Footer-Link" to="/promotions"> Promotion </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/about-us"> About us </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/faq"> Faq </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/bitcoins"> About BTC </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/promotions"> Promotion</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/about-us"> About us</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/faq"> Faq</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/bitcoins"> About BTC</NuxtLink>
         <!--        <NuxtLink class="Link Footer-Link" to="/vip">-->
         <!--          VIP rewards-->
         <!--        </NuxtLink>-->
-        <NuxtLink class="Link Footer-Link" to="/aml-policy"> AML Policy </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/terms"> Terms and conditions </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/bonus-policy"> Bonus policy </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/responsible-gaming"> Responsible gaming </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/privacy-policy"> Privacy policy </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/aml-policy"> AML Policy</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/terms"> Terms and conditions</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/bonus-policy"> Bonus policy</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/responsible-gaming"> Responsible gaming</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/privacy-policy"> Privacy policy</NuxtLink>
 
         <!--        <NuxtLink class="Link Footer-Link" to="/payment-methods">-->
         <!--          Payment methods-->
         <!--        </NuxtLink>-->
-        <NuxtLink class="Link Footer-Link" to="/risk-warnings"> Risk Warnings </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/risk-warnings"> Risk Warnings</NuxtLink>
       </div>
       <div class="Footer-Lang">
         <img src="@/assets/img/eng.png" alt="" />
       </div>
     </nav>
     <div class="Footer-Disclaimer">
+      <div class="Footer-Text">
+        You understand that by participating in the games, you risk losing the money deposited to
+        your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal.
+        You understand and agree that www.ninecasino.com is not able to provide you legal advice or
+        guarantees regarding the legality of your use of the services of the Website. The Company
+        does not affirm that the services of the Website comply with legal requirements in your
+        jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at
+        your sole discretion, as well, assuming the risk of liability, making a decision as to
+        whether the use of the services of the Website is legal in accordance with the current
+        legislation of your jurisdiction.You log in the Website and participate in the games at your
+        own risk.
+      </div>
       <div class="Footer-Text">
         Copyright © 2020 www.ninecasino.com is owned and operated by DUX GROUP N.V., a company
         registered and established under the laws of Curacao. DUX GROUP N.V. is licensed and
