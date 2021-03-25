@@ -135,7 +135,7 @@ export default {
     },
     title() {
       const selectedCategory = this.categories.find(
-        (category) => category.slug === this.tabActive.type,
+        category => category.slug === this.tabActive.type,
       );
       if (selectedCategory) return selectedCategory.name;
       return 'All games';
@@ -144,9 +144,9 @@ export default {
   mounted() {
     window.dga.connect(PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID);
     window.dga.onConnect = () => window.dga.available(PRAGMATIC_CASINOID);
-    window.dga.onMessage = (data) => {
+    window.dga.onMessage = data => {
       if (data.tableKey) {
-        data.tableKey.forEach((table) =>
+        data.tableKey.forEach(table =>
           window.dga.subscribe(PRAGMATIC_CASINOID, table, this.activeAccount.currency || 'EUR'),
         );
       }
@@ -164,10 +164,12 @@ export default {
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
       this.isOpen = false;
+      this.providerActive = DEFAULT_PROVIDER;
     },
     onChooseProvider(e) {
       this.searched = '';
       this.providerActive = e;
+      this.tabActive = this.tabs[1];
       this.$router.push({
         name: 'index-providers-providerName',
         params: {
