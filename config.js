@@ -75,7 +75,7 @@ export const LIMIT_DETAILS = {
   lossLimit: {
     name: 'Loss limits',
     text:
-      'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
+      'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or month.',
     editRules:
       'You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.',
     deleteRules:
@@ -85,7 +85,7 @@ export const LIMIT_DETAILS = {
   depositLimit: {
     name: 'Deposit limits',
     text:
-      'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or mounth.',
+      'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or month.',
     editRules:
       'You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.',
     deleteRules:
@@ -95,7 +95,7 @@ export const LIMIT_DETAILS = {
   wagerLimit: {
     name: 'Wager limits',
     text:
-      'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or mounth.',
+      'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or month.',
     editRules:
       'You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.',
     deleteRules:

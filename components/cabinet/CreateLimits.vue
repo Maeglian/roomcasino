@@ -227,7 +227,7 @@ export default {
 
       const payload = {};
 
-      this.limits[this.type.value].fields.forEach((field) => {
+      this.limits[this.type.value].fields.forEach(field => {
         payload[field] = this[field].value || this[field];
       });
 
@@ -299,6 +299,7 @@ export default {
 
   &-InputCurrency {
     position: absolute;
+    top: 50%;
     right: 16px;
     z-index: 2;
     font-size: 10px;
@@ -306,6 +307,7 @@ export default {
     line-height: 55px;
     color: var(--color-text-ghost);
     text-transform: uppercase;
+    transform: translate(0, -50%);
   }
 
   &-Error {
