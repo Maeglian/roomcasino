@@ -29,36 +29,39 @@
       </div>
     </nav>
     <div class="Footer-Disclaimer">
-      <div class="Footer-Text">
-        You understand that by participating in the games, you risk losing the money deposited to
-        your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal.
-        You understand and agree that www.ninecasino.com is not able to provide you legal advice or
-        guarantees regarding the legality of your use of the services of the Website. The Company
-        does not affirm that the services of the Website comply with legal requirements in your
-        jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at
-        your sole discretion, as well, assuming the risk of liability, making a decision as to
-        whether the use of the services of the Website is legal in accordance with the current
-        legislation of your jurisdiction.You log in the Website and participate in the games at your
-        own risk.
-      </div>
-      <div class="Footer-Text">
-        Copyright © 2020 www.ninecasino.com is owned and operated by DUX GROUP N.V., a company
-        registered and established under the laws of Curacao. DUX GROUP N.V. is licensed and
-        regulated by Antillephone N.V. (license no. 8048/JAZ2020-075).
-        <br />
-        DUX GROUP N.V.’s registration number is 155114 and its registered address is Perseusweg 27
-        A, Curacao.
-        <br />
-        SCARTESU LIMITED is a subsidiary of DUX GROUP N.V., acting as an Agent on behalf of DUX
-        GROUP N.V, registered in Cyprus with registered address Boumpoulinas 1, BOUBOULINA BUILDING,
-        3rd Floor, Flat/Office 31, 1060, Nicosia, Cyprus, and registration number ΗΕ 410983.
-        <br />
-        It is the player’s sole responsibility to inquire about the existing laws and regulations of
-        the given jurisdiction for online gambling.
-        <br />
-        <br />
-        If you have any questions or suggestions about our site, please contact us
-        <a class="Footer-Contact" href="mailto:support@ninecasino.com">support@ninecasino.com</a>
+      <div class="Footer-DisclaimerText">
+        <div class="Footer-Text">
+          You understand that by participating in the games, you risk losing the money deposited to
+          your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal.
+          You understand and agree that www.ninecasino.com is not able to provide you legal advice
+          or guarantees regarding the legality of your use of the services of the Website. The
+          Company does not affirm that the services of the Website comply with legal requirements in
+          your jurisdiction. You use the services provided by www.ninecasino.com of your own choice
+          and at your sole discretion, as well, assuming the risk of liability, making a decision as
+          to whether the use of the services of the Website is legal in accordance with the current
+          legislation of your jurisdiction.You log in the Website and participate in the games at
+          your own risk.
+        </div>
+        <div class="Footer-Text">
+          Copyright © 2020 www.ninecasino.com is owned and operated by DUX GROUP N.V., a company
+          registered and established under the laws of Curacao. DUX GROUP N.V. is licensed and
+          regulated by Antillephone N.V. (license no. 8048/JAZ2020-075).
+          <br />
+          DUX GROUP N.V.’s registration number is 155114 and its registered address is Perseusweg 27
+          A, Curacao.
+          <br />
+          SCARTESU LIMITED is a subsidiary of DUX GROUP N.V., acting as an Agent on behalf of DUX
+          GROUP N.V, registered in Cyprus with registered address Boumpoulinas 1, BOUBOULINA
+          BUILDING, 3rd Floor, Flat/Office 31, 1060, Nicosia, Cyprus, and registration number ΗΕ
+          410983.
+          <br />
+          It is the player’s sole responsibility to inquire about the existing laws and regulations
+          of the given jurisdiction for online gambling.
+          <br />
+          <br />
+          If you have any questions or suggestions about our site, please contact us
+          <a class="Footer-Contact" href="mailto:support@ninecasino.com">support@ninecasino.com</a>
+        </div>
       </div>
       <div class="Footer-Icons">
         <div
