@@ -213,7 +213,7 @@
       <li class="SupportPage-Item">
         <p class="Text">
           In order for you to be able to place wagers using any of the Website, you must first
-          register with getslots.com and open an account.
+          register with ninecasino.com and open an account.
         </p>
       </li>
       <li class="SupportPage-Item">
@@ -423,10 +423,8 @@
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          We reserve the right to carry out verification procedures for any pay-out exceeding the
-          equivalent of 1,000 €/$ or cumulative withdrawals exceeding 2,300 €/$, and further
-          reserves the right to carry out such verification procedures also in case of lower
-          pay-outs. Such verifications may for example include copies of a player’s passport,
+          We reserve the right to carry out verification procedures for each client at first
+          withdrawal. Such verifications may for example include copies of a player’s passport,
           national Identity Card, copies of a player’s utility bills, and/or copies of the
           debit/credit cards used to deposit.
         </p>
@@ -652,10 +650,35 @@
     <h4 class="Title">REFUND POLICY</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
+        <p class="Text"></p>
+      </li>
+      <li class="SupportPage-Item">
         <p class="Text">
-          A refund request will only be considered if it is requested within the first twenty-four
-          (24) hours of the alleged transaction, or within thirty (30) calendar days if a player
-          alleges that another individual has accessed his/her account.
+          If you would like to make a refund, please contact
+          <a href="mailto:support@ninecasino.com" class="Link">support@ninecasino.com</a>
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          To check the refund, you must provide these documents: <br />
+          1) photos of both sides of your passport, driver's license, or any other form of ID,<br />
+          2) proof of address (proof of address would need to be a photo of a paper document posted
+          to you in the last 90 days, it could be eg a government-issued document, a bank document,
+          a bill, or similar. <br />
+          3) Alternatively, you can upload the original PDF of a utility bill), bank statement
+          (showing your name and account number if you haven’t uploaded it as a proof of address)
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          It may take up to 7 business days for a refund to be decided
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          If a refund is decided upon, the amount of the refund shall be returned to the Player’s
+          account, the Player shall be informed and the procedure shall be finalised within 48 hours
+          after the decision has been made.
         </p>
       </li>
       <li class="SupportPage-Item">
@@ -780,6 +803,11 @@ export default {
   &:before {
     content: counter(list1, '.') '. ';
     top: 2.3px;
+  }
+
+  .Link {
+    font-size: 14px;
+    text-transform: lowercase;
   }
 }
 </style>
