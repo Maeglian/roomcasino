@@ -2,7 +2,7 @@ p {
   margin-bottom: 25px;
   font-size: 14px;
   line-height: 1.66;
-  color: var(--color-text-ghost);
+  color: var(--color-text-faded);
 }
 
 .Title {
@@ -85,7 +85,7 @@ p {
   &--additional {
     font-size: 14px;
     line-height: 1.66;
-    color: var(--color-text-ghost);
+    color: var(--color-text-faded);
   }
 
   &--center {

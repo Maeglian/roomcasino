@@ -546,7 +546,7 @@ export default {
 
 <style lang="scss" scoped>
 table {
-  color: var(--color-text-ghost);
+  color: var(--color-text-faded);
 }
 
 .Title-Div {

@@ -164,7 +164,7 @@ export default {
   .SupportPage-Item {
     margin-bottom: 15px;
     list-style-type: disc;
-    color: var(--color-text-ghost);
+    color: var(--color-text-faded);
 
     &:before {
       display: none;
