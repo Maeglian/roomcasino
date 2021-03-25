@@ -34,7 +34,7 @@
           <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
           <div class="Hero-Text" v-html="slides[depositNum].text"></div>
           <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
-            {{ isLoggedIn ? 'Deposit now' : 'Sign in' }}
+            {{ isLoggedIn ? 'Deposit now' : 'Sign up' }}
           </button>
         </div>
       </div>
