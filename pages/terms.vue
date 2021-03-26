@@ -159,7 +159,7 @@
       <li class="SupportPage-Item">
         <p class="Text">
           The website allows playing with the following currencies: EUR, USD, CAD, AUD, NOK, PLN,
-          NZD, JPY, CZK.
+          NZD, JPY, CZK, ZAR.
         </p>
       </li>
     </ul>
