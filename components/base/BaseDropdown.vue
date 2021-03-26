@@ -165,7 +165,16 @@ export default {
       }
     },
     onSelectValue(val) {
-      if (this.autocomplete) this.inputVal = '';
+      if (this.autocomplete && JSON.stringify(val) !== JSON.stringify(this.activeItem))
+        this.inputVal = '';
+      if (JSON.stringify(val) === JSON.stringify(this.activeItem)) {
+        this.inputVal =
+          this.activeItem[this.itemName] ||
+          this.activeItem ||
+          this.placeholder ||
+          this.items[0][this.itemName] ||
+          this.items[0];
+      }
       this.autocompleteMode = false;
       this.$emit('set-dropdown-value', val);
       this.isOpen = false;
