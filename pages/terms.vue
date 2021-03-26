@@ -15,16 +15,18 @@
       <li class="SupportPage-Item">
         <p class="Text">
           The website www.ninecasino.com ("Casino", "Website", “Company”, "We", "Us", "Our") is
-          owned and operated by DUX GROUP N.V, a company registered and established under the laws
-          of Curaçao, with registration number 155114 and registered address at Perseusweg 27 A,
-          Curacao. All payments are made via SCARTESU LIMITED is a subsidiary of DUX GROUP N.V.,
-          acting as an Agent on behalf of DUX GROUP N.V, registered in Cyprus with registered
-          address Boumpoulinas 1, BOUBOULINA BUILDING, 3rd Floor, Flat/Office 31, 1060, Nicosia,
-          Cyprus, and registration number ΗΕ 410983. It is the player’s sole responsibility to
+          operated by Scartesu Ltd., subsidiary of Dux Group N.V., by the laws of Cyprus acting as
+          an Agent on behalf of Dux Group N.V., registered in Cyprus with registered address:
+          Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ
+          410983.The governing law of the website is Cyprus law. The website www.ninecasino.com
+          ("Casino", "Website", “Company”, "We", "Us", "Our") is owned by Dux Group N.V., a company
+          registered and established under the laws of Curaçao, with registration No. 155114 and
+          registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by
+          the Government of Curaçao as an Information Provider legally authorised to conduct online
+          gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing
+          and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to
           inquire about the existing laws and regulations of the given jurisdiction for online
-          gambling. DUX GROUP N.V. is officially registered by the Government of Curaçao as an
-          Information Provider legally authorised to conduct online gaming operations from Curaçao.
-          Remote gaming licensing and supervision is provided by Antillephone N.V.
+          gambling.
         </p>
       </li>
       <li class="SupportPage-Item">
@@ -157,7 +159,7 @@
       <li class="SupportPage-Item">
         <p class="Text">
           The website allows playing with the following currencies: EUR, USD, CAD, AUD, NOK, PLN,
-          NZD, JPY, CZK.
+          NZD, JPY, CZK, ZAR.
         </p>
       </li>
     </ul>
