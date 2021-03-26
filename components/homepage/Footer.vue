@@ -43,24 +43,23 @@
           your own risk.
         </div>
         <div class="Footer-Text">
-          Copyright © 2020 www.ninecasino.com is owned and operated by DUX GROUP N.V., a company
-          registered and established under the laws of Curacao. DUX GROUP N.V. is licensed and
-          regulated by Antillephone N.V. (license no. 8048/JAZ2020-075).
-          <br />
-          DUX GROUP N.V.’s registration number is 155114 and its registered address is Perseusweg 27
-          A, Curacao.
-          <br />
-          SCARTESU LIMITED is a subsidiary of DUX GROUP N.V., acting as an Agent on behalf of DUX
-          GROUP N.V, registered in Cyprus with registered address Boumpoulinas 1, BOUBOULINA
-          BUILDING, 3rd Floor, Flat/Office 31, 1060, Nicosia, Cyprus, and registration number ΗΕ
-          410983.
-          <br />
-          It is the player’s sole responsibility to inquire about the existing laws and regulations
-          of the given jurisdiction for online gambling.
-          <br />
-          <br />
+          Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., subsidiary of Dux Group
+          N.V., by the laws of Cyprus acting as an Agent on behalf of Dux Group N.V., registered in
+          Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia,
+          Cyprus, and registration No. ΗΕ 410983.The governing law of the website is Cyprus law. The
+          website www.ninecasino.com is owned by Dux Group N.V., a company registered and
+          established under the laws of Curaçao, with registration No. 155114 and registered address
+          at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of
+          Curaçao as an Information Provider legally authorised to conduct online gaming operations
+          from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision
+          is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about
+          the existing laws and regulations of the given jurisdiction for online gambling.
+        </div>
+        <div class="Footer-Text">
           If you have any questions or suggestions about our site, please contact us
           <a class="Footer-Contact" href="mailto:support@ninecasino.com">support@ninecasino.com</a>
+          or
+          <a class="Footer-Contact" href="tel:+43800070855">+43800070855</a>
         </div>
       </div>
       <div class="Footer-Icons">
