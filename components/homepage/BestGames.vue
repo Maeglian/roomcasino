@@ -169,7 +169,7 @@ export default {
     onChooseProvider(e) {
       this.searched = '';
       this.providerActive = e;
-      this.tabActive = this.tabs[1];
+      this.tabActive = this.tabs.find(tab => tab.type === 'all');
       this.$router.push({
         name: 'index-providers-providerName',
         params: {
