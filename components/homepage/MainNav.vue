@@ -41,7 +41,7 @@
             :item="item"
           />
         </div>
-        <AuthSection class="AsideMenu-AuthSection AuthSection--aside" />
+        <AuthSection class="AsideMenu-AuthSection AuthSection--aside" :my-account="myAccount" />
       </div>
     </transition>
   </nav>
@@ -64,6 +64,7 @@ export default {
     return {
       documentIsScrolled: false,
       topBarIsScrolled: false,
+      myAccount: true,
       navItems: [
         {
           name: 'Lobby',
@@ -74,6 +75,11 @@ export default {
           name: 'Promotions',
           url: '/promotions',
           icon: 'promotions_nav.svg',
+        },
+        {
+          name: 'My account',
+          url: '/cabinet/balance',
+          icon: 'user-profile.svg',
         },
         // {
         //   name: 'Tournaments',
