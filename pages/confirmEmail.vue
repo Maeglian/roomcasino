@@ -11,12 +11,19 @@
           <p class="Error ConfirmEmailPage-Text">
             {{ emailConfirmError }}
           </p>
+          <NuxtLink to="/" class="Btn Btn--common ConfirmEmailPage-Btn">
+            Go to the home page
+          </NuxtLink>
         </template>
         <template v-if="emailIsConfirmed">
-          Congratulations! Your email was successfully confirmed.
+          <p class="ConfirmEmailPage-Text">
+            Congratulations! Your email was successfully confirmed.
+          </p>
+          <button class="Btn Btn--common ConfirmEmailPage-Btn" @click="$modal.show('cashier')">
+            Let’s start!
+          </button>
         </template>
       </div>
-      <NuxtLink to="/" class="Btn Btn--common ConfirmEmailPage-Btn"> Go to the home page </NuxtLink>
     </div>
   </section>
 </template>
@@ -43,7 +50,16 @@ export default {
     ...mapState(['emailConfirmError', 'emailConfirmIsFetching', 'emailIsConfirmed']),
   },
   mounted() {
-    this.confirmEmail({ code: this.$route.query.code });
+    this.confirmEmail({ code: this.$route.query.code }).then(() => {
+      if (this.emailIsConfirmed) {
+        this.timer = setTimeout(() => {
+          this.$modal.show('cashier');
+        }, 3000);
+      }
+    });
+  },
+  beforeDestroy() {
+    clearTimeout(this.timer);
   },
   methods: {
     ...mapMutations(['clearEmailConfirmError']),
