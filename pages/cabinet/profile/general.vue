@@ -1,6 +1,6 @@
 <template>
   <div class="ProfileInfo ProfilePage-Content">
-    <Loader v-if="profileIsLoading" />
+    <Loader v-if="profileIsLoading || !countriesList.length" />
     <form v-else class="ProfileInfo-Form" @submit.prevent="onSubmit">
       <div class="CabinetPage-Header">General Info</div>
       <div class="ProfileInfo-Fields">
@@ -45,8 +45,8 @@
                 <div
                   v-if="
                     $v.fields.birthDate.$dirty &&
-                    $v.fields.birthDate.required &&
-                    !$v.fields.birthDate.dateCheck
+                      $v.fields.birthDate.required &&
+                      !$v.fields.birthDate.dateCheck
                   "
                   class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
                 >
@@ -55,8 +55,8 @@
                 <div
                   v-else-if="
                     $v.fields.birthDate.$dirty &&
-                    $v.fields.birthDate.required &&
-                    !$v.fields.birthDate.ageCheck
+                      $v.fields.birthDate.required &&
+                      !$v.fields.birthDate.ageCheck
                   "
                   class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
                 >
@@ -135,7 +135,7 @@ export default {
   filters: {
     formatLabel(str) {
       const arr = str.trim().split(' ');
-      arr.forEach((word) => word.toUpperCase());
+      arr.forEach(word => word.toUpperCase());
       return arr.join('');
     },
   },
