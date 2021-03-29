@@ -60,7 +60,7 @@
                   "
                   class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
                 >
-                  You are under age of 18
+                  You are under age of {{ minAge }}
                 </div>
               </template>
               <template #beforeInput-relative>
@@ -116,7 +116,8 @@ import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import Loader from '@/components/Loader';
 import { PROFILE_LABELS } from '@/config';
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
-import { ageCheck, dateCheck, phoneWithPlusCheck, postalCodeCheck } from '@/utils/formCheckers';
+import { dateCheck, phoneWithPlusCheck, postalCodeCheck } from '@/utils/formCheckers';
+import moment from 'moment';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 
@@ -174,7 +175,9 @@ export default {
       birthDate: {
         required,
         dateCheck,
-        ageCheck,
+        ageCheck(value) {
+          return moment(value).add(this.minAge, 'years') < moment();
+        },
       },
       city: {
         required,
@@ -205,8 +208,9 @@ export default {
       'profileIsUpdating',
       'updateProfileError',
       'countriesList',
+      'defaultCountry',
     ]),
-    ...mapGetters(['userInfo']),
+    ...mapGetters(['userInfo', 'minAge']),
     // fields() {
     //   return info === 'real' ? this.userInfo : this.fakeFields;
     // },
