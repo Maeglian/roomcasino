@@ -314,12 +314,12 @@ export default {
   }
 
   &-AuthSection {
-    order: 2;
-    margin-top: auto;
+    height: auto;
+    margin-bottom: 37px;
+    padding: 0 18px;
 
     @media (min-width: $screen-xs) {
       width: 288px;
-      margin-bottom: 158px;
     }
   }
 
