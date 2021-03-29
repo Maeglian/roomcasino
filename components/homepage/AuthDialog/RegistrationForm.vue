@@ -55,7 +55,7 @@
               v-else-if="!$v[name].ageCheck && $v.fieldsStep2.birthDate.children.$anyDirty"
               class="AuthDialog-Error"
             >
-              You are under age of 18
+              You are under age of {{ minAge }}
             </div>
           </template>
           <BaseInput
@@ -77,7 +77,7 @@
             :inputmode="item.inputmode"
             :should-display-field-is-valid="
               $v.fieldsStep2.birthDate.children.$invalid ||
-              ($v[name].dateCheck && $v[name].ageCheck)
+                ($v[name].dateCheck && $v[name].ageCheck)
             "
           >
             <template #beforeInput-absolute>
@@ -108,15 +108,15 @@
             @change="field.value = $event"
             @animationend="$v[`fieldsStep${step}`][name].$reset()"
           >
-            <span v-html="field.label"></span>
+            <span v-html="labels[name]"></span>
           </BaseCheckbox>
         </template>
         <div v-else-if="field.type === 'phone'" :key="name" class="AuthDialog-Row">
           <div
             v-if="
               !$v[name].phoneWithPlusCheck &&
-              $v[`fieldsStep${step}`][name].tel.value.$dirty &&
-              !$v[`fieldsStep${step}`][name].tel.value.$invalid
+                $v[`fieldsStep${step}`][name].tel.value.$dirty &&
+                !$v[`fieldsStep${step}`][name].tel.value.$invalid
             "
             class="AuthDialog-Error"
           >
@@ -246,7 +246,6 @@ import {
 } from '@/utils/helpers';
 import {
   termsCheck,
-  ageCheck,
   dateCheck,
   phoneWithPlusCheck,
   postalCodeCheck,
@@ -310,13 +309,10 @@ export default {
         receiveEmailPromos: {
           value: false,
           type: 'checkbox',
-          label: 'Receive Email Promos',
         },
         confirmAgeAndTerms: {
           value: false,
           type: 'checkbox',
-          label:
-            'I am 18 years old and I accept the<br/> <a class="AuthDialog-RegistrationLink" href="/terms" target="_blank">Terms&nbsp;and&nbsp;Conditions</a> and <a class="AuthDialog-RegistrationLink" href="/privacy-policy" target="_blank">Privacy&nbsp;Policy</a>&nbsp;<span class="AuthDialog-Required">*</span>',
         },
       },
       fieldsStep2: {
@@ -425,7 +421,7 @@ export default {
       'updateProfileError',
       'phoneCodeList',
     ]),
-    ...mapGetters(['defaultCountry', 'userInfo']),
+    ...mapGetters(['defaultCountry', 'userInfo', 'minAge']),
     birthDate() {
       const {
         birthDate: {
@@ -449,11 +445,19 @@ export default {
       }
       return this.fieldsStep2;
     },
+    labels() {
+      return {
+        receiveEmailPromos: 'Receive Email Promos',
+        confirmAgeAndTerms: `I am ${this.minAge} years old and I accept the<br/> <a class="AuthDialog-RegistrationLink" href="/terms" target="_blank">Terms&nbsp;and&nbsp;Conditions</a> and <a class="AuthDialog-RegistrationLink" href="/privacy-policy" target="_blank">Privacy&nbsp;Policy</a>&nbsp;<span class="AuthDialog-Required">*</span>`,
+      };
+    },
   },
   validations: {
     birthDate: {
       dateCheck,
-      ageCheck,
+      ageCheck(value) {
+        return moment(value).add(this.minAge, 'years') < moment();
+      },
     },
     phoneNumber: {
       phoneWithPlusCheck,
@@ -559,12 +563,12 @@ export default {
       handler() {
         if (this.userInfo.country) {
           this.fieldsStep2.phoneNumber.code.value = this.phoneCodeList.find(
-            (item) => item.countryCode === this.userInfo.country.code,
+            item => item.countryCode === this.userInfo.country.code,
           );
         }
       },
     },
-    'fieldsStep2.birthDate.children.day.value': function (val) {
+    'fieldsStep2.birthDate.children.day.value': function(val) {
       if (this.$v.fieldsStep2.$anyDirty) {
         if (val.length === 2 && !this.$v.fieldsStep2.birthDate.children.day.value.$invalid) {
           const el =
@@ -578,7 +582,7 @@ export default {
         }
       }
     },
-    'fieldsStep2.birthDate.children.month.value': function (val) {
+    'fieldsStep2.birthDate.children.month.value': function(val) {
       if (this.$v.fieldsStep2.$anyDirty) {
         if (val.length === 2 && !this.$v.fieldsStep2.birthDate.children.month.value.$invalid) {
           const el =
@@ -590,7 +594,7 @@ export default {
         }
       }
     },
-    'fieldsStep2.birthDate.children.year.value': function (val) {
+    'fieldsStep2.birthDate.children.year.value': function(val) {
       if (this.$v.fieldsStep2.$anyDirty) {
         if (
           val.length === 4 &&
