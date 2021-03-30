@@ -110,20 +110,20 @@ export default {
     routes() {
       const routes = [];
       const categories = axios.get(`${API_HOST}/categoryList`).then(res => {
-        routes.push(
-          res.data.data.map(category => {
-            return `/games/${category}`;
-          }),
-        );
+        res.data.data.forEach(category => {
+          routes.push(`/games/${category.slug}`);
+        });
       });
       const providers = axios.get(`${API_HOST}/gameProducerList`).then(res => {
-        routes.push(
-          res.data.data.map(name => {
-            return `/providers/${name}`;
-          }),
-        );
+        res.data.data.forEach(provider => {
+          routes.push(`/providers/${provider.name}`);
+        });
       });
-      Promise.all([categories, providers]).then(() => routes);
+
+      return Promise.all([categories, providers]).then(() => {
+        console.log(routes);
+        return routes;
+      });
     },
   },
 };
