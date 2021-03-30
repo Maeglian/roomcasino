@@ -38,12 +38,12 @@
       </button>
     </div>
     <div v-else class="AuthSection-Login">
-      <button
-        class="Btn AuthSection-Btn AuthSection-Btn--login"
-        @click="showRegistrationDialog('login')"
-      >
-        Login
-      </button>
+      <!--      <button-->
+      <!--        class="Btn AuthSection-Btn AuthSection-Btn&#45;&#45;login"-->
+      <!--        @click="showRegistrationDialog('login')"-->
+      <!--      >-->
+      <!--        Login-->
+      <!--      </button>-->
       <button class="Btn AuthSection-Btn" @click="showRegistrationDialog('registration')">
         Register
       </button>
