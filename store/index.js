@@ -1507,8 +1507,8 @@ export const actions = {
       const res = await axios.get(`${API_HOST}/availableBonusList`);
       const bonuses = res.data.data;
       const depositNum = !bonuses.length
-        ? 3
-        : bonuses.find(bonus => bonus.available && bonus.depositNum).depositNum - 1;
+        ? 4
+        : bonuses.find(bonus => bonus.available && bonus.depositNum).depositNum;
       commit('setAvailableBonusList', bonuses);
       commit('setDepositNum', depositNum);
     } catch (e) {
