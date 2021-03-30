@@ -108,7 +108,11 @@ export default {
   generate: {
     fallback: 'index.html',
     routes() {
-      const routes = [];
+      const routes = [
+        '/cabinet/history/game',
+        '/cabinet/history/transaction',
+        '/cabinet/history/bonus',
+      ];
       const categories = axios.get(`${API_HOST}/categoryList`).then(res => {
         res.data.data.forEach(category => {
           routes.push(`/games/${category.slug}`);
@@ -121,7 +125,6 @@ export default {
       });
 
       return Promise.all([categories, providers]).then(() => {
-        console.log(routes);
         return routes;
       });
     },
