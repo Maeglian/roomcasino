@@ -1,7 +1,7 @@
 <template>
   <nav class="MainNav" :class="{ 'MainNav--bg': documentIsScrolled }">
     <div v-if="navIsOpen" class="MainNav-Overlay" @click="toggleNav()"></div>
-    <div class="MainNav-TopBar">
+    <div class="MainNav-TopBar" :class="{ 'MainNav-TopBar--centered': !isLoggedIn }">
       <div class="MainNav-Nav">
         <button class="MainNav-Toggle" @click="toggleNav()">
           <svg class="Toggle">
@@ -51,7 +51,7 @@
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
 import GamePanel from '@/components/homepage/GamePanel.vue';
-import { mapMutations, mapState } from 'vuex';
+import { mapGetters, mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'MainNav',
@@ -101,6 +101,7 @@ export default {
   },
   computed: {
     ...mapState(['navIsOpen', 'width']),
+    ...mapGetters(['isLoggedIn']),
     isGamePage() {
       return this.$route.name === 'game';
     },
@@ -166,6 +167,14 @@ export default {
 
     @media (min-width: $screen-xl) {
       padding-left: 16px;
+    }
+
+    &--centered {
+      justify-content: center;
+
+      @media (min-width: $screen-xs) {
+        justify-content: space-between;
+      }
     }
   }
 
