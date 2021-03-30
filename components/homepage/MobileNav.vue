@@ -1,40 +1,57 @@
 <template>
-  <nav class="MobileNav">
-    <button class="MobileNav-Item" @click="toggleNav()">
-      <svg class="MobileNav-Toggle Toggle Toggle--colored">
-        <use xlink:href="@/assets/img/icons.svg#toggle"></use>
-      </svg>
-      <div class="MobileNav-Name">Menu</div>
-    </button>
-    <NuxtLink class="MobileNav-Item" to="/promotions">
-      <svg width="17" height="16">
-        <use xlink:href="@/assets/img/icons.svg#promotions"></use>
-      </svg>
-      <div class="MobileNav-Name">Promotions</div>
-    </NuxtLink>
-    <button class="MobileNav-Item" @click="onClickBtn()">
-      <svg width="18" height="15">
-        <use xlink:href="@/assets/img/icons.svg#deposit"></use>
-      </svg>
-      <div class="MobileNav-Name">Deposit</div>
-    </button>
-    <button v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
-      <svg width="18" height="15">
-        <use xlink:href="@/assets/img/icons.svg#support"></use>
-      </svg>
-      <div class="MobileNav-Name">Support</div>
-    </button>
-    <!--    <div class="MobileNav-Item" @click="toggleNotificationsPanel">-->
-    <!--      <div class="MobileNav-Messages">-->
-    <!--        <svg width="12" height="14">-->
-    <!--          <use xlink:href="@/assets/img/icons.svg#messages"></use>-->
-    <!--        </svg>-->
-    <!--        <div v-show="isNewNotifications" class="MobileNav-MessagesNew"></div>-->
-    <!--      </div>-->
-    <!--      <div class="MobileNav-Name">-->
-    <!--        Notification-->
-    <!--      </div>-->
-    <!--    </div>-->
+  <nav class="MobileNav" :class="{ 'MobileNav--notLoggedIn': !isLoggedIn }">
+    <template v-if="isLoggedIn">
+      <button class="MobileNav-Item" @click="toggleNav()">
+        <svg class="MobileNav-Toggle Toggle Toggle--colored">
+          <use xlink:href="@/assets/img/icons.svg#toggle"></use>
+        </svg>
+        <div class="MobileNav-Name">Menu</div>
+      </button>
+      <NuxtLink class="MobileNav-Item" to="/promotions">
+        <svg width="17" height="16">
+          <use xlink:href="@/assets/img/icons.svg#promotions"></use>
+        </svg>
+        <div class="MobileNav-Name">Promotions</div>
+      </NuxtLink>
+      <button class="MobileNav-Item" @click="onClickBtn()">
+        <svg width="18" height="15">
+          <use xlink:href="@/assets/img/icons.svg#deposit"></use>
+        </svg>
+        <div class="MobileNav-Name">Deposit</div>
+      </button>
+      <button v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
+        <svg width="18" height="15">
+          <use xlink:href="@/assets/img/icons.svg#support"></use>
+        </svg>
+        <div class="MobileNav-Name">Support</div>
+      </button>
+      <!--    <div class="MobileNav-Item" @click="toggleNotificationsPanel">-->
+      <!--      <div class="MobileNav-Messages">-->
+      <!--        <svg width="12" height="14">-->
+      <!--          <use xlink:href="@/assets/img/icons.svg#messages"></use>-->
+      <!--        </svg>-->
+      <!--        <div v-show="isNewNotifications" class="MobileNav-MessagesNew"></div>-->
+      <!--      </div>-->
+      <!--      <div class="MobileNav-Name">-->
+      <!--        Notification-->
+      <!--      </div>-->
+      <!--    </div>-->
+    </template>
+    <template v-else>
+      <button class="MobileNav-Item--row" @click="showRegistrationDialog('login')">
+        <img class="MobileNav-Icon2" src="@/assets/img/user.svg" width="10" height="12" />
+        <div class="MobileNav-Name MobileNav-Name--large">Log in</div>
+      </button>
+      <button class="MobileNav-Item--row" @click="showRegistrationDialog('registration')">
+        <img class="MobileNav-Icon2" src="@/assets/img/arrow.svg" width="10" height="10" />
+        <div class="MobileNav-Name MobileNav-Name--large">Join now</div>
+      </button>
+      <button class="MobileNav-Item MobileNav-Item--burger" @click="toggleNav()">
+        <svg class="MobileNav-Toggle2 Toggle Toggle--colored">
+          <use xlink:href="@/assets/img/icons.svg#toggle"></use>
+        </svg>
+      </button>
+    </template>
   </nav>
 </template>
 
@@ -47,7 +64,7 @@ export default {
   mixins: [showAuthDialog],
   computed: {
     ...mapState(['navIsOpen', 'notificationsPanelIsOpen', 'chatIsLoaded']),
-    ...mapGetters(['activeAccount', 'isNewNotifications']),
+    ...mapGetters(['isLoggedIn', 'activeAccount', 'isNewNotifications']),
   },
   methods: {
     ...mapMutations(['openNav', 'closeNav', 'openNotificationsPanel', 'closeNotificationsPanel']),
@@ -82,11 +99,25 @@ export default {
     display: none;
   }
 
+  &--notLoggedIn {
+    padding: 16px 0;
+  }
+
   &-Item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    &--row {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+      border-right: 1px solid var(--color-border2);
+    }
+
+    &--burger {
+    }
   }
 
   &-Messages {
@@ -98,12 +129,21 @@ export default {
     height: 14px;
   }
 
+  &-Icon2 {
+    margin-right: 10px;
+  }
+
   &-Name {
     font-size: 7px;
     font-weight: 400;
     line-height: 1.66;
     color: var(--color-text-main);
     text-transform: uppercase;
+
+    &--large {
+      font-size: 10px;
+      font-weight: 700;
+    }
   }
 
   &-MessagesNew {
@@ -116,10 +156,16 @@ export default {
     border: 1px solid var(--color-body);
     border-radius: 50%;
   }
-}
 
-.MobileNav-Toggle {
-  width: 17px;
-  height: 17px;
+  &-Toggle {
+    width: 17px;
+    height: 17px;
+  }
+
+  &-Toggle2 {
+    width: 15px;
+    height: 10px;
+    margin: 0 24px;
+  }
 }
 </style>
