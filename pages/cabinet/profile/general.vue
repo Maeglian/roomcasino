@@ -6,7 +6,7 @@
       <div class="ProfileInfo-Fields">
         <template v-for="(val, name) in fields">
           <template v-if="name !== 'receiveEmailPromos' && name !== 'receiveSmsPromos'">
-            <div v-if="name === 'country'" :key="name" class="CabinetForm-Row">
+            <div v-if="name === 'country' && !user[name]" :key="name" class="CabinetForm-Row">
               <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
                 {{ name }}
               </label>
@@ -17,7 +17,7 @@
                 @set-dropdown-value="fields[name] = $event"
               />
             </div>
-            <div v-else-if="name === 'gender'" :key="name" class="CabinetForm-Row">
+            <div v-else-if="name === 'gender' && !user[name]" :key="name" class="CabinetForm-Row">
               <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
                 {{ name }}
               </label>
@@ -33,7 +33,7 @@
               :key="name"
               v-model="fields[name]"
               class="CabinetForm-Row"
-              :disabled="name === 'email'"
+              :disabled="!!user[name]"
               input-type="text"
               error-class="ProfileInfo-Error"
               :input-id="name | formatLabel"
@@ -220,6 +220,7 @@ export default {
       immediate: true,
       handler() {
         this.fields = { ...this.userInfo };
+        if (this.userInfo.country) this.fields.country = this.userInfo.country.name;
         if (!this.fields.gender) this.fields.gender = 'male';
       },
     },
@@ -236,8 +237,10 @@ export default {
       if (JSON.stringify(this.fields) === JSON.stringify(this.userInfo)) return;
       const payload = {};
       for (const key in this.fields) {
-        if (key === 'country') {
+        if (key === 'country' && !this.userInfo.country) {
           payload.country = this.fields.country.code;
+        } else if (key === 'country') {
+          payload.country = this.user.country;
         } else payload[key] = this.fields[key];
       }
 
