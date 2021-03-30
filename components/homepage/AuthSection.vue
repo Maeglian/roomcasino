@@ -38,12 +38,12 @@
       </button>
     </div>
     <div v-else class="AuthSection-Login">
-      <!--      <button-->
-      <!--        class="Btn AuthSection-Btn AuthSection-Btn&#45;&#45;login"-->
-      <!--        @click="showRegistrationDialog('login')"-->
-      <!--      >-->
-      <!--        Login-->
-      <!--      </button>-->
+      <button
+        class="Btn AuthSection-Btn AuthSection-Btn--login"
+        @click="showRegistrationDialog('login')"
+      >
+        Login
+      </button>
       <button class="Btn AuthSection-Btn" @click="showRegistrationDialog('registration')">
         Register
       </button>
@@ -274,6 +274,10 @@ export default {
     }
   }
 
+  .AuthSection-Btn--login {
+    display: none;
+  }
+
   .AuthSection-Sections {
     justify-content: space-between;
     padding: 0 32px 18px;
@@ -368,11 +372,6 @@ export default {
     &:after {
       content: 'LV';
     }
-  }
-
-  .AuthSection-Btn--login {
-    margin-bottom: 8px;
-    background: var(--color-bg-lighter);
   }
 }
 </style>
