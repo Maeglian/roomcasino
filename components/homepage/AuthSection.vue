@@ -20,7 +20,7 @@
             {{ activeAccount.currency || user.currency }}
           </div>
         </NuxtLink>
-        <NuxtLink class="AuthSection-UserInfo" to="/cabinet/balance">
+        <NuxtLink v-if="!myAccount" class="AuthSection-UserInfo" to="/cabinet/balance">
           <img src="@/assets/img/user.svg" />
         </NuxtLink>
         <!--        <div class="AuthSection-UserLvl">-->
@@ -58,6 +58,12 @@ import showAuthDialog from '@/mixins/showAuthDialog';
 export default {
   name: 'AuthSection',
   mixins: [showAuthDialog],
+  props: {
+    myAccount: {
+      type: Boolean,
+      required: false,
+    },
+  },
   computed: {
     ...mapState(['user', 'notificationsPanelIsOpen']),
     ...mapGetters(['isLoggedIn', 'activeAccount', 'isNewNotifications']),

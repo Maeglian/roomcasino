@@ -34,14 +34,16 @@
           <div class="Close AsideMenu-Close" @click="toggleNav()"></div>
         </div>
         <div class="AsideMenu-List">
-          <NavItem
-            v-for="item in navItems"
-            :key="item.name"
-            :class-name="'AsideMenu-Link'"
-            :item="item"
-          />
+          <template v-for="item in navItems">
+            <NavItem
+              v-if="isLoggedIn || !item.onlyIfLoggedIn"
+              :key="item.name"
+              :class-name="'AsideMenu-Link'"
+              :item="item"
+            />
+          </template>
         </div>
-        <AuthSection class="AsideMenu-AuthSection AuthSection--aside" />
+        <AuthSection class="AsideMenu-AuthSection AuthSection--aside" :my-account="true" />
       </div>
     </transition>
   </nav>
@@ -51,7 +53,7 @@
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
 import GamePanel from '@/components/homepage/GamePanel.vue';
-import { mapMutations, mapState } from 'vuex';
+import { mapGetters, mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'MainNav',
@@ -74,6 +76,12 @@ export default {
           name: 'Promotions',
           url: '/promotions',
           icon: 'promotions_nav.svg',
+        },
+        {
+          name: 'My account',
+          url: '/cabinet/balance',
+          icon: 'user-profile.svg',
+          onlyIfLoggedIn: true,
         },
         // {
         //   name: 'Tournaments',
@@ -101,6 +109,7 @@ export default {
   },
   computed: {
     ...mapState(['navIsOpen', 'width']),
+    ...mapGetters(['isLoggedIn']),
     isGamePage() {
       return this.$route.name === 'game';
     },
