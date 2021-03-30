@@ -1,21 +1,7 @@
 import axios from 'axios';
 import Vue from 'vue';
 import moment from 'moment';
-import {
-  BILLING_PROVIDER_ID,
-  API_HOST_PROD,
-  API_HOST_STAGE,
-  API_HOST_SANDBOX,
-  DEFAULT_PROVIDER,
-  LIMIT_DETAILS,
-} from '../config';
-
-const API_HOST =
-  process.env.NUXT_ENV_MODE === 'production'
-    ? API_HOST_PROD
-    : process.env.NUXT_ENV_MODE === 'sandbox'
-    ? API_HOST_SANDBOX
-    : API_HOST_STAGE;
+import { BILLING_PROVIDER_ID, API_HOST, DEFAULT_PROVIDER, LIMIT_DETAILS } from '../config';
 
 const Cookie = process.client ? require('js-cookie') : undefined;
 const cookieparser = process.server ? require('cookieparser') : undefined;
