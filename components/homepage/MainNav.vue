@@ -34,14 +34,16 @@
           <div class="Close AsideMenu-Close" @click="toggleNav()"></div>
         </div>
         <div class="AsideMenu-List">
-          <NavItem
-            v-for="item in navItems"
-            :key="item.name"
-            :class-name="'AsideMenu-Link'"
-            :item="item"
-          />
+          <template v-for="item in navItems">
+            <NavItem
+              v-if="isLoggedIn || !item.onlyIfLoggedIn"
+              :key="item.name"
+              :class-name="'AsideMenu-Link'"
+              :item="item"
+            />
+          </template>
         </div>
-        <AuthSection class="AsideMenu-AuthSection AuthSection--aside" />
+        <AuthSection class="AsideMenu-AuthSection AuthSection--aside" :my-account="true" />
       </div>
     </transition>
   </nav>
@@ -74,6 +76,12 @@ export default {
           name: 'Promotions',
           url: '/promotions',
           icon: 'promotions_nav.svg',
+        },
+        {
+          name: 'My account',
+          url: '/cabinet/balance',
+          icon: 'user-profile.svg',
+          onlyIfLoggedIn: true,
         },
         // {
         //   name: 'Tournaments',
