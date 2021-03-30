@@ -42,6 +42,14 @@
               :item="item"
             />
           </template>
+          <button
+            v-if="!isLoggedIn && chatIsLoaded"
+            class="Nav-Item Nav-Name"
+            @click="onClickSupport()"
+          >
+            <img class="Nav-Icon" src="@/assets/img/chat.svg" />
+            Support
+          </button>
         </div>
         <AuthSection class="AsideMenu-AuthSection AuthSection--aside" :my-account="true" />
       </div>
@@ -108,7 +116,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['navIsOpen', 'width']),
+    ...mapState(['navIsOpen', 'width', 'chatIsLoaded']),
     ...mapGetters(['isLoggedIn']),
     isGamePage() {
       return this.$route.name === 'game';
@@ -129,6 +137,9 @@ export default {
     toggleNav() {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
+    },
+    onClickSupport() {
+      window.LC_API.open_chat_window();
     },
   },
 };
