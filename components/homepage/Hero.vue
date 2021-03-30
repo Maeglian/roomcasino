@@ -29,12 +29,12 @@
             @load="setHeroBannerIsLoaded"
           />
         </picture>
-        <div class="Hero-Content">
+        <div class="Hero-Content" :class="{ 'Hero-Content--centered': !isLoggedIn }">
           <div class="Title Title--type-h1 Hero-Title" v-html="slides[depositNum].title"></div>
           <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
           <div class="Hero-Text" v-html="slides[depositNum].text"></div>
           <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
-            {{ isLoggedIn ? 'Deposit now' : 'Sign up' }}
+            {{ isLoggedIn ? 'Deposit now' : 'Register now' }}
           </button>
         </div>
       </div>
@@ -90,7 +90,7 @@
 
 <script>
 // import GamesSlider from '@/components/GamesSlider';
-import { mapMutations, mapState } from 'vuex';
+import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
@@ -109,8 +109,9 @@ export default {
       slides: [
         {
           bg: 'aztec',
-          title: 'Welcome package<br/><span class="Colored">$450</span>!',
-          text: 'Make first deposit<br/> and get 100% up to <span class="Colored">$150</span>',
+          title: 'Welcome<br/> package <span class="Colored">$ 450!</span>',
+          text:
+            'Make first deposit<br/> and get <span class="Colored">100%</span> up to <span class="Colored">$ 150</span>',
           btnText: 'Deposit now',
         },
         {
@@ -204,6 +205,7 @@ export default {
   },
   computed: {
     ...mapState(['navIsOpen', 'games', 'depositNum']),
+    ...mapGetters(['isLoggedIn']),
   },
   methods: {
     ...mapMutations(['openNav', 'closeNav', 'setHeroBannerIsLoaded']),
@@ -360,6 +362,16 @@ export default {
       top: 112px;
       left: calc(50% - 608px);
     }
+
+    &--centered {
+      bottom: 10%;
+      width: calc(100% - 32px);
+      text-align: center;
+
+      @media (min-width: $screen-xs) {
+        text-align: left;
+      }
+    }
   }
 
   &-Image {
@@ -415,6 +427,14 @@ export default {
     @media (min-width: $screen-xl) {
       margin-bottom: 24px;
       font-size: 28px;
+    }
+  }
+
+  &-Btn {
+    width: 204px;
+
+    @media (min-width: $screen-xs) {
+      width: auto;
     }
   }
 
