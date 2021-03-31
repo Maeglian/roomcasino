@@ -1,5 +1,6 @@
 <template>
-  <div class="GamePage" :style="{ '--bgImage': `url(${bg})` }">
+  <div class="GamePage">
+    <div class="GamePage-Bg" :style="{ backgroundImage: `url(${bg})` }"></div>
     <div class="GamePage-Wrapper" :class="{ 'GamePage-Wrapper--Hide': isFullScreen }">
       <MainNav v-if="!isFullScreen" />
       <iframe
@@ -84,11 +85,21 @@ export default {
 
 <style lang="scss">
 .GamePage {
+  position: relative;
   display: flex;
   flex-direction: column;
-  background-image: var(--bgImage);
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  &-Bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.8);
+  }
 
   &-Wrapper {
     display: flex;
