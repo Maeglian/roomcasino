@@ -1,3 +1,6 @@
 {
-  "title": "Ninecasino"
+  "title": "Ninecasino",
+  "buttons": {
+    "register": "Registrovat"
+  }
 }
