@@ -41,7 +41,6 @@ export default {
   },
   mounted() {
     this.height = this.$refs.langSwitcher.clientHeight;
-    console.log(this.$refs.langSwitcher.clientHeight);
   },
   methods: {
     onClickOutside(e) {
