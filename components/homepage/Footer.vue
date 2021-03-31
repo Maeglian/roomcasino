@@ -24,9 +24,10 @@
         <!--        </NuxtLink>-->
         <NuxtLink class="Link Footer-Link" to="/risk-warnings"> Risk Warnings</NuxtLink>
       </div>
-      <div class="Footer-Lang">
-        <img src="@/assets/img/eng.png" alt="" />
-      </div>
+      <LangSwitcher class="Footer-Lang" />
+      <!--      <div class="Footer-Lang">-->
+      <!--        <img src="@/assets/img/eng.png" alt="" />-->
+      <!--      </div>-->
     </nav>
     <div class="Footer-Disclaimer">
       <div class="Footer-DisclaimerText">
@@ -84,11 +85,13 @@
 
 <script>
 import Partners from '@/components/homepage/Partners.vue';
+import LangSwitcher from '@/components/LangSwitcher';
 
 export default {
   name: 'Footer',
   components: {
     Partners,
+    LangSwitcher,
   },
   mounted() {
     window.apg_034906ca_0989_44fa_8bff_6a0fdffc45bb.init();
@@ -221,28 +224,13 @@ export default {
   }
 
   &-Lang {
-    display: inline-flex;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
     order: 1;
-    width: 34px;
-    height: 34px;
     margin-bottom: 16px;
     margin-left: auto;
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    border-radius: 50%;
 
     @media (min-width: $screen-m) {
       order: 2;
       margin-bottom: 0;
-    }
-
-    img {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
     }
   }
 
