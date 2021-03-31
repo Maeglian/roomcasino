@@ -94,7 +94,33 @@ export default {
   buildModules: [],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/style-resources', '@nuxtjs/gtm'],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/gtm', 'nuxt-i18n'],
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        file: 'en.json',
+        icon: 'en.png',
+      },
+      {
+        code: 'de',
+        file: 'de.json',
+        icon: 'de.png',
+      },
+      {
+        code: 'cs',
+        file: 'cs.json',
+        icon: 'cs.png',
+      },
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: '~/locales/',
+    vueI18n: {
+      fallbackLocale: 'en',
+    },
+  },
 
   gtm: {
     enabled: process.env.NUXT_ENV_MODE === 'production',
