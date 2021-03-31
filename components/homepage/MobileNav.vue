@@ -39,11 +39,11 @@
     </template>
     <template v-else>
       <button class="MobileNav-Item--row" @click="showRegistrationDialog('login')">
-        <img class="MobileNav-Icon2" src="@/assets/img/user.svg" width="10" height="12" />
+        <img class="MobileNav-Icon2" src="@/assets/img/user.svg" width="15" />
         <div class="MobileNav-Name MobileNav-Name--large">Log in</div>
       </button>
       <button class="MobileNav-Item--row" @click="showRegistrationDialog('registration')">
-        <img class="MobileNav-Icon2" src="@/assets/img/arrow.svg" width="10" height="10" />
+        <img class="MobileNav-Icon2" src="@/assets/img/arrow.svg" width="15" />
         <div class="MobileNav-Name MobileNav-Name--large">Join now</div>
       </button>
       <button class="MobileNav-Item MobileNav-Item--burger" @click="toggleNav()">
@@ -100,6 +100,7 @@ export default {
   }
 
   &--notLoggedIn {
+    align-items: center;
     padding: 16px 0;
   }
 
@@ -141,7 +142,7 @@ export default {
     text-transform: uppercase;
 
     &--large {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
     }
   }
@@ -163,8 +164,8 @@ export default {
   }
 
   &-Toggle2 {
-    width: 15px;
-    height: 10px;
+    align-items: center;
+    width: 20px;
     margin: 0 24px;
   }
 }
