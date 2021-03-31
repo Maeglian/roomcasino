@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { API_HOST } from './config';
+
 const target =
   process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
     ? 'static'
@@ -142,5 +145,26 @@ export default {
   router: { middleware: ['closeNav'] },
   generate: {
     fallback: 'index.html',
+    routes() {
+      const routes = [
+        '/cabinet/history/game',
+        '/cabinet/history/transaction',
+        '/cabinet/history/bonus',
+      ];
+      const categories = axios.get(`${API_HOST}/categoryList`).then(res => {
+        res.data.data.forEach(category => {
+          routes.push(`/games/${category.slug}`);
+        });
+      });
+      const providers = axios.get(`${API_HOST}/gameProducerList`).then(res => {
+        res.data.data.forEach(provider => {
+          routes.push(`/providers/${provider.name}`);
+        });
+      });
+
+      return Promise.all([categories, providers]).then(() => {
+        return routes;
+      });
+    },
   },
 };

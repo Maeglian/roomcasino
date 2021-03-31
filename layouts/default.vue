@@ -40,6 +40,7 @@ export default {
   --color-breadcrumbs: #404454;
   --color-overlay: rgba(0, 0, 0, 0.6);
   --color-border: rgba(88, 92, 131, 0.3);
+  --color-border2: #979797;
   --color-hover: #c40916;
   --color-accept: #67b12d;
   --color-discard: #cc1f1f;
