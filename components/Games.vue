@@ -114,7 +114,7 @@ export default {
       return null;
     },
 
-    async openGamePage({ id, demo }) {
+    async openGamePage({ id, demo, bg }) {
       if (!demo && !this.isLoggedIn) {
         this.showRegistrationDialog('login');
         return;
@@ -131,9 +131,11 @@ export default {
       });
 
       if (!this.gameError) {
-        this.platform === 'mobile'
-          ? (window.location.href = this.gameUrlForIframe)
-          : this.$router.push(`/game`);
+        if (this.platform === 'mobile') window.location.href = this.gameUrlForIframe;
+        else {
+          localStorage.setItem('gameBg', bg);
+          this.$router.push('/game');
+        }
       }
     },
     showMoreGames() {

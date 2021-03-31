@@ -5,14 +5,18 @@
         <button
           v-if="showDemo"
           class="Card-Link"
-          @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: true })"
+          @click="
+            $emit('open-gamepage', { id: gameInfo.gameId, demo: true, bg: gameInfo.backgroundUrl })
+          "
         >
           Play for fun
         </button>
         <button
           v-if="!gameInfo.demoOnly"
           class="Card-PlayBtn"
-          @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: false })"
+          @click="
+            $emit('open-gamepage', { id: gameInfo.gameId, demo: false, bg: gameInfo.backgroundUrl })
+          "
         >
           Play Now
         </button>
