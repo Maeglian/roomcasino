@@ -4,5 +4,8 @@
     "register": "Register now",
     "login": "Login",
     "deposit": "Deposit"
+  },
+  "homepage": {
+    "bannerTitle": "Welcome package"
   }
 }
