@@ -2,6 +2,7 @@
   "title": "Ninecasino",
   "buttons": {
     "register": "Registrovat",
-    "login": "Přihlásit se"
+    "login": "Přihlásit se",
+    "deposit": "Vklad"
   }
 }
