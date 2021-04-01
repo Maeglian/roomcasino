@@ -2,6 +2,7 @@
   "title": "Ninecasino",
   "buttons": {
     "register": "Register now",
-    "login": "Login"
+    "login": "Login",
+    "deposit": "Deposit"
   }
 }
