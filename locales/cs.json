@@ -1,6 +1,7 @@
 {
-  "title": "Ninecasino",
-  "buttons": {
-    "register": "Registrovat"
-  }
+    "title": "Ninecasino",
+    "buttons": {
+        "register": "Registrovat",
+        "login": "Přihlásit se"
+    }
 }
