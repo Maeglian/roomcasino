@@ -57,18 +57,6 @@ export default {
         src: 'https://dga.pragmaticplaylive.net/dgaAPI.js',
       },
       {
-        src: 'https://global.localizecdn.com/localize.js',
-      },
-      {
-        innerHTML: `!function(a){if(!a.Localize){a.Localize={};for(var e=["translate","untranslate","phrase","initialize","translatePage","setLanguage","getLanguage","getSourceLanguage","detectLanguage","getAvailableLanguages","untranslatePage","bootstrap","prefetch","on","off","hideWidget","showWidget"],t=0;t<e.length;t++)a.Localize[e[t]]=function(){}}}(window);`,
-      },
-      {
-        innerHTML: `Localize.initialize({
-          key: 'b3wmJhfoSOL7q',
-          rememberLanguage: true
-        });`,
-      },
-      {
         src: '/js/liveChat.js',
         defer: true,
       },
