@@ -3,7 +3,7 @@
     <div class="Card-Main" @click="onClickCard">
       <div v-if="overlay && (!isLoggedIn || platform !== 'mobile')" class="Card-Overlay">
         <button
-          v-if="showDemo"
+          v-if="showDemo && gameInfo.type !== 'live'"
           class="Card-Link"
           @click="
             $emit('open-gamepage', { id: gameInfo.gameId, demo: true, bg: gameInfo.backgroundUrl })
