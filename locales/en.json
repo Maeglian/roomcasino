@@ -23,6 +23,13 @@
     "cashout": "Cashout",
     "cancel": "Cancel"
   },
+  "authDialog": {
+    "loginTitle": "Welcome back",
+    "signUpTitle": "Sign up <span class=\"Colored\">&</span> get<br />welcome bonus",
+    "forgotPassword": "Forgot password",
+    "emails": "Receive email promos",
+    "terms": "I am {minAge} years old and I accept the{br} {terms} and {policy}"
+  },
   "pages": {
     "lobby": "Lobby",
     "myAccount": "My account",
@@ -35,6 +42,15 @@
     "bonusPolicy": "Bonus policy",
     "privacyPolicy": "Privacy policy",
     "risk": "Risk warnings"
+  },
+  "gameCategories": {
+    "top": "Top games",
+    "all": "All games",
+    "live": "Live games",
+    "slots": "Slots games",
+    "roulette": "Roulette",
+    "table": "Table Games",
+    "card": "Card games"
   },
   "footer": {
     "text": {
@@ -58,7 +74,10 @@
     "amount": "Amount",
     "status": "Status",
     "title": "Title",
-    "type": "Type"
+    "type": "Type",
+    "active": "Active",
+    "left": "Left",
+    "yes": "Yes"
   },
   "actions": {
     "addCurrency": "Add currency"
@@ -87,7 +106,8 @@
         "highlighted": "The wildest selection",
         "ghost": "of game providers"
       }
-    }
+    },
+    "allProviders": "All providers"
   },
   "filters": {
     "status": "Status",
@@ -167,11 +187,25 @@
       "createLimits": "Create limits",
       "addLimits": "Add limits",
       "limits": {
-
+        "deposit": "Deposit limits",
+        "wager": "Wager limits",
+        "loss": "Loss limits",
+        "session": "Session limits",
+        "coolOff": "Coolimg off"
       },
-      "daily": "Daily",
-      "weekly": "Weekly",
-      "monthly": "Monthly"
+      "periods": {
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly",
+        "days": "Days",
+        "weeks": "Weeks",
+        "months": "Months",
+        "min": "Min"
+      },
+      "edit": "Edit limit",
+      "delete": "Delete limit",
+      "save": "Save limits",
+      "deleteText": "Are you sure you want to delete"
     }
   }
 }
