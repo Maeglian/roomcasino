@@ -1,11 +1,177 @@
 {
   "title": "Ninecasino",
   "buttons": {
-    "register": "Register now",
+    "signUp": "Sign up",
+    "register": "Register",
+    "terms": "Bonus terms & conditions",
+    "registerNow": "Register now",
     "login": "Login",
-    "deposit": "Deposit"
+    "logIn": "Log in",
+    "joinNow": "Join now",
+    "deposit": "Deposit",
+    "depositNow": "Deposit now",
+    "loadMoreGames": "Load more games",
+    "playForFun": "Play for fun",
+    "playNow": "Play now",
+    "showMore": "Show more",
+    "saveChanges": "Save changes",
+    "update": "Update",
+    "addLimits": "Add limits",
+    "filter": "Filter",
+    "menu": "Menu",
+    "support": "Support",
+    "cashout": "Cashout",
+    "cancel": "Cancel"
+  },
+  "pages": {
+    "lobby": "Lobby",
+    "myAccount": "My account",
+    "promotion": "Promotion",
+    "aboutUs": "About us",
+    "faq": "FAQ",
+    "btc": "About BTC",
+    "aml": "AML policy",
+    "terms": "Terms and conditions",
+    "bonusPolicy": "Bonus policy",
+    "privacyPolicy": "Privacy policy",
+    "risk": "Risk warnings"
+  },
+  "footer": {
+    "text": {
+      "p1": "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
+      "p2": "Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., subsidiary of Dux Group N.V., by the laws of Cyprus acting as an Agent on behalf of Dux Group N.V., registered in Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ 410983.The governing law of the website is Cyprus law. The website www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorised to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
+      "p3": "If you have any questions or suggestions about our site, please contact us"
+    }
+  },
+  "search": {
+    "findGame": "Find game",
+    "notFound": "Nothing was found"
+  },
+  "additionalWords": {
+    "now": "now",
+    "upTo": "up to",
+    "or": "or"
+  },
+  "common": {
+    "date": "Date",
+    "currency": "Currency",
+    "amount": "Amount",
+    "status": "Status",
+    "title": "Title",
+    "type": "Type"
+  },
+  "actions": {
+    "addCurrency": "Add currency"
   },
   "homepage": {
-    "bannerTitle": "Welcome package"
+    "heroBanner": {
+      "deposit1": {
+        "title": "Welcome package",
+        "text": "Make first deposit and get"
+      }
+    },
+    "advantages": {
+      "first": {
+        "highlighted": "Super fast",
+        "ghost": "withdrawals"
+      },
+      "second": {
+        "highlighted": "24/7",
+        "ghost": "friendly chat support"
+      },
+      "third": {
+        "highlighted": "More than",
+        "ghost": "2000 games"
+      },
+      "fourth": {
+        "highlighted": "The wildest selection",
+        "ghost": "of game providers"
+      }
+    }
+  },
+  "filters": {
+    "status": "Status",
+    "until": "Until",
+    "flteredBy": "Filtered by"
+  },
+  "cabinet": {
+    "pages": {
+      "balance": "Balance",
+      "bonuses": "Bonuses",
+      "history": "History",
+      "verification": "Verification",
+      "profile": "Profile",
+      "limits": "Gambling limits",
+      "exit": "Exit"
+    },
+    "balance": {
+      "table": {
+        "locked": "Locked by bonus",
+        "cashout": "Available to cash out"
+      },
+      "addCurrency": "Add currency",
+      "active": "Active",
+      "select": "Select"
+    },
+    "bonuses": {
+      "history": "Bonus history",
+      "table": {
+        "bonus": "Bonus",
+        "min": "Min deposit sum",
+        "max": "Max prize"
+      }
+    },
+    "history": {
+      "tabs": {
+        "transactions": "Transactions history",
+        "game": "Game history",
+        "bonus": "Bonus history"
+      },
+      "table": {
+        "date": "Date",
+        "paymentSystem": "Payment system",
+        "action": "Action",
+        "gameName": "Game name",
+        "betSum": "Bet sum",
+        "win": "Win",
+        "wager": "Wager",
+        "validUntil": "Valid until"
+      }
+    },
+    "verification": {
+      "documents": "Documents verification",
+      "text": "Passport, drivers license, or other official documents replacing them / until bill, phone bill, or bank statement, in which your name and address are fully indicated / screenshot or photo from online bank, bank statement, Skrill page, etc, showing the deposit.",
+      "drop": "Passport, drivers license, or other official documents replacing them / until bill, phone bill, or bank statement, in which your name and address are fully indicated / screenshot or photo from online bank, bank statement, Skrill page, etc, showing the deposit.",
+      "uploaded": "Uploaded documents",
+      "waiting": "Waiting for approve",
+      "approved": "Approved",
+      "disapproved": "Disapproved"
+    },
+    "profile": {
+      "tabs": {
+        "general": "General",
+        "security": "Security"
+      },
+      "generalInfo": "General info",
+      "subscriptions": "Subscriptions",
+      "sms": "Send promos by e-mail",
+      "email": "Send promos by sms",
+      "passwordChange": "Password change",
+      "oldPassword": "Old password",
+      "newPassword": "New password",
+      "confirmPassword": "Password confirm",
+      "sessionHistory": "Session history"
+    },
+    "limits": {
+      "initialText": "Do you want to track your activity, loss limits or limit deposits? Your account can be set with all limits. It'll help you to get an overview of your gambling. All restriction takes effect instantly.",
+      "createLimits": "Create limits",
+      "addLimits": "Add limits",
+      "limits": {
+
+      },
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "monthly": "Monthly"
+    }
   }
 }
