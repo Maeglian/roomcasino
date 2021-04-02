@@ -18,10 +18,13 @@
     "update": "Update",
     "addLimits": "Add limits",
     "filter": "Filter",
-    "menu": "Menu",
-    "support": "Support",
     "cashout": "Cashout",
     "cancel": "Cancel"
+  },
+  "menu": {
+    "menu": "Menu",
+    "support": "Support",
+    "yourAccount": "Your account"
   },
   "authDialog": {
     "loginTitle": "Welcome back",

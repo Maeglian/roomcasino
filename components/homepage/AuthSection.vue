@@ -15,7 +15,7 @@
             <!--            </span>-->
           </div>
           <div class="AuthSection-UserBalance">
-            <div class="AuthSection-UserBalanceText">Your balance</div>
+            <div class="AuthSection-UserBalanceText">{{ $t('menu.youAccount') }}</div>
             {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }}
             {{ activeAccount.currency || user.currency }}
           </div>
@@ -34,7 +34,7 @@
         <!--        </div>-->
       </div>
       <button class="AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
-        Deposit
+        {{ $t('buttons.deposit') }}
       </button>
     </div>
     <div v-else class="AuthSection-Login">
@@ -42,10 +42,10 @@
         class="Btn AuthSection-Btn AuthSection-Btn--login"
         @click="showRegistrationDialog('login')"
       >
-        Login
+        {{ $t('buttons.login') }}
       </button>
       <button class="Btn AuthSection-Btn" @click="showRegistrationDialog('registration')">
-        Register
+        {{ $t('buttons.register') }}
       </button>
     </div>
   </div>
