@@ -107,9 +107,9 @@ export default {
         icon: 'en.png',
       },
       {
-        code: 'de',
-        file: 'de.json',
-        icon: 'de.png',
+        code: 'fr',
+        file: 'fr_CA.json',
+        icon: 'fr_ca.svg',
       },
       {
         code: 'cs',
