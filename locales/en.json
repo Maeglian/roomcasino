@@ -28,7 +28,8 @@
     "signUpTitle": "Sign up <span class=\"Colored\">&</span> get<br />welcome bonus",
     "forgotPassword": "Forgot password",
     "emails": "Receive email promos",
-    "terms": "I am {minAge} years old and I accept the{br} {terms} and {policy}"
+    "terms": "I am {minAge} years old and I accept the{br} {terms} and {policy}",
+    "step2Title": "Please, fill the information below!"
   },
   "pages": {
     "lobby": "Lobby",

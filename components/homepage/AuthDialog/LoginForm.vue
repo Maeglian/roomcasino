@@ -1,7 +1,7 @@
 <template>
   <form class="AuthDialog-Login AuthDialog-Form" @submit.prevent="onSubmitForm">
     <div class="AuthDialog-Content">
-      <div class="AuthDialog-Title AuthDialog-LoginTitle">Welcome back</div>
+      <div class="AuthDialog-Title AuthDialog-LoginTitle">{{ $t('authDialog.loginTitle') }}</div>
       <div class="AuthDialog-Fields">
         <BaseInput
           v-for="(field, name) in fields"
@@ -16,7 +16,7 @@
         />
         <div class="AuthDialog-Link">
           <NuxtLink to="/passwordRestore" class="AuthDialog-Link" @click.native="$emit('close')">
-            Forgot Password?
+            {{ $t('authDialog.forgotPassword') }}?
           </NuxtLink>
         </div>
         <div v-if="authError" class="AuthDialog-Error AuthDialog-Error--login">
@@ -29,7 +29,7 @@
       :is-loading="authStatus === 'loading'"
       :disabled="$v.$error"
     >
-      Login
+      {{ $t('buttons.login') }}
     </BaseButton>
   </form>
 </template>
