@@ -4,8 +4,8 @@
       <img src="@/assets/img/logo.svg" />
     </NuxtLink>
     <div class="Nav CabinetTopbar-Nav">
-      <NuxtLink class="CabinetTopbar-Link" to="/" exact>Lobby</NuxtLink>
-      <NuxtLink class="CabinetTopbar-Link" to="/promotions">Promotions</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" to="/" exact>{{ $t('pages.lobby') }}</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" to="/promotions">{{ $t('pages.promotion') }}</NuxtLink>
       <!--      <NuxtLink class="CabinetTopbar-Link" to="/tournaments">Tournaments</NuxtLink>-->
     </div>
     <template v-if="Object.keys(user).length">
@@ -26,7 +26,7 @@
         <!--        </div>-->
       </div>
       <button class="CabinetTopbar-Btn Btn Btn--color" @click="$modal.show('cashier')">
-        Deposit
+        {{ $t('buttons.deposit') }}
       </button>
     </template>
   </div>
