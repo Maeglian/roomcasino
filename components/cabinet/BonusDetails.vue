@@ -1,7 +1,7 @@
 <template>
   <div class="Modal">
     <div class="Close Modal-Close" @click="$emit('close')"></div>
-    <div class="CabinetPage-Header">Test</div>
+    <div class="CabinetPage-Header">{{ bonus.name }}</div>
     <div class="BonusDetails">
       <div class="BonusDetails-Row">
         <div class="BonusDetails-Label">Bonus amount:</div>
