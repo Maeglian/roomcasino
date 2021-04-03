@@ -6,23 +6,29 @@
         <img src="@/assets/img/logo.svg" />
       </NuxtLink>
       <div class="Footer-Links">
-        <NuxtLink class="Link Footer-Link" to="/promotions"> Promotion</NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/about-us"> About us</NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/faq"> Faq</NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/bitcoins"> About BTC</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/promotions"> {{ $t('pages.promotion') }} </NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/about-us"> {{ $t('pages.aboutUs') }}</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/faq"> {{ $t('pages.faq') }}</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/bitcoins"> {{ $t('pages.btc') }}</NuxtLink>
         <!--        <NuxtLink class="Link Footer-Link" to="/vip">-->
         <!--          VIP rewards-->
         <!--        </NuxtLink>-->
-        <NuxtLink class="Link Footer-Link" to="/aml-policy"> AML Policy</NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/terms"> Terms and conditions</NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/bonus-policy"> Bonus policy</NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/responsible-gaming"> Responsible gaming</NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/privacy-policy"> Privacy policy</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/aml-policy"> {{ $t('pages.aml') }}</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/terms"> {{ $t('pages.terms') }}</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/bonus-policy">
+          {{ $t('pages.bonusPolicy') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" to="/responsible-gaming">
+          {{ $t('pages.responsibleGaming') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" to="/privacy-policy">
+          {{ $t('pages.privacyPolicy') }}</NuxtLink
+        >
 
         <!--        <NuxtLink class="Link Footer-Link" to="/payment-methods">-->
         <!--          Payment methods-->
         <!--        </NuxtLink>-->
-        <NuxtLink class="Link Footer-Link" to="/risk-warnings"> Risk Warnings</NuxtLink>
+        <NuxtLink class="Link Footer-Link" to="/risk-warnings"> {{ $t('pages.risk') }}</NuxtLink>
       </div>
       <LangSwitcher class="Footer-Lang" />
       <!--      <div class="Footer-Lang">-->
@@ -32,35 +38,22 @@
     <div class="Footer-Disclaimer">
       <div class="Footer-DisclaimerText">
         <div class="Footer-Text">
-          You understand that by participating in the games, you risk losing the money deposited to
-          your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal.
-          You understand and agree that www.ninecasino.com is not able to provide you legal advice
-          or guarantees regarding the legality of your use of the services of the Website. The
-          Company does not affirm that the services of the Website comply with legal requirements in
-          your jurisdiction. You use the services provided by www.ninecasino.com of your own choice
-          and at your sole discretion, as well, assuming the risk of liability, making a decision as
-          to whether the use of the services of the Website is legal in accordance with the current
-          legislation of your jurisdiction.You log in the Website and participate in the games at
-          your own risk.
+          {{ $t('footer.text.p1') }}
         </div>
         <div class="Footer-Text">
-          Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., subsidiary of Dux Group
-          N.V., by the laws of Cyprus acting as an Agent on behalf of Dux Group N.V., registered in
-          Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia,
-          Cyprus, and registration No. ΗΕ 410983.The governing law of the website is Cyprus law. The
-          website www.ninecasino.com is owned by Dux Group N.V., a company registered and
-          established under the laws of Curaçao, with registration No. 155114 and registered address
-          at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of
-          Curaçao as an Information Provider legally authorised to conduct online gaming operations
-          from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision
-          is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about
-          the existing laws and regulations of the given jurisdiction for online gambling.
+          {{ $t('footer.text.p2') }}
         </div>
         <div class="Footer-Text">
-          If you have any questions or suggestions about our site, please contact us
-          <a class="Footer-Contact" href="mailto:support@ninecasino.com">support@ninecasino.com</a>
-          or
-          <a class="Footer-Contact" href="tel:+43800070855">+43800070855</a>
+          <i18n path="footer.text.p3">
+            <template #support>
+              <a class="Footer-Contact" href="mailto:support@ninecasino.com"
+                >support@ninecasino.com</a
+              >
+            </template>
+            <template #phone>
+              <a class="Footer-Contact" href="tel:+43800070855">+43800070855</a>
+            </template>
+          </i18n>
         </div>
       </div>
       <div class="Footer-Icons">
