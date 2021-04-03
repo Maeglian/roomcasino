@@ -2,7 +2,7 @@
   <div class="ProfileInfo ProfilePage-Content">
     <Loader v-if="profileIsLoading || !countriesList.length" />
     <form v-else class="ProfileInfo-Form" @submit.prevent="onSubmit">
-      <div class="CabinetPage-Header">General Info</div>
+      <div class="CabinetPage-Header">{{ $t('cabinet.profile.generalInfo') }}</div>
       <div class="ProfileInfo-Fields">
         <template v-for="(val, name) in fields">
           <template v-if="name !== 'receiveEmailPromos' && name !== 'receiveSmsPromos'">
@@ -50,7 +50,7 @@
                   "
                   class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
                 >
-                  Input correct date YYYY-MM-DD
+                  {{ $t('errors.inputCorrectDate') }} YYYY-MM-DD
                 </div>
                 <div
                   v-else-if="
@@ -60,7 +60,7 @@
                   "
                   class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
                 >
-                  You are under age of {{ minAge }}
+                  {{ $t('errors.minAge', { minAge }) }}
                 </div>
               </template>
               <template #beforeInput-relative>
@@ -80,7 +80,7 @@
           </template>
         </template>
       </div>
-      <div class="CabinetPage-Header">Subscriptions</div>
+      <div class="CabinetPage-Header">{{ $t('cabinet.profile.subscriptions') }}</div>
       <div class="ProfileInfo-Subscriptions">
         <template v-for="(item, name) in fields">
           <BaseCheckbox
@@ -102,7 +102,7 @@
           {{ updateProfileError }}
         </div>
         <BaseButton class="Btn Btn--darkColor ProfilePage-Btn" :is-loading="profileIsUpdating">
-          Save changes
+          {{ $t('buttons.saveChanges') }}
         </BaseButton>
       </div>
     </form>
@@ -114,7 +114,6 @@ import { mapGetters, mapActions, mapState, mapMutations } from 'vuex';
 import BaseButton from '@/components/base/BaseButton.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import Loader from '@/components/Loader';
-import { PROFILE_LABELS } from '@/config';
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
 import { dateCheck, phoneWithPlusCheck, postalCodeCheck } from '@/utils/formCheckers';
 import moment from 'moment';
@@ -145,7 +144,10 @@ export default {
     return {
       fields: {},
       promosFields: {},
-      profileLabels: PROFILE_LABELS,
+      profileLabels: {
+        receiveEmailPromos: this.$t('cabinet.profile.email'),
+        receiveSmsPromos: this.$t('cabinet.profile.sms'),
+      },
       fakeFields: {
         email: 'fillypkfillypk@gmail.com',
         firstName: 'Fillyp',

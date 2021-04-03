@@ -42,7 +42,8 @@
     "positioveNum": "Input positive number",
     "0andNum": "Input 0 or positive number",
     "invalidDate": "Date is invalid",
-    "minAge": "You are under age of"
+    "minAge": "You are under age of {minAge}",
+    "inputCorrectDate": "Input correct date"
   },
   "menu": {
     "menu": "Menu",
