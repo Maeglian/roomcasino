@@ -3,7 +3,9 @@
     <div class="Close Modal-Close" @click="$emit('close')"></div>
     <div v-if="!isConfirm" class="CreateLimits">
       <div class="CabinetPage-Header CabinetPage-Section">
-        <template v-if="isEdit"> {{ $t('buttons.edit') }} {{ type.name }} </template>
+        <template v-if="isEdit">
+          {{ $t('buttons.edit') }} {{ $t(`cabinet.limits.limits.${type.value}.name`) }}
+        </template>
         <template v-else> {{ $t('cabinet.limits.createLimits') }} </template>
       </div>
       <BaseDropdown
@@ -14,7 +16,7 @@
         @set-dropdown-value="type = $event"
       />
       <div class="CabinetPage-Section CabinetPage-Text CreateLimits-Text">
-        {{ limits[type.value].text }}
+        {{ $t(`cabinet.limits.limits.${type.value}.text`) }}
       </div>
       <div
         v-if="
@@ -92,7 +94,11 @@
     <div v-else>
       <ConfirmDialog
         :title="$t('cabinet.limits.confirmUpdate')"
-        :text="`${$t('cabinet.limits.sureSet')} ${type.name}? ${limits[type.value].editRules}`"
+        :text="
+          `${$t('cabinet.limits.sureSet')} ${$t(`cabinet.limits.limits.${type.value}.name`)}? ${$t(
+            `cabinet.limits.limits.${type.value}.editRules`,
+          )}`
+        "
         :ok-btn-text="$t('cabinet.limits.setLimit')"
         @cancel="$emit('close')"
         @ok="onClickLimitBtn"

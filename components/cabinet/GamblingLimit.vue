@@ -149,11 +149,17 @@ export default {
     ...mapState(['deleteLimitError']),
     ...mapGetters(['activeAccount']),
     title() {
-      return this.item.type === 'depositLimit' ||
+      if (
+        this.item.type === 'depositLimit' ||
         this.item.type === 'wagerLimit' ||
         this.item.type === 'lossLimit'
-        ? `${LIMIT_PERIODS.find(period => period.value === this.item.period).name} limit`
-        : LIMIT_DETAILS[this.item.type].title;
+      ) {
+        const limit = LIMIT_PERIODS.find(period => period.value === this.item.period);
+        console.log(limit);
+        return `${this.$t(`cabinet.limits.periods.${limit.name}`)} limit`;
+      }
+
+      return this.$t(`cabinet.limits.limits.${this.item.type}.title`);
     },
     color() {
       switch (this.item.type) {
