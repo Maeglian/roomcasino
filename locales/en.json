@@ -112,11 +112,6 @@
     "findGame": "Find game",
     "notFound": "Nothing was found"
   },
-  "additionalWords": {
-    "now": "now",
-    "upTo": "up to",
-    "or": "or"
-  },
   "common": {
     "date": "Date",
     "currency": "Currency",
@@ -127,7 +122,10 @@
     "active": "Active",
     "left": "Left",
     "yes": "Yes",
-    "email": "Email"
+    "email": "Email",
+    "wager": "Wager",
+    "created": "Created",
+    "expiresAt": "Expires at"
   },
   "actions": {
     "addCurrency": "Add currency"
@@ -198,10 +196,13 @@
     "bonuses": {
       "history": "Bonus history",
       "table": {
+        "wagered": "wagered",
         "bonus": "Bonus",
         "min": "Min deposit sum",
         "max": "Max prize"
-      }
+      },
+      "wagerAmountRequirement": "Wager Amount requirement",
+      "wageredPercent": "Wagered percent"
     },
     "history": {
       "tabs": {
@@ -216,7 +217,6 @@
         "gameName": "Game name",
         "betSum": "Bet sum",
         "win": "Win",
-        "wager": "Wager",
         "validUntil": "Valid until"
       }
     },
