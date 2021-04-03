@@ -19,7 +19,8 @@
     "addLimits": "Add limits",
     "filter": "Filter",
     "cashout": "Cashout",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "loading": "Loading"
   },
   "menu": {
     "menu": "Menu",
