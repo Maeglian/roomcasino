@@ -23,7 +23,26 @@
     "loading": "Loading",
     "continue": "Continue",
     "letsStart": "Let’s start",
-    "goHomePage": "Go to the home page"
+    "goHomePage": "Go to the home page",
+    "save": "Save"
+  },
+  "errors": {
+    "required": "Can't be blank",
+    "email": "No valid email address",
+    "confirmPassword": "Password and confirm password are not the same",
+    "oldAndNewPasswords": "Old and new passwords are the same",
+    "minLength": "Must have at least {num} characters",
+    "maxLength": "Must not be more than {num} characters",
+    "phone": "Must be with '+', from 10 to 14 symbols",
+    "numbers": "Must be numeric",
+    "day": "Day is invalid",
+    "month": "Month is invalid",
+    "year": "Year is invalid",
+    "postalCode": "Must be letters, numbers or space",
+    "positioveNum": "Input positive number",
+    "0andNum": "Input 0 or positive number",
+    "invalidDate": "Date is invalid",
+    "minAge": "You are under age of"
   },
   "menu": {
     "menu": "Menu",
