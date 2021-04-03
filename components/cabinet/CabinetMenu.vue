@@ -1,36 +1,36 @@
 <template>
   <nav class="CabinetMenu">
-    <NuxtLink class="CabinetMenu-NavLink" to="/cabinet/balance">
+    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/cabinet/balance')">
       <svg class="CabinetMenu-NavIcon" width="20" height="16">
         <use xlink:href="@/assets/img/icons.svg#deposit"></use>
       </svg>
       {{ $t('cabinet.pages.balance') }}
     </NuxtLink>
-    <NuxtLink class="CabinetMenu-NavLink" to="/cabinet/bonuses">
+    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/cabinet/bonuses')">
       <svg class="CabinetMenu-NavIcon" width="20" height="18">
         <use xlink:href="@/assets/img/icons.svg#promotions"></use>
       </svg>
       {{ $t('cabinet.pages.bonuses') }}
     </NuxtLink>
-    <NuxtLink class="CabinetMenu-NavLink" to="/cabinet/history/transaction">
+    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/cabinet/history/transaction')">
       <svg class="CabinetMenu-NavIcon" width="22" height="20">
         <use xlink:href="@/assets/img/icons.svg#history"></use>
       </svg>
       {{ $t('cabinet.pages.history') }}
     </NuxtLink>
-    <NuxtLink class="CabinetMenu-NavLink" to="/cabinet/verification">
+    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/cabinet/verification')">
       <svg class="CabinetMenu-NavIcon" width="20" height="23">
         <use xlink:href="@/assets/img/icons.svg#verification"></use>
       </svg>
       {{ $t('cabinet.pages.verification') }}
     </NuxtLink>
-    <NuxtLink class="CabinetMenu-NavLink" to="/cabinet/profile/general">
+    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/cabinet/profile/general')">
       <svg class="CabinetMenu-NavIcon" width="20" height="22">
         <use xlink:href="@/assets/img/icons.svg#user"></use>
       </svg>
       {{ $t('cabinet.pages.profile') }}
     </NuxtLink>
-    <NuxtLink class="CabinetMenu-NavLink" to="/cabinet/limits">
+    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/cabinet/limits')">
       <svg class="CabinetMenu-NavIcon" width="20" height="20">
         <use xlink:href="@/assets/img/icons.svg#options"></use>
       </svg>
@@ -53,7 +53,7 @@ export default {
   methods: {
     ...mapActions(['logout']),
     onClickExitBtn() {
-      this.logout().then(() => this.$router.push('/'));
+      this.logout().then(() => this.$router.push(this.localePath('/')));
     },
   },
 };

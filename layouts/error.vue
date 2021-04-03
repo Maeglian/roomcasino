@@ -15,7 +15,9 @@
       <template v-else>
         <h1 class="Title Title--type-h1 ErrorPage-Title">An error occurred</h1>
       </template>
-      <NuxtLink to="/" class="Btn Btn--common ErrorPage-Btn"> Go to the home page </NuxtLink>
+      <NuxtLink :to="localePath('/')" class="Btn Btn--common ErrorPage-Btn">
+        {{ $t('buttons.goHomePage') }}
+      </NuxtLink>
     </div>
   </section>
 </template>

@@ -198,7 +198,7 @@ export default {
             type: 'success',
             text: 'Your password was successfully updated!',
           });
-          this.$router.push('/');
+          this.$router.push(this.localePath('/'));
           this.showRegistrationDialog('login');
         }
       });

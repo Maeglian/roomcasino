@@ -8,7 +8,7 @@
             <use xlink:href="@/assets/img/icons.svg#toggle"></use>
           </svg>
         </button>
-        <NuxtLink class="MainNav-Logo" to="/">
+        <NuxtLink class="MainNav-Logo" :to="localePath('/')">
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
         </NuxtLink>
       </div>
@@ -28,7 +28,7 @@
     <transition v-if="width < 960" name="slide-left">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
         <div class="AsideMenu-Header">
-          <NuxtLink class="AsideMenu-Logo" to="/">
+          <NuxtLink class="AsideMenu-Logo" :to="localePath('/')">
             <img class="AsideMenu-Logo" src="@/assets/img/logo.svg" />
           </NuxtLink>
           <div class="Close AsideMenu-Close" @click="toggleNav()"></div>

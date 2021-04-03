@@ -7,7 +7,7 @@
         </svg>
         <div class="MobileNav-Name">{{ $t('menu.menu') }}</div>
       </button>
-      <NuxtLink class="MobileNav-Item" to="/promotions">
+      <NuxtLink class="MobileNav-Item" :to="localePath('/promotions')">
         <svg width="17" height="16">
           <use xlink:href="@/assets/img/icons.svg#promotions"></use>
         </svg>

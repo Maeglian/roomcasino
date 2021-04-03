@@ -136,7 +136,7 @@ export default {
         if (this.platform === 'mobile') window.location.href = this.gameUrlForIframe;
         else {
           localStorage.setItem('gameBg', bg);
-          this.$router.push('/game');
+          this.$router.push(this.localePath('/game'));
         }
       }
     },

@@ -11,7 +11,7 @@
           <p class="Error ConfirmEmailPage-Text">
             {{ emailConfirmError }}
           </p>
-          <NuxtLink to="/" class="Btn Btn--common ConfirmEmailPage-Btn">
+          <NuxtLink :to="localePath('/')" class="Btn Btn--common ConfirmEmailPage-Btn">
             {{ $t('buttons.goHomePage') }}
           </NuxtLink>
         </template>

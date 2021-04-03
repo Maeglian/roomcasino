@@ -2,33 +2,47 @@
   <section class="Footer">
     <Partners class="Footer-Partners" />
     <nav class="Nav Footer-Nav">
-      <NuxtLink class="Footer-Logo" to="/">
+      <NuxtLink class="Footer-Logo" :to="localePath('/')">
         <img src="@/assets/img/logo.svg" />
       </NuxtLink>
       <div class="Footer-Links">
-        <NuxtLink class="Link Footer-Link" to="/promotions"> {{ $t('pages.promotion') }} </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/about-us"> {{ $t('pages.aboutUs') }}</NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/faq"> {{ $t('pages.faq') }}</NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/bitcoins"> {{ $t('pages.btc') }}</NuxtLink>
-        <!--        <NuxtLink class="Link Footer-Link" to="/vip">-->
+        <NuxtLink class="Link Footer-Link" :to="localePath('/promotions')">
+          {{ $t('pages.promotion') }}
+        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" :to="localePath('/about-us')">
+          {{ $t('pages.aboutUs') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/faq')">
+          {{ $t('pages.faq') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/bitcoins')">
+          {{ $t('pages.btc') }}</NuxtLink
+        >
+        <!--        <NuxtLink class="Link Footer-Link" to="localePath('/vip')">-->
         <!--          VIP rewards-->
         <!--        </NuxtLink>-->
-        <NuxtLink class="Link Footer-Link" to="/aml-policy"> {{ $t('pages.aml') }}</NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/terms"> {{ $t('pages.terms') }}</NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/bonus-policy">
+        <NuxtLink class="Link Footer-Link" :to="localePath('/aml-policy')">
+          {{ $t('pages.aml') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/terms')">
+          {{ $t('pages.terms') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/bonus-policy')">
           {{ $t('pages.bonusPolicy') }}</NuxtLink
         >
-        <NuxtLink class="Link Footer-Link" to="/responsible-gaming">
+        <NuxtLink class="Link Footer-Link" :to="localePath('/responsible-gaming')">
           {{ $t('pages.responsibleGaming') }}</NuxtLink
         >
-        <NuxtLink class="Link Footer-Link" to="/privacy-policy">
+        <NuxtLink class="Link Footer-Link" :to="localePath('/privacy-policy')">
           {{ $t('pages.privacyPolicy') }}</NuxtLink
         >
 
         <!--        <NuxtLink class="Link Footer-Link" to="/payment-methods">-->
         <!--          Payment methods-->
         <!--        </NuxtLink>-->
-        <NuxtLink class="Link Footer-Link" to="/risk-warnings"> {{ $t('pages.risk') }}</NuxtLink>
+        <NuxtLink class="Link Footer-Link" :to="localePath('/risk-warnings')">
+          {{ $t('pages.risk') }}</NuxtLink
+        >
       </div>
       <LangSwitcher class="Footer-Lang" />
       <!--      <div class="Footer-Lang">-->

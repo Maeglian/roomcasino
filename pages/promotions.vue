@@ -39,7 +39,7 @@
               {{ isLoggedIn ? $t('buttons.getBonus') : $t('buttons.signUp') }}
             </button>
             <NuxtLink
-              to="/bonus-terms"
+              :to="localePath('/bonus-terms')"
               class="Btn Btn--common Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
             >
               {{ $t('buttons.terms') }}

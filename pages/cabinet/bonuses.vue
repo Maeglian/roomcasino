@@ -1,7 +1,7 @@
 <template>
   <div class="CabinetPage BonusesPage">
     <div class="CabinetPage-Title BonusesPage-Title">{{ $t('cabinet.pages.bonuses') }}</div>
-    <NuxtLink to="/cabinet/history/bonus" class="BonusesPage-Bonuses">
+    <NuxtLink :to="localePath('/cabinet/history/bonus')" class="BonusesPage-Bonuses">
       {{ $t('cabinet.bonuses.history') }}
       <span class="BonusesPage-BonusesIcon">
         <svg width="16" height="16">

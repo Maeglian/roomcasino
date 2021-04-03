@@ -15,7 +15,11 @@
           :v="$v.fields[name].value"
         />
         <div class="AuthDialog-Link">
-          <NuxtLink to="/passwordRestore" class="AuthDialog-Link" @click.native="$emit('close')">
+          <NuxtLink
+            :to="localePath('/passwordRestore')"
+            class="AuthDialog-Link"
+            @click.native="$emit('close')"
+          >
             {{ $t('auth.forgotPassword') }}?
           </NuxtLink>
         </div>
@@ -79,7 +83,7 @@ export default {
         if (this.fields[key].value) payload[key] = this.fields[key].value;
       }
       this.authorize(payload).then(() => {
-        this.$router.push('/');
+        this.$router.push(this.localePath('/'));
         if (!this.authError) this.$emit('close');
       });
     },

@@ -17,7 +17,7 @@
 
       <NuxtLink
         v-if="!isFullScreen"
-        to="/"
+        :to="localePath('/')"
         class="ControlsPanel-Action"
         @click.native="onCloseGame"
       >

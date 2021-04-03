@@ -20,7 +20,7 @@
       <div class="Modal-Text">{{ $t('modals.playGame') }}.</div>
       <NuxtLink
         class="Btn Btn--common CashierForm-Btn"
-        :to="{ path: '/', hash: '#games' }"
+        :to="localePath({ path: '/', hash: '#games' })"
         @click.native="$modal.hide('goPlay')"
       >
         {{ $t('buttons.playNow') }}

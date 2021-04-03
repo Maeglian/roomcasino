@@ -2,7 +2,7 @@
   <div class="AuthSection" :class="{ 'AuthSection--authenticated': isLoggedIn }">
     <div v-if="isLoggedIn" class="AuthSection-UserSection">
       <div class="AuthSection-Sections">
-        <NuxtLink class="AuthSection-UserInfo" to="/cabinet/balance">
+        <NuxtLink class="AuthSection-UserInfo" :to="localePath('/cabinet/balance')">
           <div class="AuthSection-User">
             <span class="AuthSection-UserName">
               {{ user.firstName || user.email }}
@@ -20,7 +20,11 @@
             {{ activeAccount.currency || user.currency }}
           </div>
         </NuxtLink>
-        <NuxtLink v-if="!myAccount" class="AuthSection-UserInfo" to="/cabinet/balance">
+        <NuxtLink
+          v-if="!myAccount"
+          class="AuthSection-UserInfo"
+          :to="localePath('/cabinet/balance')"
+        >
           <img src="@/assets/img/user.svg" />
         </NuxtLink>
         <!--        <div class="AuthSection-UserLvl">-->
