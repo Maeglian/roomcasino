@@ -2,10 +2,10 @@
   <form class="AuthDialog-Registration AuthDialog-Form" @submit.prevent="onSubmitForm">
     <div class="AuthDialog-Content" :class="{ 'AuthDialog-Content--step1': step === 1 }">
       <div v-if="step === 1" class="AuthDialog-RegistrationHeader">
-        <div class="AuthDialog-Title" v-html="$t('authDialog.signUpTitle')"></div>
+        <div class="AuthDialog-Title" v-html="$t('auth.signUpTitle')"></div>
         <div class="AuthDialog-Subtitle"><span class="Colored">€ 150</span></div>
       </div>
-      <div v-if="step === 2" class="AuthDialog-Text">{{ $t('authDialog.step2Title') }}</div>
+      <div v-if="step === 2" class="AuthDialog-Text">{{ $t('auth.step2Title') }}</div>
       <template v-for="(field, name) in fields">
         <template v-if="field.type === 'dropdown'">
           <BaseDropdown
@@ -105,8 +105,8 @@
             @change="field.value = $event"
             @animationend="$v[`fieldsStep${step}`][name].$reset()"
           >
-            <span v-if="name === 'receiveEmailPromos'">{{ $t('authDialog.emails') }}</span>
-            <i18n v-if="name === 'confirmAgeAndTerms'" path="authDialog.terms" tag="span">
+            <span v-if="name === 'receiveEmailPromos'">{{ $t('auth.emails') }}</span>
+            <i18n v-if="name === 'confirmAgeAndTerms'" path="auth.terms" tag="span">
               <template #minAge>
                 <span>{{ minAge }}</span>
               </template>
@@ -235,7 +235,7 @@
         :is-loading="authStatus === 'loading'"
         :disabled="$v.$error"
       >
-        Sign up
+        {{ $t('buttons.signUp') }}
       </BaseButton>
       <BaseButton
         v-if="step === 2"
@@ -243,7 +243,7 @@
         :is-loading="authStatus === 'loading'"
         :disabled="$v.$error"
       >
-        Save
+        {{ $t('buttons.save') }}
       </BaseButton>
     </div>
   </form>
@@ -463,7 +463,7 @@ export default {
     },
     labels() {
       return {
-        receiveEmailPromos: this.$t('authDialog.emails'),
+        receiveEmailPromos: this.$t('auth.emails'),
         confirmAgeAndTerms: `I am ${this.minAge} years old and I accept the<br/> <a class="AuthDialog-RegistrationLink" href="/terms" target="_blank">Terms&nbsp;and&nbsp;Conditions</a> and <a class="AuthDialog-RegistrationLink" href="/privacy-policy" target="_blank">Privacy&nbsp;Policy</a>&nbsp;<span class="AuthDialog-Required">*</span>`,
       };
     },
