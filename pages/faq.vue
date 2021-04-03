@@ -182,7 +182,7 @@ export default {
   computed: {
     ...mapState(['width']),
     tabs() {
-      return Object.entries(this.items).map((item) => ({
+      return Object.entries(this.items).map(item => ({
         name: item[1].title,
         value: item[0],
       }));

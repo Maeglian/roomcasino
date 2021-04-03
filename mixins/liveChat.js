@@ -5,7 +5,7 @@ export default {
     ...mapState(['user']),
   },
   watch: {
-    '$store.state.user.email': function () {
+    '$store.state.user.email': function() {
       if (process.client && window.LC_API && window.LC_API.set_visitor_email && this.user.email)
         window.LC_API.set_visitor_email(this.user.email);
     },
