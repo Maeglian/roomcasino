@@ -8,7 +8,10 @@
             v-if="!providersWithoutIcons.includes(providerActive.name)"
             class="ProvidersMenu-ProviderIcon"
             :src="
-              require(`@/assets/img/${providerActive.name.toLowerCase().split(' ').join('')}.svg`)
+              require(`@/assets/img/${providerActive.name
+                .toLowerCase()
+                .split(' ')
+                .join('')}.svg`)
             "
             alt=""
           />
@@ -106,23 +109,6 @@ export default {
       required: false,
       default: false,
     },
-  },
-  data() {
-    return {
-      providersWithoutIcons: [
-        'All providers',
-        'Boomerang',
-        'Dice Lab',
-        'Felt Gaming',
-        'Fuga',
-        'Games Lab',
-        'High Flyer Games',
-        'Lightning Box',
-        'Reelplay',
-        'Silverback',
-        'Sthlmgaming',
-      ],
-    };
   },
   computed: {
     ...mapState(['width', 'gameProducerList']),

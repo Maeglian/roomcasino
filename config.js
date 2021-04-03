@@ -26,46 +26,6 @@ export const API_HOST =
     ? API_HOST_SANDBOX
     : API_HOST_STAGE;
 
-export const DEFAULT_PROVIDER = { name: 'All providers', noIcon: true };
-
-export const GAME_TYPES = [
-  {
-    name: 'Top games',
-    type: 'top',
-    icon: 'crown',
-  },
-  {
-    name: 'All games',
-    type: 'all',
-    icon: 'star',
-  },
-  {
-    name: 'Live games',
-    type: 'live',
-    icon: 'live',
-  },
-  {
-    name: 'Slots games',
-    type: 'slots',
-    icon: 'slots',
-  },
-  {
-    name: 'Roulette',
-    type: 'roulette',
-    icon: 'roulette',
-  },
-  {
-    name: 'Table games',
-    type: 'table',
-    icon: 'table',
-  },
-  {
-    name: 'Card games',
-    type: 'card',
-    icon: 'cards',
-  },
-];
-
 export const LIMIT_TYPES = [
   { name: 'Deposit limits', value: 'depositLimit' },
   { name: 'Wager limits', value: 'wagerLimit' },

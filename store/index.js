@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Vue from 'vue';
 import moment from 'moment';
-import { BILLING_PROVIDER_ID, API_HOST, DEFAULT_PROVIDER, LIMIT_DETAILS } from '../config';
+import { BILLING_PROVIDER_ID, API_HOST, LIMIT_DETAILS } from '../config';
 
 const Cookie = process.client ? require('js-cookie') : undefined;
 const cookieparser = process.server ? require('cookieparser') : undefined;
@@ -82,7 +82,7 @@ export const state = () => ({
   bonusHistoryList: [],
   sessionHistoryList: [],
   serverError: '',
-  gameProducerList: [DEFAULT_PROVIDER],
+  gameProducerList: [],
   status: '',
   authStatus: '',
   phoneCodeList: [],
@@ -954,7 +954,7 @@ export const mutations = {
     state.historyListIsLoading = false;
   },
   setGameProducerList: (state, payload) => {
-    state.gameProducerList = [...state.gameProducerList, ...payload];
+    state.gameProducerList = payload;
   },
   openNav: state => {
     state.navIsOpen = true;
@@ -1361,7 +1361,11 @@ export const actions = {
     try {
       // eslint-disable-next-line no-underscore-dangle
       const res = await axios.get(`${API_HOST}/gameProducerList`);
-      commit('setGameProducerList', res.data.data);
+      const payload = [
+        { name: this.$i18n.t('homepage.allProviders'), iconUrl: '' },
+        ...res.data.data,
+      ];
+      commit('setGameProducerList', payload);
     } catch (e) {
       commit('pushErrors', e);
     }

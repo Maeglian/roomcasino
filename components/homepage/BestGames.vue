@@ -25,13 +25,15 @@
           v-for="(tab, i) in tabs"
           :key="tab.name"
           :class="{ 'DefaultGames-Tab--active': tabActive.name === tab.name }"
-          :to="{
-            name: 'index-games-gameCategory',
-            params: {
-              gameCategory: tab.type,
-              producer: providerActive.name === 'All providers' ? false : providerActive.name,
-            },
-          }"
+          :to="
+            localePath({
+              name: 'index-games-gameCategory',
+              params: {
+                gameCategory: tab.type,
+                producer: providerActive.name === 'All providers' ? false : providerActive.name,
+              },
+            })
+          "
           class="DefaultGames-Tab"
           @click.native="onChooseTab(i)"
         >
@@ -72,7 +74,7 @@
       class="DefaultGames"
     >
       <Loader v-if="defaultGamesAreLoading" />
-      <div class="Title Title--type-h2 Cards-Title">All games</div>
+      <div class="Title Title--type-h2 Cards-Title">{{ $t('gameCategories.all') }}</div>
       <Games
         class="DefaultGames-Cards NewGames-Cards"
         :games="defaultGames"
@@ -89,7 +91,7 @@ import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
-import { DEFAULT_PROVIDER, GAME_TYPES, PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID } from '@/config';
+import { PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID } from '@/config';
 import Games from '@/components/Games';
 import toggleDropdown from '@/mixins/toggleDropdown';
 
@@ -105,10 +107,45 @@ export default {
   data() {
     return {
       listIsOpen: false,
-      tabs: GAME_TYPES,
-      tabActive:
-        GAME_TYPES.find(game => this.$route.params.gameCategory === game.type) || GAME_TYPES[0],
-      providerActive: DEFAULT_PROVIDER,
+      tabs: [
+        {
+          name: this.$t('gameCategories.top'),
+          type: 'top',
+          icon: 'crown',
+        },
+        {
+          name: this.$t('gameCategories.all'),
+          type: 'all',
+          icon: 'star',
+        },
+        {
+          name: this.$t('gameCategories.live'),
+          type: 'live',
+          icon: 'live',
+        },
+        {
+          name: this.$t('gameCategories.slots'),
+          type: 'slots',
+          icon: 'slots',
+        },
+        {
+          name: this.$t('gameCategories.roulette'),
+          type: 'roulette',
+          icon: 'roulette',
+        },
+        {
+          name: this.$t('gameCategories.table'),
+          type: 'table',
+          icon: 'table',
+        },
+        {
+          name: this.$t('gameCategories.card'),
+          type: 'card',
+          icon: 'cards',
+        },
+      ],
+      tabActive: {},
+      providerActive: {},
       searched: '',
     };
   },
@@ -141,7 +178,17 @@ export default {
       return 'All games';
     },
   },
+  watch: {
+    gameProducerList: {
+      immediate: true,
+      handler() {
+        if (this.gameProducerList.length) this.providerActive = this.gameProducerList[0];
+      },
+    },
+  },
   mounted() {
+    this.tabActive =
+      this.tabs.find(game => this.$route.params.gameCategory === game.type) || this.tabs[0];
     window.dga.connect(PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID);
     window.dga.onConnect = () => window.dga.available(PRAGMATIC_CASINOID);
     window.dga.onMessage = data => {
@@ -164,19 +211,21 @@ export default {
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
       this.isOpen = false;
-      this.providerActive = DEFAULT_PROVIDER;
+      this.providerActive = this.gameProducerList[0];
     },
     onChooseProvider(e) {
       this.searched = '';
       this.providerActive = e;
       this.tabActive = this.tabs.find(tab => tab.type === 'all');
-      this.$router.push({
-        name: 'index-providers-providerName',
-        params: {
-          category: this.tabActive.type,
-          providerName: e.name === 'All providers' ? 'all' : e.name,
-        },
-      });
+      this.$router.push(
+        this.localePath({
+          name: 'index-providers-providerName',
+          params: {
+            category: this.tabActive.type,
+            providerName: e.name === this.gameProducerList[0].name ? 'all' : e.name,
+          },
+        }),
+      );
     },
     onClickOutsideTabs(e) {
       if (!e.target.closest('.DefaultGames-ChosenTab')) this.isOpen = false;
