@@ -25,7 +25,8 @@
     "letsStart": "Let’s start",
     "goHomePage": "Go to the home page",
     "save": "Save",
-    "edit": "Edit"
+    "edit": "Edit",
+    "getBonus": "Get bonus"
   },
   "errors": {
     "required": "Can't be blank",
@@ -40,7 +41,7 @@
     "month": "Month is invalid",
     "year": "Year is invalid",
     "postalCode": "Must be letters, numbers or space",
-    "positioveNum": "Input positive number",
+    "positiveNum": "Input positive number",
     "0andNum": "Input 0 or positive number",
     "invalidDate": "Date is invalid",
     "minAge": "You are under age of {minAge}",
@@ -309,18 +310,22 @@
   },
   "promotions": {
     "title": "Current promotions",
-    "text": "Limit cancellation will be applied in 24 hours after player's request.",
+    "text": "Ninecasino is constantly working to deliver the best promotions. We use the latest\n        technology and the feedback from our players to re-design our promotions. Enjoy!",
+    "upTo": "up to $150",
     "deposit1": {
       "title": "100%<br/> of the deposit<br/> amount",
-      "text": "Make your first deposit at Ninecasino and get up to $150.</p><p>To activate the bonus - just make first deposit of $20 or more. The bonus will be credited automatically."
+      "name": "First deposit bonus",
+      "text": "Make your first deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make first deposit of $20 or more. The bonus will be credited automatically."
     },
     "deposit2": {
       "title": "55%<br/> of the deposit<br/> amount",
-      "text": "Make your second deposit at Ninecasino and get up to $150.</p><p>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically."
+      "name": "Second deposit bonus",
+      "text": "Make your second deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically."
     },
     "deposit3": {
       "title": "100%<br/> of the deposit<br/> amount",
-      "text": "Make your third deposit at Ninecasino and get up to $150.</p><p>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
+      "name": "Third deposit bonus",
+      "text": "Make your third deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
     }
   }
 }

@@ -1,10 +1,11 @@
 <template>
   <section class="Page PromotionsPage">
     <div class="Page-Header PromotionsPage-Header">
-      <h1 class="Title Title--type-h1 Page-Title PromotionsPage-Title">Current promotions</h1>
+      <h1 class="Title Title--type-h1 Page-Title PromotionsPage-Title">
+        {{ $t('promotions.title') }}
+      </h1>
       <div class="Page-Text Text Text--additional">
-        Ninecasino is constantly working to deliver the best promotions. We use the latest
-        technology and the feedback from our players to re-design our promotions. Enjoy!
+        {{ $t('promotions.text') }}
       </div>
     </div>
     <section class="Page-Content">
@@ -35,13 +36,13 @@
               class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
               @click="onClickBtn()"
             >
-              {{ isLoggedIn ? 'Get bonus' : 'Sign up' }}
+              {{ isLoggedIn ? $t('buttons.getBonus') : $t('buttons.signUp') }}
             </button>
             <NuxtLink
               to="/bonus-terms"
               class="Btn Btn--common Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
             >
-              Bonus terms & conditions
+              {{ $t('buttons.terms') }}
             </NuxtLink>
           </div>
         </article>
@@ -112,28 +113,25 @@ export default {
     return {
       promotions: [
         {
-          title: '100%<br/> of the deposit<br/> amount',
-          subtitle: 'up to $150',
+          title: this.$t('promotions.deposit1.title'),
+          subtitle: this.$t('promotions.upTo'),
           image: 'promotion1.png',
-          announce: 'First deposit bonus',
-          text:
-            '<p>Make your first deposit at Ninecasino and get up to $150.</p><p>To activate the bonus - just make first deposit of $20 or more. The bonus will be credited automatically.</p>',
+          announce: this.$t('promotions.deposit1.name'),
+          text: this.$t('promotions.deposit1.text'),
         },
         {
-          title: '55%<br/> of the deposit<br/> amount',
-          subtitle: 'up to $150',
+          title: this.$t('promotions.deposit2.title'),
+          subtitle: this.$t('promotions.upTo'),
           image: 'promotion2.png',
-          announce: 'Second deposit bonus',
-          text:
-            '<p>Make your second deposit at Ninecasino and get up to $150.</p><p>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically.</p>',
+          announce: this.$t('promotions.deposit2.name'),
+          text: this.$t('promotions.deposit2.text'),
         },
         {
-          title: '100%<br/> of the deposit<br/> amount',
-          subtitle: 'up to $150',
+          title: this.$t('promotions.deposit3.title'),
+          subtitle: this.$t('promotions.upTo'),
           image: 'promotion3.png',
-          announce: 'Third deposit bonus',
-          text:
-            '<p>Make your third deposit at Ninecasino and get up to $150.</p><p>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically.</p>',
+          announce: this.$t('promotions.deposit3.name'),
+          text: this.$t('promotions.deposit3.text'),
         },
         // {
         //   title: '55%<br/> of the deposit<br/> amount',
