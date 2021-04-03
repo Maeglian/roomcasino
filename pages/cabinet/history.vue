@@ -1,10 +1,16 @@
 <template>
   <div class="CabinetPage HistoryPage">
-    <div class="CabinetPage-Title HistoryPage-Title">History</div>
+    <div class="CabinetPage-Title HistoryPage-Title">{{ $t('cabinet.pages.history') }}</div>
     <div class="Tabs">
-      <NuxtLink to="/cabinet/history/transaction" class="Tabs-Tab"> Transactions History </NuxtLink>
-      <NuxtLink to="/cabinet/history/game" class="Tabs-Tab"> Game History </NuxtLink>
-      <NuxtLink to="/cabinet/history/bonus" class="Tabs-Tab"> Bonus History </NuxtLink>
+      <NuxtLink to="/cabinet/history/transaction" class="Tabs-Tab">
+        {{ $t('cabinet.history.tabs.transactions') }}
+      </NuxtLink>
+      <NuxtLink to="/cabinet/history/game" class="Tabs-Tab">
+        {{ $t('cabinet.history.tabs.game') }}
+      </NuxtLink>
+      <NuxtLink to="/cabinet/history/bonus" class="Tabs-Tab">
+        {{ $t('cabinet.history.tabs.bonus') }}
+      </NuxtLink>
     </div>
     <Nuxt :key="$route.path" />
   </div>
