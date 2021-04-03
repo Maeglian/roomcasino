@@ -191,6 +191,7 @@
         "cashout": "Available to cash out"
       },
       "addCurrency": "Add currency",
+      "noMoreCurrency": "No more currency to add",
       "active": "Active",
       "select": "Select"
     },
