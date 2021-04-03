@@ -26,6 +26,14 @@
     "support": "Support",
     "yourAccount": "Your account"
   },
+  "modals": {
+    "congratulations": "Congratulations",
+    "playGame": "Now you can play the game",
+    "cantStart": "Can't start the game",
+    "pleaseDeposit": "Please deposit first",
+    "pleaseDepositText": "It's a pity, but your balance is 0. Deposit now!"
+
+  },
   "authDialog": {
     "loginTitle": "Welcome back",
     "signUpTitle": "Sign up <span class=\"Colored\">&</span> get<br />welcome bonus",
