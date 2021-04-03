@@ -10,10 +10,10 @@
       </div>
       <div class="ConfirmDialog-Btns">
         <button class="Btn Btn--common Btn--dark ConfirmDialog-Btn" @click="onClickCancel">
-          Cancel
+          {{ $t('buttons.cancel') }}
         </button>
         <button class="Btn Btn--common Btn--color ConfirmDialog-Btn" @click="onClickOk">
-          Yes, {{ okBtnText }}
+          {{ $t('common.yes') }}, {{ okBtnText }}
         </button>
       </div>
     </div>
