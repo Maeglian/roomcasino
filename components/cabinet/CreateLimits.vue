@@ -3,8 +3,8 @@
     <div class="Close Modal-Close" @click="$emit('close')"></div>
     <div v-if="!isConfirm" class="CreateLimits">
       <div class="CabinetPage-Header CabinetPage-Section">
-        <template v-if="isEdit"> Edit {{ type.name }} </template>
-        <template v-else> Create limits </template>
+        <template v-if="isEdit"> {{ $t('buttons.edit') }} {{ type.name }} </template>
+        <template v-else> {{ $t('cabinet.limits.createLimits') }} </template>
       </div>
       <BaseDropdown
         v-if="!isEdit"
@@ -56,7 +56,7 @@
           :v="$v.value"
         >
           <template v-if="type.value === 'sessionLimit'" #afterInput-absolute>
-            <span class="CreateLimits-InputCurrency"> min </span>
+            <span class="CreateLimits-InputCurrency"> {{ $t('cabinet.limits.periods.min') }} </span>
           </template>
         </BaseInput>
         <BaseDropdown
@@ -85,15 +85,15 @@
         class="Btn Btn--common Btn--full Btn--color CreateLimits-Btn"
         @click="onClickLimitBtn"
       >
-        <template v-if="isEdit"> Save limits </template>
-        <template v-else> Add limits </template>
+        <template v-if="isEdit"> {{ $t('cabinet.limits.save') }} </template>
+        <template v-else> {{ $t('cabinet.limits.addLimits') }} </template>
       </button>
     </div>
     <div v-else>
       <ConfirmDialog
-        title="Confirm limit update"
-        :text="`Are you sure you want to set ${type.name}? ${limits[type.value].editRules}`"
-        ok-btn-text="set limit"
+        :title="$t('cabinet.limits.confirmUpdate')"
+        :text="`${$t('cabinet.limits.sureSet')} ${type.name}? ${limits[type.value].editRules}`"
+        :ok-btn-text="$t('cabinet.limits.setLimit')"
         @cancel="$emit('close')"
         @ok="onClickLimitBtn"
       />

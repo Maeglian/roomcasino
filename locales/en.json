@@ -24,7 +24,8 @@
     "continue": "Continue",
     "letsStart": "Let’s start",
     "goHomePage": "Go to the home page",
-    "save": "Save"
+    "save": "Save",
+    "edit": "Edit"
   },
   "errors": {
     "required": "Can't be blank",
@@ -121,6 +122,7 @@
     "title": "Title",
     "type": "Type",
     "active": "Active",
+    "disabled": "Disabled",
     "left": "Left",
     "yes": "Yes",
     "email": "Email",
@@ -298,8 +300,10 @@
       "edit": "Edit limit",
       "delete": "Delete limit",
       "save": "Save limits",
+      "setLimit": "Set limit",
       "deleteText": "Are you sure you want to delete",
       "sureSet": "Are you sure you want to set",
+      "confirmUpdate": "Confirm limit update",
       "untilReset": "Until reset"
     }
   },

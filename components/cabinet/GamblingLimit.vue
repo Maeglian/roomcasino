@@ -17,21 +17,21 @@
           <svg class="GamblingLimit-EditMenuIcon GamblingLimit-EditIcon">
             <use xlink:href="@/assets/img/icons.svg#edit"></use>
           </svg>
-          Edit limit
+          {{ $t('cabinet.limits.edit') }}
         </button>
         <button type="button" class="GamblingLimit-EditMenuItem" @click="onClickDelete">
           <svg class="GamblingLimit-EditMenuIcon GamblingLimit-DeleteIcon">
             <use xlink:href="@/assets/img/icons.svg#delete"></use>
           </svg>
-          Delete limit
+          {{ $t('cabinet.limits.delete') }}
         </button>
       </div>
       <div
         v-if="
           item.type === 'depositLimit' ||
-          item.type === 'wagerLimit' ||
-          item.type === 'lossLimit' ||
-          item.type === 'coolingOffLimit'
+            item.type === 'wagerLimit' ||
+            item.type === 'lossLimit' ||
+            item.type === 'coolingOffLimit'
         "
         class="GamblingLimit-State"
       >
@@ -46,7 +46,7 @@
           :min-format="true"
           :enddate="new Date(item.refreshAt * 1000)"
         >
-          Until Reset
+          {{ $t('cabinet.limits.untilReset') }}
         </Counter>
       </div>
       <template v-if="item.type === 'sessionLimit'">
@@ -55,9 +55,9 @@
             <svg class="GamblingLimit-SessionIcon">
               <use xlink:href="@/assets/img/icons.svg#clock"></use>
             </svg>
-            {{ sessionTime }} min
+            {{ sessionTime }} {{ $t('cabinet.limits.periods.min') }}
           </div>
-          <div>{{ item.targetValue }} min</div>
+          <div>{{ item.targetValue }} {{ $t('cabinet.limits.periods.min') }}</div>
         </div>
         <div class="GamblingLimit-LineScale">
           <div
@@ -71,12 +71,12 @@
           <template
             v-if="
               item.type === 'depositLimit' ||
-              item.type === 'wagerLimit' ||
-              item.type === 'lossLimit'
+                item.type === 'wagerLimit' ||
+                item.type === 'lossLimit'
             "
           >
             {{ item.targetValue - item.value }} of {{ item.targetValue }}
-            {{ activeAccount.currency }} left
+            {{ activeAccount.currency }} {{ $t('common.left') }}
           </template>
           <template v-else-if="item.type === 'coolingOffLimit'">
             {{ item.targetValue / 86400 }} {{ item.targetValue > 86400 ? 'days' : 'day' }}
@@ -98,7 +98,7 @@
           </template>
         </div>
         <div class="GamblingLimit-Active" :class="{ 'GamblingLimit-Active--active': isActive }">
-          {{ isActive ? 'Active' : 'Disabled' }}
+          {{ isActive ? $t('common.active') : $t('common.disabled') }}
         </div>
       </div>
     </div>
@@ -152,7 +152,7 @@ export default {
       return this.item.type === 'depositLimit' ||
         this.item.type === 'wagerLimit' ||
         this.item.type === 'lossLimit'
-        ? `${LIMIT_PERIODS.find((period) => period.value === this.item.period).name} limit`
+        ? `${LIMIT_PERIODS.find(period => period.value === this.item.period).name} limit`
         : LIMIT_DETAILS[this.item.type].title;
     },
     color() {
@@ -239,11 +239,11 @@ export default {
       this.$modal.show(
         ConfirmDialog,
         {
-          title: 'Delete limit',
-          text: `Are you sure you want to delete ${LIMIT_DETAILS[this.item.type].name}? ${
+          title: this.$t('cabinet.limits.delete'),
+          text: `${this.$t('cabinet.limits.deleteText')} ${LIMIT_DETAILS[this.item.type].name}? ${
             LIMIT_DETAILS[this.item.type].deleteRules
           }`,
-          okBtnText: 'delete limit',
+          okBtnText: this.$t('cabinet.limits.delete'),
           closeBtn: true,
           onOk: this.onDeleteLimit,
         },
