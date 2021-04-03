@@ -250,32 +250,32 @@
       "createLimits" : "Vytvořte limity",
       "addLimits" : "Přidejte limity",
       "limits" : {
-        "deposit" : {
+        "depositLimit" : {
           "name" : "Limity vkladů",
           "text" : "Váš účet lze nastavit s limity vkladů. Toto nastavení omezuje částku, kterou můžete vložit za den, týden nebo měsíc.",
           "editRules" : "Svůj limit můžete kdykoli snížit, tato změna se projeví okamžitě. Limit můžete zvýšit, ale aby se tato změna projevila, potřebujete 24 hodin.",
           "deleteRules" : "Zrušení limitu ztráty trvá 24 hodin. Po překročení limitu obdržíte e-mailové upozornění."
         },
-        "wager" : {
+        "wagerLimit" : {
           "name" : "Sázkové limity",
           "text" : "Váš účet lze nastavit sázkovými limity. Toto nastavení určuje množství peněz, které můžete vsadit za den, týden nebo měsíc.",
           "editRules" : "Svůj limit můžete kdykoli snížit, tato změna se projeví okamžitě. Limit můžete zvýšit, ale aby se tato změna projevila, potřebujete 24 hodin.",
           "deleteRules" : "Zrušení sázkového limitu trvá 24 hodin. Po překročení limitu obdržíte e-mailové upozornění."
         },
-        "loss" : {
+        "lossLimit" : {
           "name" : "Limity ztráty",
           "text" : "Váš účet lze nastavit s limity ztrát. Toto nastavení omezuje částku, kterou můžete ztratit za den, týden nebo měsíc.",
           "editRules" : "Svůj limit můžete kdykoli snížit, tato změna se projeví okamžitě. Limit můžete zvýšit, ale aby se tato změna projevila, potřebujete 24 hodin.",
           "deleteRules" : "Zrušení limitu ztráty trvá 24 hodin. Po překročení limitu obdržíte e-mailové upozornění."
         },
-        "session" : {
+        "sessionLimit" : {
           "name" : "Limity relací",
           "title" : "čas strávený hazardem '",
           "text" : "čas strávený hazardem",
           "editRules" : "",
           "deleteRules" : ""
         },
-        "coolOff" : {
+        "coolingOffLimit" : {
           "name" : "Vychladnout",
           "title" : "čas strávený hazardem '",
           "text" : "Cítíte potřebu zůstat od kasina déle? Na určitou dobu můžete nastavit limit pro rozmyšlenou. Omezení se projeví okamžitě. Během zadaného období nebudete moci provádět vklady a hrát, také budete vyloučeni ze všech reklamních nabídek. Po uplynutí nastavené doby obdržíte e-mail s oznámením, že váš účet je znovu aktivní.",
