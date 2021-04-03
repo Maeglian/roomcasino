@@ -46,13 +46,13 @@
               v-if="!$v[name].dateCheck && $v.fieldsStep2.birthDate.children.$anyDirty"
               class="AuthDialog-Error"
             >
-              Date is invalid
+              {{ $t('errors.invalidDate') }}
             </div>
             <div
               v-else-if="!$v[name].ageCheck && $v.fieldsStep2.birthDate.children.$anyDirty"
               class="AuthDialog-Error"
             >
-              You are under age of {{ minAge }}
+              {{ $t('errors.minAge', { minAge }) }}
             </div>
           </template>
           <BaseInput
@@ -136,7 +136,7 @@
             "
             class="AuthDialog-Error"
           >
-            Must be with '+', from 10 to 14 symbols
+            {{ $t('errors.phone') }}
           </div>
           <BaseDropdown
             v-model="field.code.value"
