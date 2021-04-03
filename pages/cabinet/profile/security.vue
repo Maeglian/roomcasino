@@ -23,7 +23,7 @@
       <!--        </form>-->
       <!--      </div>-->
       <form class="CabinetForm ProfilePage-Password" @submit.prevent="onSubmitPasswordForm">
-        <div class="CabinetPage-Header">Password change</div>
+        <div class="CabinetPage-Header">{{ $t('cabinet.profile.passwordChange') }}</div>
         <BaseInput
           v-model="oldPassword"
           class="ProfilePage-Row"
@@ -31,7 +31,7 @@
           error-class="CabinetForm-Error"
           input-class="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           :v="$v.oldPassword"
-          placeholder="Old password"
+          :placeholder="$t('cabinet.profile.oldPassword')"
           icon="password"
           :should-display-validation="shouldDisplayPasswordFormErrors"
         >
@@ -49,7 +49,7 @@
           error-class="CabinetForm-Error"
           input-class="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           :v="$v.newPassword.value"
-          placeholder="New password"
+          :placeholder="$t('cabinet.profile.newPassword')"
           icon="password"
           :should-display-validation="shouldDisplayPasswordFormErrors"
         >
@@ -76,7 +76,7 @@
           error-class="CabinetForm-Error"
           input-class="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           :v="$v.confirmPassword.value"
-          placeholder="Password confirm"
+          :placeholder="$t('cabinet.profile.confirmPassword')"
           :should-display-validation="shouldDisplayPasswordFormErrors"
         >
           <template #beforeInput-absolute>
@@ -101,12 +101,12 @@
           class="Btn Btn--full Btn--darkColor ProfilePage-Btn"
           :is-loading="profileIsUpdating"
         >
-          Update
+          {{ $t('buttons.update') }}
         </BaseButton>
       </form>
     </div>
     <CabinetTable
-      title="Session History"
+      :title="$t('cabinet.profile.sessionHistory')"
       :cols="sessionHistoryCols"
       :rows="sessionHistoryList"
       :show-more-btn="pageRowsCount > limit && !needsPagination"
@@ -127,7 +127,6 @@
 import CabinetTable from '@/components/cabinet/CabinetTable.vue';
 import { mapActions, mapMutations, mapState } from 'vuex';
 import { required, sameAs, not } from 'vuelidate/lib/validators';
-import { HISTORY_TABLES } from '@/config';
 import BaseInput from '@/components/base/BaseInput';
 import BaseButton from '@/components/base/BaseButton';
 
@@ -155,7 +154,34 @@ export default {
       },
       qrCode: '',
       shouldDisplayPasswordFormErrors: false,
-      sessionHistoryCols: HISTORY_TABLES.session.cols,
+      sessionHistoryCols: [
+        {
+          label: 'Started at',
+          field: 'startedAt',
+        },
+        {
+          label: 'Ip',
+          field: 'clientIp',
+        },
+        {
+          label: 'Country',
+          field: 'country',
+        },
+        {
+          label: 'User Agent',
+          field: 'userAgent',
+        },
+        {
+          label: 'Closed At',
+          field: 'closedAt',
+          colClasses(x) {
+            return x ? 'CabinetTable-Cell--disabled' : 'CabinetTable-Cell--success';
+          },
+          format(x) {
+            return x ? 'Closed' : 'Current';
+          },
+        },
+      ],
     };
   },
   computed: {
@@ -187,7 +213,7 @@ export default {
       value: {
         required,
         sameAsPassword: not(
-          sameAs(function () {
+          sameAs(function() {
             return this.oldPassword;
           }),
         ),
@@ -195,7 +221,7 @@ export default {
     },
     confirmPassword: {
       value: {
-        sameAsPassword: sameAs(function () {
+        sameAsPassword: sameAs(function() {
           return this.newPassword.value;
         }),
       },
