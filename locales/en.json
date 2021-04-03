@@ -171,7 +171,7 @@
   "filters": {
     "filteredBy": "Filtered by",
     "allStatuses": "All statuses",
-    "AllCurrencies": "All currencies",
+    "allCurrencies": "All currencies",
     "until": "Until"
   },
   "cabinet": {
@@ -232,6 +232,7 @@
       "drop": "Drop file here or browse images or .pdf files. Max size"
     },
     "profile": {
+      "title": "User profile",
       "tabs": {
         "general": "General",
         "security": "Security"
@@ -251,11 +252,38 @@
       "createLimits": "Create limits",
       "addLimits": "Add limits",
       "limits": {
-        "deposit": "Deposit limits",
-        "wager": "Wager limits",
-        "loss": "Loss limits",
-        "session": "Session limits",
-        "coolOff": "Coolimg off"
+        "deposit": {
+          "name": "Deposit limits",
+          "text": "Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or month.",
+          "editRules": "You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.",
+          "deleteRules": "Cancellation of the loss limit takes 24 hours. After the limit is exceeded, you will receive an email notification."
+        },
+        "wager": {
+          "name": "Wager limits",
+          "text": "Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or month.",
+          "editRules": "You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.",
+          "deleteRules": "Cancellation of the wager limit takes 24 hours. After the limit is exceeded, you will receive an email notification."
+        },
+        "loss": {
+          "name": "Loss limits",
+          "text": "Your account can be set with loss limits. This setting limits the amount you can lose per day, week or month.",
+          "editRules": "You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.",
+          "deleteRules": "Cancellation of the loss limit takes 24 hours. After the limit is exceeded, you will receive an email notification."
+        },
+        "session": {
+          "name": "Session limits",
+          "title": "time spent gambling'",
+          "text": "time spent gambling",
+          "editRules": "",
+          "deleteRules": ""
+        },
+        "coolOff": {
+          "name": "Cooling off",
+          "title": "time spent gambling'",
+          "text": "Feel the need to stay away from the casino for some time? You can set a cooling-off limit for a certain period of time. The restriction takes effect instantly. You won’t be able to make deposits and play during the specified period, also you will be excluded from all advertising offers. After the set period expires, you’ll receive a notification email saying your account is active again.",
+          "editRules": "Limit decrease will be applied in 24 hours after player's request. Limit increase will be applied immediately.",
+          "deleteRules": "Limit cancellation will be applied in 24 hours after player's request."
+        }
       },
       "periods": {
         "daily": "Daily",
@@ -269,7 +297,25 @@
       "edit": "Edit limit",
       "delete": "Delete limit",
       "save": "Save limits",
-      "deleteText": "Are you sure you want to delete"
+      "deleteText": "Are you sure you want to delete",
+      "sureSet": "Are you sure you want to set",
+      "untilReset": "Until reset"
+    }
+  },
+  "promotions": {
+    "title": "Current promotions",
+    "text": "Limit cancellation will be applied in 24 hours after player's request.",
+    "deposit1": {
+      "title": "100%<br/> of the deposit<br/> amount",
+      "text": "Make your first deposit at Ninecasino and get up to $150.</p><p>To activate the bonus - just make first deposit of $20 or more. The bonus will be credited automatically."
+    },
+    "deposit2": {
+      "title": "55%<br/> of the deposit<br/> amount",
+      "text": "Make your second deposit at Ninecasino and get up to $150.</p><p>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically."
+    },
+    "deposit3": {
+      "title": "100%<br/> of the deposit<br/> amount",
+      "text": "Make your third deposit at Ninecasino and get up to $150.</p><p>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
     }
   }
 }
