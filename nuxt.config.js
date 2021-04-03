@@ -91,16 +91,19 @@ export default {
     locales: [
       {
         code: 'en',
+        codeCountry: 'en_GB',
         file: 'en.json',
         icon: 'en.png',
       },
       {
         code: 'fr',
-        file: 'fr_CA.json',
+        codeCountry: 'fr_CA',
+        file: 'fr.json',
         icon: 'fr_ca.svg',
       },
       {
         code: 'cs',
+        codeCountry: 'cs_CZ',
         file: 'cs.json',
         icon: 'cs.png',
       },
