@@ -48,7 +48,7 @@
             @click="onClickSupport()"
           >
             <img class="Nav-Icon" src="@/assets/img/chat.svg" />
-            Support
+            {{ $t('menu.support') }}
           </button>
         </div>
         <AuthSection class="AsideMenu-AuthSection AuthSection--aside" :my-account="true" />
