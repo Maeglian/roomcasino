@@ -5,7 +5,7 @@
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Can't be blank
+      {{ $t('errors.required') }}
     </div>
 
     <div
@@ -13,47 +13,47 @@
       class="BaseInput-Error"
       :class="errorClass"
     >
-      No valid email address
+      {{ $t('errors.email') }}
     </div>
     <div
       v-if="
         shouldDisplayValidation &&
-        v &&
-        v.sameAsPassword === false &&
-        v.$dirty &&
-        v.$params.sameAsPassword.type !== 'not'
+          v &&
+          v.sameAsPassword === false &&
+          v.$dirty &&
+          v.$params.sameAsPassword.type !== 'not'
       "
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Password and confirm password are not the same
+      {{ $t('errors.confirmPassword') }}
     </div>
     <div
       v-if="
         shouldDisplayValidation &&
-        v &&
-        v.sameAsPassword === false &&
-        v.$dirty &&
-        v.$params.sameAsPassword.type === 'not'
+          v &&
+          v.sameAsPassword === false &&
+          v.$dirty &&
+          v.$params.sameAsPassword.type === 'not'
       "
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Old and new passwords are the same
+      {{ $t('errors.oldAndNewPasswords') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.minLength === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Must have at least {{ v.$params.minLength.min }} characters
+      {{ $t('errors.minLength', { num: v.$params.minLength.min }) }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.maxLength === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Must not be more than {{ v.$params.maxLength.max }} characters
+      {{ $t('errors.maxLength', { num: v.$params.maxLength.max }) }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.passwordCheck === false && v.$dirty"
@@ -67,35 +67,35 @@
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Must be with '+', from 10 to 14 symbols
+      {{ $t('errors.phone') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.numeric === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Must be numeric
+      {{ $t('errors.numeric') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.dayCheck === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Day is invalid
+      {{ $t('errors.day') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.monthCheck === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Month is invalid
+      {{ $t('errors.month') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.yearCheck === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Year is invalid
+      {{ $t('errors.year') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.alphaNum === false && v.$dirty"
@@ -109,21 +109,21 @@
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Input 0 or positive number
+      {{ $t('errors.0andNum') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.postalCodeCheck === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Must be letters, numbers or space
+      {{ $t('errors.postalCode') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.checkIfPositiveNumbers === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Input positive number
+      {{ $t('errors.positiveNum') }}
     </div>
     <slot name="beforeInput-relative"></slot>
     <div
