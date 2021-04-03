@@ -1,16 +1,18 @@
 <template>
   <div class="RegistrationBonus">
     <div class="RegistrationBonus-Content">
-      <div class="RegistrationBonus-Title">Thank you for registration</div>
-      <div class="RegistrationBonus-Promo">100% up to $150</div>
+      <div class="RegistrationBonus-Title">{{ $t('authDialog.thanksRegistration') }}</div>
+      <div class="RegistrationBonus-Promo">{{ $t('authDialog.registrationBonus') }}</div>
       <!--      <div class="RegistrationBonus-PromoMin">-->
       <!--        + 55 Free spins-->
       <!--      </div>-->
       <div class="RegistrationBonus-Text">
-        For your first deposit! Use advantage of Ninecasino Welcome Bonus.
+        {{ $t('authDialog.registrationBonusText') }}
       </div>
     </div>
-    <button type="btn" class="Btn Btn--common Btn--full" @click="onClickBtn">Get your bonus</button>
+    <button type="btn" class="Btn Btn--common Btn--full" @click="onClickBtn">
+      {{ $t('authDialog.getBonus') }}
+    </button>
   </div>
 </template>
 
