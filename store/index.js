@@ -567,7 +567,7 @@ export const getters = {
   isLoggedIn: state => !!state.token,
   authStatus: state => state.status,
   slicedGameProducerList: state => startIndex =>
-    state.gameProducerList.slice(startIndex, state.providers.length + 1),
+    state.gameProducerList.slice(startIndex, state.gameProducerList.length + 1),
   limitsByTypes: state => {
     const ll = state.limits.reduce((namedLimits, limit) => {
       const namedlimit = namedLimits.find(l => l.name === l.type);
