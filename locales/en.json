@@ -90,8 +90,19 @@
   "homepage": {
     "heroBanner": {
       "deposit1": {
-        "title": "Welcome package",
-        "text": "Make first deposit and get"
+        "title": "Welcome <br/> package <span class=\"Colored\">$ 450!</span>",
+        "text": "Make first deposit<br/> and get <span class=\"Colored\">100%</span> up to <span class=\"Colored\">$ 150</span>"
+      },
+      "deposit2": {
+        "title": "Second deposit<br/> bonus",
+        "text": "55% bonus<br/> up to <span class=\"Colored\">$150</span><br/> on your second deposit"
+      },
+      "deposit3": {
+        "title": "Third deposit<br/> bonus",
+        "text": "100% bonus<br/> up to <span class=\"Colored\">$150</span><br/> on your third deposit"
+      },
+      "deposit4": {
+        "title": "More exciting<br/> promotions<br/> coming soon!"
       }
     },
     "advantages": {
