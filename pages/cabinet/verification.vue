@@ -1,6 +1,8 @@
 <template>
   <div class="CabinetPage VerificationPage">
-    <div class="CabinetPage-Title VerificationPage-Title">Verification</div>
+    <div class="CabinetPage-Title VerificationPage-Title">
+      {{ $t('cabinet.pages.verification') }}
+    </div>
     <div class="VerificationPage-Content">
       <!--      <div class="VerificationPage-Item">-->
       <!--        <div class="VerificationPage-Desc">-->
@@ -119,36 +121,33 @@
             <use xlink:href="@/assets/img/icons.svg#approve"></use>
           </svg>
           <div class="VerificationPage-Title">
-            <div class="VerificationPage-Name">Documents verification</div>
+            <div class="VerificationPage-Name">{{ $t('cabinet.verification.documents') }}</div>
             <div class="VerificationPage-Text">
-              Passport, drivers license, or other official documents replacing them / until bill,
-              phone bill, or bank statement, in which your name and address are fully indicated /
-              screenshot or photo from online bank, bank statement, Skrill page, etc, showing the
-              deposit.
+              {{ $t('cabinet.verification.text') }}
             </div>
             <div
               v-if="documentsStatus.length && documentsStatus === 'pending'"
               class="VerificationPage-Approved VerificationPage-Approved--pending"
             >
-              Waiting for approve
+              {{ $t('cabinet.verification.waiting') }}
             </div>
             <div
               v-if="documentsStatus === 'approved'"
               class="VerificationPage-Approved VerificationPage-Approved--approved"
             >
-              Approved
+              {{ $t('cabinet.verification.approved') }}
             </div>
             <div
               v-if="documentsStatus === 'declined'"
               class="VerificationPage-Approved VerificationPage-Approved--declined"
             >
-              Disapproved
+              {{ $t('cabinet.verification.disapproved') }}
             </div>
           </div>
         </div>
         <div class="VerificationPage-Docs">
           <div v-if="userDocumentList.length" class="VerificationPage-DocsContent">
-            <div class="VerificationPage-DocsTitle">Uploaded documents</div>
+            <div class="VerificationPage-DocsTitle">{{ $t('cabinet.verification.uploaded') }}</div>
             <div v-for="doc in userDocumentList" :key="doc.id" class="VerificationPage-Doc">
               <svg
                 class="VerificationPage-Approve VerificationPage-Approve--min"
@@ -182,9 +181,7 @@
               @vdropzone-error="onErrorUpload"
             >
               <div class="VerificationPage-Dropzone">
-                <div class="VerificationPage-Text">
-                  Drop file here or browse images or .pdf files. Max size 110Mb
-                </div>
+                <div class="VerificationPage-Text">{{ $t('cabinet.verification.drop') }} 110Mb</div>
               </div>
             </vueDropzone>
           </client-only>

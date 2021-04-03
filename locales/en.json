@@ -169,9 +169,10 @@
     "allProviders": "All providers"
   },
   "filters": {
-    "status": "Status",
-    "until": "Until",
-    "flteredBy": "Filtered by"
+    "filteredBy": "Filtered by",
+    "allStatuses": "All statuses",
+    "AllCurrencies": "All currencies",
+    "until": "Until"
   },
   "cabinet": {
     "pages": {
@@ -227,7 +228,8 @@
       "uploaded": "Uploaded documents",
       "waiting": "Waiting for approve",
       "approved": "Approved",
-      "disapproved": "Disapproved"
+      "disapproved": "Disapproved",
+      "drop": "Drop file here or browse images or .pdf files. Max size"
     },
     "profile": {
       "tabs": {
