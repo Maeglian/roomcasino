@@ -80,7 +80,14 @@ export default {
       }
       this.authorize(payload).then(() => {
         this.$router.push('/');
-        if (!this.authError) this.$emit('close');
+        if (!this.authError) {
+          this.$emit('close');
+          scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+          });
+        }
       });
     },
   },

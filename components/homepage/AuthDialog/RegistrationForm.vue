@@ -672,6 +672,11 @@ export default {
           if (!this.updateProfileError) {
             deleteObjValuesFromLocalStorage(this.fieldsStep2);
             this.$emit('close');
+            scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth',
+            });
             if (this.beforeDeposit) {
               this.$modal.show('cashier');
             } else
