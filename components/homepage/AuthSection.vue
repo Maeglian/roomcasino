@@ -15,7 +15,7 @@
             <!--            </span>-->
           </div>
           <div class="AuthSection-UserBalance">
-            <div class="AuthSection-UserBalanceText">{{ $t('menu.youAccount') }}</div>
+            <div class="AuthSection-UserBalanceText">{{ $t('menu.yourAccount') }}</div>
             {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }}
             {{ activeAccount.currency || user.currency }}
           </div>
