@@ -93,12 +93,13 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 import toggleDropdown from '@/mixins/toggleDropdown';
+import gameProducer from '@/mixins/gameProducer';
 
 export default {
   name: 'ProvidersMenu',
-  mixins: [toggleDropdown],
+  mixins: [toggleDropdown, gameProducer],
   props: {
     providerActive: {
       type: Object,
@@ -111,8 +112,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(['width', 'gameProducerList']),
-    ...mapGetters(['slicedGameProducerList']),
+    ...mapState(['width']),
     providersToShow() {
       return this.gameProducerList.length > 3 ? 4 : this.gameProducerList.length;
     },
@@ -121,7 +121,7 @@ export default {
     },
     moreProviders() {
       if (this.width < 768) return this.gameProducerList;
-      return this.slicedGameProducerList(1);
+      return [...this.gameProducerList].slice(1, this.gameProducerList.length + 1);
     },
   },
   methods: {

@@ -94,6 +94,7 @@ import ProvidersMenu from '@/components/ProvidersMenu';
 import { PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID } from '@/config';
 import Games from '@/components/Games';
 import toggleDropdown from '@/mixins/toggleDropdown';
+import gameProducer from '@/mixins/gameProducer';
 
 export default {
   name: 'DefaultGames',
@@ -103,7 +104,7 @@ export default {
     Loader,
     Games,
   },
-  mixins: [showAuthDialog, toggleDropdown],
+  mixins: [showAuthDialog, toggleDropdown, gameProducer],
   data() {
     return {
       listIsOpen: false,
@@ -156,7 +157,6 @@ export default {
       'defaultGames',
       'gamesAreLoading',
       'defaultGamesAreLoading',
-      'gameProducerList',
       'categories',
     ]),
     ...mapGetters(['fakedNewGames', 'isLoggedIn', 'gamesSearched', 'activeAccount']),

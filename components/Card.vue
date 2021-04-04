@@ -166,10 +166,10 @@ export default {
     },
   },
   computed: {
-    ...mapState(['platform', 'dga', 'gameProducerList']),
+    ...mapState(['platform', 'dga', 'gameProducers']),
     ...mapGetters(['isLoggedIn', 'activeAccount']),
     iconUrl() {
-      const gameProducer = this.gameProducerList.find(
+      const gameProducer = this.gameProducers.find(
         producer => producer.name.toLowerCase() === this.gameInfo.gameProducer.toLowerCase(),
       );
       if (gameProducer) return gameProducer.iconUrl;

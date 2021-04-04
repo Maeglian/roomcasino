@@ -82,7 +82,7 @@ export const state = () => ({
   bonusHistoryList: [],
   sessionHistoryList: [],
   serverError: '',
-  gameProducerList: [],
+  gameProducers: [],
   status: '',
   authStatus: '',
   phoneCodeList: [],
@@ -566,8 +566,6 @@ export const getters = {
   },
   isLoggedIn: state => !!state.token,
   authStatus: state => state.status,
-  slicedGameProducerList: state => startIndex =>
-    state.gameProducerList.slice(startIndex, state.gameProducerList.length + 1),
   limitsByTypes: state => {
     const ll = state.limits.reduce((namedLimits, limit) => {
       const namedlimit = namedLimits.find(l => l.name === l.type);
@@ -789,7 +787,7 @@ export const mutations = {
     state.historyListIsLoading = false;
   },
   setGameProducerList: (state, payload) => {
-    state.gameProducerList = payload;
+    state.gameProducers = payload;
   },
   openNav: state => {
     state.navIsOpen = true;
@@ -1196,11 +1194,7 @@ export const actions = {
     try {
       // eslint-disable-next-line no-underscore-dangle
       const res = await axios.get(`${API_HOST}/gameProducerList`);
-      const payload = [
-        { name: this.$i18n.t('homepage.allProviders'), iconUrl: '' },
-        ...res.data.data,
-      ];
-      commit('setGameProducerList', payload);
+      commit('setGameProducerList', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
     }
