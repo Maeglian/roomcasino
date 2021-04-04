@@ -8,7 +8,7 @@
           <template v-if="name !== 'receiveEmailPromos' && name !== 'receiveSmsPromos'">
             <div v-if="name === 'country' && !user[name]" :key="name" class="CabinetForm-Row">
               <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
-                {{ name }}
+                {{ $t(`cabinet.profile.labels.${name}`) }}
               </label>
               <BaseDropdown
                 v-model="fields[name]"
@@ -19,7 +19,7 @@
             </div>
             <div v-else-if="name === 'gender' && !user[name]" :key="name" class="CabinetForm-Row">
               <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
-                {{ name }}
+                {{ $t(`cabinet.profile.labels.${name}`) }}
               </label>
               <BaseDropdown
                 v-model="fields[name]"
@@ -65,7 +65,7 @@
               </template>
               <template #beforeInput-relative>
                 <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
-                  {{ name }}
+                  {{ $t(`cabinet.profile.labels.${name}`) }}
                 </label>
               </template>
               <template v-if="name === 'mobile'" #afterInput-absolute>

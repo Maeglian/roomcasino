@@ -75,7 +75,20 @@
     "confirmPassword" : "Potvrzení hesla",
     "tryingConfirmEmail" : "Pokoušíme se ověřit váš e-mail",
     "confirmEmailError" : "Litujeme, váš e-mail nebyl potvrzen",
-    "confirmEmailSuccess" : "Congratulations! Your email was successfully confirmed"
+    "confirmEmailSuccess" : "Congratulations! Your email was successfully confirmed",
+    "placeholders": {
+      "email": "E-emailen",
+      "password": "Heslo",
+      "country": "Země",
+      "firstName": "Jméno",
+      "lastName": "Příjmení",
+      "male": "Mužský",
+      "female": "Ženský",
+      "city": "Mesto",
+      "address": "Adresa",
+      "postalCode": "Poštovní směrovací číslo",
+      "phone": "Mobilní telefon"
+    }
   },
   "pages" : {
     "lobby" : "Lobby",
@@ -243,7 +256,19 @@
       "oldPassword" : "Staré heslo",
       "newPassword" : "Nové heslo",
       "confirmPassword" : "Potvrzení hesla",
-      "sessionHistory" : "Historie relace"
+      "sessionHistory" : "Historie relace",
+      "labels": {
+        "email": "E-emailen",
+        "country": "Země",
+        "firstName": "Jméno",
+        "lastName": "Příjmení",
+        "gender": "Rod",
+        "birthDate": "Datum narození",
+        "city": "Mesto",
+        "address": "Adresa",
+        "postalCode": "Poštovní směrovací číslo",
+        "phoneNumber": "Mobilní telefon"
+      }
     },
     "limits" : {
       "initialText" : "Chcete sledovat svoji aktivitu, limity ztráty nebo omezit vklady? Váš účet lze nastavit se všemi limity. Pomůže vám získat přehled o vašem hazardu. Všechna omezení se projeví okamžitě.",

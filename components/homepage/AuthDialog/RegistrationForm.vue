@@ -295,7 +295,7 @@ export default {
         email: {
           value: '',
           type: 'email',
-          placeholder: 'Your email',
+          placeholder: this.$t('auth.placeholders.email'),
           required: true,
           autocapitalize: 'off',
           autocorrect: 'off',
@@ -305,20 +305,20 @@ export default {
         password: {
           value: '',
           type: 'password',
-          placeholder: 'Your password',
+          placeholder: this.$t('auth.placeholders.password'),
           required: true,
         },
         currency: {
           value: '',
           type: 'dropdown',
-          placeholder: 'currency',
+          placeholder: this.$t('common.currency'),
           items: [],
           required: true,
         },
         country: {
           value: '',
           type: 'dropdown',
-          placeholder: 'country',
+          placeholder: this.$t('auth.placeholders.country'),
           items: [],
           required: true,
         },
@@ -335,21 +335,21 @@ export default {
         firstName: {
           value: '',
           type: 'text',
-          placeholder: 'First Name',
+          placeholder: this.$t('auth.placeholders.firstName'),
           required: true,
           autocorrect: 'off',
         },
         lastName: {
           value: '',
           type: 'text',
-          placeholder: 'Last Name',
+          placeholder: this.$t('auth.placeholders.lastName'),
           required: true,
           autocorrect: 'off',
         },
         gender: {
           value: 'male',
           type: 'radio',
-          values: ['male', 'female'],
+          values: [this.$t('auth.placeholders.male'), this.$t('auth.placeholders.female')],
         },
         birthDate: {
           children: {
@@ -383,7 +383,7 @@ export default {
           value: '',
           ref: 'city',
           type: 'text',
-          placeholder: 'City',
+          placeholder: this.$t('auth.placeholders.city'),
           required: true,
           autocorrect: 'off',
           autocomplete: 'address-level2',
@@ -391,7 +391,7 @@ export default {
         address: {
           value: '',
           type: 'text',
-          placeholder: 'Address',
+          placeholder: this.$t('auth.placeholders.address'),
           required: true,
           autocorrect: 'off',
           autocomplete: 'address-line1',
@@ -399,7 +399,7 @@ export default {
         postalCode: {
           value: '',
           type: 'text',
-          placeholder: 'Postal code',
+          placeholder: this.$t('auth.placeholders.postalCode'),
           required: true,
           autocorrect: 'off',
           autocomplete: 'postal-code',
@@ -415,7 +415,7 @@ export default {
           tel: {
             value: '',
             type: 'tel',
-            placeholder: 'Mobile phone',
+            placeholder: this.$t('auth.placeholders.phone'),
             required: true,
             autocorrect: 'off',
             autocomplete: 'tel-national',

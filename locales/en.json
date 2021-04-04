@@ -79,7 +79,21 @@
     "confirmPassword": "Password confirm",
     "tryingConfirmEmail": "We're trying to verify your email",
     "confirmEmailError": "Sorry, you email was not confirmed",
-    "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed"
+    "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed",
+    "placeholders": {
+      "email": "Your email",
+      "password": "Your password",
+      "currency": "Currency",
+      "country": "Country",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "male": "Male",
+      "female": "Female",
+      "city": "City",
+      "address": "Address",
+      "postalCode": "Podtal Code",
+      "phone": "Mobile phone"
+    }
   },
   "pages": {
     "lobby": "Lobby",
@@ -249,7 +263,19 @@
       "oldPassword": "Old password",
       "newPassword": "New password",
       "confirmPassword": "Password confirm",
-      "sessionHistory": "Session history"
+      "sessionHistory": "Session history",
+      "labels": {
+        "email": "Email",
+        "country": "Country",
+        "firstName": "First name",
+        "lastName": "Last name",
+        "gender": "Gender",
+        "city": "City",
+        "address": "Address",
+        "postalCode": "Postal Code",
+        "phoneNumber": "Mobile phone",
+        "birthDate": "Birth date"
+      }
     },
     "limits": {
       "initialText": "Do you want to track your activity, loss limits or limit deposits? Your account can be set with all limits. It'll help you to get an overview of your gambling. All restriction takes effect instantly.",
