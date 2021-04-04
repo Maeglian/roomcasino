@@ -24,7 +24,7 @@
               <BaseDropdown
                 v-model="fields[name]"
                 class="CabinetForm-Row CabinetForm-Dropdown"
-                :items="['male', 'female']"
+                :items="[$t('auth.placeholders.male'), $t('auth.placeholders.female')]"
                 @set-dropdown-value="fields[name] = $event"
               />
             </div>
@@ -223,7 +223,7 @@ export default {
       handler() {
         this.fields = { ...this.userInfo };
         if (this.userInfo.country) this.fields.country = this.userInfo.country.name;
-        if (!this.fields.gender) this.fields.gender = 'male';
+        if (!this.fields.gender) this.fields.gender = this.$t('auth.placeholders.male');
       },
     },
   },
