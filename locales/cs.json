@@ -61,7 +61,7 @@
     "signUpTitle" : "Zaregistrujte se <span class = \"Colored\"> & </span> a získejte <br /> uvítací bonus",
     "forgotPassword" : "Zapomenuté heslo",
     "emails" : "Dostávat e-mailové promoakce",
-    "terms" : "Je mi {minAge} let a přijímám {br} {podmínky} a {zásady}",
+    "terms" : "Je mi {minAge} let a přijímám {br} {terms} a {policy}",
     "step2Title" : "Vyplňte prosím níže uvedené informace!",
     "thanksRegistration" : "Děkujeme za registraci",
     "registrationBonus" : "100% až Kč 3330",
@@ -270,14 +270,14 @@
         },
         "sessionLimit" : {
           "name" : "Limity relací",
-          "title" : "čas strávený hazardem '",
+          "title" : "čas strávený hazardem",
           "text" : "čas strávený hazardem",
           "editRules" : "",
           "deleteRules" : ""
         },
         "coolingOffLimit" : {
           "name" : "Vychladnout",
-          "title" : "čas strávený hazardem '",
+          "title" : "čas strávený hazardem",
           "text" : "Cítíte potřebu zůstat od kasina déle? Na určitou dobu můžete nastavit limit pro rozmyšlenou. Omezení se projeví okamžitě. Během zadaného období nebudete moci provádět vklady a hrát, také budete vyloučeni ze všech reklamních nabídek. Po uplynutí nastavené doby obdržíte e-mail s oznámením, že váš účet je znovu aktivní.",
           "editRules" : "Snížení limitu bude aplikováno do 24 hodin po požadavku hráče. Zvýšení limitu bude použito okamžitě.",
           "deleteRules" : "Zrušení limitu bude uplatněno do 24 hodin po žádosti hráče."
