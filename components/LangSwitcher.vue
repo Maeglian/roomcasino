@@ -15,6 +15,7 @@
         :key="locale.code"
         class="LangSwitcher-Lang"
         :to="switchLocalePath(locale.code)"
+        @click.native="isOpen = false"
       >
         <img class="LangSwitcher-Icon" :src="require(`@/assets/img/${locale.icon}`)" />
       </NuxtLink>
