@@ -26,14 +26,6 @@ export const API_HOST =
     ? API_HOST_SANDBOX
     : API_HOST_STAGE;
 
-export const LIMIT_TYPES = [
-  { name: 'Deposit limits', value: 'depositLimit' },
-  { name: 'Wager limits', value: 'wagerLimit' },
-  { name: 'Loss limits', value: 'lossLimit' },
-  { name: 'Session limits', value: 'sessionLimit' },
-  { name: 'Cooling off', value: 'coolingOffLimit' },
-];
-
 export const LIMIT_DETAILS = {
   lossLimit: {
     name: 'Loss limits',
@@ -100,21 +92,6 @@ export const LIMIT_DETAILS = {
   // },
 };
 
-export const LIMIT_PERIODS = [
-  {
-    name: 'daily',
-    value: 'dayLimit',
-  },
-  {
-    name: 'weekly',
-    value: 'weekLimit',
-  },
-  {
-    name: 'monthly',
-    value: 'monthLimit',
-  },
-];
-
 export const LIMIT_COOL_PERIODS = [
   {
     name: 'days',
@@ -129,11 +106,6 @@ export const LIMIT_COOL_PERIODS = [
     value: 'monthLimit',
   },
 ];
-
-export const PROFILE_LABELS = {
-  receiveEmailPromos: 'Send promos by e-mail',
-  receiveSmsPromos: 'Send promos by sms',
-};
 
 export const HISTORY_TABLES = {
   transaction: {
@@ -335,24 +307,3 @@ export const HISTORY_TABLES = {
     ],
   },
 };
-
-export const BONUSES = [
-  {
-    title: 'First welcome bonus',
-    name: 'First Deposit 100%',
-    minDeposit: '20.00 USD/EUR',
-    maxPrize: '100% of the deposit amount - up to 100$/€',
-  },
-  {
-    title: 'Second deposit bonus',
-    name: 'Second Deposit 55%',
-    minDeposit: '20.00 USD/EUR',
-    maxPrize: '55% of the deposit amount - up to 100$/€',
-  },
-  {
-    title: 'Third deposit bonus',
-    name: 'Third Deposit 100%',
-    minDeposit: '20.00 USD/EUR',
-    maxPrize: '100% of the deposit amount - up to 100$/€',
-  },
-];

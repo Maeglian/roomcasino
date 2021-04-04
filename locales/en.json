@@ -322,7 +322,8 @@
         "days": "Days",
         "weeks": "Weeks",
         "months": "Months",
-        "min": "Min"
+        "min": "Min",
+        "day": "Day"
       },
       "edit": "Edit limit",
       "delete": "Delete limit",

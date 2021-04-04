@@ -79,7 +79,12 @@
             {{ activeAccount.currency }} {{ $t('common.left') }}
           </template>
           <template v-else-if="item.type === 'coolingOffLimit'">
-            {{ item.targetValue / 86400 }} {{ item.targetValue > 86400 ? 'days' : 'day' }}
+            {{ item.targetValue / 86400 }}
+            {{
+              item.targetValue > 86400
+                ? $t('cabinet.limits.periods.days')
+                : $t('cabinet.limits.periods.day')
+            }}
           </template>
           <template v-else class="GamblingLimit-Left">
             <svg
@@ -119,7 +124,8 @@
 
 <script>
 import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
-import { LIMIT_PERIODS, LIMIT_DETAILS } from '@/config';
+import { LIMIT_DETAILS } from '@/config';
+import limits from '@/mixins/limits';
 import moment from 'moment';
 import Counter from '@/components/Counter';
 import CreateLimits from '@/components/cabinet/CreateLimits';
@@ -132,6 +138,7 @@ export default {
   components: {
     Counter,
   },
+  mixins: [limits],
   props: {
     item: {
       type: Object,
@@ -154,9 +161,8 @@ export default {
         this.item.type === 'wagerLimit' ||
         this.item.type === 'lossLimit'
       ) {
-        const limit = LIMIT_PERIODS.find(period => period.value === this.item.period);
-        console.log(limit);
-        return `${this.$t(`cabinet.limits.periods.${limit.name}`)} limit`;
+        const limit = this.periods.find(period => period.value === this.item.period);
+        return `${limit.name} limit`;
       }
 
       return this.$t(`cabinet.limits.limits.${this.item.type}.title`);

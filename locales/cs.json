@@ -315,7 +315,8 @@
         "days" : "Dny",
         "weeks" : "Týdny",
         "months" : "Měsíce",
-        "min" : "Min"
+        "min" : "Min",
+        "day": "Den"
       },
       "edit" : "Upravit limit",
       "delete" : "Smazat limit",

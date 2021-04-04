@@ -111,11 +111,12 @@
 import BaseDropdown from '@/components/base/BaseDropdown';
 import BaseInput from '@/components/base/BaseInput';
 import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
-import { LIMIT_PERIODS, LIMIT_TYPES, LIMIT_DETAILS, LIMIT_COOL_PERIODS } from '@/config';
+import { LIMIT_DETAILS } from '@/config';
 import { findValInArr } from '@/utils/helpers';
 import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
 import moment from 'moment';
 import { checkIfNullOrPositiveNumbers, checkIfPositiveNumbers } from '@/utils/formCheckers';
+import limits from '@/mixins/limits';
 
 export default {
   name: 'CreateLimits',
@@ -124,6 +125,7 @@ export default {
     BaseInput,
     ConfirmDialog,
   },
+  mixins: [limits],
   props: {
     isEdit: {
       type: Boolean,
@@ -145,7 +147,7 @@ export default {
     return {
       isConfirm: false,
       limits: LIMIT_DETAILS,
-      type: findValInArr(this.item.type, LIMIT_TYPES) || findValInArr('depositLimit', LIMIT_TYPES),
+      type: {},
       limitAmount: this.item.limitAmount || 0,
       currencyLimitList: [
         {
@@ -153,10 +155,28 @@ export default {
           value: 0,
         },
       ],
-      limitTypes: LIMIT_TYPES,
-      periods: LIMIT_PERIODS,
-      period:
-        findValInArr(this.item.period, LIMIT_PERIODS) || findValInArr('dayLimit', LIMIT_PERIODS),
+      limitTypes: [
+        { name: this.$t('cabinet.limits.limits.depositLimit.name'), value: 'depositLimit' },
+        { name: this.$t('cabinet.limits.limits.wagerLimit.name'), value: 'wagerLimit' },
+        { name: this.$t('cabinet.limits.limits.lossLimit.name'), value: 'lossLimit' },
+        { name: this.$t('cabinet.limits.limits.sessionLimit.name'), value: 'sessionLimit' },
+        { name: this.$t('cabinet.limits.limits.coolingOffLimit.name'), value: 'coolingOffLimit' },
+      ],
+      period: {},
+      limitCoolPeriods: [
+        {
+          name: this.$t('cabinet.limits.periods.days'),
+          value: 'dayLimit',
+        },
+        {
+          name: this.$t('cabinet.limits.periods.weeks'),
+          value: 'weekLimit',
+        },
+        {
+          name: this.$t('cabinet.limits.periods.months'),
+          value: 'monthLimit',
+        },
+      ],
       realityCheckPeriods: ['none', '30 min', '60 min', '120 min'],
       selfExclusionPeriods: ['none', '1 day', '1 week', '1 month', '6 month', '1 year'],
       limitState: this.item.limitState || 0,
@@ -204,8 +224,8 @@ export default {
       immediate: true,
       handler() {
         if (this.type.value === 'coolingOffLimit') {
-          this.period = findValInArr('dayLimit', LIMIT_COOL_PERIODS);
-          this.periods = LIMIT_COOL_PERIODS;
+          this.period = findValInArr('dayLimit', this.limitCoolPeriods);
+          this.periods = this.limitCoolPeriods;
         }
       },
     },
@@ -213,6 +233,11 @@ export default {
   created() {
     this.currencyLimitList[0].currency = this.activeAccount.currency;
     this.currencyLimitList[0].value = this.item.targetValue || 0;
+    this.type =
+      findValInArr(this.item.type, this.limitTypes) ||
+      findValInArr('depositLimit', this.limitTypes);
+    this.period =
+      findValInArr(this.item.period, this.periods) || findValInArr('dayLimit', this.periods);
   },
   // watch: {
   //   accountList: {
