@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Vue from 'vue';
 import moment from 'moment';
-import { BILLING_PROVIDER_ID, API_HOST, LIMIT_DETAILS } from '../config';
+import { BILLING_PROVIDER_ID, API_HOST } from '../config';
 
 const Cookie = process.client ? require('js-cookie') : undefined;
 const cookieparser = process.server ? require('cookieparser') : undefined;
@@ -568,11 +568,11 @@ export const getters = {
   authStatus: state => state.status,
   limitsByTypes: state => {
     const ll = state.limits.reduce((namedLimits, limit) => {
-      const namedlimit = namedLimits.find(l => l.name === l.type);
+      const namedlimit = namedLimits.find(l => l.type === limit.type);
       if (namedlimit) namedlimit.limits.push(limit);
       else {
         namedLimits.push({
-          name: LIMIT_DETAILS[limit.type].name,
+          type: limit.type,
           limits: [limit],
         });
       }

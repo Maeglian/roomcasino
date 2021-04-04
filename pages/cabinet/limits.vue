@@ -12,7 +12,7 @@
       <div v-else class="LimitsPage-Limits">
         <div v-for="limit in limitsByTypes" :key="limit.name" class="LimitsPage-LimitType">
           <div v-if="limit.limits.length" class="LimitsPage-Header">
-            {{ limit.name }}
+            {{ $t(`cabinet.limits.limits.${limit.type}.name`) }}
           </div>
           <GamblingLimit
             v-for="item in limit.limits"
