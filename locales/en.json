@@ -81,6 +81,8 @@
     "confirmEmailError": "Sorry, you email was not confirmed",
     "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed",
     "placeholders": {
+      "enterEmail": "Enter your email",
+      "enterPassword": "Enter your password",
       "email": "Your email",
       "password": "Your password",
       "currency": "Currency",

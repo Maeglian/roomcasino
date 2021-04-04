@@ -54,12 +54,12 @@ export default {
         email: {
           value: '',
           type: 'email',
-          placeholder: 'Enter your email',
+          placeholder: this.$t('auth.placeholders.enterEmail'),
         },
         password: {
           value: '',
           type: 'password',
-          placeholder: 'Enter your password',
+          placeholder: this.$t('auth.placeholders.enterPassword'),
         },
       },
     };

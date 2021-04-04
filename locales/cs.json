@@ -77,6 +77,8 @@
     "confirmEmailError" : "Litujeme, váš e-mail nebyl potvrzen",
     "confirmEmailSuccess" : "Congratulations! Your email was successfully confirmed",
     "placeholders": {
+      "enterEmail": "E-emailen",
+      "enterPassword": "Heslo",
       "email": "E-emailen",
       "password": "Heslo",
       "country": "Země",
