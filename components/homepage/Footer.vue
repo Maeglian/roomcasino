@@ -12,9 +12,6 @@
         <NuxtLink class="Link Footer-Link" :to="localePath('/about-us')">
           {{ $t('pages.aboutUs') }}</NuxtLink
         >
-        <NuxtLink class="Link Footer-Link" :to="localePath('/faq')">
-          {{ $t('pages.faq') }}</NuxtLink
-        >
         <NuxtLink class="Link Footer-Link" :to="localePath('/bitcoins')">
           {{ $t('pages.btc') }}</NuxtLink
         >
@@ -33,16 +30,19 @@
         <NuxtLink class="Link Footer-Link" :to="localePath('/responsible-gaming')">
           {{ $t('pages.responsibleGaming') }}</NuxtLink
         >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/risk-warnings')">
+          {{ $t('pages.risk') }}</NuxtLink
+        >
         <NuxtLink class="Link Footer-Link" :to="localePath('/privacy-policy')">
           {{ $t('pages.privacyPolicy') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/faq')">
+          {{ $t('pages.faq') }}</NuxtLink
         >
 
         <!--        <NuxtLink class="Link Footer-Link" to="/payment-methods">-->
         <!--          Payment methods-->
         <!--        </NuxtLink>-->
-        <NuxtLink class="Link Footer-Link" :to="localePath('/risk-warnings')">
-          {{ $t('pages.risk') }}</NuxtLink
-        >
       </div>
       <LangSwitcher class="Footer-Lang" />
       <!--      <div class="Footer-Lang">-->
@@ -145,7 +145,8 @@ export default {
     display: grid;
     order: 2;
     width: 100%;
-    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    grid-template-columns: 50% 50%;
     grid-column-gap: 10px;
 
     @media (min-width: $screen-m) {
@@ -158,7 +159,6 @@ export default {
     display: inline-block;
     margin-bottom: 16px;
     font-size: 12px;
-    white-space: nowrap;
 
     @media (min-width: $screen-m) {
       margin-right: 28px;
