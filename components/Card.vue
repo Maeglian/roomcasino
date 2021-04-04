@@ -9,7 +9,7 @@
             $emit('open-gamepage', { id: gameInfo.gameId, demo: true, bg: gameInfo.backgroundUrl })
           "
         >
-          Play for fun
+          {{ $t('buttons.playForFun') }}
         </button>
         <button
           v-if="!gameInfo.demoOnly"
@@ -18,7 +18,7 @@
             $emit('open-gamepage', { id: gameInfo.gameId, demo: false, bg: gameInfo.backgroundUrl })
           "
         >
-          Play Now
+          {{ $t('buttons.playNow') }}
         </button>
       </div>
       <div v-if="badge" class="Card-Badge" :class="{ 'Card-Badge--text': badge !== 'best' }">
