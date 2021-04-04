@@ -3,7 +3,7 @@
   "buttons" : {
     "signUp" : "Zaregistrovat se",
     "register" : "Zaregistrovat se",
-    "terms" : "Bonus terms & conditions",
+    "terms" : "Pravidla bonusů",
     "registerNow" : "Zaregistrujte se nyní",
     "login" : "Přihlásit se",
     "logIn" : "Přihlásit se",
@@ -24,7 +24,8 @@
     "continue" : "Pokračovat",
     "letsStart" : "Začněme",
     "goHomePage" : "Přejít na domovskou stránku",
-    "save" : "Uložit"
+    "save" : "Uložit",
+    "getBonus": "Získejte bonus"
   },
   "errors" : {
     "required" : "Nemůže to být prázdné",
@@ -66,7 +67,6 @@
     "thanksRegistration" : "Děkujeme za registraci",
     "registrationBonus" : "100% až Kč 3330",
     "registrationBonusText" : "Pro váš první vklad! Využijte uvítací bonus Ninecasino",
-    "getBonus" : "Získejte bonus",
     "enterEmail" : "Zadejte email",
     "passwordRestoreText" : "Dík! Další pokyny najdete ve svém e-mailu",
     "enterNewPassword" : "Zadejte své nové heslo",
