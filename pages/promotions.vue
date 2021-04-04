@@ -1,7 +1,7 @@
 <template>
   <section class="Page PromotionsPage">
     <div class="Page-Header PromotionsPage-Header">
-      <h1 class="Title Title--type-h1 Page-Title PromotionsPage-Title">
+      <h1 class="Wrapper Title Title--type-h1 Page-Title PromotionsPage-Title">
         {{ $t('promotions.title') }}
       </h1>
       <div class="Page-Text Text Text--additional">
@@ -185,6 +185,14 @@ export default {
       background-repeat: no-repeat;
       background-size: 100% auto;
     }
+  }
+
+  &-Title {
+    min-width: 320px;
+    max-width: 1248px;
+    margin: 20px auto;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 }
 
