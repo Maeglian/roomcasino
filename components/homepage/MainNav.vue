@@ -76,18 +76,18 @@ export default {
       topBarIsScrolled: false,
       navItems: [
         {
-          name: 'Lobby',
-          url: '/',
+          name: this.$t('pages.lobby'),
+          url: this.localePath('/'),
           icon: 'lobby_nav.svg',
         },
         {
-          name: 'Promotions',
-          url: '/promotions',
+          name: this.$t('pages.promotion'),
+          url: this.localePath('/promotions'),
           icon: 'promotions_nav.svg',
         },
         {
-          name: 'My account',
-          url: '/cabinet/balance',
+          name: this.$t('pages.myAccount'),
+          url: this.localePath('/cabinet/balance'),
           icon: 'user-profile.svg',
           onlyIfLoggedIn: true,
         },
