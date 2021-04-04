@@ -95,7 +95,7 @@
     "myAccount" : "Můj účet",
     "promotion" : "Propagace",
     "aboutUs" : "O nás",
-    "faq" : "FAQ\nFAQFAQ\nFAQ",
+    "faq" : "FAQ",
     "btc" : "O BTC",
     "aml" : "AML politika",
     "terms" : "Pravidla a podmínky",
@@ -329,16 +329,20 @@
   "promotions" : {
     "title" : "Aktuální propagační akce",
     "text" : "Zrušení limitu bude uplatněno do 24 hodin po žádosti hráče.",
+    "upTo": "až $150",
     "deposit1" : {
       "title" : "100% <br/> z vkladu <br/> částk",
+      "name": "Bonus k prvnímu vkladu",
       "text" : "Proveďte první vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
     },
     "deposit2" : {
       "title" : "55% <br/> z vkladu <br/> částky",
+      "name": "Bonus ke druhému vkladu",
       "text" : "Proveďte druhý vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
     },
     "deposit3" : {
       "title" : "100% <br/> z vkladu <br/> částky",
+      "name": "Bonus ke třetímu vkladu",
       "text" : "Proveďte třetí vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
     }
   }
