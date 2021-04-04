@@ -144,6 +144,8 @@ export default {
         '/cs/cabinet/history/transaction',
         '/cabinet/history/bonus',
         '/cs/cabinet/history/bonus',
+        '/games/all',
+        '/cs/games/all',
       ];
       const categories = axios.get(`${API_HOST}/categoryList`).then(res => {
         res.data.data.forEach(category => {
