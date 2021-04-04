@@ -95,12 +95,12 @@ export default {
         file: 'en.json',
         icon: 'en.png',
       },
-      {
-        code: 'fr',
-        codeCountry: 'fr_CA',
-        file: 'fr.json',
-        icon: 'fr_ca.svg',
-      },
+      // {
+      //   code: 'fr',
+      //   codeCountry: 'fr_CA',
+      //   file: 'fr.json',
+      //   icon: 'fr_ca.svg',
+      // },
       {
         code: 'cs',
         codeCountry: 'cs_CZ',
