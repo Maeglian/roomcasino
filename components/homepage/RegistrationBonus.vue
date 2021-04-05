@@ -59,7 +59,7 @@ export default {
   }
 
   &-Promo {
-    font-size: 76px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 1;
     color: var(--color-main1);
