@@ -24,7 +24,7 @@
               <BaseDropdown
                 v-model="fields[name]"
                 class="CabinetForm-Row CabinetForm-Dropdown"
-                :items="[$t('auth.placeholders.male'), $t('auth.placeholders.female')]"
+                :items="genders"
                 @set-dropdown-value="fields[name] = $event"
               />
             </div>
@@ -144,6 +144,10 @@ export default {
     return {
       fields: {},
       promosFields: {},
+      genders: [
+        { name: this.$t('auth.placeholders.male'), value: 'male' },
+        { name: this.$t('auth.placeholders.female'), value: 'female' },
+      ],
       profileLabels: {
         receiveEmailPromos: this.$t('cabinet.profile.email'),
         receiveSmsPromos: this.$t('cabinet.profile.sms'),
@@ -243,6 +247,8 @@ export default {
           payload.country = this.fields.country.code;
         } else if (key === 'country') {
           payload.country = this.user.country;
+        } else if (key === 'gender') {
+          payload.gender = this.fields.gender.value;
         } else payload[key] = this.fields[key];
       }
 

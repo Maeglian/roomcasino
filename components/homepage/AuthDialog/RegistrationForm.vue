@@ -26,7 +26,7 @@
         <div v-else-if="field.type === 'radio'" :key="name" class="AuthDialog-Row">
           <div
             v-for="value in field.values"
-            :key="value"
+            :key="value.value"
             class="AuthDialog-Radio AuthDialog-Field AuthDialog-Col"
           >
             <BaseCheckbox
@@ -38,7 +38,7 @@
               :value="value"
               @change="field.value = $event"
             >
-              {{ value }}
+              {{ value.name }}
             </BaseCheckbox>
           </div>
         </div>
@@ -349,9 +349,12 @@ export default {
           autocorrect: 'off',
         },
         gender: {
-          value: 'male',
+          value: { name: this.$t('auth.placeholders.male'), value: 'male' },
           type: 'radio',
-          values: [this.$t('auth.placeholders.male'), this.$t('auth.placeholders.female')],
+          values: [
+            { name: this.$t('auth.placeholders.male'), value: 'male' },
+            { name: this.$t('auth.placeholders.female'), value: 'female' },
+          ],
         },
         birthDate: {
           children: {
@@ -680,6 +683,7 @@ export default {
         const profileData = { ...this.userInfo };
         for (const key in this.fieldsStep2) {
           if (key === 'birthDate' || key === 'phoneNumber') profileData[key] = this[key];
+          else if (key === 'gender') profileData[key] = this.fieldsStep2[key].value.value;
           else if (key === 'phoneNumber') profileData[key] = `+${this.fieldsStep2[key].value}`;
           else profileData[key] = this.fieldsStep2[key].value;
         }
