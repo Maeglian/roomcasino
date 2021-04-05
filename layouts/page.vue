@@ -8,7 +8,7 @@
       "
     />
     <NotificationAlerts />
-    <MainNav />
+    <MainNav :key="$i18n.locale" />
     <Nuxt />
     <Footer />
     <MobileNav />
