@@ -11,7 +11,7 @@
       </div>
     </div>
     <button type="btn" class="Btn Btn--common Btn--full" @click="onClickBtn">
-      {{ $t('auth.getBonus') }}
+      {{ $t('buttons.getBonus') }}
     </button>
   </div>
 </template>
