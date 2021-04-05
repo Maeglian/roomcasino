@@ -76,6 +76,7 @@
     "tryingConfirmEmail" : "Pokoušíme se ověřit váš e-mail",
     "confirmEmailError" : "Litujeme, váš e-mail nebyl potvrzen",
     "confirmEmailSuccess" : "Congratulations! Your email was successfully confirmed",
+    "bonus": "KČ 3330",
     "placeholders": {
       "enterEmail": "E-emailen",
       "enterPassword": "Heslo",
@@ -112,7 +113,7 @@
     "live" : "Živé hry",
     "slots" : "Sloty hry",
     "roulette" : "Ruleta",
-    "table" : "Table Games",
+    "table" : "Stolní hry",
     "card" : "Karetní hry"
   },
   "footer" : {
@@ -177,10 +178,12 @@
       },
       "fourth" : {
         "highlighted" : "Nejdivočejší výběr",
-        "ghost" : "of game providers"
+        "ghost" : "poskytovatelé her"
       }
     },
-    "allProviders" : "Všichni poskytovatelé"
+    "allProviders" : "Všichni poskytovatelé",
+    "tableIsOpen": "Stůl je otevřený",
+    "tableIsClosed": "Stůl je zavřený"
   },
   "filters" : {
     "filteredBy" : "Filtrováno podle",
@@ -331,7 +334,7 @@
   "promotions" : {
     "title" : "Aktuální propagační akce",
     "text" : "Zrušení limitu bude uplatněno do 24 hodin po žádosti hráče.",
-    "upTo": "až $150",
+    "upTo": "až KČ 3330",
     "deposit1" : {
       "title" : "100% <br/> z vkladu <br/> částk",
       "name": "Bonus k prvnímu vkladu",
