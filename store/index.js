@@ -994,6 +994,7 @@ export const actions = {
         Cookie.set('token', token);
         axios.defaults.headers.common['X-Auth-Token'] = token;
         dispatch('getProfile');
+        dispatch('getAvailableBonusList');
       }
     } catch (e) {
       commit('pushErrors', e);
