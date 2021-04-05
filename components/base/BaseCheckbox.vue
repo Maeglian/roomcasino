@@ -57,9 +57,8 @@ export default {
   },
   computed: {
     isChecked() {
-      console.log(JSON.stringify(this.modelValue), JSON.stringify(this.value));
       if (this.type === 'radio')
-        return JSON.stringify(this.modelValue) === JSON.stringify(this.value);
+        return this.modelValue === this.value || this.modelValue.value === this.value.value;
       if (this.modelValue instanceof Array) {
         return this.modelValue.includes(this.value);
       }
