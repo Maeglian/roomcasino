@@ -36,7 +36,7 @@ export default {
   layout: 'page',
   middleware: [
     function({ route, redirect }) {
-      if (route.path === '/') redirect('/games/top');
+      if (route.path === '/') redirect({ path: '/games/top', query: route.query });
     },
   ],
   data() {
