@@ -1,17 +1,17 @@
 <template>
   <div class="RegistrationBonus">
     <div class="RegistrationBonus-Content">
-      <div class="RegistrationBonus-Title">{{ $t('authDialog.thanksRegistration') }}</div>
-      <div class="RegistrationBonus-Promo">{{ $t('authDialog.registrationBonus') }}</div>
+      <div class="RegistrationBonus-Title">{{ $t('auth.thanksRegistration') }}</div>
+      <div class="RegistrationBonus-Promo">{{ $t('auth.registrationBonus') }}</div>
       <!--      <div class="RegistrationBonus-PromoMin">-->
       <!--        + 55 Free spins-->
       <!--      </div>-->
       <div class="RegistrationBonus-Text">
-        {{ $t('authDialog.registrationBonusText') }}
+        {{ $t('auth.registrationBonusText') }}
       </div>
     </div>
     <button type="btn" class="Btn Btn--common Btn--full" @click="onClickBtn">
-      {{ $t('authDialog.getBonus') }}
+      {{ $t('auth.getBonus') }}
     </button>
   </div>
 </template>
