@@ -2,13 +2,12 @@
   <form class="AuthDialog-Registration AuthDialog-Form" @submit.prevent="onSubmitForm">
     <div class="AuthDialog-Content" :class="{ 'AuthDialog-Content--step1': step === 1 }">
       <div v-if="step === 1" class="AuthDialog-RegistrationHeader">
-        <div class="AuthDialog-Title">
-          Sign up <span class="Colored">&</span> get<br />
-          welcome bonus
+        <div class="AuthDialog-Title" v-html="$t('auth.signUpTitle')"></div>
+        <div class="AuthDialog-Subtitle">
+          <span class="Colored">{{ $t('auth.bonus') }}</span>
         </div>
-        <div class="AuthDialog-Subtitle"><span class="Colored">€ 150</span></div>
       </div>
-      <div v-if="step === 2" class="AuthDialog-Text">Please, fill the information below!</div>
+      <div v-if="step === 2" class="AuthDialog-Text">{{ $t('auth.step2Title') }}</div>
       <template v-for="(field, name) in fields">
         <template v-if="field.type === 'dropdown'">
           <BaseDropdown
@@ -27,7 +26,7 @@
         <div v-else-if="field.type === 'radio'" :key="name" class="AuthDialog-Row">
           <div
             v-for="value in field.values"
-            :key="value"
+            :key="value.value"
             class="AuthDialog-Radio AuthDialog-Field AuthDialog-Col"
           >
             <BaseCheckbox
@@ -39,7 +38,7 @@
               :value="value"
               @change="field.value = $event"
             >
-              {{ value }}
+              {{ value.name }}
             </BaseCheckbox>
           </div>
         </div>
@@ -49,13 +48,13 @@
               v-if="!$v[name].dateCheck && $v.fieldsStep2.birthDate.children.$anyDirty"
               class="AuthDialog-Error"
             >
-              Date is invalid
+              {{ $t('errors.invalidDate') }}
             </div>
             <div
               v-else-if="!$v[name].ageCheck && $v.fieldsStep2.birthDate.children.$anyDirty"
               class="AuthDialog-Error"
             >
-              You are under age of {{ minAge }}
+              {{ $t('errors.minAge', { minAge }) }}
             </div>
           </template>
           <BaseInput
@@ -108,7 +107,26 @@
             @change="field.value = $event"
             @animationend="$v[`fieldsStep${step}`][name].$reset()"
           >
-            <span v-html="labels[name]"></span>
+            <span v-if="name === 'receiveEmailPromos'">{{ $t('auth.emails') }}</span>
+            <i18n v-if="name === 'confirmAgeAndTerms'" path="auth.terms" tag="span">
+              <template #minAge>
+                <span>{{ minAge }}</span>
+              </template>
+              <template #terms>
+                <a class="AuthDialog-RegistrationLink" href="/terms" target="_blank">{{
+                  $t('pages.terms')
+                }}</a>
+              </template>
+              <template #policy>
+                <a class="AuthDialog-RegistrationLink" href="/privacy-policy" target="_blank">{{
+                  $t('pages.privacyPolicy')
+                }}</a>
+              </template>
+              <template #br>
+                <br />
+              </template>
+              <span class="AuthDialog-Required">*</span>
+            </i18n>
           </BaseCheckbox>
         </template>
         <div v-else-if="field.type === 'phone'" :key="name" class="AuthDialog-Row">
@@ -120,7 +138,7 @@
             "
             class="AuthDialog-Error"
           >
-            Must be with '+', from 10 to 14 symbols
+            {{ $t('errors.phone') }}
           </div>
           <BaseDropdown
             v-model="field.code.value"
@@ -219,7 +237,7 @@
         :is-loading="authStatus === 'loading'"
         :disabled="$v.$error"
       >
-        Sign up
+        {{ $t('buttons.signUp') }}
       </BaseButton>
       <BaseButton
         v-if="step === 2"
@@ -227,7 +245,7 @@
         :is-loading="authStatus === 'loading'"
         :disabled="$v.$error"
       >
-        Save
+        {{ $t('buttons.save') }}
       </BaseButton>
     </div>
   </form>
@@ -279,7 +297,7 @@ export default {
         email: {
           value: '',
           type: 'email',
-          placeholder: 'Your email',
+          placeholder: this.$t('auth.placeholders.email'),
           required: true,
           autocapitalize: 'off',
           autocorrect: 'off',
@@ -289,20 +307,20 @@ export default {
         password: {
           value: '',
           type: 'password',
-          placeholder: 'Your password',
+          placeholder: this.$t('auth.placeholders.password'),
           required: true,
         },
         currency: {
           value: '',
           type: 'dropdown',
-          placeholder: 'currency',
+          placeholder: this.$t('common.currency'),
           items: [],
           required: true,
         },
         country: {
           value: '',
           type: 'dropdown',
-          placeholder: 'country',
+          placeholder: this.$t('auth.placeholders.country'),
           items: [],
           required: true,
         },
@@ -319,21 +337,24 @@ export default {
         firstName: {
           value: '',
           type: 'text',
-          placeholder: 'First Name',
+          placeholder: this.$t('auth.placeholders.firstName'),
           required: true,
           autocorrect: 'off',
         },
         lastName: {
           value: '',
           type: 'text',
-          placeholder: 'Last Name',
+          placeholder: this.$t('auth.placeholders.lastName'),
           required: true,
           autocorrect: 'off',
         },
         gender: {
-          value: 'male',
+          value: { name: this.$t('auth.placeholders.male'), value: 'male' },
           type: 'radio',
-          values: ['male', 'female'],
+          values: [
+            { name: this.$t('auth.placeholders.male'), value: 'male' },
+            { name: this.$t('auth.placeholders.female'), value: 'female' },
+          ],
         },
         birthDate: {
           children: {
@@ -367,7 +388,7 @@ export default {
           value: '',
           ref: 'city',
           type: 'text',
-          placeholder: 'City',
+          placeholder: this.$t('auth.placeholders.city'),
           required: true,
           autocorrect: 'off',
           autocomplete: 'address-level2',
@@ -375,7 +396,7 @@ export default {
         address: {
           value: '',
           type: 'text',
-          placeholder: 'Address',
+          placeholder: this.$t('auth.placeholders.address'),
           required: true,
           autocorrect: 'off',
           autocomplete: 'address-line1',
@@ -383,7 +404,7 @@ export default {
         postalCode: {
           value: '',
           type: 'text',
-          placeholder: 'Postal code',
+          placeholder: this.$t('auth.placeholders.postalCode'),
           required: true,
           autocorrect: 'off',
           autocomplete: 'postal-code',
@@ -399,7 +420,7 @@ export default {
           tel: {
             value: '',
             type: 'tel',
-            placeholder: 'Mobile phone',
+            placeholder: this.$t('auth.placeholders.phone'),
             required: true,
             autocorrect: 'off',
             autocomplete: 'tel-national',
@@ -447,7 +468,7 @@ export default {
     },
     labels() {
       return {
-        receiveEmailPromos: 'Receive Email Promos',
+        receiveEmailPromos: this.$t('auth.emails'),
         confirmAgeAndTerms: `I am ${this.minAge} years old and I accept the<br/> <a class="AuthDialog-RegistrationLink" href="/terms" target="_blank">Terms&nbsp;and&nbsp;Conditions</a> and <a class="AuthDialog-RegistrationLink" href="/privacy-policy" target="_blank">Privacy&nbsp;Policy</a>&nbsp;<span class="AuthDialog-Required">*</span>`,
       };
     },
@@ -662,6 +683,7 @@ export default {
         const profileData = { ...this.userInfo };
         for (const key in this.fieldsStep2) {
           if (key === 'birthDate' || key === 'phoneNumber') profileData[key] = this[key];
+          else if (key === 'gender') profileData[key] = this.fieldsStep2[key].value.value;
           else if (key === 'phoneNumber') profileData[key] = `+${this.fieldsStep2[key].value}`;
           else profileData[key] = this.fieldsStep2[key].value;
         }

@@ -5,25 +5,25 @@
         <svg class="MobileNav-Toggle Toggle Toggle--colored">
           <use xlink:href="@/assets/img/icons.svg#toggle"></use>
         </svg>
-        <div class="MobileNav-Name">Menu</div>
+        <div class="MobileNav-Name">{{ $t('menu.menu') }}</div>
       </button>
-      <NuxtLink class="MobileNav-Item" to="/promotions">
+      <NuxtLink class="MobileNav-Item" :to="localePath('/promotions')">
         <svg width="17" height="16">
           <use xlink:href="@/assets/img/icons.svg#promotions"></use>
         </svg>
-        <div class="MobileNav-Name">Promotions</div>
+        <div class="MobileNav-Name">{{ $t('pages.promotion') }}</div>
       </NuxtLink>
       <button class="MobileNav-Item" @click="onClickBtn()">
         <svg width="18" height="15">
           <use xlink:href="@/assets/img/icons.svg#deposit"></use>
         </svg>
-        <div class="MobileNav-Name">Deposit</div>
+        <div class="MobileNav-Name">{{ $t('buttons.deposit') }}</div>
       </button>
       <button v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
         <svg width="18" height="15">
           <use xlink:href="@/assets/img/icons.svg#support"></use>
         </svg>
-        <div class="MobileNav-Name">Support</div>
+        <div class="MobileNav-Name">{{ $t('menu.support') }}</div>
       </button>
       <!--    <div class="MobileNav-Item" @click="toggleNotificationsPanel">-->
       <!--      <div class="MobileNav-Messages">-->
@@ -40,11 +40,11 @@
     <template v-else>
       <button class="MobileNav-Item--row" @click="showRegistrationDialog('login')">
         <img class="MobileNav-Icon2" src="@/assets/img/user.svg" width="15" />
-        <div class="MobileNav-Name MobileNav-Name--large">Log in</div>
+        <div class="MobileNav-Name MobileNav-Name--large">{{ $t('buttons.logIn') }}</div>
       </button>
       <button class="MobileNav-Item--row" @click="showRegistrationDialog('registration')">
         <img class="MobileNav-Icon2" src="@/assets/img/arrow.svg" width="15" />
-        <div class="MobileNav-Name MobileNav-Name--large">Join now</div>
+        <div class="MobileNav-Name MobileNav-Name--large">{{ $t('buttons.joinNow') }}</div>
       </button>
       <button class="MobileNav-Item MobileNav-Item--burger" @click="toggleNav()">
         <svg class="MobileNav-Toggle2 Toggle Toggle--colored">

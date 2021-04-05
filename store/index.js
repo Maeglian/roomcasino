@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Vue from 'vue';
 import moment from 'moment';
-import { BILLING_PROVIDER_ID, API_HOST, DEFAULT_PROVIDER, LIMIT_DETAILS } from '../config';
+import { BILLING_PROVIDER_ID, API_HOST } from '../config';
 
 const Cookie = process.client ? require('js-cookie') : undefined;
 const cookieparser = process.server ? require('cookieparser') : undefined;
@@ -82,7 +82,7 @@ export const state = () => ({
   bonusHistoryList: [],
   sessionHistoryList: [],
   serverError: '',
-  gameProducerList: [DEFAULT_PROVIDER],
+  gameProducers: [],
   status: '',
   authStatus: '',
   phoneCodeList: [],
@@ -90,171 +90,6 @@ export const state = () => ({
   currencyList: [],
   categories: [],
   shouldCashout: false,
-  providers: [
-    {
-      name: 'All providers',
-    },
-    {
-      name: 'Netent',
-      icon: 'netent',
-    },
-    {
-      name: "Play'n go",
-      icon: 'go',
-    },
-    {
-      name: 'Microgaming',
-      icon: 'microgaming',
-    },
-    {
-      name: '1x2 gambing',
-      icon: 'gaming_book',
-    },
-    {
-      name: 'Amatic',
-      icon: 'amatic',
-    },
-    {
-      name: 'Belatra',
-      icon: 'belatra',
-    },
-    {
-      name: 'Spinometal',
-      icon: 'spinometal',
-    },
-    {
-      name: 'Booming games',
-      icon: 'booming',
-    },
-    {
-      name: 'Egt',
-      icon: 'egt',
-    },
-    {
-      name: 'Endorphina',
-      icon: 'endorphina',
-    },
-    {
-      name: 'Netent',
-      icon: 'netent',
-    },
-    {
-      name: "Play'n go",
-      icon: 'go',
-    },
-    {
-      name: 'Microgaming',
-      icon: 'microgaming',
-    },
-    {
-      name: '1x2 gambing',
-      icon: 'gaming_book',
-    },
-    {
-      name: 'Amatic',
-      icon: 'amatic',
-    },
-    {
-      name: 'Belatra',
-      icon: 'belatra',
-    },
-    {
-      name: 'Spinometal',
-      icon: 'spinometal',
-    },
-    {
-      name: 'Booming games',
-      icon: 'booming',
-    },
-    {
-      name: 'Egt',
-      icon: 'egt',
-    },
-    {
-      name: 'Endorphina',
-      icon: 'endorphina',
-    },
-    {
-      name: 'Netent',
-      icon: 'netent',
-    },
-    {
-      name: "Play'n go",
-      icon: 'go',
-    },
-    {
-      name: 'Microgaming',
-      icon: 'microgaming',
-    },
-    {
-      name: '1x2 gambing',
-      icon: 'gaming_book',
-    },
-    {
-      name: 'Amatic',
-      icon: 'amatic',
-    },
-    {
-      name: 'Belatra',
-      icon: 'belatra',
-    },
-    {
-      name: 'Spinometal',
-      icon: 'spinometal',
-    },
-    {
-      name: 'Booming games',
-      icon: 'booming',
-    },
-    {
-      name: 'Egt',
-      icon: 'egt',
-    },
-    {
-      name: 'Endorphina',
-      icon: 'endorphina',
-    },
-    {
-      name: 'Netent',
-      icon: 'netent',
-    },
-    {
-      name: "Play'n go",
-      icon: 'go',
-    },
-    {
-      name: 'Microgaming',
-      icon: 'microgaming',
-    },
-    {
-      name: '1x2 gambing',
-      icon: 'gaming_book',
-    },
-    {
-      name: 'Amatic',
-      icon: 'amatic',
-    },
-    {
-      name: 'Belatra',
-      icon: 'belatra',
-    },
-    {
-      name: 'Spinometal',
-      icon: 'spinometal',
-    },
-    {
-      name: 'Booming games',
-      icon: 'booming',
-    },
-    {
-      name: 'Egt',
-      icon: 'egt',
-    },
-    {
-      name: 'Endorphina',
-      icon: 'endorphina',
-    },
-  ],
   token: null,
   authError: '',
   navIsOpen: false,
@@ -731,15 +566,13 @@ export const getters = {
   },
   isLoggedIn: state => !!state.token,
   authStatus: state => state.status,
-  slicedGameProducerList: state => startIndex =>
-    state.gameProducerList.slice(startIndex, state.providers.length + 1),
   limitsByTypes: state => {
     const ll = state.limits.reduce((namedLimits, limit) => {
-      const namedlimit = namedLimits.find(l => l.name === l.type);
+      const namedlimit = namedLimits.find(l => l.type === limit.type);
       if (namedlimit) namedlimit.limits.push(limit);
       else {
         namedLimits.push({
-          name: LIMIT_DETAILS[limit.type].name,
+          type: limit.type,
           limits: [limit],
         });
       }
@@ -954,7 +787,7 @@ export const mutations = {
     state.historyListIsLoading = false;
   },
   setGameProducerList: (state, payload) => {
-    state.gameProducerList = [...state.gameProducerList, ...payload];
+    state.gameProducers = payload;
   },
   openNav: state => {
     state.navIsOpen = true;
@@ -1217,7 +1050,7 @@ export const actions = {
       Cookie.remove('token');
       delete axios.defaults.headers.common['X-Auth-Token'];
       commit('clearNotificationAlerts');
-      this.$router.push('/');
+      this.$router.push(this.$i18n.localePath('/'));
     } catch (e) {
       commit('pushErrors', e);
     }

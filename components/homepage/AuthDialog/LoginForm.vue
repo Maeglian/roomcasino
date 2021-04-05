@@ -1,7 +1,7 @@
 <template>
   <form class="AuthDialog-Login AuthDialog-Form" @submit.prevent="onSubmitForm">
     <div class="AuthDialog-Content">
-      <div class="AuthDialog-Title AuthDialog-LoginTitle">Welcome back</div>
+      <div class="AuthDialog-Title AuthDialog-LoginTitle">{{ $t('auth.loginTitle') }}</div>
       <div class="AuthDialog-Fields">
         <BaseInput
           v-for="(field, name) in fields"
@@ -15,8 +15,12 @@
           :v="$v.fields[name].value"
         />
         <div class="AuthDialog-Link">
-          <NuxtLink to="/passwordRestore" class="AuthDialog-Link" @click.native="$emit('close')">
-            Forgot Password?
+          <NuxtLink
+            :to="localePath('/passwordRestore')"
+            class="AuthDialog-Link"
+            @click.native="$emit('close')"
+          >
+            {{ $t('auth.forgotPassword') }}?
           </NuxtLink>
         </div>
         <div v-if="authError" class="AuthDialog-Error AuthDialog-Error--login">
@@ -29,7 +33,7 @@
       :is-loading="authStatus === 'loading'"
       :disabled="$v.$error"
     >
-      Login
+      {{ $t('buttons.login') }}
     </BaseButton>
   </form>
 </template>
@@ -50,12 +54,12 @@ export default {
         email: {
           value: '',
           type: 'email',
-          placeholder: 'Enter your email',
+          placeholder: this.$t('auth.placeholders.enterEmail'),
         },
         password: {
           value: '',
           type: 'password',
-          placeholder: 'Enter your password',
+          placeholder: this.$t('auth.placeholders.enterPassword'),
         },
       },
     };
@@ -79,6 +83,8 @@ export default {
         if (this.fields[key].value) payload[key] = this.fields[key].value;
       }
       this.authorize(payload).then(() => {
+        this.$router.push(this.localePath('/'));
+        if (!this.authError) this.$emit('close');
         this.$router.push('/');
         if (!this.authError) {
           this.$emit('close');

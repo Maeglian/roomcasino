@@ -9,7 +9,7 @@
             $emit('open-gamepage', { id: gameInfo.gameId, demo: true, bg: gameInfo.backgroundUrl })
           "
         >
-          Play for fun
+          {{ $t('buttons.playForFun') }}
         </button>
         <button
           v-if="!gameInfo.demoOnly"
@@ -18,7 +18,7 @@
             $emit('open-gamepage', { id: gameInfo.gameId, demo: false, bg: gameInfo.backgroundUrl })
           "
         >
-          Play Now
+          {{ $t('buttons.playNow') }}
         </button>
       </div>
       <div v-if="badge" class="Card-Badge" :class="{ 'Card-Badge--text': badge !== 'best' }">
@@ -53,8 +53,8 @@
           >
             {{
               dga[gameInfo.gameProducer][gameInfo.gpGameId].tableOpen
-                ? 'Table is open'
-                : 'Table closed'
+                ? $t('homepage.tableIsOpen')
+                : $t('homepage.tableIsClosed')
             }}
           </div>
           <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer" class="Card-Info">
@@ -166,10 +166,10 @@ export default {
     },
   },
   computed: {
-    ...mapState(['platform', 'dga', 'gameProducerList']),
+    ...mapState(['platform', 'dga', 'gameProducers']),
     ...mapGetters(['isLoggedIn', 'activeAccount']),
     iconUrl() {
-      const gameProducer = this.gameProducerList.find(
+      const gameProducer = this.gameProducers.find(
         producer => producer.name.toLowerCase() === this.gameInfo.gameProducer.toLowerCase(),
       );
       if (gameProducer) return gameProducer.iconUrl;

@@ -33,7 +33,9 @@
         limits on the amount you deposit, lose, wager, spend in one game, or on your account
         activity on the whole. This functionality can be accessed within your account in the
         “Personal Limits” section
-        <NuxtLink v-if="isLoggedIn" to="/cabinet/limits" class="SupportPage-Link">here.</NuxtLink>
+        <NuxtLink v-if="isLoggedIn" :to="localePath('/cabinet/limits')" class="SupportPage-Link"
+          >here.</NuxtLink
+        >
         <button v-else class="SupportPage-Link" @click="showRegistrationDialog('registration')">
           here.
         </button>

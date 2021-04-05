@@ -85,7 +85,36 @@ export default {
   buildModules: [],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/style-resources', '@nuxtjs/gtm'],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/gtm', 'nuxt-i18n'],
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        codeCountry: 'en_GB',
+        file: 'en.json',
+        icon: 'en.png',
+      },
+      // {
+      //   code: 'fr',
+      //   codeCountry: 'fr_CA',
+      //   file: 'fr.json',
+      //   icon: 'fr_ca.svg',
+      // },
+      {
+        code: 'cs',
+        codeCountry: 'cs_CZ',
+        file: 'cs.json',
+        icon: 'cs.png',
+      },
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: '~/locales/',
+    vueI18n: {
+      fallbackLocale: 'en',
+    },
+  },
 
   gtm: {
     enabled: process.env.NUXT_ENV_MODE === 'production',
@@ -110,17 +139,24 @@ export default {
     routes() {
       const routes = [
         '/cabinet/history/game',
+        '/cs/cabinet/history/game',
         '/cabinet/history/transaction',
+        '/cs/cabinet/history/transaction',
         '/cabinet/history/bonus',
+        '/cs/cabinet/history/bonus',
+        '/games/all',
+        '/cs/games/all',
       ];
       const categories = axios.get(`${API_HOST}/categoryList`).then(res => {
         res.data.data.forEach(category => {
           routes.push(`/games/${category.slug}`);
+          routes.push(`/cs/games/${category.slug}`);
         });
       });
       const providers = axios.get(`${API_HOST}/gameProducerList`).then(res => {
         res.data.data.forEach(provider => {
           routes.push(`/providers/${provider.name}`);
+          routes.push(`/cs/providers/${provider.name}`);
         });
       });
 

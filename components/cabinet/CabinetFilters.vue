@@ -4,7 +4,7 @@
       <svg class="CabinetFilters-Icon" width="13" height="15">
         <use xlink:href="@/assets/img/icons.svg#filters"></use>
       </svg>
-      Filtered by
+      {{ $t('filters.filteredBy') }}
       <i
         v-if="width < 1248"
         class="ThinArrow CabinetFilters-Arrow"
@@ -77,7 +77,11 @@ export default {
     setValue({ name, type, payload }) {
       const val = { name };
       if (type === 'date') {
-        payload ? (val.val = moment(payload).startOf('day').unix()) : (val.val = '');
+        payload
+          ? (val.val = moment(payload)
+              .startOf('day')
+              .unix())
+          : (val.val = '');
       } else val.val = payload;
       this.$emit('set-value', val);
     },

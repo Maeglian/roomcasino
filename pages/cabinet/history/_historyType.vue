@@ -1,8 +1,12 @@
 <template>
   <div class="HistoryPage-Content">
-    <CabinetFilters :filters="filters" @set-value="setValue" @filter="onFilter" />
+    <CabinetFilters
+      :filters="historyTables[$route.params.historyType].filters"
+      @set-value="setValue"
+      @filter="onFilter"
+    />
     <CabinetTable
-      :cols="columns"
+      :cols="historyTables[$route.params.historyType].cols"
       thead
       :rows="historyList"
       :loading="historyListIsLoading"
@@ -23,7 +27,7 @@
 import CabinetFilters from '@/components/cabinet/CabinetFilters.vue';
 import CabinetTable from '@/components/cabinet/CabinetTable.vue';
 import { mapActions, mapState } from 'vuex';
-import { HISTORY_TABLES } from '@/config';
+import moment from 'moment';
 
 export default {
   name: 'HistoryContent',
@@ -37,8 +41,176 @@ export default {
       maxRowsPerPage: 12,
       limit: 6,
       currentPage: 1,
-      columns: HISTORY_TABLES[this.$route.params.historyType].cols,
-      filters: HISTORY_TABLES[this.$route.params.historyType].filters,
+      historyTables: {
+        transaction: {
+          cols: [
+            {
+              label: this.$t('common.date'),
+              field: 'actionTime',
+              format(x) {
+                return moment.unix(x).format('DD MMM YYYY, H:mm:ss');
+              },
+            },
+            {
+              label: this.$t('cabinet.history.table.paymentSystem'),
+              field: 'paymentSystem',
+            },
+            {
+              label: this.$t('cabinet.history.table.action'),
+              field: 'action',
+            },
+            {
+              label: this.$t('common.status'),
+              field: 'status',
+              colClasses(x) {
+                if (x === 'done') return 'CabinetTable-Cell--success';
+                if (x === 'cancel') return 'CabinetTable-Cell--error';
+                return '';
+              },
+            },
+            {
+              label: this.$t('common.amount'),
+              field: 'amount',
+            },
+            {
+              label: this.$t('common.currency'),
+              field: 'currency',
+            },
+          ],
+          filters: {
+            currency: {
+              label: this.$t('common.currency'),
+              type: 'dropdown',
+              value: { name: this.$t('filters.allCurrencies'), value: '' },
+            },
+            status: {
+              label: this.$t('common.status'),
+              type: 'dropdown',
+              values: [
+                { name: this.$t('filters.allStatuses'), value: '' },
+                { name: 'Done', value: 'done' },
+                { name: 'Waiting', value: 'wait' },
+                { name: 'Cancelled', value: 'cancel' },
+              ],
+              value: { name: this.$t('filters.allStatuses'), value: '' },
+            },
+            from: {
+              label: this.$t('filters.until'),
+              type: 'date',
+              value: '',
+            },
+          },
+        },
+        game: {
+          cols: [
+            {
+              label: this.$t('common.date'),
+              field: 'actionTime',
+              format(x) {
+                return moment.unix(x).format('DD MMM YYYY, H:mm:ss');
+              },
+            },
+            {
+              label: this.$t('cabinet.history.table.gameName'),
+              field: 'name',
+            },
+            {
+              label: this.$t('cabinet.history.table.betSum'),
+              field: 'betSum',
+            },
+            {
+              label: this.$t('cabinet.history.table.win'),
+              field: 'winSum',
+            },
+            {
+              label: this.$t('common.currency'),
+              field: 'currency',
+            },
+          ],
+          filters: {
+            currency: {
+              label: 'currency',
+              type: 'dropdown',
+              value: { name: this.$t('filters.allCurrencies'), value: '' },
+            },
+            from: {
+              label: this.$t('filters.until'),
+              type: 'date',
+              value: '',
+            },
+          },
+        },
+        bonus: {
+          cols: [
+            {
+              label: this.$t('common.date'),
+              field: 'actionTime',
+              format(x) {
+                return moment.unix(x).format('DD MMM YYYY, H:mm:ss');
+              },
+            },
+            {
+              label: this.$t('common.title'),
+              field: 'title',
+            },
+            {
+              label: this.$t('common.status'),
+              field: 'status',
+            },
+            {
+              label: this.$t('common.type'),
+              field: 'bonusType',
+            },
+            {
+              label: this.$t('common.amount'),
+              field: 'amount',
+            },
+            {
+              label: this.$t('common.currency'),
+              field: 'currency',
+            },
+            {
+              label: this.$t('common.wager'),
+              field: 'wagerRemains',
+            },
+            {
+              label: this.$t('cabinet.history.table.validUntil'),
+              field: 'expireAt',
+              format(x) {
+                return moment.unix(x).format('DD MMM YYYY, H:mm:ss');
+              },
+            },
+          ],
+          filters: {
+            currency: {
+              label: this.$t('common.currency'),
+              type: 'dropdown',
+              value: { name: 'All currencies', value: '' },
+            },
+            status: {
+              label: this.$t('common.status'),
+              type: 'dropdown',
+              values: [
+                { name: this.$t('filters.allStatuses'), value: '' },
+                { name: 'Active', value: 'active' },
+                { name: 'Run out', value: 'runOut' },
+                { name: 'Waiting', value: 'hold' },
+                { name: 'Paused', value: 'pause' },
+                { name: 'Cancelled', value: 'cancel' },
+                { name: 'Finished', value: 'wagerDone' },
+                { name: 'Not active', value: 'notActive' },
+                { name: 'Played', value: 'played' },
+              ],
+              value: { name: this.$t('filters.allStatuses'), value: '' },
+            },
+            from: {
+              label: this.$t('filters.until'),
+              type: 'date',
+              value: '',
+            },
+          },
+        },
+      },
     };
   },
   computed: {

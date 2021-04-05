@@ -1,14 +1,16 @@
 <template>
   <div class="Modal">
     <div class="Close Modal-Close" @click="$emit('close')"></div>
-    <div class="CabinetPage-Header">Test</div>
+    <div class="CabinetPage-Header">{{ bonus.name }}</div>
     <div class="BonusDetails">
       <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">Bonus amount:</div>
+        <div class="BonusDetails-Label">
+          {{ $t('cabinet.bonuses.table.bonus') }} {{ $t('common.amount') }}:
+        </div>
         <div class="BonusDetails-Value">{{ bonus.amount }} {{ bonus.currency }}</div>
       </div>
       <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">Status:</div>
+        <div class="BonusDetails-Label">{{ $t('common.status') }}:</div>
         <div
           class="BonusDetails-Value BonusDetails-Status"
           :class="[
@@ -25,37 +27,37 @@
         </div>
       </div>
       <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">Wager:</div>
+        <div class="BonusDetails-Label">{{ $t('common.wager') }}:</div>
         <div class="BonusDetails-Value">{{ bonus.wager }}</div>
       </div>
       <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">Wager amount:</div>
+        <div class="BonusDetails-Label">{{ $t('common.wager') }} {{ $t('common.amount') }}:</div>
         <div class="BonusDetails-Value">{{ bonus.currentWagerAmount }} {{ bonus.currency }}</div>
       </div>
       <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">Wager Amount requirement:</div>
+        <div class="BonusDetails-Label">{{ $t('cabinet.bonuses.wagerAmountRequirement') }}:</div>
         <div class="BonusDetails-Value">{{ bonus.wagerAmount }} {{ bonus.currency }}</div>
       </div>
       <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">Wagered percent:</div>
+        <div class="BonusDetails-Label">{{ $t('cabinet.bonuses.wageredPercent') }}:</div>
         <div class="BonusDetails-Value">
           {{ (bonus.currentWagerAmount / bonus.wagerAmount) * 100 }}%
         </div>
       </div>
       <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">Currency:</div>
+        <div class="BonusDetails-Label">{{ $t('common.currency') }}:</div>
         <div class="BonusDetails-Value">
           {{ bonus.currency }}
         </div>
       </div>
       <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">Created:</div>
+        <div class="BonusDetails-Label">{{ $t('common.created') }}:</div>
         <div class="BonusDetails-Value">
           {{ convertDate(bonus.createdAt) }}
         </div>
       </div>
       <div v-if="bonus.expireAt" class="BonusDetails-Row">
-        <div class="BonusDetails-Label">Expires at:</div>
+        <div class="BonusDetails-Label">{{ $t('common.expiresAt') }}:</div>
         <div class="BonusDetails-Value">
           {{ convertDate(bonus.expireAt) }}
         </div>

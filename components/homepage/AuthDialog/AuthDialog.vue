@@ -54,11 +54,11 @@ export default {
       tabs: [
         {
           value: 'registration',
-          name: 'Sign up',
+          name: this.$t('buttons.signUp'),
         },
         {
           value: 'login',
-          name: 'Login',
+          name: this.$t('buttons.login'),
         },
       ],
       activeTab: 'registration',

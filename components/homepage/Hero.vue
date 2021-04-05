@@ -34,7 +34,7 @@
           <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
           <div class="Hero-Text" v-html="slides[depositNum].text"></div>
           <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
-            {{ isLoggedIn ? 'Deposit now' : 'Register now' }}
+            {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.register') }}
           </button>
         </div>
       </div>
@@ -52,8 +52,8 @@
             <img src="@/assets/img/fast.svg" alt="" />
           </div>
           <div class="Advantages-Content">
-            <div class="Advantages-Title">Super fast</div>
-            <div class="Advantages-Text">withdrawals</div>
+            <div class="Advantages-Title">{{ $t('homepage.advantages.first.highlighted') }}</div>
+            <div class="Advantages-Text">{{ $t('homepage.advantages.first.ghost') }}</div>
           </div>
         </div>
         <div class="Advantages-Item">
@@ -61,8 +61,8 @@
             <img src="@/assets/img/support.svg" alt="" />
           </div>
           <div class="Advantages-Content">
-            <div class="Advantages-Title">24/7</div>
-            <div class="Advantages-Text">friendly chat support</div>
+            <div class="Advantages-Title">{{ $t('homepage.advantages.second.highlighted') }}</div>
+            <div class="Advantages-Text">{{ $t('homepage.advantages.second.ghost') }}</div>
           </div>
         </div>
         <div class="Advantages-Item">
@@ -70,8 +70,8 @@
             <img src="@/assets/img/games.svg" alt="" />
           </div>
           <div class="Advantages-Content">
-            <div class="Advantages-Title">More than</div>
-            <div class="Advantages-Text">2000 Games</div>
+            <div class="Advantages-Title">{{ $t('homepage.advantages.third.highlighted') }}</div>
+            <div class="Advantages-Text">{{ $t('homepage.advantages.third.ghost') }}</div>
           </div>
         </div>
         <div class="Advantages-Item">
@@ -79,8 +79,8 @@
             <img src="@/assets/img/providers.svg" alt="" />
           </div>
           <div class="Advantages-Content">
-            <div class="Advantages-Title">The widest selection</div>
-            <div class="Advantages-Text">of game providers</div>
+            <div class="Advantages-Title">{{ $t('homepage.advantages.fourth.highlighted') }}</div>
+            <div class="Advantages-Text">{{ $t('homepage.advantages.fourth.ghost') }}</div>
           </div>
         </div>
       </div>
@@ -109,34 +109,31 @@ export default {
       slides: [
         {
           bg: 'aztec',
-          title: 'Welcome<br/> package <span class="Colored">$ 450!</span>',
-          text:
-            'Make first deposit<br/> and get <span class="Colored">100%</span> up to <span class="Colored">$ 150</span>',
+          title: this.$t('homepage.heroBanner.deposit1.title'),
+          text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
           bg: 'joker',
-          title: 'Welcome package<br/><span class="Colored">$450</span>!',
-          text: 'Make first deposit<br/> and get 100% up to <span class="Colored">$150</span>',
+          title: this.$t('homepage.heroBanner.deposit1.title'),
+          text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
           bg: 'wolf',
-          title: 'Second deposit<br/> bonus',
-          text:
-            '55% bonus<br/> up to <span class="Colored">$150</span><br/> on your second deposit',
+          title: this.$t('homepage.heroBanner.deposit2.title'),
+          text: this.$t('homepage.heroBanner.deposit2.text'),
           btnText: 'Deposit now',
         },
         {
           bg: 'book',
-          title: 'Third deposit<br/> bonus',
-          text:
-            '100% bonus<br/> up to <span class="Colored">$150</span><br/> on your third deposit',
+          title: this.$t('homepage.heroBanner.deposit3.title'),
+          text: this.$t('homepage.heroBanner.deposit3.text'),
           btnText: 'Deposit now',
         },
         {
           bg: 'tournaments',
-          title: 'More exciting<br/> promotions<br/> coming soon!',
+          title: this.$t('homepage.heroBanner.deposit4.title'),
           text: '',
           btnText: 'Deposit now',
         },

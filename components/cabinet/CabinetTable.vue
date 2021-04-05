@@ -52,7 +52,7 @@
             class="CabinetTable-ShowMore"
             @click="$emit('show-more')"
           >
-            Show more
+            {{ $t('buttons.showMore') }}
           </button>
           <BasePagination
             v-if="pagination.enabled"

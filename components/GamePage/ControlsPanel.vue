@@ -1,7 +1,7 @@
 <template>
   <div class="ControlsPanel">
     <div v-if="!isFullScreen" class="ControlsPanel-Block">
-      <p class="ControlsPanel-Title">Responsible gaming</p>
+      <p class="ControlsPanel-Title">{{ $t('pages.responsibleGaming') }}</p>
       <img :src="clockIcon" class="ControlsPanel-Image" />
       <p class="ControlsPanel-Time">{{ getCurrentTime }}</p>
     </div>
@@ -17,7 +17,7 @@
 
       <NuxtLink
         v-if="!isFullScreen"
-        to="/"
+        :to="localePath('/')"
         class="ControlsPanel-Action"
         @click.native="onCloseGame"
       >

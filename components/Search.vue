@@ -11,7 +11,7 @@
     <input
       type="text"
       class="Search-Input"
-      placeholder="Find game"
+      :placeholder="$t('search.findGame')"
       :value="value"
       @input="$emit('input', $event.target.value)"
     />

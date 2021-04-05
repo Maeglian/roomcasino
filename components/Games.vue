@@ -8,7 +8,7 @@
       show-on-mount
       @close="clearGameError"
     >
-      <div class="Modal-Title">Can't start the game</div>
+      <div class="Modal-Title">{{ $t('modals.cantStart') }}</div>
       <div class="Modal-Text">
         {{ gameError }}
       </div>
@@ -21,8 +21,8 @@
       show-on-mount
       @close="onCloseDepositModal"
     >
-      <div class="Modal-Title">Please deposit first</div>
-      <div class="Modal-Text">It's a pity, but your balance is 0. Deposit now!</div>
+      <div class="Modal-Title">{{ $t('modals.pleaseDeposit') }}</div>
+      <div class="Modal-Text">{{ $t('modals.pleaseDepositText') }}</div>
     </BaseModal>
     <div class="Games-Items">
       <Card
@@ -36,9 +36,11 @@
         @open-gamepage="openGamePage"
       />
     </div>
-    <p v-if="!games.length" class="Text Text--center">Nothing was found</p>
+    <p v-if="!games.length" class="Text Text--center">{{ $t('search.notFound') }}</p>
     <div v-if="games.length > gamesShowed" class="Games-Btn">
-      <button class="Btn" :class="btnClass" @click="showMoreGames()">Load more games</button>
+      <button class="Btn" :class="btnClass" @click="showMoreGames()">
+        {{ $t('buttons.loadMoreGames') }}
+      </button>
     </div>
   </div>
 </template>
@@ -134,7 +136,7 @@ export default {
         if (this.platform === 'mobile') window.location.href = this.gameUrlForIframe;
         else {
           localStorage.setItem('gameBg', bg);
-          this.$router.push('/game');
+          this.$router.push(this.localePath('/game'));
         }
       }
     },
