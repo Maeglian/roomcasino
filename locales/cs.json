@@ -59,7 +59,7 @@
   },
   "auth" : {
     "loginTitle" : "Vítej zpět",
-    "signUpTitle" : "Zaregistrujte se <span class = \"Colored\"> & </span> a získejte <br /> uvítací bonus",
+    "signUpTitle" : "Zaregistrujte se<br /> <span class = \"Colored\"> & </span> a získejte <br /> uvítací bonus",
     "forgotPassword" : "Zapomenuté heslo",
     "emails" : "Dostávat e-mailové promoakce",
     "terms" : "Je mi {minAge} let a přijímám {br} {terms} a {policy}",
