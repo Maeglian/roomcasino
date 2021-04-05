@@ -42,9 +42,10 @@ jobs:
             cd ${{ env.DEPLOY_DIR_TEMP }}
             npm i
             ${{ env.BUILD_SCRIPT }}
-            ${{ env.START_SCRIPT }}
             cd ..
             rm -rf ${{ env.DEPLOY_DIR }}
             mv ${{ env.DEPLOY_DIR_TEMP }} ${{ env.DEPLOY_DIR }}
+            cd ${{ env.DEPLOY_DIR }}
+            ${{ env.START_SCRIPT }}
       - name: Print Info
         run: echo "http://${{ env.DEPLOY_DIR }}.ninecasino.com/"
