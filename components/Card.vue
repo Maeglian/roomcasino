@@ -53,8 +53,8 @@
           >
             {{
               dga[gameInfo.gameProducer][gameInfo.gpGameId].tableOpen
-                ? 'Table is open'
-                : 'Table closed'
+                ? $t('homepage.tableIsOpen')
+                : $t('homepage.tableIsClosed')
             }}
           </div>
           <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer" class="Card-Info">

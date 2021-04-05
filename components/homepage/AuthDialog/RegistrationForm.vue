@@ -3,7 +3,9 @@
     <div class="AuthDialog-Content" :class="{ 'AuthDialog-Content--step1': step === 1 }">
       <div v-if="step === 1" class="AuthDialog-RegistrationHeader">
         <div class="AuthDialog-Title" v-html="$t('auth.signUpTitle')"></div>
-        <div class="AuthDialog-Subtitle"><span class="Colored">€ 150</span></div>
+        <div class="AuthDialog-Subtitle">
+          <span class="Colored">{{ $t('auth.bonus') }}</span>
+        </div>
       </div>
       <div v-if="step === 2" class="AuthDialog-Text">{{ $t('auth.step2Title') }}</div>
       <template v-for="(field, name) in fields">
