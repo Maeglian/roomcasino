@@ -35,9 +35,9 @@ export default {
   },
   layout: 'page',
   middleware: [
-    function({ redirect, app }) {
+    function({ redirect, route, app }) {
       if (app.getRouteBaseName() === 'index')
-        redirect({ path: app.localePath('/games/top'), query: app.route.query });
+        redirect({ path: app.localePath('/games/top'), query: route.query });
     },
   ],
   data() {
