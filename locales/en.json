@@ -154,7 +154,7 @@
   "homepage": {
     "heroBanner": {
       "deposit1": {
-        "title": "Welcome <br/> package <span class=\"Colored\">$450!</span>",
+        "title": "Welcome <br/> package <span class=\"Colored\">$ 450!</span>",
         "text": "Make first deposit<br/> and get <span class=\"Colored\">100%</span> up to <span class=\"Colored\">$ 150</span>"
       },
       "deposit2": {
