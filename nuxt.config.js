@@ -114,6 +114,9 @@ export default {
     vueI18n: {
       fallbackLocale: 'en',
     },
+    detectBrowserLanguage: {
+      alwaysRedirect: true,
+    },
   },
 
   gtm: {
