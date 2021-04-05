@@ -69,25 +69,25 @@
       </div>
       <Nuxt />
     </section>
-    <section
-      v-if="tabActive.type !== 'all' || providerActive.name !== 'All providers'"
-      class="DefaultGames"
-    >
-      <Loader v-if="defaultGamesAreLoading" />
-      <div class="Title Title--type-h2 Cards-Title">{{ $t('gameCategories.all') }}</div>
-      <Games
-        class="DefaultGames-Cards NewGames-Cards"
-        :games="defaultGames"
-        :games-to-show="24"
-        btn-class="Btn--common Btn--dark"
-      />
-    </section>
+    <!--    <section-->
+    <!--      v-if="tabActive.type !== 'all' || providerActive.name !== 'All providers'"-->
+    <!--      class="DefaultGames"-->
+    <!--    >-->
+    <!--      <Loader v-if="defaultGamesAreLoading" />-->
+    <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">{{ $t('gameCategories.all') }}</div>-->
+    <!--      <Games-->
+    <!--        class="DefaultGames-Cards NewGames-Cards"-->
+    <!--        :games="defaultGames"-->
+    <!--        :games-to-show="24"-->
+    <!--        btn-class="Btn&#45;&#45;common Btn&#45;&#45;dark"-->
+    <!--      />-->
+    <!--    </section>-->
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex';
-import Loader from '@/components/Loader';
+// import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
@@ -101,7 +101,7 @@ export default {
   components: {
     ProvidersMenu,
     Search,
-    Loader,
+    // Loader,
     Games,
   },
   mixins: [showAuthDialog, toggleDropdown, gameProducer],
