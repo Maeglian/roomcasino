@@ -1,14 +1,12 @@
 <template>
-  <section class="SupportPage">
-    <h1 class="SupportPage-Title Title Title--type-h1">
-      Privacy Policy
-    </h1>
+  <section class="SupportPage SupportPage--paddings">
+    <h1 class="SupportPage-Title Title Title--type-h1">Privacy Policy</h1>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <h4 class="Title">Introduction</h4>
         <p class="Text">
           This Privacy Policy, which was last updated on 04/06/2020, sets out the data processing
-          practices carried out by Roomcasino. Here at Roomcasino we like making things simple and
+          practices carried out by Ninecasino. Here at Ninecasino we like making things simple and
           easy for our customers and that includes being clear, transparent and open about what we
           collect, and how and why we use the data we collect, so this page goes into great detail.
         </p>
@@ -19,9 +17,7 @@
           information about you and how we use it to personalize the marketing you receive, so
           please take time to read all the sections carefully.
         </p>
-        <p class="Text">
-          If we make any material updates to this Policy, we will inform you.
-        </p>
+        <p class="Text">If we make any material updates to this Policy, we will inform you.</p>
         <p class="Text">
           Please note that all our employees undertake regular training on Information Security and
           are required to comply with confidentially obligations as well as internal policies and
@@ -30,20 +26,18 @@
         <p class="Text">
           We hope you will find this page helpful, but should you have any concerns or questions,
           regarding Data Protection, please feel free to contact our Data Protection Officer at
-          dpo@roomcasino.com.
+          dpo@ninecasino.com.
         </p>
       </li>
       <li class="SupportPage-Item">
-        <h4 class="Title">
-          Our Privacy Policy Promise
-        </h4>
+        <h4 class="Title">Our Privacy Policy Promise</h4>
         <p class="Text">
-          Our Privacy Policy Promise Roomcasino will always value and respect the privacy of each
+          Our Privacy Policy Promise Ninecasino will always value and respect the privacy of each
           and every one of its customers. Your privacy is important both to you and to us and we
           make the following promise to you:
         </p>
         <p class="Text">
-          Roomcasino is committed to protecting your privacy. We believe in using your personal
+          Ninecasino is committed to protecting your privacy. We believe in using your personal
           information to make things simpler and better for you. We will always keep your personal
           information safe. We’ll be clear and open with you about why we collect your personal
           information and how we use it. Where you have choices or rights, we’ll explain them to you
@@ -121,7 +115,7 @@ export default {
       meta: [
         {
           description:
-            'Respect for the privacy policy is the main aspect of the Roomcasino. We provide the reliable protection from the third parties. Collecting of the personal data needs permission',
+            'Respect for the privacy policy is the main aspect of the Ninecasino. We provide the reliable protection from the third parties. Collecting of the personal data needs permission',
         },
       ],
     };

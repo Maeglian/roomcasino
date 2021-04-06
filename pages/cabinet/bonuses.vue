@@ -1,10 +1,8 @@
 <template>
   <div class="CabinetPage BonusesPage">
-    <div class="CabinetPage-Title BonusesPage-Title">
-      Bonuses
-    </div>
-    <NuxtLink to="/cabinet/history/bonus" class="BonusesPage-Bonuses">
-      Bonus history
+    <div class="CabinetPage-Title BonusesPage-Title">{{ $t('cabinet.pages.bonuses') }}</div>
+    <NuxtLink :to="localePath('/cabinet/history/bonus')" class="BonusesPage-Bonuses">
+      {{ $t('cabinet.bonuses.history') }}
       <span class="BonusesPage-BonusesIcon">
         <svg width="16" height="16">
           <use xlink:href="@/assets/img/icons.svg#time"></use>
@@ -19,14 +17,15 @@
           </svg>
           <div class="Bonus-Field Bonus-Amount">{{ bonus.amount }} {{ bonus.currency }}</div>
           <div class="Bonus-Field Bonus-Wager">
-            <span class="Bonus-Text">Wager</span> {{ bonus.wager }}
+            <span class="Bonus-Text">{{ $t('common.wager') }}</span>
+            {{ bonus.wager }}
           </div>
           <div class="Bonus-Field Bonus-WagerSpent">
             <span class="Bonus-CurWager">{{ bonus.currentWagerAmount }} /</span>
             <span class="Bonus-WagerAmount"
               >&nbsp;{{ bonus.wagerAmount }} {{ activeCurrency }}</span
             >
-            &nbsp;wagered
+            &nbsp;{{ $t('cabinet.bonuses.table.wagered') }}
             <svg
               class="Bonus-Icon"
               width="14"
@@ -44,10 +43,12 @@
               :min-format="true"
               :enddate="new Date(bonus.expireAt * 1000)"
             >
-              left
+              {{ $t('common.left') }}
             </Counter>
           </div>
-          <button class="Btn Btn--dark Bonus-Btn" @click="onDeleteBonus(bonus.id)">Cancel</button>
+          <button class="Btn Btn--dark Bonus-Btn" @click="onDeleteBonus(bonus.id)">
+            {{ $t('buttons.cancel') }}
+          </button>
         </div>
       </div>
     </div>
@@ -109,13 +110,13 @@
     <div v-if="availableBonusList.length" class="Table CabinetPage-Table BonusesPage-Table">
       <div class="Table-Row CabinetPage-Row">
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Bonus
+          {{ $t('cabinet.bonuses.table.bonus') }}
         </div>
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Min deposit sum
+          {{ $t('cabinet.bonuses.table.min') }}
         </div>
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Max prize
+          {{ $t('cabinet.bonuses.table.max') }}
         </div>
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th"></div>
       </div>
@@ -194,6 +195,7 @@
             @click="$modal.show('cashier')"
           >
             Deposit
+            {{ $t('buttons.deposit') }}
           </button>
         </div>
       </div>
@@ -316,8 +318,11 @@ export default {
   }
 
   &-Bonus {
-    margin-bottom: 4px;
     text-transform: capitalize;
+
+    @media (min-width: $screen-m) {
+      margin-bottom: 4px;
+    }
 
     &:last-child {
       margin-bottom: 0;

@@ -3,22 +3,25 @@
     <div class="ConfirmEmailPage-Content">
       <div class="Text Text--additional ConfirmEmailPage-Text">
         <template v-if="!emailIsConfirmed && !emailConfirmError">
-          We're trying to verify your email...
+          {{ $t('auth.tryingConfirmEmail') }}...
         </template>
         <Loader v-if="emailConfirmIsFetching" />
         <template v-if="emailConfirmError">
-          Sorry, you email was not confirmed.
+          {{ $t('auth.confirmEmailError') }}.
           <p class="Error ConfirmEmailPage-Text">
             {{ emailConfirmError }}
           </p>
+          <NuxtLink :to="localePath('/')" class="Btn Btn--common ConfirmEmailPage-Btn">
+            {{ $t('buttons.goHomePage') }}
+          </NuxtLink>
         </template>
         <template v-if="emailIsConfirmed">
-          Congratulations! Your email was successfully confirmed.
+          <p class="ConfirmEmailPage-Text">{{ $t('auth.confirmEmailSuccess') }}.</p>
+          <button class="Btn Btn--common ConfirmEmailPage-Btn" @click="$modal.show('cashier')">
+            {{ $t('buttons.letsStart') }}!
+          </button>
         </template>
       </div>
-      <NuxtLink to="/" class="Btn Btn--common ConfirmEmailPage-Btn">
-        Go to the home page
-      </NuxtLink>
     </div>
   </section>
 </template>
@@ -45,7 +48,16 @@ export default {
     ...mapState(['emailConfirmError', 'emailConfirmIsFetching', 'emailIsConfirmed']),
   },
   mounted() {
-    this.confirmEmail({ code: this.$route.query.code });
+    this.confirmEmail({ code: this.$route.query.code }).then(() => {
+      if (this.emailIsConfirmed) {
+        this.timer = setTimeout(() => {
+          this.$modal.show('cashier');
+        }, 3000);
+      }
+    });
+  },
+  beforeDestroy() {
+    clearTimeout(this.timer);
   },
   methods: {
     ...mapMutations(['clearEmailConfirmError']),

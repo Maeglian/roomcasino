@@ -1,61 +1,36 @@
 import moment from 'moment';
 
+const PRAGMATIC_WS_SERVER_PROD_DOMAIN = 'dga.pragmaticplaylive.net';
+const PRAGMATIC_WS_SERVER_DEV_DOMAIN = 'prelive-dga.pragmaticplaylive.net';
+
+export const PRAGMATIC_WS_SERVER =
+  process.env.NUXT_ENV_MODE === 'production'
+    ? PRAGMATIC_WS_SERVER_PROD_DOMAIN
+    : PRAGMATIC_WS_SERVER_DEV_DOMAIN;
+
+const PRAGMATIC_CASINOID_PROD = 'ppcdk00000004150';
+const PRAGMATIC_CASINOID_DEV = 'ppcdk00000006358';
+
+export const PRAGMATIC_CASINOID =
+  process.env.NUXT_ENV_MODE === 'production' ? PRAGMATIC_CASINOID_PROD : PRAGMATIC_CASINOID_DEV;
+
 export const BILLING_PROVIDER_ID = 'devcode';
 export const API_HOST_SANDBOX = 'http://az-44.sandbox.aramuz.net/frontapi/roomcasino';
-export const API_HOST_STAGE = 'https://dev.aramuz.net/frontapi/roomcasino';
-const API_HOST_PROD_ROOMCASINO = 'https://aramuz.net/frontapi/roomcasino';
-const API_HOST_PROD_NINECASINO = 'https://aramuz.net/frontapi/ninecasino';
+export const API_HOST_STAGE = 'https://dev.aramuz.net/frontapi/ninecasino';
+export const API_HOST_PROD = 'https://aramuz.net/frontapi/ninecasino';
 
-export const API_HOST_PROD =
-  process.env.NUXT_ENV_SLUG === 'roomcasino' ? API_HOST_PROD_ROOMCASINO : API_HOST_PROD_NINECASINO;
-
-export const DEFAULT_PROVIDER = { name: 'All providers', noIcon: true };
-
-export const GAME_TYPES = [
-  {
-    name: 'All games',
-    icon: 'star',
-  },
-  {
-    name: 'Top games',
-    type: 'top',
-    icon: 'crown',
-  },
-  {
-    name: 'Slots games',
-    type: 'slots',
-    icon: 'slots',
-  },
-  {
-    name: 'Roulette',
-    type: 'roulette',
-    icon: 'roulette',
-  },
-  {
-    name: 'Table games',
-    type: 'table',
-    icon: 'table',
-  },
-  {
-    name: 'Card games',
-    type: 'card',
-    icon: 'cards',
-  },
-];
-
-export const LIMIT_TYPES = [
-  { name: 'Deposit limits', value: 'depositLimit' },
-  { name: 'Wager limits', value: 'wagerLimit' },
-  { name: 'Loss limits', value: 'lossLimit' },
-  { name: 'Session limits', value: 'sessionLimit' },
-  { name: 'Cooling off', value: 'coolingOffLimit' },
-];
+export const API_HOST =
+  process.env.NUXT_ENV_MODE === 'production'
+    ? API_HOST_PROD
+    : process.env.NUXT_ENV_MODE === 'sandbox'
+    ? API_HOST_SANDBOX
+    : API_HOST_STAGE;
 
 export const LIMIT_DETAILS = {
   lossLimit: {
     name: 'Loss limits',
     text:
-      'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or mounth.',
+      'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or month.',
     editRules:
       'You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.',
     deleteRules:
@@ -65,7 +40,7 @@ export const LIMIT_DETAILS = {
   depositLimit: {
     name: 'Deposit limits',
     text:
-      'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or mounth.',
+      'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or month.',
     editRules:
       'You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.',
     deleteRules:
@@ -75,7 +50,7 @@ export const LIMIT_DETAILS = {
   wagerLimit: {
     name: 'Wager limits',
     text:
-      'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or mounth.',
+      'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or month.',
     editRules:
       'You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.',
     deleteRules:
@@ -117,21 +92,6 @@ export const LIMIT_DETAILS = {
   // },
 };
 
-export const LIMIT_PERIODS = [
-  {
-    name: 'daily',
-    value: 'dayLimit',
-  },
-  {
-    name: 'weekly',
-    value: 'weekLimit',
-  },
-  {
-    name: 'monthly',
-    value: 'monthLimit',
-  },
-];
-
 export const LIMIT_COOL_PERIODS = [
   {
     name: 'days',
@@ -146,11 +106,6 @@ export const LIMIT_COOL_PERIODS = [
     value: 'monthLimit',
   },
 ];
-
-export const PROFILE_LABELS = {
-  receiveEmailPromos: 'Send promos by e-mail',
-  receiveSmsPromos: 'Send promos by sms',
-};
 
 export const HISTORY_TABLES = {
   transaction: {
@@ -269,6 +224,10 @@ export const HISTORY_TABLES = {
         field: 'status',
       },
       {
+        label: 'Type',
+        field: 'bonusType',
+      },
+      {
         label: 'Amount',
         field: 'amount',
       },
@@ -283,6 +242,9 @@ export const HISTORY_TABLES = {
       {
         label: 'Valid until',
         field: 'expireAt',
+        format(x) {
+          return moment.unix(x).format('DD MMM YYYY, H:mm:ss');
+        },
       },
     ],
     filters: {
@@ -302,6 +264,8 @@ export const HISTORY_TABLES = {
           { name: 'Paused', value: 'pause' },
           { name: 'Cancelled', value: 'cancel' },
           { name: 'Finished', value: 'wagerDone' },
+          { name: 'Not active', value: 'notActive' },
+          { name: 'Played', value: 'played' },
         ],
         value: { name: 'All statuses', value: '' },
       },
@@ -343,24 +307,3 @@ export const HISTORY_TABLES = {
     ],
   },
 };
-
-export const BONUSES = [
-  {
-    title: 'First welcome bonus',
-    name: 'First Deposit 100%',
-    minDeposit: '20.00 USD/EUR',
-    maxPrize: '100% of the deposit amount - up to 100$/€',
-  },
-  {
-    title: 'Second deposit bonus',
-    name: 'Second Deposit 55%',
-    minDeposit: '20.00 USD/EUR',
-    maxPrize: '55% of the deposit amount - up to 100$/€',
-  },
-  {
-    title: 'Third deposit bonus',
-    name: 'Third Deposit 100%',
-    minDeposit: '20.00 USD/EUR',
-    maxPrize: '100% of the deposit amount - up to 100$/€',
-  },
-];

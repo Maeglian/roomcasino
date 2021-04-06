@@ -1,15 +1,11 @@
 <template>
   <div class="GamePanel">
     <template v-if="isLoggedIn">
-      <NuxtLink
-        v-if="Object.keys(this.user).length"
-        to="/cabinet/balance"
-        class="GamePanel-UserFullname"
-      >
+      <NuxtLink :to="localePath('/cabinet/balance')" class="GamePanel-UserFullname">
         {{ getFullUserName }}
       </NuxtLink>
       <button class="Btn AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
-        Deposit
+        {{ $t('buttons.deposit') }}
       </button>
     </template>
     <div v-else class="AuthSection-Login">
@@ -17,10 +13,10 @@
         class="Btn AuthSection-Btn AuthSection-Btn--login"
         @click="showRegistrationDialog('login')"
       >
-        Login
+        {{ $t('buttons.login') }}
       </button>
       <button class="Btn AuthSection-Btn" @click="showRegistrationDialog('registration')">
-        Register
+        {{ $t('buttons.register') }}
       </button>
     </div>
   </div>

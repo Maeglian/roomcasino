@@ -1,21 +1,17 @@
 <template>
   <div class="RegistrationBonus">
     <div class="RegistrationBonus-Content">
-      <div class="RegistrationBonus-Title">
-        Thank you for registration
-      </div>
-      <div class="RegistrationBonus-Promo">
-        $150
-      </div>
+      <div class="RegistrationBonus-Title">{{ $t('auth.thanksRegistration') }}</div>
+      <div class="RegistrationBonus-Promo">{{ $t('auth.registrationBonus') }}</div>
       <!--      <div class="RegistrationBonus-PromoMin">-->
       <!--        + 55 Free spins-->
       <!--      </div>-->
       <div class="RegistrationBonus-Text">
-        For your first deposit! Use advantage of Roomcasino Welcome Bonus.
+        {{ $t('auth.registrationBonusText') }}
       </div>
     </div>
     <button type="btn" class="Btn Btn--common Btn--full" @click="onClickBtn">
-      Get your bonus
+      {{ $t('buttons.getBonus') }}
     </button>
   </div>
 </template>
@@ -63,7 +59,7 @@ export default {
   }
 
   &-Promo {
-    font-size: 76px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 1;
     color: var(--color-main1);

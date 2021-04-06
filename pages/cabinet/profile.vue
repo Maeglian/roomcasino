@@ -1,14 +1,12 @@
 <template>
   <div class="CabinetPage ProfilePage">
-    <div class="CabinetPage-Title ProfilePage-Title">
-      User profile
-    </div>
+    <div class="CabinetPage-Title ProfilePage-Title">{{ $t('cabinet.profile.title') }}</div>
     <div class="Tabs">
-      <NuxtLink to="/cabinet/profile/general" class="Tabs-Tab">
-        General
+      <NuxtLink :to="localePath('/cabinet/profile/general')" class="Tabs-Tab">
+        {{ $t('cabinet.profile.tabs.general') }}
       </NuxtLink>
-      <NuxtLink to="/cabinet/profile/security" class="Tabs-Tab">
-        Security
+      <NuxtLink :to="localePath('/cabinet/profile/security')" class="Tabs-Tab">
+        {{ $t('cabinet.profile.tabs.security') }}
       </NuxtLink>
     </div>
     <Nuxt />

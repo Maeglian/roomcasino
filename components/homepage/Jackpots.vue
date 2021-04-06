@@ -4,7 +4,7 @@
       <div class="Jackpots-Daily">
         <div class="Title Title--type-h1 Jackpots-Title">
           Our <span class="Colored">Jackpot</span> <br />
-          in Roomcasino
+          in Ninecasino
         </div>
         <GamesSlider
           class="Jackpots-Winners GamesSlider--winners"
@@ -14,12 +14,8 @@
         />
       </div>
       <div class="Jackpots-Mega">
-        <div class="Jackpots-Text">
-          Mega jackpot
-        </div>
-        <div class="Jackpots-Sum">
-          € 11.574.600
-        </div>
+        <div class="Jackpots-Text">Mega jackpot</div>
+        <div class="Jackpots-Sum">€ 11.574.600</div>
       </div>
     </div>
   </section>

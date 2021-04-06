@@ -16,16 +16,19 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lintfix": "eslint --fix --ext .js,.vue . && stylelint '**/*.{scss,vue}' --fix",
     "lint:js": "eslint --ext .js,.vue .",
-    "lint:css": "stylelint '**/*.{scss, vue}'"
+    "lint:css": "stylelint '**/*.{scss, vue}'",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "dependencies": {
-    "axios": "^0.21.0",
+    "@nuxtjs/gtm": "^2.4.0",
+    "axios": "^0.21.1",
     "cookieparser": "^0.1.0",
-    "core-js": "^3.6.5",
+    "core-js": "^3.9.1",
     "js-cookie": "^2.2.1",
     "moment": "^2.29.1",
-    "nuxt": "^2.14.6",
-    "nuxt-start": "^2.14.7",
+    "nuxt": "^2.15.3",
+    "nuxt-i18n": "^6.22.3",
+    "nuxt-start": "^2.15.3",
     "v-click-outside": "^3.1.1",
     "vue-js-modal": "^2.0.0-rc.6",
     "vue-marquee-text-component": "^1.1.1",
@@ -35,25 +38,31 @@
     "vuelidate": "^0.7.5"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.14.7",
+    "@babel/preset-env": "^7.13.10",
+    "@nuxt/types": "^2.15.3",
     "@nuxtjs/style-resources": "^1.0.0",
+    "@vue/test-utils": "^1.1.3",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.14.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.22.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-import-resolver-nuxt": "^1.0.1",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.2",
     "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-prettier-vue": "^2.1.1",
-    "eslint-plugin-vue": "^7.1.0",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.5.2",
+    "eslint-plugin-vue": "^7.7.0",
+    "husky": "^4.3.8",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
     "prettier": "^1.19.1",
-    "sass": "^1.28.0",
-    "sass-loader": "^10.0.4",
-    "stylelint": "^13.8.0",
-    "stylelint-order": "^4.1.0"
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1",
+    "stylelint": "^13.12.0",
+    "stylelint-order": "^4.1.0",
+    "vue-jest": "^3.0.7"
   },
   "husky": {
     "hooks": {
@@ -67,6 +76,21 @@
     ],
     "*.js": "eslint --cache --fix",
     "*.vue": "stylelint --fix"
+  },
+  "jest": {
+    "testEnvironment": "jest-environment-node",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
   },
   "browserslist": [
     "defaults",

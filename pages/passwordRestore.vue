@@ -1,15 +1,11 @@
 <template>
   <div :key="componentKey" class="PasswordRestore">
     <template v-if="showSuccessMessage">
-      <div class="PasswordRestore-Thanks Colored">
-        Thanks! Check your email for further instructions.
-      </div>
+      <div class="PasswordRestore-Thanks Colored">{{ $t('auth.passwordRestoreText') }}.</div>
     </template>
     <div v-else class="PasswordRestore-Content">
       <template v-if="!$route.query.code">
-        <h1 class="Title Colored PasswordRestore-Title">
-          Enter email
-        </h1>
+        <h1 class="Title Colored PasswordRestore-Title">{{ $t('auth.enterEmail') }}</h1>
         <form class="PasswordRestore-Form" @submit.prevent="onContinue">
           <BaseInput
             v-model="email"
@@ -18,7 +14,7 @@
             error-class="AuthDialog-Error"
             input-class="AuthDialog-Field AuthDialog-Input"
             :v="$v.email"
-            placeholder="Email"
+            :placeholder="$t('common.email')"
             icon="password"
           >
           </BaseInput>
@@ -27,7 +23,7 @@
             :is-loading="pageDataIsLoading"
             :disabled="$v.email.$error"
           >
-            Continue
+            {{ $t('buttons.continue') }}
           </BaseButton>
           <div v-if="serverError" class="Error PasswordRestore-Error">
             {{ serverError }}
@@ -35,9 +31,7 @@
         </form>
       </template>
       <template v-else>
-        <h1 class="Title Colored PasswordRestore-Title">
-          Enter your new password
-        </h1>
+        <h1 class="Title Colored PasswordRestore-Title">{{ $t('auth.enterNewPassword') }}</h1>
         <form class="PasswordRestore-Form" @submit.prevent="onSubmit">
           <BaseInput
             v-model="password.newPassword.value"
@@ -46,7 +40,7 @@
             error-class="AuthDialog-Error"
             input-class="AuthDialog-Field AuthDialog-Input AuthDialog-Input--withIcon"
             :v="$v.password.newPassword.value"
-            placeholder="New password"
+            :placeholder="$t('auth.newPassword')"
             icon="password"
           >
             <template #beforeInput-absolute>
@@ -73,7 +67,7 @@
             error-class="AuthDialog-Error"
             input-class="AuthDialog-Field AuthDialog-Input AuthDialog-Input--withIcon"
             :v="$v.password.confirmPassword.value"
-            placeholder="Password confirm"
+            :placeholder="$t('auth.confirmPassword')"
           >
             <template #beforeInput-absolute>
               <svg class="PasswordRestore-Icon PasswordRestore-Icon--password">
@@ -98,7 +92,7 @@
             :is-loading="pageDataIsLoading"
             :disabled="$v.password.$error"
           >
-            Update password
+            {{ $t('auth.updatePassword') }}
           </BaseButton>
           <div v-if="serverError" class="Error PasswordRestore-Error">
             {{ serverError }}
@@ -146,6 +140,9 @@ export default {
       showSuccessMessage: false,
     };
   },
+  computed: {
+    ...mapState(['serverError', 'pageDataIsLoading']),
+  },
   watch: {
     $route(oldRoute, newRoute) {
       if (oldRoute.query.code !== newRoute.query.code) {
@@ -153,9 +150,6 @@ export default {
         this.componentKey += 1;
       }
     },
-  },
-  computed: {
-    ...mapState(['serverError', 'pageDataIsLoading']),
   },
   validations: {
     email: { required, email },
@@ -204,7 +198,7 @@ export default {
             type: 'success',
             text: 'Your password was successfully updated!',
           });
-          this.$router.push('/');
+          this.$router.push(this.localePath('/'));
           this.showRegistrationDialog('login');
         }
       });
@@ -214,6 +208,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@/components/homepage/AuthDialog/AuthDialog.scss';
+
 .PasswordRestore {
   &-Title {
     margin-bottom: 35px;
@@ -282,6 +278,17 @@ export default {
     font-weight: 700;
     text-align: center;
     color: var(--color-main1);
+  }
+
+  &-Field {
+    width: 100%;
+    height: 55px;
+    background: transparent;
+    border: 2px solid var(--color-border-ghost);
+
+    &--error {
+      border-color: rgba(235, 28, 42, 0.3);
+    }
   }
 }
 </style>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+
 *,
 *:before,
 *:after {
@@ -48,12 +50,20 @@ input:-internal-autofill-selected:active {
 //  scrollbar-color: #555454 #828181;
 //}
 
+html {
+  width: 100vw;
+  min-height: 100vh;
+}
+
 body {
+  width: 100vw;
   min-width: $screen-xxs;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', 'Verdana', sans-serif;
   background-color: var(--color-body);
+  -webkit-text-size-adjust: none
 }
 
 section, .Wrapper {
@@ -179,7 +189,7 @@ a {
     position: absolute;
     top: 50%;
     width: 100%;
-    height: 1px;
+    height: 2px;
     background: #6A6E7F;
   }
 
@@ -200,6 +210,13 @@ a {
   &-Close {
     margin-bottom: 5px;
     margin-left: auto;
+
+    &--thick {
+      &:before, &:after {
+        height: 3px;
+        background: var(--color-text-main);
+      }
+    }
   }
 }
 
@@ -286,7 +303,7 @@ a {
       position: absolute;
       right: 0;
       bottom: 0;
-      width: calc(100% / 6 - 10px);
+      width: calc(100% / 7 - 10px);
       height: 100%;
     }
   }
@@ -301,11 +318,19 @@ a {
 }
 
 .vm--modal {
+  height: auto !important;
   overflow: initial !important;
   background: transparent !important;
   box-shadow: none !important;
+  -ms-touch-action: none;
+  touch-action: none;
+  -webkit-overflow-scrolling: touch !important;
 }
 
 .vm--overlay {
   background: rgba(9, 5, 2, .8) !important;
+}
+
+.vm--container.scrollable .vm--modal {
+  margin-bottom: 150px !important;
 }

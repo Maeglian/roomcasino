@@ -1,5 +1,6 @@
 <template>
   <div>
+    <InitialLoader v-if="!initialLoading" />
     <Nuxt />
     <client-only>
       <CashierForm />
@@ -9,11 +10,19 @@
 
 <script>
 import CashierForm from '@/components/CashierForm';
+import { mapGetters } from 'vuex';
+import InitialLoader from '@/components/InitialLoader';
+import liveChat from '~/mixins/liveChat';
 
 export default {
   name: 'Page',
   components: {
     CashierForm,
+    InitialLoader,
+  },
+  mixins: [liveChat],
+  computed: {
+    ...mapGetters(['initialLoading']),
   },
 };
 </script>
@@ -24,11 +33,14 @@ export default {
   --color-main2: #eb1c2a;
   --color-badge: #0734a5;
   --color-text-main: #fff;
+  --color-text-faded: #aeb3c7;
   --color-text-ghost: #52586f;
   --color-text-ghost-lighter: #6e7382;
+  --color-text-ghost-darker: #737681;
   --color-breadcrumbs: #404454;
-  --color-overlay: rgba(7, 52, 165, 0.8);
+  --color-overlay: rgba(0, 0, 0, 0.6);
   --color-border: rgba(88, 92, 131, 0.3);
+  --color-border2: #979797;
   --color-hover: #c40916;
   --color-accept: #67b12d;
   --color-discard: #cc1f1f;

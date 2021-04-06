@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  DEPLOY_PATH: /www/roomcasino
+  DEPLOY_PATH: /www/ninecasino
   BUILD_SCRIPT: npm run build:stage
   BUILD_SCRIPT_OUTPUT: dist
 
@@ -43,4 +43,4 @@ jobs:
           target: ${{ env.DEPLOY_PATH }}/${{ env.BRANCH_NAME }}
           strip_components: 1
       - name: Print Info
-        run: echo "http://${{ env.BRANCH_NAME }}.sandbox.roomcasino.com/"
+        run: echo "http://${{ env.BRANCH_NAME }}.sandbox.ninecasino.com/"

@@ -1,0 +1,37 @@
+User-agent: YandexBot
+Disallow: /_nuxt/
+Disallow: *?
+Allow: /_nuxt/*.svg
+Allow: /_nuxt/*.png
+Allow: /_nuxt/*.jpg
+Allow: /_nuxt/*.js
+Allow: /_nuxt/*.css
+
+User-Agent: Googlebot
+Disallow: /_nuxt/
+Disallow: *?
+Allow: /_nuxt/*.svg
+Allow: /_nuxt/*.png
+Allow: /_nuxt/*.jpg
+Allow: /_nuxt/*.js
+Allow: /_nuxt/*.css
+
+User-Agent: Bingbot
+Disallow: /_nuxt/
+Disallow: *?
+Allow: /_nuxt/*.svg
+Allow: /_nuxt/*.png
+Allow: /_nuxt/*.jpg
+Allow: /_nuxt/*.js
+Allow: /_nuxt/*.css
+
+User-agent: *
+Disallow: /_nuxt/
+Disallow: *?
+Allow: /_nuxt/*.svg
+Allow: /_nuxt/*.png
+Allow: /_nuxt/*.jpg
+Allow: /_nuxt/*.js
+Allow: /_nuxt/*.css
+
+Sitemap: https://ninecasino.com/sitemap.xml

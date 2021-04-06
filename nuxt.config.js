@@ -1,3 +1,6 @@
+import axios from 'axios';
+import { API_HOST } from './config';
+
 const target =
   process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
     ? 'static'
@@ -26,20 +29,19 @@ export default {
   ssr,
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'roomcasino',
+    title: 'ninecasino',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
+      {
+        name: 'viewport',
+        content:
+          'width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1',
+      },
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'preload',
-        as: 'style',
-        href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap',
-      },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap',
@@ -50,6 +52,9 @@ export default {
     script: [
       {
         src: 'https://static.paymentiq.io/cashier/cashier.js',
+      },
+      {
+        src: 'https://dga.pragmaticplaylive.net/dgaAPI.js',
       },
       {
         src: '/js/liveChat.js',
@@ -80,7 +85,44 @@ export default {
   buildModules: [],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/gtm', 'nuxt-i18n'],
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        codeCountry: 'en_GB',
+        file: 'en.json',
+        icon: 'en.png',
+      },
+      // {
+      //   code: 'fr',
+      //   codeCountry: 'fr_CA',
+      //   file: 'fr.json',
+      //   icon: 'fr_ca.svg',
+      // },
+      {
+        code: 'cs',
+        codeCountry: 'cs_CZ',
+        file: 'cs.json',
+        icon: 'cs.png',
+      },
+    ],
+    defaultLocale: 'en',
+    lazy: true,
+    langDir: '~/locales/',
+    vueI18n: {
+      fallbackLocale: 'en',
+    },
+    detectBrowserLanguage: {
+      alwaysRedirect: true,
+    },
+  },
+
+  gtm: {
+    enabled: process.env.NUXT_ENV_MODE === 'production',
+    id: 'GTM-WGL6JVV',
+  },
 
   styleResources: {
     scss: ['@/assets/styles/variables.scss'],
@@ -97,5 +139,33 @@ export default {
   router: { middleware: ['closeNav'] },
   generate: {
     fallback: 'index.html',
+    routes() {
+      const routes = [
+        '/cabinet/history/game',
+        '/cs/cabinet/history/game',
+        '/cabinet/history/transaction',
+        '/cs/cabinet/history/transaction',
+        '/cabinet/history/bonus',
+        '/cs/cabinet/history/bonus',
+        '/games/all',
+        '/cs/games/all',
+      ];
+      const categories = axios.get(`${API_HOST}/categoryList`).then(res => {
+        res.data.data.forEach(category => {
+          routes.push(`/games/${category.slug}`);
+          routes.push(`/cs/games/${category.slug}`);
+        });
+      });
+      const providers = axios.get(`${API_HOST}/gameProducerList`).then(res => {
+        res.data.data.forEach(provider => {
+          routes.push(`/providers/${provider.name}`);
+          routes.push(`/cs/providers/${provider.name}`);
+        });
+      });
+
+      return Promise.all([categories, providers]).then(() => {
+        return routes;
+      });
+    },
   },
 };

@@ -2,7 +2,7 @@
   <div class="AuthSection" :class="{ 'AuthSection--authenticated': isLoggedIn }">
     <div v-if="isLoggedIn" class="AuthSection-UserSection">
       <div class="AuthSection-Sections">
-        <NuxtLink class="AuthSection-UserInfo" to="/cabinet/balance">
+        <NuxtLink class="AuthSection-UserInfo" :to="localePath('/cabinet/balance')">
           <div class="AuthSection-User">
             <span class="AuthSection-UserName">
               {{ user.firstName || user.email }}
@@ -15,12 +15,17 @@
             <!--            </span>-->
           </div>
           <div class="AuthSection-UserBalance">
-            <div class="AuthSection-UserBalanceText">
-              Your balance
-            </div>
+            <div class="AuthSection-UserBalanceText">{{ $t('menu.yourAccount') }}</div>
             {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }}
             {{ activeAccount.currency || user.currency }}
           </div>
+        </NuxtLink>
+        <NuxtLink
+          v-if="!myAccount"
+          class="AuthSection-UserInfo"
+          :to="localePath('/cabinet/balance')"
+        >
+          <img src="@/assets/img/user.svg" />
         </NuxtLink>
         <!--        <div class="AuthSection-UserLvl">-->
         <!--          2-->
@@ -33,7 +38,7 @@
         <!--        </div>-->
       </div>
       <button class="AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
-        Deposit
+        {{ $t('buttons.deposit') }}
       </button>
     </div>
     <div v-else class="AuthSection-Login">
@@ -41,10 +46,10 @@
         class="Btn AuthSection-Btn AuthSection-Btn--login"
         @click="showRegistrationDialog('login')"
       >
-        Login
+        {{ $t('buttons.login') }}
       </button>
       <button class="Btn AuthSection-Btn" @click="showRegistrationDialog('registration')">
-        Register
+        {{ $t('buttons.register') }}
       </button>
     </div>
   </div>
@@ -57,6 +62,12 @@ import showAuthDialog from '@/mixins/showAuthDialog';
 export default {
   name: 'AuthSection',
   mixins: [showAuthDialog],
+  props: {
+    myAccount: {
+      type: Boolean,
+      required: false,
+    },
+  },
   computed: {
     ...mapState(['user', 'notificationsPanelIsOpen']),
     ...mapGetters(['isLoggedIn', 'activeAccount', 'isNewNotifications']),
@@ -273,6 +284,10 @@ export default {
     }
   }
 
+  .AuthSection-Btn--login {
+    display: none;
+  }
+
   .AuthSection-Sections {
     justify-content: space-between;
     padding: 0 32px 18px;
@@ -309,7 +324,6 @@ export default {
   }
 
   .AuthSection-UserBalance {
-    margin-bottom: 16px;
     font-size: 16px;
   }
 
@@ -322,9 +336,9 @@ export default {
     flex-direction: column;
     text-align: left;
 
-    @media (min-width: $screen-xs) {
-      margin-right: auto;
-    }
+    //@media (min-width: $screen-xs) {
+    //  margin-right: auto;
+    //}
   }
 
   .AuthSection-UserName {
@@ -368,11 +382,6 @@ export default {
     &:after {
       content: 'LV';
     }
-  }
-
-  .AuthSection-Btn--login {
-    margin-bottom: 8px;
-    background: var(--color-bg-lighter);
   }
 }
 </style>

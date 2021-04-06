@@ -11,7 +11,7 @@
     <input
       type="text"
       class="Search-Input"
-      placeholder="Find game"
+      :placeholder="$t('search.findGame')"
       :value="value"
       @input="$emit('input', $event.target.value)"
     />
@@ -90,7 +90,7 @@ export default {
   &-Input {
     width: 100%;
     height: 100%;
-    padding: 16px 12px;
+    padding: 16px 50px 16px 12px;
     font-size: 14px;
     line-height: 1.18;
     color: var(--color-text-main);
@@ -98,8 +98,7 @@ export default {
     border: none;
 
     @media (min-width: $screen-m) {
-      padding: 0;
-      padding-left: 20px;
+      padding: 0 5px 0 20px;
     }
 
     @media (min-width: $screen-l) {

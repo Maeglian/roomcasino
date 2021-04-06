@@ -1,13 +1,11 @@
 <template>
   <div class="Modal">
     <div class="Close Modal-Close" @click="$emit('close')"></div>
-    <div class="CabinetPage-Header">
-      {{ bonus.name }}
-    </div>
+    <div class="CabinetPage-Header">{{ bonus.name }}</div>
     <div class="BonusDetails">
       <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">
-          Bonus amount:
+          {{ $t('cabinet.bonuses.table.bonus') }} {{ $t('common.amount') }}:
         </div>
         <div class="BonusDetails-Value">{{ bonus.amount }} {{ bonus.currency }}</div>
       </div>
@@ -18,9 +16,7 @@
         <div class="BonusDetails-Value">x{{ bonus.amount }}</div>
       </div>
       <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">
-          Status:
-        </div>
+        <div class="BonusDetails-Label">{{ $t('common.status') }}:</div>
         <div
           class="BonusDetails-Value BonusDetails-Status"
           :class="[
@@ -37,59 +33,45 @@
         </div>
       </div>
       <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">
-          Wager:
-        </div>
+        <div class="BonusDetails-Label">{{ $t('common.wager') }}:</div>
         <div class="BonusDetails-Value">{{ bonus.wager }}</div>
       </div>
       <div v-if="type === 'bonus'" class="BonusDetails-Row">
-        <div class="BonusDetails-Label">
-          Wager amount:
-        </div>
+        <div class="BonusDetails-Label">{{ $t('common.wager') }} {{ $t('common.amount') }}:</div>
         <div class="BonusDetails-Value">{{ bonus.currentWagerAmount }} {{ bonus.currency }}</div>
       </div>
       <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">
-          Wager Amount requirement:
+          {{ $t('cabinet.bonuses.wagerAmountRequirement') }}
         </div>
         <div class="BonusDetails-Value">{{ bonus.wagerAmount }} {{ bonus.currency }}</div>
       </div>
       <div v-if="type === 'bonus'" class="BonusDetails-Row">
-        <div class="BonusDetails-Label">
-          Wagered percent:
-        </div>
+        <div class="BonusDetails-Label">{{ $t('cabinet.bonuses.wageredPercent') }}:</div>
         <div class="BonusDetails-Value">
           {{ (bonus.currentWagerAmount / bonus.wagerAmount) * 100 }}%
         </div>
       </div>
       <div v-if="type === 'bonus'" class="BonusDetails-Row">
-        <div class="BonusDetails-Label">
-          Currency:
-        </div>
+        <div class="BonusDetails-Label">{{ $t('common.currency') }}:</div>
         <div class="BonusDetails-Value">
           {{ bonus.currency }}
         </div>
       </div>
       <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">
-          Created:
-        </div>
+        <div class="BonusDetails-Label">{{ $t('common.created') }}:</div>
         <div class="BonusDetails-Value">
           {{ convertDate(bonus.createdAt) }}
         </div>
       </div>
       <div v-if="bonus.expireAt" class="BonusDetails-Row">
-        <div class="BonusDetails-Label">
-          Expires at:
-        </div>
+        <div class="BonusDetails-Label">{{ $t('common.expiresAt') }}:</div>
         <div class="BonusDetails-Value">
           {{ convertDate(bonus.expireAt) }}
         </div>
       </div>
       <div v-if="bonus.activationExpireAt" class="BonusDetails-Row">
-        <div class="BonusDetails-Label">
-          Activation expires at:
-        </div>
+        <div class="BonusDetails-Label">Activation expires at:</div>
         <div class="BonusDetails-Value">
           {{ convertDate(bonus.activationExpireAt) }}
         </div>

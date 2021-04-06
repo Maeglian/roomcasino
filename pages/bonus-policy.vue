@@ -1,8 +1,6 @@
 <template>
-  <section class="SupportPage">
-    <h1 class="SupportPage-Title Title Title--type-h1">
-      Bonus Policy
-    </h1>
+  <section class="SupportPage SupportPage--paddings">
+    <h1 class="SupportPage-Title Title Title--type-h1">Bonus Policy</h1>
     <div class="SupportPage-Text">
       <p class="Text">
         This Bonus Policy is an integral part of the Terms and Conditions of Use and thus come into
@@ -151,9 +149,7 @@
         </p>
       </li>
       <li class="SupportPage-Item">
-        <p class="Text">
-          Any bonus which you redeem shall be subject to this Bonus Policy.
-        </p>
+        <p class="Text">Any bonus which you redeem shall be subject to this Bonus Policy.</p>
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
@@ -191,7 +187,7 @@
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          Each time you place a wager at VegasWinner, you'll earn VIP Points. As your VIP Points
+          Each time you place a wager at Ninecasino, you'll earn VIP Points. As your VIP Points
           accumulate, you can redeem them for instant cash in your real money player account. If you
           have not placed a wager with money in your real balance for a continuous period of thirty
           (30) days, we will be entitled to remove all VIP Points from your player's account.
@@ -536,7 +532,7 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Bonus Policy Of The Roomcasino Gaming Platform',
+      title: 'Bonus Policy Of The Ninecasino Gaming Platform',
       meta: [
         {
           description:
@@ -550,7 +546,7 @@ export default {
 
 <style lang="scss" scoped>
 table {
-  color: var(--color-text-ghost);
+  color: var(--color-text-faded);
 }
 
 .Title-Div {

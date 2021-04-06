@@ -52,7 +52,7 @@
             class="CabinetTable-ShowMore"
             @click="$emit('show-more')"
           >
-            Show more
+            {{ $t('buttons.showMore') }}
           </button>
           <BasePagination
             v-if="pagination.enabled"
@@ -61,9 +61,7 @@
             @change-page="$emit('change-page', $event)"
           />
         </template>
-        <span v-else class="CabinetTable-Info">
-          No data available
-        </span>
+        <span v-else class="CabinetTable-Info"> No data available </span>
       </div>
     </template>
   </div>

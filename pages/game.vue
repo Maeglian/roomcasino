@@ -1,5 +1,6 @@
 <template>
   <div class="GamePage">
+    <div class="GamePage-Bg" :style="{ backgroundImage: `url(${bg})` }"></div>
     <div class="GamePage-Wrapper" :class="{ 'GamePage-Wrapper--Hide': isFullScreen }">
       <MainNav v-if="!isFullScreen" />
       <iframe
@@ -38,6 +39,7 @@ export default {
     clockIcon: require('@/assets/img/clock.svg'),
     isFullScreen: false,
     storageGameUrl: '',
+    bg: '',
   }),
   computed: {
     ...mapState(['gameUrlForIframe']),
@@ -70,6 +72,7 @@ export default {
   },
   mounted() {
     this.storageGameUrl = localStorage.getItem('gameUrlForIframe');
+    this.bg = localStorage.getItem('gameBg');
   },
   methods: {
     ...mapActions(['startGame', 'getProfile']),
@@ -82,8 +85,21 @@ export default {
 
 <style lang="scss">
 .GamePage {
+  position: relative;
   display: flex;
   flex-direction: column;
+
+  &-Bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.8);
+  }
 
   &-Wrapper {
     display: flex;

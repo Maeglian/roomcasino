@@ -1,42 +1,48 @@
 <template>
   <div class="Partners">
-    <!--    <client-only>-->
-    <!--      <marquee-text :duration="durationSpeed">-->
-    <!--        <div class="Partners-Wrapper">-->
-    <!--          <div class="Partners-Partner Partners-Partner&#45;&#45;visa">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/visa.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner Partners-Partner&#45;&#45;maestro">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/maestro.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/skrill.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner Partners-Partner&#45;&#45;paysafe">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/paysafe.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/wirecard.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/webmoney.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner Partners-Partner&#45;&#45;sofort">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/sofort.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/microgaming.svg" />-->
-    <!--          </div>-->
-    <!--          <div class="Partners-Partner">-->
-    <!--            <img class="Partners-Image" src="@/assets/img/interac.svg" />-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </marquee-text>-->
-    <!--    </client-only>-->
-    <div class="Partners-Wrapper">
+    <client-only v-if="width < 690">
+      <marquee-text :duration="durationSpeed">
+        <div class="Partners-Wrapper">
+          <div class="Partners-Partner">
+            <img class="Partners-Image Partners-Image--height" src="@/assets/img/interac.svg" />
+          </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image Partners-Image--height" src="@/assets/img/astropay.svg" />
+          </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image" src="@/assets/img/inpay.png" />
+          </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image Partners-Image--height" src="@/assets/img/mastercard.svg" />
+          </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image" src="@/assets/img/visa.svg" />
+          </div>
+          <!--          <div class="Partners-Partner">-->
+          <!--            <img class="Partners-Image" src="@/assets/img/payguru.png" />-->
+          <!--          </div>-->
+        </div>
+      </marquee-text>
+    </client-only>
+    <div v-else class="Partners-Wrapper">
       <div class="Partners-Partner">
-        <img class="Partners-Image Partners-Image--interac" src="@/assets/img/interac.svg" />
+        <img class="Partners-Image Partners-Image--height" src="@/assets/img/interac.svg" />
       </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image Partners-Image--height" src="@/assets/img/astropay.svg" />
+      </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image" src="@/assets/img/inpay.png" />
+      </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image Partners-Image--height" src="@/assets/img/mastercard.svg" />
+      </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image" src="@/assets/img/visa.svg" />
+      </div>
+      <!--      <div class="Partners-Partner">-->
+      <!--        <img class="Partners-Image" src="@/assets/img/payguru.png" />-->
+      <!--      </div>-->
     </div>
   </div>
 </template>
@@ -73,11 +79,12 @@ export default {
   &-Wrapper {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
 
   &-Partner {
+    flex-shrink: 0;
     margin-right: 16px;
 
     @media (min-width: $screen-m) {
@@ -89,7 +96,7 @@ export default {
     }
   }
 
-  &-Image--interac {
+  &-Image--height {
     height: 50px;
   }
 }

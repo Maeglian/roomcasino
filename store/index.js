@@ -1,21 +1,7 @@
 import axios from 'axios';
 import Vue from 'vue';
 import moment from 'moment';
-import {
-  BILLING_PROVIDER_ID,
-  API_HOST_PROD,
-  API_HOST_STAGE,
-  API_HOST_SANDBOX,
-  DEFAULT_PROVIDER,
-  LIMIT_DETAILS,
-} from '../config';
-
-const API_HOST =
-  process.env.NUXT_ENV_MODE === 'production'
-    ? API_HOST_PROD
-    : process.env.NUXT_ENV_MODE === 'sandbox'
-    ? API_HOST_SANDBOX
-    : API_HOST_STAGE;
+import { BILLING_PROVIDER_ID, API_HOST } from '../config';
 
 const Cookie = process.client ? require('js-cookie') : undefined;
 const cookieparser = process.server ? require('cookieparser') : undefined;
@@ -49,6 +35,23 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 });
 
 export const state = () => ({
+  chatIsLoaded: false,
+  initialLoadingIsDone: {
+    geoInfo: false,
+    countries: false,
+    currency: false,
+    phones: false,
+    defaultGames: false,
+    producers: false,
+  },
+  initialLoadingLoggedInIsDone: {
+    profile: false,
+    availableBonus: false,
+    limits: false,
+  },
+  heroBannerIsLoaded: false,
+  depositNum: 0,
+  dga: {},
   platform: 'desktop',
   emailConfirmError: '',
   emailConfirmIsFetching: false,
@@ -84,7 +87,7 @@ export const state = () => ({
   bonusHistoryList: [],
   sessionHistoryList: [],
   serverError: '',
-  gameProducerList: [DEFAULT_PROVIDER],
+  gameProducers: [],
   status: '',
   authStatus: '',
   phoneCodeList: [],
@@ -92,171 +95,6 @@ export const state = () => ({
   currencyList: [],
   categories: [],
   shouldCashout: false,
-  providers: [
-    {
-      name: 'All providers',
-    },
-    {
-      name: 'Netent',
-      icon: 'netent',
-    },
-    {
-      name: "Play'n go",
-      icon: 'go',
-    },
-    {
-      name: 'Microgaming',
-      icon: 'microgaming',
-    },
-    {
-      name: '1x2 gambing',
-      icon: 'gaming_book',
-    },
-    {
-      name: 'Amatic',
-      icon: 'amatic',
-    },
-    {
-      name: 'Belatra',
-      icon: 'belatra',
-    },
-    {
-      name: 'Spinometal',
-      icon: 'spinometal',
-    },
-    {
-      name: 'Booming games',
-      icon: 'booming',
-    },
-    {
-      name: 'Egt',
-      icon: 'egt',
-    },
-    {
-      name: 'Endorphina',
-      icon: 'endorphina',
-    },
-    {
-      name: 'Netent',
-      icon: 'netent',
-    },
-    {
-      name: "Play'n go",
-      icon: 'go',
-    },
-    {
-      name: 'Microgaming',
-      icon: 'microgaming',
-    },
-    {
-      name: '1x2 gambing',
-      icon: 'gaming_book',
-    },
-    {
-      name: 'Amatic',
-      icon: 'amatic',
-    },
-    {
-      name: 'Belatra',
-      icon: 'belatra',
-    },
-    {
-      name: 'Spinometal',
-      icon: 'spinometal',
-    },
-    {
-      name: 'Booming games',
-      icon: 'booming',
-    },
-    {
-      name: 'Egt',
-      icon: 'egt',
-    },
-    {
-      name: 'Endorphina',
-      icon: 'endorphina',
-    },
-    {
-      name: 'Netent',
-      icon: 'netent',
-    },
-    {
-      name: "Play'n go",
-      icon: 'go',
-    },
-    {
-      name: 'Microgaming',
-      icon: 'microgaming',
-    },
-    {
-      name: '1x2 gambing',
-      icon: 'gaming_book',
-    },
-    {
-      name: 'Amatic',
-      icon: 'amatic',
-    },
-    {
-      name: 'Belatra',
-      icon: 'belatra',
-    },
-    {
-      name: 'Spinometal',
-      icon: 'spinometal',
-    },
-    {
-      name: 'Booming games',
-      icon: 'booming',
-    },
-    {
-      name: 'Egt',
-      icon: 'egt',
-    },
-    {
-      name: 'Endorphina',
-      icon: 'endorphina',
-    },
-    {
-      name: 'Netent',
-      icon: 'netent',
-    },
-    {
-      name: "Play'n go",
-      icon: 'go',
-    },
-    {
-      name: 'Microgaming',
-      icon: 'microgaming',
-    },
-    {
-      name: '1x2 gambing',
-      icon: 'gaming_book',
-    },
-    {
-      name: 'Amatic',
-      icon: 'amatic',
-    },
-    {
-      name: 'Belatra',
-      icon: 'belatra',
-    },
-    {
-      name: 'Spinometal',
-      icon: 'spinometal',
-    },
-    {
-      name: 'Booming games',
-      icon: 'booming',
-    },
-    {
-      name: 'Egt',
-      icon: 'egt',
-    },
-    {
-      name: 'Endorphina',
-      icon: 'endorphina',
-    },
-  ],
   token: null,
   authError: '',
   navIsOpen: false,
@@ -694,6 +532,20 @@ export const state = () => ({
 });
 
 export const getters = {
+  minAge: state => {
+    return state.defaultCountry === 'EE' ? 21 : 18;
+  },
+  initialLoading: state => {
+    const initialLoading = !Object.values(state.initialLoadingIsDone).includes(false);
+    if (state.token) {
+      const initialLoadingLoggedIn = !Object.values(state.initialLoadingLoggedInIsDone).includes(
+        false,
+      );
+      return initialLoading && initialLoadingLoggedIn;
+    }
+
+    return initialLoading;
+  },
   activeCurrency: state => {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};
@@ -705,21 +557,27 @@ export const getters = {
     if (state.user.accountList) return state.user.accountList.find(acc => acc.active === true);
     return '';
   },
-  accountList: state => {
-    if (state.user.accountList) return state.user.accountList;
+  sortedAccountList: state => {
+    if (state.user.accountList)
+      return [...state.user.accountList].sort((a, b) => b.balance - a.balance);
+    return [];
+  },
+  otherAccountList: state => {
+    if (state.user.accountList)
+      return [...state.user.accountList]
+        .filter(acc => !acc.active)
+        .sort((a, b) => b.balance - a.balance);
     return [];
   },
   isLoggedIn: state => !!state.token,
   authStatus: state => state.status,
-  slicedGameProducerList: state => startIndex =>
-    state.gameProducerList.slice(startIndex, state.providers.length + 1),
   limitsByTypes: state => {
     const ll = state.limits.reduce((namedLimits, limit) => {
-      const namedlimit = namedLimits.find(l => l.name === l.type);
+      const namedlimit = namedLimits.find(l => l.type === limit.type);
       if (namedlimit) namedlimit.limits.push(limit);
       else {
         namedLimits.push({
-          name: LIMIT_DETAILS[limit.type].name,
+          type: limit.type,
           limits: [limit],
         });
       }
@@ -773,6 +631,25 @@ export const getters = {
 };
 
 export const mutations = {
+  setChatIsLoaded: state => {
+    state.chatIsLoaded = true;
+  },
+  setHeroBannerIsLoaded: state => {
+    state.heroBannerIsLoaded = true;
+  },
+  setInitialLoading: (state, field) => {
+    state.initialLoadingIsDone[field] = true;
+  },
+  setInitialLoadingLoggedIn: (state, field) => {
+    state.initialLoadingLoggedInIsDone[field] = true;
+  },
+  setDepositNum: (state, payload) => {
+    state.depositNum = payload;
+  },
+  setDgaInfo: (state, { producer, game, data }) => {
+    if (!state.dga[producer]) Vue.set(state.dga, producer, {});
+    Vue.set(state.dga[producer], game, data);
+  },
   setPlatform: (state, payload) => {
     state.platform = payload;
   },
@@ -833,11 +710,11 @@ export const mutations = {
   clearGetBillingSessionError: state => {
     state.billingSessionIsLoading = '';
   },
-  setCreateError: (state, message) => {
-    state.deleteLimitError = message;
+  setCreateLimitError: (state, message) => {
+    state.createLimitError = message;
   },
   clearCreateLimitError: state => {
-    state.deleteLimitError = '';
+    state.createLimitError = '';
   },
   setDeleteLimitError: (state, message) => {
     state.deleteLimitError = message;
@@ -939,7 +816,7 @@ export const mutations = {
     state.historyListIsLoading = false;
   },
   setGameProducerList: (state, payload) => {
-    state.gameProducerList = [...state.gameProducerList, ...payload];
+    state.gameProducers = payload;
   },
   openNav: state => {
     state.navIsOpen = true;
@@ -1039,6 +916,7 @@ export const mutations = {
   logout(state) {
     state.status = '';
     state.token = null;
+    state.depositNum = 0;
     state.emailIsConfirmed = false;
   },
   setCashoutTrue(state) {
@@ -1145,6 +1023,7 @@ export const actions = {
         Cookie.set('token', token);
         axios.defaults.headers.common['X-Auth-Token'] = token;
         dispatch('getProfile');
+        dispatch('getAvailableBonusList');
       }
     } catch (e) {
       commit('pushErrors', e);
@@ -1159,6 +1038,7 @@ export const actions = {
       commit('setAuthSuccess');
       dispatch('getProfile');
       dispatch('getLimits');
+      dispatch('getAvailableBonusList');
     }
   },
 
@@ -1174,7 +1054,7 @@ export const actions = {
         axios.defaults.headers.common['X-Auth-Token'] = token;
       }
     } catch (e) {
-      commit('setAuthError', e);
+      commit('pushErrors', e);
       Cookie.remove('token');
     }
   },
@@ -1200,7 +1080,7 @@ export const actions = {
       Cookie.remove('token');
       delete axios.defaults.headers.common['X-Auth-Token'];
       commit('clearNotificationAlerts');
-      this.$router.push('/');
+      this.$router.push(this.$i18n.localePath('/'));
     } catch (e) {
       commit('pushErrors', e);
     }
@@ -1271,10 +1151,10 @@ export const actions = {
       const res = await axios.post(
         `${API_HOST}/startGame`,
         {
-          demo,
           gameId,
           platform: state.platform,
           returnUrl,
+          demo,
         },
         reqConfig(commit, 'setGameError'),
       );
@@ -1487,7 +1367,11 @@ export const actions = {
     try {
       const res = await axios.get(`${API_HOST}/availableBonusList`);
       const bonuses = res.data.data;
+      const depositNum = !bonuses.length
+        ? 4
+        : bonuses.find(bonus => bonus.available && bonus.depositNum).depositNum;
       commit('setAvailableBonusList', bonuses);
+      commit('setDepositNum', depositNum);
     } catch (e) {
       commit('pushErrors', e);
     } finally {

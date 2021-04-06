@@ -1,0 +1,354 @@
+{
+  "title" : "Ninecasino",
+  "buttons" : {
+    "signUp" : "Zaregistrovat se",
+    "register" : "Zaregistrovat se",
+    "terms" : "Pravidla bonusů",
+    "registerNow" : "Zaregistrujte se nyní",
+    "login" : "Přihlásit se",
+    "logIn" : "Přihlásit se",
+    "joinNow" : "Přidej se teď",
+    "deposit" : "vklad",
+    "depositNow" : "Vložit hned",
+    "loadMoreGames" : "Načíst další hry",
+    "playForFun" : "Hrát pro zábavu",
+    "playNow" : "Hrát hned",
+    "showMore" : "Zobrazit více",
+    "saveChanges" : "Uložit změny",
+    "update" : "Aktualizace",
+    "addLimits" : "Přidejte limity",
+    "filter" : "Filtr",
+    "cashout" : "Proplatit",
+    "cancel" : "Zavřít",
+    "loading" : "Načítání",
+    "continue" : "Pokračovat",
+    "letsStart" : "Začněme",
+    "goHomePage" : "Přejít na domovskou stránku",
+    "save" : "Uložit",
+    "getBonus": "Získejte bonus"
+  },
+  "errors" : {
+    "required" : "Nemůže to být prázdné",
+    "email" : "Žádná platná e-mailová adresa",
+    "confirmPassword" : "Heslo a heslo pro potvrzení nejsou stejné",
+    "oldAndNewPasswords" : "Staré a nové heslo jsou stejné",
+    "minLength" : "Musí mít alespoň {num} znaků",
+    "maxLength" : "Nesmí obsahovat více než {num} znaků",
+    "phone" : "Musí být označeno znakem „+“ od 10 do 14 symbolů",
+    "numbers" : "Musí být číselné",
+    "day" : "Den je neplatný",
+    "month" : "Měsíc je neplatný",
+    "year" : "Rok je neplatný",
+    "postalCode" : "Must be letters, numbers or space",
+    "positioveNum" : "Zadejte kladné číslo",
+    "0andNum" : "Zadejte 0 nebo kladné číslo",
+    "invalidDate" : "Datum je neplatné",
+    "minAge" : "Jste mladší než"
+  },
+  "menu" : {
+    "menu" : "Jídelní lístek",
+    "support" : "Podpěra",
+    "yourAccount" : "Váš účet"
+  },
+  "modals" : {
+    "congratulations" : "Gratulujeme",
+    "playGame" : "Nyní můžete hrát hru",
+    "cantStart" : "Hru nelze spustit",
+    "pleaseDeposit" : "Nejprve provést vklad",
+    "pleaseDepositText" : "It's a pity, but your balance is 0. Deposit now!"
+  },
+  "auth" : {
+    "loginTitle" : "Vítej zpět",
+    "signUpTitle" : "Zaregistrujte se<br /> <span class = \"Colored\"> & </span> a získejte <br /> uvítací bonus",
+    "forgotPassword" : "Zapomenuté heslo",
+    "emails" : "Dostávat e-mailové promoakce",
+    "terms" : "Je mi {minAge} let a přijímám {br} {terms} a {policy}",
+    "step2Title" : "Vyplňte prosím níže uvedené informace!",
+    "thanksRegistration" : "Děkujeme za registraci",
+    "registrationBonus" : "Kč 3330",
+    "registrationBonusText" : "Pro váš první vklad! Využijte uvítací bonus Ninecasino",
+    "enterEmail" : "Zadejte email",
+    "passwordRestoreText" : "Dík! Další pokyny najdete ve svém e-mailu",
+    "enterNewPassword" : "Zadejte své nové heslo",
+    "updatePassword" : "Aktualizujte heslo",
+    "newPassword" : "Nové heslo",
+    "confirmPassword" : "Potvrzení hesla",
+    "tryingConfirmEmail" : "Pokoušíme se ověřit váš e-mail",
+    "confirmEmailError" : "Litujeme, váš e-mail nebyl potvrzen",
+    "confirmEmailSuccess" : "Congratulations! Your email was successfully confirmed",
+    "bonus": "KČ 3330",
+    "placeholders": {
+      "enterEmail": "E-emailen",
+      "enterPassword": "Heslo",
+      "email": "E-emailen",
+      "password": "Heslo",
+      "country": "Země",
+      "firstName": "Jméno",
+      "lastName": "Příjmení",
+      "male": "Mužský",
+      "female": "Ženský",
+      "city": "Mesto",
+      "address": "Adresa",
+      "postalCode": "Poštovní směrovací číslo",
+      "phone": "Mobilní telefon"
+    }
+  },
+  "pages" : {
+    "lobby" : "Lobby",
+    "myAccount" : "Můj účet",
+    "promotion" : "Propagace",
+    "aboutUs" : "O nás",
+    "faq" : "FAQ",
+    "btc" : "O BTC",
+    "aml" : "AML politika",
+    "terms" : "Pravidla a podmínky",
+    "bonusPolicy" : "Bonusová politika",
+    "privacyPolicy" : "Zásady ochrany osobních údajů",
+    "responsibleGaming" : "Zodpovědné hraní",
+    "risk" : "Varování o riziku"
+  },
+  "gameCategories" : {
+    "top" : "Nejlepší hry",
+    "all" : "Všechny hry",
+    "live" : "Živé hry",
+    "slots" : "Sloty hry",
+    "roulette" : "Ruleta",
+    "table" : "Stolní hry",
+    "card" : "Karetní hry"
+  },
+  "footer" : {
+    "text" : {
+      "p1" : "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
+      "p2" : "Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., subsidiary of Dux Group N.V., by the laws of Cyprus acting as an Agent on behalf of Dux Group N.V., registered in Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ 410983.The governing law of the website is Cyprus law. The website www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorised to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
+      "p3" : "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
+    }
+  },
+  "search" : {
+    "findGame" : "Najdi hru",
+    "notFound" : "Nic nebylo nalezeno"
+  },
+  "common" : {
+    "date" : "Datum",
+    "currency" : "Měna",
+    "amount" : "Množství",
+    "status" : "Postavení",
+    "title" : "Titul",
+    "type" : "Typ",
+    "active" : "Aktivní",
+    "left" : "odjet",
+    "yes" : "Ano",
+    "email" : "E-mailem",
+    "wager" : "Vsadit",
+    "created" : "Vytvořeno",
+    "expiresAt" : "Expires at"
+  },
+  "actions" : {
+    "addCurrency" : "Add currency"
+  },
+  "homepage" : {
+    "heroBanner" : {
+      "deposit1" : {
+        "title" : "Vítejte <br/> balíček <span class = \"Colored\"> Kč 9990! </span>",
+        "text" : "Proveďte první vklad <br/> a získejte <span class = \"Colored\"> 100% </span> až <span class = \"Colored\"> Kč 3330 </span>"
+      },
+      "deposit2" : {
+        "title" : "Bonus <br/> za druhý vklad",
+        "text" : "55% bonus <br/> až <span class = \"Colored\"> Kč 3330</span> <br/> na váš druhý vklad"
+      },
+      "deposit3" : {
+        "title" : "Bonus<br/>za třetí vklad ",
+        "text" : "100% bonus <br/> až <span class = \"Colored\"> Kč 3330 </span> <br/> na váš třetí vklad"
+      },
+      "deposit4" : {
+        "title" : "Více vzrušujících <br/> akcí <br/> již brzy!"
+      }
+    },
+    "advantages" : {
+      "first" : {
+        "highlighted" : "Super rychlý",
+        "ghost" : "výběry"
+      },
+      "second" : {
+        "highlighted" : "24/7",
+        "ghost" : "přátelská podpora chatu"
+      },
+      "third" : {
+        "highlighted" : "Více než",
+        "ghost" : "2000 her"
+      },
+      "fourth" : {
+        "highlighted" : "Nejdivočejší výběr",
+        "ghost" : "poskytovatelé her"
+      }
+    },
+    "allProviders" : "Všichni poskytovatelé",
+    "tableIsOpen": "Stůl je otevřený",
+    "tableIsClosed": "Stůl je zavřený"
+  },
+  "filters" : {
+    "filteredBy" : "Filtrováno podle",
+    "allStatuses" : "Všechny stavy",
+    "AllCurrencies" : "Všechny měny",
+    "until" : "Dokud"
+  },
+  "cabinet" : {
+    "pages" : {
+      "balance" : "Zůstatek",
+      "bonuses" : "Bonusy",
+      "history" : "Dějiny",
+      "verification" : "Ověření",
+      "profile" : "Profil",
+      "limits" : "Limity hazardu",
+      "exit" : "Výstup"
+    },
+    "balance" : {
+      "table" : {
+        "locked" : "Locked by bonus",
+        "cashout" : "Available to cash out"
+      },
+      "addCurrency" : "Přidat měnu",
+      "noMoreCurrency" : "Už nemusíte přidávat žádnou měnu",
+      "active" : "Aktivní",
+      "select" : "Vybrat"
+    },
+    "bonuses" : {
+      "history" : "Historie bonusů",
+      "table" : {
+        "wagered" : "vsadil",
+        "bonus" : "Bonus",
+        "min" : "Minimální částka vkladu",
+        "max" : "Maximální cena"
+      },
+      "wagerAmountRequirement" : "Požadavek na sázkové množství",
+      "wageredPercent" : "Sázené procento"
+    },
+    "history" : {
+      "tabs" : {
+        "transactions" : "Historie transakcí",
+        "game" : "Historie hry",
+        "bonus" : "Historie bonusů"
+      },
+      "table" : {
+        "date" : "Datum",
+        "paymentSystem" : "Platební systém",
+        "action" : "Akce",
+        "gameName" : "Název hry",
+        "betSum" : "Sázkový součet",
+        "win" : "Vyhrát",
+        "validUntil" : "V platnosti, dokud"
+      }
+    },
+    "verification" : {
+      "documents" : "Ověření dokumentů",
+      "text" : "Pas, řidičský průkaz nebo jiné oficiální dokumenty, které je nahrazují / do vyúčtování, telefonního účtu nebo bankovního výpisu, ve kterém je plně uvedeno vaše jméno a adresa / snímek obrazovky nebo fotografie z online banky, bankovního výpisu, stránky Skrill atd., Zobrazující vklad.",
+      "drop" : "Sem přetáhněte soubor nebo procházejte obrázky nebo soubory PDF. Maximální velikost",
+      "uploaded" : "Nahrané dokumenty",
+      "waiting" : "Čekání na schválení",
+      "approved" : "Schválený",
+      "disapproved" : "Zamítnuto"
+    },
+    "profile" : {
+      "title" : "Uživatelský profil",
+      "tabs" : {
+        "general" : "Všeobecné",
+        "security" : "Bezpečnostní"
+      },
+      "generalInfo" : "Obecné informace",
+      "subscriptions" : "Předplatné",
+      "sms" : "Pošlete promo e-mailem",
+      "email" : "Posílejte promo zprávy sms",
+      "passwordChange" : "Změna hesla",
+      "oldPassword" : "Staré heslo",
+      "newPassword" : "Nové heslo",
+      "confirmPassword" : "Potvrzení hesla",
+      "sessionHistory" : "Historie relace",
+      "labels": {
+        "email": "E-emailen",
+        "country": "Země",
+        "firstName": "Jméno",
+        "lastName": "Příjmení",
+        "gender": "Rod",
+        "birthDate": "Datum narození",
+        "city": "Mesto",
+        "address": "Adresa",
+        "postalCode": "Poštovní směrovací číslo",
+        "phoneNumber": "Mobilní telefon"
+      }
+    },
+    "limits" : {
+      "initialText" : "Chcete sledovat svoji aktivitu, limity ztráty nebo omezit vklady? Váš účet lze nastavit se všemi limity. Pomůže vám získat přehled o vašem hazardu. Všechna omezení se projeví okamžitě.",
+      "createLimits" : "Vytvořte limity",
+      "addLimits" : "Přidejte limity",
+      "limits" : {
+        "depositLimit" : {
+          "name" : "Limity vkladů",
+          "text" : "Váš účet lze nastavit s limity vkladů. Toto nastavení omezuje částku, kterou můžete vložit za den, týden nebo měsíc.",
+          "editRules" : "Svůj limit můžete kdykoli snížit, tato změna se projeví okamžitě. Limit můžete zvýšit, ale aby se tato změna projevila, potřebujete 24 hodin.",
+          "deleteRules" : "Zrušení limitu ztráty trvá 24 hodin. Po překročení limitu obdržíte e-mailové upozornění."
+        },
+        "wagerLimit" : {
+          "name" : "Sázkové limity",
+          "text" : "Váš účet lze nastavit sázkovými limity. Toto nastavení určuje množství peněz, které můžete vsadit za den, týden nebo měsíc.",
+          "editRules" : "Svůj limit můžete kdykoli snížit, tato změna se projeví okamžitě. Limit můžete zvýšit, ale aby se tato změna projevila, potřebujete 24 hodin.",
+          "deleteRules" : "Zrušení sázkového limitu trvá 24 hodin. Po překročení limitu obdržíte e-mailové upozornění."
+        },
+        "lossLimit" : {
+          "name" : "Limity ztráty",
+          "text" : "Váš účet lze nastavit s limity ztrát. Toto nastavení omezuje částku, kterou můžete ztratit za den, týden nebo měsíc.",
+          "editRules" : "Svůj limit můžete kdykoli snížit, tato změna se projeví okamžitě. Limit můžete zvýšit, ale aby se tato změna projevila, potřebujete 24 hodin.",
+          "deleteRules" : "Zrušení limitu ztráty trvá 24 hodin. Po překročení limitu obdržíte e-mailové upozornění."
+        },
+        "sessionLimit" : {
+          "name" : "Limity relací",
+          "title" : "čas strávený hazardem",
+          "text" : "čas strávený hazardem",
+          "editRules" : "",
+          "deleteRules" : ""
+        },
+        "coolingOffLimit" : {
+          "name" : "Vychladnout",
+          "title" : "čas strávený hazardem",
+          "text" : "Cítíte potřebu zůstat od kasina déle? Na určitou dobu můžete nastavit limit pro rozmyšlenou. Omezení se projeví okamžitě. Během zadaného období nebudete moci provádět vklady a hrát, také budete vyloučeni ze všech reklamních nabídek. Po uplynutí nastavené doby obdržíte e-mail s oznámením, že váš účet je znovu aktivní.",
+          "editRules" : "Snížení limitu bude aplikováno do 24 hodin po požadavku hráče. Zvýšení limitu bude použito okamžitě.",
+          "deleteRules" : "Zrušení limitu bude uplatněno do 24 hodin po žádosti hráče."
+        }
+      },
+      "periods" : {
+        "daily" : "Denně",
+        "weekly" : "Týdně",
+        "monthly" : "Měsíční",
+        "days" : "Dny",
+        "weeks" : "Týdny",
+        "months" : "Měsíce",
+        "min" : "Min",
+        "day": "Den"
+      },
+      "edit" : "Upravit limit",
+      "delete" : "Smazat limit",
+      "save" : "Uložit limity",
+      "deleteText" : "Jste si jistí, že to chcete smazat",
+      "sureSet" : "Opravdu chcete nastavit",
+      "untilReset" : "Do resetu"
+    }
+  },
+  "promotions" : {
+    "title" : "Aktuální propagační akce",
+    "text" : "Zrušení limitu bude uplatněno do 24 hodin po žádosti hráče.",
+    "upTo": "až KČ 3330",
+    "deposit1" : {
+      "title" : "100% <br/> z vkladu <br/> částk",
+      "name": "Bonus k prvnímu vkladu",
+      "text" : "Proveďte první vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
+    },
+    "deposit2" : {
+      "title" : "55% <br/> z vkladu <br/> částky",
+      "name": "Bonus ke druhému vkladu",
+      "text" : "Proveďte druhý vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
+    },
+    "deposit3" : {
+      "title" : "100% <br/> z vkladu <br/> částky",
+      "name": "Bonus ke třetímu vkladu",
+      "text" : "Proveďte třetí vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
+    }
+  }
+}

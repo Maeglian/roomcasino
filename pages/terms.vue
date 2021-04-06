@@ -1,38 +1,42 @@
 <template>
-  <section class="SupportPage">
-    <h1 class="SupportPage-Title Title Title--type-h1">
-      Terms & Conditions
-    </h1>
+  <section class="SupportPage SupportPage--paddings">
+    <h1 class="SupportPage-Title Title Title--type-h1">Terms & Conditions</h1>
     <p class="Text">
       The following terms and conditions will enter into force on 01/31/2021. Before you start the
       game please read the Terms and Conditions section carefully. Started using the site you
       automatically confirm your acceptance of the Terms and Conditions
     </p>
+    <p class="Text">
+      Current Terms and Conditions are governed by and interpreted in accordance with the
+      legislation of Cyprus.
+    </p>
     <h4 class="Title">GENERAL</h4>
     <ul class="SupportPage-List">
-      <li class="SupportPage-Item ">
+      <li class="SupportPage-Item">
         <p class="Text">
-          The website www.roomcasino.com ("Casino", "Website", “Company”, "We", "Us", "Our") is
-          owned and operated by DUX GROUP N.V, a company registered and established under the laws
-          of Curaçao, with registration number 155114 and registered address at Perseusweg 27 A,
-          Curacao. All payments are made via SCARTESU LIMITED is a subsidiary of DUX GROUP N.V.,
-          acting as an Agent on behalf of DUX GROUP N.V, registered in Cyprus with registered
-          address Boumpoulinas 1, BOUBOULINA BUILDING, 3rd Floor, Flat/Office 31, 1060, Nicosia,
-          Cyprus, and registration number ΗΕ 410983. It is the player’s sole responsibility to
+          The website www.ninecasino.com ("Casino", "Website", “Company”, "We", "Us", "Our") is
+          operated by Scartesu Ltd., subsidiary of Dux Group N.V., by the laws of Cyprus acting as
+          an Agent on behalf of Dux Group N.V., registered in Cyprus with registered address:
+          Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ
+          410983.The governing law of the website is Cyprus law. The website www.ninecasino.com
+          ("Casino", "Website", “Company”, "We", "Us", "Our") is owned by Dux Group N.V., a company
+          registered and established under the laws of Curaçao, with registration No. 155114 and
+          registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by
+          the Government of Curaçao as an Information Provider legally authorised to conduct online
+          gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing
+          and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to
           inquire about the existing laws and regulations of the given jurisdiction for online
-          gambling. DUX GROUP N.V. is officially registered by the Government of Curaçao as an
-          Information Provider legally authorised to conduct online gaming operations from Curaçao.
-          Remote gaming licensing and supervision is provided by Antillephone N.V.
+          gambling.
         </p>
       </li>
-      <li class="SupportPage-Item ">
+      <li class="SupportPage-Item">
         <p class="Text">
           These Terms and Conditions may be changed by the Casino when such need occurs. We will do
           our best to notify our players of any significant changes by email. However, we do
           recommend all players to revisit this page regularly and check for possible changes.
         </p>
       </li>
-      <li class="SupportPage-Item ">
+      <li class="SupportPage-Item">
         <p class="Text">
           These Terms and Conditions constitute a binding agreement between you and Casino. Players
           must read these Terms and Conditions entirely before registering an account. If you do not
@@ -40,7 +44,7 @@
           the Website.
         </p>
       </li>
-      <li class="SupportPage-Item ">
+      <li class="SupportPage-Item">
         <p class="Text">
           You are able to opt out from receiving offers via emails from Casino. However, we still
           reserve the right to send you important information regarding your account, despite you
@@ -53,36 +57,100 @@
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
-          Certain games may be unavailable in certain jurisdictions, as required by policies of game
-          providers which may change from time to time. NetEnt games are unavailable for
-          Afghanistan, Albania, Algeria, Angola, Australia, Bahamas, Botswana, Belgium, Bulgaria,
-          Colombia, Croatia, Czech Republic, Denmark, Estonia, Ecuador, Ethiopia, France, Ghana,
-          Guyana, Hong Kong, Italy, Iran, Iraq, Israel, Kuwait, Latvia, Lithuania, Mexico, Namibia,
-          Nicaragua, North Korea, Pakistan, Panama, Philippines, Portugal, Romania, Singapore,
-          Spain, Sweden, Switzerland, Sudan, Syria, Taiwan, Trinidad and Tobago, Tunisia, Uganda,
-          United Kingdom, United States of America, Yemen, Zimbabwe. In addition to the above,
-          Street Fighter Video Slot is not available for the following countries: Anguilla, Antigua
-          & Barbuda, Argentina, Aruba, Barbados, Bahamas, Belize, Bermuda, Bolivia, Bonaire, Brazil,
-          British Virgin Islands, Canada, Cayman Islands, China, Chile, Clipperton Island, Columbia,
-          Costa Rica, Cuba, Curacao, Dominica, Dominican Republic, El Salvador, Greenland, Grenada,
-          Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica, Japan, Martinique, Mexico,
-          Montserrat, Navassa Island, Paraguay, Peru, Puerto Rico, Saba, Saint Barthelemy, Saint
-          Eustatius, Saint Kitts and Nevis, Saint Lucia, Saint Maarten, Saint Martin, Saint Pierre
-          and Miquelon, Saint Vincent and the Grenadines, South Korea, Suriname, Turks and Caicos
-          Islands, United States of America, Uruguay, US Virgin Islands, Venezuela. Additionally,
-          Universal Monsters (Dracula, Creature from the Black Lagoon, Phantoms Curse and The
-          Invisible Man), are only available in the following territories: Andorra, Armenia,
+          Please bear in mind some games may be unavailable in certain jurisdictions, as required by
+          the policies of game providers, which may change from time to time.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Using VPN to bypass provider’s block is strictly prohibited and may lead to confiscation
+          of winnings.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          NetEnt games are unavailable for Afghanistan, Albania, Algeria, Angola, Australia,
+          Bahamas, Botswana, Belgium, Bulgaria, Colombia, Croatia, Czech Republic, Denmark, Estonia,
+          Ecuador, Ethiopia, France, Ghana, Guyana, Hong Kong, Italy, Iran, Iraq, Israel, Kuwait,
+          Latvia, Lithuania, Mexico, Namibia, Nicaragua, North Korea, Pakistan, Panama, Philippines,
+          Portugal, Romania, Singapore, Spain, Sweden, Switzerland, Sudan, Syria, Taiwan, Trinidad
+          and Tobago, Tunisia, Uganda, United Kingdom, United States of America, Yemen, Zimbabwe.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          In addition to the above, Street Fighter Video Slot is not available for the following
+          countries: Anguilla, Antigua & Barbuda, Argentina, Aruba, Barbados, Bahamas, Belize,
+          Bermuda, Bolivia, Bonaire, Brazil, British Virgin Islands, Canada, Cayman Islands, China,
+          Chile, Clipperton Island, Columbia, Costa Rica, Cuba, Curacao, Dominica, Dominican
+          Republic, El Salvador, Greenland, Grenada, Guadeloupe, Guatemala, Guyana, Haiti, Honduras,
+          Jamaica, Japan, Martinique, Mexico, Montserrat, Navassa Island, Paraguay, Peru, Puerto
+          Rico, Saba, Saint Barthelemy, Saint Eustatius, Saint Kitts and Nevis, Saint Lucia, Saint
+          Maarten, Saint Martin, Saint Pierre and Miquelon, Saint Vincent and the Grenadines, South
+          Korea, Suriname, Turks and Caicos Islands, United States of America, Uruguay, US Virgin
+          Islands, Venezuela.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Fashion TV Video Slot is not available in the following countries: Cuba, Jordan, Turkey,
+          Saudi Arabia.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Planet of the Apes Video Slot is not available in the following territories: Azerbaijan,
+          China, India, Malaysia, Qatar, Russia, Thailand, Turkey, Ukraine.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Vikings Video Slot is not available in the additional jurisdictions: Azerbaijan, Cambodia,
+          Canada, China, France, India, Indonesia, Laos, Malaysia, Myanmar, Papua New Guinea, Qatar,
+          Russia, South Korea, Thailand, Turkey, Ukraine, United States of America.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Narcos Video Slot is not available in the following territories: Indonesia, South Korea.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Additionally, Universal Monsters (Dracula, Creature from the Black Lagoon, Phantoms Curse
+          and The Invisible Man), are only available in the following territories: Andorra, Armenia,
           Azerbaijan, Belarus, Bosnia and Herzegovina, Georgia, Iceland, Liechtenstein, Moldova,
           Monaco, Montenegro, Norway, Russia, San Marino, Serbia, Ukraine, North Macedonia, Turkey,
           Austria, Cyprus, Finland, Germany, Greece, Hungary, Ireland, Luxembourg, Malta,
-          Netherlands, Poland, Slovakia and Slovenia. Players from the following countries are not
-          eligible to win any jackpots from jackpot games offered by NetEnt (such as but not limited
-          to Mega Fortune): Australia, Azerbaijan, China, Denmark, India, Israel, Italy, Japan,
-          Malaysia, Qatar, Russia, Spain, Thailand, Tunisia, Turkey, United Arab Emirates, Ukraine.
-          The Casino will make reasonable efforts to prevent players from these countries to reach
-          the games, but if players from any of the stated countries would win the jackpot, the
-          jackpot win will be annulled. Players from Canada are not eligible to play games provided
-          by NYX.
+          Netherlands, Poland, Slovakia and Slovenia.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Players from the following countries are not eligible to win any jackpots from jackpot
+          games offered by NetEnt (such as but not limited to Mega Fortune and Arabian Nights):
+          Australia, Azerbaijan, China, Denmark, India, Israel, Italy, Japan, Malaysia, Qatar,
+          Russia, Spain, Thailand, Tunisia, Turkey, United Arab Emirates, Ukraine. The Casino will
+          make reasonable efforts to prevent players from these countries to reach the games, but if
+          players from any of the stated countries should win the jackpot, the jackpot win will be
+          annulled.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Players from Australia are not eligible to play the games from Amatic.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Players from the following countries are not eligible to play the games from Microgaming:
+          USA, Singapore, Italy, Denmark, South Africa, France, UK, Spain, Belgium, Australia,
+          Taiwan, Philippines.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Players from Canada are not eligible to play the games from NYX (NextGen).
         </p>
       </li>
     </ul>
@@ -91,7 +159,7 @@
       <li class="SupportPage-Item">
         <p class="Text">
           The website allows playing with the following currencies: EUR, USD, CAD, AUD, NOK, PLN,
-          NZD, JPY, CZK.
+          NZD, JPY, CZK, ZAR.
         </p>
       </li>
     </ul>
@@ -147,7 +215,7 @@
       <li class="SupportPage-Item">
         <p class="Text">
           In order for you to be able to place wagers using any of the Website, you must first
-          register with getslots.com and open an account.
+          register with ninecasino.com and open an account.
         </p>
       </li>
       <li class="SupportPage-Item">
@@ -158,7 +226,7 @@
           bonuses which you have gained or accrued during such time as the duplicate account was
           active will be forfeited by you and may be reclaimed by us, and you will return to us on
           demand any such funds which have been withdrawn from the duplicate account. If you wish to
-          open another account, you may do so by contacting the support at support@roomcasino.com.
+          open another account, you may do so by contacting the support at support@ninecasino.com.
           If a new account is opened, the old account will be closed. If you notice that you have
           more than one registered account you must notify us immediately. Failure to do so may lead
           to your account being blocked for access.
@@ -197,9 +265,9 @@
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          All information that you provide to Roomcasino.com during the term of validity of this
+          All information that you provide to Ninecasino.com during the term of validity of this
           agreement is true, complete, and correct, and that you shall immediately notify
-          Roomcasino.com of any change of such information.
+          Ninecasino.com of any change of such information.
         </p>
       </li>
       <li class="SupportPage-Item">
@@ -222,7 +290,7 @@
         <p class="Text">
           Should the user become aware of possible errors or incompleteness in the software, he/she
           agrees to refrain from taking advantage of them. Moreover, the user agrees to report any
-          error or incompleteness immediately to Roomcasino.com. Should the user fail to fulfil the
+          error or incompleteness immediately to Ninecasino.com. Should the user fail to fulfil the
           obligations stated in this clause, the Company has a right to full compensation for all
           costs related to the error or incompleteness, including any costs incurred in association
           with the respective error/incompleteness and the failed notification by the user.
@@ -230,10 +298,10 @@
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          Roomcasino.com reserves the right to retain payments, if suspicion or evidence exists of
+          Ninecasino.com reserves the right to retain payments, if suspicion or evidence exists of
           manipulation of the casino system. Criminal charges will be brought against any user or
           any other person(s), who has/have manipulated the casino system or attempted to do so.
-          Roomcasino.com reserves the right to terminate and/or change any games or events being
+          Ninecasino.com reserves the right to terminate and/or change any games or events being
           offered on the Website.
         </p>
       </li>
@@ -271,7 +339,7 @@
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          Roomcasino.com is not a financial institution and thus should not be treated as such. Your
+          Ninecasino.com is not a financial institution and thus should not be treated as such. Your
           account will not bear any interests.
         </p>
       </li>
@@ -310,6 +378,23 @@
           payment processor and will not reach your account and nor can it be returned back to you.
         </p>
       </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Internet gambling may be illegal in the jurisdiction in which you are located; if so, you
+          are not authorized to use your payment card to complete this transaction.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Cardholder's responsibility to know the laws concerning online gambling in his or her
+          country of domicile.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Participation of minors in offered on this website activities is prohibited.
+        </p>
+      </li>
     </ul>
     <h4 class="Title">WITHDRAWAL POLICY</h4>
     <ul class="SupportPage-List">
@@ -334,16 +419,14 @@
       <li class="SupportPage-Item">
         <p class="Text">
           You acknowledge that the funds are consumed instantly and Casino does not provide for
-          refunds or cancellation. Roomcasino.com reserves the right to payout substantial wins in
+          refunds or cancellation. Ninecasino.com reserves the right to payout substantial wins in
           monthly installments.
         </p>
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          We reserve the right to carry out verification procedures for any pay-out exceeding the
-          equivalent of 1,000 €/$ or cumulative withdrawals exceeding 2,300 €/$, and further
-          reserves the right to carry out such verification procedures also in case of lower
-          pay-outs. Such verifications may for example include copies of a player’s passport,
+          We reserve the right to carry out verification procedures for each client at first
+          withdrawal. Such verifications may for example include copies of a player’s passport,
           national Identity Card, copies of a player’s utility bills, and/or copies of the
           debit/credit cards used to deposit.
         </p>
@@ -382,7 +465,7 @@
         <p class="Text">
           In the unlikely event of a player depositing crypto currency funds to another crypto
           currency network address (such as but not limited to: sending BTC to a BCH address).
-          RoomCasino will not attempt to recover the amount unless it exceeds $5000. In such cases,
+          Ninecasino will not attempt to recover the amount unless it exceeds $5000. In such cases,
           a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to
           pursue the recovery, however it's not a guarantee to get the funds recovered.
         </p>
@@ -495,9 +578,7 @@
         </p>
       </li>
       <li class="SupportPage-Item">
-        <p class="Text">
-          All costs that may occur upon refund procedure are on the player.
-        </p>
+        <p class="Text">All costs that may occur upon refund procedure are on the player.</p>
       </li>
     </ul>
 
@@ -506,7 +587,7 @@
       <li class="SupportPage-Item">
         <p class="Text">
           You are solely responsible for reporting and accounting for any taxes applicable to you
-          under relevant laws for any winnings that You receive from Roomcasino.com.
+          under relevant laws for any winnings that You receive from Ninecasino.com.
         </p>
       </li>
       <li class="SupportPage-Item">
@@ -555,7 +636,7 @@
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          Roomcasino.com prohibits player collusion and does not allow any kind of robots and
+          Ninecasino.com prohibits player collusion and does not allow any kind of robots and
           programmed devices to participate in game play.
         </p>
       </li>
@@ -571,10 +652,35 @@
     <h4 class="Title">REFUND POLICY</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
+        <p class="Text"></p>
+      </li>
+      <li class="SupportPage-Item">
         <p class="Text">
-          A refund request will only be considered if it is requested within the first twenty-four
-          (24) hours of the alleged transaction, or within thirty (30) calendar days if a player
-          alleges that another individual has accessed his/her account.
+          If you would like to make a refund, please contact
+          <a href="mailto:support@ninecasino.com" class="Link">support@ninecasino.com</a>
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          To check the refund, you must provide these documents: <br />
+          1) photos of both sides of your passport, driver's license, or any other form of ID,<br />
+          2) proof of address (proof of address would need to be a photo of a paper document posted
+          to you in the last 90 days, it could be eg a government-issued document, a bank document,
+          a bill, or similar. <br />
+          3) Alternatively, you can upload the original PDF of a utility bill), bank statement
+          (showing your name and account number if you haven’t uploaded it as a proof of address)
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          It may take up to 7 business days for a refund to be decided
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          If a refund is decided upon, the amount of the refund shall be returned to the Player’s
+          account, the Player shall be informed and the procedure shall be finalised within 48 hours
+          after the decision has been made.
         </p>
       </li>
       <li class="SupportPage-Item">
@@ -645,7 +751,7 @@
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
-          If you breach any provision of these Terms and Conditions or Roomcasino.com has a
+          If you breach any provision of these Terms and Conditions or Ninecasino.com has a
           reasonable ground to suspect that you have breached them, Casino reserves the right not to
           open, suspend, close your account, withhold payment of your winnings and apply such funds
           on account of any damages due by you.
@@ -699,6 +805,11 @@ export default {
   &:before {
     content: counter(list1, '.') '. ';
     top: 2.3px;
+  }
+
+  .Link {
+    font-size: 14px;
+    text-transform: lowercase;
   }
 }
 </style>

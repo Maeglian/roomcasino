@@ -1,16 +1,14 @@
 <template>
   <div class="ProfileInfo ProfilePage-Content">
-    <Loader v-if="profileIsLoading" />
+    <Loader v-if="profileIsLoading || !countriesList.length" />
     <form v-else class="ProfileInfo-Form" @submit.prevent="onSubmit">
-      <div class="CabinetPage-Header">
-        General Info
-      </div>
+      <div class="CabinetPage-Header">{{ $t('cabinet.profile.generalInfo') }}</div>
       <div class="ProfileInfo-Fields">
         <template v-for="(val, name) in fields">
           <template v-if="name !== 'receiveEmailPromos' && name !== 'receiveSmsPromos'">
-            <div v-if="name === 'country'" :key="name" class="CabinetForm-Row">
+            <div v-if="name === 'country' && !user[name]" :key="name" class="CabinetForm-Row">
               <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
-                {{ name }}
+                {{ $t(`cabinet.profile.labels.${name}`) }}
               </label>
               <BaseDropdown
                 v-model="fields[name]"
@@ -19,14 +17,14 @@
                 @set-dropdown-value="fields[name] = $event"
               />
             </div>
-            <div v-else-if="name === 'gender'" :key="name" class="CabinetForm-Row">
+            <div v-else-if="name === 'gender' && !user[name]" :key="name" class="CabinetForm-Row">
               <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
-                {{ name }}
+                {{ $t(`cabinet.profile.labels.${name}`) }}
               </label>
               <BaseDropdown
                 v-model="fields[name]"
                 class="CabinetForm-Row CabinetForm-Dropdown"
-                :items="['male', 'female']"
+                :items="genders"
                 @set-dropdown-value="fields[name] = $event"
               />
             </div>
@@ -35,7 +33,7 @@
               :key="name"
               v-model="fields[name]"
               class="CabinetForm-Row"
-              :disabled="name === 'email'"
+              :disabled="!!user[name]"
               input-type="text"
               error-class="ProfileInfo-Error"
               :input-id="name | formatLabel"
@@ -45,27 +43,29 @@
             >
               <template v-if="name === 'birthDate'" #beforeInput-absolute>
                 <div
-                  v-if="$v.fields.birthDate.$dirty && !$v.fields.birthDate.required"
+                  v-if="
+                    $v.fields.birthDate.$dirty &&
+                      $v.fields.birthDate.required &&
+                      !$v.fields.birthDate.dateCheck
+                  "
                   class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
                 >
-                  Can't be blank
+                  {{ $t('errors.inputCorrectDate') }} YYYY-MM-DD
                 </div>
                 <div
-                  v-else-if="$v.fields.birthDate.$dirty && !$v.fields.birthDate.dateCheck"
+                  v-else-if="
+                    $v.fields.birthDate.$dirty &&
+                      $v.fields.birthDate.required &&
+                      !$v.fields.birthDate.ageCheck
+                  "
                   class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
                 >
-                  Date is invalid
-                </div>
-                <div
-                  v-else-if="$v.fields.birthDate.$dirty && !$v.fields.birthDate.ageCheck"
-                  class="BaseInput-Error ProfileInfo-Error ProfileInfo-Error--noLabel"
-                >
-                  You are under age of 18
+                  {{ $t('errors.minAge', { minAge }) }}
                 </div>
               </template>
               <template #beforeInput-relative>
                 <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
-                  {{ name }}
+                  {{ $t(`cabinet.profile.labels.${name}`) }}
                 </label>
               </template>
               <template v-if="name === 'mobile'" #afterInput-absolute>
@@ -80,9 +80,7 @@
           </template>
         </template>
       </div>
-      <div class="CabinetPage-Header">
-        Subscriptions
-      </div>
+      <div class="CabinetPage-Header">{{ $t('cabinet.profile.subscriptions') }}</div>
       <div class="ProfileInfo-Subscriptions">
         <template v-for="(item, name) in fields">
           <BaseCheckbox
@@ -104,7 +102,7 @@
           {{ updateProfileError }}
         </div>
         <BaseButton class="Btn Btn--darkColor ProfilePage-Btn" :is-loading="profileIsUpdating">
-          Save changes
+          {{ $t('buttons.saveChanges') }}
         </BaseButton>
       </div>
     </form>
@@ -116,9 +114,9 @@ import { mapGetters, mapActions, mapState, mapMutations } from 'vuex';
 import BaseButton from '@/components/base/BaseButton.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import Loader from '@/components/Loader';
-import { PROFILE_LABELS } from '@/config';
-import { maxLength, minLength, alphaNum, required } from 'vuelidate/lib/validators';
-import { ageCheck, dateCheck, phoneWithPlusCheck } from '@/utils/formCheckers';
+import { maxLength, minLength, required } from 'vuelidate/lib/validators';
+import { dateCheck, phoneWithPlusCheck, postalCodeCheck } from '@/utils/formCheckers';
+import moment from 'moment';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 
@@ -146,7 +144,14 @@ export default {
     return {
       fields: {},
       promosFields: {},
-      profileLabels: PROFILE_LABELS,
+      genders: [
+        { name: this.$t('auth.placeholders.male'), value: 'male' },
+        { name: this.$t('auth.placeholders.female'), value: 'female' },
+      ],
+      profileLabels: {
+        receiveEmailPromos: this.$t('cabinet.profile.email'),
+        receiveSmsPromos: this.$t('cabinet.profile.sms'),
+      },
       fakeFields: {
         email: 'fillypkfillypk@gmail.com',
         firstName: 'Fillyp',
@@ -174,8 +179,11 @@ export default {
         maxLength: maxLength(100),
       },
       birthDate: {
+        required,
         dateCheck,
-        ageCheck,
+        ageCheck(value) {
+          return moment(value).add(this.minAge, 'years') < moment();
+        },
       },
       city: {
         required,
@@ -189,7 +197,7 @@ export default {
       },
       postalCode: {
         required,
-        alphaNum,
+        postalCodeCheck,
         minLength: minLength(1),
         maxLength: maxLength(100),
       },
@@ -206,8 +214,9 @@ export default {
       'profileIsUpdating',
       'updateProfileError',
       'countriesList',
+      'defaultCountry',
     ]),
-    ...mapGetters(['userInfo']),
+    ...mapGetters(['userInfo', 'minAge']),
     // fields() {
     //   return info === 'real' ? this.userInfo : this.fakeFields;
     // },
@@ -217,7 +226,8 @@ export default {
       immediate: true,
       handler() {
         this.fields = { ...this.userInfo };
-        if (!this.fields.gender) this.fields.gender = 'male';
+        if (this.userInfo.country) this.fields.country = this.userInfo.country.name;
+        if (!this.fields.gender) this.fields.gender = this.$t('auth.placeholders.male');
       },
     },
   },
@@ -233,8 +243,12 @@ export default {
       if (JSON.stringify(this.fields) === JSON.stringify(this.userInfo)) return;
       const payload = {};
       for (const key in this.fields) {
-        if (key === 'country') {
+        if (key === 'country' && !this.userInfo.country) {
           payload.country = this.fields.country.code;
+        } else if (key === 'country') {
+          payload.country = this.user.country;
+        } else if (key === 'gender') {
+          payload.gender = this.fields.gender.value;
         } else payload[key] = this.fields[key];
       }
 

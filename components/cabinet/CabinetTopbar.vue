@@ -1,11 +1,15 @@
 <template>
   <div class="CabinetTopbar">
-    <NuxtLink class="CabinetTopbar-Logo" to="/">
+    <NuxtLink class="CabinetTopbar-Logo" :to="localePath('/')">
       <img src="@/assets/img/logo.svg" />
     </NuxtLink>
     <div class="Nav CabinetTopbar-Nav">
-      <NuxtLink class="CabinetTopbar-Link" to="/" exact>Lobby</NuxtLink>
-      <NuxtLink class="CabinetTopbar-Link" to="/promotions">Promotions</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" :to="localePath('/')" exact>{{
+        $t('pages.lobby')
+      }}</NuxtLink>
+      <NuxtLink class="CabinetTopbar-Link" :to="localePath('/promotions')">{{
+        $t('pages.promotion')
+      }}</NuxtLink>
       <!--      <NuxtLink class="CabinetTopbar-Link" to="/tournaments">Tournaments</NuxtLink>-->
     </div>
     <template v-if="Object.keys(user).length">
@@ -26,7 +30,7 @@
         <!--        </div>-->
       </div>
       <button class="CabinetTopbar-Btn Btn Btn--color" @click="$modal.show('cashier')">
-        Deposit
+        {{ $t('buttons.deposit') }}
       </button>
     </template>
   </div>
@@ -50,6 +54,7 @@ export default {
 
 <style lang="scss">
 .CabinetTopbar {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;

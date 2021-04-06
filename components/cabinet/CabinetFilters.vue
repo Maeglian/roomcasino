@@ -4,7 +4,7 @@
       <svg class="CabinetFilters-Icon" width="13" height="15">
         <use xlink:href="@/assets/img/icons.svg#filters"></use>
       </svg>
-      Filtered by
+      {{ $t('filters.filteredBy') }}
       <i
         v-if="width < 1248"
         class="ThinArrow CabinetFilters-Arrow"
@@ -39,9 +39,7 @@
             />
           </template>
         </div>
-        <button class="CabinetFilters-Submit" @click="$emit('filter')">
-          Filter
-        </button>
+        <button class="CabinetFilters-Submit" @click="$emit('filter')">Filter</button>
       </div>
     </transition>
   </div>

@@ -2,17 +2,15 @@
   <section class="Page Page--full DailyTournamentPage">
     <div class="Page-Header DailyTournamentPage-Header">
       <div class="Wrapper">
-        <h1 class="Title Title--type-h1 Page-Title DailyTournamentPage-Title">
-          Daily tournament
-        </h1>
+        <h1 class="Title Title--type-h1 Page-Title DailyTournamentPage-Title">Daily tournament</h1>
         <div class="Page-Text Text Text--additional DailyTournamentPage-Text">
           <template v-if="width >= 768">
-            Roomcasino is constantly working to deliver the best promotions.<br />
+            Ninecasino is constantly working to deliver the best promotions.<br />
             We use the latest technology and the feedback from our players to re-design our
             promotions. Enjoy!
           </template>
           <template v-else>
-            Roomcasino is constantly working to deliver the best promotions. Enjoy!
+            Ninecasino is constantly working to deliver the best promotions. Enjoy!
           </template>
         </div>
         <div class="DailyTournamentPage-Bonus">
@@ -29,12 +27,8 @@
             <div class="DailyTournamentPage-Benefit">
               <img src="@/assets/img/flower.svg" class="DailyTournamentPage-BenefitIcon" alt="" />
               <div>
-                <div class="DailyTournamentPage-BenefitName">
-                  1 week
-                </div>
-                <div class="DailyTournamentPage-BenefitAdditional">
-                  Duration
-                </div>
+                <div class="DailyTournamentPage-BenefitName">1 week</div>
+                <div class="DailyTournamentPage-BenefitAdditional">Duration</div>
               </div>
             </div>
             <div class="DailyTournamentPage-Benefit">
@@ -43,20 +37,14 @@
                 <div class="DailyTournamentPage-BenefitName">
                   <span class="Colored">1 000 eur</span>
                 </div>
-                <div class="DailyTournamentPage-BenefitAdditional">
-                  Prize pool
-                </div>
+                <div class="DailyTournamentPage-BenefitAdditional">Prize pool</div>
               </div>
             </div>
             <div class="DailyTournamentPage-Benefit">
               <img src="@/assets/img/flower.svg" class="DailyTournamentPage-BenefitIcon" alt="" />
               <div>
-                <div class="DailyTournamentPage-BenefitName">
-                  5 eur
-                </div>
-                <div class="DailyTournamentPage-BenefitAdditional">
-                  Bets per point
-                </div>
+                <div class="DailyTournamentPage-BenefitName">5 eur</div>
+                <div class="DailyTournamentPage-BenefitAdditional">Bets per point</div>
               </div>
             </div>
           </div>
@@ -77,18 +65,10 @@
             <div v-else class="DailyTournamentPage-Table">
               <div class="Table TableBordered">
                 <div class="Table-Row">
-                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">
-                    #
-                  </div>
-                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">
-                    Name
-                  </div>
-                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">
-                    Points
-                  </div>
-                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">
-                    Prize
-                  </div>
+                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">#</div>
+                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">Name</div>
+                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">Points</div>
+                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">Prize</div>
                 </div>
                 <div v-for="(winner, i) in winners" :key="winner.id" class="Table-Row">
                   <div class="Table-Cell TableBordered-Cell">
@@ -202,7 +182,7 @@ export default {
   },
   head() {
     return {
-      title: 'Daily Tournament At Roomcasino And Other Similar Events',
+      title: 'Daily Tournament At Ninecasino And Other Similar Events',
       meta: [
         {
           description:

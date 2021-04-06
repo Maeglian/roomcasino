@@ -2,12 +2,12 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    'jest/globals': true,
   },
   extends: [
     'eslint:recommended',
     'airbnb-base',
     'plugin:nuxt/recommended',
-    'plugin:prettier/recommended',
     'plugin:vue/recommended',
     'prettier/vue',
     'plugin:prettier-vue/recommended',
@@ -18,8 +18,10 @@ module.exports = {
     parser: 'babel-eslint',
     sourceType: 'module',
   },
-  plugins: ['vue', 'prettier'],
+  plugins: ['vue', 'prettier', 'jest'],
   rules: {
+    'no-return-assign': 'off',
+    'nuxt/no-globals-in-created': 'off',
     'no-nested-ternary': 'off',
     'no-console': 'off',
     'no-plusplus': 'off',

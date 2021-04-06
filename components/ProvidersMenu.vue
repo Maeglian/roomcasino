@@ -1,20 +1,20 @@
 <template>
   <div v-click-outside="onClickOutside" class="ProvidersMenu">
     <div v-if="insideFilters" class="CategoriesFilter ProvidersMenu-Filter">
-      <div class="CategoriesFilter-Title">
-        Providers
-      </div>
+      <div class="CategoriesFilter-Title">Providers</div>
       <div class="CategoriesFilter-Footer CategoriesFilter-Footer--full">
-        <button
-          class="ProvidersMenu-ChosenProvider CategoriesFilter-ChosenProvider"
-          @click="onOpen"
-        >
-          <!--          <img-->
-          <!--            v-if="!providerActive.noIcon"-->
-          <!--            class="ProvidersMenu-ProviderIcon"-->
-          <!--            :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"-->
-          <!--            alt=""-->
-          <!--          />-->
+        <button class="DefaultGames-ChosenTab CategoriesFilter-ChosenProvider" @click="onOpen">
+          <img
+            v-if="!providersWithoutIcons.includes(providerActive.name)"
+            class="ProvidersMenu-ProviderIcon"
+            :src="
+              require(`@/assets/img/${providerActive.name
+                .toLowerCase()
+                .split(' ')
+                .join('')}.svg`)
+            "
+            alt=""
+          />
           <span class="CategoriesFilter-Default">
             {{ providerActive.name }}
           </span>
@@ -24,16 +24,16 @@
     </div>
     <button
       v-else
-      class="ProvidersMenu-ChosenProvider"
-      :class="{ 'BestGames-ChosenTab--opened': isOpen }"
+      class="DefaultGames-ChosenTab"
+      :class="{ 'DefaultGames-ChosenTab--opened': isOpen }"
       @click="onOpen"
     >
-      <!--      <img-->
-      <!--        v-if="!providerActive.noIcon"-->
-      <!--        class="ProvidersMenu-ProviderIcon"-->
-      <!--        :src="require(`@/assets/img/${providerActive.name.toLowerCase()}.svg`)"-->
-      <!--        alt=""-->
-      <!--      />-->
+      <img
+        v-if="providerActive.iconUrl"
+        class="ProvidersMenu-ProviderIcon"
+        :src="providerActive.iconUrl"
+        alt=""
+      />
       <span class="ProvidersMenu-ActiveProvider">
         {{ providerActive.name }}
       </span>
@@ -49,13 +49,15 @@
         }"
         @click="onChooseProvider(gameProducerList[i])"
       >
-        <!--        <img-->
-        <!--          v-if="!gameProducerList[i].noIcon"-->
-        <!--          class="ProvidersMenu-ProviderIcon"-->
-        <!--          :src="require(`@/assets/img/${gameProducerList[i].name.toLowerCase()}.svg`)"-->
-        <!--          alt=""-->
-        <!--        />-->
-        {{ gameProducerList[i].name }}
+        <img
+          v-if="gameProducerList[i].iconUrl"
+          class="ProvidersMenu-ProviderIcon"
+          :src="gameProducerList[i].iconUrl"
+          :alt="gameProducerList[i].name"
+        />
+        <span class="ProvidersMenu-ProviderName">
+          {{ gameProducerList[i].name }}
+        </span>
       </button>
       <button
         v-if="width > 767 && showMoreProviders"
@@ -76,15 +78,13 @@
           v-for="(item, i) in moreProviders"
           :key="i"
           class="ProvidersMenu-AddProvider"
-          :class="{ 'ProvidersMenu-Provider--active': providerActive.name === item.name }"
+          :class="{
+            'ProvidersMenu-Provider--active': providerActive.name === item.name,
+            'ProvidersMenu-Provider--noIcon': !item.iconUrl,
+          }"
           @click="onChooseProvider(item)"
         >
-          <!--          <img-->
-          <!--            v-if="!item.noIcon"-->
-          <!--            class="ProvidersMenu-ProviderIcon"-->
-          <!--            :src="require(`@/assets/img/${item.name.toLowerCase()}.svg`)"-->
-          <!--            alt=""-->
-          <!--          />-->
+          <img v-if="item.iconUrl" class="ProvidersMenu-ProviderIcon" :src="item.iconUrl" alt="" />
           {{ item.name }}
         </button>
       </div>
@@ -93,12 +93,13 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 import toggleDropdown from '@/mixins/toggleDropdown';
+import gameProducer from '@/mixins/gameProducer';
 
 export default {
   name: 'ProvidersMenu',
-  mixins: [toggleDropdown],
+  mixins: [toggleDropdown, gameProducer],
   props: {
     providerActive: {
       type: Object,
@@ -111,8 +112,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(['width', 'gameProducerList']),
-    ...mapGetters(['slicedGameProducerList']),
+    ...mapState(['width']),
     providersToShow() {
       return this.gameProducerList.length > 3 ? 4 : this.gameProducerList.length;
     },
@@ -121,7 +121,7 @@ export default {
     },
     moreProviders() {
       if (this.width < 768) return this.gameProducerList;
-      return this.slicedGameProducerList(this.providersToShow);
+      return [...this.gameProducerList].slice(1, this.gameProducerList.length + 1);
     },
   },
   methods: {
@@ -129,8 +129,8 @@ export default {
       this.$emit('choose-provider', provider);
       this.isOpen = false;
     },
-    onClickOutside(e) {
-      if (e.target.className !== 'BestGames-ChosenTab') this.isOpen = false;
+    onClickOutside() {
+      this.isOpen = false;
     },
   },
 };
@@ -145,14 +145,14 @@ export default {
   @media (min-width: $screen-m) {
     display: grid;
     flex-direction: initial;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     grid-gap: 10px;
   }
 
   &-Providers {
-    grid-column: 1/6;
+    grid-column: 1/7;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-gap: 10px;
     padding: 0;
 
@@ -171,26 +171,34 @@ export default {
 
   &-MoreProviders {
     position: absolute;
-    top: 55px;
+    top: 38px;
     left: 0;
     z-index: 10;
     width: 100%;
     max-height: 2000px;
-    padding: 0 16px 10px;
+    padding: 10px 10px 16px;
     column-count: 2;
-    background-color: var(--color-body);
+    background-color: var(--color-bg-lighter);
+
+    @media (min-width: $screen-xs) {
+      padding: 10px 16px 16px;
+    }
 
     @media (min-width: $screen-s) {
       column-count: 3;
     }
 
     @media (min-width: $screen-m) {
-      top: 50px;
+      top: 32px;
       column-count: 5;
     }
 
     @media (min-width: $screen-l) {
-      top: 70px;
+      top: 43px;
+    }
+
+    @media (min-width: $screen-xl) {
+      top: 50px;
     }
 
     &--top {
@@ -235,6 +243,18 @@ export default {
       font-size: 12px;
     }
 
+    &--noIcon {
+      padding-left: 30px;
+
+      @media (min-width: $screen-m) {
+        padding-left: 28px;
+      }
+
+      @media (min-width: $screen-l) {
+        padding-left: 35px;
+      }
+    }
+
     &--active {
       display: none;
       color: var(--color-main1);
@@ -263,18 +283,22 @@ export default {
   }
 
   &-ProviderIcon {
-    width: 10px;
+    width: 20px;
     margin-right: 10px;
 
-    @media (min-width: $screen-m) {
-      width: auto;
-      height: 14px;
+    @media (min-width: $screen-l) {
+      width: 25px;
       margin-right: 3px;
     }
 
     @media (min-width: $screen-l) {
-      margin-right: 6px;
+      margin-right: 10px;
     }
+  }
+
+  &-ProviderName {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &-Filter {
@@ -282,31 +306,6 @@ export default {
       &.CategoriesFilter {
         display: none;
       }
-    }
-  }
-
-  &-ChosenProvider {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 16px;
-    background: var(--color-bg);
-    border: none;
-
-    @media (min-width: $screen-m) {
-      display: none;
-    }
-
-    .Arrow {
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      margin-top: -2px;
-    }
-
-    .Arrow--up {
-      margin-top: -8px;
     }
   }
 

@@ -2,61 +2,73 @@
   <section class="Footer">
     <Partners class="Footer-Partners" />
     <nav class="Nav Footer-Nav">
-      <NuxtLink class="Footer-Logo" to="/">
+      <NuxtLink class="Footer-Logo" :to="localePath('/')">
         <img src="@/assets/img/logo.svg" />
       </NuxtLink>
       <div class="Footer-Links">
-        <NuxtLink class="Link Footer-Link" to="/promotions">
-          Promotion
+        <NuxtLink class="Link Footer-Link" :to="localePath('/promotions')">
+          {{ $t('pages.promotion') }}
         </NuxtLink>
-        <!--        <NuxtLink class="Link Footer-Link" to="/vip">-->
+        <NuxtLink class="Link Footer-Link" :to="localePath('/about-us')">
+          {{ $t('pages.aboutUs') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/bitcoins')">
+          {{ $t('pages.btc') }}</NuxtLink
+        >
+        <!--        <NuxtLink class="Link Footer-Link" to="localePath('/vip')">-->
         <!--          VIP rewards-->
         <!--        </NuxtLink>-->
-        <NuxtLink class="Link Footer-Link" to="/payment-methods">
-          Payment methods
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/terms">
-          Terms and conditions
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/bonus-policy">
-          Bonus policy
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/responsible-gaming">
-          Responsible gaming
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/privacy-policy">
-          Privacy policy
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/about-us">
-          About us
-        </NuxtLink>
-        <NuxtLink class="Link Footer-Link" to="/faq">
-          Faq
-        </NuxtLink>
+        <NuxtLink class="Link Footer-Link" :to="localePath('/aml-policy')">
+          {{ $t('pages.aml') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/terms')">
+          {{ $t('pages.terms') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/bonus-policy')">
+          {{ $t('pages.bonusPolicy') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/responsible-gaming')">
+          {{ $t('pages.responsibleGaming') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/risk-warnings')">
+          {{ $t('pages.risk') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/privacy-policy')">
+          {{ $t('pages.privacyPolicy') }}</NuxtLink
+        >
+        <NuxtLink class="Link Footer-Link" :to="localePath('/faq')">
+          {{ $t('pages.faq') }}</NuxtLink
+        >
+
+        <!--        <NuxtLink class="Link Footer-Link" to="/payment-methods">-->
+        <!--          Payment methods-->
+        <!--        </NuxtLink>-->
       </div>
-      <div class="Footer-Lang">
-        <img src="@/assets/img/eng.png" alt="" />
-      </div>
+      <LangSwitcher class="Footer-Lang" />
+      <!--      <div class="Footer-Lang">-->
+      <!--        <img src="@/assets/img/eng.png" alt="" />-->
+      <!--      </div>-->
     </nav>
     <div class="Footer-Disclaimer">
-      <div class="Footer-Text">
-        Copyright © 2020 www.roomcasino.com is owned and operated by DUX GROUP N.V., a company
-        registered and established under the laws of Curacao. DUX GROUP N.V. is licensed and
-        regulated by Antillephone N.V. (license no. 8048/JAZ2020-075).
-        <br />
-        DUX GROUP N.V.’s registration number is 155114 and its registered address is Perseusweg 27
-        A, Curacao.
-        <br />
-        SCARTESU LIMITED is a subsidiary of DUX GROUP N.V., acting as an Agent on behalf of DUX
-        GROUP N.V, registered in Cyprus with registered address Boumpoulinas 1, BOUBOULINA BUILDING,
-        3rd Floor, Flat/Office 31, 1060, Nicosia, Cyprus, and registration number ΗΕ 410983.
-        <br />
-        It is the player’s sole responsibility to inquire about the existing laws and regulations of
-        the given jurisdiction for online gambling.
-        <br />
-        <br />
-        If you have any questions or suggestions about our site, please contact us
-        <a class="Footer-Contact" href="mailto:support@roomcasino.com">support@roomcasino.com</a>
+      <div class="Footer-DisclaimerText">
+        <div class="Footer-Text">
+          {{ $t('footer.text.p1') }}
+        </div>
+        <div class="Footer-Text">
+          {{ $t('footer.text.p2') }}
+        </div>
+        <div class="Footer-Text">
+          <i18n path="footer.text.p3">
+            <template #support>
+              <a class="Footer-Contact" href="mailto:support@ninecasino.com"
+                >support@ninecasino.com</a
+              >
+            </template>
+            <template #phone>
+              <a class="Footer-Contact" href="tel:+43800070855">+43800070855</a>
+            </template>
+          </i18n>
+        </div>
       </div>
       <div class="Footer-Icons">
         <div
@@ -80,11 +92,13 @@
 
 <script>
 import Partners from '@/components/homepage/Partners.vue';
+import LangSwitcher from '@/components/LangSwitcher';
 
 export default {
   name: 'Footer',
   components: {
     Partners,
+    LangSwitcher,
   },
   mounted() {
     window.apg_034906ca_0989_44fa_8bff_6a0fdffc45bb.init();
@@ -131,7 +145,8 @@ export default {
     display: grid;
     order: 2;
     width: 100%;
-    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    grid-template-columns: 50% 50%;
     grid-column-gap: 10px;
 
     @media (min-width: $screen-m) {
@@ -144,7 +159,6 @@ export default {
     display: inline-block;
     margin-bottom: 16px;
     font-size: 12px;
-    white-space: nowrap;
 
     @media (min-width: $screen-m) {
       margin-right: 28px;
@@ -217,28 +231,13 @@ export default {
   }
 
   &-Lang {
-    display: inline-flex;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
     order: 1;
-    width: 34px;
-    height: 34px;
     margin-bottom: 16px;
     margin-left: auto;
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    border-radius: 50%;
 
     @media (min-width: $screen-m) {
       order: 2;
       margin-bottom: 0;
-    }
-
-    img {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
     }
   }
 

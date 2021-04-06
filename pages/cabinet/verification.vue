@@ -1,7 +1,7 @@
 <template>
   <div class="CabinetPage VerificationPage">
     <div class="CabinetPage-Title VerificationPage-Title">
-      Verification
+      {{ $t('cabinet.pages.verification') }}
     </div>
     <div class="VerificationPage-Content">
       <!--      <div class="VerificationPage-Item">-->
@@ -108,35 +108,59 @@
       <div class="VerificationPage-Item">
         <div class="VerificationPage-Desc">
           <svg
-            class="VerificationPage-Approve"
-            :class="{ 'VerificationPage-Approve--pending': userDocumentList.length }"
+            class="VerificationPage-Approve VerificationPage-Approve--large"
+            :class="[
+              {
+                'VerificationPage-Approve--pending':
+                  documentsStatus.length && documentsStatus === 'pending',
+              },
+              { 'VerificationPage-Approve--approved': documentsStatus === 'approved' },
+              { 'VerificationPage-Approve--declined': documentsStatus === 'declined' },
+            ]"
           >
             <use xlink:href="@/assets/img/icons.svg#approve"></use>
           </svg>
           <div class="VerificationPage-Title">
-            <div class="VerificationPage-Name">
-              Documents verification
-            </div>
+            <div class="VerificationPage-Name">{{ $t('cabinet.verification.documents') }}</div>
             <div class="VerificationPage-Text">
-              Passport, drivers license, or other official documents replacing them / until bill,
-              phone bill, or bank statement, in which your name and address are fully indicated /
-              screenshot or photo from online bank, bank statement, Skrill page, etc, showing the
-              deposit.
+              {{ $t('cabinet.verification.text') }}
             </div>
             <div
-              v-if="userDocumentList.length"
+              v-if="documentsStatus.length && documentsStatus === 'pending'"
               class="VerificationPage-Approved VerificationPage-Approved--pending"
             >
-              Waiting for approve
+              {{ $t('cabinet.verification.waiting') }}
+            </div>
+            <div
+              v-if="documentsStatus === 'approved'"
+              class="VerificationPage-Approved VerificationPage-Approved--approved"
+            >
+              {{ $t('cabinet.verification.approved') }}
+            </div>
+            <div
+              v-if="documentsStatus === 'declined'"
+              class="VerificationPage-Approved VerificationPage-Approved--declined"
+            >
+              {{ $t('cabinet.verification.disapproved') }}
             </div>
           </div>
         </div>
         <div class="VerificationPage-Docs">
           <div v-if="userDocumentList.length" class="VerificationPage-DocsContent">
-            <div class="VerificationPage-DocsTitle">
-              Uploaded documents
-            </div>
+            <div class="VerificationPage-DocsTitle">{{ $t('cabinet.verification.uploaded') }}</div>
             <div v-for="doc in userDocumentList" :key="doc.id" class="VerificationPage-Doc">
+              <svg
+                class="VerificationPage-Approve VerificationPage-Approve--min"
+                :class="[
+                  {
+                    'VerificationPage-Approve--pending': doc.status === 'pending',
+                  },
+                  { 'VerificationPage-Approve--approved': doc.status === 'approved' },
+                  { 'VerificationPage-Approve--declined': doc.status === 'disapproved' },
+                ]"
+              >
+                <use xlink:href="@/assets/img/icons.svg#approve"></use>
+              </svg>
               <div class="VerificationPage-DocName" @click="onClickDocument(doc.id)">
                 {{ doc.name }}
               </div>
@@ -157,9 +181,7 @@
               @vdropzone-error="onErrorUpload"
             >
               <div class="VerificationPage-Dropzone">
-                <div class="VerificationPage-Text">
-                  Drop file here or browse images or .pdf files. Max size 110Mb
-                </div>
+                <div class="VerificationPage-Text">{{ $t('cabinet.verification.drop') }} 110Mb</div>
               </div>
             </vueDropzone>
           </client-only>
@@ -198,19 +220,11 @@
 </template>
 
 <script>
-import { API_HOST_PROD, API_HOST_SANDBOX, API_HOST_STAGE } from '@/config';
+import { API_HOST } from '@/config';
 import { mapActions, mapState, mapMutations } from 'vuex';
 import Loader from '@/components/Loader';
 
 const vue2Dropzone = () => import('vue2-dropzone');
-
-const API_HOST =
-  // eslint-disable-next-line no-nested-ternary
-  process.env.NUXT_ENV_MODE === 'production'
-    ? API_HOST_PROD
-    : process.env.NUXT_ENV_MODE === 'sandbox'
-    ? API_HOST_SANDBOX
-    : API_HOST_STAGE;
 
 export default {
   name: 'VerificationPage',
@@ -237,6 +251,12 @@ export default {
       'originalFileIsLoading',
       'originalFileError',
     ]),
+    documentsStatus() {
+      if (!this.userDocumentList.length) return 'noDocuments';
+      if (this.userDocumentList.every(doc => doc.status === 'approved')) return 'approved';
+      if (this.userDocumentList.every(doc => doc.status === 'disapproved')) return 'declined';
+      return 'pending';
+    },
   },
   created() {
     this.getUserDocumentList();
@@ -333,17 +353,7 @@ export default {
 
   &-Approve {
     flex-shrink: 0;
-    order: 1;
-    width: 34px;
-    height: 34px;
     fill: var(--color-bg-lighter);
-
-    @media (min-width: $screen-m) {
-      order: 0;
-      width: 54px;
-      height: 54px;
-      margin-right: 29px;
-    }
 
     &--pending {
       fill: var(--color-main1);
@@ -351,6 +361,29 @@ export default {
 
     &--approved {
       fill: var(--color-accept);
+    }
+
+    &--declined {
+      fill: var(--color-error);
+    }
+
+    &--large {
+      order: 1;
+      width: 34px;
+      height: 34px;
+
+      @media (min-width: $screen-m) {
+        order: 0;
+        width: 54px;
+        height: 54px;
+        margin-right: 29px;
+      }
+    }
+
+    &--min {
+      width: 25px;
+      height: 25px;
+      margin-right: 15px;
     }
   }
 
@@ -360,7 +393,6 @@ export default {
 
   &-Doc {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     min-height: 24px;
     margin-bottom: 15px;
@@ -454,6 +486,7 @@ export default {
     align-items: center;
     width: 24px;
     height: 24px;
+    margin-left: auto;
     background: var(--color-bg-lighter);
     cursor: pointer;
   }
@@ -463,11 +496,18 @@ export default {
     font-size: 12px;
     font-weight: 700;
     line-height: 1.09;
-    color: var(--color-accept);
     text-transform: uppercase;
+
+    &--approved {
+      color: var(--color-accept);
+    }
 
     &--pending {
       color: var(--color-main1);
+    }
+
+    &--declined {
+      color: var(--color-error);
     }
   }
 

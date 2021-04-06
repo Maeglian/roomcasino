@@ -1,12 +1,11 @@
 <template>
   <section class="Page PromotionsPage">
     <div class="Page-Header PromotionsPage-Header">
-      <h1 class="Title Title--type-h1 Page-Title PromotionsPage-Title">
-        Current promotions
+      <h1 class="Wrapper Title Title--type-h1 Page-Title PromotionsPage-Title">
+        {{ $t('promotions.title') }}
       </h1>
       <div class="Page-Text Text Text--additional">
-        Roomcasino is constantly working to deliver the best promotions. We use the latest
-        technology and the feedback from our players to re-design our promotions. Enjoy!
+        {{ $t('promotions.text') }}
       </div>
     </div>
     <section class="Page-Content">
@@ -37,13 +36,13 @@
               class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
               @click="onClickBtn()"
             >
-              {{ isLoggedIn ? 'Get bonus' : 'Sign up' }}
+              {{ isLoggedIn ? $t('buttons.getBonus') : $t('buttons.signUp') }}
             </button>
             <NuxtLink
-              to="/bonus-terms"
+              :to="localePath('/bonus-terms')"
               class="Btn Btn--common Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
             >
-              Bonus terms & conditions
+              {{ $t('buttons.terms') }}
             </NuxtLink>
           </div>
         </article>
@@ -114,28 +113,25 @@ export default {
     return {
       promotions: [
         {
-          title: '100%<br/> of the deposit<br/> amount',
-          subtitle: 'up to $150',
+          title: this.$t('promotions.deposit1.title'),
+          subtitle: this.$t('promotions.upTo'),
           image: 'promotion1.png',
-          announce: 'First deposit bonus',
-          text:
-            '<p>Make your first deposit at Roomcasino and get up to $150.</p><p>To activate the bonus - just make first deposit of $20 or more. The bonus will be credited automatically.</p>',
+          announce: this.$t('promotions.deposit1.name'),
+          text: this.$t('promotions.deposit1.text'),
         },
         {
-          title: '55%<br/> of the deposit<br/> amount',
-          subtitle: 'up to $150',
+          title: this.$t('promotions.deposit2.title'),
+          subtitle: this.$t('promotions.upTo'),
           image: 'promotion2.png',
-          announce: 'Second deposit bonus',
-          text:
-            '<p>Make your second deposit at Roomcasino and get up to $150.</p><p>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically.</p>',
+          announce: this.$t('promotions.deposit2.name'),
+          text: this.$t('promotions.deposit2.text'),
         },
         {
-          title: '100%<br/> of the deposit<br/> amount',
-          subtitle: 'up to $150',
+          title: this.$t('promotions.deposit3.title'),
+          subtitle: this.$t('promotions.upTo'),
           image: 'promotion3.png',
-          announce: 'Third deposit bonus',
-          text:
-            '<p>Make your third deposit at Roomcasino and get up to $150.</p><p>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically.</p>',
+          announce: this.$t('promotions.deposit3.name'),
+          text: this.$t('promotions.deposit3.text'),
         },
         // {
         //   title: '55%<br/> of the deposit<br/> amount',
@@ -166,11 +162,11 @@ export default {
   },
   head() {
     return {
-      title: 'Play Room Casino Online | Promotions + Bonuses',
+      title: 'Play Ninecasino Online | Promotions + Bonuses',
       meta: [
         {
           description:
-            'Room Casino grants the right to participate in twenty-five free spins on the money of the institution! Read about all current events and promotions on the Room casino website!',
+            'Ninecasino grants the right to participate in twenty-five free spins on the money of the institution! Read about all current events and promotions on the Room casino website!',
         },
       ],
     };
@@ -187,8 +183,16 @@ export default {
     @media (min-width: $screen-m) {
       background-image: url(../assets/img/promotions-bg-1248.png);
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: 100% auto;
     }
+  }
+
+  &-Title {
+    min-width: 320px;
+    max-width: 1248px;
+    margin: 20px auto;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 }
 

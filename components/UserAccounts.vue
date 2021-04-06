@@ -16,7 +16,7 @@
       </div>
       <ul class="UserAccounts-Popup">
         <li
-          v-for="({ balance, currency }, idx) in user.accountList"
+          v-for="({ balance, currency }, idx) in otherAccountList"
           :key="idx"
           class="UserAccounts-PopupItem"
           @click="selectCurrencyAccount({ balance, currency })"
@@ -41,14 +41,14 @@ export default {
   }),
   computed: {
     ...mapState(['user']),
-    ...mapGetters(['activeAccount', 'isLoggedIn']),
+    ...mapGetters(['activeAccount', 'isLoggedIn', 'otherAccountList']),
     getFullUserName() {
       const { firstName, lastName } = this.user;
       return `${firstName} ${lastName}`;
     },
   },
   methods: {
-    ...mapActions(['setActiveAccount']),
+    ...mapActions(['setActiveAccount', 'getBonusList', 'getAvailableBonusList']),
     togglePopup() {
       this.isOpenPopup = !this.isOpenPopup;
     },
@@ -59,6 +59,10 @@ export default {
       this.balance = balance;
       this.currency = currency;
       this.setActiveAccount({ currency }).then(() => {
+        if (this.$route.path === '/cabinet/bonuses') {
+          this.getBonusList();
+          this.getAvailableBonusList();
+        }
         this.closePopup();
       });
     },

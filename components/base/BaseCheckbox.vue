@@ -46,18 +46,19 @@ export default {
       default: '',
     },
     modelValue: {
-      type: [String, Boolean, Array],
+      type: [String, Boolean, Array, Object],
       required: true,
     },
     value: {
-      type: [String, Number, Boolean],
+      type: [String, Number, Boolean, Object],
       required: false,
       default: false,
     },
   },
   computed: {
     isChecked() {
-      if (this.type === 'radio') return this.modelValue === this.value;
+      if (this.type === 'radio')
+        return this.modelValue === this.value || this.modelValue.value === this.value.value;
       if (this.modelValue instanceof Array) {
         return this.modelValue.includes(this.value);
       }

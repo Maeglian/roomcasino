@@ -1,26 +1,18 @@
 <template>
   <div class="CabinetPage LimitsPage">
-    <div class="CabinetPage-Title LimitsPage-Title">
-      Gambling limits
-    </div>
+    <div class="CabinetPage-Title LimitsPage-Title">{{ $t('cabinet.pages.limits') }}</div>
     <button class="CabinetPage-AddBtn" @click="showCreateLimitsDialog()">
-      <span class="CabinetPage-AddBtnText">
-        Create limits
-      </span>
-      <span class="CabinetPage-AddBtnPlus CabinetPage-AddBtnPlus--right">
-        +
-      </span>
+      <span class="CabinetPage-AddBtnText"> {{ $t('cabinet.limits.createLimits') }} </span>
+      <span class="CabinetPage-AddBtnPlus CabinetPage-AddBtnPlus--right"> + </span>
     </button>
     <div class="LimitsPage-Content">
       <div v-if="!limits.length" class="LimitsPage-Text CabinetPage-Text">
-        Do you want to track your activity, loss limits or limit deposits? Your account can be set
-        with all limits. It'll help you to get an overview of your gambling. All restriction takes
-        effect instantly.
+        {{ $t('cabinet.limits.initialText') }}
       </div>
       <div v-else class="LimitsPage-Limits">
         <div v-for="limit in limitsByTypes" :key="limit.name" class="LimitsPage-LimitType">
           <div v-if="limit.limits.length" class="LimitsPage-Header">
-            {{ limit.name }}
+            {{ $t(`cabinet.limits.limits.${limit.type}.name`) }}
           </div>
           <GamblingLimit
             v-for="item in limit.limits"

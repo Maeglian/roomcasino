@@ -34,6 +34,12 @@ export default {
     // Banner,
   },
   layout: 'page',
+  middleware: [
+    function({ redirect, route, app }) {
+      if (app.getRouteBaseName() === 'index')
+        redirect({ path: app.localePath('/games/top'), query: route.query });
+    },
+  ],
   data() {
     return {
       banner1: {
@@ -43,8 +49,8 @@ export default {
         image768: 'banner1_768.png',
         image960: 'banner1_960.png',
         image1248: 'banner1_1248.png',
-        title: 'Play <span class="Colored">VIP style</span><br/> Roomcasino',
-        text: 'Your VIP level increases with every bet made at Roomcasino. The prizes are waiting!',
+        title: 'Play <span class="Colored">VIP style</span><br/> Ninecasino',
+        text: 'Your VIP level increases with every bet made at Ninecasino. The prizes are waiting!',
         btnLink: {
           text: 'More info',
           url: '/vip',
@@ -54,11 +60,11 @@ export default {
   },
   head() {
     return {
-      title: 'Casino Online🤑, Only Top Slots & Games | Get Welcome Bonus from RoomCasino',
+      title: 'Casino Online🤑, Only Top Slots & Games | Get Welcome Bonus from Ninecasino',
       meta: [
         {
           description:
-            'Sign up to 🔥RoomСasino to reveal our complete game selection. Enjoy all types of games! Claim your desirable bonuses and free spins at once after joining',
+            'Sign up to 🔥Ninecasino to reveal our complete game selection. Enjoy all types of games! Claim your desirable bonuses and free spins at once after joining',
         },
       ],
     };

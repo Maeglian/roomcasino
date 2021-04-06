@@ -8,9 +8,7 @@
       show-on-mount
       @close="clearGameError"
     >
-      <div class="Modal-Title">
-        Can't start the game
-      </div>
+      <div class="Modal-Title">{{ $t('modals.cantStart') }}</div>
       <div class="Modal-Text">
         {{ gameError }}
       </div>
@@ -23,12 +21,8 @@
       show-on-mount
       @close="onCloseDepositModal"
     >
-      <div class="Modal-Title">
-        Please deposit first
-      </div>
-      <div class="Modal-Text">
-        It's a pity, but your balance is 0. Deposit now!
-      </div>
+      <div class="Modal-Title">{{ $t('modals.pleaseDeposit') }}</div>
+      <div class="Modal-Text">{{ $t('modals.pleaseDepositText') }}</div>
     </BaseModal>
     <div class="Games-Items">
       <Card
@@ -36,17 +30,16 @@
         :key="i"
         :game-info="game"
         :img-url="game.imageUrl"
-        :show-demo="!isLoggedIn"
+        :show-demo="true"
         overlay
+        show-footer
         @open-gamepage="openGamePage"
       />
     </div>
-    <p v-if="!games.length" class="Text Text--center">
-      Nothing was found
-    </p>
+    <p v-if="!games.length" class="Text Text--center">{{ $t('search.notFound') }}</p>
     <div v-if="games.length > gamesShowed" class="Games-Btn">
       <button class="Btn" :class="btnClass" @click="showMoreGames()">
-        Load more games
+        {{ $t('buttons.loadMoreGames') }}
       </button>
     </div>
   </div>
@@ -123,7 +116,7 @@ export default {
       return null;
     },
 
-    async openGamePage({ id, demo }) {
+    async openGamePage({ id, demo, bg }) {
       if (!demo && !this.isLoggedIn) {
         this.showRegistrationDialog('login');
         return;
@@ -140,9 +133,11 @@ export default {
       });
 
       if (!this.gameError) {
-        this.platform === 'mobile'
-          ? (window.location.href = this.gameUrlForIframe)
-          : this.$router.push(`/game`);
+        if (this.platform === 'mobile') window.location.href = this.gameUrlForIframe;
+        else {
+          localStorage.setItem('gameBg', bg);
+          this.$router.push(this.localePath('/game'));
+        }
       }
     },
     showMoreGames() {
@@ -162,10 +157,11 @@ export default {
     margin-bottom: 20px;
 
     @media (min-width: $screen-s) {
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     @media (min-width: $screen-l) {
+      grid-template-columns: repeat(6, 1fr);
       margin-bottom: 24px;
     }
 

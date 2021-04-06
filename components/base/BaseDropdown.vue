@@ -8,6 +8,7 @@
       Can't be blank
     </div>
     <button
+      v-if="!autocomplete"
       class="BaseDropdown-Item BaseDropdown-ActiveItem"
       aria-haspopup="true"
       tabindex="0"
@@ -27,24 +28,48 @@
         :class="[isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"
       ></i>
     </button>
+    <button
+      v-else
+      type="button"
+      class="BaseDropdown-Wrapper"
+      aria-haspopup="true"
+      tabindex="0"
+      @keyup.up="onArrowUp()"
+      @keyup.down="onArrowDown()"
+      @click="onOpenDropdown()"
+      @keyup.enter="onSelectValueKeyboard()"
+    >
+      <input
+        v-model="inputVal"
+        class="BaseDropdown-Item BaseDropdown-ActiveItem BaseDropdown-Input"
+        @input="onInput($event)"
+        @keypress.enter.prevent
+      />
+      <slot v-if="$scopedSlots.default" :item="activeItem ? activeItem : items[0]"></slot>
+      <i
+        v-if="items.length > 1"
+        class="BaseDropdown-Arrow ThinArrow"
+        :class="[isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"
+      ></i>
+    </button>
     <ul v-show="isOpen" class="BaseDropdown-Inner" aria-label="submenu">
       <li
         v-for="(item, i) in filteredItems"
-        :key="item[itemName] || item"
+        :key="item[keyName] || item[itemName] || item"
         class="BaseDropdown-Item BaseDropdown-DropdownItem"
         :class="{ 'BaseDropdown-DropdownItem--highlighted': activeItemIndex === i }"
         @click="onSelectValue(item)"
       >
         <slot v-if="$scopedSlots.default" :item="item"></slot>
-        <template v-else>
-          {{ item[itemName] || item }}
-        </template>
+        {{ item[itemName] || item }}
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import { searchInArrByString } from '@/utils/helpers';
+
 export default {
   name: 'BaseDropdown',
   model: {
@@ -80,18 +105,54 @@ export default {
       required: false,
       default: 'name',
     },
+    keyName: {
+      type: [String, Boolean],
+      required: false,
+      default: false,
+    },
+    autocomplete: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   data() {
     return {
+      inputVal:
+        this.activeItem[this.itemName] ||
+        this.activeItem ||
+        this.placeholder ||
+        this.items[0][this.itemName] ||
+        this.items[0],
       isOpen: false,
       activeItemIndex: -1,
+      autocompletedItems: [],
+      autocompleteMode: false,
     };
   },
   computed: {
     filteredItems() {
+      if (
+        this.autocomplete &&
+        this.autocompleteMode &&
+        this.inputVal &&
+        this.autocompletedItems.length
+      )
+        return this.autocompletedItems;
+
       return this.items.filter(item => {
         return item[this.itemName] !== this.activeItem && item !== this.activeItem;
       });
+    },
+  },
+  watch: {
+    activeItem() {
+      this.inputVal = this.activeItem[this.itemName] || this.activeItem;
+    },
+    inputVal() {
+      if (this.inputVal) {
+        this.autocompletedItems = searchInArrByString(this.inputVal, this.items, this.itemName);
+      }
     },
   },
   methods: {
@@ -104,6 +165,17 @@ export default {
       }
     },
     onSelectValue(val) {
+      if (this.autocomplete && JSON.stringify(val) !== JSON.stringify(this.activeItem))
+        this.inputVal = '';
+      if (JSON.stringify(val) === JSON.stringify(this.activeItem)) {
+        this.inputVal =
+          this.activeItem[this.itemName] ||
+          this.activeItem ||
+          this.placeholder ||
+          this.items[0][this.itemName] ||
+          this.items[0];
+      }
+      this.autocompleteMode = false;
       this.$emit('set-dropdown-value', val);
       this.isOpen = false;
       this.activeItemIndex = -1;
@@ -116,6 +188,11 @@ export default {
     },
     onClickOutside() {
       this.isOpen = false;
+    },
+    onInput(e) {
+      this.isOpen = true;
+      this.autocompleteMode = true;
+      this.inputVal = e.target.value;
     },
   },
 };
@@ -144,6 +221,26 @@ export default {
 
   &-Item {
     cursor: pointer;
+  }
+
+  &-Wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &-Input {
+    width: 100%;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+  }
+
+  &-Arrow {
+    position: absolute;
+    right: 16px;
   }
 
   &-DropdownItem {

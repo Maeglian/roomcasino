@@ -3,7 +3,6 @@
     <modal
       name="cashier"
       :height="'auto'"
-      :min-height="700"
       width="400px"
       adaptive
       scrollable
@@ -11,24 +10,20 @@
       @closed="onCloseCashierForm()"
     >
       <div class="Modal">
-        <div class="Close Modal-Close" @click="$modal.hide('cashier')" />
+        <div class="Close Modal-Close Modal-Close--thick" @click="$modal.hide('cashier')" />
         <Loader v-if="billingSessionIsLoading || cashierIsLoading" class="CashierForm-Loader" />
         <div id="cashier" class="CashierForm-Content"></div>
       </div>
     </modal>
     <BaseModal name="goPlay" class="CashierForm-GoPlay" :ok-btn="false" :width="300">
-      <div class="Modal-Title">
-        Congratulations!
-      </div>
-      <div class="Modal-Text">
-        Now you can play the game.
-      </div>
+      <div class="Modal-Title">{{ $t('modals.congratulations') }}!</div>
+      <div class="Modal-Text">{{ $t('modals.playGame') }}.</div>
       <NuxtLink
         class="Btn Btn--common CashierForm-Btn"
-        :to="{ path: '/', hash: '#games' }"
+        :to="localePath({ path: '/', hash: '#games' })"
         @click.native="$modal.hide('goPlay')"
       >
-        Play now
+        {{ $t('buttons.playNow') }}
       </NuxtLink>
     </BaseModal>
   </div>
@@ -70,7 +65,13 @@ export default {
   },
   methods: {
     ...mapMutations(['setCashoutFalse', 'pushNotificationAlert']),
-    ...mapActions(['getBillingSession', 'getBonusList', 'getAvailableBonusList', 'getProfile']),
+    ...mapActions([
+      'getBillingSession',
+      'getBonusList',
+      'getAvailableBonusList',
+      'getProfile',
+      'getBonusHistoryList',
+    ]),
     async beforeInitializeCashier(event) {
       try {
         await this.getBillingSession();
@@ -87,6 +88,8 @@ export default {
 
       this.cashierIsLoading = true;
 
+      const locale = this.$i18n.locales.find(i => i.code === this.$i18n.locale);
+
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
       // eslint-disable-next-line no-unused-vars,no-undef
       const CashierInstance = new _PaymentIQCashier(
@@ -99,6 +102,7 @@ export default {
           containerHeight: 'auto',
           containerMinHeight: '700px',
           method,
+          locale: locale.codeCountry,
           accountDelete: false,
           showFooter: false,
           showAmountLimits: true,
@@ -106,6 +110,8 @@ export default {
           amount: 50,
           predefinedAmounts: [50, 75, 125, 250, 500],
           containerWidth: '100%',
+          showAccounts: 'inline',
+          singlePageFlow: true,
           theme: {
             input: {
               color: '#FFF',
@@ -123,7 +129,7 @@ export default {
               color: '#FFF;',
             },
             buttons: {
-              color: '#EB1C2A;',
+              color: '#67b12d;',
             },
             headerbackground: {
               color: '#060E2A',
@@ -171,10 +177,10 @@ export default {
           });
           api.css(`
             #cashier {
-              --buttons-color: #EB1C2A;
-              --button-hover-color: #c40916;
+              --buttons-color: #67b12d;
+              --button-hover-color: #67b12d;
               --labels-color: #fff;
-              --margin-size: 4px;
+              --margin-size: 14px;
               --headings-color: #fff;
               --error-color: #EB1C2A;
               --input-fontSize: 12px;

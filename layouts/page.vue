@@ -1,7 +1,14 @@
 <template>
   <div>
+    <InitialLoader
+      v-if="
+        $route.name === 'index-games-gameCategory'
+          ? !heroBannerIsLoaded || !initialLoading
+          : !initialLoading
+      "
+    />
     <NotificationAlerts />
-    <MainNav />
+    <MainNav :key="$i18n.locale" />
     <Nuxt />
     <Footer />
     <MobileNav />
@@ -19,6 +26,9 @@ import MobileNav from '@/components/homepage/MobileNav';
 import NotificationsPanel from '@/components/NotificationsPanel';
 import CashierForm from '@/components/CashierForm';
 import Footer from '@/components/homepage/Footer';
+import { mapGetters, mapState } from 'vuex';
+import InitialLoader from '@/components/InitialLoader';
+import liveChat from '~/mixins/liveChat';
 
 export default {
   name: 'MainMenuPage',
@@ -29,6 +39,12 @@ export default {
     Footer,
     NotificationsPanel,
     CashierForm,
+    InitialLoader,
+  },
+  mixins: [liveChat],
+  computed: {
+    ...mapState(['heroBannerIsLoaded']),
+    ...mapGetters(['initialLoading']),
   },
 };
 </script>

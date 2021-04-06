@@ -1,9 +1,7 @@
 <template>
   <section class="Page VipPage">
     <div class="Page-Header VipPage-Header">
-      <h1 class="Title Title--type-h1 Page-Title VipPage-Title">
-        Play vip style roomcasino
-      </h1>
+      <h1 class="Title Title--type-h1 Page-Title VipPage-Title">Play vip style ninecasino</h1>
       <div class="Page-Text Text Text--additional">
         You can also change your CPs for money in just one click! You will still keep your status
         and will be able to keep moving up the levels. Play and get all the privileges RoomCasino’s
@@ -11,9 +9,7 @@
       </div>
     </div>
     <section class="Page-Content">
-      <h2 class="Title Title--type-h2 Page-Subtitle VipPage-Subtitle">
-        Vip statuses
-      </h2>
+      <h2 class="Title Title--type-h2 Page-Subtitle VipPage-Subtitle">Vip statuses</h2>
       <div class="VipPage-Statuses">
         <div
           v-for="status in statuses"
@@ -29,9 +25,7 @@
               <span v-if="status.points" class="StatusCard-Points"> {{ status.points }} PC / </span>
               {{ status.condition }} PC
             </div>
-            <div v-if="status.passed" class="StatusCard-Text StatusCard-Passed">
-              Level passed
-            </div>
+            <div v-if="status.passed" class="StatusCard-Text StatusCard-Passed">Level passed</div>
             <div v-else class="StatusCard-Progress">
               <div
                 v-if="status.points"
@@ -52,9 +46,7 @@
           </div>
         </div>
       </div>
-      <h2 class="Title Title--type-h2 Page-Subtitle VipPage-Subtitle">
-        Vip terms and conditions
-      </h2>
+      <h2 class="Title Title--type-h2 Page-Subtitle VipPage-Subtitle">Vip terms and conditions</h2>
       <div class="Page-Blocks VipPage-Terms">
         <div v-for="(item, i) in terms" :key="`txt${i}`" class="Page-Block">
           <div class="Page-Number">{{ i + 1 }}.</div>

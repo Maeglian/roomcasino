@@ -5,33 +5,36 @@
         <picture class="Hero-Image">
           <source
             media="(max-width: 340px)"
-            :srcset="require('@/assets/img/hero-bg-joker_320.png')"
+            :srcset="require(`@/assets/img/${slides[depositNum].bg}_320.png`)"
           />
           <source
-            media="(max-width: 460px)"
-            :srcset="require('@/assets/img/hero-bg-joker_460.png')"
+            media="(max-width: 459px)"
+            :srcset="require(`@/assets/img/${slides[depositNum].bg}_460.png`)"
           />
           <source
-            media="(max-width: 768px)"
-            :srcset="require('@/assets/img/hero-bg-joker_768.jpg')"
+            media="(max-width: 600px)"
+            :srcset="require(`@/assets/img/${slides[depositNum].bg}_600.png`)"
           />
           <source
-            media="(max-width: 960px)"
-            :srcset="require('@/assets/img/hero-bg-joker_960.jpg')"
+            media="(max-width: 900px)"
+            :srcset="require(`@/assets/img/${slides[depositNum].bg}_900.png`)"
           />
-          <source media="(max-width: 1248px)" :srcset="require('@/assets/img/hero-bg-joker.jpg')" />
-          <img srcset="@/assets/img/joker_1920.jpg" alt="" />
+          <source
+            media="(max-width: 1248px)"
+            :srcset="require(`@/assets/img/${slides[depositNum].bg}_1248.png`)"
+          />
+          <img
+            :srcset="require(`@/assets/img/${slides[depositNum].bg}_1920.png`)"
+            alt=""
+            @load="setHeroBannerIsLoaded"
+          />
         </picture>
-        <div class="Hero-Content">
-          <div class="Title Title--type-h1 Hero-Title">
-            Sign up <span class="Colored">&</span> get <br />
-            welcome<br />
-            bonus
-          </div>
+        <div class="Hero-Content" :class="{ 'Hero-Content--centered': !isLoggedIn }">
+          <div class="Title Title--type-h1 Hero-Title" v-html="slides[depositNum].title"></div>
           <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
-          <div class="Hero-Text">100% up to 150 CAD</div>
+          <div class="Hero-Text" v-html="slides[depositNum].text"></div>
           <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
-            {{ isLoggedIn ? 'Deposit now' : 'Sign in' }}
+            {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.register') }}
           </button>
         </div>
       </div>
@@ -49,12 +52,8 @@
             <img src="@/assets/img/fast.svg" alt="" />
           </div>
           <div class="Advantages-Content">
-            <div class="Advantages-Title">
-              Super fast
-            </div>
-            <div class="Advantages-Text">
-              withdrawals
-            </div>
+            <div class="Advantages-Title">{{ $t('homepage.advantages.first.highlighted') }}</div>
+            <div class="Advantages-Text">{{ $t('homepage.advantages.first.ghost') }}</div>
           </div>
         </div>
         <div class="Advantages-Item">
@@ -62,12 +61,8 @@
             <img src="@/assets/img/support.svg" alt="" />
           </div>
           <div class="Advantages-Content">
-            <div class="Advantages-Title">
-              24/7
-            </div>
-            <div class="Advantages-Text">
-              friendly chat support
-            </div>
+            <div class="Advantages-Title">{{ $t('homepage.advantages.second.highlighted') }}</div>
+            <div class="Advantages-Text">{{ $t('homepage.advantages.second.ghost') }}</div>
           </div>
         </div>
         <div class="Advantages-Item">
@@ -75,12 +70,8 @@
             <img src="@/assets/img/games.svg" alt="" />
           </div>
           <div class="Advantages-Content">
-            <div class="Advantages-Title">
-              More than
-            </div>
-            <div class="Advantages-Text">
-              2000 Games
-            </div>
+            <div class="Advantages-Title">{{ $t('homepage.advantages.third.highlighted') }}</div>
+            <div class="Advantages-Text">{{ $t('homepage.advantages.third.ghost') }}</div>
           </div>
         </div>
         <div class="Advantages-Item">
@@ -88,12 +79,8 @@
             <img src="@/assets/img/providers.svg" alt="" />
           </div>
           <div class="Advantages-Content">
-            <div class="Advantages-Title">
-              The widest selection
-            </div>
-            <div class="Advantages-Text">
-              of game providers
-            </div>
+            <div class="Advantages-Title">{{ $t('homepage.advantages.fourth.highlighted') }}</div>
+            <div class="Advantages-Text">{{ $t('homepage.advantages.fourth.ghost') }}</div>
           </div>
         </div>
       </div>
@@ -103,7 +90,7 @@
 
 <script>
 // import GamesSlider from '@/components/GamesSlider';
-import { mapMutations, mapState } from 'vuex';
+import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
@@ -119,6 +106,38 @@ export default {
         loop: true,
         dots: true,
       },
+      slides: [
+        {
+          bg: 'aztec',
+          title: this.$t('homepage.heroBanner.deposit1.title'),
+          text: this.$t('homepage.heroBanner.deposit1.text'),
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'joker',
+          title: this.$t('homepage.heroBanner.deposit1.title'),
+          text: this.$t('homepage.heroBanner.deposit1.text'),
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'wolf',
+          title: this.$t('homepage.heroBanner.deposit2.title'),
+          text: this.$t('homepage.heroBanner.deposit2.text'),
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'book',
+          title: this.$t('homepage.heroBanner.deposit3.title'),
+          text: this.$t('homepage.heroBanner.deposit3.text'),
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'tournaments',
+          title: this.$t('homepage.heroBanner.deposit4.title'),
+          text: '',
+          btnText: 'Deposit now',
+        },
+      ],
       // slides: [
       //   {
       //     bg: 'hero-bg.jpg',
@@ -182,10 +201,11 @@ export default {
     };
   },
   computed: {
-    ...mapState(['navIsOpen', 'games']),
+    ...mapState(['navIsOpen', 'games', 'depositNum']),
+    ...mapGetters(['isLoggedIn']),
   },
   methods: {
-    ...mapMutations(['openNav', 'closeNav']),
+    ...mapMutations(['openNav', 'closeNav', 'setHeroBannerIsLoaded']),
     toggleNav() {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
@@ -234,6 +254,7 @@ export default {
     font-weight: 700;
     line-height: 1.24;
     color: var(--color-text-ghost);
+    text-transform: uppercase;
 
     @media (min-width: $screen-m) {
       font-size: 8px;
@@ -317,7 +338,7 @@ export default {
 
   &-Content {
     position: absolute;
-    bottom: 80px;
+    bottom: 7%;
     left: 16px;
     text-align: left;
 
@@ -338,6 +359,16 @@ export default {
       top: 112px;
       left: calc(50% - 608px);
     }
+
+    &--centered {
+      bottom: 10%;
+      width: calc(100% - 32px);
+      text-align: center;
+
+      @media (min-width: $screen-xs) {
+        text-align: left;
+      }
+    }
   }
 
   &-Image {
@@ -355,6 +386,14 @@ export default {
   &-Title {
     margin-bottom: 9px;
 
+    @media (min-width: $screen-xs) {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-s) {
+      margin-bottom: 9px;
+    }
+
     @media (min-width: $screen-l) {
       margin-bottom: 12px;
     }
@@ -368,8 +407,14 @@ export default {
     color: var(--color-text-main);
     text-transform: uppercase;
 
+    @media (min-width: $screen-xs) {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
     @media (min-width: $screen-m) {
       margin-bottom: 16px;
+      font-size: 20px;
     }
 
     @media (min-width: $screen-l) {
@@ -379,6 +424,14 @@ export default {
     @media (min-width: $screen-xl) {
       margin-bottom: 24px;
       font-size: 28px;
+    }
+  }
+
+  &-Btn {
+    width: 204px;
+
+    @media (min-width: $screen-xs) {
+      width: auto;
     }
   }
 

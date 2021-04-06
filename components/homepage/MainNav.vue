@@ -1,14 +1,14 @@
 <template>
   <nav class="MainNav" :class="{ 'MainNav--bg': documentIsScrolled }">
     <div v-if="navIsOpen" class="MainNav-Overlay" @click="toggleNav()"></div>
-    <div class="MainNav-TopBar">
+    <div class="MainNav-TopBar" :class="{ 'MainNav-TopBar--centered': !isLoggedIn }">
       <div class="MainNav-Nav">
         <button class="MainNav-Toggle" @click="toggleNav()">
           <svg class="Toggle">
             <use xlink:href="@/assets/img/icons.svg#toggle"></use>
           </svg>
         </button>
-        <NuxtLink class="MainNav-Logo" to="/">
+        <NuxtLink class="MainNav-Logo" :to="localePath('/')">
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
         </NuxtLink>
       </div>
@@ -25,23 +25,33 @@
       <GamePanel v-if="isGamePage" />
       <AuthSection v-else class="MainNav-AuthSection" />
     </div>
-    <transition v-if="width < 960" name="slide-left">
+    <transition v-if="width < 960" name="slide-right">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
         <div class="AsideMenu-Header">
-          <NuxtLink class="AsideMenu-Logo" to="/">
+          <NuxtLink class="AsideMenu-Logo" :to="localePath('/')">
             <img class="AsideMenu-Logo" src="@/assets/img/logo.svg" />
           </NuxtLink>
           <div class="Close AsideMenu-Close" @click="toggleNav()"></div>
         </div>
         <div class="AsideMenu-List">
-          <NavItem
-            v-for="item in navItems"
-            :key="item.name"
-            :class-name="'AsideMenu-Link'"
-            :item="item"
-          />
+          <template v-for="item in navItems">
+            <NavItem
+              v-if="isLoggedIn || !item.onlyIfLoggedIn"
+              :key="item.name"
+              :class-name="'AsideMenu-Link'"
+              :item="item"
+            />
+          </template>
+          <button
+            v-if="!isLoggedIn && chatIsLoaded"
+            class="Nav-Item Nav-Name"
+            @click="onClickSupport()"
+          >
+            <img class="Nav-Icon" src="@/assets/img/chat.svg" />
+            {{ $t('menu.support') }}
+          </button>
         </div>
-        <AuthSection class="AsideMenu-AuthSection AuthSection--aside" />
+        <AuthSection class="AsideMenu-AuthSection AuthSection--aside" :my-account="true" />
       </div>
     </transition>
   </nav>
@@ -51,7 +61,7 @@
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
 import GamePanel from '@/components/homepage/GamePanel.vue';
-import { mapMutations, mapState } from 'vuex';
+import { mapGetters, mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'MainNav',
@@ -66,14 +76,20 @@ export default {
       topBarIsScrolled: false,
       navItems: [
         {
-          name: 'Lobby',
-          url: '/',
+          name: this.$t('pages.lobby'),
+          url: this.localePath('/'),
           icon: 'lobby_nav.svg',
         },
         {
-          name: 'Promotions',
-          url: '/promotions',
+          name: this.$t('pages.promotion'),
+          url: this.localePath('/promotions'),
           icon: 'promotions_nav.svg',
+        },
+        {
+          name: this.$t('pages.myAccount'),
+          url: this.localePath('/cabinet/balance'),
+          icon: 'user-profile.svg',
+          onlyIfLoggedIn: true,
         },
         // {
         //   name: 'Tournaments',
@@ -100,12 +116,14 @@ export default {
     };
   },
   computed: {
-    ...mapState(['navIsOpen', 'width']),
+    ...mapState(['navIsOpen', 'width', 'chatIsLoaded']),
+    ...mapGetters(['isLoggedIn']),
     isGamePage() {
       return this.$route.name === 'game';
     },
   },
   mounted() {
+    if (window.scrollY > 0) this.documentIsScrolled = true;
     window.addEventListener('scroll', this.onScroll, { passive: true });
   },
   destroyed() {
@@ -120,12 +138,16 @@ export default {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
     },
+    onClickSupport() {
+      window.LC_API.open_chat_window();
+    },
   },
 };
 </script>
 
 <style lang="scss">
 .MainNav {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -164,6 +186,14 @@ export default {
 
     @media (min-width: $screen-xl) {
       padding-left: 16px;
+    }
+
+    &--centered {
+      justify-content: center;
+
+      @media (min-width: $screen-xs) {
+        justify-content: space-between;
+      }
     }
   }
 
@@ -312,12 +342,12 @@ export default {
   }
 
   &-AuthSection {
-    order: 2;
-    margin-top: auto;
+    height: auto;
+    margin-bottom: 37px;
+    padding: 0 18px;
 
     @media (min-width: $screen-xs) {
       width: 288px;
-      margin-bottom: 158px;
     }
   }
 

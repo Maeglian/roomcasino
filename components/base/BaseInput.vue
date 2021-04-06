@@ -5,7 +5,7 @@
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Can't be blank
+      {{ $t('errors.required') }}
     </div>
 
     <div
@@ -13,28 +13,47 @@
       class="BaseInput-Error"
       :class="errorClass"
     >
-      No valid email address
+      {{ $t('errors.email') }}
     </div>
     <div
-      v-if="shouldDisplayValidation && v && v.sameAsPassword === false && v.$dirty"
+      v-if="
+        shouldDisplayValidation &&
+          v &&
+          v.sameAsPassword === false &&
+          v.$dirty &&
+          v.$params.sameAsPassword.type !== 'not'
+      "
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Passwords are not the same
+      {{ $t('errors.confirmPassword') }}
+    </div>
+    <div
+      v-if="
+        shouldDisplayValidation &&
+          v &&
+          v.sameAsPassword === false &&
+          v.$dirty &&
+          v.$params.sameAsPassword.type === 'not'
+      "
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      {{ $t('errors.oldAndNewPasswords') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.minLength === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Must have at least {{ v.$params.minLength.min }} characters
+      {{ $t('errors.minLength', { num: v.$params.minLength.min }) }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.maxLength === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Must not be more than {{ v.$params.maxLength.max }} characters
+      {{ $t('errors.maxLength', { num: v.$params.maxLength.max }) }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.passwordCheck === false && v.$dirty"
@@ -48,14 +67,35 @@
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Must be with '+', from 10 to 14 symbols
+      {{ $t('errors.phone') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.numeric === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Must be numeric
+      {{ $t('errors.numeric') }}
+    </div>
+    <div
+      v-if="shouldDisplayValidation && v && v.dayCheck === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      {{ $t('errors.day') }}
+    </div>
+    <div
+      v-if="shouldDisplayValidation && v && v.monthCheck === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      {{ $t('errors.month') }}
+    </div>
+    <div
+      v-if="shouldDisplayValidation && v && v.yearCheck === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      {{ $t('errors.year') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.alphaNum === false && v.$dirty"
@@ -69,17 +109,30 @@
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Input 0 or positive number
+      {{ $t('errors.0andNum') }}
+    </div>
+    <div
+      v-if="shouldDisplayValidation && v && v.postalCodeCheck === false && v.$dirty"
+      class="BaseInput-Error"
+      :class="errorClass"
+    >
+      {{ $t('errors.postalCode') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.checkIfPositiveNumbers === false && v.$dirty"
       class="BaseInput-Error"
       :class="errorClass"
     >
-      Input positive number
+      {{ $t('errors.positiveNum') }}
     </div>
     <slot name="beforeInput-relative"></slot>
-    <div class="BaseInput-Wrapper" :class="wrapperClass">
+    <div
+      class="BaseInput-Wrapper"
+      :class="[
+        wrapperClass,
+        { 'BaseInput-Wrapper--valid': shouldDisplayFieldIsValid && !v.$invalid },
+      ]"
+    >
       <slot name="beforeInput-absolute"></slot>
       <input
         :id="inputId"
@@ -117,7 +170,7 @@ export default {
       default: false,
     },
     inputClass: {
-      type: [String, Boolean],
+      type: [String, Boolean, Array, Object],
       required: false,
       default: false,
     },
@@ -171,6 +224,11 @@ export default {
       isRequired: false,
       default: true,
     },
+    shouldDisplayFieldIsValid: {
+      type: Boolean,
+      isRequired: false,
+      default: false,
+    },
     v: {
       type: [Object, Boolean],
       required: false,
@@ -199,6 +257,20 @@ export default {
     position: relative;
     width: 100%;
     height: 100%;
+
+    &--valid {
+      &:after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 4px);
+        right: 18px;
+        width: 11px;
+        height: 8px;
+        background-image: url('~@/assets/img/check.svg');
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+      }
+    }
   }
 
   &-Input {
@@ -221,6 +293,13 @@ export default {
   &-Error {
     font-size: 10px;
     color: var(--color-error);
+  }
+
+  &-Check {
+    position: absolute;
+    top: calc(50% - 4px);
+    right: 18px;
+    height: 8px;
   }
 }
 </style>
