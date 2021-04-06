@@ -11,7 +11,7 @@
       legislation of Cyprus.
     </p>
 
-    <h4 class="Title">GENERAL</h4>
+    <h4 class="Title">general</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
@@ -54,7 +54,7 @@
       </li>
     </ul>
 
-    <h4 class="Title">AVAILABILITY OF GAMES</h4>
+    <h4 class="Title">availability of games</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
@@ -156,7 +156,7 @@
       </li>
     </ul>
 
-    <h4 class="Title">ACCEPTED CURRENCIES</h4>
+    <h4 class="Title">accepted currencies</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
@@ -166,7 +166,7 @@
       </li>
     </ul>
 
-    <h4 class="Title">WHO CAN PLAY</h4>
+    <h4 class="Title">who can play</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
@@ -214,7 +214,7 @@
       </li>
     </ul>
 
-    <h4 class="Title">USE OF PLAYER ACCOUNT</h4>
+    <h4 class="Title">use of player account</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
@@ -311,7 +311,7 @@
       </li>
     </ul>
 
-    <h4 class="Title">DEPOSITING</h4>
+    <h4 class="Title">depositing</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
@@ -402,7 +402,7 @@
       </li>
     </ul>
 
-    <h4 class="Title">WITHDRAWAL POLICY</h4>
+    <h4 class="Title">withdrawal policy</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
@@ -545,7 +545,7 @@
       </li>
     </ul>
 
-    <h4 class="Title">RESPONSIBLE GAMING</h4>
+    <h4 class="Title">responsible gaming</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
@@ -564,7 +564,7 @@
       </li>
     </ul>
 
-    <h4 class="Title">DORMANT ACCOUNTS</h4>
+    <h4 class="Title">dormant accounts</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
@@ -588,7 +588,7 @@
       </li>
     </ul>
 
-    <h4 class="Title">DISCLAIMER OF LIABILITIES</h4>
+    <h4 class="Title">disclaimer of liabilities</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
@@ -604,7 +604,7 @@
       </li>
     </ul>
 
-    <h4 class="Title">ANTI-FRAUD POLICY</h4>
+    <h4 class="Title">anti-fraud policy</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
@@ -655,7 +655,7 @@
       </li>
     </ul>
 
-    <h4 class="Title">REFUND POLICY</h4>
+    <h4 class="Title">refund policy</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text"></p>
@@ -713,7 +713,7 @@
       </li>
     </ul>
 
-    <h4 class="Title">COMPLAINTS</h4>
+    <h4 class="Title">complaints</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
         <p class="Text">
