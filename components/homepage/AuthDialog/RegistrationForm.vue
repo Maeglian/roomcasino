@@ -582,11 +582,6 @@ export default {
     userInfo: {
       immediate: true,
       handler() {
-        if (this.userInfo.gender) {
-          this.fieldsStep2.gender.value = this.fieldsStep2.gender.values.find(
-            value => value.value === this.userInfo.gender,
-          );
-        }
         if (this.userInfo.country) {
           this.fieldsStep2.phoneNumber.code.value = this.phoneCodeList.find(
             item => item.countryCode === this.userInfo.country.code,
@@ -653,6 +648,10 @@ export default {
             this.fieldsStep2.birthDate.children.month.value = String(date.month() + 1);
             this.fieldsStep2.birthDate.children.year.value = String(date.year());
           }
+        } else if (key === 'gender' && this.userInfo[key]) {
+          this.fieldsStep2.gender.value = this.fieldsStep2.gender.values.find(
+            value => value.value === this.userInfo.gender,
+          );
         } else if (this.userInfo[key]) this.fieldsStep2[key].value = this.userInfo[key];
       }
     }
