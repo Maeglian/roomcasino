@@ -227,7 +227,8 @@ export default {
       handler() {
         this.fields = { ...this.userInfo };
         if (this.userInfo.country) this.fields.country = this.userInfo.country.name;
-        if (!this.fields.gender) this.fields.gender = this.$t('auth.placeholders.male');
+        if (!this.fields.gender)
+          this.fields.gender = { name: this.$t('auth.placeholders.male'), value: 'male' };
       },
     },
   },
