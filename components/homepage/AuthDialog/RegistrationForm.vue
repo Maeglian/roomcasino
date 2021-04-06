@@ -582,6 +582,11 @@ export default {
     userInfo: {
       immediate: true,
       handler() {
+        if (this.userInfo.gender) {
+          this.fieldsStep2.gender.value = this.fieldsStep2.gender.values.find(
+            value => value.value === this.userInfo.gender,
+          );
+        }
         if (this.userInfo.country) {
           this.fieldsStep2.phoneNumber.code.value = this.phoneCodeList.find(
             item => item.countryCode === this.userInfo.country.code,
@@ -683,10 +688,12 @@ export default {
 
         const profileData = { ...this.userInfo };
         for (const key in this.fieldsStep2) {
-          if (key === 'birthDate' || key === 'phoneNumber') profileData[key] = this[key];
-          else if (key === 'gender') profileData[key] = this.fieldsStep2[key].value.value;
-          else if (key === 'phoneNumber') profileData[key] = `+${this.fieldsStep2[key].value}`;
-          else profileData[key] = this.fieldsStep2[key].value;
+          if (!profileData[key]) {
+            if (key === 'birthDate' || key === 'phoneNumber') profileData[key] = this[key];
+            else if (key === 'gender') profileData[key] = this.fieldsStep2[key].value.value;
+            else if (key === 'phoneNumber') profileData[key] = `+${this.fieldsStep2[key].value}`;
+            else profileData[key] = this.fieldsStep2[key].value;
+          }
         }
 
         profileData.country = this.userInfo.country.code;
