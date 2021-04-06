@@ -174,16 +174,16 @@
 
 .SupportPage-SubItem {
   position: relative;
+  display: block;
   padding-left: 45px;
   font-size: 14px;
-  display: block;
 
   &:before {
+    content: counters(list1, '.') '.' counters(list2, '.') '.';
     position: absolute;
     top: 2px;
     left: 0;
     font-weight: 700;
-    content: counters(list1, ".") "." counters(list2, ".") ".";
     counter-increment: list2;
   }
 
