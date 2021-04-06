@@ -632,6 +632,10 @@ export default {
   mounted() {
     getObjValuesFromLocalStorage(this.fieldsStep1);
     getObjValuesFromLocalStorage(this.fieldsStep2);
+    if (typeof this.fieldsStep2.gender.value === 'string')
+      this.fieldsStep2.gender.value = this.fieldsStep2.gender.values.find(
+        value => value.value === this.fieldsStep2.gender.value,
+      );
     this.fieldsStep1.currency.items = this.currencyList;
     if (!this.fieldsStep1.currency.value) this.fieldsStep1.currency.value = this.defaultCurrency;
     if (!this.currencyList.includes(this.fieldsStep1.currency.value))
