@@ -10,6 +10,7 @@
       Current Terms and Conditions are governed by and interpreted in accordance with the
       legislation of Cyprus.
     </p>
+
     <h4 class="Title">GENERAL</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
@@ -154,6 +155,7 @@
         </p>
       </li>
     </ul>
+
     <h4 class="Title">ACCEPTED CURRENCIES</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
@@ -163,6 +165,7 @@
         </p>
       </li>
     </ul>
+
     <h4 class="Title">WHO CAN PLAY</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
@@ -210,6 +213,7 @@
         </p>
       </li>
     </ul>
+
     <h4 class="Title">USE OF PLAYER ACCOUNT</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
@@ -306,6 +310,7 @@
         </p>
       </li>
     </ul>
+
     <h4 class="Title">DEPOSITING</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
@@ -396,6 +401,7 @@
         </p>
       </li>
     </ul>
+
     <h4 class="Title">WITHDRAWAL POLICY</h4>
     <ul class="SupportPage-List">
       <li class="SupportPage-Item">
@@ -762,6 +768,100 @@
           You acknowledge that We shall be the final decision-maker of whether you have violated the
           rules, terms or conditions in a manner that results in your suspension or permanent
           barring from participation in our site.
+        </p>
+      </li>
+    </ul>
+
+    <h4 class="Title">NetEnt T&C</h4>
+    <ul class="SupportPage-List">
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Absolute Restriction
+        </p>
+        <p class="Text">
+          NetEnt will not permit NetEnt Casino Games to be supplied to any entity that operates in
+          any of the below jurisdictions (irrespective of whether or not NetEnt Casino Games are
+          being suppliedby the entity in that jurisdiction) without the appropriate
+          licenses.Belgium, Bulgaria, Colombia, Croatia, Czech Republic, Denmark, Estonia, France,
+          Italy, Latvia, Lithuania, Mexico, Portugal, Romania, Spain, Sweden, Switzerland, United
+          Kingdom, United States of America.
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Blacklisted Territories
+        </p>
+        <p class="Text">
+          All NetEnt Casino Games may not be offered in the following territories: Afghanistan,
+          Albania, Algeria, Angola, Australia, Bahamas, Botswana, Belgium, Bulgaria, Colombia,
+          Croatia, Czech Republic, Denmark, Estonia, Ecuador, Ethiopia, France, Ghana, Guyana, Hong
+          Kong, Italy, Iran, Iraq, Israel, Kuwait, Latvia, Lithuania, Mexico, Namibia, Nicaragua,
+          North Korea, Pakistan, Panama, Philippines, Portugal, Romania, Singapore, Spain, Sweden,
+          Switzerland, Sudan, Syria, Taiwan, Trinidad and Tobago, Tunisia, Uganda, United Kingdom,
+          United States of America, Yemen, Zimbabwe
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Blacklisted Branded GamesTerritories
+        </p>
+        <p class="Text">
+          The followed NetEnt Braded Games have some further restrictions in addition to the
+          Blacklisted Territories set out above:
+        </p>
+        <ul class="SupportPage-SubList">
+          <li class="SupportPage-SubItem">
+            <p class="Text">
+              In addition to the jurisdictions set out in paragraph 2, Planet of the Apes Video Slot
+              must not be offered in the following territories: Azerbaijan, China, India, Malaysia,
+              Qatar, Russia, Thailand, Turkey, Ukraine.
+            </p>
+          </li>
+          <li class="SupportPage-SubItem">
+            <p class="Text">
+              In addition to the jurisdictions set out in paragraph 2, Vikings Video Slot must not
+              be offered in the following jurisdictions: Azerbaijan, Cambodia, Canada, China,
+              France, India, Indonesia, Laos, Malaysia, Myanmar, Papua New Guinea, Qatar, Russia,
+              South Korea, Thailand, Turkey, Ukraine, United States of America.
+            </p>
+          </li>
+          <li class="SupportPage-SubItem">
+            <p class="Text">
+              In addition to the jurisdictions set out in paragraph 2, Narcos Video Slot must not be
+              offered in the following territories: Indonesia, South Korea.
+            </p>
+          </li>
+          <li class="SupportPage-SubItem">
+            <p class="Text">
+              In addition to the jurisdictions set out in paragraph 2, Street Fighter Video Slot
+              must not be offered in the following territories: Anguilla, Antigua & Barbuda,
+              Argentina, Aruba, Barbados, Bahamas, Belize, Bermuda, Bolivia, Bonaire, Brazil,
+              British Virgin Islands, Canada, Cayman Islands, China, Chile, Clipperton Island,
+              Columbia, Costa Rica, Cuba, Curacao, Dominica, Dominican Republic, El Salvador,
+              Greenland, Grenada, Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica, Japan,
+              Martinique, Mexico, Montserrat, Navassa Island, Paraguay, Peru, Puerto Rico, Saba,
+              Saint Barthelemy, Saint Eustatius, Saint Kitts and Nevis, Saint Lucia, Saint Maarten,
+              Saint Martin, Saint Pierre and Miquelon, Saint Vincent and the Grenadines, South
+              Korea, Suriname, Turks and Caicos Islands, UnitedStates of America, Uruguay, US Virgin
+              Islands, Venezuela.
+            </p>
+          </li>
+          <li class="SupportPage-SubItem">
+            <p class="Text">
+              In addition to the jurisdictions set out in paragraph 2, Fashion TV Video Slot must
+              not be offered in the following territories: Cuba, Jordan, Turkey, Saudi Arabia.
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          Universal Monsters (Dracula, Creature from the Black Lagoon, Phantoms Curse and The
+          Invisible Man) may only be played in the following territories: Andorra, Austria, Armenia,
+          Azerbaijan, Belarus, Bosnia and Herzegovina, Cyprus, Finland, Georgia, Germany, Greece,
+          Hungary, Iceland, Ireland, Liechtenstein, Luxembourg, Malta, Moldova, Monaco, Montenegro,
+          Netherlands, North Macedonia, Norway, Poland, Russia, San Marino, Serbia, Slovakia,
+          Slovenia, Turkey and Ukraine.
         </p>
       </li>
     </ul>
