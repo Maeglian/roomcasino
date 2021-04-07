@@ -25,8 +25,8 @@
         </template>
         <div v-else-if="field.type === 'radio'" :key="name" class="AuthDialog-Row">
           <div
-            v-for="value in field.values"
-            :key="value.value"
+            v-for="(value, i) in field.values"
+            :key="value"
             class="AuthDialog-Radio AuthDialog-Field AuthDialog-Col"
           >
             <BaseCheckbox
@@ -38,7 +38,7 @@
               :value="value"
               @change="field.value = $event"
             >
-              {{ value.name }}
+              {{ (field.names && field.names[i]) || value }}
             </BaseCheckbox>
           </div>
         </div>
@@ -349,12 +349,10 @@ export default {
           autocorrect: 'off',
         },
         gender: {
-          value: { name: this.$t('auth.placeholders.male'), value: 'male' },
+          value: 'male',
           type: 'radio',
-          values: [
-            { name: this.$t('auth.placeholders.male'), value: 'male' },
-            { name: this.$t('auth.placeholders.female'), value: 'female' },
-          ],
+          values: ['male', 'female'],
+          names: [this.$t('auth.placeholders.male'), this.$t('auth.placeholders.female')],
         },
         birthDate: {
           children: {
@@ -632,7 +630,7 @@ export default {
   mounted() {
     getObjValuesFromLocalStorage(this.fieldsStep1);
     getObjValuesFromLocalStorage(this.fieldsStep2);
-    this.fieldsStep2.gender.value = { name: this.$t('auth.placeholders.male'), value: 'male' };
+    this.fieldsStep2.gender.value = 'male';
     this.fieldsStep1.currency.items = this.currencyList;
     if (!this.fieldsStep1.currency.value) this.fieldsStep1.currency.value = this.defaultCurrency;
     if (!this.currencyList.includes(this.fieldsStep1.currency.value))
@@ -648,10 +646,6 @@ export default {
             this.fieldsStep2.birthDate.children.month.value = String(date.month() + 1);
             this.fieldsStep2.birthDate.children.year.value = String(date.year());
           }
-        } else if (key === 'gender' && this.userInfo[key]) {
-          this.fieldsStep2.gender.value = this.fieldsStep2.gender.values.find(
-            value => value.value === this.userInfo.gender,
-          );
         } else if (this.userInfo[key]) this.fieldsStep2[key].value = this.userInfo[key];
       }
     }
@@ -689,7 +683,6 @@ export default {
         for (const key in this.fieldsStep2) {
           if (!profileData[key]) {
             if (key === 'birthDate' || key === 'phoneNumber') profileData[key] = this[key];
-            else if (key === 'gender') profileData[key] = this.fieldsStep2[key].value.value;
             else if (key === 'phoneNumber') profileData[key] = `+${this.fieldsStep2[key].value}`;
             else profileData[key] = this.fieldsStep2[key].value;
           }
