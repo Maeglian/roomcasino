@@ -146,6 +146,7 @@
 
 .SupportPage-Item {
   position: relative;
+  display: block;
   margin-bottom: 30px;
   font-size: 14px;
 
@@ -164,6 +165,30 @@
 
   h4 {
     padding-left: 1.2em;
+  }
+}
+
+.SupportPage-SubList {
+  counter-reset: list2;
+}
+
+.SupportPage-SubItem {
+  position: relative;
+  display: block;
+  padding-left: 45px;
+  font-size: 14px;
+
+  &:before {
+    content: counters(list1, '.') '.' counters(list2, '.') '.';
+    position: absolute;
+    top: 2px;
+    left: 0;
+    font-weight: 700;
+    counter-increment: list2;
+  }
+
+  &::marker {
+    font-weight: 700;
   }
 }
 
@@ -188,6 +213,6 @@
   color: var(--color-main1);
 
   &:hover {
-    color: var( --color-text-main);
+    color: var(--color-text-main);
   }
 }
