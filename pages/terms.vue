@@ -798,7 +798,7 @@
           Kong, Italy, Iran, Iraq, Israel, Kuwait, Latvia, Lithuania, Mexico, Namibia, Nicaragua,
           North Korea, Pakistan, Panama, Philippines, Portugal, Romania, Singapore, Spain, Sweden,
           Switzerland, Sudan, Syria, Taiwan, Trinidad and Tobago, Tunisia, Uganda, United Kingdom,
-          United States of America, Yemen, Zimbabwe
+          United States of America, Yemen, Zimbabwe.
         </p>
       </li>
       <li class="SupportPage-Item">
