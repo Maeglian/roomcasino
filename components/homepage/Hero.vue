@@ -114,13 +114,13 @@ export default {
           btnText: 'Deposit now',
         },
         {
-          bg: 'joker',
+          bg: 'wolf',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'wolf',
+          bg: 'joker',
           title: this.$t('homepage.heroBanner.deposit2.title'),
           text: this.$t('homepage.heroBanner.deposit2.text'),
           btnText: 'Deposit now',
