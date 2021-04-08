@@ -90,6 +90,7 @@ export default {
     font-weight: 700;
     color: var(--color-text-main);
     text-transform: uppercase;
+    white-space: nowrap;
     cursor: pointer;
 
     @media (min-width: $screen-l) {
