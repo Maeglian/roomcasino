@@ -127,6 +127,7 @@ export default {
     onChooseCurrency(cur) {
       this.createAccount({ currency: cur }).then(() => {
         this.$modal.hide('addCurrency');
+        this.getProfile();
       });
     },
     beforeCloseModal() {
