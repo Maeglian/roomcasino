@@ -241,14 +241,19 @@ export default {
         return;
       }
 
-      if (JSON.stringify(this.fields) === JSON.stringify(this.userInfo)) return;
+      const old = { ...this.fields };
+      old.gender = this.fields.gender.value || this.fields.gender;
+      old.country = this.userInfo.country;
+
+      if (JSON.stringify(old) === JSON.stringify(this.userInfo)) return;
+
       const payload = {};
       for (const key in this.fields) {
         if (key === 'country' && !this.userInfo.country) {
           payload.country = this.fields.country.code;
         } else if (key === 'country') {
           payload.country = this.user.country;
-        } else if (key === 'gender') {
+        } else if (key === 'gender' && !this.userInfo.gender) {
           payload.gender = this.fields.gender.value;
         } else payload[key] = this.fields[key];
       }
