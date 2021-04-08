@@ -1,8 +1,361 @@
 {
-  "title": "Ninecasino",
-  "buttons": {
-    "register": "Registrieren",
-    "login": "Anmeldung",
-    "deposit": "Anzahlung"
+  "title" : "PlayJoker",
+  "buttons" : {
+    "signUp" : "Erstanmeldung",
+    "register" : "registrieren",
+    "terms" : "Bonusbedingungen",
+    "registerNow" : "jetzt registrieren",
+    "login" : "anmelden",
+    "logIn" : "anmelden",
+    "joinNow" : "mitmachen",
+    "deposit" : "einzahlung",
+    "depositNow" : "jetzt einzahlen",
+    "loadMoreGames" : "weitere spiele laden",
+    "playForFun" : "spielen zum Spaß",
+    "playNow" : "Sofort spielen",
+    "showMore" : "mehr anzeigen",
+    "saveChanges" : "Änderungen speichern",
+    "update" : "aktualisieren",
+    "addLimits" : "Limits hinzufügen",
+    "filter" : "filtern",
+    "cashout" : "auszahlung",
+    "cancel" : "Abbrechen ",
+    "loading" : "ladend",
+    "continue" : "weiterführen",
+    "letsStart" : "Auf geht’s!",
+    "goHomePage" : "Zurück zur startseite hauptseite ",
+    "save" : "Save",
+    "edit" : "bearbeiten",
+    "getBonus" : "Bonus erhalten"
+  },
+  "errors" : {
+    "required" : " pflichtangabe ",
+    "email" : "e-mail-adresse eingeben ",
+    "confirmPassword" : "Passwort und Bestätigungspasswort sind nicht identisch",
+    "oldAndNewPasswords" : "Alte und neue Passwörter sind gleich",
+    "minLength" : "Muss mindestens {num} Zeichen enthalten",
+    "maxLength" : "Darf nicht länger als {num} Zeichen sein",
+    "phone" : "Muss mit '+' sein, von 10 bis 14 Zeichen",
+    "numbers" : "Muss numerisch sein",
+    "day" : "Tag ist ungültig",
+    "month" : "Monat ist ungültig",
+    "year" : "Jahr ist ungültig",
+    "postalCode" : "Muss aus Buchstaben, Zahlen oder Leerzeichen bestehen",
+    "positiveNum" : "Eingabe positive Zahl",
+    "0andNum" : "Eingabe 0 oder positive Zahl",
+    "invalidDate" : "Datum ist ungültig",
+    "minAge" : "Sie sind unter dem Alter von {minAge}",
+    "inputCorrectDate" : "Korrektes Datum eingeben"
+  },
+  "menu" : {
+    "menu" : "Menü",
+    "support" : "Kundenbetreuung",
+    "yourAccount" : "Ihr Konto"
+  },
+  "modals" : {
+    "congratulations" : "Glückwunsch",
+    "playGame" : "Jetzt können Sie das Spiel spielen",
+    "cantStart" : "Das Spiel kann nicht gestartet werden",
+    "pleaseDeposit" : "Bitte erst einzahlen",
+    "pleaseDepositText" : "It's a pity, but your balance is 0. Deposit now!"
+  },
+  "auth" : {
+    "loginTitle" : "Willkommen zurück  ",
+    "signUpTitle" : "Melde dich an  <span class=\"Colored\">&</span> erhalte den <br /> Begrüssungbonus",
+    "forgotPassword" : "Passwort vergessen",
+    "emails" : "Erhalt von E-Mail-Benachrichtigungen zu Aktionen",
+    "terms" : "Ich bin {minAge} Jahre alt und stimme  {br} {den Geschäftsbedingungen}   und  {den Datenschutzrichtlinien zu} ",
+    "step2Title" : "Bitte füllen Sie die untenstehenden Informationen aus! ",
+    "thanksRegistration" : "Danke für die Registrierung",
+    "registrationBonus" : "150 €",
+    "registrationBonusText" : "für deine erste Einzahlung! Nutze den Ninecasino Begrüßungsbonus",
+    "getBonus" : "hol dir deinen Bonus",
+    "enterEmail" : "E—Mail-Adresse Eingeben ",
+    "passwordRestoreText" : "Danke! Prüfen Sie Ihre E-Mail für weitere Anweisungen",
+    "enterNewPassword" : "Geben Sie Ihr neues Passwort ein",
+    "updatePassword" : "Passwort aktualisieren",
+    "newPassword" : "Neues Passwort",
+    "confirmPassword" : "Passwort bestätigen",
+    "tryingConfirmEmail" : "Wir versuchen, Ihre E-Mail zu verifizieren",
+    "confirmEmailError" : "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
+    "confirmEmailSuccess" : "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
+    "bonus" : "150 € ",
+    "placeholders" : {
+      "enterEmail" : "Enter your email",
+      "enterPassword" : "Enter your password",
+      "email" : "Your email",
+      "password" : "Your password",
+      "currency" : "Currency",
+      "country" : "Country",
+      "firstName" : "First name",
+      "lastName" : "Last name",
+      "male" : "Male",
+      "female" : "Female",
+      "city" : "City",
+      "address" : "Address",
+      "postalCode" : "Podtal Code",
+      "phone" : "Mobile phone"
+    }
+  },
+  "pages" : {
+    "lobby" : "Empfangsbereich ",
+    "myAccount" : "Mein Konto",
+    "promotion" : "Aktionen ",
+    "aboutUs" : "Über uns",
+    "faq" : "Häufig Gestellte Fragen (FAQ)",
+    "btc" : "Über BTC",
+    "aml" : "Anti-geldwähler-Politik \n",
+    "terms" : "Geschäftsbedingungen\n",
+    "bonusPolicy" : "Bonusrichtlinien ",
+    "privacyPolicy" : "Datenschutz-Bestimmungen\n",
+    "responsibleGaming" : "Verantwortungsbewusst Spielen",
+    "risk" : "Risikowarnungen  "
+  },
+  "gameCategories" : {
+    "top" : "Top-Spiele ",
+    "all" : "alle Spiele",
+    "live" : "Live-Spiele",
+    "slots" : "Spielautomaten",
+    "roulette" : "Roulette",
+    "table" : "Tischspiele",
+    "card" : "Kartenspiele"
+  },
+  "footer" : {
+    "text" : {
+      "p1" : "This site’s operations are regulated by the Malta Gaming Authority and is operated by SkillOnNet Ltd, Office 1/5297 Level G, Quantum House, 75, Abate Rigord Street, Ta’ Xbiex, XBX 1120, Malta, under the gaming license issued by the Malta Gaming Authority (license number MGA/CRP/171/2009/01) issued on 1 August 2018",
+      "p2" : "Gambling can be addictive, please play responsibly",
+      "p3" : "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
+    }
+  },
+  "search" : {
+    "findGame" : "Spiel finden",
+    "notFound" : "Keine funde"
+  },
+  "common" : {
+    "date" : "Datum",
+    "currency" : "Währung",
+    "amount" : "Betrag",
+    "status" : "Stand",
+    "title" : "Titel",
+    "type" : "Art",
+    "active" : "Aktiv",
+    "disabled" : "Deaktiviert",
+    "left" : "Links",
+    "yes" : "ja ",
+    "email" : "E-Mail-Adresse",
+    "wager" : "Umsatzanforderung",
+    "created" : "geschaffen",
+    "expiresAt" : "Läuft ab bei"
+  },
+  "actions" : {
+    "addCurrency" : "Add currency"
+  },
+  "homepage" : {
+    "heroBanner" : {
+      "deposit1" : {
+        "title" : "Sign up <span class=\"Colored\">&</span> get <br/> Welcome Bonus",
+        "text" : "€ 100 <span class=\"Colored\">+</span> 55 free spins"
+      },
+      "deposit2" : {
+        "title" : "Second deposit<br/> bonus",
+        "text" : "55% bonus<br/> up to <span class=\"Colored\">$150</span><br/> on your second deposit"
+      },
+      "deposit3" : {
+        "title" : "Third deposit<br/> bonus",
+        "text" : "100% bonus<br/> up to <span class=\"Colored\">$150</span><br/> on your third deposit"
+      },
+      "deposit4" : {
+        "title" : "More exciting<br/> promotions<br/> coming soon!"
+      }
+    },
+    "advantages" : {
+      "first" : {
+        "highlighted" : "Super fast",
+        "ghost" : "withdrawals"
+      },
+      "second" : {
+        "highlighted" : "24/7",
+        "ghost" : "friendly chat support"
+      },
+      "third" : {
+        "highlighted" : "More than",
+        "ghost" : "2000 games"
+      },
+      "fourth" : {
+        "highlighted" : "The wildest selection",
+        "ghost" : "of game providers"
+      }
+    },
+    "allProviders" : "All providers",
+    "tableIsOpen" : "Table is open",
+    "tableIsClosed" : "Table is closed"
+  },
+  "filters" : {
+    "filteredBy" : "Gefiltert nach ",
+    "allStatuses" : "Alle stände",
+    "allCurrencies" : "Alle währungen",
+    "until" : "bis"
+  },
+  "cabinet" : {
+    "pages" : {
+      "balance" : "Kontostand ",
+      "bonuses" : "Boni",
+      "history" : "historie",
+      "verification" : "Überprüfung ",
+      "profile" : "Profil",
+      "limits" : "Verlustlimits",
+      "exit" : "Beenden"
+    },
+    "balance" : {
+      "table" : {
+        "locked" : "Durch bonus gesperrt        ",
+        "cashout" : "Zur Auszahlung Verfügbar        "
+      },
+      "addCurrency" : "Währung hinzufügen ",
+      "noMoreCurrency" : "Keine Währung mehr hinzufügen",
+      "active" : "Aktiv",
+      "select" : "erwählen"
+    },
+    "bonuses" : {
+      "history" : "Bonushistorie",
+      "table" : {
+        "wagered" : "wettete",
+        "bonus" : "Bonus",
+        "min" : "Minimaler Einzahlungsbetrag",
+        "max" : "Maximaler Preis"
+      },
+      "wagerAmountRequirement" : "Wetteinsatz-Anforderung",
+      "wageredPercent" : "Eingesetzte Prozent"
+    },
+    "history" : {
+      "tabs" : {
+        "transactions" : "Transaktionshistorie",
+        "game" : "Spielhistorie ",
+        "bonus" : "Bonushistorie"
+      },
+      "table" : {
+        "date" : "Datum",
+        "paymentSystem" : "Zahlweise         ",
+        "action" : "Aktion ",
+        "gameName" : "Spielname",
+        "betSum" : "Einsatzsumme ",
+        "win" : "Gewinn",
+        "validUntil" : "Gültig bis "
+      }
+    },
+    "verification" : {
+      "documents" : "Dokumentenüberprüfung ",
+      "text" : "Ausweis, Führerschein oder andere offiziellen Dokumente, die diese ersetzen/Nebenkostenabrechnung, Telefonrechnung oder Kontoauszug, in denen Name und Adresse vollständig abgedruckt sind/Screenshot oder Foto eines Online-Kontoauszugs, Skrill-Seite, usw., die die Einzahlung zeigt.",
+      "uploaded" : "hochgeladene Dokumente",
+      "waiting" : "Warten auf die Freigabe",
+      "approved" : "Genehmigt",
+      "disapproved" : "Nicht genehmigt",
+      "drop" : "Datei hier ablegen oder Bilder oder .pdf-Dateien suchen. Maximale Größe 110 MB"
+    },
+    "profile" : {
+      "title" : "Benutzerprofil ",
+      "tabs" : {
+        "general" : "Allgemein ",
+        "security" : "Sicherheit"
+      },
+      "generalInfo" : "Allgemeine Informationen",
+      "subscriptions" : "Abonnements",
+      "sms" : "Information zu aktionen per E-MAIL",
+      "email" : "Information zu aktionen per SMS",
+      "passwordChange" : "Passwortänderung",
+      "oldPassword" : "Altes Passwort",
+      "newPassword" : "Neues Passwort",
+      "confirmPassword" : "Passwort bestätigen",
+      "sessionHistory" : "Sitzungshistorie",
+      "labels" : {
+        "email" : "Email",
+        "country" : "Staat",
+        "firstName" : "Vornamen",
+        "lastName" : "Nachname",
+        "gender" : "Geschlecht",
+        "city" : "Stadt ",
+        "address" : "Anschrift",
+        "postalCode" : "Postleitzahl",
+        "phoneNumber" : "Rufnummer \n",
+        "birthDate" : "Geburtsdatum"
+      }
+    },
+    "limits" : {
+      "initialText" : "Möchtest du deine Aktivität überwachen oder Verlust- oder Einzahlungslimits einrichten? Du kannst verschiedene Limits für dein Konto einrichten. Dies kann dir dabei helfen, einen Überblick über dein Glücksspiel zu behalten. Alle Einschränkungen treten sofort in Effekt.",
+      "createLimits" : "Limits einrichten ",
+      "addLimits" : "Limits hinzufügen",
+      "limits" : {
+        "depositLimit" : {
+          "name" : "Deposit limits",
+          "text" : "Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or month.",
+          "editRules" : "You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.",
+          "deleteRules" : "Cancellation of the loss limit takes 24 hours. After the limit is exceeded, you will receive an email notification."
+        },
+        "wagerLimit" : {
+          "name" : "Wager limits",
+          "text" : "Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or month.",
+          "editRules" : "You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.",
+          "deleteRules" : "Cancellation of the wager limit takes 24 hours. After the limit is exceeded, you will receive an email notification."
+        },
+        "lossLimit" : {
+          "name" : "Loss limits",
+          "text" : "Your account can be set with loss limits. This setting limits the amount you can lose per day, week or month.",
+          "editRules" : "You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.",
+          "deleteRules" : "Cancellation of the loss limit takes 24 hours. After the limit is exceeded, you will receive an email notification."
+        },
+        "sessionLimit" : {
+          "name" : "Session limits",
+          "title" : "time spent gambling",
+          "text" : "time spent gambling",
+          "editRules" : "",
+          "deleteRules" : ""
+        },
+        "coolingOffLimit" : {
+          "name" : "Cooling off",
+          "title" : "time spent gambling",
+          "text" : "Feel the need to stay away from the casino for some time? You can set a cooling-off limit for a certain period of time. The restriction takes effect instantly. You won’t be able to make deposits and play during the specified period, also you will be excluded from all advertising offers. After the set period expires, you’ll receive a notification email saying your account is active again.",
+          "editRules" : "Limit decrease will be applied in 24 hours after player's request. Limit increase will be applied immediately.",
+          "deleteRules" : "Limit cancellation will be applied in 24 hours after player's request."
+        }
+      },
+      "periods" : {
+        "daily" : "täglich ",
+        "weekly" : "wöchentlich",
+        "monthly" : "monatlich ",
+        "days" : "Tage",
+        "weeks" : "Wochen",
+        "months" : "Monate",
+        "min" : "Minute",
+        "day" : "Tag"
+      },
+      "edit" : "Editierlimit",
+      "delete" : "Löschenlimit",
+      "save" : "Speichernlimits",
+      "setLimit" : "Einrichtenlimit",
+      "deleteText" : "Sind Sie sicher, dass Sie löschen wollen",
+      "sureSet" : "Sind Sie sicher, dass Sie die",
+      "confirmUpdate" : "Bestätigen Sie das Limit-Update",
+      "untilReset" : "Bis zum Reset"
+    }
+  },
+  "promotions" : {
+    "title" : "Aktuelle Aktionen",
+    "text" : "Ninecasino arbeitet ständig daran, die besten Aktionen zu liefern. Wir verwenden die neueste Technologie und das Feedback unserer Spieler, um unsere Aktionen zu gestalten. Viel Spaß!",
+    "upTo" : "bis zu 150 €",
+    "deposit1" : {
+      "title" : "100%<br/> des Einzahlungsbetrags <br/> ",
+      "name" : "Bonus für die erste Einzahlung",
+      "text" : "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 €."
+    },
+    "deposit2" : {
+      "title" : "55%<br/> des Einzahlungsbetrags <br/> ",
+      "name" : "Bonus für zweite Einzahlung",
+      "text" : "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150  €."
+    },
+    "deposit3" : {
+      "title" : "100%<br/> des Einzahlungsbetrags<br/>",
+      "name" : "Third deposit bonus",
+      "text" : "Mach deine dritte Einzahlung bei Ninecasino und erhalte bis zu 150  €."
+    }
   }
 }

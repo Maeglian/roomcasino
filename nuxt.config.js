@@ -107,6 +107,12 @@ export default {
         file: 'cs.json',
         icon: 'cs.png',
       },
+      {
+        code: 'de',
+        codeCountry: 'de_DE',
+        file: 'de.json',
+        icon: 'de.png',
+      },
     ],
     defaultLocale: 'en',
     lazy: true,
