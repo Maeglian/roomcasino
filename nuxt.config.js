@@ -149,23 +149,29 @@ export default {
       const routes = [
         '/cabinet/history/game',
         '/cs/cabinet/history/game',
+        '/de/cabinet/history/game',
         '/cabinet/history/transaction',
         '/cs/cabinet/history/transaction',
+        '/de/cabinet/history/transaction',
         '/cabinet/history/bonus',
         '/cs/cabinet/history/bonus',
+        '/de/cabinet/history/bonus',
         '/games/all',
         '/cs/games/all',
+        '/de/games/all',
       ];
       const categories = axios.get(`${API_HOST}/categoryList`).then(res => {
         res.data.data.forEach(category => {
           routes.push(`/games/${category.slug}`);
           routes.push(`/cs/games/${category.slug}`);
+          routes.push(`/de/games/${category.slug}`);
         });
       });
       const providers = axios.get(`${API_HOST}/gameProducerList`).then(res => {
         res.data.data.forEach(provider => {
           routes.push(`/providers/${provider.name}`);
           routes.push(`/cs/providers/${provider.name}`);
+          routes.push(`/de/providers/${provider.name}`);
         });
       });
 
