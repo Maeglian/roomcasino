@@ -65,6 +65,7 @@ export default {
     background: var(--color-main1);
 
     @media (min-width: $screen-xl) {
+      margin-top: 0;
       margin-left: 30px;
     }
   }
