@@ -57,7 +57,7 @@
     "playGame" : "Jetzt können Sie das Spiel spielen",
     "cantStart" : "Das Spiel kann nicht gestartet werden",
     "pleaseDeposit" : "Bitte erst einzahlen",
-    "pleaseDepositText" : "It's a pity, but your balance is 0. Deposit now!"
+    "pleaseDepositText" : "Es ist schade, aber Ihr Guthaben ist 0. Jetzt einzahlen!!"
   },
   "auth" : {
     "loginTitle" : "Willkommen zurück  ",
@@ -81,20 +81,20 @@
     "confirmEmailSuccess" : "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
     "bonus" : "150 € ",
     "placeholders" : {
-      "enterEmail" : "Enter your email",
-      "enterPassword" : "Enter your password",
-      "email" : "Your email",
-      "password" : "Your password",
-      "currency" : "Currency",
-      "country" : "Country",
-      "firstName" : "First name",
-      "lastName" : "Last name",
-      "male" : "Male",
-      "female" : "Female",
-      "city" : "City",
-      "address" : "Address",
-      "postalCode" : "Podtal Code",
-      "phone" : "Mobile phone"
+      "enterEmail" : "Ihre E-Mail eingeben ",
+      "enterPassword" : "Ihr Passwort eingeben ",
+      "email" : "Ihre E-Mail ",
+      "password" : "Ihr Passwort ",
+      "currency" : "Währung ",
+      "country" : "Staat ",
+      "firstName" : "Vorname",
+      "lastName" : "Nachname ",
+      "male" : "Männlich",
+      "female" : "Weiblich \n",
+      "city" : "Stadt ",
+      "address" : "Anschrift",
+      "postalCode" : "Postleitzahl",
+      "phone" : "Rufnummer"
     }
   },
   "pages" : {
@@ -148,47 +148,47 @@
     "expiresAt" : "Läuft ab bei"
   },
   "actions" : {
-    "addCurrency" : "Add currency"
+    "addCurrency" : "Währung hinzufügen\n"
   },
   "homepage" : {
     "heroBanner" : {
       "deposit1" : {
-        "title" : "Sign up <span class=\"Colored\">&</span> get <br/> Welcome Bonus",
-        "text" : "€ 100 <span class=\"Colored\">+</span> 55 free spins"
+        "title" : "Melde dich an <span class=\"Colored\">&</span> erhalte den <br/> Begrüssungsbonus von ",
+        "text" : "100 € <span class=\"Colored\">+</span> 55 Freispiele"
       },
       "deposit2" : {
-        "title" : "Second deposit<br/> bonus",
-        "text" : "55% bonus<br/> up to <span class=\"Colored\">$150</span><br/> on your second deposit"
+        "title" : "Bonus für zweite<br/>  Einzahlung",
+        "text" : "55% bonus<br/> bis zu <span class=\"Colored\">150 €</span><br/> auf Ihre zweite Einzahlung"
       },
       "deposit3" : {
-        "title" : "Third deposit<br/> bonus",
-        "text" : "100% bonus<br/> up to <span class=\"Colored\">$150</span><br/> on your third deposit"
+        "title" : "Bonus für dritte <br/> Einzahlung",
+        "text" : "100% bonus<br/> up to <span class=\"Colored\">150 € </span><br/> auf Ihre dritte Einzahlung"
       },
       "deposit4" : {
-        "title" : "More exciting<br/> promotions<br/> coming soon!"
+        "title" : "Weitere aufregende <br/> Promotionen<br/> folgen in Kürze!"
       }
     },
     "advantages" : {
       "first" : {
-        "highlighted" : "Super fast",
-        "ghost" : "withdrawals"
+        "highlighted" : "Superschnelle",
+        "ghost" : "Abhebungen"
       },
       "second" : {
         "highlighted" : "24/7",
-        "ghost" : "friendly chat support"
+        "ghost" : "freundlicher  Chat-Kundenbetreuung"
       },
       "third" : {
-        "highlighted" : "More than",
-        "ghost" : "2000 games"
+        "highlighted" : "Mehr als  ",
+        "ghost" : "2000 Spiele"
       },
       "fourth" : {
-        "highlighted" : "The wildest selection",
-        "ghost" : "of game providers"
+        "highlighted" : "Die grösste Auswahl",
+        "ghost" : "an Spieleanbietern"
       }
     },
-    "allProviders" : "All providers",
-    "tableIsOpen" : "Table is open",
-    "tableIsClosed" : "Table is closed"
+    "allProviders" : "Alle Anbieter",
+    "tableIsOpen" : "Platzieren Sie Ihre Einsätze ",
+    "tableIsClosed" : "Keine Einsätze mehr"
   },
   "filters" : {
     "filteredBy" : "Gefiltert nach ",
@@ -286,36 +286,35 @@
       "addLimits" : "Limits hinzufügen",
       "limits" : {
         "depositLimit" : {
-          "name" : "Deposit limits",
-          "text" : "Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or month.",
-          "editRules" : "You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.",
-          "deleteRules" : "Cancellation of the loss limit takes 24 hours. After the limit is exceeded, you will receive an email notification."
+          "name" : "Einzahlungslimits ",
+          "text" : "Für dein Konto können Einzahlungslimits eingerichtet werden. Diese Einstellung begrenzt den Betrag, den du pro Tag, Woche oder Monat einzahlen kannst. ",
+          "editRules" : "Sie können Ihr Limit jederzeit herabsetzen, diese Änderung wird sofort wirksam. Sie können das Limit erhöhen, allerdings benötigen Sie 24 Stunden, damit diese Änderung wirksam wird.",
+          "deleteRules" : "Die Aufhebung des Einzahlungslimits dauert 24 Stunden. Nach Überschreiten des Limits erhalten Sie eine Benachrichtigung per E-Mail. "
         },
         "wagerLimit" : {
-          "name" : "Wager limits",
-          "text" : "Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or month.",
-          "editRules" : "You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.",
-          "deleteRules" : "Cancellation of the wager limit takes 24 hours. After the limit is exceeded, you will receive an email notification."
+          "name" : "Umsatzbegrenzung",
+          "text" : "Für dein Konto können Umsatzbegrenzung eingerichtet werden. Diese Einstellung steuert den Geldbetrag, den du pro Tag, Woche oder Monat wetten kannst.",
+          "editRules" : "Sie können Ihr Limit jederzeit herabsetzen, diese Änderung wird sofort wirksam. Sie können das Limit erhöhen, allerdings benötigen Sie 24 Stunden, damit diese Änderung wirksam wird.",
+          "deleteRules" : "Die Aufhebung des Umsatzbegrenzung dauert 24 Stunden. Nach Überschreiten des Limits erhalten Sie eine Benachrichtigung per E-Mail."
         },
         "lossLimit" : {
-          "name" : "Loss limits",
-          "text" : "Your account can be set with loss limits. This setting limits the amount you can lose per day, week or month.",
-          "editRules" : "You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.",
-          "deleteRules" : "Cancellation of the loss limit takes 24 hours. After the limit is exceeded, you will receive an email notification."
+          "name" : "Verlustlimits",
+          "text" : "Für dein Konto können Verlustlimits eingerichtet werden. Diese Einstellung begrenzt den Betrag, den du pro Tag, Woche oder Monat verlieren kannst.",
+          "editRules" : "Sie können Ihr Limit jederzeit herabsetzen, diese Änderung wird sofort wirksam. Sie können das Limit erhöhen, allerdings benötigen Sie 24 Stunden, damit diese Änderung wirksam wird."
         },
         "sessionLimit" : {
-          "name" : "Session limits",
-          "title" : "time spent gambling",
-          "text" : "time spent gambling",
-          "editRules" : "",
+          "name" : "Spielzeitbegrenzung",
+          "title" : "Zeit zum Spielen ",
+          "text" : "Zeit zum Spielen ",
+          "editRules" : "Die Einschränkung tritt sofort in Effekt. Wenn die eingestellte Dauer überschritten wird, wirst du automatisch von deinem Konto abgemeldet.",
           "deleteRules" : ""
         },
         "coolingOffLimit" : {
-          "name" : "Cooling off",
-          "title" : "time spent gambling",
-          "text" : "Feel the need to stay away from the casino for some time? You can set a cooling-off limit for a certain period of time. The restriction takes effect instantly. You won’t be able to make deposits and play during the specified period, also you will be excluded from all advertising offers. After the set period expires, you’ll receive a notification email saying your account is active again.",
-          "editRules" : "Limit decrease will be applied in 24 hours after player's request. Limit increase will be applied immediately.",
-          "deleteRules" : "Limit cancellation will be applied in 24 hours after player's request."
+          "name" : "Auszeit",
+          "title" : "Zeit zum Spielen ",
+          "text" : "Du glaubst, du musst dem Casino eine Weile fernbleiben? Du kannst eine Auszeit für einen vordefinierten Zeitraum einrichten. Die Einschränkung tritt sofort in Effekt. In dem angegebenen Zeitraum kannst du weder Einzahlungen vornehmen noch spielen, außerdem bist du von allen Werbeangeboten ausgeschlossen. Nach Ablauf der festgelegten Zeit wirst du per E-Mail davon in Kenntnis gesetzt, dass dein Konto wieder freigegeben ist. ",
+          "editRules" : "Die Senkung des Limits wird innerhalb von 24 Stunden nach der Anfrage des Spielers durchgeführt. Eine Limit-Erhöhung wird sofort angewandt. ",
+          "deleteRules" : "Die Aufhebung des Limits wird innerhalb von 24 Stunden nach der Anfrage des Spielers durchgeführt.   "
         }
       },
       "periods" : {
@@ -354,7 +353,7 @@
     },
     "deposit3" : {
       "title" : "100%<br/> des Einzahlungsbetrags<br/>",
-      "name" : "Third deposit bonus",
+      "name" : "Bonus für dritte Einzahlung ",
       "text" : "Mach deine dritte Einzahlung bei Ninecasino und erhalte bis zu 150  €."
     }
   }
