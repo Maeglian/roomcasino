@@ -5,6 +5,7 @@
     <client-only>
       <CashierForm />
     </client-only>
+    <CookiesPopup />
   </div>
 </template>
 
@@ -12,6 +13,7 @@
 import CashierForm from '@/components/CashierForm';
 import { mapGetters } from 'vuex';
 import InitialLoader from '@/components/InitialLoader';
+import CookiesPopup from '@/components/homepage/CookiesPopup';
 import liveChat from '~/mixins/liveChat';
 
 export default {
@@ -19,6 +21,7 @@ export default {
   components: {
     CashierForm,
     InitialLoader,
+    CookiesPopup,
   },
   mixins: [liveChat],
   computed: {
