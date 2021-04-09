@@ -121,7 +121,7 @@ export default {
     ...mapState(['navIsOpen', 'width', 'chatIsLoaded']),
     ...mapGetters(['isLoggedIn']),
     isGamePage() {
-      return this.$route.name === 'game';
+      return this.getRouteBaseName() === 'game';
     },
   },
   mounted() {
