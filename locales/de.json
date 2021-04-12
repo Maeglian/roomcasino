@@ -19,11 +19,11 @@
     "addLimits" : "Limits hinzufügen",
     "filter" : "Filtern",
     "cashout" : "Auszahlung",
-    "cancel" : "Abbrechen ",
+    "cancel" : "Abbrechen",
     "loading" : "Ladend",
     "continue" : "Weiterführen",
     "letsStart" : "Auf geht’s!",
-    "goHomePage" : "Zurück zur startseite hauptseite ",
+    "goHomePage" : "Zurück zur startseite hauptseite",
     "save" : "Speichern",
     "edit" : "Bearbeiten",
     "getBonus" : "Bonus erhalten"
@@ -79,16 +79,16 @@
     "tryingConfirmEmail" : "Wir versuchen, Ihre E-Mail zu verifizieren",
     "confirmEmailError" : "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
     "confirmEmailSuccess" : "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
-    "bonus" : "150 € ",
+    "bonus" : "150 €",
     "placeholders" : {
-      "enterEmail" : "Ihre E-Mail eingeben ",
-      "enterPassword" : "Ihr Passwort eingeben ",
+      "enterEmail" : "Ihre E-Mail eingeben",
+      "enterPassword" : "Ihr Passwort eingeben",
       "email" : "Ihre E-Mail ",
       "password" : "Ihr Passwort ",
       "currency" : "Währung ",
       "country" : "Staat ",
       "firstName" : "Vorname",
-      "lastName" : "Nachname ",
+      "lastName" : "Nachname",
       "male" : "Männlich",
       "female" : "Weiblich",
       "city" : "Stadt ",
@@ -156,8 +156,8 @@
   "homepage" : {
     "heroBanner" : {
       "deposit1" : {
-        "title" : "Willkommenspaket <span class=\"Colored\">$ 450!</span>",
-        "text" : "Machen Sie die erste Einzahlung <br/> und erhalten Sie <span class = \"Coloured\"> 100% </ span> bis zu <span class = \"Coloured\"> $ 150"
+        "title" : "Willkommenspaket <span class=\"Colored\">€ 450!</span>",
+        "text" : "Machen Sie die erste Einzahlung <br/> und erhalten Sie <span class = \"Coloured\"> 100% </ span> bis zu <span class = \"Coloured\"> € 150"
       },
       "deposit2" : {
         "title" : "Bonus für zweite<br/>  Einzahlung",
@@ -194,27 +194,27 @@
     "tableIsClosed" : "Keine Einsätze mehr"
   },
   "filters" : {
-    "filteredBy" : "Gefiltert nach ",
+    "filteredBy" : "Gefiltert nach",
     "allStatuses" : "Alle stände",
     "allCurrencies" : "Alle währungen",
     "until" : "bis"
   },
   "cabinet" : {
     "pages" : {
-      "balance" : "Kontostand ",
+      "balance" : "Kontostand",
       "bonuses" : "Boni",
       "history" : "historie",
-      "verification" : "Überprüfung ",
+      "verification" : "Überprüfung",
       "profile" : "Profil",
       "limits" : "Verlustlimits",
       "exit" : "Beenden"
     },
     "balance" : {
       "table" : {
-        "locked" : "Durch bonus gesperrt        ",
-        "cashout" : "Zur Auszahlung Verfügbar        "
+        "locked" : "Durch bonus gesperrt",
+        "cashout" : "Zur Auszahlung Verfügbar"
       },
-      "addCurrency" : "Währung hinzufügen ",
+      "addCurrency" : "Währung hinzufügen",
       "noMoreCurrency" : "Keine Währung mehr hinzufügen",
       "active" : "Aktiv",
       "select" : "erwählen"
@@ -233,17 +233,17 @@
     "history" : {
       "tabs" : {
         "transactions" : "Transaktionshistorie",
-        "game" : "Spielhistorie ",
+        "game" : "Spielhistorie",
         "bonus" : "Bonushistorie"
       },
       "table" : {
         "date" : "Datum",
-        "paymentSystem" : "Zahlweise         ",
-        "action" : "Aktion ",
+        "paymentSystem" : "Zahlweise",
+        "action" : "Aktion",
         "gameName" : "Spielname",
-        "betSum" : "Einsatzsumme ",
+        "betSum" : "Einsatzsumme",
         "win" : "Gewinn",
-        "validUntil" : "Gültig bis "
+        "validUntil" : "Gültig bis"
       }
     },
     "verification" : {
@@ -256,9 +256,9 @@
       "drop" : "Datei hier ablegen oder Bilder oder .pdf-Dateien suchen. Maximale Größe 110 MB"
     },
     "profile" : {
-      "title" : "Benutzerprofil ",
+      "title" : "Benutzerprofil",
       "tabs" : {
-        "general" : "Allgemein ",
+        "general" : "Allgemein",
         "security" : "Sicherheit"
       },
       "generalInfo" : "Allgemeine Informationen",
@@ -279,19 +279,19 @@
         "city" : "Stadt ",
         "address" : "Anschrift",
         "postalCode" : "Postleitzahl",
-        "phoneNumber" : "Rufnummer \n",
+        "phoneNumber" : "Rufnummer",
         "birthDate" : "Geburtsdatum"
       },
       "updateSuccess": "Dein Profil wurde erfolgreich aktualisiert!",
-      "passwordUpdateSuccess": "\nDein Passwort wurde erfolgreich geändert!"
+      "passwordUpdateSuccess": "Dein Passwort wurde erfolgreich geändert!"
     },
     "limits" : {
       "initialText" : "Möchtest du deine Aktivität überwachen oder Verlust- oder Einzahlungslimits einrichten? Du kannst verschiedene Limits für dein Konto einrichten. Dies kann dir dabei helfen, einen Überblick über dein Glücksspiel zu behalten. Alle Einschränkungen treten sofort in Effekt.",
-      "createLimits" : "Limits einrichten ",
+      "createLimits" : "Limits einrichten",
       "addLimits" : "Limits hinzufügen",
       "limits" : {
         "depositLimit" : {
-          "name" : "Einzahlungslimits ",
+          "name" : "Einzahlungslimits",
           "text" : "Für dein Konto können Einzahlungslimits eingerichtet werden. Diese Einstellung begrenzt den Betrag, den du pro Tag, Woche oder Monat einzahlen kannst. ",
           "editRules" : "Sie können Ihr Limit jederzeit herabsetzen, diese Änderung wird sofort wirksam. Sie können das Limit erhöhen, allerdings benötigen Sie 24 Stunden, damit diese Änderung wirksam wird.",
           "deleteRules" : "Die Aufhebung des Einzahlungslimits dauert 24 Stunden. Nach Überschreiten des Limits erhalten Sie eine Benachrichtigung per E-Mail. "
@@ -317,9 +317,9 @@
         "coolingOffLimit" : {
           "name" : "Auszeit",
           "title" : "Zeit zum Spielen ",
-          "text" : "Du glaubst, du musst dem Casino eine Weile fernbleiben? Du kannst eine Auszeit für einen vordefinierten Zeitraum einrichten. Die Einschränkung tritt sofort in Effekt. In dem angegebenen Zeitraum kannst du weder Einzahlungen vornehmen noch spielen, außerdem bist du von allen Werbeangeboten ausgeschlossen. Nach Ablauf der festgelegten Zeit wirst du per E-Mail davon in Kenntnis gesetzt, dass dein Konto wieder freigegeben ist. ",
-          "editRules" : "Die Senkung des Limits wird innerhalb von 24 Stunden nach der Anfrage des Spielers durchgeführt. Eine Limit-Erhöhung wird sofort angewandt. ",
-          "deleteRules" : "Die Aufhebung des Limits wird innerhalb von 24 Stunden nach der Anfrage des Spielers durchgeführt.   "
+          "text" : "Du glaubst, du musst dem Casino eine Weile fernbleiben? Du kannst eine Auszeit für einen vordefinierten Zeitraum einrichten. Die Einschränkung tritt sofort in Effekt. In dem angegebenen Zeitraum kannst du weder Einzahlungen vornehmen noch spielen, außerdem bist du von allen Werbeangeboten ausgeschlossen. Nach Ablauf der festgelegten Zeit wirst du per E-Mail davon in Kenntnis gesetzt, dass dein Konto wieder freigegeben ist.",
+          "editRules" : "Die Senkung des Limits wird innerhalb von 24 Stunden nach der Anfrage des Spielers durchgeführt. Eine Limit-Erhöhung wird sofort angewandt.",
+          "deleteRules" : "Die Aufhebung des Limits wird innerhalb von 24 Stunden nach der Anfrage des Spielers durchgeführt."
         }
       },
       "periods" : {
@@ -349,17 +349,17 @@
     "deposit1" : {
       "title" : "100%<br/> des Einzahlungsbetrags <br/> ",
       "name" : "Bonus für die erste Einzahlung",
-      "text" : "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 $ oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "text" : "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit2" : {
       "title" : "55%<br/> des Einzahlungsbetrags <br/> ",
       "name" : "Bonus für zweite Einzahlung",
-      "text" : "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150  €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach eine zweite Einzahlung von 20 $ oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "text" : "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150  €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach eine zweite Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit3" : {
       "title" : "100%<br/> des Einzahlungsbetrags<br/>",
       "name" : "Bonus für dritte Einzahlung ",
-      "text" : "Machen Sie Ihre dritte Einzahlung bei Ninecasino und erhalten Sie bis zu 150 $. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine dritte Einzahlung von 20 $ oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "text" : "Machen Sie Ihre dritte Einzahlung bei Ninecasino und erhalten Sie bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine dritte Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     }
   }
 }
