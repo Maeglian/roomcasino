@@ -62,6 +62,9 @@ export default {
       'fakeBillingSession',
       'shouldCashout',
     ]),
+    predefinedAmounts() {
+      return this.$i18n.locale === 'cs' ? [500, 1250, 2500, 5000, 12500] : [50, 75, 125, 250, 500];
+    },
   },
   methods: {
     ...mapMutations(['setCashoutFalse', 'pushNotificationAlert']),
@@ -108,7 +111,7 @@ export default {
           showAmountLimits: true,
           allowMobilePopup: true,
           amount: 50,
-          predefinedAmounts: [50, 75, 125, 250, 500],
+          predefinedAmounts: this.predefinedAmounts,
           containerWidth: '100%',
           showAccounts: 'inline',
           singlePageFlow: true,
