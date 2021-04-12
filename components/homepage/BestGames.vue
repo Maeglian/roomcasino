@@ -64,9 +64,6 @@
           btn-class="Btn--common Btn--dark"
         />
       </div>
-      <div class="Title Title--type-h2 Cards-Title">
-        {{ title }}
-      </div>
       <Nuxt />
     </section>
     <!--    <section-->

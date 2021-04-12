@@ -1,5 +1,19 @@
 <template>
   <div>
+    <template v-if="recentGames.length">
+      <div class="Title Title--type-h2 Cards-Title">
+        {{ $t('gameCategories.recent') }}
+      </div>
+      <Games
+        class="DefaultGames-Cards"
+        :games="recentGames"
+        :games-to-show="6"
+        btn-class="Btn--common Btn--dark"
+      />
+    </template>
+    <div class="Title Title--type-h2 Cards-Title">
+      {{ $t(`gameCategories.${$route.params.gameCategory}`) }}
+    </div>
     <Loader v-if="gamesAreLoading" />
     <Games
       v-else
@@ -23,7 +37,7 @@ export default {
     Games,
   },
   computed: {
-    ...mapState(['games', 'gamesAreLoading']),
+    ...mapState(['games', 'gamesAreLoading', 'recentGames']),
     gamesParams() {
       const params = {};
       if (this.$route.params.gameCategory !== 'all')
@@ -37,11 +51,12 @@ export default {
       immediate: true,
       handler() {
         this.getGames(this.gamesParams);
+        this.getRecentGames(this.gamesParams);
       },
     },
   },
   methods: {
-    ...mapActions(['getGames']),
+    ...mapActions(['getGames', 'getRecentGames']),
   },
 };
 </script>

@@ -114,7 +114,8 @@
     "slots" : "Sloty hry",
     "roulette" : "Ruleta",
     "table" : "Stolní hry",
-    "card" : "Karetní hry"
+    "card" : "Karetní hry",
+    "recent": "Nedávné hry"
   },
   "footer" : {
     "text" : {
