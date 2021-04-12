@@ -146,10 +146,11 @@
     "email" : "E-Mail-Adresse",
     "wager" : "Umsatzanforderung",
     "created" : "geschaffen",
-    "expiresAt" : "Läuft ab bei"
+    "expiresAt" : "Läuft ab bei",
+    "noData": "Keine Daten verfügbar"
   },
   "actions" : {
-    "addCurrency" : "Währung hinzufügen\n"
+    "addCurrency" : "Währung hinzufügen"
   },
   "homepage" : {
     "heroBanner" : {

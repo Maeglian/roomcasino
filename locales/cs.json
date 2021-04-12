@@ -141,7 +141,8 @@
     "email" : "E-mailem",
     "wager" : "Vsadit",
     "created" : "Vytvořeno",
-    "expiresAt" : "Expires at"
+    "expiresAt" : "Vyprší v",
+    "noData": "Údaje nejsou k dispozici"
   },
   "actions" : {
     "addCurrency" : "Add currency"

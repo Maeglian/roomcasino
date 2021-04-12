@@ -147,7 +147,8 @@
     "email": "Email",
     "wager": "Wager",
     "created": "Created",
-    "expiresAt": "Expires at"
+    "expiresAt": "Expires at",
+    "noData": "No data available"
   },
   "actions": {
     "addCurrency": "Add currency"
