@@ -5,6 +5,7 @@
         {{ $t('gameCategories.recent') }}
       </div>
       <Games
+        :key="$route.params.gameCategory"
         class="DefaultGames-Cards"
         :games="recentGames"
         :games-to-show="6"
@@ -17,6 +18,7 @@
     <Loader v-if="gamesAreLoading" />
     <Games
       v-else
+      :key="$route.params.gameCategory"
       class="DefaultGames-Cards"
       :games="games"
       :games-to-show="24"
