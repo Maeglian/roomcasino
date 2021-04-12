@@ -95,7 +95,8 @@
       "city": "City",
       "address": "Address",
       "postalCode": "Podtal Code",
-      "phone": "Mobile phone"
+      "phone": "Mobile phone",
+      "year": "YYYY"
     }
   },
   "pages": {

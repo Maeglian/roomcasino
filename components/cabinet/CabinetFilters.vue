@@ -22,7 +22,11 @@
               class="CabinetPage-Dropdown CabinetFilters-Dropdown"
               :class="`CabinetPage-Dropdown--${name}`"
               :active-item="filter.value"
-              :items="name === 'currency' ? currencyAccounts : filter.values"
+              :items="
+                name === 'currency'
+                  ? [{ name: $t('filters.allCurrencies'), value: '' }, ...currencyAccounts]
+                  : filter.values
+              "
               @set-dropdown-value="setValue({ name, type: filter.type, payload: $event })"
             />
           </template>

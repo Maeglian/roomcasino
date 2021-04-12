@@ -5,7 +5,12 @@
     <div class="BonusDetails">
       <div class="BonusDetails-Row">
         <div class="BonusDetails-Label">
-          {{ $t('cabinet.bonuses.table.bonus') }} {{ $t('common.amount') }}:
+          <template v-if="$i18n.locale === 'de'">
+            {{ $t('cabinet.bonuses.table.bonus') }}{{ $t('common.amount') }}:
+          </template>
+          <template v-else
+            >{{ $t('cabinet.bonuses.table.bonus') }} {{ $t('common.amount') }}:</template
+          >
         </div>
         <div class="BonusDetails-Value">{{ bonus.amount }} {{ bonus.currency }}</div>
       </div>

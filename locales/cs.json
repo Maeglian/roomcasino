@@ -90,7 +90,8 @@
       "city": "Mesto",
       "address": "Adresa",
       "postalCode": "Poštovní směrovací číslo",
-      "phone": "Mobilní telefon"
+      "phone": "Mobilní telefon",
+      "year": "YYYY"
     }
   },
   "pages" : {
