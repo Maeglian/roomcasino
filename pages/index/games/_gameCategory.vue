@@ -8,7 +8,7 @@
         :key="$route.params.gameCategory"
         class="DefaultGames-Cards"
         :games="recentGames"
-        :games-to-show="6"
+        :games-to-show="recentGamesNum"
         btn-class="Btn--common Btn--dark"
       />
     </template>
@@ -39,7 +39,10 @@ export default {
     Games,
   },
   computed: {
-    ...mapState(['games', 'gamesAreLoading', 'recentGames']),
+    ...mapState(['width', 'games', 'gamesAreLoading', 'recentGames']),
+    recentGamesNum() {
+      return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
+    },
     gamesParams() {
       const params = {};
       if (this.$route.params.gameCategory !== 'all')
