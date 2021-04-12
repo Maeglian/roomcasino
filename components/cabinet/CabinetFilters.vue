@@ -32,6 +32,7 @@
           </template>
           <template v-if="filter.type === 'date'">
             <Datepicker
+              :language="language"
               format="dd.MM.yyyy"
               placeholder="DD.MM.YYYY"
               class="Datepicker CabinetPage-Datepicker"
@@ -53,6 +54,7 @@
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapGetters, mapState } from 'vuex';
 import moment from 'moment';
+import { de, cs } from 'vuejs-datepicker/dist/locale';
 
 const Datepicker = () => import('vuejs-datepicker');
 
@@ -71,11 +73,16 @@ export default {
   data() {
     return {
       filtersMenuIsOpen: false,
+      de,
+      cs,
     };
   },
   computed: {
     ...mapState(['width']),
     ...mapGetters(['currencyAccounts', 'activeCurrency']),
+    language() {
+      return this[this.$i18n.locale];
+    },
   },
   methods: {
     setValue({ name, type, payload }) {
