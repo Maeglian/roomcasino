@@ -280,7 +280,8 @@
         "postalCode" : "Postleitzahl",
         "phoneNumber" : "Rufnummer \n",
         "birthDate" : "Geburtsdatum"
-      }
+      },
+      "updateSuccess": "Dein Profil wurde erfolgreich aktualisiert!"
     },
     "limits" : {
       "initialText" : "Möchtest du deine Aktivität überwachen oder Verlust- oder Einzahlungslimits einrichten? Du kannst verschiedene Limits für dein Konto einrichten. Dies kann dir dabei helfen, einen Überblick über dein Glücksspiel zu behalten. Alle Einschränkungen treten sofort in Effekt.",
