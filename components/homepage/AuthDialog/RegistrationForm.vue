@@ -375,7 +375,7 @@ export default {
               value: '',
               ref: 'year',
               type: 'text',
-              placeholder: 'YYYY',
+              placeholder: this.$t('auth.placeholders.year'),
               required: true,
               inputmode: 'tel',
             },

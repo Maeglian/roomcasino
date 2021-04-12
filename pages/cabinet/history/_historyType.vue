@@ -185,7 +185,7 @@ export default {
             currency: {
               label: this.$t('common.currency'),
               type: 'dropdown',
-              value: { name: 'All currencies', value: '' },
+              value: { name: this.$t('filters.allCurrencies'), value: '' },
             },
             status: {
               label: this.$t('common.status'),
@@ -277,7 +277,7 @@ export default {
     },
     setValue(value) {
       const { name, val } = value;
-      this.filters[name].value = val;
+      this.historyTables[this.$route.params.historyType].filters[name].value = val;
     },
     onFilter() {
       this.getData(this.filterPayload);
