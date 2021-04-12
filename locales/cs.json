@@ -276,7 +276,8 @@
         "postalCode": "Poštovní směrovací číslo",
         "phoneNumber": "Mobilní telefon"
       },
-      "updateSuccess": "Váš profil byl úspěšně aktualizován!"
+      "updateSuccess": "Váš profil byl úspěšně aktualizován!",
+      "passwordUpdateSuccess": "Vaše heslo bylo úspěšně změněno!"
     },
     "limits" : {
       "initialText" : "Chcete sledovat svoji aktivitu, limity ztráty nebo omezit vklady? Váš účet lze nastavit se všemi limity. Pomůže vám získat přehled o vašem hazardu. Všechna omezení se projeví okamžitě.",

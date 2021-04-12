@@ -261,7 +261,7 @@ export default {
           this.shouldDisplayPasswordFormErrors = false;
           this.pushNotificationAlert({
             type: 'success',
-            text: 'Your password was successfully changed!',
+            text: this.$t('cabinet.profile.passwordUpdateSuccess'),
           });
         }
       });
