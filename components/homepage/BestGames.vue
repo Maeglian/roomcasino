@@ -65,7 +65,7 @@
         />
       </div>
       <div class="Title Title--type-h2 Cards-Title">
-        {{ title }}
+        {{ tabActive.name }}
       </div>
       <Nuxt />
     </section>
@@ -169,13 +169,6 @@ export default {
     },
     filteredGames() {
       return this.gamesSearched(this.searched);
-    },
-    title() {
-      const selectedCategory = this.categories.find(
-        category => category.slug === this.tabActive.type,
-      );
-      if (selectedCategory) return selectedCategory.name;
-      return 'All games';
     },
   },
   watch: {
