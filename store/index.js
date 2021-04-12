@@ -97,6 +97,7 @@ export const state = () => ({
   notificationsPanelIsOpen: false,
   width: 0,
   games: [],
+  recentGames: [],
   defaultGames: [],
   jackpots: [],
   fakeLimits: [
@@ -826,6 +827,9 @@ export const mutations = {
   setGames: (state, payload) => {
     state.games = payload;
   },
+  setRecentGames: (state, payload) => {
+    state.recentGames = payload;
+  },
   setDefaultGames: (state, payload) => {
     state.defaultGames = payload;
   },
@@ -968,6 +972,18 @@ export const actions = {
     try {
       const res = await axios.get(`${API_HOST}/gameList`, { params: payload });
       commit('setGames', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setGamesAreLoaded');
+    }
+  },
+
+  async getRecentGames({ commit }, payload = {}) {
+    commit('setGamesAreLoading');
+    try {
+      const res = await axios.get(`${API_HOST}/gameList`, { params: { ...payload, recent: 1 } });
+      commit('setRecentGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
     } finally {
