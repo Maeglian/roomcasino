@@ -262,7 +262,7 @@ export default {
         if (!this.updateProfileError)
           this.pushNotificationAlert({
             type: 'success',
-            text: 'Your profile was successfully updated!',
+            text: this.$t('cabinet.profile.updateSuccess'),
           });
       });
     },

@@ -61,7 +61,7 @@
             @change-page="$emit('change-page', $event)"
           />
         </template>
-        <span v-else class="CabinetTable-Info"> No data available </span>
+        <span v-else class="CabinetTable-Info"> {{ $t('common.noData') }} </span>
       </div>
     </template>
   </div>

@@ -606,13 +606,10 @@ export const getters = {
   },
   currencyAccounts: state => {
     if (state.user.accountList) {
-      const currencies = state.user.accountList.map(acc => ({
+      return state.user.accountList.map(acc => ({
         name: acc.currency,
         value: acc.currency,
       }));
-      currencies.unshift({ name: 'All currencies', value: '' });
-
-      return currencies;
     }
     return [];
   },
