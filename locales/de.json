@@ -1,5 +1,5 @@
 {
-  "title" : "PlayJoker",
+  "title" : "Ninecasino",
   "buttons" : {
     "signUp" : "Erstanmeldung",
     "register" : "Registrieren",
@@ -90,7 +90,7 @@
       "firstName" : "Vorname",
       "lastName" : "Nachname ",
       "male" : "Männlich",
-      "female" : "Weiblich \n",
+      "female" : "Weiblich",
       "city" : "Stadt ",
       "address" : "Anschrift",
       "postalCode" : "Postleitzahl",
@@ -105,10 +105,10 @@
     "aboutUs" : "Über uns",
     "faq" : "Häufig Gestellte Fragen (FAQ)",
     "btc" : "Über BTC",
-    "aml" : "Anti-geldwähler-Politik \n",
-    "terms" : "Geschäftsbedingungen\n",
+    "aml" : "Anti-geldwähler-Politik",
+    "terms" : "Geschäftsbedingungen",
     "bonusPolicy" : "Bonusrichtlinien ",
-    "privacyPolicy" : "Datenschutz-Bestimmungen\n",
+    "privacyPolicy" : "Datenschutz-Bestimmungen",
     "responsibleGaming" : "Verantwortungsbewusst Spielen",
     "risk" : "Risikowarnungen  "
   },
@@ -119,7 +119,8 @@
     "slots" : "Spielautomaten",
     "roulette" : "Roulette",
     "table" : "Tischspiele",
-    "card" : "Kartenspiele"
+    "card" : "Kartenspiele",
+    "recent": "Letzte Spiele"
   },
   "footer" : {
     "text" : {
