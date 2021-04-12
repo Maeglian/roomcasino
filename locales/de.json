@@ -155,8 +155,8 @@
   "homepage" : {
     "heroBanner" : {
       "deposit1" : {
-        "title" : "Melde dich an <span class=\"Colored\">&</span> erhalte den <br/> Begrüssungsbonus von ",
-        "text" : "100 € <span class=\"Colored\">+</span> 55 Freispiele"
+        "title" : "Willkommenspaket <span class=\"Colored\">$ 450!</span>",
+        "text" : "Machen Sie die erste Einzahlung <br/> und erhalten Sie <span class = \"Coloured\"> 100% </ span> bis zu <span class = \"Coloured\"> $ 150"
       },
       "deposit2" : {
         "title" : "Bonus für zweite<br/>  Einzahlung",
@@ -347,17 +347,17 @@
     "deposit1" : {
       "title" : "100%<br/> des Einzahlungsbetrags <br/> ",
       "name" : "Bonus für die erste Einzahlung",
-      "text" : "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 €."
+      "text" : "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 $ oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit2" : {
       "title" : "55%<br/> des Einzahlungsbetrags <br/> ",
       "name" : "Bonus für zweite Einzahlung",
-      "text" : "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150  €."
+      "text" : "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150  €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach eine zweite Einzahlung von 20 $ oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit3" : {
       "title" : "100%<br/> des Einzahlungsbetrags<br/>",
       "name" : "Bonus für dritte Einzahlung ",
-      "text" : "Mach deine dritte Einzahlung bei Ninecasino und erhalte bis zu 150  €."
+      "text" : "Machen Sie Ihre dritte Einzahlung bei Ninecasino und erhalten Sie bis zu 150 $. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine dritte Einzahlung von 20 $ oder mehr. Der Bonus wird automatisch gutgeschrieben."
     }
   }
 }
