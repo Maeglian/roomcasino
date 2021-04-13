@@ -1,0 +1,361 @@
+{
+  "title" : "PlayJoker",
+  "buttons" : {
+    "signUp" : "S'enregistrer",
+    "register" : "Enregistrer",
+    "terms" : "Conditions d'attribution des bonus",
+    "registerNow" : "Enregistrez-vous maintenant",
+    "login" : "Login",
+    "logIn" : "Log in",
+    "joinNow" : "Adhérez maintenant",
+    "deposit" : "Dépôt",
+    "depositNow" : "Déposer maintenant",
+    "loadMoreGames" : "Charger plus de jeux",
+    "playForFun" : "Jouez pour le plaisir ",
+    "playNow" : "Jouez maintenant",
+    "showMore" : "Voir plus",
+    "saveChanges" : "Sauvegarder les changements",
+    "update" : "Mise à jour",
+    "addLimits" : "Ajouter des limites",
+    "filter" : "Filtre",
+    "cashout" : "Encaissement",
+    "cancel" : "Annuler",
+    "loading" : "Loading",
+    "continue" : "Continuer",
+    "letsStart" : "Commençons",
+    "goHomePage" : "Aller à la page d'accueil",
+    "save" : "Sauvegarder",
+    "edit" : "Editer",
+    "getBonus" : "Obtenir un bonus"
+  },
+  "errors" : {
+    "required" : "Ne peut pas être vide",
+    "email" : "Adresse électronique non valide",
+    "confirmPassword" : "Le mot de passe et le mot de passe de confirmation ne sont pas les mêmes",
+    "oldAndNewPasswords" : "Les anciens et les nouveaux mots de passe sont les mêmes",
+    "minLength" : "Doit avoir au moins {num} caractères",
+    "maxLength" : "Ne doit pas comporter plus de {num} caractères",
+    "phone" : "Doit être accompagné de \"+\", de 10 à 14 symboles",
+    "numbers" : "Doit être numérique",
+    "day" : "Le jour n'est pas valide",
+    "month" : "Le mois n'est pas valide",
+    "year" : "L'année n'est pas valide",
+    "postalCode" : "Doit être des lettres, des chiffres ou un espace",
+    "positiveNum" : "Entrer un nombre positif",
+    "0andNum" : "Entrée 0 ou nombre positif",
+    "invalidDate" : "La date n'est pas valide",
+    "minAge" : "Vous avez moins de {minAge}",
+    "inputCorrectDate" : "Entrez la date correcte"
+  },
+  "menu" : {
+    "menu" : "Menu",
+    "support" : "Support",
+    "yourAccount" : "Votre compte"
+  },
+  "modals" : {
+    "congratulations" : "Félicitations ",
+    "playGame" : "Maintenant vous pouvez jouer le jeu",
+    "cantStart" : "Impossible de démarrer le jeu",
+    "pleaseDeposit" : "Veuillez déposer d'abord",
+    "pleaseDepositText" : "C'est dommage, mais votre solde est de 0. Déposez maintenant ! "
+  },
+  "auth" : {
+    "loginTitle" : "Bienvenue à nouveau",
+    "signUpTitle" : "Inscrives-vous et<span class=\"Colored\">&</span> recevez<br /> un bonus de bienvenue",
+    "forgotPassword" : "Mot de passe oublié",
+    "emails" : "Receive email promos",
+    "terms" : "J’ai  {minAge} ans et j’accepte les {br} {terms} et {policy}",
+    "step2Title" : "Veuillez remplir les informations ci-dessous !",
+    "thanksRegistration" : "Merci pour l'inscription",
+    "registrationBonus" : "€ 150",
+    "registrationBonusText" : "Pour votre premier dépôt! Profitez du bonus de Bienvenue de Ninecasino",
+    "pleaseDepositText" : "Obtenez votre bonus",
+    "enterEmail" : "Entrez l'email",
+    "passwordRestoreText" : "Merci ! Vérifiez votre e-mail pour de nouvelles instructions",
+    "enterNewPassword" : "Entrez votre nouveau mot de passe",
+    "updatePassword" : "Mise à jour du mot de passe",
+    "newPassword" : "Nouveau mot de passe",
+    "confirmPassword" : "Confirmation du mot de passe",
+    "tryingConfirmEmail" : "Nous essayons de vérifier votre email",
+    "confirmEmailError" : "Désolé, votre e-mail n'a pas été confirmé",
+    "confirmEmailSuccess" : "Félicitations ! Votre e-mail a été confirmé avec succès",
+    "bonus" : "€ 150",
+    "placeholders" : {
+      "enterEmail" : "Entrez votre email",
+      "enterPassword" : "Entrez votre mot de passe",
+      "email" : "Votre email",
+      "password" : "Votre mot de passe",
+      "currency" : "Devise",
+      "country" : "Pays",
+      "firstName" : "Nom",
+      "lastName" : "Nom de famille",
+      "male" : "Homme",
+      "female" : "Femme",
+      "city" : "Ville",
+      "address" : "Adresse",
+      "postalCode" : "Code Postale",
+      "phone" : "Numéro de téléphone mobile"
+    }
+  },
+  "pages" : {
+    "lobby" : "Lobby",
+    "myAccount" : "Mon compte",
+    "promotion" : "Promotion",
+    "aboutUs" : "A propos de nous",
+    "faq" : "FAQ",
+    "btc" : "À propos de BTC",
+    "aml" : "Politique AML",
+    "terms" : "Termes et conditions",
+    "bonusPolicy" : "Politique de bonus",
+    "privacyPolicy" : "Politique de confidentialité",
+    "responsibleGaming" : "Jeu responsable",
+    "risk" : "Avertissements sur les risques"
+  },
+  "gameCategories" : {
+    "top" : "Les meilleurs jeux",
+    "all" : "Tous les jeux",
+    "live" : "Jeux en ligne",
+    "slots" : "Jeux de machines à sous",
+    "roulette" : "Roulette",
+    "table" : "Jeux de table",
+    "card" : "Jeux de cartes"
+  },
+  "footer" : {
+    "text" : {
+      "p1" : "This site’s operations are regulated by the Malta Gaming Authority and is operated by SkillOnNet Ltd, Office 1/5297 Level G, Quantum House, 75, Abate Rigord Street, Ta’ Xbiex, XBX 1120, Malta, under the gaming license issued by the Malta Gaming Authority (license number MGA/CRP/171/2009/01) issued on 1 August 2018",
+      "p2" : "Gambling can be addictive, please play responsibly",
+      "p3" : "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
+    }
+  },
+  "search" : {
+    "findGame" : "Trouver un jeu",
+    "notFound" : "Rien n'a été trouvé"
+  },
+  "common" : {
+    "date" : "Date",
+    "currency" : "Devise",
+    "amount" : "Montant",
+    "status" : "Statut",
+    "title" : "Titre",
+    "type" : "Type",
+    "active" : "Actif",
+    "disabled" : "Désactivé",
+    "left" : "est resté",
+    "yes" : "Oui",
+    "email" : "Email",
+    "wager" : "Mise",
+    "created" : "A été créé",
+    "expiresAt" : "Expire à"
+  },
+  "actions" : {
+    "addCurrency" : "Ajouter une devise"
+  },
+  "homepage" : {
+    "heroBanner" : {
+      "deposit1" : {
+        "title" : "Inscrivez-vous et <span class=\"Colored\">&</span> recevez <br/> un Bonus de bienvenue",
+        "text" : "€ 100 <span class=\"Colored\">+</span> 55 spins gratuits"
+      },
+      "deposit2" : {
+        "title" : "Bonus de deuxième<br/> dépôt",
+        "text" : "55% de bonus<br/> jusqu'à <span class=\"Colored\">150</span><br/> sur votre deuxième dépôt"
+      },
+      "deposit3" : {
+        "title" : "Bonus de troisième<br/> dépôt",
+        "text" : "100% de bonus<br/> jusqu'à <span class=\"Colored\">150</span><br/> sur votre troisième dépôt"
+      },
+      "deposit4" : {
+        "title" : "D'autres promotions<br/> excitantes<br/> sont à venir!"
+      }
+    },
+    "advantages" : {
+      "first" : {
+        "highlighted" : "Super rapide",
+        "ghost" : "retraits"
+      },
+      "second" : {
+        "highlighted" : "24/7",
+        "ghost" : "assistance amicale par chat"
+      },
+      "third" : {
+        "highlighted" : "Plus de ",
+        "ghost" : "2000 jeux"
+      },
+      "fourth" : {
+        "highlighted" : "La sélection la plus folle ",
+        "ghost" : "de fournisseurs de jeux"
+      }
+    },
+    "allProviders" : "Tous les fournisseurs",
+    "tableIsOpen" : "La table est ouverte",
+    "tableIsClosed" : "La table est fermée"
+  },
+  "filters" : {
+    "filteredBy" : "Filtré par",
+    "allStatuses" : "Tous les statuts",
+    "allCurrencies" : "Toutes les devises",
+    "until" : "Jusqu'à"
+  },
+  "cabinet" : {
+    "pages" : {
+      "balance" : "Balance",
+      "bonuses" : "Bonuses",
+      "history" : "Histoire",
+      "verification" : "Vérification",
+      "profile" : "Profile",
+      "limits" : "Limites des jeux de hasard",
+      "exit" : "Sortie"
+    },
+    "balance" : {
+      "table" : {
+        "locked" : "Verrouillé par un bonus",
+        "cashout" : "Disponible pour encaisser"
+      },
+      "addCurrency" : "Ajouter la monnaie",
+      "noMoreCurrency" : "Il n'y a plus de monnaie à ajouter",
+      "active" : "Actif",
+      "select" : "Sélectionnez"
+    },
+    "bonuses" : {
+      "history" : "Histoire du bonus",
+      "table" : {
+        "wagered" : "mis en jeu",
+        "bonus" : "Bonus",
+        "min" : "Montant du dépôt minimum",
+        "max" : "Prix maximum"
+      },
+      "wagerAmountRequirement" : "Montant requis pour la mise",
+      "wageredPercent" : "Pourcentage de mise"
+    },
+    "history" : {
+      "tabs" : {
+        "transactions" : "Histoire des transactions",
+        "game" : "Histoire du jeu",
+        "bonus" : "Histoire du bonus"
+      },
+      "table" : {
+        "date" : "Date",
+        "paymentSystem" : "Système de paiement",
+        "action" : "Action",
+        "gameName" : "Nom du jeu",
+        "betSum" : "Montant de la mise",
+        "win" : "Win",
+        "validUntil" : "Valable jusqu'au"
+      }
+    },
+    "verification" : {
+      "documents" : "Vérification des documents",
+      "text" : "Passeport, permis de conduire ou autres documents officiels les remplaçant/facture de services publics, facture de téléphone ou relevé bancaire, dans lesquels votre nom et votre adresse sont entièrement indiqués/capture d’écran ou photo de la banque en ligne, relevé bancaire, page Skrill, etc. montrant le dépôt.",
+      "uploaded" : "Documents téléchargés",
+      "waiting" : "En attendant d'être approuvé",
+      "approved" : "Approuvé",
+      "disapproved" : "Désapprouvé",
+      "drop" : "Déposez le fichier ici ou parcourez les images ou les fichiers .pdf. Taille maximale 110 MB"
+    },
+    "profile" : {
+      "title" : "Profil utilisateur",
+      "tabs" : {
+        "general" : "Général",
+        "security" : "Sécurité"
+      },
+      "generalInfo" : "Infos générales",
+      "subscriptions" : "Souscriptions",
+      "sms" : "Envoyez des promotions par e-mail",
+      "email" : "Envoyer des promos par sms",
+      "passwordChange" : "Changement de mot de passe",
+      "oldPassword" : "Vieux mot de passe",
+      "newPassword" : "Nouveau mot de passe",
+      "confirmPassword" : "Confirmation du mot de passe",
+      "sessionHistory" : "Historique de la session",
+      "labels" : {
+        "email" : "Email",
+        "country" : "Pays",
+        "firstName" : "Nom",
+        "lastName" : "Nom de famille",
+        "gender" : "Sexe",
+        "city" : "Ville",
+        "address" : "Adresse",
+        "postalCode" : "Code Postale",
+        "phoneNumber" : "Numéro de téléphone mobile",
+        "birthDate" : "Date de naissance"
+      }
+    },
+    "limits" : {
+      "initialText" : "Voulez-vous contrôler votre activité, vos limites de perte ou vos limites de dépôt? Votre compte peut être configuré avec toutes les limites. Cela vous aidera à avoir une vue d’ensemble de vos habitudes de jeu. Toutes les restrictions prennent effet instantanément.",
+      "createLimits" : "Creer del limites",
+      "addLimits" : "Ajouter des limites",
+      "limits" : {
+        "depositLimit" : {
+          "name" : "Limites de  dépôt",
+          "text" : "Votre compte peut être configuré avec des limites de dépôt. Ce paramètre limite le montant que vous pouvez déposer par jour, par semaine ou par mois.",
+          "editRules" : "Vous pouvez réduire votre limite à tout moment, cette modification prendra effet immédiatement. Vous pouvez augmenter la limite, mais vous avez besoin de 24 heures pour que cette modification prenne effet.",
+          "deleteRules" : "L’annulation de la limite de perte prend 24 heures. Une fois la limite dépassée, vous recevrez une notification par courriel"
+        },
+        "wagerLimit" : {
+          "name" : "Limites de mise",
+          "text" : "Votre compte peut être configuré avec des limites de mise. Ce paramètre contrôle la somme d’argent que vous pouvez miser par jour, par semaine ou par mois.",
+          "editRules" : "Vous pouvez réduire votre limite à tout moment, cette modification prendra effet immédiatement. Vous pouvez augmenter la limite, mais vous avez besoin de 24 heures pour que cette modification prenne effet.",
+          "deleteRules" : "L’annulation de la limite de perte prend 24 heures. Une fois la limite dépassée, vous recevrez une notification par courriel."
+        },
+        "lossLimit" : {
+          "name" : "Limite de perte",
+          "text" : "Votre compte peut être configuré avec des limites de perte. Ce paramètre limite le montant que vous pouvez perdre par jour, par semaine ou par mois.",
+          "editRules" : "Vous pouvez réduire votre limite à tout moment, cette modification prendra effet immédiatement. Vous pouvez augmenter la limite, mais vous avez besoin de 24 heures pour que cette modification prenne effet.",
+          "deleteRules" : "L’annulation de la limite de perte prend 24 heures. Une fois la limite dépassée, vous recevrez une notification par courriel."
+        },
+        "sessionLimit" : {
+          "name" : "Limites de session",
+          "title" : "le temps passé à jouer",
+          "text" : "le temps passé à jouer",
+          "editRules" : "",
+          "deleteRules" : ""
+        },
+        "coolingOffLimit" : {
+          "name" : "Repit",
+          "title" : "le temps passé à jouer",
+          "text" : "Vous avez envie de rester à l’écart du casino pendant un certain temps? Vous pouvez définir une limite de répit pour une certaine période. La restriction prend effet instantanément. Vous ne pourrez pas effectuer de dépôts et jouer pendant la période spécifiée. Vous serez également exclu de toutes les offres publicitaires. Après l’expiration de la période définie, vous recevrez un courriel de notification indiquant que votre compte est à nouveau actif.",
+          "editRules" : "Limit decrease will be applied in 24 hours after player's request. Limit increase will be applied immediately.",
+          "deleteRules" : "Limit cancellation will be applied in 24 hours after player's request."
+        }
+      },
+      "periods" : {
+        "daily" : "Par jour ",
+        "weekly" : "Par semaine",
+        "monthly" : "Par mois ",
+        "days" : "Jours",
+        "weeks" : "Semains",
+        "months" : "Mois",
+        "min" : "Min",
+        "day" : "Jour"
+      },
+      "edit" : "Limite d'édition",
+      "delete" : "Supprimer la limite",
+      "save" : "Sauvegarder les limites",
+      "setLimit" : "Fixer la limite",
+      "deleteText" : "Vous êtes sûr de vouloir supprimer",
+      "sureSet" : "Vous êtes sûr de vouloir mettre",
+      "confirmUpdate" : "Confirmer la mise à jour des limites",
+      "untilReset" : "Jusqu'à la réinitialisation"
+    }
+  },
+  "promotions" : {
+    "title" : "Promotions en cours",
+    "text" : "Ninecasino cherche constamment à offrir les meilleures promotions. Nous utilisons les dernières technologies et les commentaires de nos joueurs pour repenser nos promotions. Profitez-en!",
+    "upTo" : "jusqu’à  $150",
+    "deposit1" : {
+      "title" : "100%<br/> du montant du<br/> dépôt",
+      "name" : "Bonus de premier dépôt",
+      "text" : "Effectuez votre premier dépôt sur Ninecasino et recevez jusqu’à 150 $.<br/><br/>Pour activer le bonus, il suffit d’effectuer un premier dépôt de 20 $ ou plus. Le bonus sera versé automatiquement. "
+    },
+    "deposit2" : {
+      "title" : "55%<br/> du montant du<br/> dépôt",
+      "name" : "Bonus de deuxième dépôt ",
+      "text" : "Effectuez votre deuxième dépôt sur Ninecasino et recevez jusqu’à 150 $.<br/><br/>Pour activer le bonus, il suffit d’effectuer un deuxième dépôt de 20 $ ou plus. Le bonus sera versé automatiquement."
+    },
+    "deposit3" : {
+      "title" : "100%<br/> du montant du<br/> dépôt",
+      "name" : "Bonus de troisième dépôt",
+      "text" : "Effectuez votre troisième dépôt sur Ninecasino et recevez jusqu’à 150 $.<br/><br/>Pour activer le bonus, il suffit d’effectuer un troisième dépôt de 20 $ ou plus. Le bonus sera versé automatiquement."
+    }
+  }
+}
