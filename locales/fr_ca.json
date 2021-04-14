@@ -94,7 +94,8 @@
       "city" : "Ville",
       "address" : "Adresse",
       "postalCode" : "Code Postale",
-      "phone" : "Numéro de téléphone mobile"
+      "phone" : "Numéro de téléphone mobile",
+      "year": "AAAA"
     }
   },
   "pages" : {
@@ -153,8 +154,8 @@
   "homepage" : {
     "heroBanner" : {
       "deposit1" : {
-        "title" : "Inscrivez-vous et <span class=\"Colored\">&</span> recevez <br/> un Bonus de bienvenue",
-        "text" : "€ 100 <span class=\"Colored\">+</span> 55 spins gratuits"
+        "title" : "Paquet de bienvenue <span class=\"Colored\">€ 450!</span>",
+        "text" : "Effectuez un premier dépôt <br/> et obtenez <span class = \"Colored\"> 100% </span> jusqu'à <span class = \"Colored\">€ 150</span>"
       },
       "deposit2" : {
         "title" : "Bonus de deuxième<br/> dépôt",
@@ -194,7 +195,8 @@
     "filteredBy" : "Filtré par",
     "allStatuses" : "Tous les statuts",
     "allCurrencies" : "Toutes les devises",
-    "until" : "Jusqu'à"
+    "until" : "Jusqu'à",
+    "dataPlaceholder": "DD.MM.AAAA"
   },
   "cabinet" : {
     "pages" : {
@@ -203,7 +205,7 @@
       "history" : "Histoire",
       "verification" : "Vérification",
       "profile" : "Profile",
-      "limits" : "Limites des jeux de hasard",
+      "limits" : "Limites de jeu",
       "exit" : "Sortie"
     },
     "balance" : {
@@ -278,7 +280,9 @@
         "postalCode" : "Code Postale",
         "phoneNumber" : "Numéro de téléphone mobile",
         "birthDate" : "Date de naissance"
-      }
+      },
+      "updateSuccess": "Votre profil a été mis à jour avec succès!",
+      "passwordUpdateSuccess": "Votre mot de passe a été modifié avec succès!"
     },
     "limits" : {
       "initialText" : "Voulez-vous contrôler votre activité, vos limites de perte ou vos limites de dépôt? Votre compte peut être configuré avec toutes les limites. Cela vous aidera à avoir une vue d’ensemble de vos habitudes de jeu. Toutes les restrictions prennent effet instantanément.",

@@ -197,7 +197,8 @@
     "filteredBy" : "Gefiltert nach",
     "allStatuses" : "Alle stände",
     "allCurrencies" : "Alle währungen",
-    "until" : "bis"
+    "until" : "bis",
+    "dataPlaceholder": "DD.MM.JJJJ"
   },
   "cabinet" : {
     "pages" : {

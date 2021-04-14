@@ -191,7 +191,8 @@
     "filteredBy" : "Filtrováno podle",
     "allStatuses" : "Všechny stavy",
     "AllCurrencies" : "Všechny měny",
-    "until" : "Dokud"
+    "until" : "Dokud",
+    "dataPlaceholder": "DD.MM.YYYY"
   },
   "cabinet" : {
     "pages" : {
