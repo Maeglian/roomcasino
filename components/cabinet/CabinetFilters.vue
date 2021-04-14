@@ -44,7 +44,9 @@
             />
           </template>
         </div>
-        <button class="CabinetFilters-Submit" @click="$emit('filter')">Filter</button>
+        <button class="CabinetFilters-Submit" @click="$emit('filter')">
+          {{ $t('buttons.filter') }}
+        </button>
       </div>
     </transition>
   </div>
