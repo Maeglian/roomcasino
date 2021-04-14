@@ -4,7 +4,7 @@
       <h1 class="Title Title--type-h1 Page-Title VipPage-Title">Play vip style ninecasino</h1>
       <div class="Page-Text Text Text--additional">
         You can also change your CPs for money in just one click! You will still keep your status
-        and will be able to keep moving up the levels. Play and get all the privileges RoomCasino’s
+        and will be able to keep moving up the levels. Play and get all the privileges Ninecasino’s
         VIP club has to offer.
       </div>
     </div>
