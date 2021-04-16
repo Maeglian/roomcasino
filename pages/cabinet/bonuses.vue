@@ -93,14 +93,20 @@
           >
             Cancel
           </button>
-          <div v-if="spin.activationExpireAt" class="FreeSpin-Expires">
+          <div class="FreeSpin-Expires">
             <div class="FreeSpin-Label">
-              Until activate
+              <template v-if="spin.status === 'notActive'">
+                Until activate
+              </template>
             </div>
             <Counter
               class="Bonus-Counter"
               :min-format="true"
-              :enddate="new Date(spin.activationExpireAt * 1000)"
+              :enddate="
+                spin.status === 'notActive'
+                  ? new Date(spin.activationExpireAt * 1000)
+                  : new Date(spin.expireAt * 1000)
+              "
             />
           </div>
         </div>
