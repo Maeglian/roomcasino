@@ -25,8 +25,8 @@
         </template>
         <div v-else-if="field.type === 'radio'" :key="name" class="AuthDialog-Row">
           <div
-            v-for="value in field.values"
-            :key="value.value"
+            v-for="(value, i) in field.values"
+            :key="value"
             class="AuthDialog-Radio AuthDialog-Field AuthDialog-Col"
           >
             <BaseCheckbox
@@ -38,7 +38,7 @@
               :value="value"
               @change="field.value = $event"
             >
-              {{ value.name }}
+              {{ (field.names && field.names[i]) || value }}
             </BaseCheckbox>
           </div>
         </div>
@@ -349,12 +349,10 @@ export default {
           autocorrect: 'off',
         },
         gender: {
-          value: { name: this.$t('auth.placeholders.male'), value: 'male' },
+          value: 'male',
           type: 'radio',
-          values: [
-            { name: this.$t('auth.placeholders.male'), value: 'male' },
-            { name: this.$t('auth.placeholders.female'), value: 'female' },
-          ],
+          values: ['male', 'female'],
+          names: [this.$t('auth.placeholders.male'), this.$t('auth.placeholders.female')],
         },
         birthDate: {
           children: {
@@ -377,7 +375,7 @@ export default {
               value: '',
               ref: 'year',
               type: 'text',
-              placeholder: 'YYYY',
+              placeholder: this.$t('auth.placeholders.year'),
               required: true,
               inputmode: 'tel',
             },
@@ -632,7 +630,7 @@ export default {
   mounted() {
     getObjValuesFromLocalStorage(this.fieldsStep1);
     getObjValuesFromLocalStorage(this.fieldsStep2);
-    this.fieldsStep2.gender.value = { name: this.$t('auth.placeholders.male'), value: 'male' };
+    this.fieldsStep2.gender.value = 'male';
     this.fieldsStep1.currency.items = this.currencyList;
     if (!this.fieldsStep1.currency.value) this.fieldsStep1.currency.value = this.defaultCurrency;
     if (!this.currencyList.includes(this.fieldsStep1.currency.value))
@@ -683,10 +681,11 @@ export default {
 
         const profileData = { ...this.userInfo };
         for (const key in this.fieldsStep2) {
-          if (key === 'birthDate' || key === 'phoneNumber') profileData[key] = this[key];
-          else if (key === 'gender') profileData[key] = this.fieldsStep2[key].value.value;
-          else if (key === 'phoneNumber') profileData[key] = `+${this.fieldsStep2[key].value}`;
-          else profileData[key] = this.fieldsStep2[key].value;
+          if (!profileData[key]) {
+            if (key === 'birthDate' || key === 'phoneNumber') profileData[key] = this[key];
+            else if (key === 'phoneNumber') profileData[key] = `+${this.fieldsStep2[key].value}`;
+            else profileData[key] = this.fieldsStep2[key].value;
+          }
         }
 
         profileData.country = this.userInfo.country.code;

@@ -1,12 +1,13 @@
 import AuthDialog from '@/components/homepage/AuthDialog/AuthDialog.vue';
-import { mapGetters, mapMutations } from 'vuex';
+import { mapState, mapGetters, mapMutations } from 'vuex';
 
 export default {
   computed: {
+    ...mapState(['authError', 'updateProfileError']),
     ...mapGetters(['isLoggedIn']),
   },
   methods: {
-    ...mapMutations(['removeAuthError']),
+    ...mapMutations(['removeAuthError', 'clearUpdateProfileError']),
     showRegistrationDialog(authType, beforeDeposit) {
       this.removeAuthError();
       this.$modal.show(
@@ -19,7 +20,8 @@ export default {
       );
     },
     afterCloseAuthDialog() {
-      this.removeAuthError();
+      if (this.authError) this.removeAuthError();
+      if (this.updateProfileError) this.clearUpdateProfileError();
     },
     onClickBtn() {
       if (!this.isLoggedIn) this.showRegistrationDialog('registration');

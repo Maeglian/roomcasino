@@ -1,5 +1,6 @@
 window.__lc = window.__lc || {};
 window.__lc.license = 12226866;
+window.__lc.chat_between_groups = false;
 (function(n, t, c) {
   function i(n) {
     return e._h ? e._h.apply(null, n) : e._q.push(n);

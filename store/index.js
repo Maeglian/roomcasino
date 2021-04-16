@@ -36,6 +36,7 @@ const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
 
 export const state = () => ({
   chatIsLoaded: false,
+  needsCookiesPopup: true,
   initialLoadingIsDone: {
     geoInfo: false,
     countries: false,
@@ -610,13 +611,10 @@ export const getters = {
   },
   currencyAccounts: state => {
     if (state.user.accountList) {
-      const currencies = state.user.accountList.map(acc => ({
+      return state.user.accountList.map(acc => ({
         name: acc.currency,
         value: acc.currency,
       }));
-      currencies.unshift({ name: 'All currencies', value: '' });
-
-      return currencies;
     }
     return [];
   },
@@ -631,6 +629,9 @@ export const getters = {
 };
 
 export const mutations = {
+  setNeedsCookiesPopup: (state, payload) => {
+    state.needsCookiesPopup = payload;
+  },
   setChatIsLoaded: state => {
     state.chatIsLoaded = true;
   },
@@ -972,15 +973,19 @@ export const actions = {
   async nuxtServerInit({ commit }, { req }) {
     if (process.env.NUXT_ENV_MODE !== 'sandbox' && process.env.NUXT_ENV_MODE !== 'stage') {
       let token = null;
+      let cookiesPopup;
       if (req.headers.cookie) {
         const parsed = cookieparser.parse(req.headers.cookie);
         try {
           // eslint-disable-next-line prefer-destructuring
           token = parsed.token;
+          // eslint-disable-next-line prefer-destructuring
+          cookiesPopup = parsed.seenCookiesPopup;
           // eslint-disable-next-line no-empty
         } catch (e) {}
         axios.defaults.headers.common['X-Auth-Token'] = token;
         commit('setToken', token);
+        commit('setNeedsCookiesPopup', !cookiesPopup);
       }
     }
   },

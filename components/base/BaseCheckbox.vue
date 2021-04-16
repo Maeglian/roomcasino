@@ -50,15 +50,14 @@ export default {
       required: true,
     },
     value: {
-      type: [String, Number, Boolean, Object],
+      type: [String, Number, Boolean],
       required: false,
       default: false,
     },
   },
   computed: {
     isChecked() {
-      if (this.type === 'radio')
-        return this.modelValue === this.value || this.modelValue.value === this.value.value;
+      if (this.type === 'radio') return this.modelValue === this.value;
       if (this.modelValue instanceof Array) {
         return this.modelValue.includes(this.value);
       }

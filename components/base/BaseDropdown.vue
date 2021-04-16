@@ -141,7 +141,7 @@ export default {
         return this.autocompletedItems;
 
       return this.items.filter(item => {
-        return item[this.itemName] !== this.activeItem && item !== this.activeItem;
+        return item[this.itemName] !== this.activeItem[this.itemName] && item !== this.activeItem;
       });
     },
   },

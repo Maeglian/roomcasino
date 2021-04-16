@@ -16,6 +16,7 @@
     <client-only>
       <CashierForm />
     </client-only>
+    <CookiesPopup />
   </div>
 </template>
 
@@ -28,6 +29,7 @@ import CashierForm from '@/components/CashierForm';
 import Footer from '@/components/homepage/Footer';
 import { mapGetters, mapState } from 'vuex';
 import InitialLoader from '@/components/InitialLoader';
+import CookiesPopup from '@/components/homepage/CookiesPopup';
 import liveChat from '~/mixins/liveChat';
 
 export default {
@@ -40,6 +42,7 @@ export default {
     NotificationsPanel,
     CashierForm,
     InitialLoader,
+    CookiesPopup,
   },
   mixins: [liveChat],
   computed: {

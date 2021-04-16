@@ -90,7 +90,8 @@
       "city": "Mesto",
       "address": "Adresa",
       "postalCode": "Poštovní směrovací číslo",
-      "phone": "Mobilní telefon"
+      "phone": "Mobilní telefon",
+      "year": "YYYY"
     }
   },
   "pages" : {
@@ -140,7 +141,8 @@
     "email" : "E-mailem",
     "wager" : "Vsadit",
     "created" : "Vytvořeno",
-    "expiresAt" : "Expires at"
+    "expiresAt" : "Vyprší v",
+    "noData": "Údaje nejsou k dispozici"
   },
   "actions" : {
     "addCurrency" : "Add currency"
@@ -273,7 +275,9 @@
         "address": "Adresa",
         "postalCode": "Poštovní směrovací číslo",
         "phoneNumber": "Mobilní telefon"
-      }
+      },
+      "updateSuccess": "Váš profil byl úspěšně aktualizován!",
+      "passwordUpdateSuccess": "Vaše heslo bylo úspěšně změněno!"
     },
     "limits" : {
       "initialText" : "Chcete sledovat svoji aktivitu, limity ztráty nebo omezit vklady? Váš účet lze nastavit se všemi limity. Pomůže vám získat přehled o vašem hazardu. Všechna omezení se projeví okamžitě.",
@@ -337,7 +341,7 @@
     "upTo": "až KČ 3330",
     "deposit1" : {
       "title" : "100% <br/> z vkladu <br/> částk",
-      "name": "Bonus k prvnímu vkladu",
+      "name": "Bonus ke prvnímu vkladu",
       "text" : "Proveďte první vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
     },
     "deposit2" : {

@@ -84,8 +84,6 @@ export default {
       }
       this.authorize(payload).then(() => {
         this.$router.push(this.localePath('/'));
-        if (!this.authError) this.$emit('close');
-        this.$router.push('/');
         if (!this.authError) {
           this.$emit('close');
           scrollTo({

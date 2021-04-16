@@ -90,6 +90,7 @@ export default {
     font-weight: 700;
     color: var(--color-text-main);
     text-transform: uppercase;
+    white-space: nowrap;
     cursor: pointer;
 
     @media (min-width: $screen-l) {
@@ -104,7 +105,7 @@ export default {
       margin-right: 0;
     }
 
-    &.router-link-active {
+    &.nuxt-link-active {
       padding: 10px 5px 6px 5px;
       color: var(--color-main1);
       border-bottom: 4px solid var(--color-main1);
