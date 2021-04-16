@@ -146,51 +146,9 @@
             <template v-if="bonus.maxBonusAmount">
               {{ `, max ${bonus.maxBonusAmount} ${bonus.currency}` }}
             </template>
-          </div>
-        </div>
-        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">
-          <button
-            class="Btn Btn--common Btn--color CabinetPage-Btn"
-            :disabled="!bonus.available"
-            @click="$modal.show('cashier')"
-          >
-            Deposit
-          </button>
-        </div>
-      </div>
-    </div>
-    <div v-if="availableFreeSpinList.length" class="Table CabinetPage-Table BonusesPage-Table">
-      <div class="Table-Row CabinetPage-Row">
-        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Bonus
-        </div>
-        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Min deposit sum
-        </div>
-        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
-          Max prize
-        </div>
-        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th"></div>
-      </div>
-      <div
-        v-for="(bonus, i) in availableFreeSpinList"
-        :key="`freeSpin_${i}`"
-        class="Table-Row CabinetPage-Row"
-      >
-        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Bonus">
-          {{ bonus.name }}
-        </div>
-        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Min">
-          {{ bonus.minDepositAmount }} {{ bonus.currency }}
-        </div>
-        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Max">
-          <div class="BonusesPage-CellWrapper">
-            <svg class="BonusesPage-Icon" width="16" height="16">
-              <use xlink:href="@/assets/img/icons.svg#promotions"></use>
-            </svg>
-            {{ `${bonus.depositPercent}% of deposit` }}
-            <template v-if="bonus.maxBonusAmount">
-              {{ `, max ${bonus.maxBonusAmount} ${bonus.currency}` }}
+            <br />
+            <template v-if="findFreeSpin(bonus.depositNum)">
+              + {{ findFreeSpin(bonus.depositNum) }} free spins
             </template>
           </div>
         </div>
@@ -201,11 +159,58 @@
             @click="$modal.show('cashier')"
           >
             Deposit
-            {{ $t('buttons.deposit') }}
           </button>
         </div>
       </div>
     </div>
+    <!--    <div v-if="availableFreeSpinList.length" class="Table CabinetPage-Table BonusesPage-Table">-->
+    <!--      <div class="Table-Row CabinetPage-Row">-->
+    <!--        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">-->
+    <!--          Bonus-->
+    <!--        </div>-->
+    <!--        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">-->
+    <!--          Min deposit sum-->
+    <!--        </div>-->
+    <!--        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">-->
+    <!--          Max prize-->
+    <!--        </div>-->
+    <!--        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th"></div>-->
+    <!--      </div>-->
+    <!--      <div-->
+    <!--        v-for="(bonus, i) in availableFreeSpinList"-->
+    <!--        :key="`freeSpin_${i}`"-->
+    <!--        class="Table-Row CabinetPage-Row"-->
+    <!--      >-->
+    <!--        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Bonus">-->
+    <!--          {{ bonus.name }}-->
+    <!--        </div>-->
+    <!--        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Min">-->
+    <!--          {{ bonus.minDepositAmount }} {{ bonus.currency }}-->
+    <!--        </div>-->
+    <!--        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Max">-->
+    <!--          <div class="BonusesPage-CellWrapper">-->
+    <!--            <svg class="BonusesPage-Icon" width="16" height="16">-->
+    <!--              <use xlink:href="@/assets/img/icons.svg#promotions"></use>-->
+    <!--            </svg>-->
+    <!--            {{ `${bonus.depositPercent}% of deposit` }}-->
+    <!--            <template v-if="bonus.maxBonusAmount">-->
+    <!--              {{ `, max ${bonus.maxBonusAmount} ${bonus.currency}` }}-->
+    <!--            </template>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">-->
+    <!--          <button-->
+    <!--            class="Btn Btn&#45;&#45;common Btn&#45;&#45;color CabinetPage-Btn"-->
+    <!--            :disabled="!bonus.available"-->
+    <!--            @click="$modal.show('cashier')"-->
+    <!--          >-->
+    <!--            Deposit-->
+    <!--            {{ $t('buttons.deposit') }}-->
+    <!--          </button>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
     <!--    <div class="CabinetPage-Subtitle BonusesPage-Subtitle">-->
     <!--      Receive a bonus-->
     <!--    </div>-->
@@ -266,6 +271,11 @@ export default {
       'deleteFreeSpin',
       'activateFreeSpin',
     ]),
+    findFreeSpin(depositNum) {
+      const freeSpin = this.availableFreeSpinList.find(spin => spin.depositNum === depositNum + 30);
+      if (freeSpin) return freeSpin.freeSpinCount;
+      return null;
+    },
     onDeleteBonus(id) {
       this.deleteBonus(id).then(() => {
         if (this.deleteBonusError)
