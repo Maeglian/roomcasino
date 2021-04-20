@@ -114,6 +114,7 @@ export default {
           userId: this[billingSession].userId,
           sessionId: this[billingSession].sessionId,
           environment,
+          fetchConfig: true,
           containerHeight: 'auto',
           containerMinHeight: '700px',
           method,
