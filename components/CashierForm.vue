@@ -66,10 +66,16 @@ export default {
     predefinedAmounts() {
       return this.activeAccount.currency === 'CZK'
         ? [500, 1250, 2500, 5000, 12500]
+        : this.activeAccount.currency === 'ZAR'
+        ? [300, 600, 1500, 3000, 6000]
         : [50, 75, 125, 250, 500];
     },
     amount() {
-      return this.activeAccount.currency === 'CZK' ? 500 : 50;
+      return this.activeAccount.currency === 'CZK'
+        ? 500
+        : this.activeAccount.currency === 'ZAR'
+        ? 300
+        : 50;
     },
   },
   methods: {
