@@ -25,12 +25,13 @@ import NotificationAlerts from '@/components/NotificationAlerts';
 import MainNav from '@/components/homepage/MainNav';
 import MobileNav from '@/components/homepage/MobileNav';
 import NotificationsPanel from '@/components/NotificationsPanel';
-import CashierForm from '@/components/CashierForm';
 import Footer from '@/components/homepage/Footer';
 import { mapGetters, mapState } from 'vuex';
 import InitialLoader from '@/components/InitialLoader';
 import CookiesPopup from '@/components/homepage/CookiesPopup';
 import liveChat from '~/mixins/liveChat';
+
+const CashierForm = () => import('@/components/CashierForm');
 
 export default {
   name: 'MainMenuPage',

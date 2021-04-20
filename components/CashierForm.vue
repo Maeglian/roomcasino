@@ -31,6 +31,7 @@
 
 <script>
 import { mapActions, mapMutations, mapState, mapGetters } from 'vuex';
+import _PaymentIQCashier from 'paymentiq-cashier-bootstrapper';
 import Loader from '@/components/Loader';
 import BaseModal from '@/components/base/BaseModal';
 import showAuthDialog from '@/mixins/showAuthDialog';
@@ -106,6 +107,7 @@ export default {
       const locale = this.$i18n.locales.find(i => i.code === this.$i18n.locale);
 
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
+
       // eslint-disable-next-line no-unused-vars,no-undef
       const CashierInstance = new _PaymentIQCashier(
         '#cashier',
