@@ -120,7 +120,8 @@
     "slots": "Slots games",
     "roulette": "Roulette",
     "table": "Table Games",
-    "card": "Card games"
+    "card": "Card games",
+    "recent": "Recent games"
   },
   "footer": {
     "text": {
