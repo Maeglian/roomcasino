@@ -28,6 +28,10 @@ button {
 
     @media(min-width: $screen-m) {
       font-size: 14px;
+
+      &:hover {
+        background: var(--color-hover2);
+      }
     }
 
     @media(min-width: $screen-l) {
