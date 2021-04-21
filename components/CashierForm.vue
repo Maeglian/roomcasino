@@ -105,6 +105,7 @@ export default {
           fetchConfig: true,
           method,
           locale: locale.codeCountry,
+          containerMinHeight: '700px',
         },
         api => {
           api.on({
