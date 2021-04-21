@@ -89,6 +89,12 @@
     margin-top: auto;
     text-transform: uppercase;
     background: var(--color-main1);
+
+    @media(min-width: $screen-m) {
+      &:hover {
+        background: var(--color-hover2);
+      }
+    }
   }
 
   &-Error {
