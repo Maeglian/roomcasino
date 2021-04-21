@@ -5,7 +5,7 @@
         {{ $t('gameCategories.recent') }}
       </div>
       <Games
-        :key="$route.params.gameCategory"
+        :key="`recent_${$route.params.gameCategory}`"
         class="DefaultGames-Cards"
         :games="recentGames"
         :games-to-show="recentGamesNum"
