@@ -102,6 +102,7 @@ export default {
           environment,
           fetchConfig: true,
           method,
+          locale: 'es_CO',
           containerMinHeight: '700px',
         },
         api => {
