@@ -103,49 +103,8 @@ export default {
           sessionId: this[billingSession].sessionId,
           environment,
           fetchConfig: true,
-          containerHeight: 'auto',
-          containerMinHeight: '700px',
           method,
           locale: locale.codeCountry,
-          accountDelete: false,
-          showFooter: false,
-          showAmountLimits: true,
-          allowMobilePopup: true,
-          containerWidth: '100%',
-          showAccounts: 'inline',
-          singlePageFlow: true,
-          theme: {
-            input: {
-              color: '#FFF',
-              fontSize: '12px',
-              height: '55px',
-              borderRadius: '0',
-            },
-            inputbackground: {
-              color: '#0E152F',
-            },
-            labels: {
-              color: '#FFF;',
-            },
-            headings: {
-              color: '#FFF;',
-            },
-            buttons: {
-              color: '#67b12d;',
-            },
-            headerbackground: {
-              color: '#060E2A',
-            },
-            background: {
-              color: '#060E2A',
-            },
-            cashierbackground: {
-              color: '#060E2A',
-            },
-            border: {
-              radius: '0',
-            },
-          },
         },
         api => {
           api.on({
@@ -177,76 +136,6 @@ export default {
               console.log('New payment method page was opened', data),
             navigate: data => console.log('Path navigation triggered', data),
           });
-          api.css(`
-            #cashier {
-              --buttons-color: #67b12d;
-              --button-hover-color: #67b12d;
-              --labels-color: #fff;
-              --margin-size: 14px;
-              --headings-color: #fff;
-              --error-color: #EB1C2A;
-              --input-fontSize: 12px;
-              font-family: 'Montserrat', sans-serif;
-              font-size: 12px !important;
-              font-weight: bold !important;
-              color: #fff !important;
-              text-transform: uppercase !important;
-            }
-
-            #cashier .payment-method-header {
-              padding: 25px !important;
-            }
-
-            #cashier .predefinedvalues {
-              grid-gap: 4px;
-            }
-
-            #cashier .predefinedvalues button {
-              background: #1B2138;
-              text-transform: uppercase;
-              height: 55px !important;
-              padding: 0 !important;
-            }
-
-            #cashier .set-amount .predefinedvalues button {
-              border: none;
-            }
-
-            #cashier .predefinedvalue.active {
-              background: #1B2138;
-              padding: 13px !important;
-              border: 2px solid #F3B233 !important;
-            }
-
-            #cashier .input-label-float.active {
-              margin-top: 5px !important;
-            }
-
-            #cashier .input {
-              font-weight: bold !important;
-              text-transform: uppercase !important;
-            }
-
-            #cashier .submit-button {
-              text-transform: uppercase;
-            }
-
-            #cashier .single-iframe-input-container > div:first-child {
-              margin-bottom: 4px !important;
-            }
-
-            #cashier .receipt, #cashier .status {
-              padding-bottom: 35px;
-            }
-
-            #cashier .disable-app-overlay {
-              background: #060E2A
-            }
-
-            .spinner, .spinner-label, .zebraff-walker, .loading-circle {
-              display: none !important;
-            }
-          `);
         },
       );
     },
