@@ -51,9 +51,6 @@ export default {
     ],
     script: [
       {
-        src: 'https://static.paymentiq.io/cashier/cashier.js',
-      },
-      {
         src: 'https://dga.pragmaticplaylive.net/dgaAPI.js',
       },
       {
