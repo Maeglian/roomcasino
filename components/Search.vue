@@ -74,14 +74,13 @@ export default {
     @media (min-width: $screen-l) {
       top: 12px;
       right: initial;
-      left: 12px;
       width: 15px;
       height: 15px;
     }
 
     @media (min-width: $screen-xl) {
       top: 15px;
-      left: 18px;
+      left: 12px;
       width: 18px;
       height: 18px;
     }
@@ -106,7 +105,7 @@ export default {
     }
 
     @media (min-width: $screen-xl) {
-      padding-left: 50px;
+      padding-left: 40px;
     }
 
     &::placeholder {

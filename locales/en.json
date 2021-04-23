@@ -198,7 +198,8 @@
     "filteredBy": "Filtered by",
     "allStatuses": "All statuses",
     "allCurrencies": "All currencies",
-    "until": "Until"
+    "until": "Until",
+    "dataPlaceholder": "DD.MM.YYYY"
   },
   "cabinet": {
     "pages": {
