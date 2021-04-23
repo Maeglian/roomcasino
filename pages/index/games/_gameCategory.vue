@@ -5,7 +5,7 @@
         {{ $t('gameCategories.recent') }}
       </div>
       <Games
-        :key="`recent_${$route.params.gameCategory}`"
+        :key="`recent_${$route.params.gameCategory}_${isLoggedIn}`"
         class="DefaultGames-Cards"
         :games="recentGames"
         :games-to-show="recentGamesNum"
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapGetters, mapState } from 'vuex';
 import Loader from '@/components/Loader';
 import Games from '@/components/Games';
 
@@ -40,6 +40,7 @@ export default {
   },
   computed: {
     ...mapState(['width', 'games', 'gamesAreLoading', 'recentGames']),
+    ...mapGetters(['isLoggedIn']),
     recentGamesNum() {
       return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
     },
@@ -56,7 +57,7 @@ export default {
       immediate: true,
       handler() {
         this.getGames(this.gamesParams);
-        this.getRecentGames(this.gamesParams);
+        if (this.isLoggedIn) this.getRecentGames(this.gamesParams);
       },
     },
   },
