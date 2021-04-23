@@ -5,7 +5,7 @@
         {{ $t('gameCategories.recent') }}
       </div>
       <Games
-        :key="`recent_${$route.params.gameCategory}_${isLoggedIn}`"
+        :key="isLoggedIn"
         class="DefaultGames-Cards"
         :games="recentGames"
         :games-to-show="recentGamesNum"
@@ -18,7 +18,6 @@
     <Loader v-if="gamesAreLoading" />
     <Games
       v-else
-      :key="$route.params.gameCategory"
       class="DefaultGames-Cards"
       :games="games"
       :games-to-show="24"
