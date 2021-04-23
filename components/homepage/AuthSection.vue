@@ -127,6 +127,11 @@ export default {
   &-Btn--deposit {
     font-weight: 700;
     color: var(--color-text-main);
+    background: var(--color-main1);
+
+    &:hover {
+      background: var(--color-hover2);
+    }
   }
 
   &-Sections {
