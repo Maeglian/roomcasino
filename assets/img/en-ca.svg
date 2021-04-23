@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="40px" viewBox="0 0 60 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle-path-Copy" fill="#FFFFFF" x="20" y="0" width="19.9995703" height="40"></rect>
+        <g id="en-CA" fill="#D80027">
+            <rect id="Rectangle-path" x="0" y="0" width="19.9995703" height="40"></rect>
+            <rect id="Rectangle-path" x="40.0004297" y="0" width="19.9995703" height="40"></rect>
+            <polygon id="Shape" points="34.5000578 23.0007853 39 20.6006949 36.7500289 19.4007113 36.7500289 17.0007442 32.2499711 19.4007113 34.5000578 14.6007771 32.2499711 14.6007771 30 11.0007031 27.7500289 14.6007771 25.4999422 14.6007771 27.7500289 19.4007113 23.2499711 17.0007442 23.2499711 19.4007113 21 20.6006949 25.4999422 23.0007853 24.3749567 25.4007524 28.8750144 25.4007524 28.8750144 29.0007031 31.1249856 29.0007031 31.1249856 25.4007524 35.6250433 25.4007524"></polygon>
+        </g>
+    </g>
+</svg>
