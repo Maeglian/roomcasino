@@ -68,30 +68,6 @@
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          NetEnt games are unavailable for Afghanistan, Albania, Algeria, Angola, Australia,
-          Bahamas, Botswana, Belgium, Bulgaria, Colombia, Croatia, Czech Republic, Denmark, Estonia,
-          Ecuador, Ethiopia, France, Ghana, Guyana, Hong Kong, Italy, Iran, Iraq, Israel, Kuwait,
-          Latvia, Lithuania, Mexico, Namibia, Nicaragua, North Korea, Pakistan, Panama, Philippines,
-          Portugal, Romania, Singapore, Spain, Sweden, Switzerland, Sudan, Syria, Taiwan, Trinidad
-          and Tobago, Tunisia, Uganda, United Kingdom, United States of America, Yemen, Zimbabwe.
-        </p>
-      </li>
-      <li class="SupportPage-Item">
-        <p class="Text">
-          In addition to the above, Street Fighter Video Slot is not available for the following
-          countries: Anguilla, Antigua & Barbuda, Argentina, Aruba, Barbados, Bahamas, Belize,
-          Bermuda, Bolivia, Bonaire, Brazil, British Virgin Islands, Canada, Cayman Islands, China,
-          Chile, Clipperton Island, Columbia, Costa Rica, Cuba, Curacao, Dominica, Dominican
-          Republic, El Salvador, Greenland, Grenada, Guadeloupe, Guatemala, Guyana, Haiti, Honduras,
-          Jamaica, Japan, Martinique, Mexico, Montserrat, Navassa Island, Paraguay, Peru, Puerto
-          Rico, Saba, Saint Barthelemy, Saint Eustatius, Saint Kitts and Nevis, Saint Lucia, Saint
-          Maarten, Saint Martin, Saint Pierre and Miquelon, Saint Vincent and the Grenadines, South
-          Korea, Suriname, Turks and Caicos Islands, United States of America, Uruguay, US Virgin
-          Islands, Venezuela.
-        </p>
-      </li>
-      <li class="SupportPage-Item">
-        <p class="Text">
           Fashion TV Video Slot is not available in the following countries: Cuba, Jordan, Turkey,
           Saudi Arabia.
         </p>
