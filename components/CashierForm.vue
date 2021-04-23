@@ -90,6 +90,8 @@ export default {
 
       this.cashierIsLoading = true;
 
+      const locale = this.$i18n.locales.find(i => i.code === this.$i18n.locale);
+
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
 
       // eslint-disable-next-line no-unused-vars,no-undef
@@ -102,7 +104,7 @@ export default {
           environment,
           fetchConfig: true,
           method,
-          locale: 'es_CO',
+          locale: locale.codeCountry,
           containerMinHeight: '700px',
         },
         api => {
