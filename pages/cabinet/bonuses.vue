@@ -56,7 +56,7 @@
       <div v-for="spin in freeSpinList" :key="spin.id" class="Bonus FreeSpin BonusesPage-FreeSpin">
         <div class="FreeSpin-Section FreeSpin-Section--left">
           <div class="Bonus-Text">
-            {{ spin.gameName }}
+            {{ spin.name }}
           </div>
           <svg
             class="Bonus-Icon"
@@ -272,7 +272,7 @@ export default {
       'activateFreeSpin',
     ]),
     findFreeSpin(depositNum) {
-      const freeSpin = this.availableFreeSpinList.find(spin => spin.depositNum === depositNum + 30);
+      const freeSpin = this.availableFreeSpinList.find(spin => spin.depositNum === depositNum);
       if (freeSpin) return freeSpin.freeSpinCount;
       return null;
     },
