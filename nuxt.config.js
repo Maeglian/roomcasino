@@ -51,9 +51,6 @@ export default {
     ],
     script: [
       {
-        src: 'https://static.paymentiq.io/cashier/cashier.js',
-      },
-      {
         src: 'https://dga.pragmaticplaylive.net/dgaAPI.js',
       },
       {
@@ -96,7 +93,7 @@ export default {
         icon: 'en.svg',
       },
       {
-        code: 'fr-CA',
+        code: 'fr',
         codeCountry: 'fr_FR',
         file: 'fr_ca.json',
         icon: 'fr_ca.svg',
