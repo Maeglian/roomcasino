@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { API_HOST } from './config';
 
+const locales = ['en-CA', 'fr-CA', 'cs', 'de'];
+
 const target =
   process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
     ? 'static'
@@ -93,7 +95,13 @@ export default {
         icon: 'en.svg',
       },
       {
-        code: 'fr',
+        code: 'en-CA',
+        codeCountry: 'en_CA',
+        file: 'en_CA.json',
+        icon: 'en-ca.svg',
+      },
+      {
+        code: 'fr-CA',
         codeCountry: 'fr_FR',
         file: 'fr_ca.json',
         icon: 'fr_ca.svg',
@@ -145,36 +153,26 @@ export default {
     routes() {
       const routes = [
         '/cabinet/history/game',
-        '/cs/cabinet/history/game',
-        '/de/cabinet/history/game',
-        '/fr-CA/cabinet/history/game',
         '/cabinet/history/transaction',
-        '/cs/cabinet/history/transaction',
-        '/de/cabinet/history/transaction',
-        '/fr-CA/cabinet/history/transaction',
         '/cabinet/history/bonus',
-        '/cs/cabinet/history/bonus',
-        '/de/cabinet/history/bonus',
-        '/fr-CA/cabinet/history/bonus',
         '/games/all',
-        '/cs/games/all',
-        '/de/games/all',
-        '/fr-CA/games/all',
       ];
+
+      routes.forEach(route => {
+        locales.forEach(locale => routes.push(`/${locale}${route}`));
+      });
+
       const categories = axios.get(`${API_HOST}/categoryList`).then(res => {
         res.data.data.forEach(category => {
           routes.push(`/games/${category.slug}`);
-          routes.push(`/cs/games/${category.slug}`);
-          routes.push(`/de/games/${category.slug}`);
-          routes.push(`/fr-CA/games/${category.slug}`);
+          locales.forEach(locale => routes.push(`/${locale}/games/${category.slug}`));
         });
       });
+
       const providers = axios.get(`${API_HOST}/gameProducerList`).then(res => {
         res.data.data.forEach(provider => {
           routes.push(`/providers/${provider.name}`);
-          routes.push(`/cs/providers/${provider.name}`);
-          routes.push(`/de/providers/${provider.name}`);
-          routes.push(`/fr-CA/providers/${provider.name}`);
+          locales.forEach(locale => routes.push(`/${locale}/providers/${provider.name}`));
         });
       });
 
