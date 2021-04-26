@@ -4,11 +4,11 @@
     <p class="Text">
       The following terms and conditions will enter into force on 01/31/2021. Before you start the
       game please read the Terms and Conditions section carefully. Started using the site you
-      automatically confirm your acceptance of the Terms and Conditions
+      automatically confirm your acceptance of the Terms and Conditions.
     </p>
     <p class="Text">
       Current Terms and Conditions are governed by and interpreted in accordance with the
-      legislation of Cyprus.
+      legislation of Curacao.
     </p>
 
     <h4 class="Title">General</h4>
@@ -16,18 +16,16 @@
       <li class="SupportPage-Item">
         <p class="Text">
           The website www.ninecasino.com ("Casino", "Website", “Company”, "We", "Us", "Our") is
-          operated by Scartesu Ltd., subsidiary of Dux Group N.V., by the laws of Cyprus acting as
-          an Agent on behalf of Dux Group N.V., registered in Cyprus with registered address:
-          Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ
-          410983.The governing law of the website is Cyprus law. The website www.ninecasino.com
-          ("Casino", "Website", “Company”, "We", "Us", "Our") is owned by Dux Group N.V., a company
-          registered and established under the laws of Curaçao, with registration No. 155114 and
-          registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by
-          the Government of Curaçao as an Information Provider legally authorised to conduct online
-          gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing
-          and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to
-          inquire about the existing laws and regulations of the given jurisdiction for online
-          gambling.
+          owned and operated by Dux Group N.V. the company registered at Curacao on the 09th day of
+          September, 2020, registration number 155114, located at Perseusweg 27A, Willemstad,
+          Curacao. Dux Group N.V. is licensed by the Government of Curaçao as an Information
+          Provider legally authorised to conduct online gaming operations from Curaçao under license
+          No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone
+          N.V. It is the player’s sole responsibility to inquire about the existing laws and
+          regulations of the given jurisdiction for online gambling. The payment agent of Dux Group
+          N.V. is a Cyprus company SCARTESU LIMITED, registration number HE 410983, registered
+          address Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus. The governing
+          law of the website is the laws of Curacao.
         </p>
       </li>
       <li class="SupportPage-Item">
@@ -66,30 +64,6 @@
         <p class="Text">
           Using VPN to bypass provider’s block is strictly prohibited and may lead to confiscation
           of winnings.
-        </p>
-      </li>
-      <li class="SupportPage-Item">
-        <p class="Text">
-          NetEnt games are unavailable for Afghanistan, Albania, Algeria, Angola, Australia,
-          Bahamas, Botswana, Belgium, Bulgaria, Colombia, Croatia, Czech Republic, Denmark, Estonia,
-          Ecuador, Ethiopia, France, Ghana, Guyana, Hong Kong, Italy, Iran, Iraq, Israel, Kuwait,
-          Latvia, Lithuania, Mexico, Namibia, Nicaragua, North Korea, Pakistan, Panama, Philippines,
-          Portugal, Romania, Singapore, Spain, Sweden, Switzerland, Sudan, Syria, Taiwan, Trinidad
-          and Tobago, Tunisia, Uganda, United Kingdom, United States of America, Yemen, Zimbabwe.
-        </p>
-      </li>
-      <li class="SupportPage-Item">
-        <p class="Text">
-          In addition to the above, Street Fighter Video Slot is not available for the following
-          countries: Anguilla, Antigua & Barbuda, Argentina, Aruba, Barbados, Bahamas, Belize,
-          Bermuda, Bolivia, Bonaire, Brazil, British Virgin Islands, Canada, Cayman Islands, China,
-          Chile, Clipperton Island, Columbia, Costa Rica, Cuba, Curacao, Dominica, Dominican
-          Republic, El Salvador, Greenland, Grenada, Guadeloupe, Guatemala, Guyana, Haiti, Honduras,
-          Jamaica, Japan, Martinique, Mexico, Montserrat, Navassa Island, Paraguay, Peru, Puerto
-          Rico, Saba, Saint Barthelemy, Saint Eustatius, Saint Kitts and Nevis, Saint Lucia, Saint
-          Maarten, Saint Martin, Saint Pierre and Miquelon, Saint Vincent and the Grenadines, South
-          Korea, Suriname, Turks and Caicos Islands, United States of America, Uruguay, US Virgin
-          Islands, Venezuela.
         </p>
       </li>
       <li class="SupportPage-Item">
@@ -672,14 +646,14 @@
           1) photos of both sides of your passport, driver's license, or any other form of ID,<br />
           2) proof of address (proof of address would need to be a photo of a paper document posted
           to you in the last 90 days, it could be eg a government-issued document, a bank document,
-          a bill, or similar. <br />
+          a bill, or similar.<br />
           3) Alternatively, you can upload the original PDF of a utility bill), bank statement
           (showing your name and account number if you haven’t uploaded it as a proof of address)
         </p>
       </li>
       <li class="SupportPage-Item">
         <p class="Text">
-          It may take up to 7 business days for a refund to be decided
+          It may take up to 7 business days for a refund to be decided.
         </p>
       </li>
       <li class="SupportPage-Item">

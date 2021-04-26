@@ -29,7 +29,7 @@
             @load="setHeroBannerIsLoaded"
           />
         </picture>
-        <div class="Hero-Content" :class="{ 'Hero-Content--centered': !isLoggedIn }">
+        <div class="Hero-Content Hero-Content--centered">
           <div class="Title Title--type-h1 Hero-Title" v-html="slides[depositNum].title"></div>
           <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
           <div class="Hero-Text" v-html="slides[depositNum].text"></div>
@@ -108,12 +108,6 @@ export default {
       },
       slides: [
         {
-          bg: 'aztec',
-          title: this.$t('homepage.heroBanner.deposit1.title'),
-          text: this.$t('homepage.heroBanner.deposit1.text'),
-          btnText: 'Deposit now',
-        },
-        {
           bg: 'wolf',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
@@ -121,6 +115,12 @@ export default {
         },
         {
           bg: 'joker',
+          title: this.$t('homepage.heroBanner.deposit1.title'),
+          text: this.$t('homepage.heroBanner.deposit1.text'),
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'aztec',
           title: this.$t('homepage.heroBanner.deposit2.title'),
           text: this.$t('homepage.heroBanner.deposit2.text'),
           btnText: 'Deposit now',

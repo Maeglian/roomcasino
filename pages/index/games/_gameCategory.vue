@@ -1,5 +1,20 @@
 <template>
   <div>
+    <template v-if="recentGames.length">
+      <div class="Title Title--type-h2 Cards-Title">
+        {{ $t('gameCategories.recent') }}
+      </div>
+      <Games
+        :key="isLoggedIn"
+        class="DefaultGames-Cards"
+        :games="recentGames"
+        :games-to-show="recentGamesNum"
+        btn-class="Btn--common Btn--dark"
+      />
+    </template>
+    <div class="Title Title--type-h2 Cards-Title">
+      {{ $t(`gameCategories.${$route.params.gameCategory}`) }}
+    </div>
     <Loader v-if="gamesAreLoading" />
     <Games
       v-else
@@ -12,7 +27,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapGetters, mapState } from 'vuex';
 import Loader from '@/components/Loader';
 import Games from '@/components/Games';
 
@@ -23,7 +38,11 @@ export default {
     Games,
   },
   computed: {
-    ...mapState(['games', 'gamesAreLoading']),
+    ...mapState(['width', 'games', 'gamesAreLoading', 'recentGames']),
+    ...mapGetters(['isLoggedIn']),
+    recentGamesNum() {
+      return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
+    },
     gamesParams() {
       const params = {};
       if (this.$route.params.gameCategory !== 'all')
@@ -37,11 +56,12 @@ export default {
       immediate: true,
       handler() {
         this.getGames(this.gamesParams);
+        if (this.isLoggedIn) this.getRecentGames(this.gamesParams);
       },
     },
   },
   methods: {
-    ...mapActions(['getGames']),
+    ...mapActions(['getGames', 'getRecentGames']),
   },
 };
 </script>

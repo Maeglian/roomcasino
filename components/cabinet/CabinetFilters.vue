@@ -34,7 +34,7 @@
             <Datepicker
               :language="language"
               format="dd.MM.yyyy"
-              placeholder="DD.MM.YYYY"
+              :placeholder="$t('filters.dataPlaceholder')"
               class="Datepicker CabinetPage-Datepicker"
               calendar-class="Datepicker-Inner"
               input-class="Datepicker-Input"
@@ -44,7 +44,9 @@
             />
           </template>
         </div>
-        <button class="CabinetFilters-Submit" @click="$emit('filter')">Filter</button>
+        <button class="CabinetFilters-Submit" @click="$emit('filter')">
+          {{ $t('buttons.filter') }}
+        </button>
       </div>
     </transition>
   </div>
@@ -54,7 +56,7 @@
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapGetters, mapState } from 'vuex';
 import moment from 'moment';
-import { de, cs } from 'vuejs-datepicker/dist/locale';
+import { de, cs, fr } from 'vuejs-datepicker/dist/locale';
 
 const Datepicker = () => import('vuejs-datepicker');
 
@@ -75,6 +77,7 @@ export default {
       filtersMenuIsOpen: false,
       de,
       cs,
+      'fr-CA': fr,
     };
   },
   computed: {

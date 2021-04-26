@@ -102,7 +102,7 @@
   "pages": {
     "lobby": "Lobby",
     "myAccount": "My account",
-    "promotion": "Promotion",
+    "promotion": "Promotions",
     "aboutUs": "About us",
     "faq": "FAQ",
     "btc": "About BTC",
@@ -120,7 +120,8 @@
     "slots": "Slots games",
     "roulette": "Roulette",
     "table": "Table Games",
-    "card": "Card games"
+    "card": "Card games",
+    "recent": "Recent games"
   },
   "footer": {
     "text": {
@@ -197,7 +198,8 @@
     "filteredBy": "Filtered by",
     "allStatuses": "All statuses",
     "allCurrencies": "All currencies",
-    "until": "Until"
+    "until": "Until",
+    "dataPlaceholder": "DD.MM.YYYY"
   },
   "cabinet": {
     "pages": {

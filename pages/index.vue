@@ -1,7 +1,7 @@
 <template>
   <div class="HomePage">
     <Hero />
-    <BestGames />
+    <BestGames :key="$route.path" />
     <!--    <Jackpots />-->
     <!--    <Tournament />-->
     <!--    <Winners />-->

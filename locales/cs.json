@@ -115,7 +115,8 @@
     "slots" : "Sloty hry",
     "roulette" : "Ruleta",
     "table" : "Stolní hry",
-    "card" : "Karetní hry"
+    "card" : "Karetní hry",
+    "recent": "Nedávné hry"
   },
   "footer" : {
     "text" : {
@@ -191,7 +192,8 @@
     "filteredBy" : "Filtrováno podle",
     "allStatuses" : "Všechny stavy",
     "AllCurrencies" : "Všechny měny",
-    "until" : "Dokud"
+    "until" : "Dokud",
+    "dataPlaceholder": "DD.MM.YYYY"
   },
   "cabinet" : {
     "pages" : {
