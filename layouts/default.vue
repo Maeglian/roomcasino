@@ -13,9 +13,8 @@
 import { mapGetters } from 'vuex';
 import InitialLoader from '@/components/InitialLoader';
 import CookiesPopup from '@/components/homepage/CookiesPopup';
+import CashierForm from '@/components/CashierForm';
 import liveChat from '~/mixins/liveChat';
-
-const CashierForm = () => import('@/components/CashierForm');
 
 export default {
   name: 'Page',

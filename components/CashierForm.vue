@@ -31,7 +31,6 @@
 
 <script>
 import { mapActions, mapMutations, mapState, mapGetters } from 'vuex';
-import _PaymentIQCashier from 'paymentiq-cashier-bootstrapper';
 import Loader from '@/components/Loader';
 import BaseModal from '@/components/base/BaseModal';
 import showAuthDialog from '@/mixins/showAuthDialog';
@@ -93,8 +92,8 @@ export default {
 
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
 
-      // eslint-disable-next-line no-unused-vars,no-undef
-      const CashierInstance = new _PaymentIQCashier(
+      // eslint-disable-next-line no-unused-vars
+      const CashierInstance = new this.$_Cashier(
         '#cashier',
         {
           merchantId: this[billingSession].merchantId,
@@ -138,6 +137,8 @@ export default {
           });
         },
       );
+
+      // eslint-disable-next-line no-unused-vars,no-undef
     },
     onCloseCashierForm() {
       if (this.depositIsDone) {
