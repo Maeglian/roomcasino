@@ -97,7 +97,7 @@ export default {
       {
         code: 'en-CA',
         codeCountry: 'en_CA',
-        file: 'en_CA.json',
+        file: 'en_ca.json',
         icon: 'en-ca.svg',
       },
       {

@@ -120,7 +120,8 @@
     "roulette" : "Roulette",
     "table" : "Tischspiele",
     "card" : "Kartenspiele",
-    "recent": "Letzte Spiele"
+    "recent": "Letzte Spiele",
+    "new": "Neue Spiele"
   },
   "footer" : {
     "text" : {
