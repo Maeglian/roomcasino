@@ -68,7 +68,7 @@
     "terms": "I am {minAge} years old and I accept the{br} {terms} and {policy}",
     "step2Title": "Please, fill the information below!",
     "thanksRegistration": "Thank you for registration",
-    "registrationBonus": "$150",
+    "registrationBonus": "$225",
     "registrationBonusText": "For your first deposit! Use advantage of Ninecasino Welcome Bonus",
     "getBonus": "Get your bonus",
     "enterEmail": "Enter email",
@@ -80,7 +80,7 @@
     "tryingConfirmEmail": "We're trying to verify your email",
     "confirmEmailError": "Sorry, you email was not confirmed",
     "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed",
-    "bonus": "€ 150",
+    "bonus": "$225",
     "placeholders": {
       "enterEmail": "Enter your email",
       "enterPassword": "Enter your password",
@@ -157,16 +157,16 @@
   "homepage": {
     "heroBanner": {
       "deposit1": {
-        "title": "Welcome <br/> package <span class=\"Colored\">$ 450!</span>",
-        "text": "Make first deposit<br/> and get <span class=\"Colored\">100%</span> up to <span class=\"Colored\">$ 150</span>"
+        "title": "Welcome <br/> package <span class=\"Colored\">$ 675!</span>",
+        "text": "Make first deposit<br/> and get <span class=\"Colored\">100%</span> up to <span class=\"Colored\">$ 225</span>"
       },
       "deposit2": {
         "title": "Second deposit<br/> bonus",
-        "text": "55% bonus<br/> up to <span class=\"Colored\">$150</span><br/> on your second deposit"
+        "text": "55% bonus<br/> up to <span class=\"Colored\">$225</span><br/> on your second deposit"
       },
       "deposit3": {
         "title": "Third deposit<br/> bonus",
-        "text": "100% bonus<br/> up to <span class=\"Colored\">$150</span><br/> on your third deposit"
+        "text": "100% bonus<br/> up to <span class=\"Colored\">$225</span><br/> on your third deposit"
       },
       "deposit4": {
         "title": "More exciting<br/> promotions<br/> coming soon!"
@@ -347,21 +347,21 @@
   "promotions": {
     "title": "Current promotions",
     "text": "Ninecasino is constantly working to deliver the best promotions. We use the latest\n        technology and the feedback from our players to re-design our promotions. Enjoy!",
-    "upTo": "up to $150",
+    "upTo": "up to $225",
     "deposit1": {
       "title": "100%<br/> of the deposit<br/> amount",
       "name": "First deposit bonus",
-      "text": "Make your first deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make first deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your first deposit at Ninecasino and get up to $225.<br/><br/>To activate the bonus - just make first deposit of $30 or more. The bonus will be credited automatically."
     },
     "deposit2": {
       "title": "55%<br/> of the deposit<br/> amount",
       "name": "Second deposit bonus",
-      "text": "Make your second deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your second deposit at Ninecasino and get up to $225.<br/><br/>To activate the bonus - just make second deposit of $30 or more. The bonus will be credited automatically."
     },
     "deposit3": {
       "title": "100%<br/> of the deposit<br/> amount",
       "name": "Third deposit bonus",
-      "text": "Make your third deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your third deposit at Ninecasino and get up to $225.<br/><br/>To activate the bonus - just make third deposit of $30 or more. The bonus will be credited automatically."
     }
   }
 }

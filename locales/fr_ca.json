@@ -67,7 +67,7 @@
     "terms" : "J’ai  {minAge} ans et j’accepte les {br} {terms} et {policy}",
     "step2Title" : "Veuillez remplir les informations ci-dessous !",
     "thanksRegistration" : "Merci pour l'inscription",
-    "registrationBonus" : "€ 150",
+    "registrationBonus" : "$225",
     "registrationBonusText" : "Pour votre premier dépôt! Profitez du bonus de Bienvenue de Ninecasino",
     "pleaseDepositText" : "Obtenez votre bonus",
     "enterEmail" : "Entrez l'email",
@@ -79,7 +79,7 @@
     "tryingConfirmEmail" : "Nous essayons de vérifier votre email",
     "confirmEmailError" : "Désolé, votre e-mail n'a pas été confirmé",
     "confirmEmailSuccess" : "Félicitations ! Votre e-mail a été confirmé avec succès",
-    "bonus" : "€ 150",
+    "bonus" : "$225",
     "placeholders" : {
       "enterEmail" : "Entrez votre email",
       "enterPassword" : "Entrez votre mot de passe",
@@ -154,16 +154,16 @@
   "homepage" : {
     "heroBanner" : {
       "deposit1" : {
-        "title" : "Paquet de bienvenue <span class=\"Colored\">€ 450!</span>",
-        "text" : "Effectuez un premier dépôt <br/> et obtenez <span class = \"Colored\"> 100% </span> jusqu'à <span class = \"Colored\">€ 150</span>"
+        "title" : "Paquet de bienvenue <span class=\"Colored\">$675!</span>",
+        "text" : "Effectuez un premier dépôt <br/> et obtenez <span class = \"Colored\"> 100% </span> jusqu'à <span class = \"Colored\">$225</span>"
       },
       "deposit2" : {
         "title" : "Bonus de deuxième<br/> dépôt",
-        "text" : "55% de bonus<br/> jusqu'à <span class=\"Colored\">150</span><br/> sur votre deuxième dépôt"
+        "text" : "55% de bonus<br/> jusqu'à <span class=\"Colored\">$225</span><br/> sur votre deuxième dépôt"
       },
       "deposit3" : {
         "title" : "Bonus de troisième<br/> dépôt",
-        "text" : "100% de bonus<br/> jusqu'à <span class=\"Colored\">150</span><br/> sur votre troisième dépôt"
+        "text" : "100% de bonus<br/> jusqu'à <span class=\"Colored\">$225</span><br/> sur votre troisième dépôt"
       },
       "deposit4" : {
         "title" : "D'autres promotions<br/> excitantes<br/> sont à venir!"
@@ -345,21 +345,21 @@
   "promotions" : {
     "title" : "Promotions en cours",
     "text" : "Ninecasino cherche constamment à offrir les meilleures promotions. Nous utilisons les dernières technologies et les commentaires de nos joueurs pour repenser nos promotions. Profitez-en!",
-    "upTo" : "jusqu’à  $150",
+    "upTo" : "jusqu’à  $225",
     "deposit1" : {
       "title" : "100%<br/> du montant du<br/> dépôt",
       "name" : "Bonus de premier dépôt",
-      "text" : "Effectuez votre premier dépôt sur Ninecasino et recevez jusqu’à 150 $.<br/><br/>Pour activer le bonus, il suffit d’effectuer un premier dépôt de 20 $ ou plus. Le bonus sera versé automatiquement. "
+      "text" : "Effectuez votre premier dépôt sur Ninecasino et recevez jusqu’à $225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un premier dépôt de $30 ou plus. Le bonus sera versé automatiquement. "
     },
     "deposit2" : {
       "title" : "55%<br/> du montant du<br/> dépôt",
       "name" : "Bonus de deuxième dépôt ",
-      "text" : "Effectuez votre deuxième dépôt sur Ninecasino et recevez jusqu’à 150 $.<br/><br/>Pour activer le bonus, il suffit d’effectuer un deuxième dépôt de 20 $ ou plus. Le bonus sera versé automatiquement."
+      "text" : "Effectuez votre deuxième dépôt sur Ninecasino et recevez jusqu’à $225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un deuxième dépôt de $30 ou plus. Le bonus sera versé automatiquement."
     },
     "deposit3" : {
       "title" : "100%<br/> du montant du<br/> dépôt",
       "name" : "Bonus de troisième dépôt",
-      "text" : "Effectuez votre troisième dépôt sur Ninecasino et recevez jusqu’à 150 $.<br/><br/>Pour activer le bonus, il suffit d’effectuer un troisième dépôt de 20 $ ou plus. Le bonus sera versé automatiquement."
+      "text" : "Effectuez votre troisième dépôt sur Ninecasino et recevez jusqu’à $225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un troisième dépôt de $30 ou plus. Le bonus sera versé automatiquement."
     }
   }
 }
