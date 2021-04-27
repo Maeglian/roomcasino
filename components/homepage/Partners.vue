@@ -1,6 +1,6 @@
 <template>
   <div class="Partners">
-    <client-only v-if="width < 690">
+    <client-only>
       <marquee-text :duration="durationSpeed">
         <div class="Partners-Wrapper">
           <div class="Partners-Partner">
@@ -39,38 +39,6 @@
         </div>
       </marquee-text>
     </client-only>
-    <div v-else class="Partners-Wrapper">
-      <div class="Partners-Partner">
-        <img class="Partners-Image Partners-Image--height" src="@/assets/img/interac.svg" />
-      </div>
-      <div class="Partners-Partner">
-        <img class="Partners-Image Partners-Image--height" src="@/assets/img/astropay.svg" />
-      </div>
-      <div class="Partners-Partner">
-        <img class="Partners-Image" src="@/assets/img/inpay.png" />
-      </div>
-      <div class="Partners-Partner">
-        <img class="Partners-Image Partners-Image--height" src="@/assets/img/mastercard.svg" />
-      </div>
-      <div class="Partners-Partner">
-        <img class="Partners-Image" src="@/assets/img/visa.svg" />
-      </div>
-      <div class="Partners-Partner">
-        <img class="Partners-Image Partners-Image--width" src="@/assets/img/ecashout.svg" />
-      </div>
-      <div class="Partners-Partner">
-        <img class="Partners-Image Partners-Image--width" src="@/assets/img/flexepin.png" />
-      </div>
-      <div class="Partners-Partner">
-        <img class="Partners-Image Partners-Image--width" src="@/assets/img/neosurf.png" />
-      </div>
-      <div class="Partners-Partner">
-        <img class="Partners-Image Partners-Image--width-more" src="@/assets/img/muchbetter.png" />
-      </div>
-      <!--      <div class="Partners-Partner">-->
-      <!--        <img class="Partners-Image" src="@/assets/img/payguru.png"/>-->
-      <!--      </div>-->
-    </div>
   </div>
 </template>
 
