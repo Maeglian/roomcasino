@@ -18,8 +18,23 @@
           <div class="Partners-Partner">
             <img class="Partners-Image" src="@/assets/img/visa.svg" />
           </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image Partners-Image--width" src="@/assets/img/ecashout.svg" />
+          </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image Partners-Image--width" src="@/assets/img/flexepin.png" />
+          </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image Partners-Image--width" src="@/assets/img/neosurf.png" />
+          </div>
+          <div class="Partners-Partner">
+            <img
+              class="Partners-Image Partners-Image--width-more"
+              src="@/assets/img/muchbetter.png"
+            />
+          </div>
           <!--          <div class="Partners-Partner">-->
-          <!--            <img class="Partners-Image" src="@/assets/img/payguru.png" />-->
+          <!--            <img class="Partners-Image" src="@/assets/img/payguru.png"/>-->
           <!--          </div>-->
         </div>
       </marquee-text>
@@ -40,8 +55,20 @@
       <div class="Partners-Partner">
         <img class="Partners-Image" src="@/assets/img/visa.svg" />
       </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image Partners-Image--width" src="@/assets/img/ecashout.svg" />
+      </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image Partners-Image--width" src="@/assets/img/flexepin.png" />
+      </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image Partners-Image--width" src="@/assets/img/neosurf.png" />
+      </div>
+      <div class="Partners-Partner">
+        <img class="Partners-Image Partners-Image--width-more" src="@/assets/img/muchbetter.png" />
+      </div>
       <!--      <div class="Partners-Partner">-->
-      <!--        <img class="Partners-Image" src="@/assets/img/payguru.png" />-->
+      <!--        <img class="Partners-Image" src="@/assets/img/payguru.png"/>-->
       <!--      </div>-->
     </div>
   </div>
@@ -98,6 +125,14 @@ export default {
 
   &-Image--height {
     height: 50px;
+  }
+
+  &-Image--width {
+    width: 80px;
+  }
+
+  &-Image--width-more {
+    width: 190px;
   }
 }
 </style>
