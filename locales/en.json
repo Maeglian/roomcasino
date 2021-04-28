@@ -365,5 +365,36 @@
       "name": "Third deposit bonus",
       "text": "Make your third deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
     }
+  },
+  "dropsWins": {
+    "prize": "€ 2 500 000",
+    "text": "The main tournament of the year! Join Stage 3 (Weeks 9-12) of the promotion. Try your luck to win a cash prize of €2,500,000 in total! There are weekly and daily tournaments with generous prize pools.<br/>Every day you can get prizes in various popular slots from well-known Pragmatic Play™.",
+    "textMobile": "Welcome new Drops & Wins Network Promotion! Try your luck to win a cash prize of €2 500 000 in total!",
+    "terms": [
+      {
+        "title": "Stage 3 runs between",
+        "text": "Week 9: 8th April 2021 00:01 CEST – 14th April 2021 23:59 CEST<br/>Week 10: 15th April 2021 00:01 CEST – 21st April 2021 23:59 CEST<br/>Week 11: 22nd April 2021 00:01 CEST – 28th April 2021 23:59 CEST<br/>Week 12: 29th April 2021 00:01 CEST – 5th May 2021 23:59 CEST"
+      },
+      {
+        "title": "Games in this tournament",
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker's Jewels™, Chilli Heat™, Fruit Party™, Wild Wild Riches™, Wild West Gold™, Cowboys Gold™, Gems Bonanza™, Big Bass Bonanza™, Madame Destiny Megaways™, The Hand of Midas™, Gates of Olympus™, Joker King™, Hot to Burn Hold and Spin™, Fishin' Reels™, Juicy Fruits™, Power of Thor Megaways™."
+      },
+      {
+        "title": "Drops & Wins includes",
+        "text": "The maximum WEEKLY prize pool of €31,000 in total will be shared between 550 winners.<br/> Players have an opportunity to win cash prizes in Daily prize drops with the €4,500 prize pool which will be shared between 20 of the most active participants."
+      },
+      {
+        "title": "How to win",
+        "text": "A player must place a real money bet on any of the participating games and must get at least one (1) in-game win to qualify for the Weekly Tournament. Highest single spin win amount adjusted for bet amount.<br/> Any real money spin in the participating games can trigger a random prize."
+      },
+      {
+        "title": "Additionally",
+        "text": "Each Tournament runs for 7 days from Thursday to Wednesday with daily Prize Drops in parallel.<br/> Minimum bet requirement of €0.50.<br/> In order to participate, players need to play with real money and make qualifying bets on any of the participating games."
+      }
+    ]
+  },
+  "tournaments": {
+    "games": "Games in this tournament",
+    "terms": "Tournament terms and conditions"
   }
 }

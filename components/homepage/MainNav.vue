@@ -93,6 +93,12 @@ export default {
           icon: 'user-profile.svg',
           onlyIfLoggedIn: true,
         },
+        {
+          name: 'Drops & Wins',
+          url: this.localePath('/drops-wins'),
+          icon: 'tournament_nav.svg',
+          onlyIfLoggedIn: false,
+        },
         // {
         //   name: 'Tournaments',
         //   children: [

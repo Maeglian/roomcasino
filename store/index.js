@@ -101,6 +101,7 @@ export const state = () => ({
   defaultGames: [],
   newGames: [],
   liveGames: [],
+  dropWinsGames: [],
   jackpots: [],
   fakeLimits: [
     {
@@ -228,6 +229,7 @@ export const state = () => ({
   defaultGamesAreLoading: false,
   newGamesAreLoading: false,
   liveGamesAreLoading: false,
+  dropWinsGamesAreLoading: false,
   winnersAreLoading: false,
   errors: {},
   profileIsLoading: false,
@@ -828,6 +830,9 @@ export const mutations = {
   setNewGamesAreLoading: (state, payload) => {
     state.newGamesAreLoading = payload;
   },
+  setDropWinsGamesAreLoading: (state, payload) => {
+    state.dropWinsAreLoading = payload;
+  },
   setLiveGamesAreLoading: (state, payload) => {
     state.liveGamesAreLoading = payload;
   },
@@ -839,6 +844,9 @@ export const mutations = {
   },
   setNewGames: (state, payload) => {
     state.newGames = payload;
+  },
+  setDropWinsGames: (state, payload) => {
+    state.dropWinsGames = payload;
   },
   setLiveGames: (state, payload) => {
     state.liveGames = payload;
@@ -1013,6 +1021,18 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setLiveGamesAreLoading', false);
+    }
+  },
+
+  async getDropWinsGames({ commit }) {
+    commit('setDropWinsGamesAreLoading', true);
+    try {
+      const res = await axios.get(`${API_HOST}/gameList`, { params: { category: 'DROP&WINS' } });
+      commit('setDropWinsGames', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setDropWinsGamesAreLoading', false);
     }
   },
 
