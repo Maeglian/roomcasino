@@ -65,17 +65,19 @@
         />
       </div>
       <Nuxt />
-      <div class="Title Title--type-h2 Cards-Title">
-        {{ $t('gameCategories.new') }}
-      </div>
-      <Loader v-if="newGamesAreLoading" />
-      <Games
-        v-else
-        class="DefaultGames-Cards"
-        :games="newGames"
-        :games-to-show="24"
-        btn-class="Btn--common Btn--dark"
-      />
+      <template v-if="newGames.length">
+        <div class="Title Title--type-h2 Cards-Title">
+          {{ $t('gameCategories.new') }}
+        </div>
+        <Loader v-if="newGamesAreLoading" />
+        <Games
+          v-else
+          class="DefaultGames-Cards"
+          :games="newGames"
+          :games-to-show="24"
+          btn-class="Btn--common Btn--dark"
+        />
+      </template>
       <div class="Title Title--type-h2 Cards-Title">
         {{ $t('gameCategories.live') }}
       </div>
