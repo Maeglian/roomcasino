@@ -121,7 +121,8 @@
     "roulette": "Roulette",
     "table": "Table Games",
     "card": "Card games",
-    "recent": "Recent games"
+    "recent": "Recent games",
+    "new": "New games"
   },
   "footer": {
     "text": {

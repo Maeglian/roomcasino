@@ -48,6 +48,8 @@ window.onNuxtReady(({ context }) => {
   context.store
     .dispatch('getDefaultGames')
     .then(() => context.store.commit('setInitialLoading', 'defaultGames'));
+  context.store.dispatch('getNewGames');
+  context.store.dispatch('getLiveGames');
   context.store
     .dispatch('getCountriesList')
     .then(() => context.store.commit('setInitialLoading', 'countries'));

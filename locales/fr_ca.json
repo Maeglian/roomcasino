@@ -119,7 +119,8 @@
     "slots" : "Jeux de machines à sous",
     "roulette" : "Roulette",
     "table" : "Jeux de table",
-    "card" : "Jeux de cartes"
+    "card" : "Jeux de cartes",
+    "new": "Nouveaux jeux"
   },
   "footer" : {
     "text" : {

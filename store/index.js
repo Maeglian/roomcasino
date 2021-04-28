@@ -99,6 +99,8 @@ export const state = () => ({
   games: [],
   recentGames: [],
   defaultGames: [],
+  newGames: [],
+  liveGames: [],
   jackpots: [],
   fakeLimits: [
     {
@@ -224,6 +226,8 @@ export const state = () => ({
   limits: [],
   gamesAreLoading: false,
   defaultGamesAreLoading: false,
+  newGamesAreLoading: false,
+  liveGamesAreLoading: false,
   winnersAreLoading: false,
   errors: {},
   profileIsLoading: false,
@@ -821,11 +825,23 @@ export const mutations = {
   setDefaultGamesAreLoaded: state => {
     state.defaultGamesAreLoading = false;
   },
+  setNewGamesAreLoading: (state, payload) => {
+    state.newGamesAreLoading = payload;
+  },
+  setLiveGamesAreLoading: (state, payload) => {
+    state.liveGamesAreLoading = payload;
+  },
   setGames: (state, payload) => {
     state.games = payload;
   },
   setRecentGames: (state, payload) => {
     state.recentGames = payload;
+  },
+  setNewGames: (state, payload) => {
+    state.newGames = payload;
+  },
+  setLiveGames: (state, payload) => {
+    state.liveGames = payload;
   },
   setDefaultGames: (state, payload) => {
     state.defaultGames = payload;
@@ -973,6 +989,30 @@ export const actions = {
       commit('pushErrors', e);
     } finally {
       commit('setGamesAreLoaded');
+    }
+  },
+
+  async getNewGames({ commit }) {
+    commit('setNewGamesAreLoading', true);
+    try {
+      const res = await axios.get(`${API_HOST}/gameList`, { params: { category: 'new' } });
+      commit('setNewGames', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setNewGamesAreLoading', false);
+    }
+  },
+
+  async getLiveGames({ commit }) {
+    commit('setLiveGamesAreLoading', true);
+    try {
+      const res = await axios.get(`${API_HOST}/gameList`, { params: { category: 'live' } });
+      commit('setLiveGames', res.data.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setLiveGamesAreLoading', false);
     }
   },
 
