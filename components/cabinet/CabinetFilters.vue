@@ -77,8 +77,8 @@ export default {
       filtersMenuIsOpen: false,
       de,
       cs,
-      'fr-CA': fr,
-      'en-CA': en,
+      fr,
+      'en-ca': en,
     };
   },
   computed: {

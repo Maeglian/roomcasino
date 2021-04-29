@@ -91,6 +91,7 @@ export default {
       this.cashierIsLoading = true;
 
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
+      const locale = this.$i18n.locale === 'en-ca' ? 'en' : this.$i18n.locale;
 
       // eslint-disable-next-line no-unused-vars
       const CashierInstance = new this.$_Cashier(
@@ -102,7 +103,7 @@ export default {
           environment,
           fetchConfig: true,
           method,
-          locale: `${this.$i18n.locale}_${this.user.country}`,
+          locale: `${locale}_${this.user.country}`,
           containerMinHeight: '700px',
         },
         api => {
