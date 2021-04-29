@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API_HOST } from './config';
 
-const locales = ['en-CA', 'fr-CA', 'cs', 'de'];
+const locales = ['en-ca', 'fr', 'cs', 'de'];
 
 const target =
   process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
@@ -95,13 +95,13 @@ export default {
         icon: 'en.svg',
       },
       {
-        code: 'en-CA',
+        code: 'en-ca',
         codeCountry: 'en_CA',
         file: 'en_ca.json',
         icon: 'en-ca.svg',
       },
       {
-        code: 'fr-CA',
+        code: 'fr',
         codeCountry: 'fr_FR',
         file: 'fr_ca.json',
         icon: 'fr_ca.svg',
