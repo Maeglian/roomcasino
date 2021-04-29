@@ -4,7 +4,7 @@
       <div class="Wrapper">
         <div class="DailyTournamentPage-MainText">
           <h1 class="Title Title--type-h1 DailyTournamentPage-Title">
-            Drop<span class="Colored">&</span>wins
+            Drops<span class="Colored">&</span>wins
           </h1>
           <div class="DailyTournamentPage-Subtitle">
             {{ $t('dropsWins.prize') }}
