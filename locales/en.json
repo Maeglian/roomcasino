@@ -364,6 +364,12 @@
       "title": "100%<br/> of the deposit<br/> amount",
       "name": "Third deposit bonus",
       "text": "Make your third deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
+    },
+    "dropWins": {
+      "title": "Drops<span class=\"Colored\">&</span>wins<br/>Stage 3<br/>(Weeks 9-12)",
+      "name": "Drops&wins tournament ",
+      "text": "The main tournament of the year! Join Stage 3 (Weeks 9-12) of the promotion. <br/><br/>Try your luck to win a cash prize of €2,500,000 in total!"
+
     }
   },
   "dropsWins": {

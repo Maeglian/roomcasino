@@ -133,6 +133,13 @@ export default {
           announce: this.$t('promotions.deposit3.name'),
           text: this.$t('promotions.deposit3.text'),
         },
+        {
+          title: this.$t('promotions.dropWins.title'),
+          subtitle: this.$t('promotions.upTo'),
+          image: 'promotion3.png',
+          announce: this.$t('promotions.dropWins.name'),
+          text: this.$t('promotions.dropWins.text'),
+        },
         // {
         //   title: '55%<br/> of the deposit<br/> amount',
         //   subtitle: '€ 150 <span class="Colored">+</span> 100 Free Spins',
