@@ -59,7 +59,6 @@
     "cantStart": "Can't start the game",
     "pleaseDeposit": "Please deposit first",
     "pleaseDepositText": "It's a pity, but your balance is 0. Deposit now!"
-
   },
   "auth": {
     "loginTitle": "Welcome back",
@@ -367,36 +366,35 @@
       "text": "Make your third deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
     },
     "dropsWins": {
-      "title": "Drops<span class=\"Colored\">&</span>wins<br/>Stage 3<br/>(Weeks 9-12)",
+      "title": "Drops<span class=\"Colored\">&</span>wins<br/>Stage 4<br/>(Weeks 13-16)",
       "name": "Drops&wins tournament ",
-      "text": "The main tournament of the year! Join Stage 3 (Weeks 9-12) of the promotion. <br/><br/>Try your luck to win a cash prize of €2,500,000 in total!"
-
+      "text": "The main tournament of the year! Join Stage 4 (Weeks 13-16) of the promotion. <br/><br/>Try your luck to win a cash prize of €2,500,000 in total!"
     }
   },
   "dropsWins": {
     "prize": "€ 2 500 000",
-    "text": "The main tournament of the year! Join Stage 3 (Weeks 9-12) of the promotion. Try your luck to win a cash prize of €2,500,000 in total! There are weekly and daily tournaments with generous prize pools.<br/>Every day you can get prizes in various popular slots from well-known Pragmatic Play™.",
+    "text": "The main tournament of the year! Join Stage 4 (Weeks 13-16) of the promotion. Try your luck to win a cash prize of €2,500,000 in total! There are weekly and daily tournaments with generous prize pools.<br/>Every day you can get prizes in various popular slots from well-known Pragmatic Play™.",
     "textMobile": "Welcome new Drops & Wins Network Promotion! Try your luck to win a cash prize of €2 500 000 in total!",
     "terms": [
       {
-        "title": "Stage 3 runs between",
-        "text": "Week 9: 8th April 2021 00:01 CEST – 14th April 2021 23:59 CEST<br/>Week 10: 15th April 2021 00:01 CEST – 21st April 2021 23:59 CEST<br/>Week 11: 22nd April 2021 00:01 CEST – 28th April 2021 23:59 CEST<br/>Week 12: 29th April 2021 00:01 CEST – 5th May 2021 23:59 CEST"
+        "title": "Stage 4 runs between",
+        "text": "Week 13: 6th May 2021 00:01 CEST – 12th May 2021 23:59 CEST\nWeek 14: 13th May 2021 00:01 CEST – 19th May 2021 23:59 CEST\nWeek 15: 20th May 2021 00:01 CEST – 26th May 2021 23:59 CEST\nWeek 16: 27th May 2021 00:01 CEST – 2nd June 2021 23:59 CEST"
       },
       {
         "title": "Games in this tournament",
-        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker's Jewels™, Chilli Heat™, Fruit Party™, Wild Wild Riches™, Wild West Gold™, Cowboys Gold™, Gems Bonanza™, Big Bass Bonanza™, Madame Destiny Megaways™, The Hand of Midas™, Gates of Olympus™, Joker King™, Hot to Burn Hold and Spin™, Fishin' Reels™, Juicy Fruits™, Power of Thor Megaways™."
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker's Jewels™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, The Hand of Midas™, Wild West Gold™, Gates of Olympus™, Congo Cash™, Fishin' Reels™, Power of Thor Megaways™, Floating Dragon™, Wild Booster™, Hot Fiesta™, Buffalo King Megaways™. "
       },
       {
         "title": "Drops & Wins includes",
-        "text": "The maximum WEEKLY prize pool of €31,000 in total will be shared between 550 winners.<br/> Players have an opportunity to win cash prizes in Daily prize drops with the €4,500 prize pool which will be shared between 20 of the most active participants."
+        "text": "Each Tournament runs for seven days from Thursday to Wednesday with daily Prize Drops in parallel.\nThe maximum WEEKLY prize pool of €31,000 in total will be shared between 550 winners.\nPlayers have an opportunity to win cash prizes in Daily prize drops with the €4,500 prize pool which will be shared between 20 of the most active participants."
       },
       {
         "title": "How to win",
-        "text": "A player must place a real money bet on any of the participating games and must get at least one (1) in-game win to qualify for the Weekly Tournament. Highest single spin win amount adjusted for bet amount.<br/> Any real money spin in the participating games can trigger a random prize."
+        "text": "A player must place a real money bet on any of the participating games and must get at least one (1) in-game win to qualify for the Weekly Tournament. No minimum real money bet is required for players to be eligible to participate in the Daily Prize Drops (Prize Multiplier Weeks). "
       },
       {
         "title": "Additionally",
-        "text": "Each Tournament runs for 7 days from Thursday to Wednesday with daily Prize Drops in parallel.<br/> Minimum bet requirement of €0.50.<br/> In order to participate, players need to play with real money and make qualifying bets on any of the participating games."
+        "text": "Players participating during multiplier weeks may win prizes in the form of a multiplier of the winning player’s bet amount as set out in the Weekly Tournament (Prize Multiplier Weeks) Prize Table – and the Daily Prize Drop (Prize Multiplier Weeks) Prize Table further below (hereinafter the “Prize Multiplier Weeks”)\nIf the winning spin exceeds ten Euros (€ 10), the prize will be paid out based on a bet of ten Euros (€ 10) or the equivalent amount in the Available Currency (as defined further below) X multiplier received.\nThe leaderboard is ranked in accordance with the score, which score is based on the highest single spin win amount on any participating game adjusted to the amount of the bet.\nIn the event of two (2) or more players finishing a Weekly Tournament on the same leaderboard position, the player who has achieved the score first will receive the higher prize."
       }
     ]
   },
