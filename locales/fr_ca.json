@@ -95,7 +95,7 @@
       "address" : "Adresse",
       "postalCode" : "Code Postale",
       "phone" : "Numéro de téléphone mobile",
-      "year": "AAAA"
+      "year" : "AAAA"
     }
   },
   "pages" : {
@@ -120,13 +120,13 @@
     "roulette" : "Roulette",
     "table" : "Jeux de table",
     "card" : "Jeux de cartes",
-    "new": "Nouveaux jeux"
+    "new" : "Nouveaux jeux"
   },
   "footer" : {
     "text" : {
-      "p1": "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
-      "p2": "Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., subsidiary of Dux Group N.V., by the laws of Cyprus acting as an Agent on behalf of Dux Group N.V., registered in Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ 410983.The governing law of the website is Cyprus law. The website www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorised to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
-      "p3": "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
+      "p1" : "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
+      "p2" : "Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., subsidiary of Dux Group N.V., by the laws of Cyprus acting as an Agent on behalf of Dux Group N.V., registered in Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ 410983.The governing law of the website is Cyprus law. The website www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorised to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
+      "p3" : "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
     }
   },
   "search" : {
@@ -197,7 +197,7 @@
     "allStatuses" : "Tous les statuts",
     "allCurrencies" : "Toutes les devises",
     "until" : "Jusqu'à",
-    "dataPlaceholder": "DD.MM.AAAA"
+    "dataPlaceholder" : "DD.MM.AAAA"
   },
   "cabinet" : {
     "pages" : {
@@ -282,8 +282,8 @@
         "phoneNumber" : "Numéro de téléphone mobile",
         "birthDate" : "Date de naissance"
       },
-      "updateSuccess": "Votre profil a été mis à jour avec succès!",
-      "passwordUpdateSuccess": "Votre mot de passe a été modifié avec succès!"
+      "updateSuccess" : "Votre profil a été mis à jour avec succès!",
+      "passwordUpdateSuccess" : "Votre mot de passe a été modifié avec succès!"
     },
     "limits" : {
       "initialText" : "Voulez-vous contrôler votre activité, vos limites de perte ou vos limites de dépôt? Votre compte peut être configuré avec toutes les limites. Cela vous aidera à avoir une vue d’ensemble de vos habitudes de jeu. Toutes les restrictions prennent effet instantanément.",
@@ -361,6 +361,41 @@
       "title" : "100%<br/> du montant du<br/> dépôt",
       "name" : "Bonus de troisième dépôt",
       "text" : "Effectuez votre troisième dépôt sur Ninecasino et recevez jusqu’à $225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un troisième dépôt de $30 ou plus. Le bonus sera versé automatiquement."
+    },
+    "dropWins" : {
+      "title" : "Drops<span class=\"Colored\">&</span>wins<br/> à l’étape 4<br/>(semaines 13-16)",
+      "name" : "Drops&wins tournoi",
+      "text" : "Le principal tournoi de l’année! Bienvenue à l’étape 4 (Semaines 13-16 de la promotion Daily Drops & Wins en réseau. <br/><br/> Vous avez une chance de gagner un prix en argent d’une valeur totale de €2 500 000! "
     }
+  },
+  "dropWins" : {
+    "prize" : "€ 2 500 000",
+    "text" : "Le principal tournoi de l’année! Bienvenue à l’étape 4 (semaines 13–16) de la promotion Daily Drops & Wins en réseau. Vous avez une chance de gagner un prix en argent d’une valeur totale de €2 500 000! <br/> Tout tour en argent réel dans les jeux participants peut entraîner un prix en argent aléatoire!\n",
+    "terms" : [
+      {
+        "title" : "L’étape 4 se déroule ainsi :",
+        "text" : "Semaine 13 : du 6 mai 2021 00 h 01 HAEC au 12 mai 2021 23 h 59 HAEC\nSemaine 14 : du 13 mai 2021 00 h 01 HAEC au 19 mai 2021 23 h 59 HAEC\nSemaine 15 : du 20 mai 2021 00 h 01 HAEC au 26 mai 2021 23 h 59 HAEC\nSemaine 16 : du 27 mai 2021 00 h 01 HAEC au 2 juin 2021 23 h 59 HAEC"
+      },
+      {
+        "title" : "Jeux dans le tournoi :",
+        "text" : "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker's Jewels™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, The Hand of Midas™, Wild West Gold™, Gates of Olympus™, Congo Cash™, Fishin' Reels™, Power of Thor Megaways™, Floating Dragon™, Wild Booster™, Hot Fiesta™, Buffalo King Megaways™. "
+      },
+      {
+        "title" : "Drops & Wins comprend : ",
+        "text" : "Chaque tournoi se déroule pendant sept jours, du jeudi au mercredi, avec des remises de prix quotidiennes en parallèle.\nLa cagnotte maximale HEBDOMADAIRE d’un montant total de €31 000 sera partagée entre 550 gagnants.\nLes joueurs ont l’occasion de gagner des prix en espèces lors des remises de prix quotidiennes avec une cagnotte de €4 500 qui sera partagée entre les 20 participants les plus actifs."
+      },
+      {
+        "title" : "Comment gagner :",
+        "text" : "Un joueur doit placer une mise en argent réel sur n’importe quel jeu participant et doit obtenir au moins une (1) victoire intrajeu pour se qualifier pour le Tournoi hebdomadaire.\nUn joueur doit placer une mise en argent réel sur n’importe quel jeu participant et doit obtenir au moins une (1) victoire intrajeu pour se qualifier pour le Tournoi hebdomadaire. Aucune mise minimale en argent réel n’est requise pour que les joueurs soient admissibles à participer aux prix  quotidiens (semaines du multiplicateur de prix). "
+      },
+      {
+        "title" : "De plus :",
+        "text" : "Les joueurs participant aux semaines avec multiplicateur peuvent gagner des prix sous la forme d’un multiplicateur du montant de la mise du joueur gagnant, comme indiqué dans le tableau des prix du tournoi hebdomadaire (semaines avec multiplicateur de prix) et dans le tableau des prix quotidiens (semaines avec multiplicateur de prix) ci-dessous (ci-après les « semaines avec multiplicateur de prix »)\nSi le tour gagnant est supérieur à dix euros (€10), le prix sera payé sur la base d’une mise de dix euros (€10) ou du montant équivalent dans la devise disponible (telle que définie ci-après) X le multiplicateur reçu.\nLe classement est établi en fonction du pointage, lequel est basé sur le montant du gain le plus élevé en un seul tour pour tout jeu participant, ajusté au montant de la mise.\nDans le cas où deux (2) joueurs ou plus terminent un tournoi hebdomadaire à la même position au classement, le joueur qui a atteint le pointage en premier recevra le prix le plus élevé."
+      }
+    ]
+  },
+  "tournaments" : {
+    "games" : "Jeux dans le tournoi",
+    "terms" : "Conditions générales"
   }
 }
