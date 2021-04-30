@@ -362,13 +362,13 @@
       "name" : "Bonus de troisième dépôt",
       "text" : "Effectuez votre troisième dépôt sur Ninecasino et recevez jusqu’à $225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un troisième dépôt de $30 ou plus. Le bonus sera versé automatiquement."
     },
-    "dropWins" : {
+    "dropsWins" : {
       "title" : "Drops<span class=\"Colored\">&</span>wins<br/> à l’étape 4<br/>(semaines 13-16)",
       "name" : "Drops&wins tournoi",
       "text" : "Le principal tournoi de l’année! Bienvenue à l’étape 4 (Semaines 13-16 de la promotion Daily Drops & Wins en réseau. <br/><br/> Vous avez une chance de gagner un prix en argent d’une valeur totale de €2 500 000! "
     }
   },
-  "dropWins" : {
+  "dropsWins" : {
     "prize" : "€ 2 500 000",
     "text" : "Le principal tournoi de l’année! Bienvenue à l’étape 4 (semaines 13–16) de la promotion Daily Drops & Wins en réseau. Vous avez une chance de gagner un prix en argent d’une valeur totale de €2 500 000! <br/> Tout tour en argent réel dans les jeux participants peut entraîner un prix en argent aléatoire!\n",
     "terms" : [

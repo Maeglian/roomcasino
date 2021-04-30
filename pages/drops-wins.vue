@@ -24,7 +24,7 @@
     <section class="DailyTournamentPage-Content">
       <div class="DailyTournamentPage-Games">
         <h2 class="Title Title--type-h2 Page-Subtitle DailyTournamentPage-Subtitle">
-          Games in this tournament
+          {{ $t('tournaments.games') }}
         </h2>
         <Loader v-if="dropWinsGamesAreLoading" />
         <Games
@@ -36,7 +36,7 @@
         />
       </div>
       <h2 class="Title Title--type-h2 Page-Subtitle DailyTournamentPage-Subtitle">
-        Agreement to these terms
+        {{ $t('tournaments.terms') }}
       </h2>
       <div class="Page-Blocks DailyTournamentPage-Terms">
         <div v-for="(item, i) in $t('dropsWins.terms')" :key="`txt${i}`" class="Page-Block">
