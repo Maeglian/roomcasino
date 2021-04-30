@@ -1048,7 +1048,7 @@ export const actions = {
     commit('setPlaysonMayGamesAreLoading', true);
     try {
       const res = await axios.get(`${API_HOST}/gameList`, {
-        params: { category: 'PLAYSON_MAY_CASHDAYS' },
+        params: { category: 'playson-may-cashdays' },
       });
       commit('setPlaysonMayGames', res.data.data);
     } catch (e) {
