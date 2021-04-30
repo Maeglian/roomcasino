@@ -16,16 +16,17 @@
       <li class="SupportPage-Item">
         <p class="Text">
           The website www.ninecasino.com ("Casino", "Website", “Company”, "We", "Us", "Our") is
-          owned and operated by Dux Group N.V. the company registered at Curacao on the 09th day of
-          September, 2020, registration number 155114, located at Perseusweg 27A, Willemstad,
-          Curacao. Dux Group N.V. is licensed by the Government of Curaçao as an Information
-          Provider legally authorised to conduct online gaming operations from Curaçao under license
+          operated by Scartesu Ltd., payment operator of Dux Group N.V., by the laws of Cyprus
+          acting as an agent on behalf of Dux Group N.V., registered in Cyprus with registered
+          address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and
+          registration No. ΗΕ 410983. The governing law of the website is Cyprus law. The casino is
+          owned by Dux Group N.V., a company registered and established under the laws of Curaçao,
+          with registration No. 155114 and registered address at Perseusweg 27A, Willemstad,
+          Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information
+          Provider legally authorized to conduct online gaming operations from Curaçao under license
           No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone
           N.V. It is the player’s sole responsibility to inquire about the existing laws and
-          regulations of the given jurisdiction for online gambling. The payment agent of Dux Group
-          N.V. is a Cyprus company SCARTESU LIMITED, registration number HE 410983, registered
-          address Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus. The governing
-          law of the website is the laws of Curacao.
+          regulations of the given jurisdiction for online gambling
         </p>
       </li>
       <li class="SupportPage-Item">
