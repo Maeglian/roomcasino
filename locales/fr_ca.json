@@ -367,10 +367,10 @@
       "name" : "Drops&wins tournoi",
       "text" : "Le principal tournoi de l’année! Bienvenue à l’étape 4 (Semaines 13-16 de la promotion Daily Drops & Wins en réseau. <br/><br/> Vous avez une chance de gagner un prix en argent d’une valeur totale de €2 500 000! "
     },
-    "PlaysonMay" : {
+    "playsonMay" : {
       "title" : "Playson may<br/> cashdays",
       "name" : "Playson May CashDays",
-      "text" : "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu..<br/><br/>Playson sait comment traiter ses joueurs bien-aimés."
+      "text" : "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu.<br/><br/>Playson sait comment traiter ses joueurs bien-aimés."
     }
   },
   "dropsWins" : {
@@ -406,7 +406,7 @@
   "playsonMay" : {
     "prize" : "€ 60 000",
     "text" : "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu.<br/><br/>Playson sait comment traiter ses joueurs bien-aimés.",
-    "textMobile" : "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu..<br/><br/>Playson sait comment traiter ses joueurs bien-aimés.",
+    "textMobile" : "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu.<br/><br/>Playson sait comment traiter ses joueurs bien-aimés.",
     "terms" : [
       {
         "text" : "Le tournoi se déroule entre le 1er mai 2021 à 0 h 01 UTC et le 8 mai 2021 jusqu’à 23 h 59 UTC."
