@@ -5,13 +5,12 @@
       {{ item.name }}
     </NuxtLink>
     <div v-else-if="item.children && width >= 960" class="Nav-Item" :class="className">
-      <div class="Nav-Name">
+      <div class="Nav-Name" @click="listIsOpen = !listIsOpen">
         <img v-if="item.icon" class="Icon Nav-Icon" :src="require(`@/assets/img/${item.icon}`)" />
         {{ item.name }}
         <i
           class="Nav-Arrow ThinArrow"
           :class="[listIsOpen ? 'ThinArrow--up' : 'ThinArrow--down', `Nav-Arrow--${item.name}`]"
-          @click="listIsOpen = !listIsOpen"
         ></i>
       </div>
       <transition name="slide-up">
@@ -68,7 +67,7 @@ export default {
   methods: {
     onClickOutside(e) {
       if (!(e.target instanceof Element)) return;
-      if (!e.target.closest('.Nav-List') && !e.target.closest('.Nav-Arrow')) {
+      if (!e.target.closest('.Nav-List') && !e.target.closest('.Nav-Item')) {
         this.listIsOpen = false;
       }
     },

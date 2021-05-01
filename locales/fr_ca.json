@@ -95,7 +95,7 @@
       "address" : "Adresse",
       "postalCode" : "Code Postale",
       "phone" : "Numéro de téléphone mobile",
-      "year": "AAAA"
+      "year" : "AAAA"
     }
   },
   "pages" : {
@@ -120,13 +120,13 @@
     "roulette" : "Roulette",
     "table" : "Jeux de table",
     "card" : "Jeux de cartes",
-    "new": "Nouveaux jeux"
+    "new" : "Nouveaux jeux"
   },
   "footer" : {
     "text" : {
-      "p1": "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
-      "p2": "Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., payment operator of Dux Group N.V., by the laws of Cyprus acting as an agent on behalf of Dux Group N.V., registered in Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ 410983. The governing law of the website is Cyprus law. The website www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorized to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
-      "p3": "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
+      "p1" : "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
+      "p2" : "Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., subsidiary of Dux Group N.V., by the laws of Cyprus acting as an Agent on behalf of Dux Group N.V., registered in Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ 410983.The governing law of the website is Cyprus law. The website www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorised to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
+      "p3" : "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
     }
   },
   "search" : {
@@ -197,7 +197,7 @@
     "allStatuses" : "Tous les statuts",
     "allCurrencies" : "Toutes les devises",
     "until" : "Jusqu'à",
-    "dataPlaceholder": "DD.MM.AAAA"
+    "dataPlaceholder" : "DD.MM.AAAA"
   },
   "cabinet" : {
     "pages" : {
@@ -282,8 +282,8 @@
         "phoneNumber" : "Numéro de téléphone mobile",
         "birthDate" : "Date de naissance"
       },
-      "updateSuccess": "Votre profil a été mis à jour avec succès!",
-      "passwordUpdateSuccess": "Votre mot de passe a été modifié avec succès!"
+      "updateSuccess" : "Votre profil a été mis à jour avec succès!",
+      "passwordUpdateSuccess" : "Votre mot de passe a été modifié avec succès!"
     },
     "limits" : {
       "initialText" : "Voulez-vous contrôler votre activité, vos limites de perte ou vos limites de dépôt? Votre compte peut être configuré avec toutes les limites. Cela vous aidera à avoir une vue d’ensemble de vos habitudes de jeu. Toutes les restrictions prennent effet instantanément.",
@@ -344,7 +344,7 @@
     }
   },
   "promotions" : {
-    "title" : "Promotions en cours",
+    "title_0" : "Promotions en cours",
     "text" : "Ninecasino cherche constamment à offrir les meilleures promotions. Nous utilisons les dernières technologies et les commentaires de nos joueurs pour repenser nos promotions. Profitez-en!",
     "upTo" : "jusqu’à  $225",
     "deposit1" : {
@@ -361,6 +361,68 @@
       "title" : "100%<br/> du montant du<br/> dépôt",
       "name" : "Bonus de troisième dépôt",
       "text" : "Effectuez votre troisième dépôt sur Ninecasino et recevez jusqu’à $225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un troisième dépôt de $30 ou plus. Le bonus sera versé automatiquement."
+    },
+    "dropsWins" : {
+      "title" : "Drops<span class=\"Colored\">&</span>wins<br/> à l’étape 4<br/>(semaines 13-16)",
+      "name" : "Drops&wins tournoi",
+      "text" : "Le principal tournoi de l’année! Bienvenue à l’étape 4 (Semaines 13-16 de la promotion Daily Drops & Wins en réseau. <br/><br/> Vous avez une chance de gagner un prix en argent d’une valeur totale de €2 500 000! "
+    },
+    "playsonMay" : {
+      "title" : "Playson may<br/> cashdays",
+      "name" : "Playson May CashDays",
+      "text" : "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu.<br/><br/>Playson sait comment traiter ses joueurs bien-aimés."
     }
+  },
+  "dropsWins" : {
+    "prize" : "€ 2 500 000",
+    "text" : "Le principal tournoi de l’année! Bienvenue à l’étape 4 (semaines 13–16) de la promotion Daily Drops & Wins en réseau. Vous avez une chance de gagner un prix en argent d’une valeur totale de €2 500 000! <br/> Tout tour en argent réel dans les jeux participants peut entraîner un prix en argent aléatoire!\n",
+    "terms" : [
+      {
+        "title" : "L’étape 4 se déroule ainsi :",
+        "text" : "Semaine 13 : du 6 mai 2021 00 h 01 HAEC au 12 mai 2021 23 h 59 HAEC\nSemaine 14 : du 13 mai 2021 00 h 01 HAEC au 19 mai 2021 23 h 59 HAEC\nSemaine 15 : du 20 mai 2021 00 h 01 HAEC au 26 mai 2021 23 h 59 HAEC\nSemaine 16 : du 27 mai 2021 00 h 01 HAEC au 2 juin 2021 23 h 59 HAEC"
+      },
+      {
+        "title" : "Jeux dans le tournoi :",
+        "text" : "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker's Jewels™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, The Hand of Midas™, Wild West Gold™, Gates of Olympus™, Congo Cash™, Fishin' Reels™, Power of Thor Megaways™, Floating Dragon™, Wild Booster™, Hot Fiesta™, Buffalo King Megaways™. "
+      },
+      {
+        "title" : "Drops & Wins comprend : ",
+        "text" : "Chaque tournoi se déroule pendant sept jours, du jeudi au mercredi, avec des remises de prix quotidiennes en parallèle.\nLa cagnotte maximale HEBDOMADAIRE d’un montant total de €31 000 sera partagée entre 550 gagnants.\nLes joueurs ont l’occasion de gagner des prix en espèces lors des remises de prix quotidiennes avec une cagnotte de €4 500 qui sera partagée entre les 20 participants les plus actifs."
+      },
+      {
+        "title" : "Comment gagner :",
+        "text" : "Un joueur doit placer une mise en argent réel sur n’importe quel jeu participant et doit obtenir au moins une (1) victoire intrajeu pour se qualifier pour le Tournoi hebdomadaire.\nUn joueur doit placer une mise en argent réel sur n’importe quel jeu participant et doit obtenir au moins une (1) victoire intrajeu pour se qualifier pour le Tournoi hebdomadaire. Aucune mise minimale en argent réel n’est requise pour que les joueurs soient admissibles à participer aux prix  quotidiens (semaines du multiplicateur de prix). "
+      },
+      {
+        "title" : "De plus :",
+        "text" : "Les joueurs participant aux semaines avec multiplicateur peuvent gagner des prix sous la forme d’un multiplicateur du montant de la mise du joueur gagnant, comme indiqué dans le tableau des prix du tournoi hebdomadaire (semaines avec multiplicateur de prix) et dans le tableau des prix quotidiens (semaines avec multiplicateur de prix) ci-dessous (ci-après les « semaines avec multiplicateur de prix »)\nSi le tour gagnant est supérieur à dix euros (€10), le prix sera payé sur la base d’une mise de dix euros (€10) ou du montant équivalent dans la devise disponible (telle que définie ci-après) X le multiplicateur reçu.\nLe classement est établi en fonction du pointage, lequel est basé sur le montant du gain le plus élevé en un seul tour pour tout jeu participant, ajusté au montant de la mise.\nDans le cas où deux (2) joueurs ou plus terminent un tournoi hebdomadaire à la même position au classement, le joueur qui a atteint le pointage en premier recevra le prix le plus élevé."
+      }
+    ]
+  },
+  "tournaments" : {
+    "games" : "Jeux dans le tournoi",
+    "terms" : "Conditions générales"
+  },
+  "playsonMay" : {
+    "prize" : "€ 60 000",
+    "text" : "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu.<br/><br/>Playson sait comment traiter ses joueurs bien-aimés.",
+    "textMobile" : "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu.<br/><br/>Playson sait comment traiter ses joueurs bien-aimés.",
+    "terms" : [
+      {
+        "text" : "Le tournoi se déroule entre le 1er mai 2021 à 0 h 01 UTC et le 8 mai 2021 jusqu’à 23 h 59 UTC."
+      },
+      {
+        "text" : "Il y a 10 jeux participants :<br/>●  Book of Gold : Double chance<br/>●  Book of Gold : Multichance<br/>●  Buffalo Power : Hold and Win<br/>●  Burning Wins : classic 5 lines<br/>●  Diamond Wins : Hold and Win<br/>●  Divine Dragon : Hold and Win<br/>●  Legend of Cleopatra MegawaysTM<br/>●  Solar Queen<br/>●  Solar Temple"
+      },
+      {
+        "text" : "Comme d’habitude, la mise minimale requise pour se qualifier est de 0,50 EUR. Les points sont calculés tour par tour, chaque 1 EUR (ou équivalent monétaire) gagné valant 10 points."
+      },
+      {
+        "text" : "La généreuse cagnotte de 60 000 EUR sera partagée entre 350 joueurs chanceux : <br/>1re place – €10 000<br/>2e place – €5 000<br/>3e place – €3 000<br/>4e place – €1 500<br/>5e place – €1 000<br/>6e place – €900<br/>7e place – €800<br/>8e place – €700<br/>9e place – €600<br/>10e place – €500<br/>11e à 25e place – €400<br/>26e à 50e place – €200<br/>51e à 100e place – €150<br/>101e à 200e place – €100<br/>201e à 350e place – €50 "
+      },
+      {
+        "text" : "Suivez le classement pendant le tournoi. Plus vous gagnez de points, plus vos chances de gagner sont élevées. Allez-y et bonne chance! "
+      }
+    ]
   }
 }

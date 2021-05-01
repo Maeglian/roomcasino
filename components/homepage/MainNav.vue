@@ -93,6 +93,18 @@ export default {
           icon: 'user-profile.svg',
           onlyIfLoggedIn: true,
         },
+        {
+          name: 'Playson May CashDays ',
+          url: this.localePath('/playson-may-cashdays'),
+          icon: 'tournament_nav.svg',
+          onlyIfLoggedIn: false,
+        },
+        // {
+        //   name: 'Drops & Wins',
+        //   url: this.localePath('/drops-wins'),
+        //   icon: 'tournament_nav.svg',
+        //   onlyIfLoggedIn: false,
+        // },
         // {
         //   name: 'Tournaments',
         //   children: [
