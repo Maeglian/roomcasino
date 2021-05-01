@@ -344,7 +344,7 @@
     }
   },
   "promotions" : {
-    "title" : "Promotions en cours",
+    "title_0" : "Promotions en cours",
     "text" : "Ninecasino cherche constamment à offrir les meilleures promotions. Nous utilisons les dernières technologies et les commentaires de nos joueurs pour repenser nos promotions. Profitez-en!",
     "upTo" : "jusqu’à  $225",
     "deposit1" : {
@@ -366,6 +366,11 @@
       "title" : "Drops<span class=\"Colored\">&</span>wins<br/> à l’étape 4<br/>(semaines 13-16)",
       "name" : "Drops&wins tournoi",
       "text" : "Le principal tournoi de l’année! Bienvenue à l’étape 4 (Semaines 13-16 de la promotion Daily Drops & Wins en réseau. <br/><br/> Vous avez une chance de gagner un prix en argent d’une valeur totale de €2 500 000! "
+    },
+    "PlaysonMay" : {
+      "title" : "Playson may<br/> cashdays",
+      "name" : "Playson May CashDays",
+      "text" : "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu..<br/><br/>Playson sait comment traiter ses joueurs bien-aimés."
     }
   },
   "dropsWins" : {
@@ -397,5 +402,27 @@
   "tournaments" : {
     "games" : "Jeux dans le tournoi",
     "terms" : "Conditions générales"
+  },
+  "playsonMay" : {
+    "prize" : "€ 60 000",
+    "text" : "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu.<br/><br/>Playson sait comment traiter ses joueurs bien-aimés.",
+    "textMobile" : "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu..<br/><br/>Playson sait comment traiter ses joueurs bien-aimés.",
+    "terms" : [
+      {
+        "text" : "Le tournoi se déroule entre le 1er mai 2021 à 0 h 01 UTC et le 8 mai 2021 jusqu’à 23 h 59 UTC."
+      },
+      {
+        "text" : "Il y a 10 jeux participants :<br/>●  Book of Gold : Double chance<br/>●  Book of Gold : Multichance<br/>●  Buffalo Power : Hold and Win<br/>●  Burning Wins : classic 5 lines<br/>●  Diamond Wins : Hold and Win<br/>●  Divine Dragon : Hold and Win<br/>●  Legend of Cleopatra MegawaysTM<br/>●  Solar Queen<br/>●  Solar Temple"
+      },
+      {
+        "text" : "Comme d’habitude, la mise minimale requise pour se qualifier est de 0,50 EUR. Les points sont calculés tour par tour, chaque 1 EUR (ou équivalent monétaire) gagné valant 10 points."
+      },
+      {
+        "text" : "La généreuse cagnotte de 60 000 EUR sera partagée entre 350 joueurs chanceux : <br/>1re place – €10 000<br/>2e place – €5 000<br/>3e place – €3 000<br/>4e place – €1 500<br/>5e place – €1 000<br/>6e place – €900<br/>7e place – €800<br/>8e place – €700<br/>9e place – €600<br/>10e place – €500<br/>11e à 25e place – €400<br/>26e à 50e place – €200<br/>51e à 100e place – €150<br/>101e à 200e place – €100<br/>201e à 350e place – €50 "
+      },
+      {
+        "text" : "Suivez le classement pendant le tournoi. Plus vous gagnez de points, plus vos chances de gagner sont élevées. Allez-y et bonne chance! "
+      }
+    ]
   }
 }
