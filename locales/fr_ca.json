@@ -344,7 +344,7 @@
     }
   },
   "promotions" : {
-    "title_0" : "Promotions en cours",
+    "title" : "Promotions en cours",
     "text" : "Ninecasino cherche constamment à offrir les meilleures promotions. Nous utilisons les dernières technologies et les commentaires de nos joueurs pour repenser nos promotions. Profitez-en!",
     "upTo" : "jusqu’à  $225",
     "deposit1" : {
