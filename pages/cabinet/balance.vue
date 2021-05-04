@@ -1,5 +1,27 @@
 <template>
   <div class="CabinetPage BalancePage">
+    <BaseModal
+      name="lockedByBonus"
+      class="BalancePage-LockedBonus"
+      width="300"
+      height="auto"
+      :ok-btn="false"
+    >
+      <div class="BalancePage-LockedBonusIcon">
+        <img src="@/assets/img/locked-bonus.svg" width="130" alt="" />
+      </div>
+      <div class="Modal-Title">
+        {{ $t('modals.wait') }}
+      </div>
+      <div class="Modal-Text">
+        {{ $t('modals.lockedByBonus') }}
+      </div>
+      <template #button>
+        <NuxtLink class="Btn Btn--common Btn--full" :to="localePath('/cabinet/bonuses')">
+          {{ $t('buttons.checkBonuses') }}
+        </NuxtLink>
+      </template>
+    </BaseModal>
     <div class="CabinetPage-Title BalancePage-Title">{{ $t('cabinet.pages.balance') }}</div>
     <div class="Table CabinetPage-Table BalancePage-Table">
       <div class="Table-Row CabinetPage-Row">
@@ -105,24 +127,36 @@ export default {
   name: 'BalancePage',
   computed: {
     ...mapState(['serverError']),
-    ...mapGetters(['moreCurrencyAccounts', 'sortedAccountList']),
+    ...mapGetters(['moreCurrencyAccounts', 'sortedAccountList', 'activeAccount']),
   },
   methods: {
     ...mapMutations(['setCashoutTrue', 'clearServerError']),
     ...mapActions(['setActiveAccount', 'getLimits', 'createAccount', 'getProfile']),
     onClickDeposit(currency) {
       this.setActiveAccount({ currency }).then(() => {
+        this.getProfile();
+        this.getLimits();
         this.$modal.show('cashier');
       });
     },
     onClickCashout(currency) {
-      this.setActiveAccount({ currency }).then(() => {
-        this.setCashoutTrue();
-        this.$modal.show('cashier');
-      });
+      this.setActiveAccount({ currency })
+        .then(() => this.getProfile())
+        .then(() => {
+          this.getLimits();
+          if (this.activeAccount.lockedByBonus) {
+            this.$modal.show('lockedByBonus');
+            return;
+          }
+          this.setCashoutTrue();
+          this.$modal.show('cashier');
+        });
     },
     onChangeAccount(e) {
-      this.setActiveAccount({ currency: e.target.value });
+      this.setActiveAccount({ currency: e.target.value }).then(() => {
+        this.getProfile();
+        this.getLimits();
+      });
     },
     onChooseCurrency(cur) {
       this.createAccount({ currency: cur }).then(() => {
@@ -216,6 +250,14 @@ export default {
 
   &-Cash:before {
     content: 'Available to cash out';
+  }
+
+  &-LockedBonus {
+    text-align: center;
+  }
+
+  &-LockedBonusIcon {
+    margin-bottom: 45px;
   }
 }
 
