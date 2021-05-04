@@ -133,6 +133,10 @@ export default {
     ...mapMutations(['setCashoutTrue', 'clearServerError']),
     ...mapActions(['setActiveAccount', 'getLimits', 'createAccount', 'getProfile']),
     onClickDeposit(currency) {
+      if (currency === this.activeAccount.currency) {
+        this.$modal.show('cashier');
+        return;
+      }
       this.setActiveAccount({ currency }).then(() => {
         this.getProfile();
         this.getLimits();
@@ -140,6 +144,15 @@ export default {
       });
     },
     onClickCashout(currency) {
+      if (currency === this.activeAccount.currency) {
+        if (this.activeAccount.lockedByBonus) {
+          this.$modal.show('lockedByBonus');
+          return;
+        }
+        this.setCashoutTrue();
+        this.$modal.show('cashier');
+        return;
+      }
       this.setActiveAccount({ currency })
         .then(() => this.getProfile())
         .then(() => {
