@@ -5,6 +5,7 @@
       <div class="Modal-Content">
         <slot />
       </div>
+      <slot name="button" />
       <button v-if="okBtn" class="Btn Btn--common Btn--full" @click="$modal.hide(name)">OK</button>
     </div>
   </modal>
