@@ -101,8 +101,7 @@ export const state = () => ({
   defaultGames: [],
   newGames: [],
   liveGames: [],
-  dropWinsGames: [],
-  playsonMayGames: [],
+  tournamentGames: [],
   jackpots: [],
   fakeLimits: [
     {
@@ -230,8 +229,7 @@ export const state = () => ({
   defaultGamesAreLoading: false,
   newGamesAreLoading: false,
   liveGamesAreLoading: false,
-  dropWinsGamesAreLoading: false,
-  playsonMayGamesAreLoading: false,
+  tournamentGamesAreLoading: false,
   winnersAreLoading: false,
   errors: {},
   profileIsLoading: false,
@@ -832,11 +830,8 @@ export const mutations = {
   setNewGamesAreLoading: (state, payload) => {
     state.newGamesAreLoading = payload;
   },
-  setDropWinsGamesAreLoading: (state, payload) => {
-    state.dropWinsAreLoading = payload;
-  },
-  setPlaysonMayGamesAreLoading: (state, payload) => {
-    state.playsonMayGamesAreLoading = payload;
+  setTournamentGamesAreLoading: (state, payload) => {
+    state.tournamentGamesAreLoading = payload;
   },
   setLiveGamesAreLoading: (state, payload) => {
     state.liveGamesAreLoading = payload;
@@ -850,11 +845,8 @@ export const mutations = {
   setNewGames: (state, payload) => {
     state.newGames = payload;
   },
-  setDropWinsGames: (state, payload) => {
-    state.dropWinsGames = payload;
-  },
-  setPlaysonMayGames: (state, payload) => {
-    state.playsonMayGames = payload;
+  setTournamentGames: (state, payload) => {
+    state.tournamentGames = payload;
   },
   setLiveGames: (state, payload) => {
     state.liveGames = payload;
@@ -1032,29 +1024,15 @@ export const actions = {
     }
   },
 
-  async getDropWinsGames({ commit }) {
-    commit('setDropWinsGamesAreLoading', true);
+  async getTournamentGames({ commit }, params) {
+    commit('setTournamentGamesAreLoading', true);
     try {
-      const res = await axios.get(`${API_HOST}/gameList`, { params: { category: 'DROP&WINS' } });
-      commit('setDropWinsGames', res.data.data);
+      const res = await axios.get(`${API_HOST}/gameList`, { params });
+      commit('setTournamentGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
     } finally {
-      commit('setDropWinsGamesAreLoading', false);
-    }
-  },
-
-  async getPlaysonMayGames({ commit }) {
-    commit('setPlaysonMayGamesAreLoading', true);
-    try {
-      const res = await axios.get(`${API_HOST}/gameList`, {
-        params: { category: 'playson-may-cashdays' },
-      });
-      commit('setPlaysonMayGames', res.data.data);
-    } catch (e) {
-      commit('pushErrors', e);
-    } finally {
-      commit('setPlaysonMayGamesAreLoading', false);
+      commit('setTournamentGamesAreLoading', false);
     }
   },
 

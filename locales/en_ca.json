@@ -111,7 +111,8 @@
     "bonusPolicy": "Bonus policy",
     "privacyPolicy": "Privacy policy",
     "responsibleGaming": "Responsible Gaming",
-    "risk": "Risk warnings"
+    "risk": "Risk warnings",
+    "tournaments": "Tournaments"
   },
   "gameCategories": {
     "top": "Top games",
