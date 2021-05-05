@@ -46,7 +46,7 @@
           </template>
           <button
             v-if="!isLoggedIn && chatIsLoaded"
-            class="Nav-Item Nav-Name"
+            class="Nav-Item Nav-Name AsideMenu-Link AsideMenu-Support"
             @click="onClickSupport()"
           >
             <img class="Nav-Icon" src="@/assets/img/chat.svg" />
@@ -148,7 +148,7 @@ export default {
           onlyIfLoggedIn: false,
         }));
         navTournaments = {
-          name: 'Tournaments',
+          name: this.$t('pages.tournaments'),
           children,
         };
       }
@@ -398,6 +398,12 @@ export default {
       width: 100%;
       margin-top: auto;
       margin-bottom: 0;
+    }
+  }
+
+  &-Support {
+    @media (min-width: $screen-xs) {
+      margin: 0 auto;
     }
   }
 }
