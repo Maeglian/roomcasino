@@ -141,12 +141,15 @@ export default {
       display: inline-block;
       margin-right: 0;
       margin-bottom: 4px;
-      padding: 26px 50px 20px 43px;
       background-color: var(--color-bg);
 
       &:after {
         display: none;
       }
+    }
+
+    .Nav-Name {
+      padding: 26px 50px 20px 43px;
     }
   }
 }
