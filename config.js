@@ -307,3 +307,23 @@ export const HISTORY_TABLES = {
     ],
   },
 };
+
+export const TOURNAMENTS = {
+  'playson-may-cashdays': {
+    url: 'playson-may-cashdays',
+    name: 'Playson May CashDays',
+    title: 'Playson may<br /> cashdays',
+    translates: 'playsonMay',
+    class: 'PlaysonMay',
+    textLeft: true,
+    slug: 'playson-may-cashdays',
+  },
+  'drops-wins': {
+    url: 'drops-wins',
+    name: 'Drops & Wins',
+    title: 'Drops<span class="Colored">&</span>wins',
+    translates: 'dropsWins',
+    class: 'DropsWins',
+    slug: 'DROP&WINS',
+  },
+};
