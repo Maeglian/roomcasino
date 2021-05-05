@@ -158,7 +158,7 @@ export default {
         '/games/all',
       ];
 
-      TOURNAMENTS.forEach(t => {
+      Object.values(TOURNAMENTS).forEach(t => {
         routes.push(`/tournaments/${t.url}`);
       });
 
