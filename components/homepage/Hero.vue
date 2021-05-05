@@ -1,43 +1,45 @@
 <template>
   <section class="Hero">
     <div class="Hero-Slider">
-      <div class="Hero-Item">
-        <picture class="Hero-Image">
-          <source
-            media="(max-width: 340px)"
-            :srcset="require(`@/assets/img/${slides[depositNum].bg}_320.png`)"
-          />
-          <source
-            media="(max-width: 459px)"
-            :srcset="require(`@/assets/img/${slides[depositNum].bg}_460.png`)"
-          />
-          <source
-            media="(max-width: 600px)"
-            :srcset="require(`@/assets/img/${slides[depositNum].bg}_600.png`)"
-          />
-          <source
-            media="(max-width: 900px)"
-            :srcset="require(`@/assets/img/${slides[depositNum].bg}_900.png`)"
-          />
-          <source
-            media="(max-width: 1248px)"
-            :srcset="require(`@/assets/img/${slides[depositNum].bg}_1248.png`)"
-          />
-          <img
-            :srcset="require(`@/assets/img/${slides[depositNum].bg}_1920.png`)"
-            alt=""
-            @load="setHeroBannerIsLoaded"
-          />
-        </picture>
-        <div class="Hero-Content Hero-Content--centered">
-          <div class="Title Title--type-h1 Hero-Title" v-html="slides[depositNum].title"></div>
-          <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
-          <div class="Hero-Text" v-html="slides[depositNum].text"></div>
-          <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
-            {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.register') }}
-          </button>
+      <Slider :key="depositSlides.length" v-bind="options">
+        <div v-for="(slide, i) in depositSlides" :key="i" class="Hero-Item">
+          <picture class="Hero-Image">
+            <source
+              media="(max-width: 340px)"
+              :srcset="require(`@/assets/img/${slide.bg}_320.png`)"
+            />
+            <source
+              media="(max-width: 459px)"
+              :srcset="require(`@/assets/img/${slide.bg}_460.png`)"
+            />
+            <source
+              media="(max-width: 600px)"
+              :srcset="require(`@/assets/img/${slide.bg}_600.png`)"
+            />
+            <source
+              media="(max-width: 900px)"
+              :srcset="require(`@/assets/img/${slide.bg}_900.png`)"
+            />
+            <source
+              media="(max-width: 1248px)"
+              :srcset="require(`@/assets/img/${slide.bg}_1248.png`)"
+            />
+            <img
+              :srcset="require(`@/assets/img/${slide.bg}_1920.png`)"
+              alt=""
+              @load="setHeroBannerIsLoaded"
+            />
+          </picture>
+          <div class="Hero-Content Hero-Content--centered">
+            <div class="Title Title--type-h1 Hero-Title" v-html="slide.title"></div>
+            <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
+            <div class="Hero-Text" v-html="slide.text"></div>
+            <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
+              {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.register') }}
+            </button>
+          </div>
         </div>
-      </div>
+      </Slider>
     </div>
     <div class="Hero-Footer">
       <!--      <GamesSlider-->
@@ -92,12 +94,14 @@
 // import GamesSlider from '@/components/GamesSlider';
 import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import Slider from '@/components/Slider';
 
 export default {
   name: 'Hero',
-  // components: {
-  //   GamesSlider,
-  // },
+  components: {
+    // GamesSlider,
+    Slider,
+  },
   mixins: [showAuthDialog],
   data() {
     return {
@@ -203,6 +207,9 @@ export default {
   computed: {
     ...mapState(['navIsOpen', 'games', 'depositNum']),
     ...mapGetters(['isLoggedIn']),
+    depositSlides() {
+      return this.slides.slice(this.depositNum);
+    },
   },
   methods: {
     ...mapMutations(['openNav', 'closeNav', 'setHeroBannerIsLoaded']),
