@@ -1,6 +1,6 @@
 <template>
   <li class="Nav-Item" :class="className">
-    <NuxtLink v-if="!item.children" :to="item.url" class="Nav-Name">
+    <NuxtLink v-if="!item.children" :to="item.url" class="Nav-Name" @click.native="$emit('close')">
       <img v-if="item.icon" class="Icon Nav-Icon" :src="require(`@/assets/img/${item.icon}`)" />
       {{ item.name }}
     </NuxtLink>
@@ -25,6 +25,7 @@
             :key="child.name"
             :class-name="className"
             :item="child"
+            @close="listIsOpen = false"
           />
         </ul>
       </transition>
@@ -140,12 +141,15 @@ export default {
       display: inline-block;
       margin-right: 0;
       margin-bottom: 4px;
-      padding: 26px 50px 20px 43px;
       background-color: var(--color-bg);
 
       &:after {
         display: none;
       }
+    }
+
+    .Nav-Name {
+      padding: 26px 50px 20px 43px;
     }
   }
 }
