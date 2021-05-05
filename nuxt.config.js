@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_HOST } from './config';
+import { API_HOST, TOURNAMENTS } from './config';
 
 const locales = ['en-ca', 'fr', 'cs', 'de'];
 
@@ -157,6 +157,10 @@ export default {
         '/cabinet/history/bonus',
         '/games/all',
       ];
+
+      TOURNAMENTS.forEach(t => {
+        routes.push(`/tournaments/${t.url}`);
+      });
 
       routes.forEach(route => {
         locales.forEach(locale => routes.push(`/${locale}${route}`));
