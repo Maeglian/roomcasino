@@ -26,7 +26,8 @@
     "goHomePage" : "Aller à la page d'accueil",
     "save" : "Sauvegarder",
     "edit" : "Editer",
-    "getBonus" : "Obtenir un bonus"
+    "getBonus" : "Obtenir un bonus",
+    "more": "Plus"
   },
   "errors" : {
     "required" : "Ne peut pas être vide",
@@ -110,7 +111,8 @@
     "bonusPolicy" : "Politique de bonus",
     "privacyPolicy" : "Politique de confidentialité",
     "responsibleGaming" : "Jeu responsable",
-    "risk" : "Avertissements sur les risques"
+    "risk" : "Avertissements sur les risques",
+    "tournaments": "Tournois"
   },
   "gameCategories" : {
     "top" : "Les meilleurs jeux",
@@ -375,11 +377,12 @@
   },
   "dropsWins" : {
     "prize" : "€ 2 500 000",
-    "text" : "Le principal tournoi de l’année! Bienvenue à l’étape 4 (semaines 13–16) de la promotion Daily Drops & Wins en réseau. Vous avez une chance de gagner un prix en argent d’une valeur totale de €2 500 000! <br/> Tout tour en argent réel dans les jeux participants peut entraîner un prix en argent aléatoire!\n",
+    "text" : "Le principal tournoi de l’année! Bienvenue à l’étape 4 (semaines 13–16) de la promotion Daily Drops & Wins en réseau. Vous avez une chance de gagner un prix en argent d’une valeur totale de €2 500 000! <br/> Tout tour en argent réel dans les jeux participants peut entraîner un prix en argent aléatoire!",
+    "textMobile" : "Le principal tournoi de l’année! Bienvenue à l’étape 4 (semaines 13–16) de la promotion Daily Drops & Wins en réseau. Vous avez une chance de gagner un prix en argent d’une valeur totale de €2 500 000!",
     "terms" : [
       {
         "title" : "L’étape 4 se déroule ainsi :",
-        "text" : "Semaine 13 : du 6 mai 2021 00 h 01 HAEC au 12 mai 2021 23 h 59 HAEC\nSemaine 14 : du 13 mai 2021 00 h 01 HAEC au 19 mai 2021 23 h 59 HAEC\nSemaine 15 : du 20 mai 2021 00 h 01 HAEC au 26 mai 2021 23 h 59 HAEC\nSemaine 16 : du 27 mai 2021 00 h 01 HAEC au 2 juin 2021 23 h 59 HAEC"
+        "text" : "Semaine 13 : du 6 mai 2021 00 h 01 HAEC au 12 mai 2021 23 h 59 HAEC<br/>Semaine 14 : du 13 mai 2021 00 h 01 HAEC au 19 mai 2021 23 h 59 HAEC<br/>Semaine 15 : du 20 mai 2021 00 h 01 HAEC au 26 mai 2021 23 h 59 HAEC<br/>Semaine 16 : du 27 mai 2021 00 h 01 HAEC au 2 juin 2021 23 h 59 HAEC"
       },
       {
         "title" : "Jeux dans le tournoi :",
@@ -387,15 +390,15 @@
       },
       {
         "title" : "Drops & Wins comprend : ",
-        "text" : "Chaque tournoi se déroule pendant sept jours, du jeudi au mercredi, avec des remises de prix quotidiennes en parallèle.\nLa cagnotte maximale HEBDOMADAIRE d’un montant total de €31 000 sera partagée entre 550 gagnants.\nLes joueurs ont l’occasion de gagner des prix en espèces lors des remises de prix quotidiennes avec une cagnotte de €4 500 qui sera partagée entre les 20 participants les plus actifs."
+        "text" : "Chaque tournoi se déroule pendant sept jours, du jeudi au mercredi, avec des remises de prix quotidiennes en parallèle.<br/>La cagnotte maximale HEBDOMADAIRE d’un montant total de €31 000 sera partagée entre 550 gagnants.\nLes joueurs ont l’occasion de gagner des prix en espèces lors des remises de prix quotidiennes avec une cagnotte de €4 500 qui sera partagée entre les 20 participants les plus actifs."
       },
       {
         "title" : "Comment gagner :",
-        "text" : "Un joueur doit placer une mise en argent réel sur n’importe quel jeu participant et doit obtenir au moins une (1) victoire intrajeu pour se qualifier pour le Tournoi hebdomadaire.\nUn joueur doit placer une mise en argent réel sur n’importe quel jeu participant et doit obtenir au moins une (1) victoire intrajeu pour se qualifier pour le Tournoi hebdomadaire. Aucune mise minimale en argent réel n’est requise pour que les joueurs soient admissibles à participer aux prix  quotidiens (semaines du multiplicateur de prix). "
+        "text" : "Un joueur doit placer une mise en argent réel sur n’importe quel jeu participant et doit obtenir au moins une (1) victoire intrajeu pour se qualifier pour le Tournoi hebdomadaire.<br/>Un joueur doit placer une mise en argent réel sur n’importe quel jeu participant et doit obtenir au moins une (1) victoire intrajeu pour se qualifier pour le Tournoi hebdomadaire. Aucune mise minimale en argent réel n’est requise pour que les joueurs soient admissibles à participer aux prix  quotidiens (semaines du multiplicateur de prix). "
       },
       {
         "title" : "De plus :",
-        "text" : "Les joueurs participant aux semaines avec multiplicateur peuvent gagner des prix sous la forme d’un multiplicateur du montant de la mise du joueur gagnant, comme indiqué dans le tableau des prix du tournoi hebdomadaire (semaines avec multiplicateur de prix) et dans le tableau des prix quotidiens (semaines avec multiplicateur de prix) ci-dessous (ci-après les « semaines avec multiplicateur de prix »)\nSi le tour gagnant est supérieur à dix euros (€10), le prix sera payé sur la base d’une mise de dix euros (€10) ou du montant équivalent dans la devise disponible (telle que définie ci-après) X le multiplicateur reçu.\nLe classement est établi en fonction du pointage, lequel est basé sur le montant du gain le plus élevé en un seul tour pour tout jeu participant, ajusté au montant de la mise.\nDans le cas où deux (2) joueurs ou plus terminent un tournoi hebdomadaire à la même position au classement, le joueur qui a atteint le pointage en premier recevra le prix le plus élevé."
+        "text" : "Les joueurs participant aux semaines avec multiplicateur peuvent gagner des prix sous la forme d’un multiplicateur du montant de la mise du joueur gagnant, comme indiqué dans le tableau des prix du tournoi hebdomadaire (semaines avec multiplicateur de prix) et dans le tableau des prix quotidiens (semaines avec multiplicateur de prix) ci-dessous (ci-après les « semaines avec multiplicateur de prix »)<br/>Si le tour gagnant est supérieur à dix euros (€10), le prix sera payé sur la base d’une mise de dix euros (€10) ou du montant équivalent dans la devise disponible (telle que définie ci-après) X le multiplicateur reçu.\nLe classement est établi en fonction du pointage, lequel est basé sur le montant du gain le plus élevé en un seul tour pour tout jeu participant, ajusté au montant de la mise.\nDans le cas où deux (2) joueurs ou plus terminent un tournoi hebdomadaire à la même position au classement, le joueur qui a atteint le pointage en premier recevra le prix le plus élevé."
       }
     ]
   },

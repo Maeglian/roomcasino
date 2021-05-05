@@ -26,7 +26,8 @@
     "goHomePage" : "Zurück zur startseite hauptseite",
     "save" : "Speichern",
     "edit" : "Bearbeiten",
-    "getBonus" : "Bonus erhalten"
+    "getBonus" : "Bonus erhalten",
+    "more": "Mehr "
   },
   "errors" : {
     "required" : "Pflichtangabe",
@@ -110,7 +111,8 @@
     "bonusPolicy" : "Bonusrichtlinien ",
     "privacyPolicy" : "Datenschutz-Bestimmungen",
     "responsibleGaming" : "Verantwortungsbewusst Spielen",
-    "risk" : "Risikowarnungen  "
+    "risk" : "Risikowarnungen",
+    "tournaments": "Turniere"
   },
   "gameCategories" : {
     "top" : "Top-Spiele ",
@@ -380,11 +382,12 @@
   },
   "dropsWins" : {
     "prize" : "€ 2 500 000",
-    "text" : "DAS Turnier des Jahres! Willkommen zu Phase 4 (Wochen 13-16)der täglichen Netzwerkaktion Drops & Wins Network. Diese Woche besteht die Chance, ein Preisgeld in Höhe von insgesamt 2.500.000 € zu gewinnen. .<br/>Jeder Einsatz von echtem Geld in einer Ausspielung eines der teilnehmenden Spiele kann einen Zufallsgewinn auslösen! ",
+    "text" : "Das Turnier des Jahres! Willkommen zu Phase 4 (Wochen 13-16)der täglichen Netzwerkaktion Drops & Wins Network. Diese Woche besteht die Chance, ein Preisgeld in Höhe von insgesamt 2.500.000 € zu gewinnen! <br/>Jeder Einsatz von echtem Geld in einer Ausspielung eines der teilnehmenden Spiele kann einen Zufallsgewinn auslösen!",
+    "textMobile" : "Das Turnier des Jahres! Willkommen zu Phase 4 (Wochen 13-16)der täglichen Netzwerkaktion Drops & Wins Network. Diese Woche besteht die Chance, ein Preisgeld in Höhe von insgesamt 2.500.000 € zu gewinnen!",
     "terms" : [
       {
         "title" : "Phase 4 läuft zwischen dem:",
-        "text" : "Woche 13: 6. Mai 2021 00:01 Uhr CET – 12. Mai 2021 23:59 Uhr CET.  Woche 14: 13. Mai 2021 00:01 Uhr CET – 19. Mai 2021 23:59 Uhr CET. Woche 15: 20. Mai 2021 00:01 Uhr CET – 26. Mai 2021 23:59 Uhr CET. Woche 16: 27. Mai 2021 00:01 Uhr CET – 2. Juni 2021 23:59 Uhr CET."
+        "text" : "Woche 13: 6. Mai 2021 00:01 Uhr CET – 12. Mai 2021 23:59 Uhr CET.<br/>Woche 14: 13. Mai 2021 00:01 Uhr CET – 19. Mai 2021 23:59 Uhr CET.<br/>Woche 15: 20. Mai 2021 00:01 Uhr CET – 26. Mai 2021 23:59 Uhr CET.<br/>Woche 16: 27. Mai 2021 00:01 Uhr CET – 2. Juni 2021 23:59 Uhr CET."
       },
       {
         "title" : "Teilnehmende Spiele",
@@ -392,15 +395,15 @@
       },
       {
         "title" : "Drops & Wins beinhaltet",
-        "text" : "Jedes Turnier läuft über sieben Tage, von Donnerstag bis Mittwoch, begleitet von täglichen Gewinnausschüttungen.\nDie größtmögliche WOCHENGEWINNSUMME der Phase 4 beläuft sich auf 31.000 Euro verteilt auf 550 Gewinnerinnen und Gewinner. \nDarüber hinaus besteht die Möglichkeit auf TÄGLICHE Geldgewinne aus dem Preistopf mit 4.500 Euro, die auf die 100 aktivsten Teilnehmerinnen und Teilnehmer verteilt werden."
+        "text" : "Jedes Turnier läuft über sieben Tage, von Donnerstag bis Mittwoch, begleitet von täglichen Gewinnausschüttungen.<br/>Die größtmögliche WOCHENGEWINNSUMME der Phase 4 beläuft sich auf 31.000 Euro verteilt auf 550 Gewinnerinnen und Gewinner. <br/>Darüber hinaus besteht die Möglichkeit auf TÄGLICHE Geldgewinne aus dem Preistopf mit 4.500 Euro, die auf die 100 aktivsten Teilnehmerinnen und Teilnehmer verteilt werden."
       },
       {
         "title" : "Wie man gewinnt ",
-        "text" : "Zur Teilnahme an dem Wochenturnier berechtigt ist, wer einen Echtgeldeinsatz in einem der teilnehmenden Spiele getätigt und mindestens einen (1) Gewinn in diesem Spiel erzielt hat.\nZur Teilnahme an dem Wochenturnier berechtigt ist, wer einen Echtgeldeinsatz in einem der teilnehmenden Spiele getätigt und mindestens einen (1) Gewinn in diesem Spiel erzielt hat. Für die Teilnahme an der täglichen Gewinnausschüttung besteht kein Mindesteinsatz in echtem Geld. Drops (Ausschüttungen in Gewinnmultiplikatorenwochen). "
+        "text" : "Zur Teilnahme an dem Wochenturnier berechtigt ist, wer einen Echtgeldeinsatz in einem der teilnehmenden Spiele getätigt und mindestens einen (1) Gewinn in diesem Spiel erzielt hat.<br/>Zur Teilnahme an dem Wochenturnier berechtigt ist, wer einen Echtgeldeinsatz in einem der teilnehmenden Spiele getätigt und mindestens einen (1) Gewinn in diesem Spiel erzielt hat. Für die Teilnahme an der täglichen Gewinnausschüttung besteht kein Mindesteinsatz in echtem Geld. Drops (Ausschüttungen in Gewinnmultiplikatorenwochen). "
       },
       {
         "title" : "Zusätzlich",
-        "text" : "Während der Multiplikatorenwochen können Gewinne in Form eines in der Wochenturniergewinnübersicht (Gewinnmultiplikatorenwochen) und der Tagesausschüttungsübersicht weiter unten (im weiteren Textverlauf die „Gewinnmultiplikatorenwochen“) ausgewiesenen Vielfachen r des Einsatzes der erfolgreichen Spielerin bzw. des erfolgreichen Spielers erzielt werden.\nWenn der Gewinn in der erfolgreichen Ausspielung zehn Euro (10 €) übersteigt, erfolgt die Auszahlung des Gewinns auf der Grundlage eines Einsatzes von 10 Euro (10 €) oder umgerechnet in die jeweils geltende Währung (s. unten) multipliziert mit dem erworbenen Multiplikator x.\nDie Ermittlung der Ranglistenposition erfolgt entsprechend der Punktzahl für den höchsten Einzelgewinn in einer einzelnen Ausspielung in einem der teilnehmenden Spiele umgerechnet auf den jeweiligen Einsatz.\nSollten zwei (2) oder mehr Mitspielende ein Wochenturnier auf demselben Ranglistenplatz beenden, entfällt der höhere Gewinn auf die Spie"
+        "text" : "Während der Multiplikatorenwochen können Gewinne in Form eines in der Wochenturniergewinnübersicht (Gewinnmultiplikatorenwochen) und der Tagesausschüttungsübersicht weiter unten (im weiteren Textverlauf die „Gewinnmultiplikatorenwochen“) ausgewiesenen Vielfachen r des Einsatzes der erfolgreichen Spielerin bzw. des erfolgreichen Spielers erzielt werden.<br/>Wenn der Gewinn in der erfolgreichen Ausspielung zehn Euro (10 €) übersteigt, erfolgt die Auszahlung des Gewinns auf der Grundlage eines Einsatzes von 10 Euro (10 €) oder umgerechnet in die jeweils geltende Währung (s. unten) multipliziert mit dem erworbenen Multiplikator x.<br/>Die Ermittlung der Ranglistenposition erfolgt entsprechend der Punktzahl für den höchsten Einzelgewinn in einer einzelnen Ausspielung in einem der teilnehmenden Spiele umgerechnet auf den jeweiligen Einsatz.<br/>Sollten zwei (2) oder mehr Mitspielende ein Wochenturnier auf demselben Ranglistenplatz beenden, entfällt der höhere Gewinn auf die Spie"
       }
     ]
   },
