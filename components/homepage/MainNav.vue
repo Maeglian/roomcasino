@@ -14,7 +14,7 @@
       </div>
       <nav v-if="width >= 960" class="Nav MainNav-Links">
         <ul class="MainNav-List">
-          <template v-for="item in navItems">
+          <template v-for="item in navItemsFull">
             <NavItem
               v-if="!item.onlyIfLoggedIn"
               :key="item.name"
@@ -36,7 +36,7 @@
           <div class="Close AsideMenu-Close" @click="toggleNav()"></div>
         </div>
         <div class="AsideMenu-List">
-          <template v-for="item in navItems">
+          <template v-for="item in navItemsFull">
             <NavItem
               v-if="isLoggedIn || !item.onlyIfLoggedIn"
               :key="item.name"
@@ -64,6 +64,7 @@ import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
 import GamePanel from '@/components/homepage/GamePanel.vue';
 import { mapGetters, mapMutations, mapState } from 'vuex';
+import { TOURNAMENTS } from '@/config';
 
 export default {
   name: 'MainNav',
@@ -93,12 +94,7 @@ export default {
           icon: 'user-profile.svg',
           onlyIfLoggedIn: true,
         },
-        {
-          name: 'Playson May CashDays ',
-          url: this.localePath('/playson-may-cashdays'),
-          icon: 'tournament_nav.svg',
-          onlyIfLoggedIn: false,
-        },
+
         // {
         //   name: 'Drops & Wins',
         //   url: this.localePath('/drops-wins'),
@@ -132,6 +128,36 @@ export default {
   computed: {
     ...mapState(['navIsOpen', 'width', 'chatIsLoaded']),
     ...mapGetters(['isLoggedIn']),
+    navItemsFull() {
+      const tournaments = Object.values(TOURNAMENTS);
+      let navTournaments = {};
+      if (tournaments.length === 1) {
+        const item = tournaments[0];
+        navTournaments = {
+          name: item.name,
+          url: this.localePath(`/tournaments/${item.url}`),
+          icon: 'tournament_nav.svg',
+          onlyIfLoggedIn: false,
+        };
+      }
+      if (tournaments.length > 1) {
+        const children = tournaments.map(item => ({
+          name: item.name,
+          url: this.localePath(`/tournaments/${item.url}`),
+          icon: 'tournament_nav.svg',
+          onlyIfLoggedIn: false,
+        }));
+        navTournaments = {
+          name: 'Tournaments',
+          children,
+        };
+      }
+
+      const menu = [...this.navItems];
+      menu.push(navTournaments);
+
+      return menu;
+    },
     isGamePage() {
       return this.getRouteBaseName() === 'game';
     },
