@@ -181,4 +181,6 @@ export default {
       });
     },
   },
+
+  serverMiddleware: ['~/serverMiddleware/redirects.js'],
 };
