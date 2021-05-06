@@ -1,8 +1,8 @@
 <template>
   <section class="Hero">
     <div class="Hero-Slider">
-      <Slider :key="depositSlides.length" v-bind="options">
-        <div v-for="(slide, i) in depositSlides" :key="i" class="Hero-Item">
+      <Slider :key="slides.length" v-bind="options">
+        <div v-for="(slide, i) in slides" :key="i" class="Hero-Item">
           <picture class="Hero-Image">
             <source
               media="(max-width: 340px)"
@@ -125,68 +125,6 @@ export default {
         loop: true,
         dots: true,
       },
-      slides: [
-        {
-          bg: 'wolf',
-          title: this.$t('homepage.heroBanner.deposit1.title'),
-          text: this.$t('homepage.heroBanner.deposit1.text'),
-          btnText: 'Deposit now',
-        },
-        {
-          bg: 'joker',
-          title: this.$t('homepage.heroBanner.deposit1.title'),
-          text: this.$t('homepage.heroBanner.deposit1.text'),
-          btnText: 'Deposit now',
-        },
-        {
-          bg: 'aztec',
-          title: this.$t('homepage.heroBanner.deposit2.title'),
-          text: this.$t('homepage.heroBanner.deposit2.text'),
-          btnText: 'Deposit now',
-        },
-        {
-          bg: 'book',
-          title: this.$t('homepage.heroBanner.deposit3.title'),
-          text: this.$t('homepage.heroBanner.deposit3.text'),
-          btnText: 'Deposit now',
-        },
-        // {
-        //   bg: 'tournaments',
-        //   title: this.$t('homepage.heroBanner.deposit4.title'),
-        //   text: '',
-        //   btnText: 'Deposit now',
-        // },
-        {
-          bg: 'mayBanner',
-          title: this.$t('promotions.playsonMay.title'),
-          text: `<span class="Colored">${this.$t('playsonMay.prize')}</span>`,
-          url: '/tournaments/playson-may-cashdays',
-          linkText: this.$t('buttons.more'),
-        },
-        {
-          bg: 'dropsBanner',
-          title: this.$t('promotions.dropsWins.title'),
-          text: `<span class="Colored">${this.$t('dropsWins.prize')}</span>`,
-          url: '/tournaments/drops-wins',
-          linkText: this.$t('buttons.more'),
-        },
-      ],
-      // slides: [
-      //   {
-      //     bg: 'hero-bg.jpg',
-      //     title: 'Number one place to have fun!',
-      //     text: `Make first deposit now and get 100%<br/>
-      //           up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>`,
-      //     btnText: 'Deposit now',
-      //   },
-      //   {
-      //     bg: 'hero-bg.jpg',
-      //     title: 'Number one place to have fun!',
-      //     text: `Make first deposit now and get 100%<br/>
-      //           up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>`,
-      //     btnText: 'Deposit now',
-      //   },
-      // ],
       winners: [
         {
           imageUrl: 'https://static.egamings.com/games/thunderkick/sword_of_khans.jpg',
@@ -236,8 +174,58 @@ export default {
   computed: {
     ...mapState(['navIsOpen', 'games', 'depositNum']),
     ...mapGetters(['isLoggedIn']),
-    depositSlides() {
-      return this.slides.slice(this.depositNum);
+    slides() {
+      const slides = [
+        {
+          bg: 'wolf',
+          title: this.$t('homepage.heroBanner.deposit1.title'),
+          text: this.$t('homepage.heroBanner.deposit1.text'),
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'joker',
+          title: this.$t('homepage.heroBanner.deposit1.title'),
+          text: this.$t('homepage.heroBanner.deposit1.text'),
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'aztec',
+          title: this.$t('homepage.heroBanner.deposit2.title'),
+          text: this.$t('homepage.heroBanner.deposit2.text'),
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'book',
+          title: this.$t('homepage.heroBanner.deposit3.title'),
+          text: this.$t('homepage.heroBanner.deposit3.text'),
+          btnText: 'Deposit now',
+        },
+        // {
+        //   bg: 'tournaments',
+        //   title: this.$t('homepage.heroBanner.deposit4.title'),
+        //   text: '',
+        //   btnText: 'Deposit now',
+        // },
+        {
+          bg: 'mayBanner',
+          title: this.$t('promotions.playsonMay.title'),
+          text: `<span class="Colored">${this.$t('playsonMay.prize')}</span>`,
+          url: '/tournaments/playson-may-cashdays',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'dropsBanner',
+          title: this.$t('promotions.dropsWins.title'),
+          text: `<span class="Colored">${this.$t('dropsWins.prize')}</span>`,
+          url: '/tournaments/drops-wins',
+          linkText: this.$t('buttons.more'),
+        },
+      ];
+      if (!this.isLoggedIn) {
+        slides.splice(1, 1);
+        return slides;
+      }
+      return slides.slice(this.depositNum);
     },
   },
   methods: {
