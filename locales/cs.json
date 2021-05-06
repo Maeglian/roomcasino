@@ -25,7 +25,8 @@
     "letsStart" : "Začněme",
     "goHomePage" : "Přejít na domovskou stránku",
     "save" : "Uložit",
-    "getBonus" : "Získejte bonus"
+    "getBonus" : "Získejte bonus",
+    "more": "Více"
   },
   "errors" : {
     "required" : "Nemůže to být prázdné",
@@ -106,7 +107,8 @@
     "bonusPolicy" : "Bonusová politika",
     "privacyPolicy" : "Zásady ochrany osobních údajů",
     "responsibleGaming" : "Zodpovědné hraní",
-    "risk" : "Varování o riziku"
+    "risk" : "Varování o riziku",
+    "tournaments": "Turnaje"
   },
   "gameCategories" : {
     "top" : "Nejlepší hry",
@@ -374,12 +376,12 @@
   },
   "dropsWins" : {
     "prize" : "€ 2 500 000",
-    "text" : "The main tournament of the year! Join Stage 4 (Weeks 13-16) of the promotion. Try your luck to win a cash prize of €2,500,000 in total! There are weekly and daily tournaments with generous prize pools.<br/>Every day you can get prizes in various popular slots from well-known Pragmatic Play™.",
-    "textMobile" : "Welcome new Drops & Wins Network Promotion! Try your luck to win a cash prize of €2 500 000 in total!",
+    "text" : "Hlavní turnaj roku! Připojte se ke 4. fázi (13. až 16. týden) propagační akce. Zkuste štěstí a vyhrajte finanční odměnu celkem 2 500 000 EUR! K dispozici jsou týdenní a denní turnaje s velkorysými cenovými bankami. Každý den můžete získat ceny v různých populárních slotech od známé hry Pragmatic Play ™.",
+    "textMobile" : "Hlavní turnaj roku! Připojte se ke 4. fázi (13. až 16. týden) propagační akce. Zkuste štěstí a vyhrajte finanční odměnu celkem 2 500 000 EUR!",
     "terms" : [
       {
         "title" : "Fáze 4 probíhá v termínu:",
-        "text" : "6. května 2021 00:01 CET – 12. května 2021 23:59 CET  13. května 2021 00:01 CET – 19. května 2021 23:59 CET 20. května 2021 00:01 CET – 26. května 2021 23:59 CET 27. května 2021 00:01 CET – 2. června 2021 23:59 CET\n"
+        "text" : "6. května 2021 00:01 CET – 12. května 2021 23:59 CET  13. května 2021 00:01 CET – 19. května 2021 23:59 CET 20. května 2021 00:01 CET – 26. května 2021 23:59 CET 27. května 2021 00:01 CET – 2. června 2021 23:59 CET"
       },
       {
         "title" : "Hry zahrnuté do turnaje",
