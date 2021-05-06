@@ -500,6 +500,7 @@ export default {
     @media (min-width: $screen-xl) {
       top: 360px;
       left: calc(50% - 608px);
+      min-width: 217px;
     }
 
     &--cs {
