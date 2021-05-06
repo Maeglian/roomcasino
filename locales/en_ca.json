@@ -315,7 +315,7 @@
         "sessionLimit": {
           "name": "Session limits",
           "title": "time spent gambling",
-          "text": "time spent gambling",
+          "text": "The restriction takes effect instantly. If you hit the limit, you will be automatically logged out of your  account.",
           "editRules": "",
           "deleteRules": ""
         },
