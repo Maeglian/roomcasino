@@ -22,6 +22,30 @@
         </NuxtLink>
       </template>
     </BaseModal>
+    <BaseModal
+      name="nullBalance"
+      class="BalancePage-LockedBonus"
+      width="300"
+      height="auto"
+      :ok-btn="false"
+    >
+      <div class="BalancePage-LockedBonusIcon">
+        <svg width="95" height="78">
+          <use xlink:href="@/assets/img/icons.svg#deposit"></use>
+        </svg>
+      </div>
+      <div class="Modal-Title">
+        {{ $t('modals.wait') }}
+      </div>
+      <div class="Modal-Text">
+        {{ $t('modals.nullBalance') }}
+      </div>
+      <template #button>
+        <button class="Btn Btn--common Btn--full" @click="onClickDepositModal">
+          {{ $t('buttons.deposit') }}
+        </button>
+      </template>
+    </BaseModal>
     <div class="CabinetPage-Title BalancePage-Title">{{ $t('cabinet.pages.balance') }}</div>
     <div class="Table CabinetPage-Table BalancePage-Table">
       <div class="Table-Row CabinetPage-Row">
@@ -149,6 +173,10 @@ export default {
           this.$modal.show('lockedByBonus');
           return;
         }
+        if (!this.activeAccount.balance) {
+          this.$modal.show('nullBalance');
+          return;
+        }
         this.setCashoutTrue();
         this.$modal.show('cashier');
         return;
@@ -159,6 +187,10 @@ export default {
           this.getLimits();
           if (this.activeAccount.lockedByBonus) {
             this.$modal.show('lockedByBonus');
+            return;
+          }
+          if (!this.activeAccount.balance) {
+            this.$modal.show('nullBalance');
             return;
           }
           this.setCashoutTrue();
@@ -179,6 +211,10 @@ export default {
     },
     beforeCloseModal() {
       if (this.serverError) this.clearServerError();
+    },
+    onClickDepositModal() {
+      this.$modal.hide('nullBalance');
+      this.$modal.show('cashier');
     },
   },
 };

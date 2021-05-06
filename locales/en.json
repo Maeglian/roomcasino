@@ -61,7 +61,8 @@
     "pleaseDeposit": "Please deposit first",
     "pleaseDepositText": "It's a pity, but your balance is 0. Deposit now!",
     "wait": "Hey wait!",
-    "lockedByBonus": "There are still active bonuses on your account. In this case, the withdrawals are unavailable. Please check your profile and cancel all of them to make withdrawals."
+    "lockedByBonus": "There are still active bonuses on your account. In this case, the withdrawals are unavailable. Please check your profile and cancel all of them to make withdrawals.",
+    "nullBalance": "Unfortunately, you can't make a withdrawal. You have no funds in your account"
   },
   "auth": {
     "loginTitle": "Welcome back",

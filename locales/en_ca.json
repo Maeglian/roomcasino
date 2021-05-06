@@ -27,7 +27,8 @@
     "save": "Save",
     "edit": "Edit",
     "getBonus": "Get bonus",
-    "more": "More"
+    "more": "More",
+    "checkBonuses": "Check bonuses"
   },
   "errors": {
     "required": "Can't be blank",
@@ -58,7 +59,10 @@
     "playGame": "Now you can play the game",
     "cantStart": "Can't start the game",
     "pleaseDeposit": "Please deposit first",
-    "pleaseDepositText": "It's a pity, but your balance is 0. Deposit now!"
+    "pleaseDepositText": "It's a pity, but your balance is 0. Deposit now!",
+    "wait": "Hey wait!",
+    "lockedByBonus": "There are still active bonuses on your account. In this case, the withdrawals are unavailable. Please check your profile and cancel all of them to make withdrawals.",
+    "nullBalance": "Unfortunately, you can't make a withdrawal. You have no funds in your account"
   },
   "auth": {
     "loginTitle": "Welcome back",
@@ -384,11 +388,11 @@
   "dropsWins": {
     "prize": "€ 2 500 000",
     "text": "The main tournament of the year! Join Stage 4 (Weeks 13-16) of the promotion. Try your luck to win a cash prize of €2,500,000 in total! There are weekly and daily tournaments with generous prize pools.<br/>Every day you can get prizes in various popular slots from well-known Pragmatic Play™.",
-    "textMobile": "Welcome new Drops & Wins Network Promotion! Try your luck to win a cash prize of €2 500 000 in total!",
+    "textMobile": "Welcome new Drops & Wins Network Promotion! Try your luck to win a cash prize of € 2 500 000 in total!",
     "terms": [
       {
         "title": "Stage 4 runs between",
-        "text": "Week 13: 6th May 2021 00:01 CEST – 12th May 2021 23:59 CEST\nWeek 14: 13th May 2021 00:01 CEST – 19th May 2021 23:59 CEST\nWeek 15: 20th May 2021 00:01 CEST – 26th May 2021 23:59 CEST\nWeek 16: 27th May 2021 00:01 CEST – 2nd June 2021 23:59 CEST"
+        "text": "Week 13: 6th May 2021 00:01 CEST – 12th May 2021 23:59 CEST<br/>Week 14: 13th May 2021 00:01 CEST – 19th May 2021 23:59 CEST<br/>Week 15: 20th May 2021 00:01 CEST – 26th May 2021 23:59 CEST<br/>Week 16: 27th May 2021 00:01 CEST – 2nd June 2021 23:59 CEST"
       },
       {
         "title": "Games in this tournament",
@@ -396,7 +400,7 @@
       },
       {
         "title": "Drops & Wins includes",
-        "text": "Each Tournament runs for seven days from Thursday to Wednesday with daily Prize Drops in parallel.\nThe maximum WEEKLY prize pool of €31,000 in total will be shared between 550 winners.\nPlayers have an opportunity to win cash prizes in Daily prize drops with the €4,500 prize pool which will be shared between 20 of the most active participants."
+        "text": "Each Tournament runs for seven days from Thursday to Wednesday with daily Prize Drops in parallel.\nThe maximum WEEKLY prize pool of €31,000 in total will be shared between 550 winners.<br/>Players have an opportunity to win cash prizes in Daily prize drops with the €4,500 prize pool which will be shared between 20 of the most active participants."
       },
       {
         "title": "How to win",
@@ -404,7 +408,7 @@
       },
       {
         "title": "Additionally",
-        "text": "Players participating during multiplier weeks may win prizes in the form of a multiplier of the winning player’s bet amount as set out in the Weekly Tournament (Prize Multiplier Weeks) Prize Table – and the Daily Prize Drop (Prize Multiplier Weeks) Prize Table further below (hereinafter the “Prize Multiplier Weeks”)\nIf the winning spin exceeds ten Euros (€ 10), the prize will be paid out based on a bet of ten Euros (€ 10) or the equivalent amount in the Available Currency (as defined further below) X multiplier received.\nThe leaderboard is ranked in accordance with the score, which score is based on the highest single spin win amount on any participating game adjusted to the amount of the bet.\nIn the event of two (2) or more players finishing a Weekly Tournament on the same leaderboard position, the player who has achieved the score first will receive the higher prize."
+        "text": "Players participating during multiplier weeks may win prizes in the form of a multiplier of the winning player’s bet amount as set out in the Weekly Tournament (Prize Multiplier Weeks) Prize Table – and the Daily Prize Drop (Prize Multiplier Weeks) Prize Table further below (hereinafter the “Prize Multiplier Weeks”)<br/>If the winning spin exceeds ten Euros (€ 10), the prize will be paid out based on a bet of ten Euros (€ 10) or the equivalent amount in the Available Currency (as defined further below) X multiplier received.<br/>The leaderboard is ranked in accordance with the score, which score is based on the highest single spin win amount on any participating game adjusted to the amount of the bet.<br/>In the event of two (2) or more players finishing a Weekly Tournament on the same leaderboard position, the player who has achieved the score first will receive the higher prize."
       }
     ]
   },
