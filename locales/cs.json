@@ -27,9 +27,9 @@
     "save" : "Uložit",
     "getBonus" : "Získejte bonus",
     "more": "Více",
-    "checkBonuses": "Check bonuses",
-    "cancelBonus": "Cancel bonus",
-    "goBack": "Go back"
+    "checkBonuses": "Zkontroluj si bonusy",
+    "cancelBonus": "Zrušit bonus",
+    "goBack": "Vrátit se"
   },
   "errors" : {
     "required" : "Nemůže to být prázdné",
@@ -60,11 +60,11 @@
     "cantStart" : "Hru nelze spustit",
     "pleaseDeposit" : "Nejprve provést vklad",
     "pleaseDepositText" : "It's a pity, but your balance is 0. Deposit now!",
-    "wait": "Hey wait!",
-    "lockedByBonus": "There are still active bonuses on your account. In this case, the withdrawals are unavailable. Please check your profile and cancel all of them to make withdrawals.",
+    "wait": "Moment počkej!",
+    "lockedByBonus": "Na účtu máš aktivní bonusy. To znamená, že z účtu nemůžeš vybírat. Otevři si svůj profil a všechny je zruš, abys mohl(a) provádět výběry.",
     "nullBalance": "Unfortunately, you can't make a withdrawal. You have no funds in your account",
-    "loseBonus": "You’ve got an active bonus! If you cancel it, you will lose {amount} bonus money.",
-    "isSure": "Are you sure?"
+    "loseBonus": "Máš aktivní bonus! Pokud ho zrušíš, přijdeš o {amount} bonusové peníze.",
+    "isSure": "Určitě?"
   },
   "auth" : {
     "loginTitle" : "Vítej zpět",

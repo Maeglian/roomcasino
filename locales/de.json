@@ -28,9 +28,9 @@
     "edit" : "Bearbeiten",
     "getBonus" : "Bonus erhalten",
     "more": "Mehr",
-    "checkBonuses": "Check bonuses",
-    "cancelBonus": "Cancel bonus",
-    "goBack": "Go back"
+    "checkBonuses": "Boni prüfen",
+    "cancelBonus": "Bonus ablehnen",
+    "goBack": "Zurück"
   },
   "errors" : {
     "required" : "Pflichtangabe",
@@ -62,11 +62,11 @@
     "cantStart" : "Das Spiel kann nicht gestartet werden",
     "pleaseDeposit" : "Bitte erst einzahlen",
     "pleaseDepositText" : "Es ist schade, aber Ihr Guthaben ist 0. Jetzt einzahlen!!",
-    "wait": "Hey wait!",
-    "lockedByBonus": "There are still active bonuses on your account. In this case, the withdrawals are unavailable. Please check your profile and cancel all of them to make withdrawals.",
+    "wait": "Halt, Stop!",
+    "lockedByBonus": "Es sind noch laufende Boni auf Ihrem Konto. In diesem Fall ist keine Abhebung möglich. Bitte prüfen Sie Ihr Konto und annullieren Sie die \nBoni, um abheben zu können.",
     "nullBalance": "Unfortunately, you can't make a withdrawal. You have no funds in your account",
-    "loseBonus": "You’ve got an active bonus! If you cancel it, you will lose {amount} bonus money.",
-    "isSure": "Are you sure?"
+    "loseBonus": "Sie verfügen über einen gültigen Bonus! Wenn Sie ihn ablehnen, verlieren Sie {amount} Bonusgeld.",
+    "isSure": "Sind Sie sicher?"
   },
   "auth" : {
     "loginTitle" : "Willkommen zurück  ",

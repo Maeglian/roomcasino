@@ -28,9 +28,9 @@
     "edit" : "Editer",
     "getBonus" : "Obtenir un bonus",
     "more": "Plus",
-    "checkBonuses": "Check bonuses",
-    "cancelBonus": "Cancel bonus",
-    "goBack": "Go back"
+    "checkBonuses": "Vérifiez les bonus",
+    "cancelBonus": "Annuler le bonus",
+    "goBack": "Retour"
   },
   "errors" : {
     "required" : "Ne peut pas être vide",
@@ -62,11 +62,11 @@
     "cantStart" : "Impossible de démarrer le jeu",
     "pleaseDeposit" : "Veuillez déposer d'abord",
     "pleaseDepositText" : "C'est dommage, mais votre solde est de 0. Déposez maintenant!",
-    "wait": "Hey wait!",
-    "lockedByBonus": "There are still active bonuses on your account. In this case, the withdrawals are unavailable. Please check your profile and cancel all of them to make withdrawals.",
+    "wait": "Mais attendez!",
+    "lockedByBonus": "Il y a encore des bonus actifs dans votre compte. Dans ce cas, les retraits sont indisponibles. Veuillez vérifier votre profil et les annuler tous pour effectuer des retraits.",
     "nullBalance": "Unfortunately, you can't make a withdrawal. You have no funds in your account",
-    "loseBonus": "You’ve got an active bonus! If you cancel it, you will lose {amount} bonus money.",
-    "isSure": "Are you sure?"
+    "loseBonus": "Vous avez un bonus actif! Si vous l’annulez, vous perdrez {amount} le montant du bonus.",
+    "isSure": "Êtes-vous sûr?"
   },
   "auth" : {
     "loginTitle" : "Bienvenue à nouveau",
