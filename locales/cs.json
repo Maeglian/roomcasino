@@ -62,7 +62,7 @@
     "pleaseDepositText" : "It's a pity, but your balance is 0. Deposit now!",
     "wait": "Moment počkej!",
     "lockedByBonus": "Na účtu máš aktivní bonusy. To znamená, že z účtu nemůžeš vybírat. Otevři si svůj profil a všechny je zruš, abys mohl(a) provádět výběry.",
-    "nullBalance": "Unfortunately, you can't make a withdrawal. You have no funds in your account",
+    "nullBalance": "Bohužel výběr není možný. Na účtu nemáte žádné prostředky.",
     "loseBonus": "Máš aktivní bonus! Pokud ho zrušíš, přijdeš o {amount} bonusové peníze.",
     "isSure": "Určitě?"
   },

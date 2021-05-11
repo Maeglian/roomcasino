@@ -64,7 +64,7 @@
     "pleaseDepositText" : "C'est dommage, mais votre solde est de 0. Déposez maintenant!",
     "wait": "Mais attendez!",
     "lockedByBonus": "Il y a encore des bonus actifs dans votre compte. Dans ce cas, les retraits sont indisponibles. Veuillez vérifier votre profil et les annuler tous pour effectuer des retraits.",
-    "nullBalance": "Unfortunately, you can't make a withdrawal. You have no funds in your account",
+    "nullBalance": "Malheureusement, vous ne pouvez pas effectuer de retrait. Vous n’avez pas de fonds dans votre compte.",
     "loseBonus": "Vous avez un bonus actif! Si vous l’annulez, vous perdrez {amount} le montant du bonus.",
     "isSure": "Êtes-vous sûr?"
   },
