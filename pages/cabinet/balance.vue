@@ -95,13 +95,13 @@
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns">
           <button
-            class="Btn Btn--common Btn--color CabinetPage-Btn BalancePage-DepositBtn"
+            class="Btn Btn--color CabinetPage-Btn BalancePage-Btn"
             @click="onClickDeposit(acc.currency)"
           >
             {{ $t('buttons.deposit') }}
           </button>
           <button
-            class="Btn Btn--common Btn--outline CabinetPage-Btn"
+            class="Btn Btn--outline CabinetPage-Btn BalancePage-Btn"
             @click="onClickCashout(acc.currency)"
           >
             {{ $t('buttons.cashout') }}
@@ -226,11 +226,15 @@ export default {
     margin-bottom: 30px;
   }
 
-  &-DepositBtn {
-    margin-right: 4px;
+  &-Btn {
+    text-transform: uppercase;
 
-    @media (min-width: $screen-m) {
-      margin-right: 8px;
+    &:first-child {
+      margin-right: 4px;
+
+      @media (min-width: $screen-m) {
+        margin-right: 8px;
+      }
     }
   }
 
