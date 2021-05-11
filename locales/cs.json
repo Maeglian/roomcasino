@@ -26,7 +26,10 @@
     "goHomePage" : "Přejít na domovskou stránku",
     "save" : "Uložit",
     "getBonus" : "Získejte bonus",
-    "more": "Více"
+    "more": "Více",
+    "checkBonuses": "Check bonuses",
+    "cancelBonus": "Cancel bonus",
+    "goBack": "Go back"
   },
   "errors" : {
     "required" : "Nemůže to být prázdné",
@@ -56,7 +59,12 @@
     "playGame" : "Nyní můžete hrát hru",
     "cantStart" : "Hru nelze spustit",
     "pleaseDeposit" : "Nejprve provést vklad",
-    "pleaseDepositText" : "It's a pity, but your balance is 0. Deposit now!"
+    "pleaseDepositText" : "It's a pity, but your balance is 0. Deposit now!",
+    "wait": "Hey wait!",
+    "lockedByBonus": "There are still active bonuses on your account. In this case, the withdrawals are unavailable. Please check your profile and cancel all of them to make withdrawals.",
+    "nullBalance": "Unfortunately, you can't make a withdrawal. You have no funds in your account",
+    "loseBonus": "You’ve got an active bonus! If you cancel it, you will lose {amount} bonus money.",
+    "isSure": "Are you sure?"
   },
   "auth" : {
     "loginTitle" : "Vítej zpět",
@@ -142,6 +150,7 @@
     "active" : "Aktivní",
     "left" : "odjet",
     "yes" : "Ano",
+    "no": "Ne",
     "email" : "E-mailem",
     "wager" : "Vsadit",
     "created" : "Vytvořeno",

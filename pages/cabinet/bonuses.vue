@@ -41,7 +41,7 @@
               {{ $t('common.left') }}
             </Counter>
           </div>
-          <button class="Btn Btn--dark Bonus-Btn" @click="onDeleteBonus(bonus.id)">
+          <button class="Btn Btn--dark Bonus-Btn" @click="onClickCancelBonus(bonus)">
             {{ $t('buttons.cancel') }}
           </button>
         </div>
@@ -107,10 +107,11 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
+import { mapActions, mapGetters, mapState } from 'vuex';
 import Counter from '@/components/Counter';
 import BonusDetails from '@/components/cabinet/BonusDetails';
 import Loader from '@/components/Loader';
+import CancelBonusPopup from '@/components/CancelBonusPopup';
 
 export default {
   name: 'BonusesPage',
@@ -135,23 +136,14 @@ export default {
     this.getAvailableBonusList();
   },
   methods: {
-    ...mapMutations(['clearDeleteBonusError', 'pushNotificationAlert']),
-    ...mapActions([
-      'getBonusList',
-      'getAvailableBonusList',
-      'deleteBonus',
-      'getProfile',
-      'getBonusHistoryList',
-    ]),
-    onDeleteBonus(id) {
-      this.deleteBonus(id).then(() => {
-        if (this.deleteBonusError)
-          this.pushNotificationAlert({ type: 'error', text: 'Error on cancelling bonus' });
-        else this.pushNotificationAlert({ type: 'success', text: 'Your bonus was cancelled' });
-        this.getBonusList();
-        this.getBonusHistoryList();
-        this.getProfile();
-      });
+    ...mapActions(['getBonusList', 'getAvailableBonusList', 'getBonusHistoryList']),
+    onClickCancelBonus(bonus) {
+      this.$modal.show(
+        CancelBonusPopup,
+        { bonus },
+        { width: 418, height: 'auto', adaptive: true, scrollable: true },
+        {},
+      );
     },
     showBonusDetails(bonus) {
       this.$modal.show(BonusDetails, { bonus }, { width: 400, height: 'auto', adaptive: true });
