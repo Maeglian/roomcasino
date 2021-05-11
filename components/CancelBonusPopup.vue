@@ -9,7 +9,6 @@
         Are you sure?
       </template>
     </div>
-    <button v-if="okBtn" class="Btn Btn--common Btn--full" @click="$modal.hide(name)">OK</button>
     <div class="CancelBonusPopup-Btns">
       <template v-if="step === 1">
         <button class="Btn Btn--common CancelBonusPopup-Btn" @click="$emit('close')">
