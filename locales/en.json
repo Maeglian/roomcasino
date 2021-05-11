@@ -28,7 +28,9 @@
     "edit": "Edit",
     "getBonus": "Get bonus",
     "more": "More",
-    "checkBonuses": "Check bonuses"
+    "checkBonuses": "Check bonuses",
+    "cancelBonus": "Cancel bonus",
+    "goBack": "Go back"
   },
   "errors": {
     "required": "Can't be blank",
@@ -62,7 +64,9 @@
     "pleaseDepositText": "It's a pity, but your balance is 0. Deposit now!",
     "wait": "Hey wait!",
     "lockedByBonus": "There are still active bonuses on your account. In this case, the withdrawals are unavailable. Please check your profile and cancel all of them to make withdrawals.",
-    "nullBalance": "Unfortunately, you can't make a withdrawal. You have no funds in your account"
+    "nullBalance": "Unfortunately, you can't make a withdrawal. You have no funds in your account",
+    "loseBonus": "You’ve got an active bonus! If you cancel it, you will lose {amount} bonus money.",
+    "isSure": "Are you sure?"
   },
   "auth": {
     "loginTitle": "Welcome back",
@@ -151,6 +155,7 @@
     "disabled": "Disabled",
     "left": "Left",
     "yes": "Yes",
+    "no": "No",
     "email": "Email",
     "wager": "Wager",
     "created": "Created",
