@@ -1,43 +1,60 @@
 <template>
   <section class="Hero">
     <div class="Hero-Slider">
-      <div class="Hero-Item">
-        <picture class="Hero-Image">
-          <source
-            media="(max-width: 340px)"
-            :srcset="require(`@/assets/img/${slides[depositNum].bg}_320.png`)"
-          />
-          <source
-            media="(max-width: 459px)"
-            :srcset="require(`@/assets/img/${slides[depositNum].bg}_460.png`)"
-          />
-          <source
-            media="(max-width: 600px)"
-            :srcset="require(`@/assets/img/${slides[depositNum].bg}_600.png`)"
-          />
-          <source
-            media="(max-width: 900px)"
-            :srcset="require(`@/assets/img/${slides[depositNum].bg}_900.png`)"
-          />
-          <source
-            media="(max-width: 1248px)"
-            :srcset="require(`@/assets/img/${slides[depositNum].bg}_1248.png`)"
-          />
-          <img
-            :srcset="require(`@/assets/img/${slides[depositNum].bg}_1920.png`)"
-            alt=""
-            @load="setHeroBannerIsLoaded"
-          />
-        </picture>
-        <div class="Hero-Content Hero-Content--centered">
-          <div class="Title Title--type-h1 Hero-Title" v-html="slides[depositNum].title"></div>
-          <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
-          <div class="Hero-Text" v-html="slides[depositNum].text"></div>
-          <button class="Btn Btn--common Hero-Btn" @click="onClickBtn()">
-            {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.register') }}
-          </button>
+      <Slider :key="slides.length" v-bind="options">
+        <div v-for="(slide, i) in slides" :key="i" class="Hero-Item">
+          <picture class="Hero-Image">
+            <source
+              media="(max-width: 340px)"
+              :srcset="require(`@/assets/img/${slide.bg}_320.png`)"
+            />
+            <source
+              media="(max-width: 459px)"
+              :srcset="require(`@/assets/img/${slide.bg}_460.png`)"
+            />
+            <source
+              media="(max-width: 589px)"
+              :srcset="require(`@/assets/img/${slide.bg}_600.png`)"
+            />
+            <source
+              media="(max-width: 900px)"
+              :srcset="require(`@/assets/img/${slide.bg}_900.png`)"
+            />
+            <source
+              media="(max-width: 1248px)"
+              :srcset="require(`@/assets/img/${slide.bg}_1248.png`)"
+            />
+            <img
+              :srcset="require(`@/assets/img/${slide.bg}_1920.png`)"
+              alt=""
+              @load="setHeroBannerIsLoaded"
+            />
+          </picture>
+          <div class="Hero-Content Hero-Content--centered">
+            <div class="Hero-Description">
+              <div class="Title Title--type-h1 Hero-Title" v-html="slide.title"></div>
+              <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
+              <div class="Hero-Text" v-html="slide.text"></div>
+            </div>
+            <NuxtLink
+              v-if="slide.url"
+              :class="`Hero-Btn--${$i18n.locale}`"
+              class="Btn Btn--common Hero-Btn"
+              :to="localePath(slide.url)"
+            >
+              {{ slide.linkText }}
+            </NuxtLink>
+            <button
+              v-else
+              class="Btn Btn--common Hero-Btn"
+              :class="`Hero-Btn--${$i18n.locale}`"
+              @click="onClickBtn()"
+            >
+              {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.register') }}
+            </button>
+          </div>
         </div>
-      </div>
+      </Slider>
     </div>
     <div class="Hero-Footer">
       <!--      <GamesSlider-->
@@ -92,12 +109,14 @@
 // import GamesSlider from '@/components/GamesSlider';
 import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import Slider from '@/components/Slider';
 
 export default {
   name: 'Hero',
-  // components: {
-  //   GamesSlider,
-  // },
+  components: {
+    // GamesSlider,
+    Slider,
+  },
   mixins: [showAuthDialog],
   data() {
     return {
@@ -106,54 +125,6 @@ export default {
         loop: true,
         dots: true,
       },
-      slides: [
-        {
-          bg: 'wolf',
-          title: this.$t('homepage.heroBanner.deposit1.title'),
-          text: this.$t('homepage.heroBanner.deposit1.text'),
-          btnText: 'Deposit now',
-        },
-        {
-          bg: 'joker',
-          title: this.$t('homepage.heroBanner.deposit1.title'),
-          text: this.$t('homepage.heroBanner.deposit1.text'),
-          btnText: 'Deposit now',
-        },
-        {
-          bg: 'aztec',
-          title: this.$t('homepage.heroBanner.deposit2.title'),
-          text: this.$t('homepage.heroBanner.deposit2.text'),
-          btnText: 'Deposit now',
-        },
-        {
-          bg: 'book',
-          title: this.$t('homepage.heroBanner.deposit3.title'),
-          text: this.$t('homepage.heroBanner.deposit3.text'),
-          btnText: 'Deposit now',
-        },
-        {
-          bg: 'tournaments',
-          title: this.$t('homepage.heroBanner.deposit4.title'),
-          text: '',
-          btnText: 'Deposit now',
-        },
-      ],
-      // slides: [
-      //   {
-      //     bg: 'hero-bg.jpg',
-      //     title: 'Number one place to have fun!',
-      //     text: `Make first deposit now and get 100%<br/>
-      //           up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>`,
-      //     btnText: 'Deposit now',
-      //   },
-      //   {
-      //     bg: 'hero-bg.jpg',
-      //     title: 'Number one place to have fun!',
-      //     text: `Make first deposit now and get 100%<br/>
-      //           up to <span class="Colored Hero--colored">€100 + 55 Free  Spins</span>`,
-      //     btnText: 'Deposit now',
-      //   },
-      // ],
       winners: [
         {
           imageUrl: 'https://static.egamings.com/games/thunderkick/sword_of_khans.jpg',
@@ -203,6 +174,59 @@ export default {
   computed: {
     ...mapState(['navIsOpen', 'games', 'depositNum']),
     ...mapGetters(['isLoggedIn']),
+    slides() {
+      const slides = [
+        {
+          bg: 'wolf',
+          title: this.$t('homepage.heroBanner.deposit1.title'),
+          text: this.$t('homepage.heroBanner.deposit1.text'),
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'joker',
+          title: this.$t('homepage.heroBanner.deposit1.title'),
+          text: this.$t('homepage.heroBanner.deposit1.text'),
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'aztec',
+          title: this.$t('homepage.heroBanner.deposit2.title'),
+          text: this.$t('homepage.heroBanner.deposit2.text'),
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'book',
+          title: this.$t('homepage.heroBanner.deposit3.title'),
+          text: this.$t('homepage.heroBanner.deposit3.text'),
+          btnText: 'Deposit now',
+        },
+        // {
+        //   bg: 'tournaments',
+        //   title: this.$t('homepage.heroBanner.deposit4.title'),
+        //   text: '',
+        //   btnText: 'Deposit now',
+        // },
+        {
+          bg: 'mayBanner',
+          title: this.$t('promotions.playsonMay.title'),
+          text: `<span class="Colored">${this.$t('playsonMay.prize')}</span>`,
+          url: '/tournaments/playson-may-cashdays',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'dropsBanner',
+          title: this.$t('promotions.dropsWins.title'),
+          text: `<span class="Colored">${this.$t('dropsWins.prize')}</span>`,
+          url: '/tournaments/drops-wins',
+          linkText: this.$t('buttons.more'),
+        },
+      ];
+      if (!this.isLoggedIn) {
+        slides.splice(1, 1);
+        return slides;
+      }
+      return slides.slice(this.depositNum);
+    },
   },
   methods: {
     ...mapMutations(['openNav', 'closeNav', 'setHeroBannerIsLoaded']),
@@ -299,15 +323,40 @@ export default {
       margin-bottom: 0;
     }
 
-    .v_slider__dots {
-      position: absolute;
-      bottom: 70px;
-      left: 180px;
-      width: auto;
+    .v_slider__dots li {
+      padding: 7px;
 
       @media (min-width: $screen-xs) {
-        top: 220px;
+        padding: 9px;
+      }
+    }
+
+    .v_slider__dots li span {
+      width: 6px;
+      height: 6px;
+
+      @media (min-width: $screen-xs) {
+        width: 8px;
+        height: 8px;
+      }
+    }
+
+    .v_slider__dots {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      width: auto;
+      transform: translateX(-50%);
+
+      @media (min-width: $screen-xs) {
+        top: 65px;
+      }
+
+      @media (min-width: $screen-s) {
+        top: 190px;
         bottom: initial;
+        left: 180px;
+        transform: none;
       }
 
       @media (min-width: $screen-m) {
@@ -338,13 +387,32 @@ export default {
 
   &-Content {
     position: absolute;
-    bottom: 7%;
+    top: 53%;
     left: 16px;
     text-align: left;
 
     @media (min-width: $screen-xs) {
+      top: 58%;
+    }
+
+    @media (min-width: $screen-s) {
+      top: 0;
+    }
+
+    &--centered {
+      width: calc(100% - 32px);
+      text-align: center;
+
+      @media (min-width: $screen-s) {
+        text-align: left;
+      }
+    }
+  }
+
+  &-Description {
+    @media (min-width: $screen-s) {
+      position: absolute;
       top: 70px;
-      bottom: initial;
     }
 
     @media (min-width: $screen-m) {
@@ -359,16 +427,6 @@ export default {
       top: 112px;
       left: calc(50% - 608px);
     }
-
-    &--centered {
-      bottom: 10%;
-      width: calc(100% - 32px);
-      text-align: center;
-
-      @media (min-width: $screen-xs) {
-        text-align: left;
-      }
-    }
   }
 
   &-Image {
@@ -378,17 +436,12 @@ export default {
 
     img {
       width: 100%;
-      height: 100%;
       object-fit: cover;
     }
   }
 
   &-Title {
     margin-bottom: 9px;
-
-    @media (min-width: $screen-xs) {
-      margin-bottom: 0;
-    }
 
     @media (min-width: $screen-s) {
       margin-bottom: 9px;
@@ -407,7 +460,7 @@ export default {
     color: var(--color-text-main);
     text-transform: uppercase;
 
-    @media (min-width: $screen-xs) {
+    @media (min-width: $screen-s) {
       margin-bottom: 10px;
       font-size: 14px;
     }
@@ -430,8 +483,31 @@ export default {
   &-Btn {
     width: 204px;
 
-    @media (min-width: $screen-xs) {
+    @media (min-width: $screen-s) {
+      position: absolute;
+      top: 190px;
       width: auto;
+    }
+
+    @media (min-width: $screen-m) {
+      top: 240px;
+    }
+
+    @media (min-width: $screen-l) {
+      top: 290px;
+    }
+
+    @media (min-width: $screen-xl) {
+      top: 360px;
+      left: calc(50% - 608px);
+      min-width: 217px;
+    }
+
+    &--cs {
+      @media (min-width: $screen-xl) {
+        padding-right: 25px;
+        padding-left: 25px;
+      }
     }
   }
 
