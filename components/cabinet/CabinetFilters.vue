@@ -56,7 +56,7 @@
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapGetters, mapState } from 'vuex';
 import moment from 'moment';
-import { de, cs, fr } from 'vuejs-datepicker/dist/locale';
+import { de, cs, fr, en } from 'vuejs-datepicker/dist/locale';
 
 const Datepicker = () => import('vuejs-datepicker');
 
@@ -77,7 +77,8 @@ export default {
       filtersMenuIsOpen: false,
       de,
       cs,
-      'fr-CA': fr,
+      fr,
+      'en-ca': en,
     };
   },
   computed: {

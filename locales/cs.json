@@ -25,7 +25,11 @@
     "letsStart" : "Začněme",
     "goHomePage" : "Přejít na domovskou stránku",
     "save" : "Uložit",
-    "getBonus": "Získejte bonus"
+    "getBonus" : "Získejte bonus",
+    "more": "Více",
+    "checkBonuses": "Zkontroluj si bonusy",
+    "cancelBonus": "Zrušit bonus",
+    "goBack": "Vrátit se"
   },
   "errors" : {
     "required" : "Nemůže to být prázdné",
@@ -55,7 +59,12 @@
     "playGame" : "Nyní můžete hrát hru",
     "cantStart" : "Hru nelze spustit",
     "pleaseDeposit" : "Nejprve provést vklad",
-    "pleaseDepositText" : "It's a pity, but your balance is 0. Deposit now!"
+    "pleaseDepositText" : "It's a pity, but your balance is 0. Deposit now!",
+    "wait": "Moment počkej!",
+    "lockedByBonus": "Na účtu máš aktivní bonusy. To znamená, že z účtu nemůžeš vybírat. Otevři si svůj profil a všechny je zruš, abys mohl(a) provádět výběry.",
+    "nullBalance": "Bohužel výběr není možný. Na účtu nemáte žádné prostředky.",
+    "loseBonus": "Máš aktivní bonus! Pokud ho zrušíš, přijdeš o {amount} bonusové peníze.",
+    "isSure": "Určitě?"
   },
   "auth" : {
     "loginTitle" : "Vítej zpět",
@@ -76,22 +85,22 @@
     "tryingConfirmEmail" : "Pokoušíme se ověřit váš e-mail",
     "confirmEmailError" : "Litujeme, váš e-mail nebyl potvrzen",
     "confirmEmailSuccess" : "Congratulations! Your email was successfully confirmed",
-    "bonus": "KČ 3330",
-    "placeholders": {
-      "enterEmail": "E-emailen",
-      "enterPassword": "Heslo",
-      "email": "E-emailen",
-      "password": "Heslo",
-      "country": "Země",
-      "firstName": "Jméno",
-      "lastName": "Příjmení",
-      "male": "Mužský",
-      "female": "Ženský",
-      "city": "Mesto",
-      "address": "Adresa",
-      "postalCode": "Poštovní směrovací číslo",
-      "phone": "Mobilní telefon",
-      "year": "YYYY"
+    "bonus" : "KČ 3330",
+    "placeholders" : {
+      "enterEmail" : "E-emailen",
+      "enterPassword" : "Heslo",
+      "email" : "E-emailen",
+      "password" : "Heslo",
+      "country" : "Země",
+      "firstName" : "Jméno",
+      "lastName" : "Příjmení",
+      "male" : "Mužský",
+      "female" : "Ženský",
+      "city" : "Mesto",
+      "address" : "Adresa",
+      "postalCode" : "Poštovní směrovací číslo",
+      "phone" : "Mobilní telefon",
+      "year" : "YYYY"
     }
   },
   "pages" : {
@@ -106,7 +115,8 @@
     "bonusPolicy" : "Bonusová politika",
     "privacyPolicy" : "Zásady ochrany osobních údajů",
     "responsibleGaming" : "Zodpovědné hraní",
-    "risk" : "Varování o riziku"
+    "risk" : "Varování o riziku",
+    "tournaments": "Turnaje"
   },
   "gameCategories" : {
     "top" : "Nejlepší hry",
@@ -116,7 +126,8 @@
     "roulette" : "Ruleta",
     "table" : "Stolní hry",
     "card" : "Karetní hry",
-    "recent": "Nedávné hry"
+    "recent" : "Nedávné hry",
+    "new" : "Nový hry"
   },
   "footer" : {
     "text" : {
@@ -139,11 +150,12 @@
     "active" : "Aktivní",
     "left" : "odjet",
     "yes" : "Ano",
+    "no": "Ne",
     "email" : "E-mailem",
     "wager" : "Vsadit",
     "created" : "Vytvořeno",
     "expiresAt" : "Vyprší v",
-    "noData": "Údaje nejsou k dispozici"
+    "noData" : "Údaje nejsou k dispozici"
   },
   "actions" : {
     "addCurrency" : "Add currency"
@@ -185,15 +197,15 @@
       }
     },
     "allProviders" : "Všichni poskytovatelé",
-    "tableIsOpen": "Stůl je otevřený",
-    "tableIsClosed": "Stůl je zavřený"
+    "tableIsOpen" : "Stůl je otevřený",
+    "tableIsClosed" : "Stůl je zavřený"
   },
   "filters" : {
     "filteredBy" : "Filtrováno podle",
     "allStatuses" : "Všechny stavy",
     "AllCurrencies" : "Všechny měny",
     "until" : "Dokud",
-    "dataPlaceholder": "DD.MM.YYYY"
+    "dataPlaceholder" : "DD.MM.YYYY"
   },
   "cabinet" : {
     "pages" : {
@@ -266,20 +278,20 @@
       "newPassword" : "Nové heslo",
       "confirmPassword" : "Potvrzení hesla",
       "sessionHistory" : "Historie relace",
-      "labels": {
-        "email": "E-emailen",
-        "country": "Země",
-        "firstName": "Jméno",
-        "lastName": "Příjmení",
-        "gender": "Rod",
-        "birthDate": "Datum narození",
-        "city": "Mesto",
-        "address": "Adresa",
-        "postalCode": "Poštovní směrovací číslo",
-        "phoneNumber": "Mobilní telefon"
+      "labels" : {
+        "email" : "E-emailen",
+        "country" : "Země",
+        "firstName" : "Jméno",
+        "lastName" : "Příjmení",
+        "gender" : "Rod",
+        "birthDate" : "Datum narození",
+        "city" : "Mesto",
+        "address" : "Adresa",
+        "postalCode" : "Poštovní směrovací číslo",
+        "phoneNumber" : "Mobilní telefon"
       },
-      "updateSuccess": "Váš profil byl úspěšně aktualizován!",
-      "passwordUpdateSuccess": "Vaše heslo bylo úspěšně změněno!"
+      "updateSuccess" : "Váš profil byl úspěšně aktualizován!",
+      "passwordUpdateSuccess" : "Vaše heslo bylo úspěšně změněno!"
     },
     "limits" : {
       "initialText" : "Chcete sledovat svoji aktivitu, limity ztráty nebo omezit vklady? Váš účet lze nastavit se všemi limity. Pomůže vám získat přehled o vašem hazardu. Všechna omezení se projeví okamžitě.",
@@ -327,7 +339,7 @@
         "weeks" : "Týdny",
         "months" : "Měsíce",
         "min" : "Min",
-        "day": "Den"
+        "day" : "Den"
       },
       "edit" : "Upravit limit",
       "delete" : "Smazat limit",
@@ -340,21 +352,84 @@
   "promotions" : {
     "title" : "Aktuální propagační akce",
     "text" : "Zrušení limitu bude uplatněno do 24 hodin po žádosti hráče.",
-    "upTo": "až KČ 3330",
+    "upTo" : "až KČ 3330",
     "deposit1" : {
       "title" : "100% <br/> z vkladu <br/> částk",
-      "name": "Bonus ke prvnímu vkladu",
+      "name" : "Bonus ke prvnímu vkladu",
       "text" : "Proveďte první vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
     },
     "deposit2" : {
       "title" : "55% <br/> z vkladu <br/> částky",
-      "name": "Bonus ke druhému vkladu",
+      "name" : "Bonus ke druhému vkladu",
       "text" : "Proveďte druhý vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
     },
     "deposit3" : {
       "title" : "100% <br/> z vkladu <br/> částky",
-      "name": "Bonus ke třetímu vkladu",
+      "name" : "Bonus ke třetímu vkladu",
       "text" : "Proveďte třetí vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
+    },
+    "dropsWins" : {
+      "title" : "Drops<span class=\"Colored\">&</span>wins<br/>Vítejte v 4<br/>(týdnů 13-16)",
+      "name" : "Drops&wins turnaje",
+      "text" : "Vítejte v 4. ( týdnů 13–16) fázi denní propagační akce pořádané sítí Drops & Wins. <br/><br/>Máte příležitost vyhrát hotovost v celkové výši 2 500 000 eur! <br/><br/>"
+    },
+    "playsonMay" : {
+      "title" : "Playson may<br/> cashdays",
+      "name" : "Playson May CashDays",
+      "text" : "Přivítejte další měsíc a další turnaj CashDays 60k, který pořádá známý poskytovatel. Playson ví, jak potěšit své drahé hráče..<br/><br/>Prize pool ve výši 60 000 eur už čeká na vítěze. "
     }
+  },
+  "tournaments" : {
+    "games" : "Hry zahrnuté do turnaje",
+    "terms" : "Podmínky turnaje"
+  },
+  "dropsWins" : {
+    "prize" : "€ 2 500 000",
+    "text" : "Hlavní turnaj roku! Připojte se ke 4. fázi (13. až 16. týden) propagační akce. Zkuste štěstí a vyhrajte finanční odměnu celkem 2 500 000 EUR! K dispozici jsou týdenní a denní turnaje s velkorysými cenovými bankami. Každý den můžete získat ceny v různých populárních slotech od známé hry Pragmatic Play ™.",
+    "textMobile" : "Hlavní turnaj roku! Připojte se ke 4. fázi (13. až 16. týden) propagační akce. Zkuste štěstí a vyhrajte finanční odměnu celkem 2 500 000 EUR!",
+    "terms" : [
+      {
+        "title" : "Fáze 4 probíhá v termínu:",
+        "text" : "6. května 2021 00:01 CET – 12. května 2021 23:59 CET  13. května 2021 00:01 CET – 19. května 2021 23:59 CET 20. května 2021 00:01 CET – 26. května 2021 23:59 CET 27. května 2021 00:01 CET – 2. června 2021 23:59 CET"
+      },
+      {
+        "title" : "Hry zahrnuté do turnaje",
+        "text" : "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker's Jewels™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, The Hand of Midas™, Wild West Gold™, Gates of Olympus™, Congo Cash™, Fishin' Reels™, Power of Thor Megaways™, Floating Dragon™, Wild Booster™, Hot Fiesta™, Buffalo King Megaways™."
+      },
+      {
+        "title" : "Drops & Wins zahrnuje",
+        "text" : "Jednotlivé turnaje probíhají po dobu 7 dnů od čtvrtka do středy souběžně s denním turnajem Prize Drops.\nMaximální TÝDENNÍ výhra v 4. fázi je 31 000 eur a rozdělí si ji celkem 550 vítězů.<br/>Hráči mají příležitost KAŽDÝ DEN vyhrát peněžní ceny z prize poolu ve výši 4 500 EUR, který si rozdělí 100 nejaktivnějších účastníků."
+      },
+      {
+        "title" : "Jak vyhrát ",
+        "text" : "Hráč musí učinit vsázku se skutečnými penězi v jakékoliv ze zúčastněných her a musí získat minimálně jednu (1) výhru ve hře, aby se mohl kvalifikovat do týdenního turnaje.<br/>Hráč musí učinit vsázku se skutečnými penězi v jakékoliv ze zúčastněných her a musí získat minimálně jednu (1) výhru ve hře, aby se mohl kvalifikovat do týdenního turnaje. Pro účast v turnaji Daily Prize není požadována žádná minimální částka v reálných penězích Drops (týdny pro násobení výhry)."
+      },
+      {
+        "title" : "Dodatečně",
+        "text" : "Hráči, kteří se turnaje zúčastní ve více týdnech, mohou vyhrát ceny v podobě násobku r z vsazené částky vítězného hráče, jak je stanoveno v Tabulce výher týdenního turnaje (týdny pro násobení výhry) – a v Tabulce výher denního turnaje Prize Drop (týdny pro násobení výhry) (dále jako „Týdny pro násobení výhry“.<br/>Přesáhne-li vítězný spin hodnotu deseti eur (10 €), výhra bude vyplacena na základě sázky ve výši deseti eur (10 €) nebo odpovídající částky v dostupné měně (viz definice níže) X získaný násobek.<br/>Pořadí ve výsledkové tabulce odpovídá skóre, které je dané nejvyšší vyhranou částkou v jednom spinu a libovolné zahrnuté hře, upravenou podle výše vkladu.<br/>Pokud by týdenní turnaj dokončili dva (2) nebo více hráčů se stejným umístěním ve výsledkové tabulce, pak hráč, který skóre dosáhne první, dostane nejvyšší výhru."
+      }
+    ]
+  },
+  "playsonMay" : {
+    "prize" : "€ 60 000",
+    "text" : "Přivítejte další měsíc a další turnaj CashDays 60k, který pořádá známý poskytovatel. Playson ví, jak potěšit své drahé hráče. Prize pool ve výši 60 000 eur už čeká na vítěze. \n<br/>Turnaj se uskuteční od 1. května 2021 0:01 UTC do 8. května 2021 23:59 UTC. ",
+    "textMobile" : "Přivítejte další měsíc a další turnaj CashDays 60k, který pořádá známý poskytovatel. Playson ví, jak potěšit své drahé hráče.",
+    "terms" : [
+      {
+        "text" : "Turnaj se uskuteční od 1. května 2021 0:01 UTC do 8. května 2021 23:59 UTC."
+      },
+      {
+        "text" : "Bude zahrnovat celkem 10 her:<br/>●  Book of Gold: Double Chance<br/>●  Book of Gold: Multichance<br/>●  Buffalo Power: Hold and Win<br/>●  Burning Wins: classic 5 lines<br/>●  Diamond Wins: Hold and Win<br/>●  Divine Dragon: Hold and Win<br/>●  Legend of Cleopatra MegawaysTM<br/>●  Solar Queen<br/>●  Solar Temple<br/>●  Wolf Power: Hold and Win"
+      },
+      {
+        "text" : "Jako obvykle, minimální sázka požadovaná pro účast je 0,50 eur. Body se počítají po jednotlivých kolech, kdy každé 1 vyhrané euro (nebo ekvivalent v jiné měně) odpovídá 10 bodům."
+      },
+      {
+        "text" : "Štědrý prize pool ve výši 60 000 eur si rozdělí 350 hráčů: <br/>1. místo – 10 000 eur<br/>2. místo – 5 000 eur<br/>3. místo – 3 000 eur<br/>4. místo – 1 500 eur<br/>5. místo – 1 000 eur<br/>6. místo – 900 eur<br/>7. místo – 800 eur<br/>8. místo – 700 eur<br/>9. místo – 600 eur<br/>10. místo – 500 eur<br/>11.–25. místo – 400 eur<br/>26.–50. místo – 200 eur<br/>51.–100. místo – 150 eur<br/>101.–200. místo – 100 eur<br/>201.–350. místo – 50 eur"
+      },
+      {
+        "text" : "V průběhu turnaje sledujte výsledkovou tabulku. Čím více bodů získáte, tím vyšší jsou vaše šance na výhru. Pojďte do toho a pokuste štěstěnu!"
+      }
+    ]
   }
 }

@@ -46,7 +46,7 @@
               {{ $t('common.left') }}
             </Counter>
           </div>
-          <button class="Btn Btn--dark Bonus-Btn" @click="onDeleteBonus(bonus.id)">
+          <button class="Btn Btn--dark Bonus-Btn" @click="onClickCancelBonus(bonus)">
             {{ $t('buttons.cancel') }}
           </button>
         </div>
@@ -158,7 +158,7 @@
             :disabled="!bonus.available"
             @click="$modal.show('cashier')"
           >
-            Deposit
+            {{ $t('buttons.deposit') }}
           </button>
         </div>
       </div>
@@ -224,10 +224,11 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
+import { mapActions, mapGetters, mapState } from 'vuex';
 import Counter from '@/components/Counter';
 import BonusDetails from '@/components/cabinet/BonusDetails';
 import Loader from '@/components/Loader';
+import CancelBonusPopup from '@/components/CancelBonusPopup';
 
 export default {
   name: 'BonusesPage',
@@ -237,6 +238,7 @@ export default {
   },
   computed: {
     ...mapState([
+      'bonusListIsLoading',
       'historyListIsLoading',
       'freeSpinListIsLoading',
       'bonusListIsLoading',
@@ -259,7 +261,7 @@ export default {
     this.getAvailableFreeSpinList();
   },
   methods: {
-    ...mapMutations(['clearDeleteBonusError', 'pushNotificationAlert']),
+    ...mapActions(['getBonusList', 'getAvailableBonusList', 'getBonusHistoryList']),
     ...mapActions([
       'getBonusList',
       'getAvailableBonusList',
@@ -271,6 +273,19 @@ export default {
       'deleteFreeSpin',
       'activateFreeSpin',
     ]),
+    onClickCancelBonus(bonus) {
+      this.$modal.show(
+        CancelBonusPopup,
+        { bonus },
+        {
+          width: 418,
+          height: 'auto',
+          adaptive: true,
+          scrollable: true,
+        },
+        {},
+      );
+    },
     findFreeSpin(depositNum) {
       const freeSpin = this.availableFreeSpinList.find(spin => spin.depositNum === depositNum);
       if (freeSpin) return freeSpin.freeSpinCount;

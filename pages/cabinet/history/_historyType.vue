@@ -211,6 +211,7 @@ export default {
           },
         },
       },
+      currentFilters: {},
     };
   },
   computed: {
@@ -239,14 +240,12 @@ export default {
     },
     filterPayload() {
       const payload = {};
-      for (const key in this.filters) {
-        if (typeof this.filters[key].value === 'object') {
-          if (this.filters[key].value.value) payload[key] = this.filters[key].value.value;
-        } else if (this.filters[key].value) payload[key] = this.filters[key].value;
+      const { filters } = this.historyTables[this.$route.params.historyType];
+      for (const key in filters) {
+        if (typeof filters[key].value === 'object') {
+          if (filters[key].value.value) payload[key] = filters[key].value.value;
+        } else if (filters[key].value) payload[key] = filters[key].value;
       }
-
-      payload.offset = this.offset;
-      payload.limit = this.limit;
       return payload;
     },
     totalPages() {
@@ -255,11 +254,11 @@ export default {
   },
   watch: {
     currentPage() {
-      this.getData(this.filterPayload);
+      this.getData({ ...this.filterPayload, offset: this.offset, limit: this.limit });
     },
   },
   created() {
-    this.getData(this.filterPayload);
+    this.getData({ ...this.filterPayload, offset: this.offset, limit: this.limit });
   },
   methods: {
     ...mapActions(['getTransactionHistoryList', 'getBonusHistoryList', 'getGameHistoryList']),
@@ -280,11 +279,20 @@ export default {
       this.historyTables[this.$route.params.historyType].filters[name].value = val;
     },
     onFilter() {
-      this.getData(this.filterPayload);
+      if (JSON.stringify(this.filterPayload) !== JSON.stringify(this.currentFilters)) {
+        this.currentFilters = { ...this.filterPayload };
+        this.limit = 6;
+        if (this.currentPage !== 1) {
+          this.currentPage = 1;
+          return;
+        }
+      }
+
+      this.getData({ ...this.filterPayload, offset: this.offset, limit: this.limit });
     },
     onShowMore() {
       this.limit += this.limit;
-      this.getData(this.filterPayload);
+      this.getData({ ...this.filterPayload, offset: this.offset, limit: this.limit });
     },
   },
 };

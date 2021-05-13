@@ -94,9 +94,8 @@
 
   &-Blocks {
     @media(min-width: $screen-m) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 10px;
+      column-count: 2;
+      column-gap: 12px;
     }
 
     @media(min-width: $screen-l) {
@@ -113,9 +112,10 @@
     margin-bottom: 8px;
     padding: 24px;
     background: var(--color-bg);
+    break-inside: avoid;
 
     @media(min-width: $screen-m) {
-      margin-bottom: 0;
+      margin-bottom: 12px;
       padding: 30px;
     }
   }
@@ -123,6 +123,7 @@
   &-Number {
     margin-right: 16px;
     font-size: 14px;
+    font-weight: 700;
     color: var(--color-text-main);
   }
 

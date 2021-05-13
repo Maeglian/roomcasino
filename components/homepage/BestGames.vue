@@ -65,6 +65,30 @@
         />
       </div>
       <Nuxt />
+      <template v-if="newGames.length">
+        <div class="Title Title--type-h2 Cards-Title">
+          {{ $t('gameCategories.new') }}
+        </div>
+        <Loader v-if="newGamesAreLoading" />
+        <Games
+          v-else
+          class="DefaultGames-Cards"
+          :games="newGames"
+          :games-to-show="24"
+          btn-class="Btn--common Btn--dark"
+        />
+      </template>
+      <div class="Title Title--type-h2 Cards-Title">
+        {{ $t('gameCategories.live') }}
+      </div>
+      <Loader v-if="liveGamesAreLoading" />
+      <Games
+        v-else
+        class="DefaultGames-Cards"
+        :games="liveGames"
+        :games-to-show="24"
+        btn-class="Btn--common Btn--dark"
+      />
     </section>
     <!--    <section-->
     <!--      v-if="tabActive.type !== 'all' || providerActive.name !== 'All providers'"-->
@@ -155,6 +179,10 @@ export default {
       'gamesAreLoading',
       'defaultGamesAreLoading',
       'categories',
+      'newGames',
+      'liveGames',
+      'newGamesAreLoading',
+      'liveGamesAreLoading',
     ]),
     ...mapGetters(['fakedNewGames', 'isLoggedIn', 'gamesSearched', 'activeAccount']),
     gamesParams() {

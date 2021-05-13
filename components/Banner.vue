@@ -27,6 +27,9 @@
       <div class="Banner-Title">
         <slot name="title"></slot>
       </div>
+      <div class="Banner-Prize">
+        <slot name="prize"></slot>
+      </div>
       <div class="Banner-Subtitle">
         <slot name="subtitle"></slot>
       </div>
@@ -139,6 +142,25 @@ export default {
 
     @media (min-width: $screen-xl) {
       font-size: 20px;
+    }
+  }
+
+  &-Prize {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--color-text-main);
+
+    @media (min-width: $screen-m) {
+      font-size: 18px;
+    }
+
+    @media (min-width: $screen-l) {
+      font-size: 22px;
+    }
+
+    @media (min-width: $screen-xl) {
+      font-size: 36px;
     }
   }
 

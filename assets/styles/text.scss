@@ -14,7 +14,7 @@ p {
   &--type-h1 {
     font-size: 24px;
 
-    @media (min-width: $screen-xs) {
+    @media (min-width: $screen-s) {
       font-size: 18px;
     }
 
@@ -79,6 +79,7 @@ p {
 
 .Text {
   &--main {
+    font-weight: 700;
     color: var(--color-text-main);
   }
 

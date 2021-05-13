@@ -15,11 +15,14 @@
           :key="`prom_${i}`"
           class="PromotionsCard Page-Card"
         >
-          <Banner class="PromotionsCard-Banner" :image="item.image">
+          <Banner class="PromotionsCard-Banner" :image="item.image" :image460="item.image460">
             <template #title>
               <span v-html="item.title"></span>
             </template>
-            <template #subtitle>
+            <template v-if="item.prize" #prize>
+              <span v-html="item.prize"></span>
+            </template>
+            <template v-if="item.subtitle" #subtitle>
               <span v-html="item.subtitle"></span>
             </template>
           </Banner>
@@ -32,7 +35,15 @@
             </div>
           </div>
           <div class="PromotionsCard-Btns">
+            <NuxtLink
+              v-if="item.link"
+              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
+              :to="localePath(item.url)"
+            >
+              {{ $t('buttons.more') }}
+            </NuxtLink>
             <button
+              v-else
               class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
               @click="onClickBtn()"
             >
@@ -132,6 +143,26 @@ export default {
           image: 'promotion3.png',
           announce: this.$t('promotions.deposit3.name'),
           text: this.$t('promotions.deposit3.text'),
+        },
+        {
+          title: this.$t('promotions.playsonMay.title'),
+          prize: this.$t('playsonMay.prize'),
+          image: 'promotions-may.png',
+          image460: 'promotions-may.png',
+          announce: this.$t('promotions.playsonMay.name'),
+          text: this.$t('promotions.playsonMay.text'),
+          link: 'More',
+          url: '/tournaments/playson-may-cashdays',
+        },
+        {
+          title: this.$t('promotions.dropsWins.title'),
+          prize: this.$t('dropsWins.prize'),
+          image: 'drops-wins.png',
+          image460: 'drops-wins_460.png',
+          announce: this.$t('promotions.dropsWins.name'),
+          text: this.$t('promotions.dropsWins.text'),
+          link: 'More',
+          url: '/tournaments/drops-wins',
         },
         // {
         //   title: '55%<br/> of the deposit<br/> amount',

@@ -141,7 +141,8 @@ export default {
         return this.autocompletedItems;
 
       return this.items.filter(item => {
-        return item[this.itemName] !== this.activeItem[this.itemName] && item !== this.activeItem;
+        if (item[this.itemName]) return item[this.itemName] !== this.activeItem[this.itemName];
+        return item !== this.activeItem;
       });
     },
   },
@@ -187,6 +188,15 @@ export default {
       if (this.activeItemIndex > -1) this.activeItemIndex--;
     },
     onClickOutside() {
+      if (!this.inputVal) {
+        this.inputVal =
+          this.activeItem[this.itemName] ||
+          this.activeItem ||
+          this.placeholder ||
+          this.items[0][this.itemName] ||
+          this.items[0];
+      }
+      this.autocompleteMode = false;
       this.isOpen = false;
     },
     onInput(e) {

@@ -61,22 +61,9 @@ export default {
       'getBillingSessionError',
       'fakeBillingSession',
       'shouldCashout',
+      'user',
     ]),
     ...mapGetters(['activeAccount']),
-    predefinedAmounts() {
-      return this.activeAccount.currency === 'CZK'
-        ? [500, 1250, 2500, 5000, 12500]
-        : this.activeAccount.currency === 'ZAR'
-        ? [300, 600, 1500, 3000, 6000]
-        : [50, 75, 125, 250, 500];
-    },
-    amount() {
-      return this.activeAccount.currency === 'CZK'
-        ? 500
-        : this.activeAccount.currency === 'ZAR'
-        ? 300
-        : 50;
-    },
   },
   methods: {
     ...mapMutations(['setCashoutFalse', 'pushNotificationAlert']),
@@ -103,62 +90,21 @@ export default {
 
       this.cashierIsLoading = true;
 
-      const locale = this.$i18n.locales.find(i => i.code === this.$i18n.locale);
-
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
-      // eslint-disable-next-line no-unused-vars,no-undef
-      const CashierInstance = new _PaymentIQCashier(
+      const locale = this.$i18n.locale === 'en-ca' ? 'en' : this.$i18n.locale;
+
+      // eslint-disable-next-line no-unused-vars
+      const CashierInstance = new this.$_Cashier(
         '#cashier',
         {
           merchantId: this[billingSession].merchantId,
           userId: this[billingSession].userId,
           sessionId: this[billingSession].sessionId,
           environment,
-          containerHeight: 'auto',
-          containerMinHeight: '700px',
+          fetchConfig: true,
           method,
-          locale: locale.codeCountry,
-          accountDelete: false,
-          showFooter: false,
-          showAmountLimits: true,
-          allowMobilePopup: true,
-          amount: this.amount,
-          predefinedAmounts: this.predefinedAmounts,
-          containerWidth: '100%',
-          showAccounts: 'inline',
-          singlePageFlow: true,
-          theme: {
-            input: {
-              color: '#FFF',
-              fontSize: '12px',
-              height: '55px',
-              borderRadius: '0',
-            },
-            inputbackground: {
-              color: '#0E152F',
-            },
-            labels: {
-              color: '#FFF;',
-            },
-            headings: {
-              color: '#FFF;',
-            },
-            buttons: {
-              color: '#67b12d;',
-            },
-            headerbackground: {
-              color: '#060E2A',
-            },
-            background: {
-              color: '#060E2A',
-            },
-            cashierbackground: {
-              color: '#060E2A',
-            },
-            border: {
-              radius: '0',
-            },
-          },
+          locale: `${locale}_${this.user.country}`,
+          containerMinHeight: '700px',
         },
         api => {
           api.on({
@@ -190,78 +136,10 @@ export default {
               console.log('New payment method page was opened', data),
             navigate: data => console.log('Path navigation triggered', data),
           });
-          api.css(`
-            #cashier {
-              --buttons-color: #67b12d;
-              --button-hover-color: #67b12d;
-              --labels-color: #fff;
-              --margin-size: 14px;
-              --headings-color: #fff;
-              --error-color: #EB1C2A;
-              --input-fontSize: 12px;
-              font-family: 'Montserrat', sans-serif;
-              font-size: 12px !important;
-              font-weight: bold !important;
-              color: #fff !important;
-              text-transform: uppercase !important;
-            }
-
-            #cashier .payment-method-header {
-              padding: 25px !important;
-            }
-
-            #cashier .predefinedvalues {
-              grid-gap: 4px;
-            }
-
-            #cashier .predefinedvalues button {
-              background: #1B2138;
-              text-transform: uppercase;
-              height: 55px !important;
-              padding: 0 !important;
-            }
-
-            #cashier .set-amount .predefinedvalues button {
-              border: none;
-            }
-
-            #cashier .predefinedvalue.active {
-              background: #1B2138;
-              padding: 13px !important;
-              border: 2px solid #F3B233 !important;
-            }
-
-            #cashier .input-label-float.active {
-              margin-top: 5px !important;
-            }
-
-            #cashier .input {
-              font-weight: bold !important;
-              text-transform: uppercase !important;
-            }
-
-            #cashier .submit-button {
-              text-transform: uppercase;
-            }
-
-            #cashier .single-iframe-input-container > div:first-child {
-              margin-bottom: 4px !important;
-            }
-
-            #cashier .receipt, #cashier .status {
-              padding-bottom: 35px;
-            }
-
-            #cashier .disable-app-overlay {
-              background: #060E2A
-            }
-
-            .spinner, .spinner-label, .zebraff-walker, .loading-circle {
-              display: none !important;
-            }
-          `);
         },
       );
+
+      // eslint-disable-next-line no-unused-vars,no-undef
     },
     onCloseCashierForm() {
       if (this.depositIsDone) {
