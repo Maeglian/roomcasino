@@ -1219,15 +1219,13 @@ export const actions = {
     }
   },
 
-  async setActiveAccount({ commit, dispatch }, payload) {
+  async setActiveAccount({ commit }, payload) {
     try {
       await axios.post(
         `${API_HOST}/setActiveAccount`,
         payload,
         reqConfig(commit, 'pushNotificationAlert'),
       );
-      dispatch('getProfile');
-      dispatch('getLimits');
     } catch (e) {
       commit('pushErrors', e);
     }

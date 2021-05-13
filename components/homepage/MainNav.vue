@@ -215,7 +215,7 @@ export default {
     align-items: center;
     width: 100%;
     max-width: 1248px;
-    height: 60px;
+    height: 45px;
     margin-right: auto;
     margin-left: auto;
     padding-left: 16px;

@@ -26,7 +26,10 @@
     "goHomePage" : "Přejít na domovskou stránku",
     "save" : "Uložit",
     "getBonus" : "Získejte bonus",
-    "more": "Více"
+    "more": "Více",
+    "checkBonuses": "Zkontroluj si bonusy",
+    "cancelBonus": "Zrušit bonus",
+    "goBack": "Vrátit se"
   },
   "errors" : {
     "required" : "Nemůže to být prázdné",
@@ -56,7 +59,12 @@
     "playGame" : "Nyní můžete hrát hru",
     "cantStart" : "Hru nelze spustit",
     "pleaseDeposit" : "Nejprve provést vklad",
-    "pleaseDepositText" : "It's a pity, but your balance is 0. Deposit now!"
+    "pleaseDepositText" : "It's a pity, but your balance is 0. Deposit now!",
+    "wait": "Moment počkej!",
+    "lockedByBonus": "Na účtu máš aktivní bonusy. To znamená, že z účtu nemůžeš vybírat. Otevři si svůj profil a všechny je zruš, abys mohl(a) provádět výběry.",
+    "nullBalance": "Bohužel výběr není možný. Na účtu nemáte žádné prostředky.",
+    "loseBonus": "Máš aktivní bonus! Pokud ho zrušíš, přijdeš o {amount} bonusové peníze.",
+    "isSure": "Určitě?"
   },
   "auth" : {
     "loginTitle" : "Vítej zpět",
@@ -142,6 +150,7 @@
     "active" : "Aktivní",
     "left" : "odjet",
     "yes" : "Ano",
+    "no": "Ne",
     "email" : "E-mailem",
     "wager" : "Vsadit",
     "created" : "Vytvořeno",
