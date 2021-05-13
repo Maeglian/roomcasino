@@ -81,15 +81,27 @@
           {{ convertDate(bonus.activationExpireAt) }}
         </div>
       </div>
+      <div v-if="type === 'freeSpin'" class="BonusDetails-Slider">
+        <VueSlider v-bind="sliderOptions">
+          <div v-for="game in games" :key="game.id">
+            <img :src="game.img" />
+          </div>
+        </VueSlider>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import moment from 'moment';
+import VueSlider from '@/components/Slider';
+import { mapState } from 'vuex';
 
 export default {
   name: 'BonusDetails',
+  components: {
+    VueSlider,
+  },
   props: {
     bonus: {
       type: Object,
@@ -99,6 +111,36 @@ export default {
       type: String,
       required: false,
       default: 'bonus',
+    },
+  },
+  computed: {
+    ...mapState(['defaultGames']),
+    sliderOptions() {
+      const items = this.bonus.gameList.length >= 3 ? 3 : this.bonus.gameList.length;
+      const nav = this.bonus.gameList.length > items;
+      return {
+        nav,
+        margin: 10,
+        responsive: {
+          0: {
+            items: 2,
+          },
+          460: {
+            items,
+          },
+        },
+      };
+    },
+    games() {
+      if (this.bonus.gameList) {
+        return this.bonus.gameList.map(game => {
+          const findedGame = this.defaultGames.find(g => g.gameId === game.id);
+          const img = findedGame ? findedGame.imageUrl : '';
+          return { ...game, img };
+        });
+      }
+
+      return [];
     },
   },
   methods: {
@@ -146,6 +188,11 @@ export default {
     &--cancelled {
       color: var(--color-error);
     }
+  }
+
+  &-Slider {
+    position: relative;
+    margin: 14px 16px;
   }
 }
 </style>
