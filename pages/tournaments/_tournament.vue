@@ -190,12 +190,12 @@ export default {
   }
 }
 
-.PlaysonMay {
+.MayMadness {
   &-Header {
     width: 100%;
     margin-bottom: 22px;
     padding-top: 183px / 320px * 100%;
-    background-image: url(~@/assets/img/may_460.png);
+    background-image: url(~@/assets/img/madness_460.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: calc(100% - 32px) auto;
@@ -205,8 +205,8 @@ export default {
     }
 
     @media (min-width: $screen-s) {
-      padding-top: 115px / 1248px * 100%;
-      background-image: url(~@/assets/img/may_600.png);
+      padding-top: 0;
+      background-image: url(~@/assets/img/madness_600.png);
       background-position: center left;
     }
 
@@ -216,16 +216,18 @@ export default {
     }
 
     @media (min-width: $screen-l) {
-      background-image: url(~@/assets/img/may_900.png);
+      background-image: url(~@/assets/img/madness_900.png);
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 147px;
-      background-image: url(~@/assets/img/may_1248.png);
+      padding-top: 50px;
+      background-image: url(~@/assets/img/madness_1248.png);
     }
 
-    @media (min-width: $screen-xxl) {
-      background-image: url(~@/assets/img/may_1248.png);
+    .DailyTournamentPage-MainText {
+      @media (min-width: $screen-s) {
+        max-width: 46%;
+      }
     }
   }
 }
