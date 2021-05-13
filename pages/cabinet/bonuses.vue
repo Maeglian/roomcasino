@@ -224,7 +224,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from 'vuex';
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import Counter from '@/components/Counter';
 import BonusDetails from '@/components/cabinet/BonusDetails';
 import Loader from '@/components/Loader';
@@ -261,7 +261,7 @@ export default {
     this.getAvailableFreeSpinList();
   },
   methods: {
-    ...mapActions(['getBonusList', 'getAvailableBonusList', 'getBonusHistoryList']),
+    ...mapMutations(['pushNotificationAlert']),
     ...mapActions([
       'getBonusList',
       'getAvailableBonusList',
