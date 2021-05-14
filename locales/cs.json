@@ -26,10 +26,10 @@
     "goHomePage" : "Přejít na domovskou stránku",
     "save" : "Uložit",
     "getBonus" : "Získejte bonus",
-    "more": "Více",
-    "checkBonuses": "Zkontroluj si bonusy",
-    "cancelBonus": "Zrušit bonus",
-    "goBack": "Vrátit se"
+    "more" : "Více",
+    "checkBonuses" : "Zkontroluj si bonusy",
+    "cancelBonus" : "Zrušit bonus",
+    "goBack" : "Vrátit se"
   },
   "errors" : {
     "required" : "Nemůže to být prázdné",
@@ -60,11 +60,11 @@
     "cantStart" : "Hru nelze spustit",
     "pleaseDeposit" : "Nejprve provést vklad",
     "pleaseDepositText" : "It's a pity, but your balance is 0. Deposit now!",
-    "wait": "Moment počkej!",
-    "lockedByBonus": "Na účtu máš aktivní bonusy. To znamená, že z účtu nemůžeš vybírat. Otevři si svůj profil a všechny je zruš, abys mohl(a) provádět výběry.",
-    "nullBalance": "Bohužel výběr není možný. Na účtu nemáte žádné prostředky.",
-    "loseBonus": "Máš aktivní bonus! Pokud ho zrušíš, přijdeš o {amount} bonusové peníze.",
-    "isSure": "Určitě?"
+    "wait" : "Moment počkej!",
+    "lockedByBonus" : "Na účtu máš aktivní bonusy. To znamená, že z účtu nemůžeš vybírat. Otevři si svůj profil a všechny je zruš, abys mohl(a) provádět výběry.",
+    "nullBalance" : "Bohužel výběr není možný. Na účtu nemáte žádné prostředky.",
+    "loseBonus" : "Máš aktivní bonus! Pokud ho zrušíš, přijdeš o {amount} bonusové peníze.",
+    "isSure" : "Určitě?"
   },
   "auth" : {
     "loginTitle" : "Vítej zpět",
@@ -116,7 +116,7 @@
     "privacyPolicy" : "Zásady ochrany osobních údajů",
     "responsibleGaming" : "Zodpovědné hraní",
     "risk" : "Varování o riziku",
-    "tournaments": "Turnaje"
+    "tournaments" : "Turnaje"
   },
   "gameCategories" : {
     "top" : "Nejlepší hry",
@@ -150,7 +150,7 @@
     "active" : "Aktivní",
     "left" : "odjet",
     "yes" : "Ano",
-    "no": "Ne",
+    "no" : "Ne",
     "email" : "E-mailem",
     "wager" : "Vsadit",
     "created" : "Vytvořeno",
@@ -377,6 +377,11 @@
       "title" : "Playson may<br/> cashdays",
       "name" : "Playson May CashDays",
       "text" : "Přivítejte další měsíc a další turnaj CashDays 60k, který pořádá známý poskytovatel. Playson ví, jak potěšit své drahé hráče..<br/><br/>Prize pool ve výši 60 000 eur už čeká na vítěze. "
+    },
+    "mayMadness" : {
+      "title" : "May<br/> madness<br/> od spinomenal",
+      "name" : "May madness od spinomenal",
+      "text" : "A je to zase tady – známý poskytovatel Spinomenal vás svým vzrušujícím turnajem May Madness přivede k šílenství. Během tří květnových týdnů si můžete zahrát na skvělých slotech a rozbít velmi štědrý prize pool v hodnotě 60000eur! <br/><br/>Začněme s kolem I! Uskuteční se od 5. května 2021 00:00 GMT do 17. května 2021 23:59 GMT."
     }
   },
   "tournaments" : {
@@ -429,6 +434,25 @@
       },
       {
         "text" : "V průběhu turnaje sledujte výsledkovou tabulku. Čím více bodů získáte, tím vyšší jsou vaše šance na výhru. Pojďte do toho a pokuste štěstěnu!"
+      }
+    ]
+  },
+  "mayMadness" : {
+    "prize" : "€ 60 000",
+    "text" : "A je to zase tady – známý poskytovatel Spinomenal vás svým vzrušujícím turnajem May Madness přivede k šílenství. Během tří květnových týdnů si můžete zahrát na skvělých slotech a rozbít velmi štědrý prize pool v hodnotě 60000eur!<br/><br/>Začněme s kolem I! Uskuteční se od 5. května 2021 00:00 GMT do 17. května 2021 23:59 GMT. Celková výše prize poolu je 60000 eur!  Po skončení kola I si prvních 150 hráčů ve výsledkové tabulce rozdělí částku 20 000 eur",
+    "textMobile" : "A je to zase tady – známý poskytovatel Spinomenal vás svým vzrušujícím turnajem May Madness přivede k šílenství. Během tří květnových týdnů si můžete zahrát na skvělých slotech a rozbít velmi štědrý prize pool v hodnotě 60000eur! ",
+    "terms" : [
+      {
+        "text" : "Uskuteční se od 5. května 2021 00:00 GMT do 17. května 2021 23:59 GMT."
+      },
+      {
+        "text" : "Hry začleněné do kola I:<br/><br/>●  Book Of Demi Gods II<br/>●  Aztec Spell<br/>●  Story Of Medusa"
+      },
+      {
+        "text" : "Minimální sázka na jeden spin požadovaná pro účast v turnaji je 0,5 eur."
+      },
+      {
+        "text" : "Jediné, co potřebujete k tomu, abyste vyhráli v kole I turnaje May Madness, je hrát některou ze zapojených her. S každou výhrou získáte skóre podle násobitele výhry. Čím více bodů získáte, tím výše se v tabulce umístíte."
       }
     ]
   }
