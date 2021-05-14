@@ -18,7 +18,7 @@
       <button
         v-if="spin.status !== 'active'"
         class="Btn Btn--common Btn--color CabinetPage-Btn"
-        @click="onActivateFreeSpin(spin.id)"
+        @click="onActivateFreeSpin(spin)"
       >
         Activate now
       </button>
@@ -78,10 +78,16 @@ export default {
   methods: {
     ...mapMutations(['pushNotificationAlert']),
     ...mapActions(['deleteFreeSpin', 'activateFreeSpin', 'getFreeSpinList']),
-    showBonusDetails(bonus, type) {
+    showBonusDetails(bonus, type, chooseGameMessage = '') {
       this.$modal.show(
         BonusDetails,
-        { bonus, type, chooseGame: this.chooseGame },
+        {
+          bonus,
+          type,
+          chooseGameMessage,
+          chooseGame: this.chooseGame,
+          gameIdToActivate: this.gameIdToActivate,
+        },
         { width: 400, height: 'auto', adaptive: true },
         {},
       );
@@ -97,8 +103,11 @@ export default {
         this.getFreeSpinList();
       });
     },
-    onActivateFreeSpin(id) {
-      this.activateFreeSpin({ id, gameId: this.gameIdToActivate }).then(() => {
+    onActivateFreeSpin(spin) {
+      if (spin.gameList.length > 1 && !this.gameIdToActivate)
+        this.showBonusDetails(this.spin, 'freeSpin', true);
+      const gameId = spin.gameList.length === 1 ? spin.gameList[0].id : this.gameIdToActivate;
+      this.activateFreeSpin({ id: spin.id, gameId }).then(() => {
         if (this.activateFreeSpinError)
           this.pushNotificationAlert({ type: 'error', text: 'Error on activating free spin' });
         else this.pushNotificationAlert({ type: 'success', text: 'Your free spin was activated' });

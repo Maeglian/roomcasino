@@ -82,17 +82,23 @@
         </div>
       </div>
       <div v-if="type === 'freeSpin'" class="BonusDetails-Slider">
-        <VueSlider v-bind="sliderOptions">
+        <div v-if="chooseGameMessage" class="BonusDetails-Message">
+          Please choose a game!
+        </div>
+        <VueSlider v-if="games.length > 1" v-bind="sliderOptions">
           <div
             v-for="game in games"
             :key="game.id"
             class="BonusDetails-Image"
-            :class="{ 'BonusDetails-Image--active': game.id === gameIdToActivate }"
+            :class="{ 'BonusDetails-Image--active': game.id === chosenGame }"
             @click="onChooseGame(game.id)"
           >
             <img :src="game.img" />
           </div>
         </VueSlider>
+        <div v-else class="BonusDetails-Image BonusDetails-ActivetedGameImage">
+          <img :src="games[0].img" />
+        </div>
       </div>
     </div>
   </div>
@@ -118,15 +124,24 @@ export default {
       required: false,
       default: 'bonus',
     },
+    gameIdToActivate: {
+      type: String,
+      required: true,
+    },
     chooseGame: {
       type: Function,
       required: false,
       default: () => {},
     },
+    chooseGameMessage: {
+      type: String,
+      required: false,
+      default: '',
+    },
   },
   data() {
     return {
-      gameIdToActivate: '',
+      chosenGame: this.gameIdToActivate,
     };
   },
   computed: {
@@ -164,7 +179,7 @@ export default {
       return moment.unix(timestamp).format('DD MMM YYYY, HH:mm:ss');
     },
     onChooseGame(id) {
-      this.gameIdToActivate = id;
+      this.chosenGame = id;
       this.chooseGame(id);
     },
   },
@@ -216,6 +231,7 @@ export default {
   }
 
   &-Image {
+    max-width: 200px;
     padding: 2px;
     cursor: pointer;
 
@@ -223,6 +239,18 @@ export default {
       padding: 0;
       border: 2px solid var(--color-main1);
     }
+  }
+
+  &-ActivetedGameImage {
+    margin: 0 auto;
+  }
+
+  &-Message {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-error);
   }
 }
 </style>
