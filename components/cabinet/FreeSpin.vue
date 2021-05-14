@@ -78,7 +78,7 @@ export default {
   methods: {
     ...mapMutations(['pushNotificationAlert']),
     ...mapActions(['deleteFreeSpin', 'activateFreeSpin', 'getFreeSpinList']),
-    showBonusDetails(bonus, type, chooseGameMessage = '') {
+    showBonusDetails(bonus, type, chooseGameMessage = false) {
       this.$modal.show(
         BonusDetails,
         {
@@ -104,8 +104,11 @@ export default {
       });
     },
     onActivateFreeSpin(spin) {
-      if (spin.gameList.length > 1 && !this.gameIdToActivate)
+      if (spin.gameList.length > 1 && !this.gameIdToActivate) {
         this.showBonusDetails(this.spin, 'freeSpin', true);
+        return;
+      }
+
       const gameId = spin.gameList.length === 1 ? spin.gameList[0].id : this.gameIdToActivate;
       this.activateFreeSpin({ id: spin.id, gameId }).then(() => {
         if (this.activateFreeSpinError)

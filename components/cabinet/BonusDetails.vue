@@ -134,9 +134,9 @@ export default {
       default: () => {},
     },
     chooseGameMessage: {
-      type: String,
+      type: Boolean,
       required: false,
-      default: '',
+      default: false,
     },
   },
   data() {
