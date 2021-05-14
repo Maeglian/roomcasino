@@ -27,10 +27,10 @@
     "save" : "Speichern",
     "edit" : "Bearbeiten",
     "getBonus" : "Bonus erhalten",
-    "more": "Mehr",
-    "checkBonuses": "Boni prüfen",
-    "cancelBonus": "Bonus ablehnen",
-    "goBack": "Zurück"
+    "more" : "Mehr",
+    "checkBonuses" : "Boni prüfen",
+    "cancelBonus" : "Bonus ablehnen",
+    "goBack" : "Zurück"
   },
   "errors" : {
     "required" : "Pflichtangabe",
@@ -62,11 +62,11 @@
     "cantStart" : "Das Spiel kann nicht gestartet werden",
     "pleaseDeposit" : "Bitte erst einzahlen",
     "pleaseDepositText" : "Es ist schade, aber Ihr Guthaben ist 0. Jetzt einzahlen!!",
-    "wait": "Halt, Stop!",
-    "lockedByBonus": "Es sind noch laufende Boni auf Ihrem Konto. In diesem Fall ist keine Abhebung möglich. Bitte prüfen Sie Ihr Konto und annullieren Sie die \nBoni, um abheben zu können.",
-    "nullBalance": "Sie können leider keine Abhebung vornehmen. Ihr Konto weist kein Guthaben auf.",
-    "loseBonus": "Sie verfügen über einen gültigen Bonus! Wenn Sie ihn ablehnen, verlieren Sie {amount} Bonusgeld.",
-    "isSure": "Sind Sie sicher?"
+    "wait" : "Halt, Stop!",
+    "lockedByBonus" : "Es sind noch laufende Boni auf Ihrem Konto. In diesem Fall ist keine Abhebung möglich. Bitte prüfen Sie Ihr Konto und annullieren Sie die \nBoni, um abheben zu können.",
+    "nullBalance" : "Sie können leider keine Abhebung vornehmen. Ihr Konto weist kein Guthaben auf.",
+    "loseBonus" : "Sie verfügen über einen gültigen Bonus! Wenn Sie ihn ablehnen, verlieren Sie {amount} Bonusgeld.",
+    "isSure" : "Sind Sie sicher?"
   },
   "auth" : {
     "loginTitle" : "Willkommen zurück  ",
@@ -120,7 +120,7 @@
     "privacyPolicy" : "Datenschutz-Bestimmungen",
     "responsibleGaming" : "Verantwortungsbewusst Spielen",
     "risk" : "Risikowarnungen",
-    "tournaments": "Turniere"
+    "tournaments" : "Turniere"
   },
   "gameCategories" : {
     "top" : "Top-Spiele ",
@@ -155,7 +155,7 @@
     "disabled" : "Deaktiviert",
     "left" : "Links",
     "yes" : "Ja",
-    "no": "Nein",
+    "no" : "Nein",
     "email" : "E-Mail-Adresse",
     "wager" : "Umsatzanforderung",
     "created" : "geschaffen",
@@ -383,6 +383,11 @@
       "title" : "Playson may<br/> cashdays",
       "name" : "Playson May CashDays",
       "text" : "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt."
+    },
+    "mayMadness" : {
+      "title" : "May<br/> madness<br/> von spinomenal",
+      "name" : "May madness von spinomenal",
+      "text" : "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde I! Sie läuft ab dem 11. Mai um 00:00 Uhr GMT und endet am 17. Mai 2021 um 23:59 Uhr GMT."
     }
   },
   "tournaments" : {
@@ -435,6 +440,25 @@
       },
       {
         "text" : "Achten Sie während des Turniers auf die Rangliste. Je mehr Punkte Sie sammeln, desto höher Ihre Siegchance! Ergreifen Sie sie und viel Glück dabei! "
+      }
+    ]
+  },
+  "mayMadness" : {
+    "prize" : "€ 60 000",
+    "text" : "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde I! Sie läuft ab dem 11. Mai um 00:00 Uhr GMT und endet am 17. Mai 2021 um 23:59 Uhr GMT. Das gesamte Preisgeld beträgt 60.000 Euro! Nach Abschluss der Runde I teilen sich die 150 Bestplatzierten 20.000 davon nach folgendem Muster.",
+    "textMobile" : "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!",
+    "terms" : [
+      {
+        "text" : "Sie läuft ab dem 11. Mai um 00:00 Uhr GMT und endet am 17. Mai 2021 um 23:59 Uhr GMT."
+      },
+      {
+        "text" : "Um in Runde I des Maiwahnsinns zu den Gewinnern zu zählen, müssen Sie lediglich eines der teilnehmenden Spiele spielen:<br/><br/>●  Book Of Demi Gods II<br/>●  Aztec Spell<br/>●  Story Of Medusa"
+      },
+      {
+        "text" : "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 Euro."
+      },
+      {
+        "text" : "Jeder Gewinn bringt Ihnen Wertungspunkte entsprechend dem Gewinnmultiplikator. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
       }
     ]
   }
