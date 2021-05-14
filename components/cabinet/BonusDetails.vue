@@ -83,7 +83,13 @@
       </div>
       <div v-if="type === 'freeSpin'" class="BonusDetails-Slider">
         <VueSlider v-bind="sliderOptions">
-          <div v-for="game in games" :key="game.id">
+          <div
+            v-for="game in games"
+            :key="game.id"
+            class="BonusDetails-Image"
+            :class="{ 'BonusDetails-Image--active': game.id === gameIdToActivate }"
+            @click="onChooseGame(game.id)"
+          >
             <img :src="game.img" />
           </div>
         </VueSlider>
@@ -112,6 +118,16 @@ export default {
       required: false,
       default: 'bonus',
     },
+    chooseGame: {
+      type: Function,
+      required: false,
+      default: () => {},
+    },
+  },
+  data() {
+    return {
+      gameIdToActivate: '',
+    };
   },
   computed: {
     ...mapState(['defaultGames']),
@@ -146,6 +162,10 @@ export default {
   methods: {
     convertDate(timestamp) {
       return moment.unix(timestamp).format('DD MMM YYYY, HH:mm:ss');
+    },
+    onChooseGame(id) {
+      this.gameIdToActivate = id;
+      this.chooseGame(id);
     },
   },
 };
@@ -193,6 +213,16 @@ export default {
   &-Slider {
     position: relative;
     margin: 14px 16px;
+  }
+
+  &-Image {
+    padding: 2px;
+    cursor: pointer;
+
+    &--active {
+      padding: 0;
+      border: 2px solid var(--color-main1);
+    }
   }
 }
 </style>

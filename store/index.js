@@ -1489,12 +1489,12 @@ export const actions = {
     }
   },
 
-  async activateFreeSpin({ commit, state }, id) {
+  async activateFreeSpin({ commit, state }, { id, gameId }) {
     if (state.activateFreeSpinError) commit('clearActivateFreeSpinError');
     try {
       await axios.patch(
         `${API_HOST}/freeSpin/${id}`,
-        {},
+        { gameId },
         reqConfig(commit, 'setActivateFreeSpinError'),
       );
     } catch (e) {
