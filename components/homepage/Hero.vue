@@ -207,10 +207,10 @@ export default {
         //   btnText: 'Deposit now',
         // },
         {
-          bg: 'mayBanner',
-          title: this.$t('promotions.playsonMay.title'),
-          text: `<span class="Colored">${this.$t('playsonMay.prize')}</span>`,
-          url: '/tournaments/playson-may-cashdays',
+          bg: 'madnessBanner',
+          title: this.$t('promotions.mayMadness.title'),
+          text: `<span class="Colored">${this.$t('mayMadness.prize')}</span>`,
+          url: '/tournaments/may-madness-spinomenal',
           linkText: this.$t('buttons.more'),
         },
         {

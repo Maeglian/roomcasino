@@ -309,14 +309,14 @@ export const HISTORY_TABLES = {
 };
 
 export const TOURNAMENTS = {
-  'playson-may-cashdays': {
-    url: 'playson-may-cashdays',
-    name: 'Playson May CashDays',
-    title: 'Playson may<br /> cashdays',
-    translates: 'playsonMay',
-    class: 'PlaysonMay',
+  'may-madness-spinomenal': {
+    url: 'may-madness-spinomenal',
+    name: 'May madness by spinomenal',
+    title: 'May madness<br /> by spinomenal',
+    translates: 'mayMadness',
+    class: 'MayMadness',
     textLeft: true,
-    slug: 'playson-may-cashdays',
+    slug: 'may-madness-spinomenal',
   },
   'drops-wins': {
     url: 'drops-wins',

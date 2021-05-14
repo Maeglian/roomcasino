@@ -27,10 +27,10 @@
     "save" : "Sauvegarder",
     "edit" : "Editer",
     "getBonus" : "Obtenir un bonus",
-    "more": "Plus",
-    "checkBonuses": "Vérifiez les bonus",
-    "cancelBonus": "Annuler le bonus",
-    "goBack": "Retour"
+    "more" : "Plus",
+    "checkBonuses" : "Vérifiez les bonus",
+    "cancelBonus" : "Annuler le bonus",
+    "goBack" : "Retour"
   },
   "errors" : {
     "required" : "Ne peut pas être vide",
@@ -62,11 +62,11 @@
     "cantStart" : "Impossible de démarrer le jeu",
     "pleaseDeposit" : "Veuillez déposer d'abord",
     "pleaseDepositText" : "C'est dommage, mais votre solde est de 0. Déposez maintenant!",
-    "wait": "Mais attendez!",
-    "lockedByBonus": "Il y a encore des bonus actifs dans votre compte. Dans ce cas, les retraits sont indisponibles. Veuillez vérifier votre profil et les annuler tous pour effectuer des retraits.",
-    "nullBalance": "Malheureusement, vous ne pouvez pas effectuer de retrait. Vous n’avez pas de fonds dans votre compte.",
-    "loseBonus": "Vous avez un bonus actif! Si vous l’annulez, vous perdrez {amount} le montant du bonus.",
-    "isSure": "Êtes-vous sûr?"
+    "wait" : "Mais attendez!",
+    "lockedByBonus" : "Il y a encore des bonus actifs dans votre compte. Dans ce cas, les retraits sont indisponibles. Veuillez vérifier votre profil et les annuler tous pour effectuer des retraits.",
+    "nullBalance" : "Malheureusement, vous ne pouvez pas effectuer de retrait. Vous n’avez pas de fonds dans votre compte.",
+    "loseBonus" : "Vous avez un bonus actif! Si vous l’annulez, vous perdrez {amount} le montant du bonus.",
+    "isSure" : "Êtes-vous sûr?"
   },
   "auth" : {
     "loginTitle" : "Bienvenue à nouveau",
@@ -120,7 +120,7 @@
     "privacyPolicy" : "Politique de confidentialité",
     "responsibleGaming" : "Jeu responsable",
     "risk" : "Avertissements sur les risques",
-    "tournaments": "Tournois"
+    "tournaments" : "Tournois"
   },
   "gameCategories" : {
     "top" : "Les meilleurs jeux",
@@ -382,6 +382,11 @@
       "title" : "Playson may<br/> cashdays",
       "name" : "Playson May CashDays",
       "text" : "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu.<br/><br/>Playson sait comment traiter ses joueurs bien-aimés."
+    },
+    "mayMadness" : {
+      "title" : "May<br/> madness<br/> de spinomenal",
+      "name" : "May madness de spinomenal",
+      "text" : "Une fois de plus, le fameux Spinomenal va vous faire vivre des moments inoubliables grâce au passionnant tournoi May Madness. Pendant trois semaines en mai, vous pouvez profiter de ses géniales machines à sous et remporter une partie de la généreuse cagnotte de 60 000 EUR!<br/><br/>Commençons par le premier tour! Ça se passe entre le 11 mai 2021, 00 h 00 GMT et le 17 mai 2021, 23 h 59 GMT."
     }
   },
   "dropsWins" : {
@@ -434,6 +439,25 @@
       },
       {
         "text" : "Suivez le classement pendant le tournoi. Plus vous gagnez de points, plus vos chances de gagner sont élevées. Allez-y et bonne chance! "
+      }
+    ]
+  },
+  "mayMadness" : {
+    "prize" : "€ 60 000",
+    "text" : "Une fois de plus, le fameux Spinomenal va vous faire vivre des moments inoubliables grâce au passionnant tournoi May Madness. Pendant trois semaines en mai, vous pouvez profiter de ses géniales machines à sous et remporter une partie de la généreuse cagnotte de 60 000 EUR!<br/><br/>Commençons par le premier tour! Ça se passe entre le 11 mai 2021, 00 h 00 GMT et le 17 mai 2021, 23 h 59 GMT.",
+    "textMobile" : "Une fois de plus, le fameux Spinomenal va vous faire vivre des moments inoubliables grâce au passionnant tournoi May Madness. Pendant trois semaines en mai, vous pouvez profiter de ses géniales machines à sous et remporter une partie de la généreuse cagnotte de 60 000 EUR!",
+    "terms" : [
+      {
+        "text" : "Ça se passe entre le 11 mai 2021, 00 h 00 GMT et le 17 mai 2021, 23 h 59 GMT."
+      },
+      {
+        "text" : "Pour gagner au premier tour de May Madness, il vous suffit de jouer à l’un des jeux participants:<br/><br/>●  Book Of Demi Gods II<br/>●  Aztec Spell<br/>●  Story Of Medusa"
+      },
+      {
+        "text" : "La mise minimale de qualification par tour pour participer au tournoi est de 0,5 EUR."
+      },
+      {
+        "text" : "Chaque gain vous récompense avec un score basé sur le multiplicateur de gain. Plus vous accumulez de points, plus vous êtes bien placé dans le classement."
       }
     ]
   }

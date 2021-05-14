@@ -384,6 +384,11 @@
       "title": "Playson may<br/> cashdays",
       "name": "Playson May CashDays",
       "text": "Welcome another month and another CashDays 60k tournamentby the well-known provider.<br/><br/>The prize pool of 60,000 EUR is waiting for their winners."
+    },
+    "mayMadness": {
+      "title": "May<br/> madness<br/> by spinomenal",
+      "name": "May madness by spinomenal",
+      "text": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!<br/><br/>Let’s start with Round I! It runs between May 11, 2021, 00:00 GMT, and May 17, 2021, 23:59 GMT."
     }
   },
   "tournaments": {
@@ -439,6 +444,25 @@
       },
       {
         "text": "The more points you earn, the higher your chances of winning are."
+      }
+    ]
+  },
+  "mayMadness": {
+    "prize": "€ 60 000",
+    "text": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!<br/><br/>Let’s start with Round I! It runs between May 11, 2021, 00:00 GMT, and May 17, 2021, 23:59 GMT. The total Prize Pool is 60,000 EUR! After the Round I, the 150 first players in the leaderboard will share a prize of 20,000 EUR.",
+    "textMobile": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!",
+    "terms": [
+      {
+        "text": "Round I runs between between May 11, 2021, 00:00 GMT, and May 17, 2021, 23:59 GMT."
+      },
+      {
+        "text": "All you need to win in the May Madness Round I is just playing any of the participating games:<br/><br/>●  Book Of Demi Gods II<br/>●  Aztec Spell<br/>●  Story Of Medusa"
+      },
+      {
+        "text": "The minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
+      },
+      {
+        "text": "Each win rewards you with a score based on the win multiplier. The more points you collect, the higher your position on the leaderboard."
       }
     ]
   }
