@@ -1,465 +1,679 @@
 {
-  "title" : "Ninecasino",
-  "buttons" : {
-    "signUp" : "Erstanmeldung",
-    "register" : "Registrieren",
-    "terms" : "Bonusbedingungen",
-    "registerNow" : "Jetzt registrieren",
-    "login" : "Anmelden",
-    "logIn" : "Anmelden",
-    "joinNow" : "Mitmachen",
-    "deposit" : "Einzahlung",
-    "depositNow" : "Jetzt einzahlen",
-    "loadMoreGames" : "Weitere spiele laden",
-    "playForFun" : "Spielen zum Spaß",
-    "playNow" : "Sofort spielen",
-    "showMore" : "Mehr anzeigen",
-    "saveChanges" : "Änderungen speichern",
-    "update" : "Aktualisieren",
-    "addLimits" : "Limits hinzufügen",
-    "filter" : "Filtern",
-    "cashout" : "Auszahlung",
-    "cancel" : "Abbrechen",
-    "loading" : "Ladend",
-    "continue" : "Weiterführen",
-    "letsStart" : "Auf geht’s!",
-    "goHomePage" : "Zurück zur startseite hauptseite",
-    "save" : "Speichern",
-    "edit" : "Bearbeiten",
-    "getBonus" : "Bonus erhalten",
-    "more" : "Mehr",
-    "checkBonuses" : "Boni prüfen",
-    "cancelBonus" : "Bonus ablehnen",
-    "goBack" : "Zurück"
+  "title": "Ninecasino",
+  "buttons": {
+    "signUp": "Erstanmeldung",
+    "register": "Registrieren",
+    "terms": "Bonusbedingungen",
+    "registerNow": "Jetzt registrieren",
+    "login": "Anmelden",
+    "logIn": "Anmelden",
+    "joinNow": "Mitmachen",
+    "deposit": "Einzahlung",
+    "depositNow": "Jetzt einzahlen",
+    "loadMoreGames": "Weitere spiele laden",
+    "playForFun": "Spielen zum Spaß",
+    "playNow": "Sofort spielen",
+    "showMore": "Mehr anzeigen",
+    "saveChanges": "Änderungen speichern",
+    "update": "Aktualisieren",
+    "addLimits": "Limits hinzufügen",
+    "filter": "Filtern",
+    "cashout": "Auszahlung",
+    "cancel": "Abbrechen",
+    "loading": "Ladend",
+    "continue": "Weiterführen",
+    "letsStart": "Auf geht’s!",
+    "goHomePage": "Zurück zur startseite hauptseite",
+    "save": "Speichern",
+    "edit": "Bearbeiten",
+    "getBonus": "Bonus erhalten",
+    "more": "Mehr",
+    "checkBonuses": "Boni prüfen",
+    "cancelBonus": "Bonus ablehnen",
+    "goBack": "Zurück"
   },
-  "errors" : {
-    "required" : "Pflichtangabe",
-    "email" : "E-mail-adresse eingeben ",
-    "confirmPassword" : "Passwort und Bestätigungspasswort sind nicht identisch",
-    "oldAndNewPasswords" : "Alte und neue Passwörter sind gleich",
-    "minLength" : "Muss mindestens {num} Zeichen enthalten",
-    "maxLength" : "Darf nicht länger als {num} Zeichen sein",
-    "phone" : "Muss mit '+' sein, von 10 bis 14 Zeichen",
-    "numbers" : "Muss numerisch sein",
-    "day" : "Tag ist ungültig",
-    "month" : "Monat ist ungültig",
-    "year" : "Jahr ist ungültig",
-    "postalCode" : "Muss aus Buchstaben, Zahlen oder Leerzeichen bestehen",
-    "positiveNum" : "Eingabe positive Zahl",
-    "0andNum" : "Eingabe 0 oder positive Zahl",
-    "invalidDate" : "Datum ist ungültig",
-    "minAge" : "Sie sind unter dem Alter von {minAge}",
-    "inputCorrectDate" : "Korrektes Datum eingeben"
+  "errors": {
+    "required": "Pflichtangabe",
+    "email": "E-mail-adresse eingeben ",
+    "confirmPassword": "Passwort und Bestätigungspasswort sind nicht identisch",
+    "oldAndNewPasswords": "Alte und neue Passwörter sind gleich",
+    "minLength": "Muss mindestens {num} Zeichen enthalten",
+    "maxLength": "Darf nicht länger als {num} Zeichen sein",
+    "phone": "Muss mit '+' sein, von 10 bis 14 Zeichen",
+    "numbers": "Muss numerisch sein",
+    "day": "Tag ist ungültig",
+    "month": "Monat ist ungültig",
+    "year": "Jahr ist ungültig",
+    "postalCode": "Muss aus Buchstaben, Zahlen oder Leerzeichen bestehen",
+    "positiveNum": "Eingabe positive Zahl",
+    "0andNum": "Eingabe 0 oder positive Zahl",
+    "invalidDate": "Datum ist ungültig",
+    "minAge": "Sie sind unter dem Alter von {minAge}",
+    "inputCorrectDate": "Korrektes Datum eingeben"
   },
-  "menu" : {
-    "menu" : "Menü",
-    "support" : "Kundenbetreuung",
-    "yourAccount" : "Ihr Konto"
+  "menu": {
+    "menu": "Menü",
+    "support": "Kundenbetreuung",
+    "yourAccount": "Ihr Konto"
   },
-  "modals" : {
-    "congratulations" : "Glückwunsch",
-    "playGame" : "Jetzt können Sie das Spiel spielen",
-    "cantStart" : "Das Spiel kann nicht gestartet werden",
-    "pleaseDeposit" : "Bitte erst einzahlen",
-    "pleaseDepositText" : "Es ist schade, aber Ihr Guthaben ist 0. Jetzt einzahlen!!",
-    "wait" : "Halt, Stop!",
-    "lockedByBonus" : "Es sind noch laufende Boni auf Ihrem Konto. In diesem Fall ist keine Abhebung möglich. Bitte prüfen Sie Ihr Konto und annullieren Sie die \nBoni, um abheben zu können.",
-    "nullBalance" : "Sie können leider keine Abhebung vornehmen. Ihr Konto weist kein Guthaben auf.",
-    "loseBonus" : "Sie verfügen über einen gültigen Bonus! Wenn Sie ihn ablehnen, verlieren Sie {amount} Bonusgeld.",
-    "isSure" : "Sind Sie sicher?"
+  "modals": {
+    "congratulations": "Glückwunsch",
+    "playGame": "Jetzt können Sie das Spiel spielen",
+    "cantStart": "Das Spiel kann nicht gestartet werden",
+    "pleaseDeposit": "Bitte erst einzahlen",
+    "pleaseDepositText": "Es ist schade, aber Ihr Guthaben ist 0. Jetzt einzahlen!!",
+    "wait": "Halt, Stop!",
+    "lockedByBonus": "Es sind noch laufende Boni auf Ihrem Konto. In diesem Fall ist keine Abhebung möglich. Bitte prüfen Sie Ihr Konto und annullieren Sie die \nBoni, um abheben zu können.",
+    "nullBalance": "Sie können leider keine Abhebung vornehmen. Ihr Konto weist kein Guthaben auf.",
+    "loseBonus": "Sie verfügen über einen gültigen Bonus! Wenn Sie ihn ablehnen, verlieren Sie {amount} Bonusgeld.",
+    "isSure": "Sind Sie sicher?"
   },
-  "auth" : {
-    "loginTitle" : "Willkommen zurück  ",
-    "signUpTitle" : "Melde dich an  <span class=\"Colored\">&</span> erhalte den <br /> Begrüssungbonus",
-    "forgotPassword" : "Passwort vergessen",
-    "emails" : "Erhalt von E-Mail-Benachrichtigungen zu Aktionen",
-    "terms" : "Ich bin {minAge} Jahre alt und stimme {br} {terms} und {policy} ",
-    "step2Title" : "Bitte füllen Sie die untenstehenden Informationen aus! ",
-    "thanksRegistration" : "Danke für die Registrierung",
-    "registrationBonus" : "150 €",
-    "registrationBonusText" : "für deine erste Einzahlung! Nutze den Ninecasino Begrüßungsbonus",
-    "getBonus" : "hol dir deinen Bonus",
-    "enterEmail" : "E—Mail-Adresse Eingeben ",
-    "passwordRestoreText" : "Danke! Prüfen Sie Ihre E-Mail für weitere Anweisungen",
-    "enterNewPassword" : "Geben Sie Ihr neues Passwort ein",
-    "updatePassword" : "Passwort aktualisieren",
-    "newPassword" : "Neues Passwort",
-    "confirmPassword" : "Passwort bestätigen",
-    "tryingConfirmEmail" : "Wir versuchen, Ihre E-Mail zu verifizieren",
-    "confirmEmailError" : "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
-    "confirmEmailSuccess" : "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
-    "bonus" : "150 €",
-    "placeholders" : {
-      "enterEmail" : "Ihre E-Mail eingeben",
-      "enterPassword" : "Ihr Passwort eingeben",
-      "email" : "Ihre E-Mail ",
-      "password" : "Ihr Passwort ",
-      "currency" : "Währung ",
-      "country" : "Staat ",
-      "firstName" : "Vorname",
-      "lastName" : "Nachname",
-      "male" : "Männlich",
-      "female" : "Weiblich",
-      "city" : "Stadt ",
-      "address" : "Anschrift",
-      "postalCode" : "Postleitzahl",
-      "phone" : "Rufnummer",
-      "year" : "JJJJ"
+  "auth": {
+    "loginTitle": "Willkommen zurück  ",
+    "signUpTitle": "Melde dich an  <span class=\"Colored\">&</span> erhalte den <br /> Begrüssungbonus",
+    "forgotPassword": "Passwort vergessen",
+    "emails": "Erhalt von E-Mail-Benachrichtigungen zu Aktionen",
+    "terms": "Ich bin {minAge} Jahre alt und stimme {br} {terms} und {policy} ",
+    "step2Title": "Bitte füllen Sie die untenstehenden Informationen aus! ",
+    "thanksRegistration": "Danke für die Registrierung",
+    "registrationBonus": "150 €",
+    "registrationBonusText": "für deine erste Einzahlung! Nutze den Ninecasino Begrüßungsbonus",
+    "getBonus": "hol dir deinen Bonus",
+    "enterEmail": "E—Mail-Adresse Eingeben ",
+    "passwordRestoreText": "Danke! Prüfen Sie Ihre E-Mail für weitere Anweisungen",
+    "enterNewPassword": "Geben Sie Ihr neues Passwort ein",
+    "updatePassword": "Passwort aktualisieren",
+    "newPassword": "Neues Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "tryingConfirmEmail": "Wir versuchen, Ihre E-Mail zu verifizieren",
+    "confirmEmailError": "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
+    "confirmEmailSuccess": "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
+    "bonus": "150 €",
+    "placeholders": {
+      "enterEmail": "Ihre E-Mail eingeben",
+      "enterPassword": "Ihr Passwort eingeben",
+      "email": "Ihre E-Mail ",
+      "password": "Ihr Passwort ",
+      "currency": "Währung ",
+      "country": "Staat ",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "male": "Männlich",
+      "female": "Weiblich",
+      "city": "Stadt ",
+      "address": "Anschrift",
+      "postalCode": "Postleitzahl",
+      "phone": "Rufnummer",
+      "year": "JJJJ"
     }
   },
-  "pages" : {
-    "lobby" : "Empfangsbereich ",
-    "myAccount" : "Mein Konto",
-    "promotion" : "Aktionen ",
-    "aboutUs" : "Über uns",
-    "faq" : "Häufig Gestellte Fragen (FAQ)",
-    "btc" : "Über BTC",
-    "aml" : "Anti-geldwähler-Politik",
-    "terms" : "Geschäftsbedingungen",
-    "bonusPolicy" : "Bonusrichtlinien ",
-    "privacyPolicy" : "Datenschutz-Bestimmungen",
-    "responsibleGaming" : "Verantwortungsbewusst Spielen",
-    "risk" : "Risikowarnungen",
-    "tournaments" : "Turniere"
+  "pages": {
+    "lobby": "Empfangsbereich ",
+    "myAccount": "Mein Konto",
+    "promotion": "Aktionen ",
+    "aboutUs": "Über uns",
+    "faq": "Häufig Gestellte Fragen (FAQ)",
+    "btc": "Über BTC",
+    "aml": "Anti-geldwähler-Politik",
+    "terms": "Geschäftsbedingungen",
+    "bonusPolicy": "Bonusrichtlinien ",
+    "privacyPolicy": "Datenschutz-Bestimmungen",
+    "responsibleGaming": "Verantwortungsbewusst Spielen",
+    "risk": "Risikowarnungen",
+    "tournaments": "Turniere"
   },
-  "gameCategories" : {
-    "top" : "Top-Spiele ",
-    "all" : "alle Spiele",
-    "live" : "Live-Spiele",
-    "slots" : "Spielautomaten",
-    "roulette" : "Roulette",
-    "table" : "Tischspiele",
-    "card" : "Kartenspiele",
-    "recent" : "Letzte Spiele",
-    "new" : "Neue Spiele"
+  "gameCategories": {
+    "top": "Top-Spiele ",
+    "all": "alle Spiele",
+    "live": "Live-Spiele",
+    "slots": "Spielautomaten",
+    "roulette": "Roulette",
+    "table": "Tischspiele",
+    "card": "Kartenspiele",
+    "recent": "Letzte Spiele",
+    "new": "Neue Spiele"
   },
-  "footer" : {
-    "text" : {
-      "p1" : "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
-      "p2" : "Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., subsidiary of Dux Group N.V., by the laws of Cyprus acting as an Agent on behalf of Dux Group N.V., registered in Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ 410983.The governing law of the website is Cyprus law. The website www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorised to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
-      "p3" : "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
+  "footer": {
+    "text": {
+      "p1": "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
+      "p2": "Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., subsidiary of Dux Group N.V., by the laws of Cyprus acting as an Agent on behalf of Dux Group N.V., registered in Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ 410983.The governing law of the website is Cyprus law. The website www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorised to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
+      "p3": "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
     }
   },
-  "search" : {
-    "findGame" : "Spiel finden",
-    "notFound" : "Keine funde"
+  "search": {
+    "findGame": "Spiel finden",
+    "notFound": "Keine funde"
   },
-  "common" : {
-    "date" : "Datum",
-    "currency" : "Währung",
-    "amount" : "Betrag",
-    "status" : "Stand",
-    "title" : "Titel",
-    "type" : "Art",
-    "active" : "Aktiv",
-    "disabled" : "Deaktiviert",
-    "left" : "Links",
-    "yes" : "Ja",
-    "no" : "Nein",
-    "email" : "E-Mail-Adresse",
-    "wager" : "Umsatzanforderung",
-    "created" : "geschaffen",
-    "expiresAt" : "Läuft ab bei",
-    "noData" : "Keine Daten verfügbar"
+  "common": {
+    "date": "Datum",
+    "currency": "Währung",
+    "amount": "Betrag",
+    "status": "Stand",
+    "title": "Titel",
+    "type": "Art",
+    "active": "Aktiv",
+    "disabled": "Deaktiviert",
+    "left": "Links",
+    "yes": "Ja",
+    "no": "Nein",
+    "email": "E-Mail-Adresse",
+    "wager": "Umsatzanforderung",
+    "created": "geschaffen",
+    "expiresAt": "Läuft ab bei",
+    "noData": "Keine Daten verfügbar"
   },
-  "actions" : {
-    "addCurrency" : "Währung hinzufügen"
+  "actions": {
+    "addCurrency": "Währung hinzufügen"
   },
-  "homepage" : {
-    "heroBanner" : {
-      "deposit1" : {
-        "title" : "Willkommenspaket <span class=\"Colored\">€ 450!</span>",
-        "text" : "Machen Sie die erste Einzahlung <br/> und erhalten Sie <span class=\"Colored\"> 100% </span> bis zu <span class=\"Colored\"> € 150"
+  "homepage": {
+    "heroBanner": {
+      "deposit1": {
+        "title": "Willkommenspaket <span class=\"Colored\">€ 450!</span>",
+        "text": "Machen Sie die erste Einzahlung <br/> und erhalten Sie <span class=\"Colored\"> 100% </span> bis zu <span class=\"Colored\"> € 150"
       },
-      "deposit2" : {
-        "title" : "Bonus für zweite<br/>  Einzahlung",
-        "text" : "55% bonus<br/> bis zu <span class=\"Colored\">150 €</span><br/> auf Ihre zweite Einzahlung"
+      "deposit2": {
+        "title": "Bonus für zweite<br/>  Einzahlung",
+        "text": "55% bonus<br/> bis zu <span class=\"Colored\">150 €</span><br/> auf Ihre zweite Einzahlung"
       },
-      "deposit3" : {
-        "title" : "Bonus für dritte <br/> Einzahlung",
-        "text" : "100% bonus<br/> up to <span class=\"Colored\">150 €</span><br/> auf Ihre dritte Einzahlung"
+      "deposit3": {
+        "title": "Bonus für dritte <br/> Einzahlung",
+        "text": "100% bonus<br/> up to <span class=\"Colored\">150 €</span><br/> auf Ihre dritte Einzahlung"
       },
-      "deposit4" : {
-        "title" : "Weitere aufregende <br/> Promotionen<br/> folgen in Kürze!"
+      "deposit4": {
+        "title": "Weitere aufregende <br/> Promotionen<br/> folgen in Kürze!"
       }
     },
-    "advantages" : {
-      "first" : {
-        "highlighted" : "Superschnelle",
-        "ghost" : "Abhebungen"
+    "advantages": {
+      "first": {
+        "highlighted": "Superschnelle",
+        "ghost": "Abhebungen"
       },
-      "second" : {
-        "highlighted" : "24/7",
-        "ghost" : "freundlicher  Chat-Kundenbetreuung"
+      "second": {
+        "highlighted": "24/7",
+        "ghost": "freundlicher  Chat-Kundenbetreuung"
       },
-      "third" : {
-        "highlighted" : "Mehr als  ",
-        "ghost" : "2000 Spiele"
+      "third": {
+        "highlighted": "Mehr als  ",
+        "ghost": "2000 Spiele"
       },
-      "fourth" : {
-        "highlighted" : "Die grösste Auswahl",
-        "ghost" : "an Spieleanbietern"
+      "fourth": {
+        "highlighted": "Die grösste Auswahl",
+        "ghost": "an Spieleanbietern"
       }
     },
-    "allProviders" : "Alle Anbieter",
-    "tableIsOpen" : "Platzieren Sie Ihre Einsätze ",
-    "tableIsClosed" : "Keine Einsätze mehr"
+    "allProviders": "Alle Anbieter",
+    "tableIsOpen": "Platzieren Sie Ihre Einsätze ",
+    "tableIsClosed": "Keine Einsätze mehr"
   },
-  "filters" : {
-    "filteredBy" : "Gefiltert nach",
-    "allStatuses" : "Alle stände",
-    "allCurrencies" : "Alle währungen",
-    "until" : "bis",
-    "dataPlaceholder" : "DD.MM.JJJJ"
+  "filters": {
+    "filteredBy": "Gefiltert nach",
+    "allStatuses": "Alle stände",
+    "allCurrencies": "Alle währungen",
+    "until": "bis",
+    "dataPlaceholder": "DD.MM.JJJJ"
   },
-  "cabinet" : {
-    "pages" : {
-      "balance" : "Kontostand",
-      "bonuses" : "Boni",
-      "history" : "historie",
-      "verification" : "Überprüfung",
-      "profile" : "Profil",
-      "limits" : "Verlustlimits",
-      "exit" : "Beenden"
+  "cabinet": {
+    "pages": {
+      "balance": "Kontostand",
+      "bonuses": "Boni",
+      "history": "historie",
+      "verification": "Überprüfung",
+      "profile": "Profil",
+      "limits": "Verlustlimits",
+      "exit": "Beenden"
     },
-    "balance" : {
-      "table" : {
-        "locked" : "Durch bonus gesperrt",
-        "cashout" : "Zur Auszahlung Verfügbar"
+    "balance": {
+      "table": {
+        "locked": "Durch bonus gesperrt",
+        "cashout": "Zur Auszahlung Verfügbar"
       },
-      "addCurrency" : "Währung hinzufügen",
-      "noMoreCurrency" : "Keine Währung mehr hinzufügen",
-      "active" : "Aktiv",
-      "select" : "erwählen"
+      "addCurrency": "Währung hinzufügen",
+      "noMoreCurrency": "Keine Währung mehr hinzufügen",
+      "active": "Aktiv",
+      "select": "erwählen"
     },
-    "bonuses" : {
-      "history" : "Bonushistorie",
-      "table" : {
-        "wagered" : "wettete",
-        "bonus" : "Bonus",
-        "min" : "Minimaler Einzahlungsbetrag",
-        "max" : "Maximaler Preis"
+    "bonuses": {
+      "history": "Bonushistorie",
+      "table": {
+        "wagered": "wettete",
+        "bonus": "Bonus",
+        "min": "Minimaler Einzahlungsbetrag",
+        "max": "Maximaler Preis"
       },
-      "wagerAmountRequirement" : "Wetteinsatz-Anforderung",
-      "wageredPercent" : "Eingesetzte Prozent"
+      "wagerAmountRequirement": "Wetteinsatz-Anforderung",
+      "wageredPercent": "Eingesetzte Prozent"
     },
-    "history" : {
-      "tabs" : {
-        "transactions" : "Transaktionshistorie",
-        "game" : "Spielhistorie",
-        "bonus" : "Bonushistorie"
+    "history": {
+      "tabs": {
+        "transactions": "Transaktionshistorie",
+        "game": "Spielhistorie",
+        "bonus": "Bonushistorie"
       },
-      "table" : {
-        "date" : "Datum",
-        "paymentSystem" : "Zahlweise",
-        "action" : "Aktion",
-        "gameName" : "Spielname",
-        "betSum" : "Einsatzsumme",
-        "win" : "Gewinn",
-        "validUntil" : "Gültig bis"
+      "table": {
+        "date": "Datum",
+        "paymentSystem": "Zahlweise",
+        "action": "Aktion",
+        "gameName": "Spielname",
+        "betSum": "Einsatzsumme",
+        "win": "Gewinn",
+        "validUntil": "Gültig bis"
       }
     },
-    "verification" : {
-      "documents" : "Dokumentenüberprüfung ",
-      "text" : "Ausweis, Führerschein oder andere offiziellen Dokumente, die diese ersetzen/Nebenkostenabrechnung, Telefonrechnung oder Kontoauszug, in denen Name und Adresse vollständig abgedruckt sind/Screenshot oder Foto eines Online-Kontoauszugs, Skrill-Seite, usw., die die Einzahlung zeigt.",
-      "uploaded" : "hochgeladene Dokumente",
-      "waiting" : "Warten auf die Freigabe",
-      "approved" : "Genehmigt",
-      "disapproved" : "Nicht genehmigt",
-      "drop" : "Datei hier ablegen oder Bilder oder .pdf-Dateien suchen. Maximale Größe 110 MB"
+    "verification": {
+      "documents": "Dokumentenüberprüfung ",
+      "text": "Ausweis, Führerschein oder andere offiziellen Dokumente, die diese ersetzen/Nebenkostenabrechnung, Telefonrechnung oder Kontoauszug, in denen Name und Adresse vollständig abgedruckt sind/Screenshot oder Foto eines Online-Kontoauszugs, Skrill-Seite, usw., die die Einzahlung zeigt.",
+      "uploaded": "hochgeladene Dokumente",
+      "waiting": "Warten auf die Freigabe",
+      "approved": "Genehmigt",
+      "disapproved": "Nicht genehmigt",
+      "drop": "Datei hier ablegen oder Bilder oder .pdf-Dateien suchen. Maximale Größe 110 MB"
     },
-    "profile" : {
-      "title" : "Benutzerprofil",
-      "tabs" : {
-        "general" : "Allgemein",
-        "security" : "Sicherheit"
+    "profile": {
+      "title": "Benutzerprofil",
+      "tabs": {
+        "general": "Allgemein",
+        "security": "Sicherheit"
       },
-      "generalInfo" : "Allgemeine Informationen",
-      "subscriptions" : "Abonnements",
-      "sms" : "Information zu aktionen per E-MAIL",
-      "email" : "Information zu aktionen per SMS",
-      "passwordChange" : "Passwortänderung",
-      "oldPassword" : "Altes Passwort",
-      "newPassword" : "Neues Passwort",
-      "confirmPassword" : "Passwort bestätigen",
-      "sessionHistory" : "Sitzungshistorie",
-      "labels" : {
-        "email" : "Email",
-        "country" : "Staat",
-        "firstName" : "Vornamen",
-        "lastName" : "Nachname",
-        "gender" : "Geschlecht",
-        "city" : "Stadt ",
-        "address" : "Anschrift",
-        "postalCode" : "Postleitzahl",
-        "phoneNumber" : "Rufnummer",
-        "birthDate" : "Geburtsdatum"
+      "generalInfo": "Allgemeine Informationen",
+      "subscriptions": "Abonnements",
+      "sms": "Information zu aktionen per E-MAIL",
+      "email": "Information zu aktionen per SMS",
+      "passwordChange": "Passwortänderung",
+      "oldPassword": "Altes Passwort",
+      "newPassword": "Neues Passwort",
+      "confirmPassword": "Passwort bestätigen",
+      "sessionHistory": "Sitzungshistorie",
+      "labels": {
+        "email": "Email",
+        "country": "Staat",
+        "firstName": "Vornamen",
+        "lastName": "Nachname",
+        "gender": "Geschlecht",
+        "city": "Stadt ",
+        "address": "Anschrift",
+        "postalCode": "Postleitzahl",
+        "phoneNumber": "Rufnummer",
+        "birthDate": "Geburtsdatum"
       },
-      "updateSuccess" : "Dein Profil wurde erfolgreich aktualisiert!",
-      "passwordUpdateSuccess" : "Dein Passwort wurde erfolgreich geändert!"
+      "updateSuccess": "Dein Profil wurde erfolgreich aktualisiert!",
+      "passwordUpdateSuccess": "Dein Passwort wurde erfolgreich geändert!"
     },
-    "limits" : {
-      "initialText" : "Möchtest du deine Aktivität überwachen oder Verlust- oder Einzahlungslimits einrichten? Du kannst verschiedene Limits für dein Konto einrichten. Dies kann dir dabei helfen, einen Überblick über dein Glücksspiel zu behalten. Alle Einschränkungen treten sofort in Effekt.",
-      "createLimits" : "Limits einrichten",
-      "addLimits" : "Limits hinzufügen",
-      "limits" : {
-        "depositLimit" : {
-          "name" : "Einzahlungslimits",
-          "text" : "Für dein Konto können Einzahlungslimits eingerichtet werden. Diese Einstellung begrenzt den Betrag, den du pro Tag, Woche oder Monat einzahlen kannst. ",
-          "editRules" : "Sie können Ihr Limit jederzeit herabsetzen, diese Änderung wird sofort wirksam. Sie können das Limit erhöhen, allerdings benötigen Sie 24 Stunden, damit diese Änderung wirksam wird.",
-          "deleteRules" : "Die Aufhebung des Einzahlungslimits dauert 24 Stunden. Nach Überschreiten des Limits erhalten Sie eine Benachrichtigung per E-Mail. "
+    "limits": {
+      "initialText": "Möchtest du deine Aktivität überwachen oder Verlust- oder Einzahlungslimits einrichten? Du kannst verschiedene Limits für dein Konto einrichten. Dies kann dir dabei helfen, einen Überblick über dein Glücksspiel zu behalten. Alle Einschränkungen treten sofort in Effekt.",
+      "createLimits": "Limits einrichten",
+      "addLimits": "Limits hinzufügen",
+      "limits": {
+        "depositLimit": {
+          "name": "Einzahlungslimits",
+          "text": "Für dein Konto können Einzahlungslimits eingerichtet werden. Diese Einstellung begrenzt den Betrag, den du pro Tag, Woche oder Monat einzahlen kannst. ",
+          "editRules": "Sie können Ihr Limit jederzeit herabsetzen, diese Änderung wird sofort wirksam. Sie können das Limit erhöhen, allerdings benötigen Sie 24 Stunden, damit diese Änderung wirksam wird.",
+          "deleteRules": "Die Aufhebung des Einzahlungslimits dauert 24 Stunden. Nach Überschreiten des Limits erhalten Sie eine Benachrichtigung per E-Mail. "
         },
-        "wagerLimit" : {
-          "name" : "Umsatzbegrenzung",
-          "text" : "Für dein Konto können Umsatzbegrenzung eingerichtet werden. Diese Einstellung steuert den Geldbetrag, den du pro Tag, Woche oder Monat wetten kannst.",
-          "editRules" : "Sie können Ihr Limit jederzeit herabsetzen, diese Änderung wird sofort wirksam. Sie können das Limit erhöhen, allerdings benötigen Sie 24 Stunden, damit diese Änderung wirksam wird.",
-          "deleteRules" : "Die Aufhebung des Umsatzbegrenzung dauert 24 Stunden. Nach Überschreiten des Limits erhalten Sie eine Benachrichtigung per E-Mail."
+        "wagerLimit": {
+          "name": "Umsatzbegrenzung",
+          "text": "Für dein Konto können Umsatzbegrenzung eingerichtet werden. Diese Einstellung steuert den Geldbetrag, den du pro Tag, Woche oder Monat wetten kannst.",
+          "editRules": "Sie können Ihr Limit jederzeit herabsetzen, diese Änderung wird sofort wirksam. Sie können das Limit erhöhen, allerdings benötigen Sie 24 Stunden, damit diese Änderung wirksam wird.",
+          "deleteRules": "Die Aufhebung des Umsatzbegrenzung dauert 24 Stunden. Nach Überschreiten des Limits erhalten Sie eine Benachrichtigung per E-Mail."
         },
-        "lossLimit" : {
-          "name" : "Verlustlimits",
-          "text" : "Für dein Konto können Verlustlimits eingerichtet werden. Diese Einstellung begrenzt den Betrag, den du pro Tag, Woche oder Monat verlieren kannst.",
-          "editRules" : "Sie können Ihr Limit jederzeit herabsetzen, diese Änderung wird sofort wirksam. Sie können das Limit erhöhen, allerdings benötigen Sie 24 Stunden, damit diese Änderung wirksam wird."
+        "lossLimit": {
+          "name": "Verlustlimits",
+          "text": "Für dein Konto können Verlustlimits eingerichtet werden. Diese Einstellung begrenzt den Betrag, den du pro Tag, Woche oder Monat verlieren kannst.",
+          "editRules": "Sie können Ihr Limit jederzeit herabsetzen, diese Änderung wird sofort wirksam. Sie können das Limit erhöhen, allerdings benötigen Sie 24 Stunden, damit diese Änderung wirksam wird."
         },
-        "sessionLimit" : {
-          "name" : "Spielzeitbegrenzung",
-          "title" : "Zeit zum Spielen ",
-          "text" : "Zeit zum Spielen ",
-          "editRules" : "Die Einschränkung tritt sofort in Effekt. Wenn die eingestellte Dauer überschritten wird, wirst du automatisch von deinem Konto abgemeldet.",
-          "deleteRules" : ""
+        "sessionLimit": {
+          "name": "Spielzeitbegrenzung",
+          "title": "Zeit zum Spielen ",
+          "text": "Zeit zum Spielen ",
+          "editRules": "Die Einschränkung tritt sofort in Effekt. Wenn die eingestellte Dauer überschritten wird, wirst du automatisch von deinem Konto abgemeldet.",
+          "deleteRules": ""
         },
-        "coolingOffLimit" : {
-          "name" : "Auszeit",
-          "title" : "Zeit zum Spielen ",
-          "text" : "Du glaubst, du musst dem Casino eine Weile fernbleiben? Du kannst eine Auszeit für einen vordefinierten Zeitraum einrichten. Die Einschränkung tritt sofort in Effekt. In dem angegebenen Zeitraum kannst du weder Einzahlungen vornehmen noch spielen, außerdem bist du von allen Werbeangeboten ausgeschlossen. Nach Ablauf der festgelegten Zeit wirst du per E-Mail davon in Kenntnis gesetzt, dass dein Konto wieder freigegeben ist.",
-          "editRules" : "Die Senkung des Limits wird innerhalb von 24 Stunden nach der Anfrage des Spielers durchgeführt. Eine Limit-Erhöhung wird sofort angewandt.",
-          "deleteRules" : "Die Aufhebung des Limits wird innerhalb von 24 Stunden nach der Anfrage des Spielers durchgeführt."
+        "coolingOffLimit": {
+          "name": "Auszeit",
+          "title": "Zeit zum Spielen ",
+          "text": "Du glaubst, du musst dem Casino eine Weile fernbleiben? Du kannst eine Auszeit für einen vordefinierten Zeitraum einrichten. Die Einschränkung tritt sofort in Effekt. In dem angegebenen Zeitraum kannst du weder Einzahlungen vornehmen noch spielen, außerdem bist du von allen Werbeangeboten ausgeschlossen. Nach Ablauf der festgelegten Zeit wirst du per E-Mail davon in Kenntnis gesetzt, dass dein Konto wieder freigegeben ist.",
+          "editRules": "Die Senkung des Limits wird innerhalb von 24 Stunden nach der Anfrage des Spielers durchgeführt. Eine Limit-Erhöhung wird sofort angewandt.",
+          "deleteRules": "Die Aufhebung des Limits wird innerhalb von 24 Stunden nach der Anfrage des Spielers durchgeführt."
         }
       },
-      "periods" : {
-        "daily" : "täglich ",
-        "weekly" : "wöchentlich",
-        "monthly" : "monatlich ",
-        "days" : "Tage",
-        "weeks" : "Wochen",
-        "months" : "Monate",
-        "min" : "Minute",
-        "day" : "Tag"
+      "periods": {
+        "daily": "täglich ",
+        "weekly": "wöchentlich",
+        "monthly": "monatlich ",
+        "days": "Tage",
+        "weeks": "Wochen",
+        "months": "Monate",
+        "min": "Minute",
+        "day": "Tag"
       },
-      "edit" : "Editierlimit",
-      "delete" : "Löschenlimit",
-      "save" : "Speichernlimits",
-      "setLimit" : "Einrichtenlimit",
-      "deleteText" : "Sind Sie sicher, dass Sie löschen wollen",
-      "sureSet" : "Sind Sie sicher, dass Sie die",
-      "confirmUpdate" : "Bestätigen Sie das Limit-Update",
-      "untilReset" : "Bis zum Reset"
+      "edit": "Editierlimit",
+      "delete": "Löschenlimit",
+      "save": "Speichernlimits",
+      "setLimit": "Einrichtenlimit",
+      "deleteText": "Sind Sie sicher, dass Sie löschen wollen",
+      "sureSet": "Sind Sie sicher, dass Sie die",
+      "confirmUpdate": "Bestätigen Sie das Limit-Update",
+      "untilReset": "Bis zum Reset"
     }
   },
-  "promotions" : {
-    "title" : "Aktuelle Aktionen",
-    "text" : "Ninecasino arbeitet ständig daran, die besten Aktionen zu liefern. Wir verwenden die neueste Technologie und das Feedback unserer Spieler, um unsere Aktionen zu gestalten. Viel Spaß!",
-    "upTo" : "bis zu € 150 ",
-    "deposit1" : {
-      "title" : "100%<br/> des<br/> Einzahlungsbetrags <br/> ",
-      "name" : "Bonus für die erste Einzahlung",
-      "text" : "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+  "promotions": {
+    "title": "Aktuelle Aktionen",
+    "text": "Ninecasino arbeitet ständig daran, die besten Aktionen zu liefern. Wir verwenden die neueste Technologie und das Feedback unserer Spieler, um unsere Aktionen zu gestalten. Viel Spaß!",
+    "upTo": "bis zu € 150 ",
+    "deposit1": {
+      "title": "100%<br/> des<br/> Einzahlungsbetrags <br/> ",
+      "name": "Bonus für die erste Einzahlung",
+      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
-    "deposit2" : {
-      "title" : "55%<br/> des<br/> Einzahlungsbetrags <br/> ",
-      "name" : "Bonus für zweite Einzahlung",
-      "text" : "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150  €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach eine zweite Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+    "deposit2": {
+      "title": "55%<br/> des<br/> Einzahlungsbetrags <br/> ",
+      "name": "Bonus für zweite Einzahlung",
+      "text": "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150  €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach eine zweite Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
-    "deposit3" : {
-      "title" : "100%<br/> des<br/> Einzahlungsbetrags<br/>",
-      "name" : "Bonus für dritte Einzahlung ",
-      "text" : "Machen Sie Ihre dritte Einzahlung bei Ninecasino und erhalten Sie bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine dritte Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+    "deposit3": {
+      "title": "100%<br/> des<br/> Einzahlungsbetrags<br/>",
+      "name": "Bonus für dritte Einzahlung ",
+      "text": "Machen Sie Ihre dritte Einzahlung bei Ninecasino und erhalten Sie bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine dritte Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
-    "dropsWins" : {
-      "title" : "Drops<span class=\"Colored\">&</span>wins<br/>Phase 4<br/>(Wochen 13–16)",
-      "name" : "Drops&wins turnier",
-      "text" : "DAS Turnier des Jahres! Willkommen zu Phase 4 (Wochen 13–16) der täglichen Netzwerkaktion Drops & Wins Network. <br/><br/>TDiese Woche besteht die Chance, ein Preisgeld in Höhe von insgesamt 2.500.000 € zu gewinnen."
+    "dropsWins": {
+      "title": "Drops<span class=\"Colored\">&</span>wins<br/>Phase 4<br/>(Wochen 13–16)",
+      "name": "Drops&wins turnier",
+      "text": "DAS Turnier des Jahres! Willkommen zu Phase 4 (Wochen 13–16) der täglichen Netzwerkaktion Drops & Wins Network. <br/><br/>TDiese Woche besteht die Chance, ein Preisgeld in Höhe von insgesamt 2.500.000 € zu gewinnen."
     },
-    "playsonMay" : {
-      "title" : "Playson may<br/> cashdays",
-      "name" : "Playson May CashDays",
-      "text" : "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt."
+    "playsonMay": {
+      "title": "Playson may<br/> cashdays",
+      "name": "Playson May CashDays",
+      "text": "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt."
     },
-    "mayMadness" : {
-      "title" : "May<br/> madness<br/> von spinomenal",
-      "name" : "May madness von spinomenal",
-      "text" : "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde I! Sie läuft ab dem 11. Mai um 00:00 Uhr GMT und endet am 17. Mai 2021 um 23:59 Uhr GMT."
+    "mayMadness": {
+      "title": "May<br/> madness<br/> von spinomenal",
+      "name": "May madness von spinomenal",
+      "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde I! Sie läuft ab dem 11. Mai um 00:00 Uhr GMT und endet am 17. Mai 2021 um 23:59 Uhr GMT."
     }
   },
-  "tournaments" : {
-    "games" : "Teilnehmende Spiele",
-    "terms" : "Teilnahmebedingungen"
+  "tournaments": {
+    "games": "Teilnehmende Spiele",
+    "terms": "Teilnahmebedingungen"
   },
-  "dropsWins" : {
-    "prize" : "€ 2 500 000",
-    "text" : "Das Turnier des Jahres! Willkommen zu Phase 4 (Wochen 13-16)der täglichen Netzwerkaktion Drops & Wins Network. Diese Woche besteht die Chance, ein Preisgeld in Höhe von insgesamt 2.500.000 € zu gewinnen! <br/>Jeder Einsatz von echtem Geld in einer Ausspielung eines der teilnehmenden Spiele kann einen Zufallsgewinn auslösen!",
-    "textMobile" : "Das Turnier des Jahres! Willkommen zu Phase 4 (Wochen 13-16)der täglichen Netzwerkaktion Drops & Wins Network. Diese Woche besteht die Chance, ein Preisgeld in Höhe von insgesamt 2.500.000 € zu gewinnen!",
-    "terms" : [
+  "dropsWins": {
+    "prize": "€ 2 500 000",
+    "text": "Das Turnier des Jahres! Willkommen zu Phase 4 (Wochen 13-16)der täglichen Netzwerkaktion Drops & Wins Network. Diese Woche besteht die Chance, ein Preisgeld in Höhe von insgesamt 2.500.000 € zu gewinnen! <br/>Jeder Einsatz von echtem Geld in einer Ausspielung eines der teilnehmenden Spiele kann einen Zufallsgewinn auslösen!",
+    "textMobile": "Das Turnier des Jahres! Willkommen zu Phase 4 (Wochen 13-16)der täglichen Netzwerkaktion Drops & Wins Network. Diese Woche besteht die Chance, ein Preisgeld in Höhe von insgesamt 2.500.000 € zu gewinnen!",
+    "terms": [
       {
-        "title" : "Phase 4 läuft zwischen dem:",
-        "text" : "Woche 13: 6. Mai 2021 00:01 Uhr CET – 12. Mai 2021 23:59 Uhr CET.<br/>Woche 14: 13. Mai 2021 00:01 Uhr CET – 19. Mai 2021 23:59 Uhr CET.<br/>Woche 15: 20. Mai 2021 00:01 Uhr CET – 26. Mai 2021 23:59 Uhr CET.<br/>Woche 16: 27. Mai 2021 00:01 Uhr CET – 2. Juni 2021 23:59 Uhr CET."
+        "title": "Phase 4 läuft zwischen dem:",
+        "text": "Woche 13: 6. Mai 2021 00:01 Uhr CET – 12. Mai 2021 23:59 Uhr CET.<br/>Woche 14: 13. Mai 2021 00:01 Uhr CET – 19. Mai 2021 23:59 Uhr CET.<br/>Woche 15: 20. Mai 2021 00:01 Uhr CET – 26. Mai 2021 23:59 Uhr CET.<br/>Woche 16: 27. Mai 2021 00:01 Uhr CET – 2. Juni 2021 23:59 Uhr CET."
       },
       {
-        "title" : "Teilnehmende Spiele",
-        "text" : "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker's Jewels™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, The Hand of Midas™, Wild West Gold™, Gates of Olympus™, Congo Cash™, Fishin' Reels™, Power of Thor Megaways™, Floating Dragon™, Wild Booster™, Hot Fiesta™, Buffalo King Megaways™."
+        "title": "Teilnehmende Spiele",
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker's Jewels™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, The Hand of Midas™, Wild West Gold™, Gates of Olympus™, Congo Cash™, Fishin' Reels™, Power of Thor Megaways™, Floating Dragon™, Wild Booster™, Hot Fiesta™, Buffalo King Megaways™."
       },
       {
-        "title" : "Drops & Wins beinhaltet",
-        "text" : "Jedes Turnier läuft über sieben Tage, von Donnerstag bis Mittwoch, begleitet von täglichen Gewinnausschüttungen.<br/>Die größtmögliche WOCHENGEWINNSUMME der Phase 4 beläuft sich auf 31.000 Euro verteilt auf 550 Gewinnerinnen und Gewinner. <br/>Darüber hinaus besteht die Möglichkeit auf TÄGLICHE Geldgewinne aus dem Preistopf mit 4.500 Euro, die auf die 100 aktivsten Teilnehmerinnen und Teilnehmer verteilt werden."
+        "title": "Drops & Wins beinhaltet",
+        "text": "Jedes Turnier läuft über sieben Tage, von Donnerstag bis Mittwoch, begleitet von täglichen Gewinnausschüttungen.<br/>Die größtmögliche WOCHENGEWINNSUMME der Phase 4 beläuft sich auf 31.000 Euro verteilt auf 550 Gewinnerinnen und Gewinner. <br/>Darüber hinaus besteht die Möglichkeit auf TÄGLICHE Geldgewinne aus dem Preistopf mit 4.500 Euro, die auf die 100 aktivsten Teilnehmerinnen und Teilnehmer verteilt werden."
       },
       {
-        "title" : "Wie man gewinnt ",
-        "text" : "Zur Teilnahme an dem Wochenturnier berechtigt ist, wer einen Echtgeldeinsatz in einem der teilnehmenden Spiele getätigt und mindestens einen (1) Gewinn in diesem Spiel erzielt hat.<br/>Zur Teilnahme an dem Wochenturnier berechtigt ist, wer einen Echtgeldeinsatz in einem der teilnehmenden Spiele getätigt und mindestens einen (1) Gewinn in diesem Spiel erzielt hat. Für die Teilnahme an der täglichen Gewinnausschüttung besteht kein Mindesteinsatz in echtem Geld. Drops (Ausschüttungen in Gewinnmultiplikatorenwochen). "
+        "title": "Wie man gewinnt ",
+        "text": "Zur Teilnahme an dem Wochenturnier berechtigt ist, wer einen Echtgeldeinsatz in einem der teilnehmenden Spiele getätigt und mindestens einen (1) Gewinn in diesem Spiel erzielt hat.<br/>Zur Teilnahme an dem Wochenturnier berechtigt ist, wer einen Echtgeldeinsatz in einem der teilnehmenden Spiele getätigt und mindestens einen (1) Gewinn in diesem Spiel erzielt hat. Für die Teilnahme an der täglichen Gewinnausschüttung besteht kein Mindesteinsatz in echtem Geld. Drops (Ausschüttungen in Gewinnmultiplikatorenwochen). "
       },
       {
-        "title" : "Zusätzlich",
-        "text" : "Während der Multiplikatorenwochen können Gewinne in Form eines in der Wochenturniergewinnübersicht (Gewinnmultiplikatorenwochen) und der Tagesausschüttungsübersicht weiter unten (im weiteren Textverlauf die „Gewinnmultiplikatorenwochen“) ausgewiesenen Vielfachen r des Einsatzes der erfolgreichen Spielerin bzw. des erfolgreichen Spielers erzielt werden.<br/>Wenn der Gewinn in der erfolgreichen Ausspielung zehn Euro (10 €) übersteigt, erfolgt die Auszahlung des Gewinns auf der Grundlage eines Einsatzes von 10 Euro (10 €) oder umgerechnet in die jeweils geltende Währung (s. unten) multipliziert mit dem erworbenen Multiplikator x.<br/>Die Ermittlung der Ranglistenposition erfolgt entsprechend der Punktzahl für den höchsten Einzelgewinn in einer einzelnen Ausspielung in einem der teilnehmenden Spiele umgerechnet auf den jeweiligen Einsatz.<br/>Sollten zwei (2) oder mehr Mitspielende ein Wochenturnier auf demselben Ranglistenplatz beenden, entfällt der höhere Gewinn auf die Spie"
+        "title": "Zusätzlich",
+        "text": "Während der Multiplikatorenwochen können Gewinne in Form eines in der Wochenturniergewinnübersicht (Gewinnmultiplikatorenwochen) und der Tagesausschüttungsübersicht weiter unten (im weiteren Textverlauf die „Gewinnmultiplikatorenwochen“) ausgewiesenen Vielfachen r des Einsatzes der erfolgreichen Spielerin bzw. des erfolgreichen Spielers erzielt werden.<br/>Wenn der Gewinn in der erfolgreichen Ausspielung zehn Euro (10 €) übersteigt, erfolgt die Auszahlung des Gewinns auf der Grundlage eines Einsatzes von 10 Euro (10 €) oder umgerechnet in die jeweils geltende Währung (s. unten) multipliziert mit dem erworbenen Multiplikator x.<br/>Die Ermittlung der Ranglistenposition erfolgt entsprechend der Punktzahl für den höchsten Einzelgewinn in einer einzelnen Ausspielung in einem der teilnehmenden Spiele umgerechnet auf den jeweiligen Einsatz.<br/>Sollten zwei (2) oder mehr Mitspielende ein Wochenturnier auf demselben Ranglistenplatz beenden, entfällt der höhere Gewinn auf die Spie"
       }
     ]
   },
-  "playsonMay" : {
-    "prize" : "€ 60 000",
-    "text" : "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt.",
-    "textMobile" : "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt.",
-    "terms" : [
+  "playsonMay": {
+    "prize": "€ 60 000",
+    "text": "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt.",
+    "textMobile": "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt.",
+    "terms": [
       {
-        "text" : "Das Turnier läuft ab 0:01 Uhr UTC am 1. Mai 2021 bis zum 8. Mai 2021 um 23:59 Uhr UTC. "
+        "text": "Das Turnier läuft ab 0:01 Uhr UTC am 1. Mai 2021 bis zum 8. Mai 2021 um 23:59 Uhr UTC. "
       },
       {
-        "text" : "Diese 10 Spiele nehmen teil: <br/>●  Book of Gold: Double Chance<br/>●  Book of Gold: Multichance<br/>●  Buffalo Power: Hold and Win<br/>●  Burning Wins: classic 5 lines<br/>●  Diamond Wins: Hold and Win<br/>●  Divine Dragon: Hold and Win<br/>●  Legend of Cleopatra MegawaysTM<br/>●  Solar Queen<br/>●  Solar Temple<br/>●  Wolf Power: Hold and Win"
+        "text": "Diese 10 Spiele nehmen teil: <br/>●  Book of Gold: Double Chance<br/>●  Book of Gold: Multichance<br/>●  Buffalo Power: Hold and Win<br/>●  Burning Wins: classic 5 lines<br/>●  Diamond Wins: Hold and Win<br/>●  Divine Dragon: Hold and Win<br/>●  Legend of Cleopatra MegawaysTM<br/>●  Solar Queen<br/>●  Solar Temple<br/>●  Wolf Power: Hold and Win"
       },
       {
-        "text" : "Der Mindesteinsatz für die Teilnahme beträgt wie gewohnt 0,50 Euro. Die Punkte werden Runde für Runde berechnet, dabei entspricht jeder gewonnene Euro (oder sein Gegenwert in anderen Währungen) jeweils 10 Punkten. "
+        "text": "Der Mindesteinsatz für die Teilnahme beträgt wie gewohnt 0,50 Euro. Die Punkte werden Runde für Runde berechnet, dabei entspricht jeder gewonnene Euro (oder sein Gegenwert in anderen Währungen) jeweils 10 Punkten. "
       },
       {
-        "text" : "Das großzügige Preisgeld von 60.000 Euro wird unter 350 Mitspielenden aufgeteilt: <br/>Platz 1 – €10.000<br/>Platz 2 – €5.000<br/>Platz 3 – €3.000<br/>Platz 4 – €1.500<br/>Platz 5 – €1.000<br/>Platz 6 – €900<br/>Platz 7 – €800<br/>Platz 8 – €700<br/>Platz 9 – €600<br/>Platz 10 – €500<br/>Platz 11 – 25 je €400<br/>Platz 26 – 50 je €200<br/>Platz 51 – 100 je €150<br/>Platz 101 – 200 je €100<br/>Platz 201 – 350 je €50 "
+        "text": "Das großzügige Preisgeld von 60.000 Euro wird unter 350 Mitspielenden aufgeteilt: <br/>Platz 1 – €10.000<br/>Platz 2 – €5.000<br/>Platz 3 – €3.000<br/>Platz 4 – €1.500<br/>Platz 5 – €1.000<br/>Platz 6 – €900<br/>Platz 7 – €800<br/>Platz 8 – €700<br/>Platz 9 – €600<br/>Platz 10 – €500<br/>Platz 11 – 25 je €400<br/>Platz 26 – 50 je €200<br/>Platz 51 – 100 je €150<br/>Platz 101 – 200 je €100<br/>Platz 201 – 350 je €50 "
       },
       {
-        "text" : "Achten Sie während des Turniers auf die Rangliste. Je mehr Punkte Sie sammeln, desto höher Ihre Siegchance! Ergreifen Sie sie und viel Glück dabei! "
+        "text": "Achten Sie während des Turniers auf die Rangliste. Je mehr Punkte Sie sammeln, desto höher Ihre Siegchance! Ergreifen Sie sie und viel Glück dabei! "
       }
     ]
   },
-  "mayMadness" : {
-    "prize" : "€ 60 000",
-    "text" : "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde I! Sie läuft ab dem 11. Mai um 00:00 Uhr GMT und endet am 17. Mai 2021 um 23:59 Uhr GMT. Das gesamte Preisgeld beträgt 60.000 Euro! Nach Abschluss der Runde I teilen sich die 150 Bestplatzierten 20.000 davon nach folgendem Muster.",
-    "textMobile" : "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!",
-    "terms" : [
+  "mayMadness": {
+    "prize": "€ 60 000",
+    "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde I! Sie läuft ab dem 11. Mai um 00:00 Uhr GMT und endet am 17. Mai 2021 um 23:59 Uhr GMT. Das gesamte Preisgeld beträgt 60.000 Euro! Nach Abschluss der Runde I teilen sich die 150 Bestplatzierten 20.000 davon nach folgendem Muster.",
+    "textMobile": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!",
+    "terms": [
       {
-        "text" : "Sie läuft ab dem 11. Mai um 00:00 Uhr GMT und endet am 17. Mai 2021 um 23:59 Uhr GMT."
+        "text": "Sie läuft ab dem 11. Mai um 00:00 Uhr GMT und endet am 17. Mai 2021 um 23:59 Uhr GMT."
       },
       {
-        "text" : "Um in Runde I des Maiwahnsinns zu den Gewinnern zu zählen, müssen Sie lediglich eines der teilnehmenden Spiele spielen:<br/><br/>●  Book Of Demi Gods II<br/>●  Aztec Spell<br/>●  Story Of Medusa"
+        "text": "Um in Runde I des Maiwahnsinns zu den Gewinnern zu zählen, müssen Sie lediglich eines der teilnehmenden Spiele spielen:<br/><br/>●  Book Of Demi Gods II<br/>●  Aztec Spell<br/>●  Story Of Medusa"
       },
       {
-        "text" : "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 Euro."
+        "text": "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 Euro."
       },
       {
-        "text" : "Jeder Gewinn bringt Ihnen Wertungspunkte entsprechend dem Gewinnmultiplikator. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
+        "text": "Jeder Gewinn bringt Ihnen Wertungspunkte entsprechend dem Gewinnmultiplikator. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
       }
     ]
+  },
+  "supportPages": {
+    "termsPage": {
+      "title": "Terms & Conditions",
+      "p1": "The following terms and conditions will enter into force on 01/31/2021. Before you start the game please read the Terms and Conditions section carefully. Started using the site you automatically confirm your acceptance of the Terms and Conditions.",
+      "p2": "Current Terms and Conditions are governed by and interpreted in accordance with the legislation of Curacao.",
+      "general": {
+        "title": "General",
+        "text": [
+          "The website www.ninecasino.com (\"Casino\", \"Website\", “Company”, \"We\", \"Us\", \"Our\") is owned and operated by Dux Group N.V. the company registered at Curacao on the 09th day of September, 2020, registration number 155114, located at Perseusweg 27A, Willemstad, Curacao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorised to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling. The payment agent of Dux Group N.V. is a Cyprus company SCARTESU LIMITED, registration number HE 410983, registered address Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus. The governing law of the website is the laws of Curacao.",
+          "These Terms and Conditions may be changed by the Casino when such need occurs. We will do our best to notify our players of any significant changes by email. However, we do recommend all players to revisit this page regularly and check for possible changes.",
+          "These Terms and Conditions constitute a binding agreement between you and Casino. Players must read these Terms and Conditions entirely before registering an account. If you do not agree with any provision of these Terms and Conditions you must not use or continue to use the Website.",
+          "You are able to opt out from receiving offers via emails from Casino. However, we still reserve the right to send you important information regarding your account, despite you being opted out from regular email send-outs."
+        ]
+      },
+      "availabilityOfGames": {
+        "title": "Availability of games",
+        "text": [
+          "Please bear in mind some games may be unavailable in certain jurisdictions, as required by the policies of game providers, which may change from time to time.",
+          "Using VPN to bypass provider’s block is strictly prohibited and may lead to confiscation of winnings.",
+          "Fashion TV Video Slot is not available in the following countries: Cuba, Jordan, Turkey, Saudi Arabia.",
+          "Planet of the Apes Video Slot is not available in the following territories: Azerbaijan, China, India, Malaysia, Qatar, Russia, Thailand, Turkey, Ukraine.",
+          "Vikings Video Slot is not available in the additional jurisdictions: Azerbaijan, Cambodia, Canada, China, France, India, Indonesia, Laos, Malaysia, Myanmar, Papua New Guinea, Qatar Russia, South Korea, Thailand, Turkey, Ukraine, United States of America.",
+          "Narcos Video Slot is not available in the following territories: Indonesia, South Korea.",
+          "Additionally, Universal Monsters (Dracula, Creature from the Black Lagoon, Phantoms Curse and The Invisible Man), are only available in the following territories: Andorra, Armenia, Azerbaijan, Belarus, Bosnia and Herzegovina, Georgia, Iceland, Liechtenstein, Moldova, Monaco, Montenegro, Norway, Russia, San Marino, Serbia, Ukraine, North Macedonia, Turkey, Austria, Cyprus, Finland, Germany, Greece, Hungary, Ireland, Luxembourg, Malta, Netherlands, Poland, Slovakia and Slovenia.",
+          "Players from the following countries are not eligible to win any jackpots from jackpot games offered by NetEnt (such as but not limited to Mega Fortune and Arabian Nights): Australia, Azerbaijan, China, Denmark, India, Israel, Italy, Japan, Malaysia, Qatar, Russia, Spain, Thailand, Tunisia, Turkey, United Arab Emirates, Ukraine. The Casino will make reasonable efforts to prevent players from these countries to reach the games, but if players from any of the stated countries should win the jackpot, the jackpot win will be annulled.",
+          "Players from Australia are not eligible to play the games from Amatic.",
+          "Players from the following countries are not eligible to play the games from Microgaming: USA, Singapore, Italy, Denmark, South Africa, France, UK, Spain, Belgium, Australia, Taiwan, Philippines.",
+          "Players from Canada are not eligible to play the games from NYX (NextGen)."
+        ]
+      },
+      "acceptedCurrencies": {
+        "title": "Accepted currencies",
+        "text": [
+          "The website allows playing with the following currencies: EUR, USD, CAD, AUD, NOK, PLN, NZD, JPY, CZK, ZAR."
+        ]
+      },
+      "whoCanPlay": {
+        "title": "Who can play",
+        "text": [
+          "The Casino accepts players only from those countries and geographic regions where online gambling is allowed by law. It is the player’s sole responsibility to inquire about the existing gambling laws and regulations of the given jurisdiction before placing bets on the website.",
+          "The Casino accepts strictly adult players (the minimal age is 18) and players who have reached the age specified by the jurisdiction of player’s place of residence as eligible for online gaming. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction regarding age limitations for online gambling.",
+          "It is entirely and solely your responsibility to enquire and ensure that you do not breach laws applicable to you by participating in the games. Depositing real funds and playing for real money is subject to the laws of your country, and it is your sole responsibility to abide by your native regulations.",
+          "The Company reserves the right to ask for the proof of age from the player and limit access to the Website or suspend the account to those players who fail to meet this requirement.",
+          "Players from the following countries and their territories (“Restricted Countries”) are not allowed to deposit and play real money games: United States of America, United Kingdom, Spain, France and its overseas territories (Guadeloupe, Martinique, French Guiana, Réunion, Mayotte, St. Martin, French Polynesia, Wallis and Futuna, New Caledonia), Netherlands, Israel, Lithuania, Dutch West Indies and Curacao, Azerbaijan, Armenia, Gibraltar, Jersey, Belarus, Kazakhstan, Kyrgyzstan, Moldavia, Russia, Tajikistan, Uzbekistan, Ukraine. The Casino cannot guarantee successful processing of withdrawals or refunds in the event that player breaches this Restricted Countries policy."
+        ]
+      },
+      "useOfPlayerAccount": {
+        "title": "Use of player account",
+        "text": [
+          "In order for you to be able to place wagers using any of the Website, you must first register with ninecasino.com and open an account.",
+          "You are allowed to have only one (1) account. Only one account for each household, IP, PC is allowed. If you attempt to open more than one account, all accounts you try to open may be blocked or closed and any bets may be voided. Also any returns, deposits, winnings or bonuses which you have gained or accrued during such time as the duplicate account was active will be forfeited by you and may be reclaimed by us, and you will return to us on demand any such funds which have been withdrawn from the duplicate account. If you wish to open another account, you may do so by contacting the support at support@ninecasino.com. If a new account is opened, the old account will be closed. If you notice that you have more than one registered account you must notify us immediately. Failure to do so may lead to your account being blocked for access.",
+          "You must enter all mandatory information requested into your registration form, including a valid e-mail address; if you do not enter a valid email address, we will be unable to help you recover any “forgotten passwords”. It is your sole responsibility to ensure that the information you provide is true, complete and correct.",
+          "As part of the registration process you will have to choose your username and password for your login into the Website. It is your exclusive responsibility to ensure that your login details are kept securely. You must not disclose your login details to anyone. Casino is not responsible for any abuse of your account by third parties due to your disclosure, whether intentional or accidental, whether active or passive, of your login details to any third party.",
+          "For transaction security, we use SSL encryption. All customer data will be treated as confidential and will not be sold to third parties.",
+          "Kindly note that withdrawals have to be made to the same method that you deposited with. If you for example deposited a Credit Card, the winnings from that deposit have to be sent back via Credit Card.",
+          "All information that you provide to Ninecasino.com during the term of validity of this agreement is true, complete, and correct, and that you shall immediately notify Ninecasino.com of any change of such information.",
+          "You are not allowed to transfer funds from your account to other players or to receive funds from other players into your account, or to transfer, sell and/or acquire, user accounts.",
+          "Some circumstances may arise where a wager is confirmed, or a payment is performed, by us in error. In all these cases Casino reserves the right to cancel all the wagers accepted containing such an error, or to correct the mistake made re-settling all the wagers at the correct prices/spreads/terms that should have been available at the time that the wager was placed in the absence of the error.",
+          "Should the user become aware of possible errors or incompleteness in the software, he/she agrees to refrain from taking advantage of them. Moreover, the user agrees to report any error or incompleteness immediately to Ninecasino.com. Should the user fail to fulfil the obligations stated in this clause, the Company has a right to full compensation for all costs related to the error or incompleteness, including any costs incurred in association with the respective error/incompleteness and the failed notification by the user.",
+          "Ninecasino.com reserves the right to retain payments, if suspicion or evidence exists of manipulation of the casino system. Criminal charges will be brought against any user or any other person(s), who has/have manipulated the casino system or attempted to do so. Ninecasino.com reserves the right to terminate and/or change any games or events being offered on the Website."
+        ]
+      },
+      "depositing": {
+        "title": "Depositing",
+        "text": [
+          "You may only participate in Games if you have sufficient funds on account for such participation.",
+          "Please note that the minimal amount of deposit is 20€ or an equivalent. The maximum amount of deposit depends on the payment method you decide to use.",
+          "We can, under certain circumstances, credit a player’s account with a personal “bonus”. The conditions for the crediting of the bonus and the amount of the bonus is determined by Casino and set out on the website from time to time. If an account contains both the real funds and bonus funds, the bonus funds will only be available for wagering once the existing real funds have been used. Before fulfilling the bonus turnover conditions if you\n          transfer or withdraw the main deposit amount, bonus funds and all winnings from this bonus will be forfeited.",
+          "Kindly note that bonuses come with specific bonus terms and conditions (\"Bonus Terms and Conditions\"). These can be found on the Website.",
+          "Ninecasino.com is not a financial institution and thus should not be treated as such. Your account will not bear any interests.",
+          "Deposited amounts are available on the account within a reasonable amount of time after the confirmation of the deposit. Before a withdrawal can be made, all previous deposits need to be confirmed.",
+          "Casino is not an exchange and therefore does not execute any conversion between any currencies.",
+          "You may only use your own personal credit/debit card or other payment method to fund your account. The name appearing on the credit cards, or registered on the payment accounts used for deposits or payouts must correspond to the name registered on your account.",
+          "Kindly note that due to the nature of cryptocurrencies, deposit limits cannot be applied to the deposits made through CoinsPaid payment system. If you want to limit your gambling in the casino, please, use any other available option.",
+          "When depositing using cryptocurrencies, kindly ensure you're depositing an amount greater than or equal to, the minimum deposit limit for that particular currency, as displayed on the deposit page of your account. Deposits below this limit cannot be processed by our payment processor and will not reach your account and nor can it be returned back to you.",
+          "Internet gambling may be illegal in the jurisdiction in which you are located; if so, you are not authorized to use your payment card to complete this transaction.",
+          "Cardholder's responsibility to know the laws concerning online gambling in his or her country of domicile.",
+          "Participation of minors in offered on this website activities is prohibited."
+        ]
+      },
+      "withdrawalPolicy": {
+        "title": "Withdrawal policy",
+        "text": [
+          "The minimal amount for withdrawal is 20€ or an equivalent. The maximum amount for withdrawal depends on the payment method you use. If the requested amount exceeds the limit of a particular payment system, the amount will be withdrawn in installments.",
+          "If we mistakenly credit your account with winnings that do not belong to you, whether due to a technical error in the pay-tables, or human error or otherwise, the amount will remain our property and will be deducted from your account. If you have withdrawn funds that do not belong to you prior to us becoming aware of the error, the mistakenly paid amount will (without prejudice to other remedies and actions that may be available at law) constitute a debt owed by you to us. In the event of an incorrect crediting, you are obliged to notify us immediately by email.",
+          "You acknowledge that the funds are consumed instantly and Casino does not provide for refunds or cancellation. Ninecasino.com reserves the right to payout substantial wins in monthly installments.",
+          "We reserve the right to carry out verification procedures for each client at first withdrawal. Such verifications may for example include copies of a player’s passport, national Identity Card, copies of a player’s utility bills, and/or copies of the debit/credit cards used to deposit.",
+          "It's the responsibility of the player to ensure that all documents as a part of the KYC process are genuine. Faked or fraudulent documents provided may result in a confiscation of deposits and potential winnings of the player.",
+          "In order to make a withdrawal, a player must play through active deposited amounts at least once prior to withdrawal. This procedure is in line with anti money laundering practices. The player is fully responsible for paying all fees and taxes applied to their winnings according to the laws of the jurisdiction of the player’s residence.",
+          "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country.. For Visa, the following countries are not supported: USA, New Zealand, Australia, Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
+          "In the unlikely event of a player depositing crypto currency funds to another crypto currency network address (such as but not limited to: sending BTC to a BCH address). Ninecasino will not attempt to recover the amount unless it exceeds $5000. In such cases, a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to pursue the recovery, however it's not a guarantee to get the funds recovered.",
+          "The internal operating currency of the Website is Euro. Due to this fact, in case you transact in other currencies, the amount deducted from your credit card may be insignificantly higher than displayed at the time of transaction due to currency conversions on the side of your bank and/or the Casino's payment processing system.",
+          "All Bank Transfer payouts are processed within five (5) banking days. Please mind that you will not be able to request a Bank Transfer for USD payouts.",
+          "You acknowledge that withdrawals via bank transfers can in exceptional cases be subject to additional charges by the intermediary banks. These charges remain outside the influence of The Casino and are limited to the equivalent of EUR 16.",
+          "The maximum withdrawal amount processed to a player is 2,500 €/$ per day, 7,500 €/$ per         week and 15,000 €/$ per month, unless otherwise specified in the Terms and Conditions of a          specific promotion. Exceptions may be made to players with a higher VIP level, if any, at        the Casino’s sole discretion.",
+          "If you win more than 15,000 €/$, the Casino reserves the right to divide the payout into         monthly instalments of maximum 15,000 €/$ until the full amount is paid out.",
+          "We reserve the right to use additional procedures and means to verify your identity (Know         Your Client) when effecting deposits into your account. This could include (but is not         limited to) a selfie with a document or form of identification. In order to verify         player`s account casino management require documents (ID, payment systems, utility bills         еtc) in Latin or Cyrillic alphabet. In case player doesn’t have an opportunity to provide         documents in above-mentioned alphabets casino reserves the right to demand video          verification where player shows his/her documents.",
+          "Players depositing in CAD can only withdraw money via EcoPayz, Interac, Instadebit and         iDebit (a minimum deposit via these payment options is required to activate them for         withdrawal).",
+          "We reserve the right to make a phone call to the number provided in your account, which at          our own discretion can be a necessary part of the KYC procedure. Until the account is         fully verified, no cashouts will be processed.",
+          "We are not a financial institution and thus should not be treated as such. Your account        will not bear any interests and no conversion or exchange services will be offered at any         time."
+        ]
+      },
+      "responsibleGaming": {
+        "title": "Responsible gaming",
+        "text": [
+          "Upon requesting a self exclusion, Casino will immediately close that account and prevent        the player from playing on that particular account. We will make reasonable efforts to try         to prevent the opening of new accounts but it's the player's sole responsibility to make        sure no other accounts are created. The Casino cannot be held accountable for potential          losses on other accounts.",
+          "As a player, you have the opportunity to put a loss limit on your account (among other         limits)."
+        ]
+      },
+      "dormantAccounts": {
+        "title": "Dormant accounts",
+        "text": [
+          "An inactive (dormant) account is an account which a player has not logged into or logged         out of for twelve (12) consecutive months. If your account is deemed to be inactive, the        Casino reserves the right to charge a monthly administrative fee of €10 or the equivalent         in another currency (or the current balance of your account, if less) as long as the      balance of your account remains positive.",
+          "You authorise the Casino to debit this fee from your account on the beginning of the month         following the day on which your account is deemed inactive, and on the beginning of every        subsequent month that your account remains inactive. The Casino will stop deducting the         fee if the account balance is zero or if the account is reactivated.",
+          "All costs that may occur upon refund procedure are on the player."
+        ]
+      },
+      "disclaimerOfLiabilities": {
+        "title": "Disclaimer of liabilities",
+        "text": [
+          "You are solely responsible for reporting and accounting for any taxes applicable to you         under relevant laws for any winnings that You receive from Ninecasino.com.",
+          "You understand that by participating in the Games you take the risk of losing funds deposited into your account."
+        ]
+      },
+      "antiFraudPolicy": {
+        "title": "Anti-fraud policy",
+        "text": [
+          "The Company has a strict anti-fraud policy and utilises various anti-fraud tools and\n          techniques. If the player is suspected of fraudulent actions including, but not limited\n          to: participating in any type of collusion with other players fraudulent actions against\n          other online casinos or payment providers chargeback transactions with a credit card or\n          denial of some payments made creating two or more accounts other types of cheating or\n          becomes a bankrupt in the country of their residence, the Company reserves the right to\n          terminate such account and suspend all payouts to the player. This decision is at sole\n          discretion of the Company and the player will not be notified or informed about the\n          reasons for such actions. The Company also reserves the right to inform applicable\n          regulatory bodies of the fraudulent actions performed by the player. delaying game rounds\n          in any game, including free spins and bonus features, to a later time when you have no\n          wagering requirements, leaving large bets on the table, for example in blackjack, and\n          returning to the game after bonus wagering has been completed, playing games with bonus\n          money to build up in-game value, lose the bonus funds, and then cash out on the built-up\n          value during real-money play, using strategies that take advantage of any software bug or\n          failure.",
+          "Should the Casino become aware of any user who has accepted the bonus or a promotion with\n          sole purpose of creating a positive expected value on bonus return by using known\n          practices aimed at securing a cash out of said bonus or at any way try to take advantage\n          of bonuses received by Casino, then We will enforce immediate confiscation of winnings and\n          closure of the account with the right to withhold any further withdrawals. An example of\n          advantage play would be delaying any game round in any game, including free spins features\n          and bonus features, to a later time when you have no more wagering requirement and/or\n          performing new deposit(s) while having free spins features or bonus features still\n          available in a game, the Casino reserves the right to withhold any withdrawals and/or\n          confiscate all winnings.",
+          "Ninecasino.com prohibits player collusion and does not allow any kind of robots and\n          programmed devices to participate in game play.",
+          "The Casino reserves the right to close your account and to refund to you the amount on\n          your account balance, subject to deduction of relevant withdrawal charges, at Casino’s\n          absolute discretion and without any obligation to state a reason or give prior notice."
+        ]
+      },
+      "refundPolicy": {
+        "title": "Refund policy",
+        "text": {
+          "p1": "If you would like to make a refund, please contact\n  {email}        ",
+          "p2": "To check the refund, you must provide these documents: <br/>\n          1) photos of both sides of your passport, driver's license, or any other form of ID,<br/>\n          2) proof of address (proof of address would need to be a photo of a paper document posted\n          to you in the last 90 days, it could be eg a government-issued document, a bank document,\n          a bill, or similar.<br/>\n          3) Alternatively, you can upload the original PDF of a utility bill), bank statement\n          (showing your name and account number if you haven’t uploaded it as a proof of address)",
+          "p3": "It may take up to 7 business days for a refund to be decided.",
+          "p4": "If a refund is decided upon, the amount of the refund shall be returned to the Player’s\n          account, the Player shall be informed and the procedure shall be finalised within 48 hours\n          after the decision has been made.",
+          "p5": "If you have funded your account with a Credit Card we reserve the right to pay all\n          withdrawal requests up to the total amount deposited as refunds against the purchases you\n          have made. If your withdrawals exceed the total amount deposited, any excess amount will\n          be paid to you via one of our alternative methods available.",
+          "p6": "Before a refund is processed all bonuses and winnings in your balance will be deducted\n          prior to calculating the amount to be refunded.",
+          "p7": "In case any Credit Card purchases are considered to carry an unacceptable risk for\n          security or legal reasons either by our Payment processors or by the Casino, we will\n          initiate refunds for all such transactions back to the Сredit Сard, and notify all the\n          appropriate authorities and parties."
+        }
+      },
+      "complaints": {
+        "title": "Complaints",
+        "text": [
+          "You are free to contact our customer service team according to the instructions found on\n          the Website to give us any complaints regarding our services.",
+          "Complaints are handled in the support department and escalated in the organisation of the\n          Casino in the case that support personnel did not solve the case immediately. You shall be\n          informed about the state of the complaint to a reasonable level.",
+          "If the dispute is not resolved on the casino management level, you can contact any independent body, gaming authority or the licensing regulator listed on the Website.",
+          "In the event of any dispute, you agree that the server logs and records shall act as the\n          final authority in determining the outcome of any claim. You agree that in the unlikely\n          event of a disagreement between the result that appears on your screen and the game\n          server, the result that was logged on the game server will prevail, and you acknowledge\n          and agree that our records will be the final authority in determining the terms and\n          circumstances of your participation in the relevant online gaming activity and the results\n          of this participation.",
+          "When we wish to contact you regarding such a dispute, we will do so by using any of the contact details provided in your account."
+        ]
+      },
+      "penaltiesAndTermination": {
+        "title": "Penalties and termination",
+        "text": [
+          "If you breach any provision of these Terms and Conditions or Ninecasino.com has a\n          reasonable ground to suspect that you have breached them, Casino reserves the right not to\n          open, suspend, close your account, withhold payment of your winnings and apply such funds\n          on account of any damages due by you.",
+          "You acknowledge that We shall be the final decision-maker of whether you have violated the rules, terms or conditions in a manner that results in your suspension or permanent barring from participation in our site."
+        ]
+      },
+      "netEnt": {
+        "title": "NetEnt T&C",
+        "text": [
+          "<p class=\"Text\">Absolute Restriction</p><p class=\"Text\">NetEnt will not permit NetEnt Casino Games to be supplied to any entity that operates in\n          any of the below jurisdictions (irrespective of whether or not NetEnt Casino Games are\n          being suppliedby the entity in that jurisdiction) without the appropriate\n          licenses.Belgium, Bulgaria, Colombia, Croatia, Czech Republic, Denmark, Estonia, France,\n          Italy, Latvia, Lithuania, Mexico, Portugal, Romania, Spain, Sweden, Switzerland, United\n          Kingdom, United States of America.</p>",
+          "<p class=\"Text\">\n          Blacklisted Territories\n        </p>\n        <p class=\"Text\">\n          All NetEnt Casino Games may not be offered in the following territories: Afghanistan,\n          Albania, Algeria, Angola, Australia, Bahamas, Botswana, Belgium, Bulgaria, Colombia,\n          Croatia, Czech Republic, Denmark, Estonia, Ecuador, Ethiopia, France, Ghana, Guyana, Hong\n          Kong, Italy, Iran, Iraq, Israel, Kuwait, Latvia, Lithuania, Mexico, Namibia, Nicaragua,\n          North Korea, Pakistan, Panama, Philippines, Portugal, Romania, Singapore, Spain, Sweden,\n          Switzerland, Sudan, Syria, Taiwan, Trinidad and Tobago, Tunisia, Uganda, United Kingdom,\n          United States of America, Yemen, Zimbabwe.\n        </p>",
+          "<p class=\"Text\">\n          Blacklisted Branded GamesTerritories\n        </p>\n        <p class=\"Text\">\n          The followed NetEnt Braded Games have some further restrictions in addition to the\n          Blacklisted Territories set out above:\n        </p>\n        <ul class=\"SupportPage-SubList\">\n          <li class=\"SupportPage-SubItem\">\n            <p class=\"Text\">\n              In addition to the jurisdictions set out in paragraph 2, Planet of the Apes Video Slot\n              must not be offered in the following territories: Azerbaijan, China, India, Malaysia,\n              Qatar, Russia, Thailand, Turkey, Ukraine.\n            </p>\n          </li>\n          <li class=\"SupportPage-SubItem\">\n            <p class=\"Text\">\n              In addition to the jurisdictions set out in paragraph 2, Vikings Video Slot must not\n              be offered in the following jurisdictions: Azerbaijan, Cambodia, Canada, China,\n              France, India, Indonesia, Laos, Malaysia, Myanmar, Papua New Guinea, Qatar, Russia,\n              South Korea, Thailand, Turkey, Ukraine, United States of America.\n            </p>\n          </li>\n          <li class=\"SupportPage-SubItem\">\n            <p class=\"Text\">\n              In addition to the jurisdictions set out in paragraph 2, Narcos Video Slot must not be\n              offered in the following territories: Indonesia, South Korea.\n            </p>\n          </li>\n          <li class=\"SupportPage-SubItem\">\n            <p class=\"Text\">\n              In addition to the jurisdictions set out in paragraph 2, Street Fighter Video Slot\n              must not be offered in the following territories: Anguilla, Antigua & Barbuda,\n              Argentina, Aruba, Barbados, Bahamas, Belize, Bermuda, Bolivia, Bonaire, Brazil,\n              British Virgin Islands, Canada, Cayman Islands, China, Chile, Clipperton Island,\n              Columbia, Costa Rica, Cuba, Curacao, Dominica, Dominican Republic, El Salvador,\n              Greenland, Grenada, Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica, Japan,\n              Martinique, Mexico, Montserrat, Navassa Island, Paraguay, Peru, Puerto Rico, Saba,\n              Saint Barthelemy, Saint Eustatius, Saint Kitts and Nevis, Saint Lucia, Saint Maarten,\n              Saint Martin, Saint Pierre and Miquelon, Saint Vincent and the Grenadines, South\n              Korea, Suriname, Turks and Caicos Islands, UnitedStates of America, Uruguay, US Virgin\n              Islands, Venezuela.\n            </p>\n          </li>\n          <li class=\"SupportPage-SubItem\">\n            <p class=\"Text\">\n              In addition to the jurisdictions set out in paragraph 2, Fashion TV Video Slot must\n              not be offered in the following territories: Cuba, Jordan, Turkey, Saudi Arabia.\n            </p>\n          </li>\n        </ul>",
+          "<p class=\"Text\">\n          Universal Monsters (Dracula, Creature from the Black Lagoon, Phantoms Curse and The\n          Invisible Man) may only be played in the following territories: Andorra, Austria, Armenia,\n          Azerbaijan, Belarus, Bosnia and Herzegovina, Cyprus, Finland, Georgia, Germany, Greece,\n          Hungary, Iceland, Ireland, Liechtenstein, Luxembourg, Malta, Moldova, Monaco, Montenegro,\n          Netherlands, North Macedonia, Norway, Poland, Russia, San Marino, Serbia, Slovakia,\n          Slovenia, Turkey and Ukraine.\n        </p>"
+        ]
+      }
+    },
+    "privacyPolicyPage": {
+      "title": "Privacy Policy",
+      "introduction": {
+        "title": "Introduction",
+        "text": [
+          "This Privacy Policy, which was last updated on 04/06/2020, sets out the data processing\n          practices carried out by Ninecasino. Here at Ninecasino we like making things simple and\n          easy for our customers and that includes being clear, transparent and open about what we\n          collect, and how and why we use the data we collect, so this page goes into great detail.",
+          "Our Policy explains how we use your personal data, whether you are just visiting, making a\n          deposit or playing one of our games. This policy includes information you may not already\n          know about your data privacy rights, circumstances in which we share and obtain\n          information about you and how we use it to personalize the marketing you receive, so\n          please take time to read all the sections carefully.",
+          "If we make any material updates to this Policy, we will inform you.",
+          "Please note that all our employees undertake regular training on Information Security and\n          are required to comply with confidentially obligations as well as internal policies and\n          procedures whenever they handle your information.",
+          "We hope you will find this page helpful, but should you have any concerns or questions,   regarding Data Protection, please feel free to contact our Data Protection Officer at dpo@ninecasino.com."
+        ]
+      },
+      "policyPromise": {
+        "title": "Our Privacy Policy Promise",
+        "text": [
+          "Our Privacy Policy Promise Ninecasino will always value and respect the privacy of each\n          and every one of its customers. Your privacy is important both to you and to us and we\n          make the following promise to you:",
+          "Ninecasino is committed to protecting your privacy. We believe in using your personal\n          information to make things simpler and better for you. We will always keep your personal\n          information safe. We’ll be clear and open with you about why we collect your personal\n          information and how we use it. Where you have choices or rights, we’ll explain them to you and respect your wishes."
+        ]
+      },
+      "useYourInformation": {
+        "title": "HOW WE USE YOUR INFORMATION",
+        "text": "We process the Personal Information we collect from you in order to deliver our services.\n          In particular, we will use your data for the following purposes:",
+        "list": {
+          "p1": "Processing your bets and transactions. This includes your use of credit card and\n              online payment systems;",
+          "p2": "Providing you with gaming and other ancillary services that you seek from our Website;",
+          "p3": "Providing registered players with information about our promotional offers, or\n              providing promotional information from our selected business partners, associates and\n              affiliates (only if players specifically consented to receiving such marketing\n              material);",
+          "p4": "Monitoring and investigating transactions for the purpose of preventing fraud, terms\n              abuse, money laundering and other illegal or irregular gaming activities;"
+        }
+      },
+      "personalInformation": {
+        "title": "OBTAINING PERSONAL INFORMATION",
+        "text": [
+          "We shall not collect any Personal Information about you without your knowledge. We may,\n          however, automatically collect certain data about you where you would have provided such\n          information through the use of our services and through your interactions with us.",
+          "We may also lawfully receive certain Personal Information from online vendors and service\n          providers, such as fraud prevention companies. In addition, we retain the right to engage\n          the services of third-party providers to render technical support, so as to process your\n          online transactions and source gaming content.",
+          "Please understand that we may be granted access to any information you may provide to such\n          vendors, service providers and third-party e-commerce services. Rest assured that we will\n          use and safeguard any Personal Information so obtained, as set out in this Policy. Any\n          information that you provide will only be disclosed to third parties outside the Company\n          in accordance with this Privacy Policy, and we shall take any necessary steps to ensure\n          that our agreements with third-party service providers always protect your private      information."
+        ]
+      }
+    },
+    "aboutUsPage": {
+
+    }
   }
 }
