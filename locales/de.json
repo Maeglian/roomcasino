@@ -673,7 +673,48 @@
       }
     },
     "aboutUsPage": {
-
+      "title": "ÜBER UNS",
+      "text": "Ninecasino ist ein Next Generation High-Tech Casino mit den neuesten Spielen, entwickelt von den besten Experten der Industrie. Wir spielen seit Jahren in verschiedenen Online-Casinos. Wir haben uns eine Menge Erfahrung im Glücksspiel angeeignet. Wir wissen, was ein echter Spieler braucht.",
+      "advantages": {
+        "text1": "Schnelle Auszahlungen",
+        "text2": "Lizensiertes Online-Casino",
+        "text3": {
+          "p1": "Mehr als",
+          "p2": "Spiele"
+        },
+        "text4": "Kundenbetreuung"
+      },
+      "ourSoftware": {
+        "title": "UNSERE SOFTWARE",
+        "text": "Das Casino verwendet Produkte von den besten Entwicklern von Casinosoftware und Spielen der Industrie. Amatic, BetSoft, Endorphina, Ezugi, Microgaming und SoftSwiss. Jeder Spieler kennt diese Namen aus eigener Erfahrung und vertraut ihnen. Wir vertrauen ihnen ebenfalls. Wir wollen nicht, dass unsere Spieler sich fühlen wie eine Laborratte in einem Experiment, also bieten wir eine verlässliche Lösung, die wir mit Vergnügen selbst benutzen würden."
+      },
+      "offers": {
+        "title": "WAS WIR ANBIETEN",
+        "bonuses": {
+          "title": "BONI",
+          "text": "Unser großzügiger „Begrüßungsbonus“ wird auch die kältesten und vorsichtigsten Spieler in Aufregung versetzen. Mach einfach eine Einzahlung und bekomme den doppelten Betrag gutgeschrieben. Und das ist noch nicht alles! Folge dem Abschnitt „Boni“ unserer Webseite."
+        },
+        "ourGames": {
+          "title": "UNSERE SPIELE",
+          "text": "Unsere Spieler liegen uns am Herzen, und wir möchten ihnen etwas bieten, das jeden Geschmack befriedigt. Die Spiele, die wir anbieten, wurden von den besten Entwicklern der Industrie angefertigt. Das bedeutet, dass sie ausgezeichnete Grafik haben, und großartig klingen. Darüber hinaus verwenden die Spiele die „provably fair“-Technologie."
+        },
+        "jackpots": {
+          "title": "JACKPOTS",
+          "text": "Jeder träumt von dem Moment, wenn das magische Wort JACKPOT auf dem Bildschirm erscheint und verkündet, dass jemand seinen Traum wahrgemacht hat. Mit unseren fortschrittlichen Automaten wächst diese Zahl mit jeder Sekunde und hält mit diesem Traum Schritt."
+        },
+        "liveGames": {
+          "title": "LIVE-SPIELE",
+          "text": "Tauche ein in die Atmosphäre eines echten Casinos, ohne dein Zimmer zu verlassen. Unsere Live-Spiele fühlen sich an, als wärst du an einem echten Spieltisch, während du in Wirklichkeit gemütlich zuhause sitzt."
+        },
+        "paymentAndSecurity": {
+          "title": "ZAHLUNGSSYSTEM AND SICHERHEIT",
+          "text": "Niemand wartet gern. Wir bieten unseren Spielern sofortige Ein- und Auszahlungen. Bevor du auch nur Blinzeln kannst, erreicht das Geld sein Ziel. Wähle eine Währung, mach eine Einzahlung, atme tief durch, und du bist bereit zum Spielen."
+        },
+        "support": {
+          "title": "24/7 KUNDENBETREUUNG",
+          "text": "Wenn du auf Probleme stößt, ist unser Team von Experten jederzeit bereit, dir zu helfen. Du kannst unsere Spezialisten über den Chat oder E-Mail rund um die Uhr kontaktieren und Unterstützung erhalten, wenn Probleme auftreten."
+        }
+      }
     }
   }
 }
