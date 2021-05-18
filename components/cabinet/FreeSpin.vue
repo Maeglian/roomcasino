@@ -30,17 +30,18 @@
       <button
         v-if="spin.status === 'notActive'"
         class="Btn Btn--dark FreeSpin-Btn"
-        @click="onDeleteFreeSpin(spin.id)"
+        @click="$modal.show(`confirmDeleteFreeSpin_${spin.id}`)"
       >
         Cancel
       </button>
       <div class="FreeSpin-Expires">
         <div class="FreeSpin-Label">
-          <template v-if="spin.status === 'notActive'">
+          <template v-if="spin.status === 'notActive' && spin.activationExpireAt">
             Until activate
           </template>
         </div>
         <Counter
+          v-if="(spin.status === 'notActive' && spin.activationExpireAt) || spin.expireAt"
           class="Bonus-Counter"
           :min-format="true"
           :enddate="
@@ -51,6 +52,27 @@
         />
       </div>
     </div>
+    <BaseModal
+      :name="`confirmDeleteFreeSpin_${spin.id}`"
+      :width="300"
+      :height="'auto'"
+      :ok-btn="false"
+    >
+      <div class="Modal-Text">Are you sure you want to delete free spin?</div>
+      <template #button>
+        <div class="CancelBonusPopup-Btns">
+          <button
+            class="Btn Btn--common CancelBonusPopup-Btn"
+            @click="$modal.hide(`confirmDeleteFreeSpin_${spin.id}`)"
+          >
+            {{ $t('common.no') }}
+          </button>
+          <button class="Btn Btn--color CancelBonusPopup-Btn" @click="onDeleteFreeSpin()">
+            {{ $t('common.yes') }}
+          </button>
+        </div>
+      </template>
+    </BaseModal>
   </div>
 </template>
 
@@ -95,12 +117,21 @@ export default {
     chooseGame(id) {
       this.gameIdToActivate = id;
     },
-    onDeleteFreeSpin(id) {
-      this.deleteFreeSpin(id).then(() => {
+    onDeleteFreeSpin() {
+      this.deleteFreeSpin(this.spin.id).then(() => {
         if (this.deleteBonusError)
-          this.pushNotificationAlert({ type: 'error', text: 'Error on cancelling free spin' });
-        else this.pushNotificationAlert({ type: 'success', text: 'Your free spin was cancelled' });
-        this.getFreeSpinList();
+          this.pushNotificationAlert({
+            type: 'error',
+            text: this.$t('notifications.cancelFreeSpinError'),
+          });
+        else {
+          this.pushNotificationAlert({
+            type: 'success',
+            text: this.$t('notifications.cancelFreeSpinSuccess'),
+          });
+          this.getFreeSpinList();
+        }
+        this.$modal.hide(`confirmDeleteFreeSpin_${this.spin.id}`);
       });
     },
     onActivateFreeSpin(spin) {
@@ -112,8 +143,15 @@ export default {
       const gameId = spin.gameList.length === 1 ? spin.gameList[0].id : this.gameIdToActivate;
       this.activateFreeSpin({ id: spin.id, gameId }).then(() => {
         if (this.activateFreeSpinError)
-          this.pushNotificationAlert({ type: 'error', text: 'Error on activating free spin' });
-        else this.pushNotificationAlert({ type: 'success', text: 'Your free spin was activated' });
+          this.pushNotificationAlert({
+            type: 'error',
+            text: this.$t('notifications.activateFreeSpinError'),
+          });
+        else
+          this.pushNotificationAlert({
+            type: 'success',
+            text: this.$t('notifications.activateFreeSpinSuccess'),
+          });
         this.getFreeSpinList();
       });
     },
