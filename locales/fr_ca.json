@@ -68,6 +68,14 @@
     "loseBonus": "Vous avez un bonus actif! Si vous l’annulez, vous perdrez {amount} le montant du bonus.",
     "isSure": "Êtes-vous sûr?"
   },
+  "notifications": {
+    "cancelBonusError": "Erreur lors de l’annulation du bonus",
+    "cancelBonusSuccess": "Votre bonus a été annulé",
+    "cancelFreeSpinError": "Erreur lors de l’annulation du spin gratuit",
+    "cancelFreeSpinSuccess": "Votre tour gratuit a été annulé",
+    "activateFreeSpinError": "Erreur lors de l'activation du spin gratuit",
+    "activateFreeSpinSuccess": "Votre tour gratuit a été activé"
+  },
   "auth" : {
     "loginTitle" : "Bienvenue à nouveau",
     "signUpTitle" : "Inscrives-vous et<span class=\"Colored\">&</span> recevez<br /> un bonus de bienvenue",

@@ -66,6 +66,14 @@
     "loseBonus": "Máš aktivní bonus! Pokud ho zrušíš, přijdeš o {amount} bonusové peníze.",
     "isSure": "Určitě?"
   },
+  "notifications": {
+    "cancelBonusError": "Chyba zrušení bonusu",
+    "cancelBonusSuccess": "Tvůj bonus byl zrušen",
+    "cancelFreeSpinError": "Chyba při zrušení bezplatného roztočení",
+    "cancelFreeSpinSuccess": "Vaše točení zdarma bylo zrušeno",
+    "activateFreeSpinError": "Chyba při aktivaci bezplatného odstřeďování",
+    "activateFreeSpinSuccess": "Vaše bezplatná rotace byla aktivována"
+  },
   "auth" : {
     "loginTitle" : "Vítej zpět",
     "signUpTitle" : "Zaregistrujte se<br /> <span class = \"Colored\"> & </span> a získejte <br /> uvítací bonus",

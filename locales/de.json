@@ -68,6 +68,14 @@
     "loseBonus": "Sie verfügen über einen gültigen Bonus! Wenn Sie ihn ablehnen, verlieren Sie {amount} Bonusgeld.",
     "isSure": "Sind Sie sicher?"
   },
+  "notifications": {
+    "cancelBonusError": "Fehler bei der Annullierung Ihres Bonus",
+    "cancelBonusSuccess": "Ihr Bonus wurde annulliert",
+    "cancelFreeSpinError": "Fehler bei der Annullierung Ihres Freispiel",
+    "cancelFreeSpinSuccess": "Ihr Freispiel wurde annulliert",
+    "activateFreeSpinError": "Fehler beim Aktivieren des Freispiels",
+    "activateFreeSpinSuccess": "Dein Freispiel wurde aktiviert"
+  },
   "auth" : {
     "loginTitle" : "Willkommen zurück  ",
     "signUpTitle" : "Melde dich an  <span class=\"Colored\">&</span> erhalte den <br /> Begrüssungbonus",
