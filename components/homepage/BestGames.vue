@@ -205,8 +205,11 @@ export default {
     },
   },
   mounted() {
-    this.tabActive =
-      this.tabs.find(game => this.$route.params.gameCategory === game.type) || this.tabs[0];
+    if (this.$route.params.providerName) this.tabActive = this.tabs.find(tab => tab.type === 'all');
+    else {
+      this.tabActive =
+        this.tabs.find(game => this.$route.params.gameCategory === game.type) || this.tabs[0];
+    }
     window.dga.connect(PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID);
     window.dga.onConnect = () => window.dga.available(PRAGMATIC_CASINOID);
     window.dga.onMessage = data => {
@@ -234,12 +237,10 @@ export default {
     onChooseProvider(e) {
       this.searched = '';
       this.providerActive = e;
-      this.tabActive = this.tabs.find(tab => tab.type === 'all');
       this.$router.push(
         this.localePath({
           name: 'index-providers-providerName',
           params: {
-            category: this.tabActive.type,
             providerName: e.name === this.gameProducerList[0].name ? 'all' : e.name,
           },
         }),
