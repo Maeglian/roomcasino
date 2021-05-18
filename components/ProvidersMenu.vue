@@ -45,7 +45,9 @@
         :key="gameProducerList[i].name"
         class="ProvidersMenu-Provider"
         :class="{
-          'ProvidersMenu-Provider--active': providerActive.name === gameProducerList[i].name,
+          'ProvidersMenu-Provider--active':
+            $route.params.providerName === gameProducerList[i].name ||
+            ($route.params.providerName === 'all' && gameProducerList[i].name === 'All providers'),
         }"
         @click="onChooseProvider(gameProducerList[i])"
       >
@@ -79,7 +81,7 @@
           :key="i"
           class="ProvidersMenu-AddProvider"
           :class="{
-            'ProvidersMenu-Provider--active': providerActive.name === item.name,
+            'ProvidersMenu-Provider--active': $route.params.providerName === item.name,
             'ProvidersMenu-Provider--noIcon': !item.iconUrl,
           }"
           @click="onChooseProvider(item)"
