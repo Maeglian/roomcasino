@@ -71,10 +71,10 @@
   "notifications": {
     "cancelBonusError": "Fehler bei der Annullierung Ihres Bonus",
     "cancelBonusSuccess": "Ihr Bonus wurde annulliert",
-    "cancelFreeSpinError": "Fehler bei der Annullierung Ihres Freispiel",
-    "cancelFreeSpinSuccess": "Ihr Freispiel wurde annulliert",
-    "activateFreeSpinError": "Fehler beim Aktivieren des Freispiels",
-    "activateFreeSpinSuccess": "Dein Freispiel wurde aktiviert"
+    "cancelFreeSpinError": "Das Freispiel konnte nicht abgebrochen werden",
+    "cancelFreeSpinSuccess": "Ihr Freispiel wurde abgebrochen",
+    "activateFreeSpinError": "Das Freispiel konnte nicht gestartet werden",
+    "activateFreeSpinSuccess": "Ihr Freispiel wurde gestartet"
   },
   "auth" : {
     "loginTitle" : "Willkommen zurück  ",

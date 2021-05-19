@@ -71,9 +71,9 @@
   "notifications": {
     "cancelBonusError": "Erreur lors de l’annulation du bonus",
     "cancelBonusSuccess": "Votre bonus a été annulé",
-    "cancelFreeSpinError": "Erreur lors de l’annulation du spin gratuit",
+    "cancelFreeSpinError": "Erreur lors de l’annulation du tour gratuit",
     "cancelFreeSpinSuccess": "Votre tour gratuit a été annulé",
-    "activateFreeSpinError": "Erreur lors de l'activation du spin gratuit",
+    "activateFreeSpinError": "Erreur lors de l’activation du tour gratuit",
     "activateFreeSpinSuccess": "Votre tour gratuit a été activé"
   },
   "auth" : {
