@@ -1021,6 +1021,70 @@
           "Bonuses/Free Spins Winnings with zero wagering are subject to Fair Play. Any player that\n          takes advantage of such offers, and attempts to withdraw without adhering to Fair Play,\n          will have all their winnings confiscated and be restricted from taking any future offers."
         ]
       }
+    },
+    "responsibleGaming": {
+      "title": "responsible gaming",
+      "section1": {
+        "title": "HOW WE COMMIT TO RESPONSIBLE GAMING?",
+        "text": [
+          "Gambling at an online casino should always be aimed at entertainment. However, there is a\n        certain percentage of people who lose control over themselves while gambling. Before\n        starting to play, it is important to realise that gambling shall never be viewed as a source\n        of income or means of recovery from debts. It is useful to keep track of the time and the\n        amount of money spent at an online casino daily.",
+          "If you think that you start spending more money than you can afford, or in case gaming\n        starts interfering with your normal daily routines, we strongly advise to consider several\n        measures that can help, such as setting Personal Limits on your gaming activities, opting\n        for Self-Exclusion, and seeking help and support from trusted independent bodies.",
+          "You can take the gambling addiction\n        <a\n          href=\"https://www.begambleaware.org/gambling-problems/do-i-have-a-gambling-problem\"\n          class=\"SupportPage-Link\"\n          >quiz</a\n        >\n        to determine whether you are exhibiting the signs of an addiction to gambling."
+        ]
+      },
+      "section2": {
+        "title": "HOW CAN I LIMIT MY SPEND OR LOSSES?",
+        "text1": "<p class=\"Text\">\n        To assist you in gambling responsibly we offer the Personal Limits feature. You can set\n        limits on the amount you deposit, lose, wager, spend in one game, or on your account\n        activity on the whole. This functionality can be accessed within your account in the\n        “Personal Limits” section\n        <NuxtLink v-if=\"isLoggedIn\" :to=\"localePath('/cabinet/limits')\" class=\"SupportPage-Link\"\n          >here.</NuxtLink\n        >\n        <button v-else class=\"SupportPage-Link\" @click=\"showRegistrationDialog('registration')\">\n          here.\n        </button>\n      </p>",
+        "text2": [
+          "Limits can be amended at any time. A decrease in the limit will take effect immediately,\n        however an increase may only occur after email confirmation and only after the previous\n        limit of the same type expires, in order to avoid rash decisions. If you require further\n        information or assistance regarding Personal Limits, please contact our support team at\n        contact@ninecasino.com.",
+          "Deposit Limit. A limit on your deposits for a day, a week, or a month.",
+          "Loss Limit. A limit on your losses in the casino for a day, a week, or a month. Please note\n        the loss is based on the initial deposit and not winnings attributed to the deposited\n        amount. If for example you deposit €50, put a Loss Limit of €10 and then go on to win\n        €1,000, you can still lose more than €10 of the €1,000 balance as it is based on the initial\n        deposit instead of the winnings.",
+          "Wager Limit. A limit on the wagered amount for a day, a week, or a month.",
+          "Session Limit. A limit on the amount of time in minutes spent playing a game."
+        ]
+      },
+      "section3": {
+        "title": "NEED A BREATHER?",
+        "text": [
+          "Cooling-Off Limit. You can set a Cooling-Off Period for 1 week, 1 month, 3 months, or 6\n        months. While the limit is active you cannot deposit to the Casino and you will be excluded\n        from all promotional offers, although you may withdraw the remaining funds during this\n        period. Cooling-Off period is applied to your account immediately. Upon its expiring your\n        account will automatically be re-activated.",
+          "Self-Exclusion Limit. You can set a Self-Exclusion Limit for 6 months, 9 months, or 1 year.\n        Upon doing so your Player Account will immediately be disabled and you will be excluded from\n        all promotional offers for the set period. You will not be able to deposit or withdraw funds\n        when the limit is active. Upon its expiring your account will not be automatically\n        re-activated."
+        ]
+      },
+      "section4": {
+        "title": "WHAT IS SELF-EXCLUSION?",
+        "text": [
+          "Setting Self-exclusion lets us know that we need to take all measures to block your access\n        to your account and make sure that you receive no promotional materials. You may also\n        contact our support team at contact@ninecasino.com and inform us about your decision to stop\n        gambling at the Website for a certain period of time or forever.",
+          "Please note that if you are self excluded from the casino for indefinite period of time, the\n        funds remaining on balance will be paid according to the casino limits. If you are self\n        excluded for a definite period of time, the funds remaining on balance will be paid\n        according to the casino limits only when a period of self exclusion expires."
+        ]
+      },
+      "section5": {
+        "title": "LET’S SEE SOME ID?",
+        "text": [
+          "The Casino only accepts players who are at least 18 years old and uses all available methods\n        to stop any attempts of minors to register and play at our Website. The Casino reserves the\n        right to ask for proof of identity and in case the player has not reached the legal age to\n        play, access to the Website will be denied immediately.",
+          "However, we realise that due to a wide availability and nature of the Internet people under\n        the legal age still have a chance to register and play at an online casino. We therefore\n        strongly encourage parents to cooperate in protecting their children from free access to\n        gaming websites. There is special software that can help in this matter. Please visit the\n        following websites for more information:"
+        ],
+        "list": {
+          "text1": "CyberPatrol",
+          "text2": "GamBlock®",
+          "text3": "Solid Oak Software",
+          "text4": "Net Nanny"
+        }
+      },
+      "section6": {
+        "title": "WHAT IS REALITY CHECK?",
+        "text": [
+          "Getting caught up is easy when you are having fun, therefore we will send you an hourly\n        notification in-game to remind you of how much you have spent at the Casino. Regardless of\n        how many games you are playing at the same time, the message will let you know where you are\n        at. This is meant to provide some time to reflect on your bets and perhaps consider pausing\n        play for a while."
+        ]
+      },
+      "section7": {
+        "title": "SEEKING OUTSIDE HELP?",
+        "text": "You may contact any of the following organizations for consultation and support:",
+        "list": {
+          "text1": "Gamblers Anonymous",
+          "text2": "GamCare",
+          "text3": "Gambling Therapy"
+        }
+      }
     }
   }
 }

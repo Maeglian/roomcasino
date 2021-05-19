@@ -1017,6 +1017,70 @@
           "Boni/Freispielgewinne mit Nullwette unterliegen dem Fair Play. Alle Gewinne von Spielern, die Vorteil aus solchen Angeboten ziehen, und Abhebungen tätigen, ohne sich an Fair Play zu halten, werden beschlagnahmt, und die Spieler werden von zukünftigen Angeboten ausgeschlossen."
         ]
       }
+    },
+    "responsibleGaming": {
+      "title": "VERANTWORTUNGSBEWUSST SPIELEN",
+      "section1": {
+        "title": "WIE TRAGEN WIR ZU VERANTWORTUNGSBEWUSSTEM GLÜCKSSPIEL BEI?",
+        "text": [
+          "Glücksspiel in einem Casino sollte in erster Linie der Unterhaltung dienen. Es gibt jedoch einen gewissen Prozentsatz von Leuten, die die Kontrolle über sich verlieren, wenn sie Glücksspiel betreiben. Vor dem Spielantritt ist es wichtig, sich klarzumachen, dass Glücksspiel niemals als eine Einkommensquelle oder als Mittel zur Schuldentilgung betrachtet werden sollte. Man sollte immer die im Casino verbrachte Zeit und das ausgegebene Geld im Auge behalten.",
+          "Wenn du glaubst, dass du mehr Geld ausgibst, als du dir leisten kannst, oder wenn das Spiel deine tägliche Routine beeinträchtigt, raten wir dir eindringlich, verschiedene hilfreiche Maßnahmen zu ergreifen, zum Beispiel die Einrichtung Persönlicher Limits, Selbstausschluss und die Suche nach Hilfe und Unterstützung von anerkannten unabhängigen Gemeinschaften.",
+          "Um sich selbst auf Anzeichen einer Spielsucht zu überprüfen, können Sie unseren Spielsucht-\n        <a\n          href=\"https://www.begambleaware.org/gambling-problems/do-i-have-a-gambling-problem\"\n          class=\"SupportPage-Link\"\n          >Fragebogen</a\n        >\n beantworten."
+        ]
+      },
+      "section2": {
+        "title": "WIE KANN ICH MEINE AUSGABEN ODER VERLUSTE EINSCHRÄNKEN?",
+        "text1": "Um dich beim verantwortungsbewussten Spiel zu unterstützen, bieten wir das Feature Persönliche Limits. Du kannst Limits für den Einzahlungsbetrag, Verluste, Wetten, Ausgaben in einem Spiel, oder auf deine gesamte Kontenaktivität einrichten. Auf diese Funktionalität kann im Abschnitt Persönliche Limits deines Kontos zugegriffen werden\n        <NuxtLink v-if=\"isLoggedIn\" :to=\"localePath('/cabinet/limits')\" class=\"SupportPage-Link\"\n          >hier.</NuxtLink\n        >\n        <button v-else class=\"SupportPage-Link\" @click=\"showRegistrationDialog('registration')\">\n          hier.\n        </button>",
+        "text2": [
+          "Limits können jederzeit geändert werden. Senkungen eines Limits treten sofort in Effekt; eine Erhöhung wird jedoch erst nach Bestätigung durch E-Mail und erst nach Ablauf des vorherigen Limits des gleichen Typs aktiv, um vorschnelle Entscheidungen zu vermeiden. Falls du mehr Informationen oder Unterstützung mit den Persönlichen Limits benötigst, kontaktiere bitte unsere Kundenbetreuung unter contact@ninecasino.com.",
+          "Einzahlungslimit. Ein Limit auf deine Einzahlungen für einen Tag, eine Woche oder einen Monat.",
+          "Verlustlimit. Ein Limit auf deine Verluste im Casino für einen Tag, eine Woche oder einen Monat. Bitte berücksichtige, dass Verluste auf der anfänglichen Einzahlung basieren und nicht auf Gewinnen, die aus dem eingezahlten Betrag resultieren. Wenn du zum Beispiel €50 einzahlst, ein Verlustlimit von €10 einrichtest und dann €1.000 gewinnst, kannst du immer noch mehr als €10 des Kontostands von €1.000 verlieren, weil das Limit auf der anfänglichen Einzahlung basiert statt auf den Gewinnen.",
+          "Wettlimit. Ein Limit auf den Wetteinsatz für einen Tag, eine Woche oder einen Monat.",
+          "Spielzeitbegrenzung. Ein Limit auf die Zeitdauer in Minuten, die in einem Spiel verbracht wird."
+        ]
+      },
+      "section3": {
+        "title": "AUSZEIT NÖTIG?",
+        "text": [
+          "Abkühlungslimit. Du kannst eine Abkühlperiode für 1 Woche, 1 Monat, 3 Monate oder 6 Monate einstellen. Solange das Limit aktiv ist, kannst du nicht ins Casino einzahlen und wirst von allen Werbeaktionen ausgeschlossen; du darfst allerdings weiterhin verbleibende Kontostände abheben. Die Abkühlperiode wird automatisch auf dein Konto angewendet. Sobald sie abläuft, wird dein Konto automatisch freigegeben.",
+          "Selbstsperrung. Du kannst ein Selbstsperrung für 6 Monate, 9 Monate oder 1 Jahr einstellen. Das führt zu einer sofortigen Aussetzung deines Spielerkontos und zu Ihrem Ausschluss von allen Aktionen in dem besagten Zeitraum. Während dieser Sperrung kannst du weder Einzahlungen noch Abhebungen vornehmen. Nach Ablauf der Sperrung wird dein Konto nicht automatisch wieder freigegeben."
+        ]
+      },
+      "section4": {
+        "title": "WAS BEDEUTET SELBSTSPERRUNG?",
+        "text": [
+          "Das Festlegen einer Selbstsperrung veranlasst uns zur Ergreifung aller Maßnahmen, um dir den Zugang zu deinem Konto zu verwehren und sicherzustellen, dass du kein Werbematerial erhältst. Darüber hinaus kannst du dich unter contact@ninecasino.com an unsere Kundenbetreuung wenden und uns wissen lassen, dass du dich entschieden hast, das Spielen auf der Webseite für einen bestimmten Zeitraum oder dauerhaft einzustellen.",
+          "Beachte bitte, dass die auf deinem Konto verbliebenen Mittel im Falle einer unbefristeten Selbstsperrung in den von dem Casino festgelegten Grenzen ausbezahlt werden. Bei einer befristeten Selbstsperrung werden die auf dem Konto verbliebenen Mittel erst bei Ablauf der Sperrfrist in den von dem Casino festgelegten Grenzen ausgezahlt."
+        ]
+      },
+      "section5": {
+        "title": "IDENTITÄTSPRÜFUNG?",
+        "text": [
+          "Das Casino akzeptiert nur Spieler, die mindestens 18 Jahre alt sind, und wendet alle gebotenen Mittel an, um Versuche von Minderjährigen abzuwehren, sich auf unserer Webseite zu registrieren und zu spielen. Das Casino behält sich vor, die Vorlage eines Ausweises zu verlangen und den Zugang zu der Webseite unverzüglich zu sperren, wenn die betreffende Person das zur Teilnahme an Glücksspielen berechtigende gesetzliche Mindestalter noch nicht erreicht hat.",
+          "Wir sind uns jedoch der Tatsache bewusst, dass aufgrund der weitreichenden Zugänglichkeit des Internets und seiner Eigenschaften Minderjährige immer noch Möglichkeiten finden können, sich in einem Online-Casino anzumelden und dort zu spielen. Deshalb bitte wir alle Eltern nachdrücklich um deren Mithilfe beim Schutz ihrer Kinder vor dem freien Zugang zu Webseiten mit Glücksspielangeboten. Es gibt zu diesem Zweck eigens entwickelte Software. Mehr dazu erfährst du auf folgenden Webseiten:"
+        ],
+        "list": {
+          "text1": "CyberPatrol",
+          "text2": "GamBlock®",
+          "text3": "Solid Oak Software",
+          "text4": "Net Nanny"
+        }
+      },
+      "section6": {
+        "title": "WAS IST EIN REALITY CHECK?",
+        "text": [
+          "Wenn man Spaß hat, verliert man leicht das Zeitgefühl, weshalb wir dir stündlich Benachrichtigungen im Spiel senden, um dich daran zu erinnern, wieviel Zeit du im Casino verbracht hast. Ungeachtet der Anzahl von Spielen, die du gleichzeitig spielst, zeigt dir die Nachricht in jedem von ihnen an, wie du gerade stehst. Das soll dir Gelegenheit geben, über deine Einsätze nachzudenken und gegebenenfalls eine Pause einzulegen."
+        ]
+      },
+      "section7": {
+        "title": "EXTERNE HILFEANGEBOTE?",
+        "text": "Wende dich bei Fragen und Sorgen bitte an folgende Organisationen und/oder Einrichtungen:",
+        "list": {
+          "text1": "Gamblers Anonymous",
+          "text2": "GamCare",
+          "text3": "Gambling Therapy"
+        }
+      }
     }
   }
 }
