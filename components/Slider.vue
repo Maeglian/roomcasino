@@ -6,7 +6,6 @@
       </div>
     </div>
     <ul v-if="dots" class="v_slider__dots">
-
       <li v-for="n in numDot" @click="setDot(n)" :class="{'active': n == numDotActive}">
         <span></span>
       </li>
@@ -444,6 +443,7 @@ export default {
 
 .v_slider__track {
   position: relative;
+  display: flex;
   -ms-touch-action: pan-Y;
   -moz-backface-visibility: hidden;
 }
@@ -455,7 +455,6 @@ export default {
 }
 
 .v_slider__item {
-  float: left;
   min-height: 1px;
   -webkit-backface-visibility: hidden;
   -webkit-touch-callout: none;

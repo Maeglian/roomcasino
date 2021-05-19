@@ -68,6 +68,14 @@
     "loseBonus": "You’ve got an active bonus! If you cancel it, you will lose {amount} bonus money.",
     "isSure": "Are you sure?"
   },
+  "notifications": {
+    "cancelBonusError": "Error on cancelling bonus",
+    "cancelBonusSuccess": "Your free spin was cancelled",
+    "cancelFreeSpinError": "Error on cancelling free spin",
+    "cancelFreeSpinSuccess": "Your free spin was cancelled",
+    "activateFreeSpinError": "Error on activating free spin",
+    "activateFreeSpinSuccess": "Your free spin was activated"
+  },
   "auth": {
     "loginTitle": "Welcome back",
     "signUpTitle": "Sign up <span class=\"Colored\">&</span> get<br />welcome bonus",

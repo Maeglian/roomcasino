@@ -26,7 +26,12 @@
               >&nbsp;{{ bonus.wagerAmount }} {{ activeCurrency }}</span
             >
             &nbsp;{{ $t('cabinet.bonuses.table.wagered') }}
-            <svg class="Bonus-Icon" width="14" height="14" @click="showBonusDetails(bonus)">
+            <svg
+              class="Bonus-Icon"
+              width="14"
+              height="14"
+              @click="showBonusDetails(bonus, 'bonus')"
+            >
               <use xlink:href="@/assets/img/icons.svg#info"></use>
             </svg>
           </div>
@@ -46,6 +51,15 @@
           </button>
         </div>
       </div>
+    </div>
+    <div v-if="freeSpinList.length" class="BonusesPage-BonusList">
+      <FreeSpin
+        v-for="spin in freeSpinList"
+        :key="spin.id"
+        :spin="spin"
+        class="Bonus FreeSpin
+      BonusesPage-FreeSpin"
+      />
     </div>
     <Loader v-if="availableBonusListIsLoading" />
     <div v-if="availableBonusList.length" class="Table CabinetPage-Table BonusesPage-Table">
@@ -81,6 +95,10 @@
             <template v-if="bonus.maxBonusAmount">
               {{ `, max ${bonus.maxBonusAmount} ${bonus.currency}` }}
             </template>
+            <br />
+            <template v-if="findFreeSpin(bonus.depositNum)">
+              + {{ findFreeSpin(bonus.depositNum) }} free spins
+            </template>
           </div>
         </div>
         <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">
@@ -94,6 +112,54 @@
         </div>
       </div>
     </div>
+    <!--    <div v-if="availableFreeSpinList.length" class="Table CabinetPage-Table BonusesPage-Table">-->
+    <!--      <div class="Table-Row CabinetPage-Row">-->
+    <!--        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">-->
+    <!--          Bonus-->
+    <!--        </div>-->
+    <!--        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">-->
+    <!--          Min deposit sum-->
+    <!--        </div>-->
+    <!--        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">-->
+    <!--          Max prize-->
+    <!--        </div>-->
+    <!--        <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th"></div>-->
+    <!--      </div>-->
+    <!--      <div-->
+    <!--        v-for="(bonus, i) in availableFreeSpinList"-->
+    <!--        :key="`freeSpin_${i}`"-->
+    <!--        class="Table-Row CabinetPage-Row"-->
+    <!--      >-->
+    <!--        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Bonus">-->
+    <!--          {{ bonus.name }}-->
+    <!--        </div>-->
+    <!--        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Min">-->
+    <!--          {{ bonus.minDepositAmount }} {{ bonus.currency }}-->
+    <!--        </div>-->
+    <!--        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Max">-->
+    <!--          <div class="BonusesPage-CellWrapper">-->
+    <!--            <svg class="BonusesPage-Icon" width="16" height="16">-->
+    <!--              <use xlink:href="@/assets/img/icons.svg#promotions"></use>-->
+    <!--            </svg>-->
+    <!--            {{ `${bonus.depositPercent}% of deposit` }}-->
+    <!--            <template v-if="bonus.maxBonusAmount">-->
+    <!--              {{ `, max ${bonus.maxBonusAmount} ${bonus.currency}` }}-->
+    <!--            </template>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--        <div class="Table-Cell CabinetPage-Cell BonusesPage-Cell BonusesPage-Deposit">-->
+    <!--          <button-->
+    <!--            class="Btn Btn&#45;&#45;common Btn&#45;&#45;color CabinetPage-Btn"-->
+    <!--            :disabled="!bonus.available"-->
+    <!--            @click="$modal.show('cashier')"-->
+    <!--          >-->
+    <!--            Deposit-->
+    <!--            {{ $t('buttons.deposit') }}-->
+    <!--          </button>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </div>-->
+
     <!--    <div class="CabinetPage-Subtitle BonusesPage-Subtitle">-->
     <!--      Receive a bonus-->
     <!--    </div>-->
@@ -107,46 +173,87 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from 'vuex';
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import Counter from '@/components/Counter';
 import BonusDetails from '@/components/cabinet/BonusDetails';
 import Loader from '@/components/Loader';
 import CancelBonusPopup from '@/components/CancelBonusPopup';
+import FreeSpin from '@/components/cabinet/FreeSpin';
 
 export default {
   name: 'BonusesPage',
   components: {
     Counter,
     Loader,
+    FreeSpin,
   },
   computed: {
     ...mapState([
       'bonusListIsLoading',
       'historyListIsLoading',
+      'freeSpinListIsLoading',
+      'bonusListIsLoading',
       'bonusList',
-      'availableBonusListIsLoading',
+      'freeSpinList',
       'availableBonusList',
-      'deleteBonusError',
+      'availableFreeSpinList',
+      'availableBonusListIsLoading',
+      'availableFreeSpinListIsLoading',
     ]),
     ...mapGetters(['activeCurrency']),
   },
   created() {
     this.getBonusList();
+    this.getFreeSpinList();
     this.getBonusHistoryList();
     this.getAvailableBonusList();
+    this.getAvailableFreeSpinList();
   },
   methods: {
-    ...mapActions(['getBonusList', 'getAvailableBonusList', 'getBonusHistoryList']),
+    ...mapMutations(['pushNotificationAlert']),
+    ...mapActions([
+      'getBonusList',
+      'getAvailableBonusList',
+      'deleteBonus',
+      'getProfile',
+      'getBonusHistoryList',
+      'getFreeSpinList',
+      'getAvailableFreeSpinList',
+    ]),
     onClickCancelBonus(bonus) {
       this.$modal.show(
         CancelBonusPopup,
         { bonus },
-        { width: 418, height: 'auto', adaptive: true, scrollable: true },
+        {
+          width: 418,
+          height: 'auto',
+          adaptive: true,
+          scrollable: true,
+        },
         {},
       );
     },
-    showBonusDetails(bonus) {
-      this.$modal.show(BonusDetails, { bonus }, { width: 400, height: 'auto', adaptive: true });
+    findFreeSpin(depositNum) {
+      const freeSpin = this.availableFreeSpinList.find(spin => spin.depositNum === depositNum);
+      if (freeSpin) return freeSpin.freeSpinCount;
+      return null;
+    },
+    onDeleteBonus(id) {
+      this.deleteBonus(id).then(() => {
+        if (this.deleteBonusError)
+          this.pushNotificationAlert({ type: 'error', text: 'Error on cancelling bonus' });
+        else this.pushNotificationAlert({ type: 'success', text: 'Your bonus was cancelled' });
+        this.getBonusList();
+        this.getBonusHistoryList();
+        this.getProfile();
+      });
+    },
+    showBonusDetails(bonus, type) {
+      this.$modal.show(
+        BonusDetails,
+        { bonus, type },
+        { width: 400, height: 'auto', adaptive: true },
+      );
     },
   },
 };
@@ -324,6 +431,14 @@ export default {
       width: 122px;
     }
   }
+
+  &-FreeSpin {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .Bonus {
@@ -497,6 +612,77 @@ export default {
 
     @media (min-width: $screen-xl) {
       width: 166px;
+    }
+  }
+}
+
+.FreeSpin {
+  flex-wrap: wrap;
+  max-width: 490px;
+  padding: 12px 16px;
+  background: var(--color-bg);
+
+  &-Section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 16px;
+
+    &--left {
+      @media (min-width: $screen-m) {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &-Amount {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    text-transform: capitalize;
+
+    @media (min-width: $screen-m) {
+      font-size: 12px;
+    }
+  }
+
+  &-Btn {
+    width: 66px;
+    height: 26px;
+    font-size: 8px;
+    text-transform: uppercase;
+  }
+
+  &-Label {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--color-text-ghost);
+    text-transform: capitalize;
+  }
+
+  &-Expires {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &-Status {
+    position: relative;
+    padding-left: 11px;
+    font-size: 10px;
+    font-weight: 700;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: #0ca649;
+      border-radius: 50%;
     }
   }
 }

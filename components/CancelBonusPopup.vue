@@ -58,10 +58,16 @@ export default {
     onDeleteBonus(id) {
       this.deleteBonus(id).then(() => {
         if (this.deleteBonusError)
-          this.pushNotificationAlert({ type: 'error', text: 'Error on cancelling bonus' });
+          this.pushNotificationAlert({
+            type: 'error',
+            text: this.$t('notifications.cancelBonusError'),
+          });
         else {
           this.$emit('close');
-          this.pushNotificationAlert({ type: 'success', text: 'Your bonus was cancelled' });
+          this.pushNotificationAlert({
+            type: 'success',
+            text: this.$t('notifications.cancelBonusSuccess'),
+          });
           this.getBonusList();
           this.getBonusHistoryList();
           this.getProfile();
