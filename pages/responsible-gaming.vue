@@ -5,16 +5,37 @@
     </h1>
     <div class="SupportPage-Text">
       <h4 class="Title">{{ $t('supportPages.responsibleGaming.section1.title') }}</h4>
-      <p
-        v-for="(text, index) in $t('supportPages.responsibleGaming.section1.text')"
-        :key="index"
-        class="Text"
-        v-html="text"
-      ></p>
+      <p class="Text">{{ $t('supportPages.responsibleGaming.section1.text.p1') }}</p>
+      <p class="Text">{{ $t('supportPages.responsibleGaming.section1.text.p2') }}</p>
+      <p class="Text">
+        <i18n path="supportPages.responsibleGaming.section1.text.p3">
+          <template #quiz>
+            <a
+              href="https://www.begambleaware.org/gambling-problems/do-i-have-a-gambling-problem"
+              class="SupportPage-Link"
+            >
+              {{ $t('supportPages.responsibleGaming.section1.text.quiz') }}
+            </a>
+          </template>
+        </i18n>
+      </p>
     </div>
     <div class="SupportPage-Text">
       <h4 class="Title">{{ $t('supportPages.responsibleGaming.section2.title') }}</h4>
-      <p class="Text" v-html="$t('supportPages.responsibleGaming.section2.text1')"></p>
+      <p class="Text">
+        <i18n path="supportPages.responsibleGaming.section2.text1">
+          <template v-if="isLoggedIn" #toLimits>
+            <NuxtLink :to="localePath('/cabinet/limits')" class="SupportPage-Link"
+              >{{ $t('supportPages.responsibleGaming.section2.here') }}.</NuxtLink
+            >
+          </template>
+          <template v-else #buttonLog>
+            <button class="SupportPage-Link" @click="showRegistrationDialog('registration')">
+              {{ $t('supportPages.responsibleGaming.section2.here') }}.
+            </button>
+          </template>
+        </i18n>
+      </p>
       <p
         v-for="(text, index) in $t('supportPages.responsibleGaming.section2.text2')"
         :key="index"

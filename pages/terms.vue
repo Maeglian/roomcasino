@@ -131,22 +131,17 @@
 
     <h4 class="Title">{{ $t('supportPages.termsPage.refundPolicy.title') }}</h4>
     <ul class="SupportPage-List">
-      <!--      <li v-for="(info, index) in $t('supportPages.termsPage.refundPolicy.text')"-->
-      <!--          :key="index" class="SupportPage-Item">-->
-      <!--        <p class="Text" v-html="info"></p>-->
-      <!--      </li>-->
-      <!--      <li class="SupportPage-Item">
-&lt;!&ndash;        <p class="Text">{{ $t('supportPages.termsPage.refundPolicy.text.p1') }}</p>&ndash;&gt;
-        <i18n path="upportPages.termsPage.refundPolicy.text.p1" tag="p">
-          <template #email>
-            <a class="AuthDialog-RegistrationLink" href="mailto:support@ninecasino.com">{{
-                $t('pages.terms')
-              }}</a>
-          </template>
-        </i18n>
-      </li>-->
       <li class="SupportPage-Item">
-        <p class="Text">{{ $t('supportPages.termsPage.refundPolicy.text.p2') }}</p>
+        <p class="Text">
+          <i18n path="supportPages.termsPage.refundPolicy.text.p1">
+            <template #email>
+              <a class="Link" href="mailto:support@ninecasino.com">support@ninecasino.com</a>
+            </template>
+          </i18n>
+        </p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text" v-html="$t('supportPages.termsPage.refundPolicy.text.p2')"></p>
       </li>
       <li class="SupportPage-Item">
         <p class="Text">{{ $t('supportPages.termsPage.refundPolicy.text.p3') }}</p>
@@ -189,12 +184,36 @@
 
     <h4 class="Title">{{ $t('supportPages.termsPage.netEnt.title') }}</h4>
     <ul class="SupportPage-List">
-      <li
-        v-for="(info, index) in $t('supportPages.termsPage.netEnt.text')"
-        :key="index"
-        class="SupportPage-Item"
-        v-html="info"
-      ></li>
+      <li class="SupportPage-Item">
+        <p class="Text">{{ $t('supportPages.termsPage.netEnt.restriction.title') }}</p>
+        <p class="Text">{{ $t('supportPages.termsPage.netEnt.restriction.text') }}</p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">{{ $t('supportPages.termsPage.netEnt.blacklistedTerritories.title') }}</p>
+        <p class="Text">{{ $t('supportPages.termsPage.netEnt.blacklistedTerritories.text') }}</p>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">
+          {{ $t('supportPages.termsPage.netEnt.blacklistedBrandedGamesTerritories.title') }}
+        </p>
+        <p class="Text">
+          {{ $t('supportPages.termsPage.netEnt.blacklistedBrandedGamesTerritories.text') }}
+        </p>
+        <ul class="SupportPage-SubList">
+          <li
+            v-for="(text, index) in $t(
+              'supportPages.termsPage.netEnt.blacklistedBrandedGamesTerritories.list',
+            )"
+            :key="index"
+            class="SupportPage-SubItem"
+          >
+            <p class="Text" v-html="text"></p>
+          </li>
+        </ul>
+      </li>
+      <li class="SupportPage-Item">
+        <p class="Text">{{ $t('supportPages.termsPage.netEnt.text') }}</p>
+      </li>
     </ul>
   </section>
 </template>

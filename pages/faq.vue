@@ -25,53 +25,9 @@
           v-for="(item, i) in $t(`supportPages.faqPage.items.${[activeItem]}.items`)"
           :key="i"
           :title="item.title"
-          :content="
-            $t(`supportPages.faqPage.items.${[activeItem]}.items.${i}.answer`, {
-              list: makeList(item),
-            })
-          "
+          :content="$t(`supportPages.faqPage.items.${[activeItem]}.items.${i}.answer`)"
         />
       </div>
-      <!--      <div v-if="!tabsSectionIsActive || width >= 768" class="FaqPage-Answers">
-        <button class="FaqPage-Back" @click="tabsSectionIsActive">Back</button>
-        <h2 class="Title Title&#45;&#45;type-h1 FaqPage-SectionTitle">
-          &lt;!&ndash;          {{ items[activeItem].title }}&ndash;&gt;
-          {{ $t(`supportPages.faqPage.items.${[activeItem]}.title`) }}
-        </h2>
-        <Accordion
-          v-for="(item, name) in $t(`supportPages.faqPage.items.${[activeItem]}.items`)"
-          :key="name"
-          :title="item.title"
-          :content="item.answer"
-        />
-      </div>
-      <div v-if="!tabsSectionIsActive || width >= 768" class="FaqPage-Answers">
-        <button class="FaqPage-Back" @click="tabsSectionIsActive">Back</button>
-        <h2 class="Title Title&#45;&#45;type-h1 FaqPage-SectionTitle">
-          &lt;!&ndash;          {{ items[activeItem].title }}&ndash;&gt;
-          {{ $t(`supportPages.faqPage.items.${[activeItem]}.title`) }}
-        </h2>
-        <Accordion
-          v-for="(item, name) in $t(`supportPages.faqPage.items.${[activeItem]}.items`)"
-          :key="name"
-          :title="item.title"
-          :content="item.answer"
-          :list="item.list"
-        />
-      </div>
-      <div v-if="!tabsSectionIsActive || width >= 768" class="FaqPage-Answers">
-        <button class="FaqPage-Back" @click="tabsSectionIsActive">Back</button>
-        <h2 class="Title Title&#45;&#45;type-h1 FaqPage-SectionTitle">
-          &lt;!&ndash;          {{ items[activeItem].title }}&ndash;&gt;
-          {{ $t(`supportPages.faqPage.items.${[activeItem]}.title`) }}
-        </h2>
-        <Accordion
-          v-for="(item, name) in $t(`supportPages.faqPage.items.${[activeItem]}.items`)"
-          :key="name"
-          :title="item.title"
-          :content="item.answer"
-        />
-      </div>-->
     </div>
   </section>
 </template>
@@ -118,16 +74,6 @@ export default {
     onChooseTab(e) {
       this.activeItem = e;
       this.tabsSectionIsActive = false;
-    },
-    makeList(item) {
-      if (!item.list) return '';
-
-      const lis = item.list.map(li => `<li>${li}</li>`);
-      return `
-      <ol>
-        ${lis.join('')}
-      </ol>
-      `;
     },
   },
 };
