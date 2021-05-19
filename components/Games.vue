@@ -33,7 +33,7 @@
         :show-demo="true"
         overlay
         show-footer
-        @open-gamepage="openGamePage"
+        @open-gamepage="openGamePage($event, game.gameProducer)"
       />
     </div>
     <p v-if="!games.length" class="Text Text--center">{{ $t('search.notFound') }}</p>
@@ -81,8 +81,8 @@ export default {
     };
   },
   computed: {
-    ...mapState(['gameUrlForIframe', 'gameError', 'platform']),
-    ...mapGetters(['activeAccount']),
+    ...mapState(['gameUrlForIframe', 'gameError', 'platform', 'freeSpinList']),
+    ...mapGetters(['activeAccount', 'userInfo']),
     gamesLimited() {
       return this.games.slice(0, this.gamesShowed);
     },
@@ -116,19 +116,35 @@ export default {
       return null;
     },
 
-    async openGamePage({ id, demo, bg }) {
+    async openGamePage({ id, demo, bg }, gameProducer) {
       if (!demo && !this.isLoggedIn) {
         this.showRegistrationDialog('login');
         return;
       }
 
       if (!demo && !this.activeAccount.balance) {
-        this.showDepositModal = true;
+        const hasFreeSpins = this.freeSpinList.some(spin => {
+          return spin.gameList.some(game => game.id === id && spin.status === 'active');
+        });
+
+        if (!hasFreeSpins) {
+          this.showDepositModal = true;
+          return;
+        }
+      }
+
+      if (!demo && gameProducer === 'bgaming') {
+        const notFullProfileData = Object.values(this.userInfo).some(item => !item);
+        if (notFullProfileData)
+          this.showRegistrationDialog('registration', false, true, this.getGame, id, demo, bg);
         return;
       }
 
+      await this.getGame({ gameId: id, demo, bg });
+    },
+    async getGame({ gameId, demo, bg }) {
       await this.getGameUrl({
-        gameId: id,
+        gameId,
         demo,
       });
 
