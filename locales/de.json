@@ -715,6 +715,308 @@
           "text": "Wenn du auf Probleme stößt, ist unser Team von Experten jederzeit bereit, dir zu helfen. Du kannst unsere Spezialisten über den Chat oder E-Mail rund um die Uhr kontaktieren und Unterstützung erhalten, wenn Probleme auftreten."
         }
       }
+    },
+    "faqPage": {
+      "title": "HAST DU EINE FRAGE?",
+      "button": "Back",
+      "items": {
+        "account": {
+          "title": "KONTO",
+          "items": [
+            {
+              "title": "ICH HABE MEIN PASSWORT VERGESSEN. WAS SOLL ICH TUN?",
+              "answer": "Aus Sicherheitsgründen kennen wir dein Passwort nicht. Du musst auf die Option „Passwort vergessen?“ klicken, die sich direkt unter dem Feld befindet, das nach deinem Passwort fragt. Du wirst dann dazu aufgefordert, die „Geheime Frage“ zu beantworten, die du bei der Registrierung angegeben hast. Du solltest eine Nachricht erhalten, die lautet: „Dein Passwort wurde geändert. Du kannst dich jetzt am Casino anmelden.“ Eine weitere E-Mail wird an deine registrierte E-Mail-Adresse geschickt, die das neue Passwort bestätigt."
+            },
+            {
+              "title": "WIE KANN ICH MEIN KONTO BESTÄTIGEN?",
+              "answer": "Nach der Registrierung senden wir eine Willkommens-E-Mail an die in deinem Konto registrierte E-Mail-Adresse. In dieser E-Mail findest du einen Link, mit dem du dein Konto bestätigen kannst. Das Bestätigen deines Kontos stellt sicher, dass du unsere E-Mails erhältst, so dass du stets über unsere Aktionen und Spiele auf dem neuesten Stand bist!"
+            },
+            {
+              "title": "MEIN SPIEL HÄNGT. WIE KANN ICH NINECASINO SCHLIESSEN?",
+              "answer": "Wenn dein Spiel sich während einer Wette aufgehängt hat, empfehlen wir dir, die Software mit dem Task-Manager (Aktivitätsanzeige auf dem Mac) beendest. Drücke gleichzeitig STRG + ALT + ENTF, um die Liste der Funktionen anzuzeigen, und wähle den Task-Manager aus. Auf diese Art wird dein Spiel fortgesetzt, wenn du dich wieder am Casino anmeldest."
+            },
+            {
+              "title": "WÄHREND DER ANMELDUNG ERHIELT ICH DIE FEHLERMELDUNG „SPIELER IST BEREITS VERBUNDEN?",
+              "answer": "Wenn du dich nicht an der Download-Version von Ninecasino anmelden kannst, hast du dich möglicherweise nicht korrekt von der Instant-Version abgemeldet. Bitte melde dich stets korrekt von der Instant-Version ab, indem du die Abmelden-Taste benutzt."
+            },
+            {
+              "title": "BEIM ÖFFNEN DER KASSE HABE ICH DIESE FEHLERMELDUNG ERHALTEN: „DEIN BROWSER VERWENDET EINEN POP-UP-BLOCKER. UM WEITERZUSPIELEN, ERLAUBE BITTE POP-UPS FÜR DIESE SEITE.“",
+              "answer": "Um den Pop-Up-Blocker des Internet Explorer zu konfigurieren, folge diesen Schritten:<br/><br/><ol><li>Klicke auf Start, dann Programme, dann Internet Explorer.</li><li>Im Menü Extras, klicke auf Internetoptionen.</li><li>Klicke auf den Reiter Datenschutz und deaktiviere das Häkchen, um den Pop-Up-Blocker zu deaktivieren.</li><li>Klicke auf Übernehmen, und dann auf OK.</li></ol>Um den Pop-Up-Blocker von Google Chrome zu konfigurieren, folge diesen Schritten:<br/><br/><ol><li>Klicke auf das Chrome-Menü in der Werkzeugleiste des Browsers.</li><li>Wähle Einstellungen.</li><li>Klicke auf Erweiterte Einstellungen anzeigen.</li><li> Im Abschnitt Privatsphäre, klicke auf die Taste Inhaltseinstellungen.</li><li>Im Bereich Pop-Ups, wähle Allen Seiten erlauben, Pop-Ups anzuzeigen.</li><li>Klicke auf Übernehmen und OK. Dann beende den Browser und öffne ihn erneut.</li></ol>"
+            }
+          ]
+        },
+        "bonuses": {
+          "title": "BONI",
+          "items": [
+            {
+              "title": "WIE ERHALTE ICH MEINE KOSTENLOSEN BONI?",
+              "answer": "Herzlichen Glückwunsch! Wenn du einen exklusiven kostenlosen Bonus erhalten hast, trennen dich nur Sekunden davon, dein Geschenk zu genießen. Öffne die Kasse, gehe zum Abschnitt Boni, gib den Gutscheincode ein und klicke auf die Taste Absenden. Der Bonus gehört nun dir!"
+            },
+            {
+              "title": "WELCHE SPIELE KANN ICH MIT MEINEM BONUS SPIELEN?",
+              "answer": "Unless otherwise stated, all bonuses have 'Standard Wagering' terms, meaning that you can place bets on Slots and Scratch games. It’s important to note, however, that eligible games may differ from one offer to another, so we recommend you review our Bonus Policy by Sofern nichts anderes angegeben ist, unterliegen alle Boni den „Standard-Wettbedingungen“, was bedeutet, dass du auf Automatenspiele und Rubbellose Wetten abschließen kannst. Es ist allerdings wichtig, darauf hinzuweisen, dass die verfügbaren Spiele sich voneinander unterscheiden können, wir empfehlen dir daher, hier zu <a href='/bonus-policy' class='TextLink'>klicken</a> und unsere Bonusrichtlinien zu lesen, um jegliche Verwirrung zu vermeiden."
+            },
+            {
+              "title": "WO KANN ICH MEINE BONUS-WETTBEDINGUNGEN EINSEHEN?",
+              "answer": "Du kannst deine Bonus-Wettbedingungen im Auge behalten, indem du zur Kasse gehst und dort den Abschnitt Boni besuchst. Es ist wichtig, darauf hinzuweisen, dass Wettbedingungen voneinander abweichen können, daher empfehlen wir dir, hier zu klicken und unsere Bonusrichtlinien zu lesen, um jegliche Verwirrung zu vermeiden."
+            }
+          ]
+        },
+        "deposits": {
+          "title": "EINZAHLUNG UND ABHEBUNG",
+          "items": [
+            {
+              "title": "WELCHE MÖGLICHKEITEN HABE ICH, GELD IN MEIN KONTO EINZUZAHLEN?",
+              "answer": "Sobald du bereit bist, mit echtem Geld zu spielen, wirst du sehen, dass Einzahlungen in Ninecasino einfacher nicht sein könnten. Wir akzeptieren alle gängigen Zahlungsmethoden, darunter Kredit-/Bankkarten, Neteller, Skrill und viele andere elektronische Zahlungsmethoden. Du findest die in deinem Land verfügbaren Zahlungsmethoden im Abschnitt Einzahlung der Kasse. Verfügbarkeit ist landesabhängig."
+            },
+            {
+              "title": "ICH HABE SOEBEN EINE ABHEBUNG ANGEFORDERT. MUSS ICH IRGENDWELCHE DOKUMENTATION SENDEN?",
+              "answer": "Als Teil unserer Sicherheitsprozeduren verlangen wir standardmäßige Dokumente zur Bestätigung bei der ersten Anforderung einer Abhebung durch den Kunden. Wenn deine Mittel durch Wire Transfer zurückgezahlt werden oder wenn es sich bei deiner Abhebung um allgemeine Gewinne über dem eingezahlten Betrag handelt, bitten wir dich darum, uns folgendes zu übermitteln:<br/><br/>{list}<br/><br/>Wir überprüfen die Dokumente so schnell wie möglich, üblicherweise in weniger als 12 Stunden. Falls Bestätigung notwendig ist, kann es länger dauern; wenn du also länger als 48 Stunden nichts von uns gehört hast, wende dich bitte an die Kundenbetreuung.",
+              "list": [
+                "Eine Gas-, Wasser- oder Stromrechnung aus den letzten 6 Monaten",
+                "Kopie der Vorderseite deiner Kreditkarte (stelle aus Sicherheitsgründen bitte sicher, dass die mittleren 8 Ziffern der Vorderseite deiner Kreditkarte verborgen sind)",
+                "Identitätsnachweis (Ausweis, Führerschein o.Ä.)",
+                "Wenn du auf ein E-Wallet-Konto überweisen möchtest, übermittle uns bitte die Kontonummer/E-Mail-Adresse, die mit dem Konto verknüpft ist."
+              ]
+            },
+            {
+              "title": "WIE LANGE DAUERT ES, BIS ICH MEINE ABHEBUNG ERHALTE?",
+              "answer": "Unsere Blitzabhebung bedeutet, dass du dein Geld innerhalb von 24 Stunden erhältst, sobald wir alle Informationen besitzen, die wir laut unseren Geschäftsbedingungen benötigen. Begib dich bitte zum Abschnitt Abhebung der Kasse, um eine vollständige Aufstellung der zu erwartenden Überweisungen zu sehen."
+            },
+            {
+              "title": "WIE LANGE DAUERT ES, BIS ICH MEINE ABHEBUNG ERHALTE?",
+              "answer": "Unsere Blitzabhebung bedeutet, dass du dein Geld innerhalb von 24 Stunden erhältst, sobald wir alle Informationen von dir besitzen, die wir laut unseren Geschäftsbedingungen benötigen. Begib dich bitte zum Abschnitt Abhebung der Kasse, um eine vollständige Aufstellung der zu erwartenden Überweisungen zu sehen."
+            },
+            {
+              "title": "IICH HABE DIESE FEHLERMELDUNG ERHALTEN: DU KANNST NICHTS ABHEBEN, SOLANGE BONI AKTIV SIND, BITTE WENDE DICH AN DIE KUNDENBETREUUNG, UM DIESES PROBLEM ZU BESEITIGEN. WAS SOLL ICH TUN?",
+              "answer": "Wenn du einen aktiven Bonus auf deinem Konto hast, musst du zunächst die Bonusbedingungen erfüllen, bevor du eine Abhebung anfordern kannst. Du kannst deine Bonusbedingungen im Auge behalten, indem du zur Kasse gehst und dort den Abschnitt Boni besuchst. Sobald die Bonusbedingungen erfüllt sind, kannst du deine Abhebungsanfrage stellen."
+            },
+            {
+              "title": "KANN ICH LIMITS IN NINECASINO EINRICHTEN?",
+              "answer": "Ja, das kannst du. Wir sind stolz darauf, dir eine sichere Umgebung zu bieten. Du kannst deine Einzahlungslimits in den persönlichen Einstellungen der Kasse einstellen. Du kannst in deinem Konto auch noch andere Limits einrichten, zum Beispiel den Kontozugriff auf bestimmte Uhrzeiten festlegen. Diese Limits findest du im Abschnitt Kontoeinschränkungen. Bitte lies mehr darüber auf unserer Seite Verantwortungsbewusstes Spielen."
+            },
+            {
+              "title": "WOHER WEISS ICH, OB ES GEBÜHREN FÜR DIE BEARBEITUNG BEI NINECASINO GIBT?",
+              "answer": "Wenn erforderlich, werden Gebühren für die Bearbeitung während des Ein- und Auszahlungsprozesses erwähnt."
+            }
+          ]
+        },
+        "security": {
+          "title": "SICHERHEIT",
+          "items": [
+            {
+              "title": "IST NINECASINO EIN SICHERER ORT ZUM SPIELEN?",
+              "answer": "Ninecasino bietet nicht nur beliebte Spiele, sondern auch höchste Sicherheit. Das gesamte Spielsystem und die internen Prozeduren sind voll zertifiziert gemäß der Lizenzbedingungen."
+            },
+            {
+              "title": "WIE SICHER SIND MEINE PERSÖNLICHEN DATEN IN NINECASINO?",
+              "answer": "Ninecasino bemüht sich intensiv zu garantieren, dass deine persönlichen und finanziellen Informationen 100 % sicher und vertraulich bleiben. Wir setzen Sicherheitsprotokolle ein, die dem Industriestandard entsprechen. Die Verbindung mit der Seite ist verschlüsselt und authentifiziert durch TLS 1.2 (ein starkes Protokoll), ECDHE_RSA mit X25519 (ein starker Schlüsselaustausch), und AES_128_GCM (eine starke Chiffre), um sicherzustellen, dass alle Transaktionen, inklusive Einzahlungen und Abhebungen, auf absolut sichere Weise ablaufen. Diese Technologie schützt dich davor, dass deine Informationen von jemand anderem als Ninecasino abgefangen werden."
+            },
+            {
+              "title": "AUF WELCHEN PLATTFORMEN IST NINECASINO VERFÜGBAR?",
+              "answer": "Du kannst deine Lieblingsspiele auf einer großen Vielfalt von Plattformen spielen. Unsere Software ist verfügbar auf PC, Tablets und Smartphones."
+            },
+            {
+              "title": "WELCHE SPIELEANBIETER GIBT ES BEI NINECASINO?",
+              "answer": "Ninecasino bietet Spiele von Anbietern wie Amaya, NextGen, NetEnt, WMS, Evolution und vielen anderen, du findest also garantiert etwas, das dir gefällt!"
+            }
+          ]
+        }
+      }
+    },
+    "bitcoinsPage": {
+      "title": "WARUM BRAUCHT MAN BITCOINS?",
+      "text": "Es ist die neue Generation der Online-Zahlungsmittel. Schnelle globale Transaktionen mit niedrigen Gebühren. Die Konzepte der Kryptowährung können etwas schwer zu verstehen sein, aber die Bequemlichkeit macht es die Mühe wert.",
+      "reason1": {
+        "title": "SICHERHEIT UND JEDERZEIT RÜCKVERFOLGBARES GELD",
+        "text": "Alle Bitcoin-Transaktionen basieren auf ihrer Blockchain. Blockchain ist wie ein offenes Geschäftsbuch, in dem jeder die Transaktionshistorie verfolgen, aber keine Änderungen machen kann. Blockchain-Technologie erfreut sich aufgrund ihrer Sicherheit immer größerer Beliebtheit. Die Regierungen vieler Länder nutzen sie für ihre Zwecke."
+      },
+      "reason2": {
+        "title": "SCHUTZ DEINER DATEN",
+        "text": "Du kannst Bitcoin nutzen, ohne deine persönlichen Daten mit irgend jemandem zu teilen. Manche Kryptobörsen bitten dich darum, die KYC (Know Your Client)-Prozedur zu durchlaufen, aber das passiert nur, wenn du erhebliche Mengen kaufst oder verkaufst. Die Bedingungen der KYC sind stets in den FAQ aufgelistet – du kannst die Börse wählen, den du bevorzugst."
+      },
+      "reason3": {
+        "title": "GERINGE GEBÜHREN",
+        "text": "Bitcoin ist der beste Weg, einer Person in einem anderen Land Geld zu senden. Die Transaktion wird in weniger als einer Stunde abgewickelt, abhängig von der Last des Bitcoin-Netzwerks. Ganz anders als internationale Banktransfers, die über eine Woche in Anspruch nehmen können."
+      },
+      "reason4": {
+        "title": "INTERNATIONALE TRANSAKTIONEN",
+        "text": "Bitcoin ist der beste Weg, einer Person in einem anderen Land Geld zu senden. Die Transaktion wird in weniger als einer Stunde abgewickelt, abhängig von der Last des Bitcoin-Netzwerks. Ganz anders als internationale Banktransfers, die über eine Woche in Anspruch nehmen können."
+      },
+      "reason5": {
+        "title": "DEZENTRALISIERUNG",
+        "text": "Bitcoin ist ein Open Source-Produkt mit einer großen Gemeinschaft von Enthusiasten, die an der Entwicklung arbeiten. Das Blockchain-Netzwerk hat keinen Besitzer, so dass niemand dein Konto oder deine Wallet sperren kann."
+      },
+      "offers": {
+        "title": "WIE SPIELT MAN NINECASINO MIT BITCOINS?",
+        "offer1": {
+          "title": "WÄHLE DEINE WALLET",
+          "text": "Zunächst musst du auswählen, wo du deine Bitcoins speichern willst. Dafür gibt es mehrere Möglichkeiten: Online-Wallets, Hardware-Wallets (Cold Wallets), oder du speicherst sie in deiner Wallet in einer der Börsen. Die beliebtesten Online-Wallets sind Blockchain.com, Exodus und Mycelium. Trezor und Ledger sind die beliebtesten Cold Wallets."
+        },
+        "offer2": {
+          "title": "BITCOINS KAUFEN",
+          "text": "Es gibt zwei Haupttypen von Kryptowährungsbörsen. Der erste Typ sind normale Börsen wie Binance, Huobi, Coinbase, Kraken usw. Der zweite Typ sind p2p-Börsen, auf denen man direkt mit einer anderen Person mit Bitcoins handelt, wie LocalBitcoins.com."
+        },
+        "offer3": {
+          "title": "MACH EINE EINZAHLUNG UND GENIESSE DIE SPIELE",
+          "text": "Wenn du Bitcoins kaufst, kannst du sie in dein GetSlots-Konto einzahlen und anfangen zu spielen.\nOder du kannst Bitcoin als Investitionsmöglichkeit nutzen. Es ist eine wohlbekannte und schnell wachsende Investitionsmöglichkeit. Wir akzeptieren auch andere Kryptowährungen in unserem Casino. Du kannst Einzahlungen auch mit Ethereum, Litecoin und Bitcoin Cash machen."
+        }
+      }
+    },
+    "amlPolicyPage": {
+      "title": "GESCHÄFTSBEDINGUNGEN",
+      "subTitle": "VERBRECHEN (EINSCHLIESSLICH BETRUG UND AML)",
+      "section1": {
+        "title": "ABSCHNITT 1 – ERFAHRUNG",
+        "text": [
+          "Der Direktor von Dux Group N.V. (im Folgenden „Gesellschaft“) hat lange Erfahrung damit, Spielgesellschaften gegen kriminellen Missbrauch abzusichern und weitreichende Anti-Betrugs- und Anti-Geldwäsche-Prozesse, Prozeduren und Trainingsprogramme umzusetzen.",
+          "Das Fundament zukünftiger Trainingsprogramme sind Indikatoren des Proceeds of Crime Act and Money Laundering, die üblicherweise im Spieleumfeld zu finden sind, insbesondere in einer Card Not Present-Transaktionsumgebung.",
+          "Der Direktor kennt alle Aspekte des Proceeds of Crime Act sowie seine Verantwortung und gibt sein Wissen um Anti-Geldwäsche-Maßnahmen und -Anforderungen weiter, nachdem er wichtige entfernte und nicht-entfernte Spielgesellschaften gesichert hat."
+        ]
+      },
+      "section2": {
+        "title": "ABSCHNITT 2 – ANTI-GELDWÄSCHE UND TRANSAKTIONSBETRUG",
+        "text1": [
+          "Spieleumgebungen werden oft von Parteien anvisiert, die Geld waschen möchten. Die Geschwindigkeit der Transaktionen und die Verwendung mehrfacher Zahlungsverarbeitungsoptionen machen Spielegesellschaften besonders anfällig gegenüber diesen Aktivitäten.",
+          "Deshalb zielen viele anfängliche Handels- und prozedurale Entscheidungen des Direktors darauf ab, diese Bedrohung zu bekämpfen oder den Schutz des kommerziellen und handelsbezogenen Ansatzes der Gesellschaft zu erhöhen.",
+          "Das GESAMTE Personal wird in Bezug auf Geldwäscheindikatoren trainiert, darunter unter anderem:"
+        ],
+        "list": [
+          "Ungewöhnliche Einsatzmuster;",
+          "Verdächtige Muster von Einzahlungen und Abhebungen (Betrag und Häufigkeit);",
+          "Verlässlichkeit von Kartendaten;",
+          "Probleme bei der Kundenverifikation und Identitätsbetrug;",
+          "Kontenverknüpfung/mehrfache Konten."
+        ],
+        "text2": [
+          "Alle Vorfälle von Verdacht auf Geldwäsche müssen dem MLRO gemeldet werden, doch dieser Verdacht darf dem Kunden nicht mitgeteilt werden; weitere Aktionen erfordern Zustimmung. Der MLRO ist dann dafür verantwortlich dafür, mit NCA/UKFIU Kontakt aufzunehmen und gegebenenfalls Berichte abzuliefern, falls erforderlich. Er wird auch dafür sorgen, dass die erforderlichen Daten für alle damit zusammenhängenden Reporte gesammelt werden.",
+          "Die Gesellschaft wird eine VOLLE „Kenne deinen Kunden“-Politik implementieren. Dies wird nicht nur Bedrohungen durch Geldwäsche verringern, sondern auch Betrug im Allgemeinen. Kunden werden während der Registrierung und allgemein auf der unterstützenden nicht-transaktionalen Webseite darauf hingewiesen, dass Online-Verifizierungstools verwendet werden, und dass wir in Fällen, in denen wird gewissen Kriterien nicht gerecht werden können, Identitätsnachweise und Dokumente zur Adressenverifizierung anfordern werden.",
+          "Weiter Schlüsselentscheidungen, die diesen Schutz erhöhen, sind Schwellenwerte/-geschwindigkeiten für Abhebungen, um anfangs Überprüfungen und Zustimmung durch den Direktor für Abhebungen und Banktransfers über €3.000 in einer Transaktion erforderlich zu machen, ein Maximum von 3 (drei) täglichen Abhebungen und ein globales tägliches Maximum für Abhebungen von €9.000.",
+          "Industriestandards, die stets zu Enhanced Due Diligence führen (die Anforderung für weitere Bestätigung von Identität und Adresse), sind Abhebungen über €3.000 in einem 24-Stunden-Intervall, und €9.000 in einer 90-Tage-Periode. Simple Online-Verifikation ist unter diesen Umständen NICHT akzeptabel.",
+          "Dieses Geschäft wird außerdem kein Bargeld involvieren, so dass Risiken im Zusammenhang mit Falschgeld vermieden werden.",
+          "Die Systeme werden alle Transaktionen eines Kontos aufzeichnen. Diese Kontenhistorien werden regelmäßigen Prüfungen in Bezug auf Betrug und Indikatoren sozialer Verantwortung unterzogen. Wenn ungewöhnliche Muster von Wetten und Gewinnen festgestellt werden, werden diese außerdem mit der Kommunikationshistorie verglichen, um sicherzustellen, dass das Personal nicht mit Kunden zusammenarbeitet oder unrechtmäßig handelt.",
+          "Die Gesellschaft wird außerdem Aufzeichnungen der Kunden bevorraten, die als riskant oder politisch exponiert identifiziert wurden. Diese Konten werden strengeren und häufigeren Prüfungen unterzogen.",
+          "Wenn unangemessenes Verhalten des Personals festgestellt wird, folgen im Allgemeinen investigative und disziplinäre Prozeduren, die in den Personalverträgen gemäß geltendem Recht festgehalten werden, und es werden Maßnahmen wie Suspension angewendet, wenn zum Beispiel transaktionaler Betrug vermutet wird; diese Aktivitäten sind ein standardmäßiger Teil der Stellenbeschreibung des Personals."
+        ]
+      },
+      "section3": {
+        "title": "ABSCHNITT 3 – SICHERHEIT UND ÜBERWACHUNG",
+        "text1": [
+          "Die Umsetzung angemessener Überwachungsprozeduren ist im Spielegeschäft unerlässlich, was Gelände, Ausrüstung, Menschen, Kommunikation und Transaktionen angeht. Die Gesellschaft wird eine Reihe von Maßnahmen und Prozeduren umsetzen, um Sicherheit in diesen Bereichen zu garantieren.",
+          "Die Gesellschaft hat Technologie zur Aufzeichnung von Anrufen installiert. Dies hat mehrere Vorteile, darunter:"
+        ],
+        "list": [
+          "Personaltraining;",
+          "Gewährleisten der Genauigkeit von Wetten (Timing und Einsatz) und Transaktionsdaten;",
+          "Schutz des Rufs von Kunden und Marken;",
+          "Umsetzung robuster und häufiger Überwachungsprozeduren, die vor geheimen Absprachen zwischen Kunden und Personal schützen werden."
+        ],
+        "text2": [
+          "Der Schutz von Daten und die Sicherheit von Software und Hardware sind eine der größten Sorgen für alle Geschäfte, die Transaktionen und Daten in einer Umgebung aufzeichnen, in der kein Kontakt von Angesicht zu Angesicht besteht. Demzufolge wird die Gesellschaft eine übergeordnete Richtline von „Verschlüsseln, was verschlüsselt werden kann“. Zugang zu Freigegebenen Laufwerken wird streng eingeschränkt und überwacht und, falls angemessen, durch Passworte geschützt. Datenspeicher und Backup-Lösungen sowie Prozeduren existieren, die den Zugriff auf Kundendaten durch Dritte verhindern und den Verlust von Daten verhindern."
+        ]
+      },
+      "section4": {
+        "title": "ABSCHNITT 4 – VERANTWORTUNGSBEWUSSTER UMGANG MIT KUNDEN UND GESCHÄFTEN",
+        "text": [
+          "Die Gesellschaft wird Allgemeine Richtlinien und Geschäftsbedingungen auf ihrer Webseite veröffentlichen. Diese werden auf betrügerisches Verhalten hinweisen, vorherige Kenntnis eines Ergebnisses oder des wahrscheinlichen Ergebnisses eines Ereignisses und Angelegenheiten von Absprachen und verdächtigen Ereignissen. Sie werden die Maßnahmen darstellen, die wir ergreifen, wenn Verdacht auf Betrug besteht, und werden den Umfang erläutern, in dem wir mit Regulatoren und Sportdachverbänden zusammenarbeiten, um diese Probleme anzugehen. Dies wird im Allgemeinen eine transparente Kommunikation mit Kunden in solchen Fällen ermöglichen.",
+          "Allerdings weist der Direktor darauf hin, dass im Falle des Verdachts auf kriminelle Aktivität, bestätigt oder unbestätigt, sowohl er als auch das Personal drauf achten werden, dass die Verdächtigen nicht gewahr werden, dass sie untersucht werden, und dass in manchen Fällen andere Vorgehensweisen angewendet werden. Angemessenes Training von Personal und Eskalationsprozeduren werden eingerichtet.",
+          "Die Gesellschaft wird alle notwendigen Maßnahmen ergreifen, um die Angemessenheit ihrer Beziehungen mit anderen Geschäften zu gewährleisten. Dies wird die übliche Sorgfaltspflicht nach sich ziehen, die oft von Vertraulichkeitsvereinbarungen begleitet wird, wo angemessen. Dies wird die Offenlegung der Beteiligungsverhältnisse und Managementstrukturen, Gesellschaftsdetails, Adresse und Kontaktdaten erfordern. Details zu diesen Untersuchungen werden standardisiert und die Aufzeichnungen aufbewahrt."
+        ]
+      }
+    },
+    "bonusPolicyPage": {
+      "title": "BONUSRICHTLINIEN",
+      "text": [
+        "Diese Bonusrichtlinien sind untrennbarer Bestandteil der Geschäftsbedingungen und treten mit den Nutzungsbedingungen in Kraft. Alle allgemeinen Bedingungen der Geschäftsbedingungen betreffen auch die Bonusrichtlinien, außer wenn ausdrücklich ausgeschlossen.",
+        "Die Bonusrichtlinien sind in Englisch verfasst. Wenn die Bonusrichtlinien in eine andere Sprache übersetzt werden, ist die englische Version maßgeblich."
+      ],
+      "general": {
+        "title": "ALLGEMEINE BEDINGUNGEN",
+        "text": [
+          "Erste Einzahlung/Begrüßungsbonus können nur einmal alle 72 Stunden in den Casinos in Anspruch genommen werden, die unter der gleichen Lizenz operieren. Zuwiderhandlung kann dazu führen, dass sämtliche Gewinne entfernt werden. Um herauszufinden, auf welche Casinos dies zutrifft, kontaktiere bitte die Kundenbetreuung.",
+          "Wenn nach dem Lesen dieser Richtlinie noch Unklarheiten bestehen, oder du vom Erhalt unserer Boni blockiert werden möchtest und/oder andere Boni von deinem Konto entfernen lassen möchtest, wende dich bitte an unsere Abteilung Kundenbetreuung, bevor du weiterspielst.",
+          "Wenn der Bonus, den du empfangen wolltest, nicht automatisch in deinem Spielerkonto erscheint, kontaktiere bitte unsere Kundenbetreuung, bevor du weitere Wetten abschließt, und der Bonus wird dir gutgeschrieben.",
+          "Wir behalten uns das Recht vor, jeglichen Betrag, der über die ursprüngliche Einzahlung eines Spielers hinausgeht, zu stornieren, wenn die Wettbedingungen nicht erfüllt wurden oder der Spieler die Entfernung des Bonus beantragt hat, bevor die Wettbedingungen erfüllt wurden.",
+          "Sofern nicht anders angegeben, sind Boni nur für Spieler verfügbar, die wenigstens eine erfolgreiche Einzahlung auf ihr Konto getätigt haben.",
+          "Falls eine technische Fehlkonfiguration oder ein Fehler irgendeiner Art darin resultiert, dass eine falsche Anzahl von Freispielen oder ein fehlerhafter Bonus deinem Konto gutgeschrieben werden, behalten wir uns das Recht vor, alle resultierenden Gewinne zu entfernen und die mit der korrekten Konfiguration berechneten Werte gutzuschreiben.",
+          "Ein Benutzer ist nicht berechtigt, mehr als ein Konto im System zu registrieren. Das bedeutet, dass nur ein Konto pro Person, Haushalt, Familie, Haushaltsadresse, E-Mail-Adresse, Kreditkartennummer, E-Wallet-Konto oder geteilter Computerumgebung (z.B. Bibliothek, Arbeitsplatz, Wohnheim, Universität oder Schule) registriert werden darf. Jeglicher Täuschungsversuch durch Registrierung mehrerer Konten Bonusgeld zu erlangen, wird als Bonusmissbrauch ausgelegt und resultiert in der Einfrierung des Kontos/der Konten und der Entfernung der Gelder.",
+          "Beim Wetteinsatz jegliches Bonus/Angebots (gratis oder Einzahlung) oder Einstreichen eines Bonus für Freispielgewinne ist die maximale Einsatzhöhe 10 % (mindestens 0,10) der Bonushöhe oder 5 Währungseinheiten (z.B. €5, £5, 500 INR). Zuwiderhandlung bedeutet Bruch der Bonus-/Angebotsbedingungen, und wir behalten uns das Recht vor, jegliche Gewinne zu stornieren und zu entfernen. Eine Wette beinhaltet jegliche Wettfunktion, jede Glücksspielfunktion und jede andere Art von Wettaktivität (ungeachtet ihres Namens).",
+          "Individuelle Werbeaktionen können eigene Bedingungen beinhalten, die die hier genannten Bedingungen außer Kraft setzen oder erweitern. Bitte lies sorgfältig alle Bedingungen, die mit einem Bonus zusammenhängen, bevor du teilnimmst. Sollten die Bedingungen der individuellen Werbeaktionen mit den Bonusrichtlinien in Konflikt stehen, so kommen die Bedingungen der individuellen Werbeaktion zur Anwendung.",
+          "Unabhängig von der Währung, in der wir Bonusbeträge bewerben oder anzeigen, wird der Bonus immer in der dem Konto zugeordneten Währung gutgeschrieben.",
+          "Übereinstimmend mit der Datenschutzerklärung senden wir regelmäßig E-Mails mit Bonusangeboten. Du bist nur dann für den Bonus berechtigt, wenn du die E-Mail direkt von uns erhalten hast. Du kannst dein Abonnement von Werbeaktionen beenden, indem du dich an die Kundenbetreuung wendest. Falls wir entscheiden, dass ein Kunde nicht der beabsichtigte Empfänger einer bestimmten Werbeaktion war, sind wir nicht zur Auszahlung verpflichtet, auch wenn der Kunde die Wettbedingungen erfüllt hat.",
+          "Wir behalten uns das Recht vor, Werbeaktionen oder Bonusangebote jederzeit ohne vorhergehende Bekanntmachung zu beenden. Eine solche Beendung hat keine Auswirkung auf bereits eingelöste Gewinne.",
+          "Alle Angebote der Daily Picks sind aufgrund deines Kontostatus für dich verfügbar. Angebote können ablaufen, bevor die Zeit vorbei ist, wenn durch getätigte Transaktionen Änderungen am Konto auftreten.",
+          "Sofern anders angegeben ist die für einen Bonus qualifizierte Mindesteinzahlung €20 oder der äquivalente Wert in einer anderen Währung.",
+          "War der letzte erhaltene Bonus ein kostenloser Bonus, so muss zunächst eine Einzahlung getätigt werden, bevor der Spieler sich erneut für einen Bonus qualifizieren kann, sofern anders angegeben; dies gilt auch, wenn der Bonus direkt an den Spieler vermarktet wurde. Zuwiderhandlung kann zum Ausschluss von zukünftigen Boni führen und/oder Gewinne, die durch die Verwendung eines freien Bonus erzielt wurden, können entfernt werden.",
+          "Erhältst du kostenlos Geld (keine Einzahlung-Bonus/Freunde anwerben/Registrierungsbonus usw.) oder Freispielgewinne, so ist der maximale Betrag, den du gewinnen oder abheben kannst, €100 oder der doppelte Bonusbetrag, sofern anders angegeben. Der größere der beiden Beträge wird angewendet. Gewinne, die über den anwendbaren Betrag hinausgehen, inklusive anschließend erzielte Gewinne, auch nach einer Einzahlung, werden von deinem Konto entfernt. Außerdem dürfen Gewinne, die im Zusammenhang mit einem freien Bonus erzielt wurden, nicht abgehoben werden, solange die Wettbedingungen nicht erfüllt sind.",
+          "Ein Bonus (einschließlich des durch Freispielbonus gutgeschriebenen Bonus) wird als frei betrachtet, wenn dein Echtgeld-Kontostand zum Zeitpunkt des Erhalts des Bonus niedriger ist als deine letzte Einzahlung.",
+          "Jeder Bonus, den du einlöst, unterliegt den Bonusrichtlinien.",
+          "Um einen „Freunde anwerben“ Bonus zu erhalten, muss der Anwerber in den letzten 7 Tagen eingezahlt haben.",
+          "Freispiele sind gespielte Spiele, die deinen Kontostand nicht reduzieren. Um Zweifel auszuräumen beziehen sich alle Erwähnungen von Freispielen in diesen Bonusrichtlinien auf Spiele, die deinen Kontostand nicht reduzieren, gleichgültig, wie diese Spiele beworben werden. Dies schließt Freispiele, die innerhalb eines Spiels ausgelöst werden, nicht ein.",
+          "Durch das Casino ausgegebene Boni sind für Spiele in diesem Produkt vorbehalten und können nicht für das Spielen auf anderen Produkten verwendet werden, die wir anbieten (zum Beispiel Wetten und Poker). Darüber hinaus zählt das Spielen auf anderen Produkten als dem Casino nicht, was die Bonuswettbedingungen angeht.",
+          "Das Einlösen von VIP-Punkten in Bargeld ist nur für Spieler verfügbar, die mindestens eine erfolgreiche Einzahlung in ihr Konto getätigt haben.",
+          "Das Einlösen von VIP-Punkten in Bargeld ist nur für Spieler verfügbar, die sich vor dem 19.03.2017 registriert haben.",
+          "Jedes Mal, wenn du bei Ninecasino wettest, verdienst du VIP-Punkte. Du kannst deine angesammelten VIP-Punkte in Bargeld für dein Echtgeld-Spielerkonto umwandeln. Falls du in den letzten dreißig (30) Tagen keine Wette mit Echtgeld abgeschlossen hast, sind wir dazu berechtigt, alle VIP-Punkte von deinem Spielerkonto zu entfernen.",
+          "Kunden aus der Ukraine, Belarus, Lettland, Russland und Litauen dürfen keine Keine Einzahlung-Angebote/freie Geldangebote/Registrierungsbonus/Freunde anwerben oder andere Arten von Angeboten, die als frei betrachtet werden können, einlösen.",
+          "Wenn du einen Einlösbaren Bonus/Freispiele im Zusammenhang mit einem Einzahlungsangebot erhältst oder Freispiele mit Echtgeld kaufst, musst du den Bonus einfordern oder die Freispiele spielen, bevor du mit deinem verfügbaren Kontostand spielst (Echtgeld oder Bonuskontostand). Zuwiderhandlung kann in diesem Fall dazu führen, dass sämtliche Gewinne entfernt werden.",
+          "Bei Verstoß gegen die Bonusrichtlinien werden alle gesammelten VIP-Punkte und alle Gewinne durch VIP-Punkte entfernt. Falls du sie bereits eingelöst hast, wird der eingelöste Wert manuell entfernt.",
+          "Falls nicht anders angegeben, werden Keine Einzahlung Boni oder Keine Einzahlung Freispielangebote nur an Spieler vergeben, die ihre E-Mail-Adresse bestätigt haben. Falls Keine Einzahlung Freispiele oder Keine Einzahlung Bonusangebote an Spieler ausgegeben werden, die ihre E-Mail-Adresse nicht bestätigt haben, behalten wir uns das Recht vor, alle resultierenden Gewinne zu entfernen.",
+          "Spieler dürfen jedes Spiel spielen, während sie einen aktiven Bonus haben. In gewissen Spielen ist der Bonuskontostand nicht für das Spiel verfügbar, und wenn du diese Spiele öffnest, siehst du nur deinen echten Kontostand.  ",
+          "Ein Ausstehender Bonus ist ein Bonus, der nur dann anwendbar ist, nachdem eine Wette abgeschlossen wurde. Du wirst diesen Bonus in deinem Ausstehender Bonus Kontostand sehen.",
+          "Ein nicht-auszahlbarer Bonus ist ein Bonus, der deinem Echtgeldkontostand nicht gutgeschrieben wird, nachdem eine Wette abgeschlossen oder der Bonus verbraucht wurde, auch wenn ein Bonusbetrag verblieb, als er verbraucht wurde. Sobald die Wette abgeschlossen/der Bonus verbraucht wurde, wird der verbleibende Betrag von deinem Bonuskontostand entfernt.",
+          "Ein Netzwerkturnier ist ein Turnier, das in mehreren Casinos an den gleichen Tagen/Uhrzeiten stattfindet, und den gleichen Namen und Preispool hat. Ein Spieler darf nur in einem Casino an einem Netzwerkturnier teilnehmen. Wenn dieselbe Person (allein von uns bestimmt) in mehr als einem Casino an einem Netzwerkturnier teilnimmt, zählt nur das erste Casino, in dem gespielt wurde, zur Preisberechnung.",
+          "Gewinne, die durch Freispiele erzielt wurden, werden deinem Konto als Bonus gutgeschrieben.",
+          "Wenn du aus irgendeinem Grund deinen Bonus/deine Freispiele nicht einlösen kannst, nachdem er/sie deinem Konto gutgeschrieben wurde/wurden, bitte kontaktiere die Kundenbetreuung."
+        ]
+      },
+      "requirements": {
+        "title": "Wagering Requirements",
+        "text1": [
+          "Bonuswettbedingungen werden als Einlösbare Punkte auf der Bonusseite im Persönlichen Bereich dargestellt.",
+          "Solange nicht anders angegeben, unterliegen Boni (inklusive Freispiele) einer Wettbedingung von dreißig (30) Mal dem Gesamtbetrag, z.B.: Wenn du €10 einzahlst und einen Bonus von €10 erhältst, musst du das 30-fache der Summe setzen; in diesem Fall ist die Summe €20 (Einzahlung + Bonus). Wenn ein Bonus (einschließlich Gewinne aus Freispielen) nicht als Teil eines Einzahlungsangebots vergeben wird Oder wenn die Bonussumme (aus Boni und Freispiel-Gewinnen) größer als der eingezahlte Betrag ist, mit dem das Angebot eingelöst wurde, so unterliegt das Angebot einer Wettbedingung von sechzig (60) Mal dem Bonusbetrag."
+        ],
+        "text2": "Wir haben 3 verschiedene Arten des Wettens, die wir auf unsere Boni anwenden. Sofern anders angegeben, unterliegt der Bonus den Standardwettbedingungen. Spiele, die in den unten stehenden Wettgruppen enthalten sind, werden auf die Wettbedingungen eines Bonus angerechnet:",
+        "list1": [
+          "\"– Standardwetten: Wetten, die in einem beliebigen Spiel außer Automatenspielen und Rubbelspielen abgeschlossen werden, werden nicht auf die Wettbedingungen angerechnet.",
+          "Gemischte Wetten: 10% der Wetten, die in Nicht-Automaten- oder Rubbelspielen abgeschlossen werden, werden auf die Wettbedingungen angerechnet.",
+          "Spezielle Gemischte Wetten: 50% der Wetten, die in Nicht-Automaten- oder Rubbelspielen abgeschlossen werden, werden auf die Wettbedingungen angerechnet. Spezielle Gemischte Wetten sind nur zu besonderen Anlässen und für Spieler mit besonderem Status verfügbar."
+        ],
+        "text3": "Wenn der Bonus deinem Konto gutgeschrieben wird, so wird der erforderliche Wettbetrag in Bonuseinlösungspunkte umgewandelt. Die unten stehende Tabelle zeigt, wie viel ein Spieler in jeder Währung wetten muss, um einen Bonuspunkt zu erlangen.",
+        "points": "Punkte",
+        "text4": "Wetten werden nur auf einen Bonus zur Zeit angerechnet, entsprechend der folgenden Regeln:",
+        "list2": [
+          "Wenn Boni auf ein bestimmtes Spiel oder Spiele eingeschränkt sind, so werden Wetten zunächst auf diesen Bonus angerechnet, wenn ein solches Spiel gespielt wird.",
+          "Wenn mehrere Boni mit unterschiedlichen Wettbedingungen aktiv sind, werden Wetten in Datumsreihenfolge auf die Boni angerechnet",
+          "Wenn es zwei aktive Boni mit identischen Bedingungen gibt, werden Wetten in Datumsreihenfolge auf die Boni angerechnet.",
+          "Beachte bitte, dass du immer zuerst dein Echtgeld setzt, und erst, wenn dies vollends aufgebraucht ist, setzt du deinen Bonuskontostand."
+        ],
+        "text5": [
+          "Wenn ein Bonus innerhalb von 30 Tagen nicht verwendet wurde (Umsatzbedingungen nicht erfüllt oder verloren), wird der Bonusbetrag storniert und von deinem Konto entfernt, falls du keinen Echtgeldkontostand hast.",
+          "Sofern anders angegeben, hast du 24 Stunden, um die Wettbedingungen für freie Boni zu erfüllen (nicht-Einzahlungsbonus, Freunde anwerben, kostenlos erhaltene Freispiele), bevor der Bonus und alle Gewinne entfernt werden.",
+          "Falls Bonusgeld gesetzt und verloren wird, aber nicht alle Wettbedingungen erfüllt wurden, so setzt die nächste Einzahlung auf dein Konto den Bonus als Verbraucht zurück, sofern du keine offenen Spiele hast, und es ist nicht notwendig, die restlichen Wettbedingungen zu erfüllen. Wenn du dein Spiel fortsetzen und sicherstellen willst, dass der Bonus verbraucht wird, kontaktiere bitte die Kundenbetreuung nach deiner Einzahlung. Missbrauch dieser Regelung, um die Vervollständigung von Bonuswetten zu vermeiden, führt dazu, dass alle Gewinne entfernt werden, und deine Einzahlung kann beschlagnahmt werden.",
+          "Wenn dein Bonus verbraucht/storniert/abgelaufen ist, entweder durch das System oder aufgrund deiner Anfrage, und die Wette nicht vollständig abgeschlossen war, so werden alle Gewinne entfernt, einschließlich aller ausstehenden/nicht eingelösten Gewinne aus Spielen/Aktionen, die du gespielt hast, während du den Bonus hattest."
+        ]
+      },
+      "irregularFairPlay": {
+        "title": "UNREGELMÄSSIGES SPIEL/FAIR PLAY",
+        "text1": [
+          "Wir behalten uns das Recht vor, Transaktionshistorien und Protokolle von Zeit zu Zeit ohne besonderen Anlass zu durchsuchen. Wenn während einer solchen Durchsicht der Verdacht entsteht, dass ein Spieler sich auf eine Weise verhält, die wir unilateral als Missbrauch ansehen, behalten wir uns das Recht vor, die Berechtigung des Spielers zur Teilnahme an Angeboten zu entziehen.",
+          "Wir behalten uns das Recht vor, jeden Bonus/alle Gewinne zu annullieren oder zu verweigern, falls Kontostände durch einen Zahlungsservice oder Zahlungsbereitsteller oder den Spieler storniert oder bestritten werden."
+        ],
+        "text2": "Wir behalten uns das Recht vor, Abhebungen zurückzuhalten und/oder Gewinne zu beschlagnahmen, wenn unregelmäßiges Spiel festgestellt wurde. Die Formulierung „unregelmäßiges Spiel“ umfasst die folgenden Arten des Spiels, ist aber nicht auf sie beschränkt: Wetten mit niedriger Marge, Equal Betting, Null-Risiko-Wetten oder Sicherheitswetten werden als unregelmäßiges Spiel betrachtet, wenn es mit der Absicht durchgeführt wird, Boni auszunutzen. Darüber hinaus werden die folgenden Muster als unregelmäßiges Spiel betrachtet:",
+        "list": [
+          "Erhöhung des Kontostands mit anschließender drastischer Änderung des Spielmusters (Wette, Spieltyp, Wettstruktur, usw.), mit der Absicht, die Wettbedingungen für den Bonus zu erfüllen.",
+          "Einsatz eines Wettsystems, oder Abschließen von Even Money Bets auf Baccarat und Roulette.",
+          "Wetten, um einen Preis in einer Währung zu erhalten, und dann die Währung zu einer stärkeren Währung zu ändern, bevor der Preis dem Konto gutgeschrieben wird."
+        ],
+        "text3": [
+          "Wenn wir einen Spieler des Missbrauchs eines Bonusangebots verdächtigen, entweder alleine oder in Zusammenarbeit mit Dritten, behalten wir uns das Recht vor, die Boni zu widerrufen, Gewinne zu annullieren und die Konten der betreffenden Spieler zu schließen.",
+          "Wenn zum Zeitpunkt der Einlösung eines freien Bonus eine Abhebung aussteht, behält sich das Casino das Recht vor, alle folgenden Gewinne aus diesem Bonus zu annullieren, einschließlich des Bonusbetrags.",
+          "Aktionen und Boni sollen unseren geschätzten Spielern ausgehändigt werden – wir tolerieren keinen Missbrauch von Boni oder betrügerische Aktivität. Wir behalten uns das Recht vor, Boni von Spielern zu blockieren, die verdächtigt werden, unsere Werbeaktionen zu missbrauchen. Falls Verdacht auf betrügerische Aktivität oder Missbrauch besteht, behalten wir uns das Recht vor, Boni und Gewinne von dem entsprechenden Konto zu entfernen.",
+          "Fair Play bedeutet Einzahlung mit der Absicht, den eingezahlten Betrag zu spielen und zu riskieren.",
+          "Boni/Freispielgewinne mit Nullwette unterliegen dem Fair Play. Alle Gewinne von Spielern, die Vorteil aus solchen Angeboten ziehen, und Abhebungen tätigen, ohne sich an Fair Play zu halten, werden beschlagnahmt, und die Spieler werden von zukünftigen Angeboten ausgeschlossen."
+        ]
+      }
     }
   }
 }
