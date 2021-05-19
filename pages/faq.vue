@@ -22,11 +22,14 @@
           {{ $t(`supportPages.faqPage.items.${[activeItem]}.title`) }}
         </h2>
         <Accordion
-          v-for="(item, name) in $t(`supportPages.faqPage.items.${[activeItem]}.items`)"
-          :key="name"
+          v-for="(item, i) in $t(`supportPages.faqPage.items.${[activeItem]}.items`)"
+          :key="i"
           :title="item.title"
-          :content="item.answer"
-          :list="item.list"
+          :content="
+            $t(`supportPages.faqPage.items.${[activeItem]}.items.${i}.answer`, {
+              list: makeList(item),
+            })
+          "
         />
       </div>
       <!--      <div v-if="!tabsSectionIsActive || width >= 768" class="FaqPage-Answers">
@@ -115,6 +118,16 @@ export default {
     onChooseTab(e) {
       this.activeItem = e;
       this.tabsSectionIsActive = false;
+    },
+    makeList(item) {
+      if (!item.list) return '';
+
+      const lis = item.list.map(li => `<li>${li}</li>`);
+      return `
+      <ol>
+        ${lis.join('')}
+      </ol>
+      `;
     },
   },
 };
