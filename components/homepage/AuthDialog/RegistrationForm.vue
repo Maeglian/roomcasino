@@ -289,10 +289,15 @@ export default {
       isRequired: false,
       default: false,
     },
+    beforeStartGame: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   data() {
     return {
-      step: this.beforeDeposit ? 2 : 1,
+      step: this.beforeDeposit || this.beforeStartGame ? 2 : 1,
       fieldsStep1: {
         email: {
           value: '',
@@ -701,6 +706,8 @@ export default {
             });
             if (this.beforeDeposit) {
               this.$modal.show('cashier');
+            } else if (this.beforeStartGame) {
+              this.$emit('profile-updated');
             } else
               this.$modal.show(
                 RegistrationBonus,
