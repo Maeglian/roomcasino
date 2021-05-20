@@ -3,7 +3,7 @@
     <div class="Close Modal-Close" @click="$emit('close')" />
     <div class="Modal-Content CancelBonusPopup-Text">
       <template v-if="step === 1">
-        {{ $t('modals.loseBonus', { amount: bonus.amount }) }}
+        {{ $t('modals.loseBonus', { amount: bonus.bonusBalance }) }}
       </template>
       <template v-else>
         {{ $t('modals.isSure') }}
