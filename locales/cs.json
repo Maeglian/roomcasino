@@ -381,7 +381,7 @@
     "mayMadness" : {
       "title" : "May<br/> madness<br/> od spinomenal",
       "name" : "May madness od spinomenal",
-      "text" : "A je to zase tady – známý poskytovatel Spinomenal vás svým vzrušujícím turnajem May Madness přivede k šílenství. Během tří květnových týdnů si můžete zahrát na skvělých slotech a rozbít velmi štědrý prize pool v hodnotě 60000eur! <br/><br/>Začněme s kolem I! Uskuteční se od 5. května 2021 00:00 GMT do 17. května 2021 23:59 GMT."
+      "text" : "A je to zase tady – známý poskytovatel Spinomenal vás svým vzrušujícím turnajem May Madness přivede k šílenství. Během tří květnových týdnů si můžete zahrát na skvělých slotech a rozbít velmi štědrý prize pool v hodnotě 60000eur! <br/><br/>Začněme s kolem II! Uskuteční se od 18. května 2021 00:00 GMT do 24. května 2021 23:59 GMT."
     }
   },
   "tournaments" : {
@@ -439,14 +439,14 @@
   },
   "mayMadness" : {
     "prize" : "€ 60 000",
-    "text" : "A je to zase tady – známý poskytovatel Spinomenal vás svým vzrušujícím turnajem May Madness přivede k šílenství. Během tří květnových týdnů si můžete zahrát na skvělých slotech a rozbít velmi štědrý prize pool v hodnotě 60000eur!<br/><br/>Začněme s kolem I! Uskuteční se od 5. května 2021 00:00 GMT do 17. května 2021 23:59 GMT. Celková výše prize poolu je 60000 eur!  Po skončení kola I si prvních 150 hráčů ve výsledkové tabulce rozdělí částku 20 000 eur",
+    "text" : "A je to zase tady – známý poskytovatel Spinomenal vás svým vzrušujícím turnajem May Madness přivede k šílenství. Během tří květnových týdnů si můžete zahrát na skvělých slotech a rozbít velmi štědrý prize pool v hodnotě 60000eur!<br/><br/>Začněme s kolem II! Uskuteční se od 18. května 2021 00:00 GMT do 24. května 2021 23:59 GMT.",
     "textMobile" : "A je to zase tady – známý poskytovatel Spinomenal vás svým vzrušujícím turnajem May Madness přivede k šílenství. Během tří květnových týdnů si můžete zahrát na skvělých slotech a rozbít velmi štědrý prize pool v hodnotě 60000eur! ",
     "terms" : [
       {
-        "text" : "Uskuteční se od 5. května 2021 00:00 GMT do 17. května 2021 23:59 GMT."
+        "text" : "Uskuteční se od 18. května 2021 00:00 GMT do 24. května 2021 23:59 GMT."
       },
       {
-        "text" : "Hry začleněné do kola I:<br/><br/>●  Book Of Demi Gods II<br/>●  Aztec Spell<br/>●  Story Of Medusa"
+        "text" : "Hry začleněné do kola II:<br/><br/>●  Queen Of Fire<br/>●  Egyptian Rebirth II<br/>●  Magical Amazon"
       },
       {
         "text" : "Minimální sázka na jeden spin požadovaná pro účast v turnaji je 0,5 eur."
