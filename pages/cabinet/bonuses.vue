@@ -578,12 +578,13 @@ export default {
       top: 1px;
 
       @media (min-width: $screen-m) {
-        top: -1px;
+        top: 3px;
       }
     }
 
     .Counter-AdditionalText {
-      margin-left: -10px;
+      margin-left: 10px;
+      text-transform: lowercase;
     }
   }
 

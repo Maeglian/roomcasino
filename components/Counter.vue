@@ -117,6 +117,7 @@ export default {
 
   &-Content {
     display: flex;
+    align-items: center;
   }
 
   &-Item {
@@ -189,14 +190,10 @@ export default {
     }
 
     &:after {
-      top: -1px;
+      top: 3px;
       right: -10px;
       font-size: 10px;
       color: var(--color-text-main);
-
-      @media (min-width: $screen-m) {
-        font-size: 16px;
-      }
     }
   }
 
