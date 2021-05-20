@@ -25,7 +25,7 @@
           v-for="(item, i) in $t(`supportPages.faqPage.items.${[activeItem]}.items`)"
           :key="i"
           :title="item.title"
-          :content="$t(`supportPages.faqPage.items.${[activeItem]}.items.${i}.answer`)"
+          :content="item.answer"
         />
       </div>
     </div>

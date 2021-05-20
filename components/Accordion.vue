@@ -7,15 +7,7 @@
     >
       {{ title }}
     </div>
-    <div v-if="isOpen" class="Accordion-Content" v-html="content">
-      <!--      <i18n path="supportPages.faqPage.items.bonuses.items.list" tag="span">
-        <template #list>
-          <ol>
-            <li v-for="(li, index) in list" :key="index">{{ li }}</li>
-          </ol>
-        </template>
-      </i18n>-->
-    </div>
+    <div v-if="isOpen" class="Accordion-Content" v-html="content"></div>
   </div>
 </template>
 
@@ -30,11 +22,6 @@ export default {
     content: {
       type: String,
       required: true,
-    },
-    list: {
-      type: Array,
-      required: false,
-      default: () => {},
     },
   },
   data() {

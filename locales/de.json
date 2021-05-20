@@ -63,7 +63,7 @@
     "pleaseDeposit": "Bitte erst einzahlen",
     "pleaseDepositText": "Es ist schade, aber Ihr Guthaben ist 0. Jetzt einzahlen!!",
     "wait": "Halt, Stop!",
-    "lockedByBonus": "Es sind noch laufende Boni auf Ihrem Konto. In diesem Fall ist keine Abhebung möglich. Bitte prüfen Sie Ihr Konto und annullieren Sie die \nBoni, um abheben zu können.",
+    "lockedByBonus": "Es sind noch laufende Boni auf Ihrem Konto. In diesem Fall ist keine Abhebung möglich. Bitte prüfen Sie Ihr Konto und annullieren Sie die  Boni, um abheben zu können.",
     "nullBalance": "Sie können leider keine Abhebung vornehmen. Ihr Konto weist kein Guthaben auf.",
     "loseBonus": "Sie verfügen über einen gültigen Bonus! Wenn Sie ihn ablehnen, verlieren Sie {amount} Bonusgeld.",
     "isSure": "Sind Sie sicher?"
@@ -867,7 +867,7 @@
         },
         "offer3": {
           "title": "MACH EINE EINZAHLUNG UND GENIESSE DIE SPIELE",
-          "text": "Wenn du Bitcoins kaufst, kannst du sie in dein GetSlots-Konto einzahlen und anfangen zu spielen.\nOder du kannst Bitcoin als Investitionsmöglichkeit nutzen. Es ist eine wohlbekannte und schnell wachsende Investitionsmöglichkeit. Wir akzeptieren auch andere Kryptowährungen in unserem Casino. Du kannst Einzahlungen auch mit Ethereum, Litecoin und Bitcoin Cash machen."
+          "text": "Wenn du Bitcoins kaufst, kannst du sie in dein GetSlots-Konto einzahlen und anfangen zu spielen. Oder du kannst Bitcoin als Investitionsmöglichkeit nutzen. Es ist eine wohlbekannte und schnell wachsende Investitionsmöglichkeit. Wir akzeptieren auch andere Kryptowährungen in unserem Casino. Du kannst Einzahlungen auch mit Ethereum, Litecoin und Bitcoin Cash machen."
         }
       }
     },
@@ -1033,13 +1033,13 @@
         "text": {
           "p1": "Glücksspiel in einem Casino sollte in erster Linie der Unterhaltung dienen. Es gibt jedoch einen gewissen Prozentsatz von Leuten, die die Kontrolle über sich verlieren, wenn sie Glücksspiel betreiben. Vor dem Spielantritt ist es wichtig, sich klarzumachen, dass Glücksspiel niemals als eine Einkommensquelle oder als Mittel zur Schuldentilgung betrachtet werden sollte. Man sollte immer die im Casino verbrachte Zeit und das ausgegebene Geld im Auge behalten.",
           "p2": "Wenn du glaubst, dass du mehr Geld ausgibst, als du dir leisten kannst, oder wenn das Spiel deine tägliche Routine beeinträchtigt, raten wir dir eindringlich, verschiedene hilfreiche Maßnahmen zu ergreifen, zum Beispiel die Einrichtung Persönlicher Limits, Selbstausschluss und die Suche nach Hilfe und Unterstützung von anerkannten unabhängigen Gemeinschaften.",
-          "p3": "Um sich selbst auf Anzeichen einer Spielsucht zu überprüfen, können Sie unseren Spielsucht-\n         {quiz}  beantworten.",
+          "p3": "Um sich selbst auf Anzeichen einer Spielsucht zu überprüfen, können Sie unseren Spielsucht-          {quiz}  beantworten.",
           "quiz": "fragebogen"
         }
       },
       "section2": {
         "title": "WIE KANN ICH MEINE AUSGABEN ODER VERLUSTE EINSCHRÄNKEN?",
-        "text1": "Um dich beim verantwortungsbewussten Spiel zu unterstützen, bieten wir das Feature Persönliche Limits. Du kannst Limits für den Einzahlungsbetrag, Verluste, Wetten, Ausgaben in einem Spiel, oder auf deine gesamte Kontenaktivität einrichten. Auf diese Funktionalität kann im Abschnitt Persönliche Limits deines Kontos zugegriffen werden\n        {toLimits}\n{buttonLog}",
+        "text1": "Um dich beim verantwortungsbewussten Spiel zu unterstützen, bieten wir das Feature Persönliche Limits. Du kannst Limits für den Einzahlungsbetrag, Verluste, Wetten, Ausgaben in einem Spiel, oder auf deine gesamte Kontenaktivität einrichten. Auf diese Funktionalität kann im Abschnitt Persönliche Limits deines Kontos zugegriffen werden         {toLimits} {buttonLog}",
         "here": "hier",
         "text2": [
           "Limits können jederzeit geändert werden. Senkungen eines Limits treten sofort in Effekt; eine Erhöhung wird jedoch erst nach Bestätigung durch E-Mail und erst nach Ablauf des vorherigen Limits des gleichen Typs aktiv, um vorschnelle Entscheidungen zu vermeiden. Falls du mehr Informationen oder Unterstützung mit den Persönlichen Limits benötigst, kontaktiere bitte unsere Kundenbetreuung unter contact@ninecasino.com.",
