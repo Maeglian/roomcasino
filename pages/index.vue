@@ -1,6 +1,6 @@
 <template>
   <div class="HomePage">
-    <Hero />
+    <Hero :key="`hero_{$route.path}`" />
     <BestGames :key="$route.path" />
     <!--    <Jackpots />-->
     <!--    <Tournament />-->

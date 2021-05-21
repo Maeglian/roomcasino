@@ -75,8 +75,8 @@
         </div>
         <div v-if="lastResults" class="Card-Results">
           <div
-            v-for="result in lastResults"
-            :key="result.time"
+            v-for="(result, index) in lastResults"
+            :key="index"
             class="Card-Result"
             :style="{ backgroundColor: result.color }"
           >

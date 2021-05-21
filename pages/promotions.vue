@@ -145,16 +145,6 @@ export default {
           text: this.$t('promotions.deposit3.text'),
         },
         {
-          title: this.$t('promotions.playsonMay.title'),
-          prize: this.$t('playsonMay.prize'),
-          image: 'promotions-may.png',
-          image460: 'promotions-may.png',
-          announce: this.$t('promotions.playsonMay.name'),
-          text: this.$t('promotions.playsonMay.text'),
-          link: 'More',
-          url: '/tournaments/playson-may-cashdays',
-        },
-        {
           title: this.$t('promotions.dropsWins.title'),
           prize: this.$t('dropsWins.prize'),
           image: 'drops-wins.png',
@@ -163,6 +153,15 @@ export default {
           text: this.$t('promotions.dropsWins.text'),
           link: 'More',
           url: '/tournaments/drops-wins',
+        },
+        {
+          title: this.$t('promotions.mayMadness.title'),
+          prize: this.$t('mayMadness.prize'),
+          image: 'promotions-madness.png',
+          announce: this.$t('promotions.mayMadness.name'),
+          text: this.$t('promotions.mayMadness.text'),
+          link: 'More',
+          url: '/tournaments/may-madness-spinomenal',
         },
         // {
         //   title: '55%<br/> of the deposit<br/> amount',
