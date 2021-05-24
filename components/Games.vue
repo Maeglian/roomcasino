@@ -134,10 +134,13 @@ export default {
       }
 
       if (!demo && gameProducer === 'bgaming') {
-        const notFullProfileData = Object.values(this.userInfo).some(item => !item);
-        if (notFullProfileData)
+        const notFullProfileData = Object.values(this.userInfo).some(
+          item => item === null || item === '',
+        );
+        if (notFullProfileData) {
           this.showRegistrationDialog('registration', false, true, this.getGame, id, demo, bg);
-        return;
+          return;
+        }
       }
 
       await this.getGame({ gameId: id, demo, bg });
