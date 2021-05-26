@@ -19,7 +19,17 @@
       }"
       @change-page="currentPage = $event"
       @show-more="onShowMore"
-    />
+    >
+      <template #cancelBtn="{ item }">
+        <button
+          v-if="item.status === 'wait' && item.action === 'withdraw'"
+          class="Btn Btn--outline CabinetPage-Btn HistoryPage-Btn"
+          @click="$modal.show('cashier')"
+        >
+          {{ $t('buttons.cancel') }}
+        </button>
+      </template>
+    </CabinetTable>
   </div>
 </template>
 
@@ -67,6 +77,10 @@ export default {
                 if (x === 'cancel') return 'CabinetTable-Cell--error';
                 return '';
               },
+            },
+            {
+              label: '',
+              field: 'cancelBtn',
             },
             {
               label: this.$t('common.amount'),
@@ -302,6 +316,10 @@ export default {
 .HistoryPage {
   &-Content {
     width: 100%;
+  }
+
+  &-Btn {
+    text-transform: uppercase;
   }
 }
 </style>
