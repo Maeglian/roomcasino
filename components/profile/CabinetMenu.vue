@@ -1,46 +1,46 @@
 <template>
   <nav class="CabinetMenu">
-    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/cabinet/balance')">
+    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/balance')">
       <svg class="CabinetMenu-NavIcon" width="20" height="16">
         <use xlink:href="@/assets/img/icons.svg#deposit"></use>
       </svg>
-      {{ $t('cabinet.pages.balance') }}
+      {{ $t('profile.pages.balance') }}
     </NuxtLink>
-    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/cabinet/bonuses')">
+    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/bonuses')">
       <svg class="CabinetMenu-NavIcon" width="20" height="18">
         <use xlink:href="@/assets/img/icons.svg#promotions"></use>
       </svg>
-      {{ $t('cabinet.pages.bonuses') }}
+      {{ $t('profile.pages.bonuses') }}
     </NuxtLink>
-    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/cabinet/history/transaction')">
+    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/history/transaction')">
       <svg class="CabinetMenu-NavIcon" width="22" height="20">
         <use xlink:href="@/assets/img/icons.svg#history"></use>
       </svg>
-      {{ $t('cabinet.pages.history') }}
+      {{ $t('profile.pages.history') }}
     </NuxtLink>
-    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/cabinet/verification')">
+    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/verification')">
       <svg class="CabinetMenu-NavIcon" width="20" height="23">
         <use xlink:href="@/assets/img/icons.svg#verification"></use>
       </svg>
-      {{ $t('cabinet.pages.verification') }}
+      {{ $t('profile.pages.verification') }}
     </NuxtLink>
-    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/cabinet/profile/general')">
+    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/user/general')">
       <svg class="CabinetMenu-NavIcon" width="20" height="22">
         <use xlink:href="@/assets/img/icons.svg#user"></use>
       </svg>
-      {{ $t('cabinet.pages.profile') }}
+      {{ $t('profile.pages.user') }}
     </NuxtLink>
-    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/cabinet/limits')">
+    <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/limits')">
       <svg class="CabinetMenu-NavIcon" width="20" height="20">
         <use xlink:href="@/assets/img/icons.svg#options"></use>
       </svg>
-      {{ $t('cabinet.pages.limits') }}
+      {{ $t('profile.pages.limits') }}
     </NuxtLink>
     <div class="CabinetMenu-NavLink" @click="onClickExitBtn()">
       <svg class="CabinetMenu-NavIcon" width="22" height="18">
         <use xlink:href="@/assets/img/icons.svg#exit"></use>
       </svg>
-      {{ $t('cabinet.pages.exit') }}
+      {{ $t('profile.pages.exit') }}
     </div>
   </nav>
 </template>

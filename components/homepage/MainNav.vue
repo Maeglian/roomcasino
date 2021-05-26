@@ -90,7 +90,7 @@ export default {
         },
         {
           name: this.$t('pages.myAccount'),
-          url: this.localePath('/cabinet/balance'),
+          url: this.localePath('/profile/balance'),
           icon: 'user-profile.svg',
           onlyIfLoggedIn: true,
         },

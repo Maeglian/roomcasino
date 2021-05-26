@@ -220,13 +220,13 @@
     "until": "Until",
     "dataPlaceholder": "DD.MM.YYYY"
   },
-  "cabinet": {
+  "profile": {
     "pages": {
       "balance": "Balance",
       "bonuses": "Bonuses",
       "history": "History",
       "verification": "Verification",
-      "profile": "Profile",
+      "user": "Profile",
       "limits": "Gambling limits",
       "exit": "Exit"
     },
@@ -276,7 +276,7 @@
       "disapproved": "Disapproved",
       "drop": "Drop file here or browse images or .pdf files. Max size"
     },
-    "profile": {
+    "user": {
       "title": "User profile",
       "tabs": {
         "general": "General",

@@ -2,13 +2,13 @@
   <div class="ProfileInfo ProfilePage-Content">
     <Loader v-if="profileIsLoading || !countriesList.length" />
     <form v-else class="ProfileInfo-Form" @submit.prevent="onSubmit">
-      <div class="CabinetPage-Header">{{ $t('cabinet.profile.generalInfo') }}</div>
+      <div class="CabinetPage-Header">{{ $t('profile.user.generalInfo') }}</div>
       <div class="ProfileInfo-Fields">
         <template v-for="(val, name) in fields">
           <template v-if="name !== 'receiveEmailPromos' && name !== 'receiveSmsPromos'">
             <div v-if="name === 'country' && !user[name]" :key="name" class="CabinetForm-Row">
               <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
-                {{ $t(`cabinet.profile.labels.${name}`) }}
+                {{ $t(`profile.user.labels.${name}`) }}
               </label>
               <BaseDropdown
                 v-model="fields[name]"
@@ -19,7 +19,7 @@
             </div>
             <div v-else-if="name === 'gender' && !user[name]" :key="name" class="CabinetForm-Row">
               <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
-                {{ $t(`cabinet.profile.labels.${name}`) }}
+                {{ $t(`profile.user.labels.${name}`) }}
               </label>
               <BaseDropdown
                 v-model="fields[name]"
@@ -65,7 +65,7 @@
               </template>
               <template #beforeInput-relative>
                 <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
-                  {{ $t(`cabinet.profile.labels.${name}`) }}
+                  {{ $t(`profile.user.labels.${name}`) }}
                 </label>
               </template>
               <template v-if="name === 'mobile'" #afterInput-absolute>
@@ -80,7 +80,7 @@
           </template>
         </template>
       </div>
-      <div class="CabinetPage-Header">{{ $t('cabinet.profile.subscriptions') }}</div>
+      <div class="CabinetPage-Header">{{ $t('profile.user.subscriptions') }}</div>
       <div class="ProfileInfo-Subscriptions">
         <template v-for="(item, name) in fields">
           <BaseCheckbox
@@ -149,8 +149,8 @@ export default {
         { name: this.$t('auth.placeholders.female'), value: 'female' },
       ],
       profileLabels: {
-        receiveEmailPromos: this.$t('cabinet.profile.email'),
-        receiveSmsPromos: this.$t('cabinet.profile.sms'),
+        receiveEmailPromos: this.$t('profile.user.email'),
+        receiveSmsPromos: this.$t('profile.user.sms'),
       },
       fakeFields: {
         email: 'fillypkfillypk@gmail.com',
@@ -262,7 +262,7 @@ export default {
         if (!this.updateProfileError)
           this.pushNotificationAlert({
             type: 'success',
-            text: this.$t('cabinet.profile.updateSuccess'),
+            text: this.$t('profile.user.updateSuccess'),
           });
       });
     },
