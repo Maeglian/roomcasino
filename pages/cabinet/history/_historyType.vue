@@ -24,7 +24,7 @@
         <button
           v-if="item.status === 'wait' && item.action === 'withdraw'"
           class="Btn Btn--outline CabinetPage-Btn HistoryPage-Btn"
-          @click="$modal.show('cashier')"
+          @click="onClickCancelBtn"
         >
           {{ $t('buttons.cancel') }}
         </button>
@@ -36,7 +36,7 @@
 <script>
 import CabinetFilters from '@/components/cabinet/CabinetFilters.vue';
 import CabinetTable from '@/components/cabinet/CabinetTable.vue';
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapMutations, mapState } from 'vuex';
 import moment from 'moment';
 
 export default {
@@ -275,6 +275,7 @@ export default {
     this.getData({ ...this.filterPayload, offset: this.offset, limit: this.limit });
   },
   methods: {
+    ...mapMutations(['setCashoutTrue']),
     ...mapActions(['getTransactionHistoryList', 'getBonusHistoryList', 'getGameHistoryList']),
     getData(payload = {}) {
       switch (this.$route.params.historyType) {
@@ -307,6 +308,10 @@ export default {
     onShowMore() {
       this.limit += this.limit;
       this.getData({ ...this.filterPayload, offset: this.offset, limit: this.limit });
+    },
+    onClickCancelBtn() {
+      this.setCashoutTrue();
+      this.$modal.show('cashier');
     },
   },
 };
