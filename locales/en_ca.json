@@ -68,6 +68,14 @@
     "loseBonus": "You’ve got an active bonus! If you cancel it, you will lose {amount} bonus money.",
     "isSure": "Are you sure?"
   },
+  "notifications": {
+    "cancelBonusError": "Error on cancelling bonus",
+    "cancelBonusSuccess": "Your bonus was cancelled",
+    "cancelFreeSpinError": "Error on cancelling free spin",
+    "cancelFreeSpinSuccess": "Your free spin was cancelled",
+    "activateFreeSpinError": "Error on activating free spin",
+    "activateFreeSpinSuccess": "Your free spin was activated"
+  },
   "auth": {
     "loginTitle": "Welcome back",
     "signUpTitle": "Sign up <span class=\"Colored\">&</span> get<br />welcome bonus",
@@ -388,13 +396,13 @@
     "mayMadness": {
       "title": "May<br/> madness<br/> by spinomenal",
       "name": "May madness by spinomenal",
-      "text": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!<br/><br/>Let’s start with Round II! It runs between May 18, 2021, 00:00 GMT, and May 24, 2021, 23:59 GMT."
+      "text": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!<br/><br/>Let’s start with Round III! It runs between May 25, 2021, 00:00 GMT, and June 1, 2021, 23:59 GMT."
     }
   },
   "tournaments": {
     "games": "Games in this tournament",
     "terms": "Tournament terms and conditions"
-  } ,
+  },
   "dropsWins": {
     "prize": "€ 2 500 000",
     "text": "The main tournament of the year! Join Stage 4 (Weeks 13-16) of the promotion. Try your luck to win a cash prize of €2,500,000 in total! There are weekly and daily tournaments with generous prize pools.<br/>Every day you can get prizes in various popular slots from well-known Pragmatic Play™.",
@@ -449,14 +457,14 @@
   },
   "mayMadness": {
     "prize": "€ 60 000",
-    "text": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!<br/><br/>Let’s start with Round II! It runs between May 18, 2021, 00:00 GMT, and May 24, 2021, 23:59 GMT.",
+    "text": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!<br/><br/>Let’s start with Round III! It runs between May 25, 2021, 00:00 GMT, and June 1, 2021, 23:59 GMT.",
     "textMobile": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!",
     "terms": [
       {
-        "text": "Round II runs between between May 18, 2021, 00:00 GMT, and May 24, 2021, 23:59 GMT."
+        "text": "Round III runs between between May 25, 2021, 00:00 GMT, and June 1, 2021, 23:59 GMT."
       },
       {
-        "text": "Participating games in Round II:<br/><br/>●  Queen Of Fire<br/>●  Egyptian Rebirth II<br/>●  Magical Amazon"
+        "text": "Participating games in Round III:<br/><br/>●  Book Of Rebirth<br/>●  Origins Of Lilith<br/>●  4 Horsemen II"
       },
       {
         "text": "The minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
@@ -892,7 +900,7 @@
           "Gaming environments are often targeted by those wishing to launder money. The speed of       transactions and use of multiple payment processing options make gaming businesses especially       vulnerable to this activity.",
           "As a result, many of the initial trading and procedural decisions of the director are either       directly aimed at combatting this threat or protections are enhanced as a bi-product of the       overall commercial and trading approach/strategy taken by the business.",
           "ALL staff will be given training in Money Laundering indicators such as (but not limited to):"
-        ],
+          ],
         "list": [
           "Unusual Betting Patterns",
           "Suspicious deposit and withdrawal patterns (size and frequency)",
