@@ -96,7 +96,7 @@
     "tryingConfirmEmail": "We're trying to verify your email",
     "confirmEmailError": "Sorry, you email was not confirmed",
     "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed",
-    "bonus": "€ 150",
+    "bonus": "$ 150",
     "placeholders": {
       "enterEmail": "Enter your email",
       "enterPassword": "Enter your password",
