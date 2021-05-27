@@ -176,16 +176,16 @@
   "homepage": {
     "heroBanner": {
       "deposit1": {
-        "title": "Welcome <br/> package <span class=\"Colored\">$ 450!</span>",
-        "text": "Make first deposit<br/> and get <span class=\"Colored\">100%</span><br/> up to <span class=\"Colored\">$ 150</span> + <span class=\"Colored\">150 free spins</span>"
+        "title": "Welcome <br/> package <span class=\"Colored\">$ 675!</span>",
+        "text": "Make first deposit<br/> and get <span class=\"Colored\">100%</span><br/> up to <span class=\"Colored\">$ 225</span> + <span class=\"Colored\">150 free spins</span>"
       },
       "deposit2": {
         "title": "Second deposit<br/> bonus",
-        "text": "55% bonus<br/> up to <span class=\"Colored\">$150</span><br/> on your second deposit"
+        "text": "55% bonus<br/> up to <span class=\"Colored\">$225</span><br/> on your second deposit"
       },
       "deposit3": {
         "title": "Third deposit<br/> bonus",
-        "text": "100% bonus<br/> up to <span class=\"Colored\">$150</span><br/> on your third deposit"
+        "text": "100% bonus<br/> up to <span class=\"Colored\">$225</span><br/> on your third deposit"
       },
       "deposit4": {
         "title": "More exciting<br/> promotions<br/> coming soon!"
@@ -366,24 +366,24 @@
   },
   "promotions": {
     "title": "Current promotions",
-    "text": "Ninecasino is constantly working to deliver the best promotions. We use the latest         technology and the feedback from our players to re-design our promotions. Enjoy!",
+    "text": "Ninecasino is constantly working to deliver the best promotions. We use the latest technology and the feedback from our players to re-design our promotions. Enjoy!",
     "deposit1": {
       "title": "100%<br/> of the deposit<br/> amount",
-      "upTo": "up to $150 + 150 FREE SPINS",
+      "upTo": "up to $225 + 150 free spins",
       "name": "First deposit bonus",
-      "text": "Make your first deposit at Ninecasino and get up to $150 + 150 free spins.<br/><br/>To activate the bonus - just make first deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your first deposit at Ninecasino and get up to $225 + 150 free spins.<br/><br/>To activate the bonus - just make first deposit of $20 or more. The bonus will be credited automatically."
     },
     "deposit2": {
       "title": "55%<br/> of the deposit<br/> amount",
-      "upTo": "up to $150",
+      "upTo": "up to $225",
       "name": "Second deposit bonus",
-      "text": "Make your second deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your second deposit at Ninecasino and get up to $225.<br/><br/>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically."
     },
     "deposit3": {
       "title": "100%<br/> of the deposit<br/> amount",
-      "upTo": "up to $150",
+      "upTo": "up to $225",
       "name": "Third deposit bonus",
-      "text": "Make your third deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your third deposit at Ninecasino and get up to $225.<br/><br/>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
     },
     "dropsWins": {
       "title": "Drops<span class=\"Colored\">&</span>wins<br/>Stage 4<br/>(Weeks 13-16)",
