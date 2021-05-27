@@ -33,6 +33,15 @@
               src="@/assets/img/muchbetter.png"
             />
           </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image Partners-Image--width" src="@/assets/img/klarna.svg" />
+          </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image Partners-Image--width" src="@/assets/img/skrill.png" />
+          </div>
+          <div class="Partners-Partner">
+            <img class="Partners-Image Partners-Image--width" src="@/assets/img/volt.svg" />
+          </div>
           <!--          <div class="Partners-Partner">-->
           <!--            <img class="Partners-Image" src="@/assets/img/payguru.png"/>-->
           <!--          </div>-->
