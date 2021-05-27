@@ -1,32 +1,36 @@
 <template>
   <section class="Winners">
     <div class="Winners-Section">
-      <div class="Title Title--type-h2 Winners-Title">Latest winners</div>
+      <div class="Title Title--type-h2 Winners-Title">{{ $t('homepage.lastWinners') }}</div>
       <div class="Table TableBordered Winners-Table">
-        <div v-for="item in items" :key="item.name" class="Table-Row">
+        <div v-for="(item, i) in lastWinnerList" :key="`lastWinner_${i}`" class="Table-Row">
           <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" :src="item.imgUrl" alt="" />
+            <img class="Winners-Avatar" :src="item.gameIconUrl" alt="" />
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Name">
-            {{ item.name }} just won<br />
-            in <span class="Winners-Game">{{ item.game }}</span>
+            {{ item.nickname }} just won<br />
+            in <span class="Winners-Game">{{ item.gameName }}</span>
           </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Money">€ {{ item.sum }}</div>
+          <div class="Table-Cell TableBordered-Cell Winners-Money">
+            {{ item.amount }} {{ item.currency }}
+          </div>
         </div>
       </div>
     </div>
     <div class="Winners-Section">
-      <div class="Title Title--type-h2 Winners-Title">top winners</div>
+      <div class="Title Title--type-h2 Winners-Title">{{ $t('homepage.topWinners') }}</div>
       <div class="Table Table--bordered Winners-Table">
-        <div v-for="item in items" :key="2 + item.name" class="Table-Row">
+        <div v-for="(item, i) in topWinnerList" :key="`topWinner_${i}`" class="Table-Row">
           <div class="Table-Cell TableBordered-Cell Winners-Avatar">
-            <img class="Winners-Avatar" :src="item.imgUrl" alt="" />
+            <img class="Winners-Avatar" :src="item.gameIconUrl" alt="" />
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Name">
-            {{ item.name }} just won<br />
-            in <span class="Winners-Game">{{ item.game }}</span>
+            {{ item.nickname }} just won<br />
+            in <span class="Winners-Game">{{ item.gameName }}</span>
           </div>
-          <div class="Table-Cell TableBordered-Cell Winners-Money">€ {{ item.sum }}</div>
+          <div class="Table-Cell TableBordered-Cell Winners-Money">
+            {{ item.amount }} {{ item.currency }}
+          </div>
         </div>
       </div>
     </div>
@@ -34,6 +38,8 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex';
+
 export default {
   name: 'Winners',
   data() {
@@ -72,6 +78,20 @@ export default {
       ],
     };
   },
+  computed: {
+    ...mapState(['topWinnerList', 'lastWinnerList', 'topWinnerListError', 'lastWinnerListError']),
+  },
+  mounted() {
+    this.lastWinnersTimer = setInterval(this.getLastWinnerList, 10000, { limit: 5 });
+    this.topWinnersTimer = setInterval(this.getTopWinnerList, 10000, { limit: 5 });
+  },
+  beforeDestroy() {
+    clearInterval(this.lastWinnersTimer);
+    clearInterval(this.topWinnersTimer);
+  },
+  methods: {
+    ...mapActions(['getTopWinnerList', 'getLastWinnerList']),
+  },
 };
 </script>
 
@@ -80,11 +100,20 @@ export default {
   display: flex;
   flex-direction: column;
   margin-bottom: 32px;
+  padding-top: 20px;
 
   @media (min-width: $screen-s) {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 60px;
+  }
+
+  @media (min-width: $screen-m) {
+    padding-top: 30px;
+  }
+
+  @media (min-width: $screen-l) {
+    padding-top: 40px;
   }
 
   @media (min-width: $screen-xl) {
