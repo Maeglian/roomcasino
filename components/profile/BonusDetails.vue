@@ -3,16 +3,22 @@
     <div class="Close Modal-Close" @click="$emit('close')"></div>
     <div class="CabinetPage-Header">{{ bonus.name }}</div>
     <div class="BonusDetails">
-      <div class="BonusDetails-Row">
+      <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">
           <template v-if="$i18n.locale === 'de'">
-            {{ $t('cabinet.bonuses.table.bonus') }}{{ $t('common.amount') }}:
+            {{ $t('profile.bonuses.table.bonus') }}{{ $t('common.amount') }}:
           </template>
           <template v-else
-            >{{ $t('cabinet.bonuses.table.bonus') }} {{ $t('common.amount') }}:</template
+            >{{ $t('profile.bonuses.table.bonus') }} {{ $t('common.amount') }}:</template
           >
         </div>
         <div class="BonusDetails-Value">{{ bonus.amount }} {{ bonus.currency }}</div>
+      </div>
+      <div v-else class="BonusDetails-Row">
+        <div class="BonusDetails-Label">
+          Free spins awarded:
+        </div>
+        <div class="BonusDetails-Value">x{{ bonus.amount }}</div>
       </div>
       <div class="BonusDetails-Row">
         <div class="BonusDetails-Label">{{ $t('common.status') }}:</div>
@@ -35,21 +41,23 @@
         <div class="BonusDetails-Label">{{ $t('common.wager') }}:</div>
         <div class="BonusDetails-Value">{{ bonus.wager }}</div>
       </div>
-      <div class="BonusDetails-Row">
+      <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">{{ $t('common.wager') }} {{ $t('common.amount') }}:</div>
         <div class="BonusDetails-Value">{{ bonus.currentWagerAmount }} {{ bonus.currency }}</div>
       </div>
-      <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">{{ $t('cabinet.bonuses.wagerAmountRequirement') }}:</div>
+      <div v-if="type === 'bonus'" class="BonusDetails-Row">
+        <div class="BonusDetails-Label">
+          {{ $t('profile.bonuses.wagerAmountRequirement') }}
+        </div>
         <div class="BonusDetails-Value">{{ bonus.wagerAmount }} {{ bonus.currency }}</div>
       </div>
-      <div class="BonusDetails-Row">
-        <div class="BonusDetails-Label">{{ $t('cabinet.bonuses.wageredPercent') }}:</div>
+      <div v-if="type === 'bonus'" class="BonusDetails-Row">
+        <div class="BonusDetails-Label">{{ $t('profile.bonuses.wageredPercent') }}:</div>
         <div class="BonusDetails-Value">
           {{ (bonus.currentWagerAmount / bonus.wagerAmount) * 100 }}%
         </div>
       </div>
-      <div class="BonusDetails-Row">
+      <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">{{ $t('common.currency') }}:</div>
         <div class="BonusDetails-Value">
           {{ bonus.currency }}
@@ -73,24 +81,106 @@
           {{ convertDate(bonus.activationExpireAt) }}
         </div>
       </div>
+      <div v-if="type === 'freeSpin'" class="BonusDetails-Slider">
+        <div v-if="chooseGameMessage" class="BonusDetails-Message">
+          Please choose a game!
+        </div>
+        <VueSlider v-if="games.length > 1" v-bind="sliderOptions">
+          <div
+            v-for="game in games"
+            :key="game.id"
+            class="BonusDetails-Image"
+            :class="{ 'BonusDetails-Image--active': game.id === chosenGame }"
+            @click="onChooseGame(game.id)"
+          >
+            <img :src="game.img" />
+          </div>
+        </VueSlider>
+        <div v-else class="BonusDetails-Image BonusDetails-ActivetedGameImage">
+          <img :src="games[0].img" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import moment from 'moment';
+import VueSlider from '@/components/Slider';
+import { mapState } from 'vuex';
 
 export default {
   name: 'BonusDetails',
+  components: {
+    VueSlider,
+  },
   props: {
     bonus: {
       type: Object,
       required: true,
     },
+    type: {
+      type: String,
+      required: false,
+      default: 'bonus',
+    },
+    gameIdToActivate: {
+      type: String,
+      required: true,
+    },
+    chooseGame: {
+      type: Function,
+      required: false,
+      default: () => {},
+    },
+    chooseGameMessage: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
+  data() {
+    return {
+      chosenGame: this.gameIdToActivate,
+    };
+  },
+  computed: {
+    ...mapState(['defaultGames']),
+    sliderOptions() {
+      const items = this.bonus.gameList.length >= 3 ? 3 : this.bonus.gameList.length;
+      const nav = this.bonus.gameList.length > items;
+      return {
+        nav,
+        margin: 10,
+        responsive: {
+          0: {
+            items: 2,
+          },
+          460: {
+            items,
+          },
+        },
+      };
+    },
+    games() {
+      if (this.bonus.gameList) {
+        return this.bonus.gameList.map(game => {
+          const findedGame = this.defaultGames.find(g => g.gameId === game.id);
+          const img = findedGame ? findedGame.imageUrl : '';
+          return { ...game, img };
+        });
+      }
+
+      return [];
+    },
   },
   methods: {
     convertDate(timestamp) {
       return moment.unix(timestamp).format('DD MMM YYYY, HH:mm:ss');
+    },
+    onChooseGame(id) {
+      this.chosenGame = id;
+      this.chooseGame(id);
     },
   },
 };
@@ -133,6 +223,34 @@ export default {
     &--cancelled {
       color: var(--color-error);
     }
+  }
+
+  &-Slider {
+    position: relative;
+    margin: 14px 16px;
+  }
+
+  &-Image {
+    max-width: 200px;
+    padding: 2px;
+    cursor: pointer;
+
+    &--active {
+      padding: 0;
+      border: 2px solid var(--color-main1);
+    }
+  }
+
+  &-ActivetedGameImage {
+    margin: 0 auto;
+  }
+
+  &-Message {
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-error);
   }
 }
 </style>

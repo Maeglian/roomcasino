@@ -68,43 +68,51 @@
     "loseBonus": "Sie verfügen über einen gültigen Bonus! Wenn Sie ihn ablehnen, verlieren Sie {amount} Bonusgeld.",
     "isSure": "Sind Sie sicher?"
   },
-  "auth": {
-    "loginTitle": "Willkommen zurück  ",
-    "signUpTitle": "Melde dich an  <span class=\"Colored\">&</span> erhalte den <br /> Begrüssungbonus",
-    "forgotPassword": "Passwort vergessen",
-    "emails": "Erhalt von E-Mail-Benachrichtigungen zu Aktionen",
-    "terms": "Ich bin {minAge} Jahre alt und stimme {br} {terms} und {policy} ",
-    "step2Title": "Bitte füllen Sie die untenstehenden Informationen aus! ",
-    "thanksRegistration": "Danke für die Registrierung",
-    "registrationBonus": "150 €",
-    "registrationBonusText": "für deine erste Einzahlung! Nutze den Ninecasino Begrüßungsbonus",
-    "getBonus": "hol dir deinen Bonus",
-    "enterEmail": "E—Mail-Adresse Eingeben ",
-    "passwordRestoreText": "Danke! Prüfen Sie Ihre E-Mail für weitere Anweisungen",
-    "enterNewPassword": "Geben Sie Ihr neues Passwort ein",
-    "updatePassword": "Passwort aktualisieren",
-    "newPassword": "Neues Passwort",
-    "confirmPassword": "Passwort bestätigen",
-    "tryingConfirmEmail": "Wir versuchen, Ihre E-Mail zu verifizieren",
-    "confirmEmailError": "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
-    "confirmEmailSuccess": "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
-    "bonus": "150 €",
-    "placeholders": {
-      "enterEmail": "Ihre E-Mail eingeben",
-      "enterPassword": "Ihr Passwort eingeben",
-      "email": "Ihre E-Mail ",
-      "password": "Ihr Passwort ",
-      "currency": "Währung ",
-      "country": "Staat ",
-      "firstName": "Vorname",
-      "lastName": "Nachname",
-      "male": "Männlich",
-      "female": "Weiblich",
-      "city": "Stadt ",
-      "address": "Anschrift",
-      "postalCode": "Postleitzahl",
-      "phone": "Rufnummer",
-      "year": "JJJJ"
+  "notifications": {
+    "cancelBonusError": "Fehler bei der Annullierung Ihres Bonus",
+    "cancelBonusSuccess": "Ihr Bonus wurde annulliert",
+    "cancelFreeSpinError": "Das Freispiel konnte nicht abgebrochen werden",
+    "cancelFreeSpinSuccess": "Ihr Freispiel wurde abgebrochen",
+    "activateFreeSpinError": "Das Freispiel konnte nicht gestartet werden",
+    "activateFreeSpinSuccess": "Ihr Freispiel wurde gestartet"
+  },
+  "auth" : {
+    "loginTitle" : "Willkommen zurück  ",
+    "signUpTitle" : "Melde dich an  <span class=\"Colored\">&</span> erhalte den <br /> Begrüssungbonus",
+    "forgotPassword" : "Passwort vergessen",
+    "emails" : "Erhalt von E-Mail-Benachrichtigungen zu Aktionen",
+    "terms" : "Ich bin {minAge} Jahre alt und stimme {br} {terms} und {policy} ",
+    "step2Title" : "Bitte füllen Sie die untenstehenden Informationen aus! ",
+    "thanksRegistration" : "Danke für die Registrierung",
+    "registrationBonus" : "150 €",
+    "registrationBonusText" : "für deine erste Einzahlung! Nutze den Ninecasino Begrüßungsbonus",
+    "getBonus" : "hol dir deinen Bonus",
+    "enterEmail" : "E—Mail-Adresse Eingeben ",
+    "passwordRestoreText" : "Danke! Prüfen Sie Ihre E-Mail für weitere Anweisungen",
+    "enterNewPassword" : "Geben Sie Ihr neues Passwort ein",
+    "updatePassword" : "Passwort aktualisieren",
+    "newPassword" : "Neues Passwort",
+    "confirmPassword" : "Passwort bestätigen",
+    "tryingConfirmEmail" : "Wir versuchen, Ihre E-Mail zu verifizieren",
+    "confirmEmailError" : "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
+    "confirmEmailSuccess" : "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
+    "bonus" : "150 €",
+    "placeholders" : {
+      "enterEmail" : "Ihre E-Mail eingeben",
+      "enterPassword" : "Ihr Passwort eingeben",
+      "email" : "Ihre E-Mail ",
+      "password" : "Ihr Passwort ",
+      "currency" : "Währung ",
+      "country" : "Staat ",
+      "firstName" : "Vorname",
+      "lastName" : "Nachname",
+      "male" : "Männlich",
+      "female" : "Weiblich",
+      "city" : "Stadt ",
+      "address" : "Anschrift",
+      "postalCode" : "Postleitzahl",
+      "phone" : "Rufnummer",
+      "year" : "JJJJ"
     }
   },
   "pages": {
@@ -212,13 +220,13 @@
     "until": "bis",
     "dataPlaceholder": "DD.MM.JJJJ"
   },
-  "cabinet": {
+  "profile": {
     "pages": {
       "balance": "Kontostand",
       "bonuses": "Boni",
       "history": "historie",
       "verification": "Überprüfung",
-      "profile": "Profil",
+      "user": "Profil",
       "limits": "Verlustlimits",
       "exit": "Beenden"
     },
@@ -268,7 +276,7 @@
       "disapproved": "Nicht genehmigt",
       "drop": "Datei hier ablegen oder Bilder oder .pdf-Dateien suchen. Maximale Größe 110 MB"
     },
-    "profile": {
+    "user": {
       "title": "Benutzerprofil",
       "tabs": {
         "general": "Allgemein",

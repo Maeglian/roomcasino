@@ -68,6 +68,14 @@
     "loseBonus" : "Vous avez un bonus actif! Si vous l’annulez, vous perdrez {amount} le montant du bonus.",
     "isSure" : "Êtes-vous sûr?"
   },
+  "notifications": {
+    "cancelBonusError": "Erreur lors de l’annulation du bonus",
+    "cancelBonusSuccess": "Votre bonus a été annulé",
+    "cancelFreeSpinError": "Erreur lors de l’annulation du tour gratuit",
+    "cancelFreeSpinSuccess": "Votre tour gratuit a été annulé",
+    "activateFreeSpinError": "Erreur lors de l’activation du tour gratuit",
+    "activateFreeSpinSuccess": "Votre tour gratuit a été activé"
+  },
   "auth" : {
     "loginTitle" : "Bienvenue à nouveau",
     "signUpTitle" : "Inscrives-vous et<span class=\"Colored\">&</span> recevez<br /> un bonus de bienvenue",
@@ -210,13 +218,13 @@
     "until" : "Jusqu'à",
     "dataPlaceholder" : "DD.MM.AAAA"
   },
-  "cabinet" : {
+  "profile" : {
     "pages" : {
       "balance" : "Balance",
       "bonuses" : "Bonuses",
       "history" : "Histoire",
       "verification" : "Vérification",
-      "profile" : "Profile",
+      "user" : "Profile",
       "limits" : "Limites de jeu",
       "exit" : "Sortie"
     },
@@ -266,7 +274,7 @@
       "disapproved" : "Désapprouvé",
       "drop" : "Déposez le fichier ici ou parcourez les images ou les fichiers .pdf. Taille maximale 110 MB"
     },
-    "profile" : {
+    "user" : {
       "title" : "Profil utilisateur",
       "tabs" : {
         "general" : "Général",

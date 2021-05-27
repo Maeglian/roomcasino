@@ -455,7 +455,6 @@ export default {
 }
 
 .v_slider__item {
-  float: left;
   min-height: 1px;
   -webkit-backface-visibility: hidden;
   -webkit-touch-callout: none;

@@ -66,6 +66,14 @@
     "loseBonus" : "Máš aktivní bonus! Pokud ho zrušíš, přijdeš o {amount} bonusové peníze.",
     "isSure" : "Určitě?"
   },
+  "notifications": {
+    "cancelBonusError": "Chyba zrušení bonusu",
+    "cancelBonusSuccess": "Tvůj bonus byl zrušen",
+    "cancelFreeSpinError": "Chyba zrušení spinu zdarma",
+    "cancelFreeSpinSuccess": "Váš spin zdarma byl zrušen",
+    "activateFreeSpinError": "Chyba aktivace spinu zdarma",
+    "activateFreeSpinSuccess": "Váš spin zdarma byl aktivován"
+  },
   "auth" : {
     "loginTitle" : "Vítej zpět",
     "signUpTitle" : "Zaregistrujte se<br /> <span class = \"Colored\"> & </span> a získejte <br /> uvítací bonus",
@@ -207,13 +215,13 @@
     "until" : "Dokud",
     "dataPlaceholder" : "DD.MM.YYYY"
   },
-  "cabinet" : {
+  "profile" : {
     "pages" : {
       "balance" : "Zůstatek",
       "bonuses" : "Bonusy",
       "history" : "Dějiny",
       "verification" : "Ověření",
-      "profile" : "Profil",
+      "user" : "Profil",
       "limits" : "Limity hazardu",
       "exit" : "Výstup"
     },
@@ -263,7 +271,7 @@
       "approved" : "Schválený",
       "disapproved" : "Zamítnuto"
     },
-    "profile" : {
+    "user" : {
       "title" : "Uživatelský profil",
       "tabs" : {
         "general" : "Všeobecné",

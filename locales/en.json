@@ -68,6 +68,14 @@
     "loseBonus": "You’ve got an active bonus! If you cancel it, you will lose {amount} bonus money.",
     "isSure": "Are you sure?"
   },
+  "notifications": {
+    "cancelBonusError": "Error on cancelling bonus",
+    "cancelBonusSuccess": "Your bonus was cancelled",
+    "cancelFreeSpinError": "Error on cancelling free spin",
+    "cancelFreeSpinSuccess": "Your free spin was cancelled",
+    "activateFreeSpinError": "Error on activating free spin",
+    "activateFreeSpinSuccess": "Your free spin was activated"
+  },
   "auth": {
     "loginTitle": "Welcome back",
     "signUpTitle": "Sign up <span class=\"Colored\">&</span> get<br />welcome bonus",
@@ -88,7 +96,7 @@
     "tryingConfirmEmail": "We're trying to verify your email",
     "confirmEmailError": "Sorry, you email was not confirmed",
     "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed",
-    "bonus": "€ 150",
+    "bonus": "$ 150",
     "placeholders": {
       "enterEmail": "Enter your email",
       "enterPassword": "Enter your password",
@@ -212,13 +220,13 @@
     "until": "Until",
     "dataPlaceholder": "DD.MM.YYYY"
   },
-  "cabinet": {
+  "profile": {
     "pages": {
       "balance": "Balance",
       "bonuses": "Bonuses",
       "history": "History",
       "verification": "Verification",
-      "profile": "Profile",
+      "user": "Profile",
       "limits": "Gambling limits",
       "exit": "Exit"
     },
@@ -268,7 +276,7 @@
       "disapproved": "Disapproved",
       "drop": "Drop file here or browse images or .pdf files. Max size"
     },
-    "profile": {
+    "user": {
       "title": "User profile",
       "tabs": {
         "general": "General",

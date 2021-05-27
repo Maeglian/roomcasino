@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Spinner from '@/components/cabinet/Spinner';
+import Spinner from '@/components/profile/Spinner';
 
 export default {
   name: 'BaseButton',
