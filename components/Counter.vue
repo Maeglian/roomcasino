@@ -117,6 +117,7 @@ export default {
 
   &-Content {
     display: flex;
+    align-items: center;
   }
 
   &-Item {
@@ -184,10 +185,14 @@ export default {
     align-items: flex-end;
     margin-right: 16px;
 
+    &:last-child {
+      margin-right: 0;
+    }
+
     &:after {
-      top: -1px;
+      top: 3px;
       right: -10px;
-      font-size: 16px;
+      font-size: 10px;
       color: var(--color-text-main);
     }
   }
