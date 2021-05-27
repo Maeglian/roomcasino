@@ -177,7 +177,7 @@
     "heroBanner": {
       "deposit1": {
         "title": "Willkommenspaket <span class=\"Colored\">€ 450!</span>",
-        "text": "Machen Sie die erste Einzahlung <br/> und erhalten Sie <span class=\"Colored\"> 100% </span> bis zu <span class=\"Colored\"> € 150"
+        "text": "Machen Sie die erste Einzahlung <br/> und erhalten Sie <span class=\"Colored\"> 100% </span><br/> bis zu <span class=\"Colored\"> € 150 + <span class=\"Colored\">150 freispiele</span>"
       },
       "deposit2": {
         "title": "Bonus für zweite<br/>  Einzahlung",
@@ -366,19 +366,21 @@
   "promotions": {
     "title": "Aktuelle Aktionen",
     "text": "Ninecasino arbeitet ständig daran, die besten Aktionen zu liefern. Wir verwenden die neueste Technologie und das Feedback unserer Spieler, um unsere Aktionen zu gestalten. Viel Spaß!",
-    "upTo": "bis zu € 150 ",
     "deposit1": {
       "title": "100%<br/> des<br/> Einzahlungsbetrags <br/> ",
+      "upTo": "bis zu € 150 + 150 FREISPIELE",
       "name": "Bonus für die erste Einzahlung",
-      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 € + 150 freispiele. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit2": {
       "title": "55%<br/> des<br/> Einzahlungsbetrags <br/> ",
+      "upTo": "bis zu € 150",
       "name": "Bonus für zweite Einzahlung",
       "text": "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150  €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach eine zweite Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit3": {
       "title": "100%<br/> des<br/> Einzahlungsbetrags<br/>",
+      "upTo": "bis zu € 150",
       "name": "Bonus für dritte Einzahlung ",
       "text": "Machen Sie Ihre dritte Einzahlung bei Ninecasino und erhalten Sie bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine dritte Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
