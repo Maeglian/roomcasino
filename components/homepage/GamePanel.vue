@@ -1,7 +1,7 @@
 <template>
   <div class="GamePanel">
     <template v-if="isLoggedIn">
-      <NuxtLink :to="localePath('/cabinet/balance')" class="GamePanel-UserFullname">
+      <NuxtLink :to="localePath('/profile/balance')" class="GamePanel-UserFullname">
         {{ getFullUserName }}
       </NuxtLink>
       <button class="Btn AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">

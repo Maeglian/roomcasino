@@ -218,13 +218,13 @@
     "until" : "Jusqu'à",
     "dataPlaceholder" : "DD.MM.AAAA"
   },
-  "cabinet" : {
+  "profile" : {
     "pages" : {
       "balance" : "Balance",
       "bonuses" : "Bonuses",
       "history" : "Histoire",
       "verification" : "Vérification",
-      "profile" : "Profile",
+      "user" : "Profile",
       "limits" : "Limites de jeu",
       "exit" : "Sortie"
     },
@@ -274,7 +274,7 @@
       "disapproved" : "Désapprouvé",
       "drop" : "Déposez le fichier ici ou parcourez les images ou les fichiers .pdf. Taille maximale 110 MB"
     },
-    "profile" : {
+    "user" : {
       "title" : "Profil utilisateur",
       "tabs" : {
         "general" : "Général",

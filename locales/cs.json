@@ -215,13 +215,13 @@
     "until" : "Dokud",
     "dataPlaceholder" : "DD.MM.YYYY"
   },
-  "cabinet" : {
+  "profile" : {
     "pages" : {
       "balance" : "Zůstatek",
       "bonuses" : "Bonusy",
       "history" : "Dějiny",
       "verification" : "Ověření",
-      "profile" : "Profil",
+      "user" : "Profil",
       "limits" : "Limity hazardu",
       "exit" : "Výstup"
     },
@@ -271,7 +271,7 @@
       "approved" : "Schválený",
       "disapproved" : "Zamítnuto"
     },
-    "profile" : {
+    "user" : {
       "title" : "Uživatelský profil",
       "tabs" : {
         "general" : "Všeobecné",

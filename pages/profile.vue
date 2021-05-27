@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import CabinetMenu from '@/components/cabinet/CabinetMenu.vue';
-import CabinetTopbar from '@/components/cabinet/CabinetTopbar.vue';
+import CabinetMenu from '@/components/profile/CabinetMenu.vue';
+import CabinetTopbar from '@/components/profile/CabinetTopbar.vue';
 import { mapState } from 'vuex';
 import Loader from '@/components/Loader';
 import NotificationAlerts from '@/components/NotificationAlerts';

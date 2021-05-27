@@ -220,13 +220,13 @@
     "until": "bis",
     "dataPlaceholder": "DD.MM.JJJJ"
   },
-  "cabinet": {
+  "profile": {
     "pages": {
       "balance": "Kontostand",
       "bonuses": "Boni",
       "history": "historie",
       "verification": "Überprüfung",
-      "profile": "Profil",
+      "user": "Profil",
       "limits": "Verlustlimits",
       "exit": "Beenden"
     },
@@ -276,7 +276,7 @@
       "disapproved": "Nicht genehmigt",
       "drop": "Datei hier ablegen oder Bilder oder .pdf-Dateien suchen. Maximale Größe 110 MB"
     },
-    "profile": {
+    "user": {
       "title": "Benutzerprofil",
       "tabs": {
         "general": "Allgemein",
