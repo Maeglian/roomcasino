@@ -125,21 +125,21 @@ export default {
       promotions: [
         {
           title: this.$t('promotions.deposit1.title'),
-          subtitle: this.$t('promotions.upTo'),
+          subtitle: this.$t('promotions.deposit1.upTo'),
           image: 'promotion1.png',
           announce: this.$t('promotions.deposit1.name'),
           text: this.$t('promotions.deposit1.text'),
         },
         {
           title: this.$t('promotions.deposit2.title'),
-          subtitle: this.$t('promotions.upTo'),
+          subtitle: this.$t('promotions.deposit2.upTo'),
           image: 'promotion2.png',
           announce: this.$t('promotions.deposit2.name'),
           text: this.$t('promotions.deposit2.text'),
         },
         {
           title: this.$t('promotions.deposit3.title'),
-          subtitle: this.$t('promotions.upTo'),
+          subtitle: this.$t('promotions.deposit3.upTo'),
           image: 'promotion3.png',
           announce: this.$t('promotions.deposit3.name'),
           text: this.$t('promotions.deposit3.text'),
@@ -227,6 +227,9 @@ export default {
 }
 
 .PromotionsCard {
+  display: flex;
+  flex-direction: column;
+
   &-Title {
     margin-bottom: 12px;
     font-size: 12px;
@@ -267,6 +270,7 @@ export default {
   }
 
   &-Footer {
+    flex-grow: 1;
     margin-bottom: 4px;
     padding: 20px 16px;
     background: var(--color-bg);
@@ -287,6 +291,7 @@ export default {
   &-Btns {
     display: flex;
     width: 100%;
+    margin-top: auto;
   }
 
   &-Btn {
