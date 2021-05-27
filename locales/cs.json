@@ -206,7 +206,9 @@
     },
     "allProviders" : "Všichni poskytovatelé",
     "tableIsOpen" : "Stůl je otevřený",
-    "tableIsClosed" : "Stůl je zavřený"
+    "tableIsClosed" : "Stůl je zavřený",
+    "topWinners": "Top vítězové",
+    "lastWinners": "Nejnovější vítězové"
   },
   "filters" : {
     "filteredBy" : "Filtrováno podle",

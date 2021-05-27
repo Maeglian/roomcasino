@@ -209,7 +209,9 @@
     },
     "allProviders" : "Tous les fournisseurs",
     "tableIsOpen" : "La table est ouverte",
-    "tableIsClosed" : "La table est fermée"
+    "tableIsClosed" : "La table est fermée",
+    "topWinners": "Grands gagnants",
+    "lastWinners": "Derniers gagnants"
   },
   "filters" : {
     "filteredBy" : "Filtré par",
