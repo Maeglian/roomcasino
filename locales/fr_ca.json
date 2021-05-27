@@ -175,7 +175,7 @@
     "heroBanner" : {
       "deposit1" : {
         "title" : "Paquet de bienvenue <span class=\"Colored\">$675!</span>",
-        "text" : "Effectuez un premier dépôt <br/> et obtenez <span class = \"Colored\"> 100% </span> jusqu'à <span class = \"Colored\">$225</span>"
+        "text" : "Effectuez un premier dépôt <br/> et obtenez <span class = \"Colored\"> 100% </span><br/> jusqu'à <span class = \"Colored\">$225</span> + <span class=\"Colored\">150 tours gratuit</span>"
       },
       "deposit2" : {
         "title" : "Bonus de deuxième<br/> dépôt",
@@ -209,7 +209,9 @@
     },
     "allProviders" : "Tous les fournisseurs",
     "tableIsOpen" : "La table est ouverte",
-    "tableIsClosed" : "La table est fermée"
+    "tableIsClosed" : "La table est fermée",
+    "topWinners": "Grands gagnants",
+    "lastWinners": "Derniers gagnants"
   },
   "filters" : {
     "filteredBy" : "Filtré par",
@@ -365,19 +367,21 @@
   "promotions" : {
     "title" : "Promotions en cours",
     "text" : "Ninecasino cherche constamment à offrir les meilleures promotions. Nous utilisons les dernières technologies et les commentaires de nos joueurs pour repenser nos promotions. Profitez-en!",
-    "upTo" : "jusqu’à  $225",
     "deposit1" : {
       "title" : "100%<br/> du montant du<br/> dépôt",
+      "upTo" : "jusqu’à  $225 + 150 tours gratuit",
       "name" : "Bonus de premier dépôt",
-      "text" : "Effectuez votre premier dépôt sur Ninecasino et recevez jusqu’à $225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un premier dépôt de $30 ou plus. Le bonus sera versé automatiquement. "
+      "text" : "Effectuez votre premier dépôt sur Ninecasino et recevez jusqu’à $225 + 150 tours gratuit.<br/><br/>Pour activer le bonus, il suffit d’effectuer un premier dépôt de $30 ou plus. Le bonus sera versé automatiquement. "
     },
     "deposit2" : {
       "title" : "55%<br/> du montant du<br/> dépôt",
+      "upTo" : "jusqu’à  $225",
       "name" : "Bonus de deuxième dépôt ",
       "text" : "Effectuez votre deuxième dépôt sur Ninecasino et recevez jusqu’à $225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un deuxième dépôt de $30 ou plus. Le bonus sera versé automatiquement."
     },
     "deposit3" : {
       "title" : "100%<br/> du montant du<br/> dépôt",
+      "upTo" : "jusqu’à  $225",
       "name" : "Bonus de troisième dépôt",
       "text" : "Effectuez votre troisième dépôt sur Ninecasino et recevez jusqu’à $225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un troisième dépôt de $30 ou plus. Le bonus sera versé automatiquement."
     },

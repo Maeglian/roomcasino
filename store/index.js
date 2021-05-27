@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Vue from 'vue';
-import moment from 'moment';
 import { BILLING_PROVIDER_ID, API_HOST } from '../config';
 
 const Cookie = process.client ? require('js-cookie') : undefined;
@@ -108,127 +107,6 @@ export const state = () => ({
   liveGames: [],
   tournamentGames: [],
   jackpots: [],
-  fakeLimits: [
-    {
-      name: 'loss limits',
-      limits: [
-        {
-          isMoney: true,
-          limitState: 1,
-          limitAmount: 5,
-          currentPeriod: 'daily',
-          title: 'daily limit',
-          type: 'loss',
-          reset: moment()
-            .endOf('day')
-            .format(),
-        },
-        {
-          isMoney: true,
-          limitState: 19,
-          limitAmount: 25,
-          currentPeriod: 'weekly',
-          type: 'loss',
-          title: 'weekly limit',
-          reset: moment()
-            .endOf('week')
-            .format(),
-        },
-      ],
-    },
-    {
-      name: 'session limit',
-      limits: [
-        {
-          isMoney: false,
-          limitState: 30,
-          limitAmount: 80,
-          title: 'time spent of gambling',
-          type: 'session',
-        },
-      ],
-    },
-    {
-      name: 'wager limits',
-      limits: [
-        {
-          isMoney: true,
-          limitState: 7,
-          limitAmount: 14,
-          currentPeriod: 'weekly',
-          type: 'wager',
-          title: 'weekly limit',
-          reset: moment()
-            .endOf('week')
-            .format(),
-        },
-      ],
-    },
-    {
-      name: 'cooling off',
-      limits: [
-        {
-          isMoney: true,
-          limitState: 7,
-          limitAmount: 20,
-          type: 'cooling',
-          title: 'time spent gambling',
-          reset: moment()
-            .endOf('week')
-            .format(),
-        },
-      ],
-    },
-    {
-      name: 'reality check',
-      limits: [
-        {
-          isMoney: false,
-          type: 'reality_check',
-          title: 'notification',
-          period: 'every 60 min',
-        },
-      ],
-    },
-    {
-      name: 'deposit limits',
-      limits: [
-        {
-          isMoney: true,
-          limitState: 67,
-          limitAmount: 100,
-          currentPeriod: 'daily',
-          type: 'deposit',
-          title: 'daily limit',
-          reset: moment()
-            .endOf('day')
-            .format(),
-        },
-        {
-          isMoney: true,
-          limitState: 10,
-          limitAmount: 50,
-          currentPeriod: 'weekly',
-          type: 'deposit',
-          title: 'weekly limit',
-          reset: moment()
-            .endOf('week')
-            .format(),
-        },
-      ],
-    },
-    {
-      name: 'self exclusion',
-      limits: [
-        {
-          isMoney: false,
-          type: 'self_exclusion',
-          title: 'blocked address',
-          period: '6 month',
-        },
-      ],
-    },
-  ],
   limits: [],
   gamesAreLoading: false,
   defaultGamesAreLoading: false,
@@ -537,6 +415,12 @@ export const state = () => ({
   profileIsUpdating: false,
   updateProfileError: '',
   gameUrlForIframe: '',
+  topWinnerList: [],
+  lastWinnerList: [],
+  topWinnerListIsLoading: false,
+  lastWinnerListIsLoading: false,
+  topWinnerListError: '',
+  lastWinnerListError: '',
 });
 
 export const getters = {
@@ -995,6 +879,24 @@ export const mutations = {
   },
   clearNotificationAlerts(state) {
     state.notificationAlerts = [];
+  },
+  setTopWinnerList(state, payload) {
+    state.topWinnerList = payload;
+  },
+  setLastWinnerList(state, payload) {
+    state.lastWinnerList = payload;
+  },
+  setTopWinnerListIsLoading(state, payload) {
+    state.topWinnerListIsLoading = payload;
+  },
+  setLastWinnerListIsLoading(state, payload) {
+    state.lastWinnerListIsLoading = payload;
+  },
+  setTopWinnerListError(state, payload) {
+    state.topWinnerListError = payload;
+  },
+  setLastWinnerListError(state, payload) {
+    state.lastWinnerListError = payload;
   },
 };
 
@@ -1597,6 +1499,36 @@ export const actions = {
       commit('setDefaultCurrency', res.data.data.currency);
     } catch (e) {
       commit('pushErrors', e);
+    }
+  },
+
+  async getTopWinnerList({ commit }, payload = {}) {
+    commit('setTopWinnerListIsLoading', true);
+    try {
+      const res = await axios.get(`${API_HOST}/topWinnerList`, {
+        ...{ params: payload },
+        ...reqConfig(commit, 'setTopWinnerListError'),
+      });
+      commit('setTopWinnerList', res.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setTopWinnerListIsLoading', false);
+    }
+  },
+
+  async getLastWinnerList({ commit }, payload = {}) {
+    commit('setLastWinnerListIsLoading', true);
+    try {
+      const res = await axios.get(`${API_HOST}/lastWinnerList`, {
+        ...{ params: payload },
+        ...reqConfig(commit, 'setLastWinnerListError'),
+      });
+      commit('setLastWinnerList', res.data);
+    } catch (e) {
+      commit('pushErrors', e);
+    } finally {
+      commit('setLastWinnerListIsLoading', false);
     }
   },
 };

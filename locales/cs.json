@@ -172,7 +172,7 @@
     "heroBanner" : {
       "deposit1" : {
         "title" : "Vítejte <br/> balíček <span class = \"Colored\"> Kč 9990! </span>",
-        "text" : "Proveďte první vklad <br/> a získejte <span class = \"Colored\"> 100% </span> až <span class = \"Colored\"> Kč 3330 </span>"
+        "text" : "Proveďte první vklad <br/> a získejte <span class = \"Colored\"> 100% </span><br/> až <span class = \"Colored\"> Kč 3330 </span> + <span class=\"Colored\">150 spinů zdarma</span>"
       },
       "deposit2" : {
         "title" : "Bonus <br/> za druhý vklad",
@@ -206,7 +206,9 @@
     },
     "allProviders" : "Všichni poskytovatelé",
     "tableIsOpen" : "Stůl je otevřený",
-    "tableIsClosed" : "Stůl je zavřený"
+    "tableIsClosed" : "Stůl je zavřený",
+    "topWinners": "Top vítězové",
+    "lastWinners": "Nejnovější vítězové"
   },
   "filters" : {
     "filteredBy" : "Filtrováno podle",
@@ -360,19 +362,21 @@
   "promotions" : {
     "title" : "Aktuální propagační akce",
     "text" : "Zrušení limitu bude uplatněno do 24 hodin po žádosti hráče.",
-    "upTo" : "až KČ 3330",
     "deposit1" : {
       "title" : "100% <br/> z vkladu <br/> částk",
+      "upTo" : "až KČ 3330  + 150 SPINŮ ZDARMA",
       "name" : "Bonus ke prvnímu vkladu",
-      "text" : "Proveďte první vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
+      "text" : "Proveďte první vklad na Ninecasino a získejte až Kč 3330  + 150 spinů zdarma. Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
     },
     "deposit2" : {
       "title" : "55% <br/> z vkladu <br/> částky",
+      "upTo" : "až KČ 3330",
       "name" : "Bonus ke druhému vkladu",
       "text" : "Proveďte druhý vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
     },
     "deposit3" : {
       "title" : "100% <br/> z vkladu <br/> částky",
+      "upTo" : "až KČ 3330",
       "name" : "Bonus ke třetímu vkladu",
       "text" : "Proveďte třetí vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
     },
