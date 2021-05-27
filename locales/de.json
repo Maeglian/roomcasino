@@ -211,7 +211,9 @@
     },
     "allProviders": "Alle Anbieter",
     "tableIsOpen": "Platzieren Sie Ihre Einsätze ",
-    "tableIsClosed": "Keine Einsätze mehr"
+    "tableIsClosed": "Keine Einsätze mehr",
+    "topWinners": "Top-gewinner",
+    "lastWinners": "Aktuelle gewinner"
   },
   "filters": {
     "filteredBy": "Gefiltert nach",

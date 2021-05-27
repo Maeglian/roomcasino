@@ -4,7 +4,7 @@
     <BestGames :key="$route.path" />
     <!--    <Jackpots />-->
     <!--    <Tournament />-->
-    <!--    <Winners />-->
+    <Winners />
     <!--    <MainBanner class="HomePage-Banner" v-bind="banner1" />-->
   </div>
 </template>
@@ -14,7 +14,7 @@ import Hero from '@/components/homepage/Hero.vue';
 import BestGames from '@/components/homepage/BestGames.vue';
 // import Jackpots from '@/components/homepage/Jackpots.vue';
 // import Tournament from '@/components/homepage/Tournament.vue';
-// import Winners from '@/components/homepage/Winners.vue';
+import Winners from '@/components/homepage/Winners.vue';
 // import MainBanner from '@/components/MainBanner.vue';
 // import Promotions from '@/components/Promotions.vue';
 // import Questions from '@/components/Questions.vue';
@@ -25,9 +25,9 @@ export default {
   components: {
     Hero,
     BestGames,
+    Winners,
     // Jackpots,
     // Tournament,
-    // Winners,
     // MainBanner,
     // Promotions,
     // Questions,
