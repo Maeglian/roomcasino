@@ -207,6 +207,11 @@ export default {
         //   btnText: 'Deposit now',
         // },
         {
+          bg: 'highroller',
+          title: this.$t('homepage.heroBanner.highroller.title'),
+          text: this.$t('homepage.heroBanner.highroller.text'),
+        },
+        {
           bg: 'madnessBanner',
           title: this.$t('promotions.mayMadness.title'),
           text: `<span class="Colored">${this.$t('mayMadness.prize')}</span>`,
