@@ -187,6 +187,10 @@
       },
       "deposit4" : {
         "title" : "D'autres promotions<br/> excitantes<br/> sont à venir!"
+      },
+      "highroller": {
+        "title": "Bonus<br/> des grands<br/> joueurs",
+        "text": "jusqu’à $800"
       }
     },
     "advantages" : {
@@ -399,6 +403,10 @@
       "title" : "May<br/> madness<br/> de spinomenal",
       "name" : "May madness de spinomenal",
       "text" : "Une fois de plus, le fameux Spinomenal va vous faire vivre des moments inoubliables grâce au passionnant tournoi May Madness. Pendant trois semaines en mai, vous pouvez profiter de ses géniales machines à sous et remporter une partie de la généreuse cagnotte de 60 000 EUR!<br/><br/>Commençons par le troisième tour! Ça se passe entre le 25 mai 2021, 00 h 00 GMT et le 1 juin 2021, 23 h 59 GMT."
+    },
+    "highroller": {
+      "name": "Bonus des grands joueurs",
+      "text": "Vous aimez miser gros? Dans ce cas, nous savons ce dont vous avez besoin. Une fois par mois, bénéficiez d’un bonus spécial pour les grands joueurs de 30% jusqu’à $800 sur votre dépôt à partir de $450."
     }
   },
   "dropsWins" : {

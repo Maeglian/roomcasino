@@ -184,6 +184,10 @@
       },
       "deposit4" : {
         "title" : "Více vzrušujících <br/> akcí <br/> již brzy!"
+      },
+      "highroller": {
+        "title": "Bonus pro<br/> velké hráče",
+        "text": "až €500"
       }
     },
     "advantages" : {
@@ -394,6 +398,10 @@
       "title" : "May<br/> madness<br/> od spinomenal",
       "name" : "May madness od spinomenal",
       "text" : "A je to zase tady – známý poskytovatel Spinomenal vás svým vzrušujícím turnajem May Madness přivede k šílenství. Během tří květnových týdnů si můžete zahrát na skvělých slotech a rozbít velmi štědrý prize pool v hodnotě 60000eur! <br/><br/>Začněme s kolem III! Uskuteční se od 25. května 2021 00:00 GMT do 1. června 2021 23:59 GMT."
+    },
+    "highroller": {
+      "name": "Bonus pro velké hráče",
+      "text": "Jste velký hráč? Pak víme, co potřebujete! Získejte jako speciální bonus pro velké hráče 30 % k částce vkladu až €500 k prvnímu vkladu €300."
     }
   },
   "tournaments" : {

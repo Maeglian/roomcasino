@@ -189,6 +189,10 @@
       },
       "deposit4": {
         "title": "Weitere aufregende <br/> Promotionen<br/> folgen in Kürze!"
+      },
+      "highroller": {
+        "title": "HIGHROLLER-BONUS<br/> FÜR BESONDERE<br/> EINSATZFREUDE",
+        "text": "bis zu €500"
       }
     },
     "advantages": {
@@ -400,6 +404,10 @@
       "title": "May<br/> madness<br/> von spinomenal",
       "name": "May madness von spinomenal",
       "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde III! Sie läuft ab dem 25. Mai um 00:00 Uhr GMT und endet am 1. Juni 2021 um 23:59 Uhr GMT."
+    },
+    "highroller": {
+      "name": "Highroller-bonus für besondere einsatzfreude",
+      "text": "Sie stehen auf hohe Einsätze? Dann haben wir das Richtige für Sie. Erhalten Sie einmal im Monat einen Highroller-Bonus für besondere Einsatzfreude von 30% bis zu einem Höchstbetrag von €500 auf eine Einzahlung ab mindestens €300."
     }
   },
   "tournaments": {
