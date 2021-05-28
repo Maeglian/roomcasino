@@ -71,10 +71,6 @@
     @media(min-width: $screen-s) {
       width: calc(50% - 8px);
     }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   &-Cards {
