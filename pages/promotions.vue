@@ -145,6 +145,13 @@ export default {
           text: this.$t('promotions.deposit3.text'),
         },
         {
+          title: this.$t('homepage.heroBanner.highroller.title'),
+          subtitle: this.$t('homepage.heroBanner.highroller.text'),
+          image: 'promotions-highroller.png',
+          announce: this.$t('promotions.highroller.name'),
+          text: this.$t('promotions.highroller.text'),
+        },
+        {
           title: this.$t('promotions.dropsWins.title'),
           prize: this.$t('dropsWins.prize'),
           image: 'drops-wins.png',
