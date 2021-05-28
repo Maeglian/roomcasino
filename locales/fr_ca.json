@@ -186,7 +186,12 @@
         "text" : "100% de bonus<br/> jusqu'à <span class=\"Colored\">$225</span><br/> sur votre troisième dépôt"
       },
       "deposit4" : {
-        "title" : "D'autres promotions<br/> excitantes<br/> sont à venir!"
+        "title": "REPRISE DE FIN<br/> DE SEMAINE",
+        "text": "<span class=\"Colored\">40 % JUSQU’À $230</span>"
+      },
+      "highroller": {
+        "title": "Bonus<br/> des grands<br/> joueurs",
+        "text": "<span class=\"Colored\">jusqu’à $800</span>"
       }
     },
     "advantages" : {
@@ -385,6 +390,12 @@
       "name" : "Bonus de troisième dépôt",
       "text" : "Effectuez votre troisième dépôt sur Ninecasino et recevez jusqu’à $225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un troisième dépôt de $30 ou plus. Le bonus sera versé automatiquement."
     },
+    "deposit4": {
+      "title": "reprise de fin<br/> de semaine",
+      "upTo": "40 % JUSQU’À $230",
+      "name": "reprise de fin de semaine",
+      "text": "Commencez avec plus pour gagner plus. Faites un dépôt d’au moins $20 et recevez un bonus de 40 % jusqu’à $230 qui vous permettra de faire tourner ces machines à sous jusqu’à ce que le jackpot explose!"
+    },
     "dropsWins" : {
       "title" : "Drops<span class=\"Colored\">&</span>wins<br/> à l’étape 4<br/>(semaines 13-16)",
       "name" : "Drops&wins tournoi",
@@ -399,6 +410,11 @@
       "title" : "May<br/> madness<br/> de spinomenal",
       "name" : "May madness de spinomenal",
       "text" : "Une fois de plus, le fameux Spinomenal va vous faire vivre des moments inoubliables grâce au passionnant tournoi May Madness. Pendant trois semaines en mai, vous pouvez profiter de ses géniales machines à sous et remporter une partie de la généreuse cagnotte de 60 000 EUR!<br/><br/>Commençons par le troisième tour! Ça se passe entre le 25 mai 2021, 00 h 00 GMT et le 1 juin 2021, 23 h 59 GMT."
+    },
+    "highroller": {
+      "upTo": "up to $800",
+      "name": "Bonus des grands joueurs",
+      "text": "Vous aimez miser gros? Dans ce cas, nous savons ce dont vous avez besoin. Une fois par mois, bénéficiez d’un bonus spécial pour les grands joueurs de 30% jusqu’à $800 sur votre dépôt à partir de $450."
     }
   },
   "dropsWins" : {
