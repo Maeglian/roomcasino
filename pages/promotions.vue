@@ -146,7 +146,7 @@ export default {
         },
         {
           title: this.$t('homepage.heroBanner.highroller.title'),
-          subtitle: this.$t('homepage.heroBanner.highroller.text'),
+          subtitle: this.$t('promotions.highroller.upTo'),
           image: 'promotions-highroller.png',
           announce: this.$t('promotions.highroller.name'),
           text: this.$t('promotions.highroller.text'),
