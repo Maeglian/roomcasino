@@ -188,7 +188,8 @@
         "text": "100% bonus<br/> up to <span class=\"Colored\">$225</span><br/> on your third deposit"
       },
       "deposit4": {
-        "title": "More exciting<br/> promotions<br/> coming soon!"
+        "title": "weekend<br/> reload",
+        "text": "<span class=\"Colored\">40% up to $230</span>"
       },
       "highroller": {
         "title": "Highroller<br/> bonus",
@@ -390,6 +391,12 @@
       "upTo": "up to $225",
       "name": "Third deposit bonus",
       "text": "Make your third deposit at Ninecasino and get up to $225.<br/><br/>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
+    },
+    "deposit4": {
+      "title": "Weekend<br/> reload",
+      "upTo": "40% UP TO $230",
+      "name": "weekend reload",
+      "text": "Start with more, win more. Deposit at least $20 and get a 40% bonus up to $230 that will help to spin those slots silly, until the jackpot explodes!"
     },
     "dropsWins": {
       "title": "Drops<span class=\"Colored\">&</span>wins<br/>Stage 4<br/>(Weeks 13-16)",
