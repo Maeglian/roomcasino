@@ -385,6 +385,12 @@
       "name" : "Bonus ke třetímu vkladu",
       "text" : "Proveďte třetí vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
     },
+    "deposit4": {
+      "title": "víkendové<br/> dobití",
+      "upTo": "40% AŽ KČ 4100",
+      "name": "víkendové dobití",
+      "text": "Proveďte vklad a získejte bonus 40% k částce vkladu, až KČ 4100 Abyste aktivovali bonus – proveďte vklad v pátek, sobotu nebo neděli. Bonus můžete získat jednou za víkend. Bonus se vám přičte automaticky."
+    },
     "dropsWins" : {
       "title" : "Drops<span class=\"Colored\">&</span>wins<br/>Vítejte v 4<br/>(týdnů 13-16)",
       "name" : "Drops&wins turnaje",
