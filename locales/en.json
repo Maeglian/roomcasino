@@ -192,7 +192,7 @@
       },
       "highroller": {
         "title": "Highroller<br/> bonus",
-        "text": "up to $800"
+        "text": "<span class=\"Colored\">up to $500</span>"
       }
     },
     "advantages": {
@@ -408,7 +408,7 @@
     },
     "highroller": {
       "name": "Highroller bonus",
-      "text": "Are you fond of making high bets? Then we know what you need. Once a month get a special 30% highroller bonus up to $800 on your deposit starting from $450."
+      "text": "Are you fond of making high bets? Then we know what you need. Once a month get a special 30% highroller bonus up to $500 on your deposit starting from $300."
     }
   },
   "tournaments": {

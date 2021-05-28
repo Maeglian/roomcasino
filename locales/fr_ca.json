@@ -190,7 +190,7 @@
       },
       "highroller": {
         "title": "Bonus<br/> des grands<br/> joueurs",
-        "text": "jusqu’à $800"
+        "text": "<span class=\"Colored\">jusqu’à $800</span>"
       }
     },
     "advantages" : {
