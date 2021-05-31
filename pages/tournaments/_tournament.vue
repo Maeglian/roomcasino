@@ -184,7 +184,7 @@ export default {
       margin-bottom: 60px;
     }
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-xl) {
       margin-bottom: 80px;
     }
   }

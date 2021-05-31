@@ -145,6 +145,15 @@ export default {
           text: this.$t('promotions.deposit3.text'),
         },
         {
+          title: this.$t('promotions.cashback.title'),
+          subtitle: this.$t('promotions.cashback.upTo'),
+          image: 'promotions-cashback.png',
+          announce: this.$t('promotions.cashback.name'),
+          text: this.$t('promotions.cashback.text'),
+          link: 'More',
+          url: '/daily-cashback',
+        },
+        {
           title: this.$t('promotions.deposit4.title'),
           subtitle: this.$t('promotions.deposit4.upTo'),
           image: 'promotion7.png',
