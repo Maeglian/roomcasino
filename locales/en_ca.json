@@ -1137,62 +1137,62 @@
       "text":"You understand that by participating in the games, you risk losing the money deposited to your       account on www.ninecasino.com; In some jurisdictions, online gambling may be illegal. You       understand and agree that www.ninecasino.com is not able to provide you legal advice or       guarantees regarding the legality of your use of the services of the Website. The Company does       not affirm that the services of the Website comply with legal requirements in your       jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at       your sole discretion, as well, assuming the risk of liability, making a decision as to whether       the use of the services of the Website is legal in accordance with the current legislation of       your jurisdiction.You log in the Website and participate in the games at your own risk."
     }
   },
-  "dailyCashback" : {
-    "cashback" : "Cashback",
-    "title" : "Daily cashback<br/>up to 20%",
-    "text1" : "Who doesn’t like free casino cashback?<br/> Even if you lost! Yes, you read right - we give you cashback with wager&nbsp;x5 in case of losing.",
-    "text2" : "If it happened and you lost a sum of money at Ninecasino today, tomorrow we pay you back in accordance with the scheme below:",
-    "terms" : "Cashback terms and conditions",
-    "termsList" : [
+  "dailyCashback": {
+    "cashback": "Cashback",
+    "title": "Daily cashback<br/>up to 20%",
+    "text1": "Who doesn’t like free casino cashback?<br/> Even if you lost! Yes, you read right - we give you cashback with wager&nbsp;x5 in case of losing.",
+    "text2": "If it happened and you lost a sum of money at Ninecasino today, tomorrow we pay you back in accordance with the scheme below:",
+    "terms": "Cashback terms and conditions",
+    "termsList": [
       {
-        "text" : "Cashback is given on the loss amount (or equivalent) during the previous day from 00:01 AM to 23:59 (UTC) in slot games only."
+        "text": "Cashback is given on the loss amount (or equivalent) during the previous day from 00:01 AM to 23:59 (UTC) in slot games only."
       },
       {
-        "text" : "The cashback percentage depends on the loss sum (or equivalent) for the previous day:<br/><br/>€20 to €199 - 10% cashback<br/>€200 to €499 - 12% cashback<br/>€500 tо €999 - 14% cashback<br/>€1000 to 2499 - 16% cashback<br/>€2500 to €4999 - 18% cashback<br/>€5000 and more - 20% cashback."
+        "text": "The cashback percentage depends on the loss sum (or equivalent) for the previous day:<br/><br/>€20 to €199 - 10% cashback<br/>€200 to €499 - 12% cashback<br/>€500 tо €999 - 14% cashback<br/>€1000 to 2499 - 16% cashback<br/>€2500 to €4999 - 18% cashback<br/>€5000 and more - 20% cashback."
       },
       {
-        "text" : "The total amount of received cashback cannot exceed 20% of the total amount of all Player's losses (or equivalent)."
+        "text": "The total amount of received cashback cannot exceed 20% of the total amount of all Player's losses (or equivalent)."
       },
       {
-        "text" : "Cashback will not be credited if the real money loss for the previous day was less than 20 EUR / 20 USD / 25 CAD / 200 NOK / 85 PLN / 20 NZD / 1,500.00 RUB / 2500 JPY / 9,000.00 KZT. Real money loss here implies playing and losing without any bonuses."
+        "text": "Cashback will not be credited if the real money loss for the previous day was less than 20 EUR / 20 USD / 25 CAD / 200 NOK / 85 PLN / 20 NZD / 1,500.00 RUB / 2500 JPY / 9,000.00 KZT. Real money loss here implies playing and losing without any bonuses."
       },
       {
-        "text" : "Cashback will be credited daily at 00:10 AM (UTC)."
+        "text": "Cashback will be credited daily at 00:10 AM (UTC)."
       },
       {
-        "text" : "The wagering requirement for a cashback bonus is x5."
+        "text": "The wagering requirement for a cashback bonus is x5."
       },
       {
-        "text" : "The wagering requirement for a cashback bonus is x5."
+        "text": "The wagering requirement for a cashback bonus is x5."
       },
       {
-        "text" : "The cashback lifetime is 24 hours after the activation."
+        "text": "The cashback lifetime is 24 hours after the activation."
       }
     ],
-    "items" : [
+    "items": [
       {
-        "cashbackNum" : "10%",
-        "cashbackSum" : "€20 to €199"
+        "cashbackNum": "10%",
+        "cashbackSum": "€20 to €199"
       },
       {
-        "cashbackNum" : "12%",
-        "cashbackSum" : "€200 to €499"
+        "cashbackNum": "12%",
+        "cashbackSum": "€200 to €499"
       },
       {
-        "cashbackNum" : "14%",
-        "cashbackSum" : "€500 to €999"
+        "cashbackNum": "14%",
+        "cashbackSum": "€500 to €999"
       },
       {
-        "cashbackNum" : "16%",
-        "cashbackSum" : "€1000 to €2499"
+        "cashbackNum": "16%",
+        "cashbackSum": "€1000 to €2499"
       },
       {
-        "cashbackNum" : "18%",
-        "cashbackSum" : "€2500 to €4999"
+        "cashbackNum": "18%",
+        "cashbackSum": "€2500 to €4999"
       },
       {
-        "cashbackNum" : "20%",
-        "cashbackSum" : "€5000 and more"
+        "cashbackNum": "20%",
+        "cashbackSum": "€5000 and more"
       }
     ]
   }
