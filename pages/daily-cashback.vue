@@ -218,6 +218,7 @@ export default {
 
   &-Sum {
     font-size: 12px;
+    text-transform: capitalize;
 
     @media (min-width: $screen-l) {
       font-size: 16px;
