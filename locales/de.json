@@ -30,7 +30,8 @@
     "more": "Mehr",
     "checkBonuses": "Boni prüfen",
     "cancelBonus": "Bonus ablehnen",
-    "goBack": "Zurück"
+    "goBack": "Zurück",
+    "createAccount": "Registrieren"
   },
   "errors": {
     "required": "Pflichtangabe",
@@ -76,43 +77,43 @@
     "activateFreeSpinError": "Das Freispiel konnte nicht gestartet werden",
     "activateFreeSpinSuccess": "Ihr Freispiel wurde gestartet"
   },
-  "auth" : {
-    "loginTitle" : "Willkommen zurück  ",
-    "signUpTitle" : "Melde dich an  <span class=\"Colored\">&</span> erhalte den <br /> Begrüssungbonus",
-    "forgotPassword" : "Passwort vergessen",
-    "emails" : "Erhalt von E-Mail-Benachrichtigungen zu Aktionen",
-    "terms" : "Ich bin {minAge} Jahre alt und stimme {br} {terms} und {policy} ",
-    "step2Title" : "Bitte füllen Sie die untenstehenden Informationen aus! ",
-    "thanksRegistration" : "Danke für die Registrierung",
-    "registrationBonus" : "150 €",
-    "registrationBonusText" : "für deine erste Einzahlung! Nutze den Ninecasino Begrüßungsbonus",
-    "getBonus" : "hol dir deinen Bonus",
-    "enterEmail" : "E—Mail-Adresse Eingeben ",
-    "passwordRestoreText" : "Danke! Prüfen Sie Ihre E-Mail für weitere Anweisungen",
-    "enterNewPassword" : "Geben Sie Ihr neues Passwort ein",
-    "updatePassword" : "Passwort aktualisieren",
-    "newPassword" : "Neues Passwort",
-    "confirmPassword" : "Passwort bestätigen",
-    "tryingConfirmEmail" : "Wir versuchen, Ihre E-Mail zu verifizieren",
-    "confirmEmailError" : "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
-    "confirmEmailSuccess" : "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
-    "bonus" : "150 €",
-    "placeholders" : {
-      "enterEmail" : "Ihre E-Mail eingeben",
-      "enterPassword" : "Ihr Passwort eingeben",
-      "email" : "Ihre E-Mail ",
-      "password" : "Ihr Passwort ",
-      "currency" : "Währung ",
-      "country" : "Staat ",
-      "firstName" : "Vorname",
-      "lastName" : "Nachname",
-      "male" : "Männlich",
-      "female" : "Weiblich",
-      "city" : "Stadt ",
-      "address" : "Anschrift",
-      "postalCode" : "Postleitzahl",
-      "phone" : "Rufnummer",
-      "year" : "JJJJ"
+  "auth": {
+    "loginTitle": "Willkommen zurück  ",
+    "signUpTitle": "Melde dich an  <span class=\"Colored\">&</span> erhalte den <br /> Begrüssungbonus",
+    "forgotPassword": "Passwort vergessen",
+    "emails": "Erhalt von E-Mail-Benachrichtigungen zu Aktionen",
+    "terms": "Ich bin {minAge} Jahre alt und stimme {br} {terms} und {policy} ",
+    "step2Title": "Bitte füllen Sie die untenstehenden Informationen aus! ",
+    "thanksRegistration": "Danke für die Registrierung",
+    "registrationBonus": "150 €",
+    "registrationBonusText": "für deine erste Einzahlung! Nutze den Ninecasino Begrüßungsbonus",
+    "getBonus": "hol dir deinen Bonus",
+    "enterEmail": "E—Mail-Adresse Eingeben ",
+    "passwordRestoreText": "Danke! Prüfen Sie Ihre E-Mail für weitere Anweisungen",
+    "enterNewPassword": "Geben Sie Ihr neues Passwort ein",
+    "updatePassword": "Passwort aktualisieren",
+    "newPassword": "Neues Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "tryingConfirmEmail": "Wir versuchen, Ihre E-Mail zu verifizieren",
+    "confirmEmailError": "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
+    "confirmEmailSuccess": "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
+    "bonus": "150 €",
+    "placeholders": {
+      "enterEmail": "Ihre E-Mail eingeben",
+      "enterPassword": "Ihr Passwort eingeben",
+      "email": "Ihre E-Mail ",
+      "password": "Ihr Passwort ",
+      "currency": "Währung ",
+      "country": "Staat ",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "male": "Männlich",
+      "female": "Weiblich",
+      "city": "Stadt ",
+      "address": "Anschrift",
+      "postalCode": "Postleitzahl",
+      "phone": "Rufnummer",
+      "year": "JJJJ"
     }
   },
   "pages": {
@@ -128,7 +129,8 @@
     "privacyPolicy": "Datenschutz-Bestimmungen",
     "responsibleGaming": "Verantwortungsbewusst Spielen",
     "risk": "Risikowarnungen",
-    "tournaments": "Turniere"
+    "tournaments": "Turniere",
+    "dailyCashback": "Tägliche rückzahlung"
   },
   "gameCategories": {
     "top": "Top-Spiele ",
@@ -176,7 +178,7 @@
   "homepage": {
     "heroBanner": {
       "deposit1": {
-        "title": "Willkommenspaket <span class=\"Colored\">€ 450!</span>",
+        "title": "TÄGLICHE RÜCKZAHLUNG BIS ZU <span class=\"Colored\"> 20%\n</span>",
         "text": "Machen Sie die erste Einzahlung <br/> und erhalten Sie <span class=\"Colored\"> 100% </span><br/> bis zu <span class=\"Colored\"> € 150 + <span class=\"Colored\">150 freispiele</span>"
       },
       "deposit2": {
@@ -396,6 +398,12 @@
       "upTo": "40% BIS ZU €150",
       "name": "Wochenend bonus",
       "text": "Mit mehr beginnen, um mehr zu gewinnen. Zahlen Sie mindestens €20 ein und erhalten Sie eine Gutschrift in Höhe von 40% bis zu €150, um diese Automaten schwindlig zu spielen, bis die Jackpots explodieren!"
+    },
+    "cashback": {
+      "title": "Tägliche<br/>rückzahlung",
+      "upTo": "bis zu 20%",
+      "name": "Tägliche rückzahlung",
+      "text": "Wer bekommt im Casino nicht gerne Geld zurück? Selbst wenn Sie verloren haben!<br/>Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von x5 zurück, wenn Sie verlieren."
     },
     "dropsWins": {
       "title": "Drops<span class=\"Colored\">&</span>wins<br/>Phase 4<br/>(Wochen 13–16)",
@@ -1122,7 +1130,7 @@
     },
     "riskWarnings": {
       "title": "RISIKOWARNUNGEN",
-      "text":"Du hast verstanden, dass du durch Teilnahme in den Spielen den Verlust des Geldes riskierst, das du auf dein Konto bei www.ninecasino.com eingezahlt hast. Glücksspiel ist in manchen Gerichtsbarkeiten gesetzeswidrig. Du verstehst und stimmst zu, dass www.ninecasino.com nicht in der Lage ist, Rechtsberatung zu leisten oder die Legalität der Verwendung der Dienste unserer Webseite durch dich zu garantieren. Die Gesellschaft versichert nicht, dass die Dienste der Webseite mit den rechtlichen Anforderungen in deiner Gerichtsbarkeit übereinstimmen. Du verwendest die Dienste auf www.ninecasino.com aus freien Stücken und aus eigenem Ermessen und übernimmst dadurch das Risiko der Haftbarkeit, wenn du entscheidest, dass die Verwendung der Dienste der Webseite mit den gesetzlichen Vorgaben deiner Gerichtsbarkeit übereinstimmt. Anmeldung und Spiel auf der Webseite erfolgt auf eigenes Risiko. Bei Fragen oder Vorschlägen in Bezug auf unsere Webseite setz dich bitte unter support@ninecasino.com oder telefonisch mit uns in Verbindung."
+      "text": "Du hast verstanden, dass du durch Teilnahme in den Spielen den Verlust des Geldes riskierst, das du auf dein Konto bei www.ninecasino.com eingezahlt hast. Glücksspiel ist in manchen Gerichtsbarkeiten gesetzeswidrig. Du verstehst und stimmst zu, dass www.ninecasino.com nicht in der Lage ist, Rechtsberatung zu leisten oder die Legalität der Verwendung der Dienste unserer Webseite durch dich zu garantieren. Die Gesellschaft versichert nicht, dass die Dienste der Webseite mit den rechtlichen Anforderungen in deiner Gerichtsbarkeit übereinstimmen. Du verwendest die Dienste auf www.ninecasino.com aus freien Stücken und aus eigenem Ermessen und übernimmst dadurch das Risiko der Haftbarkeit, wenn du entscheidest, dass die Verwendung der Dienste der Webseite mit den gesetzlichen Vorgaben deiner Gerichtsbarkeit übereinstimmt. Anmeldung und Spiel auf der Webseite erfolgt auf eigenes Risiko. Bei Fragen oder Vorschlägen in Bezug auf unsere Webseite setz dich bitte unter support@ninecasino.com oder telefonisch mit uns in Verbindung."
     },
     "bonusTermsPage": {
       "title1": "bonus-bedingungen",
@@ -1180,5 +1188,64 @@
         "Diese Gewinnbegrenzung bleibt auch nach Erfüllung der Umsatzanforderung bestehen."
       ]
     }
+  },
+  "dailyCashback": {
+    "cashback": "Rückzahlung",
+    "title": "Tägliche rückzahlung<br/>bis zu 20%",
+    "text1": "Wer bekommt im Casino nicht gerne Geld zurück?<br/>  Selbst wenn Sie verloren haben! Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von&nbsp;x5 urück, wenn Sie verlieren.",
+    "text2": "Wenn Ihnen das passiert ist und Sie heute im Ninecasino Geld verloren haben, erhalten Sie es von uns morgen nach folgendem Muster zurück:",
+    "terms": "Rückerstattungsbedingungen",
+    "termsList": [
+      {
+        "text": "Rückerstattungen erfolgen in Höhe des am Vortag zwischen 00:01 und 23:59 Uhr UTC ausschließlich in Automatenspielen/an Spielautomaten verlorenen Betrages (oder seines Gegenwerts)."
+      },
+      {
+        "text": "Der Prozentsatz der Rückerstattung hängt von dem am Vortag verlorenen Betrag (oder seinem Gegenwert) ab:<br/><br/>20 bis 199 Euro – 10 %<br/>200 bis 499 Euro – 12 %<br/>500 bis 999 Euro – 14 %<br/>1.000 bis 2.499 Euro – 16 %<br/>2.500 bis 4.999 Euro – 18 %<br/>ab 5.000 Euro – 20 %."
+      },
+      {
+        "text": "Der Gesamtbetrag der erhaltenen Rückerstattungen darf 20 % der gesamten Verluste (oder ihres Gegenwerts) des betreffenden Spielers nicht übersteigen."
+      },
+      {
+        "text": "Die Rückerstattung erfolgt nicht, wenn der Echtgeldverlust des Vortages weniger als 20 EUR / 20 USD / 25 CAD / 200 NOK / 85 PLN / 20 NZD / 1.500,00 RUB / 2500 JPY / 9.000,00 KZT betragen hat. Echtgeldverlust bedeutet einen Verlust im Spiel mit den Einzahlungen ohne Boni."
+      },
+      {
+        "text": "Die Rückerstattung wird täglich um 00:10 Uhr UTC gutgeschrieben."
+      },
+      {
+        "text": "Die Umsatzanforderung für einen Rückerstattungsbonus beträgt x5."
+      },
+      {
+        "text": "Die Rückerstattung ist nach der Gutschrift auf dem Konto des Spielers 24 Stunden lang verfügbar."
+      },
+      {
+        "text": "Die Laufzeit der Rückerstattung endet 24 Stunden, nachdem sie abgerufen wurde."
+      }
+    ],
+    "items": [
+      {
+        "cashbackNum": "10%",
+        "cashbackSum": "€20 bis €199"
+      },
+      {
+        "cashbackNum": "12%",
+        "cashbackSum": "€200 bis €499"
+      },
+      {
+        "cashbackNum": "14%",
+        "cashbackSum": "€500 bis €999"
+      },
+      {
+        "cashbackNum": "16%",
+        "cashbackSum": "€1000 bis €2499"
+      },
+      {
+        "cashbackNum": "18%",
+        "cashbackSum": "€2500 bis €4999"
+      },
+      {
+        "cashbackNum": "20%",
+        "cashbackSum": "ab €5000"
+      }
+    ]
   }
 }
