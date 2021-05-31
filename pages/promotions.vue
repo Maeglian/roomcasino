@@ -159,6 +159,15 @@ export default {
           text: this.$t('promotions.highroller.text'),
         },
         {
+          title: this.$t('promotions.cashback.title'),
+          subtitle: this.$t('promotions.cashback.upTo'),
+          image: 'promotions-cashback.png',
+          announce: this.$t('promotions.cashback.name'),
+          text: this.$t('promotions.cashback.text'),
+          link: 'More',
+          url: '/daily-cashback',
+        },
+        {
           title: this.$t('promotions.dropsWins.title'),
           prize: this.$t('dropsWins.prize'),
           image: 'drops-wins.png',

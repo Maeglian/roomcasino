@@ -400,6 +400,12 @@
       "name": "weekend reload",
       "text": "Start with more, win more. Deposit at least $20 and get a 40% bonus up to $150 that will help to spin those slots silly, until the jackpot explodes!"
     },
+    "cashback": {
+      "title": "Daily<br/> cashback",
+      "upTo": "up to 20%",
+      "name": "Daily cashback",
+      "text": "Who doesn’t like free casino cashback? Even if you lost!<br/> Yes, you read right - we give you cashback with wager x5 in case of losing."
+    },
     "dropsWins": {
       "title": "Drops<span class=\"Colored\">&</span>wins<br/>Stage 4<br/>(Weeks 13-16)",
       "name": "Drops&wins tournament ",
