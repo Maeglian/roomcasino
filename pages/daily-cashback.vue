@@ -74,7 +74,7 @@ export default {
     }
 
     @media (min-width: $screen-l) {
-      background-image: url(~@/assets/img/cashback_960.jpeg);
+      background-image: url(~@/assets/img/cashback_960.png);
     }
 
     @media (min-width: $screen-xl) {
