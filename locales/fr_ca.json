@@ -130,7 +130,7 @@
     "responsibleGaming" : "Jeu responsable",
     "risk" : "Avertissements sur les risques",
     "tournaments" : "Tournois",
-    "dailyCashback" : "Daily cashback"
+    "dailyCashback" : "Remise quotidienne"
   },
   "gameCategories" : {
     "top" : "Les meilleurs jeux",
@@ -1133,11 +1133,11 @@
     }
   },
   "dailyCashback" : {
-    "cashback" : "REMISE",
-    "title" : "REMISE QUOTIDIENNE<br/>JUSQU'À 20%",
+    "cashback" : "Remise",
+    "title" : "Remise quotidienne<br/>jusqu'à 20%",
     "text1" : "Qui n’aime pas les remises en espèces gratuites dans les casinos?<br/>Même si vous avez perdu! Oui, vous avez bien lu: nous vous offrons une remise en espèces avec un pari de 5 fois en cas de perte.",
     "text2" : "Si c’est le cas et que vous avez perdu une somme d’argent sur Ninecasino aujourd’hui, nous vous remboursons demain selon le barème ci-dessous:",
-    "terms" : "CONDITIONS GÉNÉRALES DES REMISES EN ESPÈCES",
+    "terms" : "Conditions générales des remises en espèces",
     "termsList" : [
       {
         "text" : "La remise en espèces est accordée sur le montant de la perte (ou l’équivalent) au cours de la journée précédente de 00 h 01 à 23 h 59 (UTC) dans les jeux de machines à sous uniquement."
