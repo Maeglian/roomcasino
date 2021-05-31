@@ -30,7 +30,8 @@
     "more": "More",
     "checkBonuses": "Check bonuses",
     "cancelBonus": "Cancel bonus",
-    "goBack": "Go back"
+    "goBack": "Go back",
+    "createAccount": "Create account"
   },
   "errors": {
     "required": "Can't be blank",
@@ -1128,5 +1129,55 @@
       "title": "Risk Warnings",
       "text":"You understand that by participating in the games, you risk losing the money deposited to your       account on www.ninecasino.com; In some jurisdictions, online gambling may be illegal. You       understand and agree that www.ninecasino.com is not able to provide you legal advice or       guarantees regarding the legality of your use of the services of the Website. The Company does       not affirm that the services of the Website comply with legal requirements in your       jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at       your sole discretion, as well, assuming the risk of liability, making a decision as to whether       the use of the services of the Website is legal in accordance with the current legislation of       your jurisdiction.You log in the Website and participate in the games at your own risk."
     }
+  },
+  "dailyCashback": {
+    "cashback": "Cashback",
+    "title": "Daily cashback<br/>up to 20%",
+    "text1": "Who doesn’t like free casino cashback?<br/> Even if you lost! Yes, you read right - we give you cashback with wager&nbsp;x5 in case of losing.",
+    "text2": "If it happened and you lost a sum of money at Ninecasino today, tomorrow we pay you back in accordance with the scheme below:",
+    "terms": "Cashback terms and conditions",
+    "termsList": [
+      {
+        "text": "For every 20 EUR (and equivalent) deposit, a player receives 1 lottery ticket."
+      },
+      {
+        "text": "At the time of the draw, the game account should not be blocked."
+      },
+      {
+        "text": "The number of lottery tickets per player is not limited. The more tickets you collect at the time of the draw, the higher your chances of winning a prize, and it can be more than one prize."
+      },
+      {
+        "text": "Prize free spins are credited to the Wolf Treasure slot.<br/> Free spins winnings are subject to the X5 wager. The time for wagering the prize is 14 days.<br/>* If the Wolf Gold slot is not available in your area, free spins will be awarded in the Elvis Frog in Vegas slot."
+      },
+      {
+        "text": "The basic bonus terms and conditions must be observed."
+      }
+    ],
+    "items": [
+      {
+        "cashbackNum": "10%",
+        "cashbackSum": "€20 to €199"
+      },
+      {
+        "cashbackNum": "12%",
+        "cashbackSum": "€200 to €499"
+      },
+      {
+        "cashbackNum": "14%",
+        "cashbackSum": "€500 to 999"
+      },
+      {
+        "cashbackNum": "16%",
+        "cashbackSum": "€1000 to 2499"
+      },
+      {
+        "cashbackNum": "18%",
+        "cashbackSum": "€2500 to 4999"
+      },
+      {
+        "cashbackNum": "20%",
+        "cashbackSum": "€5000 and more"
+      }
+    ]
   }
 }
