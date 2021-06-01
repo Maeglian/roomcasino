@@ -318,12 +318,14 @@ export default {
     width: 104px;
     margin-right: 4px;
     padding: 0 16px;
+    overflow: hidden;
     font-size: 10px;
     font-weight: 700;
     line-height: 55px;
     color: var(--color-text-ghost);
     text-transform: uppercase;
     white-space: nowrap;
+    text-overflow: ellipsis;
     background-color: var(--color-bg);
 
     @media (min-width: $screen-l) {
