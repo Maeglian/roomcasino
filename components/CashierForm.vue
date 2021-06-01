@@ -73,6 +73,7 @@ export default {
       'getAvailableBonusList',
       'getProfile',
       'getBonusHistoryList',
+      'getTransactionHistoryList',
     ]),
     async beforeInitializeCashier(event) {
       try {
@@ -135,6 +136,7 @@ export default {
             paymentMethodPageEntered: data =>
               console.log('New payment method page was opened', data),
             navigate: data => console.log('Path navigation triggered', data),
+            cancelledPendingWD: () => this.getTransactionHistoryList(),
           });
         },
       );

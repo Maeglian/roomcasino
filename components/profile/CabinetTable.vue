@@ -27,6 +27,7 @@
                 <div class="CabinetTable-Label">
                   {{ col.label }}
                 </div>
+                <slot :name="col.field" :item="row"></slot>
                 {{ col.format ? col.format(row[col.field]) : row[col.field] }}
               </div>
             </template>
