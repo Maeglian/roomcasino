@@ -8,11 +8,19 @@ export default {
   },
   methods: {
     ...mapMutations(['removeAuthError', 'clearUpdateProfileError']),
-    showRegistrationDialog(authType, beforeDeposit) {
+    showRegistrationDialog(
+      authType,
+      beforeDeposit = false,
+      beforeStartGame = false,
+      onUpdateProfile,
+      id,
+      demo,
+      bg,
+    ) {
       this.removeAuthError();
       this.$modal.show(
         AuthDialog,
-        { authType, beforeDeposit },
+        { authType, beforeDeposit, beforeStartGame, onUpdateProfile, id, demo, bg },
         { width: this.width >= 1248 ? 845 : 418, height: 'auto', adaptive: true, scrollable: true },
         {
           'before-close': this.afterCloseAuthDialog,
