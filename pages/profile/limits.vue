@@ -1,18 +1,18 @@
 <template>
   <div class="CabinetPage LimitsPage">
-    <div class="CabinetPage-Title LimitsPage-Title">{{ $t('cabinet.pages.limits') }}</div>
+    <div class="CabinetPage-Title LimitsPage-Title">{{ $t('profile.pages.limits') }}</div>
     <button class="CabinetPage-AddBtn" @click="showCreateLimitsDialog()">
-      <span class="CabinetPage-AddBtnText"> {{ $t('cabinet.limits.createLimits') }} </span>
+      <span class="CabinetPage-AddBtnText"> {{ $t('profile.limits.createLimits') }} </span>
       <span class="CabinetPage-AddBtnPlus CabinetPage-AddBtnPlus--right"> + </span>
     </button>
     <div class="LimitsPage-Content">
       <div v-if="!limits.length" class="LimitsPage-Text CabinetPage-Text">
-        {{ $t('cabinet.limits.initialText') }}
+        {{ $t('profile.limits.initialText') }}
       </div>
       <div v-else class="LimitsPage-Limits">
         <div v-for="limit in limitsByTypes" :key="limit.name" class="LimitsPage-LimitType">
           <div v-if="limit.limits.length" class="LimitsPage-Header">
-            {{ $t(`cabinet.limits.limits.${limit.type}.name`) }}
+            {{ $t(`profile.limits.limits.${limit.type}.name`) }}
           </div>
           <GamblingLimit
             v-for="item in limit.limits"
@@ -29,8 +29,8 @@
   </div>
 </template>
 <script>
-import CreateLimits from '@/components/cabinet/CreateLimits.vue';
-import GamblingLimit from '@/components/cabinet/GamblingLimit.vue';
+import CreateLimits from '@/components/profile/CreateLimits.vue';
+import GamblingLimit from '@/components/profile/GamblingLimit.vue';
 import { mapState, mapGetters } from 'vuex';
 
 export default {

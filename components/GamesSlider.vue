@@ -7,10 +7,9 @@
       <Card
         v-for="(item, i) in items"
         :key="i"
-        :badge="item.badge"
-        :img-url="item.imageUrl"
-        :sum="item.sum"
-        :text="item.text"
+        :img-url="item.gameIconUrl"
+        :sum="`${item.amount} ${item.currency}`"
+        :text="item.nickname"
       />
     </VueSlider>
   </div>

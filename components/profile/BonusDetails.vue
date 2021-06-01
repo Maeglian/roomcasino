@@ -6,10 +6,10 @@
       <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">
           <template v-if="$i18n.locale === 'de'">
-            {{ $t('cabinet.bonuses.table.bonus') }}{{ $t('common.amount') }}:
+            {{ $t('profile.bonuses.table.bonus') }}{{ $t('common.amount') }}:
           </template>
           <template v-else
-            >{{ $t('cabinet.bonuses.table.bonus') }} {{ $t('common.amount') }}:</template
+            >{{ $t('profile.bonuses.table.bonus') }} {{ $t('common.amount') }}:</template
           >
         </div>
         <div class="BonusDetails-Value">{{ bonus.amount }} {{ bonus.currency }}</div>
@@ -47,12 +47,12 @@
       </div>
       <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">
-          {{ $t('cabinet.bonuses.wagerAmountRequirement') }}
+          {{ $t('profile.bonuses.wagerAmountRequirement') }}
         </div>
         <div class="BonusDetails-Value">{{ bonus.wagerAmount }} {{ bonus.currency }}</div>
       </div>
       <div v-if="type === 'bonus'" class="BonusDetails-Row">
-        <div class="BonusDetails-Label">{{ $t('cabinet.bonuses.wageredPercent') }}:</div>
+        <div class="BonusDetails-Label">{{ $t('profile.bonuses.wageredPercent') }}:</div>
         <div class="BonusDetails-Value">
           {{ (bonus.currentWagerAmount / bonus.wagerAmount) * 100 }}%
         </div>

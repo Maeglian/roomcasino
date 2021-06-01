@@ -67,7 +67,7 @@ export default {
       this.setActiveAccount({ currency }).then(() => {
         this.getProfile();
         this.getLimits();
-        if (this.$route.path === '/cabinet/bonuses') {
+        if (this.$route.path === '/profile/bonuses') {
           this.getBonusList();
           this.getAvailableBonusList();
         }

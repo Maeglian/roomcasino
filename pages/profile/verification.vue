@@ -1,7 +1,7 @@
 <template>
   <div class="CabinetPage VerificationPage">
     <div class="CabinetPage-Title VerificationPage-Title">
-      {{ $t('cabinet.pages.verification') }}
+      {{ $t('profile.pages.verification') }}
     </div>
     <div class="VerificationPage-Content">
       <!--      <div class="VerificationPage-Item">-->
@@ -121,33 +121,33 @@
             <use xlink:href="@/assets/img/icons.svg#approve"></use>
           </svg>
           <div class="VerificationPage-Title">
-            <div class="VerificationPage-Name">{{ $t('cabinet.verification.documents') }}</div>
+            <div class="VerificationPage-Name">{{ $t('profile.verification.documents') }}</div>
             <div class="VerificationPage-Text">
-              {{ $t('cabinet.verification.text') }}
+              {{ $t('profile.verification.text') }}
             </div>
             <div
               v-if="documentsStatus.length && documentsStatus === 'pending'"
               class="VerificationPage-Approved VerificationPage-Approved--pending"
             >
-              {{ $t('cabinet.verification.waiting') }}
+              {{ $t('profile.verification.waiting') }}
             </div>
             <div
               v-if="documentsStatus === 'approved'"
               class="VerificationPage-Approved VerificationPage-Approved--approved"
             >
-              {{ $t('cabinet.verification.approved') }}
+              {{ $t('profile.verification.approved') }}
             </div>
             <div
               v-if="documentsStatus === 'declined'"
               class="VerificationPage-Approved VerificationPage-Approved--declined"
             >
-              {{ $t('cabinet.verification.disapproved') }}
+              {{ $t('profile.verification.disapproved') }}
             </div>
           </div>
         </div>
         <div class="VerificationPage-Docs">
           <div v-if="userDocumentList.length" class="VerificationPage-DocsContent">
-            <div class="VerificationPage-DocsTitle">{{ $t('cabinet.verification.uploaded') }}</div>
+            <div class="VerificationPage-DocsTitle">{{ $t('profile.verification.uploaded') }}</div>
             <div v-for="doc in userDocumentList" :key="doc.id" class="VerificationPage-Doc">
               <svg
                 class="VerificationPage-Approve VerificationPage-Approve--min"
@@ -181,7 +181,7 @@
               @vdropzone-error="onErrorUpload"
             >
               <div class="VerificationPage-Dropzone">
-                <div class="VerificationPage-Text">{{ $t('cabinet.verification.drop') }} 110Mb</div>
+                <div class="VerificationPage-Text">{{ $t('profile.verification.drop') }} 110Mb</div>
               </div>
             </vueDropzone>
           </client-only>

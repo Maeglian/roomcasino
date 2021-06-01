@@ -64,4 +64,6 @@ window.onNuxtReady(({ context }) => {
   context.store
     .dispatch('getGameProducerList')
     .then(() => context.store.commit('setInitialLoading', 'producers'));
+  context.store.dispatch('getTopWinnerList', { limit: 5 });
+  context.store.dispatch('getLastWinnerList', { limit: 5 });
 });

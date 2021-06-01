@@ -89,8 +89,13 @@ export default {
           icon: 'promotions_nav.svg',
         },
         {
+          name: this.$t('pages.dailyCashback'),
+          url: this.localePath('/daily-cashback'),
+          icon: 'promotions_nav.svg',
+        },
+        {
           name: this.$t('pages.myAccount'),
-          url: this.localePath('/cabinet/balance'),
+          url: this.localePath('/profile/balance'),
           icon: 'user-profile.svg',
           onlyIfLoggedIn: true,
         },
