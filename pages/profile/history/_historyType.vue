@@ -19,14 +19,24 @@
       }"
       @change-page="currentPage = $event"
       @show-more="onShowMore"
-    />
+    >
+      <template #cancelBtn="{ item }">
+        <button
+          v-if="item.status === 'wait' && item.action === 'withdraw'"
+          class="Btn Btn--outline CabinetPage-Btn HistoryPage-Btn"
+          @click="onClickCancelBtn"
+        >
+          {{ $t('buttons.cancel') }}
+        </button>
+      </template>
+    </CabinetTable>
   </div>
 </template>
 
 <script>
 import CabinetFilters from '@/components/profile/CabinetFilters.vue';
 import CabinetTable from '@/components/profile/CabinetTable.vue';
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapMutations, mapState } from 'vuex';
 import moment from 'moment';
 
 export default {
@@ -67,6 +77,10 @@ export default {
                 if (x === 'cancel') return 'CabinetTable-Cell--error';
                 return '';
               },
+            },
+            {
+              label: '',
+              field: 'cancelBtn',
             },
             {
               label: this.$t('common.amount'),
@@ -261,6 +275,7 @@ export default {
     this.getData({ ...this.filterPayload, offset: this.offset, limit: this.limit });
   },
   methods: {
+    ...mapMutations(['setCashoutTrue']),
     ...mapActions(['getTransactionHistoryList', 'getBonusHistoryList', 'getGameHistoryList']),
     getData(payload = {}) {
       switch (this.$route.params.historyType) {
@@ -294,6 +309,10 @@ export default {
       this.limit += this.limit;
       this.getData({ ...this.filterPayload, offset: this.offset, limit: this.limit });
     },
+    onClickCancelBtn() {
+      this.setCashoutTrue();
+      this.$modal.show('cashier');
+    },
   },
 };
 </script>
@@ -302,6 +321,10 @@ export default {
 .HistoryPage {
   &-Content {
     width: 100%;
+  }
+
+  &-Btn {
+    text-transform: uppercase;
   }
 }
 </style>

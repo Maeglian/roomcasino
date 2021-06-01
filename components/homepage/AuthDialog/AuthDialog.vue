@@ -3,7 +3,7 @@
     <div class="Close Modal-Close" @click="$emit('close')"></div>
     <div class="AuthDialog">
       <BaseTabs
-        v-if="!beforeDeposit"
+        v-if="!beforeDeposit && !beforeStartGame"
         class="AuthDialog-Tabs"
         :items="tabs"
         :current-item="activeTab"
