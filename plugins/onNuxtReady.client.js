@@ -37,6 +37,7 @@ window.onNuxtReady(({ context }) => {
     context.store
       .dispatch('getLimits')
       .then(() => context.store.commit('setInitialLoadingLoggedIn', 'limits'));
+    context.store.dispatch('getFreeSpinList');
   } else {
     context.store.commit('setInitialLoadingLoggedIn', 'availableBonus');
     context.store.commit('setInitialLoadingLoggedIn', 'profile');

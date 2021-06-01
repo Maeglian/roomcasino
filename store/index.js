@@ -829,8 +829,18 @@ export const mutations = {
   logout(state) {
     state.status = '';
     state.token = null;
+    state.user = {};
     state.depositNum = 0;
     state.emailIsConfirmed = false;
+    state.limits = [];
+    state.freeSpinList = [];
+    state.availableBonusList = [];
+    state.bonusList = [];
+    state.userDocumentList = [];
+    state.transactionHistoryList = [];
+    state.gameHistoryList = [];
+    state.bonusHistoryList = [];
+    state.sessionHistoryList = [];
     state.recentGames = [];
   },
   setCashoutTrue(state) {
@@ -1031,6 +1041,7 @@ export const actions = {
       dispatch('getProfile');
       dispatch('getLimits');
       dispatch('getAvailableBonusList');
+      dispatch('getFreeSpinList');
       dispatch('getRecentGames');
     }
   },

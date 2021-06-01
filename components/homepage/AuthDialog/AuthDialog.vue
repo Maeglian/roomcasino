@@ -12,8 +12,10 @@
       <template v-if="beforeDeposit || activeTab === 'registration'">
         <RegistrationForm
           :before-deposit="beforeDeposit"
+          :before-start-game="beforeStartGame"
           @close="$emit('close')"
           @redirect-login="activeTab = 'login'"
+          @profile-updated="onUpdateProfile({ gameId: id, demo, bg })"
         />
       </template>
       <template v-else>
@@ -47,6 +49,31 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    beforeStartGame: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    onUpdateProfile: {
+      type: Function,
+      required: false,
+      default: () => {},
+    },
+    id: {
+      type: String,
+      required: false,
+      default: '',
+    },
+    demo: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    bg: {
+      type: String,
+      required: false,
+      default: '',
     },
   },
   data() {
