@@ -78,7 +78,7 @@
 
 <script>
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
-import BonusDetails from '@/components/cabinet/BonusDetails';
+import BonusDetails from '@/components/profile/BonusDetails';
 
 export default {
   name: 'FreeSpin',

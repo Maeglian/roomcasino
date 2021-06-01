@@ -34,8 +34,8 @@
 </template>
 
 <script>
-import CabinetFilters from '@/components/cabinet/CabinetFilters.vue';
-import CabinetTable from '@/components/cabinet/CabinetTable.vue';
+import CabinetFilters from '@/components/profile/CabinetFilters.vue';
+import CabinetTable from '@/components/profile/CabinetTable.vue';
 import { mapActions, mapMutations, mapState } from 'vuex';
 import moment from 'moment';
 
@@ -45,7 +45,7 @@ export default {
     CabinetFilters,
     CabinetTable,
   },
-  layout: 'cabinet',
+  layout: 'profile',
   data() {
     return {
       maxRowsPerPage: 12,
@@ -62,11 +62,11 @@ export default {
               },
             },
             {
-              label: this.$t('cabinet.history.table.paymentSystem'),
+              label: this.$t('profile.history.table.paymentSystem'),
               field: 'paymentSystem',
             },
             {
-              label: this.$t('cabinet.history.table.action'),
+              label: this.$t('profile.history.table.action'),
               field: 'action',
             },
             {
@@ -125,15 +125,15 @@ export default {
               },
             },
             {
-              label: this.$t('cabinet.history.table.gameName'),
+              label: this.$t('profile.history.table.gameName'),
               field: 'name',
             },
             {
-              label: this.$t('cabinet.history.table.betSum'),
+              label: this.$t('profile.history.table.betSum'),
               field: 'betSum',
             },
             {
-              label: this.$t('cabinet.history.table.win'),
+              label: this.$t('profile.history.table.win'),
               field: 'winSum',
             },
             {
@@ -188,7 +188,7 @@ export default {
               field: 'wagerRemains',
             },
             {
-              label: this.$t('cabinet.history.table.validUntil'),
+              label: this.$t('profile.history.table.validUntil'),
               field: 'expireAt',
               format(x) {
                 return moment.unix(x).format('DD MMM YYYY, H:mm:ss');

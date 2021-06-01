@@ -25,7 +25,7 @@
       <p class="Text">
         <i18n path="supportPages.responsibleGaming.section2.text1">
           <template v-if="isLoggedIn" #toLimits>
-            <NuxtLink :to="localePath('/cabinet/limits')" class="SupportPage-Link"
+            <NuxtLink :to="localePath('/profile/limits')" class="SupportPage-Link"
               >{{ $t('supportPages.responsibleGaming.section2.here') }}.</NuxtLink
             >
           </template>

@@ -17,13 +17,13 @@
           <svg class="GamblingLimit-EditMenuIcon GamblingLimit-EditIcon">
             <use xlink:href="@/assets/img/icons.svg#edit"></use>
           </svg>
-          {{ $t('cabinet.limits.edit') }}
+          {{ $t('profile.limits.edit') }}
         </button>
         <button type="button" class="GamblingLimit-EditMenuItem" @click="onClickDelete">
           <svg class="GamblingLimit-EditMenuIcon GamblingLimit-DeleteIcon">
             <use xlink:href="@/assets/img/icons.svg#delete"></use>
           </svg>
-          {{ $t('cabinet.limits.delete') }}
+          {{ $t('profile.limits.delete') }}
         </button>
       </div>
       <div
@@ -46,7 +46,7 @@
           :min-format="true"
           :enddate="new Date(item.refreshAt * 1000)"
         >
-          {{ $t('cabinet.limits.untilReset') }}
+          {{ $t('profile.limits.untilReset') }}
         </Counter>
       </div>
       <template v-if="item.type === 'sessionLimit'">
@@ -55,9 +55,9 @@
             <svg class="GamblingLimit-SessionIcon">
               <use xlink:href="@/assets/img/icons.svg#clock"></use>
             </svg>
-            {{ sessionTime }} {{ $t('cabinet.limits.periods.min') }}
+            {{ sessionTime }} {{ $t('profile.limits.periods.min') }}
           </div>
-          <div>{{ item.targetValue }} {{ $t('cabinet.limits.periods.min') }}</div>
+          <div>{{ item.targetValue }} {{ $t('profile.limits.periods.min') }}</div>
         </div>
         <div class="GamblingLimit-LineScale">
           <div
@@ -82,8 +82,8 @@
             {{ item.targetValue / 86400 }}
             {{
               item.targetValue > 86400
-                ? $t('cabinet.limits.periods.days')
-                : $t('cabinet.limits.periods.day')
+                ? $t('profile.limits.periods.days')
+                : $t('profile.limits.periods.day')
             }}
           </template>
           <template v-else class="GamblingLimit-Left">
@@ -128,8 +128,8 @@ import { LIMIT_DETAILS } from '@/config';
 import limits from '@/mixins/limits';
 import moment from 'moment';
 import Counter from '@/components/Counter';
-import CreateLimits from '@/components/cabinet/CreateLimits';
-import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
+import CreateLimits from '@/components/profile/CreateLimits';
+import ConfirmDialog from '@/components/profile/ConfirmDialog';
 
 const circleLength = 106.8;
 
@@ -165,7 +165,7 @@ export default {
         return `${limit.name} limit`;
       }
 
-      return this.$t(`cabinet.limits.limits.${this.item.type}.title`);
+      return this.$t(`profile.limits.limits.${this.item.type}.title`);
     },
     color() {
       switch (this.item.type) {
@@ -251,11 +251,11 @@ export default {
       this.$modal.show(
         ConfirmDialog,
         {
-          title: this.$t('cabinet.limits.delete'),
-          text: `${this.$t('cabinet.limits.deleteText')} ${LIMIT_DETAILS[this.item.type].name}? ${
+          title: this.$t('profile.limits.delete'),
+          text: `${this.$t('profile.limits.deleteText')} ${LIMIT_DETAILS[this.item.type].name}? ${
             LIMIT_DETAILS[this.item.type].deleteRules
           }`,
-          okBtnText: this.$t('cabinet.limits.delete'),
+          okBtnText: this.$t('profile.limits.delete'),
           closeBtn: true,
           onOk: this.onDeleteLimit,
         },

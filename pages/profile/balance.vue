@@ -17,7 +17,7 @@
         {{ $t('modals.lockedByBonus') }}
       </div>
       <template #button>
-        <NuxtLink class="Btn Btn--common Btn--full" :to="localePath('/cabinet/bonuses')">
+        <NuxtLink class="Btn Btn--common Btn--full" :to="localePath('/profile/bonuses')">
           {{ $t('buttons.checkBonuses') }}
         </NuxtLink>
       </template>
@@ -46,7 +46,7 @@
         </button>
       </template>
     </BaseModal>
-    <div class="CabinetPage-Title BalancePage-Title">{{ $t('cabinet.pages.balance') }}</div>
+    <div class="CabinetPage-Title BalancePage-Title">{{ $t('profile.pages.balance') }}</div>
     <div class="Table CabinetPage-Table BalancePage-Table">
       <div class="Table-Row CabinetPage-Row">
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">
@@ -59,17 +59,17 @@
           {{ $t('common.amount') }}
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">
-          {{ $t('cabinet.balance.table.locked') }}
+          {{ $t('profile.balance.table.locked') }}
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th">
-          {{ $t('cabinet.balance.table.cashout') }}
+          {{ $t('profile.balance.table.cashout') }}
         </div>
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell CabinetPage-Th"></div>
       </div>
       <div v-for="(acc, i) in sortedAccountList" :key="i" class="Table-Row CabinetPage-Row">
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Active">
           <label class="CabinetPage-Label">
-            {{ acc.active ? $t('cabinet.balance.active') : $t('cabinet.balance.select') }}
+            {{ acc.active ? $t('profile.balance.active') : $t('profile.balance.select') }}
             <input
               class="CabinetPage-Checkbox"
               type="radio"
@@ -111,14 +111,14 @@
     </div>
     <button class="CabinetPage-AddBtn" @click="$modal.show('addCurrency')">
       <span class="CabinetPage-AddBtnPlus CabinetPage-AddBtnPlus--left"> + </span>
-      <span class="CabinetPage-AddBtnText"> {{ $t('cabinet.balance.addCurrency') }} </span>
+      <span class="CabinetPage-AddBtnText"> {{ $t('profile.balance.addCurrency') }} </span>
     </button>
     <modal name="addCurrency" width="348" height="auto" @before-close="beforeCloseModal">
       <div class="Modal">
         <div class="Close Modal-Close" @click="$modal.hide('addCurrency')"></div>
         <div class="AddCurrency">
           <div class="CabinetPage-Header AddCurrency-Header">
-            {{ $t('cabinet.balance.addCurrency') }}
+            {{ $t('profile.balance.addCurrency') }}
           </div>
           <div v-if="moreCurrencyAccounts.length" class="AddCurrency-Content">
             <div class="AddCurrency-Currencies">
@@ -136,7 +136,7 @@
             </div>
           </div>
           <div v-else class="AddCurrency-Text">
-            {{ $t('cabinet.balance.noMoreCurrency') }}
+            {{ $t('profile.balance.noMoreCurrency') }}
           </div>
         </div>
       </div>

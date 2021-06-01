@@ -1,8 +1,8 @@
 <template>
   <div class="CabinetPage BonusesPage">
-    <div class="CabinetPage-Title BonusesPage-Title">{{ $t('cabinet.pages.bonuses') }}</div>
-    <NuxtLink :to="localePath('/cabinet/history/bonus')" class="BonusesPage-Bonuses">
-      {{ $t('cabinet.bonuses.history') }}
+    <div class="CabinetPage-Title BonusesPage-Title">{{ $t('profile.pages.bonuses') }}</div>
+    <NuxtLink :to="localePath('/profile/history/bonus')" class="BonusesPage-Bonuses">
+      {{ $t('profile.bonuses.history') }}
       <span class="BonusesPage-BonusesIcon">
         <svg width="16" height="16">
           <use xlink:href="@/assets/img/icons.svg#time"></use>
@@ -25,7 +25,7 @@
             <span class="Bonus-WagerAmount"
               >&nbsp;{{ bonus.wagerAmount }} {{ activeCurrency }}</span
             >
-            &nbsp;{{ $t('cabinet.bonuses.table.wagered') }}
+            &nbsp;{{ $t('profile.bonuses.table.wagered') }}
             <svg
               class="Bonus-Icon"
               width="14"
@@ -65,13 +65,13 @@
     <div v-if="availableBonusList.length" class="Table CabinetPage-Table BonusesPage-Table">
       <div class="Table-Row CabinetPage-Row">
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
-          {{ $t('cabinet.bonuses.table.bonus') }}
+          {{ $t('profile.bonuses.table.bonus') }}
         </div>
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
-          {{ $t('cabinet.bonuses.table.min') }}
+          {{ $t('profile.bonuses.table.min') }}
         </div>
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th">
-          {{ $t('cabinet.bonuses.table.max') }}
+          {{ $t('profile.bonuses.table.max') }}
         </div>
         <div class="Table-Cell BonusesPage-Cell CabinetPage-Cell CabinetPage-Th"></div>
       </div>
@@ -175,10 +175,10 @@
 <script>
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import Counter from '@/components/Counter';
-import BonusDetails from '@/components/cabinet/BonusDetails';
+import BonusDetails from '@/components/profile/BonusDetails';
 import Loader from '@/components/Loader';
 import CancelBonusPopup from '@/components/CancelBonusPopup';
-import FreeSpin from '@/components/cabinet/FreeSpin';
+import FreeSpin from '@/components/profile/FreeSpin';
 
 export default {
   name: 'BonusesPage',
@@ -204,7 +204,6 @@ export default {
   },
   created() {
     this.getBonusList();
-    this.getFreeSpinList();
     this.getBonusHistoryList();
     this.getAvailableBonusList();
     this.getAvailableFreeSpinList();
@@ -217,7 +216,6 @@ export default {
       'deleteBonus',
       'getProfile',
       'getBonusHistoryList',
-      'getFreeSpinList',
       'getAvailableFreeSpinList',
     ]),
     onClickCancelBonus(bonus) {

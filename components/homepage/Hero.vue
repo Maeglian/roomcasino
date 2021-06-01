@@ -200,12 +200,17 @@ export default {
           text: this.$t('homepage.heroBanner.deposit3.text'),
           btnText: 'Deposit now',
         },
-        // {
-        //   bg: 'tournaments',
-        //   title: this.$t('homepage.heroBanner.deposit4.title'),
-        //   text: '',
-        //   btnText: 'Deposit now',
-        // },
+        {
+          bg: 'tournaments',
+          title: this.$t('homepage.heroBanner.deposit4.title'),
+          text: this.$t('homepage.heroBanner.deposit4.text'),
+          btnText: 'Deposit now',
+        },
+        {
+          bg: 'highroller',
+          title: this.$t('homepage.heroBanner.highroller.title'),
+          text: this.$t('homepage.heroBanner.highroller.text'),
+        },
         {
           bg: 'madnessBanner',
           title: this.$t('promotions.mayMadness.title'),

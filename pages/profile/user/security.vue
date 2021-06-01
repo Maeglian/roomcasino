@@ -23,7 +23,7 @@
       <!--        </form>-->
       <!--      </div>-->
       <form class="CabinetForm ProfilePage-Password" @submit.prevent="onSubmitPasswordForm">
-        <div class="CabinetPage-Header">{{ $t('cabinet.profile.passwordChange') }}</div>
+        <div class="CabinetPage-Header">{{ $t('profile.user.passwordChange') }}</div>
         <BaseInput
           v-model="oldPassword"
           class="ProfilePage-Row"
@@ -31,7 +31,7 @@
           error-class="CabinetForm-Error"
           input-class="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           :v="$v.oldPassword"
-          :placeholder="$t('cabinet.profile.oldPassword')"
+          :placeholder="$t('profile.user.oldPassword')"
           icon="password"
           :should-display-validation="shouldDisplayPasswordFormErrors"
         >
@@ -49,7 +49,7 @@
           error-class="CabinetForm-Error"
           input-class="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           :v="$v.newPassword.value"
-          :placeholder="$t('cabinet.profile.newPassword')"
+          :placeholder="$t('profile.user.newPassword')"
           icon="password"
           :should-display-validation="shouldDisplayPasswordFormErrors"
         >
@@ -76,7 +76,7 @@
           error-class="CabinetForm-Error"
           input-class="ProfilePage-Field ProfilePage-Input ProfilePage-Input--withIcon"
           :v="$v.confirmPassword.value"
-          :placeholder="$t('cabinet.profile.confirmPassword')"
+          :placeholder="$t('profile.user.confirmPassword')"
           :should-display-validation="shouldDisplayPasswordFormErrors"
         >
           <template #beforeInput-absolute>
@@ -106,7 +106,7 @@
       </form>
     </div>
     <CabinetTable
-      :title="$t('cabinet.profile.sessionHistory')"
+      :title="$t('profile.user.sessionHistory')"
       :cols="sessionHistoryCols"
       :rows="sessionHistoryList"
       :show-more-btn="pageRowsCount > limit && !needsPagination"
@@ -124,7 +124,7 @@
 </template>
 
 <script>
-import CabinetTable from '@/components/cabinet/CabinetTable.vue';
+import CabinetTable from '@/components/profile/CabinetTable.vue';
 import { mapActions, mapMutations, mapState } from 'vuex';
 import { required, sameAs, not } from 'vuelidate/lib/validators';
 import BaseInput from '@/components/base/BaseInput';
@@ -261,7 +261,7 @@ export default {
           this.shouldDisplayPasswordFormErrors = false;
           this.pushNotificationAlert({
             type: 'success',
-            text: this.$t('cabinet.profile.passwordUpdateSuccess'),
+            text: this.$t('profile.user.passwordUpdateSuccess'),
           });
         }
       });

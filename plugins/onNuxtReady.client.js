@@ -37,6 +37,7 @@ window.onNuxtReady(({ context }) => {
     context.store
       .dispatch('getLimits')
       .then(() => context.store.commit('setInitialLoadingLoggedIn', 'limits'));
+    context.store.dispatch('getFreeSpinList');
   } else {
     context.store.commit('setInitialLoadingLoggedIn', 'availableBonus');
     context.store.commit('setInitialLoadingLoggedIn', 'profile');
@@ -63,4 +64,6 @@ window.onNuxtReady(({ context }) => {
   context.store
     .dispatch('getGameProducerList')
     .then(() => context.store.commit('setInitialLoading', 'producers'));
+  context.store.dispatch('getTopWinnerList', { limit: 5 });
+  context.store.dispatch('getLastWinnerList', { limit: 5 });
 });

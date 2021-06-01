@@ -4,9 +4,9 @@
     <div v-if="!isConfirm" class="CreateLimits">
       <div class="CabinetPage-Header CabinetPage-Section">
         <template v-if="isEdit">
-          {{ $t('buttons.edit') }} {{ $t(`cabinet.limits.limits.${type.value}.name`) }}
+          {{ $t('buttons.edit') }} {{ $t(`profile.limits.limits.${type.value}.name`) }}
         </template>
-        <template v-else> {{ $t('cabinet.limits.createLimits') }} </template>
+        <template v-else> {{ $t('profile.limits.createLimits') }} </template>
       </div>
       <BaseDropdown
         v-if="!isEdit"
@@ -16,7 +16,7 @@
         @set-dropdown-value="type = $event"
       />
       <div class="CabinetPage-Section CabinetPage-Text CreateLimits-Text">
-        {{ $t(`cabinet.limits.limits.${type.value}.text`) }}
+        {{ $t(`profile.limits.limits.${type.value}.text`) }}
       </div>
       <div
         v-if="
@@ -58,7 +58,7 @@
           :v="$v.value"
         >
           <template v-if="type.value === 'sessionLimit'" #afterInput-absolute>
-            <span class="CreateLimits-InputCurrency"> {{ $t('cabinet.limits.periods.min') }} </span>
+            <span class="CreateLimits-InputCurrency"> {{ $t('profile.limits.periods.min') }} </span>
           </template>
         </BaseInput>
         <BaseDropdown
@@ -87,19 +87,19 @@
         class="Btn Btn--common Btn--full Btn--color CreateLimits-Btn"
         @click="onClickLimitBtn"
       >
-        <template v-if="isEdit"> {{ $t('cabinet.limits.save') }} </template>
-        <template v-else> {{ $t('cabinet.limits.addLimits') }} </template>
+        <template v-if="isEdit"> {{ $t('profile.limits.save') }} </template>
+        <template v-else> {{ $t('profile.limits.addLimits') }} </template>
       </button>
     </div>
     <div v-else>
       <ConfirmDialog
-        :title="$t('cabinet.limits.confirmUpdate')"
+        :title="$t('profile.limits.confirmUpdate')"
         :text="
-          `${$t('cabinet.limits.sureSet')} ${$t(`cabinet.limits.limits.${type.value}.name`)}? ${$t(
-            `cabinet.limits.limits.${type.value}.editRules`,
+          `${$t('profile.limits.sureSet')} ${$t(`profile.limits.limits.${type.value}.name`)}? ${$t(
+            `profile.limits.limits.${type.value}.editRules`,
           )}`
         "
-        :ok-btn-text="$t('cabinet.limits.setLimit')"
+        :ok-btn-text="$t('profile.limits.setLimit')"
         @cancel="$emit('close')"
         @ok="onClickLimitBtn"
       />
@@ -110,7 +110,7 @@
 <script>
 import BaseDropdown from '@/components/base/BaseDropdown';
 import BaseInput from '@/components/base/BaseInput';
-import ConfirmDialog from '@/components/cabinet/ConfirmDialog';
+import ConfirmDialog from '@/components/profile/ConfirmDialog';
 import { LIMIT_DETAILS } from '@/config';
 import { findValInArr } from '@/utils/helpers';
 import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
@@ -156,24 +156,24 @@ export default {
         },
       ],
       limitTypes: [
-        { name: this.$t('cabinet.limits.limits.depositLimit.name'), value: 'depositLimit' },
-        { name: this.$t('cabinet.limits.limits.wagerLimit.name'), value: 'wagerLimit' },
-        { name: this.$t('cabinet.limits.limits.lossLimit.name'), value: 'lossLimit' },
-        { name: this.$t('cabinet.limits.limits.sessionLimit.name'), value: 'sessionLimit' },
-        { name: this.$t('cabinet.limits.limits.coolingOffLimit.name'), value: 'coolingOffLimit' },
+        { name: this.$t('profile.limits.limits.depositLimit.name'), value: 'depositLimit' },
+        { name: this.$t('profile.limits.limits.wagerLimit.name'), value: 'wagerLimit' },
+        { name: this.$t('profile.limits.limits.lossLimit.name'), value: 'lossLimit' },
+        { name: this.$t('profile.limits.limits.sessionLimit.name'), value: 'sessionLimit' },
+        { name: this.$t('profile.limits.limits.coolingOffLimit.name'), value: 'coolingOffLimit' },
       ],
       period: {},
       limitCoolPeriods: [
         {
-          name: this.$t('cabinet.limits.periods.days'),
+          name: this.$t('profile.limits.periods.days'),
           value: 'dayLimit',
         },
         {
-          name: this.$t('cabinet.limits.periods.weeks'),
+          name: this.$t('profile.limits.periods.weeks'),
           value: 'weekLimit',
         },
         {
-          name: this.$t('cabinet.limits.periods.months'),
+          name: this.$t('profile.limits.periods.months'),
           value: 'monthLimit',
         },
       ],

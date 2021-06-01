@@ -30,7 +30,8 @@
     "more": "Mehr",
     "checkBonuses": "Boni prüfen",
     "cancelBonus": "Bonus ablehnen",
-    "goBack": "Zurück"
+    "goBack": "Zurück",
+    "createAccount": "Registrieren"
   },
   "errors": {
     "required": "Pflichtangabe",
@@ -76,43 +77,43 @@
     "activateFreeSpinError": "Das Freispiel konnte nicht gestartet werden",
     "activateFreeSpinSuccess": "Ihr Freispiel wurde gestartet"
   },
-  "auth" : {
-    "loginTitle" : "Willkommen zurück  ",
-    "signUpTitle" : "Melde dich an  <span class=\"Colored\">&</span> erhalte den <br /> Begrüssungbonus",
-    "forgotPassword" : "Passwort vergessen",
-    "emails" : "Erhalt von E-Mail-Benachrichtigungen zu Aktionen",
-    "terms" : "Ich bin {minAge} Jahre alt und stimme {br} {terms} und {policy} ",
-    "step2Title" : "Bitte füllen Sie die untenstehenden Informationen aus! ",
-    "thanksRegistration" : "Danke für die Registrierung",
-    "registrationBonus" : "150 €",
-    "registrationBonusText" : "für deine erste Einzahlung! Nutze den Ninecasino Begrüßungsbonus",
-    "getBonus" : "hol dir deinen Bonus",
-    "enterEmail" : "E—Mail-Adresse Eingeben ",
-    "passwordRestoreText" : "Danke! Prüfen Sie Ihre E-Mail für weitere Anweisungen",
-    "enterNewPassword" : "Geben Sie Ihr neues Passwort ein",
-    "updatePassword" : "Passwort aktualisieren",
-    "newPassword" : "Neues Passwort",
-    "confirmPassword" : "Passwort bestätigen",
-    "tryingConfirmEmail" : "Wir versuchen, Ihre E-Mail zu verifizieren",
-    "confirmEmailError" : "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
-    "confirmEmailSuccess" : "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
-    "bonus" : "150 €",
-    "placeholders" : {
-      "enterEmail" : "Ihre E-Mail eingeben",
-      "enterPassword" : "Ihr Passwort eingeben",
-      "email" : "Ihre E-Mail ",
-      "password" : "Ihr Passwort ",
-      "currency" : "Währung ",
-      "country" : "Staat ",
-      "firstName" : "Vorname",
-      "lastName" : "Nachname",
-      "male" : "Männlich",
-      "female" : "Weiblich",
-      "city" : "Stadt ",
-      "address" : "Anschrift",
-      "postalCode" : "Postleitzahl",
-      "phone" : "Rufnummer",
-      "year" : "JJJJ"
+  "auth": {
+    "loginTitle": "Willkommen zurück  ",
+    "signUpTitle": "Melde dich an  <span class=\"Colored\">&</span> erhalte den <br /> Begrüssungbonus",
+    "forgotPassword": "Passwort vergessen",
+    "emails": "Erhalt von E-Mail-Benachrichtigungen zu Aktionen",
+    "terms": "Ich bin {minAge} Jahre alt und stimme {br} {terms} und {policy} ",
+    "step2Title": "Bitte füllen Sie die untenstehenden Informationen aus! ",
+    "thanksRegistration": "Danke für die Registrierung",
+    "registrationBonus": "150 €",
+    "registrationBonusText": "für deine erste Einzahlung! Nutze den Ninecasino Begrüßungsbonus",
+    "getBonus": "hol dir deinen Bonus",
+    "enterEmail": "E—Mail-Adresse Eingeben ",
+    "passwordRestoreText": "Danke! Prüfen Sie Ihre E-Mail für weitere Anweisungen",
+    "enterNewPassword": "Geben Sie Ihr neues Passwort ein",
+    "updatePassword": "Passwort aktualisieren",
+    "newPassword": "Neues Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "tryingConfirmEmail": "Wir versuchen, Ihre E-Mail zu verifizieren",
+    "confirmEmailError": "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
+    "confirmEmailSuccess": "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
+    "bonus": "150 €",
+    "placeholders": {
+      "enterEmail": "Ihre E-Mail eingeben",
+      "enterPassword": "Ihr Passwort eingeben",
+      "email": "Ihre E-Mail ",
+      "password": "Ihr Passwort ",
+      "currency": "Währung ",
+      "country": "Staat ",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "male": "Männlich",
+      "female": "Weiblich",
+      "city": "Stadt ",
+      "address": "Anschrift",
+      "postalCode": "Postleitzahl",
+      "phone": "Rufnummer",
+      "year": "JJJJ"
     }
   },
   "pages": {
@@ -128,7 +129,8 @@
     "privacyPolicy": "Datenschutz-Bestimmungen",
     "responsibleGaming": "Verantwortungsbewusst Spielen",
     "risk": "Risikowarnungen",
-    "tournaments": "Turniere"
+    "tournaments": "Turniere",
+    "dailyCashback": "Tägliche rückzahlung"
   },
   "gameCategories": {
     "top": "Top-Spiele ",
@@ -176,8 +178,8 @@
   "homepage": {
     "heroBanner": {
       "deposit1": {
-        "title": "Willkommenspaket <span class=\"Colored\">€ 450!</span>",
-        "text": "Machen Sie die erste Einzahlung <br/> und erhalten Sie <span class=\"Colored\"> 100% </span> bis zu <span class=\"Colored\"> € 150"
+        "title": "TÄGLICHE RÜCKZAHLUNG BIS ZU <span class=\"Colored\"> 20%\n</span>",
+        "text": "Machen Sie die erste Einzahlung <br/> und erhalten Sie <span class=\"Colored\"> 100% </span><br/> bis zu <span class=\"Colored\"> € 150 + <span class=\"Colored\">150 freispiele</span>"
       },
       "deposit2": {
         "title": "Bonus für zweite<br/>  Einzahlung",
@@ -188,7 +190,12 @@
         "text": "100% bonus<br/> up to <span class=\"Colored\">150 €</span><br/> auf Ihre dritte Einzahlung"
       },
       "deposit4": {
-        "title": "Weitere aufregende <br/> Promotionen<br/> folgen in Kürze!"
+        "title": "Wochenend<br/> bonus",
+        "text": "<span class=\"Colored\">40% BIS ZU €150</span>"
+      },
+      "highroller": {
+        "title": "HIGHROLLER-BONUS<br/> FÜR BESONDERE<br/> EINSATZFREUDE",
+        "text": "<span class=\"Colored\">bis zu €500</span>"
       }
     },
     "advantages": {
@@ -211,7 +218,9 @@
     },
     "allProviders": "Alle Anbieter",
     "tableIsOpen": "Platzieren Sie Ihre Einsätze ",
-    "tableIsClosed": "Keine Einsätze mehr"
+    "tableIsClosed": "Keine Einsätze mehr",
+    "topWinners": "Top-gewinner",
+    "lastWinners": "Aktuelle gewinner"
   },
   "filters": {
     "filteredBy": "Gefiltert nach",
@@ -220,13 +229,13 @@
     "until": "bis",
     "dataPlaceholder": "DD.MM.JJJJ"
   },
-  "cabinet": {
+  "profile": {
     "pages": {
       "balance": "Kontostand",
       "bonuses": "Boni",
       "history": "historie",
       "verification": "Überprüfung",
-      "profile": "Profil",
+      "user": "Profil",
       "limits": "Verlustlimits",
       "exit": "Beenden"
     },
@@ -276,7 +285,7 @@
       "disapproved": "Nicht genehmigt",
       "drop": "Datei hier ablegen oder Bilder oder .pdf-Dateien suchen. Maximale Größe 110 MB"
     },
-    "profile": {
+    "user": {
       "title": "Benutzerprofil",
       "tabs": {
         "general": "Allgemein",
@@ -366,21 +375,35 @@
   "promotions": {
     "title": "Aktuelle Aktionen",
     "text": "Ninecasino arbeitet ständig daran, die besten Aktionen zu liefern. Wir verwenden die neueste Technologie und das Feedback unserer Spieler, um unsere Aktionen zu gestalten. Viel Spaß!",
-    "upTo": "bis zu € 150 ",
     "deposit1": {
       "title": "100%<br/> des<br/> Einzahlungsbetrags <br/> ",
+      "upTo": "bis zu € 150 + 150 FREISPIELE",
       "name": "Bonus für die erste Einzahlung",
-      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 € + 150 freispiele. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit2": {
       "title": "55%<br/> des<br/> Einzahlungsbetrags <br/> ",
+      "upTo": "bis zu € 150",
       "name": "Bonus für zweite Einzahlung",
       "text": "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150  €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach eine zweite Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit3": {
       "title": "100%<br/> des<br/> Einzahlungsbetrags<br/>",
+      "upTo": "bis zu € 150",
       "name": "Bonus für dritte Einzahlung ",
       "text": "Machen Sie Ihre dritte Einzahlung bei Ninecasino und erhalten Sie bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine dritte Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+    },
+    "deposit4": {
+      "title": "Wochenend<br/> bonus",
+      "upTo": "40% BIS ZU €150",
+      "name": "Wochenend bonus",
+      "text": "Mit mehr beginnen, um mehr zu gewinnen. Zahlen Sie mindestens €20 ein und erhalten Sie eine Gutschrift in Höhe von 40% bis zu €150, um diese Automaten schwindlig zu spielen, bis die Jackpots explodieren!"
+    },
+    "cashback": {
+      "title": "Tägliche<br/>rückzahlung",
+      "upTo": "bis zu 20%",
+      "name": "Tägliche rückzahlung",
+      "text": "Wer bekommt im Casino nicht gerne Geld zurück? Selbst wenn Sie verloren haben!<br/>Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von x5 zurück, wenn Sie verlieren."
     },
     "dropsWins": {
       "title": "Drops<span class=\"Colored\">&</span>wins<br/>Phase 4<br/>(Wochen 13–16)",
@@ -395,7 +418,12 @@
     "mayMadness": {
       "title": "May<br/> madness<br/> von spinomenal",
       "name": "May madness von spinomenal",
-      "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde I! Sie läuft ab dem 11. Mai um 00:00 Uhr GMT und endet am 17. Mai 2021 um 23:59 Uhr GMT."
+      "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde III! Sie läuft ab dem 25. Mai um 00:00 Uhr GMT und endet am 1. Juni 2021 um 23:59 Uhr GMT."
+    },
+    "highroller": {
+      "upTo": "up to €500",
+      "name": "Highroller-bonus für besondere einsatzfreude",
+      "text": "Sie stehen auf hohe Einsätze? Dann haben wir das Richtige für Sie. Erhalten Sie einmal im Monat einen Highroller-Bonus für besondere Einsatzfreude von 30% bis zu einem Höchstbetrag von €500 auf eine Einzahlung ab mindestens €300."
     }
   },
   "tournaments": {
@@ -453,14 +481,14 @@
   },
   "mayMadness": {
     "prize": "€ 60 000",
-    "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde I! Sie läuft ab dem 11. Mai um 00:00 Uhr GMT und endet am 17. Mai 2021 um 23:59 Uhr GMT. Das gesamte Preisgeld beträgt 60.000 Euro! Nach Abschluss der Runde I teilen sich die 150 Bestplatzierten 20.000 davon nach folgendem Muster.",
+    "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde III! Sie läuft ab dem 25. Mai um 00:00 Uhr GMT und endet am 1. Juni 2021 um 23:59 Uhr GMT.",
     "textMobile": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!",
     "terms": [
       {
-        "text": "Sie läuft ab dem 11. Mai um 00:00 Uhr GMT und endet am 17. Mai 2021 um 23:59 Uhr GMT."
+        "text": "Sie läuft ab dem 25. Mai um 00:00 Uhr GMT und endet am 1. Juni 2021 um 23:59 Uhr GMT."
       },
       {
-        "text": "Um in Runde I des Maiwahnsinns zu den Gewinnern zu zählen, müssen Sie lediglich eines der teilnehmenden Spiele spielen:<br/><br/>●  Book Of Demi Gods II<br/>●  Aztec Spell<br/>●  Story Of Medusa"
+        "text": "Teilnehmende Spiele in Runde III sind:<br/><br/>●  Book Of Rebirt<br/>●  Origins Of Lilith<br/>●  4 Horsemen II"
       },
       {
         "text": "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 Euro."
@@ -1102,7 +1130,122 @@
     },
     "riskWarnings": {
       "title": "RISIKOWARNUNGEN",
-      "text":"Du hast verstanden, dass du durch Teilnahme in den Spielen den Verlust des Geldes riskierst, das du auf dein Konto bei www.ninecasino.com eingezahlt hast. Glücksspiel ist in manchen Gerichtsbarkeiten gesetzeswidrig. Du verstehst und stimmst zu, dass www.ninecasino.com nicht in der Lage ist, Rechtsberatung zu leisten oder die Legalität der Verwendung der Dienste unserer Webseite durch dich zu garantieren. Die Gesellschaft versichert nicht, dass die Dienste der Webseite mit den rechtlichen Anforderungen in deiner Gerichtsbarkeit übereinstimmen. Du verwendest die Dienste auf www.ninecasino.com aus freien Stücken und aus eigenem Ermessen und übernimmst dadurch das Risiko der Haftbarkeit, wenn du entscheidest, dass die Verwendung der Dienste der Webseite mit den gesetzlichen Vorgaben deiner Gerichtsbarkeit übereinstimmt. Anmeldung und Spiel auf der Webseite erfolgt auf eigenes Risiko. Bei Fragen oder Vorschlägen in Bezug auf unsere Webseite setz dich bitte unter support@ninecasino.com oder telefonisch mit uns in Verbindung."
+      "text": "Du hast verstanden, dass du durch Teilnahme in den Spielen den Verlust des Geldes riskierst, das du auf dein Konto bei www.ninecasino.com eingezahlt hast. Glücksspiel ist in manchen Gerichtsbarkeiten gesetzeswidrig. Du verstehst und stimmst zu, dass www.ninecasino.com nicht in der Lage ist, Rechtsberatung zu leisten oder die Legalität der Verwendung der Dienste unserer Webseite durch dich zu garantieren. Die Gesellschaft versichert nicht, dass die Dienste der Webseite mit den rechtlichen Anforderungen in deiner Gerichtsbarkeit übereinstimmen. Du verwendest die Dienste auf www.ninecasino.com aus freien Stücken und aus eigenem Ermessen und übernimmst dadurch das Risiko der Haftbarkeit, wenn du entscheidest, dass die Verwendung der Dienste der Webseite mit den gesetzlichen Vorgaben deiner Gerichtsbarkeit übereinstimmt. Anmeldung und Spiel auf der Webseite erfolgt auf eigenes Risiko. Bei Fragen oder Vorschlägen in Bezug auf unsere Webseite setz dich bitte unter support@ninecasino.com oder telefonisch mit uns in Verbindung."
+    },
+    "bonusTermsPage": {
+      "title1": "bonus-bedingungen",
+      "text1": [
+        "Alle Bonusangebote sind streng begrenzt auf je eine: Person und deren Angehörige, Wohnanschrift, E-Mail-Adresse, IP-Adresse, Telefonnummer, Kontonummer, Kredit- oder EC-Kartennummer, digitale Brieftaschennummer, ein Konto bei einem Zahlungsabwickler (Neteller, Skrill u.a.) und ein Endgerät (Computer, Mobiltelefon, Tablet-PC usw.).",
+        "Alle Mitspielenden können die Boni in Anspruch nehmen, es sei denn, die Boni unterliegen Länderbeschränkungen und die Mitspielenden sind in einem der ausgeschlossenen Staaten wohnhaft. Mitspielende aus Schweden dürfen keine Boni erhalten. Boni sind nicht verfügbar für Mitspielende aus Schweden, das schließt die Teilnahme an Werbeaktionen jeglicher Art, den Erhalt von VIP-Prämien sowie den Umtausch von Comppoints ein.",
+        "Der Spieler darf Bonusangebote nicht missbrauchen. Im Falle eines solchen Missbrauchs hat das Casino das Recht, dem Spieler jegliche Boni vorzuenthalten und alle Gewinne aus Bonusbeträgen zu stornieren, sowohl während des Wettens als auch danach.",
+        "Die Verwendung von Bonusbeträgen zum alleinigen Zweck des Fortschritts durch die Bonuslevel ist verboten, insbesondere in Fällen, wenn Bonus- oder Barbeträge alleine dazu verwendet werden, durch die Bonuslevel fortzuschreiten (e.g. Sammeln von 9 von 10 Münzen, um das Bonusfeature zu erlangen), und die finalen Level (z.B. Spielen, um die letzte Münze zu sammeln und 10 von 10 und das Bonusfeature zu erlangen) werden mit Barwetten vervollständigt, wenn Bonusbeträge verwirkt oder verloren wurden, oder die Umsatzbedingung erreicht wurde, und zu Bargeld umgewandelt werden. Alle durch derartiges Spiel erzielten Gewinne werden als nichtig betrachtet.",
+        "Während er mit einem aktiven Bonus spielt, darf der Spieler keine Strategien anwenden, die darauf abzielen, die Wettbedingungen des Bonus zu erfüllen. Falls der Spieler solche Strategien einsetzt, und falls das Casino ausreichend Grund zu der Vermutung hat, dass das Verhalten des Spielers ausschließlich darauf abzielt, finanziellen Vorteil aus dem Bonus zu ziehen, dann behält sich das Casino das Recht vor, alle Gewinne des Spielers zu stornieren.",
+        "Alle Boni setzen, sofern nicht anders angegeben eine Mindesteinzahlung für ihren Erhalt voraus und weisen eine Obergrenze für den möglichen Bonusbetrag, Umsatzanforderungen, eine Obergrenze für die Anzahl der Einsätze während der Erfüllung der Umsatzanforderungen sowie eine Laufzeitbegrenzung für den Bonus auf.",
+        "Alle Boni sind standardmäßig auf einen Höchsteinsatz beschränkt: 5 EUR/USD, 10 CAD/AUD/NZD, 50 NOK, 350 RUB, 20 PLN, 600 JPY, 2.100 KZT, 140 CZK, 0,0005 BTC, 0,014 BCH, 0,02 ETH, 0,07 LTC, 2.100 DOG, 5,5 USDT, sofern nicht anders angegeben. Der Höchsteinsatz schließt die Einsatzverdopplung nach Abschluss einer Spielrunde ebenso ein wie (in einem Spiel erworbene) Bonusrunden.",
+        "Die mithilfe von Boni erzielten Gewinne können erst abgehoben werden, wenn alle Umsatzanforderungen erfüllt wurden.",
+        "Alle Boni müssen (sofern nicht anders angegeben) 40 mal gesetzt worden sein, bevor sie abgehoben werden können.",
+        "Alle Boni unterliegen einem Auszahlungsvorbehalt. Das bedeutet, dass ihre Abhebung erst beantragt werden kann, wenn alle Umsatzanforderungen vollständig erfüllt sind. Außerdem müssen Sie zuerst echtes Geld setzen und anschließend das Bonusgeld. Sobald Letzteres verspielt ist, verfällt auch der Bonus.",
+        "Sofern nicht anders angegeben, gilt ein Bonus 14 Tage ab Erhalt.",
+        "Ist der Bonus am Ende seiner Laufzeit noch gültig, ohne dass die Umsatzanforderungen erfüllt wurden, verfallen das gesamte Bonusgeld sowie die daraus erzielten Gewinne.",
+        "Sinkt das Spielguthaben auf einem Konto auf höchstens 0,05 USD, 0,05 EUR, 0,05 RUB, 0,05 NOK, 0,05 AUD, 0,05 JPY, 0,05 NZD, 0,05 CAD, 0,05 PLN, 0,000001 BTC, 0,00001 BCH, 0,00001 ETH, 0,0005 LTC, 10 DOG, 0,05 USDT, so verfallen die Boni automatisch.*",
+        "* Das gilt nur für das an einen Bonus gebundene Guthaben, zum Beispiel Einzahlung + Bonus, oder einen reinen Bonus im Fall von Boni ohne Einzahlungsverpflichtung, nicht jedoch für aus anderen Einzahlungen oder Boni erzielte Geldmittel auf einem Spielerkonto.",
+        "Die Abhebung von Guthaben kann beantragt werden, bevor die Umsatzanforderungen für einen Bonus erfüllt wurden. In diesem Fall verfällt der Bonusbetrag nebst der mit ihm erzielten Gewinne und die vorhandenen verbleibenden Mittel werden ausgezahlt.",
+        "Ein Spieler ist berechtigt, vor Erfüllung der entsprechenden Umsatzanforderungen auf Boni zu verzichten, ohne Auswirkung auf das vorhandene Guthaben.",
+        "Es kann jeweils nur ein Bonus genutzt werden. Einzahlungsboni können nicht kombiniert werden.",
+        "Ein Spieler hat das Recht, jegliche Boni des Casinos zu verweigern.",
+        "Der Aufschub von Spielrunden in einem beliebigen Spiel, einschließlich Freispielen und Bonusrunden, auf einen späteren Zeitpunkt, zu dem Sie keinen Umsatzanforderungen und/oder Einzahlungsverpflichtungen mehr unterliegen, die Freispiele oder Bonusfunktionen jedoch in einem Spiel fortbestehen, ist unzulässig.",
+        "Beachten Sie bitte, dass nicht bei allen Spielen der volle Einsatz für die Erfüllung der Umsatzanforderung für einen Bonus angerechnet wird. Bei Automatenspielen werden außer bei den unten genannten stets 100 % des Einsatzes gewertet.",
+        "Das Spielen für Boni ist in den folgenden Spielen nicht verfügbar: Craps (1x2 Gaming), Scarab Treasure (Amatic), No such games (Belatra), Ninja (Endorphina), 1429 Uncharted Seas (Epic Media), Egyptian Dreams Deluxe, Knockout Football, London Hunter, Magic Oak, Pumpkin Patch, Santa’s Village (Habanero), Mega Boy, Roo Riches, Super Fast Hot Hot Respin, Tree of Fortune, Vegas High Roller (iSoftbet), Dead or Alive, Devil’s Delight, Lucky Angler, Reel Rush 2, Reel Steal, Robin Hood: Shifting Riches, Scudamore’s Super Stakes, Serengeti Kings, Single Deck Blackjack Professional Series, The French Roulette, The Wish Master, TXS Hold’em Professional Series (NetEnt), Baker’s Treat, Eye of the Kraken, Golden Legend, Happy Halloween, Hugo 2, MULTIFRUIT 81, Pearls of India, Pimped, Rage to Riches, Royal Masquerade, Sea Hunter, Tower Quest (Play’nGo), Queen of Gold, Jade Butterfly (Pragmatic), 300 Shields, African Quest, Agent Valkyrie, Astro Legends: Lyra and Erion, Art of the Heist, Beautiful Bones, Bikini Party, Book of Oz, Bookie of Odds, Break Da Bank Again Respin, Castle Builder, Castle Builder II, Cool Buck, Craps, Dragon Dance, Forsaken Kingdom, Gems Odyssey, Gems Odyssey 92, Hot Ink, Le Kaffee Bar, Magic of Sahara, Medusa, Peek-a-Boo – 5 Reel, Pets Go Wild, Reel Gems, Retro Reels, Retro Reels Diamond Glitz, Retro Reels Extreme Heat, Scrooge, Spectacular Wheel of Wealth, Stardust, Tomb Raider – Secret of the Sword, Tomb Raider, Untamed Bengal Tiger, Untamed Crowned Eagle, Untamed Giant Panda, Untamed Wolf Pack, Vampire: The Masquerade – Las Vegas, Village People Macho Moves, Wheel of Wealth Special Edition, Wheel of Wealth, Wild Orient, Zombie Hoard (Quickfire), Skulls Up! (Quickspin), Three Musketeers (Red Tiger), Kingmaker, Lil Devil (Relax), Cupids Strike 2, Divine Forest, Lemur Does Vegas, Summer Splash, Mines of Gold (Spinomenal), 1429 Uncharted Seas (Thunderkick), Alchymedes, Cazino Cosmos, Dark Vortex, Dwarf Mine, Double Dragons, Holmes and the Stolen Stones, Jackpot Raiders, Jokerizer, Ozwin’s Jackpots, Spina Colada, The Dark Joker Rizes, The Royal Family, Tut’s Twister, Vikings go to Hell, Vikings go Berzerk, Wicked Circus, Wolf Hunters (Yggdrasil), all Jackpot slots.",
+        "Alle Tischspiele, Roulette und Videopoker – 5% des Einsatzes.",
+        "Spiele mit Live-Kartenverteilung werden für die Umsatzanforderung nicht berücksichtigt",
+        "Beim Spielen mit Bonusgeld werden alle Gewinne, die abgehoben werden sollen, vor der Bearbeitung der Auszahlung einer Überprüfung unterzogen. Das Casino behält sich vor, die betreffende Benutzerin/den betreffenden Benutzer infolge dieser Überprüfung um eine Bestätigung ihrer/seiner personenbezogenen Daten und der Daten für die Zahlungsabwicklung zu bitten.",
+        "Das Casino ist berechtigt, unrechtmäßig oder unter Verletzung der hier niedergelegten Bestimmungen erzielten Boni und Gewinne zu widerrufen und das gesamte Guthaben des betroffenen Kontos einzuziehen.",
+        "Das Casino behält sich vor, diese Bedingungen jederzeit zu ändern und zu ergänzen.",
+        "Sinkt das Spielguthaben auf einem Konto auf höchstens 0,05 USD, 0,05 EUR, 0,05 RUB, 0,05 NOK, 0,05 AUD, 0,05 JPY, 0,05 NZD, 0,05 CAD, 0,05 PLN, 0,000001 BTC, 0,00001 BCH, 0,00001 ETH, 0,0005 LTC, 10 DOG, 0,05 USDT, so verfällt der Bonus automatisch.*",
+        "* Das gilt nur für das an einen Bonus gebundene Guthaben, zum Beispiel Einzahlung + Bonus, oder einen reinen Bonus im Fall von Boni ohne Einzahlungsverpflichtung, nicht jedoch für aus anderen Einzahlungen oder Boni erzielte Geldmittel auf einem Spielerkonto.",
+        "Die Verwendung von Bonusgeld zum alleinigen Zweck des Fortschritts durch die Bonusstufen ist verboten. Wenn beispielsweise Bonus- oder Barmittel ausschließlich zum Aufstieg durch die Bonusstufen (etwa zum Sammeln von 9 der 10 für das Erreichen der Bonusfunktion erforderlichen Münzen) genutzt werden, und die letzten Stufen (z.B. das Spielen zum Erwerb der letzten der 10 Münzen und damit das Erreichen der Bonusfunktion) mit Bargeldeinsätzen abgeschlossen werden, wenn die Bonusmittel verfallen sind oder verloren wurden oder die Umsatzanforderung erfüllt und in Bargeld umgetauscht wurde. Alle durch derartiges Spiel erzielten Gewinne werden als nichtig betrachtet.",
+        "Alle Boni nach UTC-Zeit abgerechnet."
+      ],
+      "title2": "begrüssungsspaket",
+      "text2": [
+        "Um die Boni für die erste/zweite/dritte Einzahlung zu erhalten, muss Ihr Kontostand mindestens 20 EUR/USD, 20 CAD/AUD/NZD, 200 NOK, 1.500 RUB, 85 PLN, 2.500 JPY, 9.000 KZT, 0,0036 BTC, 0,12 BCH, 0,16 ETH, 0,6 LTC, 13.000 DOG, 22,5 USDT betragen.",
+        "Der höchste Bonusbetrag für erste/zweite/dritte Einzahlung ist 100 EUR/USD, 150 CAD/AUD/NZD, 1.000 NOK, 7.000 RUB, 430 PLN, 12.000 JPY, 42.000 KZT, 0,011 BTC, 0,28 BCH, 0,4 ETH, 1,4 LTC, 42.000 DOG, 110 USDT.",
+        "Freispiele müssen innerhalb von 3 Tagen aktiviert werden, die Laufzeit der Freispiele und der aus diesen erzielten Gewinne beträgt 7 Tage.",
+        "Zur Erfüllung der Umsatzanforderungen für einen Gewinn aus Boni/Freispielen müssen Einsätze in Höhe des 40-fachen des Bonus-/Freispielgewinns getätigt werden.",
+        "Der größtmögliche Gewinn aus Freispielen für die erste/zweite/dritte Einzahlung ist 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3.500 RUB, 210 PLN, 6.000 JPY, 21.000 KZT, 0,005 BTC, 0,14 BCH, 0,2 ETH, 0,7 LTC, 21.000 DOG, 55 USDT.",
+        "Der größtmögliche Gewinn aus Freispielen für die Registrierung ist 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3.500 RUB, 210 PLN, 6.000 JPY, 21.000 KZT, 0,005 BTC, 0,14 BCH, 0,2 ETH, 0,7 LTC, 21.000 DOG, 55 USDT."
+      ],
+      "title3": "wochenendaufstockung",
+      "text3": [
+        "Um die Wochenendaufstockung zu erhalten, muss Ihr Kontostand mindestens 20 EUR/USD, 20 CAD/AUD/NZD, 200 NOK, 1.500 RUB, 85 PLN, 2.500 JPY, 9.000 KZT, 0,0036 BTC, 0,12 BCH, 0,16 ETH, 0,6 LTC, 13.000 DOG, 22,5 USDT betragen.",
+        "Der höchste Betrag für die Wochenendaufstockung ist 150 EUR/USD, 230 CAD/AUD/NZD, 1.500 NOK, 10.000 RUB, 640 PLN, 18.000 JPY, 65.000 KZT, 0,017 BTC, 0,4 BCH, 0,6 ETH, 2,1 LTC, 65.000 DOG, 170 USDT.",
+        "Zur Erfüllung der Umsatzanforderungen für den Bonus müssen Sie Einsätze in Höhe des 40-fachen des Bonusbetrages tätigen.",
+        "Der Bonus ist Freitags, Samstags oder Sonntags für Spieler verfügbar, die bereits all ihre Begrüßungspaket-Boni aufgebraucht haben."
+      ],
+      "title4": "freispiele für besondere treue",
+      "text4": [
+        "Der Höchstbetrag für Abhebungen beim Spielen mit Mitteln aus einem einzahlungsfreien Bonus oder aus Freispielen liegt bei 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3.500 RUB, 210 PLN, 6.000 JPY, 21.000 KZT, 0,005 BTC, 0,14 BCH, 0,2 ETH, 0,7 LTC, 21.000 DOG, 55 USDT.",
+        "Diese Gewinnbegrenzung bleibt auch nach Erfüllung der Umsatzanforderung bestehen."
+      ]
     }
+  },
+  "dailyCashback": {
+    "cashback": "Rückzahlung",
+    "title": "Tägliche rückzahlung<br/>bis zu 20%",
+    "text1": "Wer bekommt im Casino nicht gerne Geld zurück?<br/>  Selbst wenn Sie verloren haben! Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von&nbsp;x5 urück, wenn Sie verlieren.",
+    "text2": "Wenn Ihnen das passiert ist und Sie heute im Ninecasino Geld verloren haben, erhalten Sie es von uns morgen nach folgendem Muster zurück:",
+    "terms": "Rückerstattungsbedingungen",
+    "termsList": [
+      {
+        "text": "Rückerstattungen erfolgen in Höhe des am Vortag zwischen 00:01 und 23:59 Uhr UTC ausschließlich in Automatenspielen/an Spielautomaten verlorenen Betrages (oder seines Gegenwerts)."
+      },
+      {
+        "text": "Der Prozentsatz der Rückerstattung hängt von dem am Vortag verlorenen Betrag (oder seinem Gegenwert) ab:<br/><br/>20 bis 199 Euro – 10 %<br/>200 bis 499 Euro – 12 %<br/>500 bis 999 Euro – 14 %<br/>1.000 bis 2.499 Euro – 16 %<br/>2.500 bis 4.999 Euro – 18 %<br/>ab 5.000 Euro – 20 %."
+      },
+      {
+        "text": "Der Gesamtbetrag der erhaltenen Rückerstattungen darf 20 % der gesamten Verluste (oder ihres Gegenwerts) des betreffenden Spielers nicht übersteigen."
+      },
+      {
+        "text": "Die Rückerstattung erfolgt nicht, wenn der Echtgeldverlust des Vortages weniger als 20 EUR / 20 USD / 25 CAD / 200 NOK / 85 PLN / 20 NZD / 1.500,00 RUB / 2500 JPY / 9.000,00 KZT betragen hat. Echtgeldverlust bedeutet einen Verlust im Spiel mit den Einzahlungen ohne Boni."
+      },
+      {
+        "text": "Die Rückerstattung wird täglich um 00:10 Uhr UTC gutgeschrieben."
+      },
+      {
+        "text": "Die Umsatzanforderung für einen Rückerstattungsbonus beträgt x5."
+      },
+      {
+        "text": "Die Rückerstattung ist nach der Gutschrift auf dem Konto des Spielers 24 Stunden lang verfügbar."
+      },
+      {
+        "text": "Die Laufzeit der Rückerstattung endet 24 Stunden, nachdem sie abgerufen wurde."
+      }
+    ],
+    "items": [
+      {
+        "cashbackNum": "10%",
+        "cashbackSum": "€20 bis €199"
+      },
+      {
+        "cashbackNum": "12%",
+        "cashbackSum": "€200 bis €499"
+      },
+      {
+        "cashbackNum": "14%",
+        "cashbackSum": "€500 bis €999"
+      },
+      {
+        "cashbackNum": "16%",
+        "cashbackSum": "€1000 bis €2499"
+      },
+      {
+        "cashbackNum": "18%",
+        "cashbackSum": "€2500 bis €4999"
+      },
+      {
+        "cashbackNum": "20%",
+        "cashbackSum": "ab €5000"
+      }
+    ]
   }
 }

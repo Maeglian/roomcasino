@@ -46,6 +46,17 @@
     @media(min-width: $screen-m) {
       width: 550px;
     }
+
+    &--long {
+      @media(min-width: $screen-m) {
+        width: 503px;
+      }
+
+      @media(min-width: $screen-l) {
+        width: 604px;
+      }
+
+    }
   }
 
   &-Subtitle {
@@ -70,10 +81,6 @@
 
     @media(min-width: $screen-s) {
       width: calc(50% - 8px);
-    }
-
-    &:last-child {
-      margin-bottom: 0;
     }
   }
 
@@ -134,3 +141,4 @@
     padding: 0;
   }
 }
+
