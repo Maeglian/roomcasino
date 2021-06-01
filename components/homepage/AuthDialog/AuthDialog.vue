@@ -1,9 +1,12 @@
 <template>
-  <div class="Modal" :class="{ 'AuthDialog--login': activeTab === 'login' }">
+  <div
+    class="Modal"
+    :class="{ 'AuthDialog--login': activeTab === 'login' || beforeDeposit || beforeStartGame }"
+  >
     <div class="Close Modal-Close" @click="$emit('close')"></div>
     <div class="AuthDialog">
       <div
-        v-if="activeTab === 'registration'"
+        v-if="activeTab === 'registration' && !beforeDeposit && !beforeStartGame"
         class="AuthDialog-Banner"
         :class="`AuthDialog-Banner--${$i18n.locale}`"
       >
@@ -35,11 +38,13 @@
       <div
         class="AuthDialog-Main"
         :class="
-          activeTab === 'registration' ? 'AuthDialog-Main--registration' : 'AuthDialog-Main--login'
+          activeTab === 'registration' && !beforeDeposit && !beforeStartGame
+            ? 'AuthDialog-Main--registration'
+            : 'AuthDialog-Main--login'
         "
       >
         <BaseTabs
-          v-if="!beforeDeposit"
+          v-if="!beforeDeposit && !beforeStartGame"
           class="AuthDialog-Tabs"
           :items="tabs"
           :current-item="activeTab"
