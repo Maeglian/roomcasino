@@ -97,7 +97,8 @@
     "tryingConfirmEmail": "We're trying to verify your email",
     "confirmEmailError": "Sorry, you email was not confirmed",
     "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed",
-    "bonus": "$ 150",
+    "bonus": "$450",
+    "freeSpins": "150 free spins",
     "placeholders": {
       "enterEmail": "Enter your email",
       "enterPassword": "Enter your password",
@@ -114,6 +115,11 @@
       "postalCode": "Podtal Code",
       "phone": "Mobile phone",
       "year": "YYYY"
+    },
+    "features": {
+      "first": "Daily cashback<br/>up to 20%",
+      "second": "24/7 friendly<br/>chat support",
+      "third": "Super fast<br/>withdrawals"
     }
   },
   "pages": {

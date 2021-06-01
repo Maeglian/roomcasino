@@ -85,7 +85,7 @@
     "terms": "I am {minAge} years old and I accept the{br} {terms} and {policy}",
     "step2Title": "Please, fill the information below!",
     "thanksRegistration": "Thank you for registration",
-    "registrationBonus": "$150",
+    "registrationBonus": "$225",
     "registrationBonusText": "For your first deposit! Use advantage of Ninecasino Welcome Bonus",
     "getBonus": "Get your bonus",
     "enterEmail": "Enter email",
@@ -97,7 +97,8 @@
     "tryingConfirmEmail": "We're trying to verify your email",
     "confirmEmailError": "Sorry, you email was not confirmed",
     "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed",
-    "bonus": "$ 150",
+    "bonus": "$225",
+    "freeSpins": "150 free spins",
     "placeholders": {
       "enterEmail": "Enter your email",
       "enterPassword": "Enter your password",
@@ -114,6 +115,11 @@
       "postalCode": "Podtal Code",
       "phone": "Mobile phone",
       "year": "YYYY"
+    },
+    "features": {
+      "first": "Daily cashback<br/>up to 20%",
+      "second": "24/7 friendly<br/>chat support",
+      "third": "Super fast<br/>withdrawals"
     }
   },
   "pages": {
