@@ -96,12 +96,14 @@
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns">
           <button
             class="Btn Btn--color CabinetPage-Btn BalancePage-Btn"
+            :class="{ 'BalancePage-Btn--de': $i18n.locale === 'de' }"
             @click="onClickDeposit(acc.currency)"
           >
             {{ $t('buttons.deposit') }}
           </button>
           <button
             class="Btn Btn--outline CabinetPage-Btn BalancePage-Btn"
+            :class="{ 'BalancePage-Btn--de': $i18n.locale === 'de' }"
             @click="onClickCashout(acc.currency)"
           >
             {{ $t('buttons.cashout') }}
@@ -235,6 +237,11 @@ export default {
       @media (min-width: $screen-m) {
         margin-right: 8px;
       }
+    }
+
+    &--de {
+      padding-right: 2px !important;
+      padding-left: 2px !important;
     }
   }
 
