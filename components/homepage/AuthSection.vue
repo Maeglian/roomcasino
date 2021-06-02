@@ -128,6 +128,7 @@ export default {
     font-weight: 700;
     color: var(--color-text-main);
     background: var(--color-main1);
+    cursor: pointer;
 
     &:hover {
       background: var(--color-hover2);

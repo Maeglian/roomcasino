@@ -95,6 +95,7 @@
     "confirmEmailError" : "Litujeme, váš e-mail nebyl potvrzen",
     "confirmEmailSuccess" : "Congratulations! Your email was successfully confirmed",
     "bonus" : "KČ 3330",
+    "freeSpins": "150 spinů zdarma",
     "placeholders" : {
       "enterEmail" : "E-emailen",
       "enterPassword" : "Heslo",
@@ -110,6 +111,11 @@
       "postalCode" : "Poštovní směrovací číslo",
       "phone" : "Mobilní telefon",
       "year" : "YYYY"
+    },
+    "features": {
+      "first": "Denní cashback  <br> až 20%",
+      "second": "24/7 přátelská<br/>podpora chatu",
+      "third": "Super rychlý<br/>výběry"
     }
   },
   "pages" : {

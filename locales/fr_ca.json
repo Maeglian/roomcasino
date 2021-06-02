@@ -79,7 +79,7 @@
   },
   "auth": {
     "loginTitle": "Bienvenue à nouveau",
-    "signUpTitle": "Inscrives-vous et<span class=\"Colored\">&</span> recevez<br /> un bonus de bienvenue",
+    "signUpTitle": "Inscrives-vous et <span class=\"Colored\">&</span> recevez<br /> un bonus de bienvenue",
     "forgotPassword": "Mot de passe oublié",
     "emails": "Receive email promos",
     "terms": "J’ai  {minAge} ans et j’accepte les {br} {terms} et {policy}",
@@ -98,6 +98,7 @@
     "confirmEmailError": "Désolé, votre e-mail n'a pas été confirmé",
     "confirmEmailSuccess": "Félicitations ! Votre e-mail a été confirmé avec succès",
     "bonus": "$225",
+    "freeSpins": "150 tours gratuit",
     "placeholders": {
       "enterEmail": "Entrez votre email",
       "enterPassword": "Entrez votre mot de passe",
@@ -114,6 +115,11 @@
       "postalCode": "Code Postale",
       "phone": "Numéro de téléphone mobile",
       "year": "AAAA"
+    },
+    "features": {
+      "first": "Remise quotidienne <br> en espèces jusqu'à 20%",
+      "second": "24/7 assistance<br/>amicale par chat",
+      "third": "Super rapide<br/>retraits"
     }
   },
   "pages": {
@@ -176,7 +182,7 @@
   "homepage": {
     "heroBanner": {
       "deposit1": {
-        "title": "REMISE QUOTIDIENNE <br> EN ESPÈCES JUSQU'À  <span class=\"Colored\">20%\n</span>",
+        "title": "Remise quotidienne <br> en espèces jusqu'à  <span class=\"Colored\">20%</span>",
         "text": "Effectuez un premier dépôt <br/> et obtenez <span class = \"Colored\"> 100% </span><br/> jusqu'à <span class = \"Colored\">$225</span> + <span class=\"Colored\">150 tours gratuit</span>"
       },
       "deposit2": {

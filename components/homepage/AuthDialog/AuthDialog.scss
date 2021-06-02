@@ -1,9 +1,95 @@
 .AuthDialog {
-  position: relative;
   display: flex;
-  flex-direction: column;
-  overflow: auto;
-  background: var(--color-bg);
+  justify-content: space-between;
+  width: 100%;
+
+  &--login {
+    width: 418px;
+    margin: 0 auto;
+  }
+
+  &-Banner {
+    display: none;
+
+    @media(min-width: $screen-xl) {
+      display: flex;
+      flex-shrink: 0;
+      flex-direction: column;
+      align-items: center;
+      width: calc(50% - 2px);
+      padding: 56px 44px;
+      text-align: center;
+      background-color: var(--color-body);
+      background-image: url('~@/assets/img/auth-banner.png');
+      background-repeat: no-repeat;
+      background-position: center right;
+
+      &--de, &--cs {
+        padding: 50px 44px;
+        background-position: bottom right;
+      }
+
+      &--fr {
+        padding: 30px 44px;
+        background-position: bottom right;
+      }
+    }
+  }
+
+  &-BannerTitle {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+  }
+
+  &-BannerFeatures {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+  }
+
+  &-BannerFeature {
+    margin-right: 25px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-BannerFeatureIcon {
+    height: 30px;
+    margin-bottom: 15px;
+  }
+
+  &-BannerFeatureName {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+  }
+
+  &-Main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    &--registration {
+      flex-grow: 1;
+
+      @media(min-width: $screen-xl) {
+        flex-grow: 0;
+        width: calc(50% - 2px);
+      }
+    }
+
+    &--login {
+      flex-grow: 1;
+    }
+  }
 
   &-Tabs {
     margin-bottom: 4px;
@@ -49,10 +135,12 @@
     position: relative;
     flex-grow: 1;
     min-height: 518px;
+    margin-bottom: 4px;
     padding-right: 14px;
     padding-bottom: 29px;
     padding-left: 14px;
-    background: url('~@/assets/img/auth-bg.png');
+    background-color: var(--color-body);
+    background-image: url('~@/assets/img/auth-bg.png');
 
     @media (min-width: $screen-s) {
       padding-right: 24px;
@@ -127,6 +215,10 @@
   &-RegistrationHeader {
     margin-bottom: 34px;
     padding-top: 34px;
+
+    @media (min-width: $screen-xl) {
+      display: none;
+    }
   }
 
   &-Content--step1 {
@@ -136,6 +228,11 @@
 
     @media (min-width: $screen-m) {
       background-image: url('~@/assets/img/auth-bg1-large.png');
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 25px;
+      background-image: none;
     }
   }
 

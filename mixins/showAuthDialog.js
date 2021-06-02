@@ -3,7 +3,7 @@ import { mapState, mapGetters, mapMutations } from 'vuex';
 
 export default {
   computed: {
-    ...mapState(['authError', 'updateProfileError']),
+    ...mapState(['authError', 'updateProfileError', 'width']),
     ...mapGetters(['isLoggedIn']),
   },
   methods: {
@@ -21,7 +21,7 @@ export default {
       this.$modal.show(
         AuthDialog,
         { authType, beforeDeposit, beforeStartGame, onUpdateProfile, id, demo, bg },
-        { width: 418, height: 'auto', adaptive: true, scrollable: true },
+        { width: this.width >= 1248 ? 845 : 418, height: 'auto', adaptive: true, scrollable: true },
         {
           'before-close': this.afterCloseAuthDialog,
         },

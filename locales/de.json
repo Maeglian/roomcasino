@@ -98,6 +98,7 @@
     "confirmEmailError": "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
     "confirmEmailSuccess": "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
     "bonus": "150 €",
+    "freeSpins": "150 Freispiele",
     "placeholders": {
       "enterEmail": "Ihre E-Mail eingeben",
       "enterPassword": "Ihr Passwort eingeben",
@@ -114,6 +115,11 @@
       "postalCode": "Postleitzahl",
       "phone": "Rufnummer",
       "year": "JJJJ"
+    },
+    "features": {
+      "first": "Tägliche rückzahlung<br/>bis zu 20%",
+      "second": "24/7 freundlicher<br/>Chat-Kundenbetreuung",
+      "third": "Superschnelle<br/>Abhebungen"
     }
   },
   "pages": {
@@ -178,7 +184,7 @@
   "homepage": {
     "heroBanner": {
       "deposit1": {
-        "title": "TÄGLICHE RÜCKZAHLUNG BIS ZU <span class=\"Colored\"> 20%\n</span>",
+        "title": "Tägliche rückzahlung bis zu <span class=\"Colored\"> 20%</span>",
         "text": "Machen Sie die erste Einzahlung <br/> und erhalten Sie <span class=\"Colored\"> 100% </span><br/> bis zu <span class=\"Colored\"> € 150 + <span class=\"Colored\">150 freispiele</span>"
       },
       "deposit2": {

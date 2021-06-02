@@ -1,26 +1,68 @@
 <template>
-  <div class="Modal">
+  <div
+    class="Modal"
+    :class="{ 'AuthDialog--login': activeTab === 'login' || beforeDeposit || beforeStartGame }"
+  >
     <div class="Close Modal-Close" @click="$emit('close')"></div>
     <div class="AuthDialog">
-      <BaseTabs
-        v-if="!beforeDeposit && !beforeStartGame"
-        class="AuthDialog-Tabs"
-        :items="tabs"
-        :current-item="activeTab"
-        @choose-tab="toggleRegistration"
-      />
-      <template v-if="beforeDeposit || activeTab === 'registration'">
-        <RegistrationForm
-          :before-deposit="beforeDeposit"
-          :before-start-game="beforeStartGame"
-          @close="$emit('close')"
-          @redirect-login="activeTab = 'login'"
-          @profile-updated="onUpdateProfile({ gameId: id, demo, bg })"
+      <div
+        v-if="activeTab === 'registration' && !beforeDeposit && !beforeStartGame"
+        class="AuthDialog-Banner"
+        :class="`AuthDialog-Banner--${$i18n.locale}`"
+      >
+        <div class="AuthDialog-BannerTitle" v-html="$t('auth.signUpTitle')"></div>
+        <div class="AuthDialog-Subtitle">
+          {{ $t('auth.bonus') }} <span class="Colored">+</span> {{ $t('auth.freeSpins') }}
+        </div>
+        <div class="AuthDialog-BannerFeatures">
+          <div class="AuthDialog-BannerFeature">
+            <div class="AuthDialog-BannerFeatureIcon">
+              <img src="@/assets/img/bonus.svg" />
+            </div>
+            <div class="AuthDialog-BannerFeatureName" v-html="$t('auth.features.first')"></div>
+          </div>
+          <div class="AuthDialog-BannerFeature">
+            <div class="AuthDialog-BannerFeatureIcon">
+              <img class="AuthDialog-BannerFeatureIcon" src="@/assets/img/auth-chat.svg" />
+            </div>
+            <div class="AuthDialog-BannerFeatureName" v-html="$t('auth.features.second')"></div>
+          </div>
+          <div class="AuthDialog-BannerFeature">
+            <div class="AuthDialog-BannerFeatureIcon">
+              <img class="AuthDialog-BannerFeatureIcon" src="@/assets/img/cashout.svg" />
+            </div>
+            <div class="AuthDialog-BannerFeatureName" v-html="$t('auth.features.third')"></div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="AuthDialog-Main"
+        :class="
+          activeTab === 'registration' && !beforeDeposit && !beforeStartGame
+            ? 'AuthDialog-Main--registration'
+            : 'AuthDialog-Main--login'
+        "
+      >
+        <BaseTabs
+          v-if="!beforeDeposit && !beforeStartGame"
+          class="AuthDialog-Tabs"
+          :items="tabs"
+          :current-item="activeTab"
+          @choose-tab="toggleRegistration"
         />
-      </template>
-      <template v-else>
-        <LoginForm @close="$emit('close')" />
-      </template>
+        <template v-if="beforeDeposit || activeTab === 'registration'">
+          <RegistrationForm
+            :before-deposit="beforeDeposit"
+            :before-start-game="beforeStartGame"
+            @close="$emit('close')"
+            @redirect-login="activeTab = 'login'"
+            @profile-updated="onUpdateProfile({ gameId: id, demo, bg })"
+          />
+        </template>
+        <template v-else>
+          <LoginForm @close="$emit('close')" />
+        </template>
+      </div>
     </div>
   </div>
 </template>
