@@ -30,7 +30,7 @@
     "checkBonuses" : "Zkontroluj si bonusy",
     "cancelBonus" : "Zrušit bonus",
     "goBack" : "Vrátit se",
-    "createAccount" : "Create account"
+    "createAccount" : "Vytvořit účet"
   },
   "errors" : {
     "required" : "Nemůže to být prázdné",
@@ -113,7 +113,7 @@
       "year" : "YYYY"
     },
     "features": {
-      "first": "Denní cashback  <br> až 20%",
+      "first": "Programu cashback<br>až 20%",
       "second": "24/7 přátelská<br/>podpora chatu",
       "third": "Super rychlý<br/>výběry"
     }
@@ -132,7 +132,7 @@
     "responsibleGaming" : "Zodpovědné hraní",
     "risk" : "Varování o riziku",
     "tournaments" : "Turnaje",
-    "dailyCashback" : "Podmínky programu Cashback"
+    "dailyCashback" : "Programu cashback"
   },
   "gameCategories" : {
     "top" : "Nejlepší hry",
@@ -179,7 +179,7 @@
   "homepage" : {
     "heroBanner" : {
       "deposit1" : {
-        "title" : "Programu <br/> Cashback <span class = \"Colored\"> 20% </span>",
+        "title" : "Programu <br/> Cashback <span class = \"Colored\">až 20% </span>",
         "text" : "Proveďte první vklad <br/> a získejte <span class = \"Colored\"> 100% </span><br/> až <span class = \"Colored\"> Kč 3330 </span> + <span class=\"Colored\">150 spinů zdarma</span>"
       },
       "deposit2" : {
@@ -192,7 +192,7 @@
       },
       "deposit4" : {
         "title" : "víkendové<br/> dobití",
-        "text" : "<span class=\"Colored\">40% AŽ KČ 4100</span>"
+        "text" : "<span class=\"Colored\">40% až KČ 4100</span>"
       },
       "highroller" : {
         "title" : "Bonus pro<br/> velké hráče",
@@ -1191,22 +1191,22 @@
   },
   "dailyCashback" : {
     "cashback" : "Cashback",
-    "title" : "Programu <br/>až 20%",
+    "title" : "Programu сashback <br/>až 20%",
     "text1" : "Kdo by nechtěl zdarma vrátit hotovost v kasinu?<br/> Dokonce i když prohrajete! Ano, čtete správně – vrátíme vám hotovost, pokud vsadíte&nbsp;x5 dokonce i když prohrajete.",
-    "text2" : "Jackpot nepadne s každým otočením. Získejte své peníze zpět, i když nevyhrajete díky programu Cashback NineCasino! V následující tabulce uvádíme další podrobnosti:\n",
+    "text2" : "Jackpot nepadne s každým otočením. Získejte své peníze zpět, i když nevyhrajete díky programu Cashback NineCasino! V následující tabulce uvádíme další podrobnosti:",
     "terms" : "Podmínky programu Cashback",
     "termsList" : [
       {
         "text" : "Program Cashback se poskytuje na prohranou částku (nebo ekvivalent) během předchozího dne od 00:01 do 23:59 (UTC+3) pouze ve výherních automatech. "
       },
       {
-        "text" : "Procento vracené hotovosti závisí na prohrané částce (nebo ekvivalentu) za předchozí den: \n20 € až 199 € – 10 % zpět\n200 € až 499 € – 12 % zpět\n500 € až 999 € – 14 % zpět\n1000 € až 2499 € – 16 % zpět\n2500 € až 4999 € – 18 % zpět\n5000 € a více – 20 % zpět"
+        "text" : "Procento vracené hotovosti závisí na prohrané částce (nebo ekvivalentu) za předchozí den:<br/><br/>20 € až 199 € – 10 % zpět<br/>200 € až 499 € – 12 % zpět<br/>500 € až 999 € – 14 % zpět<br/>1000 € až 2499 € – 16 % zpět<br/>2500 € až 4999 € – 18 % zpět<br/>5000 € a více – 20 % zpět"
       },
       {
         "text" : "Celková částka vracené hotovosti nesmí překročit 20 % z celkové částky všech prohraných částek hráče (nebo ekvivalentu)."
       },
       {
-        "text" : "Vracená částka nebude připsána, pokud skutečná prohra za předchozí den byla nižší než 20 EUR / 20 USD / 25 CAD / 200 NOK / 85 PLN / 20 NZD / 1500,00 RUB / 2500 JPY / 9000,00 KZT. \n"
+        "text" : "Vracená částka nebude připsána, pokud skutečná prohra za předchozí den byla nižší než 20 EUR / 20 USD / 25 CAD / 200 NOK / 85 PLN / 20 NZD / 1500,00 RUB / 2500 JPY / 9000,00 KZT."
       },
       {
         "text" : "Vracená hotovost se připisuje každý den v 04:00 (UTC+3)."
