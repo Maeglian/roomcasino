@@ -90,7 +90,7 @@
             type="checkbox"
             class="CabinetForm-Row"
             input-class="CabinetForm-Checkbox"
-            label-class="CabinetForm-CheckboxLabel CabinetForm-Field CabinetForm-Label"
+            label-class="CabinetForm-CheckboxLabel CabinetForm-Label"
             @change="item = $event"
           >
             {{ profileLabels[name] }}
@@ -311,6 +311,11 @@ export default {
 
   &-Wrapper {
     width: 100%;
+  }
+
+  &-Field {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &-Label {

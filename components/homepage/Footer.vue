@@ -158,11 +158,10 @@ export default {
   &-Link {
     display: inline-block;
     margin-bottom: 16px;
-    font-size: 12px;
+    font-size: 10px;
 
     @media (min-width: $screen-m) {
       margin-right: 28px;
-      font-size: 10px;
     }
 
     @media (min-width: $screen-l) {

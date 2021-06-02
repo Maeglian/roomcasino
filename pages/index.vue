@@ -19,6 +19,7 @@ import Winners from '@/components/homepage/Winners.vue';
 // import Promotions from '@/components/Promotions.vue';
 // import Questions from '@/components/Questions.vue';
 // import Banner from '@/components/Banner.vue';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'HomePage',
@@ -33,6 +34,7 @@ export default {
     // Questions,
     // Banner,
   },
+  mixins: [showAuthDialog],
   layout: 'page',
   middleware: [
     function({ redirect, route, app }) {
@@ -68,6 +70,14 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    this.timer = setTimeout(() => {
+      if (!this.isLoggedIn) this.showRegistrationDialog('registration');
+    }, 20000);
+  },
+  beforeDestroy() {
+    clearTimeout(this.timer);
   },
 };
 </script>
