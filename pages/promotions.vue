@@ -177,39 +177,6 @@ export default {
           link: 'More',
           url: '/tournaments/drops-wins',
         },
-        {
-          title: this.$t('promotions.mayMadness.title'),
-          prize: this.$t('mayMadness.prize'),
-          image: 'promotions-madness.png',
-          announce: this.$t('promotions.mayMadness.name'),
-          text: this.$t('promotions.mayMadness.text'),
-          link: 'More',
-          url: '/tournaments/may-madness-spinomenal',
-        },
-        // {
-        //   title: '55%<br/> of the deposit<br/> amount',
-        //   subtitle: '€ 150 <span class="Colored">+</span> 100 Free Spins',
-        //   image: 'promotion4.png',
-        //   announce: 'Second deposit bonus',
-        //   text:
-        //     '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
-        // },
-        // {
-        //   title: '100%<br/> of the deposit<br/> amount',
-        //   subtitle: '€ 500 <span class="Colored">+</span> 500 Free Spins',
-        //   image: 'promotion5.png',
-        //   announce: 'First deposit bonus',
-        //   text:
-        //     '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
-        // },
-        // {
-        //   title: '55%<br/> of the deposit<br/> amount',
-        //   subtitle: '€ 150 <span class="Colored">+</span> 100 Free Spins',
-        //   image: 'promotion6.png',
-        //   announce: 'Second deposit bonus',
-        //   text:
-        //     '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
-        // },
       ],
     };
   },
