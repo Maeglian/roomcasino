@@ -136,6 +136,7 @@ export default {
     navItemsFull() {
       const tournaments = Object.values(TOURNAMENTS);
       let navTournaments = {};
+      if (!tournaments.length) return this.navItems;
       if (tournaments.length === 1) {
         const item = tournaments[0];
         navTournaments = {
