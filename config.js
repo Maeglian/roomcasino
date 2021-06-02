@@ -309,15 +309,6 @@ export const HISTORY_TABLES = {
 };
 
 export const TOURNAMENTS = {
-  'may-madness-spinomenal': {
-    url: 'may-madness-spinomenal',
-    name: 'May madness by spinomenal',
-    title: 'May madness<br /> by spinomenal',
-    translates: 'mayMadness',
-    class: 'MayMadness',
-    textLeft: true,
-    slug: 'may-madness-spinomenal',
-  },
   'drops-wins': {
     url: 'drops-wins',
     name: 'Drops & Wins',

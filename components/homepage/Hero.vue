@@ -212,13 +212,6 @@ export default {
           text: this.$t('homepage.heroBanner.highroller.text'),
         },
         {
-          bg: 'madnessBanner',
-          title: this.$t('promotions.mayMadness.title'),
-          text: `<span class="Colored">${this.$t('mayMadness.prize')}</span>`,
-          url: '/tournaments/may-madness-spinomenal',
-          linkText: this.$t('buttons.more'),
-        },
-        {
           bg: 'dropsBanner',
           title: this.$t('promotions.dropsWins.title'),
           text: `<span class="Colored">${this.$t('dropsWins.prize')}</span>`,
