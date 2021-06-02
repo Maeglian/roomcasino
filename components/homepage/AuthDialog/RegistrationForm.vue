@@ -4,7 +4,7 @@
       <div v-if="step === 1" class="AuthDialog-RegistrationHeader">
         <div class="AuthDialog-Title" v-html="$t('auth.signUpTitle')"></div>
         <div class="AuthDialog-Subtitle">
-          <span class="Colored">{{ $t('auth.bonus') }}</span>
+          {{ $t('auth.bonus') }} <span class="Colored">+</span> {{ $t('auth.freeSpins') }}
         </div>
       </div>
       <div v-if="step === 2" class="AuthDialog-Text">{{ $t('auth.step2Title') }}</div>
