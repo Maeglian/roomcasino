@@ -90,7 +90,7 @@
             type="checkbox"
             class="CabinetForm-Row"
             input-class="CabinetForm-Checkbox"
-            label-class="CabinetForm-CheckboxLabel CabinetForm-Field CabinetForm-Label"
+            label-class="CabinetForm-CheckboxLabel CabinetForm-Label"
             @change="item = $event"
           >
             {{ profileLabels[name] }}
@@ -313,19 +313,22 @@ export default {
     width: 100%;
   }
 
+  &-Field {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   &-Label {
     flex-shrink: 0;
     width: 104px;
     margin-right: 4px;
     padding: 0 16px;
-    overflow: hidden;
     font-size: 10px;
     font-weight: 700;
     line-height: 55px;
     color: var(--color-text-ghost);
     text-transform: uppercase;
     white-space: nowrap;
-    text-overflow: ellipsis;
     background-color: var(--color-bg);
 
     @media (min-width: $screen-l) {
