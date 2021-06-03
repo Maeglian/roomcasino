@@ -20,6 +20,7 @@ import Winners from '@/components/homepage/Winners.vue';
 // import Questions from '@/components/Questions.vue';
 // import Banner from '@/components/Banner.vue';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import { mapState } from 'vuex';
 
 export default {
   name: 'HomePage',
@@ -42,24 +43,6 @@ export default {
         redirect({ path: app.localePath('/games/top'), query: route.query });
     },
   ],
-  data() {
-    return {
-      banner1: {
-        image: 'banner1_1920.png',
-        image460: 'banner1_460.png',
-        image590: 'banner1_460.png',
-        image768: 'banner1_768.png',
-        image960: 'banner1_960.png',
-        image1248: 'banner1_1248.png',
-        title: 'Play <span class="Colored">VIP style</span><br/> Ninecasino',
-        text: 'Your VIP level increases with every bet made at Ninecasino. The prizes are waiting!',
-        btnLink: {
-          text: 'More info',
-          url: '/vip',
-        },
-      },
-    };
-  },
   head() {
     return {
       title: 'Casino Online🤑, Only Top Slots & Games | Get Welcome Bonus from Ninecasino',
@@ -70,6 +53,14 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    ...mapState(['registrationWindowWasOpened']),
+  },
+  watch: {
+    registrationWindowWasOpened() {
+      if (this.registrationWindowWasOpened) clearTimeout(this.timer);
+    },
   },
   mounted() {
     this.timer = setTimeout(() => {

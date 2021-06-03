@@ -49,6 +49,7 @@ export const state = () => ({
     availableBonus: false,
     limits: false,
   },
+  registrationWindowWasOpened: false,
   heroBannerIsLoaded: false,
   depositNum: 0,
   dga: {},
@@ -520,6 +521,9 @@ export const getters = {
 };
 
 export const mutations = {
+  setRegistrationWindowWasOpened: (state, payload) => {
+    state.registrationWindowWasOpened = payload;
+  },
   setNeedsCookiesPopup: (state, payload) => {
     state.needsCookiesPopup = payload;
   },
