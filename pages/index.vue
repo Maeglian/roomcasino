@@ -72,9 +72,10 @@ export default {
     };
   },
   mounted() {
+    const timeout = this.$route.query.open === 'registration' ? 1000 : 20000;
     this.timer = setTimeout(() => {
       if (!this.isLoggedIn) this.showRegistrationDialog('registration');
-    }, 20000);
+    }, timeout);
   },
   beforeDestroy() {
     clearTimeout(this.timer);
