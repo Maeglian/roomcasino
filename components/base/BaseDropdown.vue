@@ -239,6 +239,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    background: var(--color-bg);
   }
 
   &-Input {
