@@ -74,7 +74,7 @@
       class="BaseInput-Error"
       :class="errorClass"
     >
-      {{ $t('errors.numeric') }}
+      {{ $t('errors.numbers') }}
     </div>
     <div
       v-if="shouldDisplayValidation && v && v.dayCheck === false && v.$dirty"
