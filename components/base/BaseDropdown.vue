@@ -226,7 +226,7 @@ export default {
     font-weight: 700;
     color: var(--color-text-main);
     text-transform: inherit;
-    background: var(--color-bg);
+    background: transparent;
   }
 
   &-Item {
@@ -270,6 +270,7 @@ export default {
     width: 100%;
     max-height: 200px;
     overflow: auto;
+    background: var(--color-bg);
     scrollbar-width: thin;
     scrollbar-color: #6a6e7f transparent;
 
