@@ -218,6 +218,13 @@ export default {
           url: '/tournaments/drops-wins',
           linkText: this.$t('buttons.more'),
         },
+        {
+          bg: 'footballBanner',
+          title: this.$t('promotions.knockoutFootball.title'),
+          text: `<span class="Colored">${this.$t('knockoutFootball.prize')}</span>`,
+          url: '/tournaments/knockout-football',
+          linkText: this.$t('buttons.more'),
+        },
       ];
       if (!this.isLoggedIn) {
         slides.splice(1, 1);
