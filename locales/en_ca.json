@@ -431,6 +431,11 @@
       "upTo": "up to $800",
       "name": "Highroller bonus",
       "text": "Are you fond of making high bets? Then we know what you need. Once a month get a special 30% highroller bonus up to $800 on your deposit starting from $450."
+    },
+    "knockoutFootball": {
+      "title": "Knockout<br/>Football<br/>Rush",
+      "name": "Knockout Football Rush",
+      "text": "The first Knockout Football Rush Network Tournament will take place between the 10th June 00:01until the 25th June 23:59, GMT+2. We have 5 tournaments with prizes amounting to 25,000 EUR, distributed to the top 500 players with the highest scores on the leaderboard. Make a minimum stake of 0.10 EUR, choose your favourite Habanero slot games, and let’s kick off this campaign!"
     }
   },
   "tournaments": {
@@ -505,6 +510,37 @@
       },
       {
         "text": "Each win rewards you with a score based on the win multiplier. The more points you collect, the higher your position on the leaderboard."
+      }
+    ]
+  },
+  "knockoutFootball": {
+    "prize": "€ 55 000",
+    "text": "The first Knockout Football Rush Network Tournament will take place between the 10th June 00:01until the 25th June 23:59, GMT+2. We have 5 tournaments with prizes amounting to 25,000 EUR, distributed to the top 500 players with the highest scores on the leaderboard. Make a minimum stake of 0.10 EUR, choose your favourite Habanero slot games, and let’s kick off this campaign!<br/><br/>Join the Football frenzy as the tournament gets underway!<br/>Are you a football fanatic? Join the club!<br/>Climb the leaderboard and become a top player!",
+    "textMobile": "The first Knockout Football Rush Network Tournament will take place between the 10th June 00:01until the 25th June 23:59, GMT+2. We have 5 tournaments with prizes amounting to 25,000 EUR, distributed to the top 500 players with the highest scores on the leaderboard. Make a minimum stake of 0.10 EUR, choose your favourite Habanero slot games, and let’s kick off this campaign!",
+    "terms": [
+      {
+        "text": "Campaign duration: 10th–25th June 2021, GMT+2."
+      },
+      {
+        "text": "Campaign structure: 5 tournaments, 3 days long each."
+      },
+      {
+        "text": "Prize Pool: 25,000 EUR/5,000 EUR per tournament."
+      },
+      {
+        "text": "Prize structure: 500 winners, 100 per tournament."
+      },
+      {
+        "text": "Minimum stake: 0.10 EUR."
+      },
+      {
+        "text": "Qualifying content: all Habanero slots games."
+      },
+      {
+        "text": "Qualifying criteria: the winners are based on the highest turnover recorded."
+      },
+      {
+        "text": "Habanero has the right to change, suspend or cancel the promotion at any time."
       }
     ]
   },

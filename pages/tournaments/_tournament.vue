@@ -232,6 +232,44 @@ export default {
   }
 }
 
+.KnockoutFootball {
+  &-Header {
+    width: 100%;
+    margin-bottom: 22px;
+    padding-top: 280px / 320px * 100%;
+    background-image: url(~@/assets/img/football_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+
+    @media (min-width: $screen-s) {
+      padding-top: 0;
+      background-image: url(~@/assets/img/football_600.png);
+      background-position: center center;
+      //background-size: auto auto;
+    }
+
+    @media (min-width: $screen-m) {
+      background-image: url(~@/assets/img/footballBanner_900.png);
+    }
+
+    @media (min-width: $screen-l) {
+      background-image: url(~@/assets/img/footballBanner_1248.png);
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 50px;
+      background-image: url(~@/assets/img/footballBanner_1920.png);
+    }
+
+    .DailyTournamentPage-MainText {
+      @media (min-width: $screen-s) {
+        max-width: 40%;
+      }
+    }
+  }
+}
+
 .DropsWins {
   &-Header {
     width: 100%;

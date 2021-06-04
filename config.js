@@ -317,4 +317,13 @@ export const TOURNAMENTS = {
     class: 'DropsWins',
     slug: 'DROP&WINS',
   },
+  'knockout-football': {
+    url: 'knockout-football',
+    name: 'Knockout Football Rush',
+    title: '<span class="Colored">Knockout Football Rush</span>',
+    translates: 'knockoutFootball',
+    class: 'KnockoutFootball',
+    slug: 'footrush',
+    textLeft: true,
+  },
 };

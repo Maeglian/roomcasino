@@ -7,7 +7,11 @@ export default {
     ...mapGetters(['isLoggedIn']),
   },
   methods: {
-    ...mapMutations(['removeAuthError', 'clearUpdateProfileError']),
+    ...mapMutations([
+      'removeAuthError',
+      'clearUpdateProfileError',
+      'setRegistrationWindowWasOpened',
+    ]),
     showRegistrationDialog(
       authType,
       beforeDeposit = false,
@@ -26,6 +30,7 @@ export default {
           'before-close': this.afterCloseAuthDialog,
         },
       );
+      this.setRegistrationWindowWasOpened(true);
     },
     afterCloseAuthDialog() {
       if (this.authError) this.removeAuthError();
