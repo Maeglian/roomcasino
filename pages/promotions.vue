@@ -168,6 +168,15 @@ export default {
           text: this.$t('promotions.highroller.text'),
         },
         {
+          title: this.$t('promotions.knockoutFootball.title'),
+          prize: this.$t('knockoutFootball.prize'),
+          image: 'football-promotions.png',
+          announce: this.$t('promotions.knockoutFootball.name'),
+          text: this.$t('promotions.knockoutFootball.text'),
+          link: 'More',
+          url: '/tournaments/knockout-football',
+        },
+        {
           title: this.$t('promotions.dropsWins.title'),
           prize: this.$t('dropsWins.prize'),
           image: 'drops-wins.png',

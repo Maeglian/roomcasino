@@ -424,6 +424,11 @@
       "upTo" : "up to KČ 12700",
       "name" : "Bonus pro velké hráče",
       "text" : "Jste velký hráč? Pak víme, co potřebujete! Získejte jako speciální bonus pro velké hráče 30 % k částce vkladu až KČ 12700 k prvnímu vkladu KČ 7600."
+    },
+    "knockoutFootball": {
+      "title": "Knockout<br/>Football<br/>Rush",
+      "name": "Knockout Football Rush",
+      "text": "První síťový turnaj Knockout Football Rush proběhne od 10. června 00:01 do 25. června23:59, GMT+2. Připravili jsme 5 turnajů s cenami ve výši až 25 000 eur, které budou rozděleny mezi prvních 500 hráčů s nejvyšším skóre ve výsledkové tabulce. Proveďteminimální sázku 0,10 eur, vyberte své oblíbené slotové hry Habanero a zahajte tuto kampaň!"
     }
   },
   "tournaments" : {
@@ -495,6 +500,37 @@
       },
       {
         "text" : "Jediné, co potřebujete k tomu, abyste vyhráli v kole I turnaje May Madness, je hrát některou ze zapojených her. S každou výhrou získáte skóre podle násobitele výhry. Čím více bodů získáte, tím výše se v tabulce umístíte."
+      }
+    ]
+  },
+  "knockoutFootball": {
+    "prize": "€ 55 000",
+    "text": "První síťový turnaj Knockout Football Rush proběhne od 10. června 00:01 do 25. června23:59, GMT+2. Připravili jsme 5 turnajů s cenami ve výši až 25 000 eur, které budou rozděleny mezi prvních 500 hráčů s nejvyšším skóre ve výsledkové tabulce. Proveďteminimální sázku 0,10 eur, vyberte své oblíbené slotové hry Habanero a zahajte tuto kampaň!<br/><br/>Přidejte se k fotbalovému šílenství společně s probíhajícím turnajem!<br/>Patříte k fotbalovým fanatikům? Vstupte do klubu!<br/>Postupujte na žebříčku a staňte se nejlepším hráčem!",
+    "textMobile": "První síťový turnaj Knockout Football Rush proběhne od 10. června 00:01 do 25. června23:59, GMT+2. Připravili jsme 5 turnajů s cenami ve výši až 25 000 eur, které budou rozděleny mezi prvních 500 hráčů s nejvyšším skóre ve výsledkové tabulce. Proveďteminimální sázku 0,10 eur, vyberte své oblíbené slotové hry Habanero a zahajte tuto kampaň!",
+    "terms": [
+      {
+        "text": "Doba kampaně: 10.–25. června 2021, GMT+2."
+      },
+      {
+        "text": "Struktura kampaně: 5 turnajů, každý v trvání 3 dnů."
+      },
+      {
+        "text": "Prize pool: 25 000 eur / 5000 eur na jeden turnaj."
+      },
+      {
+        "text": "Struktura cen: 500 výherců, 100 na jeden turnaj."
+      },
+      {
+        "text": "Minimální sázka: 0,10 eur."
+      },
+      {
+        "text": "Kvalifikační obsah: všechny slotové hry od Habanero."
+      },
+      {
+        "text": "Kvalifikační kritéria: vítězové jsou určováni podle nejvyššího zaznamenaného obratu."
+      },
+      {
+        "text": "Habanero si vyhrazuje právo tuto promo akci kdykoliv změnit,přerušit nebo zrušit."
       }
     ]
   },

@@ -429,6 +429,11 @@
       "upTo": "up to $800",
       "name": "Bonus des grands joueurs",
       "text": "Vous aimez miser gros? Dans ce cas, nous savons ce dont vous avez besoin. Une fois par mois, bénéficiez d’un bonus spécial pour les grands joueurs de 30% jusqu’à $800 sur votre dépôt à partir de $450."
+    },
+    "knockoutFootball": {
+      "title": "Knockout<br/>Football<br/>Rush",
+      "name": "Knockout Football Rush",
+      "text": "Le premier tournoi Réseau Knockout Football Rush aura lieu du 10 juin à 00 h 01 au 25 juin à 23 h 59, GMT+2. Nous avons 5 tournois avec des prix d’un montant de 25 000 EUR, distribués aux 500 premiers joueurs ayant obtenu les meilleurs résultats au classement. Faites une mise minimale de 0,10 EUR, choisissez vos jeux de machines à sous Habanero préférés et donnons le coup d’envoi de cette campagne!"
     }
   },
   "dropsWins": {
@@ -500,6 +505,37 @@
       },
       {
         "text": "Chaque gain vous récompense avec un score basé sur le multiplicateur de gain. Plus vous accumulez de points, plus vous êtes bien placé dans le classement."
+      }
+    ]
+  },
+  "knockoutFootball": {
+    "prize": "€ 55 000",
+    "text": "Le premier tournoi Réseau Knockout Football Rush aura lieu du 10 juin à 00 h 01 au 25 juin à 23 h 59, GMT+2. Nous avons 5 tournois avec des prix d’un montant de 25 000 EUR, distribués aux 500 premiers joueurs ayant obtenu les meilleurs résultats au classement. Faites une mise minimale de 0,10 EUR, choisissez vos jeux de machines à sous Habanero préférés et donnons le coup d’envoi de cette campagne!<br/><br/>Rejoignez la frénésie du soccer dès le début du tournoi!<br/>Vous êtes un mordu de soccer? Bienvenue au club!<br/>Montez dans le classement et devenez le meilleur joueur!",
+    "textMobile": "Le premier tournoi Réseau Knockout Football Rush aura lieu du 10 juin à 00 h 01 au 25 juin à 23 h 59, GMT+2. Nous avons 5 tournois avec des prix d’un montant de 25 000 EUR, distribués aux 500 premiers joueurs ayant obtenu les meilleurs résultats au classement. Faites une mise minimale de 0,10 EUR, choisissez vos jeux de machines à sous Habanero préférés et donnons le coup d’envoi de cette campagne!",
+    "terms": [
+      {
+        "text": "Période de la campagne : Du 10 au 25 juin 2021, GMT+2."
+      },
+      {
+        "text": "Structure de la campagne : 5 tournois de 3 jours chacun."
+      },
+      {
+        "text": "Cagnotte : 25 000 EUR/5 000 EUR par tournoi."
+      },
+      {
+        "text": "Structure des prix : 500 gagnants, 100 par tournoi."
+      },
+      {
+        "text": "Mise minimale : 0,10 EUR."
+      },
+      {
+        "text": "Contenu qualifiant : tous les jeux de machines à sous Habanero."
+      },
+      {
+        "text": "Critères de qualification : les gagnants sont déterminés en fonction du plus élevé roulement enregistré."
+      },
+      {
+        "text": "Habanero se réserve le droit de modifier, suspendre ou annuler la promotion à tout moment."
       }
     ]
   },
