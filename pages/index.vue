@@ -55,7 +55,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['registrationWindowWasOpened']),
+    ...mapState(['registrationWindowWasOpened', 'siteIsAllowedForUser']),
   },
   watch: {
     registrationWindowWasOpened() {
@@ -63,10 +63,12 @@ export default {
     },
   },
   mounted() {
-    const timeout = this.$route.query.open === 'registration' ? 1000 : 20000;
-    this.timer = setTimeout(() => {
-      if (!this.isLoggedIn) this.showRegistrationDialog('registration');
-    }, timeout);
+    if (this.siteIsAllowedForUser) {
+      const timeout = this.$route.query.open === 'registration' ? 1000 : 20000;
+      this.timer = setTimeout(() => {
+        if (!this.isLoggedIn) this.showRegistrationDialog('registration');
+      }, timeout);
+    }
   },
   beforeDestroy() {
     clearTimeout(this.timer);
