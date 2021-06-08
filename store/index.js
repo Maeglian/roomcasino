@@ -1373,9 +1373,9 @@ export const actions = {
     try {
       const res = await axios.get(`${API_HOST}/availableBonusList`);
       const bonuses = res.data.data;
-      const depositNum = !bonuses.length
-        ? 4
-        : bonuses.find(bonus => bonus.available && bonus.depositNum).depositNum;
+      const wasntDeposit = bonuses.find(bonus => bonus.available && bonus.depositNum);
+      const depositNum = !bonuses.length || !wasntDeposit ? 4 : wasntDeposit.depositNum;
+
       commit('setAvailableBonusList', bonuses);
       commit('setDepositNum', depositNum);
     } catch (e) {
