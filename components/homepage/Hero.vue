@@ -1,7 +1,7 @@
 <template>
   <section class="Hero">
     <div class="Hero-Slider">
-      <Slider :key="slides.length" v-bind="options">
+      <Slider :key="`${slides.length}_${width}`" v-bind="options">
         <div v-for="(slide, i) in slides" :key="i" class="Hero-Item">
           <picture class="Hero-Image">
             <source
@@ -172,7 +172,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['navIsOpen', 'games', 'depositNum']),
+    ...mapState(['navIsOpen', 'games', 'depositNum', 'width']),
     ...mapGetters(['isLoggedIn']),
     slides() {
       const slides = [
