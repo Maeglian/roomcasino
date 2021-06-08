@@ -212,17 +212,24 @@ export default {
           text: this.$t('homepage.heroBanner.highroller.text'),
         },
         {
-          bg: 'dropsBanner',
-          title: this.$t('promotions.dropsWins.title'),
-          text: `<span class="Colored">${this.$t('dropsWins.prize')}</span>`,
-          url: '/tournaments/drops-wins',
-          linkText: this.$t('buttons.more'),
-        },
-        {
           bg: 'footballBanner',
           title: this.$t('promotions.knockoutFootball.title'),
           text: `<span class="Colored">${this.$t('knockoutFootball.prize')}</span>`,
           url: '/tournaments/knockout-football',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'dropsSlots',
+          title: this.$t('promotions.dropsWinsSlots.title'),
+          text: `<span class="Colored">${this.$t('dropsWinsSlots.prize')}</span>`,
+          url: '/tournaments/drops-wins-slots',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'dropsLive',
+          title: this.$t('promotions.dropsWinsLive.title'),
+          text: `<span class="Colored">${this.$t('dropsWinsLive.prize')}</span>`,
+          url: '/tournaments/drops-wins-live',
           linkText: this.$t('buttons.more'),
         },
       ];
