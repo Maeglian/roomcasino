@@ -324,7 +324,7 @@ export const TOURNAMENTS = {
     title: 'Drops<span class="Colored"> & </span>Wins Live',
     translates: 'dropsWinsLive',
     class: 'DropsWinsLive',
-    slug: 'DROP&WINS',
+    slug: 'dropslive',
     textLeft: true,
   },
   'knockout-football': {
