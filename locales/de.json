@@ -411,11 +411,6 @@
       "name": "Tägliche rückzahlung",
       "text": "Wer bekommt im Casino nicht gerne Geld zurück? Selbst wenn Sie verloren haben!<br/>Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von x5 zurück, wenn Sie verlieren."
     },
-    "dropsWins": {
-      "title": "Drops<span class=\"Colored\">&</span>wins<br/>Phase 4<br/>(Wochen 13–16)",
-      "name": "Drops&wins turnier",
-      "text": "DAS Turnier des Jahres! Willkommen zu Phase 4 (Wochen 13–16) der täglichen Netzwerkaktion Drops & Wins Network. <br/><br/>TDiese Woche besteht die Chance, ein Preisgeld in Höhe von insgesamt 2.500.000 € zu gewinnen."
-    },
     "playsonMay": {
       "title": "Playson may<br/> cashdays",
       "name": "Playson May CashDays",
@@ -435,38 +430,21 @@
       "title": "Knockout<br/>Football<br/>Rush",
       "name": "Knockout Football Rush",
       "text": "Das erste Knockout Football Rush Network Tournament findet vom 10. Juni, 00:01 Uhr bis zum 25. Juni, 23:59 Uhr GMT+2 statt. Es gibt 5 Turniere mit insgesamt 25.000€ Preisgeld, das auf die 500 Spieler mit den höchsten Punktzahlen auf der Bestenliste verteilt wird. Mache einen Mindesteinsatz von 0,10€, spiele einen Spielautomaten von Habanero, und leg los!"
+    },
+    "dropsWinsSlots": {
+      "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
+      "name": "Drops & Wins Slots",
+      "text": "Willkommen zu Phase 5 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen!"
+    },
+    "dropsWinsLive": {
+      "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
+      "name": "Drops & Wins Live",
+      "text": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!<br/><br/>Magst du Live-Spiele? Diese Live-Ausgabe wird dir gefallen. Mach mit bei wöchentlichen Turnieren – Roulette, Blackjack, Mega Wheel, Baccarat!"
     }
   },
   "tournaments": {
     "games": "Teilnehmende Spiele",
     "terms": "Teilnahmebedingungen"
-  },
-  "dropsWins": {
-    "prize": "€ 2 500 000",
-    "text": "Das Turnier des Jahres! Willkommen zu Phase 4 (Wochen 13-16)der täglichen Netzwerkaktion Drops & Wins Network. Diese Woche besteht die Chance, ein Preisgeld in Höhe von insgesamt 2.500.000 € zu gewinnen! <br/>Jeder Einsatz von echtem Geld in einer Ausspielung eines der teilnehmenden Spiele kann einen Zufallsgewinn auslösen!",
-    "textMobile": "Das Turnier des Jahres! Willkommen zu Phase 4 (Wochen 13-16)der täglichen Netzwerkaktion Drops & Wins Network. Diese Woche besteht die Chance, ein Preisgeld in Höhe von insgesamt 2.500.000 € zu gewinnen!",
-    "terms": [
-      {
-        "title": "Phase 4 läuft zwischen dem:",
-        "text": "Woche 13: 6. Mai 2021 00:01 Uhr CET – 12. Mai 2021 23:59 Uhr CET.<br/>Woche 14: 13. Mai 2021 00:01 Uhr CET – 19. Mai 2021 23:59 Uhr CET.<br/>Woche 15: 20. Mai 2021 00:01 Uhr CET – 26. Mai 2021 23:59 Uhr CET.<br/>Woche 16: 27. Mai 2021 00:01 Uhr CET – 2. Juni 2021 23:59 Uhr CET."
-      },
-      {
-        "title": "Teilnehmende Spiele",
-        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker's Jewels™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, The Hand of Midas™, Wild West Gold™, Gates of Olympus™, Congo Cash™, Fishin' Reels™, Power of Thor Megaways™, Floating Dragon™, Wild Booster™, Hot Fiesta™, Buffalo King Megaways™."
-      },
-      {
-        "title": "Drops & Wins beinhaltet",
-        "text": "Jedes Turnier läuft über sieben Tage, von Donnerstag bis Mittwoch, begleitet von täglichen Gewinnausschüttungen.<br/>Die größtmögliche WOCHENGEWINNSUMME der Phase 4 beläuft sich auf 31.000 Euro verteilt auf 550 Gewinnerinnen und Gewinner. <br/>Darüber hinaus besteht die Möglichkeit auf TÄGLICHE Geldgewinne aus dem Preistopf mit 4.500 Euro, die auf die 100 aktivsten Teilnehmerinnen und Teilnehmer verteilt werden."
-      },
-      {
-        "title": "Wie man gewinnt ",
-        "text": "Zur Teilnahme an dem Wochenturnier berechtigt ist, wer einen Echtgeldeinsatz in einem der teilnehmenden Spiele getätigt und mindestens einen (1) Gewinn in diesem Spiel erzielt hat.<br/>Zur Teilnahme an dem Wochenturnier berechtigt ist, wer einen Echtgeldeinsatz in einem der teilnehmenden Spiele getätigt und mindestens einen (1) Gewinn in diesem Spiel erzielt hat. Für die Teilnahme an der täglichen Gewinnausschüttung besteht kein Mindesteinsatz in echtem Geld. Drops (Ausschüttungen in Gewinnmultiplikatorenwochen). "
-      },
-      {
-        "title": "Zusätzlich",
-        "text": "Während der Multiplikatorenwochen können Gewinne in Form eines in der Wochenturniergewinnübersicht (Gewinnmultiplikatorenwochen) und der Tagesausschüttungsübersicht weiter unten (im weiteren Textverlauf die „Gewinnmultiplikatorenwochen“) ausgewiesenen Vielfachen r des Einsatzes der erfolgreichen Spielerin bzw. des erfolgreichen Spielers erzielt werden.<br/>Wenn der Gewinn in der erfolgreichen Ausspielung zehn Euro (10 €) übersteigt, erfolgt die Auszahlung des Gewinns auf der Grundlage eines Einsatzes von 10 Euro (10 €) oder umgerechnet in die jeweils geltende Währung (s. unten) multipliziert mit dem erworbenen Multiplikator x.<br/>Die Ermittlung der Ranglistenposition erfolgt entsprechend der Punktzahl für den höchsten Einzelgewinn in einer einzelnen Ausspielung in einem der teilnehmenden Spiele umgerechnet auf den jeweiligen Einsatz.<br/>Sollten zwei (2) oder mehr Mitspielende ein Wochenturnier auf demselben Ranglistenplatz beenden, entfällt der höhere Gewinn auf die Spie"
-      }
-    ]
   },
   "playsonMay": {
     "prize": "€ 60 000",
@@ -537,6 +515,62 @@
       },
       {
         "text": "Habanero hat das Recht, die Aktion jederzeit zu ändern, auszusetzen oder abzubrechen."
+      }
+    ]
+  },
+  "dropsWinsSlots": {
+    "title": "Aufgewertete Ausgabe von Drops & Wins Slots mit 4.000.000&nbsp;€ Preisgeld",
+    "prize": "4.000.000 €",
+    "text": "Willkommen zu Phase 5 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 17–20 der Wöchentlichen Turniere und Täglichen Gewinnausspielungen mit einigen neuen Spielen!",
+    "textMobile": "Willkommen zu Phase 5 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €!",
+    "terms": [
+      {
+        "title": "Laufzeit der Phase 5",
+        "text": "● Woche 17: 3. Juni 2021 09:01 MESZ - 9. Juni 2021 18:59 MESZ<br/>● Woche 18: 9. Juni 2021 19:01 Uhr MESZ - 16. Juni 2021 18:59 Uhr MESZ<br/>● Woche 19: 16. Juni 2021 19:01 Uhr MESZ - 23. Juni 2021 18:59 Uhr MESZ<br/>● Woche 20: 23. Juni 2021 19:01 Uhr MESZ - 30. Juni 2021 18:59 Uhr MESZ"
+      },
+      {
+        "title": "Teilnehmende Spiele der Wochen 17 – 20",
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker’s Jewels™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, The Hand of Midas™, Wild West Gold™, Gates of Olympus™, Fishin’ Reels™, Power of Thor Megaways™, Buffalo King Megaways™, Amazing Money Machine™, Phoenix Forge™, Cash Elevator ™, The Magic Cauldron – Enchanted Brew™."
+      },
+      {
+        "title": "Drops & Wins beinhaltet",
+        "text": "● Jedes Turnier läuft über sieben Tage, von Donnerstag bis Mittwoch, begleitet von täglichen Gewinnausschüttungen.<br/>● Wöchentliches Preisgeld von insgesamt 62.000 €, aufgeteilt auf 1.200 Geldpreise.<br/>● Spieler haben die Möglichkeit, in Täglichen Gewinnausspielungen Geldpreise zu gewinnen, mit täglichem Preisgeld von 9.000 € aufgeteilt auf 500 Geldpreise."
+      },
+      {
+        "title": "Wie man gewinnt",
+        "text": "● Der Mindesteinsatz beträgt 0,50 Euro.<br/>● Zur Teilnahme muss in einem oder mehreren der teilnehmenden Spiele Echtgeld in entsprechender Höhe gesetzt werden.<br/>● In den Wöchentlichen Turnieren – Höchster Einzelausspielungsgewinn relativ zum Einsatz.<br/>● In den Täglichen Turnieren – jeder Echtgeldeinsatz kann die zufällige Ausschüttung eines Preises auslösen.<br/>● Die Teilnahme hat keine weiteren Kosten."
+      }
+    ]
+  },
+  "dropsWinsLive": {
+    "title": "Drops and Wins for Live Casino mit 3.000.000&nbsp;€ Preisgeld",
+    "prize": "3.000.000 €",
+    "text": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!<br/><br/>Magst du Live-Spiele? Diese Live-Ausgabe wird dir gefallen. Mach mit bei wöchentlichen Turnieren – Roulette, Blackjack, Mega Wheel, Baccarat!",
+    "textMobile": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!",
+    "terms": [
+      {
+        "title": "Laufzeit der Phase 1",
+        "text": "● Woche 1: 3 Juni 2021 09:01 CEST – 9 Juni 2021 18:59 CEST<br/>● Woche 2: 9 Juni 2021 19:01 CEST – 16 Juni 2021 18:59 CEST<br/>● Woche 3: 16 Juni 2021 19:01 CEST – 23 Juni 2021 18:59 CEST<br/>● Woche 4: 23 Juni 2021 19:01 CEST – 30 Juni 2021 18:59 CEST"
+      },
+      {
+        "title": "Teilnehmende Spiele",
+        "text": "<strong>Wöchentliches Baccarat-Turnier:</strong><br/><br/>Baccarat A (ID – 401), Baccarat B (ID – 404), Baccarat C (ID – 405), Baccarat D (ID – 411), Baccarat E (ID – 413), Speed Baccarat A (ID – 402), Speed Baccarat B (ID – 403), Speed Baccarat C (ID – 412), Speed Baccarat D (ID – 414), Speed Baccarat E (ID – 415)<br/><br/><strong>Wöchentliches Blackjack-Turnier:</strong><br/><br/>Live Blackjack A (ID – 301), Live Blackjack B (ID – 302), Live Blackjack C (ID – 303), Live Blackjack D (ID – 304), Live Blackjack E (ID – 305), Blackjack Azure A (ID – 511), Blackjack Azure B (ID – 512), Blackjack Azure C (ID – 513), Blackjack Azure D (ID – 514), Blackjack Azure E (ID – 515), Blackjack Azure F (ID – 516), Blackjack Azure G (ID – 517), Blackjack Azure H (ID – 518), Blackjack Azure I (ID – 519), Blackjack Azure J (ID – 520), ONE Blackjack (ID – 901).<br/><br/><strong>Tables to be added on 3rd June:</strong><br/><br/>Blackjack 17 – Azure (ID – 521), Blackjack 18 – Azure (ID – 522), Blackjack 19 – Azure (ID – 523), Blackjack 20 – Azure (ID – 524), Blackjack 21 – Azure (ID – 525)<br/><br/><strong>Wöchentliches Mega Wheel-Turnier:</strong><br/><br/>Mega Wheel (ID – 801)<br/><br/><strong>Wöchentliches Roulette-Turnier:</strong><br/><br/>Auto-Roulette (ID – 225), Live Roulette A (ID – 201), Roulette Germany (ID – 222), Roulette Italy (ID – 223), Roulette Macao (ID – 206), Roulette Russia (ID – 221), Roulette Turkey (ID – 224), Speed Roulette (ID – 203), Roulette Azure (ID – 227), Mega Roulette (ID – 204) <strong>plus dedicated tables</strong>"
+      },
+      {
+        "title": "Drops & Wins beinhaltet",
+        "text": "Jedes Turnier läuft über sieben Tage, von Donnerstag bis Mittwoch<br/><br/>Turnierkriterien: Höchster Gesamtwert aller Punkte aus aufeinanderfolgenden Siegen."
+      },
+      {
+        "title": "Mindesteinsatz",
+        "text": "● Wöchentliches Roulette-Turnier: 0,5 €.<br/>● Wöchentliches Blackjack-Turnier: 10 €<br/>● Wöchentliches Mega Wheel-Turnier: 0,5 €<br/>● Wöchentliches Baccarat-Turnier: 0,5 €"
+      },
+      {
+        "title": "Mitspielen:",
+        "text": "● Spieler müssen einem der teilnehmenden Spiele beitreten.<br/>● Spieler müssen Echtgeldwetten tätigen, die den Mindestanforderungen des teilnehmenden Spiels des Wöchentlichen Turniers entsprechen und müssen mindestens zwei (2) aufeinanderfolgende In-Game-Siege mit dem erforderlichen Gewinnqualifizierer erzielen.<br/>● Je höher die Summe der Punkte ist, die der Spieler in den aufeinanderfolgenden Siegen erzielt hat, desto höher ist die Punktzahl des Spielers.<br/>● Preise werden basierend auf der finalen Punktzahl der Spieler verteilt, die am Ende des Wöchentlichen Turniers auf der Bestenliste angezeigt wird."
+      },
+      {
+        "title": "Zusätzlich:",
+        "text": "<strong>How to win:<br/><br/>Wöchentliches Roulette-Turnier<br/>Gewinne:</strong> Insgesamt 50.000 € verteilt auf 1.000 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 2x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Roulette-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Roulette-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Wetteinsätze, die auf Wetten mit Chance 1:1 getätigt werden (Rot/Schwarz, Gerade/Ungerade, 1:18/19:36) werden nicht auf die Punktzahl des Wöchentlichen Roulette-Turniers angerechnet.<br/><br/><strong>Wöchentliches Blackjack-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 300 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 10 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliches Blackjack-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Blackjack-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets und/oder Bets Behind werden für das Wöchentliche Blackjack-Turnier berücksichtigt.<br/><br/><strong>Wöchentliches Mega Wheel-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Mega Wheel-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Mega Wheel-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Alle Qualifizierenden Wetten werden für das Wöchentliche Mega Wheel-Turnier berücksichtigt.<br/><br/><strong>Wöchentliche Baccarat-Turniere<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Baccarat-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Baccarat-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets (Player, Banker und Tie) werden für das Wöchentliche Baccarat-Turnier berücksichtigt."
       }
     ]
   },

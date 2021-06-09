@@ -412,11 +412,6 @@
       "name": "Daily cashback",
       "text": "Who doesn’t like free casino cashback? Even if you lost!<br/> Yes, you read right - we give you cashback with wager x5 in case of losing."
     },
-    "dropsWins": {
-      "title": "Drops<span class=\"Colored\">&</span>wins<br/>Stage 4<br/>(Weeks 13-16)",
-      "name": "Drops&wins tournament ",
-      "text": "The main tournament of the year! Join Stage 4 (Weeks 13-16) of the promotion. <br/><br/>Try your luck to win a cash prize of €2,500,000 in total!"
-    },
     "playsonMay": {
       "title": "Playson may<br/> cashdays",
       "name": "Playson May CashDays",
@@ -436,38 +431,21 @@
       "title": "Knockout<br/>Football<br/>Rush",
       "name": "Knockout Football Rush",
       "text": "The first Knockout Football Rush Network Tournament will take place between the 10th June 00:01until the 25th June 23:59, GMT+2. We have 5 tournaments with prizes amounting to 25,000 EUR, distributed to the top 500 players with the highest scores on the leaderboard. Make a minimum stake of 0.10 EUR, choose your favourite Habanero slot games, and let’s kick off this campaign!"
+    },
+    "dropsWinsSlots": {
+      "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
+      "name": "Drops & Wins Slots",
+      "text": "Welcome to the new Stage 5 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes!"
+    },
+    "dropsWinsLive": {
+      "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
+      "name": "Drops & Wins Live",
+      "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!"
     }
   },
   "tournaments": {
     "games": "Games in this tournament",
     "terms": "Tournament terms and conditions"
-  },
-  "dropsWins": {
-    "prize": "€ 2 500 000",
-    "text": "The main tournament of the year! Join Stage 4 (Weeks 13-16) of the promotion. Try your luck to win a cash prize of €2,500,000 in total! There are weekly and daily tournaments with generous prize pools.<br/>Every day you can get prizes in various popular slots from well-known Pragmatic Play™.",
-    "textMobile": "Welcome new Drops & Wins Network Promotion! Try your luck to win a cash prize of € 2 500 000 in total!",
-    "terms": [
-      {
-        "title": "Stage 4 runs between",
-        "text": "Week 13: 6th May 2021 00:01 CEST – 12th May 2021 23:59 CEST<br/>Week 14: 13th May 2021 00:01 CEST – 19th May 2021 23:59 CEST<br/>Week 15: 20th May 2021 00:01 CEST – 26th May 2021 23:59 CEST<br/>Week 16: 27th May 2021 00:01 CEST – 2nd June 2021 23:59 CEST"
-      },
-      {
-        "title": "Games in this tournament",
-        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker's Jewels™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, The Hand of Midas™, Wild West Gold™, Gates of Olympus™, Congo Cash™, Fishin' Reels™, Power of Thor Megaways™, Floating Dragon™, Wild Booster™, Hot Fiesta™, Buffalo King Megaways™. "
-      },
-      {
-        "title": "Drops & Wins includes",
-        "text": "Each Tournament runs for seven days from Thursday to Wednesday with daily Prize Drops in parallel. The maximum WEEKLY prize pool of €31,000 in total will be shared between 550 winners.<br/>Players have an opportunity to win cash prizes in Daily prize drops with the €4,500 prize pool which will be shared between 20 of the most active participants."
-      },
-      {
-        "title": "How to win",
-        "text": "A player must place a real money bet on any of the participating games and must get at least one (1) in-game win to qualify for the Weekly Tournament. No minimum real money bet is required for players to be eligible to participate in the Daily Prize Drops (Prize Multiplier Weeks). "
-      },
-      {
-        "title": "Additionally",
-        "text": "Players participating during multiplier weeks may win prizes in the form of a multiplier of the winning player’s bet amount as set out in the Weekly Tournament (Prize Multiplier Weeks) Prize Table – and the Daily Prize Drop (Prize Multiplier Weeks) Prize Table further below (hereinafter the “Prize Multiplier Weeks”)<br/>If the winning spin exceeds ten Euros (€ 10), the prize will be paid out based on a bet of ten Euros (€ 10) or the equivalent amount in the Available Currency (as defined further below) X multiplier received.<br/>The leaderboard is ranked in accordance with the score, which score is based on the highest single spin win amount on any participating game adjusted to the amount of the bet.<br/>In the event of two (2) or more players finishing a Weekly Tournament on the same leaderboard position, the player who has achieved the score first will receive the higher prize."
-      }
-    ]
   },
   "playsonMay": {
     "prize": "€ 60 000",
@@ -515,8 +493,8 @@
   },
   "knockoutFootball": {
     "prize": "€ 55 000",
-    "text": "The first Knockout Football Rush Network Tournament will take place between the 10th June 00:01until the 25th June 23:59, GMT+2. We have 5 tournaments with prizes amounting to 25,000 EUR, distributed to the top 500 players with the highest scores on the leaderboard. Make a minimum stake of 0.10 EUR, choose your favourite Habanero slot games, and let’s kick off this campaign!<br/><br/>Join the Football frenzy as the tournament gets underway!<br/>Are you a football fanatic? Join the club!<br/>Climb the leaderboard and become a top player!",
-    "textMobile": "The first Knockout Football Rush Network Tournament will take place between the 10th June 00:01until the 25th June 23:59, GMT+2. We have 5 tournaments with prizes amounting to 25,000 EUR, distributed to the top 500 players with the highest scores on the leaderboard. Make a minimum stake of 0.10 EUR, choose your favourite Habanero slot games, and let’s kick off this campaign!",
+    "text": "The first Knockout Football Rush Network Tournament will take place between the 10th June 00:01 until the 25th June 23:59, GMT+2. We have 5 tournaments with prizes amounting to 25,000 EUR, distributed to the top 500 players with the highest scores on the leaderboard. Make a minimum stake of 0.10 EUR, choose your favourite Habanero slot games, and let’s kick off this campaign!<br/><br/>Join the Football frenzy as the tournament gets underway!<br/>Are you a football fanatic? Join the club!<br/>Climb the leaderboard and become a top player!",
+    "textMobile": "The first Knockout Football Rush Network Tournament will take place between the 10th June 00:01 until the 25th June 23:59, GMT+2. We have 5 tournaments with prizes amounting to 25,000 EUR, distributed to the top 500 players with the highest scores on the leaderboard. Make a minimum stake of 0.10 EUR, choose your favourite Habanero slot games, and let’s kick off this campaign!",
     "terms": [
       {
         "text": "Campaign duration: 10th–25th June 2021, GMT+2."
@@ -541,6 +519,62 @@
       },
       {
         "text": "Habanero has the right to change, suspend or cancel the promotion at any time."
+      }
+    ]
+  },
+  "dropsWinsSlots": {
+    "title": "Upgraded Drops & Wins Slots edition with the €4,000,000 prize pool",
+    "prize": "€4,000,000",
+    "text": "Welcome to the new Stage 5 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 17-20 of Weekly Tournaments and Daily Prize Drops with some new games!",
+    "textMobile": "Welcome to the new Stage 5 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000!",
+    "terms": [
+      {
+        "title": "Stage 5 runs between",
+        "text": "● Week 17: 3rd June 2021 09:01 CEST – 9th June 2021 18:59 CEST<br/>● Week 18: 9th June 2021 19:01 CEST – 16th June 2021 18:59 CEST<br/>● Week 19: 16th June 2021 19:01 CEST – 23rd June 2021 18:59 CEST<br/>● Week 20: 23rd June 2021 19:01 CEST – 30th June 2021 18:59 CEST"
+      },
+      {
+        "title": "Games in this tournament",
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker’s Jewels™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, The Hand of Midas™, Wild West Gold™, Gates of Olympus™, Fishin’ Reels™, Power of Thor Megaways™, Buffalo King Megaways™, Amazing Money Machine™, Phoenix Forge™, Cash Elevator ™, The Magic Cauldron – Enchanted Brew™."
+      },
+      {
+        "title": "Drops & Wins includes",
+        "text": "● Each Tournament runs for seven days from Thursday to Wednesday with daily Prize Drops in parallel.<br/>● Weekly prize pool of €62,000 in total across 1,200 cash prizes.<br/>● Players have an opportunity to win cash prizes in Daily prize drops with daily prize pool €9,000 across 500 cash prizes."
+      },
+      {
+        "title": "How to win",
+        "text": "● Minimum bet requirement of €0.50.<br/>● In order to participate, players need to play with real money and make qualifying bets on any of the participating games.<br/>● In the Weekly tournaments - the highest single spin win amount adjusted for bet amount.<br/>● In the Daily tournaments - any real money spin in the participating games can trigger a random prize.<br/>● There is no additional cost for players to participate."
+      }
+    ]
+  },
+  "dropsWinsLive": {
+    "title": "Drops and Wins for Live Casino with the €3,000,000 prize pool",
+    "prize": "€3,000,000",
+    "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!",
+    "textMobile": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!",
+    "terms": [
+      {
+        "title": "Stage 1 runs between",
+        "text": "● Week 1: 3rd June 2021 09:01 CEST – 9th June 2021 18:59 CEST<br/>● Week 2: 9th June 2021 19:01 CEST – 16th June 2021 18:59 CEST<br/>● Week 3: 16th June 2021 19:01 CEST – 23rd June 2021 18:59 CEST<br/>● Week 4: 23rd June 2021 19:01 CEST – 30th June 2021 18:59 CEST"
+      },
+      {
+        "title": "Participating Games/Tables",
+        "text": "<strong>Weekly Baccarat Tournament:</strong><br/>Baccarat A (ID – 401), Baccarat B (ID – 404), Baccarat C (ID – 405), Baccarat D (ID – 411), Baccarat E (ID – 413), Speed Baccarat A (ID – 402), Speed Baccarat B (ID – 403), Speed Baccarat C (ID – 412), Speed Baccarat D (ID – 414), Speed Baccarat E (ID – 415).<br/><br/><strong>Weekly Blackjack Tournament:</strong><br/>Live Blackjack A (ID – 301), Live Blackjack B (ID – 302), Live Blackjack C (ID – 303), Live Blackjack D (ID – 304), Live Blackjack E (ID – 305), Blackjack Azure A (ID – 511), Blackjack Azure B (ID – 512), Blackjack Azure C (ID – 513), Blackjack Azure D (ID – 514), Blackjack Azure E (ID – 515), Blackjack Azure F (ID – 516), Blackjack Azure G (ID – 517), Blackjack Azure H (ID – 518), Blackjack Azure I (ID – 519), Blackjack Azure J (ID – 520), ONE Blackjack (ID – 901).<br/><br/><strong>Tables to be added on 3rd June:</strong><br/>Blackjack 17 – Azure (ID – 521), Blackjack 18 – Azure (ID – 522), Blackjack 19 – Azure (ID – 523), Blackjack 20 – Azure (ID – 524), Blackjack 21 – Azure (ID – 525)<br/><br/><strong>Weekly Mega Wheel Tournament:</strong><br/>Mega Wheel (ID – 801)<br/><br/><strong>Weekly Roulette Tournament:</strong><br/>Auto-Roulette (ID – 225), Live Roulette A (ID – 201), Roulette Germany (ID – 222), Roulette Italy (ID – 223), Roulette Macao (ID – 206), Roulette Russia (ID – 221), Roulette Turkey (ID – 224), Speed Roulette (ID – 203), Roulette Azure (ID – 227), Mega Roulette (ID – 204) <strong>plus dedicated tables</strong>"
+      },
+      {
+        "title": "Drops & Wins includes",
+        "text": "Each Tournament runs for seven (7) days from Thursday to Wednesday.<br/><br/>Tournament Criteria: Highest total value total of all points received for consecutive wins."
+      },
+      {
+        "title": "Minimum bet requirements:",
+        "text": "● Weekly Roulette Tournament: € 0.5.<br/>● Weekly Blackjack Tournament: € 10<br/>● Weekly Mega Wheel Tournament: € 0.5<br/>● Weekly Baccarat Tournament: € 0.5"
+      },
+      {
+        "title": "How to participate:",
+        "text": "● A player must join or opt-in in any of the participating games/tables.<br/>● A player must place real money bets with a minimum stake required for any participating game/table of each Weekly Tournament and must get at least two (2) consecutive in-game wins with the required Win Qualifier.<br/>● The higher the total value of the points received by the player for the consecutive wins, the higher the player’s score would be.<br/>● The prizes will be distributed to players based on the final score showed on the in-game leaderboard by the end of each Weekly Tournament."
+      },
+      {
+        "title": "Additionally:",
+        "text": "<strong>How to win:<br/><br/>Weekly Roulette Tournament<br/>Prizes:</strong> €50,000 in total across 1,000 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0,50 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 2x of the total Qualifying Bet to qualify for the Weekly Roulette Tournament.<br/><br/>A Player may increase their Weekly Roulette Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Any stakes placed on 1:1 odds bets (Red/Black, Odd/Even, 1:18/19:36) shall not be counted towards the Weekly Roulette Tournament score.<br/><br/><strong>Weekly Blackjack Tournament<br/>Prizes:</strong> €25,000 in total across 300 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €10 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Blackjack Tournament.<br/><br/>A Player may increase their Weekly Blackjack Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets and/or Bets Behind may be considered for the Weekly Blackjack Tournament.<br/><br/><strong>Weekly Mega Wheel Tournament<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Mega Wheel Tournament.<br/><br/>A Player may increase their Weekly Mega Wheel Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>All Qualifying Bets may be considered for the Weekly Mega Wheel Tournament.<br/><br/><strong>Weekly Baccarat Tournaments<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Baccarat Tournament.<br/><br/>A Player may increase their Weekly Baccarat Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets (Player, Banker, and Tie) may be considered for the Weekly Baccarat Tournament score."
       }
     ]
   },

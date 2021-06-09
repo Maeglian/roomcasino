@@ -309,13 +309,21 @@ export const HISTORY_TABLES = {
 };
 
 export const TOURNAMENTS = {
-  'drops-wins': {
-    url: 'drops-wins',
-    name: 'Drops & Wins',
-    title: 'Drops<span class="Colored">&</span>wins',
-    translates: 'dropsWins',
-    class: 'DropsWins',
+  'drops-wins-slots': {
+    url: 'drops-wins-slots',
+    name: 'Drops & Wins Slots',
+    translates: 'dropsWinsSlots',
+    class: 'DropsWinsSlots',
     slug: 'DROP&WINS',
+    textLeft: true,
+  },
+  'drops-wins-live': {
+    url: 'drops-wins-live',
+    name: 'Drops & Wins Live',
+    translates: 'dropsWinsLive',
+    class: 'DropsWinsLive',
+    slug: 'dropslive',
+    textLeft: true,
   },
   'knockout-football': {
     url: 'knockout-football',
