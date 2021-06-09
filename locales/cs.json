@@ -405,11 +405,6 @@
       "name" : "Programu Cashback\n",
       "text" : "Kdo by nechtěl zdarma vrátit hotovost v kasinu? Dokonce i když prohrajete! <br/> Ano, čtete správně – vrátíme vám hotovost, pokud vsadíte x5, dokonce i když prohrajete"
     },
-    "dropsWins" : {
-      "title" : "Drops<span class=\"Colored\">&</span>wins<br/>Vítejte v 4<br/>(týdnů 13-16)",
-      "name" : "Drops&wins turnaje",
-      "text" : "Vítejte v 4. ( týdnů 13–16) fázi denní propagační akce pořádané sítí Drops & Wins. <br/><br/>Máte příležitost vyhrát hotovost v celkové výši 2 500 000 eur! <br/><br/>"
-    },
     "playsonMay" : {
       "title" : "Playson may<br/> cashdays",
       "name" : "Playson May CashDays",
@@ -429,38 +424,21 @@
       "title": "Knockout<br/>Football<br/>Rush",
       "name": "Knockout Football Rush",
       "text": "První síťový turnaj Knockout Football Rush proběhne od 10. června 00:01 do 25. června23:59, GMT+2. Připravili jsme 5 turnajů s cenami ve výši až 25 000 eur, které budou rozděleny mezi prvních 500 hráčů s nejvyšším skóre ve výsledkové tabulce. Proveďteminimální sázku 0,10 eur, vyberte své oblíbené slotové hry Habanero a zahajte tuto kampaň!"
+    },
+    "dropsWinsSlots": {
+      "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
+      "name": "Drops & Wins Slots",
+      "text": "Vítejte v nové 5. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops and Wins na 500 000 eur! Rovněž zvyšuje počet měsíčních peněžitých cen a nabízí větší šance na výhru. Zúčastněte se vzrušující Drops & Wins a získejte příležitost vyhrát část z neuvěřitelných 4 000 000 eur v některé z cen!"
+    },
+    "dropsWinsLive": {
+      "title": "Drops<span class=\"Colored\"> & </span>Wins",
+      "name": "Drops & Wins Live",
+      "text": "Pragmatic Play vám nabízí stále více příležitostí zábavy na nové úrovni díky nové Drops and Wins for Live Casino. Nenechte si ujít příležitost vyhrát podíl z neuvěřitelných 3 000 000 eur v hotovosti!<br/><br/>Máte rádi živé hry? Pak je tato živá akce určena právě pro vás. Zúčastněte se týdenních turnajů – ruleta, blackjack, Mega Wheel, Baccarat!"
     }
   },
   "tournaments" : {
     "games" : "Hry zahrnuté do turnaje",
     "terms" : "Podmínky turnaje"
-  },
-  "dropsWins" : {
-    "prize" : "€ 2 500 000",
-    "text" : "Hlavní turnaj roku! Připojte se ke 4. fázi (13. až 16. týden) propagační akce. Zkuste štěstí a vyhrajte finanční odměnu celkem 2 500 000 EUR! K dispozici jsou týdenní a denní turnaje s velkorysými cenovými bankami. Každý den můžete získat ceny v různých populárních slotech od známé hry Pragmatic Play ™.",
-    "textMobile" : "Hlavní turnaj roku! Připojte se ke 4. fázi (13. až 16. týden) propagační akce. Zkuste štěstí a vyhrajte finanční odměnu celkem 2 500 000 EUR!",
-    "terms" : [
-      {
-        "title" : "Fáze 4 probíhá v termínu:",
-        "text" : "6. května 2021 00:01 CET – 12. května 2021 23:59 CET  13. května 2021 00:01 CET – 19. května 2021 23:59 CET 20. května 2021 00:01 CET – 26. května 2021 23:59 CET 27. května 2021 00:01 CET – 2. června 2021 23:59 CET"
-      },
-      {
-        "title" : "Hry zahrnuté do turnaje",
-        "text" : "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker's Jewels™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, The Hand of Midas™, Wild West Gold™, Gates of Olympus™, Congo Cash™, Fishin' Reels™, Power of Thor Megaways™, Floating Dragon™, Wild Booster™, Hot Fiesta™, Buffalo King Megaways™."
-      },
-      {
-        "title" : "Drops & Wins zahrnuje",
-        "text" : "Jednotlivé turnaje probíhají po dobu 7 dnů od čtvrtka do středy souběžně s denním turnajem Prize Drops. Maximální TÝDENNÍ výhra v 4. fázi je 31 000 eur a rozdělí si ji celkem 550 vítězů.<br/>Hráči mají příležitost KAŽDÝ DEN vyhrát peněžní ceny z prize poolu ve výši 4 500 EUR, který si rozdělí 100 nejaktivnějších účastníků."
-      },
-      {
-        "title" : "Jak vyhrát ",
-        "text" : "Hráč musí učinit vsázku se skutečnými penězi v jakékoliv ze zúčastněných her a musí získat minimálně jednu (1) výhru ve hře, aby se mohl kvalifikovat do týdenního turnaje.<br/>Hráč musí učinit vsázku se skutečnými penězi v jakékoliv ze zúčastněných her a musí získat minimálně jednu (1) výhru ve hře, aby se mohl kvalifikovat do týdenního turnaje. Pro účast v turnaji Daily Prize není požadována žádná minimální částka v reálných penězích Drops (týdny pro násobení výhry)."
-      },
-      {
-        "title" : "Dodatečně",
-        "text" : "Hráči, kteří se turnaje zúčastní ve více týdnech, mohou vyhrát ceny v podobě násobku r z vsazené částky vítězného hráče, jak je stanoveno v Tabulce výher týdenního turnaje (týdny pro násobení výhry) – a v Tabulce výher denního turnaje Prize Drop (týdny pro násobení výhry) (dále jako „Týdny pro násobení výhry“.<br/>Přesáhne-li vítězný spin hodnotu deseti eur (10 €), výhra bude vyplacena na základě sázky ve výši deseti eur (10 €) nebo odpovídající částky v dostupné měně (viz definice níže) X získaný násobek.<br/>Pořadí ve výsledkové tabulce odpovídá skóre, které je dané nejvyšší vyhranou částkou v jednom spinu a libovolné zahrnuté hře, upravenou podle výše vkladu.<br/>Pokud by týdenní turnaj dokončili dva (2) nebo více hráčů se stejným umístěním ve výsledkové tabulce, pak hráč, který skóre dosáhne první, dostane nejvyšší výhru."
-      }
-    ]
   },
   "playsonMay" : {
     "prize" : "€ 60 000",
@@ -531,6 +509,62 @@
       },
       {
         "text": "Habanero si vyhrazuje právo tuto promo akci kdykoliv změnit,přerušit nebo zrušit."
+      }
+    ]
+  },
+  "dropsWinsSlots": {
+    "title": "Aktualizovaná edice Drops & Wins Slots s prize poolem ve výši 4&nbsp;000&nbsp;000&nbsp;eur",
+    "prize": "4 000 000 eur",
+    "text": "Vítejte v nové 5. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops and Wins na 500 000 eur! Rovněž zvyšuje počet měsíčních peněžitých cen a nabízí větší šance na výhru. Zúčastněte se vzrušující Drops & Wins a získejte příležitost vyhrát část z neuvěřitelných 4 000 000 eur v některé z cen! Proto jsou tentokrát do týdnů 17–20 týdenních turnajů a denních výher zahrnuty některé nové hry!",
+    "textMobile": "Vítejte v nové 5. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops and Wins na 500 000 eur!",
+    "terms": [
+      {
+        "title": ". Fáze 5 probíhá v termínu:",
+        "text": "● 17. týden: 3. června 2021 09:01 SELČ - 9. června 2021 18:59 SELČ<br/>● 18. týden: 9. června 2021 19:01 SELČ - 16. června 2021 18:59 SELČ<br/>● 19. týden: 16. června 2021 19:01 SELČ - 23. června 2021 18:59 SELČ<br/>● 20. týden: 23. června 2021 19:01 SELČ - 30. června 2021 18:59 SELČ"
+      },
+      {
+        "title": "Hry zahrnuté do týdnů 17–20",
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Joker’s Jewels™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, The Hand of Midas™, Wild West Gold™, Gates of Olympus™, Fishin’ Reels™, Power of Thor Megaways™, Buffalo King Megaways™, Amazing Money Machine™, Phoenix Forge™, Cash Elevator ™, The Magic Cauldron – Enchanted Brew™."
+      },
+      {
+        "title": "Drops & Wins zahrnuje",
+        "text": "● Každý turnaj běží od čtvrtka do středy souběžně s denním turnajem Prize Drops.<br/>● Týdenní prize pool 62 000 eur rozdělený na celkem 1 200 peněžitých cen.<br/>● Hráči mají příležitost vyhrát peněžité ceny v denních výhrách s prize poolem ve výši 9 000 eur, který bude rozdělený na 500 peněžitých cen."
+      },
+      {
+        "title": "Jak vyhrát",
+        "text": "● Minimální požadovaná sázka činí 0,50 eura.<br/>● Aby se hráči mohli zapojit, musí hrát se skutečnými penězi a provést požadovanou sázku v jakékoliv ze zahrnutých her.<br/>● V týdenních turnajích – nejvyšší výhra za jeden spin upravená podle výše sázky.<br/>● V denních turnajích – jakýkoliv spin za skutečné peníze v zapojených hrách může vyvolat náhodnou cenu.<br/>● Hráčům nevznikají žádné další výdaje související s účastí."
+      }
+    ]
+  },
+  "dropsWinsLive": {
+    "title": "Drops and Wins for Live Casino s prize poolem 3&nbsp;000&nbsp;000&nbsp;eur",
+    "prize": "3 000 000 eur",
+    "text": "Pragmatic Play vám nabízí stále více příležitostí zábavy na nové úrovni díky nové Drops and Wins for Live Casino. Nenechte si ujít příležitost vyhrát podíl z neuvěřitelných 3 000 000 eur v hotovosti!<br/><br/>Máte rádi živé hry? Pak je tato živá akce určena právě pro vás. Zúčastněte se týdenních turnajů – ruleta, blackjack, Mega Wheel, Baccarat!",
+    "textMobile": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!",
+    "terms": [
+      {
+        "title": "Fáze 5 probíhá v termínu",
+        "text": "● Týden: 3. června 2021 09:01 SELČ - 9. června 2021 18:59 SELČ<br/>● Týden: 9. června 2021 19:01 SELČ - 16. června 2021 18:59 SELČ<br/>● Týden: 16. června 2021 19:01 SELČ - 23. června 2021 18:59 SELČ<br/>● Týden: 23. června 2021 19:01 SELČ - 30. června 2021 18:59 SELČ"
+      },
+      {
+        "title": "Začleněné hry / stolní hry",
+        "text": "<strong>Týdenní turnaje v Baccaratu:</strong><br/>Baccarat A (ID – 401), Baccarat B (ID – 404), Baccarat C (ID – 405), Baccarat D (ID – 411), Baccarat E (ID – 413), Speed Baccarat A (ID – 402), Speed Baccarat B (ID – 403), Speed Baccarat C (ID – 412), Speed Baccarat D (ID – 414), Speed Baccarat E (ID – 415).</strong><br/><br/><strong>Týdenní turnaj v blackjacku:</strong><br/>Live Blackjack A (ID – 301), Live Blackjack B (ID – 302), Live Blackjack C (ID – 303), Live Blackjack D (ID – 304), Live Blackjack E (ID – 305), Blackjack Azure A (ID – 511), Blackjack Azure B (ID – 512), Blackjack Azure C (ID – 513), Blackjack Azure D (ID – 514), Blackjack Azure E (ID – 515), Blackjack Azure F (ID – 516), Blackjack Azure G (ID – 517), Blackjack Azure H (ID – 518), Blackjack Azure I (ID – 519), Blackjack Azure J (ID – 520), ONE Blackjack (ID – 901).<br/><br/><strong>Tables to be added on 3rd June:</strong><br/>Blackjack 17 – Azure (ID – 521), Blackjack 18 – Azure (ID – 522), Blackjack 19 – Azure (ID – 523), Blackjack 20 – Azure (ID – 524), Blackjack 21 – Azure (ID – 525)<br/><br/><strong>Týdenní turnaj v Mega Wheel:</strong><br/>Mega Wheel (ID – 801)<br/><br/><strong>Týdenní turnaj v ruletě:</strong><br/>Auto-Roulette (ID – 225), Live Roulette A (ID – 201), Roulette Germany (ID – 222), Roulette Italy (ID – 223), Roulette Macao (ID – 206), Roulette Russia (ID – 221), Roulette Turkey (ID – 224), Speed Roulette (ID – 203), Roulette Azure (ID – 227), Mega Roulette (ID – 204) <strong>plus dedicated tables</strong>"
+      },
+      {
+        "title": "Drops & Wins zahrnuje",
+        "text": "Jednotlivé turnaje probíhají po dobu 7 dnů od čtvrtka do středy.<br/><br/>Kritéria turnaje: Nejvyšší celková hodnota všech bodů získaných za po sobě jsoucí výhry."
+      },
+      {
+        "title": "Minimální požadovaná sázka:",
+        "text": "● Týdenní turnaj v ruletě: 0,5 eura.<br/>● Týdenní turnaj v blackjacku: 10 eura.<br/>● Týdenní turnaj v Mega Wheel: 0,5 eura.<br/>● Týdenní turnaj v Baccaratu: 0,5 eura."
+      },
+      {
+        "title": "Jak se zúčastnit:",
+        "text": "● Hráč se musí zúčastnit nebo zapojit do některé ze začleněných her / stolních her.<br/>● Hráč musí sázet skutečné peníze, přičemž pro každou ze zahrnutých her v týdenním turnaji je stanovena minimální sázka. K tomu musí získat minimálně dvě (2) po sobě jdoucí výhry ve hře s požadovaným kvalifikátorem výhry.<br/>● Čím je vyšší celkový počet bodů získaných hráčem za po sobě jdoucí výhry, tím vyšší bude mít skóre.<br/>● Ceny budou rozděleny mezi hráče podle konečného skóre zobrazeného ve výsledkové tabulce hry na konci každého týdenního turnaje."
+      },
+      {
+        "title": "Další:",
+        "text": "<strong>How to win:<br/><br/>Týdenní turnaj v ruletě<br/>Ceny:</strong> celkem 50 000 eur rozdělených na 1 000 cen:<br/>-\tHráči musí hrát se skutečnými penězi v některé ze zahrnutých her a provést minimální sázku ve výši 0,50 euro v průběhu promo akce. Hráčům nevznikají žádné další výdaje související s účastí<br/><br/>Hráč musí získat minimálně 2 po sobě jdoucí kvalifikační výhry, přičemž každá z po sobě jdoucích kvalifikačních výher bude větší než dvojnásobek celkové kvalifikační sázky pro účast v týdenním turnaji v ruletě.<br/><br/>Hráči mohou zvýšit své skóre v týdenním turnaji v ruletě s každou další následnou kvalifikační výhrou.<br/><br/>Jakékoliv sázky s pravděpodobností výhry 1:1 (červená/černá, sudá/lichá, 1:18/19:36) nebudou započítány do skóre týdenního turnaje v ruletě.<br/><br/><strong>Týdenní turnaj v blackjacku:<br/>Ceny:</strong> celkem 25 000 eur rozdělených na 300 cen:<br/>-\tHráči musí hrát se skutečnými penězi v některé ze zahrnutých her a provést minimální sázku ve výši 10 euro v průběhu promo akce. Hráčům nevznikají žádné další výdaje související s účastí.<br/><br/>Hráč musí získat minimálně 2 po sobě jdoucí kvalifikační výhry, přičemž každá z po sobě jdoucích kvalifikačních výher bude větší než jednou celkové kvalifikační sázky pro účast v týdenním turnaji v blackjacku.<br/><br/>Hráči mohou zvýšit své skóre v týdenním turnaji v blackjacku s každou další následnou kvalifikační výhrou.<br/><br/>Do týdenního turnaje v blackjacku se započítávají pouze hlavní sázky a/nebo Bet Behind.<br/><br/><strong>Týdenní turnaj v Mega Wheel:<br/>Ceny:</strong> celkem 25 000 eur rozdělených na 600 cen:<br/>Hráči musí hrát se skutečnými penězi v některé ze zahrnutých her a provést minimální sázku ve výši 0,50 euro v průběhu promo akce. Hráčům nevznikají žádné další výdaje související s účastí.<br/><br/>Hráč musí získat minimálně 2 po sobě jdoucí kvalifikační výhry, přičemž každá z po sobě jdoucích kvalifikačních výher bude větší než jednou celkové kvalifikační sázky pro účast v týdenním turnaji v Mega Wheel.<br/><br/>Hráči mohou zvýšit své skóre v týdenním turnaji v Mega Wheel s každou další následnou kvalifikační výhrou.<br/><br/>Do týdenního turnaje v Mega Wheel mohou být započteny všechny kvalifikační sázky.<br/><br/><strong>Týdenní turnaj v Baccaratu:<br/>Ceny:</strong> celkem 25 000 eur rozdělených na 600 cen:<br/>Hráči musí hrát se skutečnými penězi v některé ze zahrnutých her a provést minimální sázku ve výši 0,50 euro v průběhu promo akce. Hráčům nevznikají žádné další výdaje související s účastí.<br/><br/>Hráč musí získat minimálně 2 po sobě jdoucí kvalifikační výhry, přičemž každá z po sobě jdoucích kvalifikačních výher bude větší než jednou celkové kvalifikační sázky pro účast v týdenním turnaji v Baccaratu.<br/><br/>Hráči mohou zvýšit své skóre v týdenním turnaji v Baccaratu s každou další následnou kvalifikační výhrou.<br/><br/>Do skóre týdenního turnaje v Baccaratu se započítávají pouze hlavní sázky (pozice hráč, bankéř a Tie)."
       }
     ]
   },

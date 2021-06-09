@@ -12,10 +12,19 @@
           }"
         >
           <h1
+            v-if="tournaments[$route.params.tournament].title"
             class="Title Title--type-h1 Title--color1 DailyTournamentPage-Title"
             v-html="tournaments[$route.params.tournament].title"
           ></h1>
-          <div class="DailyTournamentPage-Subtitle">
+          <h1
+            v-else
+            class="Title Title--type-h1 Title--color1 DailyTournamentPage-Title"
+            v-html="$t(`${tournaments[$route.params.tournament].translates}.title`)"
+          ></h1>
+          <div
+            v-if="$t(`${tournaments[$route.params.tournament].translates}.prize`)"
+            class="DailyTournamentPage-Subtitle"
+          >
             {{ $t(`${tournaments[$route.params.tournament].translates}.prize`) }}
           </div>
           <div
@@ -55,7 +64,10 @@
           class="Page-Block"
         >
           <div class="Page-Number">{{ i + 1 }}.</div>
-          <div class="Text Text--additional" v-html="item.text"></div>
+          <div>
+            <div v-if="item.title" class="DailyTournamentPage-TermsTitle" v-html="item.title"></div>
+            <div class="Text Text--additional" v-html="item.text"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -188,6 +200,12 @@ export default {
       margin-bottom: 80px;
     }
   }
+
+  &-TermsTitle {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--color-text-main);
+  }
 }
 
 .MayMadness {
@@ -270,38 +288,75 @@ export default {
   }
 }
 
-.DropsWins {
+.DropsWinsSlots {
   &-Header {
     width: 100%;
+    margin-top: -70px;
     margin-bottom: 22px;
-    padding-top: 183px / 320px * 100%;
-    background-image: url(~@/assets/img/drops_460.png);
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/dropsSlots_460.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: calc(100% - 32px) auto;
 
     @media (min-width: $screen-s) {
-      padding-top: 147px / 1248px * 100%;
-      background-image: url(~@/assets/img/drops_624.png);
-      background-position: center left;
-    }
-
-    @media (min-width: $screen-m) {
+      margin-top: 0;
+      padding-top: 50px / 1248px * 100%;
+      background-image: url(~@/assets/img/dropsSlots_900.png);
       background-position: center center;
-      background-size: auto auto;
-    }
-
-    @media (min-width: $screen-l) {
-      background-image: url(~@/assets/img/drops_900.png);
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 147px;
-      background-image: url(~@/assets/img/drops_1248.png);
+      padding-top: 120px;
     }
 
     @media (min-width: $screen-xxl) {
-      background-image: url(~@/assets/img/drops_1248.png);
+      background-image: url(~@/assets/img/dropsSlots_1920.png);
+    }
+
+    .DailyTournamentPage-MainText {
+      @media (min-width: $screen-s) {
+        max-width: 35%;
+      }
+    }
+  }
+}
+
+.DropsWinsLive {
+  &-Header {
+    width: 100%;
+    margin-top: -70px;
+    margin-bottom: 22px;
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/dropsLive_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(100% - 32px) auto;
+
+    @media (min-width: $screen-s) {
+      margin-top: 0;
+      padding-top: 80px / 1248px * 100%;
+      background-image: url(~@/assets/img/dropsLive_900.png);
+      background-position: center center;
+    }
+
+    @media (min-width: $screen-m) {
+      padding-top: 50px / 1248px * 100%;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 120px;
+      background-image: url(~@/assets/img/dropsLive_1248.png);
+    }
+
+    @media (min-width: $screen-xxl) {
+      background-image: url(~@/assets/img/dropsLive_1920.png);
+    }
+
+    .DailyTournamentPage-MainText {
+      @media (min-width: $screen-s) {
+        max-width: 35%;
+      }
     }
   }
 }
