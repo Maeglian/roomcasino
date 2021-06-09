@@ -12,10 +12,17 @@
           }"
         >
           <h1
+            v-if="tournaments[$route.params.tournament].title"
             class="Title Title--type-h1 Title--color1 DailyTournamentPage-Title"
             v-html="tournaments[$route.params.tournament].title"
           ></h1>
-          <div class="DailyTournamentPage-Subtitle">
+          <h1 v-else class="Title Title--type-h1 Title--color1 DailyTournamentPage-Title">
+            {{ $t(`${tournaments[$route.params.tournament].translates}.title`) }}
+          </h1>
+          <div
+            v-if="$t(`${tournaments[$route.params.tournament].translates}.prize`)"
+            class="DailyTournamentPage-Subtitle"
+          >
             {{ $t(`${tournaments[$route.params.tournament].translates}.prize`) }}
           </div>
           <div

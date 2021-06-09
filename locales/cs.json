@@ -426,12 +426,12 @@
       "text": "První síťový turnaj Knockout Football Rush proběhne od 10. června 00:01 do 25. června23:59, GMT+2. Připravili jsme 5 turnajů s cenami ve výši až 25 000 eur, které budou rozděleny mezi prvních 500 hráčů s nejvyšším skóre ve výsledkové tabulce. Proveďteminimální sázku 0,10 eur, vyberte své oblíbené slotové hry Habanero a zahajte tuto kampaň!"
     },
     "dropsWinsSlots": {
-      "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots<br/>Stage 5<br/>(Weeks 17-20)",
-      "name": "Upgraded Drops & Wins Slots edition",
+      "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
+      "name": "Drops & Wins Slots",
       "text": "Welcome to the new Stage 5 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes!"
     },
     "dropsWinsLive": {
-      "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live<br/>Stage 1<br/>(Weeks 1-4)",
+      "title": "Drops<span class=\"Colored\"> & </span>Wins",
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!"
     }
@@ -513,7 +513,8 @@
     ]
   },
   "dropsWinsSlots": {
-    "prize": "€ 4 000 000",
+    "title": "Upgraded Drops & Wins Slots edition with the €4,000,000 prize pool",
+    "prize": "€ 4,000,000",
     "text": "Welcome to the new Stage 5 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 17-20 of Weekly Tournaments and Daily Prize Drops with some new games!.",
     "textMobile": "Welcome to the new Stage 5 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000!",
     "terms": [
@@ -536,6 +537,7 @@
     ]
   },
   "dropsWinsLive": {
+    "title": "Drops and Wins for Live Casino with the €3,000,000 prize pool",
     "prize": "€ 3,000,000",
     "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!",
     "textMobile": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!",

@@ -312,7 +312,6 @@ export const TOURNAMENTS = {
   'drops-wins-slots': {
     url: 'drops-wins-slots',
     name: 'Drops & Wins Slots',
-    title: 'Drops<span class="Colored"> & </span>Wins Slots',
     translates: 'dropsWinsSlots',
     class: 'DropsWinsSlots',
     slug: 'DROP&WINS',
@@ -321,7 +320,6 @@ export const TOURNAMENTS = {
   'drops-wins-live': {
     url: 'drops-wins-live',
     name: 'Drops & Wins Live',
-    title: 'Drops<span class="Colored"> & </span>Wins Live',
     translates: 'dropsWinsLive',
     class: 'DropsWinsLive',
     slug: 'dropslive',
