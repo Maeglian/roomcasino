@@ -291,7 +291,7 @@ export default {
     width: 100%;
     margin-top: -70px;
     margin-bottom: 22px;
-    padding-top: 250px / 320px * 100%;
+    padding-top: 270px / 320px * 100%;
     background-image: url(~@/assets/img/dropsSlots_460.png);
     background-repeat: no-repeat;
     background-position: center top;
@@ -299,21 +299,16 @@ export default {
 
     @media (min-width: $screen-s) {
       margin-top: 0;
-      padding-top: 80px / 1248px * 100%;
+      padding-top: 50px / 1248px * 100%;
       background-image: url(~@/assets/img/dropsSlots_900.png);
       background-position: center center;
     }
 
-    @media (min-width: $screen-m) {
-      padding-top: 140px / 1248px * 100%;
-    }
-
     @media (min-width: $screen-xl) {
-      padding-top: 160px;
+      padding-top: 120px;
     }
 
     @media (min-width: $screen-xxl) {
-      padding-top: 160px;
       background-image: url(~@/assets/img/dropsSlots_1920.png);
     }
 
@@ -344,11 +339,11 @@ export default {
     }
 
     @media (min-width: $screen-m) {
-      padding-top: 140px / 1248px * 100%;
+      padding-top: 50px / 1248px * 100%;
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 160px;
+      padding-top: 120px;
       background-image: url(~@/assets/img/dropsLive_1248.png);
     }
 
