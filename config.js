@@ -337,7 +337,7 @@ export const TOURNAMENTS = {
   'daily-cash-hunt': {
     url: 'daily-cash-hunt',
     name: 'Daily Cash Hunt',
-    translates: 'DailyCashHunt',
+    translates: 'dailyCashHunt',
     class: 'DailyCashHunt',
     slug: 'dailycash',
     textLeft: true,

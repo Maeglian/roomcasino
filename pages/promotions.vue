@@ -194,6 +194,15 @@ export default {
           link: 'More',
           url: '/tournaments/drops-wins-live',
         },
+        {
+          title: this.$t('promotions.dailyCashHunt.title'),
+          prize: this.$t('dailyCashHunt.prize'),
+          image: 'dailyCashHunt-promotion.png',
+          announce: this.$t('promotions.dailyCashHunt.name'),
+          text: this.$t('promotions.dailyCashHunt.text'),
+          link: 'More',
+          url: '/tournaments/daily-cash-hunt',
+        },
       ],
     };
   },
