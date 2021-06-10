@@ -203,14 +203,13 @@ export default {
 
         .CabinetMenu-NavIcon {
           fill: var(--color-main1);
-          //stroke: var(--color-bg);
+          stroke: var(--color-bg);
         }
       }
-      //border-bottom: 4px solid var(--color-main1);
 
       .CabinetMenu-NavIcon {
         fill: var(--color-bg);
-        //stroke: var(--color-main1);
+        stroke: var(--color-main1);
       }
     }
   }
