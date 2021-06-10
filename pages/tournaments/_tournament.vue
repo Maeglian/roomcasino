@@ -375,7 +375,7 @@ export default {
     @media (min-width: $screen-s) {
       margin-top: 0;
       padding-top: 80px / 1248px * 100%;
-      background-image: url(~assets/img/dailyCashHunt_600.png);
+      background-image: url(~assets/img/dailyCashHunt_900.png);
       background-position: center center;
     }
 
