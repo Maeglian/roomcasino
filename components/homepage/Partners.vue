@@ -1,50 +1,26 @@
 <template>
   <div class="Partners">
     <client-only>
-      <marquee-text :duration="durationSpeed">
-        <div class="Partners-Wrapper">
-          <div class="Partners-Partner">
-            <img class="Partners-Image Partners-Image--height" src="@/assets/img/interac.svg" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image Partners-Image--height" src="@/assets/img/astropay.svg" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image" src="@/assets/img/inpay.png" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image Partners-Image--height" src="@/assets/img/mastercard.svg" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image" src="@/assets/img/visa.svg" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image Partners-Image--width" src="@/assets/img/ecashout.svg" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image Partners-Image--width" src="@/assets/img/flexepin.png" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image Partners-Image--width" src="@/assets/img/neosurf.png" />
-          </div>
-          <div class="Partners-Partner">
+      <marquee-text :duration="durationSpeed"
+        ><div class="Partners-Wrapper">
+          <template v-if="countriesLogos[defaultCountry]">
             <img
-              class="Partners-Image Partners-Image--width-more"
-              src="@/assets/img/muchbetter.png"
+              v-for="item in countriesLogos[defaultCountry]"
+              :key="item"
+              class="Partners-Partner"
+              :src="item.logo"
+              :width="item.width"
             />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image Partners-Image--width" src="@/assets/img/klarna.svg" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image Partners-Image--width" src="@/assets/img/skrill.png" />
-          </div>
-          <div class="Partners-Partner">
-            <img class="Partners-Image Partners-Image--width" src="@/assets/img/volt.svg" />
-          </div>
-          <!--          <div class="Partners-Partner">-->
-          <!--            <img class="Partners-Image" src="@/assets/img/payguru.png"/>-->
-          <!--          </div>-->
+          </template>
+          <template v-else>
+            <img
+              v-for="item in logos"
+              :key="item"
+              class="Partners-Partner"
+              :src="item.logo"
+              :width="item.width"
+            />
+          </template>
         </div>
       </marquee-text>
     </client-only>
@@ -56,10 +32,105 @@ import { mapState } from 'vuex';
 
 export default {
   name: 'Partners',
-
+  data() {
+    return {
+      logos: {
+        interac: {
+          logo: require('@/assets/img/interac.svg'),
+          width: 60,
+        },
+        instadebit: {
+          logo: require('@/assets/img/instadebit.svg'),
+          width: 190,
+        },
+        idebit: {
+          logo: require('@/assets/img/idebit.svg'),
+          width: 80,
+        },
+        muchbetter: {
+          logo: require('@/assets/img/muchbetter.png'),
+          width: 150,
+        },
+        mastercard: {
+          logo: require('@/assets/img/mastercard.svg'),
+          width: 60,
+        },
+        visa: {
+          logo: require('@/assets/img/visa.svg'),
+          width: 60,
+        },
+        neosurf: {
+          logo: require('@/assets/img/neosurf.svg'),
+          width: 100,
+        },
+        flexepin: {
+          logo: require('@/assets/img/flexepin.png'),
+          width: 80,
+        },
+        skrill: {
+          logo: require('@/assets/img/skrill.png'),
+          width: 80,
+        },
+        jeton: {
+          logo: require('@/assets/img/jeton-logo.svg'),
+          width: 90,
+        },
+        astropay: {
+          logo: require('@/assets/img/astropay.svg'),
+          width: 120,
+        },
+        klarna: {
+          logo: require('@/assets/img/klarna.svg'),
+          width: 80,
+        },
+        neteller: {
+          logo: require('@/assets/img/neteller.svg'),
+          width: 120,
+        },
+        paysafecard: {
+          logo: require('@/assets/img/paysafe.svg'),
+          width: 120,
+        },
+        volt: {
+          logo: require('@/assets/img/volt.svg'),
+          width: 60,
+        },
+        ecashout: {
+          logo: require('@/assets/img/ecashout.svg'),
+          width: 60,
+        },
+      },
+      countriesLogos: {
+        CA: [
+          'interac',
+          'instadebit',
+          'idebit',
+          'muchbetter',
+          'mastercard',
+          'visa',
+          'neosurf',
+          'flexepin',
+          'skrill',
+          'jeton',
+          'astropay',
+        ],
+        AU: [
+          'mastercard',
+          'visa',
+          'klarna',
+          'skrill',
+          'neteller',
+          'paysafecard',
+          'volt',
+          'neosurf',
+          'astropay',
+          'muchbetter',
+        ],
+      },
+    };
+  },
   computed: {
-    ...mapState(['width']),
-
+    ...mapState(['width', 'defaultCountry']),
     durationSpeed() {
       return this.width > 460 ? 60 : 30;
     },
@@ -98,18 +169,6 @@ export default {
     @media (min-width: $screen-xl) {
       margin-right: 37px;
     }
-  }
-
-  &-Image--height {
-    height: 50px;
-  }
-
-  &-Image--width {
-    width: 80px;
-  }
-
-  &-Image--width-more {
-    width: 190px;
   }
 }
 </style>
