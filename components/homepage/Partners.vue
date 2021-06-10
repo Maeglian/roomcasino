@@ -5,8 +5,8 @@
         ><div class="Partners-Wrapper">
           <template v-if="countriesLogos[defaultCountry]">
             <img
-              v-for="item in countriesLogos[defaultCountry]"
-              :key="item"
+              v-for="(item, i) in countriesLogos[defaultCountry]"
+              :key="`logo-${i}`"
               class="Partners-Partner"
               :src="item.logo"
               :width="item.width"
@@ -14,8 +14,8 @@
           </template>
           <template v-else>
             <img
-              v-for="item in logos"
-              :key="item"
+              v-for="(item, i) in logos"
+              :key="`logo-${i}`"
               class="Partners-Partner"
               :src="item.logo"
               :width="item.width"
