@@ -44,12 +44,6 @@
               :item="item"
             />
           </template>
-          <div class="Nav-Item Nav-Name AsideMenu-Link AsideMenu-Exit" @click="onClickExitBtn()">
-            <svg class="AsideMenu-NavIcon Icon Nav-Icon Exit-Icon" width="22" height="18">
-              <use xlink:href="@/assets/img/icons.svg#exit"></use>
-            </svg>
-            {{ $t('profile.pages.exit') }}
-          </div>
           <button
             v-if="!isLoggedIn && chatIsLoaded"
             class="Nav-Item Nav-Name AsideMenu-Link AsideMenu-Support"
@@ -69,7 +63,7 @@
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
 import GamePanel from '@/components/homepage/GamePanel.vue';
-import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
+import { mapGetters, mapMutations, mapState } from 'vuex';
 import { TOURNAMENTS } from '@/config';
 
 export default {
@@ -183,7 +177,6 @@ export default {
   },
   methods: {
     ...mapMutations(['openNav', 'closeNav']),
-    ...mapActions(['logout']),
     onScroll() {
       this.documentIsScrolled = window.scrollY > 0;
     },
@@ -193,9 +186,6 @@ export default {
     },
     onClickSupport() {
       window.LC_API.open_chat_window();
-    },
-    onClickExitBtn() {
-      this.logout().then(() => this.$router.push(this.localePath('/')));
     },
   },
 };
@@ -395,15 +385,6 @@ export default {
         justify-content: center;
       }
     }
-  }
-
-  &-Exit {
-    display: flex;
-    align-items: center;
-  }
-
-  .Exit-Icon {
-    width: 16px;
   }
 
   &-AuthSection {
