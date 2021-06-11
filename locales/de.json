@@ -152,7 +152,7 @@
   "footer": {
     "text": {
       "p1": "Sie nehmen zur Kenntnis, dass durch Ihre Teilnahme an den Spielen die Gefahr besteht, dass Sie das auf Ihr Konto auf www.ninecasino.com eingezahlte Geld ganz oder teilweise verlieren. In einigen Staaten ist Online-Glücksspiel gesetzlich verboten. Sie nehmen zur Kenntnis und erkennen an, dass www.ninecasino.com weder rechtliche Hinweise geben noch die Gesetzeskonformität der Nutzung der Angebote der Webseite garantieren kann. Das Unternehmen behauptet nicht, dass die Angebote der Webseite mit den gesetzlichen Bestimmungen in Ihrem Land konform sind. Die Inanspruchnahme der von www.ninecasino.com angebotenen Dienste erfolgt aus freien Stücken und Ihrem eigenen Ermessen, weswegen das Haftungsrisiko sowie die Entscheidung darüber, ob die Nutzung der Webseite den in Ihrem Land geltenden Gesetzen entspricht, allein Ihnen obliegt. Sie melden sich auf eigenes Risiko auf der Webseite an und beteiligen sich auf eigenes Risiko an den Spielen.",
-      "p2": "Copyright © 2020 Die Webseite www.ninecasino.com wird betrieben von der Scartesu Ltd., dem nach geltendem Recht Zyperns als Bevollmächtigter der in Zypern eingetragenen Dux Group N.V. tätigen Zahlungsabwicklungsdienstleister der Dux Group N.V. mit eingetragenem Sitz unter: Boumpoulinas 1, 3. Etage, Nr. 31, 1060, Nikosia, Zypern und der Eintragungsnummer ΗΕ 410983. Für die Webseite gelten die Gesetze Zyperns. Eigentümer der Webseite www.ninecasino.com ist die Dux Group N.V., ein in Curaçao eingetragenes und ansässiges Unternehmen mit der Eintragungsnummer 155114 und eingetragenem Sitz unter Perseusweg 27A, Willemstad, Curaçao. Die Dux Group N.V. ist in Curaçao unter der Zulassungsnummer 8048/JAZ2020-075 amtlich zugelassen als Informationsdienstleistungsunternehmen mit der gesetzlichen Genehmigung zur Veranstaltung von Online-Glücksspielen von Curaçao aus. Zuständig für Zulassung und Aufsicht über den dezentralen Online-Glücksspielbetrieb ist die Antillephone N.V. Es obliegt allein den Spielerinnen und Spielern selbst, sich bezüglich der an ihrem Aufenthaltsort für das Online-Glücksspiel geltenden gesetzlichen und sonstigen Bestimmungen kundig zu machen.",
+      "p2": "Copyright © 2020 Eigentümer der Webseite www.ninecasino.com  ist die Dux Group N.V., ein in Curaçao eingetragenes und ansässiges Unternehmen mit der Eintragungsnummer 155114 und eingetragenem Sitz unter Perseusweg 27A, Willemstad, Curaçao. Die Dux Group N.V. ist in Curaçao unter der Zulassungsnummer 8048/JAZ2020-075 amtlich zugelassen als Informationsdienstleistungsunternehmen mit der gesetzlichen Genehmigung zur Veranstaltung von Online-Glücksspielen von Curaçao aus. Zuständig für Zulassung und Aufsicht über den dezentralen Online-Glücksspielbetrieb ist die Antillephone N.V. Es obliegt allein den Spielerinnen und Spielern selbst, sich bezüglich der an ihrem Aufenthaltsort für das Online-Glücksspiel geltenden gesetzlichen und sonstigen Bestimmungen kundig zu machen.",
       "p3": "Bei Fragen oder Vorschlägen in Bezug auf unsere Webseite setzen Sie sich bitte per E-Mail an {support} telefonisch unter oder {phone} mit uns in Verbindung"
     }
   },
@@ -440,6 +440,11 @@
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!<br/><br/>Magst du Live-Spiele? Diese Live-Ausgabe wird dir gefallen. Mach mit bei wöchentlichen Turnieren – Roulette, Blackjack, Mega Wheel, Baccarat!"
+    },
+    "dailyCashHunt": {
+      "title": "Daily <br/> Cash Hunt",
+      "name": "JAGEN SIE IN DIESEM SOMMER BEI DAILY CASH 60.000 EURO IN BAR!",
+      "text": "Ninecasino-Casino freut sich, Sie als Teilnehmer an der Daily Cash Hunt-Netz-Turnierserie von Booongo begrüßen zu dürfen.<br/>Die Turnierserie ist eine einmalige Aktion von Booongo. Es handelt sich um eine Kombination aus regelmäßigen Turnieren mit unterschiedlichen Laufzeiten (die Dauer der einzelnen Turnier einer Reihe kann variieren), dem jeweiligen Wertungsturnier (Gewinnmechanismus) sowie einer zweiten (SONDER-) Rangliste, die den Gesamtstand der Spielerin/des Spielers wiedergibt.<br/><br/>Verpassen Sie nicht Ihren Teil am riesigen Preisgeld von Booongo! Spielen, Spaß haben und gewinnen!"
     }
   },
   "tournaments": {
@@ -519,7 +524,7 @@
     ]
   },
   "dropsWinsSlots": {
-    "title": "Aufgewertete Ausgabe von Drops & Wins Slots mit 4.000.000&nbsp;€ Preisgeld",
+    "title": "Aufgewertete Ausgabe von Drops & Wins Slots",
     "prize": "4.000.000 €",
     "text": "Willkommen zu Phase 5 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 17–20 der Wöchentlichen Turniere und Täglichen Gewinnausspielungen mit einigen neuen Spielen!",
     "textMobile": "Willkommen zu Phase 5 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €!",
@@ -543,7 +548,7 @@
     ]
   },
   "dropsWinsLive": {
-    "title": "Drops and Wins for Live Casino mit 3.000.000&nbsp;€ Preisgeld",
+    "title": "Drops and Wins for Live Casino",
     "prize": "3.000.000 €",
     "text": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!<br/><br/>Magst du Live-Spiele? Diese Live-Ausgabe wird dir gefallen. Mach mit bei wöchentlichen Turnieren – Roulette, Blackjack, Mega Wheel, Baccarat!",
     "textMobile": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!",
@@ -574,6 +579,38 @@
       }
     ]
   },
+  "dailyCashHunt": {
+    "title": "Eröffnen Sie Ihren <br/>Sommer mit der <br/>Daily Cash Hunt",
+    "prize": "€ 60 000",
+    "text": "Ninecasino freut sich, Sie als Teilnehmer an der Daily Cash Hunt-Netz-Turnierserie von Booongo begrüßen zu dürfen.<br/><br/>Die Turnierserie ist eine einmalige Aktion von Booongo. Es handelt sich um eine Kombination aus regelmäßigen Turnieren mit unterschiedlichen Laufzeiten (die Dauer der einzelnen Turnier einer Reihe kann variieren), dem jeweiligen Wertungsturnier (Gewinnmechanismus) sowie einer zweiten (SONDER-) Rangliste, die den Gesamtstand der Spielerin/des Spielers wiedergibt.",
+    "textMobile": "Ninecasino freut sich, Sie als Teilnehmer an der Daily Cash Hunt-Netz-Turnierserie von Booongo begrüßen zu dürfen.",
+    "terms": [
+      {
+        "title": "Die Turnierserie läuft vom 10.06.2021 00:01 UTC bis zum 22.06.2021 23:00 UTC in folgenden Etappen:<br/><br/>",
+        "text": "● 10.06.2021 um 0:00 Uhr UTC bis 15.06.2021 um 23:00 Uhr UTC (Woche 1) <br/>● 17.06.2021 um 0:00 Uhr UTC bis 22.06.2021 um 23:00 Uhr UTC (Woche 2)"
+      },
+      {
+        "title": "Beteiligte Spiele: <br/><br/>",
+        "text": "Hit The Gold, Aztec Pyramid, Magic Ball, Magic Apple, Aztec Sun, Sun Of Egypt 2, Sun Of Egypt, 15 Dragon Pearls, Dragon Pearls, Wolf Saga, 3 Coins, Scarab Temple, Tiger Stone, Super Rich God, Book Of Sun Choice."
+      },
+      {
+        "title": "",
+        "text": "Des grandiose Gesamtpreisgeld für diese Aktion beläuft sich auf 60.000 Euro, die sich nach folgendem Modell aus mehreren Töpfen zusammensetzen: <br/><br/>● 30.000 Euro in Woche 1 – 4.000 Euro in jedem regelmäßig ausgespielten Turnier, das entspricht einem Gesamtbetrag von 24.000 Euro in 6 Turnieren sowie 6.000 Euro für die Bestplatzierten in der Rangliste der Serie;<br/>● 30.000 Euro in Woche 2 – 4.000 Euro in jedem regelmäßig ausgespielten Turnier, das entspricht einem Gesamtbetrag von 24.000 Euro in 6 Turnieren sowie 6.000 Euro für die Bestplatzierten in der Rangliste der Serie;"
+      },
+      {
+        "title": "",
+        "text": "Der Mindesteinsatz für die Teilnahme beträgt umgerechnet 0,5 Euro in mindestens 100 Ausspielungen."
+      },
+      {
+        "title": "",
+        "text": "Dazu gibt es bei der Daily Cash Hunt zwei Ranglisten. Die (Sonder-) Rangliste der jeweiligen Serie wird parallel zu der spielinternen Rangliste der regelmäßig ausgespielten Einzelturniere geführt. Weitere Angaben bietet die Webseite.<br/>HSRM (Bestes Gewinn-Einsatz-Verhältnis) steht für das höchste Vielfache eines Einzelgewinns gemessen am jeweiligen Einsatz und HSRP (Höchster Gewinn in Punkten) für den höchsten Geldgewinn entsprechend der Anzahl der zugewiesenen Punkte. <br/>Die von den Mitspielenden erworbenen Punkte für die Sonderrangliste der jeweiligen Serie werden bei allen Turnieren erfasst. "
+      },
+      {
+        "title": "Verpassen Sie nicht Ihren Teil am riesigen Preisgeld von Booongo! Spielen, Spaß haben und gewinnen!",
+        "text": ""
+      }
+    ]
+  },
   "supportPages": {
     "termsPage": {
       "title": "ALLGEMEINE GESCHÄFTSBEDINGUNGEN",
@@ -582,7 +619,7 @@
       "general": {
         "title": "ALLGEMEINES",
         "text": [
-          "Die Webseite www.ninecasino.com (im Folgenden das „Casino“, die „Webseite“, das „Unternehmen“ bzw. „wir“, „uns“ und „unser/e“) wird betrieben von der Scartesu Ltd., dem nach geltendem Recht Zyperns als Bevollmächtigter der in Zypern eingetragenen Dux Group N.V. tätigen Zahlungsabwicklungsdienstleister der Dux Group N.V. mit eingetragenem Sitz unter: Boumpoulinas 1, 3. Etage, Nr. 31, 1060, Nikosia, Zypern und der Eintragungsnummer ΗΕ 410983. Für die Webseite gelten die Gesetze Zyperns. Eigentümer des Casinos ist die Dux Group N.V., ein in Curaçao eingetragenes und ansässiges Unternehmen mit der Eintragungsnummer 155114 und eingetragenem Sitz unter Perseusweg 27A, Willemstad, Curaçao. Die Dux Group N.V. ist in Curaçao unter der Zulassungsnummer 8048/JAZ2020-075 amtlich zugelassen als Informationsdienstleistungsunternehmen mit der gesetzlichen Genehmigung zur Veranstaltung von Online-Glücksspielen von Curaçao aus. Zuständig für Zulassung und Aufsicht über den dezentralen Online-Glücksspielbetrieb ist die Antillephone N.V. Es obliegt allein den Spielerinnen und Spielern selbst, sich bezüglich der an ihrem Aufenthaltsort für das Online-Glücksspiel geltenden gesetzlichen und sonstigen Bestimmungen kundig zu machen.",
+          "Die Webseite www.ninecasino.com (\"Casino\", \"Website\", “Company”, \"We\", \"Us\", \"Our\") is owned and operated by Dux Group N.V. the company registered at Curacao on the 09th day of September, 2020, registration number 155114, located at Perseusweg 27A, Willemstad, Curacao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorised to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
           "Die hier vorliegenden Allgemeinen Geschäftsbedingungen dürfen von dem Casino bei Bedarf geändert werden. Wir bemühen uns darum, die Spielerinnen und Spieler von weitreichenden Änderungen per E-Mail in Kenntnis zu setzen. Dennoch empfehlen wir allen Spielerinnen und Spielern diese Webseite regelmäßig aufzurufen und auf etwaige Änderungen zu prüfen.",
           "Die hier vorliegenden Allgemeinen Geschäftsbedingungen gelten als bindender Vertrag zwischen Ihnen und dem Casino. Die Spielerinnen und Spieler müssen sich die hier vorliegenden Allgemeinen Geschäftsbedingungen in vollem Umfang durchlesen, bevor sie Spielerkonto eröffnen. Wenn Sie die hier vorliegenden Allgemeinen Geschäftsbedingungen nicht akzeptieren, dürfen Sie die Webseite nicht nutzen bzw. nicht mehr nutzen.",
           "Sie können sich von dem Bezug von E-Mail-Angeboten des Casinos abmelden. Wir behalten uns jedoch vor, Ihnen weiterhin wichtige Informationen zu Ihrem Konto per E-Mail zuzusenden, auch wenn Sie sich von dem regelmäßigen E-Mail-Bezug abgemeldet haben."
@@ -979,7 +1016,7 @@
         },
         "offer3": {
           "title": "MACH EINE EINZAHLUNG UND GENIESSE DIE SPIELE",
-          "text": "Wenn du Bitcoins kaufst, kannst du sie in dein GetSlots-Konto einzahlen und anfangen zu spielen. Oder du kannst Bitcoin als Investitionsmöglichkeit nutzen. Es ist eine wohlbekannte und schnell wachsende Investitionsmöglichkeit. Wir akzeptieren auch andere Kryptowährungen in unserem Casino. Du kannst Einzahlungen auch mit Ethereum, Litecoin und Bitcoin Cash machen."
+          "text": "Wenn du Bitcoins kaufst, kannst du sie in dein Ninecasino-Konto einzahlen und anfangen zu spielen. Oder du kannst Bitcoin als Investitionsmöglichkeit nutzen. Es ist eine wohlbekannte und schnell wachsende Investitionsmöglichkeit. Wir akzeptieren auch andere Kryptowährungen in unserem Casino. Du kannst Einzahlungen auch mit Ethereum, Litecoin und Bitcoin Cash machen."
         }
       }
     },

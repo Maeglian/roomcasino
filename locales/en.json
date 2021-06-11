@@ -152,7 +152,7 @@
   "footer": {
     "text": {
       "p1": "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
-      "p2": "Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., payment operator of Dux Group N.V., by the laws of Cyprus acting as an agent on behalf of Dux Group N.V., registered in Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ 410983. The governing law of the website is Cyprus law. The website www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorized to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
+      "p2": "Copyright © 2020 www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorized to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
       "p3": "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
     }
   },
@@ -441,6 +441,11 @@
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!"
+    },
+    "dailyCashHunt": {
+      "title": "Daily <br/> Cash Hunt",
+      "name": "HUNT DOWN 60K IN DAILY CASH THIS SUMMER!",
+      "text": "Ninecasino is pleased to welcome you as a participant in the ”Daily Cash Hunt” Network Tournament Series from Booongo.<br/>The Tournament Series is a unique game promotion introduced by Booongo. It’s a combo of regular tournaments with mixed terms (the duration of each tournament in the series can vary); the Scoring tournament (Winning Mechanic) and also a 2nd (EXTRA) Leaderboard reflecting the player’s overall progress.<br/><br/>Don’t miss out on sharing the huge prize pool from Booongo! Play, enjoy, and win!"
     }
   },
   "tournaments": {
@@ -523,7 +528,7 @@
     ]
   },
   "dropsWinsSlots": {
-    "title": "Upgraded Drops & Wins Slots edition with the €4,000,000 prize pool",
+    "title": "Upgraded Drops & Wins Slots edition",
     "prize": "€4,000,000",
     "text": "Welcome to the new Stage 5 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 17-20 of Weekly Tournaments and Daily Prize Drops with some new games!",
     "textMobile": "Welcome to the new Stage 5 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000!",
@@ -547,7 +552,7 @@
     ]
   },
   "dropsWinsLive": {
-    "title": "Drops and Wins for Live Casino with the €3,000,000 prize pool",
+    "title": "Drops and Wins for Live Casino",
     "prize": "€3,000,000",
     "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!",
     "textMobile": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!",
@@ -578,6 +583,38 @@
       }
     ]
   },
+  "dailyCashHunt": {
+    "title": "Kick start <br/>your summer with <br/>the Daily Cash Hunt",
+    "prize": "€ 60 000",
+    "text": "Ninecasino is pleased to welcome you as a participant in the ”Daily Cash Hunt” Network Tournament Series from Booongo.<br/><br/>The Tournament Series is a unique game promotion introduced by Booongo. It’s a combo of regular tournaments with mixed terms (the duration of each tournament in the series can vary); the Scoring tournament (Winning Mechanic) and also a 2nd (EXTRA) Leaderboard reflecting the player’s overall progress.",
+    "textMobile": "Ninecasino is pleased to welcome you as a participant in the ”Daily Cash Hunt” Network Tournament Series from Booongo.",
+    "terms": [
+      {
+        "title": "It runs between 10.06.2021 0:00 UTC and 22.06.2021 23:00 UTC, and is split as: <br/><br/>",
+        "text": "● 10.06.2021 0:00 UTC to 15.06.2021 23:00 UTC (week 1) <br/>● 17.06.2021 0:00 UTCto 22.06.2021 23:00 UTC (week 2)"
+      },
+      {
+        "title": "Games to play: <br/><br/>",
+        "text": "Hit The Gold, Aztec Pyramid, Magic Ball, Magic Apple, Aztec Sun, Sun Of Egypt 2, Sun Of Egypt, 15 Dragon Pearls, Dragon Pearls, Wolf Saga, 3 Coins, Scarab Temple, Tiger Stone, Super Rich God, Book Of Sun Choice."
+      },
+      {
+        "title": "Prize pool information: <br/><br/>",
+        "text": "The Grand Total Prize Pool is \u200B60,000 EUR \u200Bfor this Campaign combined from several pools by the following structure:<br/><br/>● 30,000 EUR \u200Bfor \u200BWeek 1 \u200B-  4,000 EUR \u200Bfor each Regular Tournament, which is \u200B24,000 EUR in total for \u200B6 tournaments. And 6,000 EUR\u200B for the Series Leaderboard;<br/>● 30,000 EUR \u200Bfor \u200BWeek 2 -  4,000 EUR \u200Bfor each Regular Tournament, which is \u200B24,000 EUR in total for \u200B6 tournaments. And 6,000 EUR\u200B for the Series Leaderboard."
+      },
+      {
+        "title": "Minimum bet requirements: <br/><br/>",
+        "text": "The minimum bet required to qualify is \u200B0.5 EUR\u200B or currency equivalent and the minimum \u200Bnumber of spins\u200B is \u200B100."
+      },
+      {
+        "title": "Additional terms and conditions: <br/><br/>",
+        "text": "The Daily Cash Hunt will have two Leaderboards. The \u200BSeries (Extra) Leaderboard runs in parallel \u200Bwith the In-Game Regular Tournament Leaderboard. Check the website for more information.<br/>HSRM is the highest win-to-bet multiplier and HSRP is the biggest payout equal to the number of assigned points.<br/>The Points to Series Extra Leaderboard \u200Breceived by players are accumulated during all tournaments."
+      },
+      {
+        "title": "Don’t miss out on sharing the huge prize pool from Booongo! Play, enjoy, and win!",
+        "text": ""
+      }
+    ]
+  },
   "supportPages": {
     "termsPage": {
       "title": "Terms & Conditions",
@@ -586,7 +623,7 @@
       "general": {
         "title": "General",
         "text": [
-          "The website www.ninecasino.com (\"Casino\", \"Website\", “Company”, \"We\", \"Us\", \"Our\") is owned and operated by Dux Group N.V. the company registered at Curacao on the 09th day of September, 2020, registration number 155114, located at Perseusweg 27A, Willemstad, Curacao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorised to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling. The payment agent of Dux Group N.V. is a Cyprus company SCARTESU LIMITED, registration number HE 410983, registered address Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus. The governing law of the website is the laws of Curacao.",
+          "The website www.ninecasino.com (\"Casino\", \"Website\", “Company”, \"We\", \"Us\", \"Our\") is owned and operated by Dux Group N.V. the company registered at Curacao on the 09th day of September, 2020, registration number 155114, located at Perseusweg 27A, Willemstad, Curacao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorised to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
           "These Terms and Conditions may be changed by the Casino when such need occurs. We will do our best to notify our players of any significant changes by email. However, we do recommend all players to revisit this page regularly and check for possible changes.",
           "These Terms and Conditions constitute a binding agreement between you and Casino. Players must read these Terms and Conditions entirely before registering an account. If you do not agree with any provision of these Terms and Conditions you must not use or continue to use the Website.",
           "You are able to opt out from receiving offers via emails from Casino. However, we still reserve the right to send you important information regarding your account, despite you being opted out from regular email send-outs."
@@ -983,7 +1020,7 @@
         },
         "offer3": {
           "title": "Make a deposit and enjoy the games",
-          "text": "When you buy Bitcoins, you can deposit them in your GetSlots account and start to play           games.<br />           Or you can use Bitcoin as an investment tool. It is a well-known and fast-growing           investment option.           <br /><br />           We also accept other cryptocurrencies in our casino. You can also make a deposit with           Ethereum, Litecoin and Bitcoin Cash."
+          "text": "When you buy Bitcoins, you can deposit them in your Ninecasino account and start to play           games.<br />           Or you can use Bitcoin as an investment tool. It is a well-known and fast-growing           investment option.           <br /><br />           We also accept other cryptocurrencies in our casino. You can also make a deposit with           Ethereum, Litecoin and Bitcoin Cash."
         }
       }
     },

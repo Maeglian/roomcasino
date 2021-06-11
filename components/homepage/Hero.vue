@@ -232,6 +232,13 @@ export default {
           url: '/tournaments/drops-wins-live',
           linkText: this.$t('buttons.more'),
         },
+        {
+          bg: 'dailyCashHunt',
+          title: this.$t('promotions.dailyCashHunt.title'),
+          text: `<span class="Colored">${this.$t('dailyCashHunt.prize')}</span>`,
+          url: '/tournaments/daily-cash-hunt',
+          linkText: this.$t('buttons.more'),
+        },
       ];
       if (!this.isLoggedIn) {
         slides.splice(1, 1);
