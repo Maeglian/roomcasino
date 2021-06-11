@@ -439,6 +439,11 @@
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play vous donne de plus en plus de chances de vous divertir en passant au niveau supérieur grâce à son nouveau Drops and Wins for Live Casino. Saisissez la chance de gagner une part de l’impressionnant montant de 3 000 000 € de prix en argent!<br/><br/>Aimez-vous les jeux en direct? Cette édition en direct vous ira à coup sûr. Participez aux tournois hebdomadaires  - Roulette, Blackjack, Grande Roue, Baccarat!"
+    },
+    "dailyCashHunt": {
+      "title": "Daily <br/> Cash Hunt",
+      "name": "Chassez 60 000 euros d’argent quotidien cet été!",
+      "text": "Ninecasino a le plaisir de vous accueillir en tant que participant à la série de tournois en réseau « Daily Cash Hunt » de Booongo.<br/>La série de tournois est une promotion de jeu unique introduite par Booongo. Il s’agit d’une combinaison de tournois réguliers avec des durées mixtes (la durée de chaque tournoi de la série peut varier); le tournoi de points (mécanisme de victoire) et également un 2e tableau de classement (EXTRA) reflétant la progression globale du joueur.<br/><br/>Ne manquez pas la chance de profiter de l’énorme cagnotte de Booongo! Jouez, amusez-vous et gagnez!"
     }
   },
   "tournaments": {
@@ -570,6 +575,38 @@
       {
         "title": "De plus:",
         "text": "<strong>How to win:<br/><br/>Tournoi hebdomadaire de roulette<br/>Prix:</strong> 50 000 € au total, répartis sur 1 000 prix<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 2 fois la mise totale de qualification pour se qualifier au tournoi de roulette hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de roulette à chaque nouveau gain consécutif de qualification.<br/><br/>-\tLes mises placées sur des paris à cote 1:1 (Rouge/Noir, Pair/Impair, 1:18/19:36) ne sont pas comptabilisées dans le score du tournoi de roulette hebdomadaire.<br/><br/><strong>Tournoi hebdomadaire de blackjack<br/>Prix:</strong> 25 000 € au total, répartis sur 300 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 10 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de blackjack hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de blackjack à chaque nouveau gain consécutif de qualification.<br/><br/>-\tSeules les mises principales et/ou les mises secondaires peuvent être prises en compte pour le tournoi hebdomadaire de blackjack.<br/><br/><strong>Tournoi hebdomadaire de grande roue<br/>Prix:</strong> 25 000 € au total, répartis sur 600 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de grande roue hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de grande roue à chaque nouveau gain consécutif de qualification.<br/><br/>-\tToutes les mises qualificatives peuvent être prises en compte pour le tournoi hebdomadaire de la grande roue.<br/><br/><strong>Tournoi hebdomadaire de baccara<br/>Prix:</strong> 25 000 € au total, répartis sur 600 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de baccara hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de baccara à chaque nouveau gain consécutif de qualification.<br/><br/>-\tSeules les mises principales (joueur, banquier et égalité) peuvent être prises en compte pour le score du tournoi hebdomadaire de baccara."
+      }
+    ]
+  },
+  "dailyCashHunt": {
+    "title": "Commencez l’été avec <br/>la Daily Cash Hunt",
+    "prize": "€ 60 000",
+    "text": "Ninecasino a le plaisir de vous accueillir en tant que participant à la série de tournois en réseau « Daily Cash Hunt » de Booongo.<br/><br/>La série de tournois est une promotion de jeu unique introduite par Booongo. Il s’agit d’une combinaison de tournois réguliers avec des durées mixtes (la durée de chaque tournoi de la série peut varier); le tournoi de points (mécanisme de victoire) et également un 2e tableau de classement (EXTRA) reflétant la progression globale du joueur.",
+    "textMobile": "Ninecasino a le plaisir de vous accueillir en tant que participant à la série de tournois en réseau « Daily Cash Hunt » de Booongo.",
+    "terms": [
+      {
+        "title": "Le tout se déroule du 10 juin 2021 0 h 00 UTC au 22 juin 2021 23 h 0 UTC, divisé comme suit: <br/><br/>",
+        "text": "● du 10 juin 2021 à 0 h 00 UTC au 15 juin 2021 à 23 h 00 UTC (1ère semaine)<br/>● du 17 juin 2021 à 0 h 00 UTC au 22 juin 2021 à 23 h 00 UTC (2e semaine)"
+      },
+      {
+        "title": "Jeux à jouer : <br/><br/>",
+        "text": "Hit The Gold, Aztec Pyramid, Magic Ball, Magic Apple, Aztec Sun, Sun Of Egypt 2, Sun Of Egypt, 15 Dragon Pearls, Dragon Pearls, Wolf Saga, 3 Coins, Scarab Temple, Tiger Stone, Super Rich God, Book Of Sun Choice."
+      },
+      {
+        "title": "",
+        "text": "La cagnotte totale est de 60 000 EUR pour cette campagne, combinée à plusieurs cagnottes selon la structure suivante:<br/><br/>● 30 000 EUR pour la 1ère semaine – 4 000 EUR pour chaque tournoi régulier, ce qui fait 24 000 EUR au total pour 6 tournois. Et 6 000 EUR pour le classement de la série;<br/>● 30 000 EUR pour la 2e semaine – 4 000 EUR pour chaque tournoi régulier, ce qui fait 24 000 EUR au total pour 6 tournois. Et 6 000 EUR pour le classement de la série."
+      },
+      {
+        "title": "",
+        "text": "La mise minimale requise pour se qualifier est de 0,5 EUR ou l’équivalent en devise. Le nombre minimal de tours est de 100."
+      },
+      {
+        "title": "",
+        "text": "La Daily Cash Hunt aura deux classements. Le classement des séries (Extra) fonctionne en parallèle avec le classement du tournoi régulier intrajeu. Consultez le site Web pour plus de détails.<br/>Le HSRM est le multiplicateur de gain par rapport à la mise le plus élevé. Le HSRP est le gain le plus important égal au nombre de points attribués.<br/>Le HSRM est le multiplicateur de gain par rapport à la mise le plus élevé. Le HSRP est le gain le plus important égal au nombre de points attribués."
+      },
+      {
+        "title": "Ne manquez pas la chance de profiter de l’énorme cagnotte de Booongo! Jouez, amusez-vous et gagnez! ",
+        "text": ""
       }
     ]
   },
@@ -978,7 +1015,7 @@
         },
         "offer3": {
           "title": "Make a deposit and enjoy the games",
-          "text": "When you buy Bitcoins, you can deposit them in your GetSlots account and start to play           games.<br />           Or you can use Bitcoin as an investment tool. It is a well-known and fast-growing           investment option.           <br /><br />           We also accept other cryptocurrencies in our casino. You can also make a deposit with           Ethereum, Litecoin and Bitcoin Cash."
+          "text": "When you buy Bitcoins, you can deposit them in your Ninecasino account and start to play           games.<br />           Or you can use Bitcoin as an investment tool. It is a well-known and fast-growing           investment option.           <br /><br />           We also accept other cryptocurrencies in our casino. You can also make a deposit with           Ethereum, Litecoin and Bitcoin Cash."
         }
       }
     },
