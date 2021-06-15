@@ -1,29 +1,29 @@
 <template>
   <div class="Partners">
-    <client-only>
-      <marquee-text :duration="durationSpeed"
-        ><div class="Partners-Wrapper">
-          <template v-if="countriesLogos[defaultCountry]">
-            <img
-              v-for="(item, i) in countriesLogos[defaultCountry]"
-              :key="`logo-${i}`"
-              class="Partners-Partner"
-              :src="item.logo"
-              :width="item.width"
-            />
-          </template>
-          <template v-else>
-            <img
-              v-for="(item, i) in logos"
-              :key="`logo-${i}`"
-              class="Partners-Partner"
-              :src="item.logo"
-              :width="item.width"
-            />
-          </template>
-        </div>
-      </marquee-text>
-    </client-only>
+    <!--    <client-only>
+      <marquee-text :duration="durationSpeed">-->
+    <div class="Partners-Wrapper">
+      <template v-if="countriesLogos[defaultCountry]">
+        <img
+          v-for="(item, i) in countriesLogos[defaultCountry]"
+          :key="`logo-${i}`"
+          class="Partners-Partner"
+          :src="item.logo"
+          :width="item.width"
+        />
+      </template>
+      <template v-else>
+        <img
+          v-for="(item, i) in logos"
+          :key="`logo-${i}`"
+          class="Partners-Partner"
+          :src="item.logo"
+          :width="item.width"
+        />
+      </template>
+    </div>
+    <!--      </marquee-text>-->
+    <!--    </client-only>-->
   </div>
 </template>
 
@@ -35,57 +35,51 @@ export default {
   data() {
     return {
       logos: {
-        interac: {
-          logo: require('@/assets/img/interac.svg'),
-          width: 60,
+        interacOnline: {
+          logo: require('@/assets/img/interac-online.svg'),
+        },
+        interacEtransfer: {
+          logo: require('@/assets/img/interac-etransfer.svg'),
         },
         instadebit: {
           logo: require('@/assets/img/instadebit.svg'),
-          width: 190,
         },
         idebit: {
           logo: require('@/assets/img/idebit.svg'),
-          width: 80,
         },
         muchbetter: {
-          logo: require('@/assets/img/muchbetter.png'),
-          width: 150,
+          logo: require('@/assets/img/muchbetter.svg'),
         },
         mastercard: {
           logo: require('@/assets/img/mastercard.svg'),
-          width: 60,
+          width: 100,
         },
         visa: {
           logo: require('@/assets/img/visa.svg'),
-          width: 60,
         },
         neosurf: {
           logo: require('@/assets/img/neosurf.svg'),
-          width: 100,
         },
         flexepin: {
           logo: require('@/assets/img/flexepin.png'),
-          width: 80,
         },
         skrill: {
-          logo: require('@/assets/img/skrill.png'),
-          width: 80,
+          logo: require('@/assets/img/skrill.svg'),
         },
         jeton: {
           logo: require('@/assets/img/jeton-logo.svg'),
-          width: 90,
+          width: 100,
         },
         astropay: {
           logo: require('@/assets/img/astropay.svg'),
-          width: 120,
+          width: 100,
         },
         klarna: {
           logo: require('@/assets/img/klarna.svg'),
-          width: 80,
         },
         neteller: {
           logo: require('@/assets/img/neteller.svg'),
-          width: 120,
+          width: 100,
         },
         paysafecard: {
           logo: require('@/assets/img/paysafe.svg'),
@@ -152,22 +146,27 @@ export default {
   }
 
   &-Wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    //display: flex;
+    //flex-wrap: nowrap;
+    //justify-content: flex-start;
+    //align-items: center;
+    display: grid;
+    grid-template-columns: repeat(9, 127px);
+    grid-gap: 10px 9px;
+    justify-items: center;
     align-items: center;
   }
 
   &-Partner {
     flex-shrink: 0;
-    margin-right: 16px;
+    //margin-right: 16px;
 
     @media (min-width: $screen-m) {
-      margin-right: 25px;
+      //margin-right: 25px;
     }
 
     @media (min-width: $screen-xl) {
-      margin-right: 37px;
+      //margin-right: 37px;
     }
   }
 }
