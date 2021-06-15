@@ -190,7 +190,6 @@ export default {
     }
 
     &.nuxt-link-active {
-      //padding: 10px 5px 6px 5px;
       color: var(--color-bg);
       background-color: var(--color-main1);
 
@@ -200,22 +199,20 @@ export default {
         background-color: var(--color-bg);
         border-bottom: none;
         border-left: 8px solid var(--color-main1);
-
-        .NavIcon--stroke {
-          stroke: var(--color-bg);
-        }
-
-        .NavIcon--fill {
-          fill: var(--color-main1);
-        }
       }
 
       .NavIcon--stroke {
         stroke: var(--color-main1);
+        @media (min-width: $screen-l) {
+          stroke: var(--color-bg);
+        }
       }
 
       .NavIcon--fill {
         fill: var(--color-bg);
+        @media (min-width: $screen-l) {
+          fill: var(--color-main1);
+        }
       }
     }
   }
