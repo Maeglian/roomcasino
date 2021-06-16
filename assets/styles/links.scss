@@ -18,11 +18,11 @@
 .TextLink {
   color: var(--color-text-main);
 
-  &:visited {
-    color: -webkit-link;
-  }
-
   &:hover {
     color: var(--color-main1);
+  }
+
+  &:visited {
+    color: var(--color-text-main);
   }
 }

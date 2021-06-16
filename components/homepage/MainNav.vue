@@ -44,6 +44,16 @@
               :item="item"
             />
           </template>
+          <div
+            v-if="isLoggedIn"
+            class="Nav-Item Nav-Name AsideMenu-Link Link-Exit"
+            @click="onClickExitBtn()"
+          >
+            <svg class="AsideMenu-Icon Nav-Icon Icon-Exit" width="22" height="18">
+              <use xlink:href="@/assets/img/icons.svg#exit"></use>
+            </svg>
+            {{ $t('profile.pages.exit') }}
+          </div>
           <button
             v-if="!isLoggedIn && chatIsLoaded"
             class="Nav-Item Nav-Name AsideMenu-Link AsideMenu-Support"
@@ -63,7 +73,7 @@
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
 import GamePanel from '@/components/homepage/GamePanel.vue';
-import { mapGetters, mapMutations, mapState } from 'vuex';
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import { TOURNAMENTS } from '@/config';
 
 export default {
@@ -177,6 +187,10 @@ export default {
   },
   methods: {
     ...mapMutations(['openNav', 'closeNav']),
+    ...mapActions(['logout']),
+    onClickExitBtn() {
+      this.logout().then(() => this.$router.push(this.localePath('/')));
+    },
     onScroll() {
       this.documentIsScrolled = window.scrollY > 0;
     },
@@ -387,6 +401,11 @@ export default {
     }
   }
 
+  .Link-Exit {
+    display: flex;
+    align-items: center;
+  }
+
   &-AuthSection {
     height: auto;
     margin-bottom: 37px;
@@ -411,6 +430,10 @@ export default {
     @media (min-width: $screen-xs) {
       margin: 0 auto;
     }
+  }
+
+  .Icon-Exit {
+    width: 16px;
   }
 }
 </style>

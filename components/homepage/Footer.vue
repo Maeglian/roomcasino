@@ -24,7 +24,7 @@
         <NuxtLink class="Link Footer-Link" :to="localePath('/terms')">
           {{ $t('pages.terms') }}</NuxtLink
         >
-        <NuxtLink class="Link Footer-Link" :to="localePath('/bonus-policy')">
+        <NuxtLink class="Link Footer-Link" :to="localePath('/bonus-terms')">
           {{ $t('pages.bonusPolicy') }}</NuxtLink
         >
         <NuxtLink class="Link Footer-Link" :to="localePath('/responsible-gaming')">
