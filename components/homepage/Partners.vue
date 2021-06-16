@@ -37,18 +37,23 @@ export default {
       logos: {
         interacOnline: {
           logo: require('@/assets/img/interac-online.svg'),
+          width: 100,
         },
         interacEtransfer: {
           logo: require('@/assets/img/interac-etransfer.svg'),
+          width: 100,
         },
         instadebit: {
           logo: require('@/assets/img/instadebit.svg'),
+          width: 100,
         },
         idebit: {
           logo: require('@/assets/img/idebit.svg'),
+          width: 60,
         },
         muchbetter: {
           logo: require('@/assets/img/muchbetter.svg'),
+          width: 130,
         },
         mastercard: {
           logo: require('@/assets/img/mastercard.svg'),
@@ -56,15 +61,19 @@ export default {
         },
         visa: {
           logo: require('@/assets/img/visa.svg'),
+          width: 80,
         },
         neosurf: {
           logo: require('@/assets/img/neosurf.svg'),
+          width: 90,
         },
         flexepin: {
           logo: require('@/assets/img/flexepin.png'),
+          width: 100,
         },
         skrill: {
           logo: require('@/assets/img/skrill.svg'),
+          width: 80,
         },
         jeton: {
           logo: require('@/assets/img/jeton-logo.svg'),
@@ -76,6 +85,7 @@ export default {
         },
         klarna: {
           logo: require('@/assets/img/klarna.svg'),
+          width: 80,
         },
         neteller: {
           logo: require('@/assets/img/neteller.svg'),
@@ -87,11 +97,11 @@ export default {
         },
         volt: {
           logo: require('@/assets/img/volt.svg'),
-          width: 60,
+          width: 50,
         },
         ecashout: {
           logo: require('@/assets/img/ecashout.svg'),
-          width: 60,
+          width: 50,
         },
       },
       countriesLogos: {
@@ -146,27 +156,53 @@ export default {
   }
 
   &-Wrapper {
-    //display: flex;
-    //flex-wrap: nowrap;
-    //justify-content: flex-start;
-    //align-items: center;
     display: grid;
-    grid-template-columns: repeat(9, 127px);
-    grid-gap: 10px 9px;
+    grid-template-columns: repeat(4, 69px);
+    grid-auto-rows: 28px;
+    grid-gap: 4px 4px;
     justify-items: center;
+    justify-content: center;
     align-items: center;
+
+    @media (min-width: $screen-xs) {
+      grid-template-columns: repeat(6, 69px);
+    }
+
+    @media (min-width: $screen-s) {
+      grid-template-columns: repeat(6, 90px);
+      grid-auto-rows: 35px;
+    }
+
+    @media (min-width: $screen-m) {
+      grid-template-columns: repeat(6, 127px);
+      grid-auto-rows: 55px;
+    }
+
+    @media (min-width: $screen-m) {
+      grid-template-columns: repeat(7, 127px);
+      grid-gap: 10px 9px;
+    }
+
+    @media (min-width: $screen-xl) {
+      grid-template-columns: repeat(9, 127px);
+    }
   }
 
   &-Partner {
     flex-shrink: 0;
-    //margin-right: 16px;
+    max-width: 80%;
+    max-height: 90%;
+    opacity: 0.8;
+    filter: grayscale(100%);
 
     @media (min-width: $screen-m) {
-      //margin-right: 25px;
+      max-width: 100%;
+      max-height: 100%;
     }
 
     @media (min-width: $screen-xl) {
-      //margin-right: 37px;
+      max-width: 100%;
+      max-height: 100%;
     }
   }
 }
