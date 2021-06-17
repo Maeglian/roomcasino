@@ -322,7 +322,7 @@ export default {
 
   &-Tab {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     width: 100%;
     padding: 10px 16px;
