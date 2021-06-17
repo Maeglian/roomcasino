@@ -57,7 +57,7 @@ export default {
         },
         mastercard: {
           logo: require('@/assets/img/mastercard.svg'),
-          width: 100,
+          width: 60,
         },
         visa: {
           logo: require('@/assets/img/visa.svg'),
