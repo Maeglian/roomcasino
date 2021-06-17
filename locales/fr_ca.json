@@ -441,7 +441,7 @@
       "text": "Pragmatic Play vous donne de plus en plus de chances de vous divertir en passant au niveau supérieur grâce à son nouveau Drops and Wins for Live Casino. Saisissez la chance de gagner une part de l’impressionnant montant de 3 000 000 € de prix en argent!<br/><br/>Aimez-vous les jeux en direct? Cette édition en direct vous ira à coup sûr. Participez aux tournois hebdomadaires  - Roulette, Blackjack, Grande Roue, Baccarat!"
     },
     "dailyCashHunt": {
-      "title": "Daily <br/> Cash Hunt",
+      "title": "Célébrez<br/> Daily Cash Hunt<br/> la semaine 2",
       "name": "Chassez 60 000 euros d’argent quotidien cet été!",
       "text": "Ninecasino a le plaisir de vous accueillir en tant que participant à la série de tournois en réseau « Daily Cash Hunt » de Booongo.<br/>La série de tournois est une promotion de jeu unique introduite par Booongo. Il s’agit d’une combinaison de tournois réguliers avec des durées mixtes (la durée de chaque tournoi de la série peut varier); le tournoi de points (mécanisme de victoire) et également un 2e tableau de classement (EXTRA) reflétant la progression globale du joueur.<br/><br/>Ne manquez pas la chance de profiter de l’énorme cagnotte de Booongo! Jouez, amusez-vous et gagnez!"
     }
@@ -579,34 +579,26 @@
     ]
   },
   "dailyCashHunt": {
-    "title": "Commencez l’été avec <br/>la Daily Cash Hunt",
+    "title": "Célébrez<br/> Daily Cash Hunt<br/> la semaine 2",
     "prize": "€ 60 000",
-    "text": "Ninecasino a le plaisir de vous accueillir en tant que participant à la série de tournois en réseau « Daily Cash Hunt » de Booongo.<br/><br/>La série de tournois est une promotion de jeu unique introduite par Booongo. Il s’agit d’une combinaison de tournois réguliers avec des durées mixtes (la durée de chaque tournoi de la série peut varier); le tournoi de points (mécanisme de victoire) et également un 2e tableau de classement (EXTRA) reflétant la progression globale du joueur.",
+    "text": "Ninecasino a le plaisir de vous accueillir en tant que participant à la série de tournois en réseau « Daily Cash Hunt » de Booongo.",
     "textMobile": "Ninecasino a le plaisir de vous accueillir en tant que participant à la série de tournois en réseau « Daily Cash Hunt » de Booongo.",
     "terms": [
       {
-        "title": "Le tout se déroule du 10 juin 2021 0 h 00 UTC au 22 juin 2021 23 h 0 UTC, divisé comme suit: <br/><br/>",
-        "text": "● du 10 juin 2021 à 0 h 00 UTC au 15 juin 2021 à 23 h 00 UTC (1ère semaine)<br/>● du 17 juin 2021 à 0 h 00 UTC au 22 juin 2021 à 23 h 00 UTC (2e semaine)"
-      },
-      {
-        "title": "Jeux à jouer : <br/><br/>",
-        "text": "Hit The Gold, Aztec Pyramid, Magic Ball, Magic Apple, Aztec Sun, Sun Of Egypt 2, Sun Of Egypt, 15 Dragon Pearls, Dragon Pearls, Wolf Saga, 3 Coins, Scarab Temple, Tiger Stone, Super Rich God, Book Of Sun Choice."
+        "title": "",
+        "text": "Nous entrons dans la semaine 2 du tournoi - 17.06.2021 0:00 UTC au 22.06.2021 23:00 UTC"
       },
       {
         "title": "",
-        "text": "La cagnotte totale est de 60 000 EUR pour cette campagne, combinée à plusieurs cagnottes selon la structure suivante:<br/><br/>● 30 000 EUR pour la 1ère semaine – 4 000 EUR pour chaque tournoi régulier, ce qui fait 24 000 EUR au total pour 6 tournois. Et 6 000 EUR pour le classement de la série;<br/>● 30 000 EUR pour la 2e semaine – 4 000 EUR pour chaque tournoi régulier, ce qui fait 24 000 EUR au total pour 6 tournois. Et 6 000 EUR pour le classement de la série."
+        "text": "La série de tournois est une promotion de jeu unique introduite par Booongo. Il s’agit d’une combinaison de tournois réguliers avec des durées mixtes (la durée de chaque tournoi de la série peut varier); le tournoi de points (mécanisme de victoire) et également un 2e tableau de classement (EXTRA) reflétant la progression globale du joueur."
+      },
+      {
+        "title": "",
+        "text": "La cagnotte est 30 000 EUR pour la 2e semaine – 4 000 EUR pour chaque tournoi régulier, ce qui fait 24 000 EUR au total pour 6 tournois. Et 6 000 EUR pour le classement de la série."
       },
       {
         "title": "",
         "text": "La mise minimale requise pour se qualifier est de 0,5 EUR ou l’équivalent en devise. Le nombre minimal de tours est de 100."
-      },
-      {
-        "title": "",
-        "text": "La Daily Cash Hunt aura deux classements. Le classement des séries (Extra) fonctionne en parallèle avec le classement du tournoi régulier intrajeu. Consultez le site Web pour plus de détails.<br/>Le HSRM est le multiplicateur de gain par rapport à la mise le plus élevé. Le HSRP est le gain le plus important égal au nombre de points attribués.<br/>Le HSRM est le multiplicateur de gain par rapport à la mise le plus élevé. Le HSRP est le gain le plus important égal au nombre de points attribués."
-      },
-      {
-        "title": "Ne manquez pas la chance de profiter de l’énorme cagnotte de Booongo! Jouez, amusez-vous et gagnez! ",
-        "text": ""
       }
     ]
   },
