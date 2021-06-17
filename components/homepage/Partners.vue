@@ -157,34 +157,24 @@ export default {
 
   &-Wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 69px);
-    grid-auto-rows: 28px;
-    grid-gap: 4px 4px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 35px;
+    grid-gap: 10px 9px;
     justify-items: center;
     justify-content: center;
     align-items: center;
 
     @media (min-width: $screen-xs) {
-      grid-template-columns: repeat(6, 69px);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     @media (min-width: $screen-s) {
-      grid-template-columns: repeat(6, 90px);
-      grid-auto-rows: 35px;
-    }
-
-    @media (min-width: $screen-m) {
-      grid-template-columns: repeat(6, 127px);
+      grid-template-columns: repeat(6, 1fr);
       grid-auto-rows: 55px;
     }
 
-    @media (min-width: $screen-m) {
-      grid-template-columns: repeat(7, 127px);
-      grid-gap: 10px 9px;
-    }
-
     @media (min-width: $screen-xl) {
-      grid-template-columns: repeat(9, 127px);
+      grid-template-columns: repeat(9, 1fr);
     }
   }
 
