@@ -199,11 +199,6 @@ export default {
       max-width: 100%;
       max-height: 100%;
     }
-
-    @media (min-width: $screen-xl) {
-      max-width: 100%;
-      max-height: 100%;
-    }
   }
 }
 </style>
