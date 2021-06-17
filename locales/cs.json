@@ -436,7 +436,7 @@
       "text": "Pragmatic Play vám nabízí stále více příležitostí zábavy na nové úrovni díky nové Drops and Wins for Live Casino. Nenechte si ujít příležitost vyhrát podíl z neuvěřitelných 3 000 000 eur v hotovosti!<br/><br/>Máte rádi živé hry? Pak je tato živá akce určena právě pro vás. Zúčastněte se týdenních turnajů – ruleta, blackjack, Mega Wheel, Baccarat!"
     },
     "dailyCashHunt": {
-      "title": "Daily <br/> Cash Hunt",
+      "title": "Oslavte<br/> Daily Cash Hunt<br/>  2. týden",
       "name": "TOTO LÉTO ZKUSTE VYSLEDOVAT 60 K VYPLÁCENÉ JAKO DENNÍ HOTOVOST!",
       "text": "Casino Ninecasino vás s potěšením vítá jako účastníka síťového turnaje „Daily Cash Hunt“, který pořádá Booongo.<br/>Turnajová série je unikátní herní promo akce, kterou pořádá Booongo. Je to kombinace pravidelných turnajů s různými podmínkami (jednotlivé turnaje ze série mohou mít odlišnou délku); bodování turnaje (vítězný mechanik) a také 2. (EXTRA) výsledková tabulka pro celkové postavení hráče v turnaji.<br/><br/>Nenechte si ujít příležitost získat podíl na obrovském prize poolu od Booongo! Hrajte, bavte se a vyhrávejte!"
     }
@@ -574,34 +574,26 @@
     ]
   },
   "dailyCashHunt": {
-    "title": "Nastartujte léto <br/>s Daily Cash Hunt",
+    "title": "Oslavte<br/> Daily Cash Hunt<br/>  2. týden",
     "prize": "€ 60 000",
-    "text": "Ninecasino vás s potěšením vítá jako účastníka síťového turnaje „Daily Cash Hunt“, který pořádá Booongo.<br/><br/>Turnajová série je unikátní herní promo akce, kterou pořádá Booongo. Je to kombinace pravidelných turnajů s různými podmínkami (jednotlivé turnaje ze série mohou mít odlišnou délku); bodování turnaje (vítězný mechanik) a také 2. (EXTRA) výsledková tabulka pro celkové postavení hráče v turnaji.",
+    "text": "Ninecasino vás s potěšením vítá jako účastníka síťového turnaje „Daily Cash Hunt“, který pořádá Booongo.",
     "textMobile": "Ninecasino vás s potěšením vítá jako účastníka síťového turnaje „Daily Cash Hunt“, který pořádá Booongo.",
     "terms": [
       {
-        "title": "Turnaj se uskuteční od 10. června 2021 0:00 UTC do 22. června 2021 23:00 UTC: <br/><br/>",
-        "text": "● 10. 6. 2021 0:00 UTC až 15. 6. 2021 23:00 UTC (1. týden) <br/>● 17. 6. 2021 0:00 UTC až 22. 6. 2021 23:00 UTC (2. týden)"
-      },
-      {
-        "title": "Zapojené hry:<br/><br/>",
-        "text": "Hit The Gold, Aztec Pyramid, Magic Ball, Magic Apple, Aztec Sun, Sun Of Egypt 2, Sun Of Egypt, 15 Dragon Pearls, Dragon Pearls, Wolf Saga, 3 Coins, Scarab Temple, Tiger Stone, Super Rich God, Book Of Sun Choice."
+        "title": "",
+        "text": "2. týden se uskuteční od 17.06.2021 0:00 UTC do 22.06.2021 23:00 UTC."
       },
       {
         "title": "",
-        "text": "Úžasný celkový prize pool pro tuto kampaň činí 60 000 eur a tvoří jej několik dílčích prize poolů s níže uvedenými parametry:<br/><br/>● 30 000 eur pro 1. týden – 4 000 eur pro každý regulérní turnaj, což činí celkem 24 000 eur pro 6 turnajů. A 6 000 eur pro výsledkovou tabulku série;<br/>● 30 000 eur pro 2. týden – 4 000 eur pro každý regulérní turnaj, což činí celkem 24 000 eur pro 6 turnajů. A 6 000 eur pro výsledkovou tabulku série."
+        "text": "Turnajová série je unikátní herní promo akce, kterou pořádá Booongo. Je to kombinace pravidelných turnajů s různými podmínkami (jednotlivé turnaje ze série mohou mít odlišnou délku); bodování turnaje (vítězný mechanik) a také 2. (EXTRA) výsledková tabulka pro celkové postavení hráče v turnaji."
+      },
+      {
+        "title": "",
+        "text": "Získejte šanci podělit se o výhru ve výši 30 000 eur pro 2. týden – 4 000 eur pro každý regulérní turnaj, což činí celkem \u200B24 000 eur pro \u200B6 turnajů. A 6 000 eur\u200B pro výsledkovou tabulku série."
       },
       {
         "title": "",
         "text": "Minimální sázka požadovaná pro účast je 0,5 eura nebo ekvivalent v jiné měně, minimální počet spinů je 100."
-      },
-      {
-        "title": "",
-        "text": "Daily Cash Hunt bude mít dvě výsledkové tabulky. Výsledková tabulka série (Extra) je vedena souběžně s průběžnou výsledkovou tabulkou regulérního turnaje. Více informací naleznete na webových stránkách.<br/>HSRM (největší násobek v jednom kole) je největší násobek mezi sázkou a výhrou a HSRP (největší výplata v jednom kole) je největší peněžitá výplata odpovídající počtu dosažených bodů.<br/> Nenechte si ujít příležitost získat podíl na obrovském prize poolu od Booongo! Hrajte, bavte se a vyhrávejte!"
-      },
-      {
-        "title": "Don’t miss out on sharing the huge prize pool from Booongo! Play, enjoy, and win!",
-        "text": ""
       }
     ]
   },

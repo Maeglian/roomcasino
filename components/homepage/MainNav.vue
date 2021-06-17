@@ -404,6 +404,10 @@ export default {
   .Link-Exit {
     display: flex;
     align-items: center;
+    margin-bottom: 100px;
+    @media (min-width: $screen-xs) {
+      justify-content: center;
+    }
   }
 
   &-AuthSection {
