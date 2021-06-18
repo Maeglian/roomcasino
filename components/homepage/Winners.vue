@@ -3,7 +3,12 @@
     <div class="Winners-Section">
       <div class="Title Title--type-h2 Winners-Title">{{ $t('homepage.lastWinners') }}</div>
       <div class="Table TableBordered Winners-Table">
-        <div v-for="(item, i) in lastWinnerList" :key="`lastWinner_${i}`" class="Table-Row">
+        <div
+          v-for="(item, i) in lastWinnerList"
+          :key="`lastWinner_${i}`"
+          class="Table-Row Winners-Winner"
+          @click="onClickWinner(item)"
+        >
           <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" :src="item.gameIconUrl" alt="" />
           </div>
@@ -20,7 +25,12 @@
     <div class="Winners-Section">
       <div class="Title Title--type-h2 Winners-Title">{{ $t('homepage.topWinners') }}</div>
       <div class="Table Table--bordered Winners-Table">
-        <div v-for="(item, i) in topWinnerList" :key="`topWinner_${i}`" class="Table-Row">
+        <div
+          v-for="(item, i) in topWinnerList"
+          :key="`topWinner_${i}`"
+          class="Table-Row Winners-Winner"
+          @click="onClickWinner(item)"
+        >
           <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" :src="item.gameIconUrl" alt="" />
           </div>
@@ -39,47 +49,20 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
+import openGame from '@/mixins/openGame';
 
 export default {
   name: 'Winners',
-  data() {
-    return {
-      items: [
-        {
-          name: 'Wild98',
-          game: 'Divine Lotus',
-          imgUrl: 'https://static.egamings.com/games/thunderkick/divine_lotus.jpg',
-          sum: '11.574.60',
-        },
-        {
-          name: 'Dakamu',
-          game: "Jin Chan's Pond of Riches",
-          imgUrl: 'https://static.egamings.com/games/thunderkick/jin_chans_pond_of_riches.jpg',
-          sum: '8.474.25',
-        },
-        {
-          name: 'Ioana Juliana',
-          game: 'Dragon Horn',
-          imgUrl: 'https://static.egamings.com/games/thunderkick/dragon_horn.jpg',
-          sum: '6.274.48',
-        },
-        {
-          name: 'Strike',
-          game: 'Sword of Khans',
-          imgUrl: 'https://static.egamings.com/games/thunderkick/sword_of_khans.jpg',
-          sum: '1.933.29',
-        },
-        {
-          name: 'Farisha',
-          game: 'Ravens Eye',
-          imgUrl: 'https://static.egamings.com/games/thunderkick/ravens_eye.jpg',
-          sum: '843.90',
-        },
-      ],
-    };
-  },
+  mixins: [showAuthDialog, openGame],
   computed: {
-    ...mapState(['topWinnerList', 'lastWinnerList', 'topWinnerListError', 'lastWinnerListError']),
+    ...mapState([
+      'topWinnerList',
+      'lastWinnerList',
+      'topWinnerListError',
+      'lastWinnerListError',
+      'defaultGames',
+    ]),
   },
   mounted() {
     this.lastWinnersTimer = setInterval(this.getLastWinnerList, 10000, { limit: 5 });
@@ -91,6 +74,13 @@ export default {
   },
   methods: {
     ...mapActions(['getTopWinnerList', 'getLastWinnerList']),
+    onClickWinner(winner) {
+      const game = this.defaultGames.find(g => g.gameId === winner.gameId);
+      if (!game) return;
+      const bg = game.backgroundUrl;
+      const producer = game.gameProducer;
+      this.openGamePage({ id: winner.gameId, demo: false, bg }, producer);
+    },
   },
 };
 </script>
@@ -140,6 +130,10 @@ export default {
 
   &-Title {
     margin-bottom: 19px;
+  }
+
+  &-Winner {
+    cursor: pointer;
   }
 
   &-Avatar {
