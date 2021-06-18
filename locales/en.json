@@ -185,7 +185,7 @@
     "heroBanner": {
       "deposit1": {
         "title": "Daily cashback  <br/>  up to <span class=\"Colored\">20%!</span>",
-        "text": "Make first deposit<br/> and get <span class=\"Colored\">100%</span><br/> up to <span class=\"Colored\">$ 150</span> + <span class=\"Colored\">150 free spins</span>"
+        "text": "Make your first deposit<br/> and get <span class=\"Colored\">100%</span><br/> up to <span class=\"Colored\">$150</span> + <span class=\"Colored\">150 free spins</span>"
       },
       "deposit2": {
         "title": "Second deposit<br/> bonus",
@@ -200,7 +200,7 @@
         "text": "<span class=\"Colored\">40% up to $150</span>"
       },
       "highroller": {
-        "title": "Highroller<br/> bonus",
+        "title": "High roller<br/> bonus",
         "text": "<span class=\"Colored\">up to $500</span>"
       }
     },
@@ -424,8 +424,8 @@
     },
     "highroller": {
       "upTo": "up to $500",
-      "name": "Highroller bonus",
-      "text": "Are you fond of making high bets? Then we know what you need. Once a month get a special 30% highroller bonus up to $500 on your deposit starting from $300."
+      "name": "High roller bonus",
+      "text": "Are you fond of making high bets? Then we know what you need. Once a month get a special 30% high roller bonus up to $500 on your deposit starting from $300."
     },
     "knockoutFootball": {
       "title": "Knockout<br/>Football<br/>Rush",
