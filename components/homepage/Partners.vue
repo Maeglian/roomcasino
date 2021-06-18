@@ -8,8 +8,8 @@
           v-for="(item, i) in countriesLogos[defaultCountry]"
           :key="`logo-${i}`"
           class="Partners-Partner"
-          :src="item.logo"
-          :width="item.width"
+          :src="logos[item].logo"
+          :width="logos[item].width"
         />
       </template>
       <template v-else>
