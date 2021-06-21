@@ -31,7 +31,7 @@ jobs:
       # Собираем приложение
       - name: Build Appliction
         env:
-          GIT_COMMIT_SHA: env.GITHUB_SHA
+          GIT_COMMIT_SHA: ${GITHUB_SHA}
         run: $BUILD_SCRIPT
       # Доставляем собранное приложение на сервер
       - name: Deploy to Server
