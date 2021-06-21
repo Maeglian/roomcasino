@@ -1,3 +1,5 @@
 [defaults]
-org = 'wakeapp-3j'
-project = 'ninecasino'
+org = wakeapp-3j
+project = ninecasino
+[auth]
+token = bdc2f98ad27c11eb983a0666adabdc2f
