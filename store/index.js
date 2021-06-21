@@ -943,6 +943,7 @@ export const actions = {
       commit('setGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error('apiError'));
     } finally {
       commit('setGamesAreLoaded');
     }
