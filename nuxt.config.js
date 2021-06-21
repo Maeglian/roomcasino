@@ -84,8 +84,7 @@ export default {
   buildModules: [],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/style-resources', '@nuxtjs/gtm', 'nuxt-i18n'],
-
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/gtm', 'nuxt-i18n', '@nuxtjs/sentry'],
   i18n: {
     locales: [
       {
@@ -133,6 +132,17 @@ export default {
   gtm: {
     enabled: process.env.NUXT_ENV_MODE === 'production',
     id: 'GTM-WGL6JVV',
+  },
+
+  sentry: {
+    // dsn: process.env.SENTRY_DSN,
+    // disabled: process.env.NUXT_ENV_MODE !== 'production',
+    dsn: 'https://6ab622b3618044648f19bba6d10be9fa@o739395.ingest.sentry.io/5785756',
+    publishRelease: true,
+    sourceMapStyle: 'hidden-source-map',
+    config: {
+      release: process.env.GIT_COMMIT_SHA,
+    },
   },
 
   styleResources: {
