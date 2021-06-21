@@ -8,7 +8,7 @@
     "build:roomcasino": "NUXT_ENV_MODE=production NUXT_ENV_SLUG=roomcasino nuxt build",
     "build:dev": "NUXT_ENV_MODE=dev nuxt build",
     "build:devRoomcasino": "NUXT_ENV_MODE=dev NUXT_ENV_SLUG=roomcasino nuxt build",
-    "build:stage": "GIT_COMMIT_SHA=process.env.GIT_COMMIT_SHA NUXT_ENV_MODE=stage nuxt generate",
+    "build:stage": "NUXT_ENV_MODE=stage nuxt generate",
     "build:sandbox": "NUXT_ENV_MODE=sandbox nuxt generate",
     "start": "nuxt start",
     "start:sandbox": "NUXT_ENV_MODE=sandbox nuxt start",
