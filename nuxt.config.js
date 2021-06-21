@@ -145,7 +145,7 @@ export default {
       ExtraErrorData: {},
       ReportingObserver: {},
       RewriteFrames: {},
-      Vue: { attachProps: true, logErrors: this.options.dev },
+      Vue: { attachProps: true, logErrors: true },
       InboundFilters: {},
       FunctionToString: {},
       TryCatch: {},
