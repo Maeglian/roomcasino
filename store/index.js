@@ -937,13 +937,12 @@ export const actions = {
   async getGames({ commit, state }, payload = {}) {
     commit('setGamesAreLoading');
     try {
-      const res = await axios.get(`${API_HOST}/gameSList`, {
+      const res = await axios.get(`${API_HOST}/gameList`, {
         params: { ...payload, platform: state.platform },
       });
       commit('setGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
-      this.$sentry.captureException(new Error('apiError'));
     } finally {
       commit('setGamesAreLoaded');
     }
