@@ -1025,7 +1025,7 @@ export const actions = {
     try {
       const res = await axios.post(
         `${API_HOST}/register`,
-        payload,
+        { payload },
         reqConfig(commit, 'setAuthError'),
       );
       if (!state.authError) {
@@ -1059,7 +1059,7 @@ export const actions = {
 
   async login({ commit }, payload) {
     try {
-      const res = await axios.post(`${API_HOST}/login`, { payload });
+      const res = await axios.post(`${API_HOST}/login`, payload);
       if (res.data.code === 10002) {
         commit('setAuthError', res.data.message);
       } else {
