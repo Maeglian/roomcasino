@@ -140,23 +140,6 @@ export default {
     dsn: 'https://6ab622b3618044648f19bba6d10be9fa@o739395.ingest.sentry.io/5785756',
     publishRelease: true,
     sourceMapStyle: 'hidden-source-map',
-    clientIntegrations: {
-      Dedupe: {},
-      ExtraErrorData: {},
-      ReportingObserver: {},
-      RewriteFrames: {},
-      Vue: { attachProps: true, logErrors: true },
-      InboundFilters: {},
-      FunctionToString: {},
-      TryCatch: {},
-      Breadcrumbs: {
-        xhr: true,
-        fetch: true,
-      },
-      GlobalHandlers: {},
-      LinkedErrors: {},
-      UserAgent: {},
-    },
     config: {
       release: process.env.GITHUB_SHA,
     },
