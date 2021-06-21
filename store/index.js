@@ -937,12 +937,13 @@ export const actions = {
   async getGames({ commit, state }, payload = {}) {
     commit('setGamesAreLoading');
     try {
-      const res = await axios.get(`${API_HOST}/gameSList`, {
+      const res = await axios.get(`${API_HOST}/gameList`, {
         params: { ...payload, platform: state.platform },
       });
       commit('setGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setGamesAreLoaded');
     }
@@ -957,6 +958,7 @@ export const actions = {
       commit('setNewGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setNewGamesAreLoading', false);
     }
@@ -971,6 +973,7 @@ export const actions = {
       commit('setLiveGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setLiveGamesAreLoading', false);
     }
@@ -983,6 +986,7 @@ export const actions = {
       commit('setTournamentGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setTournamentGamesAreLoading', false);
     }
@@ -997,6 +1001,7 @@ export const actions = {
       commit('setRecentGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setGamesAreLoaded');
     }
@@ -1009,6 +1014,7 @@ export const actions = {
       commit('setDefaultGames', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setDefaultGamesAreLoaded');
     }
@@ -1033,6 +1039,7 @@ export const actions = {
       }
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
       Cookie.remove('token');
     }
   },
@@ -1063,6 +1070,7 @@ export const actions = {
       }
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
       Cookie.remove('token');
     }
   },
@@ -1075,6 +1083,7 @@ export const actions = {
       commit('setUser', user);
     } catch (e) {
       commit('setAuthError', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setProfileIsLoaded');
     }
@@ -1091,6 +1100,7 @@ export const actions = {
       this.$router.push(this.$i18n.localePath('/'));
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1101,6 +1111,7 @@ export const actions = {
       commit('setCountriesList', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1111,6 +1122,7 @@ export const actions = {
       commit('setPhoneCodeList', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1121,6 +1133,7 @@ export const actions = {
       commit('setCurrencyList', res.data.data.currencyList);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
   async getCategoriesList({ commit }) {
@@ -1130,6 +1143,7 @@ export const actions = {
       commit('setCategories', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
   async getBillingSession({ state, commit }) {
@@ -1147,6 +1161,7 @@ export const actions = {
       commit('setBillingSession', res.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
       throw e;
     } finally {
       commit('setBillingSessionIsLoaded');
@@ -1172,6 +1187,7 @@ export const actions = {
       }
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1184,6 +1200,7 @@ export const actions = {
       );
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1195,6 +1212,7 @@ export const actions = {
       dispatch('getLimits');
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1206,6 +1224,7 @@ export const actions = {
       dispatch('getProfile');
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setProfileIsUpdated');
     }
@@ -1221,6 +1240,7 @@ export const actions = {
       );
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setProfileIsUpdated');
     }
@@ -1233,6 +1253,7 @@ export const actions = {
       commit('setGameProducerList', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1243,6 +1264,7 @@ export const actions = {
       commit('setLimits', limits);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1252,6 +1274,7 @@ export const actions = {
       await axios.put(`${API_HOST}/limit`, payload, reqConfig(commit, 'setCreateLimitError'));
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1264,6 +1287,7 @@ export const actions = {
       );
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1281,6 +1305,7 @@ export const actions = {
       }
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setHistoryListIsLoaded');
     }
@@ -1300,6 +1325,7 @@ export const actions = {
       }
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setHistoryListIsLoaded');
     }
@@ -1319,6 +1345,7 @@ export const actions = {
       }
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setHistoryListIsLoaded');
     }
@@ -1338,6 +1365,7 @@ export const actions = {
       }
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setHistoryListIsLoaded');
     }
@@ -1351,6 +1379,7 @@ export const actions = {
       commit('setBonusList', bonuses);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setBonusListIsLoaded');
     }
@@ -1363,6 +1392,7 @@ export const actions = {
       commit('setFreeSpinList', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setFreeSpinListIsLoaded');
     }
@@ -1380,6 +1410,7 @@ export const actions = {
       commit('setDepositNum', depositNum);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setAvailableBonusListIsLoaded');
     }
@@ -1393,6 +1424,7 @@ export const actions = {
       commit('setAvailableFreeSpinList', bonuses);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setAvailableFreeSpinListIsLoaded');
     }
@@ -1404,6 +1436,7 @@ export const actions = {
       await axios.delete(`${API_HOST}/bonus/${id}`, reqConfig(commit, 'setDeleteBonusError'));
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1413,6 +1446,7 @@ export const actions = {
       await axios.delete(`${API_HOST}/freeSpin/${id}`, reqConfig(commit, 'setDeleteBonusError'));
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1426,6 +1460,7 @@ export const actions = {
       );
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1435,6 +1470,7 @@ export const actions = {
       await axios.post(`${API_HOST}/passwordRestore`, payload, reqConfig(commit, 'setServerError'));
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setPageDataIsLoaded');
     }
@@ -1450,6 +1486,7 @@ export const actions = {
       );
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setPageDataIsLoaded');
     }
@@ -1467,6 +1504,7 @@ export const actions = {
       commit('setEmailIsConfirmed');
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setEmailConfirmIsDone');
     }
@@ -1479,6 +1517,7 @@ export const actions = {
       commit('setUserDocumentList', res.data.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setPageDataIsLoaded');
     }
@@ -1493,6 +1532,7 @@ export const actions = {
       commit('setOriginalFile', res.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setOriginalFileIsLoaded');
     }
@@ -1503,6 +1543,7 @@ export const actions = {
       await axios.delete(`${API_HOST}/document/${id}`);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1514,6 +1555,7 @@ export const actions = {
       commit('setDefaultCurrency', res.data.data.currency);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     }
   },
 
@@ -1527,6 +1569,7 @@ export const actions = {
       commit('setTopWinnerList', res.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setTopWinnerListIsLoading', false);
     }
@@ -1542,6 +1585,7 @@ export const actions = {
       commit('setLastWinnerList', res.data);
     } catch (e) {
       commit('pushErrors', e);
+      this.$sentry.captureException(new Error(e));
     } finally {
       commit('setLastWinnerListIsLoading', false);
     }
