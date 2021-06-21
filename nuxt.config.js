@@ -141,7 +141,7 @@ export default {
     publishRelease: true,
     sourceMapStyle: 'hidden-source-map',
     config: {
-      release: process.env.GIT_COMMIT_SHA,
+      release: process.env.GITHUB_SHA,
     },
   },
 
