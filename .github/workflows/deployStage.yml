@@ -30,8 +30,6 @@ jobs:
         run: npm i
       # Собираем приложение
       - name: Build Appliction
-        env:
-          GITHUB_SHA: ${{ env.GITHUB_SHA::6 }}
         run: $BUILD_SCRIPT
       # Доставляем собранное приложение на сервер
       - name: Deploy to Server
