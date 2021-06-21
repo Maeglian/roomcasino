@@ -937,7 +937,7 @@ export const actions = {
   async getGames({ commit, state }, payload = {}) {
     commit('setGamesAreLoading');
     try {
-      const res = await axios.get(`${API_HOST}/gameList`, {
+      const res = await axios.get(`${API_HOST}/gameSList`, {
         params: { ...payload, platform: state.platform },
       });
       commit('setGames', res.data.data);
@@ -1059,7 +1059,7 @@ export const actions = {
 
   async login({ commit }, payload) {
     try {
-      const res = await axios.post(`${API_HOST}/login`, payload);
+      const res = await axios.post(`${API_HOST}/login`, { payload });
       if (res.data.code === 10002) {
         commit('setAuthError', res.data.message);
       } else {
