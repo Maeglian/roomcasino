@@ -149,13 +149,13 @@ export default {
       InboundFilters: {},
       FunctionToString: {},
       TryCatch: {},
-      Breadcrumbs: {},
+      Breadcrumbs: {
+        xhr: true,
+        fetch: true,
+      },
       GlobalHandlers: {},
       LinkedErrors: {},
       UserAgent: {},
-      CaptureConsole: {
-        levels: ['warn', 'error'],
-      },
     },
     config: {
       release: process.env.GITHUB_SHA,
