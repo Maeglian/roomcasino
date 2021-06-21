@@ -153,7 +153,9 @@ export default {
       GlobalHandlers: {},
       LinkedErrors: {},
       UserAgent: {},
-      CaptureConsole: {},
+      CaptureConsole: {
+        levels: ['warn', 'error'],
+      },
     },
     config: {
       release: process.env.GITHUB_SHA,
