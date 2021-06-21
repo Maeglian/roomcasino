@@ -25,7 +25,7 @@
             <img class="Winners-Avatar" :src="item.gameIconUrl" alt="" />
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Name">
-            {{ itemN.nickname }} just won<br />
+            {{ item.nickname }} just won<br />
             in <span class="Winners-Game">{{ item.gameName }}</span>
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Money">
