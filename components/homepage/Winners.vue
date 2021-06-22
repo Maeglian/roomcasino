@@ -74,7 +74,6 @@ export default {
   },
   methods: {
     ...mapActions('games', ['getTopWinnerList', 'getLastWinnerList']),
-    ...mapActions(['getTopWinnerList', 'getLastWinnerList']),
     onClickWinner(winner) {
       const game = this.defaultGames.find(g => g.gameId === winner.gameId);
       if (!game) return;
