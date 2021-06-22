@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     onClickOutside(e) {
-      if (!e.target.closest('.LangSwitcher-ActiveLang')) this.isOpen = false;
+      if (e.target && !e.target.closest('.LangSwitcher-ActiveLang')) this.isOpen = false;
     },
   },
 };
