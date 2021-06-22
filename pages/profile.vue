@@ -299,6 +299,10 @@ export default {
     &--currency {
       width: 230px;
     }
+
+    .BaseDropdown-ActiveItem {
+      background: var(--color-bg);
+    }
   }
 
   &-Datepicker {
