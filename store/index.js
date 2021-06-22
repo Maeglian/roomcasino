@@ -5,33 +5,26 @@ import { BILLING_PROVIDER_ID, API_HOST } from '../config';
 const Cookie = process.client ? require('js-cookie') : undefined;
 const cookieparser = process.server ? require('cookieparser') : undefined;
 
-const reqConfig = (func = 'commit', funcName = 'setServerError') => ({
-  transformResponse: [
-    data => {
-      let res;
-      let errorPayload;
+const jsonInterceptor = [
+  response => {
+    if (response.headers['x-meta-count'])
+      return { data: response.data.data, count: response.headers['x-meta-count'] };
+    return response.data;
+  },
+  error => {
+    return Promise.reject(
+      (error.response.data.data && error.response.data.data.message) || error.response.data.message,
+    );
+  },
+];
 
-      try {
-        res = JSON.parse(data);
-      } catch (error) {
-        throw Error(`[requestClient] Error parsing response JSON data - ${JSON.stringify(error)}`);
-      }
+function jsonClient() {
+  const client = axios.create();
+  client.interceptors.response.use(...jsonInterceptor);
+  return client;
+}
 
-      if (res.code === 0) {
-        return res.data;
-      }
-
-      if (funcName === 'pushNotificationAlert') {
-        errorPayload = {
-          type: 'error',
-          text: res.message,
-        };
-      } else errorPayload = res.message;
-
-      func(funcName, errorPayload);
-    },
-  ],
-});
+export const http = jsonClient();
 
 export const state = () => ({
   chatIsLoaded: false,
@@ -928,7 +921,7 @@ export const actions = {
           cookiesPopup = parsed.seenCookiesPopup;
           // eslint-disable-next-line no-empty
         } catch (e) {}
-        axios.defaults.headers.common['X-Auth-Token'] = token;
+        http.defaults.headers.common['X-Auth-Token'] = token;
         commit('setToken', token);
         commit('setNeedsCookiesPopup', !cookiesPopup);
       }
@@ -937,12 +930,11 @@ export const actions = {
   async getGames({ commit, state }, payload = {}) {
     commit('setGamesAreLoading');
     try {
-      const res = await axios.get(`${API_HOST}/gameSList`, {
+      const res = await http.get(`${API_HOST}/gameList`, {
         params: { ...payload, platform: state.platform },
       });
-      commit('setGames', res.data.data);
+      commit('setGames', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setGamesAreLoaded');
@@ -952,12 +944,11 @@ export const actions = {
   async getNewGames({ commit, state }) {
     commit('setNewGamesAreLoading', true);
     try {
-      const res = await axios.get(`${API_HOST}/gameList`, {
+      const res = await http.get(`${API_HOST}/gameList`, {
         params: { category: 'new', platform: state.platform },
       });
-      commit('setNewGames', res.data.data);
+      commit('setNewGames', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setNewGamesAreLoading', false);
@@ -967,12 +958,11 @@ export const actions = {
   async getLiveGames({ commit, state }) {
     commit('setLiveGamesAreLoading', true);
     try {
-      const res = await axios.get(`${API_HOST}/gameList`, {
+      const res = await http.get(`${API_HOST}/gameList`, {
         params: { category: 'live', platform: state.platform },
       });
-      commit('setLiveGames', res.data.data);
+      commit('setLiveGames', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setLiveGamesAreLoading', false);
@@ -982,10 +972,9 @@ export const actions = {
   async getTournamentGames({ commit, state }, params) {
     commit('setTournamentGamesAreLoading', true);
     try {
-      const res = await axios.get(`${API_HOST}/gameList`, { params, platform: state.platform });
-      commit('setTournamentGames', res.data.data);
+      const res = await http.get(`${API_HOST}/gameList`, { params, platform: state.platform });
+      commit('setTournamentGames', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setTournamentGamesAreLoading', false);
@@ -995,12 +984,11 @@ export const actions = {
   async getRecentGames({ commit, state }, payload = {}) {
     commit('setGamesAreLoading');
     try {
-      const res = await axios.get(`${API_HOST}/gameList`, {
+      const res = await http.get(`${API_HOST}/gameList`, {
         params: { ...payload, recent: 1, platform: state.platform },
       });
-      commit('setRecentGames', res.data.data);
+      commit('setRecentGames', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setGamesAreLoaded');
@@ -1010,35 +998,28 @@ export const actions = {
   async getDefaultGames({ commit, state }) {
     commit('setDefaultGamesAreLoading');
     try {
-      const res = await axios.get(`${API_HOST}/gameList`, { params: { platform: state.platform } });
-      commit('setDefaultGames', res.data.data);
+      const res = await http.get(`${API_HOST}/gameList`, { params: { platform: state.platform } });
+      commit('setDefaultGames', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setDefaultGamesAreLoaded');
     }
   },
 
-  async registerUser({ state, commit, dispatch }, payload) {
+  async registerUser({ commit, dispatch }, payload) {
     commit('setAuthRequest');
     try {
-      const res = await axios.post(
-        `${API_HOST}/register`,
-        { payload },
-        reqConfig(commit, 'setAuthError'),
-      );
-      if (!state.authError) {
-        commit('setAuthSuccess');
-        const { token } = res.data;
-        commit('setToken', token);
-        Cookie.set('token', token);
-        axios.defaults.headers.common['X-Auth-Token'] = token;
-        dispatch('getProfile');
-        dispatch('getAvailableBonusList');
-      }
+      const res = await http.post(`${API_HOST}/register`, { payload });
+      commit('setAuthSuccess');
+      const { token } = res.data;
+      commit('setToken', token);
+      Cookie.set('token', token);
+      http.defaults.headers.common['X-Auth-Token'] = token;
+      dispatch('getProfile');
+      dispatch('getAvailableBonusList');
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setAuthError', e);
       this.$sentry.captureException(new Error(e));
       Cookie.remove('token');
     }
@@ -1059,17 +1040,16 @@ export const actions = {
 
   async login({ commit }, payload) {
     try {
-      const res = await axios.post(`${API_HOST}/login`, payload);
+      const res = await http.post(`${API_HOST}/login`, payload);
       if (res.data.code === 10002) {
-        commit('setAuthError', res.data.message);
+        commit('setAuthError', res.message);
       } else {
-        const { token } = res.data.data;
+        const { token } = res.data;
         commit('setToken', token);
         Cookie.set('token', token);
-        axios.defaults.headers.common['X-Auth-Token'] = token;
+        http.defaults.headers.common['X-Auth-Token'] = token;
       }
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
       Cookie.remove('token');
     }
@@ -1078,8 +1058,8 @@ export const actions = {
   async getProfile({ commit }) {
     commit('setProfileIsLoading');
     try {
-      const res = await axios.get(`${API_HOST}/profile`);
-      const user = res.data.data;
+      const res = await http.get(`${API_HOST}/profile`);
+      const user = res.data;
       commit('setUser', user);
     } catch (e) {
       commit('setAuthError', e);
@@ -1092,14 +1072,13 @@ export const actions = {
   async logout({ commit }, isAuthError = false) {
     try {
       // eslint-disable-next-line no-underscore-dangle
-      if (!isAuthError) await axios.post(`${API_HOST}/logout`);
+      if (!isAuthError) await http.post(`${API_HOST}/logout`);
       commit('logout');
       Cookie.remove('token');
-      delete axios.defaults.headers.common['X-Auth-Token'];
+      delete http.defaults.headers.common['X-Auth-Token'];
       commit('clearNotificationAlerts');
       this.$router.push(this.$i18n.localePath('/'));
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     }
   },
@@ -1107,10 +1086,9 @@ export const actions = {
   async getCountriesList({ commit }) {
     try {
       // eslint-disable-next-line no-underscore-dangle
-      const res = await axios.get(`${API_HOST}/countryList`);
-      commit('setCountriesList', res.data.data);
+      const res = await http.get(`${API_HOST}/countryList`);
+      commit('setCountriesList', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     }
   },
@@ -1118,10 +1096,9 @@ export const actions = {
   async getPhoneCodeList({ commit }) {
     try {
       // eslint-disable-next-line no-underscore-dangle
-      const res = await axios.get(`${API_HOST}/phoneCodeList`);
-      commit('setPhoneCodeList', res.data.data);
+      const res = await http.get(`${API_HOST}/phoneCodeList`);
+      commit('setPhoneCodeList', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     }
   },
@@ -1129,20 +1106,18 @@ export const actions = {
   async getCurrencyList({ commit }) {
     try {
       // eslint-disable-next-line no-underscore-dangle
-      const res = await axios.get(`${API_HOST}/currencyList`);
-      commit('setCurrencyList', res.data.data.currencyList);
+      const res = await http.get(`${API_HOST}/currencyList`);
+      commit('setCurrencyList', res.data.currencyList);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     }
   },
   async getCategoriesList({ commit }) {
     try {
       // eslint-disable-next-line no-underscore-dangle
-      const res = await axios.get(`${API_HOST}/categoryList`);
-      commit('setCategories', res.data.data);
+      const res = await http.get(`${API_HOST}/categoryList`);
+      commit('setCategories', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     }
   },
@@ -1151,16 +1126,12 @@ export const actions = {
     commit('setBillingSessionIsLoading');
     try {
       // eslint-disable-next-line no-underscore-dangle
-      const res = await axios.post(
-        `${API_HOST}/billingSession`,
-        {
-          bpId: BILLING_PROVIDER_ID,
-        },
-        reqConfig(commit, 'setGetBillingSessionError'),
-      );
+      const res = await http.post(`${API_HOST}/billingSession`, {
+        bpId: BILLING_PROVIDER_ID,
+      });
       commit('setBillingSession', res.data);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setGetBillingSessionError', e);
       this.$sentry.captureException(new Error(e));
       throw e;
     } finally {
@@ -1171,35 +1142,25 @@ export const actions = {
   async startGame({ state, commit }, { demo, gameId, returnUrl }) {
     if (state.gameError) commit('clearGameError');
     try {
-      const res = await axios.post(
-        `${API_HOST}/startGame`,
-        {
-          gameId,
-          platform: state.platform,
-          returnUrl,
-          demo,
-        },
-        reqConfig(commit, 'setGameError'),
-      );
-      if (!state.gameError) {
-        const { url } = res.data;
-        commit('setGameUrl', url);
-      }
+      const res = await http.post(`${API_HOST}/startGame`, {
+        gameId,
+        platform: state.platform,
+        returnUrl,
+        demo,
+      });
+      const { url } = res.data;
+      commit('setGameUrl', url);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setGameError', e);
       this.$sentry.captureException(new Error(e));
     }
   },
 
   async setActiveAccount({ commit }, payload) {
     try {
-      await axios.post(
-        `${API_HOST}/setActiveAccount`,
-        payload,
-        reqConfig(commit, 'pushNotificationAlert'),
-      );
+      await http.post(`${API_HOST}/setActiveAccount`, payload);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('pushNotificationAlert', e);
       this.$sentry.captureException(new Error(e));
     }
   },
@@ -1207,11 +1168,11 @@ export const actions = {
   async createAccount({ commit, dispatch }, payload) {
     commit('clearServerError');
     try {
-      await axios.post(`${API_HOST}/createAccount`, payload, reqConfig(commit));
+      await http.post(`${API_HOST}/createAccount`, payload);
       dispatch('getProfile');
       dispatch('getLimits');
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setServerError', e);
       this.$sentry.captureException(new Error(e));
     }
   },
@@ -1220,10 +1181,10 @@ export const actions = {
     if (state.updateProfileError) commit('clearUpdateProfileError');
     try {
       commit('setProfileIsUpdating');
-      await axios.put(`${API_HOST}/profile`, payload, reqConfig(commit, 'setUpdateProfileError'));
+      await http.put(`${API_HOST}/profile`, payload);
       dispatch('getProfile');
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setUpdateProfileError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setProfileIsUpdated');
@@ -1233,13 +1194,9 @@ export const actions = {
   async updatePassword({ commit }, payload) {
     try {
       commit('setProfileIsUpdating');
-      await axios.put(
-        `${API_HOST}/updatePassword`,
-        payload,
-        reqConfig(commit, 'setUpdateProfileError'),
-      );
+      await http.put(`${API_HOST}/updatePassword`, payload);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setUpdateProfileError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setProfileIsUpdated');
@@ -1249,21 +1206,19 @@ export const actions = {
   async getGameProducerList({ commit }) {
     try {
       // eslint-disable-next-line no-underscore-dangle
-      const res = await axios.get(`${API_HOST}/gameProducerList`);
-      commit('setGameProducerList', res.data.data);
+      const res = await http.get(`${API_HOST}/gameProducerList`);
+      commit('setGameProducerList', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     }
   },
 
   async getLimits({ commit }) {
     try {
-      const res = await axios.get(`${API_HOST}/limit`);
-      const limits = res.data.data;
+      const res = await http.get(`${API_HOST}/limit`);
+      const limits = res.data;
       commit('setLimits', limits);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     }
   },
@@ -1271,9 +1226,9 @@ export const actions = {
   async addLimit({ state, commit }, payload) {
     if (state.createLimitError) commit('clearCreateLimitError');
     try {
-      await axios.put(`${API_HOST}/limit`, payload, reqConfig(commit, 'setCreateLimitError'));
+      await http.put(`${API_HOST}/limit`, payload);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setCreateLimitError', e);
       this.$sentry.captureException(new Error(e));
     }
   },
@@ -1281,12 +1236,9 @@ export const actions = {
   async deleteLimit({ state, commit }, payload) {
     if (state.deleteLimitError) commit('clearDeleteLimitError');
     try {
-      await axios.delete(
-        `${API_HOST}/limit?type=${payload.type}&period=${payload.period}`,
-        reqConfig(commit, 'setDeleteLimitError'),
-      );
+      await http.delete(`${API_HOST}/limit?type=${payload.type}&period=${payload.period}`);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setDeleteLimitError', e);
       this.$sentry.captureException(new Error(e));
     }
   },
@@ -1295,16 +1247,13 @@ export const actions = {
     try {
       commit('clearServerError');
       commit('setHistoryListIsLoading');
-      const res = await axios.get(`${API_HOST}/transactionHistoryList`, {
+      const res = await http.get(`${API_HOST}/transactionHistoryList`, {
         ...{ params: payload },
-        ...reqConfig(commit),
       });
-      if (!state.serverError) {
-        commit('setPageRowsCount', res.headers['x-meta-count']);
-        commit('setTransactionHistoryList', res.data);
-      }
+      commit('setPageRowsCount', res.count);
+      commit('setTransactionHistoryList', res.data);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setServerError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setHistoryListIsLoaded');
@@ -1315,16 +1264,13 @@ export const actions = {
     try {
       commit('clearServerError');
       commit('setHistoryListIsLoading');
-      const res = await axios.get(`${API_HOST}/bonusHistoryList`, {
+      const res = await http.get(`${API_HOST}/bonusHistoryList`, {
         ...{ params: payload },
-        ...reqConfig(commit),
       });
-      if (!state.serverError) {
-        commit('setPageRowsCount', res.headers['x-meta-count']);
-        commit('setBonusHistoryList', res.data);
-      }
+      commit('setPageRowsCount', res.count);
+      commit('setBonusHistoryList', res.data);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setServerError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setHistoryListIsLoaded');
@@ -1335,16 +1281,13 @@ export const actions = {
     try {
       commit('clearServerError');
       commit('setHistoryListIsLoading');
-      const res = await axios.get(`${API_HOST}/gameHistoryList`, {
+      const res = await http.get(`${API_HOST}/gameHistoryList`, {
         ...{ params: payload },
-        ...reqConfig(commit),
       });
-      if (!state.serverError) {
-        commit('setPageRowsCount', res.headers['x-meta-count']);
-        commit('setGameHistoryList', res.data);
-      }
+      commit('setPageRowsCount', res.count);
+      commit('setGameHistoryList', res.data);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setServerError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setHistoryListIsLoaded');
@@ -1355,16 +1298,13 @@ export const actions = {
     try {
       commit('clearServerError');
       commit('setHistoryListIsLoading');
-      const res = await axios.get(`${API_HOST}/sessionHistory`, {
+      const res = await http.get(`${API_HOST}/sessionHistory`, {
         ...{ params: payload },
-        ...reqConfig(commit),
       });
-      if (!state.serverError) {
-        commit('setPageRowsCount', res.headers['x-meta-count']);
-        commit('setSessionHistoryList', res.data);
-      }
+      commit('setPageRowsCount', res.count);
+      commit('setSessionHistoryList', res.data);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setServerError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setHistoryListIsLoaded');
@@ -1374,11 +1314,9 @@ export const actions = {
   async getBonusList({ commit }) {
     commit('setBonusListIsLoading');
     try {
-      const res = await axios.get(`${API_HOST}/bonusList`);
-      const bonuses = res.data.data;
-      commit('setBonusList', bonuses);
+      const res = await http.get(`${API_HOST}/bonusList`);
+      commit('setBonusList', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setBonusListIsLoaded');
@@ -1388,10 +1326,9 @@ export const actions = {
   async getFreeSpinList({ commit }) {
     commit('setFreeSpinListIsLoading');
     try {
-      const res = await axios.get(`${API_HOST}/freeSpinList`);
-      commit('setFreeSpinList', res.data.data);
+      const res = await http.get(`${API_HOST}/freeSpinList`);
+      commit('setFreeSpinList', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setFreeSpinListIsLoaded');
@@ -1401,15 +1338,14 @@ export const actions = {
   async getAvailableBonusList({ commit }) {
     commit('setAvailableBonusListIsLoading');
     try {
-      const res = await axios.get(`${API_HOST}/availableBonusList`);
-      const bonuses = res.data.data;
+      const res = await http.get(`${API_HOST}/availableBonusList`);
+      const bonuses = res.data;
       const wasntDeposit = bonuses.find(bonus => bonus.available && bonus.depositNum);
       const depositNum = !bonuses.length || !wasntDeposit ? 4 : wasntDeposit.depositNum;
 
       commit('setAvailableBonusList', bonuses);
       commit('setDepositNum', depositNum);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setAvailableBonusListIsLoaded');
@@ -1419,11 +1355,10 @@ export const actions = {
   async getAvailableFreeSpinList({ commit }) {
     commit('setAvailableFreeSpinListIsLoading');
     try {
-      const res = await axios.get(`${API_HOST}/availableFreeSpinList`);
-      const bonuses = res.data.data;
+      const res = await http.get(`${API_HOST}/availableFreeSpinList`);
+      const bonuses = res.data;
       commit('setAvailableFreeSpinList', bonuses);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setAvailableFreeSpinListIsLoaded');
@@ -1433,9 +1368,9 @@ export const actions = {
   async deleteBonus({ commit, state }, id) {
     if (state.deleteBonusError) commit('clearDeleteBonusError');
     try {
-      await axios.delete(`${API_HOST}/bonus/${id}`, reqConfig(commit, 'setDeleteBonusError'));
+      await http.delete(`${API_HOST}/bonus/${id}`);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setDeleteBonusError', e);
       this.$sentry.captureException(new Error(e));
     }
   },
@@ -1443,9 +1378,9 @@ export const actions = {
   async deleteFreeSpin({ commit, state }, id) {
     if (state.deleteBonusError) commit('clearDeleteBonusError');
     try {
-      await axios.delete(`${API_HOST}/freeSpin/${id}`, reqConfig(commit, 'setDeleteBonusError'));
+      await http.delete(`${API_HOST}/freeSpin/${id}`);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setDeleteBonusError', e);
       this.$sentry.captureException(new Error(e));
     }
   },
@@ -1453,13 +1388,9 @@ export const actions = {
   async activateFreeSpin({ commit, state }, { id, gameId }) {
     if (state.activateFreeSpinError) commit('clearActivateFreeSpinError');
     try {
-      await axios.patch(
-        `${API_HOST}/freeSpin/${id}`,
-        { gameId },
-        reqConfig(commit, 'setActivateFreeSpinError'),
-      );
+      await http.patch(`${API_HOST}/freeSpin/${id}`, { gameId });
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setActivateFreeSpinError', e);
       this.$sentry.captureException(new Error(e));
     }
   },
@@ -1467,9 +1398,9 @@ export const actions = {
   async restorePassword({ commit }, payload) {
     try {
       commit('setPageDataIsLoading');
-      await axios.post(`${API_HOST}/passwordRestore`, payload, reqConfig(commit, 'setServerError'));
+      await http.post(`${API_HOST}/passwordRestore`, payload);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setServerError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setPageDataIsLoaded');
@@ -1479,13 +1410,9 @@ export const actions = {
   async confirmRestorePassword({ commit }, payload) {
     try {
       commit('setPageDataIsLoading');
-      await axios.post(
-        `${API_HOST}/passwordRestoreConfirm`,
-        payload,
-        reqConfig(commit, 'setServerError'),
-      );
+      await http.post(`${API_HOST}/passwordRestoreConfirm`, payload);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setServerError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setPageDataIsLoaded');
@@ -1496,14 +1423,10 @@ export const actions = {
     if (state.emailConfirmError) commit('clearEmailConfirmError');
     commit('setEmailConfirmIsFetching');
     try {
-      await axios.put(
-        `${API_HOST}/emailConfirm`,
-        payload,
-        reqConfig(commit, 'setEmailConfirmError'),
-      );
+      await http.put(`${API_HOST}/emailConfirm`, payload);
       commit('setEmailIsConfirmed');
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setEmailConfirmError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setEmailConfirmIsDone');
@@ -1513,10 +1436,9 @@ export const actions = {
   async getUserDocumentList({ commit }) {
     try {
       commit('setPageDataIsLoading');
-      const res = await axios.get(`${API_HOST}/document`);
-      commit('setUserDocumentList', res.data.data);
+      const res = await http.get(`${API_HOST}/document`);
+      commit('setUserDocumentList', res.data);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setPageDataIsLoaded');
@@ -1526,33 +1448,31 @@ export const actions = {
   async showUserDocument({ commit }, id) {
     commit('setOriginalFileIsLoading');
     try {
-      const res = await axios.get(`${API_HOST}/document/${id}`, {
+      const res = await http.get(`${API_HOST}/document/${id}`, {
         responseType: 'blob',
       });
-      commit('setOriginalFile', res.data);
+      commit('setOriginalFile', res);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setOriginalFileIsLoaded');
     }
   },
 
-  async deleteUserDocument({ commit }, id) {
+  async deleteUserDocument(id) {
     try {
-      await axios.delete(`${API_HOST}/document/${id}`);
+      await http.delete(`${API_HOST}/document/${id}`);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
     }
   },
 
   async getGeoInfo({ commit }) {
     try {
-      const res = await axios.get(`${API_HOST}/geoInfo`);
-      commit('setSiteIsAllowedForUser', res.data.data.allowed);
-      commit('setDefaultCountry', res.data.data.country);
-      commit('setDefaultCurrency', res.data.data.currency);
+      const res = await http.get(`${API_HOST}/geoInfo`);
+      commit('setSiteIsAllowedForUser', res.data.allowed);
+      commit('setDefaultCountry', res.data.country);
+      commit('setDefaultCurrency', res.data.currency);
     } catch (e) {
       commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
@@ -1562,13 +1482,12 @@ export const actions = {
   async getTopWinnerList({ commit }, payload = {}) {
     commit('setTopWinnerListIsLoading', true);
     try {
-      const res = await axios.get(`${API_HOST}/topWinnerList`, {
+      const res = await http.get(`${API_HOST}/topWinnerList`, {
         ...{ params: payload },
-        ...reqConfig(commit, 'setTopWinnerListError'),
       });
       commit('setTopWinnerList', res.data);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setTopWinnerListError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setTopWinnerListIsLoading', false);
@@ -1578,13 +1497,12 @@ export const actions = {
   async getLastWinnerList({ commit }, payload = {}) {
     commit('setLastWinnerListIsLoading', true);
     try {
-      const res = await axios.get(`${API_HOST}/lastWinnerList`, {
+      const res = await http.get(`${API_HOST}/lastWinnerList`, {
         ...{ params: payload },
-        ...reqConfig(commit, 'setLastWinnerListError'),
       });
       commit('setLastWinnerList', res.data);
     } catch (e) {
-      commit('pushErrors', e);
+      commit('setLastWinnerListError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setLastWinnerListIsLoading', false);

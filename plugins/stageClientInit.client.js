@@ -1,10 +1,10 @@
 import Cookie from 'js-cookie';
-import axios from 'axios';
+import { http } from '@/store';
 
 export default async context => {
   const token = Cookie.get('token');
   if (token) {
     context.store.commit('setToken', token);
-    axios.defaults.headers.common['X-Auth-Token'] = token;
+    http.defaults.headers.common['X-Auth-Token'] = token;
   }
 };
