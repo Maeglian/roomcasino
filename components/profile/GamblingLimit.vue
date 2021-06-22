@@ -153,7 +153,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['deleteLimitError']),
+    ...mapState('profile', ['deleteLimitError']),
     ...mapGetters(['activeAccount']),
     title() {
       if (
@@ -204,8 +204,8 @@ export default {
     if (this.item.type === 'sessionLimit') this.stopSessionTimer();
   },
   methods: {
-    ...mapMutations(['clearDeleteLimitError', 'pushNotificationAlert']),
-    ...mapActions(['deleteLimit', 'getLimits']),
+    ...mapMutations(['pushNotificationAlert']),
+    ...mapActions('profile', ['deleteLimit', 'getLimits']),
     startSessionTimer() {
       this.timer = setInterval(() => {
         this.sessionTime += 1;

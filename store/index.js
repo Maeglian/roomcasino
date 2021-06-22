@@ -12,6 +12,14 @@ const jsonInterceptor = [
     return response.data;
   },
   error => {
+    if (
+      error.response.status === 401 &&
+      error.response.config &&
+      // eslint-disable-next-line no-underscore-dangle
+      !error.response.config.__isRetryRequest
+    )
+      // eslint-disable-next-line prefer-promise-reject-errors
+      return Promise.reject('401');
     return Promise.reject(
       (error.response.data.data && error.response.data.data.message) || error.response.data.message,
     );
@@ -27,6 +35,15 @@ function jsonClient() {
 export const http = jsonClient();
 
 export const state = () => ({
+  status: '',
+  authStatus: '',
+  authError: '',
+  token: null,
+  profileIsLoading: false,
+  user: {},
+  siteIsAllowedForUser: true,
+  defaultCountry: '',
+  defaultCurrency: '',
   chatIsLoaded: false,
   needsCookiesPopup: true,
   initialLoadingIsDone: {
@@ -49,112 +66,17 @@ export const state = () => ({
   platform: 'desktop',
   emailConfirmError: '',
   emailConfirmIsFetching: false,
-  originalFileIsLoading: false,
   emailIsConfirmed: false,
-  originalFile: null,
-  originalFileError: '',
-  siteIsAllowedForUser: true,
-  defaultCountry: '',
-  defaultCurrency: '',
   billingSessionIsLoading: false,
   getBillingSessionError: '',
-  createLimitError: '',
-  deleteLimitError: '',
-  deleteBonusError: '',
-  activateFreeSpinError: '',
-  bonusList: [],
-  bonusListIsLoading: false,
-  availableBonusList: [],
-  availableBonusListIsLoading: false,
-  freeSpinList: [],
-  freeSpinListIsLoading: false,
-  availableFreeSpinList: [],
-  availableFreeSpinListIsLoading: false,
-  gameError: '',
-  notificationAlerts: [],
-  pageRowsCount: 0,
-  pageDataIsLoading: false,
-  userDocumentList: [],
-  historyListIsLoading: false,
-  transactionHistoryList: [],
-  gameHistoryList: [],
-  bonusHistoryList: [],
-  sessionHistoryList: [],
   serverError: '',
-  gameProducers: [],
-  status: '',
-  authStatus: '',
-  phoneCodeList: [],
-  countriesList: [],
-  currencyList: [],
-  categories: [],
   shouldCashout: false,
-  token: null,
-  authError: '',
   navIsOpen: false,
   notificationsPanelIsOpen: false,
+  notificationAlerts: [],
   width: 0,
-  games: [],
-  recentGames: [],
-  defaultGames: [],
-  newGames: [],
-  liveGames: [],
-  tournamentGames: [],
-  jackpots: [],
-  limits: [],
-  gamesAreLoading: false,
-  defaultGamesAreLoading: false,
-  newGamesAreLoading: false,
-  liveGamesAreLoading: false,
-  tournamentGamesAreLoading: false,
-  winnersAreLoading: false,
   errors: {},
-  profileIsLoading: false,
-  user: {},
   billingSession: {},
-  fakeBillingSession: {
-    userId: '123',
-    sessionId: '123',
-    merchantId: '1000',
-  },
-  tournaments: [
-    {
-      title: 'Weekly<br/> tournament',
-      subtitle: '€ 500 <span class="Colored">+</span> 500 Free Spins',
-      image: 'promotion1.png',
-      announce: 'Weekly tournament',
-      enddate: '2021-01-01',
-      text:
-        '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
-    },
-    {
-      title: 'Roomcasino<br/> friday party',
-      subtitle: '<span class="Colored">7 000</span> Free Spins<br/> every day',
-      image: 'promotion2.png',
-      announce: 'Friday party',
-      enddate: '2021-01-01',
-      text:
-        '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
-    },
-    {
-      title: 'Summer deluxe<br/> tournament',
-      subtitle: '<span class="Colored">€ 50 000</span> every<br/> 5th day!',
-      image: 'promotion5.png',
-      announce: 'Summer deluxe tournament',
-      enddate: '2021-01-01',
-      text:
-        '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
-    },
-    {
-      title: 'Two day<br/> tournament',
-      subtitle: '<span class="Colored">7 000</span> Free Spins<br/> every day',
-      image: 'promotion6.png',
-      announce: 'Two day tournament',
-      enddate: '2021-01-01',
-      text:
-        '<p>Make your first deposit of $20 or more, and get up to $150 and 55 free spins in The Sword and The Grail, Domnitors and Domnitors Deluxe slots.</p><p>The bonus will be credited automatically.</p>',
-    },
-  ],
   notifications: {
     promotions: [
       {
@@ -213,141 +135,6 @@ export const state = () => ({
       },
     ],
   },
-  currentTournamentWinners: [
-    {
-      id: 1,
-      name: 'Natacool',
-      points: 3422,
-      prize: '$ 10 000, 00',
-    },
-    {
-      id: 2,
-      name: 'Fire lightning 12',
-      points: 2210,
-      prize: '$ 5 000, 00',
-    },
-    {
-      id: 3,
-      name: 'Dakamu',
-      points: 1012,
-      prize: '$ 3 000, 00',
-    },
-    {
-      id: 4,
-      name: 'Ioana Juliana',
-      points: 840,
-      prize: '520 CP',
-    },
-    {
-      id: 5,
-      name: 'Fire lightning 11',
-      points: 720,
-      prize: '500 CP',
-    },
-    {
-      id: 6,
-      name: 'Dakamu',
-      points: 640,
-      prize: '500 CP',
-    },
-    {
-      id: 7,
-      name: 'Natacool',
-      points: 530,
-      prize: '500 CP',
-    },
-    {
-      id: 8,
-      name: 'Ioana Juliana',
-      points: 420,
-      prize: '500 CP',
-    },
-    {
-      id: 9,
-      name: 'Zzdeb',
-      points: 380,
-      prize: '500 CP',
-    },
-    {
-      id: 10,
-      name: 'Fire ligtning',
-      points: 260,
-      prize: '500 CP',
-    },
-  ],
-  previousTournamentWinners: [
-    {
-      id: 1,
-      name: 'Thunderbird',
-      points: 3850,
-      prize: '$ 12 000, 00',
-    },
-    {
-      id: 2,
-      name: 'Fire lightning 12',
-      points: 2210,
-      prize: '$ 5 000, 00',
-    },
-    {
-      id: 3,
-      name: 'Dakamu',
-      points: 1012,
-      prize: '$ 3 000, 00',
-    },
-    {
-      id: 4,
-      name: 'Ioana Juliana',
-      points: 840,
-      prize: '520 CP',
-    },
-    {
-      id: 5,
-      name: 'Fire lightning 11',
-      points: 720,
-      prize: '500 CP',
-    },
-    {
-      id: 6,
-      name: 'Dakamu',
-      points: 640,
-      prize: '500 CP',
-    },
-    {
-      id: 7,
-      name: 'Natacool',
-      points: 530,
-      prize: '500 CP',
-    },
-    {
-      id: 8,
-      name: 'Ioana Juliana',
-      points: 420,
-      prize: '500 CP',
-    },
-    {
-      id: 9,
-      name: 'Zzdeb',
-      points: 380,
-      prize: '500 CP',
-    },
-    {
-      id: 10,
-      name: 'Fire ligtning',
-      points: 260,
-      prize: '500 CP',
-    },
-  ],
-  terms: [
-    'You begin to participate in the VIP program after making your first deposit.',
-    'CP is credited at the rate of 1 CP for every $ 12.5, 12.5 EUR, 15 CAD, 15 AUD, 15 NZD, 125 NOK, 325 CZK, 200 ZAR, 50 PLN bids.',
-    'Exchange CP - 1 $, 1 EUR, 1.25 CAD, 1.25 AUD, 1.25 NZD, 10 NOK, 25 CZK, 17 ZAR, 4 PLN for 100 CP.',
-    'All free spins are issued with a wager x10. All cash prizes are issued with wagering x1.',
-    'Funds received when exchanging CP for real money are charged with wager x1.',
-    'All prizes and free spins will be issued within 24 hours after the player has reached the VIP level.',
-    'All prizes and free spins will be issued within 24 hours after the player has reached the VIP level.',
-    'RoomCasino reserves the right to change the terms of the VIP program at any time.',
-    'All free spins are issued with a wager x10. All cash prizes are issued with wagering x1.',
-  ],
   paymentsMethods: [
     {
       icon: 'visa',
@@ -406,15 +193,6 @@ export const state = () => ({
       limits: 'Min. 20 USDT - Max. 4,000 USDT',
     },
   ],
-  profileIsUpdating: false,
-  updateProfileError: '',
-  gameUrlForIframe: '',
-  topWinnerList: [],
-  lastWinnerList: [],
-  topWinnerListIsLoading: false,
-  lastWinnerListIsLoading: false,
-  topWinnerListError: '',
-  lastWinnerListError: '',
 });
 
 export const getters = {
@@ -436,8 +214,11 @@ export const getters = {
     if (state.user.accountList) return getters.activeAccount.currency;
     return {};
   },
-  defaultCountry: state => {
-    return state.countriesList.find(country => country.code === state.defaultCountry);
+  // eslint-disable-next-line no-shadow
+  defaultCountry: (state, getters, rootState) => {
+    return rootState.dictionary.countriesList.find(
+      country => country.code === state.defaultCountry,
+    );
   },
   activeAccount: state => {
     if (state.user.accountList) return state.user.accountList.find(acc => acc.active === true);
@@ -457,36 +238,13 @@ export const getters = {
   },
   isLoggedIn: state => !!state.token,
   authStatus: state => state.status,
-  limitsByTypes: state => {
-    const ll = state.limits.reduce((namedLimits, limit) => {
-      const namedlimit = namedLimits.find(l => l.type === limit.type);
-      if (namedlimit) namedlimit.limits.push(limit);
-      else {
-        namedLimits.push({
-          type: limit.type,
-          limits: [limit],
-        });
-      }
-      return namedLimits;
-    }, []);
-    return ll;
-  },
-  providersList: state => startIndex =>
-    state.providers.slice(startIndex, state.providers.length + 1),
-  fakedNewGames: state => [...state.games].reverse().slice(0, 12),
-  gamesLimited: state => limit => state.games.slice(0, limit),
-  gamesSearched: state => text => {
-    return state.defaultGames.filter(game => {
-      const str = text.trim().toLowerCase();
-      const title = game.gameName.toLowerCase();
-      return title.includes(str);
-    });
-  },
-  limitedTournamentWinners: state => limit => state.currentTournamentWinners.slice(0, limit),
-  userInfo: state => {
+  // eslint-disable-next-line no-shadow
+  userInfo: (state, getters, rootState) => {
     if (Object.keys(state.user).length) {
       const info = { ...state.user };
-      info.country = state.countriesList.find(country => country.code === info.country);
+      info.country = rootState.dictionary.countriesList.find(
+        country => country.code === info.country,
+      );
       delete info.accountList;
       delete info.requirePasswordChange;
       return info;
@@ -503,8 +261,9 @@ export const getters = {
     }
     return [];
   },
-  moreCurrencyAccounts: state =>
-    state.currencyList.filter(cur => {
+  // eslint-disable-next-line no-shadow
+  moreCurrencyAccounts: (state, getters, rootState) =>
+    rootState.dictionary.currencyList.filter(cur => {
       if (state.user.accountList) {
         return !state.user.accountList.some(acc => acc.currency === cur);
       }
@@ -531,6 +290,9 @@ export const mutations = {
   },
   setInitialLoadingLoggedIn: (state, field) => {
     state.initialLoadingLoggedInIsDone[field] = true;
+  },
+  setProfileIsLoading(state, payload) {
+    state.profileIsLoading = payload;
   },
   setDepositNum: (state, payload) => {
     state.depositNum = payload;
@@ -560,24 +322,6 @@ export const mutations = {
   clearEmailConfirmError: state => {
     state.emailConfirmError = '';
   },
-  setOriginalFile: (state, payload) => {
-    state.originalFile = payload;
-  },
-  clearOriginalFile: state => {
-    state.originalFile = null;
-  },
-  setOriginalFileIsLoading: state => {
-    state.originalFileIsLoading = true;
-  },
-  setOriginalFileIsLoaded: state => {
-    state.originalFileIsLoading = false;
-  },
-  setOriginalFileError: (state, payload) => {
-    state.originalFileError = payload;
-  },
-  clearOriginalFileError: state => {
-    state.originalFileError = '';
-  },
   setSiteIsAllowedForUser: (state, payload) => {
     state.siteIsAllowedForUser = payload;
   },
@@ -587,125 +331,14 @@ export const mutations = {
   setDefaultCurrency: (state, payload) => {
     state.defaultCurrency = payload;
   },
-  setBillingSessionIsLoading: state => {
-    state.billingSessionIsLoading = true;
-  },
-  setBillingSessionIsLoaded: state => {
-    state.billingSessionIsLoading = false;
+  setBillingSessionIsLoading: (state, payload) => {
+    state.billingSessionIsLoading = payload;
   },
   setGetBillingSessionError: (state, message) => {
     state.billingSessionIsLoading = message;
   },
-  clearGetBillingSessionError: state => {
-    state.billingSessionIsLoading = '';
-  },
-  setCreateLimitError: (state, message) => {
-    state.createLimitError = message;
-  },
-  clearCreateLimitError: state => {
-    state.createLimitError = '';
-  },
-  setDeleteLimitError: (state, message) => {
-    state.deleteLimitError = message;
-  },
-  clearDeleteLimitError: state => {
-    state.deleteLimitError = '';
-  },
-  setDeleteBonusError: (state, message) => {
-    state.deleteBonusError = message;
-  },
-  clearDeleteBonusError: state => {
-    state.deleteBonusError = '';
-  },
-  setActivateFreeSpinError: (state, message) => {
-    state.activateFreeSpinError = message;
-  },
-  clearActivateFreeSpinError: state => {
-    state.activateFreeSpinError = '';
-  },
-  setBonusListIsLoading: state => {
-    state.bonusListIsLoading = true;
-  },
-  setBonusListIsLoaded: state => {
-    state.bonusListIsLoading = false;
-  },
-  setBonusList: (state, payload) => {
-    state.bonusList = payload;
-  },
-  setAvailableBonusListIsLoading: state => {
-    state.availablebonusListIsLoading = true;
-  },
-  setAvailableBonusListIsLoaded: state => {
-    state.availableBonusListIsLoading = false;
-  },
-  setAvailableBonusList: (state, payload) => {
-    state.availableBonusList = payload;
-  },
-  setFreeSpinListIsLoading: state => {
-    state.freeSpinListIsLoading = true;
-  },
-  setFreeSpinListIsLoaded: state => {
-    state.freeSpinListIsLoading = false;
-  },
-  setFreeSpinList: (state, payload) => {
-    state.freeSpinList = payload;
-  },
-  setAvailableFreeSpinListIsLoading: state => {
-    state.availablefreeSpinListIsLoading = true;
-  },
-  setAvailableFreeSpinListIsLoaded: state => {
-    state.availableFreeSpinListIsLoading = false;
-  },
-  setAvailableFreeSpinList: (state, payload) => {
-    state.availableFreeSpinList = payload;
-  },
-  setPageRowsCount: (state, payload) => {
-    state.pageRowsCount = payload;
-  },
-  setGameUrl: (state, gameUrl) => {
-    state.gameUrlForIframe = gameUrl;
-  },
-  setGameError: (state, message) => {
-    state.gameError = message;
-  },
-  clearGameError: state => {
-    state.gameError = '';
-  },
-  setPageDataIsLoading: state => {
-    state.pageDataIsLoading = true;
-  },
-  setPageDataIsLoaded: state => {
-    state.pageDataIsLoading = false;
-  },
-  setUserDocumentList: (state, payload) => {
-    state.userDocumentList = payload;
-  },
   setServerError: (state, message) => {
     state.serverError = message;
-  },
-  clearServerError: state => {
-    state.serverError = '';
-  },
-  setTransactionHistoryList: (state, payload) => {
-    state.transactionHistoryList = payload;
-  },
-  setGameHistoryList: (state, payload) => {
-    state.gameHistoryList = payload;
-  },
-  setBonusHistoryList: (state, payload) => {
-    state.bonusHistoryList = payload;
-  },
-  setSessionHistoryList: (state, payload) => {
-    state.sessionHistoryList = payload;
-  },
-  setHistoryListIsLoading: state => {
-    state.historyListIsLoading = true;
-  },
-  setHistoryListIsLoaded: state => {
-    state.historyListIsLoading = false;
-  },
-  setGameProducerList: (state, payload) => {
-    state.gameProducers = payload;
   },
   openNav: state => {
     state.navIsOpen = true;
@@ -719,79 +352,11 @@ export const mutations = {
   closeNotificationsPanel: state => {
     state.notificationsPanelIsOpen = false;
   },
-  setCategories: (state, payload) => {
-    state.categories = payload;
-  },
   setWidth: (state, payload) => {
     state.width = payload;
   },
-  setGamesAreLoading: state => {
-    state.gamesAreLoading = true;
-  },
-  setDefaultGamesAreLoading: state => {
-    state.defaultGamesAreLoading = true;
-  },
-  setGamesAreLoaded: state => {
-    state.gamesAreLoading = false;
-  },
-  setDefaultGamesAreLoaded: state => {
-    state.defaultGamesAreLoading = false;
-  },
-  setNewGamesAreLoading: (state, payload) => {
-    state.newGamesAreLoading = payload;
-  },
-  setTournamentGamesAreLoading: (state, payload) => {
-    state.tournamentGamesAreLoading = payload;
-  },
-  setLiveGamesAreLoading: (state, payload) => {
-    state.liveGamesAreLoading = payload;
-  },
-  setGames: (state, payload) => {
-    state.games = payload;
-  },
-  setRecentGames: (state, payload) => {
-    state.recentGames = payload;
-  },
-  setNewGames: (state, payload) => {
-    state.newGames = payload;
-  },
-  setTournamentGames: (state, payload) => {
-    state.tournamentGames = payload;
-  },
-  setLiveGames: (state, payload) => {
-    state.liveGames = payload;
-  },
-  setDefaultGames: (state, payload) => {
-    state.defaultGames = payload;
-  },
-  setPhoneCodeList: (state, payload) => {
-    state.phoneCodeList = payload;
-  },
-  setCountriesList: (state, payload) => {
-    state.countriesList = payload;
-  },
-  setCurrencyList: (state, payload) => {
-    state.currencyList = payload;
-  },
   pushErrors: (state, payload) => {
     state.errors = { ...state.errors, payload };
-  },
-  setJackpots: (state, payload) => {
-    state.jackpots = payload;
-  },
-  setLimits: (state, payload) => {
-    state.limits = payload;
-  },
-  addLimits: (state, payload) => {
-    let limit = state.limits.find(lim => lim.name === payload.name);
-    if (!limit) {
-      limit = {
-        name: payload.name,
-        limits: [],
-      };
-      state.limits.push(limit);
-    }
-    limit.limits.push(payload.content);
   },
   setAuthRequest(state) {
     state.authStatus = 'loading';
@@ -807,12 +372,6 @@ export const mutations = {
   },
   setToken(state, token) {
     state.token = token;
-  },
-  setProfileIsLoading(state) {
-    state.profileIsLoading = true;
-  },
-  setProfileIsLoaded(state) {
-    state.profileIsLoading = false;
   },
   setUser(state, user) {
     state.user = user;
@@ -852,31 +411,9 @@ export const mutations = {
   setActiveUserAccount(state, currency) {
     if (state.user.accountList) {
       state.user.accountList.forEach(acc => {
-        if (acc.currency === currency) acc.active = true;
-        else acc.active = false;
+        acc.active = acc.currency === currency;
       });
     }
-  },
-  updateLimits(state, { i, j, payload }) {
-    Vue.set(state.limits[i].limits, j, payload);
-  },
-  deleteLimit(state, { i, j }) {
-    state.limits[i].limits = [
-      ...state.limits[i].limits.slice(0, j),
-      ...state.limits[i].limits.slice(j + 1),
-    ];
-  },
-  setProfileIsUpdating(state) {
-    state.passwordIsUpdating = true;
-  },
-  setProfileIsUpdated(state) {
-    state.passwordIsUpdating = false;
-  },
-  setUpdateProfileError(state, payload) {
-    state.updateProfileError = payload;
-  },
-  clearUpdateProfileError(state) {
-    state.updateProfileError = '';
   },
   pushNotificationAlert(state, payload) {
     state.notificationAlerts.push(payload);
@@ -886,24 +423,6 @@ export const mutations = {
   },
   clearNotificationAlerts(state) {
     state.notificationAlerts = [];
-  },
-  setTopWinnerList(state, payload) {
-    state.topWinnerList = payload;
-  },
-  setLastWinnerList(state, payload) {
-    state.lastWinnerList = payload;
-  },
-  setTopWinnerListIsLoading(state, payload) {
-    state.topWinnerListIsLoading = payload;
-  },
-  setLastWinnerListIsLoading(state, payload) {
-    state.lastWinnerListIsLoading = payload;
-  },
-  setTopWinnerListError(state, payload) {
-    state.topWinnerListError = payload;
-  },
-  setLastWinnerListError(state, payload) {
-    state.lastWinnerListError = payload;
   },
 };
 
@@ -927,97 +446,20 @@ export const actions = {
       }
     }
   },
-  async getGames({ commit, state }, payload = {}) {
-    commit('setGamesAreLoading');
-    try {
-      const res = await http.get(`${API_HOST}/gameList`, {
-        params: { ...payload, platform: state.platform },
-      });
-      commit('setGames', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setGamesAreLoaded');
-    }
-  },
-
-  async getNewGames({ commit, state }) {
-    commit('setNewGamesAreLoading', true);
-    try {
-      const res = await http.get(`${API_HOST}/gameList`, {
-        params: { category: 'new', platform: state.platform },
-      });
-      commit('setNewGames', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setNewGamesAreLoading', false);
-    }
-  },
-
-  async getLiveGames({ commit, state }) {
-    commit('setLiveGamesAreLoading', true);
-    try {
-      const res = await http.get(`${API_HOST}/gameList`, {
-        params: { category: 'live', platform: state.platform },
-      });
-      commit('setLiveGames', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setLiveGamesAreLoading', false);
-    }
-  },
-
-  async getTournamentGames({ commit, state }, params) {
-    commit('setTournamentGamesAreLoading', true);
-    try {
-      const res = await http.get(`${API_HOST}/gameList`, { params, platform: state.platform });
-      commit('setTournamentGames', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setTournamentGamesAreLoading', false);
-    }
-  },
-
-  async getRecentGames({ commit, state }, payload = {}) {
-    commit('setGamesAreLoading');
-    try {
-      const res = await http.get(`${API_HOST}/gameList`, {
-        params: { ...payload, recent: 1, platform: state.platform },
-      });
-      commit('setRecentGames', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setGamesAreLoaded');
-    }
-  },
-
-  async getDefaultGames({ commit, state }) {
-    commit('setDefaultGamesAreLoading');
-    try {
-      const res = await http.get(`${API_HOST}/gameList`, { params: { platform: state.platform } });
-      commit('setDefaultGames', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setDefaultGamesAreLoaded');
-    }
-  },
 
   async registerUser({ commit, dispatch }, payload) {
     commit('setAuthRequest');
     try {
-      const res = await http.post(`${API_HOST}/register`, { payload });
-      commit('setAuthSuccess');
-      const { token } = res.data;
-      commit('setToken', token);
-      Cookie.set('token', token);
-      http.defaults.headers.common['X-Auth-Token'] = token;
-      dispatch('getProfile');
-      dispatch('getAvailableBonusList');
+      const res = await http.post(`${API_HOST}/register`, payload);
+      if (res.code === 0) {
+        commit('setAuthSuccess');
+        const { token } = res.data;
+        commit('setToken', token);
+        Cookie.set('token', token);
+        http.defaults.headers.common['X-Auth-Token'] = token;
+        dispatch('getProfile');
+        dispatch('profile/getAvailableBonusList');
+      } else commit('setAuthError', res.message);
     } catch (e) {
       commit('setAuthError', e);
       this.$sentry.captureException(new Error(e));
@@ -1031,24 +473,22 @@ export const actions = {
     if (!state.authError) {
       commit('setAuthSuccess');
       dispatch('getProfile');
-      dispatch('getLimits');
-      dispatch('getAvailableBonusList');
-      dispatch('getFreeSpinList');
-      dispatch('getRecentGames');
+      dispatch('profile/getLimits');
+      dispatch('profile/getAvailableBonusList');
+      dispatch('profile/getFreeSpinList');
+      dispatch('games/getRecentGames');
     }
   },
 
   async login({ commit }, payload) {
     try {
       const res = await http.post(`${API_HOST}/login`, payload);
-      if (res.data.code === 10002) {
-        commit('setAuthError', res.message);
-      } else {
+      if (res.code === 0) {
         const { token } = res.data;
         commit('setToken', token);
         Cookie.set('token', token);
         http.defaults.headers.common['X-Auth-Token'] = token;
-      }
+      } else commit('setAuthError', res.message);
     } catch (e) {
       this.$sentry.captureException(new Error(e));
       Cookie.remove('token');
@@ -1056,7 +496,7 @@ export const actions = {
   },
 
   async getProfile({ commit }) {
-    commit('setProfileIsLoading');
+    commit('setProfileIsLoading', true);
     try {
       const res = await http.get(`${API_HOST}/profile`);
       const user = res.data;
@@ -1065,13 +505,12 @@ export const actions = {
       commit('setAuthError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
-      commit('setProfileIsLoaded');
+      commit('setProfileIsLoading', false);
     }
   },
 
   async logout({ commit }, isAuthError = false) {
     try {
-      // eslint-disable-next-line no-underscore-dangle
       if (!isAuthError) await http.post(`${API_HOST}/logout`);
       commit('logout');
       Cookie.remove('token');
@@ -1083,47 +522,9 @@ export const actions = {
     }
   },
 
-  async getCountriesList({ commit }) {
-    try {
-      // eslint-disable-next-line no-underscore-dangle
-      const res = await http.get(`${API_HOST}/countryList`);
-      commit('setCountriesList', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async getPhoneCodeList({ commit }) {
-    try {
-      // eslint-disable-next-line no-underscore-dangle
-      const res = await http.get(`${API_HOST}/phoneCodeList`);
-      commit('setPhoneCodeList', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async getCurrencyList({ commit }) {
-    try {
-      // eslint-disable-next-line no-underscore-dangle
-      const res = await http.get(`${API_HOST}/currencyList`);
-      commit('setCurrencyList', res.data.currencyList);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-  async getCategoriesList({ commit }) {
-    try {
-      // eslint-disable-next-line no-underscore-dangle
-      const res = await http.get(`${API_HOST}/categoryList`);
-      commit('setCategories', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    }
-  },
   async getBillingSession({ state, commit }) {
-    if (state.getBillingSessionError) commit('clearGetBillingSessionError');
-    commit('setBillingSessionIsLoading');
+    if (state.getBillingSessionError) commit('setGetBillingSessionError', '');
+    commit('setBillingSessionIsLoading', true);
     try {
       // eslint-disable-next-line no-underscore-dangle
       const res = await http.post(`${API_HOST}/billingSession`, {
@@ -1135,292 +536,12 @@ export const actions = {
       this.$sentry.captureException(new Error(e));
       throw e;
     } finally {
-      commit('setBillingSessionIsLoaded');
-    }
-  },
-
-  async startGame({ state, commit }, { demo, gameId, returnUrl }) {
-    if (state.gameError) commit('clearGameError');
-    try {
-      const res = await http.post(`${API_HOST}/startGame`, {
-        gameId,
-        platform: state.platform,
-        returnUrl,
-        demo,
-      });
-      const { url } = res.data;
-      commit('setGameUrl', url);
-    } catch (e) {
-      commit('setGameError', e);
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async setActiveAccount({ commit }, payload) {
-    try {
-      await http.post(`${API_HOST}/setActiveAccount`, payload);
-    } catch (e) {
-      commit('pushNotificationAlert', e);
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async createAccount({ commit, dispatch }, payload) {
-    commit('clearServerError');
-    try {
-      await http.post(`${API_HOST}/createAccount`, payload);
-      dispatch('getProfile');
-      dispatch('getLimits');
-    } catch (e) {
-      commit('setServerError', e);
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async updateProfile({ state, commit, dispatch }, payload) {
-    if (state.updateProfileError) commit('clearUpdateProfileError');
-    try {
-      commit('setProfileIsUpdating');
-      await http.put(`${API_HOST}/profile`, payload);
-      dispatch('getProfile');
-    } catch (e) {
-      commit('setUpdateProfileError', e);
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setProfileIsUpdated');
-    }
-  },
-
-  async updatePassword({ commit }, payload) {
-    try {
-      commit('setProfileIsUpdating');
-      await http.put(`${API_HOST}/updatePassword`, payload);
-    } catch (e) {
-      commit('setUpdateProfileError', e);
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setProfileIsUpdated');
-    }
-  },
-
-  async getGameProducerList({ commit }) {
-    try {
-      // eslint-disable-next-line no-underscore-dangle
-      const res = await http.get(`${API_HOST}/gameProducerList`);
-      commit('setGameProducerList', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async getLimits({ commit }) {
-    try {
-      const res = await http.get(`${API_HOST}/limit`);
-      const limits = res.data;
-      commit('setLimits', limits);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async addLimit({ state, commit }, payload) {
-    if (state.createLimitError) commit('clearCreateLimitError');
-    try {
-      await http.put(`${API_HOST}/limit`, payload);
-    } catch (e) {
-      commit('setCreateLimitError', e);
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async deleteLimit({ state, commit }, payload) {
-    if (state.deleteLimitError) commit('clearDeleteLimitError');
-    try {
-      await http.delete(`${API_HOST}/limit?type=${payload.type}&period=${payload.period}`);
-    } catch (e) {
-      commit('setDeleteLimitError', e);
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async getTransactionHistoryList({ commit }, payload = {}) {
-    try {
-      commit('clearServerError');
-      commit('setHistoryListIsLoading');
-      const res = await http.get(`${API_HOST}/transactionHistoryList`, {
-        ...{ params: payload },
-      });
-      commit('setPageRowsCount', res.count);
-      commit('setTransactionHistoryList', res.data);
-    } catch (e) {
-      commit('setServerError', e);
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setHistoryListIsLoaded');
-    }
-  },
-
-  async getBonusHistoryList({ commit }, payload = {}) {
-    try {
-      commit('clearServerError');
-      commit('setHistoryListIsLoading');
-      const res = await http.get(`${API_HOST}/bonusHistoryList`, {
-        ...{ params: payload },
-      });
-      commit('setPageRowsCount', res.count);
-      commit('setBonusHistoryList', res.data);
-    } catch (e) {
-      commit('setServerError', e);
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setHistoryListIsLoaded');
-    }
-  },
-
-  async getGameHistoryList({ commit }, payload = {}) {
-    try {
-      commit('clearServerError');
-      commit('setHistoryListIsLoading');
-      const res = await http.get(`${API_HOST}/gameHistoryList`, {
-        ...{ params: payload },
-      });
-      commit('setPageRowsCount', res.count);
-      commit('setGameHistoryList', res.data);
-    } catch (e) {
-      commit('setServerError', e);
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setHistoryListIsLoaded');
-    }
-  },
-
-  async getSessionHistoryList({ commit }, payload = {}) {
-    try {
-      commit('clearServerError');
-      commit('setHistoryListIsLoading');
-      const res = await http.get(`${API_HOST}/sessionHistory`, {
-        ...{ params: payload },
-      });
-      commit('setPageRowsCount', res.count);
-      commit('setSessionHistoryList', res.data);
-    } catch (e) {
-      commit('setServerError', e);
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setHistoryListIsLoaded');
-    }
-  },
-
-  async getBonusList({ commit }) {
-    commit('setBonusListIsLoading');
-    try {
-      const res = await http.get(`${API_HOST}/bonusList`);
-      commit('setBonusList', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setBonusListIsLoaded');
-    }
-  },
-
-  async getFreeSpinList({ commit }) {
-    commit('setFreeSpinListIsLoading');
-    try {
-      const res = await http.get(`${API_HOST}/freeSpinList`);
-      commit('setFreeSpinList', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setFreeSpinListIsLoaded');
-    }
-  },
-
-  async getAvailableBonusList({ commit }) {
-    commit('setAvailableBonusListIsLoading');
-    try {
-      const res = await http.get(`${API_HOST}/availableBonusList`);
-      const bonuses = res.data;
-      const wasntDeposit = bonuses.find(bonus => bonus.available && bonus.depositNum);
-      const depositNum = !bonuses.length || !wasntDeposit ? 4 : wasntDeposit.depositNum;
-
-      commit('setAvailableBonusList', bonuses);
-      commit('setDepositNum', depositNum);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setAvailableBonusListIsLoaded');
-    }
-  },
-
-  async getAvailableFreeSpinList({ commit }) {
-    commit('setAvailableFreeSpinListIsLoading');
-    try {
-      const res = await http.get(`${API_HOST}/availableFreeSpinList`);
-      const bonuses = res.data;
-      commit('setAvailableFreeSpinList', bonuses);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setAvailableFreeSpinListIsLoaded');
-    }
-  },
-
-  async deleteBonus({ commit, state }, id) {
-    if (state.deleteBonusError) commit('clearDeleteBonusError');
-    try {
-      await http.delete(`${API_HOST}/bonus/${id}`);
-    } catch (e) {
-      commit('setDeleteBonusError', e);
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async deleteFreeSpin({ commit, state }, id) {
-    if (state.deleteBonusError) commit('clearDeleteBonusError');
-    try {
-      await http.delete(`${API_HOST}/freeSpin/${id}`);
-    } catch (e) {
-      commit('setDeleteBonusError', e);
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async activateFreeSpin({ commit, state }, { id, gameId }) {
-    if (state.activateFreeSpinError) commit('clearActivateFreeSpinError');
-    try {
-      await http.patch(`${API_HOST}/freeSpin/${id}`, { gameId });
-    } catch (e) {
-      commit('setActivateFreeSpinError', e);
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async restorePassword({ commit }, payload) {
-    try {
-      commit('setPageDataIsLoading');
-      await http.post(`${API_HOST}/passwordRestore`, payload);
-    } catch (e) {
-      commit('setServerError', e);
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setPageDataIsLoaded');
-    }
-  },
-
-  async confirmRestorePassword({ commit }, payload) {
-    try {
-      commit('setPageDataIsLoading');
-      await http.post(`${API_HOST}/passwordRestoreConfirm`, payload);
-    } catch (e) {
-      commit('setServerError', e);
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setPageDataIsLoaded');
+      commit('setBillingSessionIsLoading', false);
     }
   },
 
   async confirmEmail({ state, commit }, payload) {
-    if (state.emailConfirmError) commit('clearEmailConfirmError');
+    if (state.emailConfirmError) commit('setEmailConfirmError', '');
     commit('setEmailConfirmIsFetching');
     try {
       await http.put(`${API_HOST}/emailConfirm`, payload);
@@ -1433,40 +554,6 @@ export const actions = {
     }
   },
 
-  async getUserDocumentList({ commit }) {
-    try {
-      commit('setPageDataIsLoading');
-      const res = await http.get(`${API_HOST}/document`);
-      commit('setUserDocumentList', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setPageDataIsLoaded');
-    }
-  },
-
-  async showUserDocument({ commit }, id) {
-    commit('setOriginalFileIsLoading');
-    try {
-      const res = await http.get(`${API_HOST}/document/${id}`, {
-        responseType: 'blob',
-      });
-      commit('setOriginalFile', res);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setOriginalFileIsLoaded');
-    }
-  },
-
-  async deleteUserDocument(id) {
-    try {
-      await http.delete(`${API_HOST}/document/${id}`);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    }
-  },
-
   async getGeoInfo({ commit }) {
     try {
       const res = await http.get(`${API_HOST}/geoInfo`);
@@ -1474,38 +561,7 @@ export const actions = {
       commit('setDefaultCountry', res.data.country);
       commit('setDefaultCurrency', res.data.currency);
     } catch (e) {
-      commit('pushErrors', e);
       this.$sentry.captureException(new Error(e));
-    }
-  },
-
-  async getTopWinnerList({ commit }, payload = {}) {
-    commit('setTopWinnerListIsLoading', true);
-    try {
-      const res = await http.get(`${API_HOST}/topWinnerList`, {
-        ...{ params: payload },
-      });
-      commit('setTopWinnerList', res.data);
-    } catch (e) {
-      commit('setTopWinnerListError', e);
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setTopWinnerListIsLoading', false);
-    }
-  },
-
-  async getLastWinnerList({ commit }, payload = {}) {
-    commit('setLastWinnerListIsLoading', true);
-    try {
-      const res = await http.get(`${API_HOST}/lastWinnerList`, {
-        ...{ params: payload },
-      });
-      commit('setLastWinnerList', res.data);
-    } catch (e) {
-      commit('setLastWinnerListError', e);
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setLastWinnerListIsLoading', false);
     }
   },
 };

@@ -6,7 +6,7 @@
       :width="300"
       :height="'auto'"
       show-on-mount
-      @close="clearGameError"
+      @close="setGameError('')"
     >
       <div class="Modal-Title">{{ $t('modals.cantStart') }}</div>
       <div class="Modal-Text">
@@ -81,7 +81,9 @@ export default {
     };
   },
   computed: {
-    ...mapState(['gameUrlForIframe', 'gameError', 'platform', 'freeSpinList']),
+    ...mapState(['platform']),
+    ...mapState('games', ['gameUrlForIframe', 'gameError']),
+    ...mapState('profile', ['freeSpinList']),
     ...mapGetters(['activeAccount', 'userInfo']),
     gamesLimited() {
       return this.games.slice(0, this.gamesShowed);
@@ -91,8 +93,8 @@ export default {
     this.gamesShowed = this.gamesToShow;
   },
   methods: {
-    ...mapMutations(['clearGameError']),
-    ...mapActions(['startGame']),
+    ...mapMutations('games', ['setGameError']),
+    ...mapActions('games', ['startGame']),
     onCloseDepositModal() {
       this.showDepositModal = false;
       this.$modal.show('cashier');
@@ -150,6 +152,8 @@ export default {
         gameId,
         demo,
       });
+
+      console.log(this.gameError);
 
       if (!this.gameError) {
         if (this.platform === 'mobile') window.location.href = this.gameUrlForIframe;

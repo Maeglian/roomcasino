@@ -40,7 +40,7 @@ export default {
     next();
   },
   beforeRouteLeave(to, from, next) {
-    this.clearEmailConfirmError();
+    this.setEmailConfirmError('');
     next();
   },
   layout: 'page',
@@ -60,7 +60,7 @@ export default {
     clearTimeout(this.timer);
   },
   methods: {
-    ...mapMutations(['clearEmailConfirmError']),
+    ...mapMutations(['setEmailConfirmError']),
     ...mapActions(['confirmEmail']),
   },
 };

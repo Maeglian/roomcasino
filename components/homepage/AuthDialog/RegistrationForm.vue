@@ -434,17 +434,9 @@ export default {
     };
   },
   computed: {
-    ...mapState([
-      'width',
-      'currencyList',
-      'countriesList',
-      'phoneCodeList',
-      'authStatus',
-      'authError',
-      'defaultCurrency',
-      'updateProfileError',
-      'phoneCodeList',
-    ]),
+    ...mapState(['width', 'authStatus', 'authError', 'defaultCurrency']),
+    ...mapState('profile', ['updateProfileError']),
+    ...mapState('dictionary', ['currencyList', 'countriesList', 'phoneCodeList']),
     ...mapGetters(['defaultCountry', 'userInfo', 'minAge']),
     birthDate() {
       const {
@@ -660,7 +652,8 @@ export default {
     writeObjValuesToLocalStorage(this.fieldsStep2);
   },
   methods: {
-    ...mapActions(['registerUser', 'updateProfile']),
+    ...mapActions(['registerUser']),
+    ...mapActions('profile', ['updateProfile']),
     onSubmitForm() {
       if (this.step === 1) {
         this.$v.fieldsStep1.$touch();

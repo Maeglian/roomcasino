@@ -40,8 +40,8 @@ export default {
     GamblingLimit,
   },
   computed: {
-    ...mapState(['limits']),
-    ...mapGetters(['limitsByTypes']),
+    ...mapState('profile', ['limits']),
+    ...mapGetters('profile', ['limitsByTypes']),
     // limits() {
     //   return this.fakeLimits;
     // },

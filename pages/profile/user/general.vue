@@ -139,7 +139,10 @@ export default {
       return arr.join('');
     },
   },
-  middleware: 'clearUpdateProfileError',
+  beforeRouteLeave(from, to, next) {
+    if (this.updateProfileError) this.setUpdateProfileError('');
+    next();
+  },
   data() {
     return {
       fields: {},
@@ -208,14 +211,9 @@ export default {
     },
   },
   computed: {
-    ...mapState([
-      'user',
-      'profileIsLoading',
-      'profileIsUpdating',
-      'updateProfileError',
-      'countriesList',
-      'defaultCountry',
-    ]),
+    ...mapState(['user', 'profileIsLoading', 'defaultCountry']),
+    ...mapState('profile', ['profileIsUpdating', 'updateProfileError']),
+    ...mapState('dictionary', ['countriesList']),
     ...mapGetters(['userInfo', 'minAge']),
     // fields() {
     //   return info === 'real' ? this.userInfo : this.fakeFields;
@@ -233,8 +231,9 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(['clearUpdateProfileError', 'pushNotificationAlert']),
-    ...mapActions(['updateProfile']),
+    ...mapMutations(['pushNotificationAlert']),
+    ...mapMutations('profile', ['setUpdateProfileError']),
+    ...mapActions('profile', ['updateProfile']),
     onSubmit() {
       if (this.$v.$invalid) {
         this.$v.$touch();

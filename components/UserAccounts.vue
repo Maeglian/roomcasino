@@ -48,11 +48,11 @@ export default {
     },
   },
   methods: {
-    ...mapActions([
+    ...mapActions(['getProfile']),
+    ...mapActions('profile', [
       'setActiveAccount',
       'getBonusList',
       'getAvailableBonusList',
-      'getProfile',
       'getLimits',
     ]),
     togglePopup() {

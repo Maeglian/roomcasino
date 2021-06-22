@@ -172,7 +172,8 @@ export default {
     };
   },
   computed: {
-    ...mapState(['navIsOpen', 'games', 'depositNum', 'width']),
+    ...mapState(['navIsOpen', 'depositNum', 'width']),
+    ...mapState('games', ['games']),
     ...mapGetters(['isLoggedIn']),
     slides() {
       const slides = [

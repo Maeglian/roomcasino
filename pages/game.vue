@@ -26,6 +26,7 @@ import MainNav from '@/components/homepage/MainNav';
 import ControlsPanel from '@/components/GamePage/ControlsPanel';
 
 export default {
+  name: 'GamePage',
   components: {
     MainNav,
     ControlsPanel,
@@ -42,7 +43,7 @@ export default {
     bg: '',
   }),
   computed: {
-    ...mapState(['gameUrlForIframe']),
+    ...mapState('games', ['gameUrlForIframe']),
     ...mapGetters(['activeAccount']),
     getGameUrl() {
       return this.gameUrlForIframe || this.storageGameUrl;
@@ -75,7 +76,8 @@ export default {
     this.bg = localStorage.getItem('gameBg');
   },
   methods: {
-    ...mapActions(['startGame', 'getProfile']),
+    ...mapActions(['getProfile']),
+    ...mapActions('games', ['startGame']),
     toggleFullScreenMode() {
       this.isFullScreen = !this.isFullScreen;
     },

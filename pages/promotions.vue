@@ -109,7 +109,6 @@
 <script>
 import Banner from '@/components/Banner';
 // import Counter from '@/components/Counter';
-import { mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
@@ -216,9 +215,6 @@ export default {
         },
       ],
     };
-  },
-  computed: {
-    ...mapState(['tournaments']),
   },
 };
 </script>

@@ -42,44 +42,13 @@ import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'Winners',
-  data() {
-    return {
-      items: [
-        {
-          name: 'Wild98',
-          game: 'Divine Lotus',
-          imgUrl: 'https://static.egamings.com/games/thunderkick/divine_lotus.jpg',
-          sum: '11.574.60',
-        },
-        {
-          name: 'Dakamu',
-          game: "Jin Chan's Pond of Riches",
-          imgUrl: 'https://static.egamings.com/games/thunderkick/jin_chans_pond_of_riches.jpg',
-          sum: '8.474.25',
-        },
-        {
-          name: 'Ioana Juliana',
-          game: 'Dragon Horn',
-          imgUrl: 'https://static.egamings.com/games/thunderkick/dragon_horn.jpg',
-          sum: '6.274.48',
-        },
-        {
-          name: 'Strike',
-          game: 'Sword of Khans',
-          imgUrl: 'https://static.egamings.com/games/thunderkick/sword_of_khans.jpg',
-          sum: '1.933.29',
-        },
-        {
-          name: 'Farisha',
-          game: 'Ravens Eye',
-          imgUrl: 'https://static.egamings.com/games/thunderkick/ravens_eye.jpg',
-          sum: '843.90',
-        },
-      ],
-    };
-  },
   computed: {
-    ...mapState(['topWinnerList', 'lastWinnerList', 'topWinnerListError', 'lastWinnerListError']),
+    ...mapState('games', [
+      'topWinnerList',
+      'lastWinnerList',
+      'topWinnerListError',
+      'lastWinnerListError',
+    ]),
   },
   mounted() {
     this.lastWinnersTimer = setInterval(this.getLastWinnerList, 10000, { limit: 5 });
@@ -90,7 +59,7 @@ export default {
     clearInterval(this.topWinnersTimer);
   },
   methods: {
-    ...mapActions(['getTopWinnerList', 'getLastWinnerList']),
+    ...mapActions('games', ['getTopWinnerList', 'getLastWinnerList']),
   },
 };
 </script>

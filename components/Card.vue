@@ -166,7 +166,8 @@ export default {
     },
   },
   computed: {
-    ...mapState(['platform', 'dga', 'gameProducers']),
+    ...mapState(['platform', 'dga']),
+    ...mapState('games', ['gameProducers']),
     ...mapGetters(['isLoggedIn', 'activeAccount']),
     iconUrl() {
       const gameProducer = this.gameProducers.find(

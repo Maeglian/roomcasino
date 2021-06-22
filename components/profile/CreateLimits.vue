@@ -192,7 +192,7 @@ export default {
     value: { checkIfPositiveNumbers },
   },
   computed: {
-    ...mapState(['createLimitError']),
+    ...mapState('profile', ['createLimitError']),
     ...mapGetters(['activeAccount']),
     // limitTypes() {
     //   return Object.entries(this.limits).map(entry => {
@@ -203,13 +203,11 @@ export default {
     //   });
     // },
     isMoney() {
-      if (
+      return !(
         this.type.value === 'sessionLimit' ||
         this.type.value === 'self_exclusion' ||
         this.type.value === 'reality_check'
-      )
-        return false;
-      return true;
+      );
     },
     reset() {
       let date;
@@ -246,7 +244,7 @@ export default {
   // },
   methods: {
     ...mapMutations(['pushNotificationAlert']),
-    ...mapActions(['addLimit', 'getLimits']),
+    ...mapActions('profile', ['addLimit', 'getLimits']),
     onClickLimitBtn() {
       this.$v.$touch();
       if (this.$v.$error) return;

@@ -106,7 +106,8 @@ export default {
     };
   },
   computed: {
-    ...mapState(['tournamentGames', 'tournamentGamesAreLoading', 'width']),
+    ...mapState(['width']),
+    ...mapState('games', ['tournamentGames', 'tournamentGamesAreLoading']),
   },
   created() {
     if (this.tournaments[this.$route.params.tournament])
@@ -114,7 +115,7 @@ export default {
     else this.$router.push(this.localePath('/404'));
   },
   methods: {
-    ...mapActions(['getTournamentGames']),
+    ...mapActions('games', ['getTournamentGames']),
   },
 };
 </script>

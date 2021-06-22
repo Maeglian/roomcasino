@@ -65,7 +65,7 @@ export default {
     window.clearInterval(this.timer);
   },
   methods: {
-    ...mapMutations(['setGameUrl']),
+    ...mapMutations('games', ['setGameUrl']),
     ...mapActions(['getProfile']),
     updateDateTime() {
       const today = new Date();

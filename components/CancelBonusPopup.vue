@@ -47,12 +47,12 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(['clearDeleteBonusError', 'pushNotificationAlert']),
-    ...mapActions([
+    ...mapMutations(['pushNotificationAlert']),
+    ...mapActions(['getProfile']),
+    ...mapActions('profile', [
       'getBonusList',
       'getAvailableBonusList',
       'deleteBonus',
-      'getProfile',
       'getBonusHistoryList',
     ]),
     onDeleteBonus(id) {
