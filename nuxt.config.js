@@ -139,7 +139,7 @@ export default {
     // disabled: process.env.NUXT_ENV_MODE !== 'production',
     dsn: 'https://6ab622b3618044648f19bba6d10be9fa@o739395.ingest.sentry.io/5785756',
     publishRelease: true,
-    sourceMapStyle: 'hidden-source-map',
+    // sourceMapStyle: 'hidden-source-map',
     config: {
       release: process.env.GITHUB_SHA,
     },
