@@ -3,13 +3,18 @@
     <div class="Winners-Section">
       <div class="Title Title--type-h2 Winners-Title">{{ $t('homepage.lastWinners') }}</div>
       <div class="Table TableBordered Winners-Table">
-        <div v-for="(item, i) in lastWinnerList" :key="`lastWinner_${i}`" class="Table-Row">
+        <div
+          v-for="(item, i) in lastWinnerList"
+          :key="`lastWinner_${i}`"
+          class="Table-Row Winners-Winner"
+          @click="onClickWinner(item)"
+        >
           <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" :src="item.gameIconUrl" alt="" />
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Name">
-            {{ item.nickname }} just won<br />
-            in <span class="Winners-Game">{{ item.gameName }}</span>
+            {{ item.nickname }}<br />
+            <span class="Winners-Game">{{ item.gameName }}</span>
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Money">
             {{ item.amount }} {{ item.currency }}
@@ -20,13 +25,18 @@
     <div class="Winners-Section">
       <div class="Title Title--type-h2 Winners-Title">{{ $t('homepage.topWinners') }}</div>
       <div class="Table Table--bordered Winners-Table">
-        <div v-for="(item, i) in topWinnerList" :key="`topWinner_${i}`" class="Table-Row">
+        <div
+          v-for="(item, i) in topWinnerList"
+          :key="`topWinner_${i}`"
+          class="Table-Row Winners-Winner"
+          @click="onClickWinner(item)"
+        >
           <div class="Table-Cell TableBordered-Cell Winners-Avatar">
             <img class="Winners-Avatar" :src="item.gameIconUrl" alt="" />
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Name">
-            {{ item.nickname }} just won<br />
-            in <span class="Winners-Game">{{ item.gameName }}</span>
+            {{ item.nickname }}<br />
+            <span class="Winners-Game">{{ item.gameName }}</span>
           </div>
           <div class="Table-Cell TableBordered-Cell Winners-Money">
             {{ item.amount }} {{ item.currency }}
@@ -39,15 +49,19 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
+import openGame from '@/mixins/openGame';
 
 export default {
   name: 'Winners',
+  mixins: [showAuthDialog, openGame],
   computed: {
     ...mapState('games', [
       'topWinnerList',
       'lastWinnerList',
       'topWinnerListError',
       'lastWinnerListError',
+      'defaultGames',
     ]),
   },
   mounted() {
@@ -60,6 +74,14 @@ export default {
   },
   methods: {
     ...mapActions('games', ['getTopWinnerList', 'getLastWinnerList']),
+    ...mapActions(['getTopWinnerList', 'getLastWinnerList']),
+    onClickWinner(winner) {
+      const game = this.defaultGames.find(g => g.gameId === winner.gameId);
+      if (!game) return;
+      const bg = game.backgroundUrl;
+      const producer = game.gameProducer;
+      this.openGamePage({ id: winner.gameId, demo: false, bg }, producer);
+    },
   },
 };
 </script>
@@ -109,6 +131,10 @@ export default {
 
   &-Title {
     margin-bottom: 19px;
+  }
+
+  &-Winner {
+    cursor: pointer;
   }
 
   &-Avatar {
