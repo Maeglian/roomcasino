@@ -107,6 +107,7 @@ export const state = () => ({
   newGames: [],
   liveGames: [],
   tournamentGames: [],
+  showDepositModal: false,
   jackpots: [],
   limits: [],
   gamesAreLoading: false,
@@ -677,6 +678,9 @@ export const mutations = {
   },
   clearGameError: state => {
     state.gameError = '';
+  },
+  toggleDepositModal: (state, payload) => {
+    state.showDepositModal = payload;
   },
   setPageDataIsLoading: state => {
     state.pageDataIsLoading = true;
