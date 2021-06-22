@@ -46,10 +46,10 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import BaseModal from '@/components/base/BaseModal';
 import Card from '@/components/Card';
+import openGame from '@/mixins/openGame';
 
 export default {
   name: 'Games',
@@ -57,7 +57,7 @@ export default {
     BaseModal,
     Card,
   },
-  mixins: [showAuthDialog],
+  mixins: [showAuthDialog, openGame],
   props: {
     games: {
       type: Array,
@@ -77,12 +77,9 @@ export default {
   data() {
     return {
       gamesShowed: 0,
-      showDepositModal: false,
     };
   },
   computed: {
-    ...mapState(['gameUrlForIframe', 'gameError', 'platform', 'freeSpinList']),
-    ...mapGetters(['activeAccount', 'userInfo']),
     gamesLimited() {
       return this.games.slice(0, this.gamesShowed);
     },
@@ -91,74 +88,6 @@ export default {
     this.gamesShowed = this.gamesToShow;
   },
   methods: {
-    ...mapMutations(['clearGameError']),
-    ...mapActions(['startGame']),
-    onCloseDepositModal() {
-      this.showDepositModal = false;
-      this.$modal.show('cashier');
-    },
-    async getGameUrl({
-      gameId,
-      returnUrl = `${window.location.protocol}//${window.location.host}`,
-      demo,
-    }) {
-      await this.startGame({
-        gameId,
-        returnUrl,
-        demo,
-      });
-
-      if (!this.gameError) {
-        localStorage.setItem('gameUrlForIframe', this.gameUrlForIframe);
-        return this.gameUrlForIframe;
-      }
-
-      return null;
-    },
-
-    async openGamePage({ id, demo, bg }, gameProducer) {
-      if (!demo && !this.isLoggedIn) {
-        this.showRegistrationDialog('login');
-        return;
-      }
-
-      if (!demo && !this.activeAccount.balance) {
-        const hasFreeSpins = this.freeSpinList.some(spin => {
-          return spin.gameList.some(game => game.id === id && spin.status === 'active');
-        });
-
-        if (!hasFreeSpins) {
-          this.showDepositModal = true;
-          return;
-        }
-      }
-
-      if (!demo && gameProducer === 'bgaming') {
-        const notFullProfileData = Object.values(this.userInfo).some(
-          item => item === null || item === '',
-        );
-        if (notFullProfileData) {
-          this.showRegistrationDialog('registration', false, true, this.getGame, id, demo, bg);
-          return;
-        }
-      }
-
-      await this.getGame({ gameId: id, demo, bg });
-    },
-    async getGame({ gameId, demo, bg }) {
-      await this.getGameUrl({
-        gameId,
-        demo,
-      });
-
-      if (!this.gameError) {
-        if (this.platform === 'mobile') window.location.href = this.gameUrlForIframe;
-        else {
-          localStorage.setItem('gameBg', bg);
-          this.$router.push(this.localePath('/game'));
-        }
-      }
-    },
     showMoreGames() {
       this.gamesShowed += this.gamesToShow;
     },
