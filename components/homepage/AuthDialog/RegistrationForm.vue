@@ -256,20 +256,20 @@ import BaseInput from '@/components/base/BaseInput.vue';
 import BaseCheckbox from '@/components/base/BaseCheckbox.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapActions, mapGetters, mapState } from 'vuex';
-import { required, email, minLength, maxLength, numeric } from 'vuelidate/lib/validators';
+import { email, maxLength, minLength, numeric, required } from 'vuelidate/lib/validators';
 import {
+  deleteObjValuesFromLocalStorage,
   getObjValuesFromLocalStorage,
   writeObjValuesToLocalStorage,
-  deleteObjValuesFromLocalStorage,
   transformAustriaPhone,
 } from '@/utils/helpers';
 import {
-  termsCheck,
   dateCheck,
-  phoneWithPlusCheck,
-  postalCodeCheck,
   dayCheck,
   monthCheck,
+  phoneWithPlusCheck,
+  postalCodeCheck,
+  termsCheck,
   yearCheck,
 } from '@/utils/formCheckers';
 import RegistrationBonus from '@/components/homepage/RegistrationBonus';
@@ -674,6 +674,8 @@ export default {
           } else regData[key] = this.fieldsStep1[key].value;
         }
         if (localStorage.getItem('cxd')) regData.cxd = localStorage.getItem('cxd');
+        regData.locale = navigator.language || navigator.userLanguage;
+        regData.language = this.$i18n.locale === 'en-ca' ? 'en' : this.$i18n.locale;
         this.registerUser(regData).then(() => {
           if (!this.authError) {
             deleteObjValuesFromLocalStorage(this.fieldsStep1);
