@@ -441,11 +441,6 @@
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!"
-    },
-    "dailyCashHunt": {
-      "title": "Celebrate<br/> Daily Cash Hunt<br/> Week 2",
-      "name": "HUNT DOWN 60K IN DAILY CASH THIS SUMMER!",
-      "text": "Ninecasino is pleased to welcome you as a participant in the ”Daily Cash Hunt” Network Tournament Series from Booongo.<br/>The Tournament Series is a unique game promotion introduced by Booongo. It’s a combo of regular tournaments with mixed terms (the duration of each tournament in the series can vary); the Scoring tournament (Winning Mechanic) and also a 2nd (EXTRA) Leaderboard reflecting the player’s overall progress.<br/><br/>Don’t miss out on sharing the huge prize pool from Booongo! Play, enjoy, and win!"
     }
   },
   "tournaments": {
@@ -580,30 +575,6 @@
       {
         "title": "Additionally:",
         "text": "<strong>How to win:<br/><br/>Weekly Roulette Tournament<br/>Prizes:</strong> €50,000 in total across 1,000 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0,50 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 2x of the total Qualifying Bet to qualify for the Weekly Roulette Tournament.<br/><br/>A Player may increase their Weekly Roulette Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Any stakes placed on 1:1 odds bets (Red/Black, Odd/Even, 1:18/19:36) shall not be counted towards the Weekly Roulette Tournament score.<br/><br/><strong>Weekly Blackjack Tournament<br/>Prizes:</strong> €25,000 in total across 300 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €10 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Blackjack Tournament.<br/><br/>A Player may increase their Weekly Blackjack Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets and/or Bets Behind may be considered for the Weekly Blackjack Tournament.<br/><br/><strong>Weekly Mega Wheel Tournament<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Mega Wheel Tournament.<br/><br/>A Player may increase their Weekly Mega Wheel Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>All Qualifying Bets may be considered for the Weekly Mega Wheel Tournament.<br/><br/><strong>Weekly Baccarat Tournaments<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Baccarat Tournament.<br/><br/>A Player may increase their Weekly Baccarat Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets (Player, Banker, and Tie) may be considered for the Weekly Baccarat Tournament score."
-      }
-    ]
-  },
-  "dailyCashHunt": {
-    "title": "Celebrate<br/> Daily Cash Hunt<br/> Week 2",
-    "prize": "€ 60 000",
-    "text": "Ninecasino is pleased to welcome you as a participant in the ”Daily Cash Hunt” Network Tournament Series from Booongo.",
-    "textMobile": " is pleased to welcome you as a participant in the ”Daily Cash Hunt” Network Tournament Series from Booongo.",
-    "terms": [
-      {
-        "title": "",
-        "text": "We are entering Week 2 of the Tournament - 17.06.2021 0:00 UTC to 22.06.2021 23:00 UTC"
-      },
-      {
-        "title": "",
-        "text": "The Tournament Series is a unique game promotion introduced by Booongo. It’s a combo of regular tournaments with mixed terms (the duration of each tournament in the series can vary); the Scoring tournament (Winning Mechanic) and also a 2nd (EXTRA) Leaderboard reflecting the player’s overall progress."
-      },
-      {
-        "title": "Prize pool information: <br/><br/>",
-        "text": "Get a chance to share a prize pool of 30,000 EUR \u200Bfor \u200BWeek 2 -  4,000 EUR \u200Bfor each Regular Tournament, which is \u200B24,000 EUR in total for \u200B6 tournaments. And 6,000 EUR\u200B for the Series Leaderboard."
-      },
-      {
-        "title": "Minimum bet requirements: <br/><br/>",
-        "text": "The minimum bet required to qualify is \u200B0.5 EUR\u200B or currency equivalent and the minimum \u200Bnumber of spins\u200B is \u200B100."
       }
     ]
   },
