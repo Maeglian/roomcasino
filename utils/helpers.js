@@ -72,3 +72,7 @@ export const searchInArrByString = (string, arr, itemName = undefined) => {
       return -1;
     });
 };
+
+export const transformAustriaPhone = phone => {
+  return phone.replace(/^\+?430/, match => match.replace('430', '43'));
+};

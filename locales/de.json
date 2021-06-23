@@ -440,11 +440,6 @@
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!<br/><br/>Magst du Live-Spiele? Diese Live-Ausgabe wird dir gefallen. Mach mit bei wöchentlichen Turnieren – Roulette, Blackjack, Mega Wheel, Baccarat!"
-    },
-    "dailyCashHunt": {
-      "title": "Feiern Sie<br/> Daily Cash Hunt<br/> Woche 2",
-      "name": "JAGEN SIE IN DIESEM SOMMER BEI DAILY CASH 60.000 EURO IN BAR!",
-      "text": "Ninecasino-Casino freut sich, Sie als Teilnehmer an der Daily Cash Hunt-Netz-Turnierserie von Booongo begrüßen zu dürfen.<br/>Die Turnierserie ist eine einmalige Aktion von Booongo. Es handelt sich um eine Kombination aus regelmäßigen Turnieren mit unterschiedlichen Laufzeiten (die Dauer der einzelnen Turnier einer Reihe kann variieren), dem jeweiligen Wertungsturnier (Gewinnmechanismus) sowie einer zweiten (SONDER-) Rangliste, die den Gesamtstand der Spielerin/des Spielers wiedergibt.<br/><br/>Verpassen Sie nicht Ihren Teil am riesigen Preisgeld von Booongo! Spielen, Spaß haben und gewinnen!"
     }
   },
   "tournaments": {
@@ -576,30 +571,6 @@
       {
         "title": "Zusätzlich:",
         "text": "<strong>How to win:<br/><br/>Wöchentliches Roulette-Turnier<br/>Gewinne:</strong> Insgesamt 50.000 € verteilt auf 1.000 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 2x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Roulette-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Roulette-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Wetteinsätze, die auf Wetten mit Chance 1:1 getätigt werden (Rot/Schwarz, Gerade/Ungerade, 1:18/19:36) werden nicht auf die Punktzahl des Wöchentlichen Roulette-Turniers angerechnet.<br/><br/><strong>Wöchentliches Blackjack-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 300 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 10 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliches Blackjack-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Blackjack-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets und/oder Bets Behind werden für das Wöchentliche Blackjack-Turnier berücksichtigt.<br/><br/><strong>Wöchentliches Mega Wheel-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Mega Wheel-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Mega Wheel-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Alle Qualifizierenden Wetten werden für das Wöchentliche Mega Wheel-Turnier berücksichtigt.<br/><br/><strong>Wöchentliche Baccarat-Turniere<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Baccarat-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Baccarat-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets (Player, Banker und Tie) werden für das Wöchentliche Baccarat-Turnier berücksichtigt."
-      }
-    ]
-  },
-  "dailyCashHunt": {
-    "title": "Feiern Sie<br/> Daily Cash Hunt<br/> Woche 2",
-    "prize": "€ 60 000",
-    "text": "Ninecasino freut sich, Sie als Teilnehmer an der \"Daily Cash Hunt\" Netzwerk-Turnierserie von Booongo begrüßen zu dürfen.",
-    "textMobile": "Ninecasino freut sich, Sie als Teilnehmer an der \"Daily Cash Hunt\" Netzwerk-Turnierserie von Booongo begrüßen zu dürfen.",
-    "terms": [
-      {
-        "title": "",
-        "text": "Wir betreten Woche 2 des Turniers - 17.06.2021 0:00 UTC bis 22.06.2021 23:00 UTC"
-      },
-      {
-        "title": "",
-        "text": "Die Tournament Series ist eine einzigartige Spiel-Promotion, die von Booongo eingeführt wurde. Es handelt sich um eine Kombination aus regulären Turnieren mit gemischten Laufzeiten (die Dauer jedes Turniers in der Serie kann variieren); dem Wertungsturnier (Gewinnmechanik) und auch einem 2. (EXTRA) Leaderboard, das den Gesamtfortschritt des Spielers widerspiegelt."
-      },
-      {
-        "title": "",
-        "text": "Erhalten Sie die Chance, einen Preispool von 30.000 EUR für Woche 2 zu teilen - 4.000 EUR für jedes reguläre Turnier, also insgesamt 24.000 EUR für 6 Turniere. Und 6.000 EUR für das Series Leaderboard."
-      },
-      {
-        "title": "",
-        "text": "Der Mindesteinsatz, um sich zu qualifizieren, beträgt 0,5 EUR oder den entsprechenden Währungsbetrag und die Mindestanzahl an Freispielen beträgt 100."
       }
     ]
   },
