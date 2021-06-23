@@ -117,6 +117,7 @@ import Loader from '@/components/Loader';
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
 import { dateCheck, phoneWithPlusCheck, postalCodeCheck } from '@/utils/formCheckers';
 import moment from 'moment';
+import { transformAustriaPhone } from '@/utils/helpers';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 
@@ -255,6 +256,8 @@ export default {
           payload.country = this.user.country;
         } else if (key === 'gender' && !this.userInfo.gender) {
           payload.gender = this.fields.gender.value;
+        } else if (key === 'phoneNumber' && !this.userInfo.phoneNumber) {
+          payload.phoneNumber = transformAustriaPhone(this.fields.phoneNumber);
         } else payload[key] = this.fields[key];
       }
 
@@ -451,6 +454,10 @@ export default {
   &-Dropdown {
     font-size: 12px;
     text-transform: capitalize;
+
+    .BaseDropdown-ActiveItem {
+      background: var(--color-bg);
+    }
   }
 }
 </style>
