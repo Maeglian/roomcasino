@@ -261,6 +261,7 @@ import {
   deleteObjValuesFromLocalStorage,
   getObjValuesFromLocalStorage,
   writeObjValuesToLocalStorage,
+  transformAustriaPhone,
 } from '@/utils/helpers';
 import {
   dateCheck,
@@ -461,7 +462,7 @@ export default {
 
       const codeNumber = code.value ? code.value.phoneCode.replace(' ', '') : '';
 
-      return codeNumber + tel.value;
+      return transformAustriaPhone(codeNumber + tel.value);
     },
     fields() {
       if (this.step === 1) {
@@ -553,7 +554,7 @@ export default {
       address: {
         value: {
           required,
-          minLength: minLength(1),
+          minLength: minLength(5),
           maxLength: maxLength(500),
         },
       },
@@ -690,7 +691,6 @@ export default {
         for (const key in this.fieldsStep2) {
           if (!profileData[key]) {
             if (key === 'birthDate' || key === 'phoneNumber') profileData[key] = this[key];
-            else if (key === 'phoneNumber') profileData[key] = `+${this.fieldsStep2[key].value}`;
             else profileData[key] = this.fieldsStep2[key].value;
           }
         }
