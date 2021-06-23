@@ -172,8 +172,7 @@ export default {
       title: 'Bonus Policy Of The Ninecasino Gaming Platform',
       meta: [
         {
-          description:
-            'A detailed list of the general terms and conditions of the bonus program available here. What bets are available on the site? Wagering requirements and fair play rules',
+          description: 'Detailed Information About Bonus Policy Of Ninecasino',
         },
       ],
     };

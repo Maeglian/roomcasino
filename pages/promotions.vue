@@ -208,11 +208,11 @@ export default {
   },
   head() {
     return {
-      title: 'Play Ninecasino Online | Promotions + Bonuses',
+      title: 'Promotions | Ninecasino',
       meta: [
         {
           description:
-            'Ninecasino grants the right to participate in twenty-five free spins on the money of the institution! Read about all current events and promotions on the Room casino website!',
+            'Here You Can Find About Our Welcome Bonus For New Players And Other Regular Promotions At Ninecasino',
         },
       ],
     };
