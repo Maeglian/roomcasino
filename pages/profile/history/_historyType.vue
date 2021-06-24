@@ -23,7 +23,7 @@
       <template #cancelBtn="{ item }">
         <button
           v-if="item.status === 'wait' && item.action === 'withdraw'"
-          class="Btn Btn--outline CabinetPage-Btn HistoryPage-Btn"
+          class="Btn Btn--outline2 CabinetPage-Btn HistoryPage-Btn"
           @click="onClickCancelBtn"
         >
           {{ $t('buttons.cancel') }}

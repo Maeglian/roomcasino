@@ -21,7 +21,7 @@
       class="DefaultGames-Cards"
       :games="games"
       :games-to-show="24"
-      btn-class="Btn--common Btn--dark"
+      btn-class="Btn--common Btn--outline"
     />
   </div>
 </template>

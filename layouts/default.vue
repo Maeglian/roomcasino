@@ -46,6 +46,7 @@ export default {
   --color-border2: #979797;
   --color-hover: #c40916;
   --color-hover2: #ffd708;
+  --color-hover3: #f3b233;
   --color-accept: #67b12d;
   --color-discard: #cc1f1f;
   --color-error: #eb1c2a;

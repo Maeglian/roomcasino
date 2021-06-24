@@ -70,6 +70,15 @@ button {
 
   &--outline {
     background: transparent;
+    border: 2px solid var(--color-main1);
+
+    &:hover {
+      background: var(--color-hover3);
+    }
+  }
+
+  &--outline2 {
+    background: transparent;
     border: 2px solid var(--color-main2);
   }
 
