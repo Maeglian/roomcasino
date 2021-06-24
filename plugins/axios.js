@@ -1,7 +1,7 @@
-import axios from 'axios';
+import { http } from '@/store';
 
 export default async context => {
   if (context.store.getters.isLoggedIn) {
-    axios.defaults.headers.common['X-Auth-Token'] = context.store.state.token;
+    http.defaults.headers.common['X-Auth-Token'] = context.store.state.token;
   }
 };

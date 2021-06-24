@@ -145,7 +145,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['defaultGames']),
+    ...mapState('games', ['defaultGames']),
     sliderOptions() {
       const items = this.bonus.gameList.length >= 3 ? 3 : this.bonus.gameList.length;
       const nav = this.bonus.gameList.length > items;

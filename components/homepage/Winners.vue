@@ -56,7 +56,7 @@ export default {
   name: 'Winners',
   mixins: [showAuthDialog, openGame],
   computed: {
-    ...mapState([
+    ...mapState('games', [
       'topWinnerList',
       'lastWinnerList',
       'topWinnerListError',
@@ -73,7 +73,7 @@ export default {
     clearInterval(this.topWinnersTimer);
   },
   methods: {
-    ...mapActions(['getTopWinnerList', 'getLastWinnerList']),
+    ...mapActions('games', ['getTopWinnerList', 'getLastWinnerList']),
     onClickWinner(winner) {
       const game = this.defaultGames.find(g => g.gameId === winner.gameId);
       if (!game) return;

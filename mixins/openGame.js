@@ -2,12 +2,15 @@ import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 
 export default {
   computed: {
-    ...mapState(['gameUrlForIframe', 'gameError', 'platform', 'freeSpinList', 'showDepositModal']),
+    ...mapState(['platform', 'showDepositModal']),
+    ...mapState('games', ['gameUrlForIframe', 'gameError']),
+    ...mapState('profile', ['freeSpinList']),
     ...mapGetters(['activeAccount', 'userInfo']),
   },
   methods: {
-    ...mapMutations(['clearGameError', 'toggleDepositModal']),
-    ...mapActions(['startGame']),
+    ...mapMutations(['toggleDepositModal']),
+    ...mapMutations('games', ['setGameError']),
+    ...mapActions('games', ['startGame']),
     onCloseDepositModal() {
       this.toggleDepositModal(false);
       this.$modal.show('cashier');

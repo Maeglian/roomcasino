@@ -3,15 +3,13 @@ import { mapState, mapGetters, mapMutations } from 'vuex';
 
 export default {
   computed: {
-    ...mapState(['authError', 'updateProfileError', 'width']),
+    ...mapState(['authError', 'width']),
+    ...mapState('profile', ['updateProfileError']),
     ...mapGetters(['isLoggedIn']),
   },
   methods: {
-    ...mapMutations([
-      'removeAuthError',
-      'clearUpdateProfileError',
-      'setRegistrationWindowWasOpened',
-    ]),
+    ...mapMutations(['removeAuthError', 'setRegistrationWindowWasOpened']),
+    ...mapMutations('profile', ['setUpdateProfileError']),
     showRegistrationDialog(
       authType,
       beforeDeposit = false,
@@ -34,7 +32,7 @@ export default {
     },
     afterCloseAuthDialog() {
       if (this.authError) this.removeAuthError();
-      if (this.updateProfileError) this.clearUpdateProfileError();
+      if (this.updateProfileError) this.setUpdateProfileError('');
     },
     onClickBtn() {
       if (!this.isLoggedIn) this.showRegistrationDialog('registration');

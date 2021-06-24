@@ -7,7 +7,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['gamesSearched']),
+    ...mapGetters('games', ['gamesSearched']),
     filteredGames() {
       return this.searched ? this.gamesSearched(this.searched) : this.games;
     },

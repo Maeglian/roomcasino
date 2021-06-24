@@ -22,7 +22,7 @@ export default {
     Games,
   },
   computed: {
-    ...mapState(['games', 'gamesAreLoading']),
+    ...mapState('games', ['games', 'gamesAreLoading']),
     gamesParams() {
       const params = {};
       if (this.$route.params.providerName !== 'all')
@@ -40,7 +40,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['getGames']),
+    ...mapActions('games', ['getGames']),
   },
 };
 </script>

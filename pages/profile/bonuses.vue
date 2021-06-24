@@ -188,7 +188,7 @@ export default {
     FreeSpin,
   },
   computed: {
-    ...mapState([
+    ...mapState('profile', [
       'bonusListIsLoading',
       'historyListIsLoading',
       'freeSpinListIsLoading',
@@ -210,11 +210,11 @@ export default {
   },
   methods: {
     ...mapMutations(['pushNotificationAlert']),
-    ...mapActions([
+    ...mapActions(['getProfile']),
+    ...mapActions('profile', [
       'getBonusList',
       'getAvailableBonusList',
       'deleteBonus',
-      'getProfile',
       'getBonusHistoryList',
       'getAvailableFreeSpinList',
     ]),
