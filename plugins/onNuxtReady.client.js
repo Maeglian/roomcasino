@@ -1,19 +1,14 @@
-import axios from 'axios';
 import detect from '@/utils/deviceDetector';
-import { throttle } from '../utils/helpers';
+import { http } from '@/store';
+import { throttle } from '@/utils/helpers';
 
 window.onNuxtReady(({ context }) => {
-  axios.interceptors.response.use(
+  http.interceptors.response.use(
     undefined,
     err =>
       new Promise(() => {
         // eslint-disable-next-line no-underscore-dangle,max-len
-        if (
-          err.response.status === 401 &&
-          err.response.config &&
-          // eslint-disable-next-line no-underscore-dangle
-          !err.response.config.__isRetryRequest
-        ) {
+        if (err === '401') {
           context.store.dispatch('logout', true);
         }
         throw err;
@@ -29,15 +24,15 @@ window.onNuxtReady(({ context }) => {
   if (context.route.query.cxd) localStorage.setItem('cxd', context.route.query.cxd);
   if (context.store.getters.isLoggedIn) {
     context.store
-      .dispatch('getAvailableBonusList')
+      .dispatch('profile/getAvailableBonusList')
       .then(() => context.store.commit('setInitialLoadingLoggedIn', 'availableBonus'));
     context.store
       .dispatch('getProfile')
       .then(() => context.store.commit('setInitialLoadingLoggedIn', 'profile'));
     context.store
-      .dispatch('getLimits')
+      .dispatch('profile/getLimits')
       .then(() => context.store.commit('setInitialLoadingLoggedIn', 'limits'));
-    context.store.dispatch('getFreeSpinList');
+    context.store.dispatch('profile/getFreeSpinList');
   } else {
     context.store.commit('setInitialLoadingLoggedIn', 'availableBonus');
     context.store.commit('setInitialLoadingLoggedIn', 'profile');
@@ -47,23 +42,23 @@ window.onNuxtReady(({ context }) => {
   updateWidth();
   window.addEventListener('resize', updateWidth);
   context.store
-    .dispatch('getDefaultGames')
+    .dispatch('games/getDefaultGames')
     .then(() => context.store.commit('setInitialLoading', 'defaultGames'));
-  context.store.dispatch('getNewGames');
-  context.store.dispatch('getLiveGames');
+  context.store.dispatch('games/getNewGames');
+  context.store.dispatch('games/getLiveGames');
   context.store
-    .dispatch('getCountriesList')
+    .dispatch('dictionary/getCountriesList')
     .then(() => context.store.commit('setInitialLoading', 'countries'));
   context.store
-    .dispatch('getPhoneCodeList')
+    .dispatch('dictionary/getPhoneCodeList')
     .then(() => context.store.commit('setInitialLoading', 'phones'));
   context.store
-    .dispatch('getCurrencyList')
+    .dispatch('dictionary/getCurrencyList')
     .then(() => context.store.commit('setInitialLoading', 'currency'));
-  context.store.dispatch('getCategoriesList');
+  context.store.dispatch('dictionary/getCategoriesList');
   context.store
-    .dispatch('getGameProducerList')
+    .dispatch('games/getGameProducerList')
     .then(() => context.store.commit('setInitialLoading', 'producers'));
-  context.store.dispatch('getTopWinnerList', { limit: 5 });
-  context.store.dispatch('getLastWinnerList', { limit: 5 });
+  context.store.dispatch('games/getTopWinnerList', { limit: 5 });
+  context.store.dispatch('games/getLastWinnerList', { limit: 5 });
 });

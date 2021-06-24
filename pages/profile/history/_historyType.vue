@@ -229,7 +229,7 @@ export default {
     };
   },
   computed: {
-    ...mapState([
+    ...mapState('profile', [
       'transactionHistoryList',
       'gameHistoryList',
       'bonusHistoryList',
@@ -276,7 +276,11 @@ export default {
   },
   methods: {
     ...mapMutations(['setCashoutTrue']),
-    ...mapActions(['getTransactionHistoryList', 'getBonusHistoryList', 'getGameHistoryList']),
+    ...mapActions('profile', [
+      'getTransactionHistoryList',
+      'getBonusHistoryList',
+      'getGameHistoryList',
+    ]),
     getData(payload = {}) {
       switch (this.$route.params.historyType) {
         case 'game':

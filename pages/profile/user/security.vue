@@ -137,7 +137,10 @@ export default {
     BaseInput,
     BaseButton,
   },
-  middleware: 'clearUpdateProfileError',
+  beforeRouteLeave(from, to, next) {
+    if (this.updateProfileError) this.setUpdateProfileError('');
+    next();
+  },
   data() {
     return {
       maxRowsPerPage: 12,
@@ -185,7 +188,7 @@ export default {
     };
   },
   computed: {
-    ...mapState([
+    ...mapState('profile', [
       'profileIsUpdating',
       'updateProfileError',
       'sessionHistoryList',
@@ -231,8 +234,9 @@ export default {
     this.getData();
   },
   methods: {
-    ...mapMutations(['clearUpdateProfileError', 'pushNotificationAlert']),
-    ...mapActions(['updatePassword', 'getSessionHistoryList']),
+    ...mapMutations(['pushNotificationAlert']),
+    ...mapMutations('profile', ['setUpdateProfileError']),
+    ...mapActions('profile', ['updatePassword', 'getSessionHistoryList']),
     getData() {
       this.getSessionHistoryList({ limit: this.limit, offset: this.offset });
     },
@@ -242,7 +246,7 @@ export default {
         : (this[el].inputType = 'password');
     },
     onSubmitPasswordForm() {
-      this.clearUpdateProfileError();
+      if (this.updateProfileError) this.setUpdateProfileError('');
       if (this.$v.$invalid) {
         this.shouldDisplayPasswordFormErrors = true;
         this.$v.$touch();

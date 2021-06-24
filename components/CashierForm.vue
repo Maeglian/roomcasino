@@ -35,9 +35,6 @@ import Loader from '@/components/Loader';
 import BaseModal from '@/components/base/BaseModal';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
-const billingSession =
-  process.env.NUXT_ENV_MODE === 'sandbox' ? 'fakeBillingSession' : 'billingSession';
-
 const environment = process.env.NUXT_ENV_MODE === 'production' ? 'production' : 'test';
 
 export default {
@@ -55,23 +52,21 @@ export default {
   },
   computed: {
     ...mapState([
-      'availableBonusList',
       'billingSession',
       'billingSessionIsLoading',
       'getBillingSessionError',
-      'fakeBillingSession',
       'shouldCashout',
       'user',
     ]),
+    ...mapState('profile', ['availableBonusList']),
     ...mapGetters(['activeAccount']),
   },
   methods: {
     ...mapMutations(['setCashoutFalse', 'pushNotificationAlert']),
-    ...mapActions([
-      'getBillingSession',
+    ...mapActions(['getBillingSession', 'getProfile']),
+    ...mapActions('profile', [
       'getBonusList',
       'getAvailableBonusList',
-      'getProfile',
       'getBonusHistoryList',
       'getTransactionHistoryList',
     ]),
@@ -98,9 +93,9 @@ export default {
       const CashierInstance = new this.$_Cashier(
         '#cashier',
         {
-          merchantId: this[billingSession].merchantId,
-          userId: this[billingSession].userId,
-          sessionId: this[billingSession].sessionId,
+          merchantId: this.billingSession.merchantId,
+          userId: this.billingSession.userId,
+          sessionId: this.billingSession.sessionId,
           environment,
           fetchConfig: true,
           method,

@@ -119,7 +119,7 @@ export default {
   mixins: [showAuthDialog],
   beforeRouteLeave(from, to, next) {
     this.showSuccessMessage = false;
-    this.clearServerError();
+    this.setServerError('');
     next();
   },
   layout: 'page',
@@ -141,12 +141,13 @@ export default {
     };
   },
   computed: {
-    ...mapState(['serverError', 'pageDataIsLoading']),
+    ...mapState(['serverError']),
+    ...mapState('profile', ['pageDataIsLoading']),
   },
   watch: {
     $route(oldRoute, newRoute) {
       if (oldRoute.query.code !== newRoute.query.code) {
-        if (this.serverError) this.clearServerError();
+        if (this.serverError) this.setServerError('');
         this.componentKey += 1;
       }
     },
@@ -169,15 +170,16 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(['clearUpdateProfileError', 'clearServerError', 'pushNotificationAlert']),
-    ...mapActions(['restorePassword', 'confirmRestorePassword']),
+    ...mapMutations(['setServerError']),
+    ...mapMutations('profile', ['setUpdateProfileError']),
+    ...mapActions('profile', ['restorePassword', 'confirmRestorePassword']),
     toggleVisibility(el) {
       this.password[el].inputType === 'password'
         ? (this.password[el].inputType = 'text')
         : (this.password[el].inputType = 'password');
     },
     onContinue() {
-      this.clearServerError();
+      if (this.serverError) this.setServerError('');
       this.$v.email.$touch();
       if (this.$v.email.$invalid) return;
       this.restorePassword({ email: this.email }).then(() => {
@@ -185,7 +187,7 @@ export default {
       });
     },
     onSubmit() {
-      if (this.serverError) this.clearServerError();
+      if (this.serverError) this.setServerError('');
       this.$v.password.$touch();
       if (this.$v.password.$invalid) return;
       this.confirmRestorePassword({

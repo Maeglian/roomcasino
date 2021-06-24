@@ -94,12 +94,12 @@ export default {
     };
   },
   computed: {
-    ...mapState(['deleteBonusError', 'activateFreeSpinError']),
+    ...mapState('profile', ['deleteBonusError', 'activateFreeSpinError']),
     ...mapGetters(['activeCurrency']),
   },
   methods: {
     ...mapMutations(['pushNotificationAlert']),
-    ...mapActions(['deleteFreeSpin', 'activateFreeSpin', 'getFreeSpinList']),
+    ...mapActions('profile', ['deleteFreeSpin', 'activateFreeSpin', 'getFreeSpinList']),
     showBonusDetails(bonus, type, chooseGameMessage = false) {
       this.$modal.show(
         BonusDetails,

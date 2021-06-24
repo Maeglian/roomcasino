@@ -2,9 +2,15 @@
   <div class="Card">
     <div class="Card-Main" @click="onClickCard">
       <div v-if="overlay && (!isLoggedIn || platform !== 'mobile')" class="Card-Overlay">
+        <div class="Card-Provider">
+          <img :src="iconUrl" alt="" class="Card-ProviderIcon" />
+          <div class="Card-ProviderName">
+            {{ gameInfo.gameProducer }}
+          </div>
+        </div>
         <button
           v-if="showDemo && gameInfo.type !== 'live'"
-          class="Card-Link"
+          class="Card-PlayFun"
           @click="
             $emit('open-gamepage', { id: gameInfo.gameId, demo: true, bg: gameInfo.backgroundUrl })
           "
@@ -98,12 +104,6 @@
       </div>
     </div>
     <div v-if="showFooter" class="Card-Footer">
-      <div class="Card-Provider">
-        <img :src="iconUrl" alt="" class="Card-ProviderIcon" />
-        <div class="Card-ProviderName">
-          {{ gameInfo.gameProducer }}
-        </div>
-      </div>
       <div class="Card-Name" v-html="linebreak(gameInfo.gameName)"></div>
     </div>
   </div>
@@ -166,7 +166,8 @@ export default {
     },
   },
   computed: {
-    ...mapState(['platform', 'dga', 'gameProducers']),
+    ...mapState(['platform', 'dga']),
+    ...mapState('games', ['gameProducers']),
     ...mapGetters(['isLoggedIn', 'activeAccount']),
     iconUrl() {
       const gameProducer = this.gameProducers.find(
@@ -213,7 +214,7 @@ export default {
         height: 100%;
       }
 
-      .Card-Link {
+      .Card-PlayFun {
         display: block;
       }
 
@@ -303,10 +304,29 @@ export default {
     transition: all 0.2s ease;
   }
 
-  &-Link {
+  &-Provider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+
+  &-ProviderIcon {
+    height: 20px;
+    margin-right: 8px;
+  }
+
+  &-ProviderName {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-text-main);
+    text-transform: capitalize;
+  }
+
+  &-PlayFun {
     display: none;
     align-self: center;
-    margin-top: 13%;
     padding: 10px;
     font-size: 12px;
     font-weight: 700;
@@ -481,29 +501,13 @@ export default {
   }
 
   &-Footer {
+    display: flex;
     flex-shrink: 0;
     flex-basis: 65px;
-    padding-top: 10px;
-    background: var(--color-bg);
-  }
-
-  &-Provider {
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5px;
-  }
-
-  &-ProviderIcon {
-    height: 20px;
-    margin-right: 8px;
-  }
-
-  &-ProviderName {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--color-text-ghost-darker);
-    text-transform: capitalize;
+    background: var(--color-bg);
   }
 
   &-Name {

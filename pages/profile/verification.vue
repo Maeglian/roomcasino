@@ -244,8 +244,8 @@ export default {
     };
   },
   computed: {
-    ...mapState([
-      'token',
+    ...mapState(['token']),
+    ...mapState('profile', [
       'userDocumentList',
       'originalFile',
       'originalFileIsLoading',
@@ -265,8 +265,9 @@ export default {
     this.dropzoneOptions.headers = { 'X-Auth-Token': this.token };
   },
   methods: {
-    ...mapMutations(['clearOriginalFile', 'clearOriginalFileError']),
-    ...mapActions(['getUserDocumentList', 'showUserDocument', 'deleteUserDocument', 'logout']),
+    ...mapMutations('profile', ['setOriginalFile', 'setOriginalFileError']),
+    ...mapActions(['logout']),
+    ...mapActions('profile', ['getUserDocumentList', 'showUserDocument', 'deleteUserDocument']),
     onDeleteDocument(id) {
       this.deleteUserDocument(id).then(() => this.getUserDocumentList());
     },
@@ -280,8 +281,8 @@ export default {
       if (xhr && xhr.status === 401) this.logout(true);
     },
     beforeCloseModalOriginalFile() {
-      this.clearOriginalFile();
-      if (this.originalFileError) this.clearOriginalFileError();
+      this.setOriginalFile(null);
+      if (this.originalFileError) this.setOriginalFileError('');
     },
     onClickDocument(id) {
       this.showUserDocument(id);
@@ -299,7 +300,7 @@ export default {
           `,
           components: { Loader },
           computed: {
-            ...mapState(['originalFile', 'originalFileIsLoading', 'originalFileError']),
+            ...mapState('profile', ['originalFile', 'originalFileIsLoading', 'originalFileError']),
           },
           methods: {
             createObjectURL(src) {

@@ -38,7 +38,8 @@ export default {
     Games,
   },
   computed: {
-    ...mapState(['width', 'games', 'gamesAreLoading', 'recentGames']),
+    ...mapState(['width']),
+    ...mapState('games', ['games', 'gamesAreLoading', 'recentGames']),
     ...mapGetters(['isLoggedIn']),
     recentGamesNum() {
       return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
@@ -61,7 +62,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(['getGames', 'getRecentGames']),
+    ...mapActions('games', ['getGames', 'getRecentGames']),
   },
 };
 </script>

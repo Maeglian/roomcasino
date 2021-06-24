@@ -58,8 +58,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
 export default {
   name: 'Vip',
   layout: 'page',
@@ -159,9 +157,6 @@ export default {
         },
       ],
     };
-  },
-  computed: {
-    ...mapState(['terms']),
   },
 };
 </script>

@@ -156,8 +156,9 @@ export default {
     ...mapGetters(['moreCurrencyAccounts', 'sortedAccountList', 'activeAccount']),
   },
   methods: {
-    ...mapMutations(['setCashoutTrue', 'clearServerError']),
-    ...mapActions(['setActiveAccount', 'getLimits', 'createAccount', 'getProfile']),
+    ...mapMutations(['setCashoutTrue', 'setServerError']),
+    ...mapActions(['getProfile']),
+    ...mapActions('profile', ['setActiveAccount', 'getLimits', 'createAccount']),
     onClickDeposit(currency) {
       if (currency === this.activeAccount.currency) {
         this.$modal.show('cashier');
@@ -212,7 +213,7 @@ export default {
       });
     },
     beforeCloseModal() {
-      if (this.serverError) this.clearServerError();
+      if (this.serverError) this.setServerError('');
     },
     onClickDepositModal() {
       this.$modal.hide('nullBalance');

@@ -6,7 +6,7 @@
       :width="300"
       :height="'auto'"
       show-on-mount
-      @close="clearGameError"
+      @close="setGameError('')"
     >
       <div class="Modal-Title">{{ $t('modals.cantStart') }}</div>
       <div class="Modal-Text">

@@ -172,19 +172,20 @@ export default {
     };
   },
   computed: {
-    ...mapState([
-      'width',
+    ...mapState(['width']),
+    ...mapState('dictionary', ['categories']),
+    ...mapState('games', [
       'games',
       'defaultGames',
       'gamesAreLoading',
       'defaultGamesAreLoading',
-      'categories',
       'newGames',
       'liveGames',
       'newGamesAreLoading',
       'liveGamesAreLoading',
     ]),
-    ...mapGetters(['fakedNewGames', 'isLoggedIn', 'gamesSearched', 'activeAccount']),
+    ...mapGetters(['isLoggedIn', 'activeAccount']),
+    ...mapGetters('games', ['gamesSearched']),
     gamesParams() {
       const params = {};
       if (this.tabActive.type) params.category = this.tabActive.type;
