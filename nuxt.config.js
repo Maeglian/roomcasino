@@ -135,7 +135,7 @@ export default {
   },
 
   sentry: {
-    dsn: 'https://6ab622b3618044648f19bba6d10be9fa@o739395.ingest.sentry.io/5785756',
+    dsn: 'https://97062e4a09544b70966c982cb56044fa@o739395.ingest.sentry.io/5832478',
     disabled: process.env.NUXT_ENV_MODE !== 'production',
     publishRelease: true,
     // sourceMapStyle: 'hidden-source-map',
