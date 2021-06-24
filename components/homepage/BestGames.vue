@@ -61,7 +61,7 @@
           class="DefaultGames-Cards"
           :games="filteredGames"
           :games-to-show="24"
-          btn-class="Btn--common Btn--dark"
+          btn-class="Btn--common Btn--outline"
         />
       </div>
       <Nuxt />
@@ -74,8 +74,8 @@
           v-else
           class="DefaultGames-Cards"
           :games="newGames"
-          :games-to-show="24"
-          btn-class="Btn--common Btn--dark"
+          :games-to-show="6"
+          btn-class="Btn--common Btn--outline"
         />
       </template>
       <div class="Title Title--type-h2 Cards-Title">
@@ -86,9 +86,87 @@
         v-else
         class="DefaultGames-Cards"
         :games="liveGames"
-        :games-to-show="24"
-        btn-class="Btn--common Btn--dark"
+        :games-to-show="6"
+        btn-class="Btn--common Btn--outline"
       />
+      <template v-if="jackpotGames.length">
+        <div class="Title Title--type-h2 Cards-Title">
+          Jackpots
+        </div>
+        <Loader v-if="jackpotGamesAreLoading" />
+        <Games
+          v-else
+          class="DefaultGames-Cards"
+          :games="jackpotGames"
+          :games-to-show="6"
+          btn-class="Btn--common Btn--outline"
+        />
+      </template>
+      <template v-if="buybonusGames.length">
+        <div class="Title Title--type-h2 Cards-Title">
+          Bonus Buy
+        </div>
+        <Loader v-if="buybonusGamesAreLoading" />
+        <Games
+          v-else
+          class="DefaultGames-Cards"
+          :games="buybonusGames"
+          :games-to-show="6"
+          btn-class="Btn--common Btn--outline"
+        />
+      </template>
+      <template v-if="megawaysGames.length">
+        <div class="Title Title--type-h2 Cards-Title">
+          Megaways
+        </div>
+        <Loader v-if="megawaysGamesAreLoading" />
+        <Games
+          v-else
+          class="DefaultGames-Cards"
+          :games="megawaysGames"
+          :games-to-show="6"
+          btn-class="Btn--common Btn--outline"
+        />
+      </template>
+      <template v-if="luckychoiceGames.length">
+        <div class="Title Title--type-h2 Cards-Title">
+          Lucky Choice
+        </div>
+        <Loader v-if="luckychoiceGamesAreLoading" />
+        <Games
+          v-else
+          class="DefaultGames-Cards"
+          :games="luckychoiceGames"
+          :games-to-show="6"
+          btn-class="Btn--common Btn--outline"
+        />
+      </template>
+      <template v-if="dropsWinsSlotsGames.length">
+        <div class="Title Title--type-h2 Cards-Title">
+          Drops & Wins - slots
+        </div>
+        <Loader v-if="dropsWinsSlotsGamesAreLoading" />
+        <Games
+          v-else
+          class="DefaultGames-Cards"
+          :games="dropsWinsSlotsGames"
+          :games-to-show="6"
+          btn-class="Btn--common Btn--outline"
+        />
+      </template>
+      <template v-if="dropsWinsLiveGames.length">
+        <div class="Title Title--type-h2 Cards-Title">
+          Drops & Wins - live
+        </div>
+        <Loader v-if="dropsWinsLiveGamesAreLoading" />
+        <Games
+          v-else
+          class="DefaultGames-Cards"
+          :games="dropsWinsLiveGames"
+          :games-to-show="6"
+          btn-class="Btn--common Btn--outline"
+        />
+      </template>
     </section>
     <!--    <section-->
     <!--      v-if="tabActive.type !== 'all' || providerActive.name !== 'All providers'"-->
@@ -181,8 +259,20 @@ export default {
       'defaultGamesAreLoading',
       'newGames',
       'liveGames',
+      'jackpotGames',
+      'megawaysGames',
+      'buybonusGames',
+      'luckychoiceGames',
+      'dropsWinsSlotsGames',
+      'dropsWinsLiveGames',
       'newGamesAreLoading',
       'liveGamesAreLoading',
+      'jackpotGamesAreLoading',
+      'megawaysGamesAreLoading',
+      'buybonusGamesAreLoading',
+      'luckychoiceGamesAreLoading',
+      'dropsWinsSlotsGamesAreLoading',
+      'dropsWinsLiveGamesAreLoading',
     ]),
     ...mapGetters(['isLoggedIn', 'activeAccount']),
     ...mapGetters('games', ['gamesSearched']),
