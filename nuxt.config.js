@@ -135,9 +135,8 @@ export default {
   },
 
   sentry: {
-    // dsn: process.env.SENTRY_DSN,
-    // disabled: process.env.NUXT_ENV_MODE !== 'production',
     dsn: 'https://6ab622b3618044648f19bba6d10be9fa@o739395.ingest.sentry.io/5785756',
+    disabled: process.env.NUXT_ENV_MODE !== 'production',
     publishRelease: true,
     // sourceMapStyle: 'hidden-source-map',
     config: {

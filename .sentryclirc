@@ -1,6 +1,6 @@
 [defaults]
 org=wakeapp-3j
-project=ninecasino-test
+project=ninecasino
 
 [auth]
 token=ff3c59e3fdee46bcb2b55eb4d97bf872a0831464501d4217a8fa8b01371286e4
