@@ -102,7 +102,7 @@
             {{ $t('buttons.deposit') }}
           </button>
           <button
-            class="Btn Btn--outline CabinetPage-Btn BalancePage-Btn"
+            class="Btn Btn--outline2 CabinetPage-Btn BalancePage-Btn"
             :class="{ 'BalancePage-Btn--de': $i18n.locale === 'de' }"
             @click="onClickCashout(acc.currency)"
           >
