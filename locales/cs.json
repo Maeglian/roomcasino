@@ -421,9 +421,9 @@
       "text" : "Jste velký hráč? Pak víme, co potřebujete! Získejte jako speciální bonus pro velké hráče 30 % k částce vkladu až KČ 12700 k prvnímu vkladu KČ 7600."
     },
     "knockoutFootball": {
-      "title": "Knockout<br/>Football<br/>Rush",
-      "name": "Knockout Football Rush",
-      "text": "První síťový turnaj Knockout Football Rush proběhne od 10. června 00:01 do 25. června23:59, GMT+2. Připravili jsme 5 turnajů s cenami ve výši až 25 000 eur, které budou rozděleny mezi prvních 500 hráčů s nejvyšším skóre ve výsledkové tabulce. Proveďteminimální sázku 0,10 eur, vyberte své oblíbené slotové hry Habanero a zahajte tuto kampaň!"
+      "title": "Pojďte <br/>si zahrát s Habanero, <br/>kolo 2!",
+      "name": "Pojďte si zahrát s Habanero, kolo 2!",
+      "text": "Závod o jackpot Knockout Football Rush bude pokračovat od 26. června 00:01 do 17. července 23:59, GMT+2. S 22 závody denně a výhrou v celkové hodnotě 30 000 € rozdělených náhodně mezi 2 200 hráčů.<br/><br/>Připravit, pozor a start s Ninecasino a Habanero!<br/><br/>Přihlaste se každý den, abyste mohli nalézt novou celkovou denní výhru, jejíž výše se pohybuje od 1 000 do 2 500 €. Jednoduše si vyberte své oblíbené slotové hry Habanero, proveďte minimální sázku 0,10 € a zahajte tuto kampaň!"
     },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
@@ -482,33 +482,30 @@
     ]
   },
   "knockoutFootball": {
-    "prize": "€ 55 000",
-    "text": "První síťový turnaj Knockout Football Rush proběhne od 10. června 00:01 do 25. června23:59, GMT+2. Připravili jsme 5 turnajů s cenami ve výši až 25 000 eur, které budou rozděleny mezi prvních 500 hráčů s nejvyšším skóre ve výsledkové tabulce. Proveďteminimální sázku 0,10 eur, vyberte své oblíbené slotové hry Habanero a zahajte tuto kampaň!<br/><br/>Přidejte se k fotbalovému šílenství společně s probíhajícím turnajem!<br/>Patříte k fotbalovým fanatikům? Vstupte do klubu!<br/>Postupujte na žebříčku a staňte se nejlepším hráčem!",
-    "textMobile": "První síťový turnaj Knockout Football Rush proběhne od 10. června 00:01 do 25. června23:59, GMT+2. Připravili jsme 5 turnajů s cenami ve výši až 25 000 eur, které budou rozděleny mezi prvních 500 hráčů s nejvyšším skóre ve výsledkové tabulce. Proveďteminimální sázku 0,10 eur, vyberte své oblíbené slotové hry Habanero a zahajte tuto kampaň!",
+    "title": "Pojďte <br/>si zahrát s Habanero, <br/>kolo 2!",
+    "prize": "30000 €",
+    "text": "Závod o jackpot Knockout Football Rush bude pokračovat od 26. června 00:01 do 17. července 23:59, GMT+2. S 22 závody denně a výhrou v celkové hodnotě 30 000 € rozdělených náhodně mezi 2 200 hráčů.<br/><br/>Připravit, pozor a start s Ninecasino a Habanero!<br/><br/>Přihlaste se každý den, abyste mohli nalézt novou celkovou denní výhru, jejíž výše se pohybuje od 1 000 do 2 500 €. Jednoduše si vyberte své oblíbené slotové hry Habanero, proveďte minimální sázku 0,10 € a zahajte tuto kampaň!",
+    "textMobile": "Závod o jackpot Knockout Football Rush bude pokračovat od 26. června 00:01 do 17. července 23:59, GMT+2.",
     "terms": [
       {
-        "text": "Doba kampaně: 10.–25. června 2021, GMT+2."
+        "title": " Doba kampaně:",
+        "text": "26. června až 17. července 2021, GMT+2"
       },
       {
-        "text": "Struktura kampaně: 5 turnajů, každý v trvání 3 dnů."
+        "title": "Struktura kampaně:",
+        "text": "22 soutěží, každá o délce 2 h"
       },
       {
-        "text": "Prize pool: 25 000 eur / 5000 eur na jeden turnaj."
+        "title": "Struktura cen:",
+        "text": "2 200 výherců, 100 na jednu soutěž "
       },
       {
-        "text": "Struktura cen: 500 výherců, 100 na jeden turnaj."
+        "title": "Minimální sázka:",
+        "text": "0,10 €"
       },
       {
-        "text": "Minimální sázka: 0,10 eur."
-      },
-      {
-        "text": "Kvalifikační obsah: všechny slotové hry od Habanero."
-      },
-      {
-        "text": "Kvalifikační kritéria: vítězové jsou určováni podle nejvyššího zaznamenaného obratu."
-      },
-      {
-        "text": "Habanero si vyhrazuje právo tuto promo akci kdykoliv změnit,přerušit nebo zrušit."
+        "title": "Podmínky promo akcí:",
+        "text": "• Kvalifikační obsah: všechny slotové hry od Habanero <br/>• Kvalifikační kritéria: v náhodný okamžik během soutěže hráč aktivuje první výhru, všechny následující sázky přijaté na serveru pak pomáhají zvyšovat vaší pozici<br/>• Habanero si vyhrazuje právo tuto promo akci kdykoliv změnit, přerušit nebo zrušit"
       }
     ]
   },

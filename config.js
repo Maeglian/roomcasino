@@ -322,8 +322,6 @@ export const TOURNAMENTS = {
   },
   'knockout-football': {
     url: 'knockout-football',
-    name: 'Knockout Football Rush',
-    title: '<span class="Colored">Knockout Football Rush</span>',
     translates: 'knockoutFootball',
     class: 'KnockoutFootball',
     slug: 'footrush',
