@@ -8,11 +8,22 @@ export const state = () => ({
   newGames: [],
   liveGames: [],
   tournamentGames: [],
+  jackpotGames: [],
+  buybonusGames: [],
+  megawaysGames: [],
+  luckychoiceGames: [],
+  dropsWinsSlotsGames: [],
+  dropsWinsLiveGames: [],
   gamesAreLoading: false,
   defaultGamesAreLoading: false,
   newGamesAreLoading: false,
   liveGamesAreLoading: false,
-  tournamentGamesAreLoading: false,
+  jackpotGamesAreLoading: false,
+  buybonusGamesAreLoading: false,
+  megawaysGamesAreLoading: false,
+  luckychoiceGamesAreLoading: false,
+  dropsWinsSlotsGamesAreLoading: false,
+  dropsWinsLiveGamesAreLoading: false,
   winnersAreLoading: false,
   gameProducers: [],
   gameUrlForIframe: '',
@@ -52,14 +63,32 @@ export const mutations = {
   setDefaultGamesAreLoading: (state, payload) => {
     state.defaultGamesAreLoading = payload;
   },
+  setLiveGamesAreLoading: (state, payload) => {
+    state.liveGamesAreLoading = payload;
+  },
   setNewGamesAreLoading: (state, payload) => {
     state.newGamesAreLoading = payload;
   },
   setTournamentGamesAreLoading: (state, payload) => {
     state.tournamentGamesAreLoading = payload;
   },
-  setLiveGamesAreLoading: (state, payload) => {
-    state.liveGamesAreLoading = payload;
+  setJackpotGamesAreLoading: (state, payload) => {
+    state.jackpotGamesAreLoading = payload;
+  },
+  setBuybonusGamesAreLoading: (state, payload) => {
+    state.buybonusGamesAreLoading = payload;
+  },
+  setMegawaysGamesAreLoading: (state, payload) => {
+    state.megawaysGamesAreLoading = payload;
+  },
+  setLuckychoiceGamesAreLoading: (state, payload) => {
+    state.luckychoiceGamesAreLoading = payload;
+  },
+  setDropsWinsSlotsGamesAreLoading: (state, payload) => {
+    state.dropsWinsSlotsGamesAreLoading = payload;
+  },
+  setDropsWinsLiveGamesAreLoading: (state, payload) => {
+    state.dropsWinsLiveGamesAreLoading = payload;
   },
   setGames: (state, payload) => {
     state.games = payload;
@@ -70,11 +99,29 @@ export const mutations = {
   setNewGames: (state, payload) => {
     state.newGames = payload;
   },
+  setLiveGames: (state, payload) => {
+    state.liveGames = payload;
+  },
   setTournamentGames: (state, payload) => {
     state.tournamentGames = payload;
   },
-  setLiveGames: (state, payload) => {
-    state.liveGames = payload;
+  setJackpotGames: (state, payload) => {
+    state.jackpotGames = payload;
+  },
+  setBuybonusGames: (state, payload) => {
+    state.buybonusGames = payload;
+  },
+  setMegawaysGames: (state, payload) => {
+    state.megawaysGames = payload;
+  },
+  setLuckychoiceGames: (state, payload) => {
+    state.luckychoiceGames = payload;
+  },
+  setDropsWinsSlotsGames: (state, payload) => {
+    state.dropsWinsSlotsGames = payload;
+  },
+  setDropsWinsLiveGames: (state, payload) => {
+    state.dropsWinsLiveGames = payload;
   },
   setDefaultGames: (state, payload) => {
     state.defaultGames = payload;
@@ -165,6 +212,90 @@ export const actions = {
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setGamesAreLoading', false);
+    }
+  },
+
+  async getJackpotGames({ commit, state }) {
+    commit('setJackpotGamesAreLoading', true);
+    try {
+      const res = await http.get(`${API_HOST}/gameList`, {
+        params: { category: 'jackpots', platform: state.platform },
+      });
+      commit('setJackpotGames', res.data);
+    } catch (e) {
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      commit('setJackpotGamesAreLoading', false);
+    }
+  },
+
+  async getBuybonusGames({ commit, state }) {
+    commit('setBuybonusGamesAreLoading', true);
+    try {
+      const res = await http.get(`${API_HOST}/gameList`, {
+        params: { category: 'buybonus', platform: state.platform },
+      });
+      commit('setBuybonusGames', res.data);
+    } catch (e) {
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      commit('setBuybonusGamesAreLoading', false);
+    }
+  },
+
+  async getMegawaysGames({ commit, state }) {
+    commit('setMegawaysGamesAreLoading', true);
+    try {
+      const res = await http.get(`${API_HOST}/gameList`, {
+        params: { category: 'megaways', platform: state.platform },
+      });
+      commit('setMegawaysGames', res.data);
+    } catch (e) {
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      commit('setMegawaysGamesAreLoading', false);
+    }
+  },
+
+  async getLuckychoiceGames({ commit, state }) {
+    commit('setLuckychoiceGamesAreLoading', true);
+    try {
+      const res = await http.get(`${API_HOST}/gameList`, {
+        params: { category: 'luckychoice', platform: state.platform },
+      });
+      commit('setLuckychoiceGames', res.data);
+    } catch (e) {
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      commit('setLuckychoiceGamesAreLoading', false);
+    }
+  },
+
+  async getDropsWinsSlotsGames({ commit, state }) {
+    commit('setDropsWinsSlotsGamesAreLoading', true);
+    try {
+      const res = await http.get(`${API_HOST}/gameList`, {
+        params: { category: 'DROP&WINS', platform: state.platform },
+      });
+      commit('setDropsWinsSlotsGames', res.data);
+    } catch (e) {
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      commit('setDropsWinsSlotsGamesAreLoading', false);
+    }
+  },
+
+  async getDropsWinsLiveGames({ commit, state }) {
+    commit('setDropsWinsLiveGamesAreLoading', true);
+    try {
+      const res = await http.get(`${API_HOST}/gameList`, {
+        params: { category: 'dropslive', platform: state.platform },
+      });
+      commit('setDropsWinsLiveGames', res.data);
+    } catch (e) {
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      commit('setDropsWinsLiveGamesAreLoading', false);
     }
   },
 

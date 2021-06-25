@@ -46,6 +46,12 @@ window.onNuxtReady(({ context }) => {
     .then(() => context.store.commit('setInitialLoading', 'defaultGames'));
   context.store.dispatch('games/getNewGames');
   context.store.dispatch('games/getLiveGames');
+  context.store.dispatch('games/getJackpotGames');
+  context.store.dispatch('games/getBuybonusGames');
+  context.store.dispatch('games/getMegawaysGames');
+  context.store.dispatch('games/getLuckychoiceGames');
+  context.store.dispatch('games/getDropsWinsSlotsGames');
+  context.store.dispatch('games/getDropsWinsLiveGames');
   context.store
     .dispatch('dictionary/getCountriesList')
     .then(() => context.store.commit('setInitialLoading', 'countries'));
