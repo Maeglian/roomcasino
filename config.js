@@ -29,7 +29,8 @@ export const API_HOST =
 export const LIMIT_DETAILS = {
   lossLimit: {
     name: 'Loss limits',
-    text: 'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or month.',
+    text:
+      'Your account can be set with loss limits. This setting limits the amount you can lose per day, week or month.',
     editRules:
       'You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.',
     deleteRules:
@@ -38,7 +39,8 @@ export const LIMIT_DETAILS = {
   },
   depositLimit: {
     name: 'Deposit limits',
-    text: 'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or month.',
+    text:
+      'Your account can be set with deposit limits. This setting limits  the amount you can deposit per day, week or month.',
     editRules:
       'You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.',
     deleteRules:
@@ -47,7 +49,8 @@ export const LIMIT_DETAILS = {
   },
   wagerLimit: {
     name: 'Wager limits',
-    text: 'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or month.',
+    text:
+      'Your account can be set with wager limits. This setting controls the amount of money you can wager per day, week or month.',
     editRules:
       'You can reduce your limit at any time, this change will take effect immediately. You can increase the limit, however, in order for this change to take effect, you need 24 hours.',
     deleteRules:
@@ -57,7 +60,8 @@ export const LIMIT_DETAILS = {
   sessionLimit: {
     name: 'Session limit',
     title: 'time spent gambling',
-    text: 'The restriction takes effect instantly. If you hit the limit, you will be automatically logged out of your  account.',
+    text:
+      'The restriction takes effect instantly. If you hit the limit, you will be automatically logged out of your  account.',
     editRules: '',
     deleteRules: '',
     fields: ['type', 'value'],
@@ -65,7 +69,8 @@ export const LIMIT_DETAILS = {
   coolingOffLimit: {
     name: 'Cooling off',
     title: 'time spent gambling',
-    text: 'Feel the need to stay away from the casino for some time? You can set a cooling-off limit for a certain period of time. The restriction takes effect instantly. You won’t be able to make deposits and play during the specified period, also you will be excluded from all advertising offers. After the set period expires, you’ll receive a notification email saying your account is active again.',
+    text:
+      'Feel the need to stay away from the casino for some time? You can set a cooling-off limit for a certain period of time. The restriction takes effect instantly. You won’t be able to make deposits and play during the specified period, also you will be excluded from all advertising offers. After the set period expires, you’ll receive a notification email saying your account is active again.',
     editRules:
       "Limit decrease will be applied in 24 hours after player's request. Limit increase will be applied immediately.",
     deleteRules: "Limit cancellation will be applied in 24 hours after player's request.",
@@ -323,7 +328,6 @@ export const TOURNAMENTS = {
   'knockout-football': {
     url: 'knockout-football',
     name: 'Knockout Football Rush',
-    title: '<span class="Colored">Knockout Football Rush</span>',
     translates: 'knockoutFootball',
     class: 'KnockoutFootball',
     slug: 'footrush',
