@@ -428,9 +428,9 @@
       "text": "Are you fond of making high bets? Then we know what you need. Once a month get a special 30% high roller bonus up to $500 on your deposit starting from $300."
     },
     "knockoutFootball": {
-      "title": "Knockout<br/>Football<br/>Rush",
-      "name": "Knockout Football Rush",
-      "text": "The first Knockout Football Rush Network Tournament will take place between the 10th June 00:01until the 25th June 23:59, GMT+2. We have 5 tournaments with prizes amounting to 25,000 EUR, distributed to the top 500 players with the highest scores on the leaderboard. Make a minimum stake of 0.10 EUR, choose your favourite Habanero slot games, and let’s kick off this campaign!"
+      "title": "Let’s play<br/> with Habanero <br/>Round 2!",
+      "name": "Let’s play with Habanero Round 2!",
+      "text": "Join the Knockout Football Rush campaign by Habanero with 30,000 EUR from 26th June to 17th July 2021.<br/><br/>The Jackpot Race Knockout Football Rush will continue between 26th June 00:01 and 17th July 23:59, GMT+2. With 22 daily races and a total prize amount of 30,000 EUR distributed randomly to 2,200 players.<br/><br/>Ready, set, go with NineCasino and Habanero! Log in every day to find a new total daily prize, varying from 1,000 to 2,500 EUR. Just choose your favourite Habanero slot games, make a minimum stake of 0.10 EUR, and let’s kick off this campaign!"
     },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
@@ -492,33 +492,30 @@
     ]
   },
   "knockoutFootball": {
-    "prize": "€ 55 000",
-    "text": "The first Knockout Football Rush Network Tournament will take place between the 10th June 00:01 until the 25th June 23:59, GMT+2. We have 5 tournaments with prizes amounting to 25,000 EUR, distributed to the top 500 players with the highest scores on the leaderboard. Make a minimum stake of 0.10 EUR, choose your favourite Habanero slot games, and let’s kick off this campaign!<br/><br/>Join the Football frenzy as the tournament gets underway!<br/>Are you a football fanatic? Join the club!<br/>Climb the leaderboard and become a top player!",
-    "textMobile": "The first Knockout Football Rush Network Tournament will take place between the 10th June 00:01 until the 25th June 23:59, GMT+2. We have 5 tournaments with prizes amounting to 25,000 EUR, distributed to the top 500 players with the highest scores on the leaderboard. Make a minimum stake of 0.10 EUR, choose your favourite Habanero slot games, and let’s kick off this campaign!",
+    "title": "Let’s play<br/> with Habanero <br/>Round 2!",
+    "prize": "EUR 30,000",
+    "text": "Join the Knockout Football Rush campaign by Habanero with 30,000 EUR from 26th June to 17th July 2021.<br/><br/>The Jackpot Race Knockout Football Rush will continue between 26th June 00:01 and 17th July 23:59, GMT+2. With 22 daily races and a total prize amount of 30,000 EUR distributed randomly to 2,200 players.<br/><br/>Ready, set, go with NineCasino and Habanero! Log in every day to find a new total daily prize, varying from 1,000 to 2,500 EUR. Just choose your favourite Habanero slot games, make a minimum stake of 0.10 EUR, and let’s kick off this campaign!",
+    "textMobile": "Join the Knockout Football Rush campaign by Habanero with 30,000 EUR from 26th June to 17th July 2021.",
     "terms": [
       {
-        "text": "Campaign duration: 10th–25th June 2021, GMT+2."
+        "title": "Campaign duration: ",
+        "text": "26th June – 17th July 2021, GMT+2"
       },
       {
-        "text": "Campaign structure: 5 tournaments, 3 days long each."
+        "title": "Campaign structure:",
+        "text": "22 races, each 2h long "
       },
       {
-        "text": "Prize Pool: 25,000 EUR/5,000 EUR per tournament."
+        "title": "Prize pool information:",
+        "text": "2,200 winners, 100 per race"
       },
       {
-        "text": "Prize structure: 500 winners, 100 per tournament."
+        "title": "Minimum bet requirements:",
+        "text": "EUR 0.10"
       },
       {
-        "text": "Minimum stake: 0.10 EUR."
-      },
-      {
-        "text": "Qualifying content: all Habanero slots games."
-      },
-      {
-        "text": "Qualifying criteria: the winners are based on the highest turnover recorded."
-      },
-      {
-        "text": "Habanero has the right to change, suspend or cancel the promotion at any time."
+        "title": "Additional terms and conditions:",
+        "text": "• Qualifying content: all Habanero slots games <br/>• Qualifying criteria: at a random moment during the race a player will trigger the first win, all consecutive bets received by the server will then contribute to your position<br/>• Habanero has the right to change, suspend or cancel the promotion at any time"
       }
     ]
   },

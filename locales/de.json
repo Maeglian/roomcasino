@@ -427,9 +427,9 @@
       "text": "Sie stehen auf hohe Einsätze? Dann haben wir das Richtige für Sie. Erhalten Sie einmal im Monat einen Highroller-Bonus für besondere Einsatzfreude von 30% bis zu einem Höchstbetrag von €500 auf eine Einzahlung ab mindestens €300."
     },
     "knockoutFootball": {
-      "title": "Knockout<br/>Football<br/>Rush",
-      "name": "Knockout Football Rush",
-      "text": "Das erste Knockout Football Rush Network Tournament findet vom 10. Juni, 00:01 Uhr bis zum 25. Juni, 23:59 Uhr GMT+2 statt. Es gibt 5 Turniere mit insgesamt 25.000€ Preisgeld, das auf die 500 Spieler mit den höchsten Punktzahlen auf der Bestenliste verteilt wird. Mache einen Mindesteinsatz von 0,10€, spiele einen Spielautomaten von Habanero, und leg los!"
+      "title": "Spiele <br/>mit Habanero – <br/>Runde 2!",
+      "name": "Spiele mit Habanero – Runde 2!",
+      "text": "Das Jackpot-Wettrennen Knockout Football Rush wird vom 26. Juni um 00:01 Uhr bis zum 17. Juli um 23:59 Uhr (GMT+2) fortgesetzt. Mit 22 täglichen Rennen und einer Gesamtpreissumme von 30.000 EUR, die nach dem Zufallsprinzip an 2.200 Spieler verteilt wird.<br/><br/>Auf die Plätze, fertig, los mit Nineсasino und Habanero!<br/><br/>Logge dich jeden Tag ein, um einen neuen Tagesgesamtpreis zu entdecken, der zwischen 1.000 und 2.500 EUR liegt. Wähle einfach deine Lieblings-Automatenspiele von Habanero, mache einen Mindesteinsatz von 0,10 EUR und leg los!"
     },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
@@ -488,33 +488,30 @@
     ]
   },
   "knockoutFootball": {
-    "prize": "€ 55 000",
-    "text": "Das erste Knockout Football Rush Network Tournament findet vom 10. Juni, 00:01 Uhr bis zum 25. Juni, 23:59 Uhr GMT+2 statt. Es gibt 5 Turniere mit insgesamt 25.000€ Preisgeld, das auf die 500 Spieler mit den höchsten Punktzahlen auf der Bestenliste verteilt wird. Mache einen Mindesteinsatz von 0,10€, spiele einen Spielautomaten von Habanero, und leg los!<br/><br/>Das Turnier beginnt – mach mit beim Fußballrausch!<br/>Bist du ein Fußballfan? Tritt dem Verein bei!<br/>Erklimme die Bestenliste und werde zum Spitzenspieler!",
-    "textMobile": "Das erste Knockout Football Rush Network Tournament findet vom 10. Juni, 00:01 Uhr bis zum 25. Juni, 23:59 Uhr GMT+2 statt. Es gibt 5 Turniere mit insgesamt 25.000€ Preisgeld, das auf die 500 Spieler mit den höchsten Punktzahlen auf der Bestenliste verteilt wird. Mache einen Mindesteinsatz von 0,10€, spiele einen Spielautomaten von Habanero, und leg los!",
+    "title": "Spiele <br/>mit Habanero – <br/>Runde 2!",
+    "prize": "30.000 EUR",
+    "text": "Das Jackpot-Wettrennen Knockout Football Rush wird vom 26. Juni um 00:01 Uhr bis zum 17. Juli um 23:59 Uhr (GMT+2) fortgesetzt. Mit 22 täglichen Rennen und einer Gesamtpreissumme von 30.000 EUR, die nach dem Zufallsprinzip an 2.200 Spieler verteilt wird.<br/><br/>Auf die Plätze, fertig, los mit Nineсasino und Habanero!<br/><br/>Logge dich jeden Tag ein, um einen neuen Tagesgesamtpreis zu entdecken, der zwischen 1.000 und 2.500 EUR liegt. Wähle einfach deine Lieblings-Automatenspiele von Habanero, mache einen Mindesteinsatz von 0,10 EUR und leg los!",
+    "textMobile": "Das Jackpot-Wettrennen Knockout Football Rush wird vom 26. Juni um 00:01 Uhr bis zum 17. Juli um 23:59 Uhr (GMT+2) fortgesetzt.",
     "terms": [
       {
-        "text": "Dauer der Kampagne: 10. – 25. Juni 2021, GMT+2."
+        "title": "Dauer der Aktion: ",
+        "text": "26. Juni – 17. Juli 2021 (GMT+2)"
       },
       {
-        "text": "Aufbau der Kampagne: 5 Turniere, je 3 Tage lang."
+        "title": "Aufbau der Aktion: ",
+        "text": "22 Rennen, jeweils 2 h lang"
       },
       {
-        "text": "Preisgeld: 25.000€/5.000€ pro Turnier."
+        "title": "Gewinnstrukturierung::",
+        "text": " 2.200 Sieger, 100 pro Rennen"
       },
       {
-        "text": "Gewinnstrukturierung: 500 Sieger, 100 pro Turnier."
+        "title": "Mindesteinsatz:",
+        "text": "0,10 EUR"
       },
       {
-        "text": "Mindesteinsatz: 0,10€."
-      },
-      {
-        "text": "Teilnahmeberechtigte Inhalte: alle Habanero-Automatenspiele."
-      },
-      {
-        "text": "Qualifizierungskriterien: Gewinner werden anhand des höchsten aufgezeichneten Umsatzes ermittelt."
-      },
-      {
-        "text": "Habanero hat das Recht, die Aktion jederzeit zu ändern, auszusetzen oder abzubrechen."
+        "title": "Teilnahmebedingungen der Aktion:",
+        "text": "• Teilnahmeberechtigte Inhalte: alle Habanero-Automatenspiele <br/>• Qualifikationskriterien: Während des Rennens löst ein Spieler zu einem zufälligen Zeitpunkt den ersten Gewinn aus. Alle aufeinanderfolgenden Einsätze, die auf dem Server eingehen, tragen dann zu deiner Position bei<br/>• Habanero hat das Recht, die Aktion jederzeit zu ändern, auszusetzen oder abzubrechen"
       }
     ]
   },
