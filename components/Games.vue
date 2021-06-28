@@ -68,6 +68,11 @@ export default {
       required: false,
       default: 12,
     },
+    gamesToLoadMore: {
+      type: [Number, Boolean],
+      required: false,
+      default: false,
+    },
     btnClass: {
       type: String,
       required: false,
@@ -89,7 +94,8 @@ export default {
   },
   methods: {
     showMoreGames() {
-      this.gamesShowed += this.gamesToShow;
+      const numberOfGames = this.gamesToLoadMore ? this.gamesToLoadMore : this.gamesToShow;
+      this.gamesShowed += numberOfGames;
     },
   },
 };
