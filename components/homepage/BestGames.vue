@@ -75,6 +75,7 @@
           class="DefaultGames-Cards"
           :games="newGames"
           :games-to-show="6"
+          :games-to-load-more="12"
           btn-class="Btn--common Btn--outline"
         />
       </template>
@@ -87,6 +88,7 @@
         class="DefaultGames-Cards"
         :games="liveGames"
         :games-to-show="6"
+        :games-to-load-more="12"
         btn-class="Btn--common Btn--outline"
       />
       <template v-if="jackpotGames.length">
@@ -99,6 +101,7 @@
           class="DefaultGames-Cards"
           :games="jackpotGames"
           :games-to-show="6"
+          :games-to-load-more="12"
           btn-class="Btn--common Btn--outline"
         />
       </template>
@@ -112,6 +115,7 @@
           class="DefaultGames-Cards"
           :games="buybonusGames"
           :games-to-show="6"
+          :games-to-load-more="12"
           btn-class="Btn--common Btn--outline"
         />
       </template>
@@ -125,6 +129,7 @@
           class="DefaultGames-Cards"
           :games="megawaysGames"
           :games-to-show="6"
+          :games-to-load-more="12"
           btn-class="Btn--common Btn--outline"
         />
       </template>
@@ -138,6 +143,7 @@
           class="DefaultGames-Cards"
           :games="luckychoiceGames"
           :games-to-show="6"
+          :games-to-load-more="12"
           btn-class="Btn--common Btn--outline"
         />
       </template>
@@ -151,6 +157,7 @@
           class="DefaultGames-Cards"
           :games="dropsWinsSlotsGames"
           :games-to-show="6"
+          :games-to-load-more="12"
           btn-class="Btn--common Btn--outline"
         />
       </template>
@@ -164,6 +171,7 @@
           class="DefaultGames-Cards"
           :games="dropsWinsLiveGames"
           :games-to-show="6"
+          :games-to-load-more="12"
           btn-class="Btn--common Btn--outline"
         />
       </template>
