@@ -50,7 +50,7 @@
               :class="`Hero-Btn--${$i18n.locale}`"
               @click="onClickBtn()"
             >
-              {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.register') }}
+              {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.signUp') }}
             </button>
           </div>
         </div>
