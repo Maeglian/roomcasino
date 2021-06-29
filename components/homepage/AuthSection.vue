@@ -49,7 +49,7 @@
         {{ $t('buttons.login') }}
       </button>
       <button class="Btn AuthSection-Btn" @click="showRegistrationDialog('registration')">
-        {{ $t('buttons.register') }}
+        {{ $t('buttons.signUp') }}
       </button>
     </div>
   </div>
