@@ -177,14 +177,26 @@ export default {
     ...mapGetters(['isLoggedIn']),
     slides() {
       const slides = [
+        // {
+        //   bg: 'wolf',
+        //   title: this.$t('homepage.heroBanner.deposit1.title'),
+        //   text: this.$t('homepage.heroBanner.deposit1.text'),
+        //   btnText: 'Deposit now',
+        // },
+        // {
+        //   bg: 'joker',
+        //   title: this.$t('homepage.heroBanner.deposit1.title'),
+        //   text: this.$t('homepage.heroBanner.deposit1.text'),
+        //   btnText: 'Deposit now',
+        // },
         {
-          bg: 'wolf',
+          bg: 'aztec',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'joker',
+          bg: 'aztec',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
@@ -195,44 +207,44 @@ export default {
           text: this.$t('homepage.heroBanner.deposit2.text'),
           btnText: 'Deposit now',
         },
-        {
-          bg: 'book',
-          title: this.$t('homepage.heroBanner.deposit3.title'),
-          text: this.$t('homepage.heroBanner.deposit3.text'),
-          btnText: 'Deposit now',
-        },
-        {
-          bg: 'tournaments',
-          title: this.$t('homepage.heroBanner.deposit4.title'),
-          text: this.$t('homepage.heroBanner.deposit4.text'),
-          btnText: 'Deposit now',
-        },
-        {
-          bg: 'highroller',
-          title: this.$t('homepage.heroBanner.highroller.title'),
-          text: this.$t('homepage.heroBanner.highroller.text'),
-        },
-        {
-          bg: 'footballBanner',
-          title: this.$t('promotions.knockoutFootball.title'),
-          text: `<span class="Colored">${this.$t('knockoutFootball.prize')}</span>`,
-          url: '/tournaments/knockout-football',
-          linkText: this.$t('buttons.more'),
-        },
-        {
-          bg: 'dropsSlots',
-          title: this.$t('promotions.dropsWinsSlots.title'),
-          text: `<span class="Colored">${this.$t('dropsWinsSlots.prize')}</span>`,
-          url: '/tournaments/drops-wins-slots',
-          linkText: this.$t('buttons.more'),
-        },
-        {
-          bg: 'dropsLive',
-          title: this.$t('promotions.dropsWinsLive.title'),
-          text: `<span class="Colored">${this.$t('dropsWinsLive.prize')}</span>`,
-          url: '/tournaments/drops-wins-live',
-          linkText: this.$t('buttons.more'),
-        },
+        // {
+        //   bg: 'book',
+        //   title: this.$t('homepage.heroBanner.deposit3.title'),
+        //   text: this.$t('homepage.heroBanner.deposit3.text'),
+        //   btnText: 'Deposit now',
+        // },
+        // {
+        //   bg: 'tournaments',
+        //   title: this.$t('homepage.heroBanner.deposit4.title'),
+        //   text: this.$t('homepage.heroBanner.deposit4.text'),
+        //   btnText: 'Deposit now',
+        // },
+        // {
+        //   bg: 'highroller',
+        //   title: this.$t('homepage.heroBanner.highroller.title'),
+        //   text: this.$t('homepage.heroBanner.highroller.text'),
+        // },
+        // {
+        //   bg: 'footballBanner',
+        //   title: this.$t('promotions.knockoutFootball.title'),
+        //   text: `<span class="Colored">${this.$t('knockoutFootball.prize')}</span>`,
+        //   url: '/tournaments/knockout-football',
+        //   linkText: this.$t('buttons.more'),
+        // },
+        // {
+        //   bg: 'dropsSlots',
+        //   title: this.$t('promotions.dropsWinsSlots.title'),
+        //   text: `<span class="Colored">${this.$t('dropsWinsSlots.prize')}</span>`,
+        //   url: '/tournaments/drops-wins-slots',
+        //   linkText: this.$t('buttons.more'),
+        // },
+        // {
+        //   bg: 'dropsLive',
+        //   title: this.$t('promotions.dropsWinsLive.title'),
+        //   text: `<span class="Colored">${this.$t('dropsWinsLive.prize')}</span>`,
+        //   url: '/tournaments/drops-wins-live',
+        //   linkText: this.$t('buttons.more'),
+        // },
       ];
       if (!this.isLoggedIn) {
         slides.splice(1, 1);
@@ -312,7 +324,7 @@ export default {
   width: 100%;
   max-width: 100%;
   margin-top: -75px;
-  margin-bottom: 26px;
+  margin-bottom: 40px;
   padding-right: 0;
   padding-left: 0;
 
@@ -399,21 +411,17 @@ export default {
   }
 
   &-Content {
-    position: absolute;
-    top: 53%;
-    left: 16px;
     text-align: left;
 
-    @media (min-width: $screen-xs) {
-      top: 58%;
-    }
-
     @media (min-width: $screen-s) {
+      position: absolute;
       top: 0;
+      left: 16px;
     }
 
     &--centered {
       width: calc(100% - 32px);
+      margin: 0 auto;
       text-align: center;
 
       @media (min-width: $screen-s) {
