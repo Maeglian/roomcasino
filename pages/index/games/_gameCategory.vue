@@ -12,9 +12,9 @@
         btn-class="Btn--common Btn--dark"
       />
     </template>
-    <div class="Title Title--type-h2 Cards-Title">
+    <h1 class="Title Title--type-h2 Cards-Title">
       {{ $t(`gameCategories.${$route.params.gameCategory}`) }}
-    </div>
+    </h1>
     <Loader v-if="gamesAreLoading" />
     <Games
       v-else
@@ -39,16 +39,16 @@ export default {
   },
   head() {
     return {
-      title: `ᐈ Play ${
-        this.$route.params.gameCategory.charAt(0).toUpperCase() +
-        this.$route.params.gameCategory.slice(1)
-      } Games Now For Free Or Real Money | $450 Welcome Bonus At Ninecasino`,
+      title: `ᐈ Play ${this.$route.params.gameCategory.charAt(0).toUpperCase() +
+        this.$route.params.gameCategory.slice(
+          1,
+        )} Games Now For Free Or Real Money | $450 Welcome Bonus At Ninecasino`,
       meta: [
         {
-          description: `★ Play ${
-            this.$route.params.gameCategory.charAt(0).toUpperCase() +
-            this.$route.params.gameCategory.slice(1)
-          } Games For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino`,
+          description: `★ Play ${this.$route.params.gameCategory.charAt(0).toUpperCase() +
+            this.$route.params.gameCategory.slice(
+              1,
+            )} Games For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino`,
         },
       ],
     };
