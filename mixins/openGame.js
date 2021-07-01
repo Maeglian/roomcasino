@@ -5,7 +5,7 @@ export default {
     ...mapState(['platform', 'showDepositModal']),
     ...mapState('games', ['gameUrlForIframe', 'gameError']),
     ...mapState('profile', ['freeSpinList']),
-    ...mapGetters(['activeAccount', 'userInfo']),
+    ...mapGetters(['isLoggedIn', 'activeAccount', 'userInfo']),
   },
   methods: {
     ...mapMutations(['toggleDepositModal']),
@@ -17,7 +17,7 @@ export default {
     },
     async openGamePage({ id, demo, bg }, gameProducer) {
       if (!demo && !this.isLoggedIn) {
-        this.showRegistrationDialog('login');
+        this.showRegistrationDialog('login', false, true, id, demo, bg, gameProducer);
         return;
       }
 
@@ -37,7 +37,7 @@ export default {
           item => item === null || item === '',
         );
         if (notFullProfileData) {
-          this.showRegistrationDialog('registration', false, true, this.getGame, id, demo, bg);
+          this.showRegistrationDialog('registration', false, true, id, demo, bg, gameProducer);
           return;
         }
       }

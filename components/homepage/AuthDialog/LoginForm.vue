@@ -48,6 +48,13 @@ export default {
   components: {
     BaseInput,
   },
+  props: {
+    beforeStartGame: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
   data() {
     return {
       fields: {
@@ -85,6 +92,7 @@ export default {
       this.authorize(payload).then(() => {
         this.$router.push(this.localePath('/'));
         if (!this.authError) {
+          if (this.beforeStartGame) this.$emit('start-game');
           this.$emit('close');
           scrollTo({
             top: 0,

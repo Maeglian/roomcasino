@@ -56,11 +56,15 @@
             :before-start-game="beforeStartGame"
             @close="$emit('close')"
             @redirect-login="activeTab = 'login'"
-            @profile-updated="onUpdateProfile({ gameId: id, demo, bg })"
+            @start-game="getGame({ gameId: id, demo, bg })"
           />
         </template>
         <template v-else>
-          <LoginForm @close="$emit('close')" />
+          <LoginForm
+            :before-start-game="beforeStartGame"
+            @close="$emit('close')"
+            @start-game="openGamePage({ id, demo, bg }, gameProducer)"
+          />
         </template>
       </div>
     </div>
@@ -70,6 +74,7 @@
 <script>
 import { mapMutations } from 'vuex';
 import BaseTabs from '@/components/base/BaseTabs';
+import openGame from '@/mixins/openGame';
 
 const RegistrationForm = () => import('@/components/homepage/AuthDialog/RegistrationForm.vue');
 const LoginForm = () => import('@/components/homepage/AuthDialog/LoginForm.vue');
@@ -81,6 +86,7 @@ export default {
     RegistrationForm,
     BaseTabs,
   },
+  mixins: [openGame],
   props: {
     authType: {
       type: String,
@@ -97,11 +103,6 @@ export default {
       required: false,
       default: false,
     },
-    onUpdateProfile: {
-      type: Function,
-      required: false,
-      default: () => {},
-    },
     id: {
       type: String,
       required: false,
@@ -113,6 +114,11 @@ export default {
       default: true,
     },
     bg: {
+      type: String,
+      required: false,
+      default: '',
+    },
+    gameProducer: {
       type: String,
       required: false,
       default: '',

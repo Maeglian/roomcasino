@@ -702,7 +702,7 @@ export default {
             if (this.beforeDeposit) {
               this.$modal.show('cashier');
             } else if (this.beforeStartGame) {
-              this.$emit('profile-updated');
+              this.$emit('start-game');
             } else
               this.$modal.show(
                 RegistrationBonus,
