@@ -37,55 +37,31 @@ export default {
       logos: {
         interacOnline: {
           logo: require('@/assets/img/interac-online.svg'),
-          width: 100,
-        },
-        interacEtransfer: {
-          logo: require('@/assets/img/interac-etransfer.svg'),
-          width: 100,
+          width: 150,
         },
         instadebit: {
           logo: require('@/assets/img/instadebit.svg'),
-          width: 100,
-        },
-        idebit: {
-          logo: require('@/assets/img/idebit.svg'),
-          width: 60,
+          width: 150,
         },
         muchbetter: {
           logo: require('@/assets/img/muchbetter.svg'),
-          width: 130,
+          width: 150,
         },
         mastercard: {
           logo: require('@/assets/img/mastercard.svg'),
-          width: 60,
+          width: 100,
         },
         visa: {
           logo: require('@/assets/img/visa.svg'),
-          width: 80,
-        },
-        neosurf: {
-          logo: require('@/assets/img/neosurf.svg'),
-          width: 90,
-        },
-        flexepin: {
-          logo: require('@/assets/img/flexepin.png'),
           width: 100,
         },
         skrill: {
           logo: require('@/assets/img/skrill.svg'),
-          width: 80,
-        },
-        jeton: {
-          logo: require('@/assets/img/jeton-logo.svg'),
-          width: 100,
-        },
-        astropay: {
-          logo: require('@/assets/img/astropay.svg'),
           width: 100,
         },
         klarna: {
           logo: require('@/assets/img/klarna.svg'),
-          width: 80,
+          width: 100,
         },
         neteller: {
           logo: require('@/assets/img/neteller.svg'),
@@ -95,13 +71,25 @@ export default {
           logo: require('@/assets/img/paysafe.svg'),
           width: 120,
         },
-        volt: {
-          logo: require('@/assets/img/volt.svg'),
-          width: 50,
+        playngo: {
+          logo: require('@/assets/img/playngo-white.svg'),
+          width: 120,
         },
-        ecashout: {
-          logo: require('@/assets/img/ecashout.svg'),
-          width: 50,
+        pragmatic: {
+          logo: require('@/assets/img/pragmatic-white.svg'),
+          width: 120,
+        },
+        evolution: {
+          logo: require('@/assets/img/evolution.svg'),
+          width: 120,
+        },
+        /* microgaming: {
+          logo: require('@/assets/img/microgaming-white.svg'),
+          width: 120,
+        }, */
+        netent: {
+          logo: require('@/assets/img/netent-white.svg'),
+          width: 120,
         },
       },
       countriesLogos: {
