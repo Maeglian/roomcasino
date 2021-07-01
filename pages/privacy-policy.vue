@@ -69,11 +69,11 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Confidentiality Of The Personal Information Of Our Users',
+      title: 'Privacy Policy | Ninecasino',
       meta: [
         {
           description:
-            'Respect for the privacy policy is the main aspect of the Ninecasino. We provide the reliable protection from the third parties. Collecting of the personal data needs permission',
+            'Privacy Policy Of Ninecasin: Here is Everything You Need To Know About The Safety Of Your Financial Information And Personal Account',
         },
       ],
     };

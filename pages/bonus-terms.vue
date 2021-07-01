@@ -41,11 +41,11 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Requirements Set By The Ninecasino Portal For The Use Of Bonuses',
+      title: 'Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino',
       meta: [
         {
           description:
-            'This page details the rules under which players can use their bonuses. Acceptable terms of their validity, existing restrictions, and possible penalties',
+            'Detailed Information About Bonuses: How To Receive And Withdraw Bonuses In Ninecasino',
         },
       ],
     };
