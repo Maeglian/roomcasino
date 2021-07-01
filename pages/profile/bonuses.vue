@@ -205,6 +205,7 @@ export default {
   created() {
     this.getBonusList();
     this.getBonusHistoryList();
+    this.getFreeSpinList();
     this.getAvailableBonusList();
     this.getAvailableFreeSpinList();
   },
@@ -217,6 +218,7 @@ export default {
       'deleteBonus',
       'getBonusHistoryList',
       'getAvailableFreeSpinList',
+      'getFreeSpinList',
     ]),
     onClickCancelBonus(bonus) {
       this.$modal.show(
