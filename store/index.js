@@ -392,16 +392,6 @@ export const mutations = {
     state.user = {};
     state.depositNum = 0;
     state.emailIsConfirmed = false;
-    state.limits = [];
-    state.freeSpinList = [];
-    state.availableBonusList = [];
-    state.bonusList = [];
-    state.userDocumentList = [];
-    state.transactionHistoryList = [];
-    state.gameHistoryList = [];
-    state.bonusHistoryList = [];
-    state.sessionHistoryList = [];
-    state.recentGames = [];
   },
   setCashoutTrue(state) {
     state.shouldCashout = true;
@@ -476,10 +466,10 @@ export const actions = {
     await dispatch('login', payload);
     if (!state.authError) {
       commit('setAuthSuccess');
-      dispatch('getProfile');
+      await dispatch('getProfile');
+      await dispatch('profile/getFreeSpinList');
       dispatch('profile/getLimits');
       dispatch('profile/getAvailableBonusList');
-      dispatch('profile/getFreeSpinList');
       dispatch('games/getRecentGames');
     }
   },
@@ -517,6 +507,16 @@ export const actions = {
     try {
       if (!isAuthError) await http.post(`${API_HOST}/logout`);
       commit('logout');
+      commit('games/setRecentGames', [], { root: true });
+      commit('profile/setLimits', [], { root: true });
+      commit('profile/setFreeSpinList', [], { root: true });
+      commit('profile/setAvailableBonusList', [], { root: true });
+      commit('profile/setBonusList', [], { root: true });
+      commit('profile/setUserDocumentList', [], { root: true });
+      commit('profile/setTransactionHistoryList', [], { root: true });
+      commit('profile/setGameHistoryList', [], { root: true });
+      commit('profile/setBonusHistoryList', [], { root: true });
+      commit('profile/setSessionHistoryList', [], { root: true });
       Cookie.remove('token');
       delete http.defaults.headers.common['X-Auth-Token'];
       commit('clearNotificationAlerts');
