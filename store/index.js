@@ -387,7 +387,7 @@ export const mutations = {
     state.authError = '';
   },
   logout(state) {
-    state.status = '';
+    state.authStatus = '';
     state.token = null;
     state.user = {};
     state.depositNum = 0;
@@ -465,12 +465,12 @@ export const actions = {
     commit('setAuthRequest');
     await dispatch('login', payload);
     if (!state.authError) {
-      commit('setAuthSuccess');
       await dispatch('getProfile');
       await dispatch('profile/getFreeSpinList');
       dispatch('profile/getLimits');
       dispatch('profile/getAvailableBonusList');
       dispatch('games/getRecentGames');
+      commit('setAuthSuccess');
     }
   },
 

@@ -46,7 +46,7 @@
         "
       >
         <BaseTabs
-          v-if="!beforeDeposit && !isLoggedIn"
+          v-if="!beforeDeposit && authStatus !== 'success'"
           class="AuthDialog-Tabs"
           :items="tabs"
           :current-item="activeTab"
@@ -74,7 +74,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 import BaseTabs from '@/components/base/BaseTabs';
 import openGame from '@/mixins/openGame';
 
@@ -140,6 +140,9 @@ export default {
       ],
       activeTab: 'registration',
     };
+  },
+  computed: {
+    ...mapState(['authStatus']),
   },
   mounted() {
     this.activeTab = this.authType;
