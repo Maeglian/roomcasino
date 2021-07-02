@@ -48,6 +48,13 @@ export default {
   components: {
     BaseInput,
   },
+  props: {
+    beforeStartGame: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
   data() {
     return {
       fields: {
@@ -83,14 +90,17 @@ export default {
         if (this.fields[key].value) payload[key] = this.fields[key].value;
       }
       this.authorize(payload).then(() => {
-        this.$router.push(this.localePath('/'));
         if (!this.authError) {
           this.$emit('close');
-          scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth',
-          });
+          if (this.beforeStartGame) this.$emit('start-game');
+          else {
+            this.$router.push(this.localePath('/'));
+            scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth',
+            });
+          }
         }
       });
     },
