@@ -626,7 +626,7 @@ export default {
     },
   },
   mounted() {
-    getObjValuesFromLocalStorage(this.fieldsStep1);
+    getObjValuesFromLocalStorage(this.fieldsStep1, ['country', 'currency']);
     getObjValuesFromLocalStorage(this.fieldsStep2);
     this.fieldsStep2.gender.value = 'male';
     this.fieldsStep1.currency.items = this.currencyList;
@@ -649,7 +649,7 @@ export default {
     }
   },
   beforeDestroy() {
-    writeObjValuesToLocalStorage(this.fieldsStep1);
+    writeObjValuesToLocalStorage(this.fieldsStep1, ['country', 'currency']);
     writeObjValuesToLocalStorage(this.fieldsStep2);
   },
   methods: {
