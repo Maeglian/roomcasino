@@ -224,12 +224,11 @@ export default {
   layout: 'page',
   head() {
     return {
-      title:
-        'Let us tell you a secret you can play for free. You will take the winnings for yourself',
+      title: 'Terms & Conditions | Ninecasino',
       meta: [
         {
           description:
-            'It is easy to top up your account with us. Do you want a card, bitcoins, an electronic wallet. You will be delighted with the minimum deposit and the maximum winnings. Who does not take risks does not drink champagne',
+            "This Page Will Help You To Stay Informed About Ninecasino's Terms And Conditions While Interacting With Our Site",
         },
       ],
     };

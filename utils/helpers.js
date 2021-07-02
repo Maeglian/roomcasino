@@ -23,19 +23,23 @@ export const throttle = (func, ms = 100) => {
   return throttledFunc;
 };
 
-export const getObjValuesFromLocalStorage = obj => {
+export const getObjValuesFromLocalStorage = (obj, exceptions = []) => {
   for (const key in obj) {
-    if (obj[key].children) getObjValuesFromLocalStorage(obj[key].children);
-    const storedValue = localStorage.getItem(key);
-    if (storedValue) obj[key].value = JSON.parse(storedValue);
+    if (!exceptions.includes(key)) {
+      if (obj[key].children) getObjValuesFromLocalStorage(obj[key].children);
+      const storedValue = localStorage.getItem(key);
+      if (storedValue) obj[key].value = JSON.parse(storedValue);
+    }
   }
 };
 
-export const writeObjValuesToLocalStorage = obj => {
+export const writeObjValuesToLocalStorage = (obj, exceptions = []) => {
   for (const key in obj) {
-    if (obj[key].children) writeObjValuesToLocalStorage(obj[key].children);
-    if (obj[key].value) localStorage.setItem(key, JSON.stringify(obj[key].value));
-    if (!obj[key].value && localStorage.getItem(key)) localStorage.removeItem(key);
+    if (!exceptions.includes(key)) {
+      if (obj[key].children) writeObjValuesToLocalStorage(obj[key].children);
+      if (obj[key].value) localStorage.setItem(key, JSON.stringify(obj[key].value));
+      if (!obj[key].value && localStorage.getItem(key)) localStorage.removeItem(key);
+    }
   }
 };
 

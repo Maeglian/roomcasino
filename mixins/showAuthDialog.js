@@ -14,15 +14,15 @@ export default {
       authType,
       beforeDeposit = false,
       beforeStartGame = false,
-      onUpdateProfile,
       id,
       demo,
       bg,
+      gameProducer,
     ) {
       this.removeAuthError();
       this.$modal.show(
         AuthDialog,
-        { authType, beforeDeposit, beforeStartGame, onUpdateProfile, id, demo, bg },
+        { authType, beforeDeposit, beforeStartGame, id, demo, bg, gameProducer },
         { width: this.width >= 1248 ? 845 : 418, height: 'auto', adaptive: true, scrollable: true },
         {
           'before-close': this.afterCloseAuthDialog,

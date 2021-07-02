@@ -105,6 +105,16 @@
 export default {
   name: 'BitcoinsPage',
   layout: 'page',
+  head() {
+    return {
+      title: 'How To Play On Ninecasino With Bitcoins',
+      meta: [
+        {
+          description: 'Detailed Information How You Can Play With Bitcoin At Ninecasino',
+        },
+      ],
+    };
+  },
 };
 </script>
 

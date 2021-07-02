@@ -43,17 +43,6 @@ export default {
         redirect({ path: app.localePath('/games/top'), query: route.query });
     },
   ],
-  head() {
-    return {
-      title: 'Casino Online🤑, Only Top Slots & Games | Get Welcome Bonus from Ninecasino',
-      meta: [
-        {
-          description:
-            'Sign up to 🔥Ninecasino to reveal our complete game selection. Enjoy all types of games! Claim your desirable bonuses and free spins at once after joining',
-        },
-      ],
-    };
-  },
   computed: {
     ...mapState(['registrationWindowWasOpened', 'siteIsAllowedForUser']),
   },

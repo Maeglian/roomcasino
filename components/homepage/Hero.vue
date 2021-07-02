@@ -21,11 +21,11 @@
               :srcset="require(`@/assets/img/${slide.bg}_900.png`)"
             />
             <source
-              media="(max-width: 1248px)"
+              media="(max-width: 1400px)"
               :srcset="require(`@/assets/img/${slide.bg}_1248.png`)"
             />
             <img
-              :srcset="require(`@/assets/img/${slide.bg}_1920.png`)"
+              :src="require(`@/assets/img/${slide.bg}_1920.png`)"
               alt=""
               @load="setHeroBannerIsLoaded"
             />
@@ -63,44 +63,6 @@
       <!--        :slider-options="winnersSliderOptions"-->
       <!--        title="Last winners"-->
       <!--      />-->
-      <div class="Advantages Hero-Advantages">
-        <div class="Advantages-Item">
-          <div class="Advantages-Icon">
-            <img src="@/assets/img/fast.svg" alt="" />
-          </div>
-          <div class="Advantages-Content">
-            <div class="Advantages-Title">{{ $t('homepage.advantages.first.highlighted') }}</div>
-            <div class="Advantages-Text">{{ $t('homepage.advantages.first.ghost') }}</div>
-          </div>
-        </div>
-        <div class="Advantages-Item">
-          <div class="Advantages-Icon">
-            <img src="@/assets/img/support.svg" alt="" />
-          </div>
-          <div class="Advantages-Content">
-            <div class="Advantages-Title">{{ $t('homepage.advantages.second.highlighted') }}</div>
-            <div class="Advantages-Text">{{ $t('homepage.advantages.second.ghost') }}</div>
-          </div>
-        </div>
-        <div class="Advantages-Item">
-          <div class="Advantages-Icon">
-            <img src="@/assets/img/games.svg" alt="" />
-          </div>
-          <div class="Advantages-Content">
-            <div class="Advantages-Title">{{ $t('homepage.advantages.third.highlighted') }}</div>
-            <div class="Advantages-Text">{{ $t('homepage.advantages.third.ghost') }}</div>
-          </div>
-        </div>
-        <div class="Advantages-Item">
-          <div class="Advantages-Icon">
-            <img src="@/assets/img/providers.svg" alt="" />
-          </div>
-          <div class="Advantages-Content">
-            <div class="Advantages-Title">{{ $t('homepage.advantages.fourth.highlighted') }}</div>
-            <div class="Advantages-Text">{{ $t('homepage.advantages.fourth.ghost') }}</div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 </template>
@@ -190,7 +152,7 @@ export default {
           btnText: 'Deposit now',
         },
         {
-          bg: 'aztec',
+          bg: 'caishen',
           title: this.$t('homepage.heroBanner.deposit2.title'),
           text: this.$t('homepage.heroBanner.deposit2.text'),
           btnText: 'Deposit now',
@@ -252,80 +214,17 @@ export default {
 </script>
 
 <style lang="scss">
-.Advantages {
-  display: flex;
-  justify-content: space-between;
-
-  &-Item {
-    display: flex;
-    align-items: center;
-  }
-
-  &-Icon {
-    margin-right: 14px;
-  }
-
-  &-Title {
-    margin-bottom: 5px;
-    font-size: 10px;
-    font-weight: 700;
-    line-height: 1.24;
-    color: var(--color-text-main);
-    text-transform: uppercase;
-
-    @media (min-width: $screen-m) {
-      font-size: 8px;
-    }
-
-    @media (min-width: $screen-l) {
-      font-size: 10px;
-    }
-
-    @media (min-width: $screen-xl) {
-      font-size: 11px;
-    }
-  }
-
-  &-Text {
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 1.24;
-    color: var(--color-text-ghost);
-    text-transform: uppercase;
-
-    @media (min-width: $screen-m) {
-      font-size: 8px;
-    }
-
-    @media (min-width: $screen-l) {
-      font-size: 10px;
-    }
-
-    @media (min-width: $screen-xl) {
-      font-size: 11px;
-    }
-  }
-}
-
 .Hero {
   position: relative;
   width: 100%;
   max-width: 100%;
   margin-top: -75px;
-  margin-bottom: 26px;
+  margin-bottom: 40px;
   padding-right: 0;
   padding-left: 0;
 
-  @media (min-width: $screen-m) {
-    margin-bottom: 32px;
-  }
-
-  @media (min-width: $screen-l) {
-    margin-bottom: 60px;
-  }
-
-  @media (min-width: $screen-xl) {
-    margin-bottom: 85px;
+  @media (min-width: $screen-s) {
+    margin-bottom: 0;
   }
 
   &-Slider {
@@ -392,28 +291,20 @@ export default {
     position: relative;
     height: 100%;
     overflow: hidden;
-
-    @media (min-width: $screen-l) {
-      height: 640px;
-    }
   }
 
   &-Content {
-    position: absolute;
-    top: 53%;
-    left: 16px;
     text-align: left;
 
-    @media (min-width: $screen-xs) {
-      top: 58%;
-    }
-
     @media (min-width: $screen-s) {
+      position: absolute;
       top: 0;
+      left: 16px;
     }
 
     &--centered {
       width: calc(100% - 32px);
+      margin: 0 auto;
       text-align: center;
 
       @media (min-width: $screen-s) {
@@ -581,15 +472,6 @@ export default {
 
     @media (min-width: $screen-xl) {
       margin-right: 114px;
-    }
-  }
-
-  &-Advantages {
-    display: none;
-
-    @media (min-width: $screen-m) {
-      display: flex;
-      flex-grow: 1;
     }
   }
 }

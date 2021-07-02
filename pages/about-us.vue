@@ -110,6 +110,17 @@
 export default {
   name: 'AboutUsPage',
   layout: 'page',
+  head() {
+    return {
+      title: 'Information About Ninecasino',
+      meta: [
+        {
+          description:
+            'Detailed Information About Us, Our Software And What Do We Offer To Our Clients ✓ Fast withdrawal ✓ Fully licensed',
+        },
+      ],
+    };
+  },
 };
 </script>
 

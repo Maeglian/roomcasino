@@ -298,7 +298,7 @@ export default {
   },
   data() {
     return {
-      step: this.beforeDeposit || this.beforeStartGame ? 2 : 1,
+      step: 1,
       fieldsStep1: {
         email: {
           value: '',
@@ -438,7 +438,7 @@ export default {
     ...mapState(['width', 'authStatus', 'authError', 'defaultCurrency']),
     ...mapState('profile', ['updateProfileError']),
     ...mapState('dictionary', ['currencyList', 'countriesList', 'phoneCodeList']),
-    ...mapGetters(['defaultCountry', 'userInfo', 'minAge']),
+    ...mapGetters(['defaultCountry', 'userInfo', 'minAge', 'isLoggedIn']),
     birthDate() {
       const {
         birthDate: {
@@ -626,7 +626,8 @@ export default {
     },
   },
   mounted() {
-    getObjValuesFromLocalStorage(this.fieldsStep1);
+    if (this.isLoggedIn && (this.beforeDeposit || this.beforeStartGame)) this.step = 2;
+    getObjValuesFromLocalStorage(this.fieldsStep1, ['country', 'currency']);
     getObjValuesFromLocalStorage(this.fieldsStep2);
     this.fieldsStep2.gender.value = 'male';
     this.fieldsStep1.currency.items = this.currencyList;
@@ -649,7 +650,7 @@ export default {
     }
   },
   beforeDestroy() {
-    writeObjValuesToLocalStorage(this.fieldsStep1);
+    writeObjValuesToLocalStorage(this.fieldsStep1, ['country', 'currency']);
     writeObjValuesToLocalStorage(this.fieldsStep2);
   },
   methods: {
@@ -702,7 +703,7 @@ export default {
             if (this.beforeDeposit) {
               this.$modal.show('cashier');
             } else if (this.beforeStartGame) {
-              this.$emit('profile-updated');
+              this.$emit('start-game');
             } else
               this.$modal.show(
                 RegistrationBonus,
