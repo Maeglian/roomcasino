@@ -436,6 +436,7 @@ export const actions = {
         } catch (e) {}
         http.defaults.headers.common['X-Auth-Token'] = token;
         commit('setToken', token);
+        commit('setAuthSuccess');
         commit('setNeedsCookiesPopup', !cookiesPopup);
       }
     }
