@@ -69,19 +69,19 @@ export default {
         },
         paysafecard: {
           logo: require('@/assets/img/paysafe.svg'),
-          width: 120,
+          width: 100,
         },
         playngo: {
           logo: require('@/assets/img/playngo-white.svg'),
-          width: 120,
+          width: 100,
         },
         pragmatic: {
           logo: require('@/assets/img/pragmatic-white.svg'),
-          width: 120,
+          width: 100,
         },
         evolution: {
           logo: require('@/assets/img/evolution.svg'),
-          width: 120,
+          width: 100,
         },
         /* microgaming: {
           logo: require('@/assets/img/microgaming-white.svg'),
@@ -144,38 +144,21 @@ export default {
   }
 
   &-Wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 35px;
-    grid-gap: 10px 9px;
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
-    @media (min-width: $screen-xs) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    @media (min-width: $screen-s) {
-      grid-template-columns: repeat(6, 1fr);
-      grid-auto-rows: 55px;
-    }
-
-    @media (min-width: $screen-xl) {
-      grid-template-columns: repeat(9, 1fr);
-    }
   }
 
   &-Partner {
-    flex-shrink: 0;
-    max-width: 80%;
-    max-height: 90%;
+    width: 80px;
+    margin: 5px 10px 5px;
     opacity: 0.8;
     filter: grayscale(100%);
 
     @media (min-width: $screen-m) {
-      max-width: 100%;
-      max-height: 100%;
+      width: 100px;
+      margin: 5px 15px 5px;
     }
   }
 }
