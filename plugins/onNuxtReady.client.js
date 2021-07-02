@@ -1,4 +1,3 @@
-import detect from '@/utils/deviceDetector';
 import { http } from '@/store';
 import { throttle } from '@/utils/helpers';
 
@@ -15,8 +14,6 @@ window.onNuxtReady(({ context }) => {
       }),
   );
 
-  const platform = detect.mobile() || detect.tablet() || detect.phone() ? 'mobile' : 'desktop';
-  context.store.commit('setPlatform', platform);
   context.store.dispatch('getGeoInfo').then(() => {
     context.store.commit('setInitialLoading', 'geoInfo');
     if (!context.store.state.siteIsAllowedForUser) context.redirect('/not-allowed');

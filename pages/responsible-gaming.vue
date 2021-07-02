@@ -134,11 +134,11 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Responsible And Controlled Gambling Exclusively In Our RoomCasino',
+      title: 'Responsible And Controlled Gambling In Ninecasino',
       meta: [
         {
           description:
-            'Our casino offers you responsible gambling. We have the full set of features that allow taking control over your losses. Gamble without the risk of going broke',
+            'Here You Can Find About Responsible Gaming Tools That Are At Your Disposal To Control Your Gaming Experience',
         },
       ],
     };

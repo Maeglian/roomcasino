@@ -13,6 +13,7 @@ const jsonInterceptor = [
   },
   error => {
     if (
+      error.response &&
       error.response.status === 401 &&
       error.response.config &&
       // eslint-disable-next-line no-underscore-dangle
@@ -434,9 +435,11 @@ export const actions = {
           cookiesPopup = parsed.seenCookiesPopup;
           // eslint-disable-next-line no-empty
         } catch (e) {}
-        http.defaults.headers.common['X-Auth-Token'] = token;
-        commit('setToken', token);
-        commit('setAuthSuccess');
+        if (token) {
+          http.defaults.headers.common['X-Auth-Token'] = token;
+          commit('setToken', token);
+          commit('setAuthSuccess');
+        }
         commit('setNeedsCookiesPopup', !cookiesPopup);
       }
     }
