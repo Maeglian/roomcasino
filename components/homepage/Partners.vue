@@ -4,22 +4,28 @@
       <marquee-text :duration="durationSpeed">-->
     <div class="Partners-Wrapper">
       <template v-if="countriesLogos[defaultCountry]">
-        <img
+        <div
           v-for="(item, i) in countriesLogos[defaultCountry]"
           :key="`logo-${i}`"
           class="Partners-Partner"
-          :src="logos[item].logo"
-          :width="logos[item].width"
-        />
+        >
+          <img
+            class="Partners-Image"
+            :class="`Partners-Image--${item}`"
+            :src="logos[item].logo"
+            :width="logos[item].width"
+          />
+        </div>
       </template>
       <template v-else>
-        <img
-          v-for="(item, i) in logos"
-          :key="`logo-${i}`"
-          class="Partners-Partner"
-          :src="item.logo"
-          :width="item.width"
-        />
+        <div v-for="(item, name) in logos" :key="`logo-${name}`" class="Partners-Partner">
+          <img
+            class="Partners-Image"
+            :class="`Partners-Image--${name}`"
+            :src="item.logo"
+            :width="item.width"
+          />
+        </div>
       </template>
     </div>
     <!--      </marquee-text>-->
@@ -83,10 +89,10 @@ export default {
           logo: require('@/assets/img/evolution.svg'),
           width: 100,
         },
-        /* microgaming: {
+        microgaming: {
           logo: require('@/assets/img/microgaming-white.svg'),
           width: 120,
-        }, */
+        },
         netent: {
           logo: require('@/assets/img/netent-white.svg'),
           width: 120,
@@ -151,14 +157,40 @@ export default {
   }
 
   &-Partner {
-    width: 80px;
-    margin: 5px 10px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    margin-bottom: 4px;
     opacity: 0.8;
     filter: grayscale(100%);
 
     @media (min-width: $screen-m) {
-      width: 100px;
-      margin: 5px 15px 5px;
+      width: 130px;
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 170px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &-Image {
+    max-width: 70%;
+    max-height: 20px;
+
+    @media (min-width: $screen-m) {
+      max-height: 25px;
+    }
+
+    @media (min-width: $screen-xl) {
+      max-height: 35px;
+    }
+
+    &--interacOnline {
+      max-width: 90%;
     }
   }
 }
