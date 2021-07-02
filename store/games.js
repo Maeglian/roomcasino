@@ -147,11 +147,11 @@ export const mutations = {
 };
 
 export const actions = {
-  async getGames({ commit, state }, payload = {}) {
+  async getGames({ commit, rootState }, payload = {}) {
     commit('setGamesAreLoading', true);
     try {
       const res = await http.get(`${API_HOST}/gameList`, {
-        params: { ...payload, platform: state.platform },
+        params: { ...payload, platform: rootState.platform },
       });
       commit('setGames', res.data);
     } catch (e) {
@@ -161,11 +161,11 @@ export const actions = {
     }
   },
 
-  async getNewGames({ commit, state }) {
+  async getNewGames({ commit, rootState }) {
     commit('setNewGamesAreLoading', true);
     try {
       const res = await http.get(`${API_HOST}/gameList`, {
-        params: { category: 'new', platform: state.platform },
+        params: { category: 'new', platform: rootState.platform },
       });
       commit('setNewGames', res.data);
     } catch (e) {
@@ -175,11 +175,11 @@ export const actions = {
     }
   },
 
-  async getLiveGames({ commit, state }) {
+  async getLiveGames({ commit, rootState }) {
     commit('setLiveGamesAreLoading', true);
     try {
       const res = await http.get(`${API_HOST}/gameList`, {
-        params: { category: 'live', platform: state.platform },
+        params: { category: 'live', platform: rootState.platform },
       });
       commit('setLiveGames', res.data);
     } catch (e) {
@@ -189,10 +189,10 @@ export const actions = {
     }
   },
 
-  async getTournamentGames({ commit, state }, params) {
+  async getTournamentGames({ commit, rootState }, params) {
     commit('setTournamentGamesAreLoading', true);
     try {
-      const res = await http.get(`${API_HOST}/gameList`, { params, platform: state.platform });
+      const res = await http.get(`${API_HOST}/gameList`, { params, platform: rootState.platform });
       commit('setTournamentGames', res.data);
     } catch (e) {
       this.$sentry.captureException(new Error(e));
@@ -201,11 +201,11 @@ export const actions = {
     }
   },
 
-  async getRecentGames({ commit, state }, payload = {}) {
+  async getRecentGames({ commit, rootState }, payload = {}) {
     commit('setGamesAreLoading', true);
     try {
       const res = await http.get(`${API_HOST}/gameList`, {
-        params: { ...payload, recent: 1, platform: state.platform },
+        params: { ...payload, recent: 1, platform: rootState.platform },
       });
       commit('setRecentGames', res.data);
     } catch (e) {
@@ -215,11 +215,11 @@ export const actions = {
     }
   },
 
-  async getJackpotGames({ commit, state }) {
+  async getJackpotGames({ commit, rootState }) {
     commit('setJackpotGamesAreLoading', true);
     try {
       const res = await http.get(`${API_HOST}/gameList`, {
-        params: { category: 'jackpots', platform: state.platform },
+        params: { category: 'jackpots', platform: rootState.platform },
       });
       commit('setJackpotGames', res.data);
     } catch (e) {
@@ -229,11 +229,11 @@ export const actions = {
     }
   },
 
-  async getBuybonusGames({ commit, state }) {
+  async getBuybonusGames({ commit, rootState }) {
     commit('setBuybonusGamesAreLoading', true);
     try {
       const res = await http.get(`${API_HOST}/gameList`, {
-        params: { category: 'buybonus', platform: state.platform },
+        params: { category: 'buybonus', platform: rootState.platform },
       });
       commit('setBuybonusGames', res.data);
     } catch (e) {
@@ -243,11 +243,11 @@ export const actions = {
     }
   },
 
-  async getMegawaysGames({ commit, state }) {
+  async getMegawaysGames({ commit, rootState }) {
     commit('setMegawaysGamesAreLoading', true);
     try {
       const res = await http.get(`${API_HOST}/gameList`, {
-        params: { category: 'megaways', platform: state.platform },
+        params: { category: 'megaways', platform: rootState.platform },
       });
       commit('setMegawaysGames', res.data);
     } catch (e) {
@@ -257,11 +257,11 @@ export const actions = {
     }
   },
 
-  async getLuckychoiceGames({ commit, state }) {
+  async getLuckychoiceGames({ commit, rootState }) {
     commit('setLuckychoiceGamesAreLoading', true);
     try {
       const res = await http.get(`${API_HOST}/gameList`, {
-        params: { category: 'luckychoice', platform: state.platform },
+        params: { category: 'luckychoice', platform: rootState.platform },
       });
       commit('setLuckychoiceGames', res.data);
     } catch (e) {
@@ -271,11 +271,11 @@ export const actions = {
     }
   },
 
-  async getDropsWinsSlotsGames({ commit, state }) {
+  async getDropsWinsSlotsGames({ commit, rootState }) {
     commit('setDropsWinsSlotsGamesAreLoading', true);
     try {
       const res = await http.get(`${API_HOST}/gameList`, {
-        params: { category: 'DROP&WINS', platform: state.platform },
+        params: { category: 'DROP&WINS', platform: rootState.platform },
       });
       commit('setDropsWinsSlotsGames', res.data);
     } catch (e) {
@@ -285,11 +285,11 @@ export const actions = {
     }
   },
 
-  async getDropsWinsLiveGames({ commit, state }) {
+  async getDropsWinsLiveGames({ commit, rootState }) {
     commit('setDropsWinsLiveGamesAreLoading', true);
     try {
       const res = await http.get(`${API_HOST}/gameList`, {
-        params: { category: 'dropslive', platform: state.platform },
+        params: { category: 'dropslive', platform: rootState.platform },
       });
       commit('setDropsWinsLiveGames', res.data);
     } catch (e) {
@@ -299,10 +299,12 @@ export const actions = {
     }
   },
 
-  async getDefaultGames({ commit, state }) {
+  async getDefaultGames({ commit, rootState }) {
     commit('setDefaultGamesAreLoading', true);
     try {
-      const res = await http.get(`${API_HOST}/gameList`, { params: { platform: state.platform } });
+      const res = await http.get(`${API_HOST}/gameList`, {
+        params: { platform: rootState.platform },
+      });
       commit('setDefaultGames', res.data);
     } catch (e) {
       this.$sentry.captureException(new Error(e));
