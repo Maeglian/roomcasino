@@ -15,6 +15,7 @@ const plugins =
     ? [
         '@/plugins/globals',
         '@/plugins/axios',
+        '@/plugins/detectPlatform.client',
         '@/plugins/globals.client',
         '@/plugins/onNuxtReady.client',
         '@/plugins/stageClientInit.client',
@@ -22,6 +23,7 @@ const plugins =
     : [
         '@/plugins/globals',
         '@/plugins/axios',
+        '@/plugins/detectPlatform.client',
         '@/plugins/globals.client',
         '@/plugins/onNuxtReady.client',
       ];
