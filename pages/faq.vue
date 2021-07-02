@@ -52,11 +52,11 @@ export default {
   },
   head() {
     return {
-      title: 'Click on the FAQ button. We will offer the best service and help you with everything',
+      title: 'FAQ | Ninecasino',
       meta: [
         {
           description:
-            "If you have a question on how to register an account, replenish an account, place a bet, withdraw money or upgrade to a VIP level, open the FAQ tab. Didn't find an answer, knock on technical support. You will not be left unanswered",
+            'Frequently Asked Questions - Here You Can Find Answers To The Most Popular Questions About Ninecasino',
         },
       ],
     };
