@@ -1,12 +1,17 @@
 <template>
-  <div class="GamePage">
-    <div class="GamePage-Bg" :style="{ backgroundImage: `url(${bg})` }"></div>
+  <div v-if="game" class="GamePage">
+    <GameModals />
+    <div class="GamePage-Bg" :style="{ backgroundImage: `url(${game.backgroundUrl})` }"></div>
     <div class="GamePage-Wrapper" :class="{ 'GamePage-Wrapper--Hide': isFullScreen }">
       <MainNav v-if="!isFullScreen" />
+      <h1 v-if="!isFullScreen" class="Title Title--type-h2 GamePage-Title">
+        {{ game.gameName }}
+      </h1>
       <iframe
+        v-if="gameUrlForIframe"
         :key="activeAccount.balance"
         class="GamePage-Iframe"
-        :src="getGameUrl"
+        :src="gameUrlForIframe"
         :width="getIframeWidth.width"
         :height="getIframeWidth.height"
         allowFullScreen="true"
@@ -22,16 +27,19 @@
 <script>
 import { mapActions, mapState, mapGetters } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import openGame from '@/mixins/openGame';
 import MainNav from '@/components/homepage/MainNav';
 import ControlsPanel from '@/components/GamePage/ControlsPanel';
+import GameModals from '@/components/GameModals';
 
 export default {
   name: 'GamePage',
   components: {
     MainNav,
     ControlsPanel,
+    GameModals,
   },
-  mixins: [showAuthDialog],
+  mixins: [showAuthDialog, openGame],
   beforeRouteLeave(to, from, next) {
     if (this.isLoggedIn) this.getProfile();
     next();
@@ -39,15 +47,11 @@ export default {
   data: () => ({
     clockIcon: require('@/assets/img/clock.svg'),
     isFullScreen: false,
-    storageGameUrl: '',
-    bg: '',
   }),
   computed: {
-    ...mapState('games', ['gameUrlForIframe']),
+    ...mapState(['platform']),
+    ...mapState('games', ['gameUrlForIframe', 'defaultGames']),
     ...mapGetters(['activeAccount']),
-    getGameUrl() {
-      return this.gameUrlForIframe || this.storageGameUrl;
-    },
     getIframeWidth() {
       return this.isFullScreen
         ? {
@@ -58,6 +62,12 @@ export default {
             width: '80%',
             height: '80%',
           };
+    },
+    gameId() {
+      return this.$route.params.gameId;
+    },
+    game() {
+      return this.defaultGames.find(g => g.gameId === this.gameId);
     },
   },
   watch: {
@@ -70,16 +80,32 @@ export default {
         liveChat.style.display = '';
       }
     },
+    defaultGames: {
+      immediate: true,
+      handler() {
+        this.onEnterPage();
+      },
+    },
   },
   mounted() {
-    this.storageGameUrl = localStorage.getItem('gameUrlForIframe');
-    this.bg = localStorage.getItem('gameBg');
+    this.onEnterPage();
   },
   methods: {
     ...mapActions(['getProfile']),
     ...mapActions('games', ['startGame']),
     toggleFullScreenMode() {
       this.isFullScreen = !this.isFullScreen;
+    },
+    onEnterPage() {
+      if (this.defaultGames.length) {
+        if (!this.game) this.$router.push(this.localePath('/404'));
+        else {
+          this.openGamePage(
+            { id: this.gameId, demo: !!this.$route.query.demo },
+            this.game.gameProducer,
+          );
+        }
+      }
     },
   },
 };
@@ -118,10 +144,14 @@ export default {
     }
   }
 
+  &-Title {
+    margin-bottom: auto;
+  }
+
   &-Iframe {
     position: relative;
     display: block;
-    margin: 0 auto;
+    margin: 20px auto;
     border: none;
     border-radius: 12px;
   }
