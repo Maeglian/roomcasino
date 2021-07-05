@@ -53,6 +53,8 @@ export default {
       'setActiveAccount',
       'getBonusList',
       'getAvailableBonusList',
+      'getFreeSpinList',
+      'getAvailableFreeSpinList',
       'getLimits',
     ]),
     togglePopup() {
@@ -70,6 +72,8 @@ export default {
         if (this.$route.path === '/profile/bonuses') {
           this.getBonusList();
           this.getAvailableBonusList();
+          this.getFreeSpinList();
+          this.getAvailableFreeSpinList();
         }
         this.closePopup();
       });
