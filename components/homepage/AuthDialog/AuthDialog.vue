@@ -58,6 +58,7 @@
             :before-start-game="beforeStartGame"
             @close="$emit('close')"
             @redirect-login="activeTab = 'login'"
+            @open-cashier="$modal.show('cashier', { gameId: id, demo })"
             @start-game="getGame({ gameId: id, demo })"
           />
         </template>
