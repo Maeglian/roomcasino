@@ -435,7 +435,7 @@
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
-      "text": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 21-24 of Weekly Tournaments and Daily Prize Drops with some new games!"
+      "text": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! To play with a multiplier is more fun. That’s why this time there are Weeks 21-24 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!"
     },
     "dropsWinsLive": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
@@ -522,11 +522,11 @@
   "dropsWinsSlots": {
     "title": "Upgraded Drops & Wins Slots edition",
     "prize": "€4,000,000",
-    "text": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 21-24 of Weekly Tournaments and Daily Prize Drops with some new games!",
+    "text": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! To play with a multiplier is more fun. That’s why this time there are Weeks 21-24 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!",
     "textMobile": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000!",
     "terms": [
       {
-        "title": "Stage 6 runs between:",
+        "title": "Stage 6 runs between",
         "text": "● Week 21: 30th June 2021 09:01 CEST – 7th July 2021 18:59 CEST<br/>● Week 22: 7th June 2021 19:01 CEST – 14th July 2021 18:59 CEST<br/>● Week 23: 14th July 2021 19:01 CEST – 21st July 2021 18:59 CEST<br/>● Week 24: 21st July 2021 19:01 CEST – 28th July 2021 18:59 CEST"
       },
       {
@@ -539,7 +539,11 @@
       },
       {
         "title": "How to win",
-        "text": "● Minimum bet requirement of €0.50.<br/>● In order to participate, players need to play with real money and make qualifying bets on any of the participating games.<br/>● In the Weekly tournaments - the highest single spin win amount adjusted for bet amount.<br/>● In the Daily tournaments - any real money spin in the participating games can trigger a random prize.<br/>● There is no additional cost for players to participate."
+        "text": "● Highest single spin win amount adjusted for bet amount.<br/>● Any real money spin in the participating games may trigger a random cash prize.<br/>● Players need to choose to play with real money in any of the participating games with NO minimum bet requirement. There is no additional cost for players to participate."
+      },
+      {
+        "title": "Additionally",
+        "text": "● Players participating during multiplier weeks may win prizes in the form of a multiplier of the winning player’s bet amount as set out in the Weekly Tournament (Prize Multiplier Weeks) Prize Table – and the Daily Prize Drop (Prize Multiplier Weeks) Prize Table further below (hereinafter the “Prize Multiplier Weeks”).<br/>● If the winning spin exceeds ten Euros (€ 10), the prize will be paid out based on a bet of ten Euros (€ 10) or the equivalent amount in the Available Currency (as defined further below) X multiplier received.<br/>● The leaderboard is ranked in accordance with the score, which score is based on the highest single spin win amount on any participating game adjusted to the amount of the bet.<br/>● In the event of two (2) or more players finishing a Weekly Tournament on the same leaderboard position, the player who has achieved the score first will receive the higher prize."
       }
     ]
   },
