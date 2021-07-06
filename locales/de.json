@@ -434,7 +434,7 @@
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
-      "text": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 21-24 der Wöchentlichen Turniere und Täglichen Gewinnausspielungen mit einigen neuen Spielen!"
+      "text": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Mit einem Multiplikator zu spielen, macht noch mehr Spaß. Darum gibt es diesmal in den Wochen 21–24 Wochenturniere (Gewinnmultiplikatorwochen) sowie Tagesausspielungen (Gewinnmultiplikatorwochen) mit einigen neuen Spielen!"
     },
     "dropsWinsLive": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
@@ -518,7 +518,7 @@
   "dropsWinsSlots": {
     "title": "Aufgewertete Ausgabe von Drops & Wins Slots",
     "prize": "4.000.000 €",
-    "text": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 21-24 der Wöchentlichen Turniere und Täglichen Gewinnausspielungen mit einigen neuen Spielen!",
+    "text": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Mit einem Multiplikator zu spielen, macht noch mehr Spaß. Darum gibt es diesmal in den Wochen 21–24 Wochenturniere (Gewinnmultiplikatorwochen) sowie Tagesausspielungen (Gewinnmultiplikatorwochen) mit einigen neuen Spielen!",
     "textMobile": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €!",
     "terms": [
       {
@@ -535,7 +535,11 @@
       },
       {
         "title": "Wie man gewinnt",
-        "text": "● Der Mindesteinsatz beträgt 0,50 Euro.<br/>● Zur Teilnahme muss in einem oder mehreren der teilnehmenden Spiele Echtgeld in entsprechender Höhe gesetzt werden.<br/>● In den Wöchentlichen Turnieren – Höchster Einzelausspielungsgewinn relativ zum Einsatz.<br/>● In den Täglichen Turnieren – jeder Echtgeldeinsatz kann die zufällige Ausschüttung eines Preises auslösen.<br/>● Die Teilnahme hat keine weiteren Kosten."
+        "text": "● Höchster Gewinnbetrag für eine einzelne Ausspielung, angepasst an die Höhe des Einsatzes.<br/>● Jede Echtgeld-Ausspielung kann in den teilnehmenden Spielen einen zufälligen Geldpreis hervorbringen.<br/>● Spieler müssen sich dafür entscheiden, echtes Geld in den teilnehmenden Spielen einzusetzen, OHNE dass ein Mindesteinsatz erforderlich ist. Für die Teilnahme entstehen den Spielern keine zusätzlichen Kosten."
+      },
+      {
+        "title": "Zusätzlich",
+        "text": "● Während der Multiplikatorenwochen können Gewinne in Form eines in der Wochenturniergewinnübersicht (Gewinnmultiplikatorenwochen) und der Tagesausschüttungsübersicht weiter unten (im weiteren Textverlauf die „Gewinnmultiplikatorenwochen“) ausgewiesenen Vielfachen r des Einsatzes der erfolgreichen Spielerin bzw. des erfolgreichen Spielers erzielt werden.<br/>● Wenn der Gewinn in der erfolgreichen Ausspielung zehn Euro (10 €) übersteigt, erfolgt die Auszahlung des Gewinns auf der Grundlage eines Einsatzes von 10 Euro (10 €) oder umgerechnet in die jeweils geltende Währung (s. unten) multipliziert mit dem erworbenen Multiplikator x.<br/>● Die Ermittlung der Ranglistenposition erfolgt entsprechend der Punktzahl für den höchsten Einzelgewinn in einer einzelnen Ausspielung in einem der teilnehmenden Spiele umgerechnet auf den jeweiligen Einsatz.<br/>● Sollten zwei (2) oder mehr Mitspielende ein Wochenturnier auf demselben Ranglistenplatz beenden, entfällt der höhere Gewinn auf die Spielerin bzw. den Spieler, die/der die erfolgreiche Punktzahl zuerst erreicht hat."
       }
     ]
   },
