@@ -1,7 +1,7 @@
 <template>
   <nav class="MainNav" :class="{ 'MainNav--bg': documentIsScrolled }">
     <div v-if="navIsOpen" class="MainNav-Overlay" @click="toggleNav()"></div>
-    <div class="MainNav-TopBar" :class="{ 'MainNav-TopBar--centered': !isLoggedIn }">
+    <div class="MainNav-TopBar">
       <div class="MainNav-Nav">
         <button class="MainNav-Toggle" @click="toggleNav()">
           <svg class="Toggle">
@@ -11,6 +11,14 @@
         <NuxtLink class="MainNav-Logo" :to="localePath('/')">
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
         </NuxtLink>
+        <button
+          v-if="width < 768"
+          class="Btn Btn--common MainNav-Btn"
+          :class="`MainNav-Btn--${$i18n.locale}`"
+          @click="onClickBtn()"
+        >
+          {{ isLoggedIn ? $t('buttons.deposit') : $t('buttons.login') }}
+        </button>
       </div>
       <nav v-if="width >= 960" class="Nav MainNav-Links">
         <ul class="MainNav-List">
@@ -75,6 +83,7 @@ import AuthSection from '@/components/homepage/AuthSection.vue';
 import GamePanel from '@/components/homepage/GamePanel.vue';
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import { TOURNAMENTS } from '@/config';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'MainNav',
@@ -83,6 +92,7 @@ export default {
     AuthSection,
     GamePanel,
   },
+  mixins: [showAuthDialog],
   data() {
     return {
       documentIsScrolled: false,
@@ -228,25 +238,25 @@ export default {
   }
 
   &-TopBar {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1248px;
-    height: 45px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 16px;
+    padding: 14px 16px;
 
     @media (min-width: $screen-m) {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1248px;
+      //height: 45px;
       height: auto;
+      margin-right: auto;
+      margin-left: auto;
     }
 
-    @media (min-width: $screen-xl) {
+    /*@media (min-width: $screen-xl) {
       padding-left: 16px;
-    }
+    }*/
 
     &--centered {
       justify-content: center;
@@ -259,11 +269,12 @@ export default {
 
   &-Nav {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-right: 20px;
+    //margin-right: 20px;
 
     @media (min-width: $screen-l) {
-      margin-right: 34px;
+      //margin-right: 34px;
     }
   }
 
@@ -297,6 +308,11 @@ export default {
     @media (min-width: $screen-xl) {
       width: 172px;
     }
+  }
+
+  .Btn--common {
+    padding: 9px 21px;
+    font-size: 10px;
   }
 
   &-Links {

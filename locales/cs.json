@@ -132,7 +132,8 @@
     "responsibleGaming" : "Zodpovědné hraní",
     "risk" : "Varování o riziku",
     "tournaments" : "Turnaje",
-    "dailyCashback" : "Programu cashback"
+    "dailyCashback" : "Programu cashback",
+    "search": "Vyhledávání"
   },
   "gameCategories" : {
     "top" : "Nejlepší hry",
