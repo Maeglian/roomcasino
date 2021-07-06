@@ -80,11 +80,8 @@ export default {
         liveChat.style.display = '';
       }
     },
-    defaultGames: {
-      immediate: true,
-      handler() {
-        this.onEnterPage();
-      },
+    defaultGames() {
+      this.onEnterPage();
     },
   },
   mounted() {
