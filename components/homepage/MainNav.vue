@@ -175,7 +175,7 @@ export default {
       return menu;
     },
     isGamePage() {
-      return this.getRouteBaseName() === 'game';
+      return this.getRouteBaseName() === 'game-gameId';
     },
   },
   mounted() {

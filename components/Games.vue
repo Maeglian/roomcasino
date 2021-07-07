@@ -1,29 +1,6 @@
 <template>
   <div class="Games">
-    <BaseModal
-      v-if="gameError"
-      name="gameError"
-      :width="300"
-      :height="'auto'"
-      show-on-mount
-      @close="setGameError('')"
-    >
-      <div class="Modal-Title">{{ $t('modals.cantStart') }}</div>
-      <div class="Modal-Text">
-        {{ gameError }}
-      </div>
-    </BaseModal>
-    <BaseModal
-      v-if="showDepositModal"
-      name="pleaseDeposit"
-      :width="300"
-      :height="'auto'"
-      show-on-mount
-      @close="onCloseDepositModal"
-    >
-      <div class="Modal-Title">{{ $t('modals.pleaseDeposit') }}</div>
-      <div class="Modal-Text">{{ $t('modals.pleaseDepositText') }}</div>
-    </BaseModal>
+    <GameModals />
     <div class="Games-Items">
       <Card
         v-for="(game, i) in gamesLimited"
@@ -47,15 +24,15 @@
 
 <script>
 import showAuthDialog from '@/mixins/showAuthDialog';
-import BaseModal from '@/components/base/BaseModal';
 import Card from '@/components/Card';
 import openGame from '@/mixins/openGame';
+import GameModals from '@/components/GameModals';
 
 export default {
   name: 'Games',
   components: {
-    BaseModal,
     Card,
+    GameModals,
   },
   mixins: [showAuthDialog, openGame],
   props: {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section id="games" class="DefaultGames">
+    <section class="DefaultGames">
       <button
         class="DefaultGames-ChosenTab"
         :class="{ 'DefaultGames-ChosenTab--opened': isOpen }"
@@ -64,6 +64,7 @@
           btn-class="Btn--common Btn--outline"
         />
       </div>
+      <a id="games"></a>
       <Nuxt />
       <template v-if="newGames.length">
         <div class="Title Title--type-h2 Cards-Title">
