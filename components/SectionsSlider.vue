@@ -2,10 +2,11 @@
 import VueSlider from '@/components/Slider.vue';
 import Card from '@/components/Card.vue';
 import openGame from '@/mixins/openGame';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'SectionsSlider',
-  mixins: [openGame],
+  mixins: [openGame, showAuthDialog],
   props: {
     itemsInScreen: {
       type: Number,
