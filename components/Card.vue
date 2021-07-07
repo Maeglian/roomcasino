@@ -1,7 +1,7 @@
 <template>
   <div class="Card">
-    <div class="Card-Main" @click="onClickCard">
-      <div v-if="overlay && (!isLoggedIn || platform !== 'mobile')" class="Card-Overlay">
+    <div class="Card-Main">
+      <div v-if="overlay" class="Card-Overlay">
         <div class="Card-Provider">
           <img :src="iconUrl" alt="" class="Card-ProviderIcon" />
           <div class="Card-ProviderName">
@@ -186,10 +186,10 @@ export default {
     },
   },
   methods: {
-    onClickCard() {
-      if (this.platform !== 'mobile' || !this.isLoggedIn) return;
-      this.$emit('open-gamepage', { id: this.gameInfo.gameId, demo: this.gameInfo.demoOnly });
-    },
+    // onClickCard() {
+    //   if (this.platform !== 'mobile' || !this.isLoggedIn) return;
+    //   this.$emit('open-gamepage', { id: this.gameInfo.gameId, demo: this.gameInfo.demoOnly });
+    // },
     linebreak(value) {
       return value.replace(': ', ': <br/>');
     },
