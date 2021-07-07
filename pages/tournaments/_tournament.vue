@@ -38,21 +38,98 @@
             v-html="$t(`${tournaments[$route.params.tournament].translates}.textMobile`)"
           ></div>
         </div>
+        <div class="DailyTournamentPage-Bonus">
+          € 500 <span class="Colored">+</span> 500 Free Spins
+        </div>
+        <div class="DailyTournamentPage-Promotion">
+          <div class="DailyTournamentPage-Deposit">
+            <button class="Btn Btn--common DailyTournamentPage-Btn" @click="onClickBtn()">
+              {{ isLoggedIn ? 'Deposit' : 'Sign up' }}
+            </button>
+            <Counter enddate="2020-12-31" />
+          </div>
+          <div class="DailyTournamentPage-Benefits">
+            <div class="DailyTournamentPage-Benefit">
+              <img src="@/assets/img/flower.svg" class="DailyTournamentPage-BenefitIcon" alt="" />
+              <div>
+                <div class="DailyTournamentPage-BenefitName">1 week</div>
+                <div class="DailyTournamentPage-BenefitAdditional">Duration</div>
+              </div>
+            </div>
+            <div class="DailyTournamentPage-Benefit">
+              <img src="@/assets/img/flower.svg" class="DailyTournamentPage-BenefitIcon" alt="" />
+              <div>
+                <div class="DailyTournamentPage-BenefitName">
+                  <span class="Colored">1 000 eur</span>
+                </div>
+                <div class="DailyTournamentPage-BenefitAdditional">Prize pool</div>
+              </div>
+            </div>
+            <div class="DailyTournamentPage-Benefit">
+              <img src="@/assets/img/flower.svg" class="DailyTournamentPage-BenefitIcon" alt="" />
+              <div>
+                <div class="DailyTournamentPage-BenefitName">5 eur</div>
+                <div class="DailyTournamentPage-BenefitAdditional">Bets per point</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <section class="DailyTournamentPage-Content">
-      <div class="DailyTournamentPage-Games">
-        <h2 class="Title Title--type-h2 Page-Subtitle DailyTournamentPage-Subtitle">
-          {{ $t('tournaments.games') }}
-        </h2>
-        <Loader v-if="tournamentGamesAreLoading" />
-        <Games
-          v-else
-          class="DefaultGames-Cards"
-          :games="tournamentGames"
-          :games-to-show="12"
-          btn-class="Btn--common Btn--dark"
-        />
+      <div class="DailyTournamentPage-Row">
+        <div class="DailyTournamentPage-Winners">
+          <BaseTabs
+            class="DailyTournamentPage-Tabs"
+            :items="tabs"
+            :current-item="round"
+            @choose-tab="round = $event"
+          />
+          <div class="DailyTournamentPage-WinnersTable">
+            <Loader v-if="tournamentResultIsLoading" />
+            <div v-else class="DailyTournamentPage-Table">
+              <div class="Table TableBordered">
+                <div class="Table-Row">
+                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">#</div>
+                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">Name</div>
+                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">Points</div>
+                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">Prize</div>
+                </div>
+                <div
+                  v-for="(winner, i) in tournamentResult.awards"
+                  :key="winner.id"
+                  class="Table-Row"
+                >
+                  <div class="Table-Cell TableBordered-Cell">
+                    {{ i + 1 }}
+                  </div>
+                  <div class="Table-Cell TableBordered-Cell">
+                    {{ winner.name }}
+                  </div>
+                  <div class="Table-Cell TableBordered-Cell">
+                    {{ winner.points }}
+                  </div>
+                  <div class="Table-Cell TableBordered-Cell DailyTournamentPage-Prize">
+                    {{ winner.prize }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="DailyTournamentPage-SliderSection">
+          <Loader v-if="tournamentGamesAreLoading" />
+          <SectionsSlider
+            v-else
+            :key="width"
+            class="SectionsSlider"
+            :items="tournamentGames"
+            :slider-options="sliderOptions"
+            :items-in-screen="itemsInScreen"
+            section-class="DailyTournamentPage-Games"
+            :title="$t('tournaments.games')"
+          />
+        </div>
       </div>
       <h2 class="Title Title--type-h2 Page-Subtitle DailyTournamentPage-Subtitle">
         {{ $t('tournaments.terms') }}
@@ -78,20 +155,37 @@
 import showAuthDialog from '@/mixins/showAuthDialog';
 import { mapState, mapActions } from 'vuex';
 import Loader from '@/components/Loader';
-import Games from '@/components/Games';
+import SectionsSlider from '@/components/SectionsSlider';
 import { TOURNAMENTS } from '@/config';
 
 export default {
   name: 'DailyTournamentPage',
   components: {
     Loader,
-    Games,
+    SectionsSlider,
   },
   mixins: [showAuthDialog],
   layout: 'page',
   data() {
     return {
       tournaments: TOURNAMENTS,
+      winnersToShow: 10,
+      tabs: [
+        {
+          value: 'current',
+          name: 'Current winners',
+        },
+        {
+          value: 'prev',
+          name: 'Previous winners',
+        },
+      ],
+      round: 'current',
+      sliderOptions: {
+        items: 1,
+        loop: true,
+        nav: true,
+      },
     };
   },
   head() {
@@ -107,15 +201,27 @@ export default {
   },
   computed: {
     ...mapState(['width']),
-    ...mapState('games', ['tournamentGames', 'tournamentGamesAreLoading']),
+    ...mapState('games', [
+      'tournamentGames',
+      'tournamentGamesAreLoading',
+      'tournamentResult',
+      'tournamentResultIsLoading',
+    ]),
+    itemsInScreen() {
+      if (this.width >= 960) return 9;
+      if (this.width < 960 && this.width >= 768) return 12;
+      return 8;
+    },
   },
   created() {
+    this.getTournamentList();
+    this.getTournamentResult({ tournamentId: '227904535263860741' });
     if (this.tournaments[this.$route.params.tournament])
       this.getTournamentGames({ category: this.tournaments[this.$route.params.tournament].slug });
     else this.$router.push(this.localePath('/404'));
   },
   methods: {
-    ...mapActions('games', ['getTournamentGames']),
+    ...mapActions('games', ['getTournamentGames', 'getTournamentList', 'getTournamentResult']),
   },
 };
 </script>
@@ -174,15 +280,233 @@ export default {
     }
   }
 
-  &-Games {
-    margin-bottom: 29px;
+  &-Bonus {
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-main);
 
     @media (min-width: $screen-m) {
+      margin-bottom: 36px;
+      font-size: 14px;
+    }
+
+    @media (min-width: $screen-l) {
+      margin-bottom: 24px;
+      font-size: 18px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 71px;
+      font-size: 20px;
+    }
+  }
+
+  &-Promotion {
+    position: relative;
+
+    @media (min-width: $screen-m) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+
+  &-Btn {
+    width: 100%;
+    margin-bottom: 23px;
+
+    @media (min-width: $screen-s) {
+      width: 168px;
+      margin-right: 20px;
+      margin-bottom: 0;
+      text-align: left;
+    }
+  }
+
+  &-Deposit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: $screen-s) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &-Benefits {
+    display: none;
+
+    @media (min-width: $screen-m) {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: block;
+    }
+
+    @media (min-width: $screen-xl) {
+      position: relative;
+      right: auto;
+      bottom: auto;
+      display: flex;
+    }
+  }
+
+  &-Benefit {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+
+    @media (min-width: $screen-xl) {
+      margin-right: 55px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-BenefitIcon {
+    width: 13px;
+    margin-right: 10px;
+
+    @media (min-width: $screen-l) {
+      width: 17px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 20px;
+    }
+  }
+
+  &-BenefitName {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+
+    @media (min-width: $screen-l) {
+      font-size: 20px;
+    }
+  }
+
+  &-BenefitAdditional {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--color-text-ghost);
+    text-transform: uppercase;
+
+    @media (min-width: $screen-l) {
+      font-size: 12px;
+    }
+  }
+
+  &-Tabs {
+    width: 100%;
+    margin-bottom: 4px;
+    font-size: 11px;
+    text-transform: uppercase;
+
+    @media (min-width: $screen-m) {
+      font-size: 12px;
+    }
+  }
+
+  &-Table {
+    padding: 21px 10px;
+    font-size: 10px;
+
+    @media (min-width: $screen-m) {
+      font-size: 12px;
+    }
+  }
+
+  &-Prize {
+    font-size: 11px;
+    text-align: right;
+    color: var(--color-main1);
+
+    @media (min-width: $screen-m) {
+      font-size: 14px;
+    }
+  }
+
+  &-Winners {
+    @media (min-width: $screen-l) {
+      width: calc(50% - 10px);
+    }
+
+    @media (min-width: $screen-xl) {
+      width: calc(50% - 25px);
+    }
+  }
+
+  &-WinnersTable {
+    margin-bottom: 37px;
+
+    @media (min-width: $screen-m) {
+      margin-bottom: 55px;
+    }
+
+    @media (min-width: $screen-l) {
+      margin-bottom: 0;
+    }
+  }
+
+  &-SliderSection {
+    width: 100%;
+
+    @media (min-width: $screen-l) {
+      width: calc(50% - 10px);
+      margin-top: 25px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: calc(50% - 25px);
+    }
+
+    //.v_slider, .v_slider__list, .v_slider__track {
+    //  height: 100%;
+    //}
+  }
+
+  &-Games {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-content: flex-start;
+    //height: 100%;
+
+    @media (min-width: $screen-m) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    @media (min-width: $screen-l) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  &-Row {
+    margin-bottom: 37px;
+
+    @media (min-width: $screen-m) {
+      margin-bottom: 41px;
+    }
+
+    @media (min-width: $screen-l) {
+      display: flex;
+      justify-content: space-between;
       margin-bottom: 50px;
     }
 
     @media (min-width: $screen-xl) {
-      margin-bottom: 97px;
+      margin-bottom: 80px;
     }
   }
 
@@ -304,11 +628,11 @@ export default {
       margin-top: 0;
       padding-top: 50px / 1248px * 100%;
       background-image: url(~@/assets/img/dropsSlots_900.png);
-      background-position: center center;
+      background-position: center top;
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 120px;
+      padding-top: 60px;
     }
 
     @media (min-width: $screen-xxl) {
