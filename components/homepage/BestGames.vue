@@ -161,8 +161,8 @@
           btn-class="Btn--common Btn--outline"
         />
       </template>
-      <template v-if="dropsWinsLiveGames.length">
-        <div class="Title Title--type-h2 Cards-Title">
+      <!--      <template v-if="dropsWinsLiveGames.length">
+        <div class="Title Title&#45;&#45;type-h2 Cards-Title">
           Drops & Wins - live
         </div>
         <Loader v-if="dropsWinsLiveGamesAreLoading" />
@@ -172,9 +172,9 @@
           :games="dropsWinsLiveGames"
           :games-to-show="6"
           :games-to-load-more="12"
-          btn-class="Btn--common Btn--outline"
+          btn-class="Btn&#45;&#45;common Btn&#45;&#45;outline"
         />
-      </template>
+      </template>-->
     </section>
     <!--    <section-->
     <!--      v-if="tabActive.type !== 'all' || providerActive.name !== 'All providers'"-->
