@@ -35,6 +35,12 @@ export const state = () => ({
   lastWinnerListIsLoading: false,
   topWinnerListError: '',
   lastWinnerListError: '',
+  tournamentList: [],
+  tournamentListIsLoading: false,
+  tournamentListError: '',
+  tournamentResult: [],
+  tournamentResultIsLoading: false,
+  tournamentResultError: '',
 });
 
 export const getters = {
@@ -144,6 +150,24 @@ export const mutations = {
   },
   setLastWinnerListError(state, payload) {
     state.lastWinnerListError = payload;
+  },
+  setTournamentList(state, payload) {
+    state.tournamentList = payload;
+  },
+  setTournamentListIsLoading(state, payload) {
+    state.tournamentListIsLoading = payload;
+  },
+  setTournamentListError(state, payload) {
+    state.tournamentListError = payload;
+  },
+  setTournamentResult(state, payload) {
+    state.tournamentResult = payload;
+  },
+  setTournamentResultIsLoading(state, payload) {
+    state.tournamentResultIsLoading = payload;
+  },
+  setTournamentResultError(state, payload) {
+    state.tournamentResultError = payload;
   },
 };
 
@@ -369,6 +393,35 @@ export const actions = {
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setLastWinnerListIsLoading', false);
+    }
+  },
+
+  async getTournamentList({ commit }, payload = {}) {
+    commit('setTournamentListIsLoading', true);
+    try {
+      const res = await http.get(`${API_HOST}/tournamentList`, {
+        ...{ params: payload },
+      });
+      commit('setTournamentList', res.data);
+    } catch (e) {
+      commit('setTournamentListError', e);
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      commit('setTournamentListIsLoading', false);
+    }
+  },
+  async getTournamentResult({ commit }, payload = {}) {
+    commit('setTournamentResultIsLoading', true);
+    try {
+      const res = await http.get(`${API_HOST}/tournamentResult`, {
+        ...{ params: payload },
+      });
+      commit('setTournamentResult', res.data);
+    } catch (e) {
+      commit('setTournamentResultError', e);
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      commit('setTournamentResultIsLoading', false);
     }
   },
 };
