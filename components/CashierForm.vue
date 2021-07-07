@@ -6,7 +6,7 @@
       width="400px"
       adaptive
       scrollable
-      @before-open="beforeInitializeCashier()"
+      @before-open="beforeInitializeCashier($event)"
       @closed="onCloseCashierForm()"
     >
       <div class="Modal">
@@ -20,7 +20,13 @@
       <div class="Modal-Text">{{ $t('modals.playGame') }}.</div>
       <NuxtLink
         class="Btn Btn--common CashierForm-Btn"
-        :to="localePath({ path: '/', hash: '#games' })"
+        :to="
+          localePath({
+            name: 'index-games-gameCategory',
+            params: { gameCategory: 'top' },
+            hash: '#games',
+          })
+        "
         @click.native="$modal.hide('goPlay')"
       >
         {{ $t('buttons.playNow') }}
@@ -34,6 +40,7 @@ import { mapActions, mapMutations, mapState, mapGetters } from 'vuex';
 import Loader from '@/components/Loader';
 import BaseModal from '@/components/base/BaseModal';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import openGame from '@/mixins/openGame';
 
 const environment = process.env.NUXT_ENV_MODE === 'production' ? 'production' : 'test';
 
@@ -43,11 +50,12 @@ export default {
     Loader,
     BaseModal,
   },
-  mixins: [showAuthDialog],
+  mixins: [showAuthDialog, openGame],
   data() {
     return {
       cashierIsLoading: false,
       depositIsDone: false,
+      gameStartingAfterDeposit: null,
     };
   },
   computed: {
@@ -71,14 +79,22 @@ export default {
       'getTransactionHistoryList',
     ]),
     async beforeInitializeCashier(event) {
+      if (event.params && event.params.gameParams)
+        this.gameStartingAfterDeposit = event.params.gameParams;
       try {
         await this.getBillingSession();
         if (this.getBillingSessionError)
           this.pushNotificationAlert({ type: 'error', text: this.getBillingSessionError });
 
         if (this.billingSession.needPlayerProfileData) {
-          this.showRegistrationDialog('registration', true);
-          event.cancel();
+          const gameId = this.gameStartingAfterDeposit
+            ? this.gameStartingAfterDeposit.gameId
+            : undefined;
+          const demo = this.gameStartingAfterDeposit
+            ? this.gameStartingAfterDeposit.demo
+            : undefined;
+          this.showRegistrationDialog('registration', true, true, gameId, demo);
+          this.$modal.hide('cashier');
         }
       } catch {
         this.$modal.hide('cashier');
@@ -140,7 +156,11 @@ export default {
     },
     onCloseCashierForm() {
       if (this.depositIsDone) {
-        this.$modal.show('goPlay');
+        if (this.gameStartingAfterDeposit) {
+          const { gameId, demo } = this.gameStartingAfterDeposit;
+          this.getGame({ gameId, demo });
+        } else this.$modal.show('goPlay');
+
         this.depositIsDone = false;
       }
       if (this.shouldCashout) this.setCashoutFalse();

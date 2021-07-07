@@ -58,14 +58,15 @@
             :before-start-game="beforeStartGame"
             @close="$emit('close')"
             @redirect-login="activeTab = 'login'"
-            @start-game="getGame({ gameId: id, demo, bg })"
+            @open-cashier="$modal.show('cashier', { gameId: id, demo })"
+            @start-game="getGame({ gameId: id, demo })"
           />
         </template>
         <template v-else>
           <LoginForm
             :before-start-game="beforeStartGame"
             @close="$emit('close')"
-            @start-game="openGamePage({ id, demo, bg }, gameProducer)"
+            @start-game="openGamePage({ id, demo }, gameProducer)"
           />
         </template>
       </div>

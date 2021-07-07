@@ -701,7 +701,7 @@ export default {
               behavior: 'smooth',
             });
             if (this.beforeDeposit) {
-              this.$modal.show('cashier');
+              this.$emit('open-cashier');
             } else if (this.beforeStartGame) {
               this.$emit('start-game');
             } else
