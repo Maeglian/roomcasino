@@ -16,6 +16,7 @@ export const state = () => ({
   dropsWinsLiveGames: [],
   gamesAreLoading: false,
   defaultGamesAreLoading: false,
+  tournamentGamesAreLoading: false,
   newGamesAreLoading: false,
   liveGamesAreLoading: false,
   jackpotGamesAreLoading: false,
