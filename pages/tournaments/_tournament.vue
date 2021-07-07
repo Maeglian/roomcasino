@@ -1,5 +1,6 @@
 <template>
   <section v-if="tournaments[$route.params.tournament]" class="Page Page--full DailyTournamentPage">
+    <GameModals />
     <div
       class="Page-Header DailyTournamentPage-Header"
       :class="`${tournaments[$route.params.tournament].class}-Header`"
@@ -157,12 +158,14 @@ import { mapState, mapActions } from 'vuex';
 import Loader from '@/components/Loader';
 import SectionsSlider from '@/components/SectionsSlider';
 import { TOURNAMENTS } from '@/config';
+import GameModals from '@/components/GameModals';
 
 export default {
   name: 'DailyTournamentPage',
   components: {
     Loader,
     SectionsSlider,
+    GameModals,
   },
   mixins: [showAuthDialog],
   layout: 'page',
