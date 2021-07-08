@@ -87,7 +87,7 @@
                   <div class="Table-Cell TableBordered-Cell TableBordered-Th">Prize</div>
                 </div>
                 <div
-                  v-for="(winner, i) in tournamentResult.awards"
+                  v-for="(winner, i) in tournamentResult.resultList"
                   :key="winner.id"
                   class="Table-Row"
                 >
@@ -95,7 +95,7 @@
                     {{ i + 1 }}
                   </div>
                   <div class="Table-Cell TableBordered-Cell">
-                    {{ winner.name }}
+                    {{ winner.nickname }}
                   </div>
                   <div class="Table-Cell TableBordered-Cell">
                     {{ winner.points }}
@@ -231,13 +231,13 @@ export default {
           this.getTournamentGames({
             category,
           });
+          if (this.tournament.id) this.getTournamentResult({ tournamentId: this.tournament.id });
         } else this.$router.push(this.localePath('/404'));
       }
     },
   },
   created() {
-    this.getTournamentList();
-    this.getTournamentResult({ tournamentId: '227904535263860741' });
+    this.getTournamentList({ withAwards: 1 });
   },
   methods: {
     ...mapActions('games', ['getTournamentGames', 'getTournamentList', 'getTournamentResult']),
