@@ -110,14 +110,10 @@
         </div>
         <div class="DailyTournamentPage-SliderSection">
           <Loader v-if="tournamentGamesAreLoading" />
-          <SectionsSlider
+          <PaginatedGames
             v-else
             :key="width"
-            class="SectionsSlider"
-            :items="tournamentGames"
-            :slider-options="sliderOptions"
-            :items-in-screen="itemsInScreen"
-            section-class="DailyTournamentPage-GamesSlider"
+            :games="tournamentGames"
             :title="$t('tournaments.games')"
           />
         </div>
@@ -159,7 +155,7 @@
 import showAuthDialog from '@/mixins/showAuthDialog';
 import { mapState, mapActions, mapGetters } from 'vuex';
 import Loader from '@/components/Loader';
-import SectionsSlider from '@/components/SectionsSlider';
+import PaginatedGames from '@/components/PaginatedGames';
 import GameModals from '@/components/GameModals';
 import moment from 'moment';
 
@@ -167,7 +163,7 @@ export default {
   name: 'DailyTournamentPage',
   components: {
     Loader,
-    SectionsSlider,
+    PaginatedGames,
     GameModals,
   },
   mixins: [showAuthDialog],
@@ -186,11 +182,7 @@ export default {
         },
       ],
       round: 'current',
-      sliderOptions: {
-        items: 1,
-        loop: true,
-        nav: true,
-      },
+      page: 1,
     };
   },
   head() {
@@ -214,11 +206,6 @@ export default {
       'tournamentResultIsLoading',
     ]),
     ...mapGetters('games', ['tournaments']),
-    itemsInScreen() {
-      if (this.width >= 960) return 9;
-      if (this.width < 960 && this.width >= 768) return 12;
-      return 8;
-    },
     tournament() {
       return this.tournaments[this.$route.params.tournament];
     },
@@ -509,22 +496,6 @@ export default {
     //.v_slider, .v_slider__list, .v_slider__track {
     //  height: 100%;
     //}
-  }
-
-  &-GamesSlider {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-    align-content: flex-start;
-    //height: 100%;
-
-    @media (min-width: $screen-m) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-
-    @media (min-width: $screen-l) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
   }
 
   &-Games {
