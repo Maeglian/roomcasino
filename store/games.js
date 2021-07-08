@@ -1,4 +1,4 @@
-import { API_HOST } from '@/config';
+import { API_HOST, TOURNAMENTS } from '@/config';
 import { http } from './index';
 
 export const state = () => ({
@@ -36,7 +36,7 @@ export const state = () => ({
   topWinnerListError: '',
   lastWinnerListError: '',
   tournamentList: [],
-  tournamentListIsLoading: false,
+  tournamentListLoadingStatus: 'notLoaded',
   tournamentListError: '',
   tournamentResult: [],
   tournamentResultIsLoading: false,
@@ -51,6 +51,18 @@ export const getters = {
       const title = game.gameName.toLowerCase();
       return title.includes(str);
     });
+  },
+  tournaments: state => {
+    const nineCasinoTournaments = state.tournamentList.reduce((obj, tournament) => {
+      const newTournament = tournament;
+      newTournament.url = newTournament.slug;
+      newTournament.translates = newTournament.slug;
+      newTournament.class =
+        newTournament.slug.charAt(0).toUpperCase() + newTournament.slug.slice(1);
+      obj[tournament.slug] = newTournament;
+      return obj;
+    }, {});
+    return { ...TOURNAMENTS, ...nineCasinoTournaments };
   },
 };
 
@@ -154,8 +166,8 @@ export const mutations = {
   setTournamentList(state, payload) {
     state.tournamentList = payload;
   },
-  setTournamentListIsLoading(state, payload) {
-    state.tournamentListIsLoading = payload;
+  setTournamentListLoadingStatus(state, payload) {
+    state.tournamentListLoadingStatus = payload;
   },
   setTournamentListError(state, payload) {
     state.tournamentListError = payload;
@@ -397,7 +409,7 @@ export const actions = {
   },
 
   async getTournamentList({ commit }, payload = {}) {
-    commit('setTournamentListIsLoading', true);
+    commit('setTournamentListLoadingStatus', 'loading');
     try {
       const res = await http.get(`${API_HOST}/tournamentList`, {
         ...{ params: payload },
@@ -407,7 +419,7 @@ export const actions = {
       commit('setTournamentListError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
-      commit('setTournamentListIsLoading', false);
+      commit('setTournamentListLoadingStatus', 'loaded');
     }
   },
   async getTournamentResult({ commit }, payload = {}) {
