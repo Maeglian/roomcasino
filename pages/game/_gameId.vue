@@ -48,6 +48,18 @@ export default {
     clockIcon: require('@/assets/img/clock.svg'),
     isFullScreen: false,
   }),
+  head() {
+    if (this.game) {
+      return {
+        title: `ᐈ Play ${this.game.gameName} Game Now For Free Or Real Money | $450 Welcome Bonus At Ninecasino`,
+        meta: [
+          {
+            description: `★ Play ${this.game.gameName} Game For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino`,
+          },
+        ],
+      };
+    }
+  },
   computed: {
     ...mapState(['platform']),
     ...mapState('games', ['gameUrlForIframe', 'defaultGames']),
