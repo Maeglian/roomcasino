@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       logos: {
-        interacOnline: {
+        interac: {
           logo: require('@/assets/img/interac-online.svg'),
           width: 150,
         },
@@ -97,24 +97,48 @@ export default {
           logo: require('@/assets/img/netent-white.svg'),
           width: 120,
         },
+        ezeewallet: {
+          logo: require('@/assets/img/ezeewallet.svg'),
+          width: 120,
+        },
+        instanteft: {
+          logo: require('@/assets/img/instanteft.png'),
+          width: 120,
+        },
+        astropay: {
+          logo: require('@/assets/img/astropay.svg'),
+          width: 120,
+        },
+        volt: {
+          logo: require('@/assets/img/volt.svg'),
+          width: 120,
+        },
+        neosurf: {
+          logo: require('@/assets/img/neosurf.svg'),
+          width: 120,
+        },
+        sofort: {
+          logo: require('@/assets/img/sofort.svg'),
+          width: 120,
+        },
       },
       countriesLogos: {
-        CA: ['interacOnline', 'instadebit', 'muchbetter', 'skrill', 'paysafecard'],
-        AT: ['skrill'],
-        CZ: ['skrill'],
-        SI: ['skrill'],
-        IE: ['skrill'],
-        ZA: ['skrill'],
-        RO: ['skrill'],
-        DK: ['skrill'],
-        EE: ['skrill'],
-        FI: ['skrill'],
-        GR: ['skrill'],
-        SK: ['skrill'],
-        HR: ['skrill'],
-        BG: ['skrill'],
-        DE: [],
-        AU: ['skrill'],
+        CA: ['interac', 'instadebit', 'muchbetter', 'mastercard', 'visa', 'skrill'],
+        AT: ['mastercard', 'visa', 'skrill', 'ezeewallet'],
+        CZ: ['mastercard', 'visa', 'skrill', 'ezeewallet'],
+        SI: ['mastercard', 'visa', 'skrill', 'ezeewallet'],
+        IE: ['mastercard', 'visa', 'skrill', 'ezeewallet'],
+        ZA: ['mastercard', 'visa', 'skrill', 'instanteft', 'astropay'],
+        RO: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
+        DK: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
+        EE: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
+        FI: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', 'neosurf'],
+        GR: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
+        SK: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
+        HR: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
+        BG: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
+        DE: ['mastercard', 'visa', 'sofort', 'ezeewallet', 'volt'],
+        AU: ['mastercard', 'visa', 'skrill', 'astropay', 'volt', 'neosurf'],
       },
     };
   },
