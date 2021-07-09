@@ -412,16 +412,6 @@
       "name": "Daily cashback",
       "text": "Who doesn’t like free casino cashback? Even if you lost!<br/> Yes, you read right - we give you cashback with wager x5 in case of losing."
     },
-    "playsonMay": {
-      "title": "Playson may<br/> cashdays",
-      "name": "Playson May CashDays",
-      "text": "Welcome another month and another CashDays 60k tournamentby the well-known provider.<br/><br/>The prize pool of 60,000 EUR is waiting for their winners."
-    },
-    "mayMadness": {
-      "title": "May<br/> madness<br/> by spinomenal",
-      "name": "May madness by spinomenal",
-      "text": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!<br/><br/>Let’s start with Round III! It runs between May 25, 2021, 00:00 GMT, and June 1, 2021, 23:59 GMT."
-    },
     "highroller": {
       "upTo": "up to $500",
       "name": "High roller bonus",
@@ -443,9 +433,9 @@
       "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!"
     },
     "rtt": {
-      "upTo": "up to $2500",
-      "name": "The Ninecasino Weekly Derby",
-      "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders."
+      "upTo": "prize pool €2,500",
+      "name": "Saddle up for the Weekly Derby",
+      "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
     }
   },
   "tournaments": {
