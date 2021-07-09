@@ -193,6 +193,15 @@ export default {
           link: 'More',
           url: '/tournaments/drops-wins-live',
         },
+        {
+          title: this.$t('rtt.title'),
+          prize: this.$t('promotions.rtt.upTo'),
+          image: 'derby-promotions.png',
+          announce: this.$t('promotions.rtt.name'),
+          text: this.$t('promotions.rtt.text'),
+          link: 'More',
+          url: '/tournaments/rtt',
+        },
       ],
     };
   },
