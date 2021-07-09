@@ -122,7 +122,7 @@
                   </div>
                   <div class="Table-Cell TableBordered-Cell DailyTournamentPage-Prize">
                     <template
-                      v-if="tournamentAwards.length && i <= tournamentAwards[round].awards.length"
+                      v-if="tournamentAwards.length && i < tournamentAwards[round].awards.length"
                     >
                       {{ tournamentAwards[round].awards[i].moneyAmount }} {{ tournament.currency }}
                     </template>
