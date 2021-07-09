@@ -23,7 +23,7 @@ export default {
       required: true,
     },
     currentItem: {
-      type: String,
+      type: [String, Number],
       required: true,
     },
     isVerticalForm: {

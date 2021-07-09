@@ -315,7 +315,6 @@ export const TOURNAMENTS = {
     translates: 'dropsWinsSlots',
     class: 'DropsWinsSlots',
     slug: 'DROP&WINS',
-    textLeft: true,
   },
   'drops-wins-live': {
     url: 'drops-wins-live',
@@ -323,7 +322,6 @@ export const TOURNAMENTS = {
     translates: 'dropsWinsLive',
     class: 'DropsWinsLive',
     slug: 'dropslive',
-    textLeft: true,
   },
   'knockout-football': {
     url: 'knockout-football',
@@ -331,6 +329,5 @@ export const TOURNAMENTS = {
     translates: 'knockoutFootball',
     class: 'KnockoutFootball',
     slug: 'footrush',
-    textLeft: true,
   },
 };

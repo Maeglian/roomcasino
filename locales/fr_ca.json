@@ -174,7 +174,16 @@
     "email": "Email",
     "wager": "Mise",
     "created": "A été créé",
-    "expiresAt": "Expire à"
+    "expiresAt": "Expire à",
+    "days": "Jours",
+    "hours": "Heures",
+    "minutes": "Minutes",
+    "seconds": "Secondes",
+    "week": "Semaine",
+    "name": "Nom",
+    "points": "Points",
+    "prize": "Prix",
+    "prizePool": "Une cagnotte"
   },
   "actions": {
     "addCurrency": "Ajouter une devise"
@@ -410,16 +419,6 @@
       "name": "REMISE QUOTIDIENNE",
       "text": "Qui n’aime pas les remises en espèces gratuites dans les casinos? Même si vous avez perdu!<br/> Oui, vous avez bien lu: nous vous offrons une remise en espèces avec un pari de 5 fois en cas de perte."
     },
-    "playsonMay": {
-      "title": "Playson may<br/> cashdays",
-      "name": "Playson May CashDays",
-      "text": "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu.<br/><br/>Playson sait comment traiter ses joueurs bien-aimés."
-    },
-    "mayMadness": {
-      "title": "May<br/> madness<br/> de spinomenal",
-      "name": "May madness de spinomenal",
-      "text": "Une fois de plus, le fameux Spinomenal va vous faire vivre des moments inoubliables grâce au passionnant tournoi May Madness. Pendant trois semaines en mai, vous pouvez profiter de ses géniales machines à sous et remporter une partie de la généreuse cagnotte de 60 000 EUR!<br/><br/>Commençons par le troisième tour! Ça se passe entre le 25 mai 2021, 00 h 00 GMT et le 1 juin 2021, 23 h 59 GMT."
-    },
     "highroller": {
       "upTo": "up to $800",
       "name": "Bonus des grands joueurs",
@@ -439,52 +438,21 @@
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play vous donne de plus en plus de chances de vous divertir en passant au niveau supérieur grâce à son nouveau Drops and Wins for Live Casino. Saisissez la chance de gagner une part de l’impressionnant montant de 3 000 000 € de prix en argent!<br/><br/>Aimez-vous les jeux en direct? Cette édition en direct vous ira à coup sûr. Participez aux tournois hebdomadaires  - Roulette, Blackjack, Grande Roue, Baccarat!"
+    },
+    "weekly_derby": {
+      "upTo": "une cagnotte de 2500 €",
+      "name": "À vos marques pour le Weekly Derby",
+      "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
     }
   },
   "tournaments": {
     "games": "Jeux dans le tournoi",
-    "terms": "Conditions générales"
-  },
-  "playsonMay": {
-    "prize": "€ 60 000",
-    "text": "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu.<br/><br/>Playson sait comment traiter ses joueurs bien-aimés.",
-    "textMobile": "Bienvenue à un autre mois et à un autre tournoi CashDays 60k par le fournisseur bien connu.<br/><br/>Playson sait comment traiter ses joueurs bien-aimés.",
-    "terms": [
-      {
-        "text": "Le tournoi se déroule entre le 1er mai 2021 à 0 h 01 UTC et le 8 mai 2021 jusqu’à 23 h 59 UTC."
-      },
-      {
-        "text": "Il y a 10 jeux participants :<br/>●  Book of Gold : Double chance<br/>●  Book of Gold : Multichance<br/>●  Buffalo Power : Hold and Win<br/>●  Burning Wins : classic 5 lines<br/>●  Diamond Wins : Hold and Win<br/>●  Divine Dragon : Hold and Win<br/>●  Legend of Cleopatra MegawaysTM<br/>●  Solar Queen<br/>●  Solar Temple"
-      },
-      {
-        "text": "Comme d’habitude, la mise minimale requise pour se qualifier est de 0,50 EUR. Les points sont calculés tour par tour, chaque 1 EUR (ou équivalent monétaire) gagné valant 10 points."
-      },
-      {
-        "text": "La généreuse cagnotte de 60 000 EUR sera partagée entre 350 joueurs chanceux : <br/>1re place – €10 000<br/>2e place – €5 000<br/>3e place – €3 000<br/>4e place – €1 500<br/>5e place – €1 000<br/>6e place – €900<br/>7e place – €800<br/>8e place – €700<br/>9e place – €600<br/>10e place – €500<br/>11e à 25e place – €400<br/>26e à 50e place – €200<br/>51e à 100e place – €150<br/>101e à 200e place – €100<br/>201e à 350e place – €50 "
-      },
-      {
-        "text": "Suivez le classement pendant le tournoi. Plus vous gagnez de points, plus vos chances de gagner sont élevées. Allez-y et bonne chance! "
-      }
-    ]
-  },
-  "mayMadness": {
-    "prize": "€ 60 000",
-    "text": "Une fois de plus, le fameux Spinomenal va vous faire vivre des moments inoubliables grâce au passionnant tournoi May Madness. Pendant trois semaines en mai, vous pouvez profiter de ses géniales machines à sous et remporter une partie de la généreuse cagnotte de 60 000 EUR!<br/><br/>Commençons par le troisième tour! Ça se passe entre le 25 mai 2021, 00 h 00 GMT et le 1 juin 2021, 23 h 59 GMT.",
-    "textMobile": "Une fois de plus, le fameux Spinomenal va vous faire vivre des moments inoubliables grâce au passionnant tournoi May Madness. Pendant trois semaines en mai, vous pouvez profiter de ses géniales machines à sous et remporter une partie de la généreuse cagnotte de 60 000 EUR!",
-    "terms": [
-      {
-        "text": "Ça se passe entre le 25 mai 2021, 00 h 00 GMT et le 1 juin 2021, 23 h 59 GMT."
-      },
-      {
-        "text": "Jeux participants au troisième tour:<br/><br/>●  Book Of Rebirth<br/>●  Origins Of Lilith<br/>●  4 Horsemen II"
-      },
-      {
-        "text": "La mise minimale de qualification par tour pour participer au tournoi est de 0,5 EUR."
-      },
-      {
-        "text": "Chaque gain vous récompense avec un score basé sur le multiplicateur de gain. Plus vous accumulez de points, plus vous êtes bien placé dans le classement."
-      }
-    ]
+    "terms": "Conditions générales",
+    "timeLeft": "Temps restant",
+    "duration": "Durée",
+    "betsPerPoint": "Pari par point",
+    "currentWinners": "Les gagnants actuels",
+    "previousRound": "Tour précédent"
   },
   "knockoutFootball": {
     "title": "Jouons<br/> avec le deuxième <br/>tour de Habanero!",
@@ -571,6 +539,38 @@
       {
         "title": "De plus:",
         "text": "<strong>How to win:<br/><br/>Tournoi hebdomadaire de roulette<br/>Prix:</strong> 50 000 € au total, répartis sur 1 000 prix<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 2 fois la mise totale de qualification pour se qualifier au tournoi de roulette hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de roulette à chaque nouveau gain consécutif de qualification.<br/><br/>-\tLes mises placées sur des paris à cote 1:1 (Rouge/Noir, Pair/Impair, 1:18/19:36) ne sont pas comptabilisées dans le score du tournoi de roulette hebdomadaire.<br/><br/><strong>Tournoi hebdomadaire de blackjack<br/>Prix:</strong> 25 000 € au total, répartis sur 300 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 10 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de blackjack hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de blackjack à chaque nouveau gain consécutif de qualification.<br/><br/>-\tSeules les mises principales et/ou les mises secondaires peuvent être prises en compte pour le tournoi hebdomadaire de blackjack.<br/><br/><strong>Tournoi hebdomadaire de grande roue<br/>Prix:</strong> 25 000 € au total, répartis sur 600 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de grande roue hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de grande roue à chaque nouveau gain consécutif de qualification.<br/><br/>-\tToutes les mises qualificatives peuvent être prises en compte pour le tournoi hebdomadaire de la grande roue.<br/><br/><strong>Tournoi hebdomadaire de baccara<br/>Prix:</strong> 25 000 € au total, répartis sur 600 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de baccara hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de baccara à chaque nouveau gain consécutif de qualification.<br/><br/>-\tSeules les mises principales (joueur, banquier et égalité) peuvent être prises en compte pour le score du tournoi hebdomadaire de baccara."
+      }
+    ]
+  },
+  "weekly_derby": {
+    "title": "Le Ninecasino<br/> Weekly Derby",
+    "prize": "2500 €",
+    "text": "En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.",
+    "textMobile": "En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.",
+    "terms": [
+      {
+        "text": "Chaque tournoi se déroule pendant sept jours, du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC."
+      },
+      {
+        "text": "Le fonds du prix est de 2 500 EUR. Les prix doivent être joués 5 fois."
+      },
+      {
+        "text": "Si un joueur place des mises dans une devise autre que l’euro, les prix seront accordés dans la devise dans laquelle le joueur a fait le plus de mises."
+      },
+      {
+        "text": "Les joueurs ayant effectué au moins un dépôt sont admissibles au tournoi. Pour chaque mise en argent réel de 1 EUR, le joueur recevra 1 point de tournoi."
+      },
+      {
+        "text": "Vous n’avez qu’à faire une mise de 0,5 €."
+      },
+      {
+        "text": "Seules les mises dans les machines à sous seront prises en compte; aucune mise dans les jeux de société et les jeux avec croupier ne sera prise en compte."
+      },
+      {
+        "text": "Le gagnant sera déterminé par le nombre de points de tournoi : plus le joueur accumule de points de tournoi, plus il est proche de la victoire. Les prix seront attribués automatiquement à la fin du tournoi."
+      },
+      {
+        "text": "Les Conditions générales relatives aux bonus doivent être respectées."
       }
     ]
   },

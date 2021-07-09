@@ -89,6 +89,12 @@ p {
     color: var(--color-text-faded);
   }
 
+  &--additional2 {
+    font-size: 15px;
+    line-height: 1.66;
+    color: var(--color-text-main);
+  }
+
   &--center {
     text-align: center;
   }

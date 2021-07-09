@@ -36,7 +36,7 @@
       </svg>
       <div class="Card-Image">
         <img v-if="img" :src="require(`@/assets/img/${img}`)" alt="" loading="lazy" />
-        <img v-else :src="imgUrl" alt="" loading="lazy" />
+        <img v-else :src="gameInfo.imageUrl" alt="" loading="lazy" />
       </div>
       <div v-if="sum" class="Card-Sum">
         {{ sum }}
