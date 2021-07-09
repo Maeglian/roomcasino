@@ -52,6 +52,10 @@ export default {
         media: 'print',
         onload: "this.media='all'",
       },
+      {
+        rel: 'canonical',
+        href: 'https://ninecasino.com',
+      },
     ],
     script: [
       {
@@ -86,7 +90,107 @@ export default {
   buildModules: [],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/style-resources', '@nuxtjs/gtm', 'nuxt-i18n', '@nuxtjs/sentry'],
+  modules: [
+    '@nuxtjs/style-resources',
+    '@nuxtjs/gtm',
+    'nuxt-i18n',
+    '@nuxtjs/sentry',
+    '@nuxtjs/sitemap',
+  ],
+  sitemap: {
+    hostname: 'https://ninecasino.com',
+    defaults: {
+      changefreq: 'daily',
+      priority: 0.9,
+      lastmod: new Date(),
+    },
+    routes: [
+      {
+        url: '/games/top',
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date(),
+      },
+    ],
+    filter({ routes }) {
+      return routes.map(route => {
+        route.url = `${route.url}/`;
+        return route;
+      });
+    },
+
+    /* i18n: true,
+    gzip: false,
+    exclude: ['', ''],
+    routes: [
+      {
+        url: 'https://ninecasino.com/games/top',
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date()
+      },
+      {
+        url: 'https://ninecasino.com/responsible-gaming',
+        changefreq: 'daily',
+        priority: 0.9,
+        lastmod: new Date(),
+      },
+      {
+        url: `https://ninecasino.com/aml-policy`,
+        changefreq: 'daily',
+        priority: 0.9,
+        lastmod: new Date(),
+      },
+      {
+        url: `https://ninecasino.com/terms`,
+        changefreq: 'daily',
+        priority: 0.9,
+        lastmod: new Date(),
+      },
+      {
+        url: `https://ninecasino.com/faq`,
+        changefreq: 'daily',
+        priority: 0.9,
+        lastmod: new Date(),
+      },
+      {
+        url: `https://ninecasino.com/promotions`,
+        changefreq: 'daily',
+        priority: 0.9,
+        lastmod: new Date(),
+      },
+      {
+        url: `https://ninecasino.com/about-us`,
+        changefreq: 'daily',
+        priority: 0.9,
+        lastmod: new Date(),
+      },
+      {
+        url: `https://ninecasino.com/payment-methods`,
+        changefreq: 'daily',
+        priority: 0.9,
+        lastmod: new Date(),
+      },
+      {
+        url: `https://ninecasino.com/privacy-policy`,
+        changefreq: 'daily',
+        priority: 0.9,
+        lastmod: new Date(),
+      },
+      {
+        url: `https://ninecasino.com/bonus-policy`,
+        changefreq: 'daily',
+        priority: 0.9,
+        lastmod: new Date(),
+      },
+      {
+        url: `https://ninecasino.com/bonus-terms`,
+        changefreq: 'daily',
+        priority: 0.9,
+        lastmod: new Date(),
+      },
+    ], */
+  },
   i18n: {
     locales: [
       {
@@ -94,30 +198,35 @@ export default {
         codeCountry: 'en_GB',
         file: 'en.json',
         icon: 'en.svg',
+        iso: 'en_GB',
       },
       {
         code: 'en-ca',
         codeCountry: 'en_CA',
         file: 'en_ca.json',
         icon: 'en-ca.svg',
+        iso: 'en_CA',
       },
       {
         code: 'fr',
         codeCountry: 'fr_FR',
         file: 'fr_ca.json',
         icon: 'fr_ca.svg',
+        iso: 'fr_CA',
       },
       {
         code: 'cs',
         codeCountry: 'cs_CZ',
         file: 'cs.json',
         icon: 'cs.svg',
+        iso: 'cs',
       },
       {
         code: 'de',
         codeCountry: 'de_DE',
         file: 'de.json',
         icon: 'de.svg',
+        iso: 'de',
       },
     ],
     defaultLocale: 'en',
@@ -129,6 +238,8 @@ export default {
     detectBrowserLanguage: {
       alwaysRedirect: true,
     },
+    baseUrl: 'https://ninecasino.com',
+    seo: true,
   },
 
   gtm: {

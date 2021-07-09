@@ -51,19 +51,6 @@ export default {
             )} Games For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino`,
         },
       ],
-      link: [
-        {
-          rel: 'canonical',
-          href: 'https://ninecasino.com/games/top/',
-        },
-        {
-          rel: 'alternate',
-          hreflang: `${this.$i18n.locale}`,
-          href: `https://ninecasino.com/${
-            this.$i18n.locale !== 'en' ? `${this.$i18n.locale}/` : ''
-          }games/top/`,
-        },
-      ],
     };
   },
   computed: {
