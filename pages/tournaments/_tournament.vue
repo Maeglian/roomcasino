@@ -458,6 +458,7 @@ export default {
   }
 
   &-Table {
+    max-height: 600px;
     padding: 21px 10px;
     overflow-y: auto;
     font-size: 10px;
