@@ -174,7 +174,15 @@
     "email": "Email",
     "wager": "Mise",
     "created": "A été créé",
-    "expiresAt": "Expire à"
+    "expiresAt": "Expire à",
+    "days": "Jours",
+    "hours": "Heures",
+    "minutes": "Minutes",
+    "seconds": "Secondes",
+    "week": "Semaine",
+    "name": "Nom",
+    "points": "Points",
+    "prize": "Prix"
   },
   "actions": {
     "addCurrency": "Ajouter une devise"
@@ -438,7 +446,12 @@
   },
   "tournaments": {
     "games": "Jeux dans le tournoi",
-    "terms": "Conditions générales"
+    "terms": "Conditions générales",
+    "timeLeft": "Temps restant",
+    "duration": "Durée",
+    "betsPerPoint": "Pari par point",
+    "currentWinners": "Les gagnants actuels",
+    "previousRound": "Tour précédent"
   },
   "knockoutFootball": {
     "title": "Jouons<br/> avec le deuxième <br/>tour de Habanero!",

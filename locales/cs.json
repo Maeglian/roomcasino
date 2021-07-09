@@ -171,7 +171,15 @@
     "wager" : "Vsadit",
     "created" : "Vytvořeno",
     "expiresAt" : "Vyprší v",
-    "noData" : "Údaje nejsou k dispozici"
+    "noData" : "Údaje nejsou k dispozici",
+    "days": "Dny",
+    "hours": "Hodiny",
+    "minutes": "Minut",
+    "seconds": "Sekundy",
+    "week": "Semaine",
+    "name": "Název",
+    "points":  "Směřovat",
+    "prize": "cena"
   },
   "actions" : {
     "addCurrency" : "Add currency"
@@ -433,7 +441,12 @@
   },
   "tournaments" : {
     "games" : "Hry zahrnuté do turnaje",
-    "terms" : "Podmínky turnaje"
+    "terms" : "Podmínky turnaje",
+    "timeLeft": "Čas do skončení",
+    "duration": "Trvání",
+    "betsPerPoint": "Sázky na bod",
+    "currentWinners": "Aktuální vítězové",
+    "previousRound": "Předcházející kolo"
   },
   "knockoutFootball": {
     "title": "Pojďte <br/>si zahrát s Habanero, <br/>kolo 2!",

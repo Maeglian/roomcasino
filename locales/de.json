@@ -176,7 +176,15 @@
     "wager": "Umsatzanforderung",
     "created": "geschaffen",
     "expiresAt": "Läuft ab bei",
-    "noData": "Keine Daten verfügbar"
+    "noData": "Keine Daten verfügbar",
+    "days": "Tage",
+    "hours": "Stunden",
+    "minutes": "Minuten",
+    "seconds": "Sekunden",
+    "week": "Woche",
+    "name": "Name",
+    "points":  "Punkte",
+    "prize": "Preis"
   },
   "actions": {
     "addCurrency": "Währung hinzufügen"
@@ -439,7 +447,12 @@
   },
   "tournaments": {
     "games": "Teilnehmende Spiele",
-    "terms": "Teilnahmebedingungen"
+    "terms": "Teilnahmebedingungen",
+    "timeLeft": "Noch Zeit bis zum Ende",
+    "duration": "Dauer",
+    "betsPerPoint": "Wetten pro Punkt",
+    "currentWinners": "Aktuelle Gewinner",
+    "previousRound": "Letzte Runde"
   },
   "knockoutFootball": {
     "title": "Spiele <br/>mit Habanero – <br/>Runde 2!",

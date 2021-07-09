@@ -176,7 +176,15 @@
     "wager": "Wager",
     "created": "Created",
     "expiresAt": "Expires at",
-    "noData": "No data available"
+    "noData": "No data available",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "week": "Week",
+    "name": "Name",
+    "points": "Points",
+    "prize": "Prize"
   },
   "actions": {
     "addCurrency": "Add currency"
@@ -440,7 +448,12 @@
   },
   "tournaments": {
     "games": "Games in this tournament",
-    "terms": "Tournament terms and conditions"
+    "terms": "Tournament terms and conditions",
+    "timeLeft": "Time left until finish",
+    "duration": "Duration",
+    "betsPerPoint": "Bets per point",
+    "currentWinners": "Current winners",
+    "previousRound": "Previous round"
   },
   "knockoutFootball": {
     "title": "Let’s play<br/> with Habanero <br/>Round 2!",
