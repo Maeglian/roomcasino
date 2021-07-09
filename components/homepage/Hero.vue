@@ -195,6 +195,13 @@ export default {
           url: '/tournaments/drops-wins-live',
           linkText: this.$t('buttons.more'),
         },
+        {
+          bg: 'derby',
+          title: this.$t('rtt.title'),
+          text: `<span class="Colored">${this.$t('rtt.prize')}</span>`,
+          url: '/tournaments/rtt',
+          linkText: this.$t('buttons.more'),
+        },
       ];
       if (!this.isLoggedIn) {
         slides.splice(1, 1);
