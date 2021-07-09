@@ -39,10 +39,10 @@
             <div class="DailyTournamentPage-Benefit">
               <img src="@/assets/img/flower.svg" class="DailyTournamentPage-BenefitIcon" alt="" />
               <div>
-                <div class="DailyTournamentPage-BenefitName">
-                  1 week
+                <div class="DailyTournamentPage-BenefitName">1 {{ $t('common.week') }}</div>
+                <div class="DailyTournamentPage-BenefitAdditional">
+                  {{ $t('tournaments.duration') }}
                 </div>
-                <div class="DailyTournamentPage-BenefitAdditional">Duration</div>
               </div>
             </div>
             <div class="DailyTournamentPage-Benefit">
@@ -51,7 +51,9 @@
                 <div class="DailyTournamentPage-BenefitName">
                   <span class="Colored">{{ tournament.budget }} {{ tournament.currency }}</span>
                 </div>
-                <div class="DailyTournamentPage-BenefitAdditional">Prize pool</div>
+                <div class="DailyTournamentPage-BenefitAdditional">
+                  {{ $t('common.prizePool') }}
+                </div>
               </div>
             </div>
             <div v-if="tournament.maskingRate" class="DailyTournamentPage-Benefit">
@@ -60,7 +62,9 @@
                 <div class="DailyTournamentPage-BenefitName">
                   {{ tournament.maskingRate }} {{ tournament.currency }}
                 </div>
-                <div class="DailyTournamentPage-BenefitAdditional">Bets per point</div>
+                <div class="DailyTournamentPage-BenefitAdditional">
+                  {{ $t('tournaments.betsPerPoint') }}
+                </div>
               </div>
             </div>
           </div>
@@ -89,17 +93,17 @@
                   <div
                     class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th"
                   >
-                    Name
+                    {{ $t('common.name') }}
                   </div>
                   <div
                     class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th"
                   >
-                    Points
+                    {{ $t('common.points') }}
                   </div>
                   <div
                     class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th"
                   >
-                    Prize
+                    {{ $t('common.prize') }}
                   </div>
                 </div>
                 <div
@@ -222,13 +226,13 @@ export default {
       const tabs = [
         {
           value: 0,
-          name: 'Current winners',
+          name: this.$t('tournaments.currentWinners'),
         },
       ];
       if (this.tournamentAwards.length > 1)
         tabs.push({
           value: 1,
-          name: 'Previous winners',
+          name: this.$t('tournaments.previousRound'),
         });
 
       return tabs;

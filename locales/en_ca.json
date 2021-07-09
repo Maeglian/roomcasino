@@ -184,7 +184,8 @@
     "week": "Week",
     "name": "Name",
     "points":  "Points",
-    "prize": "Prize"
+    "prize": "Prize",
+    "prizePool": "Prize pool"
   },
   "actions": {
     "addCurrency": "Add currency"

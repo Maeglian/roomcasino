@@ -179,7 +179,8 @@
     "week": "Semaine",
     "name": "Název",
     "points":  "Směřovat",
-    "prize": "cena"
+    "prize": "cena",
+    "prizePool": "Prize pool"
   },
   "actions" : {
     "addCurrency" : "Add currency"

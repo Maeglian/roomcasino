@@ -184,7 +184,8 @@
     "week": "Woche",
     "name": "Name",
     "points":  "Punkte",
-    "prize": "Preis"
+    "prize": "Preis",
+    "prizePool": "Preisgeld"
   },
   "actions": {
     "addCurrency": "Währung hinzufügen"

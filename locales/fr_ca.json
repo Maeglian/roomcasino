@@ -182,7 +182,8 @@
     "week": "Semaine",
     "name": "Nom",
     "points": "Points",
-    "prize": "Prix"
+    "prize": "Prix",
+    "prizePool": "Une cagnotte"
   },
   "actions": {
     "addCurrency": "Ajouter une devise"
