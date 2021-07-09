@@ -1,9 +1,12 @@
 <script>
 import VueSlider from '@/components/Slider.vue';
 import Card from '@/components/Card.vue';
+import openGame from '@/mixins/openGame';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'SectionsSlider',
+  mixins: [openGame, showAuthDialog],
   props: {
     itemsInScreen: {
       type: Number,
@@ -53,13 +56,20 @@ export default {
           'div',
           {
             attrs: {
-              class: `${this.sectionClass} GamesSlider-Section`,
+              class: `${this.sectionClass} SectionsSlider-Section`,
             },
           },
           items.map(item => {
             return h(Card, {
               props: {
-                imgUrl: item.imageUrl,
+                gameInfo: item,
+                showDemo: true,
+                overlay: true,
+              },
+              on: {
+                'open-gamepage': e => {
+                  this.openGamePage(e, item.gameProducer);
+                },
               },
             });
           }),
@@ -72,7 +82,7 @@ export default {
           'div',
           {
             attrs: {
-              class: 'Title GamesSlider-Title',
+              class: 'Title SectionsSlider-Title',
             },
           },
           this.title,
@@ -82,7 +92,7 @@ export default {
       'div',
       {
         attrs: {
-          class: 'Games-Slider',
+          class: 'SectionsSlider-Slider',
         },
       },
       [title, divs],
@@ -90,3 +100,42 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.SectionsSlider {
+  position: relative;
+
+  &-Title {
+    margin-bottom: 15px;
+    font-size: 16px;
+
+    @media (max-width: $screen-m) {
+      font-size: 12px;
+    }
+  }
+
+  .Card-Image {
+    position: relative;
+  }
+
+  .Card-Icon--best {
+    width: 20px;
+    height: 20px;
+  }
+
+  .v_slider__prev,
+  .v_slider__next {
+    position: absolute;
+    top: 10px;
+  }
+
+  .v_slider__prev {
+    right: 20px;
+    left: initial;
+  }
+
+  .v_slider__next {
+    right: 0;
+  }
+}
+</style>

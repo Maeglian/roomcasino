@@ -11,18 +11,14 @@
         <button
           v-if="showDemo && gameInfo.type !== 'live'"
           class="Card-PlayFun"
-          @click="
-            $emit('open-gamepage', { id: gameInfo.gameId, demo: true, bg: gameInfo.backgroundUrl })
-          "
+          @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: true })"
         >
           {{ $t('buttons.playForFun') }}
         </button>
         <button
           v-if="!gameInfo.demoOnly"
           class="Card-PlayBtn"
-          @click="
-            $emit('open-gamepage', { id: gameInfo.gameId, demo: false, bg: gameInfo.backgroundUrl })
-          "
+          @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: false })"
         >
           {{ $t('buttons.playNow') }}
         </button>
@@ -40,7 +36,7 @@
       </svg>
       <div class="Card-Image">
         <img v-if="img" :src="require(`@/assets/img/${img}`)" alt="" loading="lazy" />
-        <img v-else :src="imgUrl" alt="" loading="lazy" />
+        <img v-else :src="gameInfo.imageUrl" alt="" loading="lazy" />
       </div>
       <div v-if="sum" class="Card-Sum">
         {{ sum }}

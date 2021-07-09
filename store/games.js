@@ -1,4 +1,4 @@
-import { API_HOST } from '@/config';
+import { API_HOST, TOURNAMENTS } from '@/config';
 import { http } from './index';
 
 export const state = () => ({
@@ -35,6 +35,13 @@ export const state = () => ({
   lastWinnerListIsLoading: false,
   topWinnerListError: '',
   lastWinnerListError: '',
+  tournamentList: [],
+  tournamentListLoadingStatus: 'notLoaded',
+  tournamentListError: '',
+  tournamentResult: [],
+  tournamentResultIsLoading: false,
+  tournamentResultError: '',
+  tournamentAwards: [],
 });
 
 export const getters = {
@@ -45,6 +52,20 @@ export const getters = {
       const title = game.gameName.toLowerCase();
       return title.includes(str);
     });
+  },
+  tournaments: state => {
+    const nineCasinoTournaments = state.tournamentList.reduce((obj, tournament) => {
+      if (!obj[tournament.slug]) {
+        const newTournament = tournament;
+        newTournament.url = newTournament.slug;
+        newTournament.translates = newTournament.slug;
+        newTournament.class =
+          newTournament.slug.charAt(0).toUpperCase() + newTournament.slug.slice(1);
+        obj[tournament.slug] = newTournament;
+      }
+      return obj;
+    }, {});
+    return { ...TOURNAMENTS, ...nineCasinoTournaments };
   },
 };
 
@@ -144,6 +165,27 @@ export const mutations = {
   },
   setLastWinnerListError(state, payload) {
     state.lastWinnerListError = payload;
+  },
+  setTournamentList(state, payload) {
+    state.tournamentList = payload;
+  },
+  setTournamentListLoadingStatus(state, payload) {
+    state.tournamentListLoadingStatus = payload;
+  },
+  setTournamentListError(state, payload) {
+    state.tournamentListError = payload;
+  },
+  setTournamentResult(state, payload) {
+    state.tournamentResult = payload;
+  },
+  setTournamentResultIsLoading(state, payload) {
+    state.tournamentResultIsLoading = payload;
+  },
+  setTournamentResultError(state, payload) {
+    state.tournamentResultError = payload;
+  },
+  setTournamentAwards(state, payload) {
+    state.tournamentAwards = payload;
   },
 };
 
@@ -369,6 +411,36 @@ export const actions = {
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setLastWinnerListIsLoading', false);
+    }
+  },
+
+  async getTournamentList({ commit }, payload = {}) {
+    if (!payload.withAwards) commit('setTournamentListLoadingStatus', 'loading');
+    try {
+      const res = await http.get(`${API_HOST}/tournamentList`, {
+        ...{ params: payload },
+      });
+      if (payload.withAwards) commit('setTournamentAwards', res.data);
+      else commit('setTournamentList', res.data);
+    } catch (e) {
+      commit('setTournamentListError', e);
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      if (!payload.withAwards) commit('setTournamentListLoadingStatus', 'loaded');
+    }
+  },
+  async getTournamentResult({ commit }, payload = {}) {
+    commit('setTournamentResultIsLoading', true);
+    try {
+      const res = await http.get(`${API_HOST}/tournamentResult`, {
+        ...{ params: payload },
+      });
+      commit('setTournamentResult', res.data);
+    } catch (e) {
+      commit('setTournamentResultError', e);
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      commit('setTournamentResultIsLoading', false);
     }
   },
 };
