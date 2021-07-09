@@ -41,6 +41,7 @@ export const state = () => ({
   tournamentResult: [],
   tournamentResultIsLoading: false,
   tournamentResultError: '',
+  tournamentAwards: [],
 });
 
 export const getters = {
@@ -54,12 +55,14 @@ export const getters = {
   },
   tournaments: state => {
     const nineCasinoTournaments = state.tournamentList.reduce((obj, tournament) => {
-      const newTournament = tournament;
-      newTournament.url = newTournament.slug;
-      newTournament.translates = newTournament.slug;
-      newTournament.class =
-        newTournament.slug.charAt(0).toUpperCase() + newTournament.slug.slice(1);
-      obj[tournament.slug] = newTournament;
+      if (!obj[tournament.slug]) {
+        const newTournament = tournament;
+        newTournament.url = newTournament.slug;
+        newTournament.translates = newTournament.slug;
+        newTournament.class =
+          newTournament.slug.charAt(0).toUpperCase() + newTournament.slug.slice(1);
+        obj[tournament.slug] = newTournament;
+      }
       return obj;
     }, {});
     return { ...TOURNAMENTS, ...nineCasinoTournaments };
@@ -180,6 +183,9 @@ export const mutations = {
   },
   setTournamentResultError(state, payload) {
     state.tournamentResultError = payload;
+  },
+  setTournamentAwards(state, payload) {
+    state.tournamentAwards = payload;
   },
 };
 
@@ -409,17 +415,18 @@ export const actions = {
   },
 
   async getTournamentList({ commit }, payload = {}) {
-    commit('setTournamentListLoadingStatus', 'loading');
+    if (!payload.withAwards) commit('setTournamentListLoadingStatus', 'loading');
     try {
       const res = await http.get(`${API_HOST}/tournamentList`, {
         ...{ params: payload },
       });
-      commit('setTournamentList', res.data);
+      if (payload.withAwards) commit('setTournamentAwards', res.data);
+      else commit('setTournamentList', res.data);
     } catch (e) {
       commit('setTournamentListError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
-      commit('setTournamentListLoadingStatus', 'loaded');
+      if (!payload.withAwards) commit('setTournamentListLoadingStatus', 'loaded');
     }
   },
   async getTournamentResult({ commit }, payload = {}) {

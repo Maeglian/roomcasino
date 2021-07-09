@@ -101,7 +101,9 @@
                     {{ winner.points }}
                   </div>
                   <div class="Table-Cell TableBordered-Cell DailyTournamentPage-Prize">
-                    {{ winner.prize }}
+                    <template v-if="tournamentAwards.length && i < 3">
+                      {{ tournamentAwards[round].awards[i].moneyAmount }} {{ tournament.currency }}
+                    </template>
                   </div>
                 </div>
               </div>
@@ -171,17 +173,7 @@ export default {
   data() {
     return {
       winnersToShow: 10,
-      tabs: [
-        {
-          value: 'current',
-          name: 'Current winners',
-        },
-        {
-          value: 'prev',
-          name: 'Previous winners',
-        },
-      ],
-      round: 'current',
+      round: 0,
       page: 1,
     };
   },
@@ -204,27 +196,47 @@ export default {
       'tournamentGamesAreLoading',
       'tournamentResult',
       'tournamentResultIsLoading',
+      'tournamentAwards',
     ]),
     ...mapGetters('games', ['tournaments']),
     tournament() {
       return this.tournaments[this.$route.params.tournament];
     },
-  },
-  watch: {
-    tournamentListLoadingStatus() {
-      if (this.tournamentListLoadingStatus === 'loaded') {
-        if (this.tournament) {
-          const category = this.tournament.id ? 'slots' : this.tournament.slug;
-          this.getTournamentGames({
-            category,
-          });
-          if (this.tournament.id) this.getTournamentResult({ tournamentId: this.tournament.id });
-        } else this.$router.push(this.localePath('/404'));
-      }
+    tabs() {
+      const tabs = [
+        {
+          value: 0,
+          name: 'Current winners',
+        },
+      ];
+      if (this.tournamentAwards.length > 1)
+        tabs.push({
+          value: 1,
+          name: 'Previous winners',
+        });
+
+      return tabs;
     },
   },
-  created() {
-    this.getTournamentList({ withAwards: 1 });
+  watch: {
+    tournamentListLoadingStatus: {
+      immediate: true,
+      handler() {
+        if (this.tournamentListLoadingStatus === 'loaded') {
+          if (this.tournament) {
+            const category = this.tournament.id ? 'slots' : this.tournament.slug;
+            this.getTournamentGames({
+              category,
+            });
+            if (this.tournament.id) this.getTournamentResult({ tournamentId: this.tournament.id });
+            this.getTournamentList({ slug: this.tournament.slug, withAwards: 1, limit: 2 });
+          } else this.$router.push(this.localePath('/404'));
+        }
+      },
+    },
+    round() {
+      this.getTournamentResult({ tournamentId: this.tournamentAwards[this.round].id });
+    },
   },
   methods: {
     ...mapActions('games', ['getTournamentGames', 'getTournamentList', 'getTournamentResult']),
