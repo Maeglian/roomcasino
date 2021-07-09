@@ -441,7 +441,7 @@
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!"
     },
-    "rtt": {
+    "weekly_derby": {
       "upTo": "prize pool €2,500",
       "name": "Saddle up for the Weekly Derby",
       "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
@@ -544,7 +544,7 @@
       }
     ]
   },
-  "rtt": {
+  "weekly_derby": {
     "title": "The Ninecasino<br/> Weekly Derby",
     "prize": "€2,500",
     "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",

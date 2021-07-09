@@ -698,7 +698,7 @@ export default {
   }
 }
 
-.Rtt {
+.Weekly_derby {
   &-Header {
     width: 100%;
     margin-top: -70px;

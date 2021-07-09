@@ -197,9 +197,9 @@ export default {
         },
         {
           bg: 'derby',
-          title: this.$t('rtt.title'),
-          text: `<span class="Colored">${this.$t('rtt.prize')}</span>`,
-          url: '/tournaments/rtt',
+          title: this.$t('weekly_derby.title'),
+          text: `<span class="Colored">${this.$t('weekly_derby.prize')}</span>`,
+          url: '/tournaments/weekly_derby',
           linkText: this.$t('buttons.more'),
         },
       ];
