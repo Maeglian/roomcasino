@@ -353,10 +353,11 @@ export default {
     margin-bottom: 23px;
 
     @media (min-width: $screen-s) {
-      width: 168px;
+      width: 180px;
       margin-right: 20px;
       margin-bottom: 0;
       text-align: left;
+      white-space: nowrap;
     }
   }
 
