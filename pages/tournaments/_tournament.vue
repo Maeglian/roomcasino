@@ -40,7 +40,7 @@
               <img src="@/assets/img/flower.svg" class="DailyTournamentPage-BenefitIcon" alt="" />
               <div>
                 <div class="DailyTournamentPage-BenefitName">
-                  {{ countDuration(tournament.startDateTime, tournament.endDateTime) }}
+                  1 week
                 </div>
                 <div class="DailyTournamentPage-BenefitAdditional">Duration</div>
               </div>
