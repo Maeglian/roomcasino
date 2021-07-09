@@ -344,7 +344,7 @@ export default {
     @media (min-width: $screen-m) {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: center;
     }
   }
 
@@ -720,7 +720,7 @@ export default {
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 120px;
+      padding-top: 100px;
       background-image: url(~@/assets/img/derby_1248.png);
     }
 
