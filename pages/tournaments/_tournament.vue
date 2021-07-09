@@ -705,7 +705,7 @@ export default {
     padding-top: 270px / 320px * 100%;
     background-image: url(~@/assets/img/derby_460.png);
     background-repeat: no-repeat;
-    background-position: center 40px;
+    background-position: center top;
     background-size: calc(100% - 32px) auto;
 
     @media (min-width: $screen-s) {
