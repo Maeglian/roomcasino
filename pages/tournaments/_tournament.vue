@@ -11,7 +11,7 @@
           ></h1>
           <h1
             v-else
-            class="Title Title--type-h1 Title--color1 DailyTournamentPage-Title"
+            class="Title Title--type-h1 DailyTournamentPage-Title"
             v-html="$t(`${tournament.translates}.title`)"
           ></h1>
           <div v-if="$t(`${tournament.translates}.prize`)" class="DailyTournamentPage-Subtitle">
@@ -271,7 +271,7 @@ export default {
     margin-bottom: 18px;
     font-size: 18px;
     font-weight: 700;
-    color: var(--color-text-main);
+    color: var(--color-main1);
 
     @media (min-width: $screen-m) {
       margin-bottom: 25px;
