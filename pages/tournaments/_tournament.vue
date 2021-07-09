@@ -121,7 +121,9 @@
                     {{ winner.points }}
                   </div>
                   <div class="Table-Cell TableBordered-Cell DailyTournamentPage-Prize">
-                    <template v-if="tournamentAwards.length && i < 3">
+                    <template
+                      v-if="tournamentAwards.length && i < tournamentAwards[round].awards.length"
+                    >
                       {{ tournamentAwards[round].awards[i].moneyAmount }} {{ tournament.currency }}
                     </template>
                   </div>
