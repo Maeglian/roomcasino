@@ -81,10 +81,26 @@
             <div v-else class="DailyTournamentPage-Table">
               <div class="Table TableBordered">
                 <div class="Table-Row">
-                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">#</div>
-                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">Name</div>
-                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">Points</div>
-                  <div class="Table-Cell TableBordered-Cell TableBordered-Th">Prize</div>
+                  <div
+                    class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th"
+                  >
+                    #
+                  </div>
+                  <div
+                    class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th"
+                  >
+                    Name
+                  </div>
+                  <div
+                    class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th"
+                  >
+                    Points
+                  </div>
+                  <div
+                    class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th"
+                  >
+                    Prize
+                  </div>
                 </div>
                 <div
                   v-for="(winner, i) in tournamentResult.resultList"
@@ -94,7 +110,7 @@
                   <div class="Table-Cell TableBordered-Cell">
                     {{ i + 1 }}
                   </div>
-                  <div class="Table-Cell TableBordered-Cell">
+                  <div class="Table-Cell TableBordered-Cell DailyTournamentPage-WinnerNick">
                     {{ winner.nickname }}
                   </div>
                   <div class="Table-Cell TableBordered-Cell">
@@ -436,11 +452,32 @@ export default {
 
   &-Table {
     padding: 21px 10px;
+    overflow-y: auto;
     font-size: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #6a6e7f transparent;
 
     @media (min-width: $screen-m) {
       font-size: 12px;
     }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      background: var(--color-bg);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #6a6e7f;
+      border-radius: 3px;
+    }
+  }
+
+  &-Th {
+    color: var(--color-text-ghost);
+  }
+
+  &-WinnerNick {
+    color: var(--color-text-main);
   }
 
   &-Prize {
