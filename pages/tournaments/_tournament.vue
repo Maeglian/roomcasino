@@ -31,7 +31,7 @@
         <div v-if="tournament.id" class="DailyTournamentPage-Promotion">
           <div class="DailyTournamentPage-Deposit">
             <button class="Btn Btn--common DailyTournamentPage-Btn" @click="onClickBtn()">
-              {{ isLoggedIn ? 'Deposit' : 'Sign up' }}
+              {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.signUp') }}
             </button>
             <Counter :enddate="new Date(tournament.endDateTime * 1000)" />
           </div>
