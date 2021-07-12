@@ -305,6 +305,7 @@
       "subscriptions" : "Předplatné",
       "sms" : "Pošlete promo e-mailem",
       "email" : "Posílejte promo zprávy sms",
+      "denyBonuses": "Nechci dostávat žádné bonusy",
       "passwordChange" : "Změna hesla",
       "oldPassword" : "Staré heslo",
       "newPassword" : "Nové heslo",

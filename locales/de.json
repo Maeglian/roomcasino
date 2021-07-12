@@ -310,6 +310,7 @@
       "subscriptions": "Abonnements",
       "sms": "Information zu aktionen per E-MAIL",
       "email": "Information zu aktionen per SMS",
+      "denyBonuses": "Ich möchte keine Boni erhalten",
       "passwordChange": "Passwortänderung",
       "oldPassword": "Altes Passwort",
       "newPassword": "Neues Passwort",
