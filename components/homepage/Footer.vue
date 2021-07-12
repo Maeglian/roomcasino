@@ -211,16 +211,6 @@ export default {
     color: var(--color-more-faded);
   }
 
-  &-Text--nocopy {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    -khtml-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
-  }
-
   &-Icons {
     display: flex;
     align-items: center;
