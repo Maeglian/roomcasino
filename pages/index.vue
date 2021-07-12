@@ -37,12 +37,6 @@ export default {
   },
   mixins: [showAuthDialog],
   layout: 'page',
-  middleware: [
-    function({ redirect, route, app }) {
-      if (app.getRouteBaseName() === 'index')
-        redirect({ path: app.localePath('/games/top'), query: route.query });
-    },
-  ],
   computed: {
     ...mapState(['registrationWindowWasOpened', 'siteIsAllowedForUser']),
   },
