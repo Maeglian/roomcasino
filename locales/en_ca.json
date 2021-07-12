@@ -310,6 +310,7 @@
       "subscriptions": "Subscriptions",
       "sms": "Send promos by e-mail",
       "email": "Send promos by sms",
+      "denyBonuses": "I don’t want to receive any Bonuses",
       "passwordChange": "Password change",
       "oldPassword": "Old password",
       "newPassword": "New password",
