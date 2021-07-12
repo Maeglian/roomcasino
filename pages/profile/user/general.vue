@@ -353,6 +353,7 @@ export default {
   &-CheckboxLabel {
     position: relative;
     flex-grow: 1;
+    width: auto;
     margin-right: 0;
     margin-left: 59px;
     padding-left: 20px;
