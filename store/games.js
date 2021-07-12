@@ -6,6 +6,7 @@ export const state = () => ({
   recentGames: [],
   defaultGames: [],
   newGames: [],
+  topGames: [],
   liveGames: [],
   tournamentGames: [],
   jackpotGames: [],
@@ -18,6 +19,7 @@ export const state = () => ({
   defaultGamesAreLoading: false,
   tournamentGamesAreLoading: false,
   newGamesAreLoading: false,
+  topGamesAreLoading: false,
   liveGamesAreLoading: false,
   jackpotGamesAreLoading: false,
   buybonusGamesAreLoading: false,
@@ -88,6 +90,9 @@ export const mutations = {
   setLiveGamesAreLoading: (state, payload) => {
     state.liveGamesAreLoading = payload;
   },
+  setTopGamesAreLoading: (state, payload) => {
+    state.topGamesAreLoading = payload;
+  },
   setNewGamesAreLoading: (state, payload) => {
     state.newGamesAreLoading = payload;
   },
@@ -120,6 +125,9 @@ export const mutations = {
   },
   setNewGames: (state, payload) => {
     state.newGames = payload;
+  },
+  setTopGames: (state, payload) => {
+    state.topGames = payload;
   },
   setLiveGames: (state, payload) => {
     state.liveGames = payload;
@@ -201,6 +209,20 @@ export const actions = {
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setGamesAreLoading', false);
+    }
+  },
+
+  async getTopGames({ commit, rootState }) {
+    commit('setTopGamesAreLoading', true);
+    try {
+      const res = await http.get(`${API_HOST}/gameList`, {
+        params: { category: 'top', platform: rootState.platform },
+      });
+      commit('setTopGames', res.data);
+    } catch (e) {
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      commit('setTopGamesAreLoading', false);
     }
   },
 
