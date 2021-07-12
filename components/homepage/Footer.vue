@@ -10,35 +10,35 @@
           {{ $t('pages.promotion') }}
         </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/about-us')">
-          {{ $t('pages.aboutUs') }}</NuxtLink
-        >
+          {{ $t('pages.aboutUs') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/bitcoins')">
-          {{ $t('pages.btc') }}</NuxtLink
-        >
+          {{ $t('pages.btc') }}
+        </NuxtLink>
         <!--        <NuxtLink class="Link Footer-Link" to="localePath('/vip')">-->
         <!--          VIP rewards-->
         <!--        </NuxtLink>-->
         <NuxtLink class="Link Footer-Link" :to="localePath('/aml-policy')">
-          {{ $t('pages.aml') }}</NuxtLink
-        >
+          {{ $t('pages.aml') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/terms')">
-          {{ $t('pages.terms') }}</NuxtLink
-        >
+          {{ $t('pages.terms') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/bonus-terms')">
-          {{ $t('pages.bonusPolicy') }}</NuxtLink
-        >
+          {{ $t('pages.bonusPolicy') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/responsible-gaming')">
-          {{ $t('pages.responsibleGaming') }}</NuxtLink
-        >
+          {{ $t('pages.responsibleGaming') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/risk-warnings')">
-          {{ $t('pages.risk') }}</NuxtLink
-        >
+          {{ $t('pages.risk') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/privacy-policy')">
-          {{ $t('pages.privacyPolicy') }}</NuxtLink
-        >
+          {{ $t('pages.privacyPolicy') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/faq')">
-          {{ $t('pages.faq') }}</NuxtLink
-        >
+          {{ $t('pages.faq') }}
+        </NuxtLink>
 
         <!--        <NuxtLink class="Link Footer-Link" to="/payment-methods">-->
         <!--          Payment methods-->
@@ -54,9 +54,22 @@
         <div class="Footer-Text">
           {{ $t('footer.text.p1') }}
         </div>
-        <div class="Footer-Text">
-          {{ $t('footer.text.p2') }}
-        </div>
+
+        <!--        &lt;!&ndash;noindex&ndash;&gt;&lt;!&ndash;googleoff: index&ndash;&gt;-->
+        <!--        <div class="Footer-Text Footer-Text&#45;&#45;nocopy">-->
+        <!--          {{ $t('footer.text.p2') }}-->
+        <!--        </div>-->
+        <!--        &lt;!&ndash;googleon: index&ndash;&gt;&lt;!&ndash;/noindex&ndash;&gt;-->
+
+        <picture class="Footer-TextImg">
+          <source media="(max-width: 340px)" srcset="@/assets/img/footer-text_320.png" />
+          <source media="(max-width: 459px)" srcset="@/assets/img/footer-text_460.png" />
+          <source media="(max-width: 589px)" srcset="@/assets/img/footer-text_600.png" />
+          <source media="(max-width: 767px)" srcset="@/assets/img/footer-text_767.png" />
+          <source media="(max-width: 900px)" srcset="@/assets/img/footer-text_900.png" />
+          <source media="(max-width: 1400px)" srcset="@/assets/img/footer-text_1400.png" />
+          <img src="@/assets/img/footer-text.png" alt="" />
+        </picture>
         <div class="Footer-Text">
           <i18n path="footer.text.p3">
             <template #support>
@@ -196,6 +209,16 @@ export default {
     font-size: 14px;
     line-height: 1.66;
     color: var(--color-more-faded);
+  }
+
+  &-Text--nocopy {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
   }
 
   &-Icons {
