@@ -41,6 +41,7 @@ window.onNuxtReady(({ context }) => {
   context.store
     .dispatch('games/getDefaultGames')
     .then(() => context.store.commit('setInitialLoading', 'defaultGames'));
+  context.store.dispatch('games/getTopGames');
   context.store.dispatch('games/getNewGames');
   context.store.dispatch('games/getLiveGames');
   context.store.dispatch('games/getJackpotGames');
