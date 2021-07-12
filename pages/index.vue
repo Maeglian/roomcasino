@@ -37,6 +37,17 @@ export default {
   },
   mixins: [showAuthDialog],
   layout: 'page',
+  head() {
+    return {
+      title: 'ᐈ Casino Online and Mobile | Get Welcome Bonus $450 from Ninecasino!',
+      meta: [
+        {
+          description:
+            '★ Play Your Favorite Games For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino',
+        },
+      ],
+    };
+  },
   computed: {
     ...mapState(['registrationWindowWasOpened', 'siteIsAllowedForUser']),
   },
