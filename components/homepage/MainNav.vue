@@ -11,6 +11,8 @@
         <NuxtLink class="MainNav-Logo" :to="localePath('/')">
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
         </NuxtLink>
+        <GamePanel v-if="isGamePage" />
+        <AuthSection v-else class="MainNav-AuthSection" />
         <button
           v-if="width < 768"
           class="Btn Btn--common MainNav-Btn"
@@ -32,8 +34,8 @@
           </template>
         </ul>
       </nav>
-      <GamePanel v-if="isGamePage" />
-      <AuthSection v-else class="MainNav-AuthSection" />
+      <!--      <GamePanel v-if="isGamePage" />
+      <AuthSection v-else class="MainNav-AuthSection" />-->
     </div>
     <transition v-if="width < 960" name="slide-right">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
