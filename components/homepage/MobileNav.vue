@@ -1,25 +1,25 @@
 <template>
   <nav class="MobileNav">
     <NuxtLink class="MobileNav-Item" :to="localePath('/promotions')">
-      <svg width="17" height="16">
+      <svg class="MobileNav-Toggle2" width="17" height="16">
         <use xlink:href="@/assets/img/icons.svg#promotions"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('pages.promotion') }}</div>
     </NuxtLink>
     <button v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
-      <svg width="18" height="15">
+      <svg class="MobileNav-Toggle2" width="18" height="15">
         <use xlink:href="@/assets/img/icons.svg#support"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('menu.support') }}</div>
     </button>
     <NuxtLink class="MobileNav-Item" :to="localePath('/')">
-      <svg width="17" height="16">
+      <svg class="MobileNav-Toggle2" width="17" height="16">
         <use xlink:href="@/assets/img/icons.svg#dice"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('pages.lobby') }}</div>
     </NuxtLink>
     <NuxtLink class="MobileNav-Item" :to="localePath('/search')">
-      <svg width="17" height="16" fill="#F3B233">
+      <svg class="MobileNav-Toggle2" width="17" height="16" fill="#F3B233">
         <use xlink:href="@/assets/img/icons.svg#search"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('pages.search') }}</div>
@@ -80,8 +80,8 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 16px;
-  background: var(--color-body);
+  padding: 10px 3px 18px;
+  background: var(--color-bg-mobnav);
   transform: translateZ(0);
 
   @media (min-width: $screen-xs) {
@@ -89,10 +89,29 @@ export default {
   }
 
   &-Item {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    width: 61px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -3px;
+      width: 1px;
+      height: 25px;
+      background-color: var(--color-bg-mobnav-lighter);
+      transform: translate(0, -50%);
+    }
+
+    &:last-child {
+      &:before {
+        display: none;
+      }
+    }
 
     &--row {
       display: flex;
@@ -120,7 +139,7 @@ export default {
 
   &-Name {
     font-size: 7px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.66;
     color: var(--color-text-main);
     text-transform: uppercase;
@@ -149,8 +168,9 @@ export default {
 
   &-Toggle2 {
     align-items: center;
-    width: 20px;
-    margin: 0 24px;
+    width: 17px;
+    height: 17px;
+    margin: 0 0 4px;
   }
 }
 </style>

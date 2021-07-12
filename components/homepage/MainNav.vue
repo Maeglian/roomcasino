@@ -11,8 +11,13 @@
         <NuxtLink class="MainNav-Logo" :to="localePath('/')">
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
         </NuxtLink>
+
         <GamePanel v-if="isGamePage" />
-        <AuthSection v-else class="MainNav-AuthSection" />
+        <template v-if="width < 768">
+          <AuthSection class="MainNav-AuthSection" />
+        </template>
+        <!--        <GamePanel v-if="isGamePage" />
+        <AuthSection v-if="isLoggedIn" class="MainNav-AuthSection" />-->
         <button
           v-if="width < 768"
           class="Btn Btn--common MainNav-Btn"
@@ -34,8 +39,10 @@
           </template>
         </ul>
       </nav>
-      <!--      <GamePanel v-if="isGamePage" />
-      <AuthSection v-else class="MainNav-AuthSection" />-->
+      <GamePanel v-if="isGamePage" />
+      <template v-if="width > 768">
+        <AuthSection class="MainNav-AuthSection" />
+      </template>
     </div>
     <transition v-if="width < 960" name="slide-right">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
@@ -296,7 +303,7 @@ export default {
 
   &-Logo {
     flex-shrink: 0;
-    width: 110px;
+    width: 85px;
     vertical-align: middle;
 
     @media (min-width: $screen-s) {
@@ -307,14 +314,22 @@ export default {
       width: 140px;
     }
 
+    @media (min-width: $screen-l) {
+      margin-right: 34px;
+    }
+
     @media (min-width: $screen-xl) {
       width: 172px;
     }
   }
 
   .Btn--common {
-    padding: 9px 21px;
+    padding: 8px 14px;
     font-size: 10px;
+
+    @media (min-width: $screen-s) {
+      padding: 9px 21px;
+    }
   }
 
   &-Links {

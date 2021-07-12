@@ -157,6 +157,17 @@ export default {
     display: block;
     margin-right: 12px;
     text-align: right;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    img {
+      width: 14px;
+      @media (min-width: $screen-s) {
+        width: 20px;
+      }
+    }
   }
 
   &-User {
