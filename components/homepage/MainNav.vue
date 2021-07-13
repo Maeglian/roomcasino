@@ -61,16 +61,9 @@
               :item="item"
             />
           </template>
-          <div
-            v-if="isLoggedIn"
-            class="Nav-Item Nav-Name AsideMenu-Link Link-Exit"
-            @click="onClickExitBtn()"
-          >
-            <svg class="AsideMenu-Icon Nav-Icon Icon-Exit" width="22" height="18">
-              <use xlink:href="@/assets/img/icons.svg#exit"></use>
-            </svg>
-            {{ $t('profile.pages.exit') }}
-          </div>
+          <template v-for="item in navItemsFooter">
+            <NavItem :key="item.name" :class-name="'AsideMenu-LinkFooter'" :item="item" />
+          </template>
         </div>
         <AuthSection class="AsideMenu-AuthSection AuthSection--aside" :my-account="true" />
       </div>
@@ -105,12 +98,12 @@ export default {
           url: this.localePath('/daily-cashback'),
           icon: 'cashback.svg',
         },
-        {
+        /* {
           name: this.$t('pages.myAccount'),
           url: this.localePath('/profile/balance'),
           icon: 'user-profile.svg',
           onlyIfLoggedIn: true,
-        },
+        }, */
 
         // {
         //   name: 'Drops & Wins',
@@ -138,6 +131,44 @@ export default {
         //     },
         //   ],
         // },
+      ],
+      navItemsFooter: [
+        {
+          name: this.$t('pages.aboutUs'),
+          url: this.localePath('/about-us'),
+        },
+        {
+          name: this.$t('pages.btc'),
+          url: this.localePath('/bitcoins'),
+        },
+        {
+          name: this.$t('pages.aml'),
+          url: this.localePath('/aml-policy'),
+        },
+        {
+          name: this.$t('pages.terms'),
+          url: this.localePath('/terms'),
+        },
+        {
+          name: this.$t('pages.bonusPolicy'),
+          url: this.localePath('/bonus-terms'),
+        },
+        {
+          name: this.$t('pages.responsibleGaming'),
+          url: this.localePath('/responsible-gaming'),
+        },
+        {
+          name: this.$t('pages.risk'),
+          url: this.localePath('/risk-warnings'),
+        },
+        {
+          name: this.$t('pages.privacyPolicy'),
+          url: this.localePath('/privacy-policy'),
+        },
+        {
+          name: this.$t('pages.faq'),
+          url: this.localePath('/faq'),
+        },
       ],
       internalVisible: true,
     };
@@ -190,9 +221,6 @@ export default {
   methods: {
     ...mapMutations(['openNav', 'closeNav']),
     ...mapActions(['logout']),
-    onClickExitBtn() {
-      this.logout().then(() => this.$router.push(this.localePath('/')));
-    },
     onScroll() {
       this.documentIsScrolled = window.scrollY > 0;
     },
@@ -420,6 +448,32 @@ export default {
       .Nav-Name {
         justify-content: center;
       }
+    }
+  }
+
+  &-LinkFooter {
+    margin-bottom: 18px;
+    list-style-type: none;
+    font-size: 11px;
+
+    @media (min-width: $screen-s) {
+      font-size: 13px;
+    }
+
+    &:last-child {
+      margin-bottom: 90px;
+    }
+
+    .Nav-Name {
+      color: var(--color-text-faded);
+      @media (min-width: $screen-xs) {
+        display: block;
+        text-align: center;
+      }
+    }
+
+    .nuxt-link-exact-active {
+      color: var(--color-main1);
     }
   }
 

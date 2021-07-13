@@ -31,6 +31,10 @@
         </ul>
       </transition>
     </div>
+    <NuxtLink v-else :to="item.url" class="Nav-Name" @click.native="$emit('close')">
+      <img v-if="item.icon" class="Icon Nav-Icon" :src="require(`@/assets/img/${item.icon}`)" />
+      {{ item.name }}
+    </NuxtLink>
     <!--    <template v-else-if="item.children">
       <NavItem
         v-for="child in item.children"
