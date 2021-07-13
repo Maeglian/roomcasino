@@ -2,16 +2,18 @@
   <div class="Games">
     <GameModals />
     <div class="Games-Items">
-      <Card
-        v-for="(game, i) in gamesLimited"
-        :key="i"
-        :game-info="game"
-        :img-url="game.imageUrl"
-        :show-demo="true"
-        overlay
-        show-footer
-        @open-gamepage="openGamePage($event, game.gameProducer)"
-      />
+      <template v-for="(game, i) in games">
+        <Card
+          v-show="i < gamesShowed"
+          :key="i"
+          :game-info="game"
+          :img-url="game.imageUrl"
+          :show-demo="true"
+          overlay
+          show-footer
+          @open-gamepage="openGamePage($event, game.gameProducer)"
+        />
+      </template>
     </div>
     <p v-if="!games.length" class="Text Text--center">{{ $t('search.notFound') }}</p>
     <div v-if="games.length > gamesShowed" class="Games-Btn">
@@ -60,11 +62,6 @@ export default {
     return {
       gamesShowed: 0,
     };
-  },
-  computed: {
-    gamesLimited() {
-      return this.games.slice(0, this.gamesShowed);
-    },
   },
   created() {
     this.gamesShowed = this.gamesToShow;
