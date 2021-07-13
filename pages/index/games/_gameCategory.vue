@@ -51,7 +51,9 @@ export default {
         )} Games Now For Free Or Real Money | $450 Welcome Bonus At Ninecasino`,
       meta: [
         {
-          description: `★ Play ${this.$route.params.gameCategory.charAt(0).toUpperCase() +
+          hid: 'description',
+          name: 'description',
+          content: `★ Play ${this.$route.params.gameCategory.charAt(0).toUpperCase() +
             this.$route.params.gameCategory.slice(
               1,
             )} Games For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino`,
