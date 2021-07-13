@@ -65,7 +65,7 @@
         />
       </div>
       <a id="games"></a>
-      <Nuxt />
+      <Nuxt :key="$route.path" />
       <template v-if="newGames.length">
         <div class="Title Title--type-h2 Cards-Title">
           {{ $t('gameCategories.new') }}

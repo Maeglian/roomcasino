@@ -29,6 +29,11 @@ export default {
     Loader,
     Games,
   },
+  async asyncData({ store, params }) {
+    const gameParams = {};
+    if (params.providerName !== 'all') gameParams.gameProducer = params.providerName;
+    await store.dispatch('games/getGames', gameParams);
+  },
   head() {
     return {
       title: `ᐈ Play ${this.$route.params.providerName.charAt(0).toUpperCase() +
@@ -47,21 +52,6 @@ export default {
   },
   computed: {
     ...mapState('games', ['games', 'gamesAreLoading']),
-    gamesParams() {
-      const params = {};
-      if (this.$route.params.providerName !== 'all')
-        params.gameProducer = this.$route.params.providerName;
-      if (this.$route.params.category !== 'all') params.category = this.$route.params.category;
-      return params;
-    },
-  },
-  watch: {
-    $route: {
-      immediate: true,
-      handler() {
-        this.getGames(this.gamesParams);
-      },
-    },
   },
   methods: {
     ...mapActions('games', ['getGames']),

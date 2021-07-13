@@ -37,6 +37,12 @@ export default {
     Loader,
     Games,
   },
+  async asyncData({ store, params }) {
+    const gameParams = {};
+    if (params.gameCategory !== 'all') gameParams.category = params.gameCategory;
+    await store.dispatch('games/getGames', gameParams);
+    if (store.getters.isLoggedIn) await store.dispatch('games/getRecentGames', gameParams);
+  },
   head() {
     return {
       title: `ᐈ Play ${this.$route.params.gameCategory.charAt(0).toUpperCase() +
@@ -59,22 +65,6 @@ export default {
     ...mapGetters(['isLoggedIn']),
     recentGamesNum() {
       return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
-    },
-    gamesParams() {
-      const params = {};
-      if (this.$route.params.gameCategory !== 'all')
-        params.category = this.$route.params.gameCategory;
-      if (this.$route.params.producer) params.gameProducer = this.$route.params.producer;
-      return params;
-    },
-  },
-  watch: {
-    $route: {
-      immediate: true,
-      handler() {
-        this.getGames(this.gamesParams);
-        if (this.isLoggedIn) this.getRecentGames(this.gamesParams);
-      },
     },
   },
   methods: {
