@@ -71,14 +71,6 @@
             </svg>
             {{ $t('profile.pages.exit') }}
           </div>
-          <button
-            v-if="!isLoggedIn && chatIsLoaded"
-            class="Nav-Item Nav-Name AsideMenu-Link AsideMenu-Support"
-            @click="onClickSupport()"
-          >
-            <img class="Nav-Icon" src="@/assets/img/chat.svg" />
-            {{ $t('menu.support') }}
-          </button>
         </div>
         <AuthSection class="AsideMenu-AuthSection AuthSection--aside" :my-account="true" />
       </div>
@@ -106,21 +98,12 @@ export default {
     return {
       documentIsScrolled: false,
       topBarIsScrolled: false,
+      asideMenuLang: 'AsideMenu-Lang--aside',
       navItems: [
-        {
-          name: this.$t('pages.lobby'),
-          url: this.localePath('/'),
-          icon: 'lobby_nav.svg',
-        },
-        {
-          name: this.$t('pages.promotion'),
-          url: this.localePath('/promotions'),
-          icon: 'promotions_nav.svg',
-        },
         {
           name: this.$t('pages.dailyCashback'),
           url: this.localePath('/daily-cashback'),
-          icon: 'promotions_nav.svg',
+          icon: 'cashback.svg',
         },
         {
           name: this.$t('pages.myAccount'),
@@ -179,7 +162,7 @@ export default {
         const children = tournaments.map(item => ({
           name: item.name,
           url: this.localePath(`/tournaments/${item.url}`),
-          icon: 'tournament_nav.svg',
+          icon: 'tournament-circle_nav.svg',
           onlyIfLoggedIn: false,
         }));
         navTournaments = {
@@ -399,10 +382,16 @@ export default {
   &-Header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     margin-bottom: 50px;
     padding-right: 18px;
     padding-left: 18px;
+  }
+
+  &-Logo {
+    width: 110px;
+    height: 19px;
   }
 
   &-Close {
@@ -471,6 +460,10 @@ export default {
 
   .Icon-Exit {
     width: 16px;
+  }
+
+  .AsideMenu-Lang--aside {
+    top: 29px !important;
   }
 }
 </style>

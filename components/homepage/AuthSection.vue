@@ -158,6 +158,12 @@ export default {
     margin-right: 12px;
     text-align: right;
 
+    @media (min-width: $screen-m) {
+      &:last-child {
+        margin-right: 12px;
+      }
+    }
+
     &:last-child {
       margin-right: 0;
     }

@@ -100,7 +100,7 @@ export default {
       content: '';
       position: absolute;
       top: 50%;
-      right: -3px;
+      right: -11px;
       width: 1px;
       height: 25px;
       background-color: var(--color-bg-mobnav-lighter);
