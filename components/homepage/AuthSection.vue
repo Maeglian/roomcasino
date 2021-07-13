@@ -1,7 +1,44 @@
 <template>
   <div class="AuthSection" :class="{ 'AuthSection--authenticated': isLoggedIn }">
     <div v-if="isLoggedIn" class="AuthSection-UserSection">
-      <div class="AuthSection-Sections">
+      <!--      <div class="AuthSection-Sections">-->
+      <!--        &lt;!&ndash;        <NuxtLink class="AuthSection-UserInfo" :to="localePath('/profile/balance')">-->
+      <!--          <div class="AuthSection-User">-->
+      <!--            <span class="AuthSection-UserName">-->
+      <!--              {{ user.firstName || user.email }}-->
+      <!--            </span>-->
+      <!--            &lt;!&ndash;            <span class="AuthSection-Spent">&ndash;&gt;-->
+      <!--            &lt;!&ndash;              8 PC /&ndash;&gt;-->
+      <!--            &lt;!&ndash;            </span>&ndash;&gt;-->
+      <!--            &lt;!&ndash;            <span class="AuthSection-Left">&ndash;&gt;-->
+      <!--            &lt;!&ndash;              25 PC&ndash;&gt;-->
+      <!--            &lt;!&ndash;            </span>&ndash;&gt;-->
+      <!--          </div>-->
+      <!--          <div class="AuthSection-UserBalance">-->
+      <!--            <div class="AuthSection-UserBalanceText">{{ $t('menu.yourAccount') }}</div>-->
+      <!--            {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }}-->
+      <!--            {{ activeAccount.currency || user.currency }}-->
+      <!--          </div>-->
+      <!--        </NuxtLink>-->
+      <!--        <NuxtLink-->
+      <!--          v-if="!myAccount"-->
+      <!--          class="AuthSection-UserInfo"-->
+      <!--          :to="localePath('/profile/balance')"-->
+      <!--        >-->
+      <!--          <img src="@/assets/img/user.svg" />-->
+      <!--        </NuxtLink>&ndash;&gt;-->
+      <!--        &lt;!&ndash;        <div class="AuthSection-UserLvl">&ndash;&gt;-->
+      <!--        &lt;!&ndash;          2&ndash;&gt;-->
+      <!--        &lt;!&ndash;        </div>&ndash;&gt;-->
+      <!--        &lt;!&ndash;        <div class="AuthSection-UserMessages" @click="toggleNotificationsPanel">&ndash;&gt;-->
+      <!--        &lt;!&ndash;          <svg class="AuthSection-UserMessagesIcon">&ndash;&gt;-->
+      <!--        &lt;!&ndash;            <use xlink:href="@/assets/img/icons.svg#messages"></use>&ndash;&gt;-->
+      <!--        &lt;!&ndash;          </svg>&ndash;&gt;-->
+      <!--        &lt;!&ndash;          <div v-show="isNewNotifications" class="AuthSection-UserMessagesNew"></div>&ndash;&gt;-->
+      <!--        &lt;!&ndash;        </div>&ndash;&gt;-->
+      <!--      </div>-->
+
+      <div class="AuthSection-Box">
         <NuxtLink class="AuthSection-UserInfo" :to="localePath('/profile/balance')">
           <div class="AuthSection-User">
             <span class="AuthSection-UserName">
@@ -27,19 +64,10 @@
         >
           <img src="@/assets/img/user.svg" />
         </NuxtLink>
-        <!--        <div class="AuthSection-UserLvl">-->
-        <!--          2-->
-        <!--        </div>-->
-        <!--        <div class="AuthSection-UserMessages" @click="toggleNotificationsPanel">-->
-        <!--          <svg class="AuthSection-UserMessagesIcon">-->
-        <!--            <use xlink:href="@/assets/img/icons.svg#messages"></use>-->
-        <!--          </svg>-->
-        <!--          <div v-show="isNewNotifications" class="AuthSection-UserMessagesNew"></div>-->
-        <!--        </div>-->
+        <button class="AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
+          {{ $t('buttons.deposit') }}
+        </button>
       </div>
-      <button class="AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
-        {{ $t('buttons.deposit') }}
-      </button>
     </div>
     <div v-else class="AuthSection-Login">
       <button
@@ -125,6 +153,7 @@ export default {
   }
 
   &-Btn--deposit {
+    width: 50% !important;
     font-weight: 700;
     color: var(--color-text-main);
     background: var(--color-main1);
@@ -197,6 +226,13 @@ export default {
     color: var(--color-text-main);
   }
 
+  &-Box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+  }
+
   &-UserBalance {
     font-size: 10px;
     font-weight: 700;
@@ -205,6 +241,7 @@ export default {
 
   &-UserBalanceText {
     display: none;
+    margin-bottom: 9px;
   }
 
   &-UserLvl {
@@ -311,15 +348,26 @@ export default {
     display: none;
   }
 
+  .AuthSection-Box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    @media (min-width: $screen-xs) {
+      display: none;
+    }
+  }
+
   .AuthSection-Sections {
     justify-content: space-between;
     padding: 0 32px 18px;
 
     @media (min-width: $screen-xs) {
-      flex-grow: 1;
+      display: none;
+      /*flex-grow: 1;
       flex-shrink: 0;
       padding: 25px;
-      background: var(--color-bg-lighter);
+      background: var(--color-bg-lighter);*/
     }
   }
 

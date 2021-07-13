@@ -52,6 +52,15 @@
           </NuxtLink>
           <div class="Close AsideMenu-Close" @click="toggleNav()"></div>
         </div>
+        <NuxtLink v-if="isLoggedIn" class="AsideMenu-UserInfo" :to="localePath('/profile/balance')">
+          <div class="AsideMenu-User">
+            <img src="@/assets/img/user-profile.svg" alt="icon" class="AsideMenu-UserIcon" />
+            <span class="AsideMenu-UserName">
+              {{ user.firstName || user.email }}
+            </span>
+          </div>
+          <img src="@/assets/img/arrow-right.svg" alt="" class="AsideMenu-UserArrow" />
+        </NuxtLink>
         <div class="AsideMenu-List">
           <template v-for="item in navItemsFull">
             <NavItem
@@ -174,8 +183,8 @@ export default {
     };
   },
   computed: {
-    ...mapState(['navIsOpen', 'width', 'chatIsLoaded']),
-    ...mapGetters(['isLoggedIn']),
+    ...mapState(['navIsOpen', 'width', 'chatIsLoaded', 'user', 'notificationsPanelIsOpen']),
+    ...mapGetters(['isLoggedIn', 'activeAccount', 'isNewNotifications']),
     navItemsFull() {
       const tournaments = Object.values(TOURNAMENTS);
       let navTournaments = {};
@@ -425,6 +434,31 @@ export default {
   &-Close {
     width: 20px;
     height: 20px;
+  }
+
+  &-UserInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 42px;
+    padding: 0 16px;
+
+    @media (min-width: $screen-xs) {
+      display: none;
+    }
+  }
+
+  &-User {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-hover3);
+    text-transform: uppercase;
+  }
+
+  &-UserIcon {
+    margin-right: 17px;
   }
 
   &-List {
