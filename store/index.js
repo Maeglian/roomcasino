@@ -444,6 +444,9 @@ export const actions = {
       }
     }
     await dispatch('games/getDefaultGames').then(() => commit('setInitialLoading', 'defaultGames'));
+    await dispatch('games/getGameProducerList').then(() =>
+      commit('setInitialLoading', 'producers'),
+    );
     await dispatch('games/getNewGames');
     await dispatch('games/getLiveGames');
     await dispatch('games/getJackpotGames');

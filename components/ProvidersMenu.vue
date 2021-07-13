@@ -72,7 +72,7 @@
     </div>
     <transition name="slide-up">
       <div
-        v-if="isOpen"
+        v-show="isOpen"
         class="ProvidersMenu-MoreProviders"
         :class="{ 'ProvidersMenu-MoreProviders--top': insideFilters }"
       >

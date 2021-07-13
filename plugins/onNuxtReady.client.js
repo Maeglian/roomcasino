@@ -49,9 +49,6 @@ window.onNuxtReady(({ context }) => {
     .dispatch('dictionary/getCurrencyList')
     .then(() => context.store.commit('setInitialLoading', 'currency'));
   context.store.dispatch('dictionary/getCategoriesList');
-  context.store
-    .dispatch('games/getGameProducerList')
-    .then(() => context.store.commit('setInitialLoading', 'producers'));
   context.store.dispatch('games/getTopWinnerList', { limit: 5 });
   context.store.dispatch('games/getLastWinnerList', { limit: 5 });
   context.store.dispatch('games/getTournamentList');
