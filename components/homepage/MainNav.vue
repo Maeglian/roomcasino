@@ -69,7 +69,6 @@ import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
 import GamePanel from '@/components/homepage/GamePanel.vue';
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
-import { TOURNAMENTS } from '@/config';
 
 export default {
   name: 'MainNav',
@@ -151,8 +150,9 @@ export default {
   computed: {
     ...mapState(['navIsOpen', 'width', 'chatIsLoaded', 'user']),
     ...mapGetters(['isLoggedIn']),
+    ...mapGetters('games', ['tournaments']),
     navItemsFull() {
-      const tournaments = Object.values(TOURNAMENTS);
+      const tournaments = Object.values(this.tournaments);
       let navTournaments = {};
       if (!tournaments.length) return this.navItems;
       if (tournaments.length === 1) {
@@ -184,7 +184,7 @@ export default {
       return menu;
     },
     isGamePage() {
-      return this.getRouteBaseName() === 'game';
+      return this.getRouteBaseName() === 'game-gameId';
     },
   },
   mounted() {

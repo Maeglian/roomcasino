@@ -1,13 +1,13 @@
 <template>
   <div class="Counter" :class="{ 'Counter--min': minFormat }">
-    <div v-if="!minFormat" class="Counter-Text">Time left until finish</div>
+    <div v-if="!minFormat" class="Counter-Text">{{ $t('tournaments.timeLeft') }}</div>
     <div class="Counter-Content">
       <div class="Counter-Item Counter-Days">
         <div class="Counter-Count">
           {{ currentTime.days }}
         </div>
         <div class="Counter-Text">
-          {{ minFormat ? 'd' : 'Days' }}
+          {{ minFormat ? 'd' : $t('common.days') }}
         </div>
       </div>
       <div class="Counter-Item Counter-Hours">
@@ -15,7 +15,7 @@
           {{ currentTime.hours }}
         </div>
         <div class="Counter-Text">
-          {{ minFormat ? 'h' : 'Hours' }}
+          {{ minFormat ? 'h' : $t('common.hours') }}
         </div>
       </div>
       <div class="Counter-Item Counter-Minutes">
@@ -23,7 +23,7 @@
           {{ currentTime.minutes }}
         </div>
         <div class="Counter-Text">
-          {{ minFormat ? 'm' : 'Minutes' }}
+          {{ minFormat ? 'm' : $t('common.minutes') }}
         </div>
       </div>
       <div class="Counter-Item Counter-Seconds">
@@ -31,7 +31,7 @@
           {{ currentTime.seconds }}
         </div>
         <div class="Counter-Text">
-          {{ minFormat ? 's' : 'Seconds' }}
+          {{ minFormat ? 's' : $t('common.seconds') }}
         </div>
       </div>
     </div>

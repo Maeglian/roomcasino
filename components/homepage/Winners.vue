@@ -77,9 +77,8 @@ export default {
     onClickWinner(winner) {
       const game = this.defaultGames.find(g => g.gameId === winner.gameId);
       if (!game) return;
-      const bg = game.backgroundUrl;
       const producer = game.gameProducer;
-      this.openGamePage({ id: winner.gameId, demo: false, bg }, producer);
+      this.openGamePage({ id: winner.gameId, demo: false }, producer);
     },
   },
 };

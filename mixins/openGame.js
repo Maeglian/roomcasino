@@ -2,22 +2,17 @@ import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 
 export default {
   computed: {
-    ...mapState(['platform', 'showDepositModal']),
+    ...mapState(['platform']),
     ...mapState('games', ['gameUrlForIframe', 'gameError']),
     ...mapState('profile', ['freeSpinList']),
     ...mapGetters(['isLoggedIn', 'activeAccount', 'userInfo']),
   },
   methods: {
-    ...mapMutations(['toggleDepositModal']),
-    ...mapMutations('games', ['setGameError']),
+    ...mapMutations(['setDepositModalParams']),
     ...mapActions('games', ['startGame']),
-    onCloseDepositModal() {
-      this.toggleDepositModal(false);
-      this.$modal.show('cashier');
-    },
-    async openGamePage({ id, demo, bg }, gameProducer) {
+    async openGamePage({ id, demo }, gameProducer) {
       if (!demo && !this.isLoggedIn) {
-        this.showRegistrationDialog('login', false, true, id, demo, bg, gameProducer);
+        this.showRegistrationDialog('login', false, true, id, demo, gameProducer);
         return;
       }
 
@@ -27,7 +22,7 @@ export default {
         });
 
         if (!hasFreeSpins) {
-          this.toggleDepositModal(true);
+          this.setDepositModalParams({ gameId: id, demo });
           return;
         }
       }
@@ -37,44 +32,30 @@ export default {
           item => item === null || item === '',
         );
         if (notFullProfileData) {
-          this.showRegistrationDialog('registration', false, true, id, demo, bg, gameProducer);
+          this.showRegistrationDialog('registration', false, true, id, demo, gameProducer);
           return;
         }
       }
 
-      await this.getGame({ gameId: id, demo, bg });
+      await this.getGame({ gameId: id, demo });
     },
-    async getGame({ gameId, demo, bg }) {
-      await this.getGameUrl({
-        gameId,
-        demo,
-      });
 
-      if (!this.gameError) {
-        if (this.platform === 'mobile') window.location.href = this.gameUrlForIframe;
-        else {
-          localStorage.setItem('gameBg', bg);
-          this.$router.push(this.localePath('/game'));
-        }
+    async getGame({ gameId, demo }) {
+      if (this.platform === 'mobile' || this.getRouteBaseName() === 'game-gameId') {
+        await this.startGame({
+          gameId,
+          returnUrl: window.location.origin,
+          demo,
+        });
+
+        if (this.platform === 'mobile' && !this.gameError)
+          window.location.href = this.gameUrlForIframe;
+      } else {
+        const query = demo ? { demo } : null;
+        await this.$router.push(
+          this.localePath({ name: 'game-gameId', params: { gameId }, query }),
+        );
       }
-    },
-    async getGameUrl({
-      gameId,
-      returnUrl = `${window.location.protocol}//${window.location.host}`,
-      demo,
-    }) {
-      await this.startGame({
-        gameId,
-        returnUrl,
-        demo,
-      });
-
-      if (!this.gameError) {
-        localStorage.setItem('gameUrlForIframe', this.gameUrlForIframe);
-        return this.gameUrlForIframe;
-      }
-
-      return null;
     },
   },
 };

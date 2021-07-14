@@ -5,7 +5,11 @@
       <div class="CabinetPage-Header">{{ $t('profile.user.generalInfo') }}</div>
       <div class="ProfileInfo-Fields">
         <template v-for="(val, name) in fields">
-          <template v-if="name !== 'receiveEmailPromos' && name !== 'receiveSmsPromos'">
+          <template
+            v-if="
+              name !== 'receiveEmailPromos' && name !== 'receiveSmsPromos' && name !== 'denyBonuses'
+            "
+          >
             <div v-if="name === 'country' && !user[name]" :key="name" class="CabinetForm-Row">
               <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
                 {{ $t(`profile.user.labels.${name}`) }}
@@ -84,11 +88,14 @@
       <div class="ProfileInfo-Subscriptions">
         <template v-for="(item, name) in fields">
           <BaseCheckbox
-            v-if="name === 'receiveEmailPromos' || name === 'receiveSmsPromos'"
+            v-if="
+              name === 'receiveEmailPromos' || name === 'receiveSmsPromos' || name === 'denyBonuses'
+            "
             :key="name"
             v-model="fields[name]"
             type="checkbox"
             class="CabinetForm-Row"
+            :class="{ 'CabinetForm-Row--marginTop': name === 'denyBonuses' }"
             input-class="CabinetForm-Checkbox"
             label-class="CabinetForm-CheckboxLabel CabinetForm-Label"
             @change="item = $event"
@@ -155,6 +162,7 @@ export default {
       profileLabels: {
         receiveEmailPromos: this.$t('profile.user.email'),
         receiveSmsPromos: this.$t('profile.user.sms'),
+        denyBonuses: this.$t('profile.user.denyBonuses'),
       },
       fakeFields: {
         email: 'fillypkfillypk@gmail.com',
@@ -309,6 +317,10 @@ export default {
     &--right {
       justify-content: flex-end;
     }
+
+    &--marginTop {
+      margin-top: 25px;
+    }
   }
 
   &-Wrapper {
@@ -341,6 +353,7 @@ export default {
   &-CheckboxLabel {
     position: relative;
     flex-grow: 1;
+    width: auto;
     margin-right: 0;
     margin-left: 59px;
     padding-left: 20px;

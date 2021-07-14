@@ -153,7 +153,7 @@
   "footer": {
     "text": {
       "p1": "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
-      "p2": "Copyright © 2020 www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorized to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
+      "p2": "Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., payment operator of Dux Group N.V., by the laws of Cyprus acting as an agent on behalf of Dux Group N.V., registered in Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ 410983. The governing law of the website is Cyprus law. The website www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorized to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
       "p3": "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
     }
   },
@@ -177,7 +177,16 @@
     "wager": "Wager",
     "created": "Created",
     "expiresAt": "Expires at",
-    "noData": "No data available"
+    "noData": "No data available",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "week": "Week",
+    "name": "Name",
+    "points": "Points",
+    "prize": "Prize",
+    "prizePool": "Prize pool"
   },
   "actions": {
     "addCurrency": "Add currency"
@@ -302,6 +311,7 @@
       "subscriptions": "Subscriptions",
       "sms": "Send promos by e-mail",
       "email": "Send promos by sms",
+      "denyBonuses": "I don’t want to receive any Bonuses",
       "passwordChange": "Password change",
       "oldPassword": "Old password",
       "newPassword": "New password",
@@ -413,16 +423,6 @@
       "name": "Daily cashback",
       "text": "Who doesn’t like free casino cashback? Even if you lost!<br/> Yes, you read right - we give you cashback with wager x5 in case of losing."
     },
-    "playsonMay": {
-      "title": "Playson may<br/> cashdays",
-      "name": "Playson May CashDays",
-      "text": "Welcome another month and another CashDays 60k tournamentby the well-known provider.<br/><br/>The prize pool of 60,000 EUR is waiting for their winners."
-    },
-    "mayMadness": {
-      "title": "May<br/> madness<br/> by spinomenal",
-      "name": "May madness by spinomenal",
-      "text": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!<br/><br/>Let’s start with Round III! It runs between May 25, 2021, 00:00 GMT, and June 1, 2021, 23:59 GMT."
-    },
     "highroller": {
       "upTo": "up to $500",
       "name": "High roller bonus",
@@ -436,61 +436,27 @@
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
-      "text": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 21-24 of Weekly Tournaments and Daily Prize Drops with some new games!"
+      "text": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! To play with a multiplier is more fun. That’s why this time there are Weeks 21-24 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!"
     },
     "dropsWinsLive": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!"
+    },
+    "weekly_derby": {
+      "upTo": "prize pool €2,500",
+      "name": "Saddle up for the Weekly Derby",
+      "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
     }
   },
   "tournaments": {
     "games": "Games in this tournament",
-    "terms": "Tournament terms and conditions"
-  },
-  "playsonMay": {
-    "prize": "€ 60 000",
-    "text": "Welcome another month and another CashDays 60k tournamentby the well-known provider. Playson knows how to treat its beloved players. The prize pool of 60,000 EUR is waiting for their winners.<br/>The tournament runs between 0:01 UTC on the 1st of May 2021 and 8th of May 2021 until 23:59 UTC.",
-    "textMobile": "Welcome another month and another CashDays 60k tournamentby the well-known provider.",
-    "terms": [
-      {
-        "text": "The tournament runs between 0:01 UTC on the 1st of May 2021 and 8th of May 2021 until 23:59 UTC."
-      },
-      {
-        "text": "There are 10 participating games:<br/>●  Book of Gold: Double Chance<br/>●  Book of Gold: Multichance<br/>●  Buffalo Power: Hold and Win<br/>●  Burning Wins: classic 5 lines<br/>●  Diamond Wins: Hold and Win<br/>●  Divine Dragon: Hold and Win<br/>●  Legend of Cleopatra MegawaysTM<br/>●  Solar Queen<br/>●  Solar Temple<br/>●  Wolf Power: Hold and Win"
-      },
-      {
-        "text": "Points are calculated round-by-round, with each 1 EUR (or currency equivalent) won equaling 10 points."
-      },
-      {
-        "text": "The minimum bet required to qualify is 0.50 EUR."
-      },
-      {
-        "text": "The munificent prize pool of 60,000 EUR will be shared between 350 lucky players."
-      },
-      {
-        "text": "The more points you earn, the higher your chances of winning are."
-      }
-    ]
-  },
-  "mayMadness": {
-    "prize": "€ 60 000",
-    "text": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!<br/><br/>Let’s start with Round III! It runs between May 25, 2021, 00:00 GMT, and June 1, 2021, 23:59 GMT.",
-    "textMobile": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!",
-    "terms": [
-      {
-        "text": "Round III runs between between May 25, 2021, 00:00 GMT, and June 1, 2021, 23:59 GMT."
-      },
-      {
-        "text": "Participating games in Round III:<br/><br/>●  Book Of Rebirth<br/>●  Origins Of Lilith<br/>●  4 Horsemen II"
-      },
-      {
-        "text": "The minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
-      },
-      {
-        "text": "Each win rewards you with a score based on the win multiplier. The more points you collect, the higher your position on the leaderboard."
-      }
-    ]
+    "terms": "Tournament terms and conditions",
+    "timeLeft": "Time left until finish",
+    "duration": "Duration",
+    "betsPerPoint": "Bets per point",
+    "currentWinners": "Current winners",
+    "previousRound": "Previous round"
   },
   "knockoutFootball": {
     "title": "Let’s play<br/> with Habanero <br/>Round 2!",
@@ -523,7 +489,7 @@
   "dropsWinsSlots": {
     "title": "Upgraded Drops & Wins Slots edition",
     "prize": "€4,000,000",
-    "text": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 21-24 of Weekly Tournaments and Daily Prize Drops with some new games!",
+    "text": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! To play with a multiplier is more fun. That’s why this time there are Weeks 21-24 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!",
     "textMobile": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000!",
     "terms": [
       {
@@ -540,7 +506,11 @@
       },
       {
         "title": "How to win",
-        "text": "● Minimum bet requirement of €0.50.<br/>● In order to participate, players need to play with real money and make qualifying bets on any of the participating games.<br/>● In the Weekly tournaments - the highest single spin win amount adjusted for bet amount.<br/>● In the Daily tournaments - any real money spin in the participating games can trigger a random prize.<br/>● There is no additional cost for players to participate."
+        "text": "● Highest single spin win amount adjusted for bet amount.<br/>● Any real money spin in the participating games may trigger a random cash prize.<br/>● Players need to choose to play with real money in any of the participating games with NO minimum bet requirement. There is no additional cost for players to participate."
+      },
+      {
+        "title": "Additionally",
+        "text": "● Players participating during multiplier weeks may win prizes in the form of a multiplier of the winning player’s bet amount as set out in the Weekly Tournament (Prize Multiplier Weeks) Prize Table – and the Daily Prize Drop (Prize Multiplier Weeks) Prize Table further below (hereinafter the “Prize Multiplier Weeks”).<br/>● If the winning spin exceeds ten Euros (€ 10), the prize will be paid out based on a bet of ten Euros (€ 10) or the equivalent amount in the Available Currency (as defined further below) X multiplier received.<br/>● The leaderboard is ranked in accordance with the score, which score is based on the highest single spin win amount on any participating game adjusted to the amount of the bet.<br/>● In the event of two (2) or more players finishing a Weekly Tournament on the same leaderboard position, the player who has achieved the score first will receive the higher prize."
       }
     ]
   },
@@ -551,12 +521,12 @@
     "textMobile": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!",
     "terms": [
       {
-        "title": "Stage 1 runs between",
-        "text": "● Week 1: 3rd June 2021 09:01 CEST – 9th June 2021 18:59 CEST<br/>● Week 2: 9th June 2021 19:01 CEST – 16th June 2021 18:59 CEST<br/>● Week 3: 16th June 2021 19:01 CEST – 23rd June 2021 18:59 CEST<br/>● Week 4: 23rd June 2021 19:01 CEST – 30th June 2021 18:59 CEST"
+        "title": "Stage 2 runs between",
+        "text": "● Week 5: 30th June 2021 09:01 CEST – 7th July 2021 18:59 CEST<br/>● Week 6: 7th July 2021 19:01 CEST – 14th July 2021 18:59 CEST<br/>● Week 7: 14th July 2021 19:01 CEST – 21st July 2021 18:59 CEST<br/>● Week 8: 21st July 2021 19:01 CEST – 28th July 2021 18:59 CEST"
       },
       {
         "title": "Participating Games/Tables",
-        "text": "<strong>Weekly Baccarat Tournament:</strong><br/>Baccarat A (ID – 401), Baccarat B (ID – 404), Baccarat C (ID – 405), Baccarat D (ID – 411), Baccarat E (ID – 413), Speed Baccarat A (ID – 402), Speed Baccarat B (ID – 403), Speed Baccarat C (ID – 412), Speed Baccarat D (ID – 414), Speed Baccarat E (ID – 415).<br/><br/><strong>Weekly Blackjack Tournament:</strong><br/>Live Blackjack A (ID – 301), Live Blackjack B (ID – 302), Live Blackjack C (ID – 303), Live Blackjack D (ID – 304), Live Blackjack E (ID – 305), Blackjack Azure A (ID – 511), Blackjack Azure B (ID – 512), Blackjack Azure C (ID – 513), Blackjack Azure D (ID – 514), Blackjack Azure E (ID – 515), Blackjack Azure F (ID – 516), Blackjack Azure G (ID – 517), Blackjack Azure H (ID – 518), Blackjack Azure I (ID – 519), Blackjack Azure J (ID – 520), ONE Blackjack (ID – 901).<br/><br/><strong>Tables to be added on 3rd June:</strong><br/>Blackjack 17 – Azure (ID – 521), Blackjack 18 – Azure (ID – 522), Blackjack 19 – Azure (ID – 523), Blackjack 20 – Azure (ID – 524), Blackjack 21 – Azure (ID – 525)<br/><br/><strong>Weekly Mega Wheel Tournament:</strong><br/>Mega Wheel (ID – 801)<br/><br/><strong>Weekly Roulette Tournament:</strong><br/>Auto-Roulette (ID – 225), Live Roulette A (ID – 201), Roulette Germany (ID – 222), Roulette Italy (ID – 223), Roulette Macao (ID – 206), Roulette Russia (ID – 221), Roulette Turkey (ID – 224), Speed Roulette (ID – 203), Roulette Azure (ID – 227), Mega Roulette (ID – 204) <strong>plus dedicated tables</strong>"
+        "text": "<strong>Weekly Baccarat Tournament:</strong><br/><br/>Baccarat A (ID – 401), Baccarat B (ID – 404), Baccarat C (ID – 405), Baccarat D (ID – 411), Baccarat E (ID – 413), Speed Baccarat A (ID – 402), Speed Baccarat B (ID – 403), Speed Baccarat C (ID – 412), Speed Baccarat D (ID – 414), Speed Baccarat E (ID – 415).<br/><br/><strong>Weekly Blackjack Tournament:</strong><br/><br/>Live Blackjack A (ID – 301), Live Blackjack B (ID – 302), Live Blackjack C (ID – 303), Live Blackjack D (ID – 304), Live Blackjack E (ID – 305), Blackjack Azure A (ID – 511), Blackjack Azure B (ID – 512), Blackjack Azure C (ID – 513), Blackjack Azure D (ID – 514), Blackjack Azure E (ID – 515), Blackjack Azure F (ID – 516), Blackjack Azure G (ID – 517), Blackjack Azure H (ID – 518), Blackjack Azure I (ID – 519), Blackjack Azure J (ID – 520), ONE Blackjack (ID – 901).<br/><br/><strong>Tables to be added on 3rd June:</strong><br/><br/>Blackjack 17 – Azure (ID – 521), Blackjack 18 – Azure (ID – 522), Blackjack 19 – Azure (ID – 523), Blackjack 20 – Azure (ID – 524), Blackjack 21 – Azure (ID – 525)<br/><br/><strong>Weekly Mega Wheel Tournament:</strong><br/><br/>Mega Wheel (ID – 801)<br/><br/><strong>Weekly Roulette Tournament:</strong><br/><br/>Auto-Roulette (ID – 225), Live Roulette A (ID – 201), Roulette Germany (ID – 222), Roulette Italy (ID – 223), Roulette Macao (ID – 206), Roulette Russia (ID – 221), Roulette Turkey (ID – 224), Speed Roulette (ID – 203), Roulette Azure (ID – 227), Mega Roulette (ID – 204) <strong>plus dedicated tables</strong>"
       },
       {
         "title": "Drops & Wins includes",
@@ -573,6 +543,38 @@
       {
         "title": "Additionally:",
         "text": "<strong>How to win:<br/><br/>Weekly Roulette Tournament<br/>Prizes:</strong> €50,000 in total across 1,000 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0,50 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 2x of the total Qualifying Bet to qualify for the Weekly Roulette Tournament.<br/><br/>A Player may increase their Weekly Roulette Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Any stakes placed on 1:1 odds bets (Red/Black, Odd/Even, 1:18/19:36) shall not be counted towards the Weekly Roulette Tournament score.<br/><br/><strong>Weekly Blackjack Tournament<br/>Prizes:</strong> €25,000 in total across 300 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €10 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Blackjack Tournament.<br/><br/>A Player may increase their Weekly Blackjack Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets and/or Bets Behind may be considered for the Weekly Blackjack Tournament.<br/><br/><strong>Weekly Mega Wheel Tournament<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Mega Wheel Tournament.<br/><br/>A Player may increase their Weekly Mega Wheel Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>All Qualifying Bets may be considered for the Weekly Mega Wheel Tournament.<br/><br/><strong>Weekly Baccarat Tournaments<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Baccarat Tournament.<br/><br/>A Player may increase their Weekly Baccarat Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets (Player, Banker, and Tie) may be considered for the Weekly Baccarat Tournament score."
+      }
+    ]
+  },
+  "weekly_derby": {
+    "title": "The Ninecasino<br/> Weekly Derby",
+    "prize": "€2,500",
+    "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
+    "textMobile": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
+    "terms": [
+      {
+        "text": "It runs for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC."
+      },
+      {
+        "text": "The prize fund is €2,500. The prizes must be played through x5 (wager x5)."
+      },
+      {
+        "text": "If a player places bets in a currency other than euro, the prizes will be issued in the currency in which the player made the most of the bets."
+      },
+      {
+        "text": "Players with at least one deposit will participate in the tournament. For each real money bet of €1 the player will receive 1 tournament point."
+      },
+      {
+        "text": "The minimum bet to start participating is €0.5."
+      },
+      {
+        "text": "Only bets in slots will be taken into account; no bets in board games and games with dealers will be taken into account."
+      },
+      {
+        "text": "The winner will be determined by the number of tournament points: the more tournament points the player has, the closer the player is to victory. Prizes will be awarded automatically at the end of the tournament."
+      },
+      {
+        "text": "General Bonus Terms and Conditions must be observed."
       }
     ]
   },

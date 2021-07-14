@@ -177,7 +177,16 @@
     "wager": "Umsatzanforderung",
     "created": "geschaffen",
     "expiresAt": "Läuft ab bei",
-    "noData": "Keine Daten verfügbar"
+    "noData": "Keine Daten verfügbar",
+    "days": "Tage",
+    "hours": "Stunden",
+    "minutes": "Minuten",
+    "seconds": "Sekunden",
+    "week": "Woche",
+    "name": "Name",
+    "points":  "Punkte",
+    "prize": "Preis",
+    "prizePool": "Preisgeld"
   },
   "actions": {
     "addCurrency": "Währung hinzufügen"
@@ -302,6 +311,7 @@
       "subscriptions": "Abonnements",
       "sms": "Information zu aktionen per E-MAIL",
       "email": "Information zu aktionen per SMS",
+      "denyBonuses": "Ich möchte keine Boni erhalten",
       "passwordChange": "Passwortänderung",
       "oldPassword": "Altes Passwort",
       "newPassword": "Neues Passwort",
@@ -412,16 +422,6 @@
       "name": "Tägliche rückzahlung",
       "text": "Wer bekommt im Casino nicht gerne Geld zurück? Selbst wenn Sie verloren haben!<br/>Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von x5 zurück, wenn Sie verlieren."
     },
-    "playsonMay": {
-      "title": "Playson may<br/> cashdays",
-      "name": "Playson May CashDays",
-      "text": "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt."
-    },
-    "mayMadness": {
-      "title": "May<br/> madness<br/> von spinomenal",
-      "name": "May madness von spinomenal",
-      "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde III! Sie läuft ab dem 25. Mai um 00:00 Uhr GMT und endet am 1. Juni 2021 um 23:59 Uhr GMT."
-    },
     "highroller": {
       "upTo": "up to €500",
       "name": "High roller-bonus für besondere einsatzfreude",
@@ -435,58 +435,27 @@
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
-      "text": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 21-24 der Wöchentlichen Turniere und Täglichen Gewinnausspielungen mit einigen neuen Spielen!"
+      "text": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Mit einem Multiplikator zu spielen, macht noch mehr Spaß. Darum gibt es diesmal in den Wochen 21–24 Wochenturniere (Gewinnmultiplikatorwochen) sowie Tagesausspielungen (Gewinnmultiplikatorwochen) mit einigen neuen Spielen!"
     },
     "dropsWinsLive": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!<br/><br/>Magst du Live-Spiele? Diese Live-Ausgabe wird dir gefallen. Mach mit bei wöchentlichen Turnieren – Roulette, Blackjack, Mega Wheel, Baccarat!"
+    },
+    "weekly_derby": {
+      "upTo": "Preispool 2.500 €",
+      "name": "Aufsatteln fürs Weekly Derby",
+      "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
     }
   },
   "tournaments": {
     "games": "Teilnehmende Spiele",
-    "terms": "Teilnahmebedingungen"
-  },
-  "playsonMay": {
-    "prize": "€ 60 000",
-    "text": "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt.",
-    "textMobile": "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt.",
-    "terms": [
-      {
-        "text": "Das Turnier läuft ab 0:01 Uhr UTC am 1. Mai 2021 bis zum 8. Mai 2021 um 23:59 Uhr UTC. "
-      },
-      {
-        "text": "Diese 10 Spiele nehmen teil: <br/>●  Book of Gold: Double Chance<br/>●  Book of Gold: Multichance<br/>●  Buffalo Power: Hold and Win<br/>●  Burning Wins: classic 5 lines<br/>●  Diamond Wins: Hold and Win<br/>●  Divine Dragon: Hold and Win<br/>●  Legend of Cleopatra MegawaysTM<br/>●  Solar Queen<br/>●  Solar Temple<br/>●  Wolf Power: Hold and Win"
-      },
-      {
-        "text": "Der Mindesteinsatz für die Teilnahme beträgt wie gewohnt 0,50 Euro. Die Punkte werden Runde für Runde berechnet, dabei entspricht jeder gewonnene Euro (oder sein Gegenwert in anderen Währungen) jeweils 10 Punkten. "
-      },
-      {
-        "text": "Das großzügige Preisgeld von 60.000 Euro wird unter 350 Mitspielenden aufgeteilt: <br/>Platz 1 – €10.000<br/>Platz 2 – €5.000<br/>Platz 3 – €3.000<br/>Platz 4 – €1.500<br/>Platz 5 – €1.000<br/>Platz 6 – €900<br/>Platz 7 – €800<br/>Platz 8 – €700<br/>Platz 9 – €600<br/>Platz 10 – €500<br/>Platz 11 – 25 je €400<br/>Platz 26 – 50 je €200<br/>Platz 51 – 100 je €150<br/>Platz 101 – 200 je €100<br/>Platz 201 – 350 je €50 "
-      },
-      {
-        "text": "Achten Sie während des Turniers auf die Rangliste. Je mehr Punkte Sie sammeln, desto höher Ihre Siegchance! Ergreifen Sie sie und viel Glück dabei! "
-      }
-    ]
-  },
-  "mayMadness": {
-    "prize": "€ 60 000",
-    "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde III! Sie läuft ab dem 25. Mai um 00:00 Uhr GMT und endet am 1. Juni 2021 um 23:59 Uhr GMT.",
-    "textMobile": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!",
-    "terms": [
-      {
-        "text": "Sie läuft ab dem 25. Mai um 00:00 Uhr GMT und endet am 1. Juni 2021 um 23:59 Uhr GMT."
-      },
-      {
-        "text": "Teilnehmende Spiele in Runde III sind:<br/><br/>●  Book Of Rebirt<br/>●  Origins Of Lilith<br/>●  4 Horsemen II"
-      },
-      {
-        "text": "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 Euro."
-      },
-      {
-        "text": "Jeder Gewinn bringt Ihnen Wertungspunkte entsprechend dem Gewinnmultiplikator. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
-      }
-    ]
+    "terms": "Teilnahmebedingungen",
+    "timeLeft": "Noch Zeit bis zum Ende",
+    "duration": "Dauer",
+    "betsPerPoint": "Wetten pro Punkt",
+    "currentWinners": "Aktuelle Gewinner",
+    "previousRound": "Letzte Runde"
   },
   "knockoutFootball": {
     "title": "Spiele <br/>mit Habanero – <br/>Runde 2!",
@@ -519,7 +488,7 @@
   "dropsWinsSlots": {
     "title": "Aufgewertete Ausgabe von Drops & Wins Slots",
     "prize": "4.000.000 €",
-    "text": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 21-24 der Wöchentlichen Turniere und Täglichen Gewinnausspielungen mit einigen neuen Spielen!",
+    "text": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Mit einem Multiplikator zu spielen, macht noch mehr Spaß. Darum gibt es diesmal in den Wochen 21–24 Wochenturniere (Gewinnmultiplikatorwochen) sowie Tagesausspielungen (Gewinnmultiplikatorwochen) mit einigen neuen Spielen!",
     "textMobile": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €!",
     "terms": [
       {
@@ -536,7 +505,11 @@
       },
       {
         "title": "Wie man gewinnt",
-        "text": "● Der Mindesteinsatz beträgt 0,50 Euro.<br/>● Zur Teilnahme muss in einem oder mehreren der teilnehmenden Spiele Echtgeld in entsprechender Höhe gesetzt werden.<br/>● In den Wöchentlichen Turnieren – Höchster Einzelausspielungsgewinn relativ zum Einsatz.<br/>● In den Täglichen Turnieren – jeder Echtgeldeinsatz kann die zufällige Ausschüttung eines Preises auslösen.<br/>● Die Teilnahme hat keine weiteren Kosten."
+        "text": "● Höchster Gewinnbetrag für eine einzelne Ausspielung, angepasst an die Höhe des Einsatzes.<br/>● Jede Echtgeld-Ausspielung kann in den teilnehmenden Spielen einen zufälligen Geldpreis hervorbringen.<br/>● Spieler müssen sich dafür entscheiden, echtes Geld in den teilnehmenden Spielen einzusetzen, OHNE dass ein Mindesteinsatz erforderlich ist. Für die Teilnahme entstehen den Spielern keine zusätzlichen Kosten."
+      },
+      {
+        "title": "Zusätzlich",
+        "text": "● Während der Multiplikatorenwochen können Gewinne in Form eines in der Wochenturniergewinnübersicht (Gewinnmultiplikatorenwochen) und der Tagesausschüttungsübersicht weiter unten (im weiteren Textverlauf die „Gewinnmultiplikatorenwochen“) ausgewiesenen Vielfachen r des Einsatzes der erfolgreichen Spielerin bzw. des erfolgreichen Spielers erzielt werden.<br/>● Wenn der Gewinn in der erfolgreichen Ausspielung zehn Euro (10 €) übersteigt, erfolgt die Auszahlung des Gewinns auf der Grundlage eines Einsatzes von 10 Euro (10 €) oder umgerechnet in die jeweils geltende Währung (s. unten) multipliziert mit dem erworbenen Multiplikator x.<br/>● Die Ermittlung der Ranglistenposition erfolgt entsprechend der Punktzahl für den höchsten Einzelgewinn in einer einzelnen Ausspielung in einem der teilnehmenden Spiele umgerechnet auf den jeweiligen Einsatz.<br/>● Sollten zwei (2) oder mehr Mitspielende ein Wochenturnier auf demselben Ranglistenplatz beenden, entfällt der höhere Gewinn auf die Spielerin bzw. den Spieler, die/der die erfolgreiche Punktzahl zuerst erreicht hat."
       }
     ]
   },
@@ -568,7 +541,39 @@
       },
       {
         "title": "Zusätzlich:",
-        "text": "<strong>How to win:<br/><br/>Wöchentliches Roulette-Turnier<br/>Gewinne:</strong> Insgesamt 50.000 € verteilt auf 1.000 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 2x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Roulette-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Roulette-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Wetteinsätze, die auf Wetten mit Chance 1:1 getätigt werden (Rot/Schwarz, Gerade/Ungerade, 1:18/19:36) werden nicht auf die Punktzahl des Wöchentlichen Roulette-Turniers angerechnet.<br/><br/><strong>Wöchentliches Blackjack-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 300 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 10 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliches Blackjack-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Blackjack-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets und/oder Bets Behind werden für das Wöchentliche Blackjack-Turnier berücksichtigt.<br/><br/><strong>Wöchentliches Mega Wheel-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Mega Wheel-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Mega Wheel-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Alle Qualifizierenden Wetten werden für das Wöchentliche Mega Wheel-Turnier berücksichtigt.<br/><br/><strong>Wöchentliche Baccarat-Turniere<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Baccarat-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Baccarat-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets (Player, Banker und Tie) werden für das Wöchentliche Baccarat-Turnier berücksichtigt."
+        "text": "Wöchentliches Roulette-Turnier<br/>Gewinne:</strong> Insgesamt 50.000 € verteilt auf 1.000 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 2x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Roulette-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Roulette-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Wetteinsätze, die auf Wetten mit Chance 1:1 getätigt werden (Rot/Schwarz, Gerade/Ungerade, 1:18/19:36) werden nicht auf die Punktzahl des Wöchentlichen Roulette-Turniers angerechnet.<br/><br/><strong>Wöchentliches Blackjack-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 300 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 10 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliches Blackjack-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Blackjack-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets und/oder Bets Behind werden für das Wöchentliche Blackjack-Turnier berücksichtigt.<br/><br/><strong>Wöchentliches Mega Wheel-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Mega Wheel-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Mega Wheel-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Alle Qualifizierenden Wetten werden für das Wöchentliche Mega Wheel-Turnier berücksichtigt.<br/><br/><strong>Wöchentliche Baccarat-Turniere<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Baccarat-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Baccarat-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets (Player, Banker und Tie) werden für das Wöchentliche Baccarat-Turnier berücksichtigt."
+      }
+    ]
+  },
+  "weekly_derby": {
+    "title": "Das Weekly Derby<br/> von Ninecasino",
+    "prize": "2.500 €",
+    "text": "Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.",
+    "textMobile": "Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.",
+    "terms": [
+      {
+        "text": "Jedes Turnier läuft über sieben Tage, von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC)."
+      },
+      {
+        "text": "Das Preisgeld beträgt 2.500 Euro. Für die Gewinne gilt eine Umsatzanforderung von x5."
+      },
+      {
+        "text": "Setzt ein Mitspieler Geldbeträge in einer anderen Währung als Euro, so wird der Gewinn in der von diesem Mitspieler am häufigsten gesetzten Währung ausgewiesen."
+      },
+      {
+        "text": "Teilnahmeberechtigt ist, wer mindestens eine Einzahlung vornimmt. Jeder Einsatz von 1 Euro in echtem Geld bringt dem Spieler 1 Turnierpunkt."
+      },
+      {
+        "text": "Mach einfach einen Mindesteinsatz von 0,5 €."
+      },
+      {
+        "text": "Es zählen nur Einsätze in Automatenspielen; Brettspiele und Spiele mit Kartengebern werden nicht berücksichtigt."
+      },
+      {
+        "text": "Die Ermittlung der Gewinner erfolgt anhand der Turnierpunkte: je mehr Turnierpunkte desto größer die Gewinnchance. Die Gewinne werden nach Abschluss der Ziehung automatisch zugestellt."
+      },
+      {
+        "text": "Es gelten die allgemeinen Bedingungen für Boni."
       }
     ]
   },
