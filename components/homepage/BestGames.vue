@@ -66,6 +66,19 @@
       </div>
       <a id="games"></a>
       <Nuxt />
+      <template v-if="getRouteBaseName($route) === 'index'">
+        <div class="Title Title--type-h2 Cards-Title">
+          {{ $t('gameCategories.top') }}
+        </div>
+        <Loader v-if="topGamesAreLoading" />
+        <Games
+          v-else
+          class="DefaultGames-Cards"
+          :games="topGames"
+          :games-to-show="24"
+          btn-class="Btn--common Btn--outline"
+        />
+      </template>
       <template v-if="newGames.length">
         <div class="Title Title--type-h2 Cards-Title">
           {{ $t('gameCategories.new') }}
@@ -266,6 +279,7 @@ export default {
       'defaultGames',
       'gamesAreLoading',
       'defaultGamesAreLoading',
+      'topGames',
       'newGames',
       'liveGames',
       'jackpotGames',
@@ -275,6 +289,7 @@ export default {
       'dropsWinsSlotsGames',
       'dropsWinsLiveGames',
       'newGamesAreLoading',
+      'topGamesAreLoading',
       'liveGamesAreLoading',
       'jackpotGamesAreLoading',
       'megawaysGamesAreLoading',
