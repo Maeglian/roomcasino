@@ -256,13 +256,9 @@ export default {
     &--authenticated {
       display: grid;
       grid-template-columns: 1fr 2fr;
-    }
-
-    &--centered {
-      justify-content: center;
 
       @media (min-width: $screen-xs) {
-        justify-content: space-between;
+        display: flex;
       }
     }
   }
