@@ -1,85 +1,49 @@
 <template>
   <div class="AuthSection" :class="{ 'AuthSection--authenticated': isLoggedIn }">
     <div v-if="isLoggedIn" class="AuthSection-UserSection">
-      <!--      <div class="AuthSection-Sections">-->
-      <!--        &lt;!&ndash;        <NuxtLink class="AuthSection-UserInfo" :to="localePath('/profile/balance')">-->
-      <!--          <div class="AuthSection-User">-->
-      <!--            <span class="AuthSection-UserName">-->
-      <!--              {{ user.firstName || user.email }}-->
-      <!--            </span>-->
-      <!--            &lt;!&ndash;            <span class="AuthSection-Spent">&ndash;&gt;-->
-      <!--            &lt;!&ndash;              8 PC /&ndash;&gt;-->
-      <!--            &lt;!&ndash;            </span>&ndash;&gt;-->
-      <!--            &lt;!&ndash;            <span class="AuthSection-Left">&ndash;&gt;-->
-      <!--            &lt;!&ndash;              25 PC&ndash;&gt;-->
-      <!--            &lt;!&ndash;            </span>&ndash;&gt;-->
-      <!--          </div>-->
-      <!--          <div class="AuthSection-UserBalance">-->
-      <!--            <div class="AuthSection-UserBalanceText">{{ $t('menu.yourAccount') }}</div>-->
-      <!--            {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }}-->
-      <!--            {{ activeAccount.currency || user.currency }}-->
-      <!--          </div>-->
-      <!--        </NuxtLink>-->
-      <!--        <NuxtLink-->
-      <!--          v-if="!myAccount"-->
-      <!--          class="AuthSection-UserInfo"-->
-      <!--          :to="localePath('/profile/balance')"-->
-      <!--        >-->
-      <!--          <img src="@/assets/img/user.svg" />-->
-      <!--        </NuxtLink>&ndash;&gt;-->
-      <!--        &lt;!&ndash;        <div class="AuthSection-UserLvl">&ndash;&gt;-->
-      <!--        &lt;!&ndash;          2&ndash;&gt;-->
-      <!--        &lt;!&ndash;        </div>&ndash;&gt;-->
-      <!--        &lt;!&ndash;        <div class="AuthSection-UserMessages" @click="toggleNotificationsPanel">&ndash;&gt;-->
-      <!--        &lt;!&ndash;          <svg class="AuthSection-UserMessagesIcon">&ndash;&gt;-->
-      <!--        &lt;!&ndash;            <use xlink:href="@/assets/img/icons.svg#messages"></use>&ndash;&gt;-->
-      <!--        &lt;!&ndash;          </svg>&ndash;&gt;-->
-      <!--        &lt;!&ndash;          <div v-show="isNewNotifications" class="AuthSection-UserMessagesNew"></div>&ndash;&gt;-->
-      <!--        &lt;!&ndash;        </div>&ndash;&gt;-->
-      <!--      </div>-->
-
-      <div class="AuthSection-Box">
-        <NuxtLink class="AuthSection-UserInfo" :to="localePath('/profile/balance')">
-          <div class="AuthSection-User">
-            <span class="AuthSection-UserName">
-              {{ user.firstName || user.email }}
-            </span>
-            <!--            <span class="AuthSection-Spent">-->
-            <!--              8 PC /-->
-            <!--            </span>-->
-            <!--            <span class="AuthSection-Left">-->
-            <!--              25 PC-->
-            <!--            </span>-->
-          </div>
-          <div class="AuthSection-UserBalance">
-            <div class="AuthSection-UserBalanceText">{{ $t('menu.yourAccount') }}</div>
-            {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }}
-            {{ activeAccount.currency || user.currency }}
-          </div>
-        </NuxtLink>
-        <NuxtLink
-          v-if="!myAccount"
-          class="AuthSection-UserInfo"
-          :to="localePath('/profile/balance')"
-        >
-          <img src="@/assets/img/user.svg" />
-        </NuxtLink>
-        <button class="AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
-          {{ $t('buttons.deposit') }}
-        </button>
-      </div>
+      <NuxtLink class="AuthSection-UserInfo" :to="localePath('/profile/balance')">
+        <div class="AuthSection-User">
+          <span class="AuthSection-UserName">
+            {{ user.firstName || user.email }}
+          </span>
+          <!--            <span class="AuthSection-Spent">-->
+          <!--              8 PC /-->
+          <!--            </span>-->
+          <!--            <span class="AuthSection-Left">-->
+          <!--              25 PC-->
+          <!--            </span>-->
+        </div>
+        <div class="AuthSection-UserBalance">
+          <div class="AuthSection-UserBalanceText">{{ $t('menu.yourAccount') }}</div>
+          {{ activeAccount.balance !== undefined ? activeAccount.balance : user.balance }}
+          {{ activeAccount.currency || user.currency }}
+        </div>
+      </NuxtLink>
+      <NuxtLink v-if="!myAccount" class="AuthSection-UserInfo" :to="localePath('/profile/balance')">
+        <img src="@/assets/img/user.svg" />
+      </NuxtLink>
     </div>
     <div v-else class="AuthSection-Login">
       <button
-        class="Btn AuthSection-Btn AuthSection-Btn--login"
+        class="Btn AuthSection-Btn AuthSection-Btn--mobile AuthSection-Btn--login"
         @click="showRegistrationDialog('login')"
       >
         {{ $t('buttons.login') }}
       </button>
-      <button class="Btn AuthSection-Btn" @click="showRegistrationDialog('registration')">
+      <button
+        class="Btn AuthSection-Btn AuthSection-Btn--registration"
+        @click="showRegistrationDialog('registration')"
+      >
         {{ $t('buttons.signUp') }}
       </button>
     </div>
+    <button
+      v-if="isLoggedIn"
+      class="AuthSection-Btn AuthSection-Btn--mobile AuthSection-Btn--deposit"
+      @click="$modal.show('cashier')"
+    >
+      {{ $t('buttons.deposit') }}
+    </button>
   </div>
 </template>
 
@@ -114,26 +78,43 @@ export default {
 .AuthSection {
   height: 100%;
 
-  &-Login {
-    display: none;
+  &--authenticated {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
 
-    @media (min-width: $screen-m) {
+    @media (min-width: $screen-s) {
       display: flex;
       align-items: center;
-      margin-left: auto;
+    }
+  }
+
+  &-Login {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  &-Btn--mobile {
+    justify-self: flex-end;
+    height: 100%;
+    padding: 8px 14px;
+    background: var(--color-main1);
+
+    @media (min-width: $screen-s) {
+      padding: 9px 21px;
     }
   }
 
   &-Btn {
-    display: none;
-    height: 100%;
-    padding: 0 15px;
     font-size: 10px;
     text-transform: uppercase;
 
     @media (min-width: $screen-m) {
       display: block;
       height: 58px;
+      padding: 0 15px;
+      background: none;
     }
 
     @media (min-width: $screen-l) {
@@ -148,16 +129,24 @@ export default {
     }
   }
 
-  &-Btn--login {
-    background: none;
+  &-Btn--registration.Btn {
+    display: none;
+
+    @media (min-width: $screen-m) {
+      display: initial;
+    }
   }
 
   &-Btn--deposit {
-    width: 50% !important;
+    margin-left: 12px;
     font-weight: 700;
     color: var(--color-text-main);
     background: var(--color-main1);
     cursor: pointer;
+
+    @media (min-width: $screen-xl) {
+      margin-left: 24px;
+    }
 
     &:hover {
       background: var(--color-hover2);
@@ -170,16 +159,11 @@ export default {
   }
 
   &-UserSection {
+    justify-self: center;
     display: flex;
     align-items: center;
     height: 100%;
-    padding-right: 18px;
-    padding-left: 18px;
     text-transform: uppercase;
-
-    @media (min-width: $screen-xs) {
-      padding: 0;
-    }
   }
 
   &-UserInfo {
@@ -316,6 +300,8 @@ export default {
 
 .AuthSection--aside {
   &.AuthSection--authenticated {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     order: 0;
     height: auto;
 
@@ -324,23 +310,15 @@ export default {
     }
   }
 
-  .AuthSection-Login {
-    display: block;
-  }
-
   .AuthSection-Btn {
-    display: block;
     width: 100%;
-    padding: 18px 0;
+    height: 50px;
     font-size: 14px;
     background: var(--color-main1);
 
-    @media (min-width: $screen-xs) {
-      height: auto;
-    }
-
     @media (min-width: $screen-m) {
-      font-size: 22px;
+      height: 96px;
+      font-size: 18px;
     }
   }
 
@@ -348,14 +326,8 @@ export default {
     display: none;
   }
 
-  .AuthSection-Box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    white-space: nowrap;
-    @media (min-width: $screen-xs) {
-      display: none;
-    }
+  .AuthSection-Btn--registration {
+    display: block;
   }
 
   .AuthSection-Sections {
@@ -363,24 +335,23 @@ export default {
     padding: 0 32px 18px;
 
     @media (min-width: $screen-xs) {
-      display: none;
-      /*flex-grow: 1;
+      flex-grow: 1;
       flex-shrink: 0;
       padding: 25px;
-      background: var(--color-bg-lighter);*/
+      background: var(--color-bg-lighter);
     }
   }
 
   .AuthSection-UserSection {
+    justify-self: flex-start;
     display: block;
     order: 0;
     height: auto;
-    margin-bottom: 20px;
 
     @media (min-width: $screen-xs) {
+      justify-self: center;
       display: flex;
       align-items: stretch;
-      margin-bottom: 0;
     }
   }
 
@@ -406,10 +377,6 @@ export default {
     display: flex;
     flex-direction: column;
     text-align: left;
-
-    //@media (min-width: $screen-xs) {
-    //  margin-right: auto;
-    //}
   }
 
   .AuthSection-UserName {
@@ -426,6 +393,7 @@ export default {
 
   .AuthSection-Btn--deposit {
     @media (min-width: $screen-xs) {
+      justify-self: center;
       width: auto;
       padding-right: 70px;
       padding-left: 70px;

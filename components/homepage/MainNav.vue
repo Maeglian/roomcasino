@@ -1,7 +1,7 @@
 <template>
   <nav class="MainNav" :class="{ 'MainNav--bg': documentIsScrolled }">
     <div v-if="navIsOpen" class="MainNav-Overlay" @click="toggleNav()"></div>
-    <div class="MainNav-TopBar">
+    <div class="MainNav-TopBar" :class="{ 'MainNav-TopBar--authenticated': isLoggedIn }">
       <div class="MainNav-Nav">
         <button class="MainNav-Toggle" @click="toggleNav()">
           <svg class="Toggle">
@@ -11,21 +11,6 @@
         <NuxtLink class="MainNav-Logo" :to="localePath('/')">
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
         </NuxtLink>
-
-        <GamePanel v-if="isGamePage" />
-        <template v-if="width < 768">
-          <AuthSection class="MainNav-AuthSection" />
-        </template>
-        <!--        <GamePanel v-if="isGamePage" />
-        <AuthSection v-if="isLoggedIn" class="MainNav-AuthSection" />-->
-        <button
-          v-if="width < 768"
-          class="Btn Btn--common MainNav-Btn"
-          :class="`MainNav-Btn--${$i18n.locale}`"
-          @click="onClickBtn()"
-        >
-          {{ isLoggedIn ? $t('buttons.deposit') : $t('buttons.login') }}
-        </button>
       </div>
       <nav v-if="width >= 960" class="Nav MainNav-Links">
         <ul class="MainNav-List">
@@ -40,9 +25,7 @@
         </ul>
       </nav>
       <GamePanel v-if="isGamePage" />
-      <template v-if="width > 768">
-        <AuthSection class="MainNav-AuthSection" />
-      </template>
+      <AuthSection class="MainNav-AuthSection" />
     </div>
     <transition v-if="width < 960" name="slide-right">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
@@ -66,7 +49,8 @@
             <NavItem
               v-if="isLoggedIn || !item.onlyIfLoggedIn"
               :key="item.name"
-              :class-name="'AsideMenu-Link'"
+              class="AsideMenu-Link"
+              :class="item.modificator ? `AsideMenu-Link--${item.modificator}` : ''"
               :item="item"
             />
           </template>
@@ -86,7 +70,6 @@ import AuthSection from '@/components/homepage/AuthSection.vue';
 import GamePanel from '@/components/homepage/GamePanel.vue';
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import { TOURNAMENTS } from '@/config';
-import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'MainNav',
@@ -95,13 +78,23 @@ export default {
     AuthSection,
     GamePanel,
   },
-  mixins: [showAuthDialog],
   data() {
     return {
       documentIsScrolled: false,
       topBarIsScrolled: false,
-      asideMenuLang: 'AsideMenu-Lang--aside',
       navItems: [
+        {
+          name: this.$t('pages.lobby'),
+          url: this.localePath('/'),
+          icon: 'lobby_nav.svg',
+          modificator: 'onlyDesktop',
+        },
+        {
+          name: this.$t('pages.promotion'),
+          url: this.localePath('/promotions'),
+          icon: 'promotions_nav.svg',
+          modificator: 'onlyDesktop',
+        },
         {
           name: this.$t('pages.dailyCashback'),
           url: this.localePath('/daily-cashback'),
@@ -113,33 +106,6 @@ export default {
           icon: 'user-profile.svg',
           onlyIfLoggedIn: true,
         }, */
-
-        // {
-        //   name: 'Drops & Wins',
-        //   url: this.localePath('/drops-wins'),
-        //   icon: 'tournament_nav.svg',
-        //   onlyIfLoggedIn: false,
-        // },
-        // {
-        //   name: 'Tournaments',
-        //   children: [
-        //     {
-        //       name: 'Daily tournament',
-        //       url: '/daily-tournament',
-        //       icon: 'tournament_nav.svg',
-        //     },
-        //     {
-        //       name: 'Weekly lottery',
-        //       url: '#',
-        //       icon: 'tournament_nav.svg',
-        //     },
-        //     {
-        //       name: 'Live tournament',
-        //       url: '#',
-        //       icon: 'tournament_nav.svg',
-        //     },
-        //   ],
-        // },
       ],
       navItemsFooter: [
         {
@@ -183,8 +149,8 @@ export default {
     };
   },
   computed: {
-    ...mapState(['navIsOpen', 'width', 'chatIsLoaded', 'user', 'notificationsPanelIsOpen']),
-    ...mapGetters(['isLoggedIn', 'activeAccount', 'isNewNotifications']),
+    ...mapState(['navIsOpen', 'width', 'chatIsLoaded', 'user']),
+    ...mapGetters(['isLoggedIn']),
     navItemsFull() {
       const tournaments = Object.values(TOURNAMENTS);
       let navTournaments = {};
@@ -202,11 +168,12 @@ export default {
         const children = tournaments.map(item => ({
           name: item.name,
           url: this.localePath(`/tournaments/${item.url}`),
-          icon: 'tournament-circle_nav.svg',
+          icon: this.width < 768 ? 'tournament-circle_nav.svg' : 'tournament_nav.svg',
           onlyIfLoggedIn: false,
         }));
         navTournaments = {
           name: this.$t('pages.tournaments'),
+          icon: 'tournament_nav.svg',
           children,
         };
       }
@@ -267,25 +234,29 @@ export default {
   }
 
   &-TopBar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     padding: 14px 16px;
 
-    @media (min-width: $screen-m) {
-      position: relative;
-      z-index: 1;
+    @media (min-width: $screen-xs) {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
       max-width: 1248px;
-      //height: 45px;
-      height: auto;
       margin-right: auto;
       margin-left: auto;
     }
 
-    /*@media (min-width: $screen-xl) {
-      padding-left: 16px;
-    }*/
+    @media (min-width: $screen-m) {
+      padding: 0 0 0 16px;
+    }
+
+    &--authenticated {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
 
     &--centered {
       justify-content: center;
@@ -343,15 +314,6 @@ export default {
     }
   }
 
-  .Btn--common {
-    padding: 8px 14px;
-    font-size: 10px;
-
-    @media (min-width: $screen-s) {
-      padding: 9px 21px;
-    }
-  }
-
   &-Links {
     display: none;
 
@@ -394,6 +356,10 @@ export default {
         display: none;
       }
     }
+  }
+
+  &-Authsection {
+    flex-grow: 1;
   }
 }
 
@@ -472,16 +438,20 @@ export default {
     margin-bottom: 35px;
     font-size: 14px;
 
-    @media (min-width: $screen-s) {
-      font-size: 22px;
-    }
-
     @media (min-width: $screen-xs) {
       text-align: center;
 
       .Nav-Name {
         justify-content: center;
       }
+    }
+
+    @media (min-width: $screen-m) {
+      font-size: 18px;
+    }
+
+    &--onlyDesktop {
+      display: none;
     }
   }
 
@@ -523,7 +493,7 @@ export default {
   &-AuthSection {
     height: auto;
     margin-bottom: 37px;
-    padding: 0 18px;
+    padding: 0 16px;
 
     @media (min-width: $screen-xs) {
       width: 288px;
@@ -532,6 +502,7 @@ export default {
 
   &-AuthSection.AuthSection--authenticated {
     margin-top: 0;
+    padding: 0 32px;
 
     @media (min-width: $screen-xs) {
       width: 100%;
@@ -548,10 +519,6 @@ export default {
 
   .Icon-Exit {
     width: 16px;
-  }
-
-  .AsideMenu-Lang--aside {
-    top: 29px !important;
   }
 }
 </style>
