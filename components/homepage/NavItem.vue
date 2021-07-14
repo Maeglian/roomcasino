@@ -4,10 +4,9 @@
       <img v-if="item.icon" class="Icon Nav-Icon" :src="require(`@/assets/img/${item.icon}`)" />
       {{ item.name }}
     </NuxtLink>
-    <div v-else-if="item.children" class="Nav-Item" :class="className">
+    <div v-else class="Nav-Item" :class="className">
       <div class="Nav-Name" @click="listIsOpen = !listIsOpen">
-        <img class="Icon Nav-Icon" src="@/assets/img/tournament_nav.svg" />
-        <!--        <img v-if="item.icon" class="Icon Nav-Icon" :src="require(`@/assets/img/${item.icon}`)" />-->
+        <img v-if="item.icon" class="Icon Nav-Icon" :src="require(`@/assets/img/${item.icon}`)" />
         {{ item.name }}
         <i
           class="Nav-Arrow ThinArrow"
@@ -19,7 +18,7 @@
           v-show="listIsOpen"
           v-click-outside="onClickOutside"
           class="Nav-List"
-          :class="`Nav-List--Tournaments`"
+          :class="`Nav-List--${item.name}`"
         >
           <NavItem
             v-for="child in item.children"
@@ -31,10 +30,6 @@
         </ul>
       </transition>
     </div>
-    <NuxtLink v-else :to="item.url" class="Nav-Name" @click.native="$emit('close')">
-      <img v-if="item.icon" class="Icon Nav-Icon" :src="require(`@/assets/img/${item.icon}`)" />
-      {{ item.name }}
-    </NuxtLink>
     <!--    <template v-else-if="item.children">
       <NavItem
         v-for="child in item.children"
@@ -172,18 +167,6 @@ export default {
         padding: 26px 50px 20px 43px;
       }
     }
-  }
-}
-
-.Nav-List--Tournaments {
-  top: 44px;
-  right: 61px;
-  @media (min-width: $screen-xs) {
-    right: -10%;
-  }
-  @media (min-width: $screen-l) {
-    top: 60px;
-    right: 0;
   }
 }
 </style>
