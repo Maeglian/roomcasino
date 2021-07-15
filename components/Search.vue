@@ -5,7 +5,7 @@
     :class="{ 'Search--open': isOpen }"
     @click="openSearch"
   >
-    <svg v-if="!value" class="Icon Search-Icon">
+    <svg v-if="!value || (isOpen && width >= 768)" class="Icon Search-Icon">
       <use xlink:href="@/assets/img/icons.svg#search"></use>
     </svg>
     <div v-if="value" class="Close Search-Icon Search-Close" @click="$emit('input', '')"></div>
@@ -16,6 +16,13 @@
       :value="value"
       @input="$emit('input', $event.target.value)"
     />
+    <div
+      v-if="isOpen && withDropdown"
+      class="Search-Dropdown"
+      :class="{ 'Search-Dropdown--opened': value }"
+    >
+      <slot name="dropdown"></slot>
+    </div>
   </div>
 </template>
 
@@ -29,6 +36,11 @@ export default {
       type: String,
       required: false,
       default: '',
+    },
+    withDropdown: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   data() {
@@ -52,9 +64,7 @@ export default {
 
 <style lang="scss">
 .Search {
-  position: relative;
   display: flex;
-  border: 2px solid var(--color-border);
   cursor: pointer;
 
   &-Icon {
@@ -137,13 +147,15 @@ export default {
     }
   }
 
-  &--open {
+  &-Dropdown {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    top: 50px;
     width: 100%;
-    background: var(--color-body);
-    cursor: initial;
+    background: var(--color-bg);
+
+    &--opened {
+      padding: 15px;
+    }
   }
 }
 </style>
