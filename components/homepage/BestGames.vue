@@ -48,21 +48,57 @@
         </NuxtLink>
       </div>
       <div class="ProvidersSection DefaultGames-Providers">
-        <Search v-model="searched" class="ProvidersSection-Search DefaultGames-Search" />
+        <Search
+          v-model="searched"
+          class="ProvidersSection-Search DefaultGames-Search"
+          :with-dropdown="width >= 768"
+        >
+          <template v-if="searched" #dropdown>
+            <div v-if="filteredGames.length" class="Title Title--type-h4 Cards-Title">
+              {{ $t('search.searchResults') }} ({{ filteredGames.length }})
+            </div>
+            <Games
+              class="DefaultGames-Cards"
+              :games="filteredGames"
+              :games-to-show="12"
+              btn-class="Btn--common Btn--outline"
+            >
+              <template #notFound>
+                <div class="Title Title--type-h4">
+                  {{ $t('search.nothingFound') }}
+                </div>
+                <div class="Text Text--additional">
+                  {{ $t('search.try') }}
+                </div>
+              </template>
+            </Games>
+          </template>
+        </Search>
         <ProvidersMenu
           v-if="gameProducerList.length"
           :provider-active="providerActive"
           @choose-provider="onChooseProvider"
         />
       </div>
-      <div v-if="searched" class="SearchedGames">
-        <div class="Title Title--type-h2 Cards-Title">Searched</div>
+      <div v-if="searched && width < 768" class="SearchedGames">
+        <div class="Title Title--type-h4 Cards-Title">
+          {{ $t('search.searchResults') }} ({{ filteredGames.length }})
+        </div>
         <Games
           class="DefaultGames-Cards"
           :games="filteredGames"
           :games-to-show="24"
           btn-class="Btn--common Btn--outline"
-        />
+        >
+          <template #notFound>
+            <div class="Title ">
+              {{ $t('search.nothingFound') }}
+            </div>
+            <div class="SearchPage-Text">
+              {{ $t('search.try') }}
+            </div>
+          </template>
+        </Games>
       </div>
       <a id="games"></a>
       <Nuxt />
@@ -615,10 +651,27 @@ export default {
     z-index: 1;
     margin-top: 8px;
     margin-bottom: 8px;
+    border: 2px solid var(--color-border);
 
     @media (min-width: $screen-m) {
       margin-top: 0;
       margin-bottom: 0;
+    }
+
+    &.Search--open {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      background: var(--color-body);
+      cursor: initial;
+
+      .Search-Close {
+        @media (min-width: $screen-m) {
+          right: 16px;
+          left: initial;
+        }
+      }
     }
   }
 }
