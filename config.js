@@ -335,6 +335,6 @@ export const TOURNAMENTS = {
     name: 'SCUBA CASH BY BOOONGO',
     translates: 'scubaCash',
     class: 'ScubaCash',
-    slug: 'scubaсash',
+    slug: 'scubacash',
   },
 };
