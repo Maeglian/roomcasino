@@ -473,7 +473,6 @@ export const actions = {
       await dispatch('profile/getFreeSpinList');
       dispatch('profile/getLimits');
       dispatch('profile/getAvailableBonusList');
-      dispatch('games/getRecentGames');
       commit('setAuthSuccess');
     }
   },
