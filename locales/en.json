@@ -158,8 +158,12 @@
     }
   },
   "search": {
-    "findGame": "Find game",
-    "notFound": "Nothing was found"
+    "findGame": "Search games",
+    "notFound": "Nothing was found",
+    "search": "Search",
+    "searchResults": "Search results",
+    "nothingFound": "Sorry, nothing found",
+    "try": "Try searching for something else"
   },
   "common": {
     "date": "Date",

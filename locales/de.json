@@ -159,7 +159,11 @@
   },
   "search": {
     "findGame": "Spiel finden",
-    "notFound": "Keine funde"
+    "notFound": "Keine funde",
+    "search": "Suchen",
+    "searchResults": "Suchergebnisse",
+    "nothingFound": "Entschuldigung, nichts gefunden",
+    "try": "Versuche, nach etwas anderem zu suchen"
   },
   "common": {
     "date": "Datum",
