@@ -5,9 +5,10 @@
     :class="{ 'Search--open': isOpen }"
     @click="openSearch"
   >
-    <svg class="Icon Search-Icon">
+    <svg v-if="!value" class="Icon Search-Icon">
       <use xlink:href="@/assets/img/icons.svg#search"></use>
     </svg>
+    <div v-if="value" class="Close Search-Icon Search-Close" @click="$emit('input', '')"></div>
     <input
       type="text"
       class="Search-Input"
@@ -51,6 +52,7 @@ export default {
 
 <style lang="scss">
 .Search {
+  position: relative;
   display: flex;
   border: 2px solid var(--color-border);
   cursor: pointer;
@@ -84,6 +86,12 @@ export default {
       width: 18px;
       height: 18px;
     }
+  }
+
+  &-Close {
+    top: calc(50% - 11px);
+    width: 22px;
+    height: 22px;
   }
 
   &-Input {
