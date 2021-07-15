@@ -1,31 +1,31 @@
 <template>
   <nav class="MobileNav">
     <NuxtLink class="MobileNav-Item" :to="localePath('/promotions')">
-      <svg class="MobileNav-Toggle2" width="17" height="16">
+      <svg class="MobileNav-Icon" width="17" height="16">
         <use xlink:href="@/assets/img/icons.svg#promotions"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('pages.promotion') }}</div>
     </NuxtLink>
     <button v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
-      <svg class="MobileNav-Toggle2" width="18" height="15">
+      <svg class="MobileNav-Icon" width="18" height="15">
         <use xlink:href="@/assets/img/icons.svg#support"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('menu.support') }}</div>
     </button>
     <NuxtLink class="MobileNav-Item" :to="localePath('/')">
-      <svg class="MobileNav-Toggle2" width="17" height="16">
+      <svg class="MobileNav-Icon" width="17" height="16">
         <use xlink:href="@/assets/img/icons.svg#dice"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('pages.lobby') }}</div>
     </NuxtLink>
     <NuxtLink class="MobileNav-Item" :to="localePath('/search')">
-      <svg class="MobileNav-Toggle2" width="17" height="16" fill="#F3B233">
+      <svg class="MobileNav-Icon" width="17" height="16" fill="#F3B233">
         <use xlink:href="@/assets/img/icons.svg#search"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('pages.search') }}</div>
     </NuxtLink>
     <button class="MobileNav-Item MobileNav-Item--burger" @click="toggleNav()">
-      <svg class="MobileNav-Toggle2 Toggle Toggle--colored">
+      <svg class="MobileNav-Icon Toggle Toggle--colored">
         <use xlink:href="@/assets/img/icons.svg#toggle"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('menu.menu') }}</div>
@@ -128,15 +128,6 @@ export default {
     position: relative;
   }
 
-  &-Icon {
-    width: 12px;
-    height: 14px;
-  }
-
-  &-Icon2 {
-    margin-right: 10px;
-  }
-
   &-Name {
     font-size: 7px;
     font-weight: 700;
@@ -163,12 +154,7 @@ export default {
     border-radius: 50%;
   }
 
-  &-Toggle {
-    width: 17px;
-    height: 17px;
-  }
-
-  &-Toggle2 {
+  &-Icon {
     flex-shrink: 0;
     align-items: center;
     width: 17px;
