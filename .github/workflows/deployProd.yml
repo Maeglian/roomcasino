@@ -13,7 +13,7 @@ env:
   BUILD_SCRIPT: npm run build
   BUILD_SCRIPT_OUTPUT: .nuxt
   BRANCH_NAME: master
-  START_SCRIPT: pm2 restart node_modules/nuxt-start/bin/nuxt-start.js --name ninecasino -i max
+  START_SCRIPT: PORT=3001 pm2 restart node_modules/nuxt-start/bin/nuxt-start.js --name ninecasino -i max
   REPOSIRORY_NAME: wakeapp/roomcasino.git
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
       - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.DEPLOY_SERVER_HOST }}
+          host: ${{ secrets.DEPLOY_SERVER_HOST_PROD }}
           username: ${{ secrets.DEPLOY_SERVER_USERNAME }}
           key: ${{ secrets.DEPLOY_SERVER_KEY }}
           port: ${{ secrets.DEPLOY_SERVER_PORT }}
