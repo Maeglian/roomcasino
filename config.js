@@ -330,4 +330,11 @@ export const TOURNAMENTS = {
     class: 'KnockoutFootball',
     slug: 'footrush',
   },
+  'scuba-cash': {
+    url: 'scuba-cash',
+    name: 'SCUBA CASH BY BOOONGO',
+    translates: 'scubaCash',
+    class: 'ScubaCash',
+    slug: 'scubacash',
+  },
 };

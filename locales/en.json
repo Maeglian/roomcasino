@@ -446,6 +446,11 @@
       "upTo": "prize pool €2,500",
       "name": "Saddle up for the Weekly Derby",
       "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
+    },
+    "scubaCash": {
+      "title": "SCUBA CASH <br/>BY BOOONGO",
+      "name": "SCUBA CASH BY BOOONGO",
+      "text": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! Epic action with a prize pool spanning the seven seas! The Scuba Cash campaign includes a series of regular tournaments and an extra leaderboard. Take a deep breath and dive into underwater battles. Drag big wins from the depths of the ocean and prepare for Krakens, Sharks, and other swimmers to grab a grand prize!"
     }
   },
   "tournaments": {
@@ -1324,6 +1329,30 @@
       {
         "cashbackNum": "20%",
         "cashbackSum": "€5000 and more"
+      }
+    ]
+  },
+  "scubaCash": {
+    "title": "SCUBA CASH <br/>BY BOOONGO",
+    "prize": "€100,000",
+    "text": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! Epic action with a prize pool spanning the seven seas! The Scuba Cash campaign includes a series of regular tournaments and an extra leaderboard. Take a deep breath and dive into underwater battles. Drag big wins from the depths of the ocean and prepare for Krakens, Sharks, and other swimmers to grab a grand prize!",
+    "textMobile": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! The campaign runs from July 15th, 2021 until July 24th, 2021. The grand total prize pool is €100,000.",
+    "terms": [
+      {
+        "title": "Campaign Duration:<br/><br/>",
+        "text": "July 15th, 2021 – July 24th, 2021<br/><br/>"
+      },
+      {
+        "title": "Prize pool information:<br/><br/>",
+        "text": "- €8,000 for each regular tournament, €80,000 in total for 10 tournaments<br/><br/>- €20,000 for the series leaderboards."
+      },
+      {
+        "title": "Minimum bet requirements:<br/><br/>",
+        "text": "EUR 0.50<br/><br/>"
+      },
+      {
+        "title": "Terms and Conditions:",
+        "text": "● Only real money spins participate in the tournaments.<br/>● There are 10 Regular Tournaments every day between July 15th, 2021 and July 24th, 2021. Each Regular Tournament starts at 0:00 UTC of every day, and ends at 23:00 UTC of the same day.<br/>● Games participating in the tournament are: Pearl Diver, Wukong, Hit The Gold, Scarab Boost, Aztec Pyramid, Wolf Saga, Sun Of Egypt 2, 15 Dragon Pearls, Sun of Egypt, Magic Apple, Dragon Pearls, 3 Coins, Aztec Sun, Tiger Stone, Book of Sun Multichance.<br/>● Minimum bet in the regular tournament is €0,50 and the minimum number of spins is 100.<br/>● In the win race you will get points for each winning spin. €1 equals 1 Point.<br/>●In the multiplier race you will get 1 point for each x1 multiplier in win spin.<br/>● The extra leaderboard runs parallel with the in-game regular tournament leaderboard. The series extra leaderboard and in-game tournament leaderboard shows your progress during the whole series of tournaments.<br/>● Leaderboards are updated in real-time."
       }
     ]
   }

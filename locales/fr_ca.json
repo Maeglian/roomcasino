@@ -444,6 +444,11 @@
       "upTo": "une cagnotte de 2500 €",
       "name": "À vos marques pour le Weekly Derby",
       "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
+    },
+    "scubaCash": {
+      "title": "SCUBA CASH <br/>DE BOOONGO",
+      "name": "SCUBA CASH DE BOOONGO",
+      "text": "Préparez vos combinaisons de plongée et bienvenue au Tournoi Scuba Cash de Booongo! De l’action épique avec une cagnotte qui s’étend sur les sept mers! La campagne Scuba Cash prévoit une série de tournois réguliers et un classement supplémentaire. Prenez une grande respiration et plongez dans des batailles sous-marines. Tirez de gros gains des profondeurs de l’océan et préparez-vous à ce que les monstres marins, les requins et autres nageurs s’emparent d’un grand prix!"
     }
   },
   "tournaments": {
@@ -1322,6 +1327,30 @@
       {
         "cashbackNum": "20%",
         "cashbackSum": "€5000 ET PLUS"
+      }
+    ]
+  },
+  "scubaCash": {
+    "title": "SCUBA CASH <br/>DE BOOONGO",
+    "prize": "100 000€",
+    "text": "Préparez vos combinaisons de plongée et bienvenue au Tournoi Scuba Cash de Booongo! De l’action épique avec une cagnotte qui s’étend sur les sept mers! La campagne Scuba Cash prévoit une série de tournois réguliers et un classement supplémentaire. Prenez une grande respiration et plongez dans des batailles sous-marines. Tirez de gros gains des profondeurs de l’océan et préparez-vous à ce que les monstres marins, les requins et autres nageurs s’emparent d’un grand prix!",
+    "textMobile": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! Préparez vos combinaisons de plongée et bienvenue au Tournoi Scuba Cash de Booongo! La campagne se déroule du 15 juillet 2021 au 24 juillet 2021.  La cagnotte totale est de 100 000€.",
+    "terms": [
+      {
+        "title": "Période de la campagne:<br/><br/>",
+        "text": "15 juillet 2021 à 0 h 00 UTC au 24 juillet 2021 à 23 h 00 UTC.<br/><br/>"
+      },
+      {
+        "title": "Structure des prix:<br/><br/>",
+        "text": "- 8 000 € pour chaque tournoi régulier, 80 000 € au total pour 10 tournois;<br/><br/>- 20 000 € pour le classement de la série."
+      },
+      {
+        "title": "Mise minimale:<br/><br/>",
+        "text": "0,50 €<br/><br/><br/>"
+      },
+      {
+        "title": "Conditions générales:",
+        "text": "● Seuls les tours en argent réel sont admis dans les tournois.<br/>● Entre le 15 juillet 2021 et le 24 juillet 2021, il y a 10 tournois réguliers chaque jour. Chaque tournoi régulier commence à 0 h 00 UTC de chaque jour et se termine à 23 h 00 UTC du même jour.<br/>● Voici les jeux qui participent au tournoi :\nPearl Diver, Wukong, Hit The Gold, Scarab Boost, Aztec Pyramid, Wolf Saga, Sun Of Egypt 2, 15 Dragon Pearls, Sun of Egypt, Magic Apple, Dragon Pearls, 3 Coins, Aztec Sun, Tiger Stone, Book of Sun Multichance.<br/>● La mise minimale dans le tournoi régulier est de 0,50 € et le nombre minimal de tours est de 100.<br/>● Dans la course gagnante, vous obtiendrez des points pour chaque tour gagnant. 1 € est égal à 1 point.<br/>● Dans la course aux multiplicateurs, vous obtiendrez 1 point pour chaque multiplicateur x1 dans le tour gagnant.<br/>●Le tableau de classement supplémentaire se déroule en parallèle avec le tableau de classement du tournoi régulier du jeu. Le tableau de classement supplémentaire de la série et le tableau de classement du tournoi intra-jeu indiquent votre progression pendant toute la série de tournois.<br/>● Les classements sont mis à jour en temps réel."
       }
     ]
   }
