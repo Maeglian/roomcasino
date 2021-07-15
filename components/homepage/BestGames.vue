@@ -103,6 +103,18 @@
       <a id="games"></a>
       <Nuxt />
       <template v-if="getRouteBaseName($route) === 'index'">
+        <template v-if="recentGames.length">
+          <div class="Title Title--type-h2 Cards-Title">
+            {{ $t('gameCategories.recent') }}
+          </div>
+          <Games
+            :key="isLoggedIn"
+            class="DefaultGames-Cards"
+            :games="recentGames"
+            :games-to-show="recentGamesNum"
+            btn-class="Btn--common Btn--dark"
+          />
+        </template>
         <div class="Title Title--type-h2 Cards-Title">
           {{ $t('gameCategories.top') }}
         </div>
@@ -243,7 +255,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations } from 'vuex';
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
@@ -316,6 +328,7 @@ export default {
       'gamesAreLoading',
       'defaultGamesAreLoading',
       'topGames',
+      'recentGames',
       'newGames',
       'liveGames',
       'jackpotGames',
@@ -336,6 +349,9 @@ export default {
     ]),
     ...mapGetters(['isLoggedIn', 'activeAccount']),
     ...mapGetters('games', ['gamesSearched']),
+    recentGamesNum() {
+      return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
+    },
     gamesParams() {
       const params = {};
       if (this.tabActive.type) params.category = this.tabActive.type;
@@ -352,6 +368,14 @@ export default {
       immediate: true,
       handler() {
         if (this.gameProducerList.length) this.providerActive = this.gameProducerList[0];
+      },
+    },
+    isLoggedIn: {
+      immediate: true,
+      handler() {
+        if (this.getRouteBaseName(this.$route) === 'index' && this.isLoggedIn) {
+          this.getRecentGames({ category: 'top' });
+        }
       },
     },
   },
@@ -378,6 +402,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setDgaInfo']),
+    ...mapActions('games', ['getRecentGames']),
     onChooseTab(i) {
       this.searched = '';
       this.gamesShowed = this.gamesToShow;
