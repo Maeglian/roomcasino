@@ -202,6 +202,13 @@ export default {
           url: '/tournaments/weekly_derby',
           linkText: this.$t('buttons.more'),
         },
+        {
+          bg: 'scuba',
+          title: this.$t('scubaCash.title'),
+          text: `<span class="Colored">${this.$t('scubaCash.prize')}</span>`,
+          url: '/tournaments/scuba-cash',
+          linkText: this.$t('buttons.more'),
+        },
       ];
       if (!this.isLoggedIn) {
         slides.splice(1, 1);
@@ -243,16 +250,16 @@ export default {
     }
 
     .v_slider__dots li {
-      padding: 7px;
+      padding: 5px;
 
-      @media (min-width: $screen-xs) {
+      @media (min-width: $screen-s) {
         padding: 9px;
       }
     }
 
     .v_slider__dots li span {
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
 
       @media (min-width: $screen-xs) {
         width: 8px;

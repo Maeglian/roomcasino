@@ -445,6 +445,11 @@
       "upTo": "Preispool 2.500 €",
       "name": "Aufsatteln fürs Weekly Derby",
       "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
+    },
+    "scubaCash": {
+      "title": "SCUBA CASH <br/>BY VON BOOONGO",
+      "name": "SCUBA CASH <br/>VON BOOONGO",
+      "text": "Schlüpfe in deinen Tauchanzug und willkommen zum Scuba-Cash-Turnier von Booongo! Epische Action mit einem Preispool, der so groß ist wie die Sieben Weltmeere! Die Scuba-Cash-Aktion umfasst eine Reihe von regulären Turnieren und eine Sonderrangliste. Hol tief Luft und tauche ein in Unterwasserschlachten. Ziehe große Gewinne aus den Tiefen des Ozeans und mach dich auf Kraken, Haie und andere Wasserbewohner gefasst, um einen Hauptgewinn zu ergattern!"
     }
   },
   "tournaments": {
@@ -1323,6 +1328,30 @@
       {
         "cashbackNum": "20%",
         "cashbackSum": "ab €5000"
+      }
+    ]
+  },
+  "scubaCash": {
+    "title": "SCUBA CASH <br/>VON BOOONGO",
+    "prize": "100.000€",
+    "text": "Schlüpfe in deinen Tauchanzug und willkommen zum Scuba-Cash-Turnier von Booongo! Epische Action mit einem Preispool, der so groß ist wie die Sieben Weltmeere! Die Scuba-Cash-Aktion umfasst eine Reihe von regulären Turnieren und eine Sonderrangliste. Hol tief Luft und tauche ein in Unterwasserschlachten. Ziehe große Gewinne aus den Tiefen des Ozeans und mach dich auf Kraken, Haie und andere Wasserbewohner gefasst, um einen Hauptgewinn zu ergattern!",
+    "textMobile": "Schlüpfe in deinen Tauchanzug und willkommen zum Scuba-Cash-Turnier von Booongo! \nDie Aktion dauert vom 15. Juli 2021 bis zum 24. Juli 2021. Der grandiose Gesamtpreispool für diese Aktion beträgt 100.000 €.",
+    "terms": [
+      {
+        "title": "Dauer der Aktion:<br/><br/>",
+        "text": "15. Juli 2021 um 0:00 Uhr (UTC) bis zum 24. Juli 2021 um 23:00 Uhr (UTC)<br/><br/>"
+      },
+      {
+        "title": "Gewinnstrukturierung:<br/><br/>",
+        "text": "- 8.000 € für jedes reguläre Turnier, insgesamt 80.000 € für 10 Turniere<br/><br/>- 20.000 € für die Serien-Ranglisten.<br/><br/>"
+      },
+      {
+        "title": "Mindesteinsatz:<br/><br/>",
+        "text": "€0,50<br/><br/>"
+      },
+      {
+        "title": "Teilnahmebedingungen:",
+        "text": "● Nur Ausspielungen mit Echtgeld sind für das Turnier gültig.<br/>● Es gibt jeden Tag 10 reguläre Turniere zwischen dem 15. Juli 2021 und dem 24. Juli 2021. Jedes reguläre Turnier beginnt jeden Tag um 0:00 Uhr (UTC) und endet um 23:00 Uhr (UTC) am selben Tag.<br/>● Folgende Spiele nehmen am Turnier teil: Pearl Diver, Wukong, Hit The Gold, Scarab Boost, Aztec Pyramid, Wolf Saga, Sun Of Egypt 2, 15 Dragon Pearls, Sun of Egypt, Magic Apple, Dragon Pearls, 3 Coins, Aztec Sun, Tiger Stone, Book of Sun Multichance.<br/>● Der Mindesteinsatz im regulären Turnier beträgt 0,50 € und es sind mindestens 100 Ausspielungen erforderlich.<br/>● Im Gewinner-Rennen erhältst du Punkte für jede Ausspielung, die gewinnt. 1 € entspricht 1 Punkt.<br/>●Im Multiplikator-Rennen erhältst du 1 Punkt für jeden x1-Multiplikator in der Ausspielung, die gewinnt.<br/>● Die Sonderrangliste wird parallel zu der spielinternen Rangliste der regulären Turniere geführt. Die Sonderrangliste für die Serie und die spielinterne Turnier-Rangliste zeigen deinen Fortschritt während der gesamten Turnierserie an.<br/>● Die Ranglisten werden in Echtzeit aktualisiert."
       }
     ]
   }

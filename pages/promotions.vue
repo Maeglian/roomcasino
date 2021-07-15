@@ -202,6 +202,15 @@ export default {
           link: 'More',
           url: '/tournaments/weekly_derby',
         },
+        {
+          title: this.$t('scubaCash.title'),
+          prize: this.$t('scubaCash.prize'),
+          image: 'scuba-promotion.png',
+          announce: this.$t('promotions.scubaCash.name'),
+          text: this.$t('promotions.scubaCash.text'),
+          link: 'More',
+          url: '/tournaments/scuba-cash',
+        },
       ],
     };
   },

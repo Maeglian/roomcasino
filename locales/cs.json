@@ -439,6 +439,11 @@
       "upTo": "prize pool 2500 eur",
       "name": "Vyrazte na Weekly Derby",
       "text": "Je čas na Weekly Derby a naše ceny vás donutí trochu trošku supět, abyste první dorazili na místo!<br/><br/>Turnaj probíhá 7 dnů od čtvrtka 00:01 UTC do středy 23:59 UTC. Chopte se své příležitosti rozdělit si cenný prize pool ve výši 2500 eur společně se 40 dalšími jezdci.<br/><br/>Stačí minimální sázka 0,5 eur a být připravený na soutěž.<br/><br/>Hodně štěstí a pojďme odstartovat Derby! "
+    },
+    "scubaCash": {
+      "title": "SCUBA CASH <br/>OD BOOONGO",
+      "name": "SCUBA CASH <br/>OD BOOONGO",
+      "text": "Připravte si skafandr a vstupte do turnaje Scuba Cash od Booongo! Epická akce s prize poolem rozpínajícím se přes sedm moří! Kampaň Scuba Cash zahrnuje řadu pravidelných turnajů a extra výsledkovou tabulku. Zhluboka se nadechněte a ponořte se k podvodním bitvám. Vytáhněte velké výhry z hlubin oceánu a připravte se na to, že Krakeni, žraloci a další plavci se s vámi budou přetahovat o nejvyšší cenu!"
     }
   },
   "tournaments" : {
@@ -1317,6 +1322,30 @@
       {
         "cashbackNum" : "20%",
         "cashbackSum" : "€5000 a více"
+      }
+    ]
+  },
+  "scubaCash": {
+    "title": "SCUBA CASH <br/>OD BOOONGO",
+    "prize": "100 000€",
+    "text": "Připravte si skafandr a vstupte do turnaje Scuba Cash od Booongo! Epická akce s prize poolem rozpínajícím se přes sedm moří! Kampaň Scuba Cash zahrnuje řadu pravidelných turnajů a extra výsledkovou tabulku. Zhluboka se nadechněte a ponořte se k podvodním bitvám. Vytáhněte velké výhry z hlubin oceánu a připravte se na to, že Krakeni, žraloci a další plavci se s vámi budou přetahovat o nejvyšší cenu!",
+    "textMobile": "Připravte si skafandr a vstupte do turnaje Scuba Cash od Booongo! Tato kampaň probíhá od 15 července 2021 do 24 července 2021. Nejvyšší celkový prize pool činí 100 000 €.",
+    "terms": [
+      {
+        "title": "Doba kampaně:<br/><br/>",
+        "text": "od 15 července 2021 do 24 července 2021<br/><br/>"
+      },
+      {
+        "title": " Struktura cen:<br/><br/>",
+        "text": "- 8 000 € pro každý pravidelný turnaj, 80 000 eur celkem pro 10 turnajů<br/><br/>- 20 000 € pro výsledkové tabulky série."
+      },
+      {
+        "title": "Minimální sázka:<br/><br/>",
+        "text": "0,50€<br/><br/>"
+      },
+      {
+        "title": "Podmínky turnaje:",
+        "text": "● V turnaje jsou platné pouze spiny za skutečné peníze.<br/>● Každý den v období od 15. července 2021 do 24. července 2021 se uskuteční celkem 10 pravidelných turnajů. Všechny pravidelné turnaje začínají každý den v 0:00 UTC a končí v 23:00 UTC stejného dne.<br/>● Do turnaje jsou zařazeny následující hry: Pearl Diver, Wukong, Hit The Gold, Scarab Boost, Aztec Pyramid, Wolf Saga, Sun Of Egypt 2, 15 Dragon Pearls, Sun of Egypt, Magic Apple, Dragon Pearls, 3 Coins, Aztec Sun, Tiger Stone a Book of Sun Multichance.<br/>● Minimální sázka v pravidelném turnaji je 0,50 euro a minimální počet spinů je 100<br/>● Ve vítězné hře získáte body za každý vítězný spin. 1 euro odpovídá 1 bodu.<br/>● Při hře s násobitelem získáte 1 bod za každý násobek x1 ve vítězném spinu.<br/>● Extra výsledková tabulka je vedena souběžně s průběžnou výsledkovou tabulkou regulérního turnaje. Body, které hráči získají do extra výsledkové tabulky série a průběžné výsledkové tabulky turnaje, se sčítají během celé série turnajů.<br/>● Výsledkové tabulky jsou aktualizovány v reálném čase."
       }
     ]
   }
