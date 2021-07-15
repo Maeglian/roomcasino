@@ -208,7 +208,7 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex';
-// import Loader from '@/components/Loader';
+import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
@@ -222,7 +222,7 @@ export default {
   components: {
     ProvidersMenu,
     Search,
-    // Loader,
+    Loader,
     Games,
   },
   mixins: [showAuthDialog, toggleDropdown, gameProducer],
@@ -569,7 +569,7 @@ export default {
   }
 
   &-Cards {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     @media (min-width: $screen-l) {
       margin-bottom: 24px;
