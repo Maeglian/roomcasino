@@ -92,7 +92,7 @@ export default {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 61px;
 
@@ -141,8 +141,10 @@ export default {
     font-size: 7px;
     font-weight: 700;
     line-height: 1.66;
+    text-align: center;
     color: var(--color-text-main);
     text-transform: uppercase;
+    word-break: break-word;
 
     &--large {
       font-size: 12px;
@@ -167,10 +169,11 @@ export default {
   }
 
   &-Toggle2 {
+    flex-shrink: 0;
     align-items: center;
     width: 17px;
     height: 17px;
-    margin: 0 0 4px;
+    margin: 0 0 6px;
   }
 }
 </style>
