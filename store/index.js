@@ -47,6 +47,7 @@ export const state = () => ({
   defaultCurrency: '',
   chatIsLoaded: false,
   needsCookiesPopup: true,
+  showOverlay: false,
   initialLoadingIsDone: {
     geoInfo: false,
     countries: false,
@@ -284,6 +285,9 @@ export const mutations = {
   setChatIsLoaded: state => {
     state.chatIsLoaded = true;
   },
+  toggleOverlay: (state, payload) => {
+    state.showOverlay = payload;
+  },
   setHeroBannerIsLoaded: state => {
     state.heroBannerIsLoaded = true;
   },
@@ -473,7 +477,6 @@ export const actions = {
       await dispatch('profile/getFreeSpinList');
       dispatch('profile/getLimits');
       dispatch('profile/getAvailableBonusList');
-      dispatch('games/getRecentGames');
       commit('setAuthSuccess');
     }
   },

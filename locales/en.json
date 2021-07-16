@@ -131,12 +131,13 @@
     "btc": "About BTC",
     "aml": "AML policy",
     "terms": "Terms and conditions",
-    "bonusPolicy": "Bonus policy",
+    "bonusPolicy": "Bonus terms",
     "privacyPolicy": "Privacy policy",
     "responsibleGaming": "Responsible Gaming",
     "risk": "Risk warnings",
     "tournaments": "Tournaments",
-    "dailyCashback": "Daily cashback"
+    "dailyCashback": "Daily cashback",
+    "search": "Search"
   },
   "gameCategories": {
     "top": "Top games",
@@ -157,8 +158,12 @@
     }
   },
   "search": {
-    "findGame": "Find game",
-    "notFound": "Nothing was found"
+    "findGame": "Search games",
+    "notFound": "Nothing was found",
+    "search": "Search",
+    "searchResults": "Search results",
+    "nothingFound": "Sorry, nothing found",
+    "try": "Try searching for something else"
   },
   "common": {
     "date": "Date",
@@ -451,6 +456,9 @@
       "title": "SCUBA CASH <br/>BY BOOONGO",
       "name": "SCUBA CASH BY BOOONGO",
       "text": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! Epic action with a prize pool spanning the seven seas! The Scuba Cash campaign includes a series of regular tournaments and an extra leaderboard. Take a deep breath and dive into underwater battles. Drag big wins from the depths of the ocean and prepare for Krakens, Sharks, and other swimmers to grab a grand prize!"
+    },
+    "burningSpins": {
+      "name": "Hot summer with Burning Spins 60k"
     }
   },
   "tournaments": {
@@ -547,6 +555,58 @@
       {
         "title": "Additionally:",
         "text": "<strong>How to win:<br/><br/>Weekly Roulette Tournament<br/>Prizes:</strong> €50,000 in total across 1,000 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0,50 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 2x of the total Qualifying Bet to qualify for the Weekly Roulette Tournament.<br/><br/>A Player may increase their Weekly Roulette Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Any stakes placed on 1:1 odds bets (Red/Black, Odd/Even, 1:18/19:36) shall not be counted towards the Weekly Roulette Tournament score.<br/><br/><strong>Weekly Blackjack Tournament<br/>Prizes:</strong> €25,000 in total across 300 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €10 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Blackjack Tournament.<br/><br/>A Player may increase their Weekly Blackjack Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets and/or Bets Behind may be considered for the Weekly Blackjack Tournament.<br/><br/><strong>Weekly Mega Wheel Tournament<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Mega Wheel Tournament.<br/><br/>A Player may increase their Weekly Mega Wheel Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>All Qualifying Bets may be considered for the Weekly Mega Wheel Tournament.<br/><br/><strong>Weekly Baccarat Tournaments<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Baccarat Tournament.<br/><br/>A Player may increase their Weekly Baccarat Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets (Player, Banker, and Tie) may be considered for the Weekly Baccarat Tournament score."
+      }
+    ]
+  },
+  "scubaCash": {
+    "title": "SCUBA CASH <br/>BY BOOONGO",
+    "prize": "€100,000",
+    "text": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! Epic action with a prize pool spanning the seven seas! The Scuba Cash campaign includes a series of regular tournaments and an extra leaderboard. Take a deep breath and dive into underwater battles. Drag big wins from the depths of the ocean and prepare for Krakens, Sharks, and other swimmers to grab a grand prize!",
+    "textMobile": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! The campaign runs from July 15th, 2021 until July 24th, 2021. The grand total prize pool is €100,000.",
+    "terms": [
+      {
+        "title": "Campaign Duration:<br/><br/>",
+        "text": "July 15th, 2021 – July 24th, 2021<br/><br/>"
+      },
+      {
+        "title": "Prize pool information:<br/><br/>",
+        "text": "- €8,000 for each regular tournament, €80,000 in total for 10 tournaments<br/><br/>- €20,000 for the series leaderboards."
+      },
+      {
+        "title": "Minimum bet requirements:<br/><br/>",
+        "text": "EUR 0.50<br/><br/>"
+      },
+      {
+        "title": "Terms and Conditions:",
+        "text": "● Only real money spins participate in the tournaments.<br/>● There are 10 Regular Tournaments every day between July 15th, 2021 and July 24th, 2021. Each Regular Tournament starts at 0:00 UTC of every day, and ends at 23:00 UTC of the same day.<br/>● Games participating in the tournament are: Pearl Diver, Wukong, Hit The Gold, Scarab Boost, Aztec Pyramid, Wolf Saga, Sun Of Egypt 2, 15 Dragon Pearls, Sun of Egypt, Magic Apple, Dragon Pearls, 3 Coins, Aztec Sun, Tiger Stone, Book of Sun Multichance.<br/>● Minimum bet in the regular tournament is €0,50 and the minimum number of spins is 100.<br/>● In the win race you will get points for each winning spin. €1 equals 1 Point.<br/>●In the multiplier race you will get 1 point for each x1 multiplier in win spin.<br/>● The extra leaderboard runs parallel with the in-game regular tournament leaderboard. The series extra leaderboard and in-game tournament leaderboard shows your progress during the whole series of tournaments.<br/>● Leaderboards are updated in real-time."
+      }
+    ]
+  },
+  "burningSpins": {
+    "title": "Hot summer<br/> with Burning Spins<br/> 60k",
+    "prize": "€60,000",
+    "text": "The cash battle has begun! We invite you to play in the Playson network tournament! Burning Spins 60k! Bringing with it €60,000 in total and a top prize of €10,000, it’s surely time to burn some spins with Burning Spins!",
+    "textMobile": "The cash battle has begun! We invite you to play in the Playson network tournament! Burning Spins 60k! Bringing with it €60,000 in total and a top prize of €10,000, it’s surely time to burn some spins with Burning Spins!",
+    "terms": [
+      {
+        "title": "Campaign duration:<br/><br/>",
+        "text": "Burning Spins 60k runs between the 16th of July 2021, 00:01 UTC, and the 25th of July 2021, 23:59 UTC."
+      },
+      {
+        "title": "Enjoy the 15 participating games:<br/><br/>",
+        "text": " ● 9 Happy Pharaohs<br/>● Book of Gold: Multichance<br/>● Buffalo Power Megaways™<br/>● Buffalo Power: Hold and Win<br/>● Burning Wins: classic 5 lines<br/>● Diamond Wins: Hold and Win<br/>● Divine Dragon: Hold and Win<br/>● Hot Burning Wins<br/>● Hot Coins: Hold and Win<br/>● Legend of Cleopatra Megaways™<br/>● Rich Diamonds: Hold and Win<br/>● Sevens n Fruits<br/>● Solar Queen<br/>● Solar Temple<br/>● Wolf Power: Hold and Win."
+      },
+      {
+        "title": "Prize pool information:<br/><br/>",
+        "text": "Bringing with it €60,000 in total and a top prize of €10,000."
+      },
+      {
+        "title": "Minimum bet requirements:<br/><br/>",
+        "text": "0.5 EUR."
+      },
+      {
+        "title": "Additional terms and conditions:",
+        "text": "Points are calculated round-by-round, with each spin of 0.5 EUR or more during gameplay equaling 1 point."
       }
     ]
   },
@@ -1329,30 +1389,6 @@
       {
         "cashbackNum": "20%",
         "cashbackSum": "€5000 and more"
-      }
-    ]
-  },
-  "scubaCash": {
-    "title": "SCUBA CASH <br/>BY BOOONGO",
-    "prize": "€100,000",
-    "text": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! Epic action with a prize pool spanning the seven seas! The Scuba Cash campaign includes a series of regular tournaments and an extra leaderboard. Take a deep breath and dive into underwater battles. Drag big wins from the depths of the ocean and prepare for Krakens, Sharks, and other swimmers to grab a grand prize!",
-    "textMobile": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! The campaign runs from July 15th, 2021 until July 24th, 2021. The grand total prize pool is €100,000.",
-    "terms": [
-      {
-        "title": "Campaign Duration:<br/><br/>",
-        "text": "July 15th, 2021 – July 24th, 2021<br/><br/>"
-      },
-      {
-        "title": "Prize pool information:<br/><br/>",
-        "text": "- €8,000 for each regular tournament, €80,000 in total for 10 tournaments<br/><br/>- €20,000 for the series leaderboards."
-      },
-      {
-        "title": "Minimum bet requirements:<br/><br/>",
-        "text": "EUR 0.50<br/><br/>"
-      },
-      {
-        "title": "Terms and Conditions:",
-        "text": "● Only real money spins participate in the tournaments.<br/>● There are 10 Regular Tournaments every day between July 15th, 2021 and July 24th, 2021. Each Regular Tournament starts at 0:00 UTC of every day, and ends at 23:00 UTC of the same day.<br/>● Games participating in the tournament are: Pearl Diver, Wukong, Hit The Gold, Scarab Boost, Aztec Pyramid, Wolf Saga, Sun Of Egypt 2, 15 Dragon Pearls, Sun of Egypt, Magic Apple, Dragon Pearls, 3 Coins, Aztec Sun, Tiger Stone, Book of Sun Multichance.<br/>● Minimum bet in the regular tournament is €0,50 and the minimum number of spins is 100.<br/>● In the win race you will get points for each winning spin. €1 equals 1 Point.<br/>●In the multiplier race you will get 1 point for each x1 multiplier in win spin.<br/>● The extra leaderboard runs parallel with the in-game regular tournament leaderboard. The series extra leaderboard and in-game tournament leaderboard shows your progress during the whole series of tournaments.<br/>● Leaderboards are updated in real-time."
       }
     ]
   }

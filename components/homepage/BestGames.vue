@@ -48,24 +48,85 @@
         </NuxtLink>
       </div>
       <div class="ProvidersSection DefaultGames-Providers">
-        <Search v-model="searched" class="ProvidersSection-Search DefaultGames-Search" />
+        <Search
+          v-model="searched"
+          class="ProvidersSection-Search DefaultGames-Search"
+          :with-dropdown="width >= 768"
+        >
+          <template v-if="searched" #dropdown>
+            <div v-if="filteredGames.length" class="Title Title--type-h4 Cards-Title">
+              {{ $t('search.searchResults') }} ({{ filteredGames.length }})
+            </div>
+            <Games
+              class="DefaultGames-Cards"
+              :games="filteredGames"
+              :games-to-show="12"
+              btn-class="Btn--common Btn--outline"
+            >
+              <template #notFound>
+                <div class="Title Title--type-h4">
+                  {{ $t('search.nothingFound') }}
+                </div>
+                <div class="Text Text--additional">
+                  {{ $t('search.try') }}
+                </div>
+              </template>
+            </Games>
+          </template>
+        </Search>
         <ProvidersMenu
           v-if="gameProducerList.length"
           :provider-active="providerActive"
           @choose-provider="onChooseProvider"
         />
       </div>
-      <div v-if="searched" class="SearchedGames">
-        <div class="Title Title--type-h2 Cards-Title">Searched</div>
+      <div v-if="searched && width < 768" class="SearchedGames">
+        <div class="Title Title--type-h4 Cards-Title">
+          {{ $t('search.searchResults') }} ({{ filteredGames.length }})
+        </div>
         <Games
           class="DefaultGames-Cards"
           :games="filteredGames"
           :games-to-show="24"
           btn-class="Btn--common Btn--outline"
-        />
+        >
+          <template #notFound>
+            <div class="Title ">
+              {{ $t('search.nothingFound') }}
+            </div>
+            <div class="SearchPage-Text">
+              {{ $t('search.try') }}
+            </div>
+          </template>
+        </Games>
       </div>
       <a id="games"></a>
       <Nuxt />
+      <template v-if="getRouteBaseName($route) === 'index'">
+        <template v-if="recentGames.length">
+          <div class="Title Title--type-h2 Cards-Title">
+            {{ $t('gameCategories.recent') }}
+          </div>
+          <Games
+            :key="isLoggedIn"
+            class="DefaultGames-Cards"
+            :games="recentGames"
+            :games-to-show="recentGamesNum"
+            btn-class="Btn--common Btn--dark"
+          />
+        </template>
+        <div class="Title Title--type-h2 Cards-Title">
+          {{ $t('gameCategories.top') }}
+        </div>
+        <Loader v-if="topGamesAreLoading" />
+        <Games
+          v-else
+          class="DefaultGames-Cards"
+          :games="topGames"
+          :games-to-show="24"
+          btn-class="Btn--common Btn--outline"
+        />
+      </template>
       <template v-if="newGames.length">
         <div class="Title Title--type-h2 Cards-Title">
           {{ $t('gameCategories.new') }}
@@ -194,8 +255,8 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations } from 'vuex';
-// import Loader from '@/components/Loader';
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+import Loader from '@/components/Loader';
 import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
@@ -209,7 +270,7 @@ export default {
   components: {
     ProvidersMenu,
     Search,
-    // Loader,
+    Loader,
     Games,
   },
   mixins: [showAuthDialog, toggleDropdown, gameProducer],
@@ -266,6 +327,8 @@ export default {
       'defaultGames',
       'gamesAreLoading',
       'defaultGamesAreLoading',
+      'topGames',
+      'recentGames',
       'newGames',
       'liveGames',
       'jackpotGames',
@@ -275,6 +338,7 @@ export default {
       'dropsWinsSlotsGames',
       'dropsWinsLiveGames',
       'newGamesAreLoading',
+      'topGamesAreLoading',
       'liveGamesAreLoading',
       'jackpotGamesAreLoading',
       'megawaysGamesAreLoading',
@@ -285,6 +349,9 @@ export default {
     ]),
     ...mapGetters(['isLoggedIn', 'activeAccount']),
     ...mapGetters('games', ['gamesSearched']),
+    recentGamesNum() {
+      return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
+    },
     gamesParams() {
       const params = {};
       if (this.tabActive.type) params.category = this.tabActive.type;
@@ -301,6 +368,14 @@ export default {
       immediate: true,
       handler() {
         if (this.gameProducerList.length) this.providerActive = this.gameProducerList[0];
+      },
+    },
+    isLoggedIn: {
+      immediate: true,
+      handler() {
+        if (this.getRouteBaseName(this.$route) === 'index' && this.isLoggedIn) {
+          this.getRecentGames({ category: 'top' });
+        }
       },
     },
   },
@@ -327,6 +402,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setDgaInfo']),
+    ...mapActions('games', ['getRecentGames']),
     onChooseTab(i) {
       this.searched = '';
       this.gamesShowed = this.gamesToShow;
@@ -554,7 +630,7 @@ export default {
   }
 
   &-Cards {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     @media (min-width: $screen-l) {
       margin-bottom: 24px;
@@ -600,10 +676,28 @@ export default {
     z-index: 1;
     margin-top: 8px;
     margin-bottom: 8px;
+    border: 2px solid var(--color-border);
 
     @media (min-width: $screen-m) {
       margin-top: 0;
       margin-bottom: 0;
+    }
+
+    &.Search--open {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 1001;
+      width: 100%;
+      background: var(--color-body);
+      cursor: initial;
+
+      .Search-Close {
+        @media (min-width: $screen-m) {
+          right: 16px;
+          left: initial;
+        }
+      }
     }
   }
 }

@@ -13,7 +13,10 @@
         @open-gamepage="openGamePage($event, game.gameProducer)"
       />
     </div>
-    <p v-if="!games.length" class="Text Text--center">{{ $t('search.notFound') }}</p>
+    <template v-if="!games.length">
+      <slot name="notFound"></slot>
+      <p v-if="!$slots.notFound" class="Text Text--center">{{ $t('search.notFound') }}</p>
+    </template>
     <div v-if="games.length > gamesShowed" class="Games-Btn">
       <button class="Btn" :class="btnClass" @click="showMoreGames()">
         {{ $t('buttons.loadMoreGames') }}

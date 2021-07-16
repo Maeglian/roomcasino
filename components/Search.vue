@@ -5,9 +5,10 @@
     :class="{ 'Search--open': isOpen }"
     @click="openSearch"
   >
-    <svg class="Icon Search-Icon">
+    <svg v-if="!value || (isOpen && width >= 768)" class="Icon Search-Icon">
       <use xlink:href="@/assets/img/icons.svg#search"></use>
     </svg>
+    <div v-if="value" class="Close Search-Icon Search-Close" @click="$emit('input', '')"></div>
     <input
       type="text"
       class="Search-Input"
@@ -15,11 +16,18 @@
       :value="value"
       @input="$emit('input', $event.target.value)"
     />
+    <div
+      v-if="isOpen && withDropdown"
+      class="Search-Dropdown"
+      :class="{ 'Search-Dropdown--opened': value }"
+    >
+      <slot name="dropdown"></slot>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
   name: 'Search',
@@ -28,6 +36,11 @@ export default {
       type: String,
       required: false,
       default: '',
+    },
+    withDropdown: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   data() {
@@ -39,11 +52,16 @@ export default {
     ...mapState(['width']),
   },
   methods: {
+    ...mapMutations(['toggleOverlay']),
     openSearch() {
-      if (this.width >= 768) this.isOpen = true;
+      if (this.width >= 768) {
+        this.isOpen = true;
+        this.toggleOverlay(true);
+      }
     },
     onClickOutside() {
       this.isOpen = false;
+      this.toggleOverlay(false);
     },
   },
 };
@@ -52,7 +70,6 @@ export default {
 <style lang="scss">
 .Search {
   display: flex;
-  border: 2px solid var(--color-border);
   cursor: pointer;
 
   &-Icon {
@@ -84,6 +101,12 @@ export default {
       width: 18px;
       height: 18px;
     }
+  }
+
+  &-Close {
+    top: calc(50% - 11px);
+    width: 22px;
+    height: 22px;
   }
 
   &-Input {
@@ -129,13 +152,16 @@ export default {
     }
   }
 
-  &--open {
+  &-Dropdown {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    top: 50px;
+    z-index: 1001;
     width: 100%;
-    background: var(--color-body);
-    cursor: initial;
+    background: var(--color-bg);
+
+    &--opened {
+      padding: 15px;
+    }
   }
 }
 </style>

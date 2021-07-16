@@ -7,6 +7,7 @@
           : !initialLoading
       "
     />
+    <div v-if="showOverlay" class="Overlay"></div>
     <NotificationAlerts />
     <MainNav :key="$i18n.locale" />
     <Nuxt />
@@ -46,7 +47,7 @@ export default {
   },
   mixins: [liveChat],
   computed: {
-    ...mapState(['heroBannerIsLoaded']),
+    ...mapState(['heroBannerIsLoaded', 'showOverlay']),
     ...mapGetters(['initialLoading']),
   },
 };

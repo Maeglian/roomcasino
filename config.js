@@ -337,4 +337,11 @@ export const TOURNAMENTS = {
     class: 'ScubaCash',
     slug: 'scubacash',
   },
+  'burning-spins': {
+    url: 'burning-spins',
+    name: 'Burning spins',
+    translates: 'burningSpins',
+    class: 'BurningSpins',
+    slug: 'burningspins',
+  },
 };
