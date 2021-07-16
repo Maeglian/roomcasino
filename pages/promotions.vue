@@ -211,6 +211,15 @@ export default {
           link: 'More',
           url: '/tournaments/scuba-cash',
         },
+        {
+          title: this.$t('burningSpins.title'),
+          prize: this.$t('burningSpins.prize'),
+          image: 'spins-promotions.png',
+          announce: this.$t('promotions.burningSpins.name'),
+          text: this.$t('burningSpins.text'),
+          link: 'More',
+          url: '/tournaments/burning-spins',
+        },
       ],
     };
   },
