@@ -209,6 +209,13 @@ export default {
           url: '/tournaments/scuba-cash',
           linkText: this.$t('buttons.more'),
         },
+        {
+          bg: 'spins',
+          title: this.$t('burningSpins.title'),
+          text: `<span class="Colored">${this.$t('burningSpins.prize')}</span>`,
+          url: '/tournaments/burning-spins',
+          linkText: this.$t('buttons.more'),
+        },
       ];
       if (!this.isLoggedIn) {
         slides.splice(1, 1);
