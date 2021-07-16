@@ -136,7 +136,8 @@
     "responsibleGaming": "Jeu responsable",
     "risk": "Avertissements sur les risques",
     "tournaments": "Tournois",
-    "dailyCashback": "Remise quotidienne"
+    "dailyCashback": "Remise quotidienne",
+    "search": "Rechercher"
   },
   "gameCategories": {
     "top": "Les meilleurs jeux",
@@ -157,7 +158,11 @@
   },
   "search": {
     "findGame": "Trouver un jeu",
-    "notFound": "Rien n'a été trouvé"
+    "notFound": "Rien n'a été trouvé",
+    "search": "Rechercher",
+    "searchResults": "Résultats de la recherche",
+    "nothingFound": "Désolé, aucun résultat",
+    "try": "Essayez une autre recherche"
   },
   "common": {
     "date": "Date",

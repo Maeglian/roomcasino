@@ -132,7 +132,8 @@
     "responsibleGaming" : "Zodpovědné hraní",
     "risk" : "Varování o riziku",
     "tournaments" : "Turnaje",
-    "dailyCashback" : "Programu cashback"
+    "dailyCashback" : "Programu cashback",
+    "search": "Vyhledávání"
   },
   "gameCategories" : {
     "top" : "Nejlepší hry",
@@ -154,7 +155,11 @@
   },
   "search" : {
     "findGame" : "Najdi hru",
-    "notFound" : "Nic nebylo nalezeno"
+    "notFound" : "Nic nebylo nalezeno",
+    "search": "Hledat",
+    "searchResults": "Výsledky hledání",
+    "nothingFound": "Bohužel, nic nenalezeno",
+    "try": "Zkuste hledat něco jiného"
   },
   "common" : {
     "date" : "Datum",

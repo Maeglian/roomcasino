@@ -58,6 +58,8 @@ export default {
   --color-bg-lighter: #1b2138;
   --color-bg-darker: rgba(39, 43, 95, 0.5);
   --color-bg-nav: #151841;
+  --color-bg-mobnav: #0f152c;
+  --color-bg-mobnav-lighter: rgba(56, 62, 85, 0.3);
   --color-form: #1e1a46;
   --color-body: #060e2b;
 }
