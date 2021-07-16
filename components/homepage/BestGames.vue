@@ -687,6 +687,7 @@ export default {
       position: absolute;
       right: 0;
       bottom: 0;
+      z-index: 1001;
       width: 100%;
       background: var(--color-body);
       cursor: initial;

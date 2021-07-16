@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
   name: 'Search',
@@ -52,11 +52,14 @@ export default {
     ...mapState(['width']),
   },
   methods: {
+    ...mapMutations(['toggleOverlay']),
     openSearch() {
       if (this.width >= 768) this.isOpen = true;
+      this.toggleOverlay(true);
     },
     onClickOutside() {
       this.isOpen = false;
+      this.toggleOverlay(false);
     },
   },
 };
@@ -150,6 +153,7 @@ export default {
   &-Dropdown {
     position: absolute;
     top: 50px;
+    z-index: 1001;
     width: 100%;
     background: var(--color-bg);
 
