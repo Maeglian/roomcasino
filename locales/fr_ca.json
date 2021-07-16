@@ -131,12 +131,13 @@
     "btc": "À propos de BTC",
     "aml": "Politique AML",
     "terms": "Termes et conditions",
-    "bonusPolicy": "Politique de bonus",
+    "bonusPolicy": "Conditions de bonus",
     "privacyPolicy": "Politique de confidentialité",
     "responsibleGaming": "Jeu responsable",
     "risk": "Avertissements sur les risques",
     "tournaments": "Tournois",
-    "dailyCashback": "Remise quotidienne"
+    "dailyCashback": "Remise quotidienne",
+    "search": "Rechercher"
   },
   "gameCategories": {
     "top": "Les meilleurs jeux",
@@ -157,7 +158,11 @@
   },
   "search": {
     "findGame": "Trouver un jeu",
-    "notFound": "Rien n'a été trouvé"
+    "notFound": "Rien n'a été trouvé",
+    "search": "Rechercher",
+    "searchResults": "Résultats de la recherche",
+    "nothingFound": "Désolé, aucun résultat",
+    "try": "Essayez une autre recherche"
   },
   "common": {
     "date": "Date",
@@ -449,6 +454,9 @@
       "title": "SCUBA CASH <br/>DE BOOONGO",
       "name": "SCUBA CASH DE BOOONGO",
       "text": "Préparez vos combinaisons de plongée et bienvenue au Tournoi Scuba Cash de Booongo! De l’action épique avec une cagnotte qui s’étend sur les sept mers! La campagne Scuba Cash prévoit une série de tournois réguliers et un classement supplémentaire. Prenez une grande respiration et plongez dans des batailles sous-marines. Tirez de gros gains des profondeurs de l’océan et préparez-vous à ce que les monstres marins, les requins et autres nageurs s’emparent d’un grand prix!"
+    },
+    "burningSpins": {
+      "name": "Un été chaud avec Burning Spins 60k"
     }
   },
   "tournaments": {
@@ -545,6 +553,58 @@
       {
         "title": "De plus:",
         "text": "Tournoi hebdomadaire de roulette<br/>Prix:</strong> 50 000 € au total, répartis sur 1 000 prix<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 2 fois la mise totale de qualification pour se qualifier au tournoi de roulette hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de roulette à chaque nouveau gain consécutif de qualification.<br/><br/>-\tLes mises placées sur des paris à cote 1:1 (Rouge/Noir, Pair/Impair, 1:18/19:36) ne sont pas comptabilisées dans le score du tournoi de roulette hebdomadaire.<br/><br/><strong>Tournoi hebdomadaire de blackjack<br/>Prix:</strong> 25 000 € au total, répartis sur 300 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 10 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de blackjack hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de blackjack à chaque nouveau gain consécutif de qualification.<br/><br/>-\tSeules les mises principales et/ou les mises secondaires peuvent être prises en compte pour le tournoi hebdomadaire de blackjack.<br/><br/><strong>Tournoi hebdomadaire de grande roue<br/>Prix:</strong> 25 000 € au total, répartis sur 600 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de grande roue hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de grande roue à chaque nouveau gain consécutif de qualification.<br/><br/>-\tToutes les mises qualificatives peuvent être prises en compte pour le tournoi hebdomadaire de la grande roue.<br/><br/><strong>Tournoi hebdomadaire de baccara<br/>Prix:</strong> 25 000 € au total, répartis sur 600 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de baccara hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de baccara à chaque nouveau gain consécutif de qualification.<br/><br/>-\tSeules les mises principales (joueur, banquier et égalité) peuvent être prises en compte pour le score du tournoi hebdomadaire de baccara."
+      }
+    ]
+  },
+  "scubaCash": {
+    "title": "SCUBA CASH <br/>DE BOOONGO",
+    "prize": "100 000€",
+    "text": "Préparez vos combinaisons de plongée et bienvenue au Tournoi Scuba Cash de Booongo! De l’action épique avec une cagnotte qui s’étend sur les sept mers! La campagne Scuba Cash prévoit une série de tournois réguliers et un classement supplémentaire. Prenez une grande respiration et plongez dans des batailles sous-marines. Tirez de gros gains des profondeurs de l’océan et préparez-vous à ce que les monstres marins, les requins et autres nageurs s’emparent d’un grand prix!",
+    "textMobile": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! Préparez vos combinaisons de plongée et bienvenue au Tournoi Scuba Cash de Booongo! La campagne se déroule du 15 juillet 2021 au 24 juillet 2021.  La cagnotte totale est de 100 000€.",
+    "terms": [
+      {
+        "title": "Période de la campagne:<br/><br/>",
+        "text": "15 juillet 2021 à 0 h 00 UTC au 24 juillet 2021 à 23 h 00 UTC.<br/><br/>"
+      },
+      {
+        "title": "Structure des prix:<br/><br/>",
+        "text": "- 8 000 € pour chaque tournoi régulier, 80 000 € au total pour 10 tournois;<br/><br/>- 20 000 € pour le classement de la série."
+      },
+      {
+        "title": "Mise minimale:<br/><br/>",
+        "text": "0,50 €<br/><br/><br/>"
+      },
+      {
+        "title": "Conditions générales:",
+        "text": "● Seuls les tours en argent réel sont admis dans les tournois.<br/>● Entre le 15 juillet 2021 et le 24 juillet 2021, il y a 10 tournois réguliers chaque jour. Chaque tournoi régulier commence à 0 h 00 UTC de chaque jour et se termine à 23 h 00 UTC du même jour.<br/>● Voici les jeux qui participent au tournoi :\nPearl Diver, Wukong, Hit The Gold, Scarab Boost, Aztec Pyramid, Wolf Saga, Sun Of Egypt 2, 15 Dragon Pearls, Sun of Egypt, Magic Apple, Dragon Pearls, 3 Coins, Aztec Sun, Tiger Stone, Book of Sun Multichance.<br/>● La mise minimale dans le tournoi régulier est de 0,50 € et le nombre minimal de tours est de 100.<br/>● Dans la course gagnante, vous obtiendrez des points pour chaque tour gagnant. 1 € est égal à 1 point.<br/>● Dans la course aux multiplicateurs, vous obtiendrez 1 point pour chaque multiplicateur x1 dans le tour gagnant.<br/>●Le tableau de classement supplémentaire se déroule en parallèle avec le tableau de classement du tournoi régulier du jeu. Le tableau de classement supplémentaire de la série et le tableau de classement du tournoi intra-jeu indiquent votre progression pendant toute la série de tournois.<br/>● Les classements sont mis à jour en temps réel."
+      }
+    ]
+  },
+  "burningSpins": {
+    "title": "Un été chaud<br/> avec Burning Spins<br/> 60k",
+    "prize": "60,000 €",
+    "text": "La bataille de l’argent a débuté! Nous vous invitons à participer au tournoi du réseau Playson! Burning Spins 60k! Offrant un total de 60 000 € et un premier prix de 10 000 €, il est grand temps de faire tourner la machine avec Burning Spins!",
+    "textMobile": "La bataille de l’argent a débuté! Nous vous invitons à participer au tournoi du réseau Playson! Burning Spins 60k! Offrant un total de 60 000 € et un premier prix de 10 000 €, il est grand temps de faire tourner la machine avec Burning Spins!",
+    "terms": [
+      {
+        "title": "Période de la campagne :<br/><br/>",
+        "text": "Burning Spins 60k se déroule entre le 16 juillet 2021, 00 h 01 UTC et le 25 juillet 2021, 23 h 59 UTC."
+      },
+      {
+        "title": "Rofitez des 15 jeux participants:<br/><br/>",
+        "text": " ● 9 Happy Pharaohs<br/>● Book of Gold: Multichance<br/>● Buffalo Power Megaways™<br/>● Buffalo Power: Hold and Win<br/>● Burning Wins: classic 5 lines<br/>● Diamond Wins: Hold and Win<br/>● Divine Dragon: Hold and Win<br/>● Hot Burning Wins<br/>● Hot Coins: Hold and Win<br/>● Legend of Cleopatra Megaways™<br/>● Rich Diamonds: Hold and Win<br/>● Sevens n Fruits<br/>● Solar Queen<br/>● Solar Temple<br/>● Wolf Power: Hold and Win."
+      },
+      {
+        "title": "Structure des prix:<br/><br/>",
+        "text": "Offrant un total de 60 000 € et un premier prix de 10 000 €."
+      },
+      {
+        "title": "Mise minimale:<br/><br/>",
+        "text": "0.5 EUR."
+      },
+      {
+        "title": "Conditions générales de la promotion:",
+        "text": "Les points sont calculés tour par tour (du tournoi), chaque tour (sur les machines) de 0,5 EUR ou plus pendant le jeu valant 1 point."
       }
     ]
   },
@@ -1327,30 +1387,6 @@
       {
         "cashbackNum": "20%",
         "cashbackSum": "€5000 ET PLUS"
-      }
-    ]
-  },
-  "scubaCash": {
-    "title": "SCUBA CASH <br/>DE BOOONGO",
-    "prize": "100 000€",
-    "text": "Préparez vos combinaisons de plongée et bienvenue au Tournoi Scuba Cash de Booongo! De l’action épique avec une cagnotte qui s’étend sur les sept mers! La campagne Scuba Cash prévoit une série de tournois réguliers et un classement supplémentaire. Prenez une grande respiration et plongez dans des batailles sous-marines. Tirez de gros gains des profondeurs de l’océan et préparez-vous à ce que les monstres marins, les requins et autres nageurs s’emparent d’un grand prix!",
-    "textMobile": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! Préparez vos combinaisons de plongée et bienvenue au Tournoi Scuba Cash de Booongo! La campagne se déroule du 15 juillet 2021 au 24 juillet 2021.  La cagnotte totale est de 100 000€.",
-    "terms": [
-      {
-        "title": "Période de la campagne:<br/><br/>",
-        "text": "15 juillet 2021 à 0 h 00 UTC au 24 juillet 2021 à 23 h 00 UTC.<br/><br/>"
-      },
-      {
-        "title": "Structure des prix:<br/><br/>",
-        "text": "- 8 000 € pour chaque tournoi régulier, 80 000 € au total pour 10 tournois;<br/><br/>- 20 000 € pour le classement de la série."
-      },
-      {
-        "title": "Mise minimale:<br/><br/>",
-        "text": "0,50 €<br/><br/><br/>"
-      },
-      {
-        "title": "Conditions générales:",
-        "text": "● Seuls les tours en argent réel sont admis dans les tournois.<br/>● Entre le 15 juillet 2021 et le 24 juillet 2021, il y a 10 tournois réguliers chaque jour. Chaque tournoi régulier commence à 0 h 00 UTC de chaque jour et se termine à 23 h 00 UTC du même jour.<br/>● Voici les jeux qui participent au tournoi :\nPearl Diver, Wukong, Hit The Gold, Scarab Boost, Aztec Pyramid, Wolf Saga, Sun Of Egypt 2, 15 Dragon Pearls, Sun of Egypt, Magic Apple, Dragon Pearls, 3 Coins, Aztec Sun, Tiger Stone, Book of Sun Multichance.<br/>● La mise minimale dans le tournoi régulier est de 0,50 € et le nombre minimal de tours est de 100.<br/>● Dans la course gagnante, vous obtiendrez des points pour chaque tour gagnant. 1 € est égal à 1 point.<br/>● Dans la course aux multiplicateurs, vous obtiendrez 1 point pour chaque multiplicateur x1 dans le tour gagnant.<br/>●Le tableau de classement supplémentaire se déroule en parallèle avec le tableau de classement du tournoi régulier du jeu. Le tableau de classement supplémentaire de la série et le tableau de classement du tournoi intra-jeu indiquent votre progression pendant toute la série de tournois.<br/>● Les classements sont mis à jour en temps réel."
       }
     ]
   }

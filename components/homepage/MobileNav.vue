@@ -1,57 +1,46 @@
 <template>
-  <nav class="MobileNav" :class="{ 'MobileNav--notLoggedIn': !isLoggedIn }">
-    <template v-if="isLoggedIn">
-      <button class="MobileNav-Item" @click="toggleNav()">
-        <svg class="MobileNav-Toggle Toggle Toggle--colored">
-          <use xlink:href="@/assets/img/icons.svg#toggle"></use>
-        </svg>
-        <div class="MobileNav-Name">{{ $t('menu.menu') }}</div>
-      </button>
-      <NuxtLink class="MobileNav-Item" :to="localePath('/promotions')">
-        <svg width="17" height="16">
-          <use xlink:href="@/assets/img/icons.svg#promotions"></use>
-        </svg>
-        <div class="MobileNav-Name">{{ $t('pages.promotion') }}</div>
-      </NuxtLink>
-      <button class="MobileNav-Item" @click="onClickBtn()">
-        <svg width="18" height="15">
-          <use xlink:href="@/assets/img/icons.svg#deposit"></use>
-        </svg>
-        <div class="MobileNav-Name">{{ $t('buttons.deposit') }}</div>
-      </button>
-      <button v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
-        <svg width="18" height="15">
-          <use xlink:href="@/assets/img/icons.svg#support"></use>
-        </svg>
-        <div class="MobileNav-Name">{{ $t('menu.support') }}</div>
-      </button>
-      <!--    <div class="MobileNav-Item" @click="toggleNotificationsPanel">-->
-      <!--      <div class="MobileNav-Messages">-->
-      <!--        <svg width="12" height="14">-->
-      <!--          <use xlink:href="@/assets/img/icons.svg#messages"></use>-->
-      <!--        </svg>-->
-      <!--        <div v-show="isNewNotifications" class="MobileNav-MessagesNew"></div>-->
-      <!--      </div>-->
-      <!--      <div class="MobileNav-Name">-->
-      <!--        Notification-->
-      <!--      </div>-->
-      <!--    </div>-->
-    </template>
-    <template v-else>
-      <button class="MobileNav-Item--row" @click="showRegistrationDialog('login')">
-        <img class="MobileNav-Icon2" src="@/assets/img/user.svg" width="15" />
-        <div class="MobileNav-Name MobileNav-Name--large">{{ $t('buttons.logIn') }}</div>
-      </button>
-      <button class="MobileNav-Item--row" @click="showRegistrationDialog('registration')">
-        <img class="MobileNav-Icon2" src="@/assets/img/arrow.svg" width="15" />
-        <div class="MobileNav-Name MobileNav-Name--large">{{ $t('buttons.joinNow') }}</div>
-      </button>
-      <button class="MobileNav-Item MobileNav-Item--burger" @click="toggleNav()">
-        <svg class="MobileNav-Toggle2 Toggle Toggle--colored">
-          <use xlink:href="@/assets/img/icons.svg#toggle"></use>
-        </svg>
-      </button>
-    </template>
+  <nav class="MobileNav">
+    <NuxtLink class="MobileNav-Item" :to="localePath('/promotions')">
+      <svg class="MobileNav-Icon" width="17" height="16">
+        <use xlink:href="@/assets/img/icons.svg#promotions"></use>
+      </svg>
+      <div class="MobileNav-Name">{{ $t('pages.promotion') }}</div>
+    </NuxtLink>
+    <button v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
+      <svg class="MobileNav-Icon" width="18" height="15">
+        <use xlink:href="@/assets/img/icons.svg#support"></use>
+      </svg>
+      <div class="MobileNav-Name">{{ $t('menu.support') }}</div>
+    </button>
+    <NuxtLink class="MobileNav-Item" :to="localePath('/')">
+      <svg class="MobileNav-Icon" width="17" height="16">
+        <use xlink:href="@/assets/img/icons.svg#dice"></use>
+      </svg>
+      <div class="MobileNav-Name">{{ $t('pages.lobby') }}</div>
+    </NuxtLink>
+    <NuxtLink class="MobileNav-Item" :to="localePath('/search')">
+      <svg class="MobileNav-Icon" width="17" height="16" fill="#F3B233">
+        <use xlink:href="@/assets/img/icons.svg#search"></use>
+      </svg>
+      <div class="MobileNav-Name">{{ $t('pages.search') }}</div>
+    </NuxtLink>
+    <button class="MobileNav-Item MobileNav-Item--burger" @click="toggleNav()">
+      <svg class="MobileNav-Icon Toggle Toggle--colored">
+        <use xlink:href="@/assets/img/icons.svg#toggle"></use>
+      </svg>
+      <div class="MobileNav-Name">{{ $t('menu.menu') }}</div>
+    </button>
+    <!--    <div class="MobileNav-Item" @click="toggleNotificationsPanel">-->
+    <!--      <div class="MobileNav-Messages">-->
+    <!--        <svg width="12" height="14">-->
+    <!--          <use xlink:href="@/assets/img/icons.svg#messages"></use>-->
+    <!--        </svg>-->
+    <!--        <div v-show="isNewNotifications" class="MobileNav-MessagesNew"></div>-->
+    <!--      </div>-->
+    <!--      <div class="MobileNav-Name">-->
+    <!--        Notification-->
+    <!--      </div>-->
+    <!--    </div>-->
   </nav>
 </template>
 
@@ -91,24 +80,38 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 18px 24px 20px;
-  background: var(--color-body);
+  padding: 10px 3px 18px;
+  background: var(--color-bg-mobnav);
   transform: translateZ(0);
 
   @media (min-width: $screen-xs) {
     display: none;
   }
 
-  &--notLoggedIn {
-    align-items: center;
-    padding: 16px 0;
-  }
-
   &-Item {
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    width: 61px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -11px;
+      width: 1px;
+      height: 25px;
+      background-color: var(--color-bg-mobnav-lighter);
+      transform: translate(0, -50%);
+    }
+
+    &:last-child {
+      &:before {
+        display: none;
+      }
+    }
 
     &--row {
       display: flex;
@@ -125,21 +128,14 @@ export default {
     position: relative;
   }
 
-  &-Icon {
-    width: 12px;
-    height: 14px;
-  }
-
-  &-Icon2 {
-    margin-right: 10px;
-  }
-
   &-Name {
     font-size: 7px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.66;
+    text-align: center;
     color: var(--color-text-main);
     text-transform: uppercase;
+    word-break: break-word;
 
     &--large {
       font-size: 12px;
@@ -158,15 +154,12 @@ export default {
     border-radius: 50%;
   }
 
-  &-Toggle {
+  &-Icon {
+    flex-shrink: 0;
+    align-items: center;
     width: 17px;
     height: 17px;
-  }
-
-  &-Toggle2 {
-    align-items: center;
-    width: 20px;
-    margin: 0 24px;
+    margin: 0 0 6px;
   }
 }
 </style>
