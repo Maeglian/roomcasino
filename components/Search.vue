@@ -54,8 +54,10 @@ export default {
   methods: {
     ...mapMutations(['toggleOverlay']),
     openSearch() {
-      if (this.width >= 768) this.isOpen = true;
-      this.toggleOverlay(true);
+      if (this.width >= 768) {
+        this.isOpen = true;
+        this.toggleOverlay(true);
+      }
     },
     onClickOutside() {
       this.isOpen = false;
