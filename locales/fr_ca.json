@@ -430,11 +430,6 @@
       "name": "Bonus des grands joueurs",
       "text": "Vous aimez miser gros? Dans ce cas, nous savons ce dont vous avez besoin. Une fois par mois, bénéficiez d’un bonus spécial pour les grands joueurs de 30% jusqu’à $800 sur votre dépôt à partir de $450."
     },
-    "knockoutFootball": {
-      "title": "Jouons<br/> avec le deuxième <br/>tour de Habanero!",
-      "name": "Jouons avec le deuxième tour de Habanero!",
-      "text": "La course au jackpot Knockout Football Rush se déroulera du 26 juin, 00 h 01 au 17 juillet, 23 h 59, GMT+2. Avec 22 courses quotidiennes et un montant total de 30 000 € distribué de manière aléatoire à 2 200 joueurs.<br/><br/>C’est parti avec Ninecasino et Habanero!<br/><br/>Connectez-vous chaque jour pour découvrir un nouveau prix total quotidien, variant de 1 000 à 2 500 €. Choisissez simplement vos jeux de machines à sous Habanero préférés, faites une mise minimale de 0,10 € et donnons le coup d’envoi de cette campagne!"
-    },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins",
       "name": "Drops & Wins Slots",
@@ -467,34 +462,6 @@
     "betsPerPoint": "Pari par point",
     "currentWinners": "Les gagnants actuels",
     "previousRound": "Tour précédent"
-  },
-  "knockoutFootball": {
-    "title": "Jouons<br/> avec le deuxième <br/>tour de Habanero!",
-    "prize": "30 000 €",
-    "text": "La course au jackpot Knockout Football Rush se déroulera du 26 juin, 00 h 01 au 17 juillet, 23 h 59, GMT+2. Avec 22 courses quotidiennes et un montant total de 30 000 € distribué de manière aléatoire à 2 200 joueurs.<br/><br/>C’est parti avec Ninecasino et Habanero!<br/><br/>Connectez-vous chaque jour pour découvrir un nouveau prix total quotidien, variant de 1 000 à 2 500 €. Choisissez simplement vos jeux de machines à sous Habanero préférés, faites une mise minimale de 0,10 € et donnons le coup d’envoi de cette campagne!",
-    "textMobile": "La course au jackpot Knockout Football Rush se déroulera du 26 juin, 00 h 01 au 17 juillet, 23 h 59, GMT+2.",
-    "terms": [
-      {
-        "title": "Période de la campagne:",
-        "text": "du 26 juin au 17 juillet 2021, GMT+2"
-      },
-      {
-        "title": "Structure de la campagne:",
-        "text": "22 courses, chacune d’une durée de 2 h"
-      },
-      {
-        "title": "Structure des prix:",
-        "text": "2 200 gagnants, 100 par course"
-      },
-      {
-        "title": "Mise minimale:",
-        "text": "0,10 €"
-      },
-      {
-        "title": "Conditions générales de la promotion :",
-        "text": "• Contenu qualifiant : tous les jeux de machines à sous Habanero <br/>• Critères de qualification : à un moment aléatoire de la course, un joueur déclenchera le premier gain, toutes les mises consécutives reçues par le serveur contribueront alors à votre position<br/>• Habanero se réserve le droit de modifier, suspendre ou annuler la promotion à tout moment"
-      }
-    ]
   },
   "dropsWinsSlots": {
     "title": "Édition mise à jour de Drops & Wins Slots",

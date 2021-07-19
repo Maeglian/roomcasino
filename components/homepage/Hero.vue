@@ -175,13 +175,6 @@ export default {
           text: this.$t('homepage.heroBanner.highroller.text'),
         },
         {
-          bg: 'footballBanner',
-          title: this.$t('promotions.knockoutFootball.title'),
-          text: `<span class="Colored">${this.$t('knockoutFootball.prize')}</span>`,
-          url: '/tournaments/knockout-football',
-          linkText: this.$t('buttons.more'),
-        },
-        {
           bg: 'dropsSlots',
           title: this.$t('promotions.dropsWinsSlots.title'),
           text: `<span class="Colored">${this.$t('dropsWinsSlots.prize')}</span>`,
