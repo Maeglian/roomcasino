@@ -42,6 +42,7 @@
               error-class="ProfileInfo-Error"
               :input-id="name | formatLabel"
               input-class="CabinetForm-Input"
+              :input-mask="name === 'birthDate' ? dateInputMask : false"
               wrapper-class="CabinetForm-Wrapper"
               :v="$v.fields[name] ? $v.fields[name] : false"
             >
@@ -124,7 +125,7 @@ import Loader from '@/components/Loader';
 import { maxLength, minLength, required } from 'vuelidate/lib/validators';
 import { dateCheck, phoneWithPlusCheck, postalCodeCheck } from '@/utils/formCheckers';
 import moment from 'moment';
-import { transformAustriaPhone } from '@/utils/helpers';
+import { transformAustriaPhone, dateInputMask } from '@/utils/helpers';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 
@@ -154,6 +155,7 @@ export default {
   data() {
     return {
       fields: {},
+      dateInputMask,
       promosFields: {},
       genders: [
         { name: this.$t('auth.placeholders.male'), value: 'male' },
@@ -163,18 +165,6 @@ export default {
         receiveEmailPromos: this.$t('profile.user.email'),
         receiveSmsPromos: this.$t('profile.user.sms'),
         denyBonuses: this.$t('profile.user.denyBonuses'),
-      },
-      fakeFields: {
-        email: 'fillypkfillypk@gmail.com',
-        firstName: 'Fillyp',
-        lastName: 'Fillypkin',
-        birthDate: '1979-01-04',
-        gender: 'male',
-        country: 'RUS',
-        city: 'Moscow',
-        address: '-',
-        postalCode: '864520',
-        mobile: '+3588****89',
       },
     };
   },

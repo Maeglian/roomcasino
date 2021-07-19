@@ -431,11 +431,6 @@
       "name": "High roller-bonus für besondere einsatzfreude",
       "text": "Sie stehen auf hohe Einsätze? Dann haben wir das Richtige für Sie. Erhalten Sie einmal im Monat einen Highroller-Bonus für besondere Einsatzfreude von 30% bis zu einem Höchstbetrag von €500 auf eine Einzahlung ab mindestens €300."
     },
-    "knockoutFootball": {
-      "title": "Spiele <br/>mit Habanero – <br/>Runde 2!",
-      "name": "Spiele mit Habanero – Runde 2!",
-      "text": "Das Jackpot-Wettrennen Knockout Football Rush wird vom 26. Juni um 00:01 Uhr bis zum 17. Juli um 23:59 Uhr (GMT+2) fortgesetzt. Mit 22 täglichen Rennen und einer Gesamtpreissumme von 30.000 EUR, die nach dem Zufallsprinzip an 2.200 Spieler verteilt wird.<br/><br/>Auf die Plätze, fertig, los mit Nineсasino und Habanero!<br/><br/>Logge dich jeden Tag ein, um einen neuen Tagesgesamtpreis zu entdecken, der zwischen 1.000 und 2.500 EUR liegt. Wähle einfach deine Lieblings-Automatenspiele von Habanero, mache einen Mindesteinsatz von 0,10 EUR und leg los!"
-    },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
@@ -463,34 +458,6 @@
     "betsPerPoint": "Wetten pro Punkt",
     "currentWinners": "Aktuelle Gewinner",
     "previousRound": "Letzte Runde"
-  },
-  "knockoutFootball": {
-    "title": "Spiele <br/>mit Habanero – <br/>Runde 2!",
-    "prize": "30.000 EUR",
-    "text": "Das Jackpot-Wettrennen Knockout Football Rush wird vom 26. Juni um 00:01 Uhr bis zum 17. Juli um 23:59 Uhr (GMT+2) fortgesetzt. Mit 22 täglichen Rennen und einer Gesamtpreissumme von 30.000 EUR, die nach dem Zufallsprinzip an 2.200 Spieler verteilt wird.<br/><br/>Auf die Plätze, fertig, los mit Nineсasino und Habanero!<br/><br/>Logge dich jeden Tag ein, um einen neuen Tagesgesamtpreis zu entdecken, der zwischen 1.000 und 2.500 EUR liegt. Wähle einfach deine Lieblings-Automatenspiele von Habanero, mache einen Mindesteinsatz von 0,10 EUR und leg los!",
-    "textMobile": "Das Jackpot-Wettrennen Knockout Football Rush wird vom 26. Juni um 00:01 Uhr bis zum 17. Juli um 23:59 Uhr (GMT+2) fortgesetzt.",
-    "terms": [
-      {
-        "title": "Dauer der Aktion: ",
-        "text": "26. Juni – 17. Juli 2021 (GMT+2)"
-      },
-      {
-        "title": "Aufbau der Aktion: ",
-        "text": "22 Rennen, jeweils 2 h lang"
-      },
-      {
-        "title": "Gewinnstrukturierung::",
-        "text": " 2.200 Sieger, 100 pro Rennen"
-      },
-      {
-        "title": "Mindesteinsatz:",
-        "text": "0,10 EUR"
-      },
-      {
-        "title": "Teilnahmebedingungen der Aktion:",
-        "text": "• Teilnahmeberechtigte Inhalte: alle Habanero-Automatenspiele <br/>• Qualifikationskriterien: Während des Rennens löst ein Spieler zu einem zufälligen Zeitpunkt den ersten Gewinn aus. Alle aufeinanderfolgenden Einsätze, die auf dem Server eingehen, tragen dann zu deiner Position bei<br/>• Habanero hat das Recht, die Aktion jederzeit zu ändern, auszusetzen oder abzubrechen"
-      }
-    ]
   },
   "dropsWinsSlots": {
     "title": "Aufgewertete Ausgabe von Drops & Wins Slots",
@@ -941,10 +908,6 @@
             {
               "title": "ICH HABE SOEBEN EINE ABHEBUNG ANGEFORDERT. MUSS ICH IRGENDWELCHE DOKUMENTATION SENDEN?",
               "answer": "Als Teil unserer Sicherheitsprozeduren verlangen wir standardmäßige Dokumente zur Bestätigung bei der ersten Anforderung einer Abhebung durch den Kunden. Wenn deine Mittel durch Wire Transfer zurückgezahlt werden oder wenn es sich bei deiner Abhebung um allgemeine Gewinne über dem eingezahlten Betrag handelt, bitten wir dich darum, uns folgendes zu übermitteln:<br/><br/><ol><li>Eine Gas-, Wasser- oder Stromrechnung aus den letzten 6 Monaten</li><li>Kopie der Vorderseite deiner Kreditkarte (stelle aus Sicherheitsgründen bitte sicher, dass die mittleren 8 Ziffern der Vorderseite deiner Kreditkarte verborgen sind)</li><li>Identitätsnachweis (Ausweis, Führerschein o.Ä.)</li><li>Wenn du auf ein E-Wallet-Konto überweisen möchtest, übermittle uns bitte die Kontonummer/E-Mail-Adresse, die mit dem Konto verknüpft ist.</li></ol><br/><br/>Wir überprüfen die Dokumente so schnell wie möglich, üblicherweise in weniger als 12 Stunden. Falls Bestätigung notwendig ist, kann es länger dauern; wenn du also länger als 48 Stunden nichts von uns gehört hast, wende dich bitte an die Kundenbetreuung."
-            },
-            {
-              "title": "WIE LANGE DAUERT ES, BIS ICH MEINE ABHEBUNG ERHALTE?",
-              "answer": "Unsere Blitzabhebung bedeutet, dass du dein Geld innerhalb von 24 Stunden erhältst, sobald wir alle Informationen besitzen, die wir laut unseren Geschäftsbedingungen benötigen. Begib dich bitte zum Abschnitt Abhebung der Kasse, um eine vollständige Aufstellung der zu erwartenden Überweisungen zu sehen."
             },
             {
               "title": "WIE LANGE DAUERT ES, BIS ICH MEINE ABHEBUNG ERHALTE?",

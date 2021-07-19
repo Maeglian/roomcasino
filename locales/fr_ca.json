@@ -430,11 +430,6 @@
       "name": "Bonus des grands joueurs",
       "text": "Vous aimez miser gros? Dans ce cas, nous savons ce dont vous avez besoin. Une fois par mois, bénéficiez d’un bonus spécial pour les grands joueurs de 30% jusqu’à $800 sur votre dépôt à partir de $450."
     },
-    "knockoutFootball": {
-      "title": "Jouons<br/> avec le deuxième <br/>tour de Habanero!",
-      "name": "Jouons avec le deuxième tour de Habanero!",
-      "text": "La course au jackpot Knockout Football Rush se déroulera du 26 juin, 00 h 01 au 17 juillet, 23 h 59, GMT+2. Avec 22 courses quotidiennes et un montant total de 30 000 € distribué de manière aléatoire à 2 200 joueurs.<br/><br/>C’est parti avec Ninecasino et Habanero!<br/><br/>Connectez-vous chaque jour pour découvrir un nouveau prix total quotidien, variant de 1 000 à 2 500 €. Choisissez simplement vos jeux de machines à sous Habanero préférés, faites une mise minimale de 0,10 € et donnons le coup d’envoi de cette campagne!"
-    },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins",
       "name": "Drops & Wins Slots",
@@ -467,34 +462,6 @@
     "betsPerPoint": "Pari par point",
     "currentWinners": "Les gagnants actuels",
     "previousRound": "Tour précédent"
-  },
-  "knockoutFootball": {
-    "title": "Jouons<br/> avec le deuxième <br/>tour de Habanero!",
-    "prize": "30 000 €",
-    "text": "La course au jackpot Knockout Football Rush se déroulera du 26 juin, 00 h 01 au 17 juillet, 23 h 59, GMT+2. Avec 22 courses quotidiennes et un montant total de 30 000 € distribué de manière aléatoire à 2 200 joueurs.<br/><br/>C’est parti avec Ninecasino et Habanero!<br/><br/>Connectez-vous chaque jour pour découvrir un nouveau prix total quotidien, variant de 1 000 à 2 500 €. Choisissez simplement vos jeux de machines à sous Habanero préférés, faites une mise minimale de 0,10 € et donnons le coup d’envoi de cette campagne!",
-    "textMobile": "La course au jackpot Knockout Football Rush se déroulera du 26 juin, 00 h 01 au 17 juillet, 23 h 59, GMT+2.",
-    "terms": [
-      {
-        "title": "Période de la campagne:",
-        "text": "du 26 juin au 17 juillet 2021, GMT+2"
-      },
-      {
-        "title": "Structure de la campagne:",
-        "text": "22 courses, chacune d’une durée de 2 h"
-      },
-      {
-        "title": "Structure des prix:",
-        "text": "2 200 gagnants, 100 par course"
-      },
-      {
-        "title": "Mise minimale:",
-        "text": "0,10 €"
-      },
-      {
-        "title": "Conditions générales de la promotion :",
-        "text": "• Contenu qualifiant : tous les jeux de machines à sous Habanero <br/>• Critères de qualification : à un moment aléatoire de la course, un joueur déclenchera le premier gain, toutes les mises consécutives reçues par le serveur contribueront alors à votre position<br/>• Habanero se réserve le droit de modifier, suspendre ou annuler la promotion à tout moment"
-      }
-    ]
   },
   "dropsWinsSlots": {
     "title": "Édition mise à jour de Drops & Wins Slots",
@@ -964,10 +931,6 @@
             {
               "title": "I’ve just requested a withdrawal. Do I need to send any documentation?",
               "answer": "As part of our security procedure, we require standard verification documents upon customers' first withdrawal request. If your funds are being returned by Wire Transfer or your withdrawal is general winnings above the amount you have deposited, we kindly ask you to provide us with the following:<br/><br/><br/><br/><ol><li>Utility bill no older than 6 months</li><li>Copy of the front of your credit card (for security reasons, please ensure that the middle 8 digits on the front of your credit card are hidden)</li><li>Proof of ID (Passport/Driving Licence etc.)</li><li>If you are withdrawing to an E-Wallet account, please provide us with your account number/email address attached to the account.</li></ol><br/><br/>We check documents as quickly as possible, usually less than 12 hours. It could take longer if extra verification is needed, so if you haven’t heard from us within 48 hours, please contact customer support."
-            },
-            {
-              "title": "How long will it take to receive my withdrawal?",
-              "answer": "Our Lightning Withdrawals means you'll get your cash within 24 hours, subject to providing any information we require in accordance with our terms and conditions.For a complete timetable of when you should expect to see your funds in your account, please visit the Withdraw section of the Cashier."
             },
             {
               "title": "How long will it take to receive my withdrawal?",
