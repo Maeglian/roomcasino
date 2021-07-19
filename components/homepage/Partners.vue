@@ -36,6 +36,8 @@
 <script>
 import { mapState } from 'vuex';
 
+const gameProducers = ['playngo', 'pragmatic', 'evolution', 'microgaming', 'netent'];
+
 export default {
   name: 'Partners',
   data() {
@@ -123,22 +125,30 @@ export default {
         },
       },
       countriesLogos: {
-        CA: ['interac', 'instadebit', 'muchbetter', 'mastercard', 'visa', 'skrill'],
-        AT: ['mastercard', 'visa', 'skrill', 'ezeewallet'],
-        CZ: ['mastercard', 'visa', 'skrill', 'ezeewallet'],
-        SI: ['mastercard', 'visa', 'skrill', 'ezeewallet'],
-        IE: ['mastercard', 'visa', 'skrill', 'ezeewallet'],
-        ZA: ['mastercard', 'visa', 'skrill', 'instanteft', 'astropay'],
-        RO: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
-        DK: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
-        EE: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
-        FI: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', 'neosurf'],
-        GR: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
-        SK: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
-        HR: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
-        BG: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt'],
-        DE: ['mastercard', 'visa', 'sofort', 'ezeewallet', 'volt'],
-        AU: ['mastercard', 'visa', 'skrill', 'astropay', 'volt', 'neosurf'],
+        CA: [
+          'interac',
+          'instadebit',
+          'muchbetter',
+          'mastercard',
+          'visa',
+          'skrill',
+          ...gameProducers,
+        ],
+        AT: ['mastercard', 'visa', 'skrill', 'ezeewallet', ...gameProducers],
+        CZ: ['mastercard', 'visa', 'skrill', 'ezeewallet', ...gameProducers],
+        SI: ['mastercard', 'visa', 'skrill', 'ezeewallet', ...gameProducers],
+        IE: ['mastercard', 'visa', 'skrill', 'ezeewallet', ...gameProducers],
+        ZA: ['mastercard', 'visa', 'skrill', 'instanteft', 'astropay', ...gameProducers],
+        RO: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        DK: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        EE: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        FI: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', 'neosurf', ...gameProducers],
+        GR: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        SK: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        HR: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        BG: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        DE: ['mastercard', 'visa', 'sofort', 'ezeewallet', 'volt', ...gameProducers],
+        AU: ['mastercard', 'visa', 'skrill', 'astropay', 'volt', ...gameProducers],
       },
     };
   },
