@@ -425,11 +425,6 @@
       "name" : "Bonus pro velké hráče",
       "text" : "Jste velký hráč? Pak víme, co potřebujete! Získejte jako speciální bonus pro velké hráče 30 % k částce vkladu až KČ 12700 k prvnímu vkladu KČ 7600."
     },
-    "knockoutFootball": {
-      "title": "Pojďte <br/>si zahrát s Habanero, <br/>kolo 2!",
-      "name": "Pojďte si zahrát s Habanero, kolo 2!",
-      "text": "Závod o jackpot Knockout Football Rush bude pokračovat od 26. června 00:01 do 17. července 23:59, GMT+2. S 22 závody denně a výhrou v celkové hodnotě 30 000 € rozdělených náhodně mezi 2 200 hráčů.<br/><br/>Připravit, pozor a start s Ninecasino a Habanero!<br/><br/>Přihlaste se každý den, abyste mohli nalézt novou celkovou denní výhru, jejíž výše se pohybuje od 1 000 do 2 500 €. Jednoduše si vyberte své oblíbené slotové hry Habanero, proveďte minimální sázku 0,10 € a zahajte tuto kampaň!"
-    },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
@@ -462,34 +457,6 @@
     "betsPerPoint": "Sázky na bod",
     "currentWinners": "Aktuální vítězové",
     "previousRound": "Předcházející kolo"
-  },
-  "knockoutFootball": {
-    "title": "Pojďte <br/>si zahrát s Habanero, <br/>kolo 2!",
-    "prize": "30000 €",
-    "text": "Závod o jackpot Knockout Football Rush bude pokračovat od 26. června 00:01 do 17. července 23:59, GMT+2. S 22 závody denně a výhrou v celkové hodnotě 30 000 € rozdělených náhodně mezi 2 200 hráčů.<br/><br/>Připravit, pozor a start s Ninecasino a Habanero!<br/><br/>Přihlaste se každý den, abyste mohli nalézt novou celkovou denní výhru, jejíž výše se pohybuje od 1 000 do 2 500 €. Jednoduše si vyberte své oblíbené slotové hry Habanero, proveďte minimální sázku 0,10 € a zahajte tuto kampaň!",
-    "textMobile": "Závod o jackpot Knockout Football Rush bude pokračovat od 26. června 00:01 do 17. července 23:59, GMT+2.",
-    "terms": [
-      {
-        "title": " Doba kampaně:",
-        "text": "26. června až 17. července 2021, GMT+2"
-      },
-      {
-        "title": "Struktura kampaně:",
-        "text": "22 soutěží, každá o délce 2 h"
-      },
-      {
-        "title": "Struktura cen:",
-        "text": "2 200 výherců, 100 na jednu soutěž "
-      },
-      {
-        "title": "Minimální sázka:",
-        "text": "0,10 €"
-      },
-      {
-        "title": "Podmínky promo akcí:",
-        "text": "• Kvalifikační obsah: všechny slotové hry od Habanero <br/>• Kvalifikační kritéria: v náhodný okamžik během soutěže hráč aktivuje první výhru, všechny následující sázky přijaté na serveru pak pomáhají zvyšovat vaší pozici<br/>• Habanero si vyhrazuje právo tuto promo akci kdykoliv změnit, přerušit nebo zrušit"
-      }
-    ]
   },
   "dropsWinsSlots": {
     "title": "Aktualizovaná edice Drops & Wins Slots",

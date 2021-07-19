@@ -432,11 +432,6 @@
       "name": "High roller bonus",
       "text": "Are you fond of making high bets? Then we know what you need. Once a month get a special 30% high roller bonus up to $500 on your deposit starting from $300."
     },
-    "knockoutFootball": {
-      "title": "Let’s play<br/> with Habanero <br/>Round 2!",
-      "name": "Let’s play with Habanero Round 2!",
-      "text": "Join the Knockout Football Rush campaign by Habanero with 30,000 EUR from 26th June to 17th July 2021.<br/><br/>The Jackpot Race Knockout Football Rush will continue between 26th June 00:01 and 17th July 23:59, GMT+2. With 22 daily races and a total prize amount of 30,000 EUR distributed randomly to 2,200 players.<br/><br/>Ready, set, go with NineCasino and Habanero! Log in every day to find a new total daily prize, varying from 1,000 to 2,500 EUR. Just choose your favourite Habanero slot games, make a minimum stake of 0.10 EUR, and let’s kick off this campaign!"
-    },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
@@ -469,34 +464,6 @@
     "betsPerPoint": "Bets per point",
     "currentWinners": "Current winners",
     "previousRound": "Previous round"
-  },
-  "knockoutFootball": {
-    "title": "Let’s play<br/> with Habanero <br/>Round 2!",
-    "prize": "EUR 30,000",
-    "text": "Join the Knockout Football Rush campaign by Habanero with 30,000 EUR from 26th June to 17th July 2021.<br/><br/>The Jackpot Race Knockout Football Rush will continue between 26th June 00:01 and 17th July 23:59, GMT+2. With 22 daily races and a total prize amount of 30,000 EUR distributed randomly to 2,200 players.<br/><br/>Ready, set, go with NineCasino and Habanero! Log in every day to find a new total daily prize, varying from 1,000 to 2,500 EUR. Just choose your favourite Habanero slot games, make a minimum stake of 0.10 EUR, and let’s kick off this campaign!",
-    "textMobile": "Join the Knockout Football Rush campaign by Habanero with 30,000 EUR from 26th June to 17th July 2021.",
-    "terms": [
-      {
-        "title": "Campaign duration: ",
-        "text": "26th June – 17th July 2021, GMT+2"
-      },
-      {
-        "title": "Campaign structure:",
-        "text": "22 races, each 2h long "
-      },
-      {
-        "title": "Prize pool information:",
-        "text": "2,200 winners, 100 per race"
-      },
-      {
-        "title": "Minimum bet requirements:",
-        "text": "EUR 0.10"
-      },
-      {
-        "title": "Additional terms and conditions:",
-        "text": "• Qualifying content: all Habanero slots games <br/>• Qualifying criteria: at a random moment during the race a player will trigger the first win, all consecutive bets received by the server will then contribute to your position<br/>• Habanero has the right to change, suspend or cancel the promotion at any time"
-      }
-    ]
   },
   "dropsWinsSlots": {
     "title": "Upgraded Drops & Wins Slots edition",

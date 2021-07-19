@@ -323,13 +323,6 @@ export const TOURNAMENTS = {
     class: 'DropsWinsLive',
     slug: 'dropslive',
   },
-  'knockout-football': {
-    url: 'knockout-football',
-    name: 'Knockout Football Rush',
-    translates: 'knockoutFootball',
-    class: 'KnockoutFootball',
-    slug: 'footrush',
-  },
   'scuba-cash': {
     url: 'scuba-cash',
     name: 'SCUBA CASH BY BOOONGO',
