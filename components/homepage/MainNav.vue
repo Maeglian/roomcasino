@@ -25,7 +25,7 @@
         </ul>
       </nav>
       <GamePanel v-if="isGamePage" />
-      <AuthSection class="MainNav-AuthSection" />
+      <AuthSection v-else class="MainNav-AuthSection" />
     </div>
     <transition v-if="width < 960" name="slide-right">
       <div v-show="navIsOpen" class="AsideMenu MainNav-Aside">
