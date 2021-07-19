@@ -80,3 +80,13 @@ export const searchInArrByString = (string, arr, itemName = undefined) => {
 export const transformAustriaPhone = phone => {
   return phone.replace(/^\+?430/, match => match.replace('430', '43'));
 };
+
+export const dateInputMask = val => {
+  const len = val.length;
+
+  if (len === 4 || len === 7) {
+    val += '-';
+  }
+
+  return val;
+};
