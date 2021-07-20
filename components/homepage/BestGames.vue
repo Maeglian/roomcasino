@@ -101,7 +101,7 @@
         </Games>
       </div>
       <a id="games"></a>
-      <Nuxt />
+      <Nuxt :key="$route.path" />
       <template v-if="getRouteBaseName($route) === 'index'">
         <template v-if="recentGames.length">
           <div class="Title Title--type-h2 Cards-Title">

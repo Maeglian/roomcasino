@@ -41,7 +41,6 @@ export default {
         content:
           'width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1',
       },
-      { hid: 'description', name: 'description', content: '' },
     ],
     link: [
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
