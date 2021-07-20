@@ -175,13 +175,6 @@ export default {
           text: this.$t('homepage.heroBanner.highroller.text'),
         },
         {
-          bg: 'footballBanner',
-          title: this.$t('promotions.knockoutFootball.title'),
-          text: `<span class="Colored">${this.$t('knockoutFootball.prize')}</span>`,
-          url: '/tournaments/knockout-football',
-          linkText: this.$t('buttons.more'),
-        },
-        {
           bg: 'dropsSlots',
           title: this.$t('promotions.dropsWinsSlots.title'),
           text: `<span class="Colored">${this.$t('dropsWinsSlots.prize')}</span>`,
@@ -200,6 +193,20 @@ export default {
           title: this.$t('weekly_derby.title'),
           text: `<span class="Colored">${this.$t('weekly_derby.prize')}</span>`,
           url: '/tournaments/weekly_derby',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'scuba',
+          title: this.$t('scubaCash.title'),
+          text: `<span class="Colored">${this.$t('scubaCash.prize')}</span>`,
+          url: '/tournaments/scuba-cash',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'spins',
+          title: this.$t('burningSpins.title'),
+          text: `<span class="Colored">${this.$t('burningSpins.prize')}</span>`,
+          url: '/tournaments/burning-spins',
           linkText: this.$t('buttons.more'),
         },
       ];
@@ -243,16 +250,16 @@ export default {
     }
 
     .v_slider__dots li {
-      padding: 7px;
+      padding: 5px;
 
-      @media (min-width: $screen-xs) {
+      @media (min-width: $screen-s) {
         padding: 9px;
       }
     }
 
     .v_slider__dots li span {
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
 
       @media (min-width: $screen-xs) {
         width: 8px;

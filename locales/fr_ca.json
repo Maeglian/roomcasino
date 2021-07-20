@@ -131,12 +131,13 @@
     "btc": "À propos de BTC",
     "aml": "Politique AML",
     "terms": "Termes et conditions",
-    "bonusPolicy": "Politique de bonus",
+    "bonusPolicy": "Conditions de bonus",
     "privacyPolicy": "Politique de confidentialité",
     "responsibleGaming": "Jeu responsable",
     "risk": "Avertissements sur les risques",
     "tournaments": "Tournois",
-    "dailyCashback": "Remise quotidienne"
+    "dailyCashback": "Remise quotidienne",
+    "search": "Rechercher"
   },
   "gameCategories": {
     "top": "Les meilleurs jeux",
@@ -157,7 +158,11 @@
   },
   "search": {
     "findGame": "Trouver un jeu",
-    "notFound": "Rien n'a été trouvé"
+    "notFound": "Rien n'a été trouvé",
+    "search": "Rechercher",
+    "searchResults": "Résultats de la recherche",
+    "nothingFound": "Désolé, aucun résultat",
+    "try": "Essayez une autre recherche"
   },
   "common": {
     "date": "Date",
@@ -425,11 +430,6 @@
       "name": "Bonus des grands joueurs",
       "text": "Vous aimez miser gros? Dans ce cas, nous savons ce dont vous avez besoin. Une fois par mois, bénéficiez d’un bonus spécial pour les grands joueurs de 30% jusqu’à $800 sur votre dépôt à partir de $450."
     },
-    "knockoutFootball": {
-      "title": "Jouons<br/> avec le deuxième <br/>tour de Habanero!",
-      "name": "Jouons avec le deuxième tour de Habanero!",
-      "text": "La course au jackpot Knockout Football Rush se déroulera du 26 juin, 00 h 01 au 17 juillet, 23 h 59, GMT+2. Avec 22 courses quotidiennes et un montant total de 30 000 € distribué de manière aléatoire à 2 200 joueurs.<br/><br/>C’est parti avec Ninecasino et Habanero!<br/><br/>Connectez-vous chaque jour pour découvrir un nouveau prix total quotidien, variant de 1 000 à 2 500 €. Choisissez simplement vos jeux de machines à sous Habanero préférés, faites une mise minimale de 0,10 € et donnons le coup d’envoi de cette campagne!"
-    },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins",
       "name": "Drops & Wins Slots",
@@ -444,6 +444,14 @@
       "upTo": "une cagnotte de 2500 €",
       "name": "À vos marques pour le Weekly Derby",
       "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
+    },
+    "scubaCash": {
+      "title": "SCUBA CASH <br/>DE BOOONGO",
+      "name": "SCUBA CASH DE BOOONGO",
+      "text": "Préparez vos combinaisons de plongée et bienvenue au Tournoi Scuba Cash de Booongo! De l’action épique avec une cagnotte qui s’étend sur les sept mers! La campagne Scuba Cash prévoit une série de tournois réguliers et un classement supplémentaire. Prenez une grande respiration et plongez dans des batailles sous-marines. Tirez de gros gains des profondeurs de l’océan et préparez-vous à ce que les monstres marins, les requins et autres nageurs s’emparent d’un grand prix!"
+    },
+    "burningSpins": {
+      "name": "Un été chaud avec Burning Spins 60k"
     }
   },
   "tournaments": {
@@ -454,34 +462,6 @@
     "betsPerPoint": "Pari par point",
     "currentWinners": "Les gagnants actuels",
     "previousRound": "Tour précédent"
-  },
-  "knockoutFootball": {
-    "title": "Jouons<br/> avec le deuxième <br/>tour de Habanero!",
-    "prize": "30 000 €",
-    "text": "La course au jackpot Knockout Football Rush se déroulera du 26 juin, 00 h 01 au 17 juillet, 23 h 59, GMT+2. Avec 22 courses quotidiennes et un montant total de 30 000 € distribué de manière aléatoire à 2 200 joueurs.<br/><br/>C’est parti avec Ninecasino et Habanero!<br/><br/>Connectez-vous chaque jour pour découvrir un nouveau prix total quotidien, variant de 1 000 à 2 500 €. Choisissez simplement vos jeux de machines à sous Habanero préférés, faites une mise minimale de 0,10 € et donnons le coup d’envoi de cette campagne!",
-    "textMobile": "La course au jackpot Knockout Football Rush se déroulera du 26 juin, 00 h 01 au 17 juillet, 23 h 59, GMT+2.",
-    "terms": [
-      {
-        "title": "Période de la campagne:",
-        "text": "du 26 juin au 17 juillet 2021, GMT+2"
-      },
-      {
-        "title": "Structure de la campagne:",
-        "text": "22 courses, chacune d’une durée de 2 h"
-      },
-      {
-        "title": "Structure des prix:",
-        "text": "2 200 gagnants, 100 par course"
-      },
-      {
-        "title": "Mise minimale:",
-        "text": "0,10 €"
-      },
-      {
-        "title": "Conditions générales de la promotion :",
-        "text": "• Contenu qualifiant : tous les jeux de machines à sous Habanero <br/>• Critères de qualification : à un moment aléatoire de la course, un joueur déclenchera le premier gain, toutes les mises consécutives reçues par le serveur contribueront alors à votre position<br/>• Habanero se réserve le droit de modifier, suspendre ou annuler la promotion à tout moment"
-      }
-    ]
   },
   "dropsWinsSlots": {
     "title": "Édition mise à jour de Drops & Wins Slots",
@@ -540,6 +520,58 @@
       {
         "title": "De plus:",
         "text": "Tournoi hebdomadaire de roulette<br/>Prix:</strong> 50 000 € au total, répartis sur 1 000 prix<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 2 fois la mise totale de qualification pour se qualifier au tournoi de roulette hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de roulette à chaque nouveau gain consécutif de qualification.<br/><br/>-\tLes mises placées sur des paris à cote 1:1 (Rouge/Noir, Pair/Impair, 1:18/19:36) ne sont pas comptabilisées dans le score du tournoi de roulette hebdomadaire.<br/><br/><strong>Tournoi hebdomadaire de blackjack<br/>Prix:</strong> 25 000 € au total, répartis sur 300 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 10 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de blackjack hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de blackjack à chaque nouveau gain consécutif de qualification.<br/><br/>-\tSeules les mises principales et/ou les mises secondaires peuvent être prises en compte pour le tournoi hebdomadaire de blackjack.<br/><br/><strong>Tournoi hebdomadaire de grande roue<br/>Prix:</strong> 25 000 € au total, répartis sur 600 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de grande roue hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de grande roue à chaque nouveau gain consécutif de qualification.<br/><br/>-\tToutes les mises qualificatives peuvent être prises en compte pour le tournoi hebdomadaire de la grande roue.<br/><br/><strong>Tournoi hebdomadaire de baccara<br/>Prix:</strong> 25 000 € au total, répartis sur 600 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de baccara hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de baccara à chaque nouveau gain consécutif de qualification.<br/><br/>-\tSeules les mises principales (joueur, banquier et égalité) peuvent être prises en compte pour le score du tournoi hebdomadaire de baccara."
+      }
+    ]
+  },
+  "scubaCash": {
+    "title": "SCUBA CASH <br/>DE BOOONGO",
+    "prize": "100 000€",
+    "text": "Préparez vos combinaisons de plongée et bienvenue au Tournoi Scuba Cash de Booongo! De l’action épique avec une cagnotte qui s’étend sur les sept mers! La campagne Scuba Cash prévoit une série de tournois réguliers et un classement supplémentaire. Prenez une grande respiration et plongez dans des batailles sous-marines. Tirez de gros gains des profondeurs de l’océan et préparez-vous à ce que les monstres marins, les requins et autres nageurs s’emparent d’un grand prix!",
+    "textMobile": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! Préparez vos combinaisons de plongée et bienvenue au Tournoi Scuba Cash de Booongo! La campagne se déroule du 15 juillet 2021 au 24 juillet 2021.  La cagnotte totale est de 100 000€.",
+    "terms": [
+      {
+        "title": "Période de la campagne:<br/><br/>",
+        "text": "15 juillet 2021 à 0 h 00 UTC au 24 juillet 2021 à 23 h 00 UTC.<br/><br/>"
+      },
+      {
+        "title": "Structure des prix:<br/><br/>",
+        "text": "- 8 000 € pour chaque tournoi régulier, 80 000 € au total pour 10 tournois;<br/><br/>- 20 000 € pour le classement de la série."
+      },
+      {
+        "title": "Mise minimale:<br/><br/>",
+        "text": "0,50 €<br/><br/><br/>"
+      },
+      {
+        "title": "Conditions générales:",
+        "text": "● Seuls les tours en argent réel sont admis dans les tournois.<br/>● Entre le 15 juillet 2021 et le 24 juillet 2021, il y a 10 tournois réguliers chaque jour. Chaque tournoi régulier commence à 0 h 00 UTC de chaque jour et se termine à 23 h 00 UTC du même jour.<br/>● Voici les jeux qui participent au tournoi :\nPearl Diver, Wukong, Hit The Gold, Scarab Boost, Aztec Pyramid, Wolf Saga, Sun Of Egypt 2, 15 Dragon Pearls, Sun of Egypt, Magic Apple, Dragon Pearls, 3 Coins, Aztec Sun, Tiger Stone, Book of Sun Multichance.<br/>● La mise minimale dans le tournoi régulier est de 0,50 € et le nombre minimal de tours est de 100.<br/>● Dans la course gagnante, vous obtiendrez des points pour chaque tour gagnant. 1 € est égal à 1 point.<br/>● Dans la course aux multiplicateurs, vous obtiendrez 1 point pour chaque multiplicateur x1 dans le tour gagnant.<br/>●Le tableau de classement supplémentaire se déroule en parallèle avec le tableau de classement du tournoi régulier du jeu. Le tableau de classement supplémentaire de la série et le tableau de classement du tournoi intra-jeu indiquent votre progression pendant toute la série de tournois.<br/>● Les classements sont mis à jour en temps réel."
+      }
+    ]
+  },
+  "burningSpins": {
+    "title": "Un été chaud<br/> avec Burning Spins<br/> 60k",
+    "prize": "60,000 €",
+    "text": "La bataille de l’argent a débuté! Nous vous invitons à participer au tournoi du réseau Playson! Burning Spins 60k! Offrant un total de 60 000 € et un premier prix de 10 000 €, il est grand temps de faire tourner la machine avec Burning Spins!",
+    "textMobile": "La bataille de l’argent a débuté! Nous vous invitons à participer au tournoi du réseau Playson! Burning Spins 60k! Offrant un total de 60 000 € et un premier prix de 10 000 €, il est grand temps de faire tourner la machine avec Burning Spins!",
+    "terms": [
+      {
+        "title": "Période de la campagne :<br/><br/>",
+        "text": "Burning Spins 60k se déroule entre le 16 juillet 2021, 00 h 01 UTC et le 25 juillet 2021, 23 h 59 UTC."
+      },
+      {
+        "title": "Rofitez des 15 jeux participants:<br/><br/>",
+        "text": " ● 9 Happy Pharaohs<br/>● Book of Gold: Multichance<br/>● Buffalo Power Megaways™<br/>● Buffalo Power: Hold and Win<br/>● Burning Wins: classic 5 lines<br/>● Diamond Wins: Hold and Win<br/>● Divine Dragon: Hold and Win<br/>● Hot Burning Wins<br/>● Hot Coins: Hold and Win<br/>● Legend of Cleopatra Megaways™<br/>● Rich Diamonds: Hold and Win<br/>● Sevens n Fruits<br/>● Solar Queen<br/>● Solar Temple<br/>● Wolf Power: Hold and Win."
+      },
+      {
+        "title": "Structure des prix:<br/><br/>",
+        "text": "Offrant un total de 60 000 € et un premier prix de 10 000 €."
+      },
+      {
+        "title": "Mise minimale:<br/><br/>",
+        "text": "0.5 EUR."
+      },
+      {
+        "title": "Conditions générales de la promotion:",
+        "text": "Les points sont calculés tour par tour (du tournoi), chaque tour (sur les machines) de 0,5 EUR ou plus pendant le jeu valant 1 point."
       }
     ]
   },
@@ -899,10 +931,6 @@
             {
               "title": "I’ve just requested a withdrawal. Do I need to send any documentation?",
               "answer": "As part of our security procedure, we require standard verification documents upon customers' first withdrawal request. If your funds are being returned by Wire Transfer or your withdrawal is general winnings above the amount you have deposited, we kindly ask you to provide us with the following:<br/><br/><br/><br/><ol><li>Utility bill no older than 6 months</li><li>Copy of the front of your credit card (for security reasons, please ensure that the middle 8 digits on the front of your credit card are hidden)</li><li>Proof of ID (Passport/Driving Licence etc.)</li><li>If you are withdrawing to an E-Wallet account, please provide us with your account number/email address attached to the account.</li></ol><br/><br/>We check documents as quickly as possible, usually less than 12 hours. It could take longer if extra verification is needed, so if you haven’t heard from us within 48 hours, please contact customer support."
-            },
-            {
-              "title": "How long will it take to receive my withdrawal?",
-              "answer": "Our Lightning Withdrawals means you'll get your cash within 24 hours, subject to providing any information we require in accordance with our terms and conditions.For a complete timetable of when you should expect to see your funds in your account, please visit the Withdraw section of the Cashier."
             },
             {
               "title": "How long will it take to receive my withdrawal?",

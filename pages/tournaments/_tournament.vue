@@ -590,44 +590,6 @@ export default {
   }
 }
 
-.KnockoutFootball {
-  &-Header {
-    width: 100%;
-    margin-bottom: 22px;
-    padding-top: 280px / 320px * 100%;
-    background-image: url(~@/assets/img/football_460.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: contain;
-
-    @media (min-width: $screen-s) {
-      padding-top: 0;
-      background-image: url(~@/assets/img/football_600.png);
-      background-position: center center;
-      //background-size: auto auto;
-    }
-
-    @media (min-width: $screen-m) {
-      background-image: url(~@/assets/img/footballBanner_900.png);
-    }
-
-    @media (min-width: $screen-l) {
-      background-image: url(~@/assets/img/footballBanner_1248.png);
-    }
-
-    @media (min-width: $screen-xl) {
-      padding-top: 50px;
-      background-image: url(~@/assets/img/footballBanner_1920.png);
-    }
-
-    .DailyTournamentPage-MainText {
-      @media (min-width: $screen-s) {
-        max-width: 40%;
-      }
-    }
-  }
-}
-
 .DropsWinsSlots {
   &-Header {
     width: 100%;
@@ -695,6 +657,88 @@ export default {
 
     .DailyTournamentPage-MainText {
       @media (min-width: $screen-s) {
+        max-width: 35%;
+      }
+    }
+  }
+}
+
+.ScubaCash {
+  &-Header {
+    width: 100%;
+    margin-top: -70px;
+    margin-bottom: 22px;
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/scuba_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(100% - 32px) auto;
+
+    @media (min-width: $screen-s) {
+      margin-top: 0;
+      padding-top: 80px / 1248px * 100%;
+      background-image: url(~@/assets/img/scuba_900.png);
+      background-position: center center;
+    }
+
+    @media (min-width: $screen-m) {
+      padding-top: 50px / 1248px * 100%;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 120px;
+      background-image: url(~@/assets/img/scuba_1248.png);
+    }
+
+    @media (min-width: $screen-xxl) {
+      background-image: url(~@/assets/img/scuba_1920.png);
+    }
+
+    .DailyTournamentPage-MainText {
+      @media (min-width: $screen-s) {
+        max-width: 35%;
+      }
+    }
+  }
+}
+
+.BurningSpins {
+  &-Header {
+    width: 100%;
+    margin-top: -70px;
+    margin-bottom: 22px;
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/spins_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(100% - 32px) auto;
+
+    @media (min-width: $screen-s) {
+      margin-top: 0;
+      padding-top: 80px / 1248px * 100%;
+      background-image: url(~@/assets/img/spins_page_900.png);
+      background-position: center center;
+    }
+
+    @media (min-width: $screen-m) {
+      padding-top: 50px / 1248px * 100%;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 120px;
+      background-image: url(~@/assets/img/spins_page_1248.png);
+    }
+
+    @media (min-width: $screen-xxl) {
+      background-image: url(~@/assets/img/spins_1920.png);
+    }
+
+    .DailyTournamentPage-MainText {
+      @media (min-width: $screen-s) {
+        max-width: 50%;
+      }
+
+      @media (min-width: $screen-xl) {
         max-width: 35%;
       }
     }

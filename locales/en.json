@@ -131,12 +131,13 @@
     "btc": "About BTC",
     "aml": "AML policy",
     "terms": "Terms and conditions",
-    "bonusPolicy": "Bonus policy",
+    "bonusPolicy": "Bonus terms",
     "privacyPolicy": "Privacy policy",
     "responsibleGaming": "Responsible Gaming",
     "risk": "Risk warnings",
     "tournaments": "Tournaments",
-    "dailyCashback": "Daily cashback"
+    "dailyCashback": "Daily cashback",
+    "search": "Search"
   },
   "gameCategories": {
     "top": "Top games",
@@ -157,8 +158,12 @@
     }
   },
   "search": {
-    "findGame": "Find game",
-    "notFound": "Nothing was found"
+    "findGame": "Search games",
+    "notFound": "Nothing was found",
+    "search": "Search",
+    "searchResults": "Search results",
+    "nothingFound": "Sorry, nothing found",
+    "try": "Try searching for something else"
   },
   "common": {
     "date": "Date",
@@ -427,11 +432,6 @@
       "name": "High roller bonus",
       "text": "Are you fond of making high bets? Then we know what you need. Once a month get a special 30% high roller bonus up to $500 on your deposit starting from $300."
     },
-    "knockoutFootball": {
-      "title": "Let’s play<br/> with Habanero <br/>Round 2!",
-      "name": "Let’s play with Habanero Round 2!",
-      "text": "Join the Knockout Football Rush campaign by Habanero with 30,000 EUR from 26th June to 17th July 2021.<br/><br/>The Jackpot Race Knockout Football Rush will continue between 26th June 00:01 and 17th July 23:59, GMT+2. With 22 daily races and a total prize amount of 30,000 EUR distributed randomly to 2,200 players.<br/><br/>Ready, set, go with NineCasino and Habanero! Log in every day to find a new total daily prize, varying from 1,000 to 2,500 EUR. Just choose your favourite Habanero slot games, make a minimum stake of 0.10 EUR, and let’s kick off this campaign!"
-    },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
@@ -446,6 +446,14 @@
       "upTo": "prize pool €2,500",
       "name": "Saddle up for the Weekly Derby",
       "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
+    },
+    "scubaCash": {
+      "title": "SCUBA CASH <br/>BY BOOONGO",
+      "name": "SCUBA CASH BY BOOONGO",
+      "text": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! Epic action with a prize pool spanning the seven seas! The Scuba Cash campaign includes a series of regular tournaments and an extra leaderboard. Take a deep breath and dive into underwater battles. Drag big wins from the depths of the ocean and prepare for Krakens, Sharks, and other swimmers to grab a grand prize!"
+    },
+    "burningSpins": {
+      "name": "Hot summer with Burning Spins 60k"
     }
   },
   "tournaments": {
@@ -456,34 +464,6 @@
     "betsPerPoint": "Bets per point",
     "currentWinners": "Current winners",
     "previousRound": "Previous round"
-  },
-  "knockoutFootball": {
-    "title": "Let’s play<br/> with Habanero <br/>Round 2!",
-    "prize": "EUR 30,000",
-    "text": "Join the Knockout Football Rush campaign by Habanero with 30,000 EUR from 26th June to 17th July 2021.<br/><br/>The Jackpot Race Knockout Football Rush will continue between 26th June 00:01 and 17th July 23:59, GMT+2. With 22 daily races and a total prize amount of 30,000 EUR distributed randomly to 2,200 players.<br/><br/>Ready, set, go with NineCasino and Habanero! Log in every day to find a new total daily prize, varying from 1,000 to 2,500 EUR. Just choose your favourite Habanero slot games, make a minimum stake of 0.10 EUR, and let’s kick off this campaign!",
-    "textMobile": "Join the Knockout Football Rush campaign by Habanero with 30,000 EUR from 26th June to 17th July 2021.",
-    "terms": [
-      {
-        "title": "Campaign duration: ",
-        "text": "26th June – 17th July 2021, GMT+2"
-      },
-      {
-        "title": "Campaign structure:",
-        "text": "22 races, each 2h long "
-      },
-      {
-        "title": "Prize pool information:",
-        "text": "2,200 winners, 100 per race"
-      },
-      {
-        "title": "Minimum bet requirements:",
-        "text": "EUR 0.10"
-      },
-      {
-        "title": "Additional terms and conditions:",
-        "text": "• Qualifying content: all Habanero slots games <br/>• Qualifying criteria: at a random moment during the race a player will trigger the first win, all consecutive bets received by the server will then contribute to your position<br/>• Habanero has the right to change, suspend or cancel the promotion at any time"
-      }
-    ]
   },
   "dropsWinsSlots": {
     "title": "Upgraded Drops & Wins Slots edition",
@@ -542,6 +522,58 @@
       {
         "title": "Additionally:",
         "text": "<strong>How to win:<br/><br/>Weekly Roulette Tournament<br/>Prizes:</strong> €50,000 in total across 1,000 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0,50 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 2x of the total Qualifying Bet to qualify for the Weekly Roulette Tournament.<br/><br/>A Player may increase their Weekly Roulette Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Any stakes placed on 1:1 odds bets (Red/Black, Odd/Even, 1:18/19:36) shall not be counted towards the Weekly Roulette Tournament score.<br/><br/><strong>Weekly Blackjack Tournament<br/>Prizes:</strong> €25,000 in total across 300 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €10 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Blackjack Tournament.<br/><br/>A Player may increase their Weekly Blackjack Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets and/or Bets Behind may be considered for the Weekly Blackjack Tournament.<br/><br/><strong>Weekly Mega Wheel Tournament<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Mega Wheel Tournament.<br/><br/>A Player may increase their Weekly Mega Wheel Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>All Qualifying Bets may be considered for the Weekly Mega Wheel Tournament.<br/><br/><strong>Weekly Baccarat Tournaments<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Baccarat Tournament.<br/><br/>A Player may increase their Weekly Baccarat Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets (Player, Banker, and Tie) may be considered for the Weekly Baccarat Tournament score."
+      }
+    ]
+  },
+  "scubaCash": {
+    "title": "SCUBA CASH <br/>BY BOOONGO",
+    "prize": "€100,000",
+    "text": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! Epic action with a prize pool spanning the seven seas! The Scuba Cash campaign includes a series of regular tournaments and an extra leaderboard. Take a deep breath and dive into underwater battles. Drag big wins from the depths of the ocean and prepare for Krakens, Sharks, and other swimmers to grab a grand prize!",
+    "textMobile": "Get your diving suits ready and welcome to the Scuba Cash Tournament by Booongo! The campaign runs from July 15th, 2021 until July 24th, 2021. The grand total prize pool is €100,000.",
+    "terms": [
+      {
+        "title": "Campaign Duration:<br/><br/>",
+        "text": "July 15th, 2021 – July 24th, 2021<br/><br/>"
+      },
+      {
+        "title": "Prize pool information:<br/><br/>",
+        "text": "- €8,000 for each regular tournament, €80,000 in total for 10 tournaments<br/><br/>- €20,000 for the series leaderboards."
+      },
+      {
+        "title": "Minimum bet requirements:<br/><br/>",
+        "text": "EUR 0.50<br/><br/>"
+      },
+      {
+        "title": "Terms and Conditions:",
+        "text": "● Only real money spins participate in the tournaments.<br/>● There are 10 Regular Tournaments every day between July 15th, 2021 and July 24th, 2021. Each Regular Tournament starts at 0:00 UTC of every day, and ends at 23:00 UTC of the same day.<br/>● Games participating in the tournament are: Pearl Diver, Wukong, Hit The Gold, Scarab Boost, Aztec Pyramid, Wolf Saga, Sun Of Egypt 2, 15 Dragon Pearls, Sun of Egypt, Magic Apple, Dragon Pearls, 3 Coins, Aztec Sun, Tiger Stone, Book of Sun Multichance.<br/>● Minimum bet in the regular tournament is €0,50 and the minimum number of spins is 100.<br/>● In the win race you will get points for each winning spin. €1 equals 1 Point.<br/>●In the multiplier race you will get 1 point for each x1 multiplier in win spin.<br/>● The extra leaderboard runs parallel with the in-game regular tournament leaderboard. The series extra leaderboard and in-game tournament leaderboard shows your progress during the whole series of tournaments.<br/>● Leaderboards are updated in real-time."
+      }
+    ]
+  },
+  "burningSpins": {
+    "title": "Hot summer<br/> with Burning Spins<br/> 60k",
+    "prize": "€60,000",
+    "text": "The cash battle has begun! We invite you to play in the Playson network tournament! Burning Spins 60k! Bringing with it €60,000 in total and a top prize of €10,000, it’s surely time to burn some spins with Burning Spins!",
+    "textMobile": "The cash battle has begun! We invite you to play in the Playson network tournament! Burning Spins 60k! Bringing with it €60,000 in total and a top prize of €10,000, it’s surely time to burn some spins with Burning Spins!",
+    "terms": [
+      {
+        "title": "Campaign duration:<br/><br/>",
+        "text": "Burning Spins 60k runs between the 16th of July 2021, 00:01 UTC, and the 25th of July 2021, 23:59 UTC."
+      },
+      {
+        "title": "Enjoy the 15 participating games:<br/><br/>",
+        "text": " ● 9 Happy Pharaohs<br/>● Book of Gold: Multichance<br/>● Buffalo Power Megaways™<br/>● Buffalo Power: Hold and Win<br/>● Burning Wins: classic 5 lines<br/>● Diamond Wins: Hold and Win<br/>● Divine Dragon: Hold and Win<br/>● Hot Burning Wins<br/>● Hot Coins: Hold and Win<br/>● Legend of Cleopatra Megaways™<br/>● Rich Diamonds: Hold and Win<br/>● Sevens n Fruits<br/>● Solar Queen<br/>● Solar Temple<br/>● Wolf Power: Hold and Win."
+      },
+      {
+        "title": "Prize pool information:<br/><br/>",
+        "text": "Bringing with it €60,000 in total and a top prize of €10,000."
+      },
+      {
+        "title": "Minimum bet requirements:<br/><br/>",
+        "text": "0.5 EUR."
+      },
+      {
+        "title": "Additional terms and conditions:",
+        "text": "Points are calculated round-by-round, with each spin of 0.5 EUR or more during gameplay equaling 1 point."
       }
     ]
   },
@@ -901,10 +933,6 @@
             {
               "title": "I’ve just requested a withdrawal. Do I need to send any documentation?",
               "answer": "As part of our security procedure, we require standard verification documents upon customers' first withdrawal request. If your funds are being returned by Wire Transfer or your withdrawal is general winnings above the amount you have deposited, we kindly ask you to provide us with the following:<br/><br/><br/><br/><ol><li>Utility bill no older than 6 months</li><li>Copy of the front of your credit card (for security reasons, please ensure that the middle 8 digits on the front of your credit card are hidden)</li><li>Proof of ID (Passport/Driving Licence etc.)</li><li>If you are withdrawing to an E-Wallet account, please provide us with your account number/email address attached to the account.</li></ol><br/><br/>We check documents as quickly as possible, usually less than 12 hours. It could take longer if extra verification is needed, so if you haven’t heard from us within 48 hours, please contact customer support."
-            },
-            {
-              "title": "How long will it take to receive my withdrawal?",
-              "answer": "Our Lightning Withdrawals means you'll get your cash within 24 hours, subject to providing any information we require in accordance with our terms and conditions.For a complete timetable of when you should expect to see your funds in your account, please visit the Withdraw section of the Cashier."
             },
             {
               "title": "How long will it take to receive my withdrawal?",

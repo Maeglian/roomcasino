@@ -4,22 +4,28 @@
       <marquee-text :duration="durationSpeed">-->
     <div class="Partners-Wrapper">
       <template v-if="countriesLogos[defaultCountry]">
-        <img
+        <div
           v-for="(item, i) in countriesLogos[defaultCountry]"
           :key="`logo-${i}`"
           class="Partners-Partner"
-          :src="logos[item].logo"
-          :width="logos[item].width"
-        />
+        >
+          <img
+            class="Partners-Image"
+            :class="`Partners-Image--${item}`"
+            :src="logos[item].logo"
+            :width="logos[item].width"
+          />
+        </div>
       </template>
       <template v-else>
-        <img
-          v-for="(item, i) in logos"
-          :key="`logo-${i}`"
-          class="Partners-Partner"
-          :src="item.logo"
-          :width="item.width"
-        />
+        <div v-for="(item, name) in logos" :key="`logo-${name}`" class="Partners-Partner">
+          <img
+            class="Partners-Image"
+            :class="`Partners-Image--${name}`"
+            :src="item.logo"
+            :width="item.width"
+          />
+        </div>
       </template>
     </div>
     <!--      </marquee-text>-->
@@ -30,62 +36,40 @@
 <script>
 import { mapState } from 'vuex';
 
+const gameProducers = ['playngo', 'pragmatic', 'evolution', 'microgaming', 'netent'];
+
 export default {
   name: 'Partners',
   data() {
     return {
       logos: {
-        interacOnline: {
+        interac: {
           logo: require('@/assets/img/interac-online.svg'),
-          width: 100,
-        },
-        interacEtransfer: {
-          logo: require('@/assets/img/interac-etransfer.svg'),
-          width: 100,
+          width: 150,
         },
         instadebit: {
           logo: require('@/assets/img/instadebit.svg'),
-          width: 100,
-        },
-        idebit: {
-          logo: require('@/assets/img/idebit.svg'),
-          width: 60,
+          width: 150,
         },
         muchbetter: {
           logo: require('@/assets/img/muchbetter.svg'),
-          width: 130,
+          width: 150,
         },
         mastercard: {
           logo: require('@/assets/img/mastercard.svg'),
-          width: 60,
+          width: 100,
         },
         visa: {
           logo: require('@/assets/img/visa.svg'),
-          width: 80,
-        },
-        neosurf: {
-          logo: require('@/assets/img/neosurf.svg'),
-          width: 90,
-        },
-        flexepin: {
-          logo: require('@/assets/img/flexepin.png'),
           width: 100,
         },
         skrill: {
           logo: require('@/assets/img/skrill.svg'),
-          width: 80,
-        },
-        jeton: {
-          logo: require('@/assets/img/jeton-logo.svg'),
-          width: 100,
-        },
-        astropay: {
-          logo: require('@/assets/img/astropay.svg'),
           width: 100,
         },
         klarna: {
           logo: require('@/assets/img/klarna.svg'),
-          width: 80,
+          width: 100,
         },
         neteller: {
           logo: require('@/assets/img/neteller.svg'),
@@ -93,43 +77,78 @@ export default {
         },
         paysafecard: {
           logo: require('@/assets/img/paysafe.svg'),
+          width: 100,
+        },
+        playngo: {
+          logo: require('@/assets/img/playngo-white.svg'),
+          width: 100,
+        },
+        pragmatic: {
+          logo: require('@/assets/img/pragmatic-white.svg'),
+          width: 100,
+        },
+        evolution: {
+          logo: require('@/assets/img/evolution.svg'),
+          width: 100,
+        },
+        microgaming: {
+          logo: require('@/assets/img/microgaming-white.svg'),
+          width: 120,
+        },
+        netent: {
+          logo: require('@/assets/img/netent-white.svg'),
+          width: 120,
+        },
+        ezeewallet: {
+          logo: require('@/assets/img/ezeewallet.svg'),
+          width: 120,
+        },
+        instanteft: {
+          logo: require('@/assets/img/instanteft.png'),
+          width: 120,
+        },
+        astropay: {
+          logo: require('@/assets/img/astropay.svg'),
           width: 120,
         },
         volt: {
           logo: require('@/assets/img/volt.svg'),
-          width: 50,
+          width: 120,
         },
-        ecashout: {
-          logo: require('@/assets/img/ecashout.svg'),
-          width: 50,
+        neosurf: {
+          logo: require('@/assets/img/neosurf.svg'),
+          width: 120,
+        },
+        sofort: {
+          logo: require('@/assets/img/sofort.svg'),
+          width: 120,
         },
       },
       countriesLogos: {
         CA: [
           'interac',
           'instadebit',
-          'idebit',
           'muchbetter',
           'mastercard',
           'visa',
-          'neosurf',
-          'flexepin',
           'skrill',
-          'jeton',
-          'astropay',
+          ...gameProducers,
         ],
-        AU: [
-          'mastercard',
-          'visa',
-          'klarna',
-          'skrill',
-          'neteller',
-          'paysafecard',
-          'volt',
-          'neosurf',
-          'astropay',
-          'muchbetter',
-        ],
+        AT: ['mastercard', 'visa', 'skrill', 'ezeewallet', ...gameProducers],
+        CZ: ['mastercard', 'visa', 'skrill', 'ezeewallet', ...gameProducers],
+        SI: ['mastercard', 'visa', 'skrill', 'ezeewallet', ...gameProducers],
+        IE: ['mastercard', 'visa', 'skrill', 'ezeewallet', ...gameProducers],
+        ZA: ['mastercard', 'visa', 'skrill', 'instanteft', 'astropay', ...gameProducers],
+        RO: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        DK: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        EE: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        FI: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', 'neosurf', ...gameProducers],
+        GR: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        SK: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        HR: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        BG: ['mastercard', 'visa', 'skrill', 'ezeewallet', 'volt', ...gameProducers],
+        DE: ['mastercard', 'visa', 'sofort', 'ezeewallet', 'volt', ...gameProducers],
+        AU: ['mastercard', 'visa', 'skrill', 'astropay', 'volt', ...gameProducers],
       },
     };
   },
@@ -156,38 +175,47 @@ export default {
   }
 
   &-Wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 35px;
-    grid-gap: 10px 9px;
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
-    @media (min-width: $screen-xs) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    @media (min-width: $screen-s) {
-      grid-template-columns: repeat(6, 1fr);
-      grid-auto-rows: 55px;
-    }
-
-    @media (min-width: $screen-xl) {
-      grid-template-columns: repeat(9, 1fr);
-    }
   }
 
   &-Partner {
-    flex-shrink: 0;
-    max-width: 80%;
-    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    margin-bottom: 4px;
     opacity: 0.8;
     filter: grayscale(100%);
 
     @media (min-width: $screen-m) {
-      max-width: 100%;
-      max-height: 100%;
+      width: 130px;
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 170px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &-Image {
+    max-width: 70%;
+    max-height: 20px;
+
+    @media (min-width: $screen-m) {
+      max-height: 25px;
+    }
+
+    @media (min-width: $screen-xl) {
+      max-height: 35px;
+    }
+
+    &--interacOnline {
+      max-width: 90%;
     }
   }
 }

@@ -9,7 +9,7 @@
         class="DefaultGames-Cards"
         :games="recentGames"
         :games-to-show="recentGamesNum"
-        btn-class="Btn--common Btn--dark"
+        btn-class="Btn--common Btn--outline"
       />
     </template>
     <h1 class="Title Title--type-h2 Cards-Title">
