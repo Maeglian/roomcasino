@@ -38,7 +38,19 @@ window.onNuxtReady(({ context }) => {
   const updateWidth = throttle(() => context.store.commit('setWidth', window.innerWidth), 150);
   updateWidth();
   window.addEventListener('resize', updateWidth);
-  // context.store.dispatch('games/getDropsWinsLiveGames');
+  if (process.env.NUXT_ENV_MODE === 'stage') {
+    context.store
+      .dispatch('games/getDefaultGames')
+      .then(() => context.store.commit('setInitialLoading', 'defaultGames'));
+    context.store.dispatch('games/getTopGames');
+    context.store.dispatch('games/getNewGames');
+    context.store.dispatch('games/getLiveGames');
+    context.store.dispatch('games/getJackpotGames');
+    context.store.dispatch('games/getBuybonusGames');
+    context.store.dispatch('games/getMegawaysGames');
+    context.store.dispatch('games/getLuckychoiceGames');
+    context.store.dispatch('games/getDropsWinsSlotsGames');
+  }
   context.store
     .dispatch('dictionary/getCountriesList')
     .then(() => context.store.commit('setInitialLoading', 'countries'));
