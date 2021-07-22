@@ -94,8 +94,8 @@
     "tryingConfirmEmail" : "Pokoušíme se ověřit váš e-mail",
     "confirmEmailError" : "Litujeme, váš e-mail nebyl potvrzen",
     "confirmEmailSuccess" : "Congratulations! Your email was successfully confirmed",
-    "bonus" : "KČ 3330",
-    "freeSpins": "150 spinů zdarma",
+    "bonus" : "KČ 9990",
+    "freeSpins": "250 spinů zdarma",
     "placeholders" : {
       "enterEmail" : "E-emailen",
       "enterPassword" : "Heslo",
@@ -194,7 +194,7 @@
     "heroBanner" : {
       "deposit1" : {
         "title" : "Programu <br/> Cashback <span class = \"Colored\">až 20% </span>",
-        "text" : "NA VÁŠ PRVNÍ VKLAD <br/> a získejte <span class = \"Colored\"> 100% </span><br/> až <span class = \"Colored\"> Kč 3330 </span> + <span class=\"Colored\">150 spinů zdarma</span>"
+        "text" : "NA VÁŠ PRVNÍ VKLAD <br/> a získejte <span class = \"Colored\"> 100% </span><br/> až <span class = \"Colored\"> Kč 3330 </span> + <span class=\"Colored\">250 spinů zdarma</span>"
       },
       "deposit2" : {
         "title" : "Bonus <br/> za druhý vklad",
@@ -392,9 +392,9 @@
     "text" : "Zrušení limitu bude uplatněno do 24 hodin po žádosti hráče.",
     "deposit1" : {
       "title" : "100% <br/> z vkladu <br/> částk",
-      "upTo" : "až KČ 3330  + 150 SPINŮ ZDARMA",
+      "upTo" : "až KČ 3330  + 250 SPINŮ ZDARMA",
       "name" : "Bonus ke prvnímu vkladu",
-      "text" : "Proveďte první vklad na Ninecasino a získejte až Kč 3330  + 150 spinů zdarma. Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
+      "text" : "Proveďte první vklad na Ninecasino a získejte až Kč 3330 + 250 spinů zdarma. Po prvním vkladu získáte 50 spinů zdarma každý z následujících 5 dnů.. Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
     },
     "deposit2" : {
       "title" : "55% <br/> z vkladu <br/> částky",

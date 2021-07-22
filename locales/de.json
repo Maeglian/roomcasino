@@ -97,8 +97,8 @@
     "tryingConfirmEmail": "Wir versuchen, Ihre E-Mail zu verifizieren",
     "confirmEmailError": "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
     "confirmEmailSuccess": "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
-    "bonus": "150 €",
-    "freeSpins": "150 Freispiele",
+    "bonus": "450 €",
+    "freeSpins": "250 Freispiele",
     "placeholders": {
       "enterEmail": "Ihre E-Mail eingeben",
       "enterPassword": "Ihr Passwort eingeben",
@@ -199,7 +199,7 @@
     "heroBanner": {
       "deposit1": {
         "title": "Tägliche rückzahlung<br/> bis zu <span class=\"Colored\"> 20%</span>",
-        "text": "BONUS AUF DIE ERSTE<br/> EINZAHLUNG <span class=\"Colored\"> 100% </span> <br/>bis zu <span class=\"Colored\"> € 150 + <span class=\"Colored\">150 freispiele</span>"
+        "text": "BONUS AUF DIE ERSTE<br/> EINZAHLUNG <span class=\"Colored\"> 100% </span> <br/>bis zu <span class=\"Colored\"> € 150 + <span class=\"Colored\">250 freispiele</span>"
       },
       "deposit2": {
         "title": "Bonus für zweite<br/>  Einzahlung",
@@ -398,9 +398,9 @@
     "text": "Ninecasino arbeitet ständig daran, die besten Aktionen zu liefern. Wir verwenden die neueste Technologie und das Feedback unserer Spieler, um unsere Aktionen zu gestalten. Viel Spaß!",
     "deposit1": {
       "title": "100%<br/> des<br/> Einzahlungsbetrags <br/> ",
-      "upTo": "bis zu € 150 + 150 FREISPIELE",
+      "upTo": "bis zu € 150 + 250 FREISPIELE",
       "name": "Bonus für die erste Einzahlung",
-      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 € + 150 freispiele. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 € + 250 freispiele. Nach Ihrer ersten Einzahlung erhalten Sie an jedem der darauffolgenden 5 Tage jeweils 50 Freispiele.<br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit2": {
       "title": "55%<br/> des<br/> Einzahlungsbetrags <br/> ",
