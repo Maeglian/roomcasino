@@ -98,6 +98,9 @@
             <use xlink:href="@/assets/img/icons.svg#ssl"></use>
           </svg>
         </div>
+        <div class="Footer-MoreIcons">
+          <img src="@/assets/img/logo-footer.svg" width="120" />
+        </div>
       </div>
     </div>
   </section>
@@ -203,6 +206,12 @@ export default {
     }
   }
 
+  &-DisclaimerText {
+    @media (min-width: $screen-l) {
+      padding-right: 25px;
+    }
+  }
+
   &-Text {
     margin-right: 20px;
     margin-bottom: 17px;
@@ -213,6 +222,7 @@ export default {
 
   &-Icons {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
 
     @media (min-width: $screen-l) {
@@ -222,8 +232,9 @@ export default {
 
   &-MoreIcons {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-left: 0;
+    margin-left: 20px;
 
     @media (min-width: $screen-l) {
       margin-top: 15px;
