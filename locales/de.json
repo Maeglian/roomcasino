@@ -97,8 +97,8 @@
     "tryingConfirmEmail": "Wir versuchen, Ihre E-Mail zu verifizieren",
     "confirmEmailError": "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
     "confirmEmailSuccess": "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
-    "bonus": "150 €",
-    "freeSpins": "150 Freispiele",
+    "bonus": "450 €",
+    "freeSpins": "250 Freispiele",
     "placeholders": {
       "enterEmail": "Ihre E-Mail eingeben",
       "enterPassword": "Ihr Passwort eingeben",
@@ -129,7 +129,7 @@
     "aboutUs": "Über uns",
     "faq": "Häufig Gestellte Fragen (FAQ)",
     "btc": "Über BTC",
-    "aml": "Anti-geldwähler-Politik",
+    "aml": "Anti-Geldwäsche-Policy",
     "terms": "Geschäftsbedingungen",
     "bonusPolicy": "Bonusbedingungen",
     "privacyPolicy": "Datenschutz-Bestimmungen",
@@ -199,7 +199,7 @@
     "heroBanner": {
       "deposit1": {
         "title": "Tägliche rückzahlung<br/> bis zu <span class=\"Colored\"> 20%</span>",
-        "text": "BONUS AUF DIE ERSTE<br/> EINZAHLUNG <span class=\"Colored\"> 100% </span> <br/>bis zu <span class=\"Colored\"> € 150 + <span class=\"Colored\">150 freispiele</span>"
+        "text": "BONUS AUF DIE ERSTE<br/> EINZAHLUNG <span class=\"Colored\"> 100% </span> <br/>bis zu <span class=\"Colored\"> € 150 + <span class=\"Colored\">250 freispiele</span>"
       },
       "deposit2": {
         "title": "Bonus für zweite<br/>  Einzahlung",
@@ -398,9 +398,9 @@
     "text": "Ninecasino arbeitet ständig daran, die besten Aktionen zu liefern. Wir verwenden die neueste Technologie und das Feedback unserer Spieler, um unsere Aktionen zu gestalten. Viel Spaß!",
     "deposit1": {
       "title": "100%<br/> des<br/> Einzahlungsbetrags <br/> ",
-      "upTo": "bis zu € 150 + 150 FREISPIELE",
+      "upTo": "bis zu € 150 + 250 FREISPIELE",
       "name": "Bonus für die erste Einzahlung",
-      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 € + 150 freispiele. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 € + 250 freispiele. Nach Ihrer ersten Einzahlung erhalten Sie an jedem der darauffolgenden 5 Tage jeweils 50 Freispiele.<br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit2": {
       "title": "55%<br/> des<br/> Einzahlungsbetrags <br/> ",
@@ -1223,13 +1223,13 @@
         "Die Verwendung von Bonusbeträgen zum alleinigen Zweck des Fortschritts durch die Bonuslevel ist verboten, insbesondere in Fällen, wenn Bonus- oder Barbeträge alleine dazu verwendet werden, durch die Bonuslevel fortzuschreiten (e.g. Sammeln von 9 von 10 Münzen, um das Bonusfeature zu erlangen), und die finalen Level (z.B. Spielen, um die letzte Münze zu sammeln und 10 von 10 und das Bonusfeature zu erlangen) werden mit Barwetten vervollständigt, wenn Bonusbeträge verwirkt oder verloren wurden, oder die Umsatzbedingung erreicht wurde, und zu Bargeld umgewandelt werden. Alle durch derartiges Spiel erzielten Gewinne werden als nichtig betrachtet.",
         "Während er mit einem aktiven Bonus spielt, darf der Spieler keine Strategien anwenden, die darauf abzielen, die Wettbedingungen des Bonus zu erfüllen. Falls der Spieler solche Strategien einsetzt, und falls das Casino ausreichend Grund zu der Vermutung hat, dass das Verhalten des Spielers ausschließlich darauf abzielt, finanziellen Vorteil aus dem Bonus zu ziehen, dann behält sich das Casino das Recht vor, alle Gewinne des Spielers zu stornieren.",
         "Alle Boni setzen, sofern nicht anders angegeben eine Mindesteinzahlung für ihren Erhalt voraus und weisen eine Obergrenze für den möglichen Bonusbetrag, Umsatzanforderungen, eine Obergrenze für die Anzahl der Einsätze während der Erfüllung der Umsatzanforderungen sowie eine Laufzeitbegrenzung für den Bonus auf.",
-        "Alle Boni sind standardmäßig auf einen Höchsteinsatz beschränkt: 5 EUR/USD, 10 CAD/AUD/NZD, 50 NOK, 350 RUB, 20 PLN, 600 JPY, 2.100 KZT, 140 CZK, 0,0005 BTC, 0,014 BCH, 0,02 ETH, 0,07 LTC, 2.100 DOG, 5,5 USDT, sofern nicht anders angegeben. Der Höchsteinsatz schließt die Einsatzverdopplung nach Abschluss einer Spielrunde ebenso ein wie (in einem Spiel erworbene) Bonusrunden.",
+        "Alle Boni sind standardmäßig auf einen Höchsteinsatz beschränkt: 5 EUR, 10 CAD/AUD, 100 CZK, 90 ZAR, 10 BGN, 40 DKK, 40 HRK, 25 RON, 0,00019 BTC, sofern nicht anders angegeben. Der Höchsteinsatz schließt die Einsatzverdopplung nach Abschluss einer Spielrunde ebenso ein wie (in einem Spiel erworbene) Bonusrunden.",
         "Die mithilfe von Boni erzielten Gewinne können erst abgehoben werden, wenn alle Umsatzanforderungen erfüllt wurden.",
         "Alle Boni müssen (sofern nicht anders angegeben) 40 mal gesetzt worden sein, bevor sie abgehoben werden können.",
         "Alle Boni unterliegen einem Auszahlungsvorbehalt. Das bedeutet, dass ihre Abhebung erst beantragt werden kann, wenn alle Umsatzanforderungen vollständig erfüllt sind. Außerdem müssen Sie zuerst echtes Geld setzen und anschließend das Bonusgeld. Sobald Letzteres verspielt ist, verfällt auch der Bonus.",
         "Sofern nicht anders angegeben, gilt ein Bonus 14 Tage ab Erhalt.",
         "Ist der Bonus am Ende seiner Laufzeit noch gültig, ohne dass die Umsatzanforderungen erfüllt wurden, verfallen das gesamte Bonusgeld sowie die daraus erzielten Gewinne.",
-        "Sinkt das Spielguthaben auf einem Konto auf höchstens 0,05 USD, 0,05 EUR, 0,05 RUB, 0,05 NOK, 0,05 AUD, 0,05 JPY, 0,05 NZD, 0,05 CAD, 0,05 PLN, 0,000001 BTC, 0,00001 BCH, 0,00001 ETH, 0,0005 LTC, 10 DOG, 0,05 USDT, so verfallen die Boni automatisch.*",
+        "Sinkt das Spielguthaben auf einem Konto auf höchstens 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC, so verfallen die Boni automatisch.*",
         "* Das gilt nur für das an einen Bonus gebundene Guthaben, zum Beispiel Einzahlung + Bonus, oder einen reinen Bonus im Fall von Boni ohne Einzahlungsverpflichtung, nicht jedoch für aus anderen Einzahlungen oder Boni erzielte Geldmittel auf einem Spielerkonto.",
         "Die Abhebung von Guthaben kann beantragt werden, bevor die Umsatzanforderungen für einen Bonus erfüllt wurden. In diesem Fall verfällt der Bonusbetrag nebst der mit ihm erzielten Gewinne und die vorhandenen verbleibenden Mittel werden ausgezahlt.",
         "Ein Spieler ist berechtigt, vor Erfüllung der entsprechenden Umsatzanforderungen auf Boni zu verzichten, ohne Auswirkung auf das vorhandene Guthaben.",
@@ -1243,30 +1243,30 @@
         "Beim Spielen mit Bonusgeld werden alle Gewinne, die abgehoben werden sollen, vor der Bearbeitung der Auszahlung einer Überprüfung unterzogen. Das Casino behält sich vor, die betreffende Benutzerin/den betreffenden Benutzer infolge dieser Überprüfung um eine Bestätigung ihrer/seiner personenbezogenen Daten und der Daten für die Zahlungsabwicklung zu bitten.",
         "Das Casino ist berechtigt, unrechtmäßig oder unter Verletzung der hier niedergelegten Bestimmungen erzielten Boni und Gewinne zu widerrufen und das gesamte Guthaben des betroffenen Kontos einzuziehen.",
         "Das Casino behält sich vor, diese Bedingungen jederzeit zu ändern und zu ergänzen.",
-        "Sinkt das Spielguthaben auf einem Konto auf höchstens 0,05 USD, 0,05 EUR, 0,05 RUB, 0,05 NOK, 0,05 AUD, 0,05 JPY, 0,05 NZD, 0,05 CAD, 0,05 PLN, 0,000001 BTC, 0,00001 BCH, 0,00001 ETH, 0,0005 LTC, 10 DOG, 0,05 USDT, so verfällt der Bonus automatisch.*",
+        "Sinkt das Spielguthaben auf einem Konto auf höchstens 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC, so verfällt der Bonus automatisch.*",
         "* Das gilt nur für das an einen Bonus gebundene Guthaben, zum Beispiel Einzahlung + Bonus, oder einen reinen Bonus im Fall von Boni ohne Einzahlungsverpflichtung, nicht jedoch für aus anderen Einzahlungen oder Boni erzielte Geldmittel auf einem Spielerkonto.",
         "Die Verwendung von Bonusgeld zum alleinigen Zweck des Fortschritts durch die Bonusstufen ist verboten. Wenn beispielsweise Bonus- oder Barmittel ausschließlich zum Aufstieg durch die Bonusstufen (etwa zum Sammeln von 9 der 10 für das Erreichen der Bonusfunktion erforderlichen Münzen) genutzt werden, und die letzten Stufen (z.B. das Spielen zum Erwerb der letzten der 10 Münzen und damit das Erreichen der Bonusfunktion) mit Bargeldeinsätzen abgeschlossen werden, wenn die Bonusmittel verfallen sind oder verloren wurden oder die Umsatzanforderung erfüllt und in Bargeld umgetauscht wurde. Alle durch derartiges Spiel erzielten Gewinne werden als nichtig betrachtet.",
         "Alle Boni nach UTC-Zeit abgerechnet."
       ],
       "title2": "begrüssungsspaket",
       "text2": [
-        "Um die Boni für die erste/zweite/dritte Einzahlung zu erhalten, muss Ihr Kontostand mindestens 20 EUR/USD, 20 CAD/AUD/NZD, 200 NOK, 1.500 RUB, 85 PLN, 2.500 JPY, 9.000 KZT, 0,0036 BTC, 0,12 BCH, 0,16 ETH, 0,6 LTC, 13.000 DOG, 22,5 USDT betragen.",
-        "Der höchste Bonusbetrag für erste/zweite/dritte Einzahlung ist 100 EUR/USD, 150 CAD/AUD/NZD, 1.000 NOK, 7.000 RUB, 430 PLN, 12.000 JPY, 42.000 KZT, 0,011 BTC, 0,28 BCH, 0,4 ETH, 1,4 LTC, 42.000 DOG, 110 USDT.",
+        "Um die Boni für die erste/zweite/dritte Einzahlung zu erhalten, muss Ihr Kontostand mindestens 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC betragen.",
+        "Der höchste Bonusbetrag für erste/zweite/dritte Einzahlung ist 100 EUR, 150 CAD, 160 AUD, 2600 CZK, 1730 ZAR, 200 BGN, 740 DKK, 750 HRK, 490 RON, 0,0037 BTC.",
         "Freispiele müssen innerhalb von 3 Tagen aktiviert werden, die Laufzeit der Freispiele und der aus diesen erzielten Gewinne beträgt 7 Tage.",
         "Zur Erfüllung der Umsatzanforderungen für einen Gewinn aus Boni/Freispielen müssen Einsätze in Höhe des 40-fachen des Bonus-/Freispielgewinns getätigt werden.",
-        "Der größtmögliche Gewinn aus Freispielen für die erste/zweite/dritte Einzahlung ist 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3.500 RUB, 210 PLN, 6.000 JPY, 21.000 KZT, 0,005 BTC, 0,14 BCH, 0,2 ETH, 0,7 LTC, 21.000 DOG, 55 USDT.",
-        "Der größtmögliche Gewinn aus Freispielen für die Registrierung ist 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3.500 RUB, 210 PLN, 6.000 JPY, 21.000 KZT, 0,005 BTC, 0,14 BCH, 0,2 ETH, 0,7 LTC, 21.000 DOG, 55 USDT."
+        "Der größtmögliche Gewinn aus Freispielen für die erste/zweite/dritte Einzahlung ist 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "Der größtmögliche Gewinn aus Freispielen für die Registrierung ist 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC."
       ],
       "title3": "wochenendaufstockung",
       "text3": [
-        "Um die Wochenendaufstockung zu erhalten, muss Ihr Kontostand mindestens 20 EUR/USD, 20 CAD/AUD/NZD, 200 NOK, 1.500 RUB, 85 PLN, 2.500 JPY, 9.000 KZT, 0,0036 BTC, 0,12 BCH, 0,16 ETH, 0,6 LTC, 13.000 DOG, 22,5 USDT betragen.",
-        "Der höchste Betrag für die Wochenendaufstockung ist 150 EUR/USD, 230 CAD/AUD/NZD, 1.500 NOK, 10.000 RUB, 640 PLN, 18.000 JPY, 65.000 KZT, 0,017 BTC, 0,4 BCH, 0,6 ETH, 2,1 LTC, 65.000 DOG, 170 USDT.",
+        "Um die Wochenendaufstockung zu erhalten, muss Ihr Kontostand mindestens 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC betragen.",
+        "Der höchste Betrag für die Wochenendaufstockung ist 150 EUR, 220 CAD, 240 AUD, 3900 CZK, 2580 ZAR, 300 BGN, 1110 DKK, 1125 HRK, 735 RON, 0,0056 BTC.",
         "Zur Erfüllung der Umsatzanforderungen für den Bonus müssen Sie Einsätze in Höhe des 40-fachen des Bonusbetrages tätigen.",
         "Der Bonus ist Freitags, Samstags oder Sonntags für Spieler verfügbar, die bereits all ihre Begrüßungspaket-Boni aufgebraucht haben."
       ],
       "title4": "freispiele für besondere treue",
       "text4": [
-        "Der Höchstbetrag für Abhebungen beim Spielen mit Mitteln aus einem einzahlungsfreien Bonus oder aus Freispielen liegt bei 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3.500 RUB, 210 PLN, 6.000 JPY, 21.000 KZT, 0,005 BTC, 0,14 BCH, 0,2 ETH, 0,7 LTC, 21.000 DOG, 55 USDT.",
+        "Der Höchstbetrag für Abhebungen beim Spielen mit Mitteln aus einem einzahlungsfreien Bonus oder aus Freispielen liegt bei 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
         "Diese Gewinnbegrenzung bleibt auch nach Erfüllung der Umsatzanforderung bestehen."
       ]
     }

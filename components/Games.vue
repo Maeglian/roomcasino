@@ -2,16 +2,18 @@
   <div class="Games">
     <GameModals />
     <div class="Games-Items">
-      <Card
-        v-for="(game, i) in gamesLimited"
-        :key="i"
-        :game-info="game"
-        :img-url="game.imageUrl"
-        :show-demo="true"
-        overlay
-        show-footer
-        @open-gamepage="openGamePage($event, game.gameProducer)"
-      />
+      <template v-for="(game, i) in games">
+        <Card
+          v-show="i < gamesShowed"
+          :key="i"
+          :game-info="game"
+          :img-url="game.imageUrl"
+          :show-demo="true"
+          overlay
+          show-footer
+          @open-gamepage="openGamePage($event, game.gameProducer)"
+        />
+      </template>
     </div>
     <template v-if="!games.length">
       <slot name="notFound"></slot>
@@ -63,11 +65,6 @@ export default {
     return {
       gamesShowed: 0,
     };
-  },
-  computed: {
-    gamesLimited() {
-      return this.games.slice(0, this.gamesShowed);
-    },
   },
   created() {
     this.gamesShowed = this.gamesToShow;
