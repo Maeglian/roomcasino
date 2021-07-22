@@ -1246,13 +1246,13 @@
         "The use of bonus funds purely to progress through the bonus stages is prohibited, particularly in the cases when bonus or cash funds are used purely to progress through the bonus stages (e.g. collecting 9 out of 10 coins to reach the bonus feature), and then final stages (e.g. playing to collect the final coin to reach 10 out of 10 and the bonus feature) are completed with cash bets when bonus funds have been forfeited, lost or wagering has been met, and converted to cash. All the winnings gained during that play may be considered void.",
         "The Player is not allowed to use any strategies while playing with an active bonus in order to fulfil the requirements to wager the bonus. If the Player uses such strategies, and if the Casino has sufficient grounds to believe that the Player's actions are aimed solely to obtain financial benefits using the bonus advantage, then the Casino reserves the right to cancel all Player's winnings.",
         "All the bonuses have a minimum deposit requirement for obtaining the bonus, limitation of the maximum possible bonus amount, wagering terms, limitation of the maximum amount of bets while wagering, time limitation of bonus life, unless otherwise indicated.",
-        "Any issued bonuses are by default limited to a maximum bet during wagering: 5 EUR/USD, 10 CAD/AUD/NZD, 50 NOK, 350 RUB, 20 PLN, 600 JPY, 2,100 KZT, 140 CZK, 0.0005 BTC, 0.014 BCH, 0.02 ETH, 0.07 LTC, 2,100 DOG, 5.5 USDT, unless otherwise specified. Max bet limit includes bets doubling after a game round has been completed as well as bonus rounds (purchased within the game).",
+        "Any issued bonuses are by default limited to a maximum bet during wagering: 5 EUR, 10 CAD/AUD, 100 CZK, 90 ZAR, 10 BGN, 40 DKK, 40 HRK, 25 RON, 0,00019 BTC, unless otherwise specified. Max bet limit includes bets doubling after a game round has been completed as well as bonus rounds (purchased within the game).",
         "The winnings obtained by using bonuses become available for withdrawal only after meeting the requirements of all wagering rules.",
         "All bonuses (unless otherwise specified) need to be wagered 40 times before the funds can be withdrawn.",
         "All the bonuses are sticky. It means, you cannot request your withdrawal until wagering requirements are fully fulfilled. Also, you start playing for real money first, then for bonus money, and as soon as bonus money is lost, the bonus also gets lost.",
         "Validity of the bonus is 14 days from the moment it was received, unless otherwise indicated.",
         "At the end of the bonus period, if the bonus remains valid and the conditions of wagering are not met, all bonus money and winnings are void.",
-        "Bonuses are automatically cancelled upon active balance reaching the amount of 0.05 USD, 0.05 EUR, 0.05 RUB, 0.05 NOK, 0.05 AUD, 0.05 JPY, 0.05 NZD, 0.05 CAD, 0.05 PLN, 0.000001 BTC, 0.00001 BCH, 0.00001 ETH, 0.0005 LTC, 10 DOG, 0.05 USDT, or less.*",
+        "Bonuses are automatically cancelled upon active balance reaching the amount of 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC, or less.*",
         "*This term only applies to balance tied to a bonus, i.e. deposit + bonus, or a bonus only (in case of a no deposit bonus), and doesn't apply to funds on player's balance gained from other deposits or bonuses.",
         "A player can request a withdrawal of their deposit before meeting the requirements for bonus wagering. In this case, the amount of the bonus and winnings are void, and the remaining funds, if any, are paid to the player.",
         "A player has the right to cancel any bonuses without proceeding to their wagering, without any loss of their own funds.",
@@ -1266,30 +1266,30 @@
         "When gambling with bonus funds, all the winnings requested for withdrawal pass a check prior to payment processing. The Casino reserves the right to request the user to confirm the personal data and payment method data as a result of the check.",
         "The Casino has the right to revoke any bonuses and winnings, as well as to confiscate all the money in the account if it has been obtained dishonestly or in violation of these rules.",
         "The Casino reserves the right to amend and supplement these terms at any time.",
-        "Bonus is automatically cancelled upon active balance reaching amount of 0.05 USD, 0.05 EUR, 0.05 RUB, 0.05 NOK, 0.05 AUD, 0.05 JPY, 0.05 NZD, 0.05 CAD, 0.05 PLN, 0.000001 BTC, 0.00001 BCH, 0.00001 ETH, 0.0005 LTC, 10 DOG, 0.05 USDT or less.*",
+        "Bonus is automatically cancelled upon active balance reaching amount of 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC, or less.*",
         "*This term only applies balance tied to bonus, i.e. deposit + bonus or only bonus in case of no deposit bonus, and doesn't apply funds on player's balance gained from other deposits or bonuses.",
         "The use of bonus funds purely to progress through the bonus stages is prohibited. For example when bonus or cash funds are used purely to progress through the bonus stages (e.g. collecting 9 out of 10 coins to reach that bonus feature) and then final stages (e.g. playing to collect the final coin to reach 10 out of 10 coins to reach the bonus feature) completed with cash bets when bonus funds have been forfeited, lost or wagering met and converted to cash. All the winnings gained during that play may be considered void.",
         "All bonuses are accrued at UTC time."
       ],
       "title2": "welcome package",
       "text2": [
-        "To get the first/second/third deposit bonuses, your deposit shall be at least 20 EUR/ USD, 20 CAD/AUD/NZD, 200 NOK, 1,500 RUB, 85 PLN, 2,500 JPY, 9,000 KZT, 0.0036 BTC, 0.12 BCH, 0.16 ETH, 0.6 LTC, 13,000 DOG, 22.5 USDT.",
-        "Maximum first/second/third deposit bonus amount is 100 EUR/USD, 150 CAD/AUD/NZD, 1,000 NOK, 7,000 RUB, 430 PLN, 12,000 JPY, 42,000 KZT, 0.011 BTC, 0.28 BCH, 0.4 ETH, 1.4 LTC, 42,000 DOG, 110 USDT.",
+        "To get the first/second/third deposit bonuses, your deposit shall be at least 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
+        "Maximum first/second/third deposit bonus amount is 100 EUR, 150 CAD, 160 AUD, 2600 CZK, 1730 ZAR, 200 BGN, 740 DKK, 750 HRK, 490 RON, 0,0037 BTC.",
         "Free spin activation duration is 3 days, free spin duration and free spin result duration are 7 days.",
         "To wager the bonus / free spin result, you need to make bets for an amount 40 times the bonus / free spin result amount.",
-        "Maximum win resulting from first/second/third deposit free spins is 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3,500 RUB, 210 PLN, 6,000 JPY, 21,000 KZT, 0.005 BTC, 0.14 BCH, 0.2 ETH, 0.7 LTC, 21,000 DOG, 55 USDT.",
-        "Maximum win resulting from sign up freespins is 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3,500 RUB, 210 PLN, 6,000 JPY, 21,000 KZT, 0.005 BTC, 0.14 BCH, 0.2 ETH, 0.7 LTC, 21,000 DOG, 55 USDT."
+        "Maximum win resulting from first/second/third deposit free spins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "Maximum win resulting from sign up freespins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC."
       ],
       "title3": "weekend reload",
       "text3": [
-        "To get the weekend reload, your deposit shall be at least 20 EUR/ USD, 20 CAD/AUD/NZD, 200 NOK, 1,500 RUB, 85 PLN, 2,500 JPY, 9,000 KZT, 0.0036 BTC, 0.12 BCH, 0.16 ETH, 0.6 LTC, 13,000 DOG, 22.5 USDT.",
-        "Maximum weekend reload amount is 150 EUR/USD, 230 CAD/AUD/NZD, 1,500 NOK, 10,000 RUB, 640 PLN, 18,000 JPY, 65,000 KZT, 0.017 BTC, 0.4 BCH, 0.6 ETH, 2.1 LTC, 65,000 DOG, 170 USDT.",
+        "To get the weekend reload, your deposit shall be at least 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
+        "Maximum weekend reload amount is 150 EUR, 220 CAD, 240 AUD, 3900 CZK, 2580 ZAR, 300 BGN, 1110 DKK, 1125 HRK, 735 RON, 0,0056 BTC.",
         "To wager the bonus, you need to make bets for an amount 40 times the bonus amount.",
         "The bonus is available once on Friday, Saturday, or Sunday for players who have already used all the welcome package bonuses."
       ],
       "title4": "loyalty free spins",
       "text4": [
-        "The maximum you will ever be able to withdraw from play with funds associated with a no-deposit bonus or free spins is 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3,500 RUB, 210 PLN, 6,000 JPY, 21,000 KZT, 0.005 BTC, 0.14 BCH, 0.2 ETH, 0.7 LTC, 21,000 DOG, 55 USDT.",
+        "The maximum you will ever be able to withdraw from play with funds associated with a no-deposit bonus or free spins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
         "The maximum win restriction persists after the completion of the wagering requirement."
       ]
     }
