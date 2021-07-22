@@ -740,7 +740,8 @@ export default {
   }
 }
 
-.Weekly_derby {
+.Weekly_derby,
+.Rtt {
   &-Header {
     width: 100%;
     margin-top: -70px;
@@ -755,11 +756,11 @@ export default {
       margin-top: 0;
       padding-top: 80px / 1248px * 100%;
       background-image: url(~@/assets/img/derby_900.png);
-      background-position: center center;
     }
 
     @media (min-width: $screen-m) {
       padding-top: 50px / 1248px * 100%;
+      background-position: center center;
     }
 
     @media (min-width: $screen-xl) {
@@ -773,6 +774,10 @@ export default {
 
     .DailyTournamentPage-MainText {
       @media (min-width: $screen-s) {
+        max-width: 50%;
+      }
+
+      @media (min-width: $screen-m) {
         max-width: 35%;
       }
     }
