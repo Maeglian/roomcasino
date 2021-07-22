@@ -396,41 +396,41 @@
   },
   "promotions": {
     "title": "Current promotions",
-    "text": "Ninecasino is constantly working to deliver the best promotions. We use the latest technology and the feedback from our players to re-design our promotions. Enjoy!",
+    "text": "Ninecasino is constantly working to deliver the best promotions. We use the latest technology and feedback from our players to improve our promos all the time. Enjoy!",
     "deposit1": {
       "title": "100%<br/> of the deposit<br/> amount",
-      "upTo": "up to $225 + 150 free spins",
+      "upTo": "up to $225 + 250 free spins",
       "name": "First deposit bonus",
-      "text": "Make your first deposit at Ninecasino and get up to $225 + 150 free spins.<br/><br/>To activate the bonus - just make first deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your first deposit at NineCasino and get up to $150 + 250 free spins. After your first deposit, you'll get 50 Free Spins every day for the next 5 days.<br/><br/>To activate the bonus just make a first deposit of $20 or more. The bonus will be credited automatically."
     },
     "deposit2": {
       "title": "55%<br/> of the deposit<br/> amount",
       "upTo": "up to $225",
       "name": "Second deposit bonus",
-      "text": "Make your second deposit at Ninecasino and get up to $225.<br/><br/>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically."
+      "text": "To activate the bonus just make a second deposit of $20 or more. The bonus will be credited automatically."
     },
     "deposit3": {
       "title": "100%<br/> of the deposit<br/> amount",
       "upTo": "up to $225",
       "name": "Third deposit bonus",
-      "text": "Make your third deposit at Ninecasino and get up to $225.<br/><br/>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your third deposit at Ninecasino and get up to $225.<br/><br/>To activate the bonus just make a third deposit of $20 or more. The bonus will be credited automatically."
     },
     "deposit4": {
       "title": "Weekend<br/> reload",
       "upTo": "40% UP TO $230",
       "name": "weekend reload",
-      "text": "Start with more, win more. Deposit at least $20 and get a 40% bonus up to $230 that will help to spin those slots silly, until the jackpot explodes!"
+      "text": "Start with more, win more. Deposit at least $20 and get a 40% bonus up to $150 to help spin those slots silly, until the jackpot explodes!"
     },
     "cashback": {
       "title": "Daily<br/> cashback",
       "upTo": "up to 20%",
       "name": "Daily cashback",
-      "text": "Who doesn’t like free casino cashback? Even if you lost!<br/> Yes, you read right - we give you cashback with wager x5 in case of losing."
+      "text": "Who doesn’t like free casino cashback when losing?<br/> Yes, you read right! We give you cashback with only 5x wagering when losing!"
     },
     "highroller": {
       "upTo": "up to $800",
       "name": "High roller bonus",
-      "text": "Are you fond of making high bets? Then we know what you need. Once a month get a special 30% high roller bonus up to $800 on your deposit starting from $450."
+      "text": "Are you fond of making big bets? Then we’ve got what you need. Once a month get a special 30% high roller bonus up to $500 on your deposit, starting from $300."
     },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
@@ -1299,8 +1299,8 @@
   "dailyCashback": {
     "cashback": "Cashback",
     "title": "Daily cashback<br/>up to 20%",
-    "text1": "Who doesn’t like free casino cashback?<br/> Even if you lost! Yes, you read right - we give you cashback with wager&nbsp;x5 in case of losing.",
-    "text2": "If it happened and you lost a sum of money at Ninecasino today, tomorrow we pay you back in accordance with the scheme below:",
+    "text1": "Who doesn’t like free casino cashback when losing?<br/>Yes, you read right! We give you cashback with only 5x wagering when losing!",
+    "text2": "If you lost some cash at Ninecasino today, tomorrow we pay you back in accordance with our table below:",
     "terms": "Cashback terms and conditions",
     "termsList": [
       {
@@ -1322,7 +1322,7 @@
         "text": "The wagering requirement for a cashback bonus is x5."
       },
       {
-        "text": "The wagering requirement for a cashback bonus is x5."
+        "text": "Cashback is available for 24 hours after the crediting on the player’s account."
       },
       {
         "text": "The cashback lifetime is 24 hours after the activation."
