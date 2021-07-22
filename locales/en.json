@@ -98,7 +98,7 @@
     "confirmEmailError": "Sorry, you email was not confirmed",
     "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed",
     "bonus": "$450",
-    "freeSpins": "150 free spins",
+    "freeSpins": "250 free spins",
     "placeholders": {
       "enterEmail": "Enter your email",
       "enterPassword": "Enter your password",

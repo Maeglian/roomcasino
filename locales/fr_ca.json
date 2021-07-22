@@ -97,8 +97,8 @@
     "tryingConfirmEmail": "Nous essayons de vérifier votre email",
     "confirmEmailError": "Désolé, votre e-mail n'a pas été confirmé",
     "confirmEmailSuccess": "Félicitations ! Votre e-mail a été confirmé avec succès",
-    "bonus": "$225",
-    "freeSpins": "150 tours gratuit",
+    "bonus": "$450",
+    "freeSpins": "250 tours gratuit",
     "placeholders": {
       "enterEmail": "Entrez votre email",
       "enterPassword": "Entrez votre mot de passe",
