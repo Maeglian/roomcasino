@@ -445,9 +445,6 @@
       "upTo": "Preispool 2.500 €",
       "name": "Aufsatteln fürs Weekly Derby",
       "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
-    },
-    "burningSpins": {
-      "name": "Ein heißer Sommer mit Burning Spins 60k"
     }
   },
   "tournaments": {
@@ -516,39 +513,6 @@
       {
         "title": "Zusätzlich:",
         "text": "Wöchentliches Roulette-Turnier<br/>Gewinne:</strong> Insgesamt 50.000 € verteilt auf 1.000 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 2x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Roulette-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Roulette-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Wetteinsätze, die auf Wetten mit Chance 1:1 getätigt werden (Rot/Schwarz, Gerade/Ungerade, 1:18/19:36) werden nicht auf die Punktzahl des Wöchentlichen Roulette-Turniers angerechnet.<br/><br/><strong>Wöchentliches Blackjack-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 300 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 10 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliches Blackjack-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Blackjack-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets und/oder Bets Behind werden für das Wöchentliche Blackjack-Turnier berücksichtigt.<br/><br/><strong>Wöchentliches Mega Wheel-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Mega Wheel-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Mega Wheel-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Alle Qualifizierenden Wetten werden für das Wöchentliche Mega Wheel-Turnier berücksichtigt.<br/><br/><strong>Wöchentliche Baccarat-Turniere<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Baccarat-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Baccarat-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets (Player, Banker und Tie) werden für das Wöchentliche Baccarat-Turnier berücksichtigt."
-      }
-    ]
-  },
-  "scubaCash": {
-    "title": "SCUBA CASH <br/>BY VON BOOONGO",
-    "name": "SCUBA CASH VON BOOONGO",
-    "text": "Schlüpfe in deinen Tauchanzug und willkommen zum Scuba-Cash-Turnier von Booongo! Epische Action mit einem Preispool, der so groß ist wie die Sieben Weltmeere! Die Scuba-Cash-Aktion umfasst eine Reihe von regulären Turnieren und eine Sonderrangliste. Hol tief Luft und tauche ein in Unterwasserschlachten. Ziehe große Gewinne aus den Tiefen des Ozeans und mach dich auf Kraken, Haie und andere Wasserbewohner gefasst, um einen Hauptgewinn zu ergattern!"
-  },
-  "burningSpins": {
-    "title": "Ein heißer Sommer<br/> mit Burning Spins<br/> 60k",
-    "prize": "60,000 €",
-    "text": "Die Schlacht ums Geld hat begonnen! Wir laden dich ein, am Playson-Netzwerk-Turnier teilzunehmen! Burning Spins 60k! Mit einer Gesamtsumme von 60.000 € und einem Hauptpreis von 10.000 € ist es Zeit, dir mit Burning Spins richtig einzuheizen!",
-    "textMobile": "Die Schlacht ums Geld hat begonnen! Wir laden dich ein, am Playson-Netzwerk-Turnier teilzunehmen! Burning Spins 60k! Mit einer Gesamtsumme von 60.000 € und einem Hauptpreis von 10.000 € ist es Zeit, dir mit Burning Spins richtig einzuheizen!",
-    "terms": [
-      {
-        "title": "Dauer der Aktion:<br/><br/>",
-        "text": "Burning Spins 60k läuft zwischen dem 16. Juli 2021 um 00:01 Uhr (UTC) und dem 25. Juli 2021 um 23:59 Uhr (UTC)."
-      },
-      {
-        "title": "Hab Spaß mit diesen 15 teilnehmenden Spielen:<br/><br/>",
-        "text": " ● 9 Happy Pharaohs<br/>● Book of Gold: Multichance<br/>● Buffalo Power Megaways™<br/>● Buffalo Power: Hold and Win<br/>● Burning Wins: classic 5 lines<br/>● Diamond Wins: Hold and Win<br/>● Divine Dragon: Hold and Win<br/>● Hot Burning Wins<br/>● Hot Coins: Hold and Win<br/>● Legend of Cleopatra Megaways™<br/>● Rich Diamonds: Hold and Win<br/>● Sevens n Fruits<br/>● Solar Queen<br/>● Solar Temple<br/>● Wolf Power: Hold and Win."
-      },
-      {
-        "title": "Gewinnstrukturierung:<br/><br/>",
-        "text": "Mit einer Gesamtsumme von 60.000 € und einem Hauptpreis von 10.000 € ist es Zeit."
-      },
-      {
-        "title": "Mindesteinsatz:<br/><br/>",
-        "text": "0.5 EUR."
-      },
-      {
-        "title": "Teilnahmebedingungen der Aktion:",
-        "text": "Punkte werden pro Runde berechnet und jede Ausspielung von 0,5 EUR oder mehr entspricht während des Spiels 1 Punkt."
       }
     ]
   },
