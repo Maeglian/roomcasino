@@ -10,7 +10,6 @@
           :img-url="game.imageUrl"
           :show-demo="true"
           overlay
-          show-footer
           @open-gamepage="openGamePage($event, game.gameProducer)"
         />
       </template>
@@ -83,7 +82,8 @@ export default {
   &-Items {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
     justify-items: center;
     margin-bottom: 20px;
 
