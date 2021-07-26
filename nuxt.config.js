@@ -127,6 +127,7 @@ export default {
     },
     detectBrowserLanguage: {
       alwaysRedirect: true,
+      onlyOnRoot: true,
     },
   },
 
