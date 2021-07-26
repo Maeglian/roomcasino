@@ -127,6 +127,10 @@ export default {
       padding: 0 30px;
       font-size: 12px;
     }
+
+    &:hover {
+      background: var(--color-main1);
+    }
   }
 
   &-Btn--registration.Btn {

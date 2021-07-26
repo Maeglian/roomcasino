@@ -323,18 +323,4 @@ export const TOURNAMENTS = {
     class: 'DropsWinsLive',
     slug: 'dropslive',
   },
-  'scuba-cash': {
-    url: 'scuba-cash',
-    name: 'SCUBA CASH BY BOOONGO',
-    translates: 'scubaCash',
-    class: 'ScubaCash',
-    slug: 'scubacash',
-  },
-  'burning-spins': {
-    url: 'burning-spins',
-    name: 'Burning spins',
-    translates: 'burningSpins',
-    class: 'BurningSpins',
-    slug: 'burningspins',
-  },
 };
