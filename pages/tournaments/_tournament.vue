@@ -608,6 +608,11 @@ export default {
       background-position: center top;
     }
 
+    @media (min-width: $screen-l) {
+      padding-top: 100px / 1248px * 100%;
+      background-position: center center;
+    }
+
     @media (min-width: $screen-xl) {
       padding-top: 120px;
       background-image: url(~@/assets/img/dropsSlots_1248.png);
