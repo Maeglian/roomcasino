@@ -609,7 +609,8 @@ export default {
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 60px;
+      padding-top: 120px;
+      background-image: url(~@/assets/img/dropsSlots_1248.png);
     }
 
     @media (min-width: $screen-xxl) {
@@ -647,7 +648,7 @@ export default {
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 120px;
+      padding-top: 140px;
       background-image: url(~@/assets/img/dropsLive_1248.png);
     }
 
