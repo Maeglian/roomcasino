@@ -442,6 +442,11 @@
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!"
     },
+    "augustCashdays": {
+      "title": "August CashDays<br/> 60k",
+      "name": "August CashDays 60k",
+      "text": "Welcome to the August CashDays 60k tournament with marvelous bets and hefty prizes, created by Playson. The tournament runs between 01.08.2021 0:01 UTC and 08.08.2021 23:59 UTC. At NineCasino you can play all the top games of the Tournament. So, make hay while the sun shines!"
+    },
     "weekly_derby": {
       "upTo": "prize pool €2,500",
       "name": "Saddle up for the Weekly Derby",
@@ -510,6 +515,30 @@
       {
         "title": "Additionally:",
         "text": "<strong>How to win:<br/><br/>Weekly Roulette Tournament<br/>Prizes:</strong> €50,000 in total across 1,000 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0,50 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 2x of the total Qualifying Bet to qualify for the Weekly Roulette Tournament.<br/><br/>A Player may increase their Weekly Roulette Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Any stakes placed on 1:1 odds bets (Red/Black, Odd/Even, 1:18/19:36) shall not be counted towards the Weekly Roulette Tournament score.<br/><br/><strong>Weekly Blackjack Tournament<br/>Prizes:</strong> €25,000 in total across 300 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €10 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Blackjack Tournament.<br/><br/>A Player may increase their Weekly Blackjack Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets and/or Bets Behind may be considered for the Weekly Blackjack Tournament.<br/><br/><strong>Weekly Mega Wheel Tournament<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Mega Wheel Tournament.<br/><br/>A Player may increase their Weekly Mega Wheel Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>All Qualifying Bets may be considered for the Weekly Mega Wheel Tournament.<br/><br/><strong>Weekly Baccarat Tournaments<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Baccarat Tournament.<br/><br/>A Player may increase their Weekly Baccarat Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets (Player, Banker, and Tie) may be considered for the Weekly Baccarat Tournament score."
+      }
+    ]
+  },
+  "augustCashdays": {
+    "title": "August CashDays 60k",
+    "prize": "€60,000",
+    "text": "Welcome to the August CashDays 60k tournament with marvelous bets and hefty prizes, created by Playson. The tournament runs between 01.08.2021 0:01 UTC and 08.08.2021 23:59 UTC. At NineCasino you can play all the top games of the Tournament. So, make hay while the sun shines!",
+    "textMobile": "Welcome to the August CashDays 60k tournament with marvelous bets and hefty prizes, created by Playson. The tournament runs between 01.08.2021 0:01 UTC and 08.08.2021 23:59 UTC.",
+    "terms": [
+      {
+        "title": "Campaign duration:",
+        "text": "The tournament runs between 01.08.2021 0:01 UTC and 08.08.2021 23:59 UTC."
+      },
+      {
+        "title": "Prize pool information:",
+        "text": "The prize pool is distributed among 350 participants:<br/>1st place – €10,000<br/>2nd place – €5,000<br/>3d place – €3,000<br/>4th place – €1,500<br/>5th place – €1,000<br/>6th place – €900<br/>7th place – €800<br/>8th place – €700<br/>9th place – €600<br/>10th place – €500<br/>11th - 25th place – €400 <br/>26th - 50th place – € 200  <br/>51st - 100th place – €150 <br/>101st - 200th place – €100<br/>201st - 350th place – €50."
+      },
+      {
+        "title": "Minimum bet requirements:",
+        "text": "0.5 EUR"
+      },
+      {
+        "title": "Additional terms and conditions:",
+        "text": "1. The August Cashdays 60k tournament is available to play in real mode only. <br/>2. The minimum Bet is € 0.5 or currency equivalent. <br/>3. Points are calculated round-by-round. Points equal currency multiplied by 10. For example, € 1 won equals 10 points. <br/>4. Any winnings are counted and displayed on the Leaderboard, where we show all the best participants of the tournament. <br/><br/>Here are the 15 games for you to enjoy:                                                                 <br/>Book of Gold: Double Chance<br/>Book of Gold: Multichance                <br/>Buffalo Power: Hold and Win                <br/>Burning Wins: classic 5 lines        <br/>Diamond Wins: Hold and Win                        <br/>Divine Dragon: Hold and Win                        <br/>Hand of Gold                <br/>Hot Coins: Hold and Win                <br/>Legend of Cleopatra Megaways                        <br/>Sevens n Fruits                        <br/>Solar Queen                        <br/>Solar Temple                <br/>Sunny Fruits: Hold and Win                        <br/>Super Sunny Fruits: Hold and Win                        <br/>Wolf Power: Hold and Win"
       }
     ]
   },
