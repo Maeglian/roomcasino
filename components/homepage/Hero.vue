@@ -272,14 +272,14 @@ export default {
       }
 
       @media (min-width: $screen-s) {
-        top: 190px;
+        top: 250px;
         bottom: initial;
-        left: 180px;
+        left: 16px;
         transform: none;
       }
 
       @media (min-width: $screen-m) {
-        top: 240px;
+        top: 300px;
       }
 
       @media (min-width: $screen-l) {
