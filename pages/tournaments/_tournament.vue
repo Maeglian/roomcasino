@@ -731,12 +731,17 @@ export default {
     }
 
     @media (min-width: $screen-m) {
-      padding-top: 50px / 1248px * 100%;
+      padding-top: 120px / 1248px * 100%;
+    }
+
+    @media (min-width: $screen-l) {
+      padding-top: 140px / 1248px * 100%;
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 100px;
+      padding-top: 150px;
       background-image: url(~@/assets/img/august_1248_page.png);
+      background-position: center top;
     }
 
     @media (min-width: $screen-xxl) {
