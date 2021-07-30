@@ -98,9 +98,9 @@
             <use xlink:href="@/assets/img/icons.svg#ssl"></use>
           </svg>
         </div>
-        <div class="Footer-MoreIcons">
+        <a class="Footer-MoreIcons" href="https://duxgroup.com/" target="_blank">
           <img src="@/assets/img/logo-footer.svg" width="120" />
-        </div>
+        </a>
       </div>
     </div>
   </section>
