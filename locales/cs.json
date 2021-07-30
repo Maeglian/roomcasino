@@ -435,6 +435,11 @@
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play vám nabízí stále více příležitostí zábavy na nové úrovni díky nové Drops and Wins for Live Casino. Nenechte si ujít příležitost vyhrát podíl z neuvěřitelných 3 000 000 eur v hotovosti!<br/><br/>Máte rádi živé hry? Pak je tato živá akce určena právě pro vás. Zúčastněte se týdenních turnajů – ruleta, blackjack, Mega Wheel, Baccarat!"
     },
+    "augustCashdays": {
+      "title": "August CashDays<br/> 60k",
+      "name": "August CashDays 60k",
+      "text": "Vítejte v turnaji August CashDays 60k s podivuhodnými sázkami a pořádnými cenami, který pro vás pořádá Playson. Turnaj proběhne od 1. srpna 2021 0:01 UTC do 8. srpna 2021 23:59 UTC. V NineCasino si můžete zahrát všechny nejlepší hry zapojené do turnaje. Tak neodkládejte na zítřek, co můžete udělat dnes!"
+    },
     "weekly_derby": {
       "upTo": "prize pool 2500 eur",
       "name": "Vyrazte na Weekly Derby",
@@ -503,6 +508,30 @@
       {
         "title": "Další:",
         "text": "Týdenní turnaj v ruletě<br/>Ceny:</strong> celkem 50 000 € rozdělených na 1 000 cen:<br/>-\tHráči musí hrát se skutečnými penězi v některé ze zahrnutých her a provést minimální sázku ve výši 0,50 € v průběhu promo akce. Hráčům nevznikají žádné další výdaje související s účastí<br/><br/>Hráč musí získat minimálně 2 po sobě jdoucí kvalifikační výhry, přičemž každá z po sobě jdoucích kvalifikačních výher bude větší než dvojnásobek celkové kvalifikační sázky pro účast v týdenním turnaji v ruletě.<br/><br/>Hráči mohou zvýšit své skóre v týdenním turnaji v ruletě s každou další následnou kvalifikační výhrou.<br/><br/>Jakékoliv sázky s pravděpodobností výhry 1:1 (červená/černá, sudá/lichá, 1:18/19:36) nebudou započítány do skóre týdenního turnaje v ruletě.<br/><br/><strong>Týdenní turnaj v blackjacku:<br/>Ceny:</strong> celkem 25 000 € rozdělených na 300 cen:<br/>-\tHráči musí hrát se skutečnými penězi v některé ze zahrnutých her a provést minimální sázku ve výši 10 € v průběhu promo akce. Hráčům nevznikají žádné další výdaje související s účastí.<br/><br/>Hráč musí získat minimálně 2 po sobě jdoucí kvalifikační výhry, přičemž každá z po sobě jdoucích kvalifikačních výher bude větší než jednou celkové kvalifikační sázky pro účast v týdenním turnaji v blackjacku.<br/><br/>Hráči mohou zvýšit své skóre v týdenním turnaji v blackjacku s každou další následnou kvalifikační výhrou.<br/><br/>Do týdenního turnaje v blackjacku se započítávají pouze hlavní sázky a/nebo Bet Behind.<br/><br/><strong>Týdenní turnaj v Mega Wheel:<br/>Ceny:</strong> celkem 25 000 € rozdělených na 600 cen:<br/>Hráči musí hrát se skutečnými penězi v některé ze zahrnutých her a provést minimální sázku ve výši 0,50 € v průběhu promo akce. Hráčům nevznikají žádné další výdaje související s účastí.<br/><br/>Hráč musí získat minimálně 2 po sobě jdoucí kvalifikační výhry, přičemž každá z po sobě jdoucích kvalifikačních výher bude větší než jednou celkové kvalifikační sázky pro účast v týdenním turnaji v Mega Wheel.<br/><br/>Hráči mohou zvýšit své skóre v týdenním turnaji v Mega Wheel s každou další následnou kvalifikační výhrou.<br/><br/>Do týdenního turnaje v Mega Wheel mohou být započteny všechny kvalifikační sázky.<br/><br/><strong>Týdenní turnaj v Baccaratu:<br/>Ceny:</strong> celkem 25 000 € rozdělených na 600 cen:<br/>Hráči musí hrát se skutečnými penězi v některé ze zahrnutých her a provést minimální sázku ve výši 0,50 € v průběhu promo akce. Hráčům nevznikají žádné další výdaje související s účastí.<br/><br/>Hráč musí získat minimálně 2 po sobě jdoucí kvalifikační výhry, přičemž každá z po sobě jdoucích kvalifikačních výher bude větší než jednou celkové kvalifikační sázky pro účast v týdenním turnaji v Baccaratu.<br/><br/>Hráči mohou zvýšit své skóre v týdenním turnaji v Baccaratu s každou další následnou kvalifikační výhrou.<br/><br/>Do skóre týdenního turnaje v Baccaratu se započítávají pouze hlavní sázky (pozice hráč, bankéř a Tie)."
+      }
+    ]
+  },
+  "augustCashdays": {
+    "title": "August CashDays 60k",
+    "prize": "60 000 eur",
+    "text": "Vítejte v turnaji August CashDays 60k s podivuhodnými sázkami a pořádnými cenami, který pro vás pořádá Playson. Turnaj proběhne od 1. srpna 2021 0:01 UTC do 8. srpna 2021 23:59 UTC. V NineCasino si můžete zahrát všechny nejlepší hry zapojené do turnaje. Tak neodkládejte na zítřek, co můžete udělat dnes!",
+    "textMobile": "Vítejte v turnaji August CashDays 60k s podivuhodnými sázkami a pořádnými cenami, který pro vás pořádá Playson. Turnaj proběhne od 1. srpna 2021 0:01 UTC do 8. srpna 2021 23:59 UTC.",
+    "terms": [
+      {
+        "title": "Doba kampaně:",
+        "text": "Turnaj proběhne od 1. srpna 2021 0:01 UTC do 8. srpna 2021 23:59 UTC."
+      },
+      {
+        "title": "Struktura cen:",
+        "text": "Prize pool si rozdělí 350 účastníků:<br/>1. místo – 10 000 eur<br/>2. místo – 5000 eur<br/>3. místo – 3000 eur<br/>4. místo – 1500 eur<br/>5. místo – 1000 eur<br/>6. místo – 900 eur<br/>7. místo – 800 eur<br/>8. místo – 700 eur<br/>9. místo – 600 eur<br/>10. místo – 500 eur<br/>11.–25. místo – 400 eur <br/>26.–50. místo – 200 eur  <br/>51.–100. místo – 150 eur <br/>101.–200. místo – 100 eur<br/>201.–350. místo – 50 eur"
+      },
+      {
+        "title": "Minimální sázka:",
+        "text": "0,5 euro"
+      },
+      {
+        "title": "Podmínky promo akcí:",
+        "text": "1. Turnaje August CashDays 60k se mohou zúčastnit pouze hráči, kteří hrají za skutečné peníze. <br/>2. Minimální sázka je 0,5 eur, nebo ekvivalent v jiné měně. <br/>3. Body se počítají po jednotlivých kolech. Počet bodů odpovídá částce měny vynásobené 10. Například 1 euro odpovídá 10 bodům. <br/>4. Započítávají se všechny výhry, které jsou následně uvedeny ve výsledkové tabulce. V té jsou zobrazeni všichni nejlepší účastníci turnaje. <br/><br/>Vychutnat si budete moci těchto 15 her:<br/>Book of Gold: Double Chance<br/>Book of Gold: Multichance                <br/>Buffalo Power: Hold and Win                <br/>Burning Wins: classic 5 lines        <br/>Diamond Wins: Hold and Win                        <br/>Divine Dragon: Hold and Win                        <br/>Hand of Gold                <br/>Hot Coins: Hold and Win                <br/>Legend of Cleopatra Megaways                        <br/>Sevens n Fruits                        <br/>Solar Queen                        <br/>Solar Temple                <br/>Sunny Fruits: Hold and Win                        <br/>Super Sunny Fruits: Hold and Win                        <br/>Wolf Power: Hold and Win"
       }
     ]
   },

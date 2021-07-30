@@ -189,6 +189,13 @@ export default {
           linkText: this.$t('buttons.more'),
         },
         {
+          bg: 'august',
+          title: this.$t('promotions.augustCashdays.title'),
+          text: `<span class="Colored">${this.$t('augustCashdays.prize')}</span>`,
+          url: '/tournaments/august-cashdays',
+          linkText: this.$t('buttons.more'),
+        },
+        {
           bg: 'derby',
           title: this.$t('weekly_derby.title'),
           text: `<span class="Colored">${this.$t('weekly_derby.prize')}</span>`,

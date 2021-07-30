@@ -440,6 +440,11 @@
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play vous donne de plus en plus de chances de vous divertir en passant au niveau supérieur grâce à son nouveau Drops and Wins for Live Casino. Saisissez la chance de gagner une part de l’impressionnant montant de 3 000 000 € de prix en argent!<br/><br/>Aimez-vous les jeux en direct? Cette édition en direct vous ira à coup sûr. Participez aux tournois hebdomadaires  - Roulette, Blackjack, Grande Roue, Baccarat!"
     },
+    "augustCashdays": {
+      "title": "August CashDays<br/> 60k",
+      "name": "August CashDays 60k",
+      "text": "Bienvenue au tournoi August CashDays 60k avec des mises fantastiques et des prix impressionnants, créé par Playson. Le tournoi se déroule du 1 août 2021 0 h 01 UTC au 8 août 2021 23 h 59 UTC. À NineCasino, vous pouvez jouer à tous les meilleurs jeux du tournoi. Ne laissez pas la chance vous échapper!"
+    },
     "weekly_derby": {
       "upTo": "une cagnotte de 2500 €",
       "name": "À vos marques pour le Weekly Derby",
@@ -508,6 +513,30 @@
       {
         "title": "De plus:",
         "text": "Tournoi hebdomadaire de roulette<br/>Prix:</strong> 50 000 € au total, répartis sur 1 000 prix<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 2 fois la mise totale de qualification pour se qualifier au tournoi de roulette hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de roulette à chaque nouveau gain consécutif de qualification.<br/><br/>-\tLes mises placées sur des paris à cote 1:1 (Rouge/Noir, Pair/Impair, 1:18/19:36) ne sont pas comptabilisées dans le score du tournoi de roulette hebdomadaire.<br/><br/><strong>Tournoi hebdomadaire de blackjack<br/>Prix:</strong> 25 000 € au total, répartis sur 300 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 10 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de blackjack hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de blackjack à chaque nouveau gain consécutif de qualification.<br/><br/>-\tSeules les mises principales et/ou les mises secondaires peuvent être prises en compte pour le tournoi hebdomadaire de blackjack.<br/><br/><strong>Tournoi hebdomadaire de grande roue<br/>Prix:</strong> 25 000 € au total, répartis sur 600 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de grande roue hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de grande roue à chaque nouveau gain consécutif de qualification.<br/><br/>-\tToutes les mises qualificatives peuvent être prises en compte pour le tournoi hebdomadaire de la grande roue.<br/><br/><strong>Tournoi hebdomadaire de baccara<br/>Prix:</strong> 25 000 € au total, répartis sur 600 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de baccara hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de baccara à chaque nouveau gain consécutif de qualification.<br/><br/>-\tSeules les mises principales (joueur, banquier et égalité) peuvent être prises en compte pour le score du tournoi hebdomadaire de baccara."
+      }
+    ]
+  },
+  "augustCashdays": {
+    "title": "August CashDays 60k",
+    "prize": "60 000 €",
+    "text": "Bienvenue au tournoi August CashDays 60k avec des mises fantastiques et des prix impressionnants, créé par Playson. Le tournoi se déroule du 1 août 2021 0 h 01 UTC au 8 août 2021 23 h 59 UTC. À NineCasino, vous pouvez jouer à tous les meilleurs jeux du tournoi. Ne laissez pas la chance vous échapper!",
+    "textMobile": "Bienvenue au tournoi August CashDays 60k avec des mises fantastiques et des prix impressionnants, créé par Playson. Le tournoi se déroule du 1 août 2021 0 h 01 UTC au 8 août 2021 23 h 59 UTC.",
+    "terms": [
+      {
+        "title": "Période de la campagne:",
+        "text": "Le tournoi se déroule du 1 août 2021 0 h 01 UTC au 8 août 2021 23 h 59 UTC."
+      },
+      {
+        "title": "Structure des prix:",
+        "text": "La cagnotte est répartie entre 350 participants:<br/>1re place – 10 000 €<br/>2e place – 5 000 €<br/>3e place – 3 000 €<br/>4e place – 1 500 €<br/>5e place – 1 000 €<br/>6e place – 900 €<br/>7e place – 800 €<br/>8e place – 700 €<br/>9e place – 600 €<br/>10e place – 500 €<br/>11e à 25e place – 400 € <br/>26e à 50e place – 200 €  <br/>51e à 100e place – 150 € <br/>101e à 200e place – 100 €<br/>201e à 350e place – 50 €"
+      },
+      {
+        "title": "Mise minimale:",
+        "text": "0,5 EUR"
+      },
+      {
+        "title": "Conditions générales de la promotion:",
+        "text": "1. Le tournoi August Cashdays 60k est disponible pour jouer en mode réel uniquement. <br/>2. La mise minimale est de 0,5 EUR ou l’équivalent en autre devise. <br/>3. Les points sont calculés tour par tour. Les points sont égaux à la somme d’argent multipliée par 10. Par exemple, 1 EUR gagné équivaut à 10 points. <br/>4. Tous les gains sont comptabilisés et affichés dans le classement, où nous présentons tous les meilleurs participants du tournoi. <br/><br/>Voici les 15 jeux qui vous attendent :<br/>Book of Gold: Double Chance<br/>Book of Gold: Multichance                <br/>Buffalo Power: Hold and Win                <br/>Burning Wins: classic 5 lines        <br/>Diamond Wins: Hold and Win                        <br/>Divine Dragon: Hold and Win                        <br/>Hand of Gold                <br/>Hot Coins: Hold and Win                <br/>Legend of Cleopatra Megaways                        <br/>Sevens n Fruits                        <br/>Solar Queen                        <br/>Solar Temple                <br/>Sunny Fruits: Hold and Win                        <br/>Super Sunny Fruits: Hold and Win                        <br/>Wolf Power: Hold and Win"
       }
     ]
   },

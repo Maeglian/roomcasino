@@ -323,4 +323,11 @@ export const TOURNAMENTS = {
     class: 'DropsWinsLive',
     slug: 'dropslive',
   },
+  'august-cashdays': {
+    url: 'august-cashdays',
+    name: 'August CashDays 60k',
+    translates: 'augustCashdays',
+    class: 'AugustCashdays',
+    slug: 'playsonaugust',
+  },
 };
