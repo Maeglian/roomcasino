@@ -447,6 +447,11 @@
       "name": "August CashDays 60k",
       "text": "Welcome to the August CashDays 60k tournament with marvelous bets and hefty prizes, created by Playson. The tournament runs between 01.08.2021 0:01 UTC and 08.08.2021 23:59 UTC. At NineCasino you can play all the top games of the Tournament. So, make hay while the sun shines!"
     },
+    "epicRace": {
+      "title": "Spinomenal<br/> Epiс Race",
+      "name": "Spinomenal Epiс Race",
+      "text": "Again, the well-known Spinomenal race will drive you nuts with the exciting Epiс Race tournament.<br/> During these days in August, you can enjoy cool slots and earn a piece of the lavish prize pool of €20,000!"
+    },
     "weekly_derby": {
       "upTo": "prize pool €2,500",
       "name": "Saddle up for the Weekly Derby",
@@ -539,6 +544,30 @@
       {
         "title": "Additional terms and conditions:",
         "text": "1. The August Cashdays 60k tournament is available to play in real mode only. <br/>2. The minimum Bet is € 0.5 or currency equivalent. <br/>3. Points are calculated round-by-round. Points equal currency multiplied by 10. For example, € 1 won equals 10 points. <br/>4. Any winnings are counted and displayed on the Leaderboard, where we show all the best participants of the tournament. <br/><br/>Here are the 15 games for you to enjoy:                                                                 <br/>Book of Gold: Double Chance<br/>Book of Gold: Multichance                <br/>Buffalo Power: Hold and Win                <br/>Burning Wins: classic 5 lines        <br/>Diamond Wins: Hold and Win                        <br/>Divine Dragon: Hold and Win                        <br/>Hand of Gold                <br/>Hot Coins: Hold and Win                <br/>Legend of Cleopatra Megaways                        <br/>Sevens n Fruits                        <br/>Solar Queen                        <br/>Solar Temple                <br/>Sunny Fruits: Hold and Win                        <br/>Super Sunny Fruits: Hold and Win                        <br/>Wolf Power: Hold and Win"
+      }
+    ]
+  },
+  "epicRace": {
+    "title": "Spinomenal Epiс Race",
+    "prize": "€20,000",
+    "text": "Again, the well-known Spinomenal race will drive you nuts with the exciting Epiс Race tournament. During these days in August, you can enjoy cool slots and earn a piece of the lavish prize pool of €20,000!",
+    "textMobile": "Again, the well-known Spinomenal race will drive you nuts with the exciting Epiс Race tournament. During these days in August, you can enjoy cool slots and earn a piece of the lavish prize pool of €20,000!",
+    "terms": [
+      {
+        "title": "Campaign duration:",
+        "text": "The Epic Race runs between August 2nd, 2021, 00:00 GMT, and August 9th, 2021, 23:59 GMT."
+      },
+      {
+        "title": "Prize pool information:",
+        "text": "The 150 first players in the leaderboard will share a prize pool of €20,000:  <br/>1st place - €3,500<br/>2nd place - €2,500<br/>3rd place - €1,500<br/>4th place - €1,000<br/>5th place - €850<br/>6th place - €750<br/>7th place - €600<br/>8th place - €350<br/>9th place - €300<br/>10th place - €250<br/>11th - 20th places - €200<br/>21st - 30th places - €150<br/>31st - 40th places - €80<br/>41st - 50th places - €60<br/>51st - 100th places - €40<br/>101st - 150th places - €30."
+      },
+      {
+        "title": "Minimum bet requirements:",
+        "text": "0.5 EUR"
+      },
+      {
+        "title": "Additional terms and conditions:",
+        "text": "The minimum qualifying bet per spin to participate in the tournament is €0.5. <br/>Participating games: Book Of The Divine, Majestic King, Aztec Spell.<br/>All you need to do to join the Spinomenal Epiс Race is just play any of the participating games. Each win rewards you with a score based on the win multiplier. The more points you collect, the higher your position on the leaderboard."
       }
     ]
   },

@@ -196,6 +196,13 @@ export default {
           linkText: this.$t('buttons.more'),
         },
         {
+          bg: 'race',
+          title: this.$t('promotions.epicRace.title'),
+          text: `<span class="Colored">${this.$t('epicRace.prize')}</span>`,
+          url: '/tournaments/spinomenal-epic-race',
+          linkText: this.$t('buttons.more'),
+        },
+        {
           bg: 'derby',
           title: this.$t('weekly_derby.title'),
           text: `<span class="Colored">${this.$t('weekly_derby.prize')}</span>`,
