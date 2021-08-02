@@ -445,6 +445,11 @@
       "name": "August CashDays 60k",
       "text": "Bienvenue au tournoi August CashDays 60k avec des mises fantastiques et des prix impressionnants, créé par Playson. Le tournoi se déroule du 1 août 2021 0 h 01 UTC au 8 août 2021 23 h 59 UTC. À NineCasino, vous pouvez jouer à tous les meilleurs jeux du tournoi. Ne laissez pas la chance vous échapper!"
     },
+    "epicRace": {
+      "title": "Spinomenal<br/> Epiс Race",
+      "name": "Spinomenal Epiс Race",
+      "text": "Une fois de plus, la fameuse Spinomenal Race va vous faire vivre des moments inoubliables grâce au passionnant tournoi Epic Race.<br/> Pendant ces journées d’août, vous pourrez profiter de machines à sous géniales et gagner une partie de la généreuse cagnotte de 20 000 €!"
+    },
     "weekly_derby": {
       "upTo": "une cagnotte de 2500 €",
       "name": "À vos marques pour le Weekly Derby",
@@ -537,6 +542,30 @@
       {
         "title": "Conditions générales de la promotion:",
         "text": "1. Le tournoi August Cashdays 60k est disponible pour jouer en mode réel uniquement. <br/>2. La mise minimale est de 0,5 EUR ou l’équivalent en autre devise. <br/>3. Les points sont calculés tour par tour. Les points sont égaux à la somme d’argent multipliée par 10. Par exemple, 1 EUR gagné équivaut à 10 points. <br/>4. Tous les gains sont comptabilisés et affichés dans le classement, où nous présentons tous les meilleurs participants du tournoi. <br/><br/>Voici les 15 jeux qui vous attendent :<br/>Book of Gold: Double Chance<br/>Book of Gold: Multichance                <br/>Buffalo Power: Hold and Win                <br/>Burning Wins: classic 5 lines        <br/>Diamond Wins: Hold and Win                        <br/>Divine Dragon: Hold and Win                        <br/>Hand of Gold                <br/>Hot Coins: Hold and Win                <br/>Legend of Cleopatra Megaways                        <br/>Sevens n Fruits                        <br/>Solar Queen                        <br/>Solar Temple                <br/>Sunny Fruits: Hold and Win                        <br/>Super Sunny Fruits: Hold and Win                        <br/>Wolf Power: Hold and Win"
+      }
+    ]
+  },
+  "epicRace": {
+    "title": "Spinomenal Epiс Race",
+    "prize": "20 000 €",
+    "text": "Une fois de plus, la fameuse Spinomenal Race va vous faire vivre des moments inoubliables grâce au passionnant tournoi Epic Race. Pendant ces journées d’août, vous pourrez profiter de machines à sous géniales et gagner une partie de la généreuse cagnotte de 20 000 €!",
+    "textMobile": "Une fois de plus, la fameuse Spinomenal Race va vous faire vivre des moments inoubliables grâce au passionnant tournoi Epic Race. Pendant ces journées d’août, vous pourrez profiter de machines à sous géniales et gagner une partie de la généreuse cagnotte de 20 000 €!",
+    "terms": [
+      {
+        "title": "Période de la campagne:",
+        "text": "Cette Epic Race se déroule entre le 2 août 2021, 00 h 00 GMT et le 9 août 2021, 23 h 59 GMT."
+      },
+      {
+        "title": "Structure des prix:",
+        "text": "La cagnotte est répartie entre 350 participants.Les 150 premiers joueurs du classement se partageront une cagnotte de 20 000 € comme suit :  <br/>1re place – 3 500 €<br/>2e place – 2 500 €<br/>3e place – 1 500 €<br/>4e place – 1 000 €<br/>5e place – 850 €<br/>6e place – 750 €<br/>7e place – 600 €<br/>8e place – 350 €<br/>9e place – 300 €<br/>10e place – 250 €<br/>11e à 20e place – 200 €<br/>21e à 30e place – 150 €<br/>31e à 40e place – 80 €<br/>41e à 50e place – 60 €<br/>51e à 100e place – 40 €<br/>101e à 150e place – 30 €"
+      },
+      {
+        "title": "Mise minimale:",
+        "text": "0,5 EUR"
+      },
+      {
+        "title": "Conditions générales de la promotion:",
+        "text": "La mise minimale de qualification par tour pour participer au tournoi est de 0,5 €. <br/>Jeux participants : Book Of The Divine, Majestic King, Aztec Spell.<br/>Pour participer à cette Epic Race de Spinomenal, il vous suffit de jouer à l’un des jeux participants. Chaque gain vous récompense avec un score basé sur le multiplicateur de gain. Plus vous accumulez de points, plus vous êtes bien placé dans le classement."
       }
     ]
   },

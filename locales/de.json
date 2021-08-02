@@ -446,6 +446,11 @@
       "name": "August CashDays 60k",
       "text": "Willkommen bei dem August CashDays 60k-Turnier mit sagenhaften Einsätzen und satten Gewinnen aus dem Hause Playson. Das Turnier läuft ab dem 01.08.2021 um 0:01 Uhr UTC und endet am 08.08.2021 um 23:59 Uhr UTC. Bei NineCasino können Sie alle angesagten Spiele des Turniers spielen. Also, fahren Sie die Scheuer ein, solange die Sonne lacht!"
     },
+    "epicRace": {
+      "title": "Spinomenal<br/> Epiс Race",
+      "name": "Spinomenal Epiс Race",
+      "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Epic Race-Turnier verrückt spielen.<br/> An diesen Augusttagen können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 20.000 Euro sichern!"
+    },
     "weekly_derby": {
       "upTo": "Preispool 2.500 €",
       "name": "Aufsatteln fürs Weekly Derby",
@@ -538,6 +543,30 @@
       {
         "title": "Teilnahmebedingungen der Aktion:",
         "text": "1. An dem August CashDays 60k-Turnier kann nur im Echtgeldmodus teilgenommen werden. <br/>2. Der Mindesteinsatz beträgt umgerechnet 0,5 Euro. <br/>3. Die Punkte werden Runde für Runde berechnet. Dabei entspricht jeder Punkt dem gewonnenen Betrag multipliziert mit 10. 1 gewonnener Euro entspricht demnach 10 Punkten. <br/>4. Alle Gewinne werden in der Rangliste der besten Turnierteilnehmerinnen und -teilnehmer erfasst und angezeigt. <br/><br/>Und diese 15 Spiele warten auf Sie:<br/>Book of Gold: Double Chance<br/>Book of Gold: Multichance                <br/>Buffalo Power: Hold and Win                <br/>Burning Wins: classic 5 lines        <br/>Diamond Wins: Hold and Win                        <br/>Divine Dragon: Hold and Win                        <br/>Hand of Gold                <br/>Hot Coins: Hold and Win                <br/>Legend of Cleopatra Megaways                        <br/>Sevens n Fruits                        <br/>Solar Queen                        <br/>Solar Temple                <br/>Sunny Fruits: Hold and Win                        <br/>Super Sunny Fruits: Hold and Win                        <br/>Wolf Power: Hold and Win"
+      }
+    ]
+  },
+  "epicRace": {
+    "title": "Spinomenal Epiс Race",
+    "prize": "20.000 €",
+    "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Epic Race-Turnier verrückt spielen. An diesen Augusttagen können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 20.000 Euro sichern!",
+    "textMobile": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Epic Race-Turnier verrückt spielen. An diesen Augusttagen können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 20.000 Euro sichern!",
+    "terms": [
+      {
+        "title": "Dauer der Aktion:",
+        "text": "Das Epic Race läuft ab dem 2. August um 00:00 Uhr GMT und endet am 9. August 2021 um 23:59 Uhr GMT."
+      },
+      {
+        "title": "Gewinnstrukturierung:",
+        "text": "Die 150 Bestplatzierten teilen sich das Preisgeld in Höhe von 20.000 Euro nach folgendem Muster:  <br/>Platz 1 – 3.500 €<br/>Platz 2 – 2.500 €<br/>Platz 3 – 1.500 €<br/>Platz 4 – 1.000 €<br/>Platz 5 – 850 €<br/>Platz 6 – 750 €<br/>Platz 7 – 600 €<br/>Platz 8 – 350 €<br/>Platz 9 – 300 €<br/>Platz 10 – 250 €<br/>Platz 11 bis 20 je 200 €<br/>Platz 21 bis 30 je 150 €<br/>Platz 31 bis 40 je 80 €<br/>Platz 41 bis 50 je 60 €<br/>Platz 51 bis 100 je 40 €<br/>Platz 101 bis 150 je 30 €"
+      },
+      {
+        "title": "Mindesteinsatz:",
+        "text": "0.5 EUR"
+      },
+      {
+        "title": "Teilnahmebedingungen der Aktion:",
+        "text": "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 Euro. <br/>Teilnehmende Spiele: Book Of The Divine, Majestic King, Aztec Spell.<br/>Um an dem Epic Race von Spinomenal teilzunehmen, müssen Sie lediglich eines der teilnehmenden Spiele spielen. Jeder Gewinn bringt Ihnen Wertungspunkte entsprechend dem Gewinnmultiplikator. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
       }
     ]
   },
