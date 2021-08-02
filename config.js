@@ -330,4 +330,11 @@ export const TOURNAMENTS = {
     class: 'AugustCashdays',
     slug: 'playsonaugust',
   },
+  'spinomenal-epic-race': {
+    url: 'spinomenal-epic-race',
+    name: 'Spinomenal Epiс Race',
+    translates: 'epicRace',
+    class: 'EpicRace',
+    slug: 'epicrace',
+  },
 };

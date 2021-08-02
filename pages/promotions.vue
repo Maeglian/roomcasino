@@ -194,6 +194,15 @@ export default {
           url: '/tournaments/august-cashdays',
         },
         {
+          title: this.$t('promotions.epicRace.title'),
+          prize: this.$t('epicRace.prize'),
+          image: 'race-promotions.png',
+          announce: this.$t('promotions.epicRace.name'),
+          text: this.$t('promotions.epicRace.text'),
+          link: 'More',
+          url: '/tournaments/spinomenal-epic-race',
+        },
+        {
           title: this.$t('weekly_derby.title'),
           prize: this.$t('promotions.weekly_derby.upTo'),
           image: 'derby-promotions.png',

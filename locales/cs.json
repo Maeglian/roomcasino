@@ -417,7 +417,7 @@
     "cashback" : {
       "title" : "Programu <br/> cashback",
       "upTo" : "až 20%",
-      "name" : "Programu Cashback\n",
+      "name" : "Programu Cashback",
       "text" : "Kdo by nechtěl zdarma vrátit hotovost v kasinu? Dokonce i když prohrajete! <br/> Ano, čtete správně – vrátíme vám hotovost, pokud vsadíte x5, dokonce i když prohrajete"
     },
     "highroller" : {
@@ -439,6 +439,11 @@
       "title": "August CashDays<br/> 60k",
       "name": "August CashDays 60k",
       "text": "Vítejte v turnaji August CashDays 60k s podivuhodnými sázkami a pořádnými cenami, který pro vás pořádá Playson. Turnaj proběhne od 1. srpna 2021 0:01 UTC do 8. srpna 2021 23:59 UTC. V NineCasino si můžete zahrát všechny nejlepší hry zapojené do turnaje. Tak neodkládejte na zítřek, co můžete udělat dnes!"
+    },
+    "epicRace": {
+      "title": "Spinomenal<br/> Epiс Race",
+      "name": "Spinomenal Epiс Race",
+      "text": "A je to zase tady – známý poskytovatel Spinomenal vás svým vzrušujícím turnajem Epic Race přivede k šílenství.<br/> Během těchto srpnových dnů si můžete zahrát na nejskvělejších slotech a odloupnout si část ze štědrého prize poolu v hodnotě 20 000 eur! "
     },
     "weekly_derby": {
       "upTo": "prize pool 2500 eur",
@@ -532,6 +537,30 @@
       {
         "title": "Podmínky promo akcí:",
         "text": "1. Turnaje August CashDays 60k se mohou zúčastnit pouze hráči, kteří hrají za skutečné peníze. <br/>2. Minimální sázka je 0,5 eur, nebo ekvivalent v jiné měně. <br/>3. Body se počítají po jednotlivých kolech. Počet bodů odpovídá částce měny vynásobené 10. Například 1 euro odpovídá 10 bodům. <br/>4. Započítávají se všechny výhry, které jsou následně uvedeny ve výsledkové tabulce. V té jsou zobrazeni všichni nejlepší účastníci turnaje. <br/><br/>Vychutnat si budete moci těchto 15 her:<br/>Book of Gold: Double Chance<br/>Book of Gold: Multichance                <br/>Buffalo Power: Hold and Win                <br/>Burning Wins: classic 5 lines        <br/>Diamond Wins: Hold and Win                        <br/>Divine Dragon: Hold and Win                        <br/>Hand of Gold                <br/>Hot Coins: Hold and Win                <br/>Legend of Cleopatra Megaways                        <br/>Sevens n Fruits                        <br/>Solar Queen                        <br/>Solar Temple                <br/>Sunny Fruits: Hold and Win                        <br/>Super Sunny Fruits: Hold and Win                        <br/>Wolf Power: Hold and Win"
+      }
+    ]
+  },
+  "epicRace": {
+    "title": "Spinomenal Epiс Race",
+    "prize": "20 000 eur",
+    "text": "A je to zase tady – známý poskytovatel Spinomenal vás svým vzrušujícím turnajem Epic Race přivede k šílenství. Během těchto srpnových dnů si můžete zahrát na nejskvělejších slotech a odloupnout si část ze štědrého prize poolu v hodnotě 20 000 eur! ",
+    "textMobile": "A je to zase tady – známý poskytovatel Spinomenal vás svým vzrušujícím turnajem Epic Race přivede k šílenství. Během těchto srpnových dnů si můžete zahrát na nejskvělejších slotech a odloupnout si část ze štědrého prize poolu v hodnotě 20 000 eur!",
+    "terms": [
+      {
+        "title": "Doba kampaně:",
+        "text": "Epic Race Uskuteční se od 2. srpna 2021 00:00 GMT do 9. srpna 2021 23:59 GMT."
+      },
+      {
+        "title": "Struktura cen:",
+        "text": "Prvních 150 hráčů ve výsledkové tabulce si rozdělí částku 20 000 eur následovně:  <br/>1. místo – 3500 eur<br/>2. místo – 2500 eur<br/>3. místo – 1500 eur<br/>4. místo – 1000 eur<br/>5. místo – 850 eur<br/>6. místo – 750 eur<br/>7. místo – 600 eur<br/>8. místo – 350 eur<br/>9. místo – 300 eur<br/>10. místo – 250 eur<br/>11.–20. místo – 200 eur<br/>21.–30. místo – 150 eur<br/>31.–40. místo – 80 eur<br/>41.–50. místo – 60 eur<br/>51.–100. místo – 40 eur<br/>101.–150. místo – 30 eur"
+      },
+      {
+        "title": "Minimální sázka:",
+        "text": "0,5 euro"
+      },
+      {
+        "title": "Podmínky promo akcí:",
+        "text": "Minimální sázka na jeden spin požadovaná pro účast v turnaji je 0,5 eur. <br/>Zapojené hry: Book Of The Divine, Majestic King, Aztec Spell.<br/>Jedinou podmínkou pro účast v turnaji Spinomenal Epic Race je hrát některou ze zapojených her. S každou výhrou získáte skóre podle násobitele výhry. Čím více bodů získáte, tím výše se v tabulce umístíte."
       }
     ]
   },
