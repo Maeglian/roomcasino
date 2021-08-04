@@ -73,6 +73,93 @@
       </div>
     </div>
     <section class="DailyTournamentPage-Content">
+      <div class="LotteryPage-WinnersTables">
+        <!--        <Loader v-if="tournamentResultIsLoading" />-->
+        <div class="DailyTournamentPage-TableSection">
+          <div class="LotteryPage-WinnersTitle">
+            {{ $t('tournaments.currentWinners') }}
+          </div>
+          <div class="DailyTournamentPage-Table LotteryPage-Table Table--scrollable">
+            <div class="Table TableBordered">
+              <div class="Table-Row">
+                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
+                  #
+                </div>
+                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
+                  {{ $t('common.name') }}
+                </div>
+                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
+                  {{ $t('common.points') }}
+                </div>
+                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
+                  {{ $t('common.prize') }}
+                </div>
+              </div>
+              <div v-for="(winner, i) in lotteryWinnersList" :key="winner.id" class="Table-Row">
+                <div class="Table-Cell TableBordered-Cell">
+                  {{ i + 1 }}
+                </div>
+                <div class="Table-Cell TableBordered-Cell DailyTournamentPage-WinnerNick">
+                  {{ winner.nickname }}
+                </div>
+                <div class="Table-Cell TableBordered-Cell">
+                  {{ winner.points }}
+                </div>
+                <div class="Table-Cell TableBordered-Cell DailyTournamentPage-Prize">
+                  <!--                <template-->
+                  <!--                  v-if="tournamentAwards.length && i < tournamentAwards[round].awards.length"-->
+                  <!--                >-->
+                  <!--                  {{ tournamentAwards[round].awards[i].moneyAmount }} {{ tournament.currency }}-->
+                  <!--                </template>-->
+                  {{ winner.prize }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="DailyTournamentPage-TableSection">
+          <div class="LotteryPage-WinnersTitle">
+            {{ $t('tournaments.previousRound') }}
+          </div>
+          <div class="DailyTournamentPage-Table LotteryPage-Table Table--scrollable">
+            <div class="Table TableBordered">
+              <div class="Table-Row">
+                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
+                  #
+                </div>
+                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
+                  {{ $t('common.name') }}
+                </div>
+                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
+                  {{ $t('common.points') }}
+                </div>
+                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
+                  {{ $t('common.prize') }}
+                </div>
+              </div>
+              <div v-for="(winner, i) in lotteryWinnersList" :key="winner.id" class="Table-Row">
+                <div class="Table-Cell TableBordered-Cell">
+                  {{ i + 1 }}
+                </div>
+                <div class="Table-Cell TableBordered-Cell DailyTournamentPage-WinnerNick">
+                  {{ winner.nickname }}
+                </div>
+                <div class="Table-Cell TableBordered-Cell">
+                  {{ winner.points }}
+                </div>
+                <div class="Table-Cell TableBordered-Cell DailyTournamentPage-Prize">
+                  <!--                <template-->
+                  <!--                  v-if="tournamentAwards.length && i < tournamentAwards[round].awards.length"-->
+                  <!--                >-->
+                  <!--                  {{ tournamentAwards[round].awards[i].moneyAmount }} {{ tournament.currency }}-->
+                  <!--                </template>-->
+                  {{ winner.prize }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <h2 class="Title Title--type-h2 Page-Subtitle DailyTournamentPage-Subtitle">
         {{ $t('lottery.termsTitle') }}
       </h2>
@@ -104,6 +191,91 @@ export default {
       winnersToShow: 10,
       round: 0,
       page: 1,
+      lotteryWinnersList: [
+        {
+          nickname: 'Valeria',
+          place: 1,
+          points: 859,
+          prize: '200 EUR',
+        },
+        {
+          nickname: 'dfdf',
+          place: 2,
+          points: 40,
+          prize: '150 EUR',
+        },
+        {
+          nickname: 'Marfa',
+          place: 3,
+          points: 26,
+          prize: '120 EUR',
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+        {
+          nickname: 'Pupa',
+          place: 4,
+          points: 8,
+        },
+      ],
     };
   },
   head() {
@@ -163,326 +335,6 @@ export default {
 </script>
 
 <style lang="scss">
-.DailyTournamentPage {
-  &-MainText {
-    display: block;
-    text-align: center;
-
-    @media (min-width: $screen-s) {
-      max-width: 40%;
-      text-align: left;
-    }
-  }
-
-  &-Title {
-    margin-bottom: 11px;
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 15px;
-    }
-  }
-
-  &-Subtitle {
-    margin-bottom: 18px;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--color-main1);
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 25px;
-      font-size: 22px;
-    }
-
-    @media (min-width: $screen-l) {
-      font-size: 30px;
-    }
-
-    @media (min-width: $screen-xl) {
-      font-size: 36px;
-    }
-  }
-
-  &-Text {
-    margin-bottom: 20px;
-
-    @media (min-width: $screen-s) {
-      margin-bottom: 30px;
-      text-align: left;
-    }
-  }
-
-  &-Bonus {
-    margin-bottom: 30px;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--color-text-main);
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 36px;
-      font-size: 14px;
-    }
-
-    @media (min-width: $screen-l) {
-      margin-bottom: 24px;
-      font-size: 18px;
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-bottom: 71px;
-      font-size: 20px;
-    }
-  }
-
-  &-Promotion {
-    position: relative;
-
-    @media (min-width: $screen-m) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-
-  &-Btn {
-    width: 100%;
-    margin-bottom: 23px;
-
-    @media (min-width: $screen-s) {
-      width: 180px;
-      margin-right: 20px;
-      margin-bottom: 0;
-      text-align: left;
-      white-space: nowrap;
-    }
-  }
-
-  &-Deposit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    @media (min-width: $screen-s) {
-      flex-direction: row;
-      align-items: center;
-    }
-  }
-
-  &-Benefits {
-    display: none;
-
-    @media (min-width: $screen-m) {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      display: block;
-    }
-
-    @media (min-width: $screen-xl) {
-      position: relative;
-      right: auto;
-      bottom: auto;
-      display: flex;
-    }
-  }
-
-  &-Benefit {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 15px;
-
-    @media (min-width: $screen-xl) {
-      margin-right: 55px;
-      margin-bottom: 0;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &-BenefitIcon {
-    width: 13px;
-    margin-right: 10px;
-
-    @media (min-width: $screen-l) {
-      width: 17px;
-    }
-
-    @media (min-width: $screen-xl) {
-      width: 20px;
-    }
-  }
-
-  &-BenefitName {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--color-text-main);
-    text-transform: uppercase;
-
-    @media (min-width: $screen-l) {
-      font-size: 20px;
-    }
-  }
-
-  &-BenefitAdditional {
-    font-size: 9px;
-    font-weight: 700;
-    color: var(--color-text-ghost);
-    text-transform: uppercase;
-
-    @media (min-width: $screen-l) {
-      font-size: 12px;
-    }
-  }
-
-  &-Tabs {
-    width: 100%;
-    margin-bottom: 4px;
-    font-size: 11px;
-    text-transform: uppercase;
-
-    @media (min-width: $screen-m) {
-      font-size: 12px;
-    }
-  }
-
-  &-Table {
-    max-height: 600px;
-    padding: 21px 10px;
-    overflow-y: auto;
-    font-size: 10px;
-    scrollbar-width: thin;
-    scrollbar-color: #6a6e7f transparent;
-
-    @media (min-width: $screen-m) {
-      font-size: 12px;
-    }
-
-    &::-webkit-scrollbar {
-      width: 5px;
-      background: var(--color-bg);
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: #6a6e7f;
-      border-radius: 3px;
-    }
-  }
-
-  &-Th {
-    color: var(--color-text-ghost);
-  }
-
-  &-WinnerNick {
-    color: var(--color-text-main);
-  }
-
-  &-Prize {
-    font-size: 11px;
-    text-align: right;
-    color: var(--color-main1);
-
-    @media (min-width: $screen-m) {
-      font-size: 14px;
-    }
-  }
-
-  &-Row {
-    margin-bottom: 37px;
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 41px;
-    }
-
-    @media (min-width: $screen-l) {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 50px;
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-bottom: 80px;
-    }
-  }
-
-  &-Winners {
-    @media (min-width: $screen-l) {
-      width: calc(50% - 10px);
-    }
-
-    @media (min-width: $screen-xl) {
-      width: calc(50% - 25px);
-    }
-  }
-
-  &-WinnersTable {
-    margin-bottom: 37px;
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 55px;
-    }
-
-    @media (min-width: $screen-l) {
-      margin-bottom: 0;
-    }
-  }
-
-  &-SliderSection {
-    width: 100%;
-
-    @media (min-width: $screen-l) {
-      width: calc(50% - 10px);
-      margin-top: 25px;
-    }
-
-    @media (min-width: $screen-xl) {
-      width: calc(50% - 25px);
-    }
-
-    //.v_slider, .v_slider__list, .v_slider__track {
-    //  height: 100%;
-    //}
-  }
-
-  &-Games {
-    margin-bottom: 29px;
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 50px;
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-bottom: 97px;
-    }
-  }
-
-  &-Terms {
-    margin-bottom: 37px;
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 56px;
-    }
-
-    @media (min-width: $screen-l) {
-      margin-bottom: 60px;
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-bottom: 80px;
-    }
-  }
-
-  &-TermsTitle {
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: var(--color-text-main);
-  }
-}
-
 .LotteryPage {
   &-Advantages {
     display: grid;
@@ -544,6 +396,61 @@ export default {
         max-width: 35%;
       }
     }
+  }
+
+  &-WinnersTables {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 48px;
+    margin-bottom: 38px;
+
+    @media (min-width: $screen-m) {
+      margin-bottom: 48px;
+    }
+
+    @media (min-width: $screen-l) {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 12px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &-Table {
+    background: var(--color-bg);
+  }
+
+  &-WinnersTitle {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    margin-bottom: 4px;
+    padding: 0 15px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+    background: var(--color-bg);
+
+    @media (min-width: $screen-m) {
+      height: 60px;
+      padding: 0 34px;
+    }
+
+    @media (min-width: $screen-l) {
+      height: 60px;
+      padding: 0 18px;
+      font-size: 16px;
+    }
+
+    @media (min-width: $screen-l) {
+      height: 70px;
+      padding: 0 24px;
+      font-size: 20px;
+    }
+  }
+
+  .Table--scrollable {
+    max-height: 430px;
   }
 }
 </style>

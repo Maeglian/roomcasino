@@ -41,7 +41,6 @@
     }
   }
 
-
   &-Text {
     margin-bottom: 20px;
 
@@ -190,29 +189,6 @@
     }
   }
 
-  &-Table {
-    max-height: 600px;
-    padding: 21px 10px;
-    overflow-y: auto;
-    font-size: 10px;
-    scrollbar-width: thin;
-    scrollbar-color: #6a6e7f transparent;
-
-    @media (min-width: $screen-m) {
-      font-size: 12px;
-    }
-
-    &::-webkit-scrollbar {
-      width: 5px;
-      background: var(--color-bg);
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: #6a6e7f;
-      border-radius: 3px;
-    }
-  }
-
   &-Th {
     color: var(--color-text-ghost);
   }
@@ -268,6 +244,19 @@
 
     @media (min-width: $screen-l) {
       margin-bottom: 0;
+    }
+  }
+
+  &-Table {
+    padding: 21px 10px;
+    font-size: 10px;
+
+    @media (min-width: $screen-m) {
+      font-size: 12px;
+    }
+
+    &.Table--scrollable {
+      max-height: 600px;
     }
   }
 

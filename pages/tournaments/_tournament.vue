@@ -85,7 +85,7 @@
           />
           <div class="DailyTournamentPage-WinnersTable">
             <Loader v-if="tournamentResultIsLoading" />
-            <div v-else class="DailyTournamentPage-Table">
+            <div v-else class="DailyTournamentPage-Table Table--scrollable">
               <div class="Table TableBordered">
                 <div class="Table-Row">
                   <div
