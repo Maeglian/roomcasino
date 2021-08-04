@@ -1,6 +1,6 @@
 <template>
   <section class="Page Page--full LotteryPage DailyTournamentPage">
-    <div class="Page-Header DailyTournamentPage-Header">
+    <div class="Page-Header LotteryPage-Header">
       <div class="Wrapper">
         <div class="DailyTournamentPage-MainText">
           <h1
@@ -509,164 +509,30 @@ export default {
       margin-bottom: 60px;
     }
   }
-}
 
-.DropsWinsSlots {
   &-Header {
     width: 100%;
     margin-top: -70px;
     margin-bottom: 22px;
-    padding-top: 270px / 320px * 100%;
-    background-image: url(~@/assets/img/dropsSlots_460.png);
+    padding-top: 190px / 320px * 100%;
+    background-image: url(~@/assets/img/lottery_460.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: calc(100% - 32px) auto;
 
     @media (min-width: $screen-s) {
       margin-top: 0;
-      padding-top: 50px / 1248px * 100%;
-      background-image: url(~@/assets/img/dropsSlots_900.png);
-      background-position: center top;
+      padding-top: 18px / 768px * 100%;
+      background-image: url(~@/assets/img/lottery_768.png);
     }
 
     @media (min-width: $screen-l) {
-      padding-top: 100px / 1248px * 100%;
-      background-position: center center;
+      background-image: url(~@/assets/img/lottery_960.png);
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 120px;
-      background-image: url(~@/assets/img/dropsSlots_1248.png);
-    }
-
-    @media (min-width: $screen-xxl) {
-      background-image: url(~@/assets/img/dropsSlots_1920.png);
-    }
-
-    .DailyTournamentPage-MainText {
-      @media (min-width: $screen-s) {
-        max-width: 35%;
-      }
-    }
-  }
-}
-
-.DropsWinsLive {
-  &-Header {
-    width: 100%;
-    margin-top: -70px;
-    margin-bottom: 22px;
-    padding-top: 270px / 320px * 100%;
-    background-image: url(~@/assets/img/dropsLive_460.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: calc(100% - 32px) auto;
-
-    @media (min-width: $screen-s) {
-      margin-top: 0;
-      padding-top: 80px / 1248px * 100%;
-      background-image: url(~@/assets/img/dropsLive_900.png);
-      background-position: center center;
-    }
-
-    @media (min-width: $screen-m) {
-      padding-top: 50px / 1248px * 100%;
-    }
-
-    @media (min-width: $screen-xl) {
-      padding-top: 140px;
-      background-image: url(~@/assets/img/dropsLive_1248.png);
-    }
-
-    @media (min-width: $screen-xxl) {
-      background-image: url(~@/assets/img/dropsLive_1920.png);
-    }
-
-    .DailyTournamentPage-MainText {
-      @media (min-width: $screen-s) {
-        max-width: 35%;
-      }
-    }
-  }
-}
-
-.Weekly_derby {
-  &-Header {
-    width: 100%;
-    margin-top: -70px;
-    margin-bottom: 22px;
-    padding-top: 270px / 320px * 100%;
-    background-image: url(~@/assets/img/derby_460.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: calc(100% - 32px) auto;
-
-    @media (min-width: $screen-s) {
-      margin-top: 0;
-      padding-top: 80px / 1248px * 100%;
-      background-image: url(~@/assets/img/derby_900.png);
-    }
-
-    @media (min-width: $screen-m) {
-      padding-top: 50px / 1248px * 100%;
-      background-position: center center;
-    }
-
-    @media (min-width: $screen-xl) {
-      padding-top: 100px;
-      background-image: url(~@/assets/img/derby_1248.png);
-    }
-
-    @media (min-width: $screen-xxl) {
-      background-image: url(~@/assets/img/derby_1920.png);
-    }
-
-    .DailyTournamentPage-MainText {
-      @media (min-width: $screen-s) {
-        max-width: 50%;
-      }
-
-      @media (min-width: $screen-m) {
-        max-width: 35%;
-      }
-    }
-  }
-}
-
-.AugustCashdays {
-  &-Header {
-    width: 100%;
-    margin-top: -70px;
-    margin-bottom: 22px;
-    padding-top: 270px / 320px * 100%;
-    background-image: url(~@/assets/img/august_460.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: calc(100% - 32px) auto;
-
-    @media (min-width: $screen-s) {
-      margin-top: 0;
-      padding-top: 80px / 1248px * 100%;
-      background-image: url(~@/assets/img/august_900_page.png);
-      background-position: center center;
-    }
-
-    @media (min-width: $screen-m) {
-      padding-top: 120px / 1248px * 100%;
-    }
-
-    @media (min-width: $screen-l) {
-      padding-top: 140px / 1248px * 100%;
-    }
-
-    @media (min-width: $screen-xl) {
-      padding-top: 150px;
-      background-image: url(~@/assets/img/august_1248_page.png);
-      background-position: center top;
-    }
-
-    @media (min-width: $screen-xxl) {
-      background-image: url(~@/assets/img/august_1920.png);
+      padding-top: 36px;
+      background-image: url(~@/assets/img/lottery_1248.png);
     }
 
     .DailyTournamentPage-MainText {
