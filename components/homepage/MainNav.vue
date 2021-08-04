@@ -99,6 +99,11 @@ export default {
           url: this.localePath('/daily-cashback'),
           icon: 'cashback.svg',
         },
+        {
+          name: this.$t('pages.lottery'),
+          url: this.localePath('/lottery'),
+          icon: 'promotions_nav.svg',
+        },
         /* {
           name: this.$t('pages.myAccount'),
           url: this.localePath('/profile/balance'),
