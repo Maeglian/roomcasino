@@ -346,26 +346,22 @@ export default {
       grid-column-gap: 0;
       grid-row-gap: 12px;
       margin-top: 48px;
-      margin-bottom: 48px;
     }
 
     @media (min-width: $screen-l) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-row-gap: 0;
       margin-top: 28px;
-      margin-bottom: 35px;
     }
 
     @media (min-width: $screen-xl) {
       margin-top: 50px;
-      margin-bottom: 60px;
     }
   }
 
   &-Header {
     width: 100%;
     margin-top: -70px;
-    margin-bottom: 22px;
     padding-top: 190px / 320px * 100%;
     background-image: url(~@/assets/img/lottery_460.png);
     background-repeat: no-repeat;
@@ -375,6 +371,7 @@ export default {
     @media (min-width: $screen-s) {
       margin-top: 0;
       padding-top: 18px / 768px * 100%;
+      padding-bottom: 35px;
       background-image: url(~@/assets/img/lottery_768.png);
     }
 
@@ -384,6 +381,7 @@ export default {
 
     @media (min-width: $screen-xl) {
       padding-top: 36px;
+      padding-bottom: 60px;
       background-image: url(~@/assets/img/lottery_1248.png);
     }
 
