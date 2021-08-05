@@ -56,12 +56,12 @@ export default {
     openSearch() {
       if (this.width >= 768) {
         this.isOpen = true;
-        this.toggleOverlay(true);
+        if (this.withDropdown) this.toggleOverlay(true);
       }
     },
     onClickOutside() {
       this.isOpen = false;
-      this.toggleOverlay(false);
+      if (this.withDropdown) this.toggleOverlay(false);
     },
   },
 };
