@@ -56,6 +56,7 @@ export default {
   --color-most-faded: rgba(255, 255, 255, 0.2);
   --color-bg: #0e152f;
   --color-bg-lighter: #1b2138;
+  --color-bg-cookies: #303030;
   --color-bg-darker: rgba(39, 43, 95, 0.5);
   --color-bg-nav: #151841;
   --color-bg-mobnav: #0f152c;
