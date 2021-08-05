@@ -149,6 +149,11 @@ export default {
             navigate: data => console.log('Path navigation triggered', data),
             cancelledPendingWD: () => this.getTransactionHistoryList(),
           });
+          api.set({
+            attributes: {
+              affiliateId: this.user.affiliateId,
+            },
+          });
         },
       );
 
