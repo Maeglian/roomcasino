@@ -249,6 +249,7 @@ export const getters = {
         country => country.code === info.country,
       );
       delete info.accountList;
+      delete info.affiliateId;
       delete info.requirePasswordChange;
       return info;
     }
