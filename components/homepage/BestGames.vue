@@ -33,6 +33,7 @@
           v-if="width >= 768"
           v-model="searched"
           class="ProvidersSection-Search DefaultGames-Search"
+          with-dropdown
         >
           <template v-if="searched" #dropdown>
             <div v-if="filteredGames.length" class="Title Title--type-h4 Cards-Title">
