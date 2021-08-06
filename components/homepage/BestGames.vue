@@ -1,26 +1,7 @@
 <template>
   <div>
     <section class="DefaultGames">
-      <button
-        class="DefaultGames-ChosenTab"
-        :class="{ 'DefaultGames-ChosenTab--opened': isOpen }"
-        @click="onOpen"
-      >
-        <div class="DefaultGames-Icon">
-          <svg :class="`DefaultGames-Icon--${tabActive.icon}`">
-            <use :xlink:href="require('@/assets/img/icons.svg') + `#${tabActive.icon}`"></use>
-          </svg>
-        </div>
-        <div class="DefaultGames-Name">
-          {{ tabActive.name }}
-        </div>
-        <i class="Arrow Tab-Arrow" :class="[isOpen ? 'Arrow--up' : 'Arrow--down']"></i>
-      </button>
-      <div
-        v-if="width > 767 || isOpen"
-        v-click-outside="onClickOutsideTabs"
-        class="DefaultGames-Tabs"
-      >
+      <div v-click-outside="onClickOutsideTabs" class="DefaultGames-Tabs">
         <NuxtLink
           v-for="(tab, i) in tabs"
           :key="tab.name"
@@ -49,9 +30,9 @@
       </div>
       <div class="ProvidersSection DefaultGames-Providers">
         <Search
+          v-if="width >= 768"
           v-model="searched"
           class="ProvidersSection-Search DefaultGames-Search"
-          :with-dropdown="width >= 768"
         >
           <template v-if="searched" #dropdown>
             <div v-if="filteredGames.length" class="Title Title--type-h4 Cards-Title">
@@ -79,26 +60,6 @@
           :provider-active="providerActive"
           @choose-provider="onChooseProvider"
         />
-      </div>
-      <div v-if="searched && width < 768" class="SearchedGames">
-        <div class="Title Title--type-h4 Cards-Title">
-          {{ $t('search.searchResults') }} ({{ filteredGames.length }})
-        </div>
-        <Games
-          class="DefaultGames-Cards"
-          :games="filteredGames"
-          :games-to-show="24"
-          btn-class="Btn--common Btn--outline"
-        >
-          <template #notFound>
-            <div class="Title ">
-              {{ $t('search.nothingFound') }}
-            </div>
-            <div class="SearchPage-Text">
-              {{ $t('search.try') }}
-            </div>
-          </template>
-        </Games>
       </div>
       <a id="games"></a>
       <Nuxt :key="$route.path" />
@@ -434,12 +395,10 @@ export default {
   position: relative;
 
   &-Tabs {
-    position: absolute;
-    top: 41px;
-    left: 0;
-    z-index: 2;
+    display: flex;
     width: 100%;
-    padding: 0 16px 10px;
+    margin-bottom: 16px;
+    overflow-x: scroll;
     background-color: var(--color-body);
 
     @media (min-width: $screen-m) {
@@ -447,10 +406,11 @@ export default {
       top: initial;
       left: initial;
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      grid-gap: 10px;
       margin-bottom: 10px;
       padding: 0;
+      overflow-x: auto;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap: 10px;
     }
 
     //@media(max-width: $screen-s) {
@@ -476,7 +436,7 @@ export default {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 10px 16px;
+    padding: 17px 16px;
     background: var(--color-bg);
     border: none;
 
@@ -501,7 +461,7 @@ export default {
     justify-content: left;
     align-items: center;
     width: 100%;
-    padding: 10px 16px;
+    padding: 17px 16px;
     line-height: 1.18;
     white-space: nowrap;
     background-color: var(--color-bg);
@@ -517,7 +477,7 @@ export default {
     }
 
     &--active {
-      display: none;
+      background: var(--color-bg-lighter);
 
       @media (min-width: $screen-m) {
         display: initial;
@@ -550,10 +510,12 @@ export default {
   }
 
   &-Icon {
+    display: none;
     width: 55px;
     text-align: center;
 
     @media (min-width: $screen-m) {
+      display: block;
       width: auto;
       margin-bottom: 10px;
     }
