@@ -144,7 +144,8 @@
     "table" : "Stolní hry",
     "card" : "Karetní hry",
     "recent" : "Nedávné hry",
-    "new" : "Nový hry"
+    "new" : "Nový hry",
+    "buybonus": "Bonus Buy"
   },
   "footer" : {
     "text" : {
