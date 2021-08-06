@@ -16,7 +16,7 @@ export default {
         return;
       }
 
-      if (!demo && !this.activeAccount.balance) {
+      if (!demo && this.activeAccount.balance === 0) {
         const hasFreeSpins = this.freeSpinList.some(spin => {
           return spin.gameList.some(game => game.id === id && spin.status === 'active');
         });
