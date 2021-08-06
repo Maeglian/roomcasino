@@ -131,7 +131,7 @@
       </template>
       <template v-if="buybonusGames.length">
         <div class="Title Title--type-h2 Cards-Title">
-          Bonus Buy
+          {{ $t('gameCategories.buybonus') }}
         </div>
         <Loader v-if="buybonusGamesAreLoading" />
         <Games
@@ -239,43 +239,6 @@ export default {
   data() {
     return {
       listIsOpen: false,
-      tabs: [
-        {
-          name: this.$t('gameCategories.top'),
-          type: 'top',
-          icon: 'crown',
-        },
-        {
-          name: this.$t('gameCategories.all'),
-          type: 'all',
-          icon: 'star',
-        },
-        {
-          name: this.$t('gameCategories.live'),
-          type: 'live',
-          icon: 'live',
-        },
-        {
-          name: this.$t('gameCategories.slots'),
-          type: 'slots',
-          icon: 'slots',
-        },
-        {
-          name: this.$t('gameCategories.roulette'),
-          type: 'roulette',
-          icon: 'roulette',
-        },
-        {
-          name: this.$t('gameCategories.table'),
-          type: 'table',
-          icon: 'table',
-        },
-        {
-          name: this.$t('gameCategories.card'),
-          type: 'card',
-          icon: 'cards',
-        },
-      ],
       tabActive: {},
       providerActive: {},
       searched: '',
@@ -311,6 +274,79 @@ export default {
     ]),
     ...mapGetters(['isLoggedIn', 'activeAccount']),
     ...mapGetters('games', ['gamesSearched']),
+    tabs() {
+      if (this.width < 768) {
+        return [
+          {
+            name: this.$t('gameCategories.slots'),
+            type: 'slots',
+            icon: 'slots',
+          },
+          {
+            name: this.$t('gameCategories.live'),
+            type: 'live',
+            icon: 'live',
+          },
+          {
+            name: this.$t('gameCategories.top'),
+            type: 'top',
+            icon: 'crown',
+          },
+          {
+            name: this.$t('gameCategories.buybonus'),
+            type: 'buybonus',
+            icon: 'crown',
+          },
+          {
+            name: this.$t('gameCategories.new'),
+            type: 'new',
+            icon: 'crown',
+          },
+          {
+            name: this.$t('gameCategories.table'),
+            type: 'table',
+            icon: 'table',
+          },
+        ];
+      }
+      return [
+        {
+          name: this.$t('gameCategories.top'),
+          type: 'top',
+          icon: 'crown',
+        },
+        {
+          name: this.$t('gameCategories.all'),
+          type: 'all',
+          icon: 'star',
+        },
+        {
+          name: this.$t('gameCategories.live'),
+          type: 'live',
+          icon: 'live',
+        },
+        {
+          name: this.$t('gameCategories.slots'),
+          type: 'slots',
+          icon: 'slots',
+        },
+        {
+          name: this.$t('gameCategories.roulette'),
+          type: 'roulette',
+          icon: 'roulette',
+        },
+        {
+          name: this.$t('gameCategories.table'),
+          type: 'table',
+          icon: 'table',
+        },
+        {
+          name: this.$t('gameCategories.card'),
+          type: 'card',
+          icon: 'cards',
+        },
+      ];
+    },
     recentGamesNum() {
       return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
     },
@@ -345,7 +381,8 @@ export default {
     if (this.$route.params.providerName) this.tabActive = this.tabs.find(tab => tab.type === 'all');
     else {
       this.tabActive =
-        this.tabs.find(game => this.$route.params.gameCategory === game.type) || this.tabs[0];
+        this.tabs.find(game => this.$route.params.gameCategory === game.type) ||
+        this.tabs.find(game => game.type === 'top');
     }
     window.dga.connect(PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID);
     window.dga.onConnect = () => window.dga.available(PRAGMATIC_CASINOID);
