@@ -66,5 +66,6 @@ window.onNuxtReady(({ context }) => {
   context.store.dispatch('dictionary/getCategoriesList');
   context.store.dispatch('games/getTopWinnerList', { limit: 5 });
   context.store.dispatch('games/getLastWinnerList', { limit: 5 });
-  context.store.dispatch('games/getTournamentList');
+  context.store.dispatch('tournaments/getTournamentList');
+  context.store.dispatch('tournaments/getLotteryList');
 });

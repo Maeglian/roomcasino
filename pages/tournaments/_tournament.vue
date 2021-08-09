@@ -217,7 +217,7 @@ export default {
   },
   computed: {
     ...mapState(['width']),
-    ...mapState('games', [
+    ...mapState('tournaments', [
       'tournamentListLoadingStatus',
       'tournamentGames',
       'tournamentGamesAreLoading',
@@ -225,7 +225,7 @@ export default {
       'tournamentResultIsLoading',
       'tournamentAwards',
     ]),
-    ...mapGetters('games', ['tournaments']),
+    ...mapGetters('tournaments', ['tournaments']),
     tournament() {
       return this.tournaments[this.$route.params.tournament];
     },
@@ -266,7 +266,11 @@ export default {
     },
   },
   methods: {
-    ...mapActions('games', ['getTournamentGames', 'getTournamentList', 'getTournamentResult']),
+    ...mapActions('tournaments', [
+      'getTournamentGames',
+      'getTournamentList',
+      'getTournamentResult',
+    ]),
     countDuration(startdate, enddate) {
       return moment(enddate).diff(moment(startdate), 'minutes');
     },
