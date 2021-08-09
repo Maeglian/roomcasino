@@ -185,7 +185,8 @@
     "name": "Název",
     "points":  "Směřovat",
     "prize": "cena",
-    "prizePool": "Prize pool"
+    "prizePool": "Prize pool",
+    "freeSpins": "spinů zdarma"
   },
   "actions" : {
     "addCurrency" : "Add currency"

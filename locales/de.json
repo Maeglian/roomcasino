@@ -190,7 +190,8 @@
     "name": "Name",
     "points":  "Punkte",
     "prize": "Preis",
-    "prizePool": "Preisgeld"
+    "prizePool": "Preisgeld",
+    "freeSpins": "Freispiele"
   },
   "actions": {
     "addCurrency": "Währung hinzufügen"

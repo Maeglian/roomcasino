@@ -188,7 +188,8 @@
     "name": "Nom",
     "points": "Points",
     "prize": "Prix",
-    "prizePool": "Une cagnotte"
+    "prizePool": "Une cagnotte",
+    "freeSpins": "tours gratuites"
   },
   "actions": {
     "addCurrency": "Ajouter une devise"

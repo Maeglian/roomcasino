@@ -191,7 +191,8 @@
     "name": "Name",
     "points": "Points",
     "prize": "Prize",
-    "prizePool": "Prize pool"
+    "prizePool": "Prize pool",
+    "freeSpins": "Free Spins"
   },
   "actions": {
     "addCurrency": "Add currency"
