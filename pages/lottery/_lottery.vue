@@ -18,16 +18,15 @@
             <button class="Btn Btn--common DailyTournamentPage-Btn" @click="onClickBtn()">
               {{ isLoggedIn ? $t('buttons.deposit') : $t('buttons.signUp') }}
             </button>
-            <!--            <Counter :enddate="new Date(tournament.endDateTime * 1000)" />-->
-            <Counter :enddate="new Date('2021-08-30')" />
+            <Counter v-if="lottery" :enddate="lottery.endDateTime * 1000" />
           </div>
         </div>
-        <div class="Advantages Advantages--min LotteryPage-Advantages">
+        <div v-if="lottery" class="Advantages Advantages--min LotteryPage-Advantages">
           <div class="Advantages-Advantage">
             <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
             <div class="Advantages-AdvantageBlock">
               <div class="Advantages-AdvantageTitle">
-                {{ $t('lottery.advantages.text1-highlighted') }}
+                {{ lottery.awardList.length }}
               </div>
               <div class="Advantages-AdvantageInfo">
                 {{ $t('lottery.advantages.text1') }}
@@ -38,7 +37,7 @@
             <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
             <div class="Advantages-AdvantageBlock">
               <div class="Advantages-AdvantageTitle">
-                {{ $t('lottery.advantages.text2-highlighted') }}
+                {{ lottery.recurringShift }} {{ lottery.recurringUnit }}
               </div>
               <div class="Advantages-AdvantageInfo">
                 {{ $t('lottery.advantages.text2') }}
@@ -50,7 +49,12 @@
             <div class="Advantages-AdvantageBlock">
               <div class="Advantages-AdvantageTitle">
                 <span class="Colored">
-                  {{ $t('lottery.advantages.text3-highlighted') }}
+                  <template v-if="lottery.budget">
+                    {{ lottery.budget }} {{ lottery.currency }}<br />
+                  </template>
+                  <template v-if="lottery.freeSpinBudget">
+                    {{ lottery.freeSpinBudget }} {{ $t('common.freeSpins') }}
+                  </template>
                 </span>
               </div>
               <div class="Advantages-AdvantageInfo">
@@ -62,7 +66,7 @@
             <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
             <div class="Advantages-AdvantageBlock">
               <div class="Advantages-AdvantageTitle">
-                {{ $t('lottery.advantages.text4-highlighted') }}
+                {{ lottery.ticketCost }} {{ lottery.currency }}
               </div>
               <div class="Advantages-AdvantageInfo">
                 {{ $t('lottery.advantages.text4') }}
@@ -73,93 +77,48 @@
       </div>
     </div>
     <section class="DailyTournamentPage-Content">
-      <div class="LotteryPage-WinnersTables">
-        <!--        <Loader v-if="tournamentResultIsLoading" />-->
-        <div class="DailyTournamentPage-TableSection">
-          <div class="LotteryPage-WinnersTitle">
-            {{ $t('tournaments.currentWinners') }}
-          </div>
-          <div class="DailyTournamentPage-Table LotteryPage-Table Table--scrollable">
-            <div class="Table TableBordered">
-              <div class="Table-Row">
-                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
-                  #
-                </div>
-                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
-                  {{ $t('common.name') }}
-                </div>
-                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
-                  {{ $t('common.points') }}
-                </div>
-                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
-                  {{ $t('common.prize') }}
-                </div>
+      <Loader v-if="lotteryResultListIsLoading" />
+      <template v-else-if="winners.length">
+        <div class="LotteryPage-WinnersTitle">
+          Last round winners
+        </div>
+        <div class="DailyTournamentPage-Table LotteryPage-Table Table--scrollable">
+          <div class="Table TableBordered">
+            <div class="Table-Row">
+              <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
+                #
               </div>
-              <div v-for="(winner, i) in lotteryWinnersList" :key="winner.id" class="Table-Row">
-                <div class="Table-Cell TableBordered-Cell">
-                  {{ i + 1 }}
-                </div>
-                <div class="Table-Cell TableBordered-Cell DailyTournamentPage-WinnerNick">
-                  {{ winner.nickname }}
-                </div>
-                <div class="Table-Cell TableBordered-Cell">
-                  {{ winner.points }}
-                </div>
-                <div class="Table-Cell TableBordered-Cell DailyTournamentPage-Prize">
-                  <!--                <template-->
-                  <!--                  v-if="tournamentAwards.length && i < tournamentAwards[round].awards.length"-->
-                  <!--                >-->
-                  <!--                  {{ tournamentAwards[round].awards[i].moneyAmount }} {{ tournament.currency }}-->
-                  <!--                </template>-->
-                  {{ winner.prize }}
-                </div>
+              <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
+                {{ $t('common.name') }}
+              </div>
+              <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
+                {{ $t('common.prize') }}
+              </div>
+            </div>
+            <div v-for="(winner, i) in winners" :key="winner.id" class="Table-Row">
+              <div class="Table-Cell TableBordered-Cell">
+                {{ i + 1 }}
+              </div>
+              <div class="Table-Cell TableBordered-Cell DailyTournamentPage-WinnerNick">
+                {{ winner.nickname }}
+              </div>
+              <div class="Table-Cell TableBordered-Cell DailyTournamentPage-Prize">
+                <template v-if="winner.moneyAmount">
+                  {{ winner.moneyAmount }} {{ winner.currency }}<br />
+                </template>
+                <template v-if="winner.freespinAmount">
+                  {{ winner.freespinAmount }} {{ $t('common.freeSpins') }}
+                </template>
+                <!--                <template-->
+                <!--                  v-if="tournamentAwards.length && i < tournamentAwards[round].awards.length"-->
+                <!--                >-->
+                <!--                  {{ tournamentAwards[round].awards[i].moneyAmount }} {{ tournament.currency }}-->
+                <!--                </template>-->
               </div>
             </div>
           </div>
         </div>
-        <div class="DailyTournamentPage-TableSection">
-          <div class="LotteryPage-WinnersTitle">
-            {{ $t('tournaments.previousRound') }}
-          </div>
-          <div class="DailyTournamentPage-Table LotteryPage-Table Table--scrollable">
-            <div class="Table TableBordered">
-              <div class="Table-Row">
-                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
-                  #
-                </div>
-                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
-                  {{ $t('common.name') }}
-                </div>
-                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
-                  {{ $t('common.points') }}
-                </div>
-                <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
-                  {{ $t('common.prize') }}
-                </div>
-              </div>
-              <div v-for="(winner, i) in lotteryWinnersList" :key="winner.id" class="Table-Row">
-                <div class="Table-Cell TableBordered-Cell">
-                  {{ i + 1 }}
-                </div>
-                <div class="Table-Cell TableBordered-Cell DailyTournamentPage-WinnerNick">
-                  {{ winner.nickname }}
-                </div>
-                <div class="Table-Cell TableBordered-Cell">
-                  {{ winner.points }}
-                </div>
-                <div class="Table-Cell TableBordered-Cell DailyTournamentPage-Prize">
-                  <!--                <template-->
-                  <!--                  v-if="tournamentAwards.length && i < tournamentAwards[round].awards.length"-->
-                  <!--                >-->
-                  <!--                  {{ tournamentAwards[round].awards[i].moneyAmount }} {{ tournament.currency }}-->
-                  <!--                </template>-->
-                  {{ winner.prize }}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </template>
       <h2 class="Title Title--type-h2 Page-Subtitle DailyTournamentPage-Subtitle">
         {{ $t('lottery.termsTitle') }}
       </h2>
@@ -179,10 +138,9 @@
 <script>
 import showAuthDialog from '@/mixins/showAuthDialog';
 import { mapState, mapActions, mapGetters } from 'vuex';
-import moment from 'moment';
 
 export default {
-  name: 'DailyTournamentPage',
+  name: 'LotteryPage',
   components: {},
   mixins: [showAuthDialog],
   layout: 'page',
@@ -291,45 +249,49 @@ export default {
   },
   computed: {
     ...mapState(['width']),
-    ...mapState('games', [
-      'tournamentListLoadingStatus',
-      'tournamentGames',
-      'tournamentGamesAreLoading',
-      'tournamentResult',
-      'tournamentResultIsLoading',
-      'tournamentAwards',
+    ...mapState('tournaments', [
+      'lotteryList',
+      'lotteryListLoadingStatus',
+      'lotteryResultListIsLoading',
+      'lotteryResultList',
     ]),
-    ...mapGetters('games', ['tournaments']),
-    tabs() {
-      const tabs = [
-        {
-          value: 0,
-          name: this.$t('tournaments.currentWinners'),
-        },
-      ];
-      if (this.tournamentAwards.length > 1)
-        tabs.push({
-          value: 1,
-          name: this.$t('tournaments.previousRound'),
-        });
-
-      return tabs;
+    ...mapGetters('tournaments', ['tournaments']),
+    slug() {
+      return this.$route.params.lottery;
+    },
+    lottery() {
+      return this.lotteryResultList[0];
+    },
+    winners() {
+      if (this.lotteryResultList[1]) {
+        if (this.lotteryResultList[1].awardList.some(award => award.status === 'noWinners'))
+          return [];
+        return this.lotteryResultList[1].awardList;
+      }
+      return [];
     },
   },
   watch: {
-    tournamentListLoadingStatus: {
+    lotteryListLoadingStatus: {
       immediate: true,
-      handler() {},
-    },
-    round() {
-      this.getTournamentResult({ tournamentId: this.tournamentAwards[this.round].id });
+      handler(newVal) {
+        if (newVal === 'loaded') {
+          if (!this.lotteryList.find(l => l.slug === this.slug)) {
+            this.$router.push(this.localePath('/404'));
+            return;
+          }
+
+          this.getLotteryResultList({
+            slug: this.slug,
+            offset: 0,
+            limit: 100,
+          });
+        }
+      },
     },
   },
   methods: {
-    ...mapActions('games', ['getTournamentGames', 'getTournamentList', 'getTournamentResult']),
-    countDuration(startdate, enddate) {
-      return moment(enddate).diff(moment(startdate), 'minutes');
-    },
+    ...mapActions('tournaments', ['getLotteryResultList']),
   },
 };
 </script>
@@ -396,25 +358,17 @@ export default {
     }
   }
 
-  &-WinnersTables {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: 48px;
+  &-Table {
     margin-bottom: 38px;
+    background: var(--color-bg);
 
     @media (min-width: $screen-m) {
       margin-bottom: 48px;
     }
 
     @media (min-width: $screen-l) {
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 12px;
       margin-bottom: 80px;
     }
-  }
-
-  &-Table {
-    background: var(--color-bg);
   }
 
   &-WinnersTitle {
