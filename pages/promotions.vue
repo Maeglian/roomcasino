@@ -185,15 +185,6 @@ export default {
           url: '/tournaments/drops-wins-live',
         },
         {
-          title: this.$t('promotions.augustCashdays.title'),
-          prize: this.$t('augustCashdays.prize'),
-          image: 'august-promotions.png',
-          announce: this.$t('promotions.augustCashdays.name'),
-          text: this.$t('promotions.augustCashdays.text'),
-          link: 'More',
-          url: '/tournaments/august-cashdays',
-        },
-        {
           title: this.$t('promotions.epicRace.title'),
           prize: this.$t('epicRace.prize'),
           image: 'race-promotions.png',
