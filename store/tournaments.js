@@ -13,9 +13,9 @@ export const state = () => ({
   tournamentAwards: [],
   lotteryList: [],
   lotteryListLoadingStatus: 'notLoaded',
-  lotteryResultIsLoading: false,
+  lotteryResultListIsLoading: false,
   lotteryResultList: [],
-  lotteryResultError: '',
+  lotteryResultListError: '',
 });
 
 export const getters = {
@@ -69,14 +69,14 @@ export const mutations = {
   setLotteryListLoadingStatus(state, payload) {
     state.lotteryListLoadingStatus = payload;
   },
-  setLotteryResultIsLoading(state, payload) {
-    state.lotteryResultIsLoading = payload;
+  setLotteryResultListIsLoading(state, payload) {
+    state.lotteryResultListIsLoading = payload;
   },
   setLotteryResultList(state, payload) {
     state.lotteryResultList = payload;
   },
-  setLotteryResultError(state, payload) {
-    state.lotteryResultError = payload;
+  setLotteryResultListError(state, payload) {
+    state.lotteryResultListError = payload;
   },
 };
 
@@ -137,17 +137,17 @@ export const actions = {
   },
 
   async getLotteryResultList({ commit }, payload = {}) {
-    commit('setLotteryResultIsLoading', true);
+    commit('setLotteryResultListIsLoading', true);
     try {
       const res = await http.get(`${API_HOST}/lotteryList`, {
         ...{ params: payload },
       });
       commit('setLotteryResultList', res.data);
     } catch (e) {
-      commit('setLotteryResultError', e);
+      commit('setLotteryResultListError', e);
       this.$sentry.captureException(new Error(e));
     } finally {
-      commit('setLotteryResultIsLoading', false);
+      commit('setLotteryResultListIsLoading', false);
     }
   },
 };
