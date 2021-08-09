@@ -99,11 +99,11 @@ export default {
           url: this.localePath('/daily-cashback'),
           icon: 'cashback.svg',
         },
-        {
-          name: this.$t('pages.lottery'),
-          url: this.localePath('/lottery'),
-          icon: 'promotions_nav.svg',
-        },
+        // {
+        //   name: this.$t('pages.lottery'),
+        //   url: this.localePath('/lottery'),
+        //   icon: 'promotions_nav.svg',
+        // },
         /* {
           name: this.$t('pages.myAccount'),
           url: this.localePath('/profile/balance'),
@@ -154,12 +154,32 @@ export default {
   },
   computed: {
     ...mapState(['navIsOpen', 'width', 'chatIsLoaded', 'user']),
+    ...mapState('tournaments', ['lotteryList']),
     ...mapGetters(['isLoggedIn']),
-    ...mapGetters('games', ['tournaments']),
+    ...mapGetters('tournaments', ['tournaments']),
     navItemsFull() {
+      const lotteryList = [];
+      const lotteries = this.lotteryList.map(lottery => {
+        return {
+          name: lottery.name,
+          url: `/lottery/${lottery.slug}`,
+          icon: 'tournament_nav.svg',
+          onlyIfLoggedIn: false,
+        };
+      });
+      if (this.lotteryList.length === 1) lotteryList.push(lotteries[0]);
+      if (this.lotteryList.length > 1) {
+        const lotteryItem = {
+          name: this.$t('pages.lottery'),
+          icon: 'tournament_nav.svg',
+          children: lotteries,
+        };
+        lotteryList.push(lotteryItem);
+      }
+      const navItems = [...this.navItems, ...lotteryList];
       const tournaments = Object.values(this.tournaments);
       let navTournaments = {};
-      if (!tournaments.length) return this.navItems;
+      if (!tournaments.length) return navItems;
       if (tournaments.length === 1) {
         const item = tournaments[0];
         navTournaments = {
@@ -183,7 +203,7 @@ export default {
         };
       }
 
-      const menu = [...this.navItems];
+      const menu = [...navItems];
       menu.push(navTournaments);
 
       return menu;
