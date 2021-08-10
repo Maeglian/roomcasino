@@ -33,7 +33,7 @@
                   {{ lottery.awardList.length }}
                 </div>
                 <div class="Advantages-AdvantageInfo">
-                  {{ $t('lottery.advantages.text1') }}
+                  {{ $t('common.winners') }}
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@
                   </span>
                 </div>
                 <div class="Advantages-AdvantageInfo">
-                  {{ $t('lottery.advantages.text3') }}
+                  {{ $t('common.prizePool') }}
                 </div>
               </div>
             </div>
@@ -73,7 +73,7 @@
                   {{ lottery.ticketCost }} {{ lottery.currency }}
                 </div>
                 <div class="Advantages-AdvantageInfo">
-                  {{ $t('lottery.advantages.text4') }}
+                  {{ $t('lottery.ticket') }}
                 </div>
               </div>
             </div>
@@ -83,7 +83,7 @@
               {{ user.firstName }} {{ user.lastName }}
             </div>
             <div class="LotteryPage-Ticket LotteryPage-HighlightedText">
-              <div>Tickets:</div>
+              <div>{{ $t('lottery.tickets') }}:</div>
               <div class="LotteryPage-TicketCount Colored">{{ lottery.playerTicketsCount }}</div>
               <img src="@/assets/img/ticket.svg" class="LotteryPage-TicketImg" alt="ticket icon" />
             </div>
@@ -95,7 +95,7 @@
       <Loader v-if="lotteryResultListIsLoading" />
       <template v-else-if="winners.length">
         <div class="LotteryPage-WinnersTitle">
-          Last round winners
+          {{ $t('lottery.lastRoundWinners') }}
         </div>
         <div class="DailyTournamentPage-Table LotteryPage-Table Table--scrollable">
           <div class="Table TableBordered">
@@ -103,6 +103,9 @@
               <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
                 #
               </div>
+              <div
+                class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th"
+              ></div>
               <div class="Table-Cell TableBordered-Cell TableBordered-Th DailyTournamentPage-Th">
                 {{ $t('common.name') }}
               </div>
@@ -111,8 +114,13 @@
               </div>
             </div>
             <div v-for="(winner, i) in winners" :key="winner.id" class="Table-Row">
-              <div class="Table-Cell TableBordered-Cell">
+              <div class="Table-Cell TableBordered-Cell LotteryPage-NumCell">
                 {{ i + 1 }}
+              </div>
+              <div class="Table-Cell TableBordered-Cell LotteryPage-WinnerBadgeCell">
+                <svg class="LotteryPage-WinnerBadge" :class="`LotteryPage-WinnerBadge--${i + 1}`">
+                  <use xlink:href="@/assets/img/icons.svg#winner-badge"></use>
+                </svg>
               </div>
               <div class="Table-Cell TableBordered-Cell DailyTournamentPage-WinnerNick">
                 {{ winner.nickname }}
@@ -391,6 +399,40 @@ export default {
 
     @media (min-width: $screen-l) {
       margin-bottom: 80px;
+    }
+  }
+
+  &-NumCell,
+  &-WinnerBadgeCell {
+    width: 50px;
+
+    @media (min-width: $screen-m) {
+      width: 80px;
+    }
+  }
+
+  &-WinnerBadge {
+    width: 17px;
+    height: 17px;
+
+    @media (min-width: $screen-xl) {
+      width: 21px;
+      height: 21px;
+    }
+
+    &--1 {
+      fill: var(--color-main1);
+      stroke: var(--color-main1);
+    }
+
+    &--2 {
+      fill: var(--color-text-faded);
+      stroke: var(--color-text-faded);
+    }
+
+    &--3 {
+      fill: #f37833;
+      stroke: #f37833;
     }
   }
 
