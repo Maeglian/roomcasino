@@ -202,6 +202,13 @@ export default {
           url: '/tournaments/weekly_derby',
           linkText: this.$t('buttons.more'),
         },
+        {
+          bg: 'sunshine',
+          title: this.$t('sunshine_spins_lottery.title'),
+          text: `<span class="Colored">${this.$t('sunshine_spins_lottery.prize')}</span>`,
+          url: '/lottery/sunshine_spins_lottery',
+          linkText: this.$t('buttons.more'),
+        },
       ];
       if (!this.isLoggedIn) {
         slides.splice(1, 1);
