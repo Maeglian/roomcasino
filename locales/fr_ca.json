@@ -189,7 +189,8 @@
     "points": "Points",
     "prize": "Prix",
     "prizePool": "Une cagnotte",
-    "freeSpins": "tours gratuites"
+    "freeSpins": "tours gratuites",
+    "winners": "Les gagnants"
   },
   "actions": {
     "addCurrency": "Ajouter une devise"
@@ -1325,16 +1326,6 @@
     "title": "Weekend<br/> Playing Lottery ",
     "prize": "<span class=\"Colored\">€ 2,500</span> + <span class=\"Colored\">500 Free Spins</span>",
     "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
-    "advantages": {
-      "text1-highlighted": "240",
-      "text1": "winners",
-      "text2-highlighted": "1 week",
-      "text2": "duration",
-      "text3-highlighted": "2,500 eur",
-      "text3": "prize pool",
-      "text4-highlighted": "0,5 eur",
-      "text4": "1 ticket"
-    },
     "termsTitle": "Conditions générales de participation à la loterie",
     "terms": [
       {
@@ -1361,7 +1352,10 @@
       {
         "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
       }
-    ]
+    ],
+    "lastRoundWinners": "Les gagnants du dernier tour",
+    "ticket": "Billet",
+    "tickets": "Billets"
   },
   "sunshine_spins_lottery": {
     "title": "La loterie<br/> Sunshine Spins",
