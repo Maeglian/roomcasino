@@ -501,6 +501,7 @@ export default {
 
     @media (min-width: $screen-xl) {
       background-image: url(~@/assets/img/sunshine-page_1248.png);
+      background-position: center top;
     }
   }
 }
