@@ -321,16 +321,19 @@ export default {
       grid-column-gap: 0;
       grid-row-gap: 12px;
       margin-top: 48px;
+      margin-bottom: 12px;
     }
 
     @media (min-width: $screen-l) {
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-row-gap: 0;
       margin-top: 28px;
+      margin-bottom: 13px;
     }
 
     @media (min-width: $screen-xl) {
       margin-top: 50px;
+      margin-bottom: 16px;
     }
   }
 
