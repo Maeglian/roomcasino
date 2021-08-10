@@ -1315,5 +1315,75 @@
         "cashbackSum" : "€5000 a více"
       }
     ]
+  },
+  "lottery": {
+    "title": "Weekend<br/> Playing Lottery ",
+    "prize": "<span class=\"Colored\">€ 2,500</span> + <span class=\"Colored\">500 Free Spins</span>",
+    "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
+    "advantages": {
+      "text1-highlighted": "240",
+      "text1": "winners",
+      "text2-highlighted": "1 week",
+      "text2": "duration",
+      "text3-highlighted": "2,500 eur",
+      "text3": "prize pool",
+      "text4-highlighted": "0,5 eur",
+      "text4": "1 ticket"
+    },
+    "termsTitle": "Podmínky účasti v loterii",
+    "terms": [
+      {
+        "text": "You begin to participate in the VIP program after making your first deposit."
+      },
+      {
+        "text": "CP is credited at the rate of 1 CP for every $ 12.5, 12.5 EUR, 15 CAD, 15 AUD, 15 NZD, 125 NOK, 325 CZK."
+      },
+      {
+        "text": "Exchange CP - 1 $, 1 EUR, 1.25 CAD, 1.25 AUD, 1.25 NZD, 10 NOK, 25 CZK, 17 ZAR, 4 PLN for 100 CP."
+      },
+      {
+        "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      },
+      {
+        "text": "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text": "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text": "RoomCasino reserves the right to change the terms of the VIP program at any time."
+      },
+      {
+        "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      }
+    ]
+  },
+  "sunshine_spins_lottery": {
+    "title": "Loterie<br/> Sunshine Spins",
+    "prize": " 4 000 spinů zdarma",
+    "text": "Šťastní letní lidé vyparádění ve veselém letním oblečení společně kráčejí vstříc festivalu nabitému zábavou, který se koná tenhle měsíc: Loterii Sunshine Spins!<br/><br/>S loterií Sunshine Spins si můžete připomenout časy Woodstocku, festivalu na ostrově Wight a atmosféru San Francisca. Pokud se chcete přidat, shoďte boty a bosky to rozjeďte u svých nejoblíbenějších slotů. Užívejte si pohodu se 4 000 spiny zdarma a cenami pro 50 šťastných výherců!",
+    "terms": [
+      {
+        "text": "Loterie poběží 7 dnů. Začíná vždy v úterý v 00:01 (UTC) a končí v pondělí v 23:59 (UTC). "
+      },
+      {
+        "text": "Minimální vklad pro získání losu je 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text": "Počet losů na hráče není nijak omezený."
+      },
+      {
+        "text": "Každý losu může být výherní."
+      },
+      {
+        "text": "V době slosování nesmí být herní účet zablokovaný."
+      },
+      {
+        "text": "4 000 spinů zdarma budou uděleny automaticky na konci loterie každé pondělí."
+      },
+      {
+        "text": "Pro spiny zdarma ceny dostanete je protočení x5."
+      }
+    ]
   }
 }

@@ -1320,5 +1320,75 @@
         "cashbackSum": "€5000 ET PLUS"
       }
     ]
+  },
+  "lottery": {
+    "title": "Weekend<br/> Playing Lottery ",
+    "prize": "<span class=\"Colored\">€ 2,500</span> + <span class=\"Colored\">500 Free Spins</span>",
+    "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
+    "advantages": {
+      "text1-highlighted": "240",
+      "text1": "winners",
+      "text2-highlighted": "1 week",
+      "text2": "duration",
+      "text3-highlighted": "2,500 eur",
+      "text3": "prize pool",
+      "text4-highlighted": "0,5 eur",
+      "text4": "1 ticket"
+    },
+    "termsTitle": "Conditions générales de participation à la loterie",
+    "terms": [
+      {
+        "text": "You begin to participate in the VIP program after making your first deposit."
+      },
+      {
+        "text": "CP is credited at the rate of 1 CP for every $ 12.5, 12.5 EUR, 15 CAD, 15 AUD, 15 NZD, 125 NOK, 325 CZK."
+      },
+      {
+        "text": "Exchange CP - 1 $, 1 EUR, 1.25 CAD, 1.25 AUD, 1.25 NZD, 10 NOK, 25 CZK, 17 ZAR, 4 PLN for 100 CP."
+      },
+      {
+        "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      },
+      {
+        "text": "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text": "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text": "RoomCasino reserves the right to change the terms of the VIP program at any time."
+      },
+      {
+        "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      }
+    ]
+  },
+  "sunshine_spins_lottery": {
+    "title": "La loterie<br/> Sunshine Spins",
+    "prize": "4 000 tours gratuits",
+    "text": "Des amateurs d’été heureux, équipés de vêtements décontractés d’été, marchant vers le festival de ce mois-ci : la loterie Sunshine Spins!<br/><br/>Grâce à la loterie Sunshine Spins, revivez l’époque de Woodstock, du festival de l’île de Wight et de San Francisco. Pour participer, il suffit de courir pieds nus, d’écouter vos chansons préférées et de faire tourner vos machines à sous préférées. Profitez de l’ambiance de la cagnotte de 4 000 tours gratuits avec 50 heureux gagnants!",
+    "terms": [
+      {
+        "text": "La loterie se déroulera sur 7 jours, du Mardi à 00 h 01 (UTC) au lundi à 23 h 59 (UTC). "
+      },
+      {
+        "text": "Le dépôt minimal requis pour un billet de loterie est de 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text": "Le nombre de billets de loterie par joueur est illimité."
+      },
+      {
+        "text": "Chaque billet peut être gagnant."
+      },
+      {
+        "text": "Au moment du tirage au sort, votre compte de jeu ne doit pas être bloqué."
+      },
+      {
+        "text": "Des 4000 tours gratuits seront attribués automatiquement à la fin de la loterie chaque semaine le lundi."
+      },
+      {
+        "text": "Pour les tours gratuits, votre mise est de x5."
+      }
+    ]
   }
 }

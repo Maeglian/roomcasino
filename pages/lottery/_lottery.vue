@@ -1,16 +1,19 @@
 <template>
-  <section class="Page Page--full LotteryPage DailyTournamentPage">
+  <section class="Page Page--full LotteryPage DailyTournamentPage" :class="`${slug}-Header`">
     <div class="Page-Header LotteryPage-Header">
       <div class="Wrapper">
         <div class="DailyTournamentPage-MainText">
           <h1
             class="Title Title--type-h1 DailyTournamentPage-Title"
-            v-html="$t('lottery.title')"
+            v-html="$t(`${slug}.title`)"
           ></h1>
-          <div class="DailyTournamentPage-Subtitle" v-html="$t('lottery.prize')"></div>
+          <div
+            class="DailyTournamentPage-Subtitle DailyTournamentPage-Subtitle--color"
+            v-html="$t(`${slug}.prize`)"
+          ></div>
           <div
             class="Text Text--additional2 DailyTournamentPage-Text"
-            v-html="$t('lottery.text')"
+            v-html="$t(`${slug}.text`)"
           ></div>
         </div>
         <div class="DailyTournamentPage-Promotion">
@@ -41,7 +44,7 @@
                   {{ lottery.recurringShift }} {{ lottery.recurringUnit }}
                 </div>
                 <div class="Advantages-AdvantageInfo">
-                  {{ $t('lottery.advantages.text2') }}
+                  {{ $t('tournaments.duration') }}
                 </div>
               </div>
             </div>
@@ -135,7 +138,7 @@
         {{ $t('lottery.termsTitle') }}
       </h2>
       <div class="Page-Blocks DailyTournamentPage-Terms">
-        <div v-for="(item, i) in $t('lottery.terms')" :key="`txt${i}`" class="Page-Block">
+        <div v-for="(item, i) in $t(`${slug}.terms`)" :key="`txt${i}`" class="Page-Block">
           <div class="Page-Number">{{ i + 1 }}.</div>
           <div>
             <div v-if="item.title" class="DailyTournamentPage-TermsTitle" v-html="item.title"></div>
