@@ -135,6 +135,18 @@
     "dailyCashback" : "Programu cashback",
     "search": "Vyhledávání"
   },
+  "gameCategoriesTabs": {
+    "top" : "Nejlepší hry",
+    "all" : "Všechny hry",
+    "live" : "Živé hry",
+    "slots" : "Sloty hry",
+    "roulette" : "Ruleta",
+    "table" : "Stolní hry",
+    "card" : "Karetní hry",
+    "recent" : "Nedávné hry",
+    "new" : "Nový hry",
+    "buybonus": "Bonus Buy"
+  },
   "gameCategories" : {
     "top" : "Nejlepší hry",
     "all" : "Všechny hry",
