@@ -21,59 +21,71 @@
             <Counter v-if="lottery" :enddate="lottery.endDateTime * 1000" />
           </div>
         </div>
-        <div v-if="lottery" class="Advantages Advantages--min LotteryPage-Advantages">
-          <div class="Advantages-Advantage">
-            <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
-            <div class="Advantages-AdvantageBlock">
-              <div class="Advantages-AdvantageTitle">
-                {{ lottery.awardList.length }}
+        <template v-if="lottery">
+          <div class="Advantages Advantages--min LotteryPage-Advantages">
+            <div class="Advantages-Advantage">
+              <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
+              <div class="Advantages-AdvantageBlock">
+                <div class="Advantages-AdvantageTitle">
+                  {{ lottery.awardList.length }}
+                </div>
+                <div class="Advantages-AdvantageInfo">
+                  {{ $t('lottery.advantages.text1') }}
+                </div>
               </div>
-              <div class="Advantages-AdvantageInfo">
-                {{ $t('lottery.advantages.text1') }}
+            </div>
+            <div class="Advantages-Advantage">
+              <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
+              <div class="Advantages-AdvantageBlock">
+                <div class="Advantages-AdvantageTitle">
+                  {{ lottery.recurringShift }} {{ lottery.recurringUnit }}
+                </div>
+                <div class="Advantages-AdvantageInfo">
+                  {{ $t('lottery.advantages.text2') }}
+                </div>
+              </div>
+            </div>
+            <div class="Advantages-Advantage">
+              <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
+              <div class="Advantages-AdvantageBlock">
+                <div class="Advantages-AdvantageTitle">
+                  <span class="Colored">
+                    <template v-if="lottery.budget">
+                      {{ lottery.budget }} {{ lottery.currency }}<br />
+                    </template>
+                    <template v-if="lottery.freeSpinBudget">
+                      {{ lottery.freeSpinBudget }} {{ $t('common.freeSpins') }}
+                    </template>
+                  </span>
+                </div>
+                <div class="Advantages-AdvantageInfo">
+                  {{ $t('lottery.advantages.text3') }}
+                </div>
+              </div>
+            </div>
+            <div class="Advantages-Advantage">
+              <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
+              <div class="Advantages-AdvantageBlock">
+                <div class="Advantages-AdvantageTitle">
+                  {{ lottery.ticketCost }} {{ lottery.currency }}
+                </div>
+                <div class="Advantages-AdvantageInfo">
+                  {{ $t('lottery.advantages.text4') }}
+                </div>
               </div>
             </div>
           </div>
-          <div class="Advantages-Advantage">
-            <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
-            <div class="Advantages-AdvantageBlock">
-              <div class="Advantages-AdvantageTitle">
-                {{ lottery.recurringShift }} {{ lottery.recurringUnit }}
-              </div>
-              <div class="Advantages-AdvantageInfo">
-                {{ $t('lottery.advantages.text2') }}
-              </div>
+          <div v-if="isLoggedIn" class="LotteryPage-Tickets">
+            <div class="LotteryPage-User LotteryPage-HighlightedText">
+              {{ user.firstName }} {{ user.lastName }}
+            </div>
+            <div class="LotteryPage-Ticket LotteryPage-HighlightedText">
+              <div>Tickets:</div>
+              <div class="LotteryPage-TicketCount Colored">{{ lottery.playerTicketsCount }}</div>
+              <img src="@/assets/img/ticket.svg" class="LotteryPage-TicketImg" alt="ticket icon" />
             </div>
           </div>
-          <div class="Advantages-Advantage">
-            <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
-            <div class="Advantages-AdvantageBlock">
-              <div class="Advantages-AdvantageTitle">
-                <span class="Colored">
-                  <template v-if="lottery.budget">
-                    {{ lottery.budget }} {{ lottery.currency }}<br />
-                  </template>
-                  <template v-if="lottery.freeSpinBudget">
-                    {{ lottery.freeSpinBudget }} {{ $t('common.freeSpins') }}
-                  </template>
-                </span>
-              </div>
-              <div class="Advantages-AdvantageInfo">
-                {{ $t('lottery.advantages.text3') }}
-              </div>
-            </div>
-          </div>
-          <div class="Advantages-Advantage">
-            <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
-            <div class="Advantages-AdvantageBlock">
-              <div class="Advantages-AdvantageTitle">
-                {{ lottery.ticketCost }} {{ lottery.currency }}
-              </div>
-              <div class="Advantages-AdvantageInfo">
-                {{ $t('lottery.advantages.text4') }}
-              </div>
-            </div>
-          </div>
-        </div>
+        </template>
       </div>
     </div>
     <section class="DailyTournamentPage-Content">
@@ -248,7 +260,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['width']),
+    ...mapState(['width', 'user']),
     ...mapState('tournaments', [
       'lotteryList',
       'lotteryListLoadingStatus',
@@ -256,6 +268,7 @@ export default {
       'lotteryResultList',
     ]),
     ...mapGetters('tournaments', ['tournaments']),
+    ...mapGetters(['isLoggedIn']),
     slug() {
       return this.$route.params.lottery;
     },
@@ -397,6 +410,60 @@ export default {
     @media (min-width: $screen-l) {
       height: 70px;
       padding: 0 24px;
+      font-size: 20px;
+    }
+  }
+
+  &-Tickets {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 16px 100px;
+    background-color: var(--color-bg);
+    background-image: url(~@/assets/img/tickets-bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (min-width: $screen-m) {
+      padding-left: 250px;
+      background-image: url(~@/assets/img/tickets-bg.png);
+    }
+  }
+
+  &-Ticket {
+    text-align: right;
+
+    @media (min-width: $screen-m) {
+      display: flex;
+    }
+  }
+
+  &-TicketCount {
+    margin-left: 12px;
+  }
+
+  &-TicketImg {
+    display: none;
+
+    @media (min-width: $screen-m) {
+      display: block;
+      margin-left: 10px;
+    }
+  }
+
+  &-HighlightedText {
+    font-size: 12px;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+
+    @media (min-width: $screen-m) {
+      font-size: 14px;
+    }
+
+    @media (min-width: $screen-l) {
+      font-size: 16px;
+    }
+
+    @media (min-width: $screen-xl) {
       font-size: 20px;
     }
   }
