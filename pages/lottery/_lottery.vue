@@ -21,7 +21,7 @@
             <button class="Btn Btn--common DailyTournamentPage-Btn" @click="onClickBtn()">
               {{ isLoggedIn ? $t('buttons.deposit') : $t('buttons.signUp') }}
             </button>
-            <Counter v-if="lottery" :enddate="lottery.endDateTime * 1000" />
+            <Counter v-if="lottery" :enddate="new Date(lottery.endDateTime * 1000)" />
           </div>
         </div>
         <template v-if="lottery">
