@@ -1,6 +1,6 @@
 <template>
-  <section class="Page Page--full LotteryPage DailyTournamentPage" :class="`${slug}-Header`">
-    <div class="Page-Header LotteryPage-Header">
+  <section class="Page Page--full LotteryPage DailyTournamentPage">
+    <div class="Page-Header LotteryPage-Header" :class="`${slug}-Header`">
       <div class="Wrapper">
         <div class="DailyTournamentPage-MainText">
           <h1
@@ -350,13 +350,13 @@ export default {
     background-size: calc(100% - 32px) auto;
 
     @media (min-width: $screen-s) {
+      background-image: url(~@/assets/img/lottery_600.png);
+    }
+
+    @media (min-width: $screen-m) {
       margin-top: 0;
       padding-top: 18px / 768px * 100%;
       padding-bottom: 35px;
-      background-image: url(~@/assets/img/lottery_768.png);
-    }
-
-    @media (min-width: $screen-l) {
       background-image: url(~@/assets/img/lottery_960.png);
     }
 
@@ -368,6 +368,10 @@ export default {
 
     .DailyTournamentPage-MainText {
       @media (min-width: $screen-s) {
+        max-width: 100%;
+      }
+
+      @media (min-width: $screen-m) {
         max-width: 50%;
       }
 
@@ -476,6 +480,28 @@ export default {
 
   .Table--scrollable {
     max-height: 430px;
+  }
+}
+
+.sunshine_spins_lottery {
+  &-Header {
+    background-image: url(~@/assets/img/sunshine-page_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(100% - 32px) auto;
+
+    @media (min-width: $screen-s) {
+      background-image: url(~@/assets/img/sunshine-page_600.png);
+    }
+
+    @media (min-width: $screen-m) {
+      background-image: url(~@/assets/img/sunshine-page_900.png);
+      background-position: center 20%;
+    }
+
+    @media (min-width: $screen-xl) {
+      background-image: url(~@/assets/img/sunshine-page_1248.png);
+    }
   }
 }
 </style>
