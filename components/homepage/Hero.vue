@@ -189,13 +189,6 @@ export default {
           linkText: this.$t('buttons.more'),
         },
         {
-          bg: 'august',
-          title: this.$t('promotions.augustCashdays.title'),
-          text: `<span class="Colored">${this.$t('augustCashdays.prize')}</span>`,
-          url: '/tournaments/august-cashdays',
-          linkText: this.$t('buttons.more'),
-        },
-        {
           bg: 'race',
           title: this.$t('promotions.epicRace.title'),
           text: `<span class="Colored">${this.$t('epicRace.prize')}</span>`,
@@ -207,6 +200,13 @@ export default {
           title: this.$t('weekly_derby.title'),
           text: `<span class="Colored">${this.$t('weekly_derby.prize')}</span>`,
           url: '/tournaments/weekly_derby',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'sunshine',
+          title: this.$t('sunshine_spins_lottery.title'),
+          text: `<span class="Colored">${this.$t('sunshine_spins_lottery.prize')}</span>`,
+          url: '/lottery/sunshine_spins_lottery',
           linkText: this.$t('buttons.more'),
         },
       ];

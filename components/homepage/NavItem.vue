@@ -16,6 +16,7 @@
       <transition name="slide-up">
         <ul
           v-show="listIsOpen"
+          ref="list"
           v-click-outside="onClickOutside"
           class="Nav-List"
           :class="`Nav-List--${item.name}`"
@@ -68,9 +69,7 @@ export default {
   methods: {
     onClickOutside(e) {
       if (!(e.target instanceof Element)) return;
-      if (!e.target.closest('.Nav-List') && !e.target.closest('.Nav-Item')) {
-        this.listIsOpen = false;
-      }
+      if (!this.$el.contains(e.target)) this.listIsOpen = false;
     },
   },
 };

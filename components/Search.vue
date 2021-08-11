@@ -31,6 +31,7 @@ import { mapState, mapMutations } from 'vuex';
 
 export default {
   name: 'Search',
+
   props: {
     value: {
       type: String,
@@ -50,6 +51,9 @@ export default {
   },
   computed: {
     ...mapState(['width']),
+  },
+  beforeDestroy() {
+    this.onClickOutside();
   },
   methods: {
     ...mapMutations(['toggleOverlay']),

@@ -113,6 +113,9 @@ export default {
           userId: this.billingSession.userId,
           sessionId: this.billingSession.sessionId,
           environment,
+          attributes: {
+            affiliateId: this.user.affiliateId,
+          },
           fetchConfig: true,
           method,
           locale: `${locale}_${this.user.country}`,
