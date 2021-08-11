@@ -29,33 +29,6 @@
         </NuxtLink>
       </div>
       <div class="ProvidersSection DefaultGames-Providers">
-        <Search
-          v-if="width >= 768"
-          v-model="searched"
-          class="ProvidersSection-Search DefaultGames-Search"
-          with-dropdown
-        >
-          <template v-if="searched" #dropdown>
-            <div v-if="filteredGames.length" class="Title Title--type-h4 Cards-Title">
-              {{ $t('search.searchResults') }} ({{ filteredGames.length }})
-            </div>
-            <Games
-              class="DefaultGames-Cards"
-              :games="filteredGames"
-              :games-to-show="12"
-              btn-class="Btn--common Btn--outline"
-            >
-              <template #notFound>
-                <div class="Title Title--type-h4">
-                  {{ $t('search.nothingFound') }}
-                </div>
-                <div class="Text Text--additional">
-                  {{ $t('search.try') }}
-                </div>
-              </template>
-            </Games>
-          </template>
-        </Search>
         <ProvidersMenu
           v-if="gameProducerList.length"
           :provider-active="providerActive"
@@ -219,7 +192,6 @@
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 import Loader from '@/components/Loader';
-import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import { PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID } from '@/config';
@@ -231,7 +203,6 @@ export default {
   name: 'DefaultGames',
   components: {
     ProvidersMenu,
-    Search,
     Loader,
     Games,
   },
@@ -241,7 +212,6 @@ export default {
       listIsOpen: false,
       tabActive: {},
       providerActive: {},
-      searched: '',
     };
   },
   computed: {
@@ -273,7 +243,6 @@ export default {
       'dropsWinsLiveGamesAreLoading',
     ]),
     ...mapGetters(['isLoggedIn', 'activeAccount']),
-    ...mapGetters('games', ['gamesSearched']),
     tabs() {
       if (this.width < 768) {
         return [
@@ -357,9 +326,6 @@ export default {
         params.gameProducer = this.providerActive.name;
       return params;
     },
-    filteredGames() {
-      return this.gamesSearched(this.searched);
-    },
   },
   watch: {
     gameProducerList: {
@@ -403,14 +369,12 @@ export default {
     ...mapMutations(['setDgaInfo']),
     ...mapActions('games', ['getRecentGames']),
     onChooseTab(i) {
-      this.searched = '';
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
       this.isOpen = false;
       this.providerActive = this.gameProducerList[0];
     },
     onChooseProvider(e) {
-      this.searched = '';
       this.providerActive = e;
       this.$router.push(
         this.localePath({
@@ -669,35 +633,6 @@ export default {
 
     @media (min-width: $screen-xl) {
       margin-bottom: 60px;
-    }
-  }
-
-  &-Search {
-    z-index: 1;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border: 2px solid var(--color-border);
-
-    @media (min-width: $screen-m) {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    &.Search--open {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      z-index: 1001;
-      width: 100%;
-      background: var(--color-body);
-      cursor: initial;
-
-      .Search-Close {
-        @media (min-width: $screen-m) {
-          right: 16px;
-          left: initial;
-        }
-      }
     }
   }
 }
