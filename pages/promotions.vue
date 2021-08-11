@@ -202,6 +202,14 @@ export default {
           link: 'More',
           url: '/tournaments/weekly_derby',
         },
+        {
+          title: this.$t('promotions.twitterGiveaway.title'),
+          prize: this.$t('promotions.twitterGiveaway.upTo'),
+          image: 'wolf_900.png',
+          announce: this.$t('promotions.twitterGiveaway.name'),
+          text: this.$t('promotions.twitterGiveaway.text'),
+          link: 'More',
+        },
       ],
     };
   },
