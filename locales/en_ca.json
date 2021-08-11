@@ -445,11 +445,6 @@
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!"
     },
-    "epicRace": {
-      "title": "Spinomenal<br/> Epiс Race",
-      "name": "Spinomenal Epiс Race",
-      "text": "Again, the well-known Spinomenal race will drive you nuts with the exciting Epiс Race tournament.<br/> During these days in August, you can enjoy cool slots and earn a piece of the lavish prize pool of €20,000!"
-    },
     "weekly_derby": {
       "upTo": "prize pool €2,500",
       "name": "Saddle up for the Weekly Derby",
@@ -518,30 +513,6 @@
       {
         "title": "Additionally:",
         "text": "<strong>How to win:<br/><br/>Weekly Roulette Tournament<br/>Prizes:</strong> €50,000 in total across 1,000 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0,50 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 2x of the total Qualifying Bet to qualify for the Weekly Roulette Tournament.<br/><br/>A Player may increase their Weekly Roulette Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Any stakes placed on 1:1 odds bets (Red/Black, Odd/Even, 1:18/19:36) shall not be counted towards the Weekly Roulette Tournament score.<br/><br/><strong>Weekly Blackjack Tournament<br/>Prizes:</strong> €25,000 in total across 300 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €10 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Blackjack Tournament.<br/><br/>A Player may increase their Weekly Blackjack Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets and/or Bets Behind may be considered for the Weekly Blackjack Tournament.<br/><br/><strong>Weekly Mega Wheel Tournament<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Mega Wheel Tournament.<br/><br/>A Player may increase their Weekly Mega Wheel Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>All Qualifying Bets may be considered for the Weekly Mega Wheel Tournament.<br/><br/><strong>Weekly Baccarat Tournaments<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Baccarat Tournament.<br/><br/>A Player may increase their Weekly Baccarat Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets (Player, Banker, and Tie) may be considered for the Weekly Baccarat Tournament score."
-      }
-    ]
-  },
-  "epicRace": {
-    "title": "Spinomenal Epiс Race",
-    "prize": "€20,000",
-    "text": "Again, the well-known Spinomenal race will drive you nuts with the exciting Epiс Race tournament. During these days in August, you can enjoy cool slots and earn a piece of the lavish prize pool of €20,000!",
-    "textMobile": "Again, the well-known Spinomenal race will drive you nuts with the exciting Epiс Race tournament. During these days in August, you can enjoy cool slots and earn a piece of the lavish prize pool of €20,000!",
-    "terms": [
-      {
-        "title": "Campaign duration:",
-        "text": "The Epic Race runs between August 2nd, 2021, 00:00 GMT, and August 9th, 2021, 23:59 GMT."
-      },
-      {
-        "title": "Prize pool information:",
-        "text": "The 150 first players in the leaderboard will share a prize pool of €20,000:  <br/>1st place - €3,500<br/>2nd place - €2,500<br/>3rd place - €1,500<br/>4th place - €1,000<br/>5th place - €850<br/>6th place - €750<br/>7th place - €600<br/>8th place - €350<br/>9th place - €300<br/>10th place - €250<br/>11th - 20th places - €200<br/>21st - 30th places - €150<br/>31st - 40th places - €80<br/>41st - 50th places - €60<br/>51st - 100th places - €40<br/>101st - 150th places - €30."
-      },
-      {
-        "title": "Minimum bet requirements:",
-        "text": "0.5 EUR"
-      },
-      {
-        "title": "Additional terms and conditions:",
-        "text": "The minimum qualifying bet per spin to participate in the tournament is €0.5. <br/>Participating games: Book Of The Divine, Majestic King, Aztec Spell.<br/>All you need to do to join the Spinomenal Epiс Race is just play any of the participating games. Each win rewards you with a score based on the win multiplier. The more points you collect, the higher your position on the leaderboard."
       }
     ]
   },

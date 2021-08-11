@@ -323,11 +323,4 @@ export const TOURNAMENTS = {
     class: 'DropsWinsLive',
     slug: 'dropslive',
   },
-  'spinomenal-epic-race': {
-    url: 'spinomenal-epic-race',
-    name: 'Spinomenal Epiс Race',
-    translates: 'epicRace',
-    class: 'EpicRace',
-    slug: 'epicrace',
-  },
 };
