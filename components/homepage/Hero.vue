@@ -202,6 +202,13 @@ export default {
           url: '/lottery/sunshine_spins_lottery',
           linkText: this.$t('buttons.more'),
         },
+        {
+          bg: 'lucky',
+          title: this.$t('luckyPlayson.title'),
+          text: `<span class="Colored">${this.$t('luckyPlayson.prize')}</span>`,
+          url: '/tournaments/lucky-playson',
+          linkText: this.$t('buttons.more'),
+        },
       ];
       if (!this.isLoggedIn) {
         slides.splice(1, 1);

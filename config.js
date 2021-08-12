@@ -323,4 +323,11 @@ export const TOURNAMENTS = {
     class: 'DropsWinsLive',
     slug: 'dropslive',
   },
+  'lucky-playson': {
+    url: 'lucky-playson',
+    name: 'Lucky 13',
+    translates: 'luckyPlayson',
+    class: 'LuckyPlayson',
+    slug: 'lucky',
+  },
 };

@@ -202,6 +202,15 @@ export default {
           link: 'More',
           url: '/lottery/sunshine_spins_lottery',
         },
+        {
+          title: this.$t('luckyPlayson.title'),
+          prize: this.$t('promotions.luckyPlayson.upTo'),
+          image: 'lucky-promotions.png',
+          announce: this.$t('promotions.luckyPlayson.name'),
+          text: this.$t('promotions.luckyPlayson.text'),
+          link: 'More',
+          url: '/tournaments/lucky-playson',
+        },
       ],
     };
   },

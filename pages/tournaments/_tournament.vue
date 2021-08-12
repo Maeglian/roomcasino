@@ -400,4 +400,47 @@ export default {
     }
   }
 }
+
+.LuckyPlayson {
+  &-Header {
+    width: 100%;
+    margin-top: -70px;
+    margin-bottom: 22px;
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/lucky_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(100% - 32px) auto;
+
+    @media (min-width: $screen-s) {
+      margin-top: 0;
+      padding-top: 80px / 1248px * 100%;
+      background-image: url(~@/assets/img/lucky_900.png);
+    }
+
+    @media (min-width: $screen-m) {
+      padding-top: 50px / 1248px * 100%;
+      background-position: center center;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 100px;
+      background-image: url(~@/assets/img/lucky_1248.png);
+    }
+
+    @media (min-width: $screen-xxl) {
+      background-image: url(~@/assets/img/lucky_1920.png);
+    }
+
+    .DailyTournamentPage-MainText {
+      @media (min-width: $screen-s) {
+        max-width: 50%;
+      }
+
+      @media (min-width: $screen-m) {
+        max-width: 35%;
+      }
+    }
+  }
+}
 </style>

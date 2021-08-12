@@ -453,6 +453,11 @@
       "upTo": "Preispool 2.500 €",
       "name": "Aufsatteln fürs Weekly Derby",
       "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
+    },
+    "luckyPlayson": {
+      "upTo": "Das Preisgeld 13.000 €.",
+      "name": "Lucky 13",
+      "text": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!"
     }
   },
   "tournaments": {
@@ -1361,6 +1366,34 @@
       },
       {
         "text": "Für Freispiele besteht eine Umsatzanforderung von x5."
+      }
+    ]
+  },
+  "luckyPlayson": {
+    "title": "Lucky 13",
+    "prize": "13.000 €",
+    "text": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!",
+    "textMobile": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!",
+    "terms": [
+      {
+        "title": "Dauer der Aktion:",
+        "text": "Das Turnier läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC."
+      },
+      {
+        "title": "Aufbau der Aktion:",
+        "text": "Das Turnier läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC."
+      },
+      {
+        "title": "Gewinnstrukturierung:",
+        "text": "Gewinnübersicht für die 13.000 Euro:<br/> Platz:        Gewinn in Euro<br/>1    -    1,313<br/>2    -    1,013<br/>3    -     813<br/>4     -    666<br/>5    -     453<br/>6    -     413<br/>7     -    353<br/>8     -    313<br/>9    -     253<br/>10-12 - 213<br/>13    -     130<br/>14-25  -    93<br/>26-50   -    63<br/>51-150   -   33<br/>151-200  -   13"
+      },
+      {
+        "title": "Mindesteinsatz:",
+        "text": "0.13 EUR"
+      },
+      {
+        "title": "Teilnahmebedingungen der Aktion:",
+        "text": "13 Spiele nehmen daran teil: <br/>● Book of Gold: Double Chance ● Book of Gold: Multichance <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Diamond Wins: Hold and Win <br/>● Divine Dragon: Hold and Win <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra Megaways™ <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Super Sunny Fruits: Hold and Win <br/>● Wolf Power: Hold and Win.<br/><br/>Es müssen mindestens 13 Ausspielungen gespielt werden, um an dieser Aktion teilnehmen zu können. Die Punkte werden Runde für Runde berechnet, dabei entspricht jeder umgesetzte Euro 100 Punkten."
       }
     ]
   }
