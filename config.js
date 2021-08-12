@@ -328,6 +328,6 @@ export const TOURNAMENTS = {
     name: 'Lucky 13',
     translates: 'luckyPlayson',
     class: 'LuckyPlayson',
-    slug: 'lucky',
+    slug: 'thirteen',
   },
 };
