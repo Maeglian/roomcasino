@@ -1371,24 +1371,19 @@
     "textMobile": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! ",
     "terms": [
       {
-        "title": "Période de la campagne:<br/><br/>",
-        "text": "Le tournoi se déroule du 12 août 2021 0 h 01 UTC au 22 août 2021 23 h 59 UTC<br/><br/>"
+        "title": "Le tournoi se déroule du 12 août 2021 0 h 01 UTC au 22 août 2021 23 h 59 UTC<br/><br/>"
       },
       {
-        "title": "There are 10 participating games:<br/><br/>",
-        "text": "Il y a 10 jeux participants : Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
+        "title": "There are 10 participating games:<br/><br/> Il y a 10 jeux participants : Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
       },
       {
-        "title": "Mise minimale:<br/><br/>",
-        "text": "La mise minimale est de 0,5 € ou l’équivalent dans d’autres devises<br/><br/>"
+        "title": "La mise minimale est de 0,5 € ou l’équivalent dans d’autres devises<br/><br/>"
       },
       {
-        "title": "Structure des prix:",
-        "text": "La cagnotte de 10 000 € sera répartie entre les 100 premiers gagnants du classement en fonction de leur position dans le tournoi:<br/>1re place – 1 670 €<br/>2e place – 1 270 €<br/>3e place – 1 000 €<br/>4e place – 667 €<br/>5e place – 600 €<br/>6e place – 533 €<br/><br/>7e place – 400 €<br/>8e place – 293 €<br/>9e place – 220 €<br/>10e à 19e place – 133 €<br/>20e à 49e place – 33 €<br/>50e à 100e place – 20 €"
+        "title": "La cagnotte de 10 000 € sera répartie entre les 100 premiers gagnants du classement en fonction de leur position dans le tournoi:<br/>1re place – 1 670 €<br/>2e place – 1 270 €<br/>3e place – 1 000 €<br/>4e place – 667 €<br/>5e place – 600 €<br/>6e place – 533 €<br/>7e place – 400 €<br/>8e place – 293 €<br/>9e place – 220 €<br/>10e à 19e place – 133 €<br/>20e à 49e place – 33 €<br/>50e à 100e place – 20 €"
       },
       {
-        "title": "Conditions générales de la promotion:",
-        "text": "Un tour est équivalent à un point. Plus le nombre de points est important, plus le joueur est bien placé dans le classement."
+        "title": "Un tour est équivalent à un point. Plus le nombre de points est important, plus le joueur est bien placé dans le classement."
       }
     ]
   }
