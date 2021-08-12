@@ -304,7 +304,7 @@
       "waiting": "En attendant d'être approuvé",
       "approved": "Approuvé",
       "disapproved": "Désapprouvé",
-      "drop": "Déposez le fichier ici ou parcourez les images ou les fichiers .pdf. Taille maximale 110 MB"
+      "drop": "Déposez le fichier ici ou parcourez les images ou les fichiers .pdf. Taille maximale 110 MB"
     },
     "user": {
       "title": "Profil utilisateur",
@@ -446,7 +446,18 @@
     "weekly_derby": {
       "upTo": "une cagnotte de 2500 €",
       "name": "À vos marques pour le Weekly Derby",
-      "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
+      "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
+    },
+    "rapidSpins": {
+      "title": "Tournoi en réseau <br/>RAPID SPINS <br/>d’EvoPlay",
+      "upTo": "10 000 €",
+      "name": "Tournoi en réseau RAPID SPINS d’EvoPlay",
+      "text": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! "
+    },
+    "luckyPlayson": {
+      "upTo": "The prize pool is €13,000.",
+      "name": "Lucky 13",
+      "text": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/><br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!"
     }
   },
   "tournaments": {
@@ -635,7 +646,7 @@
           "We reserve the right to carry out verification procedures for each client at first withdrawal. Such verifications may for example include copies of a player’s passport, national Identity Card, copies of a player’s utility bills, and/or copies of the debit/credit cards used to deposit.",
           "It's the responsibility of the player to ensure that all documents as a part of the KYC process are genuine. Faked or fraudulent documents provided may result in a confiscation of deposits and potential winnings of the player.",
           "In order to make a withdrawal, a player must play through active deposited amounts at least once prior to withdrawal. This procedure is in line with anti money laundering practices. The player is fully responsible for paying all fees and taxes applied to their winnings according to the laws of the jurisdiction of the player’s residence.",
-          "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country.. For Visa, the following countries are not supported: USA, New Zealand, Australia, Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
+          "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country. For Visa, the following countries are not supported: Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
           "In the unlikely event of a player depositing crypto currency funds to another crypto currency network address (such as but not limited to: sending BTC to a BCH address). Ninecasino will not attempt to recover the amount unless it exceeds $5000. In such cases, a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to pursue the recovery, however it's not a guarantee to get the funds recovered.",
           "The internal operating currency of the Website is Euro. Due to this fact, in case you transact in other currencies, the amount deducted from your credit card may be insignificantly higher than displayed at the time of transaction due to currency conversions on the side of your bank and/or the Casino's payment processing system.",
           "All Bank Transfer payouts are processed within five (5) banking days. Please mind that you will not be able to request a Bank Transfer for USD payouts.",
@@ -784,7 +795,7 @@
       },
       "ourSoftware": {
         "title": "Our software",
-        "text": "The casino uses products that have been made by the best developers of casino software and games in the industry. Amatic, BetSoft, Endorphina, Ezugi, Microgaming, and SoftSwiss. Every gambler will be familiar with them firsthand and trust everything that these names stand for. We trust them too. We do not want our players to feel like experimental lab mice in an abortive experiment, so we offer a reliable solution that we would be delighted to use  ourselves as gamblers."
+        "text": "The casino uses products that have been made by the best developers of casino software and games in the industry. Amatic, BetSoft, Endorphina, Microgaming, and Bgaming. Every gambler will be familiar with them firsthand and trust everything that these names stand for. We trust them too. We do not want our players to feel like experimental lab mice in an abortive experiment, so we offer a reliable solution that we would be delighted to use  ourselves as gamblers."
       },
       "offers": {
         "title": "What do we offer",
@@ -1355,6 +1366,53 @@
       },
       {
         "text": "Pour les tours gratuits, votre mise est de x5."
+      }
+    ]
+  },
+  "rapidSpins": {
+    "title": "Tournoi en réseau RAPID SPINS d’EvoPlay",
+    "prize": "10 000 €",
+    "text": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! À partir du 12 août, pendant 10 jours, vous aurez la possibilité de monter à bord et de participer à cet événement électrisant!",
+    "textMobile": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! ",
+    "terms": [
+      {
+        "title": "Le tournoi se déroule du 12 août 2021 0 h 01 UTC au 22 août 2021 23 h 59 UTC<br/><br/>"
+      },
+      {
+        "title": "There are 10 participating games:<br/><br/> Il y a 10 jeux participants : Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
+      },
+      {
+        "title": "La mise minimale est de 0,5 € ou l’équivalent dans d’autres devises<br/><br/>"
+      },
+      {
+        "title": "La cagnotte de 10 000 € sera répartie entre les 100 premiers gagnants du classement en fonction de leur position dans le tournoi:<br/>1re place – 1 670 €<br/>2e place – 1 270 €<br/>3e place – 1 000 €<br/>4e place – 667 €<br/>5e place – 600 €<br/>6e place – 533 €<br/>7e place – 400 €<br/>8e place – 293 €<br/>9e place – 220 €<br/>10e à 19e place – 133 €<br/>20e à 49e place – 33 €<br/>50e à 100e place – 20 €"
+      },
+      {
+        "title": "Un tour est équivalent à un point. Plus le nombre de points est important, plus le joueur est bien placé dans le classement."
+      }
+    ]
+  },
+  "luckyPlayson": {
+    "title": "Lucky 13",
+    "prize": "€13,000",
+    "text": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/><br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!",
+    "textMobile": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/><br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!",
+    "terms": [
+      {
+        "title": "The tournament runs between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!"
+      },
+      {
+        "title": "€13,000 Prize Pool Table:<br/>Places:        Prize EUR<br/>1   -     € 1,313<br/>2    -    € 1,013<br/>3    -    € 813<br/>4    -    € 666<br/>5    -    € 453<br/>6    -    € 413<br/>7    -    € 353<br/>8    -    € 313<br/>9    -    € 253<br/>10-12    -    € 213<br/>13    -    € 130<br/>14-25    -    € 93<br/>26-50    -    € 63<br/>51-150     -   € 33<br/>151-200    -    € 13"
+      },
+      {
+        "title": "Minimum bet requirements:",
+        "text": "0.13 EUR"
+      },
+      {
+        "title": "With 13 participating games: <br/>● Book of Gold: Double Chance <br/>● Book of Gold: Multichance <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Diamond Wins: Hold and Win <br/>● Divine Dragon: Hold and Win <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra Megaways™ <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Super Sunny Fruits: Hold and Win <br/>● Wolf Power: Hold and Win.<br/><br/>"
+      },
+      {
+        "title": "The minimum number of spins required to qualify in this promotion is 13 spins. Points are calculated round-by-round, with each 1 EUR wagered equaling 100 points."
       }
     ]
   }
