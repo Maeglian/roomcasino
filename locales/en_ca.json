@@ -450,6 +450,12 @@
       "name": "Saddle up for the Weekly Derby",
       "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
     },
+    "rapidSpins": {
+      "title": "RAPID SPINS <br/>Network <br/>Tournament",
+      "upTo": "€10,000",
+      "name": "RAPID SPINS Network Tournament",
+      "text": "Navigate and bounce your way down the raging RAPID SPINS Network Tournament by EvoPlay. Race down the river for prizes and land in the final Prize Pool of €10,000!"
+    },
     "luckyPlayson": {
       "upTo": "The prize pool is €13,000.",
       "name": "Lucky 13",
@@ -642,7 +648,7 @@
           "We reserve the right to carry out verification procedures for each client at first withdrawal. Such verifications may for example include copies of a player’s passport, national Identity Card, copies of a player’s utility bills, and/or copies of the debit/credit cards used to deposit.",
           "It's the responsibility of the player to ensure that all documents as a part of the KYC process are genuine. Faked or fraudulent documents provided may result in a confiscation of deposits and potential winnings of the player.",
           "In order to make a withdrawal, a player must play through active deposited amounts at least once prior to withdrawal. This procedure is in line with anti money laundering practices. The player is fully responsible for paying all fees and taxes applied to their winnings according to the laws of the jurisdiction of the player’s residence.",
-          "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country.. For Visa, the following countries are not supported: USA, New Zealand, Australia, Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
+          "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country. For Visa, the following countries are not supported: Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
           "In the unlikely event of a player depositing crypto currency funds to another crypto currency network address (such as but not limited to: sending BTC to a BCH address). Ninecasino will not attempt to recover the amount unless it exceeds $5000. In such cases, a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to pursue the recovery, however it's not a guarantee to get the funds recovered.",
           "The internal operating currency of the Website is Euro. Due to this fact, in case you transact in other currencies, the amount deducted from your credit card may be insignificantly higher than displayed at the time of transaction due to currency conversions on the side of your bank and/or the Casino's payment processing system.",
           "All Bank Transfer payouts are processed within five (5) banking days. Please mind that you will not be able to request a Bank Transfer for USD payouts.",
@@ -791,7 +797,7 @@
       },
       "ourSoftware": {
         "title": "Our software",
-        "text": "The casino uses products that have been made by the best developers of casino software and games in the industry. Amatic, BetSoft, Endorphina, Ezugi, Microgaming, and SoftSwiss. Every gambler will be familiar with them firsthand and trust everything that these names stand for. We trust them too. We do not want our players to feel like experimental lab mice in an abortive experiment, so we offer a reliable solution that we would be delighted to use  ourselves as gamblers."
+        "text": "The casino uses products that have been made by the best developers of casino software and games in the industry. Amatic, BetSoft, Endorphina, Microgaming, and Bgaming. Every gambler will be familiar with them firsthand and trust everything that these names stand for. We trust them too. We do not want our players to feel like experimental lab mice in an abortive experiment, so we offer a reliable solution that we would be delighted to use  ourselves as gamblers."
       },
       "offers": {
         "title": "What do we offer",
@@ -1362,6 +1368,29 @@
       },
       {
         "text": "For Free Spins, wagering is x5."
+      }
+    ]
+  },
+  "rapidSpins": {
+    "title": "RAPID SPINS Network Tournament",
+    "prize": "€10,000",
+    "text": "Navigate and bounce your way down the raging RAPID SPINS Network Tournament by EvoPlay. Race down the river for prizes and land in the final Prize Pool of €10,000! For 10 days starting from the 12th of August you will have a chance to jump on board and take part in this electrifying event!",
+    "textMobile": "Navigate and bounce your way down the raging RAPID SPINS Network Tournament by EvoPlay. Race down the river for prizes and land in the final Prize Pool of €10,000!",
+    "terms": [
+      {
+        "title": "The tournament runs between August 12nd, 2021 0:01 UTC, and August 22nd, 2021 until 23:59 UTC<br/><br/>"
+      },
+      {
+        "title": "There are 10 participating games:<br/><br/>Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
+      },
+      {
+        "title": "The minimum bet is €0.5 or the equivalent in other currencies<br/><br/>"
+      },
+      {
+        "title": "The Prize Pool of €10,000 will be distributed among the top 100 winners on the leaderboard according to these tournament positions:<br/>1st place – €1,670<br/>2nd place – €1,270<br/>3rd place – €1,000<br/>4th place – €667<br/>5th place – €600<br/>6th place – €533<br/>7th place – €400<br/>8th place – €293<br/>9th place – €220<br/>10th-19th place – €133<br/>20th-49th place – €33<br/>50th-100th place – €20"
+      },
+      {
+        "title": "One spin equals one point. The more points, the higher the player’s position on the leaderboard."
       }
     ]
   },

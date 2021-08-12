@@ -203,6 +203,13 @@ export default {
           linkText: this.$t('buttons.more'),
         },
         {
+          bg: 'rapid',
+          title: this.$t('promotions.rapidSpins.title'),
+          text: `<span class="Colored">${this.$t('rapidSpins.prize')}</span>`,
+          url: '/tournaments/rapid-spins',
+          linkText: this.$t('buttons.more'),
+        },
+        {
           bg: 'lucky',
           title: this.$t('luckyPlayson.title'),
           text: `<span class="Colored">${this.$t('luckyPlayson.prize')}</span>`,

@@ -203,6 +203,15 @@ export default {
           url: '/lottery/sunshine_spins_lottery',
         },
         {
+          title: this.$t('promotions.rapidSpins.title'),
+          prize: this.$t('rapidSpins.prize'),
+          image: 'rapid-promotions.png',
+          announce: this.$t('promotions.rapidSpins.name'),
+          text: this.$t('promotions.rapidSpins.text'),
+          link: 'More',
+          url: '/tournaments/rapid-spins',
+        },
+        {
           title: this.$t('luckyPlayson.title'),
           prize: this.$t('promotions.luckyPlayson.upTo'),
           image: 'lucky-promotions.png',

@@ -323,6 +323,13 @@ export const TOURNAMENTS = {
     class: 'DropsWinsLive',
     slug: 'dropslive',
   },
+  'rapid-spins': {
+    url: 'rapid-spins',
+    name: 'RAPID SPINS Network Tournament',
+    translates: 'rapidSpins',
+    class: 'RapidSpins',
+    slug: 'rapid',
+  },
   'lucky-playson': {
     url: 'lucky-playson',
     name: 'Lucky 13',
