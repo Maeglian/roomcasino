@@ -515,7 +515,7 @@ export const actions = {
 
   async getPixel() {
     try {
-      await http.get(`${PIXEL_HOST}/pixel/image`);
+      await http.get(`${PIXEL_HOST}/pixel/image`, { withCredentials: true });
     } catch (e) {
       this.$sentry.captureException(new Error(e));
     }
