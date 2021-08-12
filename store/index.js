@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Vue from 'vue';
-import { BILLING_PROVIDER_ID, API_HOST } from '../config';
+import { BILLING_PROVIDER_ID, API_HOST, PIXEL_HOST, DOMAIN } from '../config';
 
 const Cookie = process.client ? require('js-cookie') : undefined;
 const cookieparser = process.server ? require('cookieparser') : undefined;
@@ -471,7 +471,10 @@ export const actions = {
         const { token } = res.data;
         commit('setToken', token);
         Cookie.set('token', token);
+        Cookie.set('token', token, { domain: `pixel.${DOMAIN}` });
+        Cookie.set('token', token, { domain: `.pixel.${DOMAIN}` });
         http.defaults.headers.common['X-Auth-Token'] = token;
+        dispatch('getPixel');
         dispatch('getProfile');
         dispatch('profile/getAvailableBonusList');
       } else commit('setAuthError', res.message);
@@ -494,18 +497,29 @@ export const actions = {
     }
   },
 
-  async login({ commit }, payload) {
+  async login({ commit, dispatch }, payload) {
     try {
       const res = await http.post(`${API_HOST}/login`, payload);
       if (res.code === 0) {
         const { token } = res.data;
         commit('setToken', token);
         Cookie.set('token', token);
+        Cookie.set('token', token, { domain: `pixel.${DOMAIN}` });
+        Cookie.set('token', token, { domain: `.pixel.${DOMAIN}` });
         http.defaults.headers.common['X-Auth-Token'] = token;
+        dispatch('getPixel');
       } else commit('setAuthError', res.message);
     } catch (e) {
       this.$sentry.captureException(new Error(e));
       Cookie.remove('token');
+    }
+  },
+
+  async getPixel() {
+    try {
+      await http.get(`${PIXEL_HOST}/pixel/image`);
+    } catch (e) {
+      this.$sentry.captureException(new Error(e));
     }
   },
 
