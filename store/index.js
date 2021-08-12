@@ -471,8 +471,7 @@ export const actions = {
         const { token } = res.data;
         commit('setToken', token);
         Cookie.set('token', token);
-        Cookie.set('token', token, { domain: `pixel.${DOMAIN}` });
-        Cookie.set('token', token, { domain: `.pixel.${DOMAIN}` });
+        Cookie.set('token', token, { domain: `.${DOMAIN}` });
         http.defaults.headers.common['X-Auth-Token'] = token;
         dispatch('getPixel');
         dispatch('getProfile');
@@ -504,8 +503,7 @@ export const actions = {
         const { token } = res.data;
         commit('setToken', token);
         Cookie.set('token', token);
-        Cookie.set('token', token, { domain: `pixel.${DOMAIN}` });
-        Cookie.set('token', token, { domain: `.pixel.${DOMAIN}` });
+        Cookie.set('token', token, { domain: `.${DOMAIN}` });
         http.defaults.headers.common['X-Auth-Token'] = token;
         dispatch('getPixel');
       } else commit('setAuthError', res.message);
