@@ -304,7 +304,7 @@
       "waiting": "En attendant d'être approuvé",
       "approved": "Approuvé",
       "disapproved": "Désapprouvé",
-      "drop": "Déposez le fichier ici ou parcourez les images ou les fichiers .pdf. Taille maximale 110 MB"
+      "drop": "Déposez le fichier ici ou parcourez les images ou les fichiers .pdf. Taille maximale 110 MB"
     },
     "user": {
       "title": "Profil utilisateur",
@@ -345,20 +345,20 @@
         "depositLimit": {
           "name": "Limites de  dépôt",
           "text": "Votre compte peut être configuré avec des limites de dépôt. Ce paramètre limite le montant que vous pouvez déposer par jour, par semaine ou par mois.",
-          "editRules": "Vous pouvez réduire votre limite à tout moment, cette modification prendra effet immédiatement. Vous pouvez augmenter la limite, mais vous avez besoin de 24 heures pour que cette modification prenne effet.",
-          "deleteRules": "L’annulation de la limite de perte prend 24 heures. Une fois la limite dépassée, vous recevrez une notification par courriel"
+          "editRules": "Vous pouvez réduire votre limite à tout moment, cette modification prendra effet immédiatement. Vous pouvez augmenter la limite, mais vous avez besoin de 24 heures pour que cette modification prenne effet.",
+          "deleteRules": "L’annulation de la limite de perte prend 24 heures. Une fois la limite dépassée, vous recevrez une notification par courriel"
         },
         "wagerLimit": {
           "name": "Limites de mise",
           "text": "Votre compte peut être configuré avec des limites de mise. Ce paramètre contrôle la somme d’argent que vous pouvez miser par jour, par semaine ou par mois.",
-          "editRules": "Vous pouvez réduire votre limite à tout moment, cette modification prendra effet immédiatement. Vous pouvez augmenter la limite, mais vous avez besoin de 24 heures pour que cette modification prenne effet.",
-          "deleteRules": "L’annulation de la limite de perte prend 24 heures. Une fois la limite dépassée, vous recevrez une notification par courriel."
+          "editRules": "Vous pouvez réduire votre limite à tout moment, cette modification prendra effet immédiatement. Vous pouvez augmenter la limite, mais vous avez besoin de 24 heures pour que cette modification prenne effet.",
+          "deleteRules": "L’annulation de la limite de perte prend 24 heures. Une fois la limite dépassée, vous recevrez une notification par courriel."
         },
         "lossLimit": {
           "name": "Limite de perte",
           "text": "Votre compte peut être configuré avec des limites de perte. Ce paramètre limite le montant que vous pouvez perdre par jour, par semaine ou par mois.",
-          "editRules": "Vous pouvez réduire votre limite à tout moment, cette modification prendra effet immédiatement. Vous pouvez augmenter la limite, mais vous avez besoin de 24 heures pour que cette modification prenne effet.",
-          "deleteRules": "L’annulation de la limite de perte prend 24 heures. Une fois la limite dépassée, vous recevrez une notification par courriel."
+          "editRules": "Vous pouvez réduire votre limite à tout moment, cette modification prendra effet immédiatement. Vous pouvez augmenter la limite, mais vous avez besoin de 24 heures pour que cette modification prenne effet.",
+          "deleteRules": "L’annulation de la limite de perte prend 24 heures. Une fois la limite dépassée, vous recevrez une notification par courriel."
         },
         "sessionLimit": {
           "name": "Limites de session",
@@ -446,12 +446,18 @@
     "epicRace": {
       "title": "Spinomenal<br/> Epiс Race",
       "name": "Spinomenal Epiс Race",
-      "text": "Une fois de plus, la fameuse Spinomenal Race va vous faire vivre des moments inoubliables grâce au passionnant tournoi Epic Race.<br/> Pendant ces journées d’août, vous pourrez profiter de machines à sous géniales et gagner une partie de la généreuse cagnotte de 20 000 €!"
+      "text": "Une fois de plus, la fameuse Spinomenal Race va vous faire vivre des moments inoubliables grâce au passionnant tournoi Epic Race.<br/> Pendant ces journées d’août, vous pourrez profiter de machines à sous géniales et gagner une partie de la généreuse cagnotte de 20 000 €!"
     },
     "weekly_derby": {
       "upTo": "une cagnotte de 2500 €",
       "name": "À vos marques pour le Weekly Derby",
-      "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
+      "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
+    },
+    "rapidSpins": {
+      "title": "Tournoi en réseau <br/>RAPID SPINS <br/>d’EvoPlay",
+      "upTo": "10 000 €",
+      "name": "Tournoi en réseau RAPID SPINS d’EvoPlay",
+      "text": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! "
     }
   },
   "tournaments": {
@@ -522,8 +528,8 @@
   "epicRace": {
     "title": "Spinomenal Epiс Race",
     "prize": "20 000 €",
-    "text": "Une fois de plus, la fameuse Spinomenal Race va vous faire vivre des moments inoubliables grâce au passionnant tournoi Epic Race. Pendant ces journées d’août, vous pourrez profiter de machines à sous géniales et gagner une partie de la généreuse cagnotte de 20 000 €!",
-    "textMobile": "Une fois de plus, la fameuse Spinomenal Race va vous faire vivre des moments inoubliables grâce au passionnant tournoi Epic Race. Pendant ces journées d’août, vous pourrez profiter de machines à sous géniales et gagner une partie de la généreuse cagnotte de 20 000 €!",
+    "text": "Une fois de plus, la fameuse Spinomenal Race va vous faire vivre des moments inoubliables grâce au passionnant tournoi Epic Race. Pendant ces journées d’août, vous pourrez profiter de machines à sous géniales et gagner une partie de la généreuse cagnotte de 20 000 €!",
+    "textMobile": "Une fois de plus, la fameuse Spinomenal Race va vous faire vivre des moments inoubliables grâce au passionnant tournoi Epic Race. Pendant ces journées d’août, vous pourrez profiter de machines à sous géniales et gagner une partie de la généreuse cagnotte de 20 000 €!",
     "terms": [
       {
         "title": "Période de la campagne:",
@@ -531,23 +537,23 @@
       },
       {
         "title": "Structure des prix:",
-        "text": "La cagnotte est répartie entre 350 participants.Les 150 premiers joueurs du classement se partageront une cagnotte de 20 000 € comme suit :  <br/>1re place – 3 500 €<br/>2e place – 2 500 €<br/>3e place – 1 500 €<br/>4e place – 1 000 €<br/>5e place – 850 €<br/>6e place – 750 €<br/>7e place – 600 €<br/>8e place – 350 €<br/>9e place – 300 €<br/>10e place – 250 €<br/>11e à 20e place – 200 €<br/>21e à 30e place – 150 €<br/>31e à 40e place – 80 €<br/>41e à 50e place – 60 €<br/>51e à 100e place – 40 €<br/>101e à 150e place – 30 €"
+        "text": "La cagnotte est répartie entre 350 participants.Les 150 premiers joueurs du classement se partageront une cagnotte de 20 000 € comme suit :  <br/>1re place – 3 500 €<br/>2e place – 2 500 €<br/>3e place – 1 500 €<br/>4e place – 1 000 €<br/>5e place – 850 €<br/>6e place – 750 €<br/>7e place – 600 €<br/>8e place – 350 €<br/>9e place – 300 €<br/>10e place – 250 €<br/>11e à 20e place – 200 €<br/>21e à 30e place – 150 €<br/>31e à 40e place – 80 €<br/>41e à 50e place – 60 €<br/>51e à 100e place – 40 €<br/>101e à 150e place – 30 €"
       },
       {
         "title": "Mise minimale:",
-        "text": "0,5 EUR"
+        "text": "0,5 EUR"
       },
       {
         "title": "Conditions générales de la promotion:",
-        "text": "La mise minimale de qualification par tour pour participer au tournoi est de 0,5 €. <br/>Jeux participants : Book Of The Divine, Majestic King, Aztec Spell.<br/>Pour participer à cette Epic Race de Spinomenal, il vous suffit de jouer à l’un des jeux participants. Chaque gain vous récompense avec un score basé sur le multiplicateur de gain. Plus vous accumulez de points, plus vous êtes bien placé dans le classement."
+        "text": "La mise minimale de qualification par tour pour participer au tournoi est de 0,5 €. <br/>Jeux participants : Book Of The Divine, Majestic King, Aztec Spell.<br/>Pour participer à cette Epic Race de Spinomenal, il vous suffit de jouer à l’un des jeux participants. Chaque gain vous récompense avec un score basé sur le multiplicateur de gain. Plus vous accumulez de points, plus vous êtes bien placé dans le classement."
       }
     ]
   },
   "weekly_derby": {
     "title": "Le Ninecasino<br/> Weekly Derby",
     "prize": "2500 €",
-    "text": "En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.",
-    "textMobile": "En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.",
+    "text": "En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.",
+    "textMobile": "En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.",
     "terms": [
       {
         "text": "Chaque tournoi se déroule pendant sept jours, du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC."
@@ -1208,17 +1214,17 @@
     "bonusTermsPage": {
       "title1": "Conditions générales relatives aux bonus",
       "text1": [
-        "Toutes les offres de bonus sont strictement limitées à une par : personne et sa famille, adresse de domicile, courriel, adresse IP, numéro de téléphone, numéro de compte, numéro de carte de crédit ou de débit, numéro de portefeuille électronique, compte de système de paiement (Neteller, Skrill, etc.), un appareil électronique (ordinateur, téléphone mobile, tablette, etc.).",
+        "Toutes les offres de bonus sont strictement limitées à une par : personne et sa famille, adresse de domicile, courriel, adresse IP, numéro de téléphone, numéro de compte, numéro de carte de crédit ou de débit, numéro de portefeuille électronique, compte de système de paiement (Neteller, Skrill, etc.), un appareil électronique (ordinateur, téléphone mobile, tablette, etc.).",
         "Tous les joueurs ont la possibilité de profiter des bonus, sauf dans les cas où le bonus est soumis à des restrictions par pays et que le joueur est citoyen d’un des pays concernés. Les joueurs de Suède ne sont pas autorisés à recevoir des bonus. Aucun bonus n’est disponible pour les joueurs de Suède, y compris la participation à tout type de programme promotionnel, la réception de récompenses VIP, ainsi que l’échange de points comp.",
         "Le joueur ne peut utiliser les offres de bonus de manière abusive. Dans le cas d’un tel abus, le Casino se réserve le droit d’interdire au joueur de recevoir des bonus et d’annuler tous les gains obtenus à l’aide des fonds de bonus, tant au moment de la mise qu’après celle-ci.",
-        "L’utilisation des fonds de bonus dans le seul but de progresser dans les étapes de bonus est interdite, en particulier dans les cas où les fonds de bonus ou les fonds en espèces sont utilisés dans le seul but de progresser dans les étapes de bonus (par exemple, collecter 9 pièces sur 10 pour atteindre la fonction de bonus), puis les étapes finales (par exemple, jouer pour collecter la dernière pièce pour atteindre 10 sur 10 et la fonction de bonus) sont accomplies avec des mises en espèces lorsque les fonds de bonus ont été annulés, perdus, convertis en espèces ou que les mises ont été atteintes. Tous les gains obtenus au cours de ce type de jeu peuvent être considérés comme nuls.",
+        "L’utilisation des fonds de bonus dans le seul but de progresser dans les étapes de bonus est interdite, en particulier dans les cas où les fonds de bonus ou les fonds en espèces sont utilisés dans le seul but de progresser dans les étapes de bonus (par exemple, collecter 9 pièces sur 10 pour atteindre la fonction de bonus), puis les étapes finales (par exemple, jouer pour collecter la dernière pièce pour atteindre 10 sur 10 et la fonction de bonus) sont accomplies avec des mises en espèces lorsque les fonds de bonus ont été annulés, perdus, convertis en espèces ou que les mises ont été atteintes. Tous les gains obtenus au cours de ce type de jeu peuvent être considérés comme nuls.",
         "Le joueur ne peut pas utiliser de stratégies lorsqu’il joue avec un bonus actif afin de remplir les conditions pour miser le bonus. Lorsque le joueur utilise de telles stratégies et si le Casino a des raisons suffisantes de croire que les actions du joueur visent uniquement à obtenir des avantages financiers en utilisant l’avantage du bonus, le Casino se réserve le droit d’annuler tous les gains du joueur.",
         "Tous les bonus comportent une exigence de dépôt minimum pour l’obtention du bonus, une limitation du montant maximum possible du bonus, des conditions de mise, une limitation du montant maximal des mises pendant les paris, une limitation de la durée de vie du bonus, sauf indication contraire.",
-        "Tous les bonus accordés sont par défaut limités à une mise maximale pendant les paris : 5 EUR, 10 CAD/AUD, 100 CZK, 90 ZAR, 10 BGN, 40 DKK, 40 HRK, 25 RON, 0,00019 BTC, sauf indication contraire. La limite de mise maximale inclut les mises doublées après la fin d’un tour de jeu, ainsi que les tours de bonus (achetés dans le jeu).",
+        "Tous les bonus accordés sont par défaut limités à une mise maximale pendant les paris : 5 EUR, 10 CAD/AUD, 100 CZK, 90 ZAR, 10 BGN, 40 DKK, 40 HRK, 25 RON, 0,00019 BTC, sauf indication contraire. La limite de mise maximale inclut les mises doublées après la fin d’un tour de jeu, ainsi que les tours de bonus (achetés dans le jeu).",
         "Les gains obtenus grâce aux bonus ne peuvent être retirés qu’après avoir satisfait à toutes les règles de mise.",
-        "Tous les bonus (sauf indication contraire) doivent être misés 40 fois avant que les fonds puissent être retirés.",
-        "Tous les bonus sont « sticky ». Cela signifie qu’il est impossible de demander un retrait tant que les conditions de mise ne sont pas entièrement remplies. De plus, vous commencez à jouer avec de l’argent réel, ensuite avec de l’argent du bonus. Dès que l’argent du bonus est perdu, le bonus est également perdu.",
-        "La validité du bonus est de 14 jours à partir du moment où il a été reçu, sauf indication contraire.",
+        "Tous les bonus (sauf indication contraire) doivent être misés 40 fois avant que les fonds puissent être retirés.",
+        "Tous les bonus sont « sticky ». Cela signifie qu’il est impossible de demander un retrait tant que les conditions de mise ne sont pas entièrement remplies. De plus, vous commencez à jouer avec de l’argent réel, ensuite avec de l’argent du bonus. Dès que l’argent du bonus est perdu, le bonus est également perdu.",
+        "La validité du bonus est de 14 jours à partir du moment où il a été reçu, sauf indication contraire.",
         "À la fin de la période de bonus, si le bonus reste valide et que les conditions de mise ne sont pas remplies, l’argent du bonus et les gains sont annulés.",
         "Les bonus sont automatiquement annulés lorsque le solde actif atteint le montant de 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC ou moins.*",
         "*Cette condition s’applique uniquement au solde lié à un bonus, c’est-à-dire dépôt + bonus, ou à un bonus uniquement (dans le cas d’un bonus sans dépôt), et ne s’applique pas aux fonds sur le solde du joueur provenant d’autres dépôts ou bonus.",
@@ -1227,16 +1233,16 @@
         "Un seul bonus peut être activé à la fois. Les bonus de dépôt ne peuvent pas être combinés.",
         "Un joueur a le droit de refuser tout bonus du Casino.",
         "Il est interdit de retarder tout tour de jeu dans un jeu (y compris les tours gratuits et les fonctions de bonus) à un moment ultérieur où il n’y a plus d’exigence de mise et/ou d’effectuer un ou plusieurs nouveaux dépôts alors que des tours gratuits ou des fonctions de bonus sont encore disponibles dans un jeu.",
-        "Veuillez noter que dans tous les jeux, le montant de la mise n’est pas entièrement pris en compte lors de la mise du bonus. 100 % de la mise est prise en compte pour les machines à sous, sauf pour les machines à sous indiquées ci-dessous.",
-        "Le jeu pour les bonus n’est pas disponible dans les machines à sous suivantes : Craps (1x2 Gaming), Scarab Treasure (Amatic), No such games (Belatra), Ninja (Endorphina), 1429 Uncharted Seas (Epic Media), Egyptian Dreams Deluxe, Knockout Football, London Hunter, Magic Oak, Pumpkin Patch, Santa’s Village (Habanero), Mega Boy, Roo Riches, Super Fast Hot Hot Respin, Tree of Fortune, Vegas High Roller (iSoftbet), Dead or Alive, Devil’s Delight, Lucky Angler, Reel Rush 2, Reel Steal, Robin Hood: Shifting Riches, Scudamore’s Super Stakes, Serengeti Kings, Single Deck Blackjack Professional Series, The French Roulette, The Wish Master, TXS Hold’em Professional Series (NetEnt), Baker’s Treat, Eye of the Kraken, Golden Legend, Happy Halloween, Hugo 2, MULTIFRUIT 81, Pearls of India, Pimped, Rage to Riches, Royal Masquerade, Sea Hunter, Tower Quest (Play’nGo), Queen of Gold, Jade Butterfly (Pragmatic), 300 Shields, African Quest, Agent Valkyrie, Astro Legends: Lyra and Erion, Art of the Heist, Beautiful Bones, Bikini Party, Book of Oz, Bookie of Odds, Break Da Bank Again Respin, Castle Builder, Castle Builder II, Cool Buck, Craps, Dragon Dance, Forsaken Kingdom, Gems Odyssey, Gems Odyssey 92, Hot Ink, Le Kaffee Bar, Magic of Sahara, Medusa, Peek-a-Boo - 5 Reel, Pets Go Wild, Reel Gems, Retro Reels, Retro Reels Diamond Glitz, Retro Reels Extreme Heat, Scrooge, Spectacular Wheel of Wealth, Stardust, Tomb Raider - Secret of the Sword, Tomb Raider, Untamed Bengal Tiger, Untamed Crowned Eagle, Untamed Giant Panda, Untamed Wolf Pack, Vampire: The Masquerade - Las Vegas, Village People Macho Moves, Wheel of Wealth Special Edition, Wheel of Wealth, Wild Orient, Zombie Hoard (Quickfire), Skulls Up! (Quickspin), Three Musketeers (Red Tiger), Kingmaker, Lil Devil (Relax), Cupids Strike 2, Divine Forest, Lemur Does Vegas, Summer Splash, Mines of Gold (Spinomenal), 1429 Uncharted Seas (Thunderkick), Alchymedes, Cazino Cosmos, Dark Vortex, Dwarf Mine, Double Dragons, Holmes and the Stolen Stones, Jackpot Raiders, Jokerizer, Ozwin’s Jackpots, Spina Colada, The Dark Joker Rizes, The Royal Family, Tut’s Twister, Vikings go to Hell, Vikings go Berzerk, Wicked Circus, Wolf Hunters (Yggdrasil), toutes les machines à sous à jackpot.",
-        "Pour tous les jeux de cartes, la roulette, le poker et les pokers vidéo, il s’agit de 5 % de la mise.",
+        "Veuillez noter que dans tous les jeux, le montant de la mise n’est pas entièrement pris en compte lors de la mise du bonus. 100 % de la mise est prise en compte pour les machines à sous, sauf pour les machines à sous indiquées ci-dessous.",
+        "Le jeu pour les bonus n’est pas disponible dans les machines à sous suivantes : Craps (1x2 Gaming), Scarab Treasure (Amatic), No such games (Belatra), Ninja (Endorphina), 1429 Uncharted Seas (Epic Media), Egyptian Dreams Deluxe, Knockout Football, London Hunter, Magic Oak, Pumpkin Patch, Santa’s Village (Habanero), Mega Boy, Roo Riches, Super Fast Hot Hot Respin, Tree of Fortune, Vegas High Roller (iSoftbet), Dead or Alive, Devil’s Delight, Lucky Angler, Reel Rush 2, Reel Steal, Robin Hood: Shifting Riches, Scudamore’s Super Stakes, Serengeti Kings, Single Deck Blackjack Professional Series, The French Roulette, The Wish Master, TXS Hold’em Professional Series (NetEnt), Baker’s Treat, Eye of the Kraken, Golden Legend, Happy Halloween, Hugo 2, MULTIFRUIT 81, Pearls of India, Pimped, Rage to Riches, Royal Masquerade, Sea Hunter, Tower Quest (Play’nGo), Queen of Gold, Jade Butterfly (Pragmatic), 300 Shields, African Quest, Agent Valkyrie, Astro Legends: Lyra and Erion, Art of the Heist, Beautiful Bones, Bikini Party, Book of Oz, Bookie of Odds, Break Da Bank Again Respin, Castle Builder, Castle Builder II, Cool Buck, Craps, Dragon Dance, Forsaken Kingdom, Gems Odyssey, Gems Odyssey 92, Hot Ink, Le Kaffee Bar, Magic of Sahara, Medusa, Peek-a-Boo - 5 Reel, Pets Go Wild, Reel Gems, Retro Reels, Retro Reels Diamond Glitz, Retro Reels Extreme Heat, Scrooge, Spectacular Wheel of Wealth, Stardust, Tomb Raider - Secret of the Sword, Tomb Raider, Untamed Bengal Tiger, Untamed Crowned Eagle, Untamed Giant Panda, Untamed Wolf Pack, Vampire: The Masquerade - Las Vegas, Village People Macho Moves, Wheel of Wealth Special Edition, Wheel of Wealth, Wild Orient, Zombie Hoard (Quickfire), Skulls Up! (Quickspin), Three Musketeers (Red Tiger), Kingmaker, Lil Devil (Relax), Cupids Strike 2, Divine Forest, Lemur Does Vegas, Summer Splash, Mines of Gold (Spinomenal), 1429 Uncharted Seas (Thunderkick), Alchymedes, Cazino Cosmos, Dark Vortex, Dwarf Mine, Double Dragons, Holmes and the Stolen Stones, Jackpot Raiders, Jokerizer, Ozwin’s Jackpots, Spina Colada, The Dark Joker Rizes, The Royal Family, Tut’s Twister, Vikings go to Hell, Vikings go Berzerk, Wicked Circus, Wolf Hunters (Yggdrasil), toutes les machines à sous à jackpot.",
+        "Pour tous les jeux de cartes, la roulette, le poker et les pokers vidéo, il s’agit de 5 % de la mise.",
         "Les jeux comportant des croupiers en direct ne sont pas concernés par les mises.",
         "En cas de jeu avec des fonds de bonus, tous les gains demandés pour le retrait passent une vérification avant le traitement du paiement. Le Casino se réserve le droit de demander à l’utilisateur de confirmer les données personnelles et les données relatives au mode de paiement à la suite de la procédure de vérification.",
         "Le Casino se réserve le droit de révoquer tous les bonus et gains, ainsi que de confisquer tout l’argent du compte s’il a été obtenu de manière malhonnête ou en violation de ces règles.",
         "Le Casino se réserve le droit de modifier et de compléter ces conditions à tout moment.",
         "Le bonus est automatiquement annulé lorsque le solde actif atteint le montant de 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC ou moins.*",
         "*Cette condition s’applique uniquement au solde lié au bonus, c’est-à-dire au dépôt + bonus ou uniquement au bonus sans dépôt et ne s’applique pas aux fonds sur le solde du joueur provenant d’autres dépôts ou bonus.",
-        "L’utilisation des fonds de bonus dans le seul but de progresser dans les étapes de bonus est interdite. Par exemple, dans les cas où les fonds de bonus ou les fonds en espèces sont utilisés dans le seul but de progresser dans les étapes de bonus (par exemple, collecter 9 pièces sur 10 pour atteindre la fonction de bonus), puis les étapes finales (par exemple, jouer pour collecter la dernière pièce pour atteindre 10 sur 10 et la fonction de bonus) sont accomplies avec des mises en espèces lorsque les fonds de bonus ont été annulés, perdus, convertis en espèces ou que les mises ont été atteintes. Tous les gains obtenus au cours de ce type de jeu peuvent être considérés comme nuls.",
+        "L’utilisation des fonds de bonus dans le seul but de progresser dans les étapes de bonus est interdite. Par exemple, dans les cas où les fonds de bonus ou les fonds en espèces sont utilisés dans le seul but de progresser dans les étapes de bonus (par exemple, collecter 9 pièces sur 10 pour atteindre la fonction de bonus), puis les étapes finales (par exemple, jouer pour collecter la dernière pièce pour atteindre 10 sur 10 et la fonction de bonus) sont accomplies avec des mises en espèces lorsque les fonds de bonus ont été annulés, perdus, convertis en espèces ou que les mises ont été atteintes. Tous les gains obtenus au cours de ce type de jeu peuvent être considérés comme nuls.",
         "Tous les bonus sont comptabilisés selon la date UTC."
       ],
       "title2": "Coffret de bienvenue",
@@ -1245,8 +1251,8 @@
         "Le montant maximum du bonus associé au premier, deuxième et troisième dépôt est de 150 EUR, 225 CAD, 225 AUD, 3330 CZK, 2600 ZAR, 290 BGN, 1150 DKK, 1130 HRK, 740 RON, 0,0055 BTC.",
         "Les joueurs peuvent utiliser leurs 250 tours gratuits sur les jeux de machines à sous Aztec Magic, Aztec Magic Delux, Johnny Cash, Platinum Lightning et Platinum Lightning Delux de BGaming.",
         "Après le premier dépôt, les joueurs recevront 50 tours gratuits chaque jour pendant les 5 jours suivants.",
-        "La durée d’activation des tours gratuits est de 3 jours, la durée des tours gratuits et la durée des résultats des tours gratuits sont de 7 jours.",
-        "Pour miser le résultat du bonus / tour gratuit, vous devez effectuer des mises pour un montant de 40 fois le montant du résultat du bonus / tour gratuit.",
+        "La durée d’activation des tours gratuits est de 3 jours, la durée des tours gratuits et la durée des résultats des tours gratuits sont de 7 jours.",
+        "Pour miser le résultat du bonus / tour gratuit, vous devez effectuer des mises pour un montant de 40 fois le montant du résultat du bonus / tour gratuit.",
         "Le gain maximum résultant des tours gratuits associés au premier, deuxième et troisième dépôt est de 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
         "Le gain maximum résultant des tours gratuits associés à l’inscription est de 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC."
       ],
@@ -1254,7 +1260,7 @@
       "text3": [
         "Pour obtenir les bonus associés à la reprise de fin de semaine, votre dépôt doit être d’au moins 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
         "Le montant maximum du bonus associé à la reprise de fin de semaine est de 150 EUR, 220 CAD, 240 AUD, 3900 CZK, 2580 ZAR, 300 BGN, 1110 DKK, 1125 HRK, 735 RON, 0,0056 BTC.",
-        "Pour miser le résultat du bonus, vous devez effectuer des mises pour un montant de 40 fois le montant du résultat du bonus.",
+        "Pour miser le résultat du bonus, vous devez effectuer des mises pour un montant de 40 fois le montant du résultat du bonus.",
         "Ce bonus est disponible une fois le vendredi, le samedi ou le dimanche pour les joueurs qui ont déjà utilisé tous les bonus du coffret de bienvenue."
       ],
       "title4": "Tours gratuits de fidélité",
@@ -1362,13 +1368,13 @@
     "title": "La loterie<br/> Sunshine Spins",
     "name": "La loterie Sunshine Spins",
     "prize": "4 000 tours gratuits",
-    "text": "Des amateurs d’été heureux, équipés de vêtements décontractés d’été, marchant vers le festival de ce mois-ci : la loterie Sunshine Spins!<br/><br/>Grâce à la loterie Sunshine Spins, revivez l’époque de Woodstock, du festival de l’île de Wight et de San Francisco. Pour participer, il suffit de courir pieds nus, d’écouter vos chansons préférées et de faire tourner vos machines à sous préférées. Profitez de l’ambiance de la cagnotte de 4 000 tours gratuits avec 50 heureux gagnants!",
+    "text": "Des amateurs d’été heureux, équipés de vêtements décontractés d’été, marchant vers le festival de ce mois-ci : la loterie Sunshine Spins!<br/><br/>Grâce à la loterie Sunshine Spins, revivez l’époque de Woodstock, du festival de l’île de Wight et de San Francisco. Pour participer, il suffit de courir pieds nus, d’écouter vos chansons préférées et de faire tourner vos machines à sous préférées. Profitez de l’ambiance de la cagnotte de 4 000 tours gratuits avec 50 heureux gagnants!",
     "terms": [
       {
         "text": "La loterie se déroulera sur 7 jours, du Mardi à 00 h 01 (UTC) au lundi à 23 h 59 (UTC). "
       },
       {
-        "text": "Le dépôt minimal requis pour un billet de loterie est de 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+        "text": "Le dépôt minimal requis pour un billet de loterie est de 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
       },
       {
         "text": "Le nombre de billets de loterie par joueur est illimité."
@@ -1384,6 +1390,34 @@
       },
       {
         "text": "Pour les tours gratuits, votre mise est de x5."
+      }
+    ]
+  },
+  "rapidSpins": {
+    "title": "Tournoi en réseau RAPID SPINS d’EvoPlay",
+    "prize": "10 000 €",
+    "text": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! À partir du 12 août, pendant 10 jours, vous aurez la possibilité de monter à bord et de participer à cet événement électrisant!",
+    "textMobile": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! ",
+    "terms": [
+      {
+        "title": "Période de la campagne:<br/><br/>",
+        "text": "Le tournoi se déroule du 12 août 2021 0 h 01 UTC au 22 août 2021 23 h 59 UTC<br/><br/>"
+      },
+      {
+        "title": "There are 10 participating games:<br/><br/>",
+        "text": "Il y a 10 jeux participants : Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
+      },
+      {
+        "title": "Mise minimale:<br/><br/>",
+        "text": "La mise minimale est de 0,5 € ou l’équivalent dans d’autres devises<br/><br/>"
+      },
+      {
+        "title": "Structure des prix:",
+        "text": "La cagnotte de 10 000 € sera répartie entre les 100 premiers gagnants du classement en fonction de leur position dans le tournoi:<br/>1re place – 1 670 €<br/>2e place – 1 270 €<br/>3e place – 1 000 €<br/>4e place – 667 €<br/>5e place – 600 €<br/>6e place – 533 €<br/><br/>7e place – 400 €<br/>8e place – 293 €<br/>9e place – 220 €<br/>10e à 19e place – 133 €<br/>20e à 49e place – 33 €<br/>50e à 100e place – 20 €"
+      },
+      {
+        "title": "Conditions générales de la promotion:",
+        "text": "Un tour est équivalent à un point. Plus le nombre de points est important, plus le joueur est bien placé dans le classement."
       }
     ]
   }

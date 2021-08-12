@@ -330,4 +330,11 @@ export const TOURNAMENTS = {
     class: 'EpicRace',
     slug: 'epicrace',
   },
+  'rapid-spins': {
+    url: 'rapid-spins',
+    name: 'RAPID SPINS Network Tournament',
+    translates: 'rapidSpins',
+    class: 'RapidSpins',
+    slug: 'rapid',
+  },
 };

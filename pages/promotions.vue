@@ -211,6 +211,15 @@ export default {
           link: 'More',
           url: '/lottery/sunshine_spins_lottery',
         },
+        {
+          title: this.$t('promotions.rapidSpins.title'),
+          prize: this.$t('rapidSpins.prize'),
+          image: 'race-promotions.png',
+          announce: this.$t('promotions.rapidSpins.name'),
+          text: this.$t('promotions.rapidSpins.text'),
+          link: 'More',
+          url: '/tournaments/rapid-spins',
+        },
       ],
     };
   },
