@@ -304,7 +304,7 @@
       "waiting": "En attendant d'être approuvé",
       "approved": "Approuvé",
       "disapproved": "Désapprouvé",
-      "drop": "Déposez le fichier ici ou parcourez les images ou les fichiers .pdf. Taille maximale 110 MB"
+      "drop": "Déposez le fichier ici ou parcourez les images ou les fichiers .pdf. Taille maximale 110 MB"
     },
     "user": {
       "title": "Profil utilisateur",
@@ -446,7 +446,13 @@
     "weekly_derby": {
       "upTo": "une cagnotte de 2500 €",
       "name": "À vos marques pour le Weekly Derby",
-      "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
+      "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
+    },
+    "rapidSpins": {
+      "title": "Tournoi en réseau <br/>RAPID SPINS <br/>d’EvoPlay",
+      "upTo": "10 000 €",
+      "name": "Tournoi en réseau RAPID SPINS d’EvoPlay",
+      "text": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! "
     }
   },
   "tournaments": {
@@ -1355,6 +1361,29 @@
       },
       {
         "text": "Pour les tours gratuits, votre mise est de x5."
+      }
+    ]
+  },
+  "rapidSpins": {
+    "title": "Tournoi en réseau RAPID SPINS d’EvoPlay",
+    "prize": "10 000 €",
+    "text": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! À partir du 12 août, pendant 10 jours, vous aurez la possibilité de monter à bord et de participer à cet événement électrisant!",
+    "textMobile": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! ",
+    "terms": [
+      {
+        "title": "Le tournoi se déroule du 12 août 2021 0 h 01 UTC au 22 août 2021 23 h 59 UTC<br/><br/>"
+      },
+      {
+        "title": "There are 10 participating games:<br/><br/> Il y a 10 jeux participants : Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
+      },
+      {
+        "title": "La mise minimale est de 0,5 € ou l’équivalent dans d’autres devises<br/><br/>"
+      },
+      {
+        "title": "La cagnotte de 10 000 € sera répartie entre les 100 premiers gagnants du classement en fonction de leur position dans le tournoi:<br/>1re place – 1 670 €<br/>2e place – 1 270 €<br/>3e place – 1 000 €<br/>4e place – 667 €<br/>5e place – 600 €<br/>6e place – 533 €<br/>7e place – 400 €<br/>8e place – 293 €<br/>9e place – 220 €<br/>10e à 19e place – 133 €<br/>20e à 49e place – 33 €<br/>50e à 100e place – 20 €"
+      },
+      {
+        "title": "Un tour est équivalent à un point. Plus le nombre de points est important, plus le joueur est bien placé dans le classement."
       }
     ]
   }

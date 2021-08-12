@@ -453,6 +453,12 @@
       "upTo": "Preispool 2.500 €",
       "name": "Aufsatteln fürs Weekly Derby",
       "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
+    },
+    "rapidSpins": {
+      "title": "RAPID SPINS-Netzturnier <br/>von EvoPlay",
+      "upTo": "€10.000",
+      "name": "RAPID SPINS-Netzturnier von EvoPlay",
+      "text": "Navigieren und halten Sie Kurs bei dem stürmischen RAPID SPINS-Netzturnier von EvoPlay. Sausen Sie flussabwärts in das abschließende Gewinnbecken mit 10.000 €!"
     }
   },
   "tournaments": {
@@ -1361,6 +1367,29 @@
       },
       {
         "text": "Für Freispiele besteht eine Umsatzanforderung von x5."
+      }
+    ]
+  },
+  "rapidSpins": {
+    "title": "RAPID SPINS-Netzturnier von EvoPlay",
+    "prize": "€10.000",
+    "text": "Navigieren und halten Sie Kurs bei dem stürmischen RAPID SPINS-Netzturnier von EvoPlay. Sausen Sie flussabwärts in das abschließende Gewinnbecken mit 10.000€! Beginnend mit dem 12. August haben Sie 10 Tage lang die Gelegenheit, an Bord zu kommen und an diesem elektrisierenden Ereignis teilzunehmen!",
+    "textMobile": "Navigieren und halten Sie Kurs bei dem stürmischen RAPID SPINS-Netzturnier von EvoPlay. Sausen Sie flussabwärts in das abschließende Gewinnbecken mit 10.000€!",
+    "terms": [
+      {
+        "title": "Das Turnier läuft ab dem 12. August 2021 um 0:01 Uhr UTC und endet am 22. August 2021 um 23:59 Uhr UTC.<br/><br/>"
+      },
+      {
+        "title": "Diese 10 Spiele nehmen teil:<br/><br/> Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
+      },
+      {
+        "title": "Der Mindesteinsatz beträgt umgerechnet 0,5€<br/><br/>"
+      },
+      {
+        "title": "Das Preisgeld von 10.000 € wird unter den 100 erfolgreichsten Mitspielenden entsprechend der Rangliste wie folgt aufgeteilt:<br/>Platz 1 – 1.670 €<br/>Platz 2 – 1.270 €<br/>Platz 3 – 1.000 €<br/>Platz 4 – 667 €<br/>Platz 5 – 600 €<br/>Platz 6 – 533 €<br/>Platz 7 – 400 €<br/>Platz 8 – 293 €<br/>Platz 9 – 220 €<br/>Platz 10 – 19 je 133 €<br/>Platz 20 – 49 je 33 €<br/>Platz 50 – 100 je 20 €"
+      },
+      {
+        "title": "Eine Ausspielung entspricht einem Punkt. Je mehr Punkte, desto besser die Platzierung in der Rangliste."
       }
     ]
   }
