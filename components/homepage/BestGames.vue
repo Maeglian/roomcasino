@@ -211,7 +211,6 @@ export default {
     return {
       listIsOpen: false,
       tabActive: {},
-      providerActive: {},
     };
   },
   computed: {
@@ -373,17 +372,6 @@ export default {
       this.tabActive = this.tabs[i];
       this.isOpen = false;
       this.providerActive = this.gameProducerList[0];
-    },
-    onChooseProvider(e) {
-      this.providerActive = e;
-      this.$router.push(
-        this.localePath({
-          name: 'index-providers-providerName',
-          params: {
-            providerName: e.name === this.gameProducerList[0].name ? 'all' : e.name,
-          },
-        }),
-      );
     },
     onClickOutsideTabs(e) {
       if (!e.target.closest('.DefaultGames-ChosenTab')) this.isOpen = false;

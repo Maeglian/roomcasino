@@ -2,6 +2,11 @@
   <div class="SearchPage Wrapper">
     <h1 class="Title Title--center SearchPage-Title">{{ $t('search.findGame') }}</h1>
     <Search v-model="searched" class="SearchPage-Search" />
+    <ProvidersMenu
+      v-if="gameProducerList.length"
+      :provider-active="providerActive"
+      @choose-provider="onChooseProvider"
+    />
     <div v-if="searched" class="SearchedGames">
       <div v-if="filteredGames.length" class="Title Title--type-h4 Cards-Title">
         {{ $t('search.searchResults') }} ({{ filteredGames.length }})
@@ -53,14 +58,17 @@ import { mapActions, mapGetters, mapState } from 'vuex';
 import search from '@/mixins/search';
 import Search from '@/components/Search';
 import Games from '@/components/Games';
+import ProvidersMenu from '@/components/ProvidersMenu';
+import gameProducer from '@/mixins/gameProducer';
 
 export default {
   name: 'SearchPage',
   components: {
     Search,
     Games,
+    ProvidersMenu,
   },
-  mixins: [search],
+  mixins: [search, gameProducer],
   layout: 'page',
   computed: {
     ...mapState('games', ['topGames', 'topGamesAreLoading', 'recentGames']),
