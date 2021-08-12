@@ -401,54 +401,6 @@ export default {
   }
 }
 
-.EpicRace {
-  &-Header {
-    width: 100%;
-    margin-top: -70px;
-    margin-bottom: 22px;
-    padding-top: 270px / 320px * 100%;
-    background-image: url(~@/assets/img/race_460.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: calc(100% - 32px) auto;
-
-    @media (min-width: $screen-s) {
-      margin-top: 0;
-      padding-top: 80px / 1248px * 100%;
-      background-image: url(~@/assets/img/race-page_900.png);
-      background-position: center center;
-    }
-
-    @media (min-width: $screen-m) {
-      padding-top: 120px / 1248px * 100%;
-    }
-
-    @media (min-width: $screen-l) {
-      padding-top: 140px / 1248px * 100%;
-    }
-
-    @media (min-width: $screen-xl) {
-      padding-top: 180px;
-      background-image: url(~@/assets/img/race-page_1248.png);
-      background-position: center top;
-    }
-
-    @media (min-width: $screen-xxl) {
-      background-image: url(~@/assets/img/race_1920.png);
-    }
-
-    .DailyTournamentPage-MainText {
-      @media (min-width: $screen-s) {
-        max-width: 50%;
-      }
-
-      @media (min-width: $screen-xl) {
-        max-width: 35%;
-      }
-    }
-  }
-}
-
 .RapidSpins {
   &-Header {
     width: 100%;
