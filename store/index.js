@@ -515,7 +515,17 @@ export const actions = {
 
   async getPixel() {
     try {
-      await http.get(`${PIXEL_HOST}/pixel/image`, { withCredentials: true });
+      await fetch(`${PIXEL_HOST}/pixel/image`, {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+      });
     } catch (e) {
       this.$sentry.captureException(new Error(e));
     }
