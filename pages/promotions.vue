@@ -214,7 +214,7 @@ export default {
         {
           title: this.$t('promotions.rapidSpins.title'),
           prize: this.$t('rapidSpins.prize'),
-          image: 'race-promotions.png',
+          image: 'rapid-promotions.png',
           announce: this.$t('promotions.rapidSpins.name'),
           text: this.$t('promotions.rapidSpins.text'),
           link: 'More',
