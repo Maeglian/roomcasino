@@ -82,7 +82,7 @@ export default {
     right: 18px;
     width: 15px;
     height: 15px;
-    fill: var(--color-main2);
+    fill: var(--color-main1);
 
     @media (min-width: $screen-m) {
       top: 10px;
