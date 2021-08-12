@@ -457,7 +457,7 @@
     "luckyPlayson": {
       "upTo": "Das Preisgeld 13.000 €.",
       "name": "Lucky 13",
-      "text": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!"
+      "text": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/><br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!"
     }
   },
   "tournaments": {
@@ -1372,8 +1372,8 @@
   "luckyPlayson": {
     "title": "Lucky 13",
     "prize": "13.000 €",
-    "text": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!",
-    "textMobile": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!",
+    "text": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/><br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!",
+    "textMobile": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/><br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!",
     "terms": [
       {
         "title": "Das Turnier läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC."

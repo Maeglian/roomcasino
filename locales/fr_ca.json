@@ -451,7 +451,7 @@
     "luckyPlayson": {
       "upTo": "The prize pool is €13,000.",
       "name": "Lucky 13",
-      "text": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!"
+      "text": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/><br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!"
     }
   },
   "tournaments": {
@@ -1366,8 +1366,8 @@
   "luckyPlayson": {
     "title": "Lucky 13",
     "prize": "€13,000",
-    "text": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!",
-    "textMobile": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!",
+    "text": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/><br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!",
+    "textMobile": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/><br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!",
     "terms": [
       {
         "title": "The tournament runs between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!"
