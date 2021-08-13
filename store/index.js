@@ -531,6 +531,14 @@ export const actions = {
     }
   },
 
+  async sendLocaleStorageId(context, payload) {
+    try {
+      await http.post(`${API_HOST}/localStorage`, payload);
+    } catch (e) {
+      this.$sentry.captureException(new Error(e));
+    }
+  },
+
   async getProfile({ commit }) {
     commit('setProfileIsLoading', true);
     try {
