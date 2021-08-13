@@ -16,10 +16,11 @@ button {
   color: var(--color-text-main);
   text-decoration: none;
   border: none;
+  border-radius: 60px;
   cursor: pointer;
 
   &--common {
-    padding: 20px 15px;
+    padding: 15px;
     font-size: 16px;
     font-weight: 700;
     color: var(--color-text-main);
@@ -35,11 +36,11 @@ button {
     }
 
     @media(min-width: $screen-l) {
-      padding: 22px 30px;
+      padding: 15px 30px;
     }
 
     @media(min-width: $screen-xl) {
-      padding: 25px 45px;
+      padding: 20px 45px;
       font-size: 16px;
     }
   }
