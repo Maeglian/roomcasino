@@ -4,6 +4,7 @@
     <Search v-model="searched" class="SearchPage-Search" />
     <ProvidersMenu
       v-if="gameProducerList.length"
+      class="SearchPage-Providers"
       :provider-active="providerActive"
       @choose-provider="onChooseProvider"
     />
@@ -27,26 +28,12 @@
         </template>
       </Games>
     </div>
-    <template v-if="recentGames.length">
-      <div class="Title Title--type-h2 Cards-Title">
-        {{ $t('gameCategories.recent') }}
-      </div>
-      <Games
-        :key="isLoggedIn"
-        class="DefaultGames-Cards"
-        :games="recentGames"
-        :games-to-show="6"
-        btn-class="Btn--common Btn--outline"
-      />
-    </template>
-    <div class="Title Title--type-h2 Cards-Title">
-      {{ $t('gameCategories.top') }}
+    <div class="Title Title--type-h4 Cards-Title">
+      {{ $t('search.popular') }}
     </div>
-    <Loader v-if="topGamesAreLoading" />
     <Games
-      v-else
       class="DefaultGames-Cards"
-      :games="topGames"
+      :games="popularGames"
       :games-to-show="24"
       btn-class="Btn--common Btn--outline"
     />
@@ -54,12 +41,63 @@
 </template>
 
 <script>
-import { mapActions, mapGetters, mapState } from 'vuex';
+import { mapState } from 'vuex';
 import search from '@/mixins/search';
 import Search from '@/components/Search';
 import Games from '@/components/Games';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import gameProducer from '@/mixins/gameProducer';
+
+const gamesForCountries = {
+  RU: [
+    'book of dead',
+    'starburst',
+    'legacy of dead',
+    'wolf gold',
+    'sweet bonanza',
+    'lightning roulette',
+    "gonzo's quest megaways",
+    'big bass bonanza',
+    'crazy time',
+    'joe exotic',
+  ],
+  AT: [
+    'book of dead',
+    'starburst',
+    'legacy of dead',
+    'wolf gold',
+    'sweet bonanza',
+    'lightning roulette',
+    "gonzo's quest megaways",
+    'big bass bonanza',
+    'crazy time',
+    'joe exotic',
+  ],
+  CZ: [
+    'elvis frog in vegas',
+    'the dog house',
+    'sweet bonanza',
+    'wolf gold',
+    'fruit party',
+    'big bass bonanza',
+    'release the kraken',
+    'hot to burn',
+    'buffalo power hold and win',
+    'gems bonanza',
+    'four lucky clover',
+  ],
+  SI: [],
+  IE: [],
+  RO: [],
+  DK: [],
+  EE: [],
+  FI: [],
+  GR: [],
+  HR: [],
+  BG: [],
+  DE: [],
+  AU: [],
+};
 
 export default {
   name: 'SearchPage',
@@ -71,15 +109,18 @@ export default {
   mixins: [search, gameProducer],
   layout: 'page',
   computed: {
-    ...mapState('games', ['topGames', 'topGamesAreLoading', 'recentGames']),
-    ...mapGetters(['isLoggedIn']),
-  },
-  mounted() {
-    this.getTopGames();
-    this.getRecentGames();
-  },
-  methods: {
-    ...mapActions('games', ['getTopGames', 'getRecentGames']),
+    ...mapState(['defaultCountry']),
+    ...mapState('games', ['defaultGames']),
+    popularGames() {
+      if (this.defaultCountry) {
+        return this.defaultGames.filter(game => {
+          const gameLowerCase = game.gameName.toLowerCase();
+          return gamesForCountries[this.defaultCountry].includes(gameLowerCase);
+        });
+      }
+
+      return [];
+    },
   },
 };
 </script>
@@ -97,12 +138,15 @@ export default {
 
     @media (min-width: $screen-m) {
       position: relative;
-      width: 600px;
       height: 46px;
-      margin: 0 auto 32px;
+      margin: 0 auto 10px;
       background: var(--color-bg);
       border: none;
     }
+  }
+
+  &-Providers {
+    margin-bottom: 24px;
   }
 
   &-Cards {

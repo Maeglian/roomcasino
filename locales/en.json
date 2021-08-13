@@ -165,7 +165,8 @@
     "search": "Search",
     "searchResults": "Search results",
     "nothingFound": "Sorry, nothing found",
-    "try": "Try searching for something else"
+    "try": "Try searching for something else",
+    "popular": "Popular searches"
   },
   "common": {
     "date": "Date",
