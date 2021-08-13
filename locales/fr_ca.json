@@ -163,7 +163,8 @@
     "search": "Rechercher",
     "searchResults": "Résultats de la recherche",
     "nothingFound": "Désolé, aucun résultat",
-    "try": "Essayez une autre recherche"
+    "try": "Essayez une autre recherche",
+    "popular": "Recherches fréquentes"
   },
   "common": {
     "date": "Date",
