@@ -11,7 +11,6 @@
               name: 'index-games-gameCategory',
               params: {
                 gameCategory: tab.type,
-                producer: providerActive.name === 'All providers' ? false : providerActive.name,
               },
             })
           "
@@ -31,6 +30,7 @@
       <div class="ProvidersSection DefaultGames-Providers">
         <ProvidersMenu
           v-if="gameProducerList.length"
+          :game-producer-list="gameProducerList"
           :provider-active="providerActive"
           @choose-provider="onChooseProvider"
         />
@@ -173,19 +173,6 @@
         />
       </template>-->
     </section>
-    <!--    <section-->
-    <!--      v-if="tabActive.type !== 'all' || providerActive.name !== 'All providers'"-->
-    <!--      class="DefaultGames"-->
-    <!--    >-->
-    <!--      <Loader v-if="defaultGamesAreLoading" />-->
-    <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">{{ $t('gameCategories.all') }}</div>-->
-    <!--      <Games-->
-    <!--        class="DefaultGames-Cards NewGames-Cards"-->
-    <!--        :games="defaultGames"-->
-    <!--        :games-to-show="24"-->
-    <!--        btn-class="Btn&#45;&#45;common Btn&#45;&#45;dark"-->
-    <!--      />-->
-    <!--    </section>-->
   </div>
 </template>
 
@@ -318,21 +305,8 @@ export default {
     recentGamesNum() {
       return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
     },
-    gamesParams() {
-      const params = {};
-      if (this.tabActive.type) params.category = this.tabActive.type;
-      if (this.providerActive.name !== 'All providers')
-        params.gameProducer = this.providerActive.name;
-      return params;
-    },
   },
   watch: {
-    gameProducerList: {
-      immediate: true,
-      handler() {
-        if (this.gameProducerList.length) this.providerActive = this.gameProducerList[0];
-      },
-    },
     isLoggedIn: {
       immediate: true,
       handler() {
@@ -343,8 +317,11 @@ export default {
     },
   },
   mounted() {
-    if (this.$route.params.providerName) this.tabActive = this.tabs.find(tab => tab.type === 'all');
-    else {
+    if (this.$route.params.providerName) {
+      const categoryAll = this.tabs.find(tab => tab.type === 'all');
+      if (categoryAll) this.tabActive = categoryAll;
+      else this.tabActive = {};
+    } else {
       this.tabActive =
         this.tabs.find(game => this.$route.params.gameCategory === game.type) ||
         this.tabs.find(game => game.type === 'top');
@@ -371,7 +348,6 @@ export default {
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
       this.isOpen = false;
-      this.providerActive = this.gameProducerList[0];
     },
     onClickOutsideTabs(e) {
       if (!e.target.closest('.DefaultGames-ChosenTab')) this.isOpen = false;
@@ -402,23 +378,6 @@ export default {
       grid-template-columns: repeat(7, 1fr);
       grid-gap: 10px;
     }
-
-    //@media(max-width: $screen-s) {
-    //  position: absolute;
-    //  left: 0;
-    //  top: 125px;
-    //  flex-direction: column;
-    //  order: 2;
-    //  width: 100%;
-    //  margin-right: 0;
-    //  border: 1px solid var(--color-border-ghost);
-    //  border-top: none;
-    //  border-radius: 0 0 8px 8px;
-    //
-    //  .DefaultGames-Tab--active {
-    //    display: none;
-    //  }
-    //}
   }
 
   &-ChosenTab {

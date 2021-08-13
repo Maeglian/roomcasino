@@ -18,6 +18,18 @@ export default {
       ];
     },
   },
+  watch: {
+    gameProducerList: {
+      immediate: true,
+      handler() {
+        if (this.gameProducerList.length)
+          this.providerActive =
+            this.gameProducerList.find(
+              producer => producer.name === this.$route.params.providerName,
+            ) || this.gameProducerList[0];
+      },
+    },
+  },
   methods: {
     onChooseProvider(e) {
       this.providerActive = e;
