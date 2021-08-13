@@ -30,7 +30,7 @@ export const actions = {
     const existingLocalStorageId = localStorage.getItem('localStorageId') || null;
     try {
       const res = await http.post(`${API_HOST}/localStorage`, {
-        localStorageId: null,
+        localStorageId: existingLocalStorageId,
       });
       if (!existingLocalStorageId) localStorage.setItem('localStorageId', res.data.localStorageId);
     } catch (e) {
