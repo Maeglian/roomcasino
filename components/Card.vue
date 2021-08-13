@@ -330,6 +330,7 @@ export default {
     color: var(--color-text-main);
     text-transform: uppercase;
     border: 2px solid var(--color-text-main);
+    border-radius: 60px;
     cursor: pointer;
     opacity: 0.7;
 
@@ -349,13 +350,17 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 37%;
+    align-self: center;
+    height: 50px;
     margin-top: auto;
+    margin-bottom: 30px;
+    padding: 0 35px;
     font-size: 16px;
     font-weight: 700;
     color: var(--color-text-main);
     text-transform: uppercase;
     background-color: var(--color-main1);
+    border-radius: 60px;
     cursor: pointer;
 
     @media (max-width: $screen-l) {
