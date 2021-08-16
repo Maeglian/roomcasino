@@ -495,6 +495,7 @@ export default {
   }
 
   &-Tab {
+    position: relative;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -503,6 +504,7 @@ export default {
     line-height: 1.18;
     white-space: nowrap;
     background-color: var(--color-bg);
+    border-radius: 12px;
     cursor: pointer;
 
     @media (min-width: $screen-m) {
@@ -520,7 +522,17 @@ export default {
       @media (min-width: $screen-m) {
         display: initial;
         padding-bottom: 18px;
-        border-bottom: 2px solid var(--color-main1);
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 50%;
+          height: 3px;
+          background: var(--color-main1);
+          transform: translateX(-50%);
+        }
       }
     }
   }

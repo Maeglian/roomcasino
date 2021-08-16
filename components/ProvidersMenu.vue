@@ -233,6 +233,7 @@ export default {
     color: var(--color-text-main);
     text-transform: uppercase;
     border: 2px solid var(--color-border-ghost);
+    border-radius: 8px;
     cursor: pointer;
 
     @media (min-width: $screen-l) {
