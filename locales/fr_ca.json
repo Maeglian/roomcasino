@@ -453,10 +453,15 @@
     },
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
-      "upTo": "Gagnez 600 tours gratuits",
+      "upTo": "Gagnez 600 <br>tours gratuits",
       "name": "Gagnez 600 tours gratuits sur Twitter.",
-      "text": "Nous avons préparé un concours pour vous sur notre compte Twitter officiel.<br/><br/>Suivez-nous, aimez ce tweet et attendez les résultats, le 19 août. Nous choisirons au hasard 3 gagnants qui recevront chacun 200 tours gratuits à la machine à sous Wolf Gold.<br/><br/>Bonne chance!"
+      "text": "Nous avons préparé un concours pour vous sur notre compte {twitterAccount}.{br}{br}Suivez-nous, aimez ce {tweet} et attendez les résultats, le 19 août. Nous choisirons au hasard 3 gagnants qui recevront chacun 200 tours gratuits à la machine à sous Wolf Gold.{br}{br}Bonne chance!"
     }
+  },
+  "twitter": {
+    "twitterBtn": "Twitter",
+    "twitterAccount": "Twitter officiel",
+    "tweet": "tweet"
   },
   "tournaments": {
     "games": "Jeux dans le tournoi",

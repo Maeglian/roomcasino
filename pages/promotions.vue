@@ -31,7 +31,24 @@
               {{ item.announce }}
             </div>
             <div class="PromotionsCard-Text Text Text--additional">
-              <span v-html="item.text"> </span>
+              <template v-if="item.linkTo" v-html="item.text">
+                <i18n path="promotions.twitterGiveaway.text">
+                  <template #twitterAccount>
+                    <a class="Footer-Contact" href="https://twitter.com/casino_nine">{{
+                      $t('twitter.twitterAccount')
+                    }}</a>
+                  </template>
+                  <template #tweet>
+                    <a class="Footer-Contact" href="https://twitter.com/casino_nine">
+                      {{ $t('twitter.tweet') }}
+                    </a>
+                  </template>
+                  <template #br>
+                    <br />
+                  </template>
+                </i18n>
+              </template>
+              <span v-else v-html="item.text"> </span>
             </div>
           </div>
           <div class="PromotionsCard-Btns">
@@ -42,6 +59,13 @@
             >
               {{ $t('buttons.more') }}
             </NuxtLink>
+            <a
+              v-else-if="item.linkTo"
+              :href="item.url"
+              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
+            >
+              {{ $t('twitter.twitterBtn') }}
+            </a>
             <button
               v-else
               class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
@@ -208,7 +232,8 @@ export default {
           image: 'wolf_900.png',
           announce: this.$t('promotions.twitterGiveaway.name'),
           text: this.$t('promotions.twitterGiveaway.text'),
-          link: 'More',
+          linkTo: 'Twitter',
+          url: 'https://twitter.com/casino_nine',
         },
       ],
     };

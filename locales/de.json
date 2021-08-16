@@ -461,8 +461,13 @@
       "title": "twitter<br/> Giveaway",
       "upTo": "600 Freispiele",
       "name": "600 Freispiele geschenkt auf Twitter.",
-      "text": "Wir haben ein Geschenk für Sie auf unserem Konto bei Twitter.<br/><br/>Folgen Sie uns, befürworten Sie diesen Beitrag und warten Sie bis zum 19. August auf die Ergebnisse. 3 glückliche Gewinnerinnen und Gewinner werden nach dem Zufallsprinzip ausgewählt und erhalten jeweils 200 Freispiele für das Automatenspiel Wolf Gold.<br/><br/>Viel Glück!"
+      "text": "Wir haben ein Geschenk für Sie auf unserem Konto bei {twitterAccount}.{br}{br}Folgen Sie uns, befürworten Sie {tweet} und warten Sie bis zum 19. August auf die Ergebnisse. 3 glückliche Gewinnerinnen und Gewinner werden nach dem Zufallsprinzip ausgewählt und erhalten jeweils 200 Freispiele für das Automatenspiel Wolf Gold.{br}{br}Viel Glück!"
     }
+  },
+  "twitter": {
+    "twitterBtn": "Twitter",
+    "twitterAccount": "Twitter",
+    "tweet": "diesen Beitrag"
   },
   "tournaments": {
     "games": "Teilnehmende Spiele",
