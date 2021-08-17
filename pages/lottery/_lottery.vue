@@ -560,4 +560,40 @@ export default {
     }
   }
 }
+
+.tesla_lottery {
+  &-Header {
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/tesla_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(100% - 32px) auto;
+
+    @media (min-width: $screen-s) {
+      background-image: url(~@/assets/img/tesla_600.png);
+    }
+
+    @media (min-width: $screen-m) {
+      padding-top: 50px / 768px * 100%;
+      background-image: url(~@/assets/img/tesla_900.png);
+      background-position: center 10%;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 20px / 1248px * 100%;
+      background-image: url(~@/assets/img/tesla_1248.png);
+      background-position: center top;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-top: 100px / 1920px * 100%;
+      background-image: url(~@/assets/img/tesla_1920.png);
+      background-position: center top;
+    }
+
+    @media (min-width: $screen-xxxl) {
+      padding-top: 160px / 1920px * 100%;
+    }
+  }
+}
 </style>
