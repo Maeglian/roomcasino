@@ -464,7 +464,7 @@
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
       "upTo": "600 Free Spins",
-      "name": "600 Free Spins Giveaway on Twitter.",
+      "name": "600 Free Spins Giveaway on Twitter",
       "text": "We’ve prepared a giveaway for you on our official {twitterAccount}.{br}{br} Follow us, like this {tweet}, and wait for the results on August 26th. We will randomly choose 3 winners and each of them will receive 250 Free Spins in the Wolf Gold slot.{br}{br}Good Luck!"
     }
   },
@@ -1379,6 +1379,34 @@
       },
       {
         "text": "For Free Spins, wagering is x5."
+      }
+    ]
+  },
+  "tesla_lottery": {
+    "metaTitle": "➤ Tesla Lottery With Tesla Model 3 - Play Your Favorite Games And Win Great Prize - Tesla Model 3!",
+    "metaDescription": "✭ Try Your Luck In New Tesla Lottery by NineCasino ➔ Take a ticket for a Tesla!",
+    "title": "The Tesla<br/> Lottery",
+    "name": "The Tesla Lottery",
+    "prize": "Tesla Model 3",
+    "text": "Join the Tesla Lottery at NineCasino between August 18th, 2021 and September 23rd, 2021 and get a chance to become the happy owner of a Tesla Model 3! <br/><br/>On the 24th of September we will announce the Tesla winner!",
+    "terms": [
+      {
+        "text": "The lottery runs between August 18th, 2021 and September 23rd, 2021."
+      },
+      {
+        "text": "A minimum deposit per ticket is €50. Each ticket can win."
+      },
+      {
+        "text": "The number of lottery tickets per player is not limited."
+      },
+      {
+        "text": "The more tickets you collect at the time of the draw, the higher your chances of winning a prize are."
+      },
+      {
+        "text": "At the time of the draw, the game account must not be blocked."
+      },
+      {
+        "text": "The winner of the lottery will be announced on the 24th of September."
       }
     ]
   },

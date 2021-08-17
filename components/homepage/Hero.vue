@@ -216,6 +216,13 @@ export default {
           url: '/tournaments/lucky-playson',
           linkText: this.$t('buttons.more'),
         },
+        {
+          bg: 'tesla',
+          title: this.$t('tesla_lottery.title'),
+          text: `<span class="Colored">${this.$t('tesla_lottery.prize')}</span>`,
+          url: '/lottery/tesla_lottery',
+          linkText: this.$t('buttons.more'),
+        },
       ];
       if (!this.isLoggedIn) {
         slides.splice(1, 1);
