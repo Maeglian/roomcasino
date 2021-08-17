@@ -464,7 +464,18 @@
       "upTo": "Das Preisgeld 13.000 €.",
       "name": "Lucky 13",
       "text": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/><br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!"
+    },
+    "twitterGiveaway": {
+      "title": "twitter<br/> Giveaway",
+      "upTo": "600 Freispiele",
+      "name": "600 Freispiele geschenkt auf Twitter.",
+      "text": "Wir haben ein Geschenk für Sie auf unserem Konto bei {twitterAccount}.{br}{br}Folgen Sie uns, befürworten Sie {tweet} und warten Sie bis zum 26. August auf die Ergebnisse. 3 glückliche Gewinnerinnen und Gewinner werden nach dem Zufallsprinzip ausgewählt und erhalten jeweils 200 Freispiele für das Automatenspiel Wolf Gold.{br}{br}Viel Glück!"
     }
+  },
+  "twitter": {
+    "twitterBtn": "Twitter",
+    "twitterAccount": "Twitter",
+    "tweet": "diesen Beitrag"
   },
   "tournaments": {
     "games": "Teilnehmende Spiele",
