@@ -1386,6 +1386,34 @@
       }
     ]
   },
+  "tesla_lottery": {
+    "metaTitle": "➤ Tesla-Verlosung mit Tesla Modell 3  – Spiele deine Lieblingsspiele und gewinne tolle Preis - Tesla Modell 3!",
+    "metaDescription": "✭ Versuch dein Glück beim neuen Tesla Lottery von NineCasino ➔ Holen Sie sich ein Los, um einen Tesla zu gewinnen!",
+    "title": "Tesla-Verlosung",
+    "name": "Tesla-Verlosung",
+    "prize": "Tesla Modell 3",
+    "text": "Mitgemacht bei der Tesla-Verlosung im NineCasino vom 18. August bis zum 23. September 2021 mit der Chance, einen Tesla Modell 3 Ihr eigen nennen zu können!<br/><br/>Die Bekanntgabe der Gewinnerin bzw. des Gewinners erfolgt am 24. September!",
+    "terms": [
+      {
+        "text": "Die Verlosung läuft ab dem 18. August bis zum 23. September 2021."
+      },
+      {
+        "text": "Die Mindesteinzahlung je Los beträgt 50 Euro. Jedes Los kann gewinnen."
+      },
+      {
+        "text": "Die Anzahl der Lose je Mitspielerin/Mitspieler ist nicht begrenzt."
+      },
+      {
+        "text": "Je mehr Lose bis zum Zeitpunkt der Ziehung gesammelt wurden, desto größer ist die Gewinnchance."
+      },
+      {
+        "text": "Zum Zeitpunkt der Ziehung darf das Spielkonto nicht gesperrt sein."
+      },
+      {
+        "text": "Die Bekanntgabe der Gewinnerin bzw. des Gewinners erfolgt am 24. September."
+      }
+    ]
+  },
   "rapidSpins": {
     "title": "RAPID SPINS-Netzturnier von EvoPlay",
     "prize": "€10.000",

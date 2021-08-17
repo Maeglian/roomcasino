@@ -260,6 +260,16 @@ export default {
     };
   },
   head() {
+    if (this.slug === 'tesla_lottery') {
+      return {
+        title: this.$t(`${this.slug}.metaTitle`),
+        meta: [
+          {
+            description: this.$t(`${this.slug}.metaDescription`),
+          },
+        ],
+      };
+    }
     return {
       title: 'Daily Tournament At Ninecasino And Other Similar Events',
       meta: [

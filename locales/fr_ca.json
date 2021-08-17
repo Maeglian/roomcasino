@@ -1317,6 +1317,8 @@
     ]
   },
   "lottery": {
+    "metaTitle": "➤ La loterie Tesla avec Tesla Model 3 – Jouez à vos jeux préférés et gagnez un grand prix - Tesla Model 3!",
+    "metaDescription": "✭ Participez à la loterie Tesla sur NineCasino ➔ Prenez un billet pour une Tesla!",
     "title": "Weekend<br/> Playing Lottery ",
     "prize": "<span class=\"Colored\">€ 2,500</span> + <span class=\"Colored\">500 Free Spins</span>",
     "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
@@ -1377,6 +1379,32 @@
       },
       {
         "text": "Pour les tours gratuits, votre mise est de x5."
+      }
+    ]
+  },
+  "tesla_lottery": {
+    "title": "La loterie Tesla",
+    "name": "Tesla Model 3",
+    "prize": "Tesly Model 3",
+    "text": "Participez à la loterie Tesla sur NineCasino entre le 18 août 2021 et le 23 septembre 2021 et courez la chance de devenir l’heureux propriétaire d’une Tesla Model 3!<br/><br/>Nous annoncerons le gagnant de la Tesla le 24 septembre!",
+    "terms": [
+      {
+        "text": "La loterie se déroule du 18 août 2021 au 23 septembre 2021."
+      },
+      {
+        "text": "Le dépôt minimal par billet est de 50 €. Chaque billet peut être gagnant."
+      },
+      {
+        "text": "Le nombre de billets de loterie par joueur n’est pas limité."
+      },
+      {
+        "text": "Plus vous collectez de billets au moment du tirage, plus vos chances de gagner un prix sont élevées."
+      },
+      {
+        "text": "Au moment du tirage au sort, le compte de jeu ne doit pas être bloqué."
+      },
+      {
+        "text": "Le gagnant de la loterie sera annoncé le 24 septembre."
       }
     ]
   },
