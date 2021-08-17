@@ -189,17 +189,31 @@ export default {
           linkText: this.$t('buttons.more'),
         },
         {
-          bg: 'race',
-          title: this.$t('promotions.epicRace.title'),
-          text: `<span class="Colored">${this.$t('epicRace.prize')}</span>`,
-          url: '/tournaments/spinomenal-epic-race',
-          linkText: this.$t('buttons.more'),
-        },
-        {
           bg: 'derby',
           title: this.$t('weekly_derby.title'),
           text: `<span class="Colored">${this.$t('weekly_derby.prize')}</span>`,
           url: '/tournaments/weekly_derby',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'sunshine',
+          title: this.$t('sunshine_spins_lottery.title'),
+          text: `<span class="Colored">${this.$t('sunshine_spins_lottery.prize')}</span>`,
+          url: '/lottery/sunshine_spins_lottery',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'rapid',
+          title: this.$t('promotions.rapidSpins.title'),
+          text: `<span class="Colored">${this.$t('rapidSpins.prize')}</span>`,
+          url: '/tournaments/rapid-spins',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'lucky',
+          title: this.$t('luckyPlayson.title'),
+          text: `<span class="Colored">${this.$t('luckyPlayson.prize')}</span>`,
+          url: '/tournaments/lucky-playson',
           linkText: this.$t('buttons.more'),
         },
       ];

@@ -191,7 +191,9 @@
     "name": "Name",
     "points":  "Punkte",
     "prize": "Preis",
-    "prizePool": "Preisgeld"
+    "prizePool": "Preisgeld",
+    "freeSpins": "Freispiele",
+    "winners": "Gewinner"
   },
   "actions": {
     "addCurrency": "Währung hinzufügen"
@@ -447,15 +449,21 @@
       "name": "August CashDays 60k",
       "text": "Willkommen bei dem August CashDays 60k-Turnier mit sagenhaften Einsätzen und satten Gewinnen aus dem Hause Playson. Das Turnier läuft ab dem 01.08.2021 um 0:01 Uhr UTC und endet am 08.08.2021 um 23:59 Uhr UTC. Bei NineCasino können Sie alle angesagten Spiele des Turniers spielen. Also, fahren Sie die Scheuer ein, solange die Sonne lacht!"
     },
-    "epicRace": {
-      "title": "Spinomenal<br/> Epiс Race",
-      "name": "Spinomenal Epiс Race",
-      "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Epic Race-Turnier verrückt spielen.<br/> An diesen Augusttagen können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 20.000 Euro sichern!"
-    },
     "weekly_derby": {
       "upTo": "Preispool 2.500 €",
       "name": "Aufsatteln fürs Weekly Derby",
       "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
+    },
+    "rapidSpins": {
+      "title": "RAPID SPINS-Netzturnier <br/>von EvoPlay",
+      "upTo": "€10.000",
+      "name": "RAPID SPINS-Netzturnier von EvoPlay",
+      "text": "Navigieren und halten Sie Kurs bei dem stürmischen RAPID SPINS-Netzturnier von EvoPlay. Sausen Sie flussabwärts in das abschließende Gewinnbecken mit 10.000 €!"
+    },
+    "luckyPlayson": {
+      "upTo": "Das Preisgeld 13.000 €.",
+      "name": "Lucky 13",
+      "text": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/><br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!"
     },
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
@@ -531,30 +539,6 @@
       {
         "title": "Zusätzlich:",
         "text": "Wöchentliches Roulette-Turnier<br/>Gewinne:</strong> Insgesamt 50.000 € verteilt auf 1.000 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 2x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Roulette-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Roulette-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Wetteinsätze, die auf Wetten mit Chance 1:1 getätigt werden (Rot/Schwarz, Gerade/Ungerade, 1:18/19:36) werden nicht auf die Punktzahl des Wöchentlichen Roulette-Turniers angerechnet.<br/><br/><strong>Wöchentliches Blackjack-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 300 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 10 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliches Blackjack-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Blackjack-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets und/oder Bets Behind werden für das Wöchentliche Blackjack-Turnier berücksichtigt.<br/><br/><strong>Wöchentliches Mega Wheel-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Mega Wheel-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Mega Wheel-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Alle Qualifizierenden Wetten werden für das Wöchentliche Mega Wheel-Turnier berücksichtigt.<br/><br/><strong>Wöchentliche Baccarat-Turniere<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Baccarat-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Baccarat-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets (Player, Banker und Tie) werden für das Wöchentliche Baccarat-Turnier berücksichtigt."
-      }
-    ]
-  },
-  "epicRace": {
-    "title": "Spinomenal Epiс Race",
-    "prize": "20.000 €",
-    "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Epic Race-Turnier verrückt spielen. An diesen Augusttagen können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 20.000 Euro sichern!",
-    "textMobile": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Epic Race-Turnier verrückt spielen. An diesen Augusttagen können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 20.000 Euro sichern!",
-    "terms": [
-      {
-        "title": "Dauer der Aktion:",
-        "text": "Das Epic Race läuft ab dem 2. August um 00:00 Uhr GMT und endet am 9. August 2021 um 23:59 Uhr GMT."
-      },
-      {
-        "title": "Gewinnstrukturierung:",
-        "text": "Die 150 Bestplatzierten teilen sich das Preisgeld in Höhe von 20.000 Euro nach folgendem Muster:  <br/>Platz 1 – 3.500 €<br/>Platz 2 – 2.500 €<br/>Platz 3 – 1.500 €<br/>Platz 4 – 1.000 €<br/>Platz 5 – 850 €<br/>Platz 6 – 750 €<br/>Platz 7 – 600 €<br/>Platz 8 – 350 €<br/>Platz 9 – 300 €<br/>Platz 10 – 250 €<br/>Platz 11 bis 20 je 200 €<br/>Platz 21 bis 30 je 150 €<br/>Platz 31 bis 40 je 80 €<br/>Platz 41 bis 50 je 60 €<br/>Platz 51 bis 100 je 40 €<br/>Platz 101 bis 150 je 30 €"
-      },
-      {
-        "title": "Mindesteinsatz:",
-        "text": "0.5 EUR"
-      },
-      {
-        "title": "Teilnahmebedingungen der Aktion:",
-        "text": "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 Euro. <br/>Teilnehmende Spiele: Book Of The Divine, Majestic King, Aztec Spell.<br/>Um an dem Epic Race von Spinomenal teilzunehmen, müssen Sie lediglich eines der teilnehmenden Spiele spielen. Jeder Gewinn bringt Ihnen Wertungspunkte entsprechend dem Gewinnmultiplikator. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
       }
     ]
   },
@@ -679,7 +663,7 @@
           "Wir behalten uns vor, bei der ersten Abhebung die Identität der betreffenden Kundin/des betreffenden Kunden zu prüfen. Dazu kann beispielsweise eine Kopie des Reisepasses oder Personalausweises, von Rechnungen von Versorgungsunternehmen und/oder Kopien der bei der Einzahlung verwendeten Kredit-/Girokarte angefordert werden.",
           "Es obliegt der Spielerin/dem Spieler, die Echtheit aller im Zuge der Kundenidentifikation (KYC) verwendeten Unterlagen sicherzustellen. Die Vorlage gefälschter oder trügerischer Unterlagen kann zu einer Einziehung des Guthabens und der möglichen Gewinne der betreffenden Spielerin/des betreffenden Spielers führen.",
           "Um eine Abhebung tätigen zu können, muss der eingezahlte Betrag vor der Abhebung mindestens einmal verspielt worden sein. Dieses Vorgehen dient der Verhinderung von Geldwäsche. Den Spielenden obliegt die alleinige Verantwortung für die Zahlung aller in Bezug auf Ihre Gewinne nach an Ihrem Aufenthaltsort anfallenden Steuern und Abgaben.",
-          "Die Webseite unterstützt Auszahlungen mittels Original Credit Transfer (OCT) von Visa sowie mittels Payment Transfer von Mastercard. Weitere Voraussetzungen sind, dass es sich bei der verwendeten Kreditkarte nicht um eine Unternehmenskreditkarte handelt, und dass diese Karte in einem der zugelassenen Staaten ausgegeben wurde. Visa kann in folgenden Staaten nicht genutzt werden: USA, Neuseeland, Australien, Hongkong, Indien, Indonesien, Japan, Korea, Malaysia, Singapur. Mastercard kann in folgenden Staaten verwendet werden: Andorra, Belgien, Dänemark, Deutschland, Estland, Frankreich, Gibraltar, Griechenland, Großbritannien, Irland, Island, Italien, Lettland, Luxemburg, Malta, Monaco, Niederlande, Norwegen, Österreich, San Marino, Slowakei, Slowenien, Spanien, Schweden, Schweiz, Tschechische Republik, Türkei, Ungarn und Zypern. Beachten Sie bitte, dass das Casino auch in zugelassenen Staaten die erfolgreiche Zahlungsabwicklung per Kreditkarte nicht in allen Fällen gewährleisten kann, da die Banken, die diese Kreditkarten ausgeben, derartige Überweisungen in eigenem Ermessen sperren oder ablehnen können.",
+          "Die Webseite unterstützt Auszahlungen mittels Original Credit Transfer (OCT) von Visa sowie mittels Payment Transfer von Mastercard. Weitere Voraussetzungen sind, dass es sich bei der verwendeten Kreditkarte nicht um eine Unternehmenskreditkarte handelt, und dass diese Karte in einem der zugelassenen Staaten ausgegeben wurde. Visa kann in folgenden Staaten nicht genutzt werden: Hongkong, Indien, Indonesien, Japan, Korea, Malaysia, Singapur. Mastercard kann in folgenden Staaten verwendet werden: Andorra, Belgien, Dänemark, Deutschland, Estland, Frankreich, Gibraltar, Griechenland, Großbritannien, Irland, Island, Italien, Lettland, Luxemburg, Malta, Monaco, Niederlande, Norwegen, Österreich, San Marino, Slowakei, Slowenien, Spanien, Schweden, Schweiz, Tschechische Republik, Türkei, Ungarn und Zypern. Beachten Sie bitte, dass das Casino auch in zugelassenen Staaten die erfolgreiche Zahlungsabwicklung per Kreditkarte nicht in allen Fällen gewährleisten kann, da die Banken, die diese Kreditkarten ausgeben, derartige Überweisungen in eigenem Ermessen sperren oder ablehnen können.",
           "In dem unwahrscheinlichen Fall, dass Zahlungsmittel in einer Kryptowährung auf die Netzwerkadresse einer anderen Kryptowährung eingezahlt werden (z.B. BTC auf eine BCH-Adresse), unternimmt Ninecasino bis zu einem Betrag von 5.000 USD keinen Versuch, diese zurückzubuchen. In einem solchen Fall wird für die Rückbuchung der eingebüßten Zahlungsmittel eine Gebühr von 0,1 BTC zur Deckung der Kosten für die Rückbuchung berechnet. Das ist jedoch keine Garantie dafür, dass die Mittel tatsächlich zurückgebucht werden.",
           "Die interne Verrechnungswährung der Webseite ist der Euro. Deshalb kann bei Überweisungen in anderen Währungen der von Ihrer Kreditkarte abgebuchte Betrag aufgrund von des Wechselkurses Ihrer Bank und/oder des Zahlungsabwicklungssystems des Casinos unwesentlich höher sein als zum Zeitpunkt der Überweisung angezeigt.",
           "Alle Auszahlungen per Banküberweisung werden innerhalb von fünf (5) Werktagen bearbeitet. Beachten Sie bitte, das eine Banküberweisung für Auszahlungen in US-Dollar nicht verfügbar ist.",
@@ -828,7 +812,7 @@
       },
       "ourSoftware": {
         "title": "UNSERE SOFTWARE",
-        "text": "Das Casino verwendet Produkte von den besten Entwicklern von Casinosoftware und Spielen der Industrie. Amatic, BetSoft, Endorphina, Ezugi, Microgaming und SoftSwiss. Jeder Spieler kennt diese Namen aus eigener Erfahrung und vertraut ihnen. Wir vertrauen ihnen ebenfalls. Wir wollen nicht, dass unsere Spieler sich fühlen wie eine Laborratte in einem Experiment, also bieten wir eine verlässliche Lösung, die wir mit Vergnügen selbst benutzen würden."
+        "text": "Das Casino verwendet Produkte von den besten Entwicklern von Casinosoftware und Spielen der Industrie. Amatic, BetSoft, Endorphina, Microgaming und Bgaming. Jeder Spieler kennt diese Namen aus eigener Erfahrung und vertraut ihnen. Wir vertrauen ihnen ebenfalls. Wir wollen nicht, dass unsere Spieler sich fühlen wie eine Laborratte in einem Experiment, also bieten wir eine verlässliche Lösung, die wir mit Vergnügen selbst benutzen würden."
       },
       "offers": {
         "title": "WAS WIR ANBIETEN",
@@ -1335,6 +1319,117 @@
       {
         "cashbackNum": "20%",
         "cashbackSum": "ab €5000"
+      }
+    ]
+  },
+  "lottery": {
+    "title": "Weekend<br/> Playing Lottery ",
+    "prize": "<span class=\"Colored\">€ 2,500</span> + <span class=\"Colored\">500 Free Spins</span>",
+    "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
+    "termsTitle": "Teilnahmebedingungen für die verlosung",
+    "terms": [
+      {
+        "text": "You begin to participate in the VIP program after making your first deposit."
+      },
+      {
+        "text": "CP is credited at the rate of 1 CP for every $ 12.5, 12.5 EUR, 15 CAD, 15 AUD, 15 NZD, 125 NOK, 325 CZK."
+      },
+      {
+        "text": "Exchange CP - 1 $, 1 EUR, 1.25 CAD, 1.25 AUD, 1.25 NZD, 10 NOK, 25 CZK, 17 ZAR, 4 PLN for 100 CP."
+      },
+      {
+        "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      },
+      {
+        "text": "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text": "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text": "RoomCasino reserves the right to change the terms of the VIP program at any time."
+      },
+      {
+        "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      }
+    ],
+    "lastRoundWinners": "Gewinner der letzten runde",
+    "ticket": "Los",
+    "tickets": "Lose"
+  },
+  "sunshine_spins_lottery": {
+    "title": "Sunshine<br/> Spins-Verlosung",
+    "name": "Sunshine Spins-Verlosung",
+    "prize": "4 000 Freispiele",
+    "text": "Fröhliche Sommerfrischler in fröhlichen Sommerklamotten auf dem Weg zum Spaßfestival dieses Monats: Der Sunshine Spins-Verlosung!<br/><br/>Lassen Sie sich bei der Sunshine Spins-Verlosung zurückversetzen in die Zeit der Festivals von Woodstock und der Isle of Wight und nach San Francisco. Um mitzumachen, Schuhe ausziehen und abrocken zu Ihren Lieblingsautomatenspielen. Gehören Sie zu den 50 Glücklichen, die sich den Gesamtgewinn von 4 000 Freispielen teilen!",
+    "terms": [
+      {
+        "text": "Das Verlosung läuft über 7 Tage, es beginnt jeweils Dienstag um 00:01 Uhr UTC und endet Montag um 23:59 Uhr UTC."
+      },
+      {
+        "text": "Die Mindesteinzahlung für ein Los beträgt 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text": "Die Anzahl der Lose pro Spieler ist unbegrenzt."
+      },
+      {
+        "text": "Jedes Los kann gewinnen."
+      },
+      {
+        "text": "Zum Zeitpunkt der Ziehung darf das Spielkonto nicht gesperrt sein."
+      },
+      {
+        "text": "Die Gewinne im Gesamtwert von 4 000 Freispiele werden nach Ablauf jeder Verlosungswoche jeweils Montags automatisch zugewiesen."
+      },
+      {
+        "text": "Für Freispiele besteht eine Umsatzanforderung von x5."
+      }
+    ]
+  },
+  "rapidSpins": {
+    "title": "RAPID SPINS-Netzturnier von EvoPlay",
+    "prize": "€10.000",
+    "text": "Navigieren und halten Sie Kurs bei dem stürmischen RAPID SPINS-Netzturnier von EvoPlay. Sausen Sie flussabwärts in das abschließende Gewinnbecken mit 10.000€! Beginnend mit dem 12. August haben Sie 10 Tage lang die Gelegenheit, an Bord zu kommen und an diesem elektrisierenden Ereignis teilzunehmen!",
+    "textMobile": "Navigieren und halten Sie Kurs bei dem stürmischen RAPID SPINS-Netzturnier von EvoPlay. Sausen Sie flussabwärts in das abschließende Gewinnbecken mit 10.000€!",
+    "terms": [
+      {
+        "title": "Das Turnier läuft ab dem 12. August 2021 um 0:01 Uhr UTC und endet am 22. August 2021 um 23:59 Uhr UTC.<br/><br/>"
+      },
+      {
+        "title": "Diese 10 Spiele nehmen teil:<br/><br/> Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
+      },
+      {
+        "title": "Der Mindesteinsatz beträgt umgerechnet 0,5€<br/><br/>"
+      },
+      {
+        "title": "Das Preisgeld von 10.000 € wird unter den 100 erfolgreichsten Mitspielenden entsprechend der Rangliste wie folgt aufgeteilt:<br/>Platz 1 – 1.670 €<br/>Platz 2 – 1.270 €<br/>Platz 3 – 1.000 €<br/>Platz 4 – 667 €<br/>Platz 5 – 600 €<br/>Platz 6 – 533 €<br/>Platz 7 – 400 €<br/>Platz 8 – 293 €<br/>Platz 9 – 220 €<br/>Platz 10 – 19 je 133 €<br/>Platz 20 – 49 je 33 €<br/>Platz 50 – 100 je 20 €"
+      },
+      {
+        "title": "Eine Ausspielung entspricht einem Punkt. Je mehr Punkte, desto besser die Platzierung in der Rangliste."
+      }
+    ]
+  },
+  "luckyPlayson": {
+    "title": "Lucky 13",
+    "prize": "13.000 €",
+    "text": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/><br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!",
+    "textMobile": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/><br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!",
+    "terms": [
+      {
+        "title": "Das Turnier läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC."
+      },
+      {
+        "title": "Gewinnübersicht für die 13.000 Euro:<br/> Platz:        Gewinn in Euro<br/>1    -    1,313<br/>2    -    1,013<br/>3    -     813<br/>4     -    666<br/>5    -     453<br/>6    -     413<br/>7     -    353<br/>8     -    313<br/>9    -     253<br/>10-12 - 213<br/>13    -     130<br/>14-25  -    93<br/>26-50   -    63<br/>51-150   -   33<br/>151-200  -   13"
+      },
+      {
+        "title": "Mindesteinsatz:",
+        "text": "0.13 EUR"
+      },
+      {
+        "title": "13 Spiele nehmen daran teil: <br/>● Book of Gold: Double Chance ● Book of Gold: Multichance <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Diamond Wins: Hold and Win <br/>● Divine Dragon: Hold and Win <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra Megaways™ <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Super Sunny Fruits: Hold and Win <br/>● Wolf Power: Hold and Win.<br/><br/>"
+      },
+      {
+        "title": "Es müssen mindestens 13 Ausspielungen gespielt werden, um an dieser Aktion teilnehmen zu können. Die Punkte werden Runde für Runde berechnet, dabei entspricht jeder umgesetzte Euro 100 Punkten."
       }
     ]
   }

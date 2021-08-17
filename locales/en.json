@@ -136,6 +136,7 @@
     "responsibleGaming": "Responsible Gaming",
     "risk": "Risk warnings",
     "tournaments": "Tournaments",
+    "lottery": "Lottery",
     "dailyCashback": "Daily cashback",
     "search": "Search"
   },
@@ -191,7 +192,9 @@
     "name": "Name",
     "points": "Points",
     "prize": "Prize",
-    "prizePool": "Prize pool"
+    "prizePool": "Prize pool",
+    "freeSpins": "Free Spins",
+    "winners": "Winners"
   },
   "actions": {
     "addCurrency": "Add currency"
@@ -443,15 +446,21 @@
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!"
     },
-    "epicRace": {
-      "title": "Spinomenal<br/> Epiс Race",
-      "name": "Spinomenal Epiс Race",
-      "text": "Again, the well-known Spinomenal race will drive you nuts with the exciting Epiс Race tournament.<br/> During these days in August, you can enjoy cool slots and earn a piece of the lavish prize pool of €20,000!"
-    },
     "weekly_derby": {
       "upTo": "prize pool €2,500",
       "name": "Saddle up for the Weekly Derby",
       "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
+    },
+    "rapidSpins": {
+      "title": "RAPID SPINS <br/>Network <br/>Tournament",
+      "upTo": "€10,000",
+      "name": "RAPID SPINS Network Tournament",
+      "text": "Navigate and bounce your way down the raging RAPID SPINS Network Tournament by EvoPlay. Race down the river for prizes and land in the final Prize Pool of €10,000!"
+    },
+    "luckyPlayson": {
+      "upTo": "The prize pool is €13,000.",
+      "name": "Lucky 13",
+      "text": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/><br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!"
     },
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
@@ -527,30 +536,6 @@
       {
         "title": "Additionally:",
         "text": "<strong>How to win:<br/><br/>Weekly Roulette Tournament<br/>Prizes:</strong> €50,000 in total across 1,000 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0,50 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 2x of the total Qualifying Bet to qualify for the Weekly Roulette Tournament.<br/><br/>A Player may increase their Weekly Roulette Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Any stakes placed on 1:1 odds bets (Red/Black, Odd/Even, 1:18/19:36) shall not be counted towards the Weekly Roulette Tournament score.<br/><br/><strong>Weekly Blackjack Tournament<br/>Prizes:</strong> €25,000 in total across 300 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €10 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Blackjack Tournament.<br/><br/>A Player may increase their Weekly Blackjack Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets and/or Bets Behind may be considered for the Weekly Blackjack Tournament.<br/><br/><strong>Weekly Mega Wheel Tournament<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Mega Wheel Tournament.<br/><br/>A Player may increase their Weekly Mega Wheel Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>All Qualifying Bets may be considered for the Weekly Mega Wheel Tournament.<br/><br/><strong>Weekly Baccarat Tournaments<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Baccarat Tournament.<br/><br/>A Player may increase their Weekly Baccarat Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets (Player, Banker, and Tie) may be considered for the Weekly Baccarat Tournament score."
-      }
-    ]
-  },
-  "epicRace": {
-    "title": "Spinomenal Epiс Race",
-    "prize": "€20,000",
-    "text": "Again, the well-known Spinomenal race will drive you nuts with the exciting Epiс Race tournament. During these days in August, you can enjoy cool slots and earn a piece of the lavish prize pool of €20,000!",
-    "textMobile": "Again, the well-known Spinomenal race will drive you nuts with the exciting Epiс Race tournament. During these days in August, you can enjoy cool slots and earn a piece of the lavish prize pool of €20,000!",
-    "terms": [
-      {
-        "title": "Campaign duration:",
-        "text": "The Epic Race runs between August 2nd, 2021, 00:00 GMT, and August 9th, 2021, 23:59 GMT."
-      },
-      {
-        "title": "Prize pool information:",
-        "text": "The 150 first players in the leaderboard will share a prize pool of €20,000:  <br/>1st place - €3,500<br/>2nd place - €2,500<br/>3rd place - €1,500<br/>4th place - €1,000<br/>5th place - €850<br/>6th place - €750<br/>7th place - €600<br/>8th place - €350<br/>9th place - €300<br/>10th place - €250<br/>11th - 20th places - €200<br/>21st - 30th places - €150<br/>31st - 40th places - €80<br/>41st - 50th places - €60<br/>51st - 100th places - €40<br/>101st - 150th places - €30."
-      },
-      {
-        "title": "Minimum bet requirements:",
-        "text": "0.5 EUR"
-      },
-      {
-        "title": "Additional terms and conditions:",
-        "text": "The minimum qualifying bet per spin to participate in the tournament is €0.5. <br/>Participating games: Book Of The Divine, Majestic King, Aztec Spell.<br/>All you need to do to join the Spinomenal Epiс Race is just play any of the participating games. Each win rewards you with a score based on the win multiplier. The more points you collect, the higher your position on the leaderboard."
       }
     ]
   },
@@ -675,7 +660,7 @@
           "We reserve the right to carry out verification procedures for each client at first withdrawal. Such verifications may for example include copies of a player’s passport, national Identity Card, copies of a player’s utility bills, and/or copies of the debit/credit cards used to deposit.",
           "It's the responsibility of the player to ensure that all documents as a part of the KYC process are genuine. Faked or fraudulent documents provided may result in a confiscation of deposits and potential winnings of the player.",
           "In order to make a withdrawal, a player must play through active deposited amounts at least once prior to withdrawal. This procedure is in line with anti money laundering practices. The player is fully responsible for paying all fees and taxes applied to their winnings according to the laws of the jurisdiction of the player’s residence.",
-          "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country.. For Visa, the following countries are not supported: USA, New Zealand, Australia, Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
+          "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country. For Visa, the following countries are not supported: Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
           "In the unlikely event of a player depositing crypto currency funds to another crypto currency network address (such as but not limited to: sending BTC to a BCH address). Ninecasino will not attempt to recover the amount unless it exceeds $5000. In such cases, a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to pursue the recovery, however it's not a guarantee to get the funds recovered.",
           "The internal operating currency of the Website is Euro. Due to this fact, in case you transact in other currencies, the amount deducted from your credit card may be insignificantly higher than displayed at the time of transaction due to currency conversions on the side of your bank and/or the Casino's payment processing system.",
           "All Bank Transfer payouts are processed within five (5) banking days. Please mind that you will not be able to request a Bank Transfer for USD payouts.",
@@ -824,7 +809,7 @@
       },
       "ourSoftware": {
         "title": "Our software",
-        "text": "The casino uses products that have been made by the best developers of casino software and games in the industry. Amatic, BetSoft, Endorphina, Ezugi, Microgaming, and SoftSwiss. Every gambler will be familiar with them firsthand and trust everything that these names stand for. We trust them too. We do not want our players to feel like experimental lab mice in an abortive experiment, so we offer a reliable solution that we would be delighted to use  ourselves as gamblers."
+        "text": "The casino uses products that have been made by the best developers of casino software and games in the industry. Amatic, BetSoft, Endorphina, Microgaming, and Bgaming. Every gambler will be familiar with them firsthand and trust everything that these names stand for. We trust them too. We do not want our players to feel like experimental lab mice in an abortive experiment, so we offer a reliable solution that we would be delighted to use  ourselves as gamblers."
       },
       "offers": {
         "title": "What do we offer",
@@ -1331,6 +1316,117 @@
       {
         "cashbackNum": "20%",
         "cashbackSum": "€5000 and more"
+      }
+    ]
+  },
+  "lottery": {
+    "title": "Weekend<br/> Playing Lottery ",
+    "prize": "<span class=\"Colored\">€ 2,500</span> + <span class=\"Colored\">500 Free Spins</span>",
+    "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
+    "termsTitle": "Lottery participation terms",
+    "terms": [
+      {
+        "text": "You begin to participate in the VIP program after making your first deposit."
+      },
+      {
+        "text": "CP is credited at the rate of 1 CP for every $ 12.5, 12.5 EUR, 15 CAD, 15 AUD, 15 NZD, 125 NOK, 325 CZK."
+      },
+      {
+        "text": "Exchange CP - 1 $, 1 EUR, 1.25 CAD, 1.25 AUD, 1.25 NZD, 10 NOK, 25 CZK, 17 ZAR, 4 PLN for 100 CP."
+      },
+      {
+        "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      },
+      {
+        "text": "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text": "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text": "RoomCasino reserves the right to change the terms of the VIP program at any time."
+      },
+      {
+        "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      }
+    ],
+    "lastRoundWinners": "Last round winners",
+    "ticket": "Ticket",
+    "tickets": "Tickets"
+  },
+  "sunshine_spins_lottery": {
+    "title": "Sunshine Spins<br/> lottery",
+    "name": "Sunshine Spins lottery",
+    "prize": "4,000 Free Spins",
+    "text": "Happy summer people decked out in happy summer clothes, marching toward this month’s fun-stuffed festival: The Sunshine Spins lottery!<br/><br/>With the Sunshine Spins lottery, take yourself back to the time of Woodstock, Isle of Wight Festival, and San Francisco. To join in just run around barefoot and rock out to your favourite slots. Enjoy the vibe of the 4000 Free Spin prize pool with 50 lucky winners!<br/>So put your best summer clothes on and remember, “it’s all about the spins man!”",
+    "terms": [
+      {
+        "text": "The lottery will last 7 days starting at 00.01 (UTC) on Tuesday and ending at 23.59 (UTC) on Monday."
+      },
+      {
+        "text": "The minimum deposit required for a lottery ticket is 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text": "The number of lottery tickets per player is unlimited."
+      },
+      {
+        "text": "Every ticket can be a winning ticket."
+      },
+      {
+        "text": "At the time of the draw, the game account must not be blocked."
+      },
+      {
+        "text": "Prizes of 4000 Free Spins will be awarded automatically at the end of the lottery every week on Monday."
+      },
+      {
+        "text": "For Free Spins, wagering is x5."
+      }
+    ]
+  },
+  "rapidSpins": {
+    "title": "RAPID SPINS Network Tournament",
+    "prize": "€10,000",
+    "text": "Navigate and bounce your way down the raging RAPID SPINS Network Tournament by EvoPlay. Race down the river for prizes and land in the final Prize Pool of €10,000! For 10 days starting from the 12th of August you will have a chance to jump on board and take part in this electrifying event!",
+    "textMobile": "Navigate and bounce your way down the raging RAPID SPINS Network Tournament by EvoPlay. Race down the river for prizes and land in the final Prize Pool of €10,000!",
+    "terms": [
+      {
+        "title": "The tournament runs between August 12nd, 2021 0:01 UTC, and August 22nd, 2021 until 23:59 UTC<br/><br/>"
+      },
+      {
+        "title": "There are 10 participating games:<br/><br/>Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
+      },
+      {
+        "title": "The minimum bet is €0.5 or the equivalent in other currencies<br/><br/>"
+      },
+      {
+        "title": "The Prize Pool of €10,000 will be distributed among the top 100 winners on the leaderboard according to these tournament positions:<br/>1st place – €1,670<br/>2nd place – €1,270<br/>3rd place – €1,000<br/>4th place – €667<br/>5th place – €600<br/>6th place – €533<br/>7th place – €400<br/>8th place – €293<br/>9th place – €220<br/>10th-19th place – €133<br/>20th-49th place – €33<br/>50th-100th place – €20"
+      },
+      {
+        "title": "One spin equals one point. The more points, the higher the player’s position on the leaderboard."
+      }
+    ]
+  },
+  "luckyPlayson": {
+    "title": "Lucky 13",
+    "prize": "€13,000",
+    "text": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/><br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!",
+    "textMobile": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/><br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!",
+    "terms": [
+      {
+        "title": "The tournament runs between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!"
+      },
+      {
+        "title": "€13,000 Prize Pool Table:<br/>Places:        Prize EUR<br/>1   -     € 1,313<br/>2    -    € 1,013<br/>3    -    € 813<br/>4    -    € 666<br/>5    -    € 453<br/>6    -    € 413<br/>7    -    € 353<br/>8    -    € 313<br/>9    -    € 253<br/>10-12    -    € 213<br/>13    -    € 130<br/>14-25    -    € 93<br/>26-50    -    € 63<br/>51-150     -   € 33<br/>151-200    -    € 13"
+      },
+      {
+        "title": "Minimum bet requirements:",
+        "text": "0.13 EUR"
+      },
+      {
+        "title": "With 13 participating games: <br/>● Book of Gold: Double Chance <br/>● Book of Gold: Multichance <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Diamond Wins: Hold and Win <br/>● Divine Dragon: Hold and Win <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra Megaways™ <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Super Sunny Fruits: Hold and Win <br/>● Wolf Power: Hold and Win.<br/><br/>"
+      },
+      {
+        "title": "The minimum number of spins required to qualify in this promotion is 13 spins. Points are calculated round-by-round, with each 1 EUR wagered equaling 100 points."
       }
     ]
   }
