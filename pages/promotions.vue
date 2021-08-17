@@ -38,7 +38,10 @@
                   }}</a>
                 </template>
                 <template #tweet>
-                  <a class="Footer-Contact" href="https://twitter.com/casino_nine">
+                  <a
+                    class="Footer-Contact"
+                    href="https://twitter.com/casino_nine/status/1427561698408505344?s=20"
+                  >
                     {{ $t('twitter.tweet') }}
                   </a>
                 </template>
