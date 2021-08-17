@@ -31,23 +31,21 @@
               {{ item.announce }}
             </div>
             <div class="PromotionsCard-Text Text Text--additional">
-              <template v-if="item.linkTo" v-html="item.text">
-                <i18n path="promotions.twitterGiveaway.text">
-                  <template #twitterAccount>
-                    <a class="Footer-Contact" href="https://twitter.com/casino_nine">{{
-                      $t('twitter.twitterAccount')
-                    }}</a>
-                  </template>
-                  <template #tweet>
-                    <a class="Footer-Contact" href="https://twitter.com/casino_nine">
-                      {{ $t('twitter.tweet') }}
-                    </a>
-                  </template>
-                  <template #br>
-                    <br />
-                  </template>
-                </i18n>
-              </template>
+              <i18n v-if="item.linkTo" path="promotions.twitterGiveaway.text">
+                <template #twitterAccount>
+                  <a class="Footer-Contact" href="https://twitter.com/casino_nine">{{
+                    $t('twitter.twitterAccount')
+                  }}</a>
+                </template>
+                <template #tweet>
+                  <a class="Footer-Contact" href="https://twitter.com/casino_nine">
+                    {{ $t('twitter.tweet') }}
+                  </a>
+                </template>
+                <template #br>
+                  <br />
+                </template>
+              </i18n>
               <span v-else v-html="item.text"> </span>
             </div>
           </div>
