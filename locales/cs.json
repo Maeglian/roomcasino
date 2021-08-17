@@ -456,8 +456,8 @@
     },
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
-      "upTo": "Dar v podobě 600 spinů zdarma",
-      "name": "Dar v podobě 600 spinů zdarma na Twitteru.",
+      "upTo": "600 spinů zdarma",
+      "name": "Dar v podobě 600 spinů zdarma na Twitteru",
       "text": "Připravili jsme pro vád dar na oficiálním {twitterAccount}.{br}{br}Sledujte nás, dejte lajk tomuto {tweet} a čekejte na výsledky 26. srpna. Náhodně vybereme 3 vítěze a každému z nich dáme 200 spinů zdarma v slotu Wolf Gold.{br}{br}Hodně štěstí!"
     }
   },
