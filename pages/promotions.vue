@@ -254,6 +254,15 @@ export default {
           link: 'More',
           url: '/tournaments/lucky-playson',
         },
+        {
+          title: this.$t('tesla_lottery.title'),
+          prize: this.$t('tesla_lottery.prize'),
+          image: 'tesla-promotion.png',
+          announce: this.$t('tesla_lottery.name'),
+          text: this.$t('tesla_lottery.text'),
+          link: 'More',
+          url: '/lottery/tesla_lottery',
+        },
       ],
     };
   },
