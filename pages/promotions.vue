@@ -31,7 +31,25 @@
               {{ item.announce }}
             </div>
             <div class="PromotionsCard-Text Text Text--additional">
-              <span v-html="item.text"> </span>
+              <i18n v-if="item.linkTo" path="promotions.twitterGiveaway.text">
+                <template #twitterAccount>
+                  <a class="Footer-Contact" href="https://twitter.com/casino_nine">{{
+                    $t('twitter.twitterAccount')
+                  }}</a>
+                </template>
+                <template #tweet>
+                  <a
+                    class="Footer-Contact"
+                    href="https://twitter.com/casino_nine/status/1427561698408505344?s=20"
+                  >
+                    {{ $t('twitter.tweet') }}
+                  </a>
+                </template>
+                <template #br>
+                  <br />
+                </template>
+              </i18n>
+              <span v-else v-html="item.text"> </span>
             </div>
           </div>
           <div class="PromotionsCard-Btns">
@@ -42,6 +60,13 @@
             >
               {{ $t('buttons.more') }}
             </NuxtLink>
+            <a
+              v-else-if="item.linkTo"
+              :href="item.url"
+              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
+            >
+              {{ $t('twitter.twitterBtn') }}
+            </a>
             <button
               v-else
               class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
@@ -192,6 +217,15 @@ export default {
           text: this.$t('promotions.weekly_derby.text'),
           link: 'More',
           url: '/tournaments/weekly_derby',
+        },
+        {
+          title: this.$t('promotions.twitterGiveaway.title'),
+          prize: this.$t('promotions.twitterGiveaway.upTo'),
+          image: 'wolf_900.png',
+          announce: this.$t('promotions.twitterGiveaway.name'),
+          text: this.$t('promotions.twitterGiveaway.text'),
+          linkTo: 'Twitter',
+          url: 'https://twitter.com/casino_nine',
         },
         {
           title: this.$t('sunshine_spins_lottery.title'),

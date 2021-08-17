@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Vue from 'vue';
-import { BILLING_PROVIDER_ID, API_HOST, PIXEL_HOST, DOMAIN } from '../config';
+import { BILLING_PROVIDER_ID, API_HOST, DOMAIN } from '../config';
 
 const Cookie = process.client ? require('js-cookie') : undefined;
 const cookieparser = process.server ? require('cookieparser') : undefined;
@@ -473,7 +473,8 @@ export const actions = {
         Cookie.set('token', token);
         Cookie.set('token', token, { domain: `.${DOMAIN}` });
         http.defaults.headers.common['X-Auth-Token'] = token;
-        dispatch('getPixel');
+        dispatch('antifrod/getPixel');
+        dispatch('antifrod/sendLocaleStorageId');
         dispatch('getProfile');
         dispatch('profile/getAvailableBonusList');
       } else commit('setAuthError', res.message);
@@ -505,29 +506,12 @@ export const actions = {
         Cookie.set('token', token);
         Cookie.set('token', token, { domain: `.${DOMAIN}` });
         http.defaults.headers.common['X-Auth-Token'] = token;
-        dispatch('getPixel');
+        dispatch('antifrod/getPixel');
+        dispatch('antifrod/sendLocaleStorageId');
       } else commit('setAuthError', res.message);
     } catch (e) {
       this.$sentry.captureException(new Error(e));
       Cookie.remove('token');
-    }
-  },
-
-  async getPixel() {
-    try {
-      await fetch(`${PIXEL_HOST}/pixel/image`, {
-        method: 'GET',
-        mode: 'cors',
-        cache: 'no-cache',
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        redirect: 'follow',
-        referrerPolicy: 'no-referrer',
-      });
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
     }
   },
 

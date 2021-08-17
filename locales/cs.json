@@ -453,7 +453,18 @@
       "upTo": "The prize pool is €13,000.",
       "name": "Lucky 13",
       "text": "Enjoy 13 epic games in August with the Lucky 13 tournament by Playson!<br/><br/>NineCasino have teamed up with the awesome game provider Playson to invite you to join Lucky 13, running between 0:01 UTC and 23:59 UTC on the 13th of August 2021 with a €13,000 Prize Pool!"
+    },
+    "twitterGiveaway": {
+      "title": "twitter<br/> Giveaway",
+      "upTo": "Dar v podobě 600 spinů zdarma",
+      "name": "Dar v podobě 600 spinů zdarma na Twitteru.",
+      "text": "Připravili jsme pro vád dar na oficiálním {twitterAccount}.{br}{br}Sledujte nás, dejte lajk tomuto {tweet} a čekejte na výsledky 26. srpna. Náhodně vybereme 3 vítěze a každému z nich dáme 200 spinů zdarma v slotu Wolf Gold.{br}{br}Hodně štěstí!"
     }
+  },
+  "twitter": {
+    "twitterBtn": "Twitter",
+    "twitterAccount": "Twitterovém účtu",
+    "tweet": "tweetu"
   },
   "tournaments" : {
     "games" : "Hry zahrnuté do turnaje",

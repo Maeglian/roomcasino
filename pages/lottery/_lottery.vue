@@ -292,7 +292,7 @@ export default {
       );
       if (!finishedLotteries.length) return [];
       const lastLottery = finishedLotteries.sort(
-        (l1, l2) => l1.startDateTime - l2.startDateTime,
+        (l1, l2) => l2.startDateTime - l1.startDateTime,
       )[0];
       if (lastLottery.awardList.some(award => award.status === 'noWinners')) return [];
       return [...lastLottery.awardList].sort((winner1, winner2) => winner1.place - winner2.place);
