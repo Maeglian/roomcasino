@@ -39,7 +39,9 @@
         <NuxtLink class="Link Footer-Link" :to="localePath('/faq')">
           {{ $t('pages.faq') }}
         </NuxtLink>
-
+        <a href="https://chillipartners.com/" class="Link Footer-Link" target="_blank">
+          Affiliates
+        </a>
         <!--        <NuxtLink class="Link Footer-Link" to="/payment-methods">-->
         <!--          Payment methods-->
         <!--        </NuxtLink>-->
