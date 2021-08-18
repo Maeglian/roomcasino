@@ -75,7 +75,7 @@
     "cancelFreeSpinError": "Error on cancelling free spin",
     "cancelFreeSpinSuccess": "Your free spin was cancelled",
     "activateFreeSpinError": "Error on activating free spin",
-    "activateFreeSpinSuccess": "Your free spin was activated"
+    "activateFreeSpinSuccess": "Your free spins were activated"
   },
   "auth": {
     "loginTitle": "Welcome back",
