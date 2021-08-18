@@ -59,6 +59,17 @@ export default {
   name: 'DailyCashback',
   mixins: [showAuthDialog],
   layout: 'page',
+  head() {
+    return {
+      title: 'Daily Cashback Up To 20%',
+      meta: [
+        {
+          description:
+            'Daily Cashback Up To 20% - If You Lose We Give You Cashback with x5 wagering.',
+        },
+      ],
+    };
+  },
 };
 </script>
 

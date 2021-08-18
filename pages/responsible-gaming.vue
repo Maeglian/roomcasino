@@ -134,11 +134,11 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Responsible And Controlled Gambling In Ninecasino',
+      title: 'Responsible and Controlled Gambling At Ninecasino',
       meta: [
         {
           description:
-            'Here You Can Find About Responsible Gaming Tools That Are At Your Disposal To Control Your Gaming Experience',
+            'Here You Can Find About Responsible Gaming Tools At Your Disposal To Control Your Gaming Experience',
         },
       ],
     };

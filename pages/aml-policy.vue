@@ -72,11 +72,11 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Incorporating Fraud And Anti Money Laundering Policy | Ninecasino',
+      title: 'Incorporating Fraud and Anti Money Laundering Policy',
       meta: [
         {
           description:
-            'Detailed Information About How We Handle The Incorporating Fraud And Anti Money Laundering',
+            'Detailed Information About How We Handle Incorporating Fraud and Anti Money Laundering',
         },
       ],
     };

@@ -116,7 +116,7 @@ export default {
       meta: [
         {
           description:
-            'Detailed Information About Us, Our Software And What Do We Offer To Our Clients ✓ Fast withdrawal ✓ Fully licensed',
+            'Detailed Information About Us, Our Software, And What We Offer Our Clients ✓ Fast withdrawal ✓ Fully licensed',
         },
       ],
     };

@@ -268,11 +268,11 @@ export default {
   },
   head() {
     return {
-      title: 'Promotions | Ninecasino',
+      title: 'Promotions',
       meta: [
         {
           description:
-            'Here You Can Find About Our Welcome Bonus For New Players And Other Regular Promotions At Ninecasino',
+            'Here You Can Find Out About Our Welcome Bonus For New Players And Other Regular Promotions At Ninecasino',
         },
       ],
     };

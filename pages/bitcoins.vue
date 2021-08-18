@@ -110,7 +110,7 @@ export default {
       title: 'How To Play On Ninecasino With Bitcoins',
       meta: [
         {
-          description: 'Detailed Information How You Can Play With Bitcoin At Ninecasino',
+          description: 'Detailed Information How You Can Play With Bitcoin at Ninecasino',
         },
       ],
     };

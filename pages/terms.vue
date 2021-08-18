@@ -224,7 +224,7 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Terms & Conditions | Ninecasino',
+      title: 'Terms & Conditions',
       meta: [
         {
           description:

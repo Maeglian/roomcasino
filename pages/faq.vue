@@ -52,7 +52,7 @@ export default {
   },
   head() {
     return {
-      title: 'FAQ | Ninecasino',
+      title: 'FAQ',
       meta: [
         {
           description:

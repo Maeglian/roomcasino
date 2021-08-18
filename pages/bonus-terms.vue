@@ -45,7 +45,7 @@ export default {
       meta: [
         {
           description:
-            'Detailed Information About Bonuses: How To Receive And Withdraw Bonuses In Ninecasino',
+            'Detailed Information About Bonuses: How To Receive And Withdraw Bonuses At Ninecasino',
         },
       ],
     };
