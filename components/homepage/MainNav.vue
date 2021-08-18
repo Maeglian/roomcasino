@@ -265,7 +265,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 14px 16px;
+    padding: 10px 16px;
 
     @media (min-width: $screen-xs) {
       display: flex;
@@ -275,7 +275,7 @@ export default {
     }
 
     @media (min-width: $screen-m) {
-      padding: 0 0 0 16px;
+      padding: 16px;
     }
 
     &--authenticated {
@@ -465,10 +465,6 @@ export default {
       .Nav-Name {
         justify-content: center;
       }
-    }
-
-    @media (min-width: $screen-m) {
-      font-size: 18px;
     }
 
     &--onlyDesktop {
