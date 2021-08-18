@@ -37,21 +37,21 @@
           <div class="PromotionsCard-Btns">
             <NuxtLink
               v-if="item.link"
-              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
+              class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
               :to="localePath(item.url)"
             >
               {{ $t('buttons.more') }}
             </NuxtLink>
             <button
               v-else
-              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
+              class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
               @click="onClickBtn()"
             >
               {{ isLoggedIn ? $t('buttons.getBonus') : $t('buttons.signUp') }}
             </button>
             <NuxtLink
               :to="localePath('/bonus-terms')"
-              class="Btn Btn--common Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
+              class="Btn Btn--common Btn--rightCorner Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
             >
               {{ $t('buttons.terms') }}
             </NuxtLink>

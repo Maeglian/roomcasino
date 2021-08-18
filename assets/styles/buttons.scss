@@ -78,6 +78,14 @@ button {
     }
   }
 
+  &--leftCorner {
+    border-radius: 0 0 0 20px;
+  }
+
+  &--rightCorner {
+    border-radius: 0 0 20px 0;
+  }
+
   &--outline2 {
     background: transparent;
     border: 2px solid var(--color-main2);
