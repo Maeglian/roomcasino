@@ -1233,8 +1233,6 @@
         "Beim Spielen mit Bonusgeld werden alle Gewinne, die abgehoben werden sollen, vor der Bearbeitung der Auszahlung einer Überprüfung unterzogen. Das Casino behält sich vor, die betreffende Benutzerin/den betreffenden Benutzer infolge dieser Überprüfung um eine Bestätigung ihrer/seiner personenbezogenen Daten und der Daten für die Zahlungsabwicklung zu bitten.",
         "Das Casino ist berechtigt, unrechtmäßig oder unter Verletzung der hier niedergelegten Bestimmungen erzielten Boni und Gewinne zu widerrufen und das gesamte Guthaben des betroffenen Kontos einzuziehen.",
         "Das Casino behält sich vor, diese Bedingungen jederzeit zu ändern und zu ergänzen.",
-        "Sinkt das Spielguthaben auf einem Konto auf höchstens 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC, so verfällt der Bonus automatisch.*",
-        "* Das gilt nur für das an einen Bonus gebundene Guthaben, zum Beispiel Einzahlung + Bonus, oder einen reinen Bonus im Fall von Boni ohne Einzahlungsverpflichtung, nicht jedoch für aus anderen Einzahlungen oder Boni erzielte Geldmittel auf einem Spielerkonto.",
         "Die Verwendung von Bonusgeld zum alleinigen Zweck des Fortschritts durch die Bonusstufen ist verboten. Wenn beispielsweise Bonus- oder Barmittel ausschließlich zum Aufstieg durch die Bonusstufen (etwa zum Sammeln von 9 der 10 für das Erreichen der Bonusfunktion erforderlichen Münzen) genutzt werden, und die letzten Stufen (z.B. das Spielen zum Erwerb der letzten der 10 Münzen und damit das Erreichen der Bonusfunktion) mit Bargeldeinsätzen abgeschlossen werden, wenn die Bonusmittel verfallen sind oder verloren wurden oder die Umsatzanforderung erfüllt und in Bargeld umgetauscht wurde. Alle durch derartiges Spiel erzielten Gewinne werden als nichtig betrachtet.",
         "Alle Boni nach UTC-Zeit abgerechnet."
       ],
@@ -1266,7 +1264,7 @@
   "dailyCashback": {
     "cashback": "Rückzahlung",
     "title": "Tägliche rückzahlung<br/>bis zu 20%",
-    "text1": "Wer bekommt im Casino nicht gerne Geld zurück?<br/>  Selbst wenn Sie verloren haben! Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von&nbsp;x5 urück, wenn Sie verlieren.",
+    "text1": "Wer bekommt im Casino nicht gerne Geld zurück?<br/>  Selbst wenn Sie verloren haben! Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von&nbsp;x5 zurück, wenn Sie verlieren.",
     "text2": "Wenn Ihnen das passiert ist und Sie heute im Ninecasino Geld verloren haben, erhalten Sie es von uns morgen nach folgendem Muster zurück:",
     "terms": "Rückerstattungsbedingungen",
     "termsList": [

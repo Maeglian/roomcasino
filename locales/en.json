@@ -466,7 +466,7 @@
       "title": "twitter<br/> Giveaway",
       "upTo": "600 Free Spins",
       "name": "600 Free Spins Giveaway on Twitter",
-      "text": "We’ve prepared a giveaway for you on our official {twitterAccount}.{br}{br} Follow us, like this {tweet}, and wait for the results on August 26th. We will randomly choose 3 winners and each of them will receive 250 Free Spins in the Wolf Gold slot.{br}{br}Good Luck!"
+      "text": "We’ve prepared a giveaway for you on our official {twitterAccount}.{br}{br} Follow us, like this {tweet}, and wait for the results on August 26th. We will randomly choose 3 winners and each of them will receive 200 Free Spins in the Wolf Gold slot.{br}{br}Good Luck!"
     }
   },
   "twitter": {
@@ -1230,8 +1230,6 @@
         "When gambling with bonus funds, all the winnings requested for withdrawal pass a check prior to payment processing. The Casino reserves the right to request the user to confirm the personal data and payment method data as a result of the check.",
         "The Casino has the right to revoke any bonuses and winnings, as well as to confiscate all the money in the account if it has been obtained dishonestly or in violation of these rules.",
         "The Casino reserves the right to amend and supplement these terms at any time.",
-        "Bonus is automatically cancelled upon active balance reaching amount of 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC, or less.*",
-        "*This term only applies balance tied to bonus, i.e. deposit + bonus or only bonus in case of no deposit bonus, and doesn't apply funds on player's balance gained from other deposits or bonuses.",
         "The use of bonus funds purely to progress through the bonus stages is prohibited. For example when bonus or cash funds are used purely to progress through the bonus stages (e.g. collecting 9 out of 10 coins to reach that bonus feature) and then final stages (e.g. playing to collect the final coin to reach 10 out of 10 coins to reach the bonus feature) completed with cash bets when bonus funds have been forfeited, lost or wagering met and converted to cash. All the winnings gained during that play may be considered void.",
         "All bonuses are accrued at UTC time."
       ],

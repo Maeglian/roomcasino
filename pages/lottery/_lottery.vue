@@ -41,7 +41,10 @@
               <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
               <div class="Advantages-AdvantageBlock">
                 <div class="Advantages-AdvantageTitle">
-                  {{ lottery.recurringShift }} {{ lottery.recurringUnit }}
+                  <template v-if="slug === 'tesla_lottery'"> 40 {{ $t('common.days') }}</template>
+                  <template v-else>
+                    {{ lottery.recurringShift }} {{ lottery.recurringUnit }}
+                  </template>
                 </div>
                 <div class="Advantages-AdvantageInfo">
                   {{ $t('tournaments.duration') }}
@@ -53,11 +56,16 @@
               <div class="Advantages-AdvantageBlock">
                 <div class="Advantages-AdvantageTitle">
                   <span class="Colored">
-                    <template v-if="lottery.budget">
-                      {{ lottery.budget }} {{ lottery.currency }}<br />
+                    <template v-if="slug === 'tesla_lottery'">
+                      {{ $t('tesla_lottery.prize') }}
                     </template>
-                    <template v-if="lottery.freeSpinBudget">
-                      {{ lottery.freeSpinBudget }} {{ $t('common.freeSpins') }}
+                    <template v-else>
+                      <template v-if="lottery.budget">
+                        {{ lottery.budget }} {{ lottery.currency }}<br />
+                      </template>
+                      <template v-if="lottery.freeSpinBudget">
+                        {{ lottery.freeSpinBudget }} {{ $t('common.freeSpins') }}
+                      </template>
                     </template>
                   </span>
                 </div>
