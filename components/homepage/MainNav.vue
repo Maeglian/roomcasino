@@ -440,7 +440,7 @@ export default {
     align-items: center;
     font-size: 13px;
     font-weight: 700;
-    color: var(--color-hover3);
+    color: var(--color-main1);
     text-transform: uppercase;
   }
 
