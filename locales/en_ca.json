@@ -72,9 +72,9 @@
   "notifications": {
     "cancelBonusError": "Error on cancelling bonus",
     "cancelBonusSuccess": "Your bonus was cancelled",
-    "cancelFreeSpinError": "Error on cancelling free spin",
-    "cancelFreeSpinSuccess": "Your free spin was cancelled",
-    "activateFreeSpinError": "Error on activating free spin",
+    "cancelFreeSpinError": "Error on cancelling free spins",
+    "cancelFreeSpinSuccess": "Your free spins were cancelled",
+    "activateFreeSpinError": "Error on activating free spins",
     "activateFreeSpinSuccess": "Your free spins were activated"
   },
   "auth": {
