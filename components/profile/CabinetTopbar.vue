@@ -62,9 +62,7 @@ export default {
   align-items: center;
   width: 100%;
   max-width: 100%;
-  padding-right: 16px;
-  padding-bottom: 8px;
-  padding-left: 16px;
+  padding: 8px 16px;
   font-size: 10px;
   font-weight: 700;
   line-height: 1.2;
@@ -72,7 +70,7 @@ export default {
   background: var(--color-bg);
 
   @media (min-width: $screen-l) {
-    padding: 0;
+    padding: 12px 16px;
     background: var(--color-body);
   }
 
@@ -146,13 +144,14 @@ export default {
 
     @media (min-width: $screen-m) {
       display: inline-flex;
-      align-self: stretch;
+      height: 30px;
       padding: 0 18px;
       font-size: 10px;
       text-transform: uppercase;
     }
 
     @media (min-width: $screen-l) {
+      height: 50px;
       padding: 22px 30px;
     }
   }
