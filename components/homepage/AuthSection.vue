@@ -20,7 +20,7 @@
         </div>
       </NuxtLink>
       <NuxtLink v-if="!myAccount" class="AuthSection-UserInfo" :to="localePath('/profile/balance')">
-        <img src="@/assets/img/user.svg" />
+        <BaseIcon class="Icon--fill" name="user" width="20" height="23" />
       </NuxtLink>
     </div>
     <div v-else class="AuthSection-Login">
@@ -50,9 +50,13 @@
 <script>
 import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import BaseIcon from '@/components/base/BaseIcon';
 
 export default {
   name: 'AuthSection',
+  components: {
+    BaseIcon,
+  },
   mixins: [showAuthDialog],
   props: {
     myAccount: {

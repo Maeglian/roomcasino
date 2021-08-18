@@ -299,6 +299,7 @@ export default {
     height: 40px;
     margin-left: 15px;
     background: var(--color-bg-lighter);
+    fill: var(--color-main1);
 
     @media (min-width: $screen-m) {
       width: 55px;
@@ -355,6 +356,7 @@ export default {
 
   &-Icon {
     margin-right: 8px;
+    fill: var(--color-main1);
 
     @media (min-width: $screen-m) {
       margin-right: 12px;

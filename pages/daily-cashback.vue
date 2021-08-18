@@ -125,6 +125,7 @@ export default {
     width: 40px;
     height: 40px;
     margin-bottom: 12px;
+    fill: var(--color-main1);
 
     @media (min-width: $screen-m) {
       width: 45px;
