@@ -103,6 +103,7 @@
         </div>
       </div>
     </div>
+    <Breadcrumbs />
   </section>
 </template>
 
