@@ -283,6 +283,7 @@ export default {
           type: 'success',
           text: 'Your promo code was successfully added',
         });
+        this.code = '';
       });
     },
   },
