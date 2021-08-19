@@ -112,11 +112,10 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Information About Ninecasino',
+      title: this.$t('metaTags.about-us.title'),
       meta: [
         {
-          description:
-            'Detailed Information About Us, Our Software, And What We Offer Our Clients ✓ Fast withdrawal ✓ Fully licensed',
+          description: this.$t('metaTags.about-us.description'),
         },
       ],
     };

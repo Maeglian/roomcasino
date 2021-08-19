@@ -1447,5 +1447,51 @@
         "title": "The minimum number of spins required to qualify in this promotion is 13 spins. Points are calculated round-by-round, with each 1 EUR wagered equaling 100 points."
       }
     ]
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Zde naleznete informace o našem uvítacím bonusu pro nové hráče a další pravidelné promo akce v Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Denní vracení hotovosti až do 20 % – Pokud prohrajete, dáme vám možnost vrácení hotovosti s protočením x5."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Detailní informace o nás, našem softwaru a našich nabídkách pro kleienty ✓ Rychlý výběr ✓ Plně licencované"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Časté dotazy – Zde naleznete odpovědi na vaše nejčastější otázky ohledně Ninecasion"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "Tato stránka vám pomůže zůstat informovanými o podmínkách a ujednáních Ninecasino při interakci s našimi webovými stránkami"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Detailní informace o bonusech: Jak získat a vybírat bonusy v Ninecasino"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Zda si můžete přečíst o nástrojích pro odpovědné hraní, které u nás máte k dispozici pro kontrolu vašeho hraní"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Informace o rizicích, která přijímáte účastí ve hrách v Ninecasino"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Zásady ochrany osobních údajů v Ninecasino: Vše, co potřebujete znát o bezpečnosti vašich finančních informací a osobního účtu"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Detailní informace o tom, jak můžete hrát s Bitcoiny v Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Detailní informace o tom, jak implementujeme zákony proti falšování a praní špinavých peněz"
+    }
   }
 }

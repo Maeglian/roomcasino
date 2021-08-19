@@ -52,11 +52,10 @@ export default {
   },
   head() {
     return {
-      title: 'FAQ',
+      title: this.$t('metaTags.faq.title'),
       meta: [
         {
-          description:
-            'Frequently Asked Questions - Here You Can Find Answers To The Most Popular Questions About Ninecasino',
+          description: this.$t('metaTags.faq.description'),
         },
       ],
     };

@@ -1458,5 +1458,51 @@
         "title": "Es müssen mindestens 13 Ausspielungen gespielt werden, um an dieser Aktion teilnehmen zu können. Die Punkte werden Runde für Runde berechnet, dabei entspricht jeder umgesetzte Euro 100 Punkten."
       }
     ]
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Hier finden Sie Informationen zu unserem Begrüßungsbonus für neue Mitspielerinnen und Mitspieler sowie weitere regelmäßige Aktionen im Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Tägliche Rükzahlung von bis zu 20 % – Bei Verlusten geähren wir Ihnen eine Rückzahlung mit einer Umsatzanforderung von x5."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Ausführliche Informationen zu uns, unsere Software und zu dem, was wir unseren Kunden bieten ✓ Schnelle Abhebung ✓ Alle Zulassungen"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Häufig gestellte Fragen – Hier sind die Antworten auf die beliebtesten Fragen zu Ninecasino"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "Hier erhalten Sie aktuelle Informationen zu den Geschäftsbedingungen von Ninecasino für den Besuch unserer Webseite"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Ausführliche Informationen zu unseren Boni: Erhalten und Abheben von Boni im Ninecasino"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Hier erfahren Sie mehr über die verfügbaren Hilfen für verantwortungsbewusstes Glücksspiel, damit Sie Ihr Spielverhalten im Griff haben"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Informationen zu den Gefahren, denen Sie sich aussetzen, wenn Sie an Glücksspielen im Ninecasino teilnehmen"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Datenschutz im Ninecasino: Alles, was Sie in Bezug auf die Sicherheit Ihrer finanziellen und personenbezogenen Angaben wissen sollten"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Ausführliche Informationen über die Verwendung von Bitcoins im Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Ausführliche Informationen zu unserem Umgang mit Betrugsversuchen und Geldwäsche"
+    }
   }
 }

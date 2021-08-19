@@ -1452,5 +1452,51 @@
         "title": "The minimum number of spins required to qualify in this promotion is 13 spins. Points are calculated round-by-round, with each 1 EUR wagered equaling 100 points."
       }
     ]
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Vous pouvez découvrir ici notre bonus de bienvenue pour les nouveaux joueurs et d’autres promotions régulières de Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Remise en espèces quotidienne jusqu’à 20 % – Si vous perdez, nous vous offrons une remise en espèces avec une mise de x5."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Informations détaillées sur nous, nos logiciels et ce que nous offrons à nos clients ✓ Retrait rapide ✓ Entièrement autorisé"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Foire aux questions – Vous trouverez ici les réponses aux questions les plus courantes à propos de Ninecasino"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "Cette page vous aidera à rester informé des conditions générales de Ninecasino lorsque vous utilisez notre site"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Informations détaillées sur les bonus: Comment recevoir et retirer des bonus sur Ninecasino?"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Vous trouverez ici des informations sur les outils de jeu responsable à votre disposition pour mieux gérer votre expérience de jeu"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Informations sur les risques que vous encourez en participant à des jeux sur Ninecasino"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Politique de confidentialité de Ninecasino: Tout ce que vous devez savoir sur la sécurité de vos informations financières et de votre compte personnel"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Informations détaillées sur la façon dont vous pouvez jouer en utilisant Bitcoin à Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Informations détaillées sur la manière dont nous traitons la fraude et la lutte contre le blanchiment d’argent"
+    }
   }
 }

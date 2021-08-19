@@ -107,10 +107,10 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'How To Play On Ninecasino With Bitcoins',
+      title: this.$t('metaTags.bitcoins.title'),
       meta: [
         {
-          description: 'Detailed Information How You Can Play With Bitcoin at Ninecasino',
+          description: this.$t('metaTags.bitcoins.description'),
         },
       ],
     };

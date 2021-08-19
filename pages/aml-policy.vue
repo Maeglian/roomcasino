@@ -72,11 +72,10 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Incorporating Fraud and Anti Money Laundering Policy',
+      title: this.$t('metaTags.aml-policy.title'),
       meta: [
         {
-          description:
-            'Detailed Information About How We Handle Incorporating Fraud and Anti Money Laundering',
+          description: this.$t('metaTags.aml-policy.description'),
         },
       ],
     };

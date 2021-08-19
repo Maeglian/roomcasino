@@ -61,11 +61,10 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Daily Cashback Up To 20%',
+      title: this.$t('metaTags.daily-cashback.title'),
       meta: [
         {
-          description:
-            'Daily Cashback Up To 20% - If You Lose We Give You Cashback with x5 wagering.',
+          description: this.$t('metaTags.daily-cashback.description'),
         },
       ],
     };
