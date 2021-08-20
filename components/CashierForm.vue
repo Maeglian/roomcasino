@@ -114,9 +114,6 @@ export default {
           userId: this.billingSession.userId,
           sessionId: this.billingSession.sessionId,
           environment,
-          attributes: {
-            affiliateId: this.user.affiliateId,
-          },
           fetchConfig: true,
           method,
           locale: `${locale}_${this.user.country}`,
@@ -153,6 +150,11 @@ export default {
               console.log('New payment method page was opened', data),
             navigate: data => console.log('Path navigation triggered', data),
             cancelledPendingWD: () => this.getTransactionHistoryList(),
+          });
+          api.set({
+            attributes: {
+              affiliateId: this.user.affiliateId,
+            },
           });
         },
       );
