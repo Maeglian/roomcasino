@@ -344,4 +344,11 @@ export const TOURNAMENTS = {
     class: 'LuckyPlayson',
     slug: 'thirteen',
   },
+  'spirit-of-egypt': {
+    url: 'spirit-of-egypt',
+    name: 'Spirit of Egypt 60k',
+    translates: 'spiritOfEgypt',
+    class: 'SpiritOfEgypt',
+    slug: 'spirit',
+  },
 };

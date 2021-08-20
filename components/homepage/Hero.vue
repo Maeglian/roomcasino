@@ -217,6 +217,13 @@ export default {
           linkText: this.$t('buttons.more'),
         },
         {
+          bg: 'spirit',
+          title: this.$t('spiritOfEgypt.title'),
+          text: `<span class="Colored">${this.$t('spiritOfEgypt.prize')}</span>`,
+          url: '/tournaments/spirit-of-egypt',
+          linkText: this.$t('buttons.more'),
+        },
+        {
           bg: 'tesla',
           title: this.$t('tesla_lottery.title'),
           text: `<span class="Colored">${this.$t('tesla_lottery.prize')}</span>`,

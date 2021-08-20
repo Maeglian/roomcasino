@@ -465,6 +465,11 @@
       "name": "Lucky 13",
       "text": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/><br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!"
     },
+    "spiritOfEgypt": {
+      "upTo": "Das Preisgeld 60,000 €.",
+      "name": "Spirit of Egypt 60k",
+      "text": "Folgen Sie dem Spirit of Egypt zu 60.000 Euro!<br/><br/>Neue Abenteuer deuten sich an, und Playson erwartet Sie ab 00:01 Uhr UTC am 20. August 2021 bis 23:59 Uhr UTC am 29. August 2021 zu dem Spirit of Egypt-Turnier um 60.000 Euro.<br/><br/>Das Gesamtpreisgeld beträgt umwerfende 60.000 Euro, und auf dem Gipfel der Pyramiden warten 10.000 davon! Machen Sie Ihr Glück bei Spirit of Egypt um 60.000 Euro!"
+    },
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
       "upTo": "600 Freispiele",
@@ -1456,6 +1461,33 @@
       },
       {
         "title": "Es müssen mindestens 13 Ausspielungen gespielt werden, um an dieser Aktion teilnehmen zu können. Die Punkte werden Runde für Runde berechnet, dabei entspricht jeder umgesetzte Euro 100 Punkten."
+      }
+    ]
+  },
+  "spiritOfEgypt": {
+    "title": "Spirit of Egypt 60k",
+    "prize": "€60,000",
+    "text": "Na obzoru se rýsují nová dobrodružství a Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC.<br/><br/>Celkový prize pool má závratnou hodnotu 60 000 eur, a pokud se vám podaří dostat se na vrchol pyramidy, pak můžete očekávat nejvyšší cenu ve výši 10 000 eur! Zkuste své štěstí se Spirit of Egypt 60k!",
+    "textMobile": "Na obzoru se rýsují nová dobrodružství a Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC.<br/><br/>Celkový prize pool má závratnou hodnotu 60 000 eur, a pokud se vám podaří dostat se na vrchol pyramidy, pak můžete očekávat nejvyšší cenu ve výši 10 000 eur! Zkuste své štěstí se Spirit of Egypt 60k!",
+    "metaInfo": {
+      "title": "➤ Spirit of Egypt 60k-Turnier mit massivem Preisgeld von 60.000 € – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
+      "description": "✭ Versuch dein Glück beim neuen Spirit of Egypt 60k von Playson ➔ Jeder gewonnene Einsatz bringt dir Punkte!"
+    },
+    "terms": [
+      {
+        "title": "Playson erwartet Sie ab 00:01 Uhr UTC am 20. August 2021 bis 23:59 Uhr UTC am 29. August 2021 zu dem Spirit of Egypt-Turnier um 60.000 Euro."
+      },
+      {
+        "title": "Das Gesamtpreisgeld beträgt 60.000 Euro."
+      },
+      {
+        "title": "Diese 20 Spiele sind beteiligt: <br/>● 5 Fortunator <br/>● 9 Happy Pharaohs <br/>● Bo ok of Gold 2: Double HitTM <br/>● Book of Gold: Multichance <br/>● Buffalo Power MegawaysTM <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Divine Dragon: Hold and Win <br/>● Eagle Power: Hold and Win <br/>● Hot Burning Wins <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra <br/>● Legend of Cleopatra MegawaysTM <br/>● Rich Diamonds: Hold and Win <br/>● Rise of Egypt Deluxe <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Spirit of Egypt: Hold and Win <br/>● Wolf Power: Hold and Win."
+      },
+      {
+        "title": "Für die Teilnahme ist kein Mindesteinsatz erforderlich."
+      },
+      {
+        "title": "Die Punkte werden Runde für Runde berechnet, dabei entspricht jeder umgesetzte Euro umgerechnet 100 Punkten."
       }
     ]
   }
