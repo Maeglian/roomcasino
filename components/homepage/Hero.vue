@@ -209,13 +209,13 @@ export default {
           url: '/lottery/tesla_lottery',
           linkText: this.$t('buttons.more'),
         },
-        // {
-        //   // bg: 'sumdes',
-        //   title: this.$t('summerDesserts.title'),
-        //   text: `<span class="Colored">${this.$t('summerDesserts.prize')}</span>`,
-        //   url: '/tournaments/summer-desserts',
-        //   linkText: this.$t('buttons.more'),
-        // },
+        {
+          bg: 'sumdes',
+          title: this.$t('sumdes.title'),
+          text: `<span class="Colored">${this.$t('sumdes.prize')}</span>`,
+          url: '/tournaments/summer-desserts',
+          linkText: this.$t('buttons.more'),
+        },
       ];
       if (!this.isLoggedIn) {
         slides.splice(1, 1);

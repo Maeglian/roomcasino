@@ -340,7 +340,7 @@ export const TOURNAMENTS = {
   'summer-desserts': {
     url: 'summer-desserts',
     name: 'Summer Desserts',
-    translates: 'summerDesserts',
+    translates: 'sumdes',
     class: 'SummerDesserts',
     slug: 'sumdes',
   },
