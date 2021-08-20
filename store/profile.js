@@ -418,4 +418,15 @@ export const actions = {
       this.$sentry.captureException(new Error(e));
     }
   },
+
+  async addPromoCode({ commit }, payload) {
+    try {
+      const res = await http.post(`${API_HOST}/bonus/code`, payload);
+      if (res.code !== 0) throw Error(res.message);
+    } catch (e) {
+      commit('pushNotificationAlert', { type: 'error', text: e }, { root: true });
+      this.$sentry.captureException(new Error(e));
+      throw Error();
+    }
+  },
 };
