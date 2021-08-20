@@ -285,6 +285,7 @@ export default {
         });
         this.code = '';
         this.getBonusList();
+        this.getFreeSpinList();
       });
     },
   },
