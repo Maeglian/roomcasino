@@ -1,5 +1,5 @@
 <template>
-  <ul class="BreadcrumbList">
+  <ul class="Wrapper BreadcrumbList">
     <li class="BreadcrumbList-Item">
       <NuxtLink class="Link BreadcrumbList-ItemLink" to="/">
         <span property="name">Lobby</span>
@@ -31,16 +31,24 @@ export default {
         ? fullPath.substring(1).split('/')
         : fullPath.split('/');
       const crumbs = [];
-
       let path = '';
-
-      params.forEach((param /* , index */) => {
+      params.forEach((param, index) => {
         path = `${path}/${param}`;
         const match = this.$router.match(path);
-
-        if (match.name !== null) {
+        if (
+          match.name !== null &&
+          param !== this.$i18n.locale &&
+          param !== 'tournaments' &&
+          param !== 'lottery' &&
+          param !== 'history' &&
+          param !== 'games' &&
+          param !== 'providers' &&
+          param !== 'game' &&
+          param !== 'profile' &&
+          param !== 'user'
+        ) {
           crumbs.push({
-            title: param.replace(/-/g, ' '),
+            title: param.replace(/[-_]/gi, ' '),
             ...match,
           });
         }
@@ -55,7 +63,8 @@ export default {
 .BreadcrumbList {
   display: flex;
   align-items: center;
-  margin: 60px 0 40px;
+  margin-top: 40px;
+  margin-bottom: 80px;
   padding: 7px 16px;
   font-size: 12px;
   color: var(--color-text-main);
@@ -80,6 +89,7 @@ export default {
 
     &:last-child {
       margin-right: 0;
+      color: var(--color-text-faded);
 
       &:after {
         display: none;
