@@ -77,6 +77,7 @@ export default {
       'getAvailableBonusList',
       'getBonusHistoryList',
       'getTransactionHistoryList',
+      'getFreeSpinList',
     ]),
     async beforeInitializeCashier(event) {
       if (event.params && event.params.gameParams)
@@ -138,6 +139,7 @@ export default {
                 this.getBonusList();
                 this.getAvailableBonusList();
               }
+              this.getFreeSpinList();
             },
             failure: data => console.log('Transaction failed', data),
             isLoading: data => console.log('Data is loading', data),
