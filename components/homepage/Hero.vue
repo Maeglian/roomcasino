@@ -210,13 +210,6 @@ export default {
           linkText: this.$t('buttons.more'),
         },
         {
-          bg: 'lucky',
-          title: this.$t('luckyPlayson.title'),
-          text: `<span class="Colored">${this.$t('luckyPlayson.prize')}</span>`,
-          url: '/tournaments/lucky-playson',
-          linkText: this.$t('buttons.more'),
-        },
-        {
           bg: 'spirit',
           title: this.$t('spiritOfEgypt.title'),
           text: `<span class="Colored">${this.$t('spiritOfEgypt.prize')}</span>`,
@@ -228,6 +221,13 @@ export default {
           title: this.$t('tesla_lottery.title'),
           text: `<span class="Colored">${this.$t('tesla_lottery.prize')}</span>`,
           url: '/lottery/tesla_lottery',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'sumdes',
+          title: this.$t('sumdes.title'),
+          text: `<span class="Colored">${this.$t('sumdes.prize')}</span>`,
+          url: '/tournaments/summer-desserts',
           linkText: this.$t('buttons.more'),
         },
       ];

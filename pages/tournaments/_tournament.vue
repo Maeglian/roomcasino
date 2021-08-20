@@ -211,6 +211,12 @@ export default {
         meta: [{ description: this.$t('spiritOfEgypt.metaInfo.description') }],
       };
     }
+    if (this.$route.params.tournament === 'summer-desserts') {
+      return {
+        title: this.$t('sumdes.metaInfo.title'),
+        meta: [{ description: this.$t('sumdes.metaInfo.description') }],
+      };
+    }
     return {
       title: 'Daily Tournament At Ninecasino And Other Similar Events',
       meta: [
@@ -407,13 +413,13 @@ export default {
   }
 }
 
-.LuckyPlayson {
+.RapidSpins {
   &-Header {
     width: 100%;
     margin-top: -70px;
     margin-bottom: 22px;
     padding-top: 270px / 320px * 100%;
-    background-image: url(~@/assets/img/lucky_460.png);
+    background-image: url(~@/assets/img/rapid_460.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: calc(100% - 32px) auto;
@@ -421,21 +427,26 @@ export default {
     @media (min-width: $screen-s) {
       margin-top: 0;
       padding-top: 80px / 1248px * 100%;
-      background-image: url(~@/assets/img/lucky_900.png);
-    }
-
-    @media (min-width: $screen-m) {
-      padding-top: 50px / 1248px * 100%;
+      background-image: url(~@/assets/img/rapid-page_900.png);
       background-position: center center;
     }
 
+    @media (min-width: $screen-m) {
+      padding-top: 120px / 1248px * 100%;
+    }
+
+    @media (min-width: $screen-l) {
+      padding-top: 140px / 1248px * 100%;
+    }
+
     @media (min-width: $screen-xl) {
-      padding-top: 100px;
-      background-image: url(~@/assets/img/lucky_1248.png);
+      padding-top: 180px;
+      background-image: url(~@/assets/img/rapid-page_1248.png);
+      background-position: center top;
     }
 
     @media (min-width: $screen-xxl) {
-      background-image: url(~@/assets/img/lucky_1920.png);
+      background-image: url(~@/assets/img/rapid_1920.png);
     }
 
     .DailyTournamentPage-MainText {
@@ -449,6 +460,7 @@ export default {
     }
   }
 }
+
 .SpiritOfEgypt {
   &-Header {
     width: 100%;
@@ -485,20 +497,20 @@ export default {
         max-width: 50%;
       }
 
-      @media (min-width: $screen-m) {
+      @media (min-width: $screen-xl) {
         max-width: 35%;
       }
     }
   }
 }
 
-.RapidSpins {
+.SummerDesserts {
   &-Header {
     width: 100%;
     margin-top: -70px;
     margin-bottom: 22px;
     padding-top: 270px / 320px * 100%;
-    background-image: url(~@/assets/img/rapid_460.png);
+    background-image: url(~@/assets/img/sumdes_460.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: calc(100% - 32px) auto;
@@ -506,7 +518,7 @@ export default {
     @media (min-width: $screen-s) {
       margin-top: 0;
       padding-top: 80px / 1248px * 100%;
-      background-image: url(~@/assets/img/rapid-page_900.png);
+      background-image: url(~@/assets/img/sumdes-page_900.png);
       background-position: center center;
     }
 
@@ -520,12 +532,12 @@ export default {
 
     @media (min-width: $screen-xl) {
       padding-top: 180px;
-      background-image: url(~@/assets/img/rapid-page_1248.png);
+      background-image: url(~@/assets/img/sumdes-page_1248.png);
       background-position: center top;
     }
 
     @media (min-width: $screen-xxl) {
-      background-image: url(~@/assets/img/rapid_1920.png);
+      background-image: url(~@/assets/img/sumdes_1920.png);
     }
 
     .DailyTournamentPage-MainText {

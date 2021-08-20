@@ -337,12 +337,12 @@ export const TOURNAMENTS = {
     class: 'RapidSpins',
     slug: 'rapid',
   },
-  'lucky-playson': {
-    url: 'lucky-playson',
-    name: 'Lucky 13',
-    translates: 'luckyPlayson',
-    class: 'LuckyPlayson',
-    slug: 'thirteen',
+  'summer-desserts': {
+    url: 'summer-desserts',
+    name: 'Summer Desserts',
+    translates: 'sumdes',
+    class: 'SummerDesserts',
+    slug: 'sumdes',
   },
   'spirit-of-egypt': {
     url: 'spirit-of-egypt',
