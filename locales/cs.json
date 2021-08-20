@@ -455,6 +455,11 @@
       "name": "Pokuste se vyslídit 100k se Summer Desserts",
       "text": "Léto je v plném proudu, takže co může být lepšího než turnajová série od Booongo! Tak na nic nečekejte a uhánějte za zábavou v síťové turnajové sérii Summer Desserts na NineCasino! <br>Síťová turnajová série Summer Desserts proběhne od 19. srpna 2021 (0:00 UTC) do 28. srpna 2021 (23:00 UTC).<br><br>Tak na co čekáte? Nepromeškejte příležitost získat podíl na obrovském prize poolu od Booongo! Hrajte, bavte se a vyhrávejte!"
     },
+    "spiritOfEgypt": {
+      "upTo": "The prize pool is €60,000.",
+      "name": "Spirit of Egypt 60k",
+      "text": "Nekonečné ceny se Spirit of Egypt 60k!<br/><br/>Na obzoru se rýsují nová dobrodružství a Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC.<br/><br/>Celkový prize pool má závratnou hodnotu 60 000 eur, a pokud se vám podaří dostat se na vrchol pyramidy, pak můžete očekávat nejvyšší cenu ve výši 10 000 eur! Zkuste své štěstí se Spirit of Egypt 60k!"
+    },
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
       "upTo": "600 spinů zdarma",
@@ -1457,5 +1462,32 @@
       "title": "➤ Summer Desserts  Turnaj s bohatým prize poolem 100 000 € – Hrajte své oblíbené hry a vyhrávejte skvělé ceny!",
       "description": "✭ Zkuste štěstí v novém Summer Desserts  od Booongo ➔ Splňte misi – Vyhrajte ceny!"
     }
+  },
+  "spiritOfEgypt": {
+    "title": "Spirit of Egypt 60k",
+    "prize": "€60,000",
+    "text": "Na obzoru se rýsují nová dobrodružství a Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC.<br/><br/>Celkový prize pool má závratnou hodnotu 60 000 eur, a pokud se vám podaří dostat se na vrchol pyramidy, pak můžete očekávat nejvyšší cenu ve výši 10 000 eur! Zkuste své štěstí se Spirit of Egypt 60k!",
+    "textMobile": "Na obzoru se rýsují nová dobrodružství a Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC.<br/><br/>Celkový prize pool má závratnou hodnotu 60 000 eur, a pokud se vám podaří dostat se na vrchol pyramidy, pak můžete očekávat nejvyšší cenu ve výši 10 000 eur! Zkuste své štěstí se Spirit of Egypt 60k!",
+    "metaInfo": {
+      "title": "➤ Spirit of Egypt 60k Turnaj s bohatým prize poolem 60 000 € – Hrajte své oblíbené hry a vyhrávejte skvělé ceny!",
+      "description": "✭ Zkuste štěstí v novém Spirit of Egypt 60k od Playson ➔ Každá vítězná sázka vám přinese body!"
+    },
+    "terms": [
+      {
+        "title": "Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC."
+      },
+      {
+        "title": "Celkový prize pool má 60 000 eur."
+      },
+      {
+        "title": "Do turnaje je zahrnuto celkem 20 her: <br/>● 5 Fortunator <br/>● 9 Happy Pharaohs <br/>● Book of Gold 2: Double HitTM <br/>● Book of Gold: Multichance <br/>● Buffalo Power MegawaysTM <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Divine Dragon: Hold and Win <br/>● Eagle Power: Hold and Win <br/>● Hot Burning Wins <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra <br/>● Legend of Cleopatra MegawaysTM <br/>● Rich Diamonds: Hold and Win <br/>● Rise of Egypt Deluxe <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Spirit of Egypt: Hold and Win <br/>● Wolf Power: Hold and Win."
+      },
+      {
+        "title": "Pro účast není požadována žádná minimální sázka."
+      },
+      {
+        "title": "Body jsou počítány po jednotlivých kolech, kdy každé vsazené 1 euro (nebo ekvivalentní hodnota v jiné měně) odpovídá 100 bodům."
+      }
+    ]
   }
 }

@@ -344,4 +344,11 @@ export const TOURNAMENTS = {
     class: 'SummerDesserts',
     slug: 'sumdes',
   },
+  'spirit-of-egypt': {
+    url: 'spirit-of-egypt',
+    name: 'Spirit of Egypt 60k',
+    translates: 'spiritOfEgypt',
+    class: 'SpiritOfEgypt',
+    slug: 'spirit',
+  },
 };

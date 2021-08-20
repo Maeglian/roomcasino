@@ -460,6 +460,11 @@
       "name": "Chassez les 100k des Summer Desserts",
       "text": "L’été bat son plein, alors quoi de mieux qu’une série de tournois de Booongo? Dépêchez-vous de profiter de la série de tournois en réseau Summer Desserts sur NineCasino! <br>La série de tournois en réseau Summer Desserts se déroule du 19 août 2021 (0 h 00 UTC) au 28 août 2021 (23 h 00 UTC).<br><br>Il n’y a plus rien qui vous empêche! Ne manquez pas de partager l’énorme cagnotte de Booongo! Jouez, amusez-vous et gagnez!"
     },
+    "spiritOfEgypt": {
+      "upTo": "The prize pool is €60,000.",
+      "name": "Spirit of Egypt 60k",
+      "text": "Laissez le Spirit of Egypt vous guider vers 60k!<br/><br/>De nouvelles aventures se profilent à l’horizon et Playson vous attend avec le tournoi Spirit of Egypt 60k, qui se déroulera du 20 août 2021 à 0 h 01 UTC au 29 août 2021 à 23 h 59 UTC.<br/><br/>La cagnotte totale s’élève à 60 000 €. Si vous atteignez le sommet de la pyramide, le premier prix est de 10 000 €! Tentez votre chance au Spirit of Egypt 60k!"
+    },
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
       "upTo": "600 tours gratuits",
@@ -1462,5 +1467,32 @@
       "title": "➤ Le tournoi Summer Desserts  avec une cagnotte impressionnante de 100 000 € – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
       "description": "✭ Tentez votre chance dans le nouveau Summer Desserts  de Booongo ➔ Accomplissez des missions et gagnez des prix!"
     }
+  },
+  "spiritOfEgypt": {
+    "title": "Spirit of Egypt 60k",
+    "prize": "€60,000",
+    "text": "De nouvelles aventures se profilent à l’horizon et Playson vous attend avec le tournoi Spirit of Egypt 60k, qui se déroulera du 20 août 2021 à 0 h 01 UTC au 29 août 2021 à 23 h 59 UTC.<br/><br/>La cagnotte totale s’élève à 60 000 €. Si vous atteignez le sommet de la pyramide, le premier prix est de 10 000 €! Tentez votre chance au Spirit of Egypt 60k!",
+    "textMobile": "De nouvelles aventures se profilent à l’horizon et Playson vous attend avec le tournoi Spirit of Egypt 60k, qui se déroulera du 20 août 2021 à 0 h 01 UTC au 29 août 2021 à 23 h 59 UTC.<br/><br/>La cagnotte totale s’élève à 60 000 €. Si vous atteignez le sommet de la pyramide, le premier prix est de 10 000 €! Tentez votre chance au Spirit of Egypt 60k!",
+    "metaInfo": {
+      "title": "➤ Le tournoi Spirit of Egypt 60k avec une cagnotte impressionnante de 60 000 € – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
+      "description": "✭ Tentez votre chance dans le nouveau Spirit of Egypt 60k de Playson ➔ Chaque mise gagnée vous rapporte des points!"
+    },
+    "terms": [
+      {
+        "title": "Playson vous attend avec le tournoi Spirit of Egypt 60k, qui se déroulera du 20 août 2021 à 0 h 01 UTC au 29 août 2021 à 23 h 59 UTC."
+      },
+      {
+        "title": "La cagnotte totale à 60 000 €."
+      },
+      {
+        "title": "Les 20 jeux participants: <br/>● 5 Fortunator <br/>● 9 Happy Pharaohs <br/>● Book of Gold 2: Double HitTM <br/>● Book of Gold: Multichance <br/>● Buffalo Power MegawaysTM <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Divine Dragon: Hold and Win <br/>● Eagle Power: Hold and Win <br/>● Hot Burning Wins <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra <br/>● Legend of Cleopatra MegawaysTM <br/>● Rich Diamonds: Hold and Win <br/>● Rise of Egypt Deluxe <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Spirit of Egypt: Hold and Win <br/>● Wolf Power: Hold and Win."
+      },
+      {
+        "title": "Aucune mise minimale n’est requise pour se qualifier. "
+      },
+      {
+        "title": "Les points sont calculés tour par tour, chaque 1 EUR (ou équivalent monétaire) gagné valant 100 points."
+      }
+    ]
   }
 }

@@ -463,6 +463,11 @@
       "name": "Hunt down 100k with Summer Desserts",
       "text": "The summer is in full swing, so what’s better than a Tournament Series from Booongo! Hurry up to enjoy the Summer Desserts Network Tournament Series at NineCasino! <br/>Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC).<br/><br/>nWhat are you waiting for? Don’t miss out on sharing the huge prize pool from Booongo! Play, enjoy, and win!"
     },
+    "spiritOfEgypt": {
+      "upTo": "The prize pool is €60,000.",
+      "name": "Spirit of Egypt 60k",
+      "text": "Let the Spirit of Egypt guide you to 60k<br/><br/>New adventures are on the horizon and Playson is waiting with the Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021.<br/><br/>The total Prize pool is a whopping €60,000, and if you reach the peak of the pyramid the top prize is €10,000! Search for tombs, mummies and prizes with the Spirit of Egypt 60k!"
+    },
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
       "upTo": "600 Free Spins",
@@ -1465,5 +1470,32 @@
       "title": "➤ Summer Desserts  Tournament With Solid Prize Pool €100,000 - Play Your Favorite Games And Win Great Prizes!",
       "description": "✭ Try Your Luck In New Summer Desserts  by Booongo ➔ Complete Missions - Win Prizes!"
     }
+  },
+  "spiritOfEgypt": {
+    "title": "Spirit of Egypt 60k",
+    "prize": "€60,000",
+    "text": "New adventures are on the horizon and Playson is waiting with the Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021.<br/><br/>The total Prize pool is a whopping €60,000, and if you reach the peak of the pyramid the top prize is €10,000! Make your own luck with the Spirit of Egypt 60k!",
+    "textMobile": "New adventures are on the horizon and Playson is waiting with the Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021.<br/><br/>The total Prize pool is a whopping €60,000, and if you reach the peak of the pyramid the top prize is €10,000! Make your own luck with the Spirit of Egypt 60k!",
+    "metaInfo": {
+        "title": "➤ Spirit of Egypt 60k Tournament With Solid Prize Pool €60,000 - Play Your Favorite Games And Win Great Prizes!",
+        "description": "✭ Try Your Luck In New Spirit of Egypt 60k by Playson ➔ Each Won Bet Brings You Points!"
+    },
+    "terms": [
+      {
+        "title": "The Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021."
+      },
+      {
+        "title": "The total Prize pool is €60,000."
+      },
+      {
+        "title": "The 20 participating games: <br/>● 5 Fortunator <br/>● 9 Happy Pharaohs <br/>● Book of Gold 2: Double HitTM <br/>● Book of Gold: Multichance <br/>● Buffalo Power MegawaysTM <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Divine Dragon: Hold and Win <br/>● Eagle Power: Hold and Win <br/>● Hot Burning Wins <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra <br/>● Legend of Cleopatra MegawaysTM <br/>● Rich Diamonds: Hold and Win <br/>● Rise of Egypt Deluxe <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Spirit of Egypt: Hold and Win <br/>● Wolf Power: Hold and Win."
+      },
+      {
+        "title": "No minimum bet is required to qualify."
+      },
+      {
+        "title": "Points are calculated round-by-round, with each 1 EUR (or currency equivalent) wagered equaling 100 points."
+      }
+    ]
   }
 }

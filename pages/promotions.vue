@@ -255,6 +255,15 @@ export default {
           url: '/tournaments/summer-desserts',
         },
         {
+          title: this.$t('spiritOfEgypt.title'),
+          prize: this.$t('spiritOfEgypt.prize'),
+          image: 'spirit-promotions.png',
+          announce: this.$t('promotions.spiritOfEgypt.name'),
+          text: this.$t('promotions.spiritOfEgypt.text'),
+          link: 'More',
+          url: '/tournaments/spirit-of-egypt',
+        },
+        {
           title: this.$t('tesla_lottery.title'),
           prize: this.$t('tesla_lottery.prize'),
           image: 'tesla-promotion.png',

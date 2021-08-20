@@ -205,6 +205,12 @@ export default {
     };
   },
   head() {
+    if (this.$route.params.tournament === 'spirit-of-egypt') {
+      return {
+        title: this.$t('spiritOfEgypt.metaInfo.title'),
+        meta: [{ description: this.$t('spiritOfEgypt.metaInfo.description') }],
+      };
+    }
     if (this.$route.params.tournament === 'summer-desserts') {
       return {
         title: this.$t('sumdes.metaInfo.title'),
@@ -213,8 +219,12 @@ export default {
     }
     return {
       title: 'Daily Tournament At Ninecasino And Other Similar Events',
-      description:
-        'On this page, you will find detailed information about the tournaments held by the gaming website. List of winners and terms and conditions of the events',
+      meta: [
+        {
+          description:
+            'On this page, you will find detailed information about the tournaments held by the gaming website. List of winners and terms and conditions of the events',
+        },
+      ],
     };
   },
   computed: {
@@ -437,6 +447,49 @@ export default {
 
     @media (min-width: $screen-xxl) {
       background-image: url(~@/assets/img/rapid_1920.png);
+    }
+
+    .DailyTournamentPage-MainText {
+      @media (min-width: $screen-s) {
+        max-width: 50%;
+      }
+
+      @media (min-width: $screen-m) {
+        max-width: 35%;
+      }
+    }
+  }
+}
+
+.SpiritOfEgypt {
+  &-Header {
+    width: 100%;
+    margin-top: -70px;
+    margin-bottom: 22px;
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/spirit_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(100% - 32px) auto;
+
+    @media (min-width: $screen-s) {
+      margin-top: 0;
+      padding-top: 80px / 1248px * 100%;
+      background-image: url(~@/assets/img/spirit_900.png);
+    }
+
+    @media (min-width: $screen-m) {
+      padding-top: 50px / 1248px * 100%;
+      background-position: center center;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 100px;
+      background-image: url(~@/assets/img/spirit_1248.png);
+    }
+
+    @media (min-width: $screen-xxl) {
+      background-image: url(~@/assets/img/spirit_1920.png);
     }
 
     .DailyTournamentPage-MainText {
