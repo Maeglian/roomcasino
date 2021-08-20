@@ -284,6 +284,7 @@ export default {
           text: 'Your promo code was successfully added',
         });
         this.code = '';
+        this.getBonusList();
       });
     },
   },
