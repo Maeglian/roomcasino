@@ -427,7 +427,7 @@ export const mutations = {
 };
 
 export const actions = {
-  async nuxtServerInit({ commit, dispatch }, { req }) {
+  async nuxtServerInit({ commit }, { req }) {
     if (process.env.NUXT_ENV_MODE !== 'sandbox' && process.env.NUXT_ENV_MODE !== 'stage') {
       let token = null;
       let cookiesPopup;
@@ -448,18 +448,18 @@ export const actions = {
         commit('setNeedsCookiesPopup', !cookiesPopup);
       }
     }
-    await dispatch('games/getDefaultGames').then(() => commit('setInitialLoading', 'defaultGames'));
-    await dispatch('games/getGameProducerList').then(() =>
-      commit('setInitialLoading', 'producers'),
-    );
-    await dispatch('games/getTopGames');
-    await dispatch('games/getNewGames');
-    await dispatch('games/getLiveGames');
-    await dispatch('games/getJackpotGames');
-    await dispatch('games/getBuybonusGames');
-    await dispatch('games/getMegawaysGames');
-    await dispatch('games/getLuckychoiceGames');
-    await dispatch('games/getDropsWinsSlotsGames');
+    // await dispatch('games/getDefaultGames').then(() => commit('setInitialLoading', 'defaultGames'));
+    // await dispatch('games/getGameProducerList').then(() =>
+    //   commit('setInitialLoading', 'producers'),
+    // );
+    // await dispatch('games/getTopGames');
+    // await dispatch('games/getNewGames');
+    // await dispatch('games/getLiveGames');
+    // await dispatch('games/getJackpotGames');
+    // await dispatch('games/getBuybonusGames');
+    // await dispatch('games/getMegawaysGames');
+    // await dispatch('games/getLuckychoiceGames');
+    // await dispatch('games/getDropsWinsSlotsGames');
   },
 
   async registerUser({ commit, dispatch }, payload) {
