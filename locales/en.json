@@ -463,12 +463,6 @@
       "name": "Saddle up for the Weekly Derby",
       "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
     },
-    "rapidSpins": {
-      "title": "RAPID SPINS <br/>Network <br/>Tournament",
-      "upTo": "€10,000",
-      "name": "RAPID SPINS Network Tournament",
-      "text": "Navigate and bounce your way down the raging RAPID SPINS Network Tournament by EvoPlay. Race down the river for prizes and land in the final Prize Pool of €10,000!"
-    },
     "sumdes": {
       "title": "Summer Desserts<br/> Tournament",
       "upTo": "€100,000",
@@ -1424,29 +1418,6 @@
       },
       {
         "text": "The winner of the lottery will be announced on the 24th of September."
-      }
-    ]
-  },
-  "rapidSpins": {
-    "title": "RAPID SPINS Network Tournament",
-    "prize": "€10,000",
-    "text": "Navigate and bounce your way down the raging RAPID SPINS Network Tournament by EvoPlay. Race down the river for prizes and land in the final Prize Pool of €10,000! For 10 days starting from the 12th of August you will have a chance to jump on board and take part in this electrifying event!",
-    "textMobile": "Navigate and bounce your way down the raging RAPID SPINS Network Tournament by EvoPlay. Race down the river for prizes and land in the final Prize Pool of €10,000!",
-    "terms": [
-      {
-        "title": "The tournament runs between August 12nd, 2021 0:01 UTC, and August 22nd, 2021 until 23:59 UTC<br/><br/>"
-      },
-      {
-        "title": "There are 10 participating games:<br/><br/>Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
-      },
-      {
-        "title": "The minimum bet is €0.5 or the equivalent in other currencies<br/><br/>"
-      },
-      {
-        "title": "The Prize Pool of €10,000 will be distributed among the top 100 winners on the leaderboard according to these tournament positions:<br/>1st place – €1,670<br/>2nd place – €1,270<br/>3rd place – €1,000<br/>4th place – €667<br/>5th place – €600<br/>6th place – €533<br/>7th place – €400<br/>8th place – €293<br/>9th place – €220<br/>10th-19th place – €133<br/>20th-49th place – €33<br/>50th-100th place – €20"
-      },
-      {
-        "title": "One spin equals one point. The more points, the higher the player’s position on the leaderboard."
       }
     ]
   },
