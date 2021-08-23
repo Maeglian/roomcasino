@@ -454,12 +454,6 @@
       "name": "Vyrazte na Weekly Derby",
       "text": "Je čas na Weekly Derby a naše ceny vás donutí trochu trošku supět, abyste první dorazili na místo!<br/><br/>Turnaj probíhá 7 dnů od čtvrtka 00:01 UTC do středy 23:59 UTC. Chopte se své příležitosti rozdělit si cenný prize pool ve výši 2500 eur společně se 40 dalšími jezdci.<br/><br/>Stačí minimální sázka 0,5 eur a být připravený na soutěž.<br/><br/>Hodně štěstí a pojďme odstartovat Derby! "
     },
-    "rapidSpins": {
-      "title": "Síťový turnaj<br/>RAPID SPINS<br/>od EvoPlay",
-      "upTo": "10 000 €",
-      "name": "Síťový turnaj RAPID SPINS od EvoPlay",
-      "text": "Navigujte a proskákejte svou cestu skrz bouřlivý síťový turnaj RAPID SPINS od EvoPlay. Uhánějte po řece za cenami a přistaňte ve finálním prize poolu v hodnotě 10 000 €!"
-    },
     "sumdes": {
       "title": "Turnajové sérii<br/> Summer Desserts",
       "upTo": "100 000 €",
@@ -1415,29 +1409,6 @@
       },
       {
         "text": "Výherce loterie bude oznámený 24. září."
-      }
-    ]
-  },
-  "rapidSpins": {
-    "title": "Síťový turnaj RAPID SPINS od EvoPlay",
-    "prize": "10 000 €",
-    "text": "Navigujte a proskákejte svou cestu skrz bouřlivý síťový turnaj RAPID SPINS od EvoPlay. Uhánějte po řece za cenami a přistaňte ve finálním prize poolu v hodnotě 10 000 €! Po dobu 10 dnů od 12. srpna budete mít příležitost naskočit na palubu a zúčastnit se této elektrizující události!",
-    "textMobile": "Navigujte a proskákejte svou cestu skrz bouřlivý síťový turnaj RAPID SPINS od EvoPlay. Uhánějte po řece za cenami a přistaňte ve finálním prize poolu v hodnotě 10 000 €! ",
-    "terms": [
-      {
-        "title": "Turnaj proběhne od 12. srpna 2021 0:01 UTC do 22. srpna 2021 23:59 UTC<br/><br/>"
-      },
-      {
-        "title": "Bude zahrnovat celkem 10 her:<br/><br/> Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead a Irish Reels<br/><br/>"
-      },
-      {
-        "title": "Minimální vklad je 0,5 € nebo ekvivalent v jiných měnách<br/><br/>"
-      },
-      {
-        "title": "Prize pool ve výši 10 000 € si rozdělí 100 prvních hráčů ve výsledkové tabulce podle níže uvedeného umístění v turnaji:<br/>1. místo – 1 670 €<br/>2. místo – 1 270 €<br/>3. místo – 1 000 €<br/>4. místo – 667 €<br/>5. místo – 600 €<br/>6. místo – 533 €<br/>7. místo – 400 €<br/>8. místo – 293 €<br/>9. místo – 220 €<br/>10.–19. místo – 133 €<br/>20.–49. místo – 33 €<br/>50.–100. místo – 20 €"
-      },
-      {
-        "title": "Jeden spin odpovídá jednomu bodu. Čím více bodů, tím vyšší umístění hráče ve výsledkové tabulce."
       }
     ]
   },
