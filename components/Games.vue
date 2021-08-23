@@ -9,7 +9,10 @@
           :game-info="game"
           :img-url="game.imageUrl"
           :show-demo="true"
-          overlay
+          show-footer
+          :overlay="!startGameOnClickCard"
+          :show-provider="startGameOnClickCard"
+          :start-game-on-click="startGameOnClickCard"
           @open-gamepage="openGamePage($event, game.gameProducer)"
         />
       </template>
@@ -58,6 +61,11 @@ export default {
       type: String,
       required: false,
       default: '',
+    },
+    startGameOnClickCard: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   data() {

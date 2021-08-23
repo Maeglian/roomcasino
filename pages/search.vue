@@ -14,10 +14,11 @@
         {{ $t('search.searchResults') }} ({{ filteredGames.length }})
       </div>
       <Games
-        class="DefaultGames-Cards"
+        class="SearchPage-Cards"
         :games="filteredGames"
-        :games-to-show="24"
-        btn-class="Btn--common Btn--outline"
+        :games-to-show="7"
+        start-game-on-click-card
+        btn-class="SearchPage-Btn"
       >
         <template #notFound>
           <div class="Title Title--type-h4">
@@ -35,8 +36,9 @@
     <Games
       class="DefaultGames-Cards"
       :games="popularGames"
-      :games-to-show="24"
-      btn-class="Btn--common Btn--outline"
+      :games-to-show="7"
+      start-game-on-click-card
+      btn-class="SearchPage-Btn"
     />
   </div>
 </template>
@@ -248,6 +250,8 @@ export default {
 
 <style lang="scss">
 .SearchPage {
+  max-width: 600px;
+
   &-Title {
     margin: 18px 0;
     font-size: 20px;
@@ -256,13 +260,14 @@ export default {
   &-Search {
     position: relative;
     margin-bottom: 32px;
+    background: var(--color-bg-lighter);
+    border: 2px solid var(--color-bg-mobnav-lighter);
+    border-radius: 8px;
 
     @media (min-width: $screen-m) {
       position: relative;
       height: 46px;
       margin: 0 auto 10px;
-      background: var(--color-bg);
-      border: none;
     }
   }
 
@@ -280,11 +285,60 @@ export default {
     color: var(--color-text-faded);
   }
 
+  &-Btn {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-main1);
+    text-transform: capitalize;
+  }
+
   .Search-Close {
     @media (min-width: $screen-m) {
       right: 16px;
       left: initial;
     }
+  }
+
+  .Games-Items {
+    display: block;
+  }
+
+  .Games-Btn {
+    text-align: left;
+  }
+
+  .Card {
+    flex-direction: row;
+    margin-bottom: 12px;
+  }
+
+  .Card-Main {
+    flex-grow: 0;
+    flex-basis: 0;
+  }
+
+  .Card-Image {
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+  }
+
+  .Card-Footer {
+    align-items: flex-start;
+    background: transparent;
+  }
+
+  .Card-Name {
+    white-space: nowrap;
+  }
+
+  .Card-Provider {
+    margin-top: 3px;
+    margin-bottom: 0;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--color-text-faded);
+    text-transform: capitalize;
   }
 }
 </style>

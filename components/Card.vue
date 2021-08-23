@@ -1,5 +1,5 @@
 <template>
-  <div class="Card">
+  <div class="Card" :class="{ 'Card--clickable': startGameOnClick }" @click="onClickCard">
     <div class="Card-Main">
       <div v-if="overlay" class="Card-Overlay">
         <div class="Card-Provider">
@@ -101,6 +101,7 @@
     </div>
     <div v-if="showFooter" class="Card-Footer">
       <div class="Card-Name" v-html="linebreak(gameInfo.gameName)"></div>
+      <div v-if="showProvider" class="Card-Provider">{{ gameInfo.gameProducer }}</div>
     </div>
   </div>
 </template>
@@ -151,6 +152,11 @@ export default {
       required: false,
       default: false,
     },
+    showProvider: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     showDemo: {
       type: Boolean,
       required: false,
@@ -159,6 +165,11 @@ export default {
     gameInfo: {
       type: Object,
       required: true,
+    },
+    startGameOnClick: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   computed: {
@@ -182,10 +193,14 @@ export default {
     },
   },
   methods: {
-    // onClickCard() {
-    //   if (this.platform !== 'mobile' || !this.isLoggedIn) return;
-    //   this.$emit('open-gamepage', { id: this.gameInfo.gameId, demo: this.gameInfo.demoOnly });
-    // },
+    onClickCard() {
+      // if (this.platform !== 'mobile' || !this.isLoggedIn) return;
+      if (!this.startGameOnClick) return;
+      this.$emit('open-gamepage', {
+        id: this.gameInfo.gameId,
+        demo: this.gameInfo.demoOnly || !this.isLoggedIn,
+      });
+    },
     linebreak(value) {
       return value.replace(': ', ': <br/>');
     },
@@ -199,6 +214,10 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 100%;
+
+  &--clickable {
+    cursor: pointer;
+  }
 
   &-Main {
     position: relative;
