@@ -351,4 +351,11 @@ export const TOURNAMENTS = {
     class: 'SpiritOfEgypt',
     slug: 'spirit',
   },
+  demigods: {
+    url: 'demigods',
+    name: 'Demi God Tales Tournament Round I',
+    translates: 'demigods',
+    class: 'DemiGods',
+    slug: 'demigods',
+  },
 };

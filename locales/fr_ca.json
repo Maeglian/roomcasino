@@ -465,6 +465,12 @@
       "name": "Spirit of Egypt 60k",
       "text": "Laissez le Spirit of Egypt vous guider vers 60k!<br/><br/>De nouvelles aventures se profilent à l’horizon et Playson vous attend avec le tournoi Spirit of Egypt 60k, qui se déroulera du 20 août 2021 à 0 h 01 UTC au 29 août 2021 à 23 h 59 UTC.<br/><br/>La cagnotte totale s’élève à 60 000 €. Si vous atteignez le sommet de la pyramide, le premier prix est de 10 000 €! Tentez votre chance au Spirit of Egypt 60k!"
     },
+    "demigods": {
+      "title": "Demi God Tales <br/>Tournament <br/>1er tour",
+      "upTo": "20 000 €",
+      "name": "Devenez le héros de Demi God Tales",
+      "text": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales."
+    },
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
       "upTo": "600 tours gratuits",
@@ -1494,5 +1500,35 @@
         "title": "Les points sont calculés tour par tour, chaque 1 EUR (ou équivalent monétaire) gagné valant 100 points."
       }
     ]
+  },
+  "demigods": {
+    "title": "Demi God Tales Tournament<br/>1er tour",
+    "prize": "20 000 €",
+    "text": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales.",
+    "textMobile": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales.",
+    "terms": [
+      {
+        "title": "El 1er tour se déroule du 24 août 2021 (0 h 00 UTC) au 30 août 2021 (23 h 00 UTC)."
+      },
+      {
+        "title": "Jeux participants:<br/>Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II."
+      },
+      {
+        "title": "Les 150 premiers joueurs du classement se partageront un prix de 20 000 EUR."
+      },
+      {
+        "title": "Jouez à l’un des jeux participants. Chaque gain vous récompense avec un score basé sur le multiplicateur de gain (par exemple, si vous avez misé 1 EUR et gagné 10 EUR, vous serez récompensé par 10 points)."
+      },
+      {
+        "title": "Les points reçus sont cumulés pendant toute la durée du tournoi. Plus vous accumulez de points, plus vous êtes bien placé dans le classement."
+      },
+      {
+        "title": "La mise minimale de qualification par tour pour participer au tournoi est de 0,5 EUR."
+      }
+    ],
+    "metaInfo": {
+      "title": "➤ Le tournoi Demi God Tales avec une cagnotte impressionnante de 40 000 € – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
+      "description": "✭ Tentez votre chance dans le nouveau Demi God Tales de Spinomenal  ➔ Accomplissez des missions et gagnez des prix!"
+    }
   }
 }

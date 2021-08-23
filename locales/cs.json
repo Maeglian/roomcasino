@@ -455,6 +455,12 @@
       "name": "Pokuste se vyslídit 100k se Summer Desserts",
       "text": "Léto je v plném proudu, takže co může být lepšího než turnajová série od Booongo! Tak na nic nečekejte a uhánějte za zábavou v síťové turnajové sérii Summer Desserts na NineCasino! <br>Síťová turnajová série Summer Desserts proběhne od 19. srpna 2021 (0:00 UTC) do 28. srpna 2021 (23:00 UTC).<br><br>Tak na co čekáte? Nepromeškejte příležitost získat podíl na obrovském prize poolu od Booongo! Hrajte, bavte se a vyhrávejte!"
     },
+    "demigods": {
+      "title": "Demi God Tales <br/>TournamentKolo I",
+      "upTo": "€ 20 000",
+      "name": "Staňte se hrdinou v Demi God Tales",
+      "text": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales."
+    },
     "spiritOfEgypt": {
       "upTo": "The prize pool is €60,000.",
       "name": "Spirit of Egypt 60k",
@@ -1489,5 +1495,35 @@
         "title": "Body jsou počítány po jednotlivých kolech, kdy každé vsazené 1 euro (nebo ekvivalentní hodnota v jiné měně) odpovídá 100 bodům."
       }
     ]
+  },
+  "demigods": {
+    "title": "Demi God Tales Tournament<br/>Kolo I",
+    "prize": "€ 20 000",
+    "text": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales.",
+    "textMobile": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales.",
+    "terms": [
+      {
+        "title": "Kolo I proběhne od 24. srpna 2021 (0:00 UTC) do 30. srpna 2021 (23:00 UTC)."
+      },
+      {
+        "title": "Zapojené hry:<br/> Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II."
+      },
+      {
+        "title": "Prvních 150 hráčů ve výsledkové tabulce si rozdělí částku 20 000 eur."
+      },
+      {
+        "title": "Zahrajte si kteroukoliv ze zapojených her. S každou výhrou získáte skóre podle násobitele výhry (například, pokud jste vsadili 1 euro a vyhráli 10 eur, získáte 10 bodů)."
+      },
+      {
+        "title": "Získané body budou v průběhu turnaje sčítány. Čím více bodů získáte, tím výše se v tabulce umístíte."
+      },
+      {
+        "title": "Minimální sázka na jeden spin požadovaná pro účast v turnaji je 0,5 eur."
+      }
+    ],
+    "metaInfo": {
+      "title": "➤ Demi God Tales Turnaj s bohatým prize poolem 40 000 € – Hrajte své oblíbené hry a vyhrávejte skvělé ceny!",
+      "description": "✭ Zkuste štěstí v novém Demi God Tales od Spinomenal  ➔ Splňte misi – Vyhrajte ceny!"
+    }
   }
 }
