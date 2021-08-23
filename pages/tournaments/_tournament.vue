@@ -14,7 +14,10 @@
             class="Title Title--type-h1 DailyTournamentPage-Title"
             v-html="$t(`${tournament.translates}.title`)"
           ></h1>
-          <div v-if="$t(`${tournament.translates}.prize`)" class="DailyTournamentPage-Subtitle">
+          <div
+            v-if="$t(`${tournament.translates}.prize`)"
+            class="DailyTournamentPage-Subtitle DailyTournamentPage-Subtitle--color"
+          >
             {{ $t(`${tournament.translates}.prize`) }}
           </div>
           <div
@@ -82,7 +85,7 @@
           />
           <div class="DailyTournamentPage-WinnersTable">
             <Loader v-if="tournamentResultIsLoading" />
-            <div v-else class="DailyTournamentPage-Table">
+            <div v-else class="DailyTournamentPage-Table Table--scrollable">
               <div class="Table TableBordered">
                 <div class="Table-Row">
                   <div
@@ -143,7 +146,9 @@
         </div>
       </div>
       <div v-else class="DailyTournamentPage-Games">
-        <h2 class="Title Title--type-h2 Page-Subtitle DailyTournamentPage-Subtitle">
+        <h2
+          class="Title Title--type-h2 Page-Subtitle DailyTournamentPage-Subtitle DailyTournamentPage-Subtitle--color"
+        >
           {{ $t('tournaments.games') }}
         </h2>
         <Loader v-if="tournamentGamesAreLoading" />
@@ -200,6 +205,18 @@ export default {
     };
   },
   head() {
+    if (this.$route.params.tournament === 'spirit-of-egypt') {
+      return {
+        title: this.$t('spiritOfEgypt.metaInfo.title'),
+        meta: [{ description: this.$t('spiritOfEgypt.metaInfo.description') }],
+      };
+    }
+    if (this.$route.params.tournament === 'summer-desserts') {
+      return {
+        title: this.$t('sumdes.metaInfo.title'),
+        meta: [{ description: this.$t('sumdes.metaInfo.description') }],
+      };
+    }
     return {
       title: 'Daily Tournament At Ninecasino And Other Similar Events',
       meta: [
@@ -212,7 +229,7 @@ export default {
   },
   computed: {
     ...mapState(['width']),
-    ...mapState('games', [
+    ...mapState('tournaments', [
       'tournamentListLoadingStatus',
       'tournamentGames',
       'tournamentGamesAreLoading',
@@ -220,7 +237,7 @@ export default {
       'tournamentResultIsLoading',
       'tournamentAwards',
     ]),
-    ...mapGetters('games', ['tournaments']),
+    ...mapGetters('tournaments', ['tournaments']),
     tournament() {
       return this.tournaments[this.$route.params.tournament];
     },
@@ -261,7 +278,11 @@ export default {
     },
   },
   methods: {
-    ...mapActions('games', ['getTournamentGames', 'getTournamentList', 'getTournamentResult']),
+    ...mapActions('tournaments', [
+      'getTournamentGames',
+      'getTournamentList',
+      'getTournamentResult',
+    ]),
     countDuration(startdate, enddate) {
       return moment(enddate).diff(moment(startdate), 'minutes');
     },
@@ -270,326 +291,6 @@ export default {
 </script>
 
 <style lang="scss">
-.DailyTournamentPage {
-  &-MainText {
-    display: block;
-    text-align: center;
-
-    @media (min-width: $screen-s) {
-      max-width: 40%;
-      text-align: left;
-    }
-  }
-
-  &-Title {
-    margin-bottom: 11px;
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 15px;
-    }
-  }
-
-  &-Subtitle {
-    margin-bottom: 18px;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--color-main1);
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 25px;
-      font-size: 22px;
-    }
-
-    @media (min-width: $screen-l) {
-      font-size: 30px;
-    }
-
-    @media (min-width: $screen-xl) {
-      font-size: 36px;
-    }
-  }
-
-  &-Text {
-    margin-bottom: 20px;
-
-    @media (min-width: $screen-s) {
-      margin-bottom: 30px;
-      text-align: left;
-    }
-  }
-
-  &-Bonus {
-    margin-bottom: 30px;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--color-text-main);
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 36px;
-      font-size: 14px;
-    }
-
-    @media (min-width: $screen-l) {
-      margin-bottom: 24px;
-      font-size: 18px;
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-bottom: 71px;
-      font-size: 20px;
-    }
-  }
-
-  &-Promotion {
-    position: relative;
-
-    @media (min-width: $screen-m) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  }
-
-  &-Btn {
-    width: 100%;
-    margin-bottom: 23px;
-
-    @media (min-width: $screen-s) {
-      width: 180px;
-      margin-right: 20px;
-      margin-bottom: 0;
-      text-align: left;
-      white-space: nowrap;
-    }
-  }
-
-  &-Deposit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    @media (min-width: $screen-s) {
-      flex-direction: row;
-      align-items: center;
-    }
-  }
-
-  &-Benefits {
-    display: none;
-
-    @media (min-width: $screen-m) {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      display: block;
-    }
-
-    @media (min-width: $screen-xl) {
-      position: relative;
-      right: auto;
-      bottom: auto;
-      display: flex;
-    }
-  }
-
-  &-Benefit {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 15px;
-
-    @media (min-width: $screen-xl) {
-      margin-right: 55px;
-      margin-bottom: 0;
-
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &-BenefitIcon {
-    width: 13px;
-    margin-right: 10px;
-
-    @media (min-width: $screen-l) {
-      width: 17px;
-    }
-
-    @media (min-width: $screen-xl) {
-      width: 20px;
-    }
-  }
-
-  &-BenefitName {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--color-text-main);
-    text-transform: uppercase;
-
-    @media (min-width: $screen-l) {
-      font-size: 20px;
-    }
-  }
-
-  &-BenefitAdditional {
-    font-size: 9px;
-    font-weight: 700;
-    color: var(--color-text-ghost);
-    text-transform: uppercase;
-
-    @media (min-width: $screen-l) {
-      font-size: 12px;
-    }
-  }
-
-  &-Tabs {
-    width: 100%;
-    margin-bottom: 4px;
-    font-size: 11px;
-    text-transform: uppercase;
-
-    @media (min-width: $screen-m) {
-      font-size: 12px;
-    }
-  }
-
-  &-Table {
-    max-height: 600px;
-    padding: 21px 10px;
-    overflow-y: auto;
-    font-size: 10px;
-    scrollbar-width: thin;
-    scrollbar-color: #6a6e7f transparent;
-
-    @media (min-width: $screen-m) {
-      font-size: 12px;
-    }
-
-    &::-webkit-scrollbar {
-      width: 5px;
-      background: var(--color-bg);
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: #6a6e7f;
-      border-radius: 3px;
-    }
-  }
-
-  &-Th {
-    color: var(--color-text-ghost);
-  }
-
-  &-WinnerNick {
-    color: var(--color-text-main);
-  }
-
-  &-Prize {
-    font-size: 11px;
-    text-align: right;
-    color: var(--color-main1);
-
-    @media (min-width: $screen-m) {
-      font-size: 14px;
-    }
-  }
-
-  &-Row {
-    margin-bottom: 37px;
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 41px;
-    }
-
-    @media (min-width: $screen-l) {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 50px;
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-bottom: 80px;
-    }
-  }
-
-  &-Winners {
-    @media (min-width: $screen-l) {
-      width: calc(50% - 10px);
-    }
-
-    @media (min-width: $screen-xl) {
-      width: calc(50% - 25px);
-    }
-  }
-
-  &-WinnersTable {
-    margin-bottom: 37px;
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 55px;
-    }
-
-    @media (min-width: $screen-l) {
-      margin-bottom: 0;
-    }
-  }
-
-  &-SliderSection {
-    width: 100%;
-
-    @media (min-width: $screen-l) {
-      width: calc(50% - 10px);
-      margin-top: 25px;
-    }
-
-    @media (min-width: $screen-xl) {
-      width: calc(50% - 25px);
-    }
-
-    //.v_slider, .v_slider__list, .v_slider__track {
-    //  height: 100%;
-    //}
-  }
-
-  &-Games {
-    margin-bottom: 29px;
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 50px;
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-bottom: 97px;
-    }
-  }
-
-  &-Terms {
-    margin-bottom: 37px;
-
-    @media (min-width: $screen-m) {
-      margin-bottom: 56px;
-    }
-
-    @media (min-width: $screen-l) {
-      margin-bottom: 60px;
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-bottom: 80px;
-    }
-  }
-
-  &-TermsTitle {
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: var(--color-text-main);
-  }
-}
-
 .DropsWinsSlots {
   &-Header {
     width: 100%;
@@ -712,13 +413,13 @@ export default {
   }
 }
 
-.EpicRace {
+.RapidSpins {
   &-Header {
     width: 100%;
     margin-top: -70px;
     margin-bottom: 22px;
     padding-top: 270px / 320px * 100%;
-    background-image: url(~@/assets/img/race_460.png);
+    background-image: url(~@/assets/img/rapid_460.png);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: calc(100% - 32px) auto;
@@ -726,7 +427,7 @@ export default {
     @media (min-width: $screen-s) {
       margin-top: 0;
       padding-top: 80px / 1248px * 100%;
-      background-image: url(~@/assets/img/race-page_900.png);
+      background-image: url(~@/assets/img/rapid-page_900.png);
       background-position: center center;
     }
 
@@ -740,12 +441,103 @@ export default {
 
     @media (min-width: $screen-xl) {
       padding-top: 180px;
-      background-image: url(~@/assets/img/race-page_1248.png);
+      background-image: url(~@/assets/img/rapid-page_1248.png);
       background-position: center top;
     }
 
     @media (min-width: $screen-xxl) {
-      background-image: url(~@/assets/img/race_1920.png);
+      background-image: url(~@/assets/img/rapid_1920.png);
+    }
+
+    .DailyTournamentPage-MainText {
+      @media (min-width: $screen-s) {
+        max-width: 50%;
+      }
+
+      @media (min-width: $screen-m) {
+        max-width: 35%;
+      }
+    }
+  }
+}
+
+.SpiritOfEgypt {
+  &-Header {
+    width: 100%;
+    margin-top: -70px;
+    margin-bottom: 22px;
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/spirit_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(100% - 32px) auto;
+
+    @media (min-width: $screen-s) {
+      margin-top: 0;
+      padding-top: 80px / 1248px * 100%;
+      background-image: url(~@/assets/img/spirit_900.png);
+    }
+
+    @media (min-width: $screen-m) {
+      padding-top: 50px / 1248px * 100%;
+      background-position: center center;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 100px;
+      background-image: url(~@/assets/img/spirit_1248.png);
+    }
+
+    @media (min-width: $screen-xxl) {
+      background-image: url(~@/assets/img/spirit_1920.png);
+    }
+
+    .DailyTournamentPage-MainText {
+      @media (min-width: $screen-s) {
+        max-width: 50%;
+      }
+
+      @media (min-width: $screen-xl) {
+        max-width: 35%;
+      }
+    }
+  }
+}
+
+.SummerDesserts {
+  &-Header {
+    width: 100%;
+    margin-top: -70px;
+    margin-bottom: 22px;
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/sumdes_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(100% - 32px) auto;
+
+    @media (min-width: $screen-s) {
+      margin-top: 0;
+      padding-top: 80px / 1248px * 100%;
+      background-image: url(~@/assets/img/sumdes-page_900.png);
+      background-position: center center;
+    }
+
+    @media (min-width: $screen-m) {
+      padding-top: 120px / 1248px * 100%;
+    }
+
+    @media (min-width: $screen-l) {
+      padding-top: 140px / 1248px * 100%;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 180px;
+      background-image: url(~@/assets/img/sumdes-page_1248.png);
+      background-position: center top;
+    }
+
+    @media (min-width: $screen-xxl) {
+      background-image: url(~@/assets/img/sumdes_1920.png);
     }
 
     .DailyTournamentPage-MainText {

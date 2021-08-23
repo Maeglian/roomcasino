@@ -6,30 +6,30 @@
     <div class="SupportPage-Introduction">
       {{ $t('supportPages.aboutUsPage.text') }}
     </div>
-    <div class="AboutUsPage-Advantages">
-      <div class="AboutUsPage-Advantage">
+    <div class="AboutUsPage-Advantages Advantages">
+      <div class="Advantages-Advantage">
         <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
-        <div class="AboutUsPage-AdvantageText">
+        <div class="Advantages-AdvantageText">
           {{ $t('supportPages.aboutUsPage.advantages.text1') }}
         </div>
       </div>
-      <div class="AboutUsPage-Advantage">
+      <div class="Advantages-Advantage">
         <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
-        <div class="AboutUsPage-AdvantageText">
+        <div class="Advantages-AdvantageText">
           {{ $t('supportPages.aboutUsPage.advantages.text2') }}
         </div>
       </div>
-      <div class="AboutUsPage-Advantage">
+      <div class="Advantages-Advantage">
         <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
-        <div class="AboutUsPage-AdvantageText">
+        <div class="Advantages-AdvantageText">
           {{ $t('supportPages.aboutUsPage.advantages.text3.p1') }}
           <span class="Colored">6,000</span>
           {{ $t('supportPages.aboutUsPage.advantages.text3.p2') }}
         </div>
       </div>
-      <div class="AboutUsPage-Advantage">
+      <div class="Advantages-Advantage">
         <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
-        <div class="AboutUsPage-AdvantageText">
+        <div class="Advantages-AdvantageText">
           <span class="Colored">24</span>/
           <span class="Colored">7</span>
           {{ $t('supportPages.aboutUsPage.advantages.text4') }}
@@ -143,13 +143,10 @@ export default {
   }
 
   &-Advantages {
-    width: 100%;
     margin-top: 21px;
     margin-bottom: 36px;
 
     @media (min-width: $screen-m) {
-      display: flex;
-      justify-content: space-between;
       margin-top: 27px;
       margin-bottom: 26px;
     }
@@ -165,47 +162,10 @@ export default {
     }
   }
 
-  &-Advantage {
-    display: flex;
-    align-items: center;
-    margin-bottom: 12px;
-    padding: 24px 26px;
-    background: var(--color-bg);
-
-    @media (min-width: $screen-m) {
-      flex-grow: 1;
-      margin-right: 11px;
-      margin-bottom: 0;
-    }
-
-    @media (min-width: $screen-l) {
-      margin-right: 13px;
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-right: 15px;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
   &-AdvantageIcon {
     width: 34px;
     height: 34px;
     margin-right: 12px;
-  }
-
-  &-AdvantageText {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--color-text-main);
-    text-transform: capitalize;
-
-    @media (min-width: $screen-l) {
-      margin-right: 16px;
-    }
   }
 
   &-Subtitle {

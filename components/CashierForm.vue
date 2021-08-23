@@ -77,6 +77,7 @@ export default {
       'getAvailableBonusList',
       'getBonusHistoryList',
       'getTransactionHistoryList',
+      'getFreeSpinList',
     ]),
     async beforeInitializeCashier(event) {
       if (event.params && event.params.gameParams)
@@ -113,9 +114,6 @@ export default {
           userId: this.billingSession.userId,
           sessionId: this.billingSession.sessionId,
           environment,
-          attributes: {
-            affiliateId: this.user.affiliateId,
-          },
           fetchConfig: true,
           method,
           locale: `${locale}_${this.user.country}`,
@@ -138,6 +136,7 @@ export default {
                 this.getBonusList();
                 this.getAvailableBonusList();
               }
+              this.getFreeSpinList();
             },
             failure: data => console.log('Transaction failed', data),
             isLoading: data => console.log('Data is loading', data),
@@ -151,6 +150,11 @@ export default {
               console.log('New payment method page was opened', data),
             navigate: data => console.log('Path navigation triggered', data),
             cancelledPendingWD: () => this.getTransactionHistoryList(),
+          });
+          api.set({
+            attributes: {
+              affiliateId: this.user.affiliateId,
+            },
           });
         },
       );
