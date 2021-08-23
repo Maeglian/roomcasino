@@ -8,7 +8,7 @@
     </li>
     <li v-for="(crumb, index) in crumbs" :key="index" class="BreadcrumbList-Item">
       <NuxtLink class="Link BreadcrumbList-ItemLink" :to="crumb.path">
-        <span>{{ $route.fullPath === crumb.path && title !== null ? title : crumb.title }}</span>
+        <span>{{ crumb.title }}</span>
       </NuxtLink>
       <meta property="position" :content="index + 2" />
     </li>
@@ -18,12 +18,6 @@
 <script>
 export default {
   name: 'Breadcrumbs',
-  props: {
-    title: {
-      type: String,
-      default: null,
-    },
-  },
   computed: {
     crumbs() {
       const { fullPath } = this.$route;
@@ -32,7 +26,7 @@ export default {
         : fullPath.split('/');
       const crumbs = [];
       let path = '';
-      params.forEach((param, index) => {
+      params.forEach(param => {
         path = `${path}/${param}`;
         const match = this.$router.match(path);
         if (
