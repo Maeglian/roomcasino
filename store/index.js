@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Vue from 'vue';
-import { BILLING_PROVIDER_ID, API_HOST } from '../config';
+import { BILLING_PROVIDER_ID, API_HOST, DOMAIN } from '../config';
 
 const Cookie = process.client ? require('js-cookie') : undefined;
 const cookieparser = process.server ? require('cookieparser') : undefined;
@@ -427,7 +427,7 @@ export const mutations = {
 };
 
 export const actions = {
-  async nuxtServerInit({ commit, dispatch }, { req }) {
+  async nuxtServerInit({ commit }, { req }) {
     if (process.env.NUXT_ENV_MODE !== 'sandbox' && process.env.NUXT_ENV_MODE !== 'stage') {
       let token = null;
       let cookiesPopup;
@@ -448,18 +448,18 @@ export const actions = {
         commit('setNeedsCookiesPopup', !cookiesPopup);
       }
     }
-    await dispatch('games/getDefaultGames').then(() => commit('setInitialLoading', 'defaultGames'));
-    await dispatch('games/getGameProducerList').then(() =>
-      commit('setInitialLoading', 'producers'),
-    );
-    await dispatch('games/getTopGames');
-    await dispatch('games/getNewGames');
-    await dispatch('games/getLiveGames');
-    await dispatch('games/getJackpotGames');
-    await dispatch('games/getBuybonusGames');
-    await dispatch('games/getMegawaysGames');
-    await dispatch('games/getLuckychoiceGames');
-    await dispatch('games/getDropsWinsSlotsGames');
+    // await dispatch('games/getDefaultGames').then(() => commit('setInitialLoading', 'defaultGames'));
+    // await dispatch('games/getGameProducerList').then(() =>
+    //   commit('setInitialLoading', 'producers'),
+    // );
+    // await dispatch('games/getTopGames');
+    // await dispatch('games/getNewGames');
+    // await dispatch('games/getLiveGames');
+    // await dispatch('games/getJackpotGames');
+    // await dispatch('games/getBuybonusGames');
+    // await dispatch('games/getMegawaysGames');
+    // await dispatch('games/getLuckychoiceGames');
+    // await dispatch('games/getDropsWinsSlotsGames');
   },
 
   async registerUser({ commit, dispatch }, payload) {
@@ -471,7 +471,10 @@ export const actions = {
         const { token } = res.data;
         commit('setToken', token);
         Cookie.set('token', token);
+        Cookie.set('token', token, { domain: `.${DOMAIN}` });
         http.defaults.headers.common['X-Auth-Token'] = token;
+        dispatch('antifrod/getPixel');
+        dispatch('antifrod/sendLocaleStorageId');
         dispatch('getProfile');
         dispatch('profile/getAvailableBonusList');
       } else commit('setAuthError', res.message);
@@ -494,14 +497,17 @@ export const actions = {
     }
   },
 
-  async login({ commit }, payload) {
+  async login({ commit, dispatch }, payload) {
     try {
       const res = await http.post(`${API_HOST}/login`, payload);
       if (res.code === 0) {
         const { token } = res.data;
         commit('setToken', token);
         Cookie.set('token', token);
+        Cookie.set('token', token, { domain: `.${DOMAIN}` });
         http.defaults.headers.common['X-Auth-Token'] = token;
+        dispatch('antifrod/getPixel');
+        dispatch('antifrod/sendLocaleStorageId');
       } else commit('setAuthError', res.message);
     } catch (e) {
       this.$sentry.captureException(new Error(e));
