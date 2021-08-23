@@ -330,13 +330,6 @@ export const TOURNAMENTS = {
     class: 'DropsWinsLive',
     slug: 'dropslive',
   },
-  'rapid-spins': {
-    url: 'rapid-spins',
-    name: 'RAPID SPINS Network Tournament',
-    translates: 'rapidSpins',
-    class: 'RapidSpins',
-    slug: 'rapid',
-  },
   'summer-desserts': {
     url: 'summer-desserts',
     name: 'Summer Desserts',
@@ -350,5 +343,12 @@ export const TOURNAMENTS = {
     translates: 'spiritOfEgypt',
     class: 'SpiritOfEgypt',
     slug: 'spirit',
+  },
+  demigods: {
+    url: 'demigods',
+    name: 'Demi God Tales Tournament Round I',
+    translates: 'demigods',
+    class: 'DemiGods',
+    slug: 'demigods',
   },
 };

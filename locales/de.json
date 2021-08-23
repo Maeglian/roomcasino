@@ -139,6 +139,18 @@
     "dailyCashback": "Tägliche rückzahlung",
     "search": "Suche"
   },
+  "gameCategoriesTabs": {
+    "top": "Top-Spiele ",
+    "all": "alle Spiele",
+    "live": "Live-Spiele",
+    "slots": "Spielautomaten",
+    "roulette": "Roulette",
+    "table": "Tischspiele",
+    "card": "Kartenspiele",
+    "recent": "Letzte Spiele",
+    "new": "Neue Spiele",
+    "buybonus": "Bonus Buy"
+  },
   "gameCategories": {
     "top": "Top-Spiele ",
     "all": "alle Spiele",
@@ -454,12 +466,6 @@
       "name": "Aufsatteln fürs Weekly Derby",
       "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
     },
-    "rapidSpins": {
-      "title": "RAPID SPINS-Netzturnier <br/>von EvoPlay",
-      "upTo": "€10.000",
-      "name": "RAPID SPINS-Netzturnier von EvoPlay",
-      "text": "Navigieren und halten Sie Kurs bei dem stürmischen RAPID SPINS-Netzturnier von EvoPlay. Sausen Sie flussabwärts in das abschließende Gewinnbecken mit 10.000 €!"
-    },
     "sumdes": {
       "title": "Summer Desserts<br/> Turnierserie",
       "upTo": "100.000 €",
@@ -470,6 +476,12 @@
       "upTo": "Das Preisgeld 60,000 €.",
       "name": "Spirit of Egypt 60k",
       "text": "Folgen Sie dem Spirit of Egypt zu 60.000 Euro!<br/><br/>Neue Abenteuer deuten sich an, und Playson erwartet Sie ab 00:01 Uhr UTC am 20. August 2021 bis 23:59 Uhr UTC am 29. August 2021 zu dem Spirit of Egypt-Turnier um 60.000 Euro.<br/><br/>Das Gesamtpreisgeld beträgt umwerfende 60.000 Euro, und auf dem Gipfel der Pyramiden warten 10.000 davon! Machen Sie Ihr Glück bei Spirit of Egypt um 60.000 Euro!"
+    },
+    "demigods": {
+      "title": "Demi God Tales <br/>Tournament <br/>Runde I",
+      "upTo": "20.000 €",
+      "name": "Werden Sie der Held in Demi God Tales",
+      "text": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst."
     },
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
@@ -1418,29 +1430,6 @@
       }
     ]
   },
-  "rapidSpins": {
-    "title": "RAPID SPINS-Netzturnier von EvoPlay",
-    "prize": "€10.000",
-    "text": "Navigieren und halten Sie Kurs bei dem stürmischen RAPID SPINS-Netzturnier von EvoPlay. Sausen Sie flussabwärts in das abschließende Gewinnbecken mit 10.000€! Beginnend mit dem 12. August haben Sie 10 Tage lang die Gelegenheit, an Bord zu kommen und an diesem elektrisierenden Ereignis teilzunehmen!",
-    "textMobile": "Navigieren und halten Sie Kurs bei dem stürmischen RAPID SPINS-Netzturnier von EvoPlay. Sausen Sie flussabwärts in das abschließende Gewinnbecken mit 10.000€!",
-    "terms": [
-      {
-        "title": "Das Turnier läuft ab dem 12. August 2021 um 0:01 Uhr UTC und endet am 22. August 2021 um 23:59 Uhr UTC.<br/><br/>"
-      },
-      {
-        "title": "Diese 10 Spiele nehmen teil:<br/><br/> Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
-      },
-      {
-        "title": "Der Mindesteinsatz beträgt umgerechnet 0,5€<br/><br/>"
-      },
-      {
-        "title": "Das Preisgeld von 10.000 € wird unter den 100 erfolgreichsten Mitspielenden entsprechend der Rangliste wie folgt aufgeteilt:<br/>Platz 1 – 1.670 €<br/>Platz 2 – 1.270 €<br/>Platz 3 – 1.000 €<br/>Platz 4 – 667 €<br/>Platz 5 – 600 €<br/>Platz 6 – 533 €<br/>Platz 7 – 400 €<br/>Platz 8 – 293 €<br/>Platz 9 – 220 €<br/>Platz 10 – 19 je 133 €<br/>Platz 20 – 49 je 33 €<br/>Platz 50 – 100 je 20 €"
-      },
-      {
-        "title": "Eine Ausspielung entspricht einem Punkt. Je mehr Punkte, desto besser die Platzierung in der Rangliste."
-      }
-    ]
-  },
   "sumdes": {
     "title": "Summer Desserts <br>Turnierserie",
     "prize": "100.000 €",
@@ -1500,5 +1489,35 @@
         "title": "Die Punkte werden Runde für Runde berechnet, dabei entspricht jeder umgesetzte Euro umgerechnet 100 Punkten."
       }
     ]
+  },
+  "demigods": {
+    "title": "Demi God Tales Tournament<br>Runde I",
+    "prize": "20.000 €",
+    "text": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst.",
+    "textMobile": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst.",
+    "terms": [
+      {
+        "title": "Runde I beginnt am 24. August um 00:00 Uhr UTC und endet am 30. August 2021 um 23:00 Uhr UTC."
+      },
+      {
+        "title": "Teilnehmende Spiele:<br>Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II."
+      },
+      {
+        "title": "Die 150 Bestplatzierten teilen sich den Gesamtgewinn von 20.000 Euro."
+      },
+      {
+        "title": "Spielen Sie eines oder mehrere der teilnehmenden Spiele. Jeder Gewinn bringt Ihnen Wertungspunkte entsprechend dem Gewinnmultiplikator (wird zum Beispiel mit einem gesetzten Euro ein Gewinn von 10 Euro erzielt, ergibt das 10 Punkte für Sie)."
+      },
+      {
+        "title": "Die gesammelten Punkte werden während des gesamten Turnierverlaufs aufaddiert. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
+      },
+      {
+        "title": "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 Euro."
+      }
+    ],
+    "metaInfo": {
+      "title": "➤ Demi God Tales-Turnier mit massivem Preisgeld von 40.000 € – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
+      "description": "✭ Versuch dein Glück beim neuen Demi God Tales von Spinomenal  ➔ Schließe Missionen ab – gewinne Preise!"
+    }
   }
 }

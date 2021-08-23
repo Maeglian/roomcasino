@@ -237,15 +237,6 @@ export default {
           url: '/lottery/sunshine_spins_lottery',
         },
         {
-          title: this.$t('promotions.rapidSpins.title'),
-          prize: this.$t('rapidSpins.prize'),
-          image: 'rapid-promotions.png',
-          announce: this.$t('promotions.rapidSpins.name'),
-          text: this.$t('promotions.rapidSpins.text'),
-          link: 'More',
-          url: '/tournaments/rapid-spins',
-        },
-        {
           title: this.$t('promotions.sumdes.title'),
           prize: this.$t('sumdes.prize'),
           image: 'sumdes-promotions.png',
@@ -262,6 +253,15 @@ export default {
           text: this.$t('promotions.spiritOfEgypt.text'),
           link: 'More',
           url: '/tournaments/spirit-of-egypt',
+        },
+        {
+          title: this.$t('promotions.demigods.title'),
+          prize: this.$t('demigods.prize'),
+          image: 'demigods-promotions.png',
+          announce: this.$t('promotions.demigods.name'),
+          text: this.$t('promotions.demigods.text'),
+          link: 'More',
+          url: '/tournaments/demigods',
         },
         {
           title: this.$t('tesla_lottery.title'),
