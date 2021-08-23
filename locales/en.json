@@ -140,6 +140,18 @@
     "dailyCashback": "Daily cashback",
     "search": "Search"
   },
+  "gameCategoriesTabs": {
+    "top": "Top",
+    "all": "All",
+    "live": "Live",
+    "slots": "Slots",
+    "roulette": "Roulette",
+    "table": "Table",
+    "card": "Card",
+    "recent": "Last",
+    "new": "New",
+    "buybonus": "Bonus Buy"
+  },
   "gameCategories": {
     "top": "Top games",
     "all": "All games",

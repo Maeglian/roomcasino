@@ -139,6 +139,18 @@
     "dailyCashback": "Tägliche rückzahlung",
     "search": "Suche"
   },
+  "gameCategoriesTabs": {
+    "top": "Top-Spiele ",
+    "all": "alle Spiele",
+    "live": "Live-Spiele",
+    "slots": "Spielautomaten",
+    "roulette": "Roulette",
+    "table": "Tischspiele",
+    "card": "Kartenspiele",
+    "recent": "Letzte Spiele",
+    "new": "Neue Spiele",
+    "buybonus": "Bonus Buy"
+  },
   "gameCategories": {
     "top": "Top-Spiele ",
     "all": "alle Spiele",

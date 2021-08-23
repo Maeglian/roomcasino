@@ -139,6 +139,17 @@
     "dailyCashback": "Remise quotidienne",
     "search": "Rechercher"
   },
+  "gameCategoriesTabs": {
+    "top": "Les meilleurs jeux",
+    "all": "Tous les jeux",
+    "live": "Jeux en ligne",
+    "slots": "Jeux de machines à sous",
+    "roulette": "Roulette",
+    "table": "Jeux de table",
+    "card": "Jeux de cartes",
+    "new": "Nouveaux jeux",
+    "buybonus": "Bonus Buy"
+  },
   "gameCategories": {
     "top": "Les meilleurs jeux",
     "all": "Tous les jeux",
