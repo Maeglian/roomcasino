@@ -2,13 +2,31 @@
   <div class="SearchPage Wrapper">
     <h1 class="Title Title--center SearchPage-Title">{{ $t('search.findGame') }}</h1>
     <Search v-model="searched" class="SearchPage-Search" />
-    <ProvidersMenu
-      v-if="gameProducerList.length"
-      class="SearchPage-Providers"
-      :game-producer-list="gameProducerList"
-      :provider-active="providerActive"
-      @choose-provider="onChooseProvider"
-    />
+    <div
+      v-for="(filter, name) in filters"
+      :key="name"
+      v-click-outside="() => (filter.isOpen = false)"
+      class="CategoriesFilter"
+    >
+      <button class="CategoriesFilter-Footer" @click="filter.isOpen = !filter.isOpen">
+        <div class="CategoriesFilter-Default">
+          {{ filter.value.length ? filter.value.toString() : filter.defaultValue }}
+        </div>
+        <i class="ThinArrow" :class="[filter.isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"></i>
+      </button>
+      <div v-show="filter.isOpen" class="CategoriesFilter-Inner">
+        <BaseCheckbox
+          v-for="val in filter.values"
+          :key="val[filter.valueKey]"
+          v-model="filter.value"
+          class="CategoriesFilter-Checkbox"
+          label-class="CategoriesFilter-Label"
+          :value="val[filter.valueKey]"
+        >
+          {{ val[filter.nameKey] }}
+        </BaseCheckbox>
+      </div>
+    </div>
     <div v-if="searched" class="SearchedGames">
       <div v-if="filteredGames.length" class="Title Title--type-h4 Cards-Title">
         {{ $t('search.searchResults') }} ({{ filteredGames.length }})
@@ -48,8 +66,7 @@ import { mapState } from 'vuex';
 import search from '@/mixins/search';
 import Search from '@/components/Search';
 import Games from '@/components/Games';
-import ProvidersMenu from '@/components/ProvidersMenu';
-import gameProducer from '@/mixins/gameProducer';
+import BaseCheckbox from '@/components/base/BaseCheckbox';
 
 const gamesForCountries = {
   AT: [
@@ -227,13 +244,35 @@ export default {
   components: {
     Search,
     Games,
-    ProvidersMenu,
+    BaseCheckbox,
   },
-  mixins: [search, gameProducer],
+  mixins: [search],
   layout: 'page',
+  data() {
+    return {
+      filters: {
+        categoriesList: {
+          defaultValue: 'All categories',
+          value: [],
+          nameKey: 'name',
+          valueKey: 'value',
+          values: [],
+          isOpen: false,
+        },
+        gameProducerList: {
+          defaultValue: 'All producers',
+          value: [],
+          nameKey: 'name',
+          valueKey: 'name',
+          values: [],
+          isOpen: false,
+        },
+      },
+    };
+  },
   computed: {
     ...mapState(['defaultCountry']),
-    ...mapState('games', ['defaultGames']),
+    ...mapState('games', ['defaultGames', 'gameProducers']),
     popularGames() {
       if (this.defaultCountry) {
         return this.defaultGames.filter(game => {
@@ -243,6 +282,14 @@ export default {
       }
 
       return [];
+    },
+  },
+  watch: {
+    gameProducers: {
+      immediate: true,
+      handler() {
+        if (this.gameProducers.length) this.filters.gameProducerList.values = this.gameProducers;
+      },
     },
   },
 };
