@@ -469,6 +469,12 @@
       "name": "Hunt down 100k with Summer Desserts",
       "text": "The summer is in full swing, so what’s better than a Tournament Series from Booongo! Hurry up to enjoy the Summer Desserts Network Tournament Series at NineCasino! <br/>Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC).<br/><br/>nWhat are you waiting for? Don’t miss out on sharing the huge prize pool from Booongo! Play, enjoy, and win!"
     },
+    "demigods": {
+      "title": "Demi God Tales <br>Tournament",
+      "upTo": "€20,000",
+      "name": "Become the hero of the Demi God Tales",
+      "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament."
+    },
     "spiritOfEgypt": {
       "upTo": "The prize pool is €60,000.",
       "name": "Spirit of Egypt 60k",
@@ -1480,5 +1486,35 @@
         "title": "Points are calculated round-by-round, with each 1 EUR (or currency equivalent) wagered equaling 100 points."
       }
     ]
+  },
+  "demigods": {
+    "title": "Demi God Tales Tournament<br>Round I",
+    "prize": "€20,000",
+    "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
+    "textMobile": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
+    "terms": [
+      {
+        "title": "Round I runs between August 24th 00:00 GMT and August 30th 23:59 GMT."
+      },
+      {
+        "title": "Participating games: <br>Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II."
+      },
+      {
+        "title": "The 150 first players on the leaderboard will share a prize of 20,000 EUR."
+      },
+      {
+        "title": "Play any of the participating games. Each win rewards you with a score based on the win multiplier (for example, if you waged 1 EUR and won 10 EUR, you will be rewarded with 10 points)."
+      },
+      {
+        "title": "Points received are summed up throughout the tournament period. The more points you collect, the higher your position on the leaderboard."
+      },
+      {
+        "title": "Minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
+      }
+    ],
+    "metaInfo": {
+      "title": "➤ Demi God Tales Tournament With Solid Prize Pool €40,000 - Play Your Favorite Games And Win Great Prizes!",
+      "description": "✭ Try Your Luck In New Demi God Tales by Spinomenal  ➔ Complete Missions - Win Prizes!"
+    }
   }
 }

@@ -217,6 +217,12 @@ export default {
         meta: [{ description: this.$t('sumdes.metaInfo.description') }],
       };
     }
+    if (this.$route.params.tournament === 'demigods') {
+      return {
+        title: this.$t('demigods.metaInfo.title'),
+        meta: [{ description: this.$t('demigods.metaInfo.description') }],
+      };
+    }
     return {
       title: 'Daily Tournament At Ninecasino And Other Similar Events',
       meta: [
@@ -490,6 +496,45 @@ export default {
 
     @media (min-width: $screen-xxl) {
       background-image: url(~@/assets/img/sumdes_1920.png);
+    }
+
+    .DailyTournamentPage-MainText {
+      @media (min-width: $screen-s) {
+        max-width: 50%;
+      }
+
+      @media (min-width: $screen-xl) {
+        max-width: 35%;
+      }
+    }
+  }
+}
+
+.DemiGods {
+  &-Header {
+    width: 100%;
+    margin-top: -70px;
+    margin-bottom: 22px;
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/demigods_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(100% - 32px) auto;
+
+    @media (min-width: $screen-s) {
+      margin-top: 0;
+      padding-top: 80px / 1248px * 100%;
+      background-image: url(~@/assets/img/demigods-page_900.png);
+      background-position: center center;
+    }
+
+    @media (min-width: $screen-xl) {
+      background-image: url(~@/assets/img/demigods-page_1248.png);
+      background-position: center top;
+    }
+
+    @media (min-width: $screen-xxl) {
+      background-image: url(~@/assets/img/demigods_1920.png);
     }
 
     .DailyTournamentPage-MainText {
