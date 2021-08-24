@@ -118,6 +118,12 @@ export default {
         file: 'de.json',
         icon: 'de.svg',
       },
+      {
+        code: 'nz',
+        codeCountry: 'nz_NZ',
+        file: 'nz.json',
+        icon: 'nz.svg',
+      },
     ],
     defaultLocale: 'en',
     lazy: true,
