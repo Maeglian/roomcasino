@@ -501,7 +501,7 @@
     "previousRound": "Previous round"
   },
   "dropsWinsSlots": {
-    "title": "Drops & Wins Slots",
+    "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
     "prize": "€4,000,000",
     "text": "Welcome to the new Stage 8 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. To play with a multiplier is more fun.  Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 29-32 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!",
     "textMobile": "Welcome to the new Stage 8 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000!",
@@ -529,14 +529,14 @@
     ]
   },
   "dropsWinsLive": {
-    "title": "Drops & Wins for Live Casino",
-    "prize": "€3,000,000",
-    "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!",
-    "textMobile": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!",
+    "title": "DROPS <span class=\"Colored\">&</span> WINS FOR LIVE CASINO",
+    "prize": "3.000.000 €",
+    "text": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!<br/><br/>Magst du Live-Spiele? Diese Live-Ausgabe wird dir gefallen. Mach mit bei wöchentlichen Turnieren – Roulette, Blackjack, Mega Wheel, Baccarat!",
+    "textMobile": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!",
     "terms": [
       {
-        "title": "Stage 3 runs between",
-        "text": "● Week 9: 28th July 2021 19:01 CEST – 4th August 2021 18:59 CEST<br/>● Week 10: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Week 11: 11th August 2021 19:01 CEST – 18th August 2021 18:59 CEST<br/>● Week 12: 18th August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
+        "title": "Laufzeit der Phase 4",
+        "text": "● Woche 13: 28th Juli 2021 09:01 CEST – 4th August 2021 18:59 CEST<br/>● Woche 14: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Woche 15: 11th August 2021 19:01 CEST – 18st August 2021 18:59 CEST<br/>● Woche 16: 18st August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
       },
       {
         "title": "Participating Games/Tables",

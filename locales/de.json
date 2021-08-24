@@ -505,7 +505,7 @@
     "previousRound": "Letzte Runde"
   },
   "dropsWinsSlots": {
-    "title": "Drops & Wins Slots",
+    "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
     "prize": "4.000.000 €",
     "text": "Willkommen zu Phase 8 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops & Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mit einem Multiplikator zu spielen, macht noch mehr Spaß. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 29–32 der Wochenturniere (Gewinnmultiplikatorwochen) sowie Tagesausspielungen (Gewinnmultiplikatorwochen) mit einigen neuen Spielen!",
     "textMobile": "Willkommen zu Phase 8 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops & Wins auf 500.000 €!",
@@ -533,14 +533,14 @@
     ]
   },
   "dropsWinsLive": {
-    "title": "Drops & Wins for Live Casino",
+    "title": "DROPS <span class=\"Colored\">&</span> WINS FOR LIVE CASINO",
     "prize": "3.000.000 €",
     "text": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!<br/><br/>Magst du Live-Spiele? Diese Live-Ausgabe wird dir gefallen. Mach mit bei wöchentlichen Turnieren – Roulette, Blackjack, Mega Wheel, Baccarat!",
     "textMobile": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!",
     "terms": [
       {
-        "title": "Laufzeit der Phase 3",
-        "text": "● Woche 9: 28th Juli 2021 09:01 CEST – 4th August 2021 18:59 CEST<br/>● Woche 10: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Woche 11: 11th August 2021 19:01 CEST – 18st August 2021 18:59 CEST<br/>● Woche 12: 18st August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
+        "title": "Laufzeit der Phase 4",
+        "text": "● Woche 13: 28th Juli 2021 09:01 CEST – 4th August 2021 18:59 CEST<br/>● Woche 14: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Woche 15: 11th August 2021 19:01 CEST – 18st August 2021 18:59 CEST<br/>● Woche 16: 18st August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
       },
       {
         "title": "Teilnehmende Spiele",

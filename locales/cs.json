@@ -493,7 +493,7 @@
     "previousRound": "Předcházející kolo"
   },
   "dropsWinsSlots": {
-    "title": "Drops & Wins Slots",
+    "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
     "prize": "4 000 000 €",
     "text": "Vítejte v nové 8. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops & Wins na 500 000 €! Rovněž zvyšuje počet měsíčních peněžitých cen a nabízí větší šance na výhru. Hraní s násobitelem je mnohem zábavnější. Zúčastněte se vzrušující Drops & Wins a získejte příležitost vyhrát část z neuvěřitelných 4 000 000 € v některé z cen! Proto jsou tentokrát do týdnů 29–32 týdenních turnajů (týdny s násobitelem výhry) a denních výher (týdny s násobitelem výhry) některé nové hry!",
     "textMobile": "Vítejte v nové 8. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops & Wins na 500 000 €!",
@@ -521,14 +521,14 @@
     ]
   },
   "dropsWinsLive": {
-    "title": "Drops & Wins for Live Casino",
+    "title": "DROPS <span class=\"Colored\">&</span> WINS FOR LIVE CASINO",
     "prize": "3 000 000 €",
     "text": "Pragmatic Play vám nabízí stále více příležitostí zábavy na nové úrovni díky nové Drops and Wins for Live Casino. Nenechte si ujít příležitost vyhrát podíl z neuvěřitelných 3 000 000 € v hotovosti!<br/><br/>Máte rádi živé hry? Pak je tato živá akce určena právě pro vás. Zúčastněte se týdenních turnajů – ruleta, blackjack, Mega Wheel, Baccarat!",
     "textMobile": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive 3,000,000 € in cash prizes!",
     "terms": [
       {
-        "title": "Fáze 3 probíhá v termínu",
-        "text": "● 9. týden: 28. července 2021 09:01 CEST – 4. srpna 2021 18:59 CEST<br/>● 10. týden: 4. srpna 2021 19:01 CEST – 11. srpna 2021 18:59 CEST<br/>● 10. týden: 4. srpna 2021 19:01 CEST – 11. srpna 2021 18:59 CEST<br/>● 12. týden: 18. srpna 2021 19:01 CEST – 25. srpna 2021 18:59 CEST"
+        "title": "Fáze 4 probíhá v termínu:",
+        "text": "● 13. týden: 25. srpna 2021 09:01 CEST – 1. září 2021 18:59 CEST<br/>● 14. týden: 1. září 2021 19:01 CEST – 8. září 2021 18:59 CEST<br/>● 15. týden: 8. září 2021 19:01 CEST – 15. září 2021 18:59 CEST<br/>● 16. týden: 15. září 2021 19:01 CEST – 22. září 2021 18:59 CEST"
       },
       {
         "title": "Začleněné hry / stolní hry",
