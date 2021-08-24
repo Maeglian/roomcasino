@@ -140,25 +140,25 @@ export default {
     slides() {
       const slides = [
         {
-          bg: 'wolf',
+          bg: 'banker-green',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'joker',
+          bg: 'banker-green',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'caishen',
+          bg: 'banker-gold',
           title: this.$t('homepage.heroBanner.deposit2.title'),
           text: this.$t('homepage.heroBanner.deposit2.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'book',
+          bg: 'banker-purple',
           title: this.$t('homepage.heroBanner.deposit3.title'),
           text: this.$t('homepage.heroBanner.deposit3.text'),
           btnText: 'Deposit now',
