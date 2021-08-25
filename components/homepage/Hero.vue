@@ -140,25 +140,25 @@ export default {
     slides() {
       const slides = [
         {
-          bg: 'wolf',
+          bg: 'banker-green',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'joker',
+          bg: 'banker-green',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'caishen',
+          bg: 'banker-gold',
           title: this.$t('homepage.heroBanner.deposit2.title'),
           text: this.$t('homepage.heroBanner.deposit2.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'book',
+          bg: 'banker-purple',
           title: this.$t('homepage.heroBanner.deposit3.title'),
           text: this.$t('homepage.heroBanner.deposit3.text'),
           btnText: 'Deposit now',
@@ -203,17 +203,17 @@ export default {
           linkText: this.$t('buttons.more'),
         },
         {
-          bg: 'rapid',
-          title: this.$t('promotions.rapidSpins.title'),
-          text: `<span class="Colored">${this.$t('rapidSpins.prize')}</span>`,
-          url: '/tournaments/rapid-spins',
-          linkText: this.$t('buttons.more'),
-        },
-        {
           bg: 'spirit',
           title: this.$t('spiritOfEgypt.title'),
           text: `<span class="Colored">${this.$t('spiritOfEgypt.prize')}</span>`,
           url: '/tournaments/spirit-of-egypt',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'demigods',
+          title: this.$t('demigods.title'),
+          text: `<span class="Colored">${this.$t('demigods.prize')}</span>`,
+          url: '/tournaments/demigods',
           linkText: this.$t('buttons.more'),
         },
         {

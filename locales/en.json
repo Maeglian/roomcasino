@@ -140,6 +140,18 @@
     "dailyCashback": "Daily cashback",
     "search": "Search"
   },
+  "gameCategoriesTabs": {
+    "top": "Top",
+    "all": "All",
+    "live": "Live",
+    "slots": "Slots",
+    "roulette": "Roulette",
+    "table": "Table",
+    "card": "Card",
+    "recent": "Last",
+    "new": "New",
+    "buybonus": "Bonus Buy"
+  },
   "gameCategories": {
     "top": "Top games",
     "all": "All games",
@@ -440,7 +452,7 @@
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
-      "text": "Welcome to the new Stage 7 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 25-28 of Weekly Tournaments and Daily Prize Drops with some new games!"
+      "text": "Welcome to the new Stage 8 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! <br><br>They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 29-32 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!"
     },
     "dropsWinsLive": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
@@ -452,17 +464,17 @@
       "name": "Saddle up for the Weekly Derby",
       "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
     },
-    "rapidSpins": {
-      "title": "RAPID SPINS <br/>Network <br/>Tournament",
-      "upTo": "€10,000",
-      "name": "RAPID SPINS Network Tournament",
-      "text": "Navigate and bounce your way down the raging RAPID SPINS Network Tournament by EvoPlay. Race down the river for prizes and land in the final Prize Pool of €10,000!"
-    },
     "sumdes": {
       "title": "Summer Desserts<br/> Tournament",
       "upTo": "€100,000",
       "name": "Hunt down 100k with Summer Desserts",
       "text": "The summer is in full swing, so what’s better than a Tournament Series from Booongo! Hurry up to enjoy the Summer Desserts Network Tournament Series at NineCasino! <br/>Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC).<br/><br/>nWhat are you waiting for? Don’t miss out on sharing the huge prize pool from Booongo! Play, enjoy, and win!"
+    },
+    "demigods": {
+      "title": "Demi God Tales <br>Tournament",
+      "upTo": "€20,000",
+      "name": "Become the hero of the Demi God Tales",
+      "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament."
     },
     "spiritOfEgypt": {
       "upTo": "The prize pool is €60,000.",
@@ -491,18 +503,18 @@
     "previousRound": "Previous round"
   },
   "dropsWinsSlots": {
-    "title": "Upgraded Drops & Wins Slots edition",
+    "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
     "prize": "€4,000,000",
-    "text": "Welcome to the new Stage 7 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 25-28 of Weekly Tournaments and Daily Prize Drops with some new games!",
-    "textMobile": "Welcome to the new Stage 7 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000!",
+    "text": "Welcome to the new Stage 8 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. To play with a multiplier is more fun.  Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 29-32 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!",
+    "textMobile": "Welcome to the new Stage 8 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000!",
     "terms": [
       {
-        "title": "Stage 7 runs between",
-        "text": "● Week 25: 28th July 2021 19:01 CEST – 4th August 2021 18:59 CEST<br/>● Week 26: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Week 27: 11th August 2021 19:01 CEST – 18th August 2021 18:59 CEST<br/>● Week 28: 18th August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
+        "title": "Stage 8 runs between",
+        "text": "● Week 29: 25th August 2021 19:01 CEST – 1st September 2021 18:59 CEST<br/>● Week 30: 1st September 2021 19:01 CEST – 8th September 2021 18:59 CEST<br/>● Week 31: 8th September 2021 19:01 CEST – 15th September 2021 18:59 CEST<br/>● Week 32: 15th September 2021 19:01 CEST – 22nd September 2021 18:59 CEST"
       },
       {
         "title": "Games in this tournament",
-        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Release the Kraken™, Empty the Bank™, Lucky Grace And Charm™, Book of Vikings™."
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House ™, The Dog House Megaways™, Chilli Heat ™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Book of Vikings™, Chicken Drop™, Fruit Party 2™, Rise of Giza PowerNudge™, Juicy Fruits™."
       },
       {
         "title": "Drops & Wins includes",
@@ -510,19 +522,23 @@
       },
       {
         "title": "How to win",
-        "text": "● Minimum bet requirement of €0.50.<br/>● In order to participate, players need to play with real money and make qualifying bets on any of the participating games.<br/>● In the Weekly tournaments - the highest single spin win amount adjusted for bet amount.<br/>● In the Daily tournaments - any real money spin in the participating games can trigger a random prize<br/>● There is no additional cost for players to participate."
+        "text": "● A player must place a real money bet on any of the participating games and must get at least one (1) in-game win to qualify for the Weekly Tournament.<br/>● No minimum real money bet is required for players to be eligible to participate in the Daily Prize\u2028Drops (Prize Multiplier Weeks)."
+      },
+      {
+        "title": "Additionally",
+        "text": "● Players participating during multiplier weeks may win prizes in the form of a multiplier r of the winning player’s bet amount as set out in the Weekly Tournament (Prize Multiplier Weeks) Prize Table – and the Daily Prize Drop (Prize Multiplier Weeks) Prize Table further below (hereinafter the “Prize Multiplier Weeks”).<br/>● If the winning spin exceeds ten Euros/British Pounds Sterling (€/£ 10), the prize will be paid out based on a bet of ten Euros/British Pounds Sterling (€/£ 10) or the equivalent amount in the Available Currency (as defined further below) X multiplier received.<br/>● The leaderboard is ranked in accordance with the score, which score is based on the highest single spin win amount on any participating game adjusted to the amount of the bet.<br/>● In the event of two (2) or more players finishing a Weekly Tournament on the same leaderboard position, the player who has achieved the score first will receive the higher prize."
       }
     ]
   },
   "dropsWinsLive": {
-    "title": "Drops & Wins for Live Casino",
+    "title": "DROPS <span class=\"Colored\">&</span> WINS FOR LIVE CASINO",
     "prize": "€3,000,000",
     "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!",
     "textMobile": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!",
     "terms": [
       {
-        "title": "Stage 3 runs between",
-        "text": "● Week 9: 28th July 2021 19:01 CEST – 4th August 2021 18:59 CEST<br/>● Week 10: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Week 11: 11th August 2021 19:01 CEST – 18th August 2021 18:59 CEST<br/>● Week 12: 18th August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
+        "title": "Stage 4 runs between",
+        "text": "● Week 13: 25th August 2021 19:01 CEST – 1st September 2021 18:59 CEST<br/>● Week 14: 1st September 2021 19:01 CEST – 8th September 2021 18:59 CEST<br/>● Week 15: 8th September 2021 19:01 CEST – 15th September 2021 18:59 CEST<br/>● Week 16: 15th September 2021 19:01 CEST – 22nd September 2021 18:59 CEST"
       },
       {
         "title": "Participating Games/Tables",
@@ -1009,7 +1025,7 @@
           "Account linkage/multiple accounting"
         ],
         "text2": [
-          "All instances of suspected Money Laundering attempts must be reported to the MLRO but that       suspicion must not be conveyed to the customer and further actions must await consents. The       MLRO is then responsible for liaising with, submitting Suspicious Activity Reports and seeking       consents from the NCA/UKFIU where and when appropriate. He will also ensure that appropriate       registers are kept for all related reporting.",
+          "All instances of suspected Money Laundering attempts must be reported to the MLRO but that suspicion must not be conveyed to the customer and further actions must await consents. The MLRO is then responsible for liaising with, submitting Suspicious Activity Reports and seeking consents through the goAML system of the Financial Intelligence Unit (FIU) Curaçao where and when appropriate. He will also ensure that appropriate registers are kept for all related reporting.",
           "Company will implement a FULL ‘Know Your Customer’ policy. This will assist in tackling not       just Money Laundering threats but other fraud threats generally. Customers will be advised at       registration and generally on the supporting non-transactional website that Company will       utilise online verification tools and that in instances where we are not able to satisfy       criteria, ID and address verification documents will be requested.",
           "Other key decisions that will enhance these protections include setting period       thresholds/velocities for withdrawals to include at outset the requirement for checks and       director approval prior to processing card withdrawals and bank transfers of over 3000 EUR in       one single transaction, a maximum of 3 (three) daily withdrawals and an overall maximum daily       withdrawal of 9000 EUR.",
           "Industry accepted standards that will always lead to Enhanced Due Diligence (the requirement       for further proof of ID and Address) will be withdrawals in excess of 3000 EUR in a single       24hour period and 9000 EUR in a 90-day period. Simple online verification will NOT be       acceptable in these circumstances.",
@@ -1416,29 +1432,6 @@
       }
     ]
   },
-  "rapidSpins": {
-    "title": "RAPID SPINS Network Tournament",
-    "prize": "€10,000",
-    "text": "Navigate and bounce your way down the raging RAPID SPINS Network Tournament by EvoPlay. Race down the river for prizes and land in the final Prize Pool of €10,000! For 10 days starting from the 12th of August you will have a chance to jump on board and take part in this electrifying event!",
-    "textMobile": "Navigate and bounce your way down the raging RAPID SPINS Network Tournament by EvoPlay. Race down the river for prizes and land in the final Prize Pool of €10,000!",
-    "terms": [
-      {
-        "title": "The tournament runs between August 12nd, 2021 0:01 UTC, and August 22nd, 2021 until 23:59 UTC<br/><br/>"
-      },
-      {
-        "title": "There are 10 participating games:<br/><br/>Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
-      },
-      {
-        "title": "The minimum bet is €0.5 or the equivalent in other currencies<br/><br/>"
-      },
-      {
-        "title": "The Prize Pool of €10,000 will be distributed among the top 100 winners on the leaderboard according to these tournament positions:<br/>1st place – €1,670<br/>2nd place – €1,270<br/>3rd place – €1,000<br/>4th place – €667<br/>5th place – €600<br/>6th place – €533<br/>7th place – €400<br/>8th place – €293<br/>9th place – €220<br/>10th-19th place – €133<br/>20th-49th place – €33<br/>50th-100th place – €20"
-      },
-      {
-        "title": "One spin equals one point. The more points, the higher the player’s position on the leaderboard."
-      }
-    ]
-  },
   "sumdes": {
     "title": "Summer Desserts<br> Tournament",
     "prize": "€100,000",
@@ -1498,5 +1491,81 @@
         "title": "Points are calculated round-by-round, with each 1 EUR (or currency equivalent) wagered equaling 100 points."
       }
     ]
+  },
+  "demigods": {
+    "title": "Demi God Tales Tournament<br>Round I",
+    "prize": "€20,000",
+    "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
+    "textMobile": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
+    "terms": [
+      {
+        "title": "Round I runs between August 24th 00:00 GMT and August 30th 23:59 GMT.<br><br>"
+      },
+      {
+        "title": "Participating games: <br>Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II.<br><br>"
+      },
+      {
+        "title": "The 150 first players on the leaderboard will share a prize of 20,000 EUR.<br><br>"
+      },
+      {
+        "title": "Play any of the participating games. Each win rewards you with a score based on the win multiplier (for example, if you waged 1 EUR and won 10 EUR, you will be rewarded with 10 points)."
+      },
+      {
+        "title": "Points received are summed up throughout the tournament period. The more points you collect, the higher your position on the leaderboard."
+      },
+      {
+        "title": "Minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
+      }
+    ],
+    "metaInfo": {
+      "title": "➤ Demi God Tales Tournament With Solid Prize Pool €40,000 - Play Your Favorite Games And Win Great Prizes!",
+      "description": "✭ Try Your Luck In New Demi God Tales by Spinomenal  ➔ Complete Missions - Win Prizes!"
+    }
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Here You Can Find Out About Our Welcome Bonus For New Players And Other Regular Promotions At Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Daily Cashback Up To 20% - If You Lose We Give You Cashback with x5 wagering."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Detailed Information About Us, Our Software, And What We Offer Our Clients ✓ Fast withdrawal ✓ Fully licensed"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Frequently Asked Questions - Here You Can Find Answers To The Most Popular Questions About Ninecasino"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "This Page Will Help You To Stay Informed About Ninecasino's Terms And Conditions While Interacting With Our Site"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Detailed Information About Bonuses: How To Receive And Withdraw Bonuses At Ninecasino"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Here You Can Find About Responsible Gaming Tools At Your Disposal To Control Your Gaming Experience"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Information About The Risks You Take Paticipating In Games At Ninecasino"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Privacy Policy Of Ninecasino: Everything You Need To Know About The Safety Of Your Financial Information And Personal Account"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Detailed Information How You Can Play With Bitcoin at Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Detailed Information About How We Handle Incorporating Fraud and Anti Money Laundering"
+    }
   }
 }

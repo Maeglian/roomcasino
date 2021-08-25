@@ -139,6 +139,17 @@
     "dailyCashback": "Remise quotidienne",
     "search": "Rechercher"
   },
+  "gameCategoriesTabs": {
+    "top": "Les meilleurs jeux",
+    "all": "Tous les jeux",
+    "live": "Jeux en ligne",
+    "slots": "Jeux de machines à sous",
+    "roulette": "Roulette",
+    "table": "Jeux de table",
+    "card": "Jeux de cartes",
+    "new": "Nouveaux jeux",
+    "buybonus": "Bonus Buy"
+  },
   "gameCategories": {
     "top": "Les meilleurs jeux",
     "all": "Tous les jeux",
@@ -435,9 +446,9 @@
       "text": "Vous aimez miser gros? Dans ce cas, nous savons ce dont vous avez besoin. Une fois par mois, bénéficiez d’un bonus spécial pour les grands joueurs de 30% jusqu’à $800 sur votre dépôt à partir de $450."
     },
     "dropsWinsSlots": {
-      "title": "Drops<span class=\"Colored\"> & </span>Wins",
+      "title": "Drops<span class=\"Colored\"> & </span>Wins <br/>Slots",
       "name": "Drops & Wins Slots",
-      "text": "Bienvenue à la nouvelle étape 7 de la promotion Drops & Wins quotidienne. Pragmatic Play a décidé de doubler le budget de l’édition mensuelle de Drops & Wins Slots à 500 000 €! Ils augmentent également le nombre de prix mensuels en argent et vous donnent encore plus de chances de gagner. Participez au passionnant Drops & Wins et courez la chance de gagner une part des 4 000 000 € de prix! C’est pourquoi, cette fois, les semaines 25–28 sont consacrées à des tournois hebdomadaires et à des remises de prix quotidiens avec de nouveaux jeux!"
+      "text": "Bienvenue à la nouvelle étape 8 de la promotion Drops & Wins quotidienne. Pragmatic Play a décidé de doubler le budget de l’édition mensuelle de Drops & Wins Slots à 500 000 €! <br/><br/>Ils augmentent également le nombre de prix mensuels en argent et vous donnent encore plus de chances de gagner. Participez au passionnant Drops & Wins et courez la chance de gagner une part des 4 000 000 € de prix! C’est pourquoi, cette fois, C’est pourquoi, cette fois, les semaines 29–32 des tournois hebdomadaires (semaines à prix multiplicateur) et des remises de prix quotidiennes (semaines à prix multiplicateur) avec de nouveaux jeux!"
     },
     "dropsWinsLive": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
@@ -449,12 +460,6 @@
       "name": "À vos marques pour le Weekly Derby",
       "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
     },
-    "rapidSpins": {
-      "title": "Tournoi en réseau <br/>RAPID SPINS <br/>d’EvoPlay",
-      "upTo": "10 000 €",
-      "name": "Tournoi en réseau RAPID SPINS d’EvoPlay",
-      "text": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! "
-    },
     "sumdes": {
       "title": "La série de tournois<br/> Summer Desserts",
       "upTo": "100 000 €",
@@ -465,6 +470,12 @@
       "upTo": "The prize pool is €60,000.",
       "name": "Spirit of Egypt 60k",
       "text": "Laissez le Spirit of Egypt vous guider vers 60k!<br/><br/>De nouvelles aventures se profilent à l’horizon et Playson vous attend avec le tournoi Spirit of Egypt 60k, qui se déroulera du 20 août 2021 à 0 h 01 UTC au 29 août 2021 à 23 h 59 UTC.<br/><br/>La cagnotte totale s’élève à 60 000 €. Si vous atteignez le sommet de la pyramide, le premier prix est de 10 000 €! Tentez votre chance au Spirit of Egypt 60k!"
+    },
+    "demigods": {
+      "title": "Demi God Tales <br/>Tournament <br/>1er tour",
+      "upTo": "20 000 €",
+      "name": "Devenez le héros de Demi God Tales",
+      "text": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales."
     },
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
@@ -488,18 +499,18 @@
     "previousRound": "Tour précédent"
   },
   "dropsWinsSlots": {
-    "title": "Édition mise à jour de Drops & Wins Slots",
+    "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
     "prize": "4 000 000 €",
-    "text": "Bienvenue à la nouvelle étape 7 de la promotion Drops & Wins quotidienne. Pragmatic Play a décidé de doubler le budget de l’édition mensuelle de Drops & Wins Slots à 500 000 €! Ils augmentent également le nombre de prix mensuels en argent et vous donnent encore plus de chances de gagner. Participez au passionnant Drops & Wins et courez la chance de gagner une part des 4 000 000 € de prix! C’est pourquoi, cette fois, les semaines 25–28 sont consacrées à des tournois hebdomadaires et à des remises de prix quotidiens avec de nouveaux jeux!",
-    "textMobile": "Bienvenue à la nouvelle étape 7 de la promotion Drops & Wins quotidienne. Pragmatic Play a décidé de doubler le budget de l’édition mensuelle de Drops & Wins Slots à 500 000 €!",
+    "text": "Bienvenue à la nouvelle étape 8 de la promotion Drops & Wins quotidienne. Pragmatic Play a décidé de doubler le budget de l’édition mensuelle de Drops & Wins Slots à 500 000 €! Ils augmentent également le nombre de prix mensuels en argent et vous donnent encore plus de chances de gagner. Jouer avec un multiplicateur est plus amusant. Participez au passionnant Drops & Wins et courez la chance de gagner une part des 4 000 000 € de prix! C’est pourquoi, cette fois, les semaines 13–16 des tournois hebdomadaires (semaines à prix multiplicateur) et des remises de prix quotidiennes (semaines à prix multiplicateur) avec de nouveaux jeux!",
+    "textMobile": "Bienvenue à la nouvelle étape 8 de la promotion Drops & Wins quotidienne. Pragmatic Play a décidé de doubler le budget de l’édition mensuelle de Drops & Wins Slots à 500 000 €!",
     "terms": [
       {
-        "title": "L’étape 7 se déroule ainsi",
-        "text": "● Semaine 25: 28 juli 2021 09:01 CEST – 4 août 2021 18:59 CEST<br/>● Semaine 26: 4 août 2021 19:01 CEST – 11 août 2021 18:59 CEST<br/>● Semaine 27: 11 août 2021 19:01 CEST – 18 août 2021 18:59 CEST<br/>● Semaine 28: 18 août 2021 19:01 CEST – 25 août 2021 18:59 CEST"
+        "title": "L’étape 8 se déroule ainsi",
+        "text": "● Semaine 29: 25 août 2021 09:01 CEST – 1 septembre 2021 18:59 CEST<br/>● Semaine 30: 1 septembre 2021 19:01 CEST – 8 septembre 2021 18:59 CEST<br/>● Semaine 31: 8 septembre 2021 19:01 CEST – 15 septembre 2021 18:59 CEST<br/>● Semaine 32: 15 septembre 2021 19:01 CEST – 22 septembre 2021 18:59 CEST"
       },
       {
         "title": "Jeux participants:",
-        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Release the Kraken™, Empty the Bank™, Lucky Grace And Charm™, Book of Vikings™."
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House ™, The Dog House Megaways™, Chilli Heat ™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Book of Vikings™, Chicken Drop™, Fruit Party 2™, Rise of Giza PowerNudge™, Juicy Fruits™."
       },
       {
         "title": "Drops & Wins comprend",
@@ -507,19 +518,23 @@
       },
       {
         "title": "Comment gagner",
-        "text": "● Mise minimale requise de 0,50 €. <br/>● Pour participer, les joueurs doivent jouer avec de l’argent réel et faire des paris qualifiants dans l’un des jeux participants. <br/>● Dans les tournois hebdomadaires, le plus haut montant de gain d’un seul tour ajusté au montant de la mise.<br/>● Dans les tournois quotidiens, tout tour en argent réel dans les jeux participants peut entraîner un prix aléatoire.<br/>● La participation des joueurs n’entraîne aucun coût supplémentaire"
+        "text": "● Un joueur doit placer une mise en argent réel sur n’importe quel jeu participant et doit obtenir au moins une (1) victoire intrajeu pour se qualifier pour le Tournoi hebdomadaire. <br/>● Aucune mise minimale en argent réel n’est requise pour que les joueurs soient admissibles à participer aux prix quotidiens (semaines du multiplicateur de prix). "
+      },
+      {
+        "title": "De plus:",
+        "text": "● Les joueurs participant aux semaines avec multiplicateur peuvent gagner des prix sous la forme d’un multiplicateur du montant de la mise du joueur gagnant, comme indiqué dans le tableau des prix du tournoi hebdomadaire (semaines avec multiplicateur de prix) et dans le tableau des prix quotidiens (semaines avec multiplicateur de prix) ci-dessous (ci-après les « semaines avec multiplicateur de prix »). <br/>● Si le tour gagnant est supérieur à dix euros (€10), le prix sera payé sur la base d’une mise de dix euros (€10) ou du montant équivalent dans la devise disponible (telle que définie ci-après) X le multiplicateur reçu.<br/>● Le classement est établi en fonction du pointage, lequel est basé sur le montant du gain le plus élevé en un seul tour pour tout jeu participant, ajusté au montant de la mise.<br/>● Dans le cas où deux (2) joueurs ou plus terminent un tournoi hebdomadaire à la même position au classement, le joueur qui a atteint le pointage en premier recevra le prix le plus élevé."
       }
     ]
   },
   "dropsWinsLive": {
-    "title": "Drops & Wins for Live Casino",
+    "title": "DROPS <span class=\"Colored\">&</span> WINS FOR LIVE CASINO",
     "prize": "3 000 000 €",
     "text": "Pragmatic Play vous donne de plus en plus de chances de vous divertir en passant au niveau supérieur grâce à son nouveau Drops and Wins for Live Casino. Saisissez la chance de gagner une part de l’impressionnant montant de 3 000 000 € de prix en argent!<br/><br/>Aimez-vous les jeux en direct? Cette édition en direct vous ira à coup sûr. Participez aux tournois hebdomadaires  - Roulette, Blackjack, Grande Roue, Baccarat!",
     "textMobile": "Pragmatic Play vous donne de plus en plus de chances de vous divertir en passant au niveau supérieur grâce à son nouveau Drops and Wins for Live Casino. Saisissez la chance de gagner une part de l’impressionnant montant de 3 000 000 € de prix en argent!",
     "terms": [
       {
-        "title": "L’étape 3 se déroule ainsi<br/><br/>",
-        "text": "● Semaine 9: 28 juli 2021 09:01 CEST – 4 août 2021 18:59 CEST<br/>● Semaine 10: 4 août 2021 19:01 CEST – 11 août 2021 18:59 CEST<br/>● Semaine 11: 11 août 2021 19:01 CEST – 18 août 2021 18:59 CEST<br/>● Semaine 12: 18 août 2021 19:01 CEST – 25 août 2021 18:59 CEST"
+        "title": "L’étape 4 se déroule ainsi<br/><br/>",
+        "text": "● Semaine 13: 25 août 2021 09:01 CEST – 1 septembre 2021 18:59 CEST<br/>● Semaine 14: 1 septembre 2021 19:01 CEST – 8 septembre 2021 18:59 CEST<br/>● Semaine 15: 8 septembre 2021 19:01 CEST – 15 septembre 2021 18:59 CEST<br/>● Semaine 16: 15 septembre 2021 19:01 CEST – 22 septembre 2021 18:59 CEST"
       },
       {
         "title": "Jeux/Tables participants<br/><br/>",
@@ -1006,7 +1021,7 @@
           "Account linkage/multiple accounting"
         ],
         "text2": [
-          "All instances of suspected Money Laundering attempts must be reported to the MLRO but that       suspicion must not be conveyed to the customer and further actions must await consents. The       MLRO is then responsible for liaising with, submitting Suspicious Activity Reports and seeking       consents from the NCA/UKFIU where and when appropriate. He will also ensure that appropriate       registers are kept for all related reporting.",
+          "All instances of suspected Money Laundering attempts must be reported to the MLRO but that suspicion must not be conveyed to the customer and further actions must await consents. The MLRO is then responsible for liaising with, submitting Suspicious Activity Reports and seeking consents through the goAML system of the Financial Intelligence Unit (FIU) Curaçao where and when appropriate. He will also ensure that appropriate registers are kept for all related reporting.",
           "Company will implement a FULL ‘Know Your Customer’ policy. This will assist in tackling not       just Money Laundering threats but other fraud threats generally. Customers will be advised at       registration and generally on the supporting non-transactional website that Company will       utilise online verification tools and that in instances where we are not able to satisfy       criteria, ID and address verification documents will be requested.",
           "Other key decisions that will enhance these protections include setting period       thresholds/velocities for withdrawals to include at outset the requirement for checks and       director approval prior to processing card withdrawals and bank transfers of over 3000 EUR in       one single transaction, a maximum of 3 (three) daily withdrawals and an overall maximum daily       withdrawal of 9000 EUR.",
           "Industry accepted standards that will always lead to Enhanced Due Diligence (the requirement       for further proof of ID and Address) will be withdrawals in excess of 3000 EUR in a single       24hour period and 9000 EUR in a 90-day period. Simple online verification will NOT be       acceptable in these circumstances.",
@@ -1413,29 +1428,6 @@
       }
     ]
   },
-  "rapidSpins": {
-    "title": "Tournoi en réseau RAPID SPINS d’EvoPlay",
-    "prize": "10 000 €",
-    "text": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! À partir du 12 août, pendant 10 jours, vous aurez la possibilité de monter à bord et de participer à cet événement électrisant!",
-    "textMobile": "Explorez et trouvez votre chemin dans le tournoi en réseau RAPID SPINS d’EvoPlay. Descendez la rivière pour gagner des prix et débarquer dans la cagnotte finale de 10 000 €! ",
-    "terms": [
-      {
-        "title": "Le tournoi se déroule du 12 août 2021 0 h 01 UTC au 22 août 2021 23 h 59 UTC<br/><br/>"
-      },
-      {
-        "title": "There are 10 participating games:<br/><br/> Il y a 10 jeux participants : Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
-      },
-      {
-        "title": "La mise minimale est de 0,5 € ou l’équivalent dans d’autres devises<br/><br/>"
-      },
-      {
-        "title": "La cagnotte de 10 000 € sera répartie entre les 100 premiers gagnants du classement en fonction de leur position dans le tournoi:<br/>1re place – 1 670 €<br/>2e place – 1 270 €<br/>3e place – 1 000 €<br/>4e place – 667 €<br/>5e place – 600 €<br/>6e place – 533 €<br/>7e place – 400 €<br/>8e place – 293 €<br/>9e place – 220 €<br/>10e à 19e place – 133 €<br/>20e à 49e place – 33 €<br/>50e à 100e place – 20 €"
-      },
-      {
-        "title": "Un tour est équivalent à un point. Plus le nombre de points est important, plus le joueur est bien placé dans le classement."
-      }
-    ]
-  },
   "sumdes": {
     "title": "La série de tournois <br>Summer Desserts ",
     "prize": "100 000 €",
@@ -1495,5 +1487,81 @@
         "title": "Les points sont calculés tour par tour, chaque 1 EUR (ou équivalent monétaire) gagné valant 100 points."
       }
     ]
+  },
+  "demigods": {
+    "title": "Demi God Tales Tournament<br/>1er tour",
+    "prize": "20 000 €",
+    "text": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales.",
+    "textMobile": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales.",
+    "terms": [
+      {
+        "title": "El 1er tour se déroule du 24 août 2021 (0 h 00 UTC) au 30 août 2021 (23 h 00 UTC).<br><br>"
+      },
+      {
+        "title": "Jeux participants:<br/>Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II.<br><br>"
+      },
+      {
+        "title": "Les 150 premiers joueurs du classement se partageront un prix de 20 000 EUR.<br><br>"
+      },
+      {
+        "title": "Jouez à l’un des jeux participants. Chaque gain vous récompense avec un score basé sur le multiplicateur de gain (par exemple, si vous avez misé 1 EUR et gagné 10 EUR, vous serez récompensé par 10 points)."
+      },
+      {
+        "title": "Les points reçus sont cumulés pendant toute la durée du tournoi. Plus vous accumulez de points, plus vous êtes bien placé dans le classement."
+      },
+      {
+        "title": "La mise minimale de qualification par tour pour participer au tournoi est de 0,5 EUR."
+      }
+    ],
+    "metaInfo": {
+      "title": "➤ Le tournoi Demi God Tales avec une cagnotte impressionnante de 40 000 € – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
+      "description": "✭ Tentez votre chance dans le nouveau Demi God Tales de Spinomenal  ➔ Accomplissez des missions et gagnez des prix!"
+    }
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Vous pouvez découvrir ici notre bonus de bienvenue pour les nouveaux joueurs et d’autres promotions régulières de Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Remise en espèces quotidienne jusqu’à 20 % – Si vous perdez, nous vous offrons une remise en espèces avec une mise de x5."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Informations détaillées sur nous, nos logiciels et ce que nous offrons à nos clients ✓ Retrait rapide ✓ Entièrement autorisé"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Foire aux questions – Vous trouverez ici les réponses aux questions les plus courantes à propos de Ninecasino"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "Cette page vous aidera à rester informé des conditions générales de Ninecasino lorsque vous utilisez notre site"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Informations détaillées sur les bonus: Comment recevoir et retirer des bonus sur Ninecasino?"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Vous trouverez ici des informations sur les outils de jeu responsable à votre disposition pour mieux gérer votre expérience de jeu"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Informations sur les risques que vous encourez en participant à des jeux sur Ninecasino"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Politique de confidentialité de Ninecasino: Tout ce que vous devez savoir sur la sécurité de vos informations financières et de votre compte personnel"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Informations détaillées sur la façon dont vous pouvez jouer en utilisant Bitcoin à Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Informations détaillées sur la manière dont nous traitons la fraude et la lutte contre le blanchiment d’argent"
+    }
   }
 }
