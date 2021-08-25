@@ -150,21 +150,21 @@ export default {
         {
           title: this.$t('promotions.deposit1.title'),
           subtitle: this.$t('promotions.deposit1.upTo'),
-          image: 'promotion1.png',
+          image: 'banker-green-promotions.png',
           announce: this.$t('promotions.deposit1.name'),
           text: this.$t('promotions.deposit1.text'),
         },
         {
           title: this.$t('promotions.deposit2.title'),
           subtitle: this.$t('promotions.deposit2.upTo'),
-          image: 'promotion2.png',
+          image: 'banker-gold-promotions.png',
           announce: this.$t('promotions.deposit2.name'),
           text: this.$t('promotions.deposit2.text'),
         },
         {
           title: this.$t('promotions.deposit3.title'),
           subtitle: this.$t('promotions.deposit3.upTo'),
-          image: 'promotion3.png',
+          image: 'banker-purple-promotions.png',
           announce: this.$t('promotions.deposit3.name'),
           text: this.$t('promotions.deposit3.text'),
         },
@@ -277,11 +277,10 @@ export default {
   },
   head() {
     return {
-      title: 'Promotions | Ninecasino',
+      title: this.$t('metaTags.promotions.title'),
       meta: [
         {
-          description:
-            'Here You Can Find About Our Welcome Bonus For New Players And Other Regular Promotions At Ninecasino',
+          description: this.$t('metaTags.promotions.description'),
         },
       ],
     };

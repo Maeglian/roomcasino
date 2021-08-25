@@ -442,7 +442,7 @@
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
-      "text": "Vítejte v nové 7. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops & Wins na 500 000 €! Rovněž zvyšuje počet měsíčních peněžitých cen a nabízí větší šance na výhru. Zúčastněte se vzrušující Drops & Wins a získejte příležitost vyhrát část z neuvěřitelných 4 000 000 € v některé z cen! Proto jsou tentokrát do týdnů 25–28 týdenních turnajů a denních výher zahrnuty některé nové hry!"
+      "text": "\"Vítejte v nové 8. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops & Wins na 500 000 €! Rovněž zvyšuje počet měsíčních peněžitých cen a nabízí větší šance na výhru. <br/><br/>Zúčastněte se vzrušující Drops & Wins a získejte příležitost vyhrát část z neuvěřitelných 4 000 000 € v některé z cen! Proto jsou tentokrát do týdnů 29–32 týdenních turnajů (týdny s násobitelem výhry) a denních výher (týdny s násobitelem výhry) některé nové hry!"
     },
     "dropsWinsLive": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins",
@@ -493,38 +493,42 @@
     "previousRound": "Předcházející kolo"
   },
   "dropsWinsSlots": {
-    "title": "Aktualizovaná edice Drops & Wins Slots",
-    "prize": "4 000 000 eur",
-    "text": "Vítejte v nové 7. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops & Wins na 500 000 €! Rovněž zvyšuje počet měsíčních peněžitých cen a nabízí větší šance na výhru. Zúčastněte se vzrušující Drops & Wins a získejte příležitost vyhrát část z neuvěřitelných 4 000 000 € v některé z cen! Proto jsou tentokrát do týdnů 25–28 týdenních turnajů a denních výher zahrnuty některé nové hry!",
-    "textMobile": "Vítejte v nové 7. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops and Wins na 500 000 eur!",
+    "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
+    "prize": "4 000 000 €",
+    "text": "Vítejte v nové 8. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops & Wins na 500 000 €! Rovněž zvyšuje počet měsíčních peněžitých cen a nabízí větší šance na výhru. Hraní s násobitelem je mnohem zábavnější. Zúčastněte se vzrušující Drops & Wins a získejte příležitost vyhrát část z neuvěřitelných 4 000 000 € v některé z cen! Proto jsou tentokrát do týdnů 29–32 týdenních turnajů (týdny s násobitelem výhry) a denních výher (týdny s násobitelem výhry) některé nové hry!",
+    "textMobile": "Vítejte v nové 8. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops & Wins na 500 000 €!",
     "terms": [
       {
-        "title": "Fáze 7 probíhá v termínu:",
-        "text": "● 25. týden: 28. července 2021 09:01 CEST – 4. srpna 2021 18:59 CEST<br/>● 26. týden: 4. srpna 2021 19:01 CEST – 11. srpna 2021 18:59 CEST<br/>● 27. týden: 11. srpna 2021 19:01 CEST – 18. srpna 2021 18:59 CEST<br/>● 28. týden: 18. srpna 2021 19:01 CEST – 25. srpna 2021 18:59 CEST"
+        "title": "Fáze 8 probíhá v termínu:",
+        "text": "● 29. týden: 25. srpna 2021 09:01 CEST – 1. září 2021 18:59 CEST<br/>● 30. týden: 1. září 2021 19:01 CEST – 8. září 2021 18:59 CEST<br/>● 31. týden: 8. září 2021 19:01 CEST – 15. září 2021 18:59 CEST<br/>● 32. týden: 15. září 2021 19:01 CEST – 22. září 2021 18:59 CEST"
       },
       {
-        "title": "Hry zahrnuté",
-        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Release the Kraken™, Empty the Bank™, Lucky Grace And Charm™, Book of Vikings™."
+        "title": "Hry zahrnuté:",
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House ™, The Dog House Megaways™, Chilli Heat ™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Book of Vikings™, Chicken Drop™, Fruit Party 2™, Rise of Giza PowerNudge™, Juicy Fruits™."
       },
       {
         "title": "Drops & Wins zahrnuje",
-        "text": "● Každý turnaj běží od čtvrtka do středy souběžně s denním turnajem Prize Drops.<br/>● Týdenní prize pool 62 000 eur rozdělený na celkem 1 200 peněžitých cen.<br/>● Hráči mají příležitost vyhrát peněžité ceny v denních výhrách s prize poolem ve výši 9 000 eur, který bude rozdělený na 500 peněžitých cen."
+        "text": "● Každý turnaj běží od čtvrtka do středy souběžně s denním turnajem Prize Drops.<br/>● Týdenní prize pool 62 000 € rozdělený na celkem 1 200 peněžitých cen.<br/>● Hráči mají příležitost vyhrát peněžité ceny v denních výhrách s prize poolem ve výši 9 000 €, který bude rozdělený na 500 peněžitých cen."
       },
       {
         "title": "Jak vyhrát",
-        "text": "● Minimální požadovaná sázka činí 0,50 €. <br/>● Aby se hráči mohli zapojit, musí hrát se skutečnými penězi a provést požadovanou sázku v jakékoliv ze zahrnutých her. <br/>● V týdenních turnajích – nejvyšší výhra za jeden spin upravená podle výše sázky.<br/>● V denních turnajích – jakýkoliv spin za skutečné peníze v zapojených hrách může vyvolat náhodnou cenu.<br/>● Hráčům nevznikají žádné další výdaje související s účastí."
+        "text": "● Hráč musí učinit vsázku se skutečnými penězi v jakékoliv ze zúčastněných her a musí získat minimálně jednu (1) výhru ve hře, aby se mohl kvalifikovat do týdenního turnaje. <br/>● Pro účast v turnaji Daily Prize není požadována žádná minimální částka v reálných penězích. Drops (týdny pro násobení výhry)."
+      },
+      {
+        "title": "Dodatečně",
+        "text": "● Hráči, kteří se turnaje zúčastní ve více týdnech, mohou vyhrát ceny v podobě násobku r z vsazené částky vítězného hráče, jak je stanoveno v Tabulce výher týdenního turnaje (týdny pro násobení výhry) – a v Tabulce výher denního turnaje Prize Drop (týdny pro násobení výhry) (dále jako „Týdny pro násobení výhry“). <br/>● Přesáhne-li vítězný spin hodnotu deseti eur/liber (10 €/£), výhra bude vyplacena na základě sázky ve výši deseti eur/liber (10 €/£) nebo odpovídající částky v dostupné měně (viz definice níže) X získaný násobek. <br>● Pořadí ve výsledkové tabulce odpovídá skóre, které je dané nejvyšší vyhranou částkou v jednom spinu a libovolné zahrnuté hře, upravenou podle výše vkladu.<br>● Pokud by týdenní turnaj dokončili dva (2) nebo více hráčů se stejným umístěním ve výsledkové tabulce, pak hráč, který skóre dosáhne první, dostane nejvyšší výhru."
       }
     ]
   },
   "dropsWinsLive": {
-    "title": "Drops & Wins for Live Casino",
+    "title": "DROPS <span class=\"Colored\">&</span> WINS FOR LIVE CASINO",
     "prize": "3 000 000 €",
     "text": "Pragmatic Play vám nabízí stále více příležitostí zábavy na nové úrovni díky nové Drops and Wins for Live Casino. Nenechte si ujít příležitost vyhrát podíl z neuvěřitelných 3 000 000 € v hotovosti!<br/><br/>Máte rádi živé hry? Pak je tato živá akce určena právě pro vás. Zúčastněte se týdenních turnajů – ruleta, blackjack, Mega Wheel, Baccarat!",
     "textMobile": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive 3,000,000 € in cash prizes!",
     "terms": [
       {
-        "title": "Fáze 3 probíhá v termínu",
-        "text": "● 9. týden: 28. července 2021 09:01 CEST – 4. srpna 2021 18:59 CEST<br/>● 10. týden: 4. srpna 2021 19:01 CEST – 11. srpna 2021 18:59 CEST<br/>● 10. týden: 4. srpna 2021 19:01 CEST – 11. srpna 2021 18:59 CEST<br/>● 12. týden: 18. srpna 2021 19:01 CEST – 25. srpna 2021 18:59 CEST"
+        "title": "Fáze 4 probíhá v termínu:",
+        "text": "● 13. týden: 25. srpna 2021 09:01 CEST – 1. září 2021 18:59 CEST<br/>● 14. týden: 1. září 2021 19:01 CEST – 8. září 2021 18:59 CEST<br/>● 15. týden: 8. září 2021 19:01 CEST – 15. září 2021 18:59 CEST<br/>● 16. týden: 15. září 2021 19:01 CEST – 22. září 2021 18:59 CEST"
       },
       {
         "title": "Začleněné hry / stolní hry",
@@ -1011,7 +1015,7 @@
           "Account linkage/multiple accounting"
         ],
         "text2": [
-          "All instances of suspected Money Laundering attempts must be reported to the MLRO but that       suspicion must not be conveyed to the customer and further actions must await consents. The       MLRO is then responsible for liaising with, submitting Suspicious Activity Reports and seeking       consents from the NCA/UKFIU where and when appropriate. He will also ensure that appropriate       registers are kept for all related reporting.",
+          "All instances of suspected Money Laundering attempts must be reported to the MLRO but that suspicion must not be conveyed to the customer and further actions must await consents. The MLRO is then responsible for liaising with, submitting Suspicious Activity Reports and seeking consents through the goAML system of the Financial Intelligence Unit (FIU) Curaçao where and when appropriate. He will also ensure that appropriate registers are kept for all related reporting.",
           "Company will implement a FULL ‘Know Your Customer’ policy. This will assist in tackling not       just Money Laundering threats but other fraud threats generally. Customers will be advised at       registration and generally on the supporting non-transactional website that Company will       utilise online verification tools and that in instances where we are not able to satisfy       criteria, ID and address verification documents will be requested.",
           "Other key decisions that will enhance these protections include setting period       thresholds/velocities for withdrawals to include at outset the requirement for checks and       director approval prior to processing card withdrawals and bank transfers of over 3000 EUR in       one single transaction, a maximum of 3 (three) daily withdrawals and an overall maximum daily       withdrawal of 9000 EUR.",
           "Industry accepted standards that will always lead to Enhanced Due Diligence (the requirement       for further proof of ID and Address) will be withdrawals in excess of 3000 EUR in a single       24hour period and 9000 EUR in a 90-day period. Simple online verification will NOT be       acceptable in these circumstances.",
@@ -1477,6 +1481,52 @@
         "title": "Body jsou počítány po jednotlivých kolech, kdy každé vsazené 1 euro (nebo ekvivalentní hodnota v jiné měně) odpovídá 100 bodům."
       }
     ]
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Zde naleznete informace o našem uvítacím bonusu pro nové hráče a další pravidelné promo akce v Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Denní vracení hotovosti až do 20 % – Pokud prohrajete, dáme vám možnost vrácení hotovosti s protočením x5."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Detailní informace o nás, našem softwaru a našich nabídkách pro kleienty ✓ Rychlý výběr ✓ Plně licencované"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Časté dotazy – Zde naleznete odpovědi na vaše nejčastější otázky ohledně Ninecasion"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "Tato stránka vám pomůže zůstat informovanými o podmínkách a ujednáních Ninecasino při interakci s našimi webovými stránkami"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Detailní informace o bonusech: Jak získat a vybírat bonusy v Ninecasino"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Zda si můžete přečíst o nástrojích pro odpovědné hraní, které u nás máte k dispozici pro kontrolu vašeho hraní"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Informace o rizicích, která přijímáte účastí ve hrách v Ninecasino"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Zásady ochrany osobních údajů v Ninecasino: Vše, co potřebujete znát o bezpečnosti vašich finančních informací a osobního účtu"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Detailní informace o tom, jak můžete hrát s Bitcoiny v Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Detailní informace o tom, jak implementujeme zákony proti falšování a praní špinavých peněz"
+    }
   },
   "demigods": {
     "title": "Demi God Tales Tournament<br/>Kolo I",
