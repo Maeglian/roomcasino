@@ -321,12 +321,35 @@ export default {
 
       return [];
     },
+    formattedGameProducerList() {
+      return this.gameProducers.map(producer => {
+        return { ...producer, name: producer.name.toLowerCase() };
+      });
+    },
+    filteredGames() {
+      if (!this.filters.gameProducerList.value.length && !this.filters.categoriesList.value.length)
+        return this.searchedGames;
+
+      return this.searchedGames.filter(game => {
+        if (this.filters.gameProducerList.value.includes(game.gameProducer)) return true;
+        let gameIsSelected = false;
+        for (let i = 0; i < this.filters.categoriesList.value.length; i++) {
+          if (game.categoryList.includes(this.filters.categoriesList.value[i])) {
+            gameIsSelected = true;
+            break;
+          }
+        }
+
+        return gameIsSelected;
+      });
+    },
   },
   watch: {
-    gameProducers: {
+    formattedGameProducerList: {
       immediate: true,
       handler() {
-        if (this.gameProducers.length) this.filters.gameProducerList.values = this.gameProducers;
+        if (this.formattedGameProducerList.length)
+          this.filters.gameProducerList.values = this.formattedGameProducerList;
       },
     },
   },

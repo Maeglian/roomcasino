@@ -8,7 +8,7 @@ export default {
   },
   computed: {
     ...mapGetters('games', ['gamesSearched']),
-    filteredGames() {
+    searchedGames() {
       return this.searched ? this.gamesSearched(this.searched) : this.games;
     },
   },
