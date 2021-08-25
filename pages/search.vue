@@ -2,29 +2,34 @@
   <div class="SearchPage Wrapper">
     <h1 class="Title Title--center SearchPage-Title">{{ $t('search.findGame') }}</h1>
     <Search v-model="searched" class="SearchPage-Search" />
-    <div
-      v-for="(filter, name) in filters"
-      :key="name"
-      v-click-outside="() => (filter.isOpen = false)"
-      class="CategoriesFilter"
-    >
-      <button class="CategoriesFilter-Footer" @click="filter.isOpen = !filter.isOpen">
-        <div class="CategoriesFilter-Default">
-          {{ filter.value.length ? filter.value.toString() : filter.defaultValue }}
+    <div class="SearchPage-Filters">
+      <div
+        v-for="(filter, name) in filters"
+        :key="name"
+        v-click-outside="() => (filter.isOpen = false)"
+        class="CheckboxFilter SearchPage-Filter"
+      >
+        <button class="CheckboxFilter-Footer" @click="filter.isOpen = !filter.isOpen">
+          <div
+            class="CheckboxFilter-Label CheckboxFilter-Default"
+            :class="{ 'CheckboxFilter-Default--active': filter.isOpen }"
+          >
+            {{ filter.value.length ? filter.value.toString() : filter.defaultValue }}
+          </div>
+          <i class="Arrow" :class="[filter.isOpen ? 'Arrow--up' : 'Arrow--down']"></i>
+        </button>
+        <div v-show="filter.isOpen" class="CheckboxFilter-Inner">
+          <BaseCheckbox
+            v-for="val in filter.values"
+            :key="val[filter.valueKey]"
+            v-model="filter.value"
+            class="CheckboxFilter-Checkbox"
+            label-class="CheckboxFilter-Label"
+            :value="val[filter.valueKey]"
+          >
+            {{ val[filter.nameKey] }}
+          </BaseCheckbox>
         </div>
-        <i class="ThinArrow" :class="[filter.isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"></i>
-      </button>
-      <div v-show="filter.isOpen" class="CategoriesFilter-Inner">
-        <BaseCheckbox
-          v-for="val in filter.values"
-          :key="val[filter.valueKey]"
-          v-model="filter.value"
-          class="CategoriesFilter-Checkbox"
-          label-class="CategoriesFilter-Label"
-          :value="val[filter.valueKey]"
-        >
-          {{ val[filter.nameKey] }}
-        </BaseCheckbox>
       </div>
     </div>
     <div v-if="searched" class="SearchedGames">
@@ -256,7 +261,40 @@ export default {
           value: [],
           nameKey: 'name',
           valueKey: 'value',
-          values: [],
+          values: [
+            {
+              name: this.$t('gameCategories.top'),
+              value: 'top',
+            },
+            {
+              name: this.$t('gameCategories.all'),
+              value: 'all',
+            },
+            {
+              name: this.$t('gameCategories.slots'),
+              value: 'slots',
+            },
+            {
+              name: this.$t('gameCategories.roulette'),
+              value: 'roulette',
+            },
+            {
+              name: this.$t('gameCategories.table'),
+              value: 'table',
+            },
+            {
+              name: this.$t('gameCategories.card'),
+              value: 'card',
+            },
+            {
+              name: this.$t('gameCategories.new'),
+              value: 'new',
+            },
+            {
+              name: this.$t('gameCategories.buybonus'),
+              value: 'buybonus',
+            },
+          ],
           isOpen: false,
         },
         gameProducerList: {
@@ -346,6 +384,22 @@ export default {
     }
   }
 
+  &-Filters {
+    display: flex;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--color-text-ghost);
+  }
+
+  &-Filter {
+    flex-shrink: 0;
+    width: 120px;
+    margin-right: 56px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
   .Games-Items {
     display: block;
   }
@@ -386,6 +440,86 @@ export default {
     font-weight: 500;
     color: var(--color-text-faded);
     text-transform: capitalize;
+  }
+}
+
+.CheckboxFilter {
+  position: relative;
+  display: flex;
+  padding: 23px 18px;
+
+  &-Footer {
+    display: flex;
+    align-items: center;
+  }
+
+  &-Inner {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    z-index: 6;
+    max-height: 360px;
+    padding: 30px 25px;
+    columns: 200px auto;
+    background-color: var(--color-bg-lighter);
+    border-radius: 8px;
+  }
+
+  &-Checkbox {
+    margin-bottom: 17px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-Label {
+    padding-left: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    color: var(--color-text-main);
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    &:before {
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &-Default {
+    margin-right: 8px;
+    padding-left: 0;
+
+    &--active {
+      color: var(--color-text-faded);
+    }
+  }
+
+  &-ChosenProvider {
+    display: flex;
+    height: 100%;
+
+    .ThinArrow {
+      margin-left: auto;
+    }
+  }
+
+  &-Submit {
+    width: 100%;
+    height: 55px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 55px;
+    text-align: center;
+    color: var(--color-main1);
+    text-transform: uppercase;
+    background: var(--color-bg-lighter);
+
+    @media (min-width: $screen-m) {
+      display: none;
+    }
   }
 }
 </style>
