@@ -60,8 +60,8 @@ export default {
           width: 100,
         },
         visa: {
-          logo: require('@/assets/img/visa.svg'),
-          width: 100,
+          logo: require('@/assets/img/visawhite.svg'),
+          width: 120,
         },
         skrill: {
           logo: require('@/assets/img/skrill.svg'),
