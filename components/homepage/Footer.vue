@@ -128,7 +128,11 @@ export default {
   },
   methods: {
     openInfoSertificate() {
-      window.open('https://certificates.gamingcommission.ca/KGCCertificates.aspx?id=b58a864d-54d2-4a91-8860-13a5980e5c5a','BrandNameCertificates','location=0,status=0,scrollbars=1')
+      window.open(
+        'https://certificates.gamingcommission.ca/KGCCertificates.aspx?id=b58a864d-54d2-4a91-8860-13a5980e5c5a',
+        'BrandNameCertificates',
+        'location=0,status=0,scrollbars=1',
+      );
     },
   },
 };
