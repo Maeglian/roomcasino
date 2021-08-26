@@ -265,7 +265,8 @@ export default {
     font-weight: 400;
     line-height: 40px;
     color: var(--color-main1);
-    background: var(--color-bg);
+    background: var(--color-bg-lighter);
+    border-radius: 0 0 0 8px;
     cursor: pointer;
 
     @media (min-width: $screen-m) {

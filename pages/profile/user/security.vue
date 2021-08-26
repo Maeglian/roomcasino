@@ -351,8 +351,9 @@ export default {
     padding-left: 16px;
     font-size: 16px;
     color: var(--color-text-main);
-    background: var(--color-bg);
-    border: none;
+    background: var(--color-bg-input);
+    border: 2px solid var(--color-border-input);
+    border-radius: var(--border-radius-default);
 
     @media (min-width: $screen-s) {
       font-size: 12px;

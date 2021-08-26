@@ -283,8 +283,9 @@
   &-Field {
     width: 100%;
     height: 55px;
-    background: transparent;
-    border: 2px solid var(--color-border-ghost);
+    background: var(--color-bg-input);
+    border: 2px solid var(--color-border-input);
+    border-radius: var(--border-radius-default);
 
     &--error {
       border-color: rgba(235, 28, 42, 0.3);
