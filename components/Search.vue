@@ -5,7 +5,7 @@
     :class="{ 'Search--open': isOpen }"
     @click="openSearch"
   >
-    <svg v-if="!value || (isOpen && width >= 768)" class="Icon Search-Icon">
+    <svg class="Icon Search-Icon">
       <use xlink:href="@/assets/img/icons.svg#search"></use>
     </svg>
     <div v-if="value" class="Close Search-Icon Search-Close" @click="$emit('input', '')"></div>
