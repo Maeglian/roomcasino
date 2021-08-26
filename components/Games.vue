@@ -21,7 +21,8 @@
       <slot name="notFound"></slot>
       <p v-if="!$slots.notFound" class="Text Text--center">{{ $t('search.notFound') }}</p>
     </template>
-    <div v-if="games.length > gamesShowed" class="Games-Btn">
+    <slot name="btn"></slot>
+    <div v-if="!$slots.btn && games.length > gamesShowed" class="Games-Btn">
       <button class="Btn" :class="btnClass" @click="showMoreGames()">
         {{ $t('buttons.loadMoreGames') }}
       </button>

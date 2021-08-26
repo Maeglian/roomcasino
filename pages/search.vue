@@ -50,6 +50,11 @@
             {{ $t('search.try') }}
           </div>
         </template>
+        <template v-if="selectedOneFilter" #btn>
+          <NuxtLink :to="pathToSelectedFilter" class="SearchPage-Btn">
+            {{ $t('buttons.loadMoreGames') }}
+          </NuxtLink>
+        </template>
       </Games>
     </div>
     <div class="SearchPage-Popular">
@@ -312,6 +317,21 @@ export default {
   computed: {
     ...mapState(['defaultCountry']),
     ...mapState('games', ['defaultGames', 'gameProducers']),
+    selectedOneFilter() {
+      return (
+        (this.filters.categoriesList.value.length === 1 &&
+          !this.filters.gameProducerList.value.length) ||
+        this.filters.gameProducerList.value.length === 1
+      );
+    },
+    pathToSelectedFilter() {
+      let path = '';
+      if (this.filters.gameProducerList.value.length === 1)
+        path = `/providers/${this.filters.gameProducerList.value[0]}`;
+      else if (this.filters.categoriesList.value.length === 1)
+        path = `/games/${this.filters.categoriesList.value[0]}`;
+      return this.localePath({ to: path });
+    },
     popularGames() {
       if (this.defaultCountry) {
         return this.defaultGames.filter(game => {
