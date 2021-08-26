@@ -1,34 +1,53 @@
 <template>
   <div class="SearchPage Wrapper">
     <h1 class="Title Title--center SearchPage-Title">{{ $t('search.findGame') }}</h1>
-    <Search v-model="searched" class="SearchPage-Search" />
-    <div class="SearchPage-Filters">
-      <div
-        v-for="(filter, name) in filters"
-        :key="name"
-        v-click-outside="() => (filter.isOpen = false)"
-        class="CheckboxFilter SearchPage-Filter"
-      >
-        <button class="CheckboxFilter-Footer" @click="filter.isOpen = !filter.isOpen">
+    <div v-click-outside="onClickOutsideFiltersBtn" class="SearchPage-Header">
+      <Search v-model="searched" class="SearchPage-Search" />
+      <div class="SearchPage-Filters">
+        <div class="SearchPage-FiltersIconWrapper" @click="filtersAreOpen = !filtersAreOpen">
+          <svg class="SearchPage-Icon" width="13" height="15">
+            <use xlink:href="@/assets/img/icons.svg#filters"></use>
+          </svg>
+        </div>
+        <div v-if="filtersAreOpen || width >= 768" class="SearchPage-FiltersInner">
           <div
-            class="CheckboxFilter-Label CheckboxFilter-Default"
-            :class="{ 'CheckboxFilter-Default--active': filter.isOpen }"
+            v-for="(filter, name) in filters"
+            :key="name"
+            v-click-outside="() => (filter.isOpen = false)"
+            class="CheckboxFilter SearchPage-Filter"
           >
-            {{ filter.value.length ? filter.value.toString() : filter.defaultValue }}
+            <div class="CheckboxFilter-Title">
+              {{ filter.title }}
+            </div>
+            <button class="CheckboxFilter-Footer" @click="filter.isOpen = !filter.isOpen">
+              <div
+                class="CheckboxFilter-Label CheckboxFilter-Default"
+                :class="{ 'CheckboxFilter-Default--active': filter.isOpen }"
+              >
+                {{ filter.value.length ? filter.value.toString() : filter.defaultValue }}
+              </div>
+              <svg
+                class="Arrow SearchPage-Arrow"
+                :class="[filter.isOpen ? 'Arrow--up' : 'Arrow--down']"
+                width="6"
+                height="5"
+              >
+                <use xlink:href="@/assets/img/icons.svg#triangle"></use>
+              </svg>
+            </button>
+            <div v-show="filter.isOpen || width < 768" class="CheckboxFilter-Inner">
+              <BaseCheckbox
+                v-for="val in filter.values"
+                :key="val[filter.valueKey]"
+                v-model="filter.value"
+                class="CheckboxFilter-Checkbox"
+                label-class="CheckboxFilter-Label"
+                :value="val[filter.valueKey]"
+              >
+                {{ val[filter.nameKey] }}
+              </BaseCheckbox>
+            </div>
           </div>
-          <i class="Arrow" :class="[filter.isOpen ? 'Arrow--up' : 'Arrow--down']"></i>
-        </button>
-        <div v-show="filter.isOpen" class="CheckboxFilter-Inner">
-          <BaseCheckbox
-            v-for="val in filter.values"
-            :key="val[filter.valueKey]"
-            v-model="filter.value"
-            class="CheckboxFilter-Checkbox"
-            label-class="CheckboxFilter-Label"
-            :value="val[filter.valueKey]"
-          >
-            {{ val[filter.nameKey] }}
-          </BaseCheckbox>
         </div>
       </div>
     </div>
@@ -267,6 +286,7 @@ export default {
       filters: {
         categoriesList: {
           defaultValue: 'All categories',
+          title: 'Categories',
           value: [],
           nameKey: 'name',
           valueKey: 'value',
@@ -308,6 +328,7 @@ export default {
         },
         gameProducerList: {
           defaultValue: 'All producers',
+          title: 'Producers',
           value: [],
           nameKey: 'name',
           valueKey: 'name',
@@ -315,10 +336,11 @@ export default {
           isOpen: false,
         },
       },
+      filtersAreOpen: false,
     };
   },
   computed: {
-    ...mapState(['defaultCountry']),
+    ...mapState(['width', 'defaultCountry']),
     ...mapState('games', ['defaultGames', 'gameProducers']),
     selectedOneFilter() {
       return (
@@ -377,6 +399,11 @@ export default {
       },
     },
   },
+  methods: {
+    onClickOutsideFiltersBtn() {
+      this.filtersAreOpen = false;
+    },
+  },
 };
 </script>
 
@@ -390,17 +417,25 @@ export default {
     font-size: 20px;
   }
 
+  &-Header {
+    position: relative;
+    display: flex;
+
+    @media (min-width: $screen-m) {
+      display: block;
+    }
+  }
+
   &-Search {
     position: relative;
-    margin-bottom: 32px;
+    flex-grow: 1;
+    height: 50px;
     background: var(--color-bg-lighter);
     border: 2px solid var(--color-bg-mobnav-lighter);
     border-radius: var(--border-radius-default);
 
     @media (min-width: $screen-m) {
       position: relative;
-      height: 46px;
-      margin: 0 auto 10px;
     }
   }
 
@@ -432,26 +467,78 @@ export default {
     }
   }
 
-  &-Filters {
+  &-FiltersInner {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    background: var(--color-bg-lighter);
+    border-radius: var(--border-radius-default);
+
+    @media (min-width: $screen-m) {
+      position: relative;
+      top: initial;
+      display: flex;
+      margin-bottom: 24px;
+      background: transparent;
+      border-bottom: 1px solid var(--color-text-ghost);
+      border-radius: 0;
+    }
+  }
+
+  &-Arrow {
+    fill: var(--color-text-main);
+  }
+
+  &-FiltersIconWrapper {
     display: flex;
-    margin-bottom: 24px;
-    border-bottom: 1px solid var(--color-text-ghost);
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-left: 6px;
+    background: var(--color-bg-lighter);
+    border: 2px solid var(--color-bg-mobnav-lighter);
+    border-radius: var(--border-radius-default);
+
+    @media (min-width: $screen-m) {
+      display: none;
+    }
+  }
+
+  &-FiltersIcon {
+    fill: var(--color-main1);
   }
 
   &-NotFound {
-    padding: 0 18px 20px;
     font-size: 12px;
     font-weight: 300;
+    line-height: 1.66;
     color: var(--color-text-main);
-    border-bottom: 1px solid var(--color-text-ghost);
+
+    @media (min-width: $screen-m) {
+      padding: 0 18px 20px;
+      border-bottom: 1px solid var(--color-text-ghost);
+    }
   }
 
   &-Filter {
-    flex-shrink: 0;
-    margin-right: 56px;
+    @media (min-width: $screen-m) {
+      flex-shrink: 0;
+      margin-right: 56px;
 
-    &:last-child {
-      margin-right: 0;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &-Games {
+    margin-top: 16px;
+
+    @media (min-width: $screen-m) {
+      margin-top: 0;
     }
   }
 
@@ -506,23 +593,45 @@ export default {
 
 .CheckboxFilter {
   position: relative;
-  display: flex;
   padding: 23px 18px;
 
-  &-Footer {
+  @media (min-width: $screen-m) {
     display: flex;
-    align-items: center;
+  }
+
+  &-Title {
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-text-faded);
+
+    @media (min-width: $screen-m) {
+      display: none;
+    }
+  }
+
+  &-Footer {
+    display: none;
+
+    @media (min-width: $screen-m) {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &-Inner {
-    position: absolute;
-    top: 55px;
-    left: 0;
-    z-index: 6;
-    padding: 30px 25px;
-    column-count: 3;
-    background-color: var(--color-bg-lighter);
-    border-radius: var(--border-radius-default);
+    column-count: 2;
+
+    @media (min-width: $screen-m) {
+      position: absolute;
+      top: 55px;
+      left: 0;
+      z-index: 6;
+      padding: 30px 25px;
+      column-count: 3;
+      background-color: var(--color-bg-lighter);
+      border-radius: var(--border-radius-default);
+    }
   }
 
   &-Checkbox {
