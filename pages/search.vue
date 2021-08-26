@@ -595,7 +595,6 @@ export default {
 }
 
 .CheckboxFilter {
-  position: relative;
   padding: 23px 18px;
 
   @media (min-width: $screen-m) {
@@ -634,6 +633,17 @@ export default {
       column-count: 3;
       background-color: var(--color-bg-lighter);
       border-radius: var(--border-radius-default);
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      background: var(--color-bg-lighter);
+      transform: rotate(45deg);
     }
   }
 
