@@ -47,7 +47,7 @@
         <template v-if="selectedOneFilter" #btn>
           <NuxtLink
             :to="localePath({ path: pathToSelectedFilter, hash: '#games' })"
-            class="SearchPage-Btn"
+            class="SearchPage-Btn Games-Btn"
           >
             {{ $t('buttons.loadMoreGames') }}
           </NuxtLink>
@@ -267,36 +267,52 @@ export default {
           value: [],
           values: [
             {
-              name: this.$t('gameCategories.top'),
+              name: this.$t('gameCategoriesTabs.top'),
               value: 'top',
             },
             {
-              name: this.$t('gameCategories.all'),
+              name: this.$t('gameCategoriesTabs.all'),
               value: 'all',
             },
             {
-              name: this.$t('gameCategories.slots'),
+              name: this.$t('gameCategoriesTabs.slots'),
               value: 'slots',
             },
             {
-              name: this.$t('gameCategories.roulette'),
+              name: this.$t('gameCategoriesTabs.roulette'),
               value: 'roulette',
             },
             {
-              name: this.$t('gameCategories.table'),
+              name: this.$t('gameCategoriesTabs.table'),
               value: 'table',
             },
             {
-              name: this.$t('gameCategories.card'),
+              name: this.$t('gameCategoriesTabs.card'),
               value: 'card',
             },
             {
-              name: this.$t('gameCategories.new'),
+              name: this.$t('gameCategoriesTabs.new'),
               value: 'new',
             },
             {
-              name: this.$t('gameCategories.buybonus'),
+              name: this.$t('gameCategoriesTabs.jackpots'),
+              value: 'jackpots',
+            },
+            {
+              name: this.$t('gameCategoriesTabs.megaways'),
+              value: 'megaways',
+            },
+            {
+              name: this.$t('gameCategoriesTabs.buybonus'),
               value: 'buybonus',
+            },
+            {
+              name: this.$t('gameCategoriesTabs.luckychoice'),
+              value: 'luckychoice',
+            },
+            {
+              name: this.$t('gameCategoriesTabs.DROP&WINS'),
+              value: 'DROP&WINS',
             },
           ],
         },
@@ -427,6 +443,7 @@ export default {
   }
 
   &-Btn {
+    display: inline-block;
     font-size: 14px;
     font-weight: 700;
     color: var(--color-main1);

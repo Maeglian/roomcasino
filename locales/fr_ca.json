@@ -148,7 +148,11 @@
     "table": "Jeux de table",
     "card": "Jeux de cartes",
     "new": "Nouveaux jeux",
-    "buybonus": "Bonus Buy"
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "gameCategories": {
     "top": "Les meilleurs jeux",
@@ -159,7 +163,11 @@
     "table": "Jeux de table",
     "card": "Jeux de cartes",
     "new": "Nouveaux jeux",
-    "buybonus": "Bonus Buy"
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "footer": {
     "text": {

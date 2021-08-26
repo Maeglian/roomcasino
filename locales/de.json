@@ -149,7 +149,11 @@
     "card": "Kartenspiele",
     "recent": "Letzte Spiele",
     "new": "Neue Spiele",
-    "buybonus": "Bonus Buy"
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "gameCategories": {
     "top": "Top-Spiele ",
@@ -161,7 +165,11 @@
     "card": "Kartenspiele",
     "recent": "Letzte Spiele",
     "new": "Neue Spiele",
-    "buybonus": "Bonus Buy"
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "footer": {
     "text": {
