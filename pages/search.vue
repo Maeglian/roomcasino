@@ -557,6 +557,7 @@ export default {
     height: 60px;
     margin-right: 12px;
     overflow: hidden;
+    background-size: contain;
     border-radius: var(--border-radius-6);
   }
 
