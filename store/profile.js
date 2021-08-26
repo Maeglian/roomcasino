@@ -87,11 +87,8 @@ export const mutations = {
   setPageRowsCount: (state, payload) => {
     state.pageRowsCount = payload;
   },
-  setPageDataIsLoading: state => {
-    state.pageDataIsLoading = true;
-  },
-  setPageDataIsLoaded: state => {
-    state.pageDataIsLoading = false;
+  setPageDataIsLoading: (state, payload) => {
+    state.pageDataIsLoading = payload;
   },
   setTransactionHistoryList: (state, payload) => {
     state.transactionHistoryList = payload;
