@@ -5,7 +5,7 @@
     :class="{ 'Search--open': isOpen }"
     @click="openSearch"
   >
-    <svg class="Icon Search-Icon">
+    <svg class="Icon Search-Icon" :class="{ 'Search-Icon--invisible': value }">
       <use xlink:href="@/assets/img/icons.svg#search"></use>
     </svg>
     <div v-if="value" class="Close Search-Icon Search-Close" @click="$emit('input', '')"></div>
@@ -85,25 +85,19 @@ export default {
     fill: var(--color-main1);
 
     @media (min-width: $screen-m) {
-      top: 10px;
-      right: auto;
-      left: 6px;
-      width: 9px;
-      height: 9px;
-    }
-
-    @media (min-width: $screen-l) {
-      top: 12px;
-      right: initial;
-      width: 15px;
-      height: 15px;
-    }
-
-    @media (min-width: $screen-xl) {
       top: calc(50% - 9px);
+      right: auto;
       left: 12px;
       width: 18px;
       height: 18px;
+    }
+
+    &--invisible {
+      display: none;
+
+      @media (min-width: $screen-m) {
+        display: block;
+      }
     }
   }
 
@@ -124,14 +118,6 @@ export default {
     border: none;
 
     @media (min-width: $screen-m) {
-      padding: 0 5px 0 20px;
-    }
-
-    @media (min-width: $screen-l) {
-      padding-left: 32px;
-    }
-
-    @media (min-width: $screen-xl) {
       padding-left: 40px;
     }
 
@@ -141,18 +127,6 @@ export default {
       line-height: 1.242;
       color: var(--color-text-main);
       text-transform: uppercase;
-
-      @media (min-width: $screen-m) {
-        font-size: 9px;
-      }
-
-      @media (min-width: $screen-l) {
-        font-size: 10px;
-      }
-
-      @media (min-width: $screen-xl) {
-        font-size: 12px;
-      }
     }
   }
 
