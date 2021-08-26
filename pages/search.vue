@@ -10,44 +10,19 @@
           </svg>
         </div>
         <div v-if="filtersAreOpen || width >= 768" class="SearchPage-FiltersInner">
-          <div
+          <CheckboxFilter
             v-for="(filter, name) in filters"
             :key="name"
-            v-click-outside="() => (filter.isOpen = false)"
-            class="CheckboxFilter SearchPage-Filter"
+            class="SearchPage-Filter"
+            :title="filter.title"
+            :default-value="filter.defaultValue"
+            :name-key="filter.nameKey"
+            :value-key="filter.valueKey"
+            :value="filter.value"
+            :values="filter.values"
+            @change="filter.value = $event"
           >
-            <div class="CheckboxFilter-Title">
-              {{ filter.title }}
-            </div>
-            <button class="CheckboxFilter-Footer" @click="filter.isOpen = !filter.isOpen">
-              <div
-                class="CheckboxFilter-Label CheckboxFilter-Default"
-                :class="{ 'CheckboxFilter-Default--active': filter.isOpen }"
-              >
-                {{ filter.value.length ? filter.value.toString() : filter.defaultValue }}
-              </div>
-              <svg
-                class="Arrow SearchPage-Arrow"
-                :class="[filter.isOpen ? 'Arrow--up' : 'Arrow--down']"
-                width="6"
-                height="5"
-              >
-                <use xlink:href="@/assets/img/icons.svg#triangle"></use>
-              </svg>
-            </button>
-            <div v-show="filter.isOpen || width < 768" class="CheckboxFilter-Inner">
-              <BaseCheckbox
-                v-for="val in filter.values"
-                :key="val[filter.valueKey]"
-                v-model="filter.value"
-                class="CheckboxFilter-Checkbox"
-                label-class="CheckboxFilter-Label"
-                :value="val[filter.valueKey]"
-              >
-                {{ val[filter.nameKey] }}
-              </BaseCheckbox>
-            </div>
-          </div>
+          </CheckboxFilter>
         </div>
       </div>
     </div>
@@ -99,7 +74,7 @@ import { mapState } from 'vuex';
 import search from '@/mixins/search';
 import Search from '@/components/Search';
 import Games from '@/components/Games';
-import BaseCheckbox from '@/components/base/BaseCheckbox';
+import CheckboxFilter from '@/components/CheckboxFilter';
 
 const gamesForCountries = {
   AT: [
@@ -277,7 +252,7 @@ export default {
   components: {
     Search,
     Games,
-    BaseCheckbox,
+    CheckboxFilter,
   },
   mixins: [search],
   layout: 'page',
@@ -285,11 +260,11 @@ export default {
     return {
       filters: {
         categoriesList: {
-          defaultValue: 'All categories',
           title: 'Categories',
-          value: [],
+          defaultValue: 'All categories',
           nameKey: 'name',
           valueKey: 'value',
+          value: [],
           values: [
             {
               name: this.$t('gameCategories.top'),
@@ -324,16 +299,14 @@ export default {
               value: 'buybonus',
             },
           ],
-          isOpen: false,
         },
         gameProducerList: {
-          defaultValue: 'All producers',
           title: 'Producers',
-          value: [],
+          defaultValue: 'All producers',
           nameKey: 'name',
           valueKey: 'name',
+          value: [],
           values: [],
-          isOpen: false,
         },
       },
       filtersAreOpen: false,
@@ -511,6 +484,17 @@ export default {
     fill: var(--color-main1);
   }
 
+  &-Filter {
+    @media (min-width: $screen-m) {
+      flex-shrink: 0;
+      margin-right: 56px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
   &-NotFound {
     font-size: 12px;
     font-weight: 300;
@@ -520,17 +504,6 @@ export default {
     @media (min-width: $screen-m) {
       padding: 0 18px 20px;
       border-bottom: 1px solid var(--color-text-ghost);
-    }
-  }
-
-  &-Filter {
-    @media (min-width: $screen-m) {
-      flex-shrink: 0;
-      margin-right: 56px;
-
-      &:last-child {
-        margin-right: 0;
-      }
     }
   }
 
@@ -591,128 +564,6 @@ export default {
     font-weight: 500;
     color: var(--color-text-faded);
     text-transform: capitalize;
-  }
-}
-
-.CheckboxFilter {
-  padding: 23px 18px;
-
-  @media (min-width: $screen-m) {
-    display: flex;
-  }
-
-  &-Title {
-    margin-bottom: 12px;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--color-text-faded);
-
-    @media (min-width: $screen-m) {
-      display: none;
-    }
-  }
-
-  &-Footer {
-    display: none;
-
-    @media (min-width: $screen-m) {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  &-Inner {
-    column-count: 2;
-
-    @media (min-width: $screen-m) {
-      position: absolute;
-      top: 55px;
-      left: 0;
-      z-index: 6;
-      padding: 30px 25px;
-      column-count: 3;
-      background-color: var(--color-bg-lighter);
-      border-radius: var(--border-radius-default);
-    }
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: -10px;
-      right: 10px;
-      width: 20px;
-      height: 20px;
-      background: var(--color-bg-lighter);
-      transform: rotate(45deg);
-    }
-  }
-
-  &-Checkbox {
-    break-inside: avoid;
-    margin-bottom: 17px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  .BaseCheckbox-Checkbox:checked + &-Label:before {
-    background-color: transparent;
-    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='10' height='10' rx='2' fill='%23E45809'/%3E%3C/svg%3E%0A");
-  }
-
-  &-Label {
-    padding-left: 30px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 15px;
-    color: var(--color-text-main);
-    text-transform: capitalize;
-    white-space: nowrap;
-
-    &:before {
-      top: 0;
-      left: 0;
-      border-radius: var(--border-radius-4);
-    }
-  }
-
-  &-Default {
-    width: 100px;
-    margin-right: 8px;
-    padding-left: 0;
-    overflow: hidden;
-    text-align: left;
-    text-overflow: ellipsis;
-
-    &--active {
-      color: var(--color-text-faded);
-    }
-  }
-
-  &-ChosenProvider {
-    display: flex;
-    height: 100%;
-
-    .ThinArrow {
-      margin-left: auto;
-    }
-  }
-
-  &-Submit {
-    width: 100%;
-    height: 55px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 55px;
-    text-align: center;
-    color: var(--color-main1);
-    text-transform: uppercase;
-    background: var(--color-bg-lighter);
-
-    @media (min-width: $screen-m) {
-      display: none;
-    }
   }
 }
 </style>
