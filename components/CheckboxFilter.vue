@@ -164,7 +164,7 @@ export default {
     padding-left: 30px;
     font-size: 12px;
     font-weight: 700;
-    line-height: 15px;
+    line-height: 17px;
     color: var(--color-text-main);
     text-transform: capitalize;
     white-space: nowrap;
