@@ -194,11 +194,22 @@ export default {
       background-color: var(--color-main1);
 
       @media (min-width: $screen-l) {
-        padding: 10px 5px 10px 29px;
+        position: relative;
+        padding: 10px 5px 10px 37px;
         color: var(--color-text-main);
         background-color: var(--color-bg);
         border-bottom: none;
-        border-left: 8px solid var(--color-main1);
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 8px;
+          height: 100%;
+          background-color: var(--color-main1);
+          border-radius: 0 8px 8px 0;
+        }
       }
 
       .NavIcon--stroke {

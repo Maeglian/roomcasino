@@ -151,7 +151,7 @@ export default {
     }
 
     @media (min-width: $screen-l) {
-      height: 50px;
+      height: 40px;
       padding: 22px 30px;
     }
   }
