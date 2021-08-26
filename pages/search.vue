@@ -448,7 +448,6 @@ export default {
 
   &-Filter {
     flex-shrink: 0;
-    width: 120px;
     margin-right: 56px;
 
     &:last-child {
@@ -535,6 +534,11 @@ export default {
     }
   }
 
+  .BaseCheckbox-Checkbox:checked + &-Label:before {
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='10' height='10' rx='2' fill='%23E45809'/%3E%3C/svg%3E%0A");
+  }
+
   &-Label {
     padding-left: 30px;
     font-size: 12px;
@@ -547,12 +551,17 @@ export default {
     &:before {
       top: 0;
       left: 0;
+      border-radius: var(--border-radius-4);
     }
   }
 
   &-Default {
+    width: 100px;
     margin-right: 8px;
     padding-left: 0;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
 
     &--active {
       color: var(--color-text-faded);
