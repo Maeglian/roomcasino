@@ -139,6 +139,18 @@
     "dailyCashback": "Tägliche rückzahlung",
     "search": "Suche"
   },
+  "gameCategoriesTabs": {
+    "top": "Top-Spiele ",
+    "all": "alle Spiele",
+    "live": "Live-Spiele",
+    "slots": "Spielautomaten",
+    "roulette": "Roulette",
+    "table": "Tischspiele",
+    "card": "Kartenspiele",
+    "recent": "Letzte Spiele",
+    "new": "Neue Spiele",
+    "buybonus": "Bonus Buy"
+  },
   "gameCategories": {
     "top": "Top-Spiele ",
     "all": "alle Spiele",
@@ -189,7 +201,7 @@
     "seconds": "Sekunden",
     "week": "Woche",
     "name": "Name",
-    "points":  "Punkte",
+    "points": "Punkte",
     "prize": "Preis",
     "prizePool": "Preisgeld",
     "freeSpins": "Freispiele",
@@ -437,7 +449,7 @@
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
-      "text": "Willkommen zu Phase 7 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops & Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 25–28 der Wöchentlichen Turniere und Täglichen Gewinnausspielungen mit einigen neuen Spielen!"
+      "text": "Willkommen zu Phase 8 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops & Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. <br/><br/>Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 29–32 der Wochenturniere (Gewinnmultiplikatorwochen) sowie Tagesausspielungen (Gewinnmultiplikatorwochen) mit einigen neuen Spielen!"
     },
     "dropsWinsLive": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
@@ -454,17 +466,34 @@
       "name": "Aufsatteln fürs Weekly Derby",
       "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
     },
-    "rapidSpins": {
-      "title": "RAPID SPINS-Netzturnier <br/>von EvoPlay",
-      "upTo": "€10.000",
-      "name": "RAPID SPINS-Netzturnier von EvoPlay",
-      "text": "Navigieren und halten Sie Kurs bei dem stürmischen RAPID SPINS-Netzturnier von EvoPlay. Sausen Sie flussabwärts in das abschließende Gewinnbecken mit 10.000 €!"
+    "sumdes": {
+      "title": "Summer Desserts<br/> Turnierserie",
+      "upTo": "100.000 €",
+      "name": "Auf den Geschmack kommen mit Summer Desserts",
+      "text": "Der Sommer ist voll in Schwung, was wäre also besser als eine Turnierserie von Booongo? Schnell mitmachen bei der Online-Turnierserie Summer Desserts im NineCasino! <br>Online-Turnierserie Summer Desserts beginnt am 19. August um 00:00 Uhr UTC und endet am 28. August 2021 um 23:00 Uhr UTC.<br><br>Worauf warten Sie noch? Verpassen Sie nicht Ihren Teil am riesigen Preisgeld von Booongo! Spielen, Spaß haben und gewinnen!"
     },
-    "luckyPlayson": {
-      "upTo": "Das Preisgeld 13.000 €.",
-      "name": "Lucky 13",
-      "text": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/><br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!"
+    "spiritOfEgypt": {
+      "upTo": "Das Preisgeld 60,000 €.",
+      "name": "Spirit of Egypt 60k",
+      "text": "Folgen Sie dem Spirit of Egypt zu 60.000 Euro!<br/><br/>Neue Abenteuer deuten sich an, und Playson erwartet Sie ab 00:01 Uhr UTC am 20. August 2021 bis 23:59 Uhr UTC am 29. August 2021 zu dem Spirit of Egypt-Turnier um 60.000 Euro.<br/><br/>Das Gesamtpreisgeld beträgt umwerfende 60.000 Euro, und auf dem Gipfel der Pyramiden warten 10.000 davon! Machen Sie Ihr Glück bei Spirit of Egypt um 60.000 Euro!"
+    },
+    "demigods": {
+      "title": "Demi God Tales <br/>Tournament <br/>Runde I",
+      "upTo": "20.000 €",
+      "name": "Werden Sie der Held in Demi God Tales",
+      "text": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst."
+    },
+    "twitterGiveaway": {
+      "title": "twitter<br/> Giveaway",
+      "upTo": "600 Freispiele",
+      "name": "600 Freispiele geschenkt auf Twitter",
+      "text": "Wir haben ein Geschenk für Sie auf unserem Konto bei {twitterAccount}.{br}{br}Folgen Sie uns, befürworten Sie {tweet} und warten Sie bis zum 26. August auf die Ergebnisse. 3 glückliche Gewinnerinnen und Gewinner werden nach dem Zufallsprinzip ausgewählt und erhalten jeweils 200 Freispiele für das Automatenspiel Wolf Gold.{br}{br}Viel Glück!"
     }
+  },
+  "twitter": {
+    "twitterBtn": "Twitter",
+    "twitterAccount": "Twitter",
+    "tweet": "diesen Beitrag"
   },
   "tournaments": {
     "games": "Teilnehmende Spiele",
@@ -476,18 +505,18 @@
     "previousRound": "Letzte Runde"
   },
   "dropsWinsSlots": {
-    "title": "Aufgewertete Ausgabe von Drops & Wins Slots",
+    "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
     "prize": "4.000.000 €",
-    "text": "Willkommen zu Phase 7 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops & Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 25–28 der Wöchentlichen Turniere und Täglichen Gewinnausspielungen mit einigen neuen Spielen!",
-    "textMobile": "Willkommen zu Phase 7 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops & Wins auf 500.000 €!",
+    "text": "Willkommen zu Phase 8 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops & Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mit einem Multiplikator zu spielen, macht noch mehr Spaß. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 29–32 der Wochenturniere (Gewinnmultiplikatorwochen) sowie Tagesausspielungen (Gewinnmultiplikatorwochen) mit einigen neuen Spielen!",
+    "textMobile": "Willkommen zu Phase 8 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops & Wins auf 500.000 €!",
     "terms": [
       {
-        "title": "Laufzeit der Phase 7",
-        "text": "● Woche 25: 28th Juli 2021 09:01 CEST – 4th August 2021 18:59 CEST<br/>● Woche 26: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Woche 27: 11th August 2021 19:01 CEST – 18st August 2021 18:59 CEST<br/>● Woche 28: 18st August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
+        "title": "Laufzeit der Phase 8",
+        "text": "● Woche 29: 25. August 2021 19:01 CEST – 1. September 2021 18:59 CEST<br/>● Woche 30: 1. September 2021 19:01 CEST – 8. August 2021 18:59 CEST<br/>● Woche 31: 8. September 2021 19:01 CEST – 15. September 2021 18:59 CEST<br/>● Woche 32: 15. September 2021 19:01 CEST – 22. September 2021 18:59 CEST"
       },
       {
         "title": "Teilnehmende Spiele",
-        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Release the Kraken™, Empty the Bank™, Lucky Grace And Charm™, Book of Vikings™."
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House ™, The Dog House Megaways™, Chilli Heat ™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Book of Vikings™, Chicken Drop™, Fruit Party 2™, Rise of Giza PowerNudge™, Juicy Fruits™."
       },
       {
         "title": "Drops & Wins beinhaltet",
@@ -495,19 +524,23 @@
       },
       {
         "title": "Wie man gewinnt",
-        "text": "● Der Mindesteinsatz beträgt 0,50 Euro. <br/>● Zur Teilnahme muss in einem oder mehreren der teilnehmenden Spiele Echtgeld in entsprechender Höhe gesetzt werden. <br/>● In den Wöchentlichen Turnieren – Höchster Einzelausspielungsgewinn relativ zum Einsatz.<br/>● In den Täglichen Turnieren – jeder Echtgeldeinsatz kann die zufällige Ausschüttung eines Preises auslösen.<br/>● Die Teilnahme hat keine weiteren Kosten."
+        "text": "● Zur Teilnahme an dem Wochenturnier berechtigt ist, wer einen Echtgeldeinsatz in einem der teilnehmenden Spiele getätigt und mindestens einen (1) Gewinn in diesem Spiel erzielt hat. <br/>● Für die Teilnahme an der täglichen Gewinnausschüttung besteht kein Mindesteinsatz in echtem Geld. Drops (Ausschüttungen in Gewinnmultiplikatorenwochen)."
+      },
+      {
+        "title": "Zusätzlich",
+        "text": "● Während der Multiplikatorenwochen können Gewinne in Form eines in der Wochenturniergewinnübersicht (Gewinnmultiplikatorenwochen) und der Tagesausschüttungsübersicht weiter unten (im weiteren Textverlauf die „Gewinnmultiplikatorenwochen“) ausgewiesenen Vielfachen r des Einsatzes der erfolgreichen Spielerin bzw. des erfolgreichen Spielers erzielt werden.<br/>● Wenn der Gewinn in der erfolgreichen Ausspielung zehn Euro/Pfund Sterling (10 €/£) übersteigt, erfolgt die Auszahlung des Gewinns auf der Grundlage eines Einsatzes von 10 Euro/Pfund Sterling (10 €/£) oder umgerechnet in die jeweils geltende Währung (s. unten) multipliziert mit dem erworbenen Multiplikator x.<br>● Die Ermittlung der Ranglistenposition erfolgt entsprechend der Punktzahl für den höchsten Einzelgewinn in einer einzelnen Ausspielung in einem der teilnehmenden Spiele umgerechnet auf den jeweiligen Einsatz.<br>● Sollten zwei (2) oder mehr Mitspielende ein Wochenturnier auf demselben Ranglistenplatz beenden, entfällt der höhere Gewinn auf die Spielerin bzw. den Spieler, die/der die erfolgreiche Punktzahl zuerst erreicht hat."
       }
     ]
   },
   "dropsWinsLive": {
-    "title": "Drops & Wins for Live Casino",
+    "title": "DROPS <span class=\"Colored\">&</span> WINS FOR LIVE CASINO",
     "prize": "3.000.000 €",
     "text": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!<br/><br/>Magst du Live-Spiele? Diese Live-Ausgabe wird dir gefallen. Mach mit bei wöchentlichen Turnieren – Roulette, Blackjack, Mega Wheel, Baccarat!",
     "textMobile": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!",
     "terms": [
       {
-        "title": "Laufzeit der Phase 3",
-        "text": "● Woche 9: 28th Juli 2021 09:01 CEST – 4th August 2021 18:59 CEST<br/>● Woche 10: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Woche 11: 11th August 2021 19:01 CEST – 18st August 2021 18:59 CEST<br/>● Woche 12: 18st August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
+        "title": "Laufzeit der Phase 4",
+        "text": "● Woche 13: 28th Juli 2021 09:01 CEST – 4th August 2021 18:59 CEST<br/>● Woche 14: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Woche 15: 11th August 2021 19:01 CEST – 18st August 2021 18:59 CEST<br/>● Woche 16: 18st August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
       },
       {
         "title": "Teilnehmende Spiele",
@@ -1222,8 +1255,6 @@
         "Beim Spielen mit Bonusgeld werden alle Gewinne, die abgehoben werden sollen, vor der Bearbeitung der Auszahlung einer Überprüfung unterzogen. Das Casino behält sich vor, die betreffende Benutzerin/den betreffenden Benutzer infolge dieser Überprüfung um eine Bestätigung ihrer/seiner personenbezogenen Daten und der Daten für die Zahlungsabwicklung zu bitten.",
         "Das Casino ist berechtigt, unrechtmäßig oder unter Verletzung der hier niedergelegten Bestimmungen erzielten Boni und Gewinne zu widerrufen und das gesamte Guthaben des betroffenen Kontos einzuziehen.",
         "Das Casino behält sich vor, diese Bedingungen jederzeit zu ändern und zu ergänzen.",
-        "Sinkt das Spielguthaben auf einem Konto auf höchstens 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC, so verfällt der Bonus automatisch.*",
-        "* Das gilt nur für das an einen Bonus gebundene Guthaben, zum Beispiel Einzahlung + Bonus, oder einen reinen Bonus im Fall von Boni ohne Einzahlungsverpflichtung, nicht jedoch für aus anderen Einzahlungen oder Boni erzielte Geldmittel auf einem Spielerkonto.",
         "Die Verwendung von Bonusgeld zum alleinigen Zweck des Fortschritts durch die Bonusstufen ist verboten. Wenn beispielsweise Bonus- oder Barmittel ausschließlich zum Aufstieg durch die Bonusstufen (etwa zum Sammeln von 9 der 10 für das Erreichen der Bonusfunktion erforderlichen Münzen) genutzt werden, und die letzten Stufen (z.B. das Spielen zum Erwerb der letzten der 10 Münzen und damit das Erreichen der Bonusfunktion) mit Bargeldeinsätzen abgeschlossen werden, wenn die Bonusmittel verfallen sind oder verloren wurden oder die Umsatzanforderung erfüllt und in Bargeld umgetauscht wurde. Alle durch derartiges Spiel erzielten Gewinne werden als nichtig betrachtet.",
         "Alle Boni nach UTC-Zeit abgerechnet."
       ],
@@ -1255,7 +1286,7 @@
   "dailyCashback": {
     "cashback": "Rückzahlung",
     "title": "Tägliche rückzahlung<br/>bis zu 20%",
-    "text1": "Wer bekommt im Casino nicht gerne Geld zurück?<br/>  Selbst wenn Sie verloren haben! Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von&nbsp;x5 urück, wenn Sie verlieren.",
+    "text1": "Wer bekommt im Casino nicht gerne Geld zurück?<br/>  Selbst wenn Sie verloren haben! Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von&nbsp;x5 zurück, wenn Sie verlieren.",
     "text2": "Wenn Ihnen das passiert ist und Sie heute im Ninecasino Geld verloren haben, erhalten Sie es von uns morgen nach folgendem Muster zurück:",
     "terms": "Rückerstattungsbedingungen",
     "termsList": [
@@ -1375,51 +1406,168 @@
       }
     ]
   },
-  "rapidSpins": {
-    "title": "RAPID SPINS-Netzturnier von EvoPlay",
-    "prize": "€10.000",
-    "text": "Navigieren und halten Sie Kurs bei dem stürmischen RAPID SPINS-Netzturnier von EvoPlay. Sausen Sie flussabwärts in das abschließende Gewinnbecken mit 10.000€! Beginnend mit dem 12. August haben Sie 10 Tage lang die Gelegenheit, an Bord zu kommen und an diesem elektrisierenden Ereignis teilzunehmen!",
-    "textMobile": "Navigieren und halten Sie Kurs bei dem stürmischen RAPID SPINS-Netzturnier von EvoPlay. Sausen Sie flussabwärts in das abschließende Gewinnbecken mit 10.000€!",
+  "tesla_lottery": {
+    "metaTitle": "➤ Tesla-Verlosung mit Tesla Modell 3  – Spiele deine Lieblingsspiele und gewinne tolle Preis - Tesla Modell 3!",
+    "metaDescription": "✭ Versuch dein Glück beim neuen Tesla Lottery von NineCasino ➔ Holen Sie sich ein Los, um einen Tesla zu gewinnen!",
+    "title": "Tesla-Verlosung",
+    "name": "Tesla-Verlosung",
+    "prize": "Tesla Modell 3",
+    "text": "Mitgemacht bei der Tesla-Verlosung im NineCasino vom 18. August bis zum 23. September 2021 mit der Chance, einen Tesla Modell 3 Ihr eigen nennen zu können!<br/><br/>Die Bekanntgabe der Gewinnerin bzw. des Gewinners erfolgt am 24. September!",
     "terms": [
       {
-        "title": "Das Turnier läuft ab dem 12. August 2021 um 0:01 Uhr UTC und endet am 22. August 2021 um 23:59 Uhr UTC.<br/><br/>"
+        "text": "Die Verlosung läuft ab dem 18. August bis zum 23. September 2021."
       },
       {
-        "title": "Diese 10 Spiele nehmen teil:<br/><br/> Fruit SuperNova, Ice Mania, Hot Triple Sevens, Indiana's Quest, Cycle of Luck, Elven Princess, Midnight Show, Rise of Horus, Temple of Dead, Irish Reels<br/><br/>"
+        "text": "Die Mindesteinzahlung je Los beträgt 50 Euro. Jedes Los kann gewinnen."
       },
       {
-        "title": "Der Mindesteinsatz beträgt umgerechnet 0,5€<br/><br/>"
+        "text": "Die Anzahl der Lose je Mitspielerin/Mitspieler ist nicht begrenzt."
       },
       {
-        "title": "Das Preisgeld von 10.000 € wird unter den 100 erfolgreichsten Mitspielenden entsprechend der Rangliste wie folgt aufgeteilt:<br/>Platz 1 – 1.670 €<br/>Platz 2 – 1.270 €<br/>Platz 3 – 1.000 €<br/>Platz 4 – 667 €<br/>Platz 5 – 600 €<br/>Platz 6 – 533 €<br/>Platz 7 – 400 €<br/>Platz 8 – 293 €<br/>Platz 9 – 220 €<br/>Platz 10 – 19 je 133 €<br/>Platz 20 – 49 je 33 €<br/>Platz 50 – 100 je 20 €"
+        "text": "Je mehr Lose bis zum Zeitpunkt der Ziehung gesammelt wurden, desto größer ist die Gewinnchance."
       },
       {
-        "title": "Eine Ausspielung entspricht einem Punkt. Je mehr Punkte, desto besser die Platzierung in der Rangliste."
+        "text": "Zum Zeitpunkt der Ziehung darf das Spielkonto nicht gesperrt sein."
+      },
+      {
+        "text": "Die Bekanntgabe der Gewinnerin bzw. des Gewinners erfolgt am 24. September."
       }
     ]
   },
-  "luckyPlayson": {
-    "title": "Lucky 13",
-    "prize": "13.000 €",
-    "text": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/><br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!",
-    "textMobile": "Im August beim Lucky 13-Turnier von Playson 13 epische Spiele spielen!<br/><br/>NineCasino und der fantastische Spieleanbieter Playson haben sich zusammengetan, um Sie zum Lucky 13-Turnier einzuladen, es läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC, und es geht um ein Gesamtpreisgeld von 13.000 Euro!",
+  "sumdes": {
+    "title": "Summer Desserts <br>Turnierserie",
+    "prize": "100.000 €",
+    "text": "Der Sommer ist voll in Schwung, was wäre also besser als eine Turnierserie von Booongo? Schnell mitmachen bei der Online-Turnierserie Summer Desserts im NineCasino! <br>Online-Turnierserie Summer Desserts beginnt am 19. August um 00:00 Uhr UTC und endet am 28. August 2021 um 23:00 Uhr UTC.<br>Verpassen Sie nicht Ihren Teil am riesigen Preisgeld von Booongo!",
+    "textMobile": "Der Sommer ist voll in Schwung, was wäre also besser als eine Turnierserie von Booongo? Schnell mitmachen bei der Online-Turnierserie Summer Desserts im NineCasino! <br>Online-Turnierserie Summer Desserts beginnt am 19. August um 00:00 Uhr UTC und endet am 28. August 2021 um 23:00 Uhr UTC.<br>Verpassen Sie nicht Ihren Teil am riesigen Preisgeld von Booongo!",
     "terms": [
       {
-        "title": "Das Turnier läuft am 13. August 2021 von 00:01 Uhr UTC bis 23:59 Uhr UTC."
+        "title": "Online-Turnierserie Summer Desserts beginnt am 19. August um 00:00 Uhr UTC und endet am 28. August 2021 um 23:00 Uhr UTC."
       },
       {
-        "title": "Gewinnübersicht für die 13.000 Euro:<br/> Platz:        Gewinn in Euro<br/>1    -    1,313<br/>2    -    1,013<br/>3    -     813<br/>4     -    666<br/>5    -     453<br/>6    -     413<br/>7     -    353<br/>8     -    313<br/>9    -     253<br/>10-12 - 213<br/>13    -     130<br/>14-25  -    93<br/>26-50   -    63<br/>51-150   -   33<br/>151-200  -   13"
+        "title": "Es handelt sich um eine Kombination aus regelmäßigen Turnieren mit unterschiedlichen Laufzeiten (die Dauer der einzelnen Turniere einer Reihe kann variieren); dem jeweiligen Wertungsturnier (bei dem es für jede Ausspielung mit Gewinn Punkte gibt) sowie einer zweiten (SONDER-) Rangliste, die die Gesamtplatzierung der Spielerin/des Spielers wiedergibt.   "
       },
       {
-        "title": "Mindesteinsatz:",
-        "text": "0.13 EUR"
+        "title": "Es geht um ein großartiges Gesamtpreisgeld von umgerechnet 100.000 Euro:<br> - insgesamt 80.000 Euro für 10 regelmäßige Turniere (8.000 Euro je Turnier);<br> - 20.000 Euro für die Gesamtrangliste (mit Auszahlung der Gewinne bei Beendigung des Abschlussturniers der Serie am 28.08.2021 um 23:00 Uhr UTC)."
       },
       {
-        "title": "13 Spiele nehmen daran teil: <br/>● Book of Gold: Double Chance ● Book of Gold: Multichance <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Diamond Wins: Hold and Win <br/>● Divine Dragon: Hold and Win <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra Megaways™ <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Super Sunny Fruits: Hold and Win <br/>● Wolf Power: Hold and Win.<br/><br/>"
+        "title": "Kämpfen Sie mit bei folgenden atemberaubenden Spielen:<br>3 Coins Egypt; Pearl Diver; Wukong; Sun of Egypt 2; 15 Dragon Pearls; Hit the Gold!; 3 Coins; Magic Apple; Sun of Egypt; Dragon Pearls; Scarab Temple; Wolf Saga; Aztec Sun; Aztec Pyramid; Scarab Boost."
       },
       {
-        "title": "Es müssen mindestens 13 Ausspielungen gespielt werden, um an dieser Aktion teilnehmen zu können. Die Punkte werden Runde für Runde berechnet, dabei entspricht jeder umgesetzte Euro 100 Punkten."
+        "title": "Der Mindesteinsatz für die Teilnahme beträgt lediglich 0,5 Euro."
+      },
+      {
+        "title": "Es müssen mindestens 100 Ausspielungen gespielt werden."
+      },
+      {
+        "title": "Jede Ausspielung mit Gewinn bringt Punkte – 1 Euro = 1 Punkt. Für jeden x1-Vervielfachungsfaktor in einer Ausspielung mit Gewinn gibt es 1 Punkt."
+      }
+    ],
+    "metaInfo": {
+      "title": "➤ Summer Desserts -Turnier mit massivem Preispool von 100.000 € – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
+      "description": "✭ Versuch dein Glück beim neuen Summer Desserts  von Booongo ➔ Schließe Missionen ab – gewinne Preise!"
+    }
+  },
+  "spiritOfEgypt": {
+    "title": "Spirit of Egypt 60k",
+    "prize": "€60,000",
+    "text": "Na obzoru se rýsují nová dobrodružství a Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC.<br/><br/>Celkový prize pool má závratnou hodnotu 60 000 eur, a pokud se vám podaří dostat se na vrchol pyramidy, pak můžete očekávat nejvyšší cenu ve výši 10 000 eur! Zkuste své štěstí se Spirit of Egypt 60k!",
+    "textMobile": "Na obzoru se rýsují nová dobrodružství a Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC.<br/><br/>Celkový prize pool má závratnou hodnotu 60 000 eur, a pokud se vám podaří dostat se na vrchol pyramidy, pak můžete očekávat nejvyšší cenu ve výši 10 000 eur! Zkuste své štěstí se Spirit of Egypt 60k!",
+    "metaInfo": {
+      "title": "➤ Spirit of Egypt 60k-Turnier mit massivem Preisgeld von 60.000 € – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
+      "description": "✭ Versuch dein Glück beim neuen Spirit of Egypt 60k von Playson ➔ Jeder gewonnene Einsatz bringt dir Punkte!"
+    },
+    "terms": [
+      {
+        "title": "Playson erwartet Sie ab 00:01 Uhr UTC am 20. August 2021 bis 23:59 Uhr UTC am 29. August 2021 zu dem Spirit of Egypt-Turnier um 60.000 Euro."
+      },
+      {
+        "title": "Das Gesamtpreisgeld beträgt 60.000 Euro."
+      },
+      {
+        "title": "Diese 20 Spiele sind beteiligt: <br/>● 5 Fortunator <br/>● 9 Happy Pharaohs <br/>● Bo ok of Gold 2: Double HitTM <br/>● Book of Gold: Multichance <br/>● Buffalo Power MegawaysTM <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Divine Dragon: Hold and Win <br/>● Eagle Power: Hold and Win <br/>● Hot Burning Wins <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra <br/>● Legend of Cleopatra MegawaysTM <br/>● Rich Diamonds: Hold and Win <br/>● Rise of Egypt Deluxe <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Spirit of Egypt: Hold and Win <br/>● Wolf Power: Hold and Win."
+      },
+      {
+        "title": "Für die Teilnahme ist kein Mindesteinsatz erforderlich."
+      },
+      {
+        "title": "Die Punkte werden Runde für Runde berechnet, dabei entspricht jeder umgesetzte Euro umgerechnet 100 Punkten."
       }
     ]
+  },
+  "demigods": {
+    "title": "Demi God Tales Tournament<br>Runde I",
+    "prize": "20.000 €",
+    "text": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst.",
+    "textMobile": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst.",
+    "terms": [
+      {
+        "title": "Runde I beginnt am 24. August um 00:00 Uhr UTC und endet am 30. August 2021 um 23:00 Uhr UTC.<br><br>"
+      },
+      {
+        "title": "Teilnehmende Spiele:<br>Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II.<br><br>"
+      },
+      {
+        "title": "Die 150 Bestplatzierten teilen sich den Gesamtgewinn von 20.000 Euro.<br><br>"
+      },
+      {
+        "title": "Spielen Sie eines oder mehrere der teilnehmenden Spiele. Jeder Gewinn bringt Ihnen Wertungspunkte entsprechend dem Gewinnmultiplikator (wird zum Beispiel mit einem gesetzten Euro ein Gewinn von 10 Euro erzielt, ergibt das 10 Punkte für Sie)."
+      },
+      {
+        "title": "Die gesammelten Punkte werden während des gesamten Turnierverlaufs aufaddiert. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
+      },
+      {
+        "title": "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 Euro."
+      }
+    ],
+    "metaInfo": {
+      "title": "➤ Demi God Tales-Turnier mit massivem Preisgeld von 40.000 € – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
+      "description": "✭ Versuch dein Glück beim neuen Demi God Tales von Spinomenal  ➔ Schließe Missionen ab – gewinne Preise!"
+    }
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Hier finden Sie Informationen zu unserem Begrüßungsbonus für neue Mitspielerinnen und Mitspieler sowie weitere regelmäßige Aktionen im Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Tägliche Rükzahlung von bis zu 20 % – Bei Verlusten geähren wir Ihnen eine Rückzahlung mit einer Umsatzanforderung von x5."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Ausführliche Informationen zu uns, unsere Software und zu dem, was wir unseren Kunden bieten ✓ Schnelle Abhebung ✓ Alle Zulassungen"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Häufig gestellte Fragen – Hier sind die Antworten auf die beliebtesten Fragen zu Ninecasino"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "Hier erhalten Sie aktuelle Informationen zu den Geschäftsbedingungen von Ninecasino für den Besuch unserer Webseite"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Ausführliche Informationen zu unseren Boni: Erhalten und Abheben von Boni im Ninecasino"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Hier erfahren Sie mehr über die verfügbaren Hilfen für verantwortungsbewusstes Glücksspiel, damit Sie Ihr Spielverhalten im Griff haben"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Informationen zu den Gefahren, denen Sie sich aussetzen, wenn Sie an Glücksspielen im Ninecasino teilnehmen"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Datenschutz im Ninecasino: Alles, was Sie in Bezug auf die Sicherheit Ihrer finanziellen und personenbezogenen Angaben wissen sollten"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Ausführliche Informationen über die Verwendung von Bitcoins im Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Ausführliche Informationen zu unserem Umgang mit Betrugsversuchen und Geldwäsche"
+    }
   }
 }

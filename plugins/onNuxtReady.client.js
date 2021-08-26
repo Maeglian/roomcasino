@@ -38,22 +38,33 @@ window.onNuxtReady(({ context }) => {
   const updateWidth = throttle(() => context.store.commit('setWidth', window.innerWidth), 150);
   updateWidth();
   window.addEventListener('resize', updateWidth);
-  if (process.env.NUXT_ENV_MODE === 'stage') {
-    context.store
-      .dispatch('games/getDefaultGames')
-      .then(() => context.store.commit('setInitialLoading', 'defaultGames'));
-    context.store
-      .dispatch('games/getGameProducerList')
-      .then(() => context.store.commit('setInitialLoading', 'producers'));
-    context.store.dispatch('games/getTopGames');
-    context.store.dispatch('games/getNewGames');
-    context.store.dispatch('games/getLiveGames');
-    context.store.dispatch('games/getJackpotGames');
-    context.store.dispatch('games/getBuybonusGames');
-    context.store.dispatch('games/getMegawaysGames');
-    context.store.dispatch('games/getLuckychoiceGames');
-    context.store.dispatch('games/getDropsWinsSlotsGames');
-  }
+  context.store
+    .dispatch('games/getDefaultGames')
+    .then(() => context.store.commit('setInitialLoading', 'defaultGames'));
+  context.store.dispatch('games/getTopGames');
+  context.store.dispatch('games/getNewGames');
+  context.store.dispatch('games/getLiveGames');
+  context.store.dispatch('games/getJackpotGames');
+  context.store.dispatch('games/getBuybonusGames');
+  context.store.dispatch('games/getMegawaysGames');
+  context.store.dispatch('games/getLuckychoiceGames');
+  context.store.dispatch('games/getDropsWinsSlotsGames');
+  // if (process.env.NUXT_ENV_MODE === 'stage') {
+  //   context.store
+  //     .dispatch('games/getDefaultGames')
+  //     .then(() => context.store.commit('setInitialLoading', 'defaultGames'));
+  //   context.store
+  //     .dispatch('games/getGameProducerList')
+  //     .then(() => context.store.commit('setInitialLoading', 'producers'));
+  //   context.store.dispatch('games/getTopGames');
+  //   context.store.dispatch('games/getNewGames');
+  //   context.store.dispatch('games/getLiveGames');
+  //   context.store.dispatch('games/getJackpotGames');
+  //   context.store.dispatch('games/getBuybonusGames');
+  //   context.store.dispatch('games/getMegawaysGames');
+  //   context.store.dispatch('games/getLuckychoiceGames');
+  //   context.store.dispatch('games/getDropsWinsSlotsGames');
+  // }
   context.store
     .dispatch('dictionary/getCountriesList')
     .then(() => context.store.commit('setInitialLoading', 'countries'));
@@ -64,6 +75,9 @@ window.onNuxtReady(({ context }) => {
     .dispatch('dictionary/getCurrencyList')
     .then(() => context.store.commit('setInitialLoading', 'currency'));
   context.store.dispatch('dictionary/getCategoriesList');
+  context.store
+    .dispatch('games/getGameProducerList')
+    .then(() => context.store.commit('setInitialLoading', 'producers'));
   context.store.dispatch('games/getTopWinnerList', { limit: 5 });
   context.store.dispatch('games/getLastWinnerList', { limit: 5 });
   context.store.dispatch('tournaments/getTournamentList');

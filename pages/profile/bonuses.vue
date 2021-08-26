@@ -160,15 +160,22 @@
     <!--      </div>-->
     <!--    </div>-->
 
-    <!--    <div class="CabinetPage-Subtitle BonusesPage-Subtitle">-->
-    <!--      Receive a bonus-->
-    <!--    </div>-->
-    <!--    <form class="BonusesPage-Form CabinetPage-Form">-->
-    <!--      <input type="text" class="BonusesPage-Input CabinetPage-Input" placeholder="Promo code" />-->
-    <!--      <button class="BonusesPage-Submit CabinetPage-Submit" type="submit">-->
-    <!--        Add-->
-    <!--      </button>-->
-    <!--    </form>-->
+    <div class="CabinetPage-Subtitle BonusesPage-Subtitle">
+      I have a bonus code
+    </div>
+    <form class="BonusesPage-Form CabinetPage-Form" @submit.prevent="onAddPromoCode">
+      <BaseInput
+        v-model="code"
+        class="BonusesPage-AddPromoCode"
+        error-class="BonusesPage-InputError"
+        input-class="BonusesPage-Input CabinetPage-Input"
+        placeholder="Promo code"
+        :v="$v.code"
+      />
+      <button class="BonusesPage-Submit CabinetPage-Submit" type="submit">
+        Redeem
+      </button>
+    </form>
   </div>
 </template>
 
@@ -179,6 +186,8 @@ import BonusDetails from '@/components/profile/BonusDetails';
 import Loader from '@/components/Loader';
 import CancelBonusPopup from '@/components/CancelBonusPopup';
 import FreeSpin from '@/components/profile/FreeSpin';
+import BaseInput from '@/components/base/BaseInput';
+import { alphaNum } from 'vuelidate/lib/validators';
 
 export default {
   name: 'BonusesPage',
@@ -186,6 +195,15 @@ export default {
     Counter,
     Loader,
     FreeSpin,
+    BaseInput,
+  },
+  data() {
+    return {
+      code: '',
+    };
+  },
+  validations: {
+    code: { alphaNum },
   },
   computed: {
     ...mapState('profile', [
@@ -219,6 +237,7 @@ export default {
       'getBonusHistoryList',
       'getAvailableFreeSpinList',
       'getFreeSpinList',
+      'addPromoCode',
     ]),
     onClickCancelBonus(bonus) {
       this.$modal.show(
@@ -255,12 +274,28 @@ export default {
         { width: 400, height: 'auto', adaptive: true },
       );
     },
+    onAddPromoCode() {
+      this.$v.code.$touch();
+      if (this.$v.code.$error) return;
+
+      this.addPromoCode({ bonusCode: this.code }).then(() => {
+        this.pushNotificationAlert({
+          type: 'success',
+          text: 'Your promo code was successfully added',
+        });
+        this.code = '';
+        this.getBonusList();
+        this.getFreeSpinList();
+      });
+    },
   },
 };
 </script>
 
 <style lang="scss">
 .BonusesPage {
+  padding-bottom: 100px;
+
   &-Bonuses {
     display: flex;
     align-items: center;
@@ -414,20 +449,32 @@ export default {
     display: flex;
     order: 1;
     width: 100%;
+  }
+
+  &-AddPromoCode {
+    flex-grow: 1;
 
     @media (min-width: $screen-m) {
-      width: 616px / $screen-xl * 100%;
+      flex-grow: 0;
+      width: 490px;
     }
   }
 
   &-Input {
-    flex-grow: 1;
-    margin-right: 4px;
     padding: 14px 16px;
   }
 
+  &-InputError {
+    position: absolute;
+    bottom: -15px;
+  }
+
   &-Submit {
+    flex-shrink: 0;
     width: 84px;
+    margin-left: 4px;
+    font-weight: 700;
+    cursor: pointer;
 
     @media (min-width: $screen-m) {
       width: 122px;

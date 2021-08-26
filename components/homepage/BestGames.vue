@@ -68,20 +68,20 @@
         />
       </div>
       <a id="games"></a>
+      <template v-if="recentGames.length">
+        <div class="Title Title--type-h2 Cards-Title">
+          {{ $t('gameCategories.recent') }}
+        </div>
+        <Games
+          :key="isLoggedIn"
+          class="DefaultGames-Cards"
+          :games="recentGames"
+          :games-to-show="recentGamesNum"
+          btn-class="Btn--common Btn--dark"
+        />
+      </template>
       <Nuxt :key="$route.path" />
       <template v-if="getRouteBaseName($route) === 'index'">
-        <template v-if="recentGames.length">
-          <div class="Title Title--type-h2 Cards-Title">
-            {{ $t('gameCategories.recent') }}
-          </div>
-          <Games
-            :key="isLoggedIn"
-            class="DefaultGames-Cards"
-            :games="recentGames"
-            :games-to-show="recentGamesNum"
-            btn-class="Btn--common Btn--dark"
-          />
-        </template>
         <div class="Title Title--type-h2 Cards-Title">
           {{ $t('gameCategories.top') }}
         </div>
@@ -283,32 +283,32 @@ export default {
       if (this.width < 768) {
         return [
           {
-            name: this.$t('gameCategories.slots'),
+            name: this.$t('gameCategoriesTabs.slots'),
             type: 'slots',
             icon: 'slots',
           },
           {
-            name: this.$t('gameCategories.live'),
+            name: this.$t('gameCategoriesTabs.live'),
             type: 'live',
             icon: 'live',
           },
           {
-            name: this.$t('gameCategories.top'),
+            name: this.$t('gameCategoriesTabs.top'),
             type: 'top',
             icon: 'crown',
           },
           {
-            name: this.$t('gameCategories.buybonus'),
+            name: this.$t('gameCategoriesTabs.buybonus'),
             type: 'buybonus',
             icon: 'crown',
           },
           {
-            name: this.$t('gameCategories.new'),
+            name: this.$t('gameCategoriesTabs.new'),
             type: 'new',
             icon: 'crown',
           },
           {
-            name: this.$t('gameCategories.table'),
+            name: this.$t('gameCategoriesTabs.table'),
             type: 'table',
             icon: 'table',
           },
@@ -316,37 +316,37 @@ export default {
       }
       return [
         {
-          name: this.$t('gameCategories.top'),
+          name: this.$t('gameCategoriesTabs.top'),
           type: 'top',
           icon: 'crown',
         },
         {
-          name: this.$t('gameCategories.all'),
+          name: this.$t('gameCategoriesTabs.all'),
           type: 'all',
           icon: 'all',
         },
         {
-          name: this.$t('gameCategories.live'),
+          name: this.$t('gameCategoriesTabs.live'),
           type: 'live',
           icon: 'live',
         },
         {
-          name: this.$t('gameCategories.slots'),
+          name: this.$t('gameCategoriesTabs.slots'),
           type: 'slots',
           icon: 'slots',
         },
         {
-          name: this.$t('gameCategories.roulette'),
+          name: this.$t('gameCategoriesTabs.roulette'),
           type: 'roulette',
           icon: 'roulette',
         },
         {
-          name: this.$t('gameCategories.table'),
+          name: this.$t('gameCategoriesTabs.table'),
           type: 'table',
           icon: 'table',
         },
         {
-          name: this.$t('gameCategories.card'),
+          name: this.$t('gameCategoriesTabs.card'),
           type: 'card',
           icon: 'cards',
         },
@@ -376,8 +376,8 @@ export default {
     isLoggedIn: {
       immediate: true,
       handler() {
-        if (this.getRouteBaseName(this.$route) === 'index' && this.isLoggedIn) {
-          this.getRecentGames({ category: 'top' });
+        if (this.isLoggedIn) {
+          this.getRecentGames();
         }
       },
     },

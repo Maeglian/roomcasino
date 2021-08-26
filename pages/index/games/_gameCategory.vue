@@ -1,17 +1,5 @@
 <template>
   <div>
-    <template v-if="recentGames.length">
-      <div class="Title Title--type-h2 Cards-Title">
-        {{ $t('gameCategories.recent') }}
-      </div>
-      <Games
-        :key="isLoggedIn"
-        class="DefaultGames-Cards"
-        :games="recentGames"
-        :games-to-show="recentGamesNum"
-        btn-class="Btn--common Btn--outline"
-      />
-    </template>
     <h1 class="Title Title--type-h2 Cards-Title">
       {{ $t(`gameCategories.${$route.params.gameCategory}`) }}
     </h1>
@@ -41,7 +29,6 @@ export default {
     const gameParams = {};
     if (params.gameCategory !== 'all') gameParams.category = params.gameCategory;
     await store.dispatch('games/getGames', gameParams);
-    if (store.getters.isLoggedIn) await store.dispatch('games/getRecentGames', gameParams);
   },
   head() {
     return {
@@ -65,12 +52,9 @@ export default {
     ...mapState(['width']),
     ...mapState('games', ['games', 'gamesAreLoading', 'recentGames']),
     ...mapGetters(['isLoggedIn']),
-    recentGamesNum() {
-      return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
-    },
   },
   methods: {
-    ...mapActions('games', ['getGames', 'getRecentGames']),
+    ...mapActions('games', ['getGames']),
   },
 };
 </script>

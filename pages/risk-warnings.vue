@@ -16,10 +16,10 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Risk Warnings | Ninecasino',
+      title: this.$t('metaTags.risk-warnings.title'),
       meta: [
         {
-          description: 'Information About Risks You Take Paticipating In Games At Ninecasino',
+          description: this.$t('metaTags.risk-warnings.description'),
         },
       ],
     };
