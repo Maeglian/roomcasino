@@ -85,7 +85,7 @@
     "terms": "I am {minAge} years old and I accept the{br} {terms} and {policy}",
     "step2Title": "Please, fill the information below!",
     "thanksRegistration": "Thank you for registration",
-    "registrationBonus": "NZ$ 150",
+    "registrationBonus": "NZ$ 250",
     "registrationBonusText": "For your first deposit! Use advantage of Ninecasino Welcome Bonus",
     "getBonus": "Get your bonus",
     "enterEmail": "Enter email",
@@ -97,7 +97,7 @@
     "tryingConfirmEmail": "We're trying to verify your email",
     "confirmEmailError": "Sorry, you email was not confirmed",
     "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed",
-    "bonus": "NZ$ 450",
+    "bonus": "NZ$ 750",
     "freeSpins": "250 free spins",
     "placeholders": {
       "enterEmail": "Enter your email",
@@ -215,7 +215,7 @@
     "heroBanner": {
       "deposit1": {
         "title": "Welcome package <br/><span class=\"Colored\">NZ$  750!</span>",
-        "text": "Make first deposit<br/> and get <span class=\"Colored\">100%</span><br/> up to <span class=\"Colored\">NZ$  250</span> + <span class=\"Colored\">250 free spins</span>"
+        "text": "Make first deposit<br/> and get <span class=\"Colored\">100%</span><br/> up to <span class=\"Colored\">NZ$ 250</span> + <span class=\"Colored\">250 free spins</span>"
       },
       "deposit2": {
         "title": "Second deposit<br/> bonus",
@@ -1167,7 +1167,7 @@
         "text2": [
           "Limits can be amended at any time. A decrease in the limit will take effect immediately,         however an increase may only occur after email confirmation and only after the previous         limit of the same type expires, in order to avoid rash decisions. If you require further         information or assistance regarding Personal Limits, please contact our support team at         contact@ninecasino.com.",
           "Deposit Limit. A limit on your deposits for a day, a week, or a month.",
-          "Loss Limit. A limit on your losses in the casino for a day, a week, or a month. Please note         the loss is based on the initial deposit and not winnings attributed to the deposited         amount. If for example you deposit €50, put a Loss Limit of €10 and then go on to win         €1,000, you can still lose more than €10 of the €1,000 balance as it is based on the initial         deposit instead of the winnings.",
+          "Loss Limit. A limit on your losses in the casino for a day, a week, or a month. Please note the loss is based on the initial deposit and not winnings attributed to the deposited amount. If for example you deposit NZ$ 75, put a Loss Limit of NZ$ 20 and then go on to win NZ$ 1,710, you can still lose more than NZ$ 75 of the NZ$ 1,710 balance as the limit is based on the initial deposit instead of the winnings.",
           "Wager Limit. A limit on the wagered amount for a day, a week, or a month.",
           "Session Limit. A limit on the amount of time in minutes spent playing a game."
         ]
@@ -1228,13 +1228,13 @@
         "The use of bonus funds purely to progress through the bonus stages is prohibited, particularly in the cases when bonus or cash funds are used purely to progress through the bonus stages (e.g. collecting 9 out of 10 coins to reach the bonus feature), and then final stages (e.g. playing to collect the final coin to reach 10 out of 10 and the bonus feature) are completed with cash bets when bonus funds have been forfeited, lost or wagering has been met, and converted to cash. All the winnings gained during that play may be considered void.",
         "The Player is not allowed to perform any fraudulent actions while playing with an active bonus in order to fulfil the requirements to wager the bonus, the Casino reserves the right to cancel all Player’s winnings.",
         "All the bonuses have a minimum deposit requirement for obtaining the bonus, limitation of the maximum possible bonus amount, wagering terms, limitation of the maximum amount of bets while wagering, time limitation of bonus life, unless otherwise indicated.",
-        "Any issued bonuses are by default limited to a maximum bet during wagering: 5 EUR, 10 CAD/AUD, 100 CZK, 90 ZAR, 10 BGN, 40 DKK, 40 HRK, 25 RON, 0,00019 BTC, unless otherwise specified. Max bet limit includes bets doubling after a game round has been completed as well as bonus rounds (purchased within the game).",
+        "Any issued bonuses are by default limited to a maximum bet during wagering: 5 EUR, 7,5 NZD, 10 CAD/AUD, 100 CZK, 90 ZAR, 10 BGN, 40 DKK, 40 HRK, 25 RON, 0,00019 BTC, unless otherwise specified. Max bet limit includes bets doubling after a game round has been completed as well as bonus rounds (purchased within the game).",
         "The winnings obtained by using bonuses become available for withdrawal only after meeting the requirements of all wagering rules.",
         "All bonuses (unless otherwise specified) need to be wagered 40 times before the funds can be withdrawn.",
         "All the bonuses are sticky. It means, you cannot request your withdrawal until wagering requirements are fully fulfilled. Also, you start playing for real money first, then for bonus money, and as soon as bonus money is lost, the bonus also gets lost.",
         "Validity of the bonus is 14 days from the moment it was received, unless otherwise indicated.",
         "At the end of the bonus period, if the bonus remains valid and the conditions of wagering are not met, all bonus money and winnings are void.",
-        "Bonuses are automatically cancelled upon active balance reaching the amount of 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC, or less.*",
+        "Bonuses are automatically cancelled upon active balance reaching the amount of 0.05 EUR, 0.05 CAD/AUD/NZD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC, or less.*",
         "*This term only applies to balance tied to a bonus, i.e. deposit + bonus, or a bonus only (in case of a no deposit bonus), and doesn't apply to funds on player's balance gained from other deposits or bonuses.",
         "A player can request a withdrawal of their deposit before meeting the requirements for bonus wagering. In this case, the amount of the bonus and winnings are void, and the remaining funds, if any, are paid to the player.",
         "A player has the right to cancel any bonuses without proceeding to their wagering, without any loss of their own funds.",
@@ -1253,25 +1253,26 @@
       ],
       "title2": "welcome package",
       "text2": [
-        "To get the first/second/third deposit bonuses, your deposit shall be at least 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
-        "Maximum first/second/third deposit bonus amount is 150 EUR, 225 CAD, 225 AUD, 3330 CZK, 2600 ZAR, 290 BGN, 1150 DKK, 1130 HRK, 740 RON, 0,0055 BTC.",
+        "All promotions are available only to those who have completed their Welcome Package bonuses, including wagering. If you received an increased welcome bonus, you do not need to have completed wagering before you can accept other promotions.",
+        "To get the first/second/third deposit bonuses, your deposit shall be at least 20 EUR, 20 CAD/AUD, 25 NZD,  500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
+        "Maximum first/second/third deposit bonus amount is 150 EUR, 225 CAD, 250 NZD, 225 AUD, 3330 CZK, 2600 ZAR, 290 BGN, 1150 DKK, 1130 HRK, 740 RON, 0,0055 BTC.",
         "Players can use their Free Spins in Aztec Magic, Aztec Magic Delux, Johnny Cash, Platinum Lightning, and Platinum Lightning Delux slot games by BGaming.",
         "After the first deposit, players will get 50 Free Spins every day for the next 5 days.",
         "Free spin activation duration is 3 days, free spin duration and free spin result duration are 7 days.",
         "To wager the bonus / free spin result, you need to make bets for an amount 40 times the bonus / free spin result amount.",
-        "Maximum win resulting from first/second/third deposit free spins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
-        "Maximum win resulting from sign up freespins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC."
+        "Maximum win resulting from first/second/third deposit free spins is 50 EUR, 70 CAD, 75 NZD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "Maximum win resulting from sign up freespins is 50 EUR, 70 CAD, 75 NZD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC."
       ],
       "title3": "weekend reload",
       "text3": [
-        "To get the weekend reload, your deposit shall be at least 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
-        "Maximum weekend reload amount is 150 EUR, 220 CAD, 240 AUD, 3900 CZK, 2580 ZAR, 300 BGN, 1110 DKK, 1125 HRK, 735 RON, 0,0056 BTC.",
+        "To get the weekend reload, your deposit shall be at least 20 EUR, 20 CAD/AUD, 25 NZD,  500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
+        "Maximum weekend reload amount is 150 EUR, 220 CAD, 240 AUD, 260 NZD, 3900 CZK, 2580 ZAR, 300 BGN, 1110 DKK, 1125 HRK, 735 RON, 0,0056 BTC.",
         "To wager the bonus, you need to make bets for an amount 40 times the bonus amount.",
         "The bonus is available once on Friday, Saturday, or Sunday for players who have already used all the welcome package bonuses."
       ],
       "title4": "loyalty free spins",
       "text4": [
-        "The maximum you will ever be able to withdraw from play with funds associated with a no-deposit bonus or free spins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "The maximum you will ever be able to withdraw from play with funds associated with a no-deposit bonus or free spins is 50 EUR, 70 CAD, 75 NZD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
         "The maximum win restriction persists after the completion of the wagering requirement."
       ]
     }
