@@ -543,7 +543,9 @@ export default {
   }
 
   .Games-Items {
-    display: block;
+    grid-template-columns: 1fr;
+    justify-items: flex-start;
+    grid-row-gap: 12px;
   }
 
   .Games-Btn {
@@ -552,7 +554,7 @@ export default {
 
   .Card {
     flex-direction: row;
-    margin-bottom: 12px;
+    width: auto;
   }
 
   .Card-Main {
@@ -569,6 +571,7 @@ export default {
   }
 
   .Card-Footer {
+    flex-basis: 0;
     align-items: flex-start;
     background: transparent;
   }
