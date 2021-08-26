@@ -14,7 +14,7 @@
       <span class="ProvidersMenu-ActiveProvider">
         {{ providerActive.name }}
       </span>
-      <i class="Arrow Tab-Arrow" :class="[isOpen ? 'Arrow--up' : 'Arrow--down']"></i>
+      <i class="ThickArrow Tab-Arrow" :class="[isOpen ? 'ThickArrow--up' : 'ThickArrow--down']"></i>
     </button>
     <div v-if="width > 767" class="ProvidersMenu-Providers">
       <button

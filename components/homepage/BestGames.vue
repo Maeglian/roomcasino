@@ -393,14 +393,14 @@ export default {
       display: none;
     }
 
-    .Arrow {
+    .ThickArrow {
       position: absolute;
       top: 50%;
       right: 20px;
       margin-top: -2px;
     }
 
-    .Arrow--up {
+    .ThickArrow--up {
       margin-top: -8px;
     }
   }
