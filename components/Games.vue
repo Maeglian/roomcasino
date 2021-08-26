@@ -93,7 +93,6 @@ export default {
     grid-column-gap: 10px;
     grid-row-gap: 20px;
     justify-items: center;
-    margin-bottom: 20px;
 
     @media (min-width: $screen-s) {
       grid-template-columns: repeat(4, 1fr);
@@ -101,16 +100,20 @@ export default {
 
     @media (min-width: $screen-l) {
       grid-template-columns: repeat(6, 1fr);
-      margin-bottom: 24px;
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-bottom: 32px;
     }
   }
 
   &-Btn {
+    margin-top: 20px;
     text-align: center;
+
+    @media (min-width: $screen-l) {
+      margin-top: 24px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: 32px;
+    }
   }
 }
 </style>

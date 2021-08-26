@@ -100,7 +100,7 @@ export default {
     }
 
     @media (min-width: $screen-xl) {
-      top: 15px;
+      top: calc(50% - 9px);
       left: 12px;
       width: 18px;
       height: 18px;

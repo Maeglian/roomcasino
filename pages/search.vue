@@ -32,7 +32,7 @@
         </div>
       </div>
     </div>
-    <div v-if="searched" class="SearchedGames">
+    <div v-if="searched" class="SearchPage-Games">
       <div v-if="filteredGames.length" class="Title Title--type-h4 Cards-Title">
         {{ $t('search.searchResults') }} ({{ filteredGames.length }})
       </div>
@@ -44,25 +44,26 @@
         btn-class="SearchPage-Btn"
       >
         <template #notFound>
-          <div class="Title Title--type-h4">
-            {{ $t('search.nothingFound') }}
-          </div>
-          <div class="Text Text--additional">
+          <div class="SearchPage-NotFound ">
+            {{ $t('search.nothingFound') }}.
+            <br />
             {{ $t('search.try') }}
           </div>
         </template>
       </Games>
     </div>
-    <div class="Title Title--type-h4 Cards-Title">
-      {{ $t('search.popular') }}
+    <div class="SearchPage-Popular">
+      <div class="Title Title--type-h4 Cards-Title">
+        {{ $t('search.popular') }}
+      </div>
+      <Games
+        class="DefaultGames-Cards"
+        :games="popularGames"
+        :games-to-show="7"
+        start-game-on-click-card
+        btn-class="SearchPage-Btn"
+      />
     </div>
-    <Games
-      class="DefaultGames-Cards"
-      :games="popularGames"
-      :games-to-show="7"
-      start-game-on-click-card
-      btn-class="SearchPage-Btn"
-    />
   </div>
 </template>
 
@@ -359,6 +360,7 @@ export default {
 <style lang="scss">
 .SearchPage {
   max-width: 600px;
+  padding-bottom: 100px;
 
   &-Title {
     margin: 18px 0;
@@ -383,8 +385,8 @@ export default {
     margin-bottom: 24px;
   }
 
-  &-Cards {
-    margin-bottom: 30px;
+  &-Popular {
+    margin-top: 24px;
   }
 
   &-Text {
@@ -410,6 +412,14 @@ export default {
   &-Filters {
     display: flex;
     margin-bottom: 24px;
+    border-bottom: 1px solid var(--color-text-ghost);
+  }
+
+  &-NotFound {
+    padding: 0 18px 20px;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--color-text-main);
     border-bottom: 1px solid var(--color-text-ghost);
   }
 
@@ -481,14 +491,14 @@ export default {
     top: 55px;
     left: 0;
     z-index: 6;
-    max-height: 360px;
     padding: 30px 25px;
-    columns: 200px auto;
+    column-count: 3;
     background-color: var(--color-bg-lighter);
     border-radius: 8px;
   }
 
   &-Checkbox {
+    break-inside: avoid;
     margin-bottom: 17px;
 
     &:last-child {
