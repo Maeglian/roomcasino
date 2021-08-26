@@ -51,7 +51,10 @@
           </div>
         </template>
         <template v-if="selectedOneFilter" #btn>
-          <NuxtLink :to="pathToSelectedFilter" class="SearchPage-Btn">
+          <NuxtLink
+            :to="localePath({ path: pathToSelectedFilter, hash: '#games' })"
+            class="SearchPage-Btn"
+          >
             {{ $t('buttons.loadMoreGames') }}
           </NuxtLink>
         </template>
@@ -330,7 +333,7 @@ export default {
         path = `/providers/${this.filters.gameProducerList.value[0]}`;
       else if (this.filters.categoriesList.value.length === 1)
         path = `/games/${this.filters.categoriesList.value[0]}`;
-      return this.localePath({ to: path });
+      return path;
     },
     popularGames() {
       if (this.defaultCountry) {
@@ -392,7 +395,7 @@ export default {
     margin-bottom: 32px;
     background: var(--color-bg-lighter);
     border: 2px solid var(--color-bg-mobnav-lighter);
-    border-radius: 8px;
+    border-radius: var(--border-radius-default);
 
     @media (min-width: $screen-m) {
       position: relative;
@@ -475,6 +478,8 @@ export default {
     width: 60px;
     height: 60px;
     margin-right: 12px;
+    overflow: hidden;
+    border-radius: var(--border-radius-6);
   }
 
   .Card-Footer {
@@ -484,6 +489,10 @@ export default {
 
   .Card-Name {
     white-space: nowrap;
+
+    br {
+      display: none;
+    }
   }
 
   .Card-Provider {
@@ -514,7 +523,7 @@ export default {
     padding: 30px 25px;
     column-count: 3;
     background-color: var(--color-bg-lighter);
-    border-radius: 8px;
+    border-radius: var(--border-radius-default);
   }
 
   &-Checkbox {
