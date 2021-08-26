@@ -98,7 +98,7 @@
           {{ updateProfileError }}
         </div>
         <BaseButton
-          class="Btn Btn--full Btn--darkColor ProfilePage-Btn"
+          class="Btn Btn--full Btn--darkColor Btn--bottomCorners ProfilePage-Btn"
           :is-loading="profileIsUpdating"
         >
           {{ $t('buttons.update') }}

@@ -86,12 +86,20 @@ button {
     }
   }
 
+  &--square {
+    border-radius: 0;
+  }
+
   &--leftCorner {
     border-radius: 0 0 0 20px;
   }
 
   &--rightCorner {
     border-radius: 0 0 20px 0;
+  }
+
+  &--bottomCorners {
+    border-radius: 0 0 20px 20px;
   }
 
   &--outline2 {

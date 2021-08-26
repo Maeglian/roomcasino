@@ -173,6 +173,7 @@ export default {
     text-transform: uppercase;
     white-space: nowrap;
     background-color: var(--color-bg-lighter);
+    border-radius: var(--border-radius-default);
     cursor: pointer;
 
     @media (min-width: $screen-l) {
@@ -196,7 +197,7 @@ export default {
       @media (min-width: $screen-l) {
         position: relative;
         padding: 10px 5px 10px 37px;
-        color: var(--color-text-main);
+        color: var(--color-main1);
         background-color: var(--color-bg);
         border-bottom: none;
 

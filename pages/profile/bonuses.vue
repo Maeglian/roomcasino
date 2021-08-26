@@ -46,7 +46,7 @@
               {{ $t('common.left') }}
             </Counter>
           </div>
-          <button class="Btn Btn--dark Bonus-Btn" @click="onClickCancelBonus(bonus)">
+          <button class="Btn Btn--square Btn--dark Bonus-Btn" @click="onClickCancelBonus(bonus)">
             {{ $t('buttons.cancel') }}
           </button>
         </div>
@@ -399,12 +399,13 @@ export default {
 
     &--clover {
       width: 15px;
-      height: 15px;
+      height: 14px;
       margin-right: 16px;
+      stroke: var(--color-main1);
 
       @media (min-width: $screen-m) {
         width: 21px;
-        height: 21px;
+        height: 20px;
       }
     }
   }
