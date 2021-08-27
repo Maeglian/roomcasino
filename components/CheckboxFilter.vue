@@ -86,7 +86,7 @@ export default {
     ...mapState(['width']),
   },
   mounted() {
-    this.arrowLeftPosition = this.$refs.arrow.offsetLeft;
+    this.arrowLeftPosition = this.$refs.arrow.offsetLeft || 20;
   },
   methods: {
     onClickOutside() {
@@ -136,17 +136,17 @@ export default {
       column-count: 3;
       background-color: var(--color-bg-lighter);
       border-radius: var(--border-radius-default);
-    }
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: calc(var(--left-position) - 5px);
-      width: 15px;
-      height: 15px;
-      background: var(--color-bg-lighter);
-      transform: rotate(45deg);
+      &:before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: calc(var(--left-position) - 5px);
+        width: 15px;
+        height: 15px;
+        background: var(--color-bg-lighter);
+        transform: rotate(45deg);
+      }
     }
   }
 
