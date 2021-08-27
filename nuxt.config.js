@@ -101,10 +101,16 @@ export default {
         icon: 'en-ca.svg',
       },
       {
-        code: 'fr',
-        codeCountry: 'fr_FR',
+        code: 'fr-ca',
+        codeCountry: 'fr_CA',
         file: 'fr_ca.json',
         icon: 'fr_ca.svg',
+      },
+      {
+        code: 'fr',
+        codeCountry: 'fr_FR',
+        file: 'fr.json',
+        icon: 'fr.svg',
       },
       {
         code: 'cs',

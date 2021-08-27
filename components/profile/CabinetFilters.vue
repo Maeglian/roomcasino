@@ -80,6 +80,7 @@ export default {
       fr,
       nz: en,
       'en-ca': en,
+      'fr-ca': fr,
     };
   },
   computed: {
