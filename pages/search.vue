@@ -34,6 +34,7 @@
         class="SearchPage-Cards"
         :games="filteredGames"
         :games-to-show="7"
+        :show-dga="false"
         start-game-on-click-card
         btn-class="SearchPage-Btn"
       >
@@ -62,6 +63,7 @@
         class="DefaultGames-Cards"
         :games="popularGames"
         :games-to-show="7"
+        :show-dga="false"
         start-game-on-click-card
         btn-class="SearchPage-Btn"
       />

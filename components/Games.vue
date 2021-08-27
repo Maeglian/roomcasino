@@ -9,6 +9,7 @@
           :game-info="game"
           :img-url="game.imageUrl"
           :show-demo="true"
+          :show-dga="showDga"
           show-footer
           :overlay="!startGameOnClickCard"
           :show-provider="startGameOnClickCard"
@@ -67,6 +68,11 @@ export default {
       type: Boolean,
       required: false,
       default: false,
+    },
+    showDga: {
+      type: Boolean,
+      required: false,
+      default: true,
     },
   },
   data() {
