@@ -36,18 +36,6 @@
         />
       </div>
       <a id="games"></a>
-      <template v-if="recentGames.length">
-        <div class="Title Title--type-h2 Cards-Title">
-          {{ $t('gameCategories.recent') }}
-        </div>
-        <Games
-          :key="isLoggedIn"
-          class="DefaultGames-Cards"
-          :games="recentGames"
-          :games-to-show="recentGamesNum"
-          btn-class="Btn--common Btn--dark"
-        />
-      </template>
       <Nuxt :key="$route.path" />
       <template v-if="getRouteBaseName($route) === 'index'">
         <div class="Title Title--type-h2 Cards-Title">
@@ -60,6 +48,18 @@
           :games="topGames"
           :games-to-show="24"
           btn-class="Btn--common Btn--outline"
+        />
+      </template>
+      <template v-if="recentGames.length">
+        <div class="Title Title--type-h2 Cards-Title">
+          {{ $t('gameCategories.recent') }}
+        </div>
+        <Games
+          :key="isLoggedIn"
+          class="DefaultGames-Cards"
+          :games="recentGames"
+          :games-to-show="recentGamesNum"
+          btn-class="Btn--common Btn--dark"
         />
       </template>
       <template v-if="newGames.length">
