@@ -18,7 +18,12 @@
           @click.native="onChooseTab(i)"
         >
           <div class="DefaultGames-Icon">
-            <svg :class="`DefaultGames-Icon--${tab.icon}`">
+            <img
+              v-if="tab.icon === 'table'"
+              class="DefaultGames-Icon--table"
+              src="@/assets/img/table.svg"
+            />
+            <svg v-else :class="`DefaultGames-Icon--${tab.icon}`">
               <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
             </svg>
           </div>
@@ -59,7 +64,7 @@
           class="DefaultGames-Cards"
           :games="recentGames"
           :games-to-show="recentGamesNum"
-          btn-class="Btn--common Btn--dark"
+          btn-class="Btn--common Btn--outline"
         />
       </template>
       <template v-if="newGames.length">
@@ -273,7 +278,7 @@ export default {
         {
           name: this.$t('gameCategoriesTabs.all'),
           type: 'all',
-          icon: 'star',
+          icon: 'all',
         },
         {
           name: this.$t('gameCategoriesTabs.live'),
@@ -406,6 +411,7 @@ export default {
   }
 
   &-Tab {
+    position: relative;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -414,6 +420,7 @@ export default {
     line-height: 1.18;
     white-space: nowrap;
     background-color: var(--color-bg);
+    border-radius: 12px;
     cursor: pointer;
 
     @media (min-width: $screen-m) {
@@ -431,7 +438,17 @@ export default {
       @media (min-width: $screen-m) {
         display: initial;
         padding-bottom: 18px;
-        border-bottom: 2px solid var(--color-main1);
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 50%;
+          height: 3px;
+          background: var(--color-main1);
+          transform: translateX(-50%);
+        }
       }
     }
   }
@@ -469,74 +486,46 @@ export default {
       margin-bottom: 10px;
     }
 
-    &--star {
-      width: 18px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 25px;
-        height: 23px;
-      }
+    &--all {
+      width: 28px;
+      height: 28px;
+      fill: var(--color-main1);
     }
 
     &--crown {
-      width: 18px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 22px;
-        height: 22px;
-      }
+      width: 30px;
+      height: 21px;
+      stroke: var(--color-main1);
     }
 
     &--live {
-      width: 17px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 23px;
-        height: 23px;
-      }
+      width: 23px;
+      height: 23px;
+      fill: var(--color-main1);
     }
 
     &--slots {
-      width: 34px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 46px;
-        height: 23px;
-      }
+      width: 45px;
+      height: 25px;
+      fill: var(--color-main1);
     }
 
     &--roulette {
-      width: 17px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 22px;
-        height: 22px;
-      }
+      width: 23px;
+      height: 23px;
+      fill: var(--color-main1);
     }
 
     &--table {
-      width: 17px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 22px;
-        height: 22px;
-      }
+      width: 29px;
+      height: 28px;
+      fill: var(--color-main1);
     }
 
     &--cards {
-      width: 18px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 26px;
-        height: 25px;
-      }
+      width: 26px;
+      height: 24px;
+      fill: var(--color-main1);
     }
   }
 

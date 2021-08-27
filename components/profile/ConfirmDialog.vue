@@ -9,10 +9,16 @@
         {{ text }}
       </div>
       <div class="ConfirmDialog-Btns">
-        <button class="Btn Btn--common Btn--dark ConfirmDialog-Btn" @click="onClickCancel">
+        <button
+          class="Btn Btn--common Btn--dark Btn--leftCorner ConfirmDialog-Btn"
+          @click="onClickCancel"
+        >
           {{ $t('buttons.cancel') }}
         </button>
-        <button class="Btn Btn--common Btn--color ConfirmDialog-Btn" @click="onClickOk">
+        <button
+          class="Btn Btn--common Btn--color Btn--rightCorner ConfirmDialog-Btn"
+          @click="onClickOk"
+        >
           {{ $t('common.yes') }}, {{ okBtnText }}
         </button>
       </div>

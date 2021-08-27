@@ -9,18 +9,18 @@
           </div>
         </div>
         <button
-          v-if="showDemo && gameInfo.type !== 'live'"
-          class="Card-PlayFun"
-          @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: true })"
-        >
-          {{ $t('buttons.playForFun') }}
-        </button>
-        <button
           v-if="!gameInfo.demoOnly"
           class="Card-PlayBtn"
           @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: false })"
         >
           {{ $t('buttons.playNow') }}
+        </button>
+        <button
+          v-if="showDemo && gameInfo.type !== 'live'"
+          class="Card-PlayFun"
+          @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: true })"
+        >
+          {{ $t('buttons.playForFun') }}
         </button>
       </div>
       <div v-if="badge" class="Card-Badge" :class="{ 'Card-Badge--text': badge !== 'best' }">
@@ -221,6 +221,8 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  border-radius: 14px 14px 0 0;
 
   &--clickable {
     cursor: pointer;
@@ -349,39 +351,33 @@ export default {
   &-PlayFun {
     display: none;
     align-self: center;
-    padding: 10px;
-    font-size: 12px;
+    margin-top: auto;
+    margin-bottom: 32px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 1.242;
     color: var(--color-text-main);
-    text-transform: uppercase;
-    border: 2px solid var(--color-text-main);
     cursor: pointer;
-    opacity: 0.7;
-
-    @media (max-width: $screen-l) {
-      padding: 8px;
-      font-size: 10px;
-    }
-
-    @media (max-width: $screen-m) {
-      padding: 4px;
-      font-size: 9px;
-    }
+    opacity: 0.6;
   }
 
   &-PlayBtn {
+    position: absolute;
+    top: 50%;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 37%;
-    margin-top: auto;
-    font-size: 16px;
+    align-self: center;
+    height: 50px;
+    padding: 0 30px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--color-text-main);
     text-transform: uppercase;
     background-color: var(--color-main1);
+    border-radius: 60px;
+    transform: translateY(-50%);
     cursor: pointer;
 
     @media (max-width: $screen-l) {
@@ -525,11 +521,12 @@ export default {
   &-Footer {
     display: flex;
     flex-shrink: 0;
-    flex-basis: 65px;
+    flex-basis: 40px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: var(--color-bg);
+    border-radius: 0 0 14px 14px;
   }
 
   &-Name {

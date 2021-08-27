@@ -97,8 +97,7 @@ export default {
   &-Items {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 20px;
+    grid-gap: 10px;
     justify-items: center;
 
     @media (min-width: $screen-s) {

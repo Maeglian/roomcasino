@@ -5,7 +5,7 @@
       <Search v-model="searched" class="SearchPage-Search" />
       <div class="SearchPage-Filters">
         <div class="SearchPage-FiltersIconWrapper" @click="filtersAreOpen = !filtersAreOpen">
-          <svg class="SearchPage-Icon" width="13" height="15">
+          <svg class="SearchPage-FiltersIcon" width="13" height="15">
             <use xlink:href="@/assets/img/icons.svg#filters"></use>
           </svg>
         </div>

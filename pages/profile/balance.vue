@@ -368,6 +368,7 @@ export default {
     color: var(--color-text-main);
     text-transform: uppercase;
     background: var(--color-bg-lighter);
+    border-radius: var(--border-radius-4);
     cursor: pointer;
 
     &:hover {

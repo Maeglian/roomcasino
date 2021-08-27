@@ -144,6 +144,7 @@ export default {
 
   &-Icon {
     margin-right: 16px;
+    fill: var(--color-main1);
   }
 
   &-Filters {
