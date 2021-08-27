@@ -1,5 +1,5 @@
 <template>
-  <div class="Card">
+  <div class="Card" :class="{ 'Card--clickable': startGameOnClick }" @click="onClickCard">
     <div class="Card-Main">
       <div v-if="overlay" class="Card-Overlay">
         <div class="Card-Provider">
@@ -44,63 +44,66 @@
       <div v-if="text" class="Card-Text">
         {{ text }}
       </div>
-      <div
-        v-if="dga[gameInfo.gameProducer] && dga[gameInfo.gameProducer][gameInfo.gpGameId]"
-        class="Card-TableInfo Card-Dga"
-      >
-        <div class="Card-Info">
-          <div
-            v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].tableOpen"
-            class="Card-DgaText Card-DgaRow"
-          >
-            {{
-              dga[gameInfo.gameProducer][gameInfo.gpGameId].tableOpen
-                ? $t('homepage.tableIsOpen')
-                : $t('homepage.tableIsClosed')
-            }}
-          </div>
-          <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer" class="Card-Info">
-            <img src="@/assets/img/dealer.png" class="Card-InfoIcon" />
-            <div class="Card-DgaText">
-              {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer.name }}
+      <template v-if="showDga">
+        <div
+          v-if="dga[gameInfo.gameProducer] && dga[gameInfo.gameProducer][gameInfo.gpGameId]"
+          class="Card-TableInfo Card-Dga"
+        >
+          <div class="Card-Info">
+            <div
+              v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].tableOpen"
+              class="Card-DgaText Card-DgaRow"
+            >
+              {{
+                dga[gameInfo.gameProducer][gameInfo.gpGameId].tableOpen
+                  ? $t('homepage.tableIsOpen')
+                  : $t('homepage.tableIsClosed')
+              }}
+            </div>
+            <div v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer" class="Card-Info">
+              <img src="@/assets/img/dealer.png" class="Card-InfoIcon" />
+              <div class="Card-DgaText">
+                {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].dealer.name }}
+              </div>
+            </div>
+            <div
+              v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats"
+              class="Card-Info"
+            >
+              <img src="@/assets/img/chair.png" class="Card-InfoIcon" />
+              <div class="Card-DgaText">
+                {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats }}
+              </div>
             </div>
           </div>
-          <div
-            v-if="dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats"
-            class="Card-Info"
-          >
-            <img src="@/assets/img/chair.png" class="Card-InfoIcon" />
-            <div class="Card-DgaText">
-              {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].availableSeats }}
+          <div v-if="lastResults" class="Card-Results">
+            <div
+              v-for="(result, i) in lastResults"
+              :key="i"
+              class="Card-Result"
+              :style="{ backgroundColor: result.color }"
+            >
+              {{ result.totalSum || result.result }}
             </div>
           </div>
         </div>
-        <div v-if="lastResults" class="Card-Results">
-          <div
-            v-for="(result, i) in lastResults"
-            :key="i"
-            class="Card-Result"
-            :style="{ backgroundColor: result.color }"
-          >
-            {{ result.totalSum || result.result }}
-          </div>
+        <div
+          v-if="
+            dga[gameInfo.gameProducer] &&
+              dga[gameInfo.gameProducer][gameInfo.gpGameId] &&
+              dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits
+          "
+          class="Card-Bets Card-Dga"
+        >
+          {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.minBet }} -
+          {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.maxBet }}&nbsp;
+          {{ activeAccount.currency || 'EUR' }}
         </div>
-      </div>
-      <div
-        v-if="
-          dga[gameInfo.gameProducer] &&
-            dga[gameInfo.gameProducer][gameInfo.gpGameId] &&
-            dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits
-        "
-        class="Card-Bets Card-Dga"
-      >
-        {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.minBet }} -
-        {{ dga[gameInfo.gameProducer][gameInfo.gpGameId].tableLimits.maxBet }}&nbsp;
-        {{ activeAccount.currency || 'EUR' }}
-      </div>
+      </template>
     </div>
     <div v-if="showFooter" class="Card-Footer">
       <div class="Card-Name" v-html="linebreak(gameInfo.gameName)"></div>
+      <div v-if="showProvider" class="Card-Provider">{{ gameInfo.gameProducer }}</div>
     </div>
   </div>
 </template>
@@ -151,6 +154,16 @@ export default {
       required: false,
       default: false,
     },
+    showDga: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    showProvider: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     showDemo: {
       type: Boolean,
       required: false,
@@ -159,6 +172,11 @@ export default {
     gameInfo: {
       type: Object,
       required: true,
+    },
+    startGameOnClick: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   computed: {
@@ -182,10 +200,14 @@ export default {
     },
   },
   methods: {
-    // onClickCard() {
-    //   if (this.platform !== 'mobile' || !this.isLoggedIn) return;
-    //   this.$emit('open-gamepage', { id: this.gameInfo.gameId, demo: this.gameInfo.demoOnly });
-    // },
+    onClickCard() {
+      // if (this.platform !== 'mobile' || !this.isLoggedIn) return;
+      if (!this.startGameOnClick) return;
+      this.$emit('open-gamepage', {
+        id: this.gameInfo.gameId,
+        demo: this.gameInfo.demoOnly || !this.isLoggedIn,
+      });
+    },
     linebreak(value) {
       return value.replace(': ', ': <br/>');
     },
@@ -199,6 +221,10 @@ export default {
   flex-direction: column;
   width: 100%;
   height: 100%;
+
+  &--clickable {
+    cursor: pointer;
+  }
 
   &-Main {
     position: relative;

@@ -144,7 +144,11 @@
     "table": "Stolní hry",
     "card": "Karetní hry",
     "recent": "Nedávné hry",
-    "new": "Nový hry"
+    "new": "Nový hry",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "gameCategoriesTabs": {
     "top" : "Nejlepší hry",
@@ -156,7 +160,11 @@
     "card" : "Karetní hry",
     "recent" : "Nedávné hry",
     "new" : "Nový hry",
-    "buybonus": "Bonus Buy"
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "footer" : {
     "text" : {
@@ -171,7 +179,8 @@
     "search": "Hledat",
     "searchResults": "Výsledky hledání",
     "nothingFound": "Bohužel, nic nenalezeno",
-    "try": "Zkuste hledat něco jiného"
+    "try": "Zkuste hledat něco jiného",
+    "popular": "Oblíbená hledání"
   },
   "common": {
     "date": "Datum",

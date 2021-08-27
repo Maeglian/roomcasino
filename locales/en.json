@@ -150,7 +150,11 @@
     "card": "Card",
     "recent": "Last",
     "new": "New",
-    "buybonus": "Bonus Buy"
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "gameCategories": {
     "top": "Top games",
@@ -162,7 +166,11 @@
     "card": "Card games",
     "recent": "Last games",
     "new": "New games",
-    "buybonus": "Bonus Buy"
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "footer": {
     "text": {
@@ -177,7 +185,8 @@
     "search": "Search",
     "searchResults": "Search results",
     "nothingFound": "Sorry, nothing found",
-    "try": "Try searching for something else"
+    "try": "Try searching for something else",
+    "popular": "Popular searches"
   },
   "common": {
     "date": "Date",

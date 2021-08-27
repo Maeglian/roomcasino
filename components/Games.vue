@@ -9,7 +9,11 @@
           :game-info="game"
           :img-url="game.imageUrl"
           :show-demo="true"
-          overlay
+          :show-dga="showDga"
+          show-footer
+          :overlay="!startGameOnClickCard"
+          :show-provider="startGameOnClickCard"
+          :start-game-on-click="startGameOnClickCard"
           @open-gamepage="openGamePage($event, game.gameProducer)"
         />
       </template>
@@ -18,7 +22,8 @@
       <slot name="notFound"></slot>
       <p v-if="!$slots.notFound" class="Text Text--center">{{ $t('search.notFound') }}</p>
     </template>
-    <div v-if="games.length > gamesShowed" class="Games-Btn">
+    <slot name="btn"></slot>
+    <div v-if="!$slots.btn && games.length > gamesShowed" class="Games-Btn">
       <button class="Btn" :class="btnClass" @click="showMoreGames()">
         {{ $t('buttons.loadMoreGames') }}
       </button>
@@ -59,6 +64,16 @@ export default {
       required: false,
       default: '',
     },
+    startGameOnClickCard: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    showDga: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
   data() {
     return {
@@ -85,7 +100,6 @@ export default {
     grid-column-gap: 10px;
     grid-row-gap: 20px;
     justify-items: center;
-    margin-bottom: 20px;
 
     @media (min-width: $screen-s) {
       grid-template-columns: repeat(4, 1fr);
@@ -93,16 +107,20 @@ export default {
 
     @media (min-width: $screen-l) {
       grid-template-columns: repeat(6, 1fr);
-      margin-bottom: 24px;
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-bottom: 32px;
     }
   }
 
   &-Btn {
+    margin-top: 20px;
     text-align: center;
+
+    @media (min-width: $screen-l) {
+      margin-top: 24px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: 32px;
+    }
   }
 }
 </style>

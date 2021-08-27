@@ -11,7 +11,6 @@
               name: 'index-games-gameCategory',
               params: {
                 gameCategory: tab.type,
-                producer: providerActive.name === 'All providers' ? false : providerActive.name,
               },
             })
           "
@@ -29,35 +28,9 @@
         </NuxtLink>
       </div>
       <div class="ProvidersSection DefaultGames-Providers">
-        <Search
-          v-if="width >= 768"
-          v-model="searched"
-          class="ProvidersSection-Search DefaultGames-Search"
-          with-dropdown
-        >
-          <template v-if="searched" #dropdown>
-            <div v-if="filteredGames.length" class="Title Title--type-h4 Cards-Title">
-              {{ $t('search.searchResults') }} ({{ filteredGames.length }})
-            </div>
-            <Games
-              class="DefaultGames-Cards"
-              :games="filteredGames"
-              :games-to-show="12"
-              btn-class="Btn--common Btn--outline"
-            >
-              <template #notFound>
-                <div class="Title Title--type-h4">
-                  {{ $t('search.nothingFound') }}
-                </div>
-                <div class="Text Text--additional">
-                  {{ $t('search.try') }}
-                </div>
-              </template>
-            </Games>
-          </template>
-        </Search>
         <ProvidersMenu
           v-if="gameProducerList.length"
+          :game-producer-list="gameProducerList"
           :provider-active="providerActive"
           @choose-provider="onChooseProvider"
         />
@@ -200,26 +173,12 @@
         />
       </template>-->
     </section>
-    <!--    <section-->
-    <!--      v-if="tabActive.type !== 'all' || providerActive.name !== 'All providers'"-->
-    <!--      class="DefaultGames"-->
-    <!--    >-->
-    <!--      <Loader v-if="defaultGamesAreLoading" />-->
-    <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">{{ $t('gameCategories.all') }}</div>-->
-    <!--      <Games-->
-    <!--        class="DefaultGames-Cards NewGames-Cards"-->
-    <!--        :games="defaultGames"-->
-    <!--        :games-to-show="24"-->
-    <!--        btn-class="Btn&#45;&#45;common Btn&#45;&#45;dark"-->
-    <!--      />-->
-    <!--    </section>-->
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 import Loader from '@/components/Loader';
-import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import { PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID } from '@/config';
@@ -231,7 +190,6 @@ export default {
   name: 'DefaultGames',
   components: {
     ProvidersMenu,
-    Search,
     Loader,
     Games,
   },
@@ -240,8 +198,6 @@ export default {
     return {
       listIsOpen: false,
       tabActive: {},
-      providerActive: {},
-      searched: '',
     };
   },
   computed: {
@@ -273,7 +229,6 @@ export default {
       'dropsWinsLiveGamesAreLoading',
     ]),
     ...mapGetters(['isLoggedIn', 'activeAccount']),
-    ...mapGetters('games', ['gamesSearched']),
     tabs() {
       if (this.width < 768) {
         return [
@@ -350,24 +305,8 @@ export default {
     recentGamesNum() {
       return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
     },
-    gamesParams() {
-      const params = {};
-      if (this.tabActive.type) params.category = this.tabActive.type;
-      if (this.providerActive.name !== 'All providers')
-        params.gameProducer = this.providerActive.name;
-      return params;
-    },
-    filteredGames() {
-      return this.gamesSearched(this.searched);
-    },
   },
   watch: {
-    gameProducerList: {
-      immediate: true,
-      handler() {
-        if (this.gameProducerList.length) this.providerActive = this.gameProducerList[0];
-      },
-    },
     isLoggedIn: {
       immediate: true,
       handler() {
@@ -378,8 +317,11 @@ export default {
     },
   },
   mounted() {
-    if (this.$route.params.providerName) this.tabActive = this.tabs.find(tab => tab.type === 'all');
-    else {
+    if (this.$route.params.providerName) {
+      const categoryAll = this.tabs.find(tab => tab.type === 'all');
+      if (categoryAll) this.tabActive = categoryAll;
+      else this.tabActive = {};
+    } else {
       this.tabActive =
         this.tabs.find(game => this.$route.params.gameCategory === game.type) ||
         this.tabs.find(game => game.type === 'top');
@@ -403,23 +345,9 @@ export default {
     ...mapMutations(['setDgaInfo']),
     ...mapActions('games', ['getRecentGames']),
     onChooseTab(i) {
-      this.searched = '';
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
       this.isOpen = false;
-      this.providerActive = this.gameProducerList[0];
-    },
-    onChooseProvider(e) {
-      this.searched = '';
-      this.providerActive = e;
-      this.$router.push(
-        this.localePath({
-          name: 'index-providers-providerName',
-          params: {
-            providerName: e.name === this.gameProducerList[0].name ? 'all' : e.name,
-          },
-        }),
-      );
     },
     onClickOutsideTabs(e) {
       if (!e.target.closest('.DefaultGames-ChosenTab')) this.isOpen = false;
@@ -450,23 +378,6 @@ export default {
       grid-template-columns: repeat(7, 1fr);
       grid-gap: 10px;
     }
-
-    //@media(max-width: $screen-s) {
-    //  position: absolute;
-    //  left: 0;
-    //  top: 125px;
-    //  flex-direction: column;
-    //  order: 2;
-    //  width: 100%;
-    //  margin-right: 0;
-    //  border: 1px solid var(--color-border-ghost);
-    //  border-top: none;
-    //  border-radius: 0 0 8px 8px;
-    //
-    //  .DefaultGames-Tab--active {
-    //    display: none;
-    //  }
-    //}
   }
 
   &-ChosenTab {
@@ -482,14 +393,14 @@ export default {
       display: none;
     }
 
-    .Arrow {
+    .ThickArrow {
       position: absolute;
       top: 50%;
       right: 20px;
       margin-top: -2px;
     }
 
-    .Arrow--up {
+    .ThickArrow--up {
       margin-top: -8px;
     }
   }
@@ -669,35 +580,6 @@ export default {
 
     @media (min-width: $screen-xl) {
       margin-bottom: 60px;
-    }
-  }
-
-  &-Search {
-    z-index: 1;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border: 2px solid var(--color-border);
-
-    @media (min-width: $screen-m) {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    &.Search--open {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      z-index: 1001;
-      width: 100%;
-      background: var(--color-body);
-      cursor: initial;
-
-      .Search-Close {
-        @media (min-width: $screen-m) {
-          right: 16px;
-          left: initial;
-        }
-      }
     }
   }
 }
