@@ -1,5 +1,5 @@
 <template>
-  <div v-click-outside="() => (isOpen = false)" class="CheckboxFilter">
+  <div v-click-outside="onClickOutside" class="CheckboxFilter">
     <div v-if="title" class="CheckboxFilter-Title">
       {{ title }}
     </div>
@@ -86,8 +86,12 @@ export default {
     ...mapState(['width']),
   },
   mounted() {
-    console.log(this.$refs.arrow.offsetParent);
     this.arrowLeftPosition = this.$refs.arrow.offsetLeft;
+  },
+  methods: {
+    onClickOutside() {
+      this.isOpen = false;
+    },
   },
 };
 </script>
@@ -157,7 +161,7 @@ export default {
 
   .BaseCheckbox-Checkbox:checked + .BaseCheckbox-Label:before {
     background-color: transparent;
-    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='10' height='10' rx='2' fill='%23E45809'/%3E%3C/svg%3E%0A") !important;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='10' height='10' rx='2' fill='%23E45809'/%3E%3C/svg%3E%0A");
   }
 
   &-Label {
