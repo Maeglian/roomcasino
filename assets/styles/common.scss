@@ -240,12 +240,17 @@ a {
 }
 
 .Toggle {
-  width: 17px;
-  height: 12px;
-  stroke: var(--color-text-main);
+  width: 25px;
+  height: 20px;
+  fill: var(--color-text-main);
+
+  @media (min-width: $screen-xs) {
+    width: 17px;
+    height: 12px;
+  }
 
   &--colored {
-    stroke: var(--color-main1);
+    fill: var(--color-main1);
   }
 }
 

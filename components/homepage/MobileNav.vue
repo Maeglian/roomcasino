@@ -1,33 +1,47 @@
 <template>
   <nav class="MobileNav">
     <NuxtLink class="MobileNav-Item" :to="localePath('/promotions')">
-      <svg class="MobileNav-Icon" width="17" height="16">
-        <use xlink:href="@/assets/img/icons.svg#promotions"></use>
-      </svg>
+      <div class="MobileNav-IconWrapper">
+        <svg class="MobileNav-Icon MobileNav-Icon--fill" width="22" height="23">
+          <use xlink:href="@/assets/img/icons.svg#promotions"></use>
+        </svg>
+      </div>
       <div class="MobileNav-Name">{{ $t('pages.promotion') }}</div>
     </NuxtLink>
     <button v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
-      <svg class="MobileNav-Icon" width="18" height="15">
-        <use xlink:href="@/assets/img/icons.svg#support"></use>
-      </svg>
+      <div class="MobileNav-IconWrapper">
+        <svg class="MobileNav-Icon MobileNav-Icon--stroke" width="22" height="22">
+          <use xlink:href="@/assets/img/icons.svg#support"></use>
+        </svg>
+      </div>
       <div class="MobileNav-Name">{{ $t('menu.support') }}</div>
     </button>
     <NuxtLink class="MobileNav-Item" :to="localePath('/')">
-      <svg class="MobileNav-Icon" width="17" height="16">
-        <use xlink:href="@/assets/img/icons.svg#dice"></use>
-      </svg>
+      <div class="MobileNav-IconWrapper">
+        <svg
+          class="MobileNav-Icon MobileNav-Icon--stroke MobileNav-Icon--fill"
+          width="36"
+          height="34"
+        >
+          <use xlink:href="@/assets/img/icons.svg#dice"></use>
+        </svg>
+      </div>
       <div class="MobileNav-Name">{{ $t('pages.lobby') }}</div>
     </NuxtLink>
     <NuxtLink class="MobileNav-Item" :to="localePath('/search')">
-      <svg class="MobileNav-Icon" width="17" height="16" fill="#F3B233">
-        <use xlink:href="@/assets/img/icons.svg#search"></use>
-      </svg>
+      <div class="MobileNav-IconWrapper">
+        <svg class="MobileNav-Icon MobileNav-Icon--fill" width="17" height="16" fill="#F3B233">
+          <use xlink:href="@/assets/img/icons.svg#search"></use>
+        </svg>
+      </div>
       <div class="MobileNav-Name">{{ $t('pages.search') }}</div>
     </NuxtLink>
     <button class="MobileNav-Item MobileNav-Item--burger" @click="toggleNav()">
-      <svg class="MobileNav-Icon Toggle Toggle--colored">
-        <use xlink:href="@/assets/img/icons.svg#toggle"></use>
-      </svg>
+      <div class="MobileNav-IconWrapper">
+        <svg class="MobileNav-Icon Toggle" width="25" height="20">
+          <use xlink:href="@/assets/img/icons.svg#toggle"></use>
+        </svg>
+      </div>
       <div class="MobileNav-Name">{{ $t('menu.menu') }}</div>
     </button>
     <!--    <div class="MobileNav-Item" @click="toggleNotificationsPanel">-->
@@ -154,12 +168,24 @@ export default {
     border-radius: 50%;
   }
 
+  &-IconWrapper {
+    display: flex;
+    align-items: center;
+    height: 34px;
+    overflow: hidden;
+  }
+
   &-Icon {
     flex-shrink: 0;
     align-items: center;
-    width: 17px;
-    height: 17px;
-    margin: 0 0 6px;
+
+    &--fill {
+      fill: var(--color-text-main);
+    }
+
+    &--stroke {
+      stroke: var(--color-text-main);
+    }
   }
 }
 </style>
