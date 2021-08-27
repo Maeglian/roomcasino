@@ -59,6 +59,16 @@ export default {
   name: 'DailyCashback',
   mixins: [showAuthDialog],
   layout: 'page',
+  head() {
+    return {
+      title: this.$t('metaTags.daily-cashback.title'),
+      meta: [
+        {
+          description: this.$t('metaTags.daily-cashback.description'),
+        },
+      ],
+    };
+  },
 };
 </script>
 
