@@ -214,7 +214,7 @@
     "heroBanner": {
       "deposit1": {
         "title": "Tägliche rückzahlung<br/> bis zu <span class=\"Colored\"> 20%</span>",
-        "text": "BONUS AUF DIE ERSTE<br/> EINZAHLUNG <span class=\"Colored\"> 100% </span> <br/>bis zu <span class=\"Colored\"> € 150 + <span class=\"Colored\">250 freispiele</span>"
+        "text": "BONUS AUF DIE ERSTE<br/> EINZAHLUNG <span class=\"Colored\"> 100% </span> <br/>bis zu <span class=\"Colored\"> 150 € + <span class=\"Colored\">250 freispiele</span>"
       },
       "deposit2": {
         "title": "Bonus für zweite<br/>  Einzahlung",
@@ -226,11 +226,11 @@
       },
       "deposit4": {
         "title": "Wochenend<br/> bonus",
-        "text": "<span class=\"Colored\">40% BIS ZU €150</span>"
+        "text": "<span class=\"Colored\">40% BIS ZU 150 €</span>"
       },
       "highroller": {
         "title": "HIGH ROLLER-BONUS<br/> FÜR BESONDERE<br/> EINSATZFREUDE",
-        "text": "<span class=\"Colored\">bis zu €500</span>"
+        "text": "<span class=\"Colored\">bis zu 500 €</span>"
       }
     },
     "advantages": {
@@ -413,27 +413,27 @@
     "text": "Ninecasino arbeitet ständig daran, die besten Aktionen zu liefern. Wir verwenden die neueste Technologie und das Feedback unserer Spieler, um unsere Aktionen zu gestalten. Viel Spaß!",
     "deposit1": {
       "title": "100%<br/> des<br/> Einzahlungsbetrags <br/> ",
-      "upTo": "bis zu € 150 + 250 FREISPIELE",
+      "upTo": "bis zu 150 € + 250 FREISPIELE",
       "name": "Bonus für die erste Einzahlung",
       "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 € + 250 freispiele. Nach Ihrer ersten Einzahlung erhalten Sie an jedem der darauffolgenden 5 Tage jeweils 50 Freispiele.<br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit2": {
       "title": "55%<br/> des<br/> Einzahlungsbetrags <br/> ",
-      "upTo": "bis zu € 150",
+      "upTo": "bis zu 150 €",
       "name": "Bonus für zweite Einzahlung",
-      "text": "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150  €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach eine zweite Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "text": "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach eine zweite Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit3": {
       "title": "100%<br/> des<br/> Einzahlungsbetrags<br/>",
-      "upTo": "bis zu € 150",
+      "upTo": "bis zu 150 €",
       "name": "Bonus für dritte Einzahlung ",
       "text": "Machen Sie Ihre dritte Einzahlung bei Ninecasino und erhalten Sie bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine dritte Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit4": {
       "title": "Wochenend<br/> bonus",
-      "upTo": "40% BIS ZU €150",
+      "upTo": "40% BIS ZU 150 €",
       "name": "Wochenend bonus",
-      "text": "Mit mehr beginnen, um mehr zu gewinnen. Zahlen Sie mindestens €20 ein und erhalten Sie eine Gutschrift in Höhe von 40% bis zu €150, um diese Automaten schwindlig zu spielen, bis die Jackpots explodieren!"
+      "text": "Mit mehr beginnen, um mehr zu gewinnen. Zahlen Sie mindestens 20 € ein und erhalten Sie eine Gutschrift in Höhe von 40% bis zu 150 €, um diese Automaten schwindlig zu spielen, bis die Jackpots explodieren!"
     },
     "cashback": {
       "title": "Tägliche<br/>rückzahlung",
@@ -442,9 +442,9 @@
       "text": "Wer bekommt im Casino nicht gerne Geld zurück? Selbst wenn Sie verloren haben!<br/>Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von x5 zurück, wenn Sie verlieren."
     },
     "highroller": {
-      "upTo": "up to €500",
+      "upTo": "up to 500 €",
       "name": "High roller-bonus für besondere einsatzfreude",
-      "text": "Sie stehen auf hohe Einsätze? Dann haben wir das Richtige für Sie. Erhalten Sie einmal im Monat einen Highroller-Bonus für besondere Einsatzfreude von 30% bis zu einem Höchstbetrag von €500 auf eine Einzahlung ab mindestens €300."
+      "text": "Sie stehen auf hohe Einsätze? Dann haben wir das Richtige für Sie. Erhalten Sie einmal im Monat einen Highroller-Bonus für besondere Einsatzfreude von 30% bis zu einem Höchstbetrag von 500 € auf eine Einzahlung ab mindestens 300 €."
     },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
@@ -462,7 +462,7 @@
       "text": "Willkommen bei dem August CashDays 60k-Turnier mit sagenhaften Einsätzen und satten Gewinnen aus dem Hause Playson. Das Turnier läuft ab dem 01.08.2021 um 0:01 Uhr UTC und endet am 08.08.2021 um 23:59 Uhr UTC. Bei NineCasino können Sie alle angesagten Spiele des Turniers spielen. Also, fahren Sie die Scheuer ein, solange die Sonne lacht!"
     },
     "weekly_derby": {
-      "upTo": "Preispool 2.500 €",
+      "upTo": "Preispool 2.500 €",
       "name": "Aufsatteln fürs Weekly Derby",
       "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
     },
@@ -473,7 +473,7 @@
       "text": "Der Sommer ist voll in Schwung, was wäre also besser als eine Turnierserie von Booongo? Schnell mitmachen bei der Online-Turnierserie Summer Desserts im NineCasino! <br>Online-Turnierserie Summer Desserts beginnt am 19. August um 00:00 Uhr UTC und endet am 28. August 2021 um 23:00 Uhr UTC.<br><br>Worauf warten Sie noch? Verpassen Sie nicht Ihren Teil am riesigen Preisgeld von Booongo! Spielen, Spaß haben und gewinnen!"
     },
     "spiritOfEgypt": {
-      "upTo": "Das Preisgeld 60,000 €.",
+      "upTo": "Das Preisgeld 60.000 €.",
       "name": "Spirit of Egypt 60k",
       "text": "Folgen Sie dem Spirit of Egypt zu 60.000 Euro!<br/><br/>Neue Abenteuer deuten sich an, und Playson erwartet Sie ab 00:01 Uhr UTC am 20. August 2021 bis 23:59 Uhr UTC am 29. August 2021 zu dem Spirit of Egypt-Turnier um 60.000 Euro.<br/><br/>Das Gesamtpreisgeld beträgt umwerfende 60.000 Euro, und auf dem Gipfel der Pyramiden warten 10.000 davon! Machen Sie Ihr Glück bei Spirit of Egypt um 60.000 Euro!"
     },
@@ -566,9 +566,9 @@
   },
   "weekly_derby": {
     "title": "Das Weekly Derby<br/> von Ninecasino",
-    "prize": "2.500 €",
-    "text": "Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.",
-    "textMobile": "Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.",
+    "prize": "2.500 €",
+    "text": "Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.",
+    "textMobile": "Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.",
     "terms": [
       {
         "text": "Jedes Turnier läuft über sieben Tage, von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC)."
@@ -1030,7 +1030,7 @@
           "Alle Vorfälle von Verdacht auf Geldwäsche müssen dem MLRO gemeldet werden, doch dieser Verdacht darf dem Kunden nicht mitgeteilt werden; weitere Aktionen erfordern Zustimmung. Der MLRO ist dann dafür verantwortlich dafür, mit NCA/UKFIU Kontakt aufzunehmen und gegebenenfalls Berichte abzuliefern, falls erforderlich. Er wird auch dafür sorgen, dass die erforderlichen Daten für alle damit zusammenhängenden Reporte gesammelt werden.",
           "Die Gesellschaft wird eine VOLLE „Kenne deinen Kunden“-Politik implementieren. Dies wird nicht nur Bedrohungen durch Geldwäsche verringern, sondern auch Betrug im Allgemeinen. Kunden werden während der Registrierung und allgemein auf der unterstützenden nicht-transaktionalen Webseite darauf hingewiesen, dass Online-Verifizierungstools verwendet werden, und dass wir in Fällen, in denen wird gewissen Kriterien nicht gerecht werden können, Identitätsnachweise und Dokumente zur Adressenverifizierung anfordern werden.",
           "Weiter Schlüsselentscheidungen, die diesen Schutz erhöhen, sind Schwellenwerte/-geschwindigkeiten für Abhebungen, um anfangs Überprüfungen und Zustimmung durch den Direktor für Abhebungen und Banktransfers über €3.000 in einer Transaktion erforderlich zu machen, ein Maximum von 3 (drei) täglichen Abhebungen und ein globales tägliches Maximum für Abhebungen von €9.000.",
-          "Industriestandards, die stets zu Enhanced Due Diligence führen (die Anforderung für weitere Bestätigung von Identität und Adresse), sind Abhebungen über €3.000 in einem 24-Stunden-Intervall, und €9.000 in einer 90-Tage-Periode. Simple Online-Verifikation ist unter diesen Umständen NICHT akzeptabel.",
+          "Industriestandards, die stets zu Enhanced Due Diligence führen (die Anforderung für weitere Bestätigung von Identität und Adresse), sind Abhebungen über 3.000 € in einem 24-Stunden-Intervall, und 9.000 € in einer 90-Tage-Periode. Simple Online-Verifikation ist unter diesen Umständen NICHT akzeptabel.",
           "Dieses Geschäft wird außerdem kein Bargeld involvieren, so dass Risiken im Zusammenhang mit Falschgeld vermieden werden.",
           "Die Systeme werden alle Transaktionen eines Kontos aufzeichnen. Diese Kontenhistorien werden regelmäßigen Prüfungen in Bezug auf Betrug und Indikatoren sozialer Verantwortung unterzogen. Wenn ungewöhnliche Muster von Wetten und Gewinnen festgestellt werden, werden diese außerdem mit der Kommunikationshistorie verglichen, um sicherzustellen, dass das Personal nicht mit Kunden zusammenarbeitet oder unrechtmäßig handelt.",
           "Die Gesellschaft wird außerdem Aufzeichnungen der Kunden bevorraten, die als riskant oder politisch exponiert identifiziert wurden. Diese Konten werden strengeren und häufigeren Prüfungen unterzogen.",
@@ -1078,7 +1078,7 @@
           "Sofern nicht anders angegeben, sind Boni nur für Spieler verfügbar, die wenigstens eine erfolgreiche Einzahlung auf ihr Konto getätigt haben.",
           "Falls eine technische Fehlkonfiguration oder ein Fehler irgendeiner Art darin resultiert, dass eine falsche Anzahl von Freispielen oder ein fehlerhafter Bonus deinem Konto gutgeschrieben werden, behalten wir uns das Recht vor, alle resultierenden Gewinne zu entfernen und die mit der korrekten Konfiguration berechneten Werte gutzuschreiben.",
           "Ein Benutzer ist nicht berechtigt, mehr als ein Konto im System zu registrieren. Das bedeutet, dass nur ein Konto pro Person, Haushalt, Familie, Haushaltsadresse, E-Mail-Adresse, Kreditkartennummer, E-Wallet-Konto oder geteilter Computerumgebung (z.B. Bibliothek, Arbeitsplatz, Wohnheim, Universität oder Schule) registriert werden darf. Jeglicher Täuschungsversuch durch Registrierung mehrerer Konten Bonusgeld zu erlangen, wird als Bonusmissbrauch ausgelegt und resultiert in der Einfrierung des Kontos/der Konten und der Entfernung der Gelder.",
-          "Beim Wetteinsatz jegliches Bonus/Angebots (gratis oder Einzahlung) oder Einstreichen eines Bonus für Freispielgewinne ist die maximale Einsatzhöhe 10 % (mindestens 0,10) der Bonushöhe oder 5 Währungseinheiten (z.B. €5, £5, 500 INR). Zuwiderhandlung bedeutet Bruch der Bonus-/Angebotsbedingungen, und wir behalten uns das Recht vor, jegliche Gewinne zu stornieren und zu entfernen. Eine Wette beinhaltet jegliche Wettfunktion, jede Glücksspielfunktion und jede andere Art von Wettaktivität (ungeachtet ihres Namens).",
+          "Beim Wetteinsatz jegliches Bonus/Angebots (gratis oder Einzahlung) oder Einstreichen eines Bonus für Freispielgewinne ist die maximale Einsatzhöhe 10 % (mindestens 0,10) der Bonushöhe oder 5 Währungseinheiten (z.B. €5, £5, 500 INR). Zuwiderhandlung bedeutet Bruch der Bonus-/Angebotsbedingungen, und wir behalten uns das Recht vor, jegliche Gewinne zu stornieren und zu entfernen. Eine Wette beinhaltet jegliche Wettfunktion, jede Glücksspielfunktion und jede andere Art von Wettaktivität (ungeachtet ihres Namens).",
           "Individuelle Werbeaktionen können eigene Bedingungen beinhalten, die die hier genannten Bedingungen außer Kraft setzen oder erweitern. Bitte lies sorgfältig alle Bedingungen, die mit einem Bonus zusammenhängen, bevor du teilnimmst. Sollten die Bedingungen der individuellen Werbeaktionen mit den Bonusrichtlinien in Konflikt stehen, so kommen die Bedingungen der individuellen Werbeaktion zur Anwendung.",
           "Unabhängig von der Währung, in der wir Bonusbeträge bewerben oder anzeigen, wird der Bonus immer in der dem Konto zugeordneten Währung gutgeschrieben.",
           "Übereinstimmend mit der Datenschutzerklärung senden wir regelmäßig E-Mails mit Bonusangeboten. Du bist nur dann für den Bonus berechtigt, wenn du die E-Mail direkt von uns erhalten hast. Du kannst dein Abonnement von Werbeaktionen beenden, indem du dich an die Kundenbetreuung wendest. Falls wir entscheiden, dass ein Kunde nicht der beabsichtigte Empfänger einer bestimmten Werbeaktion war, sind wir nicht zur Auszahlung verpflichtet, auch wenn der Kunde die Wettbedingungen erfüllt hat.",
@@ -1344,8 +1344,8 @@
   },
   "lottery": {
     "title": "Weekend<br/> Playing Lottery ",
-    "prize": "<span class=\"Colored\">€ 2,500</span> + <span class=\"Colored\">500 Free Spins</span>",
-    "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
+    "prize": "<span class=\"Colored\">2.500 €</span> + <span class=\"Colored\">500 Free Spins</span>",
+    "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of 2.500 € with 40 lucky riders.",
     "termsTitle": "Teilnahmebedingungen für die verlosung",
     "terms": [
       {
@@ -1469,7 +1469,7 @@
   },
   "spiritOfEgypt": {
     "title": "Spirit of Egypt 60k",
-    "prize": "€60,000",
+    "prize": "60.000 €",
     "text": "Na obzoru se rýsují nová dobrodružství a Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC.<br/><br/>Celkový prize pool má závratnou hodnotu 60 000 eur, a pokud se vám podaří dostat se na vrchol pyramidy, pak můžete očekávat nejvyšší cenu ve výši 10 000 eur! Zkuste své štěstí se Spirit of Egypt 60k!",
     "textMobile": "Na obzoru se rýsují nová dobrodružství a Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC.<br/><br/>Celkový prize pool má závratnou hodnotu 60 000 eur, a pokud se vám podaří dostat se na vrchol pyramidy, pak můžete očekávat nejvyšší cenu ve výši 10 000 eur! Zkuste své štěstí se Spirit of Egypt 60k!",
     "metaInfo": {
