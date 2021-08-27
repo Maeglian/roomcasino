@@ -37,7 +37,6 @@ export default {
           param !== 'history' &&
           param !== 'games' &&
           param !== 'providers' &&
-          param !== 'game' &&
           param !== 'profile' &&
           param !== 'user'
         ) {
