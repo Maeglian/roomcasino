@@ -393,6 +393,7 @@ export default {
     padding: 17px 16px;
     background: var(--color-bg-lighter);
     border: 2px solid var(--color-border-input);
+    border-radius: var(--border-radius-default);
 
     @media (min-width: $screen-m) {
       display: none;
