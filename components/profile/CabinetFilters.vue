@@ -79,6 +79,7 @@ export default {
       cs,
       fr,
       'en-ca': en,
+      'fr-ca': fr,
     };
   },
   computed: {
