@@ -96,10 +96,12 @@ export default {
 
   @media (min-width: $screen-l) {
     display: block;
+    flex-grow: 0;
     flex-shrink: 0;
-    width: 274px / $screen-xl * 100%;
+    width: 274px;
     min-width: auto;
-    height: 100vh;
+    min-height: 100vh;
+    margin-bottom: 0;
     padding: 0;
   }
 

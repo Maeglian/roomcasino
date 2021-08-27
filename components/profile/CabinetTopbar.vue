@@ -81,7 +81,8 @@ export default {
     margin-right: 15px;
 
     @media (min-width: $screen-l) {
-      width: 274px / $screen-xl * 100%;
+      flex-grow: 0;
+      width: 274px;
       height: 66px;
       margin-right: 46px;
       padding-left: 37px;
