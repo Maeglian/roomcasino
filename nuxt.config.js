@@ -118,6 +118,12 @@ export default {
         file: 'de.json',
         icon: 'de.svg',
       },
+      {
+        code: 'gr',
+        codeCountry: 'gr_GR',
+        file: 'gr.json',
+        icon: 'gr.svg',
+      },
     ],
     defaultLocale: 'en',
     lazy: true,
