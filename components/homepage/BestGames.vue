@@ -11,7 +11,6 @@
               name: 'index-games-gameCategory',
               params: {
                 gameCategory: tab.type,
-                producer: providerActive.name === 'All providers' ? false : providerActive.name,
               },
             })
           "
@@ -19,7 +18,12 @@
           @click.native="onChooseTab(i)"
         >
           <div class="DefaultGames-Icon">
-            <svg :class="`DefaultGames-Icon--${tab.icon}`">
+            <img
+              v-if="tab.icon === 'table'"
+              class="DefaultGames-Icon--table"
+              src="@/assets/img/table.svg"
+            />
+            <svg v-else :class="`DefaultGames-Icon--${tab.icon}`">
               <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
             </svg>
           </div>
@@ -29,52 +33,14 @@
         </NuxtLink>
       </div>
       <div class="ProvidersSection DefaultGames-Providers">
-        <Search
-          v-if="width >= 768"
-          v-model="searched"
-          class="ProvidersSection-Search DefaultGames-Search"
-          with-dropdown
-        >
-          <template v-if="searched" #dropdown>
-            <div v-if="filteredGames.length" class="Title Title--type-h4 Cards-Title">
-              {{ $t('search.searchResults') }} ({{ filteredGames.length }})
-            </div>
-            <Games
-              class="DefaultGames-Cards"
-              :games="filteredGames"
-              :games-to-show="12"
-              btn-class="Btn--common Btn--outline"
-            >
-              <template #notFound>
-                <div class="Title Title--type-h4">
-                  {{ $t('search.nothingFound') }}
-                </div>
-                <div class="Text Text--additional">
-                  {{ $t('search.try') }}
-                </div>
-              </template>
-            </Games>
-          </template>
-        </Search>
         <ProvidersMenu
           v-if="gameProducerList.length"
+          :game-producer-list="gameProducerList"
           :provider-active="providerActive"
           @choose-provider="onChooseProvider"
         />
       </div>
       <a id="games"></a>
-      <template v-if="recentGames.length">
-        <div class="Title Title--type-h2 Cards-Title">
-          {{ $t('gameCategories.recent') }}
-        </div>
-        <Games
-          :key="isLoggedIn"
-          class="DefaultGames-Cards"
-          :games="recentGames"
-          :games-to-show="recentGamesNum"
-          btn-class="Btn--common Btn--dark"
-        />
-      </template>
       <Nuxt :key="$route.path" />
       <template v-if="getRouteBaseName($route) === 'index'">
         <div class="Title Title--type-h2 Cards-Title">
@@ -86,6 +52,18 @@
           class="DefaultGames-Cards"
           :games="topGames"
           :games-to-show="24"
+          btn-class="Btn--common Btn--outline"
+        />
+      </template>
+      <template v-if="recentGames.length">
+        <div class="Title Title--type-h2 Cards-Title">
+          {{ $t('gameCategories.recent') }}
+        </div>
+        <Games
+          :key="isLoggedIn"
+          class="DefaultGames-Cards"
+          :games="recentGames"
+          :games-to-show="recentGamesNum"
           btn-class="Btn--common Btn--outline"
         />
       </template>
@@ -200,26 +178,12 @@
         />
       </template>-->
     </section>
-    <!--    <section-->
-    <!--      v-if="tabActive.type !== 'all' || providerActive.name !== 'All providers'"-->
-    <!--      class="DefaultGames"-->
-    <!--    >-->
-    <!--      <Loader v-if="defaultGamesAreLoading" />-->
-    <!--      <div class="Title Title&#45;&#45;type-h2 Cards-Title">{{ $t('gameCategories.all') }}</div>-->
-    <!--      <Games-->
-    <!--        class="DefaultGames-Cards NewGames-Cards"-->
-    <!--        :games="defaultGames"-->
-    <!--        :games-to-show="24"-->
-    <!--        btn-class="Btn&#45;&#45;common Btn&#45;&#45;dark"-->
-    <!--      />-->
-    <!--    </section>-->
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 import Loader from '@/components/Loader';
-import Search from '@/components/Search';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import ProvidersMenu from '@/components/ProvidersMenu';
 import { PRAGMATIC_WS_SERVER, PRAGMATIC_CASINOID } from '@/config';
@@ -231,7 +195,6 @@ export default {
   name: 'DefaultGames',
   components: {
     ProvidersMenu,
-    Search,
     Loader,
     Games,
   },
@@ -240,8 +203,6 @@ export default {
     return {
       listIsOpen: false,
       tabActive: {},
-      providerActive: {},
-      searched: '',
     };
   },
   computed: {
@@ -273,7 +234,6 @@ export default {
       'dropsWinsLiveGamesAreLoading',
     ]),
     ...mapGetters(['isLoggedIn', 'activeAccount']),
-    ...mapGetters('games', ['gamesSearched']),
     tabs() {
       if (this.width < 768) {
         return [
@@ -318,7 +278,7 @@ export default {
         {
           name: this.$t('gameCategoriesTabs.all'),
           type: 'all',
-          icon: 'star',
+          icon: 'all',
         },
         {
           name: this.$t('gameCategoriesTabs.live'),
@@ -350,24 +310,8 @@ export default {
     recentGamesNum() {
       return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
     },
-    gamesParams() {
-      const params = {};
-      if (this.tabActive.type) params.category = this.tabActive.type;
-      if (this.providerActive.name !== 'All providers')
-        params.gameProducer = this.providerActive.name;
-      return params;
-    },
-    filteredGames() {
-      return this.gamesSearched(this.searched);
-    },
   },
   watch: {
-    gameProducerList: {
-      immediate: true,
-      handler() {
-        if (this.gameProducerList.length) this.providerActive = this.gameProducerList[0];
-      },
-    },
     isLoggedIn: {
       immediate: true,
       handler() {
@@ -378,8 +322,11 @@ export default {
     },
   },
   mounted() {
-    if (this.$route.params.providerName) this.tabActive = this.tabs.find(tab => tab.type === 'all');
-    else {
+    if (this.$route.params.providerName) {
+      const categoryAll = this.tabs.find(tab => tab.type === 'all');
+      if (categoryAll) this.tabActive = categoryAll;
+      else this.tabActive = {};
+    } else {
       this.tabActive =
         this.tabs.find(game => this.$route.params.gameCategory === game.type) ||
         this.tabs.find(game => game.type === 'top');
@@ -403,23 +350,9 @@ export default {
     ...mapMutations(['setDgaInfo']),
     ...mapActions('games', ['getRecentGames']),
     onChooseTab(i) {
-      this.searched = '';
       this.gamesShowed = this.gamesToShow;
       this.tabActive = this.tabs[i];
       this.isOpen = false;
-      this.providerActive = this.gameProducerList[0];
-    },
-    onChooseProvider(e) {
-      this.searched = '';
-      this.providerActive = e;
-      this.$router.push(
-        this.localePath({
-          name: 'index-providers-providerName',
-          params: {
-            providerName: e.name === this.gameProducerList[0].name ? 'all' : e.name,
-          },
-        }),
-      );
     },
     onClickOutsideTabs(e) {
       if (!e.target.closest('.DefaultGames-ChosenTab')) this.isOpen = false;
@@ -450,23 +383,6 @@ export default {
       grid-template-columns: repeat(7, 1fr);
       grid-gap: 10px;
     }
-
-    //@media(max-width: $screen-s) {
-    //  position: absolute;
-    //  left: 0;
-    //  top: 125px;
-    //  flex-direction: column;
-    //  order: 2;
-    //  width: 100%;
-    //  margin-right: 0;
-    //  border: 1px solid var(--color-border-ghost);
-    //  border-top: none;
-    //  border-radius: 0 0 8px 8px;
-    //
-    //  .DefaultGames-Tab--active {
-    //    display: none;
-    //  }
-    //}
   }
 
   &-ChosenTab {
@@ -475,39 +391,45 @@ export default {
     align-items: center;
     width: 100%;
     padding: 17px 16px;
-    background: var(--color-bg);
-    border: none;
+    background: var(--color-bg-lighter);
+    border: 2px solid var(--color-border-input);
+    border-radius: var(--border-radius-default);
 
     @media (min-width: $screen-m) {
       display: none;
     }
 
-    .Arrow {
+    .ThickArrow {
       position: absolute;
       top: 50%;
       right: 20px;
       margin-top: -2px;
     }
 
-    .Arrow--up {
+    .ThickArrow--up {
       margin-top: -8px;
     }
   }
 
   &-Tab {
+    position: relative;
     display: flex;
     justify-content: left;
     align-items: center;
     width: 100%;
+    margin-right: 8px;
     padding: 17px 16px;
     line-height: 1.18;
     white-space: nowrap;
     background-color: var(--color-bg);
+    border: 2px solid var(--color-border-input);
+    border-radius: var(--border-radius-default);
     cursor: pointer;
 
     @media (min-width: $screen-m) {
       display: block;
       padding: 20px 10px;
+      border: none;
     }
 
     @media (min-width: $screen-l) {
@@ -516,11 +438,22 @@ export default {
 
     &--active {
       background: var(--color-bg-lighter);
+      border-color: var(--color-bg-lighter);
 
       @media (min-width: $screen-m) {
         display: initial;
         padding-bottom: 18px;
-        border-bottom: 2px solid var(--color-main1);
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 50%;
+          height: 3px;
+          background: var(--color-main1);
+          transform: translateX(-50%);
+        }
       }
     }
   }
@@ -558,74 +491,46 @@ export default {
       margin-bottom: 10px;
     }
 
-    &--star {
-      width: 18px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 25px;
-        height: 23px;
-      }
+    &--all {
+      width: 28px;
+      height: 28px;
+      fill: var(--color-main1);
     }
 
     &--crown {
-      width: 18px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 22px;
-        height: 22px;
-      }
+      width: 30px;
+      height: 21px;
+      stroke: var(--color-main1);
     }
 
     &--live {
-      width: 17px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 23px;
-        height: 23px;
-      }
+      width: 23px;
+      height: 23px;
+      fill: var(--color-main1);
     }
 
     &--slots {
-      width: 34px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 46px;
-        height: 23px;
-      }
+      width: 45px;
+      height: 25px;
+      fill: var(--color-main1);
     }
 
     &--roulette {
-      width: 17px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 22px;
-        height: 22px;
-      }
+      width: 23px;
+      height: 23px;
+      fill: var(--color-main1);
     }
 
     &--table {
-      width: 17px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 22px;
-        height: 22px;
-      }
+      width: 29px;
+      height: 28px;
+      fill: var(--color-main1);
     }
 
     &--cards {
-      width: 18px;
-      height: 17px;
-
-      @media (min-width: $screen-xl) {
-        width: 26px;
-        height: 25px;
-      }
+      width: 26px;
+      height: 24px;
+      fill: var(--color-main1);
     }
   }
 
@@ -669,35 +574,6 @@ export default {
 
     @media (min-width: $screen-xl) {
       margin-bottom: 60px;
-    }
-  }
-
-  &-Search {
-    z-index: 1;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    border: 2px solid var(--color-border);
-
-    @media (min-width: $screen-m) {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    &.Search--open {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      z-index: 1001;
-      width: 100%;
-      background: var(--color-body);
-      cursor: initial;
-
-      .Search-Close {
-        @media (min-width: $screen-m) {
-          right: 16px;
-          left: initial;
-        }
-      }
     }
   }
 }

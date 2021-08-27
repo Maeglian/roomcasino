@@ -20,18 +20,18 @@
         </div>
       </NuxtLink>
       <NuxtLink v-if="!myAccount" class="AuthSection-UserInfo" :to="localePath('/profile/balance')">
-        <img src="@/assets/img/user.svg" />
+        <BaseIcon class="Icon--fill" name="user" width="20" height="23" />
       </NuxtLink>
     </div>
     <div v-else class="AuthSection-Login">
       <button
-        class="Btn AuthSection-Btn AuthSection-Btn--mobile AuthSection-Btn--login"
+        class="Btn Btn--outline AuthSection-Btn AuthSection-Btn--mobile AuthSection-Btn--login"
         @click="showRegistrationDialog('login')"
       >
         {{ $t('buttons.login') }}
       </button>
       <button
-        class="Btn AuthSection-Btn AuthSection-Btn--registration"
+        class="Btn Btn--color1 AuthSection-Btn AuthSection-Btn--registration"
         @click="showRegistrationDialog('registration')"
       >
         {{ $t('buttons.signUp') }}
@@ -50,9 +50,13 @@
 <script>
 import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import BaseIcon from '@/components/base/BaseIcon';
 
 export default {
   name: 'AuthSection',
+  components: {
+    BaseIcon,
+  },
   mixins: [showAuthDialog],
   props: {
     myAccount: {
@@ -107,29 +111,23 @@ export default {
   }
 
   &-Btn {
+    height: 30px;
     font-size: 10px;
     text-transform: uppercase;
 
     @media (min-width: $screen-m) {
       display: block;
-      height: 58px;
-      padding: 0 15px;
-      background: none;
-    }
-
-    @media (min-width: $screen-l) {
-      height: 64px;
-      padding: 0 25px;
+      padding: 0 20px;
     }
 
     @media (min-width: $screen-xl) {
-      height: 76px;
+      height: 47px;
       padding: 0 30px;
       font-size: 12px;
     }
 
-    &:hover {
-      background: var(--color-main1);
+    &--login {
+      margin-right: 8px;
     }
   }
 
@@ -138,6 +136,7 @@ export default {
 
     @media (min-width: $screen-m) {
       display: initial;
+      background: var(--color-main1);
     }
   }
 
@@ -146,6 +145,7 @@ export default {
     font-weight: 700;
     color: var(--color-text-main);
     background: var(--color-main1);
+    border-radius: 60px;
     cursor: pointer;
 
     @media (min-width: $screen-xl) {
@@ -319,11 +319,6 @@ export default {
     height: 50px;
     font-size: 14px;
     background: var(--color-main1);
-
-    @media (min-width: $screen-m) {
-      height: 96px;
-      font-size: 18px;
-    }
   }
 
   .AuthSection-Btn--login {
