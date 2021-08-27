@@ -67,11 +67,10 @@ export default {
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
-  background: var(--color-bg);
+  background: var(--color-body);
 
   @media (min-width: $screen-l) {
-    padding: 12px 16px;
-    background: var(--color-body);
+    padding: 0 16px 0 0;
   }
 
   &-Logo {
