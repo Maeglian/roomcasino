@@ -112,6 +112,7 @@
     flex-grow: 1;
     flex-direction: column;
     height: 100%;
+    background-color: var(--color-body);
   }
 
   &-Title {
@@ -139,7 +140,6 @@
     padding-right: 14px;
     padding-bottom: 29px;
     padding-left: 14px;
-    background-color: var(--color-body);
     background-image: url('~@/assets/img/auth-bg.png');
 
     @media (min-width: $screen-s) {
@@ -174,9 +174,13 @@
   &-Btn {
     flex-grow: 1;
     height: 68px;
-    margin-top: auto;
+    margin: auto 18px 15px;
     text-transform: uppercase;
     background: var(--color-main1);
+
+    @media (min-width: $screen-s) {
+      margin: auto 24px 27px;
+    }
 
     @media(min-width: $screen-m) {
       &:hover {
@@ -324,6 +328,7 @@
     position: absolute;
     top: 0;
     left: 20px;
+    z-index: 10;
     font-weight: 700;
     line-height: 58px;
     text-transform: uppercase;

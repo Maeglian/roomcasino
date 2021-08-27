@@ -197,8 +197,8 @@ export default {
     line-height: 1.18;
     color: var(--color-text-main);
     text-transform: uppercase;
-    border: 2px solid var(--color-border-ghost);
-    border-radius: 8px;
+    border: 2px solid var(--color-border-input);
+    border-radius: var(--border-radius-default);
     cursor: pointer;
 
     @media (min-width: $screen-l) {
