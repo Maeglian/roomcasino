@@ -391,8 +391,8 @@ export default {
     align-items: center;
     width: 100%;
     padding: 17px 16px;
-    background: var(--color-bg);
-    border: none;
+    background: var(--color-bg-lighter);
+    border: 2px solid var(--color-border-input);
 
     @media (min-width: $screen-m) {
       display: none;
@@ -416,16 +416,19 @@ export default {
     justify-content: left;
     align-items: center;
     width: 100%;
+    margin-right: 8px;
     padding: 17px 16px;
     line-height: 1.18;
     white-space: nowrap;
     background-color: var(--color-bg);
-    border-radius: 12px;
+    border: 2px solid var(--color-border-input);
+    border-radius: var(--border-radius-default);
     cursor: pointer;
 
     @media (min-width: $screen-m) {
       display: block;
       padding: 20px 10px;
+      border: none;
     }
 
     @media (min-width: $screen-l) {
@@ -434,6 +437,7 @@ export default {
 
     &--active {
       background: var(--color-bg-lighter);
+      border-color: var(--color-bg-lighter);
 
       @media (min-width: $screen-m) {
         display: initial;
