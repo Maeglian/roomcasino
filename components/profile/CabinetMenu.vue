@@ -38,7 +38,7 @@
     </NuxtLink>
     <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/user/general')">
       <BaseIcon
-        name="user"
+        name="user2"
         class="CabinetMenu-NavIcon CabinetMenu-NavIcon--stroke"
         width="18"
         height="20"
