@@ -77,7 +77,7 @@
           class="DefaultGames-Cards"
           :games="recentGames"
           :games-to-show="recentGamesNum"
-          btn-class="Btn--common Btn--dark"
+          btn-class="Btn--common Btn--outline"
         />
       </template>
       <Nuxt :key="$route.path" />
