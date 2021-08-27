@@ -1,56 +1,61 @@
 <template>
   <nav class="MobileNav">
-    <NuxtLink class="MobileNav-Item" :to="localePath('/promotions')">
+    <div
+      :class="['MobileNav-Item', { 'route-promotions': menuItems.promotions }]"
+      @click="focusMenu('promotions', 'effect')"
+    >
       <svg class="MobileNav-Icon" width="17" height="16">
         <use xlink:href="@/assets/img/icons.svg#promotions"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('pages.promotion') }}</div>
-    </NuxtLink>
-    <button v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
+    </div>
+    <button :class="['MobileNav-Item', { 'route-promotions': menuItems.promotions }]"
+             v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
       <svg class="MobileNav-Icon" width="18" height="15">
         <use xlink:href="@/assets/img/icons.svg#support"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('menu.support') }}</div>
     </button>
-    <NuxtLink class="MobileNav-Item" :to="localePath('/')">
+    <div
+      :class="['MobileNav-Item', { 'route-home': menuItems.home }]"
+      @click="focusMenu('home', 'effect')"
+    >
       <svg class="MobileNav-Icon" width="17" height="16">
         <use xlink:href="@/assets/img/icons.svg#dice"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('pages.lobby') }}</div>
-    </NuxtLink>
-    <NuxtLink class="MobileNav-Item" :to="localePath('/search')">
+    </div>
+    <div :class="['MobileNav-Item', { 'route-search': menuItems.search }]">
       <svg class="MobileNav-Icon" width="17" height="16" fill="#F3B233">
         <use xlink:href="@/assets/img/icons.svg#search"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('pages.search') }}</div>
-    </NuxtLink>
+    </div>
     <button class="MobileNav-Item MobileNav-Item--burger" @click="toggleNav()">
       <svg class="MobileNav-Icon Toggle Toggle--colored">
         <use xlink:href="@/assets/img/icons.svg#toggle"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('menu.menu') }}</div>
     </button>
-    <!--    <div class="MobileNav-Item" @click="toggleNotificationsPanel">-->
-    <!--      <div class="MobileNav-Messages">-->
-    <!--        <svg width="12" height="14">-->
-    <!--          <use xlink:href="@/assets/img/icons.svg#messages"></use>-->
-    <!--        </svg>-->
-    <!--        <div v-show="isNewNotifications" class="MobileNav-MessagesNew"></div>-->
-    <!--      </div>-->
-    <!--      <div class="MobileNav-Name">-->
-    <!--        Notification-->
-    <!--      </div>-->
-    <!--    </div>-->
   </nav>
 </template>
 
 <script>
-import showAuthDialog from '@/mixins/showAuthDialog';
 import { mapGetters, mapMutations, mapState } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'MobileNav',
   mixins: [showAuthDialog],
+  data() {
+    return {
+      menuItems: {
+        promotions: true,
+        home: false,
+        search: false,
+      },
+    };
+  },
   computed: {
     ...mapState(['navIsOpen', 'notificationsPanelIsOpen', 'chatIsLoaded']),
     ...mapGetters(['isLoggedIn', 'activeAccount', 'isNewNotifications']),
@@ -68,11 +73,28 @@ export default {
     onClickSupport() {
       window.LC_API.open_chat_window();
     },
+    /**
+     * Touch menu
+     * */
+    focusMenu(route, effect) {
+      setTimeout(() => {
+        this.menuItems?.[route] === true; // !this.menuItems?.[route];
+      }, 2000);
+      // this.changeRoute(route);
+    },
+    changeRoute(route) {
+      if (route === 'home') {
+        route = '';
+      }
+      this.$router.push(this.localePath(`/${route}`));
+    },
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import './MobileNavEffects.scss';
+
 .MobileNav {
   position: fixed;
   bottom: 0;
@@ -161,5 +183,12 @@ export default {
     height: 17px;
     margin: 0 0 6px;
   }
+}
+
+.route-home,
+.route-search,
+.route-promotions {
+  // background-color: #0e152f !important;
+  @include touch-btn-1();
 }
 </style>
