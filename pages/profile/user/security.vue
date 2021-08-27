@@ -23,7 +23,9 @@
       <!--        </form>-->
       <!--      </div>-->
       <form class="CabinetForm ProfilePage-Password" @submit.prevent="onSubmitPasswordForm">
-        <div class="CabinetPage-Header">{{ $t('profile.user.passwordChange') }}</div>
+        <div class="CabinetPage-Header CabinetPage-Header--transparent">
+          {{ $t('profile.user.passwordChange') }}
+        </div>
         <BaseInput
           v-model="oldPassword"
           class="ProfilePage-Row"

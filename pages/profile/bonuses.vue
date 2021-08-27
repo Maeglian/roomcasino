@@ -5,7 +5,7 @@
       {{ $t('profile.bonuses.history') }}
       <span class="BonusesPage-BonusesIcon">
         <svg width="16" height="16">
-          <use xlink:href="@/assets/img/icons.svg#time"></use>
+          <use xlink:href="@/assets/img/icons.svg#time2"></use>
         </svg>
       </span>
     </NuxtLink>
@@ -334,7 +334,7 @@ export default {
     height: 40px;
     margin-left: 15px;
     background: var(--color-bg-lighter);
-    fill: var(--color-main1);
+    stroke: var(--color-main1);
 
     @media (min-width: $screen-m) {
       width: 55px;
@@ -463,6 +463,7 @@ export default {
 
   &-Input {
     padding: 14px 16px;
+    border-radius: var(--border-radius-default) 0 0 var(--border-radius-default);
   }
 
   &-InputError {
@@ -475,6 +476,7 @@ export default {
     width: 84px;
     margin-left: 4px;
     font-weight: 700;
+    border-radius: 0 var(--border-radius-default) var(--border-radius-default) 0;
     cursor: pointer;
 
     @media (min-width: $screen-m) {

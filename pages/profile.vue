@@ -62,6 +62,10 @@ export default {
     color: var(--color-text-main);
     text-transform: capitalize;
     background: var(--color-bg);
+
+    &--transparent {
+      background: transparent;
+    }
   }
 
   &-Wrapper {
