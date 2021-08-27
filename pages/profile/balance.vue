@@ -93,17 +93,26 @@
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Cash">
           {{ acc.withdrawable }}
         </div>
-        <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns">
+        <div
+          class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns"
+          :class="{ 'BalancePage-Btns--gr': $i18n.locale === 'gr' }"
+        >
           <button
             class="Btn Btn--color CabinetPage-Btn BalancePage-Btn"
-            :class="{ 'BalancePage-Btn--de': $i18n.locale === 'de' }"
+            :class="[
+              { 'BalancePage-Btn--de': $i18n.locale === 'de' },
+              { 'BalancePage-Btn--gr': $i18n.locale === 'gr' },
+            ]"
             @click="onClickDeposit(acc.currency)"
           >
             {{ $t('buttons.deposit') }}
           </button>
           <button
             class="Btn Btn--outline2 CabinetPage-Btn BalancePage-Btn"
-            :class="{ 'BalancePage-Btn--de': $i18n.locale === 'de' }"
+            :class="[
+              { 'BalancePage-Btn--de': $i18n.locale === 'de' },
+              { 'BalancePage-Btn--gr': $i18n.locale === 'gr' },
+            ]"
             @click="onClickCashout(acc.currency)"
           >
             {{ $t('buttons.cashout') }}
@@ -244,6 +253,17 @@ export default {
       padding-right: 2px !important;
       padding-left: 2px !important;
     }
+
+    &--gr {
+      &:first-child {
+        margin-right: 0;
+        margin-bottom: 4px;
+        @media (min-width: $screen-m) {
+          margin-right: 8px;
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   &-Table {
@@ -261,6 +281,13 @@ export default {
 
   &-Btns {
     white-space: nowrap;
+
+    &--gr {
+      white-space: normal;
+      @media (min-width: $screen-m) {
+        white-space: nowrap;
+      }
+    }
   }
 
   &-Active,

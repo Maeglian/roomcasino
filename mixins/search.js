@@ -1,4 +1,4 @@
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 
 export default {
   data() {
@@ -7,9 +7,10 @@ export default {
     };
   },
   computed: {
+    ...mapState('games', ['defaultGames']),
     ...mapGetters('games', ['gamesSearched']),
-    filteredGames() {
-      return this.searched ? this.gamesSearched(this.searched) : this.games;
+    searchedGames() {
+      return this.searched ? this.gamesSearched(this.searched) : this.defaultGames;
     },
   },
 };

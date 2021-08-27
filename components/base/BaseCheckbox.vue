@@ -12,7 +12,9 @@
       class="BaseCheckbox-Label"
       :class="[labelClass, { 'BaseCheckbox-Label--radio': type === 'radio' }]"
     >
-      <slot></slot>
+      <div class="BaseCheckbox-LabelInfo">
+        <slot></slot>
+      </div>
     </div>
   </label>
 </template>
@@ -120,6 +122,11 @@ export default {
       height: 20px;
       background: var(--color-text-ghost);
     }
+  }
+
+  &-LabelInfo {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &-Checkbox:checked + &-Label:before {
