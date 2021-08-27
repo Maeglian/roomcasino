@@ -26,7 +26,12 @@
         </div>
       </div>
     </div>
-    <div v-if="searched" class="SearchPage-Games">
+    <div
+      v-if="
+        searched || filters.gameProducerList.value.length || filters.categoriesList.value.length
+      "
+      class="SearchPage-Games"
+    >
       <div v-if="filteredGames.length" class="Title Title--type-h4 Cards-Title">
         {{ $t('search.searchResults') }} ({{ filteredGames.length }})
       </div>
@@ -273,10 +278,6 @@ export default {
               value: 'top',
             },
             {
-              name: this.$t('gameCategoriesTabs.all'),
-              value: 'all',
-            },
-            {
               name: this.$t('gameCategoriesTabs.slots'),
               value: 'slots',
             },
@@ -332,7 +333,7 @@ export default {
   },
   computed: {
     ...mapState(['width', 'defaultCountry']),
-    ...mapState('games', ['defaultGames', 'gameProducers']),
+    ...mapState('games', ['gameProducers']),
     selectedOneFilter() {
       return (
         (this.filters.categoriesList.value.length === 1 &&
@@ -368,10 +369,18 @@ export default {
         return this.searchedGames;
 
       return this.searchedGames.filter(game => {
-        if (this.filters.gameProducerList.value.includes(game.gameProducer)) return true;
+        if (
+          this.filters.gameProducerList.value.includes(game.gameProducer) &&
+          !this.filters.categoriesList.value.length
+        )
+          return true;
         let gameIsSelected = false;
         for (let i = 0; i < this.filters.categoriesList.value.length; i++) {
-          if (game.categoryList.includes(this.filters.categoriesList.value[i])) {
+          if (
+            game.categoryList.includes(this.filters.categoriesList.value[i]) &&
+            (this.filters.gameProducerList.value.includes(game.gameProducer) ||
+              !this.filters.gameProducerList.value.length)
+          ) {
             gameIsSelected = true;
             break;
           }
@@ -584,6 +593,7 @@ export default {
     font-weight: 500;
     color: var(--color-text-faded);
     text-transform: capitalize;
+    white-space: nowrap;
   }
 }
 </style>
