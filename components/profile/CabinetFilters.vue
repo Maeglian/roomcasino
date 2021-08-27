@@ -78,6 +78,7 @@ export default {
       de,
       cs,
       fr,
+      nz: en,
       'en-ca': en,
     };
   },
