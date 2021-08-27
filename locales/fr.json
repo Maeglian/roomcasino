@@ -1,595 +1,591 @@
 {
-  "title": "Ninecasino",
+  "title": "PlayJoker",
   "buttons": {
-    "signUp": "Zaregistrovat se",
-    "register": "Zaregistrovat se",
-    "terms": "Pravidla bonusů",
-    "registerNow": "Přihlaste se nyní",
-    "login": "Přihlásit se",
-    "logIn": "Přihlásit se",
-    "joinNow": "Přidej se teď",
-    "deposit": "vklad",
-    "depositNow": "Vložit hned",
-    "loadMoreGames": "Načíst další hry",
-    "playForFun": "Hrát pro zábavu",
-    "playNow": "Hrát hned",
-    "showMore": "Zobrazit více",
-    "saveChanges": "Uložit změny",
-    "update": "Aktualizace",
-    "addLimits": "Přidejte limity",
-    "filter": "Filtr",
-    "cashout": "Proplatit",
-    "cancel": "Zavřít",
-    "loading": "Načítání",
-    "continue": "Pokračovat",
-    "letsStart": "Začněme",
-    "goHomePage": "Přejít na domovskou stránku",
-    "save": "Uložit",
-    "getBonus": "Získejte bonus",
-    "more": "Více",
-    "checkBonuses": "Zkontroluj si bonusy",
-    "cancelBonus": "Zrušit bonus",
-    "goBack": "Vrátit se",
-    "createAccount": "Vytvořit účet"
+    "signUp": "S'enregistrer",
+    "register": "Enregistrer",
+    "terms": "Conditions d'attribution des bonus",
+    "registerNow": "S'enregistrer-vous maintenant",
+    "login": "Login",
+    "logIn": "Log in",
+    "joinNow": "Adhérez maintenant",
+    "deposit": "Dépôt",
+    "depositNow": "Dépôt",
+    "loadMoreGames": "Charger plus de jeux",
+    "playForFun": "Jouez pour le plaisir ",
+    "playNow": "Jouez maintenant",
+    "showMore": "Voir plus",
+    "saveChanges": "Sauvegarder les changements",
+    "update": "Mise à jour",
+    "addLimits": "Ajouter des limites",
+    "filter": "Filtre",
+    "cashout": "Encaissement",
+    "cancel": "Annuler",
+    "loading": "Loading",
+    "continue": "Continuer",
+    "letsStart": "Commençons",
+    "goHomePage": "Aller à la page d'accueil",
+    "save": "Sauvegarder",
+    "edit": "Editer",
+    "getBonus": "Obtenir un bonus",
+    "more": "Plus",
+    "checkBonuses": "Vérifiez les bonus",
+    "cancelBonus": "Annuler le bonus",
+    "goBack": "Retour",
+    "createAccount": "Enregistrer"
   },
   "errors": {
-    "required": "Nemůže to být prázdné",
-    "email": "Žádná platná e-mailová adresa",
-    "confirmPassword": "Heslo a heslo pro potvrzení nejsou stejné",
-    "oldAndNewPasswords": "Staré a nové heslo jsou stejné",
-    "minLength": "Musí mít alespoň {num} znaků",
-    "maxLength": "Nesmí obsahovat více než {num} znaků",
-    "phone": "Musí být označeno znakem „+“ od 10 do 14 symbolů",
-    "numbers": "Musí být číselné",
-    "day": "Den je neplatný",
-    "month": "Měsíc je neplatný",
-    "year": "Rok je neplatný",
-    "postalCode": "Must be letters, numbers or space",
-    "positioveNum": "Zadejte kladné číslo",
-    "0andNum": "Zadejte 0 nebo kladné číslo",
-    "invalidDate": "Datum je neplatné",
-    "minAge": "Jste mladší než"
+    "required": "Ne peut pas être vide",
+    "email": "Adresse électronique non valide",
+    "confirmPassword": "Le mot de passe et le mot de passe de confirmation ne sont pas les mêmes",
+    "oldAndNewPasswords": "Les anciens et les nouveaux mots de passe sont les mêmes",
+    "minLength": "Doit avoir au moins {num} caractères",
+    "maxLength": "Ne doit pas comporter plus de {num} caractères",
+    "phone": "Doit être accompagné de \"+\", de 10 à 14 symboles",
+    "numbers": "Doit être numérique",
+    "day": "Le jour n'est pas valide",
+    "month": "Le mois n'est pas valide",
+    "year": "L'année n'est pas valide",
+    "postalCode": "Doit être des lettres, des chiffres ou un espace",
+    "positiveNum": "Entrer un nombre positif",
+    "0andNum": "Entrée 0 ou nombre positif",
+    "invalidDate": "La date n'est pas valide",
+    "minAge": "Vous avez moins de {minAge}",
+    "inputCorrectDate": "Entrez la date correcte"
   },
   "menu": {
-    "menu": "Jídelní lístek",
-    "support": "Podpěra",
-    "yourAccount": "Váš účet"
+    "menu": "Menu",
+    "support": "Support",
+    "yourAccount": "Votre compte"
   },
   "modals": {
-    "congratulations": "Gratulujeme",
-    "playGame": "Nyní můžete hrát hru",
-    "cantStart": "Hru nelze spustit",
-    "pleaseDeposit": "Nejprve provést vklad",
-    "pleaseDepositText": "It's a pity, but your balance is 0. Deposit now!",
-    "wait": "Moment počkej!",
-    "lockedByBonus": "Na účtu máš aktivní bonusy. To znamená, že z účtu nemůžeš vybírat. Otevři si svůj profil a všechny je zruš, abys mohl(a) provádět výběry.",
-    "nullBalance": "Bohužel výběr není možný. Na účtu nemáte žádné prostředky.",
-    "loseBonus": "Máš aktivní bonus! Pokud ho zrušíš, přijdeš o {amount} bonusové peníze.",
-    "isSure": "Určitě?"
+    "congratulations": "Félicitations ",
+    "playGame": "Maintenant vous pouvez jouer le jeu",
+    "cantStart": "Impossible de démarrer le jeu",
+    "pleaseDeposit": "Veuillez déposer d'abord",
+    "pleaseDepositText": "C'est dommage, mais votre solde est de 0. Déposez maintenant!",
+    "wait": "Mais attendez!",
+    "lockedByBonus": "Il y a encore des bonus actifs dans votre compte. Dans ce cas, les retraits sont indisponibles. Veuillez vérifier votre profil et les annuler tous pour effectuer des retraits.",
+    "nullBalance": "Malheureusement, vous ne pouvez pas effectuer de retrait. Vous n’avez pas de fonds dans votre compte.",
+    "loseBonus": "Vous avez un bonus actif! Si vous l’annulez, vous perdrez {amount} le montant du bonus.",
+    "isSure": "Êtes-vous sûr?"
   },
   "notifications": {
-    "cancelBonusError": "Chyba zrušení bonusu",
-    "cancelBonusSuccess": "Tvůj bonus byl zrušen",
-    "cancelFreeSpinError": "Chyba zrušení spinu zdarma",
-    "cancelFreeSpinSuccess": "Váš spin zdarma byl zrušen",
-    "activateFreeSpinError": "Chyba aktivace spinu zdarma",
-    "activateFreeSpinSuccess": "Váš spin zdarma byl aktivován"
+    "cancelBonusError": "Erreur lors de l’annulation du bonus",
+    "cancelBonusSuccess": "Votre bonus a été annulé",
+    "cancelFreeSpinError": "Erreur lors de l’annulation du tour gratuit",
+    "cancelFreeSpinSuccess": "Votre tour gratuit a été annulé",
+    "activateFreeSpinError": "Erreur lors de l’activation du tour gratuit",
+    "activateFreeSpinSuccess": "Votre tour gratuit a été activé"
   },
   "auth": {
-    "loginTitle": "Vítej zpět",
-    "signUpTitle": "Zaregistrujte se<br /> <span class = \"Colored\"> & </span> a získejte <br /> uvítací bonus",
-    "forgotPassword": "Zapomenuté heslo",
-    "emails": "Dostávat e-mailové promoakce",
-    "terms": "Je mi {minAge} let a přijímám {br} {terms} a {policy}",
-    "step2Title": "Vyplňte prosím níže uvedené informace!",
-    "thanksRegistration": "Děkujeme za registraci",
-    "registrationBonus": "Kč 3330",
-    "registrationBonusText": "Pro váš první vklad! Využijte uvítací bonus Ninecasino",
-    "enterEmail": "Zadejte email",
-    "passwordRestoreText": "Dík! Další pokyny najdete ve svém e-mailu",
-    "enterNewPassword": "Zadejte své nové heslo",
-    "updatePassword": "Aktualizujte heslo",
-    "newPassword": "Nové heslo",
-    "confirmPassword": "Potvrzení hesla",
-    "tryingConfirmEmail": "Pokoušíme se ověřit váš e-mail",
-    "confirmEmailError": "Litujeme, váš e-mail nebyl potvrzen",
-    "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed",
-    "bonus": "KČ 9990",
-    "freeSpins": "250 spinů zdarma",
+    "loginTitle": "Bienvenue à nouveau",
+    "signUpTitle": "Inscrives-vous et <span class=\"Colored\">&</span> recevez<br /> un bonus de bienvenue",
+    "forgotPassword": "Mot de passe oublié",
+    "emails": "Receive email promos",
+    "terms": "J’ai  {minAge} ans et j’accepte les {br} {terms} et {policy}",
+    "step2Title": "Veuillez remplir les informations ci-dessous !",
+    "thanksRegistration": "Merci pour l'inscription",
+    "registrationBonus": "150 €",
+    "registrationBonusText": "Pour votre premier dépôt! Profitez du bonus de Bienvenue de Ninecasino",
+    "pleaseDepositText": "Obtenez votre bonus",
+    "enterEmail": "Entrez l'email",
+    "passwordRestoreText": "Merci ! Vérifiez votre e-mail pour de nouvelles instructions",
+    "enterNewPassword": "Entrez votre nouveau mot de passe",
+    "updatePassword": "Mise à jour du mot de passe",
+    "newPassword": "Nouveau mot de passe",
+    "confirmPassword": "Confirmation du mot de passe",
+    "tryingConfirmEmail": "Nous essayons de vérifier votre email",
+    "confirmEmailError": "Désolé, votre e-mail n'a pas été confirmé",
+    "confirmEmailSuccess": "Félicitations ! Votre e-mail a été confirmé avec succès",
+    "bonus": "450 €",
+    "freeSpins": "250 tours gratuit",
     "placeholders": {
-      "enterEmail": "E-emailen",
-      "enterPassword": "Heslo",
-      "email": "E-emailen",
-      "password": "Heslo",
-      "country": "Země",
-      "firstName": "Jméno",
-      "lastName": "Příjmení",
-      "male": "Mužský",
-      "female": "Ženský",
-      "city": "Mesto",
-      "address": "Adresa",
-      "postalCode": "Poštovní směrovací číslo",
-      "phone": "Mobilní telefon",
-      "year": "YYYY"
+      "enterEmail": "Entrez votre email",
+      "enterPassword": "Entrez votre mot de passe",
+      "email": "Votre email",
+      "password": "Votre mot de passe",
+      "currency": "Devise",
+      "country": "Pays",
+      "firstName": "Nom",
+      "lastName": "Nom de famille",
+      "male": "Homme",
+      "female": "Femme",
+      "city": "Ville",
+      "address": "Adresse",
+      "postalCode": "Code Postale",
+      "phone": "Numéro de téléphone mobile",
+      "year": "AAAA"
     },
     "features": {
-      "first": "Programu cashback<br>až 20%",
-      "second": "24/7 přátelská<br/>podpora chatu",
-      "third": "Super rychlý<br/>výběry"
+      "first": "Remise quotidienne <br> en espèces jusqu'à 20%",
+      "second": "24/7 assistance<br/>amicale par chat",
+      "third": "Super rapide<br/>retraits"
     }
   },
   "pages": {
     "lobby": "Lobby",
-    "myAccount": "Můj účet",
-    "promotion": "Propagace",
-    "aboutUs": "O nás",
+    "myAccount": "Mon compte",
+    "promotion": "Promotion",
+    "aboutUs": "A propos de nous",
     "faq": "FAQ",
-    "btc": "O BTC",
-    "aml": "AML politika",
-    "terms": "Pravidla a podmínky",
-    "bonusPolicy": "Bonusové podmínky",
-    "privacyPolicy": "Zásady ochrany osobních údajů",
-    "responsibleGaming": "Zodpovědné hraní",
-    "risk": "Varování o riziku",
-    "tournaments": "Turnaje",
-    "dailyCashback": "Programu cashback",
-    "search": "Vyhledávání"
-  },
-  "gameCategories": {
-    "top": "Nejlepší hry",
-    "all": "Všechny hry",
-    "live": "Živé hry",
-    "slots": "Sloty hry",
-    "roulette": "Ruleta",
-    "table": "Stolní hry",
-    "card": "Karetní hry",
-    "recent": "Nedávné hry",
-    "new": "Nový hry",
-    "megaways": "Megaways",
-    "luckychoice": "Lucky choice",
-    "DROP&WINS": "Drops & Wins Slots",
-    "jackpots": "Jackpots"
+    "btc": "À propos de BTC",
+    "aml": "Politique AML",
+    "terms": "Termes et conditions",
+    "bonusPolicy": "Conditions de bonus",
+    "privacyPolicy": "Politique de confidentialité",
+    "responsibleGaming": "Jeu responsable",
+    "risk": "Avertissements sur les risques",
+    "tournaments": "Tournois",
+    "dailyCashback": "Remise quotidienne",
+    "search": "Rechercher"
   },
   "gameCategoriesTabs": {
-    "top" : "Nejlepší hry",
-    "all" : "Všechny hry",
-    "live" : "Živé hry",
-    "slots" : "Sloty hry",
-    "roulette" : "Ruleta",
-    "table" : "Stolní hry",
-    "card" : "Karetní hry",
-    "recent" : "Nedávné hry",
-    "new" : "Nový hry",
-    "buybonus": "Bonus Buy",
-    "megaways": "Megaways",
-    "luckychoice": "Lucky choice",
-    "DROP&WINS": "Drops & Wins Slots",
-    "jackpots": "Jackpots"
+    "top": "Les meilleurs jeux",
+    "all": "Tous les jeux",
+    "live": "Jeux en ligne",
+    "slots": "Jeux de machines à sous",
+    "roulette": "Roulette",
+    "table": "Jeux de table",
+    "card": "Jeux de cartes",
+    "new": "Nouveaux jeux",
+    "buybonus": "Bonus Buy"
   },
-  "footer" : {
-    "text" : {
-      "p1" : "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com by your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
-      "p2" : "Copyright © 2020 www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorized to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
-      "p3" : "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
+  "gameCategories": {
+    "top": "Les meilleurs jeux",
+    "all": "Tous les jeux",
+    "live": "Jeux en ligne",
+    "slots": "Jeux de machines à sous",
+    "roulette": "Roulette",
+    "table": "Jeux de table",
+    "card": "Jeux de cartes",
+    "new": "Nouveaux jeux",
+    "buybonus": "Bonus Buy"
+  },
+  "footer": {
+    "text": {
+      "p1": "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com by your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
+      "p2": "Copyright © 2020 www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorized to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
+      "p3": "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
     }
   },
   "search": {
-    "findGame": "Najdi hru",
-    "notFound": "Nic nebylo nalezeno",
-    "search": "Hledat",
-    "searchResults": "Výsledky hledání",
-    "nothingFound": "Bohužel, nic nenalezeno",
-    "try": "Zkuste hledat něco jiného",
-    "popular": "Oblíbená hledání"
+    "findGame": "Trouver un jeu",
+    "notFound": "Rien n'a été trouvé",
+    "search": "Rechercher",
+    "searchResults": "Résultats de la recherche",
+    "nothingFound": "Désolé, aucun résultat",
+    "try": "Essayez une autre recherche"
   },
   "common": {
-    "date": "Datum",
-    "currency": "Měna",
-    "amount": "Množství",
-    "status": "Postavení",
-    "title": "Titul",
-    "type": "Typ",
-    "active": "Aktivní",
-    "left": "odjet",
-    "yes": "Ano",
-    "no": "Ne",
-    "email": "E-mailem",
-    "wager": "Vsadit",
-    "created": "Vytvořeno",
-    "expiresAt": "Vyprší v",
-    "noData": "Údaje nejsou k dispozici",
-    "days": "Dny",
-    "hours": "Hodiny",
-    "minutes": "Minut",
-    "seconds": "Sekundy",
-    "week": "Týden",
-    "name": "Název",
-    "points": "Směřovat",
-    "prize": "cena",
-    "prizePool": "Prize pool",
-    "freeSpins": "spinů zdarma",
-    "winners": "Vítězové"
+    "date": "Date",
+    "currency": "Devise",
+    "amount": "Montant",
+    "status": "Statut",
+    "title": "Titre",
+    "type": "Type",
+    "active": "Actif",
+    "disabled": "Désactivé",
+    "left": "est resté",
+    "yes": "Oui",
+    "no": "Non",
+    "email": "Email",
+    "wager": "Mise",
+    "created": "A été créé",
+    "expiresAt": "Expire à",
+    "days": "Jours",
+    "hours": "Heures",
+    "minutes": "Minutes",
+    "seconds": "Secondes",
+    "week": "Semaine",
+    "name": "Nom",
+    "points": "Points",
+    "prize": "Prix",
+    "prizePool": "Une cagnotte",
+    "freeSpins": "tours gratuites",
+    "winners": "Les gagnants"
   },
   "actions": {
-    "addCurrency": "Add currency"
+    "addCurrency": "Ajouter une devise"
   },
   "homepage": {
     "heroBanner": {
       "deposit1": {
-        "title": "Programu <br/> Cashback <span class = \"Colored\">až 20% </span>",
-        "text": "NA VÁŠ PRVNÍ VKLAD <br/> a získejte <span class = \"Colored\"> 100% </span><br/> až <span class = \"Colored\"> Kč 3330 </span> + <span class=\"Colored\">250 spinů zdarma</span>"
+        "title": "Remise quotidienne <br> en espèces jusqu'à  <span class=\"Colored\">20%</span>",
+        "text": "BONUS DE PREMIER<br/> DÉPÔT <span class = \"Colored\"> 100% </span> jusqu’à <br/><span class = \"Colored\">€ 150</span> + <span class=\"Colored\">250 tours gratuites</span>"
       },
       "deposit2": {
-        "title": "Bonus <br/> za druhý vklad",
-        "text": "55% bonus <br/> až <span class = \"Colored\"> Kč 3330</span> <br/> na váš druhý vklad"
+        "title": "Bonus de deuxième<br/> dépôt",
+        "text": "55% de bonus<br/> jusqu'à <span class=\"Colored\">150 €</span><br/> sur votre deuxième dépôt"
       },
       "deposit3": {
-        "title": "Bonus<br/>za třetí vklad ",
-        "text": "100% bonus <br/> až <span class = \"Colored\"> Kč 3330 </span> <br/> na váš třetí vklad"
+        "title": "Bonus de troisième<br/> dépôt",
+        "text": "100% de bonus<br/> jusqu'à <span class=\"Colored\">150 €</span><br/> sur votre troisième dépôt"
       },
       "deposit4": {
-        "title": "víkendové<br/> dobití",
-        "text": "<span class=\"Colored\">40% až KČ 4100</span>"
+        "title": "REPRISE DE FIN<br/> DE SEMAINE",
+        "text": "<span class=\"Colored\">40 % JUSQU’À 150 €</span>"
       },
       "highroller": {
-        "title": "Bonus pro<br/> velké hráče",
-        "text": "<span class=\"Colored\">až KČ 12700</span>"
+        "title": "Bonus<br/> des grands<br/> joueurs",
+        "text": "<span class=\"Colored\">jusqu’à 500 €</span>"
       }
     },
     "advantages": {
       "first": {
-        "highlighted": "Super rychlý",
-        "ghost": "výběry"
+        "highlighted": "Super rapide",
+        "ghost": "retraits"
       },
       "second": {
         "highlighted": "24/7",
-        "ghost": "přátelská podpora chatu"
+        "ghost": "assistance amicale par chat"
       },
       "third": {
-        "highlighted": "Více než",
-        "ghost": "2000 her"
+        "highlighted": "Plus de ",
+        "ghost": "2000 jeux"
       },
       "fourth": {
-        "highlighted": "Nejdivočejší výběr",
-        "ghost": "poskytovatelé her"
+        "highlighted": "La sélection la plus folle ",
+        "ghost": "de fournisseurs de jeux"
       }
     },
-    "allProviders": "Všichni poskytovatelé",
-    "tableIsOpen": "Stůl je otevřený",
-    "tableIsClosed": "Stůl je zavřený",
-    "topWinners": "Top vítězové",
-    "lastWinners": "Nejnovější vítězové"
+    "allProviders": "Tous les fournisseurs",
+    "tableIsOpen": "La table est ouverte",
+    "tableIsClosed": "La table est fermée",
+    "topWinners": "Grands gagnants",
+    "lastWinners": "Derniers gagnants"
   },
   "filters": {
-    "filteredBy": "Filtrováno podle",
-    "allStatuses": "Všechny stavy",
-    "AllCurrencies": "Všechny měny",
-    "until": "Dokud",
-    "dataPlaceholder": "DD.MM.YYYY"
+    "filteredBy": "Filtré par",
+    "allStatuses": "Tous les statuts",
+    "allCurrencies": "Toutes les devises",
+    "until": "Jusqu'à",
+    "dataPlaceholder": "DD.MM.AAAA"
   },
   "profile": {
     "pages": {
-      "balance": "Zůstatek",
-      "bonuses": "Bonusy",
-      "history": "Dějiny",
-      "verification": "Ověření",
-      "user": "Profil",
-      "limits": "Limity hazardu",
-      "exit": "Výstup"
+      "balance": "Balance",
+      "bonuses": "Bonuses",
+      "history": "Histoire",
+      "verification": "Vérification",
+      "user": "Profile",
+      "limits": "Limites de jeu",
+      "exit": "Sortie"
     },
     "balance": {
       "table": {
-        "locked": "Locked by bonus",
-        "cashout": "Available to cash out"
+        "locked": "Verrouillé par un bonus",
+        "cashout": "Disponible pour encaisser"
       },
-      "addCurrency": "Přidat měnu",
-      "noMoreCurrency": "Už nemusíte přidávat žádnou měnu",
-      "active": "Aktivní",
-      "select": "Vybrat"
+      "addCurrency": "Ajouter la monnaie",
+      "noMoreCurrency": "Il n'y a plus de monnaie à ajouter",
+      "active": "Actif",
+      "select": "Sélectionnez"
     },
     "bonuses": {
-      "history": "Historie bonusů",
+      "history": "Histoire du bonus",
       "table": {
-        "wagered": "vsadil",
+        "wagered": "mis en jeu",
         "bonus": "Bonus",
-        "min": "Minimální částka vkladu",
-        "max": "Maximální cena"
+        "min": "Montant du dépôt minimum",
+        "max": "Prix maximum"
       },
-      "wagerAmountRequirement": "Požadavek na sázkové množství",
-      "wageredPercent": "Sázené procento"
+      "wagerAmountRequirement": "Montant requis pour la mise",
+      "wageredPercent": "Pourcentage de mise"
     },
     "history": {
       "tabs": {
-        "transactions": "Historie transakcí",
-        "game": "Historie hry",
-        "bonus": "Historie bonusů"
+        "transactions": "Histoire des transactions",
+        "game": "Histoire du jeu",
+        "bonus": "Histoire du bonus"
       },
       "table": {
-        "date": "Datum",
-        "paymentSystem": "Platební systém",
-        "action": "Akce",
-        "gameName": "Název hry",
-        "betSum": "Sázkový součet",
-        "win": "Vyhrát",
-        "validUntil": "V platnosti, dokud"
+        "date": "Date",
+        "paymentSystem": "Système de paiement",
+        "action": "Action",
+        "gameName": "Nom du jeu",
+        "betSum": "Montant de la mise",
+        "win": "Win",
+        "validUntil": "Valable jusqu'au"
       }
     },
     "verification": {
-      "documents": "Ověření dokumentů",
-      "text": "Pas, řidičský průkaz nebo jiné oficiální dokumenty, které je nahrazují / do vyúčtování, telefonního účtu nebo bankovního výpisu, ve kterém je plně uvedeno vaše jméno a adresa / snímek obrazovky nebo fotografie z online banky, bankovního výpisu, stránky Skrill atd., Zobrazující vklad.",
-      "drop": "Sem přetáhněte soubor nebo procházejte obrázky nebo soubory PDF. Maximální velikost",
-      "uploaded": "Nahrané dokumenty",
-      "waiting": "Čekání na schválení",
-      "approved": "Schválený",
-      "disapproved": "Zamítnuto"
+      "documents": "Vérification des documents",
+      "text": "Passeport, permis de conduire ou autres documents officiels les remplaçant/facture de services publics, facture de téléphone ou relevé bancaire, dans lesquels votre nom et votre adresse sont entièrement indiqués/capture d’écran ou photo de la banque en ligne, relevé bancaire, page Skrill, etc. montrant le dépôt.",
+      "uploaded": "Documents téléchargés",
+      "waiting": "En attendant d'être approuvé",
+      "approved": "Approuvé",
+      "disapproved": "Désapprouvé",
+      "drop": "Déposez le fichier ici ou parcourez les images ou les fichiers .pdf. Taille maximale 110 MB"
     },
     "user": {
-      "title": "Uživatelský profil",
+      "title": "Profil utilisateur",
       "tabs": {
-        "general": "Všeobecné",
-        "security": "Bezpečnostní"
+        "general": "Général",
+        "security": "Sécurité"
       },
-      "generalInfo": "Obecné informace",
-      "subscriptions": "Předplatné",
-      "sms": "Pošlete promo e-mailem",
-      "email": "Posílejte promo zprávy sms",
-      "denyBonuses": "Nechci dostávat žádné bonusy",
-      "passwordChange": "Změna hesla",
-      "oldPassword": "Staré heslo",
-      "newPassword": "Nové heslo",
-      "confirmPassword": "Potvrzení hesla",
-      "sessionHistory": "Historie relace",
+      "generalInfo": "Infos générales",
+      "subscriptions": "Souscriptions",
+      "sms": "Envoyez des promotions par e-mail",
+      "email": "Je ne veux pas recevoir de bonus",
+      "denyBonuses": "Ich möchte keine Boni erhalten",
+      "passwordChange": "Changement de mot de passe",
+      "oldPassword": "Vieux mot de passe",
+      "newPassword": "Nouveau mot de passe",
+      "confirmPassword": "Confirmation du mot de passe",
+      "sessionHistory": "Historique de la session",
       "labels": {
-        "email": "E-emailen",
-        "country": "Země",
-        "firstName": "Jméno",
-        "lastName": "Příjmení",
-        "gender": "Rod",
-        "birthDate": "Datum narození",
-        "city": "Mesto",
-        "address": "Adresa",
-        "postalCode": "Poštovní směrovací číslo",
-        "phoneNumber": "Mobilní telefon"
+        "email": "Email",
+        "country": "Pays",
+        "firstName": "Nom",
+        "lastName": "Nom de famille",
+        "gender": "Sexe",
+        "city": "Ville",
+        "address": "Adresse",
+        "postalCode": "Code Postale",
+        "phoneNumber": "Numéro de téléphone mobile",
+        "birthDate": "Date de naissance"
       },
-      "updateSuccess": "Váš profil byl úspěšně aktualizován!",
-      "passwordUpdateSuccess": "Vaše heslo bylo úspěšně změněno!"
+      "updateSuccess": "Votre profil a été mis à jour avec succès!",
+      "passwordUpdateSuccess": "Votre mot de passe a été modifié avec succès!"
     },
     "limits": {
-      "initialText": "Chcete sledovat svoji aktivitu, limity ztráty nebo omezit vklady? Váš účet lze nastavit se všemi limity. Pomůže vám získat přehled o vašem hazardu. Všechna omezení se projeví okamžitě.",
-      "createLimits": "Vytvořte limity",
-      "addLimits": "Přidejte limity",
+      "initialText": "Voulez-vous contrôler votre activité, vos limites de perte ou vos limites de dépôt? Votre compte peut être configuré avec toutes les limites. Cela vous aidera à avoir une vue d’ensemble de vos habitudes de jeu. Toutes les restrictions prennent effet instantanément.",
+      "createLimits": "Creer del limites",
+      "addLimits": "Ajouter des limites",
       "limits": {
         "depositLimit": {
-          "name": "Limity vkladů",
-          "text": "Váš účet lze nastavit s limity vkladů. Toto nastavení omezuje částku, kterou můžete vložit za den, týden nebo měsíc.",
-          "editRules": "Svůj limit můžete kdykoli snížit, tato změna se projeví okamžitě. Limit můžete zvýšit, ale aby se tato změna projevila, potřebujete 24 hodin.",
-          "deleteRules": "Zrušení limitu ztráty trvá 24 hodin. Po překročení limitu obdržíte e-mailové upozornění."
+          "name": "Limites de  dépôt",
+          "text": "Votre compte peut être configuré avec des limites de dépôt. Ce paramètre limite le montant que vous pouvez déposer par jour, par semaine ou par mois.",
+          "editRules": "Vous pouvez réduire votre limite à tout moment, cette modification prendra effet immédiatement. Vous pouvez augmenter la limite, mais vous avez besoin de 24 heures pour que cette modification prenne effet.",
+          "deleteRules": "L’annulation de la limite de perte prend 24 heures. Une fois la limite dépassée, vous recevrez une notification par courriel"
         },
         "wagerLimit": {
-          "name": "Sázkové limity",
-          "text": "Váš účet lze nastavit sázkovými limity. Toto nastavení určuje množství peněz, které můžete vsadit za den, týden nebo měsíc.",
-          "editRules": "Svůj limit můžete kdykoli snížit, tato změna se projeví okamžitě. Limit můžete zvýšit, ale aby se tato změna projevila, potřebujete 24 hodin.",
-          "deleteRules": "Zrušení sázkového limitu trvá 24 hodin. Po překročení limitu obdržíte e-mailové upozornění."
+          "name": "Limites de mise",
+          "text": "Votre compte peut être configuré avec des limites de mise. Ce paramètre contrôle la somme d’argent que vous pouvez miser par jour, par semaine ou par mois.",
+          "editRules": "Vous pouvez réduire votre limite à tout moment, cette modification prendra effet immédiatement. Vous pouvez augmenter la limite, mais vous avez besoin de 24 heures pour que cette modification prenne effet.",
+          "deleteRules": "L’annulation de la limite de perte prend 24 heures. Une fois la limite dépassée, vous recevrez une notification par courriel."
         },
         "lossLimit": {
-          "name": "Limity ztráty",
-          "text": "Váš účet lze nastavit s limity ztrát. Toto nastavení omezuje částku, kterou můžete ztratit za den, týden nebo měsíc.",
-          "editRules": "Svůj limit můžete kdykoli snížit, tato změna se projeví okamžitě. Limit můžete zvýšit, ale aby se tato změna projevila, potřebujete 24 hodin.",
-          "deleteRules": "Zrušení limitu ztráty trvá 24 hodin. Po překročení limitu obdržíte e-mailové upozornění."
+          "name": "Limite de perte",
+          "text": "Votre compte peut être configuré avec des limites de perte. Ce paramètre limite le montant que vous pouvez perdre par jour, par semaine ou par mois.",
+          "editRules": "Vous pouvez réduire votre limite à tout moment, cette modification prendra effet immédiatement. Vous pouvez augmenter la limite, mais vous avez besoin de 24 heures pour que cette modification prenne effet.",
+          "deleteRules": "L’annulation de la limite de perte prend 24 heures. Une fois la limite dépassée, vous recevrez une notification par courriel."
         },
         "sessionLimit": {
-          "name": "Limity relací",
-          "title": "čas strávený hazardem",
-          "text": "čas strávený hazardem",
+          "name": "Limites de session",
+          "title": "le temps passé à jouer",
+          "text": "le temps passé à jouer",
           "editRules": "",
           "deleteRules": ""
         },
         "coolingOffLimit": {
-          "name": "Vychladnout",
-          "title": "čas strávený hazardem",
-          "text": "Cítíte potřebu zůstat od kasina déle? Na určitou dobu můžete nastavit limit pro rozmyšlenou. Omezení se projeví okamžitě. Během zadaného období nebudete moci provádět vklady a hrát, také budete vyloučeni ze všech reklamních nabídek. Po uplynutí nastavené doby obdržíte e-mail s oznámením, že váš účet je znovu aktivní.",
-          "editRules": "Snížení limitu bude aplikováno do 24 hodin po požadavku hráče. Zvýšení limitu bude použito okamžitě.",
-          "deleteRules": "Zrušení limitu bude uplatněno do 24 hodin po žádosti hráče."
+          "name": "Repit",
+          "title": "le temps passé à jouer",
+          "text": "Vous avez envie de rester à l’écart du casino pendant un certain temps? Vous pouvez définir une limite de répit pour une certaine période. La restriction prend effet instantanément. Vous ne pourrez pas effectuer de dépôts et jouer pendant la période spécifiée. Vous serez également exclu de toutes les offres publicitaires. Après l’expiration de la période définie, vous recevrez un courriel de notification indiquant que votre compte est à nouveau actif.",
+          "editRules": "Limit decrease will be applied in 24 hours after player's request. Limit increase will be applied immediately.",
+          "deleteRules": "Limit cancellation will be applied in 24 hours after player's request."
         }
       },
       "periods": {
-        "daily": "Denně",
-        "weekly": "Týdně",
-        "monthly": "Měsíční",
-        "days": "Dny",
-        "weeks": "Týdny",
-        "months": "Měsíce",
+        "daily": "Par jour ",
+        "weekly": "Par semaine",
+        "monthly": "Par mois ",
+        "days": "Jours",
+        "weeks": "Semains",
+        "months": "Mois",
         "min": "Min",
-        "day": "Den"
+        "day": "Jour"
       },
-      "edit": "Upravit limit",
-      "delete": "Smazat limit",
-      "save": "Uložit limity",
-      "deleteText": "Jste si jistí, že to chcete smazat",
-      "sureSet": "Opravdu chcete nastavit",
-      "untilReset": "Do resetu"
+      "edit": "Limite d'édition",
+      "delete": "Supprimer la limite",
+      "save": "Sauvegarder les limites",
+      "setLimit": "Fixer la limite",
+      "deleteText": "Vous êtes sûr de vouloir supprimer",
+      "sureSet": "Vous êtes sûr de vouloir mettre",
+      "confirmUpdate": "Confirmer la mise à jour des limites",
+      "untilReset": "Jusqu'à la réinitialisation"
     }
   },
   "promotions": {
-    "title": "Aktuální propagační akce",
-    "text": "Zrušení limitu bude uplatněno do 24 hodin po žádosti hráče.",
+    "title": "Promotions en cours",
+    "text": "Ninecasino cherche constamment à offrir les meilleures promotions. Nous utilisons les dernières technologies et les commentaires de nos joueurs pour repenser nos promotions. Profitez-en!",
     "deposit1": {
-      "title": "100% <br/> z vkladu <br/> částk",
-      "upTo": "až KČ 3330  + 250 SPINŮ ZDARMA",
-      "name": "Bonus ke prvnímu vkladu",
-      "text": "Proveďte první vklad na Ninecasino a získejte až Kč 3330 + 250 spinů zdarma. Po prvním vkladu získáte 50 spinů zdarma každý z následujících 5 dnů.. Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
+      "title": "100%<br/> du montant du<br/> dépôt",
+      "upTo": "jusqu’à  150 € + 250 tours gratuit",
+      "name": "Bonus de premier dépôt",
+      "text": "Effectuez votre premier dépôt sur Ninecasino et recevez jusqu’à 150 € + 250 tours gratuit. Après votre premier dépôt, vous recevrez 50 tours gratuits chaque jour au cours des 5 jours suivants.<br/><br/>Pour activer le bonus, il suffit d’effectuer un premier dépôt de $30 ou plus. Le bonus sera versé automatiquement. "
     },
     "deposit2": {
-      "title": "55% <br/> z vkladu <br/> částky",
-      "upTo": "až KČ 3330",
-      "name": "Bonus ke druhému vkladu",
-      "text": "Proveďte druhý vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
+      "title": "55%<br/> du montant du<br/> dépôt",
+      "upTo": "jusqu’à  150 €",
+      "name": "Bonus de deuxième dépôt ",
+      "text": "Effectuez votre deuxième dépôt sur Ninecasino et recevez jusqu’à 150 €.<br/><br/>Pour activer le bonus, il suffit d’effectuer un deuxième dépôt de 20 € ou plus. Le bonus sera versé automatiquement."
     },
     "deposit3": {
-      "title": "100% <br/> z vkladu <br/> částky",
-      "upTo": "až KČ 3330",
-      "name": "Bonus ke třetímu vkladu",
-      "text": "Proveďte třetí vklad na Ninecasino a získejte až Kč 3330 Abyste aktivovali bonus – jednoduše vložte € 20 nebo více. Bonus se vám přičte automaticky."
+      "title": "100%<br/> du montant du<br/> dépôt",
+      "upTo": "jusqu’à  150 €",
+      "name": "Bonus de troisième dépôt",
+      "text": "Effectuez votre troisième dépôt sur Ninecasino et recevez jusqu’à 150 €.<br/><br/>Pour activer le bonus, il suffit d’effectuer un troisième dépôt de 20 € ou plus. Le bonus sera versé automatiquement."
     },
     "deposit4": {
-      "title": "víkendové<br/> dobití",
-      "upTo": "40% AŽ KČ 4100",
-      "name": "víkendové dobití",
-      "text": "Proveďte vklad a získejte bonus 40% k částce vkladu, až KČ 4100 Abyste aktivovali bonus – proveďte vklad v pátek, sobotu nebo neděli. Bonus můžete získat jednou za víkend. Bonus se vám přičte automaticky."
+      "title": "reprise de fin<br/> de semaine",
+      "upTo": "40 % JUSQU’À 150 €",
+      "name": "reprise de fin de semaine",
+      "text": "Commencez avec plus pour gagner plus. Faites un dépôt d’au moins 20 € et recevez un bonus de 40 % jusqu’à 150 € qui vous permettra de faire tourner ces machines à sous jusqu’à ce que le jackpot explose!"
     },
     "cashback": {
-      "title": "Programu <br/> cashback",
-      "upTo": "až 20%",
-      "name": "Programu Cashback",
-      "text": "Kdo by nechtěl zdarma vrátit hotovost v kasinu? Dokonce i když prohrajete! <br/> Ano, čtete správně – vrátíme vám hotovost, pokud vsadíte x5, dokonce i když prohrajete"
+      "title": "REMISE <br/> QUOTIDIENNE",
+      "upTo": "JUSQU'À 20%",
+      "name": "REMISE QUOTIDIENNE",
+      "text": "Qui n’aime pas les remises en espèces gratuites dans les casinos? Même si vous avez perdu!<br/> Oui, vous avez bien lu: nous vous offrons une remise en espèces avec un pari de 5 fois en cas de perte."
     },
     "highroller": {
-      "upTo": "up to KČ 12700",
-      "name": "Bonus pro velké hráče",
-      "text": "Jste velký hráč? Pak víme, co potřebujete! Získejte jako speciální bonus pro velké hráče 30 % k částce vkladu až KČ 12700 k prvnímu vkladu KČ 7600."
+      "upTo": "up to 500 €",
+      "name": "Bonus des grands joueurs",
+      "text": "Vous aimez miser gros? Dans ce cas, nous savons ce dont vous avez besoin. Une fois par mois, bénéficiez d’un bonus spécial pour les grands joueurs de 30% jusqu’à 500 € sur votre dépôt à partir de 300 €."
     },
     "dropsWinsSlots": {
-      "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
+      "title": "Drops<span class=\"Colored\"> & </span>Wins <br/>Slots",
       "name": "Drops & Wins Slots",
-      "text": "\"Vítejte v nové 8. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops & Wins na 500 000 €! Rovněž zvyšuje počet měsíčních peněžitých cen a nabízí větší šance na výhru. <br/><br/>Zúčastněte se vzrušující Drops & Wins a získejte příležitost vyhrát část z neuvěřitelných 4 000 000 € v některé z cen! Proto jsou tentokrát do týdnů 29–32 týdenních turnajů (týdny s násobitelem výhry) a denních výher (týdny s násobitelem výhry) některé nové hry!"
+      "text": "Bienvenue à la nouvelle étape 8 de la promotion Drops & Wins quotidienne. Pragmatic Play a décidé de doubler le budget de l’édition mensuelle de Drops & Wins Slots à 500.000 €! <br/><br/>Ils augmentent également le nombre de prix mensuels en argent et vous donnent encore plus de chances de gagner. Participez au passionnant Drops & Wins et courez la chance de gagner une part des 4.000.000 € de prix! C’est pourquoi, cette fois, C’est pourquoi, cette fois, les semaines 29–32 des tournois hebdomadaires (semaines à prix multiplicateur) et des remises de prix quotidiennes (semaines à prix multiplicateur) avec de nouveaux jeux!"
     },
     "dropsWinsLive": {
-      "title": "Drops<span class=\"Colored\"> & </span>Wins",
+      "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
       "name": "Drops & Wins Live",
-      "text": "Pragmatic Play vám nabízí stále více příležitostí zábavy na nové úrovni díky nové Drops and Wins for Live Casino. Nenechte si ujít příležitost vyhrát podíl z neuvěřitelných 3 000 000 eur v hotovosti!<br/><br/>Máte rádi živé hry? Pak je tato živá akce určena právě pro vás. Zúčastněte se týdenních turnajů – ruleta, blackjack, Mega Wheel, Baccarat!"
+      "text": "Pragmatic Play vous donne de plus en plus de chances de vous divertir en passant au niveau supérieur grâce à son nouveau Drops and Wins for Live Casino. Saisissez la chance de gagner une part de l’impressionnant montant de 3.000.000 € de prix en argent!<br/><br/>Aimez-vous les jeux en direct? Cette édition en direct vous ira à coup sûr. Participez aux tournois hebdomadaires  - Roulette, Blackjack, Grande Roue, Baccarat!"
     },
     "weekly_derby": {
-      "upTo": "prize pool 2500 eur",
-      "name": "Vyrazte na Weekly Derby",
-      "text": "Je čas na Weekly Derby a naše ceny vás donutí trochu trošku supět, abyste první dorazili na místo!<br/><br/>Turnaj probíhá 7 dnů od čtvrtka 00:01 UTC do středy 23:59 UTC. Chopte se své příležitosti rozdělit si cenný prize pool ve výši 2500 eur společně se 40 dalšími jezdci.<br/><br/>Stačí minimální sázka 0,5 eur a být připravený na soutěž.<br/><br/>Hodně štěstí a pojďme odstartovat Derby! "
+      "upTo": "une cagnotte de 2.500 €",
+      "name": "À vos marques pour le Weekly Derby",
+      "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
     },
     "sumdes": {
-      "title": "Turnajové sérii<br/> Summer Desserts",
-      "upTo": "100 000 €",
-      "name": "Pokuste se vyslídit 100k se Summer Desserts",
-      "text": "Léto je v plném proudu, takže co může být lepšího než turnajová série od Booongo! Tak na nic nečekejte a uhánějte za zábavou v síťové turnajové sérii Summer Desserts na NineCasino! <br>Síťová turnajová série Summer Desserts proběhne od 19. srpna 2021 (0:00 UTC) do 28. srpna 2021 (23:00 UTC).<br><br>Tak na co čekáte? Nepromeškejte příležitost získat podíl na obrovském prize poolu od Booongo! Hrajte, bavte se a vyhrávejte!"
-    },
-    "demigods": {
-      "title": "Demi God Tales <br/>Tournament<br/> Kolo I",
-      "upTo": "€ 20 000",
-      "name": "Staňte se hrdinou v Demi God Tales",
-      "text": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales."
+      "title": "La série de tournois<br/> Summer Desserts",
+      "upTo": "100.000 €",
+      "name": "Chassez les 100k des Summer Desserts",
+      "text": "L’été bat son plein, alors quoi de mieux qu’une série de tournois de Booongo? Dépêchez-vous de profiter de la série de tournois en réseau Summer Desserts sur NineCasino! <br>La série de tournois en réseau Summer Desserts se déroule du 19 août 2021 (0 h 00 UTC) au 28 août 2021 (23 h 00 UTC).<br><br>Il n’y a plus rien qui vous empêche! Ne manquez pas de partager l’énorme cagnotte de Booongo! Jouez, amusez-vous et gagnez!"
     },
     "spiritOfEgypt": {
-      "upTo": "The prize pool is €60,000.",
+      "upTo": "The prize pool is 60.000 €.",
       "name": "Spirit of Egypt 60k",
-      "text": "Nekonečné ceny se Spirit of Egypt 60k!<br/><br/>Na obzoru se rýsují nová dobrodružství a Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC.<br/><br/>Celkový prize pool má závratnou hodnotu 60 000 eur, a pokud se vám podaří dostat se na vrchol pyramidy, pak můžete očekávat nejvyšší cenu ve výši 10 000 eur! Zkuste své štěstí se Spirit of Egypt 60k!"
+      "text": "Laissez le Spirit of Egypt vous guider vers 60k!<br/><br/>De nouvelles aventures se profilent à l’horizon et Playson vous attend avec le tournoi Spirit of Egypt 60k, qui se déroulera du 20 août 2021 à 0 h 01 UTC au 29 août 2021 à 23 h 59 UTC.<br/><br/>La cagnotte totale s’élève à 60 000 €. Si vous atteignez le sommet de la pyramide, le premier prix est de 10 000 €! Tentez votre chance au Spirit of Egypt 60k!"
+    },
+    "demigods": {
+      "title": "Demi God Tales <br/>Tournament <br/>1er tour",
+      "upTo": "20.000 €",
+      "name": "Devenez le héros de Demi God Tales",
+      "text": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales."
     },
     "twitterGiveaway": {
       "title": "twitter<br/> Giveaway",
-      "upTo": "600 spinů zdarma",
-      "name": "Dar v podobě 600 spinů zdarma na Twitteru",
-      "text": "Připravili jsme pro vád dar na oficiálním {twitterAccount}.{br}{br}Sledujte nás, dejte lajk tomuto {tweet} a čekejte na výsledky 26. srpna. Náhodně vybereme 3 vítěze a každému z nich dáme 200 spinů zdarma v slotu Wolf Gold.{br}{br}Hodně štěstí!"
+      "upTo": "600 tours gratuits",
+      "name": "Gagnez 600 tours gratuits sur Twitter",
+      "text": "Nous avons préparé un concours pour vous sur notre compte {twitterAccount}.{br}{br}Suivez-nous, aimez ce {tweet} et attendez les résultats, le 26 août. Nous choisirons au hasard 3 gagnants qui recevront chacun 200 tours gratuits à la machine à sous Wolf Gold.{br}{br}Bonne chance!"
     }
   },
   "twitter": {
     "twitterBtn": "Twitter",
-    "twitterAccount": "Twitterovém účtu",
-    "tweet": "tweetu"
+    "twitterAccount": "Twitter officiel",
+    "tweet": "tweet"
   },
   "tournaments": {
-    "games": "Hry zahrnuté do turnaje",
-    "terms": "Podmínky turnaje",
-    "timeLeft": "Čas do skončení",
-    "duration": "Trvání",
-    "betsPerPoint": "Sázky na bod",
-    "currentWinners": "Aktuální vítězové",
-    "previousRound": "Předcházející kolo"
+    "games": "Jeux dans le tournoi",
+    "terms": "Conditions générales",
+    "timeLeft": "Temps restant",
+    "duration": "Durée",
+    "betsPerPoint": "Pari par point",
+    "currentWinners": "Les gagnants actuels",
+    "previousRound": "Tour précédent"
   },
   "dropsWinsSlots": {
     "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
-    "prize": "4 000 000 €",
-    "text": "Vítejte v nové 8. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops & Wins na 500 000 €! Rovněž zvyšuje počet měsíčních peněžitých cen a nabízí větší šance na výhru. Hraní s násobitelem je mnohem zábavnější. Zúčastněte se vzrušující Drops & Wins a získejte příležitost vyhrát část z neuvěřitelných 4 000 000 € v některé z cen! Proto jsou tentokrát do týdnů 29–32 týdenních turnajů (týdny s násobitelem výhry) a denních výher (týdny s násobitelem výhry) některé nové hry!",
-    "textMobile": "Vítejte v nové 8. fázi pro akce Daily Drops & Wins. Pragmatic Play se rozhodl zdvojnásobit měsíční sumu slotové edice Drops & Wins na 500 000 €!",
+    "prize": "4.000.000 €",
+    "text": "Bienvenue à la nouvelle étape 8 de la promotion Drops & Wins quotidienne. Pragmatic Play a décidé de doubler le budget de l’édition mensuelle de Drops & Wins Slots à 500.000 €! Ils augmentent également le nombre de prix mensuels en argent et vous donnent encore plus de chances de gagner. Jouer avec un multiplicateur est plus amusant. Participez au passionnant Drops & Wins et courez la chance de gagner une part des 4.000.000 € de prix! C’est pourquoi, cette fois, les semaines 13–16 des tournois hebdomadaires (semaines à prix multiplicateur) et des remises de prix quotidiennes (semaines à prix multiplicateur) avec de nouveaux jeux!",
+    "textMobile": "Bienvenue à la nouvelle étape 8 de la promotion Drops & Wins quotidienne. Pragmatic Play a décidé de doubler le budget de l’édition mensuelle de Drops & Wins Slots à 500.000 €!",
     "terms": [
       {
-        "title": "Fáze 8 probíhá v termínu:",
-        "text": "● 29. týden: 25. srpna 2021 09:01 CEST – 1. září 2021 18:59 CEST<br/>● 30. týden: 1. září 2021 19:01 CEST – 8. září 2021 18:59 CEST<br/>● 31. týden: 8. září 2021 19:01 CEST – 15. září 2021 18:59 CEST<br/>● 32. týden: 15. září 2021 19:01 CEST – 22. září 2021 18:59 CEST"
+        "title": "L’étape 8 se déroule ainsi",
+        "text": "● Semaine 29: 25 août 2021 09:01 CEST – 1 septembre 2021 18:59 CEST<br/>● Semaine 30: 1 septembre 2021 19:01 CEST – 8 septembre 2021 18:59 CEST<br/>● Semaine 31: 8 septembre 2021 19:01 CEST – 15 septembre 2021 18:59 CEST<br/>● Semaine 32: 15 septembre 2021 19:01 CEST – 22 septembre 2021 18:59 CEST"
       },
       {
-        "title": "Hry zahrnuté:",
+        "title": "Jeux participants:",
         "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House ™, The Dog House Megaways™, Chilli Heat ™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Book of Vikings™, Chicken Drop™, Fruit Party 2™, Rise of Giza PowerNudge™, Juicy Fruits™."
       },
       {
-        "title": "Drops & Wins zahrnuje",
-        "text": "● Každý turnaj běží od čtvrtka do středy souběžně s denním turnajem Prize Drops.<br/>● Týdenní prize pool 62 000 € rozdělený na celkem 1 200 peněžitých cen.<br/>● Hráči mají příležitost vyhrát peněžité ceny v denních výhrách s prize poolem ve výši 9 000 €, který bude rozdělený na 500 peněžitých cen."
+        "title": "Drops & Wins comprend",
+        "text": "● Chaque tournoi se déroule pendant sept jours, du jeudi au mercredi, avec des remises de prix quotidiennes en parallèle.<br/>● Une cagnotte hebdomadaire de 62.000 € au total, répartie sur 1 200 prix en argent.<br/>● Les joueurs ont l’occasion de gagner des prix en argent lors des remises de prix quotidiennes avec une cagnotte quotidienne de 9.000 € répartie en 500 prix en argent."
       },
       {
-        "title": "Jak vyhrát",
-        "text": "● Hráč musí učinit vsázku se skutečnými penězi v jakékoliv ze zúčastněných her a musí získat minimálně jednu (1) výhru ve hře, aby se mohl kvalifikovat do týdenního turnaje. <br/>● Pro účast v turnaji Daily Prize není požadována žádná minimální částka v reálných penězích. Drops (týdny pro násobení výhry)."
+        "title": "Comment gagner",
+        "text": "● Un joueur doit placer une mise en argent réel sur n’importe quel jeu participant et doit obtenir au moins une (1) victoire intrajeu pour se qualifier pour le Tournoi hebdomadaire. <br/>● Aucune mise minimale en argent réel n’est requise pour que les joueurs soient admissibles à participer aux prix quotidiens (semaines du multiplicateur de prix). "
       },
       {
-        "title": "Dodatečně",
-        "text": "● Hráči, kteří se turnaje zúčastní ve více týdnech, mohou vyhrát ceny v podobě násobku r z vsazené částky vítězného hráče, jak je stanoveno v Tabulce výher týdenního turnaje (týdny pro násobení výhry) – a v Tabulce výher denního turnaje Prize Drop (týdny pro násobení výhry) (dále jako „Týdny pro násobení výhry“). <br/>● Přesáhne-li vítězný spin hodnotu deseti eur/liber (10 €/£), výhra bude vyplacena na základě sázky ve výši deseti eur/liber (10 €/£) nebo odpovídající částky v dostupné měně (viz definice níže) X získaný násobek. <br>● Pořadí ve výsledkové tabulce odpovídá skóre, které je dané nejvyšší vyhranou částkou v jednom spinu a libovolné zahrnuté hře, upravenou podle výše vkladu.<br>● Pokud by týdenní turnaj dokončili dva (2) nebo více hráčů se stejným umístěním ve výsledkové tabulce, pak hráč, který skóre dosáhne první, dostane nejvyšší výhru."
+        "title": "De plus:",
+        "text": "● Les joueurs participant aux semaines avec multiplicateur peuvent gagner des prix sous la forme d’un multiplicateur du montant de la mise du joueur gagnant, comme indiqué dans le tableau des prix du tournoi hebdomadaire (semaines avec multiplicateur de prix) et dans le tableau des prix quotidiens (semaines avec multiplicateur de prix) ci-dessous (ci-après les « semaines avec multiplicateur de prix »). <br/>● Si le tour gagnant est supérieur à dix euros (€10), le prix sera payé sur la base d’une mise de dix euros (€10) ou du montant équivalent dans la devise disponible (telle que définie ci-après) X le multiplicateur reçu.<br/>● Le classement est établi en fonction du pointage, lequel est basé sur le montant du gain le plus élevé en un seul tour pour tout jeu participant, ajusté au montant de la mise.<br/>● Dans le cas où deux (2) joueurs ou plus terminent un tournoi hebdomadaire à la même position au classement, le joueur qui a atteint le pointage en premier recevra le prix le plus élevé."
       }
     ]
   },
   "dropsWinsLive": {
     "title": "DROPS <span class=\"Colored\">&</span> WINS FOR LIVE CASINO",
-    "prize": "3 000 000 €",
-    "text": "Pragmatic Play vám nabízí stále více příležitostí zábavy na nové úrovni díky nové Drops and Wins for Live Casino. Nenechte si ujít příležitost vyhrát podíl z neuvěřitelných 3 000 000 € v hotovosti!<br/><br/>Máte rádi živé hry? Pak je tato živá akce určena právě pro vás. Zúčastněte se týdenních turnajů – ruleta, blackjack, Mega Wheel, Baccarat!",
-    "textMobile": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive 3,000,000 € in cash prizes!",
+    "prize": "3.000.000 €",
+    "text": "Pragmatic Play vous donne de plus en plus de chances de vous divertir en passant au niveau supérieur grâce à son nouveau Drops and Wins for Live Casino. Saisissez la chance de gagner une part de l’impressionnant montant de 3.000.000 € de prix en argent!<br/><br/>Aimez-vous les jeux en direct? Cette édition en direct vous ira à coup sûr. Participez aux tournois hebdomadaires  - Roulette, Blackjack, Grande Roue, Baccarat!",
+    "textMobile": "Pragmatic Play vous donne de plus en plus de chances de vous divertir en passant au niveau supérieur grâce à son nouveau Drops and Wins for Live Casino. Saisissez la chance de gagner une part de l’impressionnant montant de 3.000.000 € de prix en argent!",
     "terms": [
       {
-        "title": "Fáze 4 probíhá v termínu:",
-        "text": "● 13. týden: 25. srpna 2021 09:01 CEST – 1. září 2021 18:59 CEST<br/>● 14. týden: 1. září 2021 19:01 CEST – 8. září 2021 18:59 CEST<br/>● 15. týden: 8. září 2021 19:01 CEST – 15. září 2021 18:59 CEST<br/>● 16. týden: 15. září 2021 19:01 CEST – 22. září 2021 18:59 CEST"
+        "title": "L’étape 4 se déroule ainsi<br/><br/>",
+        "text": "● Semaine 13: 25 août 2021 09:01 CEST – 1 septembre 2021 18:59 CEST<br/>● Semaine 14: 1 septembre 2021 19:01 CEST – 8 septembre 2021 18:59 CEST<br/>● Semaine 15: 8 septembre 2021 19:01 CEST – 15 septembre 2021 18:59 CEST<br/>● Semaine 16: 15 septembre 2021 19:01 CEST – 22 septembre 2021 18:59 CEST"
       },
       {
-        "title": "Začleněné hry / stolní hry",
-        "text": "<strong>Týdenní turnaje v Baccaratu:</strong><br/><br/>Baccarat A (ID – 401), Baccarat B (ID – 404), Baccarat C (ID – 405), Baccarat D (ID – 411), Baccarat E (ID – 413), Speed Baccarat A (ID – 402), Speed Baccarat B (ID – 403), Speed Baccarat C (ID – 412), Speed Baccarat D (ID – 414), Speed Baccarat E (ID – 415).</strong><br/><br/><strong>Týdenní turnaj v blackjacku:</strong><br/><br/>Live Blackjack A (ID – 301), Live Blackjack B (ID – 302), Live Blackjack C (ID – 303), Live Blackjack D (ID – 304), Live Blackjack E (ID – 305), Blackjack Azure A (ID – 511), Blackjack Azure B (ID – 512), Blackjack Azure C (ID – 513), Blackjack Azure D (ID – 514), Blackjack Azure E (ID – 515), Blackjack Azure F (ID – 516), Blackjack Azure G (ID – 517), Blackjack Azure H (ID – 518), Blackjack Azure I (ID – 519), Blackjack Azure J (ID – 520), ONE Blackjack (ID – 901).<br/><br/><strong>Tables to be added on 3rd June:</strong><br/><br/>Blackjack 17 – Azure (ID – 521), Blackjack 18 – Azure (ID – 522), Blackjack 19 – Azure (ID – 523), Blackjack 20 – Azure (ID – 524), Blackjack 21 – Azure (ID – 525)<br/><br/><strong>Týdenní turnaj v Mega Wheel:</strong><br/><br/>Mega Wheel (ID – 801)<br/><br/><strong>Týdenní turnaj v ruletě:</strong><br/><br/>Auto-Roulette (ID – 225), Live Roulette A (ID – 201), Roulette Germany (ID – 222), Roulette Italy (ID – 223), Roulette Macao (ID – 206), Roulette Russia (ID – 221), Roulette Turkey (ID – 224), Speed Roulette (ID – 203), Roulette Azure (ID – 227), Mega Roulette (ID – 204) <strong>plus dedicated tables</strong>"
+        "title": "Jeux/Tables participants<br/><br/>",
+        "text": "<strong>Tournoi hebdomadaire de baccara:</strong><br/><br/>Baccarat A (ID – 401), Baccarat B (ID – 404), Baccarat C (ID – 405), Baccarat D (ID – 411), Baccarat E (ID – 413), Speed Baccarat A (ID – 402), Speed Baccarat B (ID – 403), Speed Baccarat C (ID – 412), Speed Baccarat D (ID – 414), Speed Baccarat E (ID – 415).</strong><br/><br/><strong>Tournoi hebdomadaire de blackjack:</strong><br/><br/>Live Blackjack A (ID – 301), Live Blackjack B (ID – 302), Live Blackjack C (ID – 303), Live Blackjack D (ID – 304), Live Blackjack E (ID – 305), Blackjack Azure A (ID – 511), Blackjack Azure B (ID – 512), Blackjack Azure C (ID – 513), Blackjack Azure D (ID – 514), Blackjack Azure E (ID – 515), Blackjack Azure F (ID – 516), Blackjack Azure G (ID – 517), Blackjack Azure H (ID – 518), Blackjack Azure I (ID – 519), Blackjack Azure J (ID – 520), ONE Blackjack (ID – 901).<br/><br/><strong>Tables to be added on 3rd June:</strong><br/><br/>Blackjack 17 – Azure (ID – 521), Blackjack 18 – Azure (ID – 522), Blackjack 19 – Azure (ID – 523), Blackjack 20 – Azure (ID – 524), Blackjack 21 – Azure (ID – 525)<br/><br/><strong>Tournoi hebdomadaire de grande roue:</strong><br/><br/>Mega Wheel (ID – 801)<br/><br/><strong>Tournoi hebdomadaire de roulette:</strong><br/><br/>Auto-Roulette (ID – 225), Live Roulette A (ID – 201), Roulette Germany (ID – 222), Roulette Italy (ID – 223), Roulette Macao (ID – 206), Roulette Russia (ID – 221), Roulette Turkey (ID – 224), Speed Roulette (ID – 203), Roulette Azure (ID – 227), Mega Roulette (ID – 204) <strong>plus dedicated tables</strong>"
       },
       {
-        "title": "Drops & Wins zahrnuje",
-        "text": "Jednotlivé turnaje probíhají po dobu 7 dnů od čtvrtka do středy.<br/><br/>Kritéria turnaje: Nejvyšší celková hodnota všech bodů získaných za po sobě jsoucí výhry."
+        "title": "Drops & Wins comprend",
+        "text": "Chaque tournoi se déroule sur sept (7) jours, du jeudi au mercredi.<br/><br/>Critères du tournoi : Valeur totale la plus élevée de tous les points reçus pour des gains consécutifs"
       },
       {
-        "title": "Minimální požadovaná sázka:",
-        "text": "● Týdenní turnaj v ruletě: 0,5 €.<br/>● Týdenní turnaj v blackjacku: 10 €.<br/>● Týdenní turnaj v Mega Wheel: 0,5 €.<br/>● Týdenní turnaj v Baccaratu: 0,5 €."
+        "title": "Mise minimale requise:<br/><br/>",
+        "text": "● Tournoi hebdomadaire de roulette: 0,5 €.<br/>● Tournoi hebdomadaire de blackjack: 0,5 €.<br/>● Tournoi hebdomadaire de grande roue: 0,5 €.<br/>● Tournoi hebdomadaire de baccara: 0,5 €."
       },
       {
-        "title": "Jak se zúčastnit:",
-        "text": "● Hráč se musí zúčastnit nebo zapojit do některé ze začleněných her / stolních her.<br/>● Hráč musí sázet skutečné peníze, přičemž pro každou ze zahrnutých her v týdenním turnaji je stanovena minimální sázka. K tomu musí získat minimálně dvě (2) po sobě jdoucí výhry ve hře s požadovaným kvalifikátorem výhry.<br/>● Čím je vyšší celkový počet bodů získaných hráčem za po sobě jdoucí výhry, tím vyšší bude mít skóre.<br/>● Ceny budou rozděleny mezi hráče podle konečného skóre zobrazeného ve výsledkové tabulce hry na konci každého týdenního turnaje."
+        "title": "Comment participer:",
+        "text": "● Un joueur doit s’inscrire ou opter pour l’un des jeux/tables participants.<br/>● Un joueur doit placer des mises en argent réel avec le minimum requis pour n’importe quel jeu/tableau participant de chaque tournoi hebdomadaire et doit obtenir au moins deux (2) gains consécutifs en jeu avec le qualificatif de gain requis.<br/>● Plus la valeur totale des points reçus par le joueur pour les gains consécutifs est élevée, plus le score du joueur est élevé.<br/>● Les prix seront distribués aux joueurs en fonction du score final affiché sur le tableau de classement du jeu à la fin de chaque tournoi hebdomadaire."
       },
       {
-        "title": "Další:",
-        "text": "Týdenní turnaj v ruletě<br/>Ceny:</strong> celkem 50 000 € rozdělených na 1 000 cen:<br/>-\tHráči musí hrát se skutečnými penězi v některé ze zahrnutých her a provést minimální sázku ve výši 0,50 € v průběhu promo akce. Hráčům nevznikají žádné další výdaje související s účastí<br/><br/>Hráč musí získat minimálně 2 po sobě jdoucí kvalifikační výhry, přičemž každá z po sobě jdoucích kvalifikačních výher bude větší než dvojnásobek celkové kvalifikační sázky pro účast v týdenním turnaji v ruletě.<br/><br/>Hráči mohou zvýšit své skóre v týdenním turnaji v ruletě s každou další následnou kvalifikační výhrou.<br/><br/>Jakékoliv sázky s pravděpodobností výhry 1:1 (červená/černá, sudá/lichá, 1:18/19:36) nebudou započítány do skóre týdenního turnaje v ruletě.<br/><br/><strong>Týdenní turnaj v blackjacku:<br/>Ceny:</strong> celkem 25 000 € rozdělených na 300 cen:<br/>-\tHráči musí hrát se skutečnými penězi v některé ze zahrnutých her a provést minimální sázku ve výši 10 € v průběhu promo akce. Hráčům nevznikají žádné další výdaje související s účastí.<br/><br/>Hráč musí získat minimálně 2 po sobě jdoucí kvalifikační výhry, přičemž každá z po sobě jdoucích kvalifikačních výher bude větší než jednou celkové kvalifikační sázky pro účast v týdenním turnaji v blackjacku.<br/><br/>Hráči mohou zvýšit své skóre v týdenním turnaji v blackjacku s každou další následnou kvalifikační výhrou.<br/><br/>Do týdenního turnaje v blackjacku se započítávají pouze hlavní sázky a/nebo Bet Behind.<br/><br/><strong>Týdenní turnaj v Mega Wheel:<br/>Ceny:</strong> celkem 25 000 € rozdělených na 600 cen:<br/>Hráči musí hrát se skutečnými penězi v některé ze zahrnutých her a provést minimální sázku ve výši 0,50 € v průběhu promo akce. Hráčům nevznikají žádné další výdaje související s účastí.<br/><br/>Hráč musí získat minimálně 2 po sobě jdoucí kvalifikační výhry, přičemž každá z po sobě jdoucích kvalifikačních výher bude větší než jednou celkové kvalifikační sázky pro účast v týdenním turnaji v Mega Wheel.<br/><br/>Hráči mohou zvýšit své skóre v týdenním turnaji v Mega Wheel s každou další následnou kvalifikační výhrou.<br/><br/>Do týdenního turnaje v Mega Wheel mohou být započteny všechny kvalifikační sázky.<br/><br/><strong>Týdenní turnaj v Baccaratu:<br/>Ceny:</strong> celkem 25 000 € rozdělených na 600 cen:<br/>Hráči musí hrát se skutečnými penězi v některé ze zahrnutých her a provést minimální sázku ve výši 0,50 € v průběhu promo akce. Hráčům nevznikají žádné další výdaje související s účastí.<br/><br/>Hráč musí získat minimálně 2 po sobě jdoucí kvalifikační výhry, přičemž každá z po sobě jdoucích kvalifikačních výher bude větší než jednou celkové kvalifikační sázky pro účast v týdenním turnaji v Baccaratu.<br/><br/>Hráči mohou zvýšit své skóre v týdenním turnaji v Baccaratu s každou další následnou kvalifikační výhrou.<br/><br/>Do skóre týdenního turnaje v Baccaratu se započítávají pouze hlavní sázky (pozice hráč, bankéř a Tie)."
+        "title": "De plus:",
+        "text": "Tournoi hebdomadaire de roulette<br/>Prix:</strong> 50.000 € au total, répartis sur 1 000 prix<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 2 fois la mise totale de qualification pour se qualifier au tournoi de roulette hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de roulette à chaque nouveau gain consécutif de qualification.<br/><br/>-\tLes mises placées sur des paris à cote 1:1 (Rouge/Noir, Pair/Impair, 1:18/19:36) ne sont pas comptabilisées dans le score du tournoi de roulette hebdomadaire.<br/><br/><strong>Tournoi hebdomadaire de blackjack<br/>Prix:</strong> 25.000 € au total, répartis sur 300 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 10 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de blackjack hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de blackjack à chaque nouveau gain consécutif de qualification.<br/><br/>-\tSeules les mises principales et/ou les mises secondaires peuvent être prises en compte pour le tournoi hebdomadaire de blackjack.<br/><br/><strong>Tournoi hebdomadaire de grande roue<br/>Prix:</strong> 25 000 € au total, répartis sur 600 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de grande roue hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de grande roue à chaque nouveau gain consécutif de qualification.<br/><br/>-\tToutes les mises qualificatives peuvent être prises en compte pour le tournoi hebdomadaire de la grande roue.<br/><br/><strong>Tournoi hebdomadaire de baccara<br/>Prix:</strong> 25.000 € au total, répartis sur 600 prix:<br/>-\tLes joueurs doivent choisir de jouer avec de l’argent réel dans l’un des jeux participants avec une mise minimale requise de 0,50 € pendant la période de promotion. La participation des joueurs n’entraîne aucun coût supplémentaire.<br/><br/>-\tUn joueur doit recevoir un minimum de 2 gains consécutifs de qualification, où chaque gain consécutif de qualification est supérieur à 1 fois la mise totale de qualification pour se qualifier au tournoi de baccara hebdomadaire.<br/><br/>-\tUn joueur peut augmenter son score hebdomadaire dans les tournois de baccara à chaque nouveau gain consécutif de qualification.<br/><br/>-\tSeules les mises principales (joueur, banquier et égalité) peuvent être prises en compte pour le score du tournoi hebdomadaire de baccara."
       }
     ]
   },
   "weekly_derby": {
-    "title": "The Ninecasino<br/> Weekly Derby",
-    "prize": "2500 eur",
-    "text": "Turnaj probíhá 7 dnů od čtvrtka 00:01 UTC do středy 23:59 UTC. Chopte se své příležitosti rozdělit si cenný prize pool ve výši 2500 eur společně se 40 dalšími jezdci.",
-    "textMobile": "Turnaj probíhá 7 dnů od čtvrtka 00:01 UTC do středy 23:59 UTC. Chopte se své příležitosti rozdělit si cenný prize pool ve výši 2500 eur společně se 40 dalšími jezdci.",
+    "title": "Le Ninecasino<br/> Weekly Derby",
+    "prize": "2.500 €",
+    "text": "En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2.500 € avec 40 coureurs chanceux.",
+    "textMobile": "En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2.500 € avec 40 coureurs chanceux.",
     "terms": [
       {
-        "text": "Každý turnaj běží od čtvrtka 00:01 UTC do středy 23:59 UTC."
+        "text": "Chaque tournoi se déroule pendant sept jours, du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC."
       },
       {
-        "text": "Celková hodnota odměn činí 2 500 eur. Ceny musí být přehrány x5 (wager x5)."
+        "text": "Le fonds du prix est de 2 500 EUR. Les prix doivent être joués 5 fois."
       },
       {
-        "text": "Pokud hráč vsadí v měně jiné než euro, ceny budou vyplaceny v měně, ve které hráč sázel nejvíce."
+        "text": "Si un joueur place des mises dans une devise autre que l’euro, les prix seront accordés dans la devise dans laquelle le joueur a fait le plus de mises."
       },
       {
-        "text": "Turnaje se zúčastní hráči s alespoň jedním vkladem. Za každou reálnou sázku v hodnotě 1 euro hráč obdrží 1 bod do turnaje."
+        "text": "Les joueurs ayant effectué au moins un dépôt sont admissibles au tournoi. Pour chaque mise en argent réel de 1 EUR, le joueur recevra 1 point de tournoi."
       },
       {
-        "text": "Stačí minimální sázka 0,5 eur."
+        "text": "Vous n’avez qu’à faire une mise de 0,5 €."
       },
       {
-        "text": "Započítávány budou pouze sázky do slotů, ne sázky do deskových her a her s krupiéry."
+        "text": "Seules les mises dans les machines à sous seront prises en compte; aucune mise dans les jeux de société et les jeux avec croupier ne sera prise en compte."
       },
       {
-        "text": "Výherce bude určen podle počtu bodů v turnaji: Čím více bodů hráč získá, tím blíže bude k výhře. Odměny budou uděleny automaticky na konci turnaje."
+        "text": "Le gagnant sera déterminé par le nombre de points de tournoi : plus le joueur accumule de points de tournoi, plus il est proche de la victoire. Les prix seront attribués automatiquement à la fin du tournoi."
       },
       {
-        "text": "Je nutné dodržovat obecné podmínky bonusů."
+        "text": "Les Conditions générales relatives aux bonus doivent être respectées."
       }
     ]
   },
@@ -687,8 +683,8 @@
           "The internal operating currency of the Website is Euro. Due to this fact, in case you transact in other currencies, the amount deducted from your credit card may be insignificantly higher than displayed at the time of transaction due to currency conversions on the side of your bank and/or the Casino's payment processing system.",
           "All Bank Transfer payouts are processed within five (5) banking days. Please mind that you will not be able to request a Bank Transfer for USD payouts.",
           "You acknowledge that withdrawals via bank transfers can in exceptional cases be subject to additional charges by the intermediary banks. These charges remain outside the influence of The Casino and are limited to the equivalent of EUR 16.",
-          "The maximum withdrawal amount processed to a player is 2,500 €/$ per day, 7,500 €/$ per         week and 15,000 €/$ per month, unless otherwise specified in the Terms and Conditions of a          specific promotion. Exceptions may be made to players with a higher VIP level, if any, at        the Casino’s sole discretion.",
-          "If you win more than 15,000 €/$, the Casino reserves the right to divide the payout into         monthly instalments of maximum 15,000 €/$ until the full amount is paid out.",
+          "The maximum withdrawal amount processed to a player is 2.500 €/$ per day, 7.500 €/$ per         week and 15.000 €/$ per month, unless otherwise specified in the Terms and Conditions of a          specific promotion. Exceptions may be made to players with a higher VIP level, if any, at        the Casino’s sole discretion.",
+          "If you win more than 15.000 €/$, the Casino reserves the right to divide the payout into         monthly instalments of maximum 15.000 €/$ until the full amount is paid out.",
           "We reserve the right to use additional procedures and means to verify your identity (Know         Your Client) when effecting deposits into your account. This could include (but is not         limited to) a selfie with a document or form of identification. In order to verify         player`s account casino management require documents (ID, payment systems, utility bills         еtc) in Latin or Cyrillic alphabet. In case player doesn’t have an opportunity to provide         documents in above-mentioned alphabets casino reserves the right to demand video          verification where player shows his/her documents.",
           "Players depositing in CAD can only withdraw money via EcoPayz, Interac, Instadebit and         iDebit (a minimum deposit via these payment options is required to activate them for         withdrawal).",
           "We reserve the right to make a phone call to the number provided in your account, which at          our own discretion can be a necessary part of the KYC procedure. Until the account is         fully verified, no cashouts will be processed.",
@@ -1026,8 +1022,8 @@
         "text2": [
           "All instances of suspected Money Laundering attempts must be reported to the MLRO but that suspicion must not be conveyed to the customer and further actions must await consents. The MLRO is then responsible for liaising with, submitting Suspicious Activity Reports and seeking consents through the goAML system of the Financial Intelligence Unit (FIU) Curaçao where and when appropriate. He will also ensure that appropriate registers are kept for all related reporting.",
           "Company will implement a FULL ‘Know Your Customer’ policy. This will assist in tackling not       just Money Laundering threats but other fraud threats generally. Customers will be advised at       registration and generally on the supporting non-transactional website that Company will       utilise online verification tools and that in instances where we are not able to satisfy       criteria, ID and address verification documents will be requested.",
-          "Other key decisions that will enhance these protections include setting period       thresholds/velocities for withdrawals to include at outset the requirement for checks and       director approval prior to processing card withdrawals and bank transfers of over 3000 EUR in       one single transaction, a maximum of 3 (three) daily withdrawals and an overall maximum daily       withdrawal of 9000 EUR.",
-          "Industry accepted standards that will always lead to Enhanced Due Diligence (the requirement       for further proof of ID and Address) will be withdrawals in excess of 3000 EUR in a single       24hour period and 9000 EUR in a 90-day period. Simple online verification will NOT be       acceptable in these circumstances.",
+          "Other key decisions that will enhance these protections include setting period       thresholds/velocities for withdrawals to include at outset the requirement for checks and       director approval prior to processing card withdrawals and bank transfers of over 3.000 € in       one single transaction, a maximum of 3 (three) daily withdrawals and an overall maximum daily       withdrawal of 9.000 €.",
+          "Industry accepted standards that will always lead to Enhanced Due Diligence (the requirement       for further proof of ID and Address) will be withdrawals in excess of 3.000 € in a single       24hour period and 9.000 € in a 90-day period. Simple online verification will NOT be       acceptable in these circumstances.",
           "The business will also not have any cash element to it, mitigating risks associated with       counterfeit monies.",
           "Systems will be operating to record all transactions for an account. These account histories       will be subject to a program of regular and continual checks against fraud and social       responsibility indicators. Where unusual bet patterns and winning patterns are detected, these       will also be cross- referenced to call history to ensure that staff are not colluding with       customers or acting illicitly.",
           "Company will also keep a register of those customers that it identifies as high risk or       politically exposed. Those accounts will be subject to greater scrutiny and frequency of       checks.",
@@ -1219,134 +1215,133 @@
         }
       }
     },
-    "riskWarnings" : {
-      "title" : "Risk Warnings",
-      "text" : "You understand that by participating in the games, you risk losing the money deposited to your       account on www.ninecasino.com; In some jurisdictions, online gambling may be illegal. You       understand and agree that www.ninecasino.com is not able to provide you legal advice or       guarantees regarding the legality of your use of the services of the Website. The Company does       not affirm that the services of the Website comply with legal requirements in your       jurisdiction. You use the services provided by www.ninecasino.com by your own choice and at       your sole discretion, as well, assuming the risk of liability, making a decision as to whether       the use of the services of the Website is legal in accordance with the current legislation of       your jurisdiction.You log in the Website and participate in the games at your own risk."
+    "riskWarnings": {
+      "title": "Risk Warnings",
+      "text": "You understand that by participating in the games, you risk losing the money deposited to your       account on www.ninecasino.com; In some jurisdictions, online gambling may be illegal. You       understand and agree that www.ninecasino.com is not able to provide you legal advice or       guarantees regarding the legality of your use of the services of the Website. The Company does       not affirm that the services of the Website comply with legal requirements in your       jurisdiction. You use the services provided by www.ninecasino.com by your own choice and at       your sole discretion, as well, assuming the risk of liability, making a decision as to whether       the use of the services of the Website is legal in accordance with the current legislation of       your jurisdiction.You log in the Website and participate in the games at your own risk."
     },
     "bonusTermsPage": {
-      "title1": "Podmínky bonusů",
+      "title1": "Conditions générales relatives aux bonus",
       "text1": [
-        "Všechny nabídky bonusů jsou striktně omezenu na jednu nabídku na: osobu a její rodinu, adresu bydliště, e-mailovou adresu, IP adresu, telefonní číslo, číslo účtu, číslo kreditní či debetní karty, číslo elektronické peněženky, účet platebního systému (Neteller, Skrill atd.) a jedno elektronické zařízení (počítač, mobilní telefon, tablet atd.).",
-        "Bonusy smí využívat všichni hráči s výjimkou případů, kdy určité země uplatňují ve vztahu k bonusům restrikce a hráč je občanem jedné z těchto zemí. Bonusy nesmí být udělovány hráčům ze Švédska. Hráči ze Švédska nesmí dostávat žádné bonusy, nesmí se také účastnit jakéhokoliv druhu propagačních programů, nesmí dostávat VIP odměny a nesmí si ani vyměňovat comp body.",
-        "Hráči mají zákaz používat jakékoliv bonusové nabídky jiným způsobem, než je dovoleno. V případě takového zneužití má Casino právo zakázat hráči přijímat jakékoliv bonusy a zruší jakékoliv výhry, které hráč získal s použitím bonusů, a to jak ve chvíli protáčení tak poté.",
-        "Je zakázáno používat bonusy čistě za účelem postupu bonusovými fázemi, zejména v případech, kdy se bonusy nebo finanční prostředky používají čistě k postupu bonusovými fázemi (například získání 9 mincí z 10 za účelem dosažení bonusu) a potom jsou závěrečné fáze (například hra zaměřená na získání závěrečných mincí s cílem dosáhnout 10 z 10 a bonusu) ukončeny s peněženími sázkami, když dojde k propadnutí bonusů, ke ztrátě nebo splnění limitu protočení a jejich konverzi na hotovost. Jakékoliv výhry získané během takové hry mohou být považovány za neplatné.",
-        "Při hraní s aktivním bonusem nesmí hráč používat žádné strategie zaměřené na splnění požadavků na protočení bonusu. V případě, že hráč takové strategie používá a pokud má Casino dostatečné důvody se domnívat, že jednání hráče je motivováno výhradně snahou získat finanční zvýhodnění s využitím bonusové výhody, vyhrazuje si Casino právo všechny výhry hráče zrušit.",
-        "Pokud není uvedeno jinak, je u všech bonusů podmínkou k jejich získání požadavek na minimální vklad, omezení maximální částky možného bonusu, podmínky protočení, omezení maximální výše sázek při protočení a časové omezení životnosti bonusu.",
-        "U všech vydaných bonusů je přednastaveně omezena maximální výše sázky při protočení: Není-li uvedeno jinak, tak 5 EUR, 10 CAD/AUD, 100 CZK, 90 ZAR, 10 BGN, 40 DKK, 40 HRK, 25 RON, 0,00019 BTC. Maximální limit sázky zahrnuje zdvojnásobení sázek po ukončení kola hry a také kol bonusů (které byly zakoupeny během hry).",
-        "Výhry získané s vyžitím bonusů si může hráč vyzvednout pouze po splnění požadavků všech pravidel protočení.",
-        "Není-li uvedeno jinak, musí se všechny bonusy protočit 40 krát a teprve poté si lze peníze vyzvednout.",
-        "Všechny bonusy jsou těžko realizovatelné. To znamená, že o výběr peněz můžete požádat teprve poté, co došlo k úplnému splnění požadavků ohledně protočení. Navíc, musíte nejdříve začít hrát nejdříve o skutečné peníze a teprve poté o bonusové peníze a jakmile přijdete o bonusové peníze, přijdete také o bonus.",
-        "Není-li uvedeno jinak, je platnost bonusu 14 dní od chvíle jeho obdržení.",
-        "Pokud na konci bonusového období zůstane bonus platný, ale podmínky protočení nebudou splněny, budou všechny bonusové peníze i výhry neplatné..",
-        "Bonusy se automaticky zruší poté, co aktivní zůstatek dosáhne částky 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC nebo méně.*",
-        "*Tato podmínka platí pouze pro zůstatek spojený s bonusem, tj. vklad + bonus nebo samotný bonus (v případě nulového bonusového vkladu), neplatí však na peníze na zůstatku hráče získané z jiných vkladů nebo bonusů.",
-        "Hráč může požadovat výběr svého vkladu dříve, než splní požadavky na protočení bonusu. V takovém případě bude částka bonusu a výher neplatná a hráči budou vyplaceny případné zbývající finanční prostředky.",
-        "Hráč je oprávněn jakékoliv bonusy zrušit, niž by musel pokračovat v jejich protáčení a aniž by přitom ztratil jakékoliv svoje finanční prostředky.",
-        "V daný okamžik může být aktivován vždy pouze jeden bonus. Vkladové bonusy nelze kombinovat.",
-        "Hráč má právo odmítnout od Casina jakékoliv bonusy.",
-        "V jakékoliv hře je zakázáno opožďovat jakékoliv kolo hry, včetně spinů zdarma a bonusů na pozdější dobu, pokud již nemáte další požadavek na protočení a/nebo provádíte nový vklad (nové vklady) přičemž je zakázáno mít ve hře stále k dispozici volné spiny nebo bonusy.",
-        "Mějte na paměti, že ve všech hrách neplatí, že by při protočení bonusu byla plně zohledňována hodnota sázky. 100 % sázek je zohledněno při hraní slotů s výjimkou níže uvedených slotů.",
-        "U následujících slotů nelze hrát za bonusy: Craps (1x2 Gaming), Scarab Treasure (Amatic), No such games (Belatra), Ninja (Endorphina), 1429 Uncharted Seas (Epic Media), Egyptian Dreams Deluxe, Knockout Football, London Hunter, Magic Oak, Pumpkin Patch, Santa’s Village (Habanero), Mega Boy, Roo Riches, Super Fast Hot Hot Respin, Tree of Fortune, Vegas High Roller (iSoftbet), Dead or Alive, Devil's Delight, Lucky Angler, Reel Rush 2, Reel Steal, Robin Hood: Shifting Riches, Scudamore's Super Stakes, Serengeti Kings, Single Deck Blackjack Professional Series, The French Roulette, The Wish Master, TXS Hold'em Professional Series (NetEnt), Baker's Treat, Eye of the Kraken, Golden Legend, Happy Halloween, Hugo 2, MULTIFRUIT 81, Pearls of India, Pimped, Rage to Riches, Royal Masquerade, Sea Hunter, Tower Quest (Play'nGo), Queen of Gold, Jade Butterfly (Pragmatic), 300 Shields, African Quest, Agent Valkyrie, Astro Legends: Lyra and Erion, Art of the Heist, Beautiful Bones, Bikini Party, Book of Oz, Bookie of Odds, Break Da Bank Again Respin, Castle Builder, Castle Builder II, Cool Buck, Craps, Dragon Dance, Forsaken Kingdom, Gems Odyssey, Gems Odyssey 92, Hot Ink, Le Kaffee Bar, Magic of Sahara, Medusa, Peek-a-Boo - 5 Reel, Pets Go Wild, Reel Gems, Retro Reels, Retro Reels Diamond Glitz, Retro Reels Extreme Heat, Scrooge, Spectacular Wheel of Wealth, Stardust, Tomb Raider - Secret of the Sword, Tomb Raider, Untamed Bengal Tiger, Untamed Crowned Eagle, Untamed Giant Panda, Untamed Wolf Pack, Vampire: The Masquerade - Las Vegas, Village People Macho Moves, Wheel of Wealth Special Edition, Wheel of Wealth, Wild Orient, Zombie Hoard (Quickfire), Skulls Up! (Quickspin), Three Musketeers (Red Tiger), Kingmaker, Lil Devil (Relax), Cupids Strike 2, Divine Forest, Lemur Does Vegas, Summer Splash, Mines of Gold (Spinomenal), 1429 Uncharted Seas (Thunderkick), Alchymedes, Cazino Cosmos, Dark Vortex, Dwarf Mine, Double Dragons, Holmes and the Stolen Stones, Jackpot Raiders, Jokerizer, Ozwin’s Jackpots, Spina Colada, The Dark Joker Rizes, The Royal Family, Tut's Twister, Vikings go to Hell, Vikings go Berzerk, Wicked Circus, Wolf Hunters (Yggdrasil), všechny Jackpotové sloty.",
-        "U všech karetních her, rulety, pokeru a video pokeru – 5 % sázky.",
-        "Protočení se netýká her s živými krupiéry",
-        "Při hraní s bonusovými prostředky musí všechny výhry, které chcete vybrat, projít předchozím testem zpracování plateb. Casino si vyhrazuje právo požádat uživatele v důsledku kontroly o potvrzení osobních data a dat souvisejících s platební metodou.",
-        "Casino má právo jakékoliv bonusy výhry zrušit a také má právo zabavit všechny peníze na účtu, pokud byly získány nepoctivě nebo porušením těchto pravidel.",
-        "Casino si vyhrazuje právo tyto podmínky kdykoliv upravit a doplnit.",
-        "Použití bonusových prostředků čistě za účelem postupu jednotlivými bonusovými fázemi je zakázáno. Například případech, kdy se bonusy nebo finanční prostředky používají čistě k postupu bonusovými fázemi (například získání 9 mincí z 10 za účelem dosažení bonusu) a potom jsou závěrečné fáze (například hra zaměřená na získání závěrečných mincí s cílem dosáhnout 10 z 10 pro dosažení bonusu) ukončeny s peněženími sázkami, když dojde k propadnutí bonusů, ke ztrátě nebo splnění limitu protočení a jejich konverzi na hotovost. Jakékoliv výhry získané během takové hry mohou být považovány za neplatné.",
-        "Všechny bonusy vznikají v čase UTC."
+        "Toutes les offres de bonus sont strictement limitées à une par : personne et sa famille, adresse de domicile, courriel, adresse IP, numéro de téléphone, numéro de compte, numéro de carte de crédit ou de débit, numéro de portefeuille électronique, compte de système de paiement (Neteller, Skrill, etc.), un appareil électronique (ordinateur, téléphone mobile, tablette, etc.).",
+        "Tous les joueurs ont la possibilité de profiter des bonus, sauf dans les cas où le bonus est soumis à des restrictions par pays et que le joueur est citoyen d’un des pays concernés. Les joueurs de Suède ne sont pas autorisés à recevoir des bonus. Aucun bonus n’est disponible pour les joueurs de Suède, y compris la participation à tout type de programme promotionnel, la réception de récompenses VIP, ainsi que l’échange de points comp.",
+        "Le joueur ne peut utiliser les offres de bonus de manière abusive. Dans le cas d’un tel abus, le Casino se réserve le droit d’interdire au joueur de recevoir des bonus et d’annuler tous les gains obtenus à l’aide des fonds de bonus, tant au moment de la mise qu’après celle-ci.",
+        "L’utilisation des fonds de bonus dans le seul but de progresser dans les étapes de bonus est interdite, en particulier dans les cas où les fonds de bonus ou les fonds en espèces sont utilisés dans le seul but de progresser dans les étapes de bonus (par exemple, collecter 9 pièces sur 10 pour atteindre la fonction de bonus), puis les étapes finales (par exemple, jouer pour collecter la dernière pièce pour atteindre 10 sur 10 et la fonction de bonus) sont accomplies avec des mises en espèces lorsque les fonds de bonus ont été annulés, perdus, convertis en espèces ou que les mises ont été atteintes. Tous les gains obtenus au cours de ce type de jeu peuvent être considérés comme nuls.",
+        "Le joueur ne peut pas utiliser de stratégies lorsqu’il joue avec un bonus actif afin de remplir les conditions pour miser le bonus. Lorsque le joueur utilise de telles stratégies et si le Casino a des raisons suffisantes de croire que les actions du joueur visent uniquement à obtenir des avantages financiers en utilisant l’avantage du bonus, le Casino se réserve le droit d’annuler tous les gains du joueur.",
+        "Tous les bonus comportent une exigence de dépôt minimum pour l’obtention du bonus, une limitation du montant maximum possible du bonus, des conditions de mise, une limitation du montant maximal des mises pendant les paris, une limitation de la durée de vie du bonus, sauf indication contraire.",
+        "Tous les bonus accordés sont par défaut limités à une mise maximale pendant les paris : 5 EUR, 10 CAD/AUD, 100 CZK, 90 ZAR, 10 BGN, 40 DKK, 40 HRK, 25 RON, 0,00019 BTC, sauf indication contraire. La limite de mise maximale inclut les mises doublées après la fin d’un tour de jeu, ainsi que les tours de bonus (achetés dans le jeu).",
+        "Les gains obtenus grâce aux bonus ne peuvent être retirés qu’après avoir satisfait à toutes les règles de mise.",
+        "Tous les bonus (sauf indication contraire) doivent être misés 40 fois avant que les fonds puissent être retirés.",
+        "Tous les bonus sont « sticky ». Cela signifie qu’il est impossible de demander un retrait tant que les conditions de mise ne sont pas entièrement remplies. De plus, vous commencez à jouer avec de l’argent réel, ensuite avec de l’argent du bonus. Dès que l’argent du bonus est perdu, le bonus est également perdu.",
+        "La validité du bonus est de 14 jours à partir du moment où il a été reçu, sauf indication contraire.",
+        "À la fin de la période de bonus, si le bonus reste valide et que les conditions de mise ne sont pas remplies, l’argent du bonus et les gains sont annulés.",
+        "Les bonus sont automatiquement annulés lorsque le solde actif atteint le montant de 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC ou moins.*",
+        "*Cette condition s’applique uniquement au solde lié à un bonus, c’est-à-dire dépôt + bonus, ou à un bonus uniquement (dans le cas d’un bonus sans dépôt), et ne s’applique pas aux fonds sur le solde du joueur provenant d’autres dépôts ou bonus.",
+        "Un joueur peut demander le retrait de son dépôt avant de remplir les conditions de mise du bonus. Dans ce cas, le montant du bonus et les gains sont annulés. Les fonds restants, le cas échéant, sont payés au joueur.",
+        "Un joueur a le droit d’annuler tout bonus sans procéder à sa mise, sans aucune perte de ses propres fonds.",
+        "Un seul bonus peut être activé à la fois. Les bonus de dépôt ne peuvent pas être combinés.",
+        "Un joueur a le droit de refuser tout bonus du Casino.",
+        "Il est interdit de retarder tout tour de jeu dans un jeu (y compris les tours gratuits et les fonctions de bonus) à un moment ultérieur où il n’y a plus d’exigence de mise et/ou d’effectuer un ou plusieurs nouveaux dépôts alors que des tours gratuits ou des fonctions de bonus sont encore disponibles dans un jeu.",
+        "Veuillez noter que dans tous les jeux, le montant de la mise n’est pas entièrement pris en compte lors de la mise du bonus. 100 % de la mise est prise en compte pour les machines à sous, sauf pour les machines à sous indiquées ci-dessous.",
+        "Le jeu pour les bonus n’est pas disponible dans les machines à sous suivantes : Craps (1x2 Gaming), Scarab Treasure (Amatic), No such games (Belatra), Ninja (Endorphina), 1429 Uncharted Seas (Epic Media), Egyptian Dreams Deluxe, Knockout Football, London Hunter, Magic Oak, Pumpkin Patch, Santa’s Village (Habanero), Mega Boy, Roo Riches, Super Fast Hot Hot Respin, Tree of Fortune, Vegas High Roller (iSoftbet), Dead or Alive, Devil’s Delight, Lucky Angler, Reel Rush 2, Reel Steal, Robin Hood: Shifting Riches, Scudamore’s Super Stakes, Serengeti Kings, Single Deck Blackjack Professional Series, The French Roulette, The Wish Master, TXS Hold’em Professional Series (NetEnt), Baker’s Treat, Eye of the Kraken, Golden Legend, Happy Halloween, Hugo 2, MULTIFRUIT 81, Pearls of India, Pimped, Rage to Riches, Royal Masquerade, Sea Hunter, Tower Quest (Play’nGo), Queen of Gold, Jade Butterfly (Pragmatic), 300 Shields, African Quest, Agent Valkyrie, Astro Legends: Lyra and Erion, Art of the Heist, Beautiful Bones, Bikini Party, Book of Oz, Bookie of Odds, Break Da Bank Again Respin, Castle Builder, Castle Builder II, Cool Buck, Craps, Dragon Dance, Forsaken Kingdom, Gems Odyssey, Gems Odyssey 92, Hot Ink, Le Kaffee Bar, Magic of Sahara, Medusa, Peek-a-Boo - 5 Reel, Pets Go Wild, Reel Gems, Retro Reels, Retro Reels Diamond Glitz, Retro Reels Extreme Heat, Scrooge, Spectacular Wheel of Wealth, Stardust, Tomb Raider - Secret of the Sword, Tomb Raider, Untamed Bengal Tiger, Untamed Crowned Eagle, Untamed Giant Panda, Untamed Wolf Pack, Vampire: The Masquerade - Las Vegas, Village People Macho Moves, Wheel of Wealth Special Edition, Wheel of Wealth, Wild Orient, Zombie Hoard (Quickfire), Skulls Up! (Quickspin), Three Musketeers (Red Tiger), Kingmaker, Lil Devil (Relax), Cupids Strike 2, Divine Forest, Lemur Does Vegas, Summer Splash, Mines of Gold (Spinomenal), 1429 Uncharted Seas (Thunderkick), Alchymedes, Cazino Cosmos, Dark Vortex, Dwarf Mine, Double Dragons, Holmes and the Stolen Stones, Jackpot Raiders, Jokerizer, Ozwin’s Jackpots, Spina Colada, The Dark Joker Rizes, The Royal Family, Tut’s Twister, Vikings go to Hell, Vikings go Berzerk, Wicked Circus, Wolf Hunters (Yggdrasil), toutes les machines à sous à jackpot.",
+        "Pour tous les jeux de cartes, la roulette, le poker et les pokers vidéo, il s’agit de 5 % de la mise.",
+        "Les jeux comportant des croupiers en direct ne sont pas concernés par les mises.",
+        "En cas de jeu avec des fonds de bonus, tous les gains demandés pour le retrait passent une vérification avant le traitement du paiement. Le Casino se réserve le droit de demander à l’utilisateur de confirmer les données personnelles et les données relatives au mode de paiement à la suite de la procédure de vérification.",
+        "Le Casino se réserve le droit de révoquer tous les bonus et gains, ainsi que de confisquer tout l’argent du compte s’il a été obtenu de manière malhonnête ou en violation de ces règles.",
+        "Le Casino se réserve le droit de modifier et de compléter ces conditions à tout moment.",
+        "L’utilisation des fonds de bonus dans le seul but de progresser dans les étapes de bonus est interdite. Par exemple, dans les cas où les fonds de bonus ou les fonds en espèces sont utilisés dans le seul but de progresser dans les étapes de bonus (par exemple, collecter 9 pièces sur 10 pour atteindre la fonction de bonus), puis les étapes finales (par exemple, jouer pour collecter la dernière pièce pour atteindre 10 sur 10 et la fonction de bonus) sont accomplies avec des mises en espèces lorsque les fonds de bonus ont été annulés, perdus, convertis en espèces ou que les mises ont été atteintes. Tous les gains obtenus au cours de ce type de jeu peuvent être considérés comme nuls.",
+        "Tous les bonus sont comptabilisés selon la date UTC."
       ],
-      "title2": "Uvítací balíček",
+      "title2": "Coffret de bienvenue",
       "text2": [
-        "Pro získání prvního/druhého/třetího vkladového bonusu musí váš vklad činit minimálně 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
-        "Maximální výše prvního/druhého/třetího vkladového bonusu je 150 EUR, 225 CAD, 225 AUD, 3330 CZK, 2600 ZAR, 290 BGN, 1150 DKK, 1130 HRK, 740 RON, 0,0055 BTC.",
-        "Hráči mohou využít 250 spinů zdarma ve slotových hrách Aztec Magic, Aztec Magic Delux, Johnny Cash, Platinum Lightning a Platinum Lightning Delux od BGaming.",
-        "Po prvním vkladu hráči získají 50 spinů zdarma každý den po dobu následujících 5 dnů.",
-        "Aktivační doba spinů zdarma je 3 dny, doba trvání spinů zdarma a trvání výsledků spinů zdarma činí 7 dní.",
-        "Pro protočení bonusu / výsledek spinu zdarma musíte provést sázky ve výši odpovídající 40násobku bonusu / výsledku spinu zdarma.",
-        "Maximální výhra z prvních/druhých/třetích spinů zdarma z vkladů činí 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
-        "Maximální výhra vyplývající z bezplatných spinů přihlášení činí 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
-        "Všechny promo akce jsou určeny pouze pro hráče, kteří splnili podmínky bonusů uvítacího balíčku včetně počtu protočení. Pokud jste získali rozšířený uvítací balíček, nemusíte splňovat podmínku protočení, abyste mohli akceptovat další promo akce."
+        "Pour obtenir les bonus associés au premier, deuxième et troisième dépôt, votre dépôt doit être d’au moins 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
+        "Le montant maximum du bonus associé au premier, deuxième et troisième dépôt est de 150 EUR, 225 CAD, 225 AUD, 3330 CZK, 2600 ZAR, 290 BGN, 1150 DKK, 1130 HRK, 740 RON, 0,0055 BTC.",
+        "Les joueurs peuvent utiliser leurs 250 tours gratuits sur les jeux de machines à sous Aztec Magic, Aztec Magic Delux, Johnny Cash, Platinum Lightning et Platinum Lightning Delux de BGaming.",
+        "Après le premier dépôt, les joueurs recevront 50 tours gratuits chaque jour pendant les 5 jours suivants.",
+        "La durée d’activation des tours gratuits est de 3 jours, la durée des tours gratuits et la durée des résultats des tours gratuits sont de 7 jours.",
+        "Pour miser le résultat du bonus / tour gratuit, vous devez effectuer des mises pour un montant de 40 fois le montant du résultat du bonus / tour gratuit.",
+        "Le gain maximum résultant des tours gratuits associés au premier, deuxième et troisième dépôt est de 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "Le gain maximum résultant des tours gratuits associés à l’inscription est de 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC."
       ],
-      "title3": "Víkendové opakované nabití",
+      "title3": "Reprise de fin de semaine",
       "text3": [
-        "Pro získání víkendového opakovaného nabití musí váš vklad činit nejméně 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
-        "Maximální výše víkendového opakovaného nabití činí 150 EUR, 220 CAD, 240 AUD, 3900 CZK, 2580 ZAR, 300 BGN, 1110 DKK, 1125 HRK, 735 RON, 0,0056 BTC.",
-        "Pro protočení bonusu musíte provést sázky na částku odpovídající čtyřicetinásobku hodnoty bonusu.",
-        "Bonus je k dispozici vždy v pátek, v sobotu nebo v neděli pro hráče, kteří již využili všechny bonusy z uvítacího balíčku."
+        "Pour obtenir les bonus associés à la reprise de fin de semaine, votre dépôt doit être d’au moins 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
+        "Le montant maximum du bonus associé à la reprise de fin de semaine est de 150 EUR, 220 CAD, 240 AUD, 3900 CZK, 2580 ZAR, 300 BGN, 1110 DKK, 1125 HRK, 735 RON, 0,0056 BTC.",
+        "Pour miser le résultat du bonus, vous devez effectuer des mises pour un montant de 40 fois le montant du résultat du bonus.",
+        "Ce bonus est disponible une fois le vendredi, le samedi ou le dimanche pour les joueurs qui ont déjà utilisé tous les bonus du coffret de bienvenue."
       ],
-      "title4": "Věrnostní spiny zdarma",
+      "title4": "Tours gratuits de fidélité",
       "text4": [
-        "Maximální částka, kterou si můžete vybrat z hry s prostředky, které jsou spojeny s nevkladovým bonusem nebo spiny zdarma činí 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
-        "Maximální omezení výhry platí i po splnění požadavku na protočení."
+        "Le maximum que vous pourrez retirer des fonds associés à un bonus sans dépôt ou à des tours gratuits est de 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "La restriction du gain maximal demeure après avoir rempli les conditions de mise."
       ]
     }
   },
   "dailyCashback": {
-    "cashback": "Cashback",
-    "title": "Programu сashback <br/>až 20%",
-    "text1": "Kdo by nechtěl zdarma vrátit hotovost v kasinu?<br/> Dokonce i když prohrajete! Ano, čtete správně – vrátíme vám hotovost, pokud vsadíte&nbsp;x5 dokonce i když prohrajete.",
-    "text2": "Jackpot nepadne s každým otočením. Získejte své peníze zpět, i když nevyhrajete díky programu Cashback NineCasino! V následující tabulce uvádíme další podrobnosti:",
-    "terms": "Podmínky programu Cashback",
+    "cashback": "Remise",
+    "title": "Remise quotidienne<br/>jusqu'à 20%",
+    "text1": "Qui n’aime pas les remises en espèces gratuites dans les casinos?<br/>Même si vous avez perdu! Oui, vous avez bien lu: nous vous offrons une remise en espèces avec un pari de 5 fois en cas de perte.",
+    "text2": "Si c’est le cas et que vous avez perdu une somme d’argent sur Ninecasino aujourd’hui, nous vous remboursons demain selon le barème ci-dessous:",
+    "terms": "Conditions générales des remises en espèces",
     "termsList": [
       {
-        "text": "Program Cashback se poskytuje na prohranou částku (nebo ekvivalent) během předchozího dne od 00:01 do 23:59 (UTC+3) pouze ve výherních automatech. "
+        "text": "La remise en espèces est accordée sur le montant de la perte (ou l’équivalent) au cours de la journée précédente de 00 h 01 à 23 h 59 (UTC) dans les jeux de machines à sous uniquement."
       },
       {
-        "text": "Procento vracené hotovosti závisí na prohrané částce (nebo ekvivalentu) za předchozí den:<br/><br/>20 € až 199 € – 10 % zpět<br/>200 € až 499 € – 12 % zpět<br/>500 € až 999 € – 14 % zpět<br/>1000 € až 2499 € – 16 % zpět<br/>2500 € až 4999 € – 18 % zpět<br/>5000 € a více – 20 % zpět"
+        "text": "Le pourcentage de remise en espèces dépend de la somme des pertes (ou équivalent) de la journée précédente:<br/><br/>20 € à 199 € – Remise en espèces de 10 %<br/>200 € à 499 € – Remise en espèces de 12 %<br/>500 € à 999 € – Remise en espèces de 14 %<br/>1 000 € à 2 499 € – Remise en espèces de 16 %<br/>2 500 € à 4 999 € – Remise en espèces de 18 %<br/>5 000 € et plus – Remise en espèces de 20 %."
       },
       {
-        "text": "Celková částka vracené hotovosti nesmí překročit 20 % z celkové částky všech prohraných částek hráče (nebo ekvivalentu)."
+        "text": "Le montant total des remises en espèces reçues ne peut pas dépasser 20 % du montant total de toutes les pertes du joueur (ou équivalent)."
       },
       {
-        "text": "Vracená částka nebude připsána, pokud skutečná prohra za předchozí den byla nižší než 20 EUR / 20 USD / 25 CAD / 200 NOK / 85 PLN / 20 NZD / 1500,00 RUB / 2500 JPY / 9000,00 KZT."
+        "text": "La remise en espèces ne sera pas créditée si la perte en argent réel de la journée précédente était inférieure à 20 EUR / 20 USD / 25 CAD / 200 NOK / 85 PLN / 20 NZD / 1 500 RUB / 2 500 JPY / 9 000 KZT. La perte d'argent réel implique ici de jouer et de perdre sans aucun bonus."
       },
       {
-        "text": "Vracená hotovost se připisuje každý den v 04:00 (UTC+3)."
+        "text": "La remise en espèces sera créditée chaque jour à 00 h 10 (UTC)."
       },
       {
-        "text": "Požadavek na bonus v podobě vracené hotovosti platí pro sázky x5."
+        "text": "L’exigence de pari pour un bonus de remise en espèces est de x5."
       },
       {
-        "text": "Vracená částka je k dispozici 24 hodin po připsání na účet hráče. "
+        "text": "La remise en espèces est disponible pendant 24 heures après avoir été créditée dans le compte du joueur."
       },
       {
-        "text": "Vracenou částku je třeba využít během 24 hodin po aktivaci. "
+        "text": "La remise en espèces est valable 24 heures après l’activation."
       }
     ],
     "items": [
       {
         "cashbackNum": "10%",
-        "cashbackSum": "€20 až €199"
+        "cashbackSum": "€20 À €199"
       },
       {
         "cashbackNum": "12%",
-        "cashbackSum": "€200 až €499"
+        "cashbackSum": "€200 À €499"
       },
       {
         "cashbackNum": "14%",
-        "cashbackSum": "€500 až €999"
+        "cashbackSum": "€500 À €999"
       },
       {
         "cashbackNum": "16%",
-        "cashbackSum": "€1000 až €2499"
+        "cashbackSum": "€1000 À €2499"
       },
       {
         "cashbackNum": "18%",
-        "cashbackSum": "€2500 až €4999"
+        "cashbackSum": "€2500 À €4999"
       },
       {
         "cashbackNum": "20%",
-        "cashbackSum": "€5000 a více"
+        "cashbackSum": "€5000 ET PLUS"
       }
     ]
   },
   "lottery": {
-    "metaTitle": "➤ Loterie Tesla s Tesly Model 3 – Hrajte své oblíbené hry a vyhrávejte skvělou cenu - Tesly Model 3!",
-    "metaDescription": "✭ Zúčastněte se loterie Tesla v NineCasino ➔ Vezměte si los pro Teslu!",
+    "metaTitle": "➤ La loterie Tesla avec Tesla Model 3 – Jouez à vos jeux préférés et gagnez un grand prix - Tesla Model 3!",
+    "metaDescription": "✭ Participez à la loterie Tesla sur NineCasino ➔ Prenez un billet pour une Tesla!",
     "title": "Weekend<br/> Playing Lottery ",
-    "prize": "<span class=\"Colored\">€ 2,500</span> + <span class=\"Colored\">500 Free Spins</span>",
-    "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
-    "termsTitle": "Podmínky účasti v loterii",
+    "prize": "<span class=\"Colored\">2.500 €</span> + <span class=\"Colored\">500 Free Spins</span>",
+    "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of 2.500 € with 40 lucky riders.",
+    "termsTitle": "Conditions générales de participation à la loterie",
     "terms": [
       {
         "text": "You begin to participate in the VIP program after making your first deposit."
@@ -1373,199 +1368,199 @@
         "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
       }
     ],
-    "lastRoundWinners": "Vítězové posledního kola",
-    "ticket": "Los",
-    "tickets": "Losy"
+    "lastRoundWinners": "Les gagnants du dernier tour",
+    "ticket": "Billet",
+    "tickets": "Billets"
   },
   "sunshine_spins_lottery": {
-    "title": "Loterie<br/> Sunshine Spins",
-    "name": "Loterie Sunshine Spins",
-    "prize": " 4 000 spinů zdarma",
-    "text": "Šťastní letní lidé vyparádění ve veselém letním oblečení společně kráčejí vstříc festivalu nabitému zábavou, který se koná tenhle měsíc: Loterii Sunshine Spins!<br/><br/>S loterií Sunshine Spins si můžete připomenout časy Woodstocku, festivalu na ostrově Wight a atmosféru San Francisca. Pokud se chcete přidat, shoďte boty a bosky to rozjeďte u svých nejoblíbenějších slotů. Užívejte si pohodu se 4 000 spiny zdarma a cenami pro 50 šťastných výherců!",
+    "title": "La loterie<br/> Sunshine Spins",
+    "name": "La loterie Sunshine Spins",
+    "prize": "4 000 tours gratuits",
+    "text": "Des amateurs d’été heureux, équipés de vêtements décontractés d’été, marchant vers le festival de ce mois-ci : la loterie Sunshine Spins!<br/><br/>Grâce à la loterie Sunshine Spins, revivez l’époque de Woodstock, du festival de l’île de Wight et de San Francisco. Pour participer, il suffit de courir pieds nus, d’écouter vos chansons préférées et de faire tourner vos machines à sous préférées. Profitez de l’ambiance de la cagnotte de 4 000 tours gratuits avec 50 heureux gagnants!",
     "terms": [
       {
-        "text": "Loterie poběží 7 dnů. Začíná vždy v úterý v 00:01 (UTC) a končí v pondělí v 23:59 (UTC). "
+        "text": "La loterie se déroulera sur 7 jours, du Mardi à 00 h 01 (UTC) au lundi à 23 h 59 (UTC). "
       },
       {
-        "text": "Minimální vklad pro získání losu je 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+        "text": "Le dépôt minimal requis pour un billet de loterie est de 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
       },
       {
-        "text": "Počet losů na hráče není nijak omezený."
+        "text": "Le nombre de billets de loterie par joueur est illimité."
       },
       {
-        "text": "Každý losu může být výherní."
+        "text": "Chaque billet peut être gagnant."
       },
       {
-        "text": "V době slosování nesmí být herní účet zablokovaný."
+        "text": "Au moment du tirage au sort, votre compte de jeu ne doit pas être bloqué."
       },
       {
-        "text": "4 000 spinů zdarma budou uděleny automaticky na konci loterie každé pondělí."
+        "text": "Des 4000 tours gratuits seront attribués automatiquement à la fin de la loterie chaque semaine le lundi."
       },
       {
-        "text": "Pro spiny zdarma ceny dostanete je protočení x5."
+        "text": "Pour les tours gratuits, votre mise est de x5."
       }
     ]
   },
   "tesla_lottery": {
-    "title": "Loterie<br/> Tesla",
-    "name": "Loterie Tesla",
+    "title": "La loterie<br/> Tesla",
+    "name": "Tesla Model 3",
     "prize": "Tesly Model 3",
-    "text": "Zúčastněte se loterie Tesla v NineCasino od 18. srpna do 23. září 2021 a získejte šanci stát se šťastným výhercem Tesly Model 3!<br/><br/>Výherce vozu Tesla oznámíme 24. září!",
+    "text": "Participez à la loterie Tesla sur NineCasino entre le 18 août 2021 et le 23 septembre 2021 et courez la chance de devenir l’heureux propriétaire d’une Tesla Model 3!<br/><br/>Nous annoncerons le gagnant de la Tesla le 24 septembre!",
     "terms": [
       {
-        "text": "Loterie proběhne od 18. srpna do 23. září 2021."
+        "text": "La loterie se déroule du 18 août 2021 au 23 septembre 2021."
       },
       {
-        "text": "Minimální vklad na jeden los je 50 eur. Každý los může vyhrát."
+        "text": "Le dépôt minimal par billet est de 50 €. Chaque billet peut être gagnant."
       },
       {
-        "text": "Počet losů na jednoho hráče není nijak omezený."
+        "text": "Le nombre de billets de loterie par joueur n’est pas limité."
       },
       {
-        "text": "Čím více losů budete mít v době losování, tím vyšší budou vaše šance na výhru ceny."
+        "text": "Plus vous collectez de billets au moment du tirage, plus vos chances de gagner un prix sont élevées."
       },
       {
-        "text": "V době slosování nesmí být herní účet zablokovaný."
+        "text": "Au moment du tirage au sort, le compte de jeu ne doit pas être bloqué."
       },
       {
-        "text": "Výherce loterie bude oznámený 24. září."
+        "text": "Le gagnant de la loterie sera annoncé le 24 septembre."
       }
     ]
   },
   "sumdes": {
-    "title": "Turnajové sérii <br>Summer Desserts",
-    "prize": "100 000 €",
-    "text": "Léto je v plném proudu, takže co může být lepšího než turnajová série od Booongo! Tak na nic nečekejte a uhánějte za zábavou v síťové turnajové sérii Summer Desserts na NineCasino! <br>Síťová turnajová série Summer Desserts proběhne od 19. srpna 2021 (0:00 UTC) do 28. srpna 2021 (23:00 UTC).<br><br>Nepromeškejte příležitost získat podíl na obrovském prize poolu od Booongo!",
-    "textMobile": "Léto je v plném proudu, takže co může být lepšího než turnajová série od Booongo! Tak na nic nečekejte a uhánějte za zábavou v síťové turnajové sérii Summer Desserts na NineCasino! <br>Síťová turnajová série Summer Desserts proběhne od 19. srpna 2021 (0:00 UTC) do 28. srpna 2021 (23:00 UTC).<br><br>Nepromeškejte příležitost získat podíl na obrovském prize poolu od Booongo!",
+    "title": "La série de tournois <br>Summer Desserts ",
+    "prize": "100.000 €",
+    "text": "L’été bat son plein, alors quoi de mieux qu’une série de tournois de Booongo? Dépêchez-vous de profiter de la série de tournois en réseau Summer Desserts sur NineCasino! <br>La série de tournois en réseau Summer Desserts se déroule du 19 août 2021 (0 h 00 UTC) au 28 août 2021 (23 h 00 UTC).<br><br>Ne manquez pas de partager l’énorme cagnotte de Booongo!",
+    "textMobile": "L’été bat son plein, alors quoi de mieux qu’une série de tournois de Booongo? Dépêchez-vous de profiter de la série de tournois en réseau Summer Desserts sur NineCasino! <br>La série de tournois en réseau Summer Desserts se déroule du 19 août 2021 (0 h 00 UTC) au 28 août 2021 (23 h 00 UTC).<br><br>Ne manquez pas de partager l’énorme cagnotte de Booongo!",
     "terms": [
       {
-        "title": "Síťová turnajová série Summer Desserts proběhne od 19. srpna 2021 (0:00 UTC) do 28. srpna 2021 (23:00 UTC)."
+        "title": "La série de tournois en réseau Summer Desserts se déroule du 19 août 2021 (0 h 00 UTC) au 28 août 2021 (23 h 00 UTC)."
       },
       {
-        "title": "Je to kombinace pravidelných turnajů s různými podmínkami (jednotlivé turnaje ze série mohou mít odlišnou délku); bodování turnaje (hráči dostávají body za každý vítězný spin) a také 2. (EXTRA) výsledková tabulka ukazující celkové postavení hráče v turnaji."
+        "title": "Il s’agit d’une combinaison de tournois réguliers avec des durées mixtes (la durée de chaque tournoi de la série peut varier); le tournoi de points (où les joueurs obtiendront des points pour chaque tour gagnant) et également un 2e tableau de classement (EXTRA) reflétant la progression globale du joueur."
       },
       {
-        "title": "Pokuste se výhru z Velkého celkového prize poolu ve výši 100 000 eur (nebo ekvivalentní částky v měně hráče):<br> - celkem 80 000 eur za 10 pravidelných turnajů (8 000 eur v každém);<br> - 20 000 eur za postavení ve výsledkové tabulce (ceny budou vypláceny současně s uzavřením pravidelného turnaje série dne 28. 8. 2021 23:00 UTC)."
+        "title": "Relevez le défi pour le grand prix total de 100 000 € (ou l’équivalent dans la devise du joueur) :<br> - 80 000 € au total pour 10 tournois réguliers (8 000 € pour chacun);<br> - 20 000 € pour le classement de la série (les prix sont versés en même temps que le tournoi régulier de clôture de la série, le 28 août 2021 à 23 h 00 UTC)."
       },
       {
-        "title": "Zabojujte v těchto dech beroucích hrách:v<br>3 Coins Egypt; Pearl Diver; Wukong; Sun of Egypt 2; 15 Dragon Pearls; Hit the Gold!; 3 Coins; Magic Apple; Sun of Egypt; Dragon Pearls; Scarab Temple; Wolf Saga; Aztec Sun; Aztec Pyramid; Scarab Boost."
+        "title": "Mesurez-vous à ces jeux à couper le souffle :<br>3 Coins Egypt; Pearl Diver; Wukong; Sun of Egypt 2; 15 Dragon Pearls; Hit the Gold!; 3 Coins; Magic Apple; Sun of Egypt; Dragon Pearls; Scarab Temple; Wolf Saga; Aztec Sun; Aztec Pyramid; Scarab Boost."
       },
       {
-        "title": "Vše, co k tomu potřebujete, je minimální sázka 0,5 eur."
+        "title": "Pour participer, il vous suffit de placer une mise minimale de 0,5 €. "
       },
       {
-        "title": "Minimální počet spinů je 100."
+        "title": "Le nombre minimal de tours est de 100."
       },
       {
-        "title": "Za každý vítězný spin hráč získá body, 1 euro = 1 bod. Za každý násobek x1 ve vítězném spinu hráč získá 1 bod."
+        "title": "7. Les joueurs obtiennent des points pour chaque tour gagnant : 1 € = 1 point. Les joueurs obtiendront 1 point pour chaque multiplicateur de х1 dans le tour gagnant."
       }
     ],
     "metaInfo": {
-      "title": "➤ Summer Desserts  Turnaj s bohatým prize poolem 100 000 € – Hrajte své oblíbené hry a vyhrávejte skvělé ceny!",
-      "description": "✭ Zkuste štěstí v novém Summer Desserts  od Booongo ➔ Splňte misi – Vyhrajte ceny!"
+      "title": "➤ Le tournoi Summer Desserts  avec une cagnotte impressionnante de 100.000 € – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
+      "description": "✭ Tentez votre chance dans le nouveau Summer Desserts  de Booongo ➔ Accomplissez des missions et gagnez des prix!"
     }
   },
   "spiritOfEgypt": {
     "title": "Spirit of Egypt 60k",
-    "prize": "€60,000",
-    "text": "Na obzoru se rýsují nová dobrodružství a Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC.<br/><br/>Celkový prize pool má závratnou hodnotu 60 000 eur, a pokud se vám podaří dostat se na vrchol pyramidy, pak můžete očekávat nejvyšší cenu ve výši 10 000 eur! Zkuste své štěstí se Spirit of Egypt 60k!",
-    "textMobile": "Na obzoru se rýsují nová dobrodružství a Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC.<br/><br/>Celkový prize pool má závratnou hodnotu 60 000 eur, a pokud se vám podaří dostat se na vrchol pyramidy, pak můžete očekávat nejvyšší cenu ve výši 10 000 eur! Zkuste své štěstí se Spirit of Egypt 60k!",
+    "prize": "60.000 €",
+    "text": "De nouvelles aventures se profilent à l’horizon et Playson vous attend avec le tournoi Spirit of Egypt 60k, qui se déroulera du 20 août 2021 à 0 h 01 UTC au 29 août 2021 à 23 h 59 UTC.<br/><br/>La cagnotte totale s’élève à 60 000 €. Si vous atteignez le sommet de la pyramide, le premier prix est de 10 000 €! Tentez votre chance au Spirit of Egypt 60k!",
+    "textMobile": "De nouvelles aventures se profilent à l’horizon et Playson vous attend avec le tournoi Spirit of Egypt 60k, qui se déroulera du 20 août 2021 à 0 h 01 UTC au 29 août 2021 à 23 h 59 UTC.<br/><br/>La cagnotte totale s’élève à 60 000 €. Si vous atteignez le sommet de la pyramide, le premier prix est de 10 000 €! Tentez votre chance au Spirit of Egypt 60k!",
     "metaInfo": {
-      "title": "➤ Spirit of Egypt 60k Turnaj s bohatým prize poolem 60 000 € – Hrajte své oblíbené hry a vyhrávejte skvělé ceny!",
-      "description": "✭ Zkuste štěstí v novém Spirit of Egypt 60k od Playson ➔ Každá vítězná sázka vám přinese body!"
+      "title": "➤ Le tournoi Spirit of Egypt 60k avec une cagnotte impressionnante de 60.000 € – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
+      "description": "✭ Tentez votre chance dans le nouveau Spirit of Egypt 60k de Playson ➔ Chaque mise gagnée vous rapporte des points!"
     },
     "terms": [
       {
-        "title": "Playson už na vás čeká s turnajem Spirit of Egypt 60k, který proběhne od 20. srpna 2021 0:01 UTC do 29. srpna 2021 23:59 UTC."
+        "title": "Playson vous attend avec le tournoi Spirit of Egypt 60k, qui se déroulera du 20 août 2021 à 0 h 01 UTC au 29 août 2021 à 23 h 59 UTC."
       },
       {
-        "title": "Celkový prize pool má 60 000 eur."
+        "title": "La cagnotte totale à 60 000 €."
       },
       {
-        "title": "Do turnaje je zahrnuto celkem 20 her: <br/>● 5 Fortunator <br/>● 9 Happy Pharaohs <br/>● Book of Gold 2: Double HitTM <br/>● Book of Gold: Multichance <br/>● Buffalo Power MegawaysTM <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Divine Dragon: Hold and Win <br/>● Eagle Power: Hold and Win <br/>● Hot Burning Wins <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra <br/>● Legend of Cleopatra MegawaysTM <br/>● Rich Diamonds: Hold and Win <br/>● Rise of Egypt Deluxe <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Spirit of Egypt: Hold and Win <br/>● Wolf Power: Hold and Win."
+        "title": "Les 20 jeux participants: <br/>● 5 Fortunator <br/>● 9 Happy Pharaohs <br/>● Book of Gold 2: Double HitTM <br/>● Book of Gold: Multichance <br/>● Buffalo Power MegawaysTM <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Divine Dragon: Hold and Win <br/>● Eagle Power: Hold and Win <br/>● Hot Burning Wins <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra <br/>● Legend of Cleopatra MegawaysTM <br/>● Rich Diamonds: Hold and Win <br/>● Rise of Egypt Deluxe <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Spirit of Egypt: Hold and Win <br/>● Wolf Power: Hold and Win."
       },
       {
-        "title": "Pro účast není požadována žádná minimální sázka."
+        "title": "Aucune mise minimale n’est requise pour se qualifier. "
       },
       {
-        "title": "Body jsou počítány po jednotlivých kolech, kdy každé vsazené 1 euro (nebo ekvivalentní hodnota v jiné měně) odpovídá 100 bodům."
+        "title": "Les points sont calculés tour par tour, chaque 1 EUR (ou équivalent monétaire) gagné valant 100 points."
       }
     ]
+  },
+  "demigods": {
+    "title": "Demi God Tales Tournament<br/>1er tour",
+    "prize": "20.000 €",
+    "text": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales.",
+    "textMobile": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales.",
+    "terms": [
+      {
+        "title": "El 1er tour se déroule du 24 août 2021 (0 h 00 UTC) au 30 août 2021 (23 h 00 UTC).<br><br>"
+      },
+      {
+        "title": "Jeux participants:<br/>Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II.<br><br>"
+      },
+      {
+        "title": "Les 150 premiers joueurs du classement se partageront un prix de 20 000 EUR.<br><br>"
+      },
+      {
+        "title": "Jouez à l’un des jeux participants. Chaque gain vous récompense avec un score basé sur le multiplicateur de gain (par exemple, si vous avez misé 1 EUR et gagné 10 EUR, vous serez récompensé par 10 points)."
+      },
+      {
+        "title": "Les points reçus sont cumulés pendant toute la durée du tournoi. Plus vous accumulez de points, plus vous êtes bien placé dans le classement."
+      },
+      {
+        "title": "La mise minimale de qualification par tour pour participer au tournoi est de 0,5 EUR."
+      }
+    ],
+    "metaInfo": {
+      "title": "➤ Le tournoi Demi God Tales avec une cagnotte impressionnante de 40.000 € – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
+      "description": "✭ Tentez votre chance dans le nouveau Demi God Tales de Spinomenal  ➔ Accomplissez des missions et gagnez des prix!"
+    }
   },
   "metaTags": {
     "promotions": {
       "title": "Promotions",
-      "description": "Zde naleznete informace o našem uvítacím bonusu pro nové hráče a další pravidelné promo akce v Ninecasino"
+      "description": "Vous pouvez découvrir ici notre bonus de bienvenue pour les nouveaux joueurs et d’autres promotions régulières de Ninecasino"
     },
     "daily-cashback": {
       "title": "Daily Cashback Up To 20%",
-      "description": "Denní vracení hotovosti až do 20 % – Pokud prohrajete, dáme vám možnost vrácení hotovosti s protočením x5."
+      "description": "Remise en espèces quotidienne jusqu’à 20 % – Si vous perdez, nous vous offrons une remise en espèces avec une mise de x5."
     },
     "about-us": {
       "title": "Information About Ninecasino",
-      "description": "Detailní informace o nás, našem softwaru a našich nabídkách pro kleienty ✓ Rychlý výběr ✓ Plně licencované"
+      "description": "Informations détaillées sur nous, nos logiciels et ce que nous offrons à nos clients ✓ Retrait rapide ✓ Entièrement autorisé"
     },
     "faq": {
       "title": "FAQ",
-      "description": "Časté dotazy – Zde naleznete odpovědi na vaše nejčastější otázky ohledně Ninecasion"
+      "description": "Foire aux questions – Vous trouverez ici les réponses aux questions les plus courantes à propos de Ninecasino"
     },
     "terms": {
       "title": "Terms & Conditions",
-      "description": "Tato stránka vám pomůže zůstat informovanými o podmínkách a ujednáních Ninecasino při interakci s našimi webovými stránkami"
+      "description": "Cette page vous aidera à rester informé des conditions générales de Ninecasino lorsque vous utilisez notre site"
     },
     "bonus-terms": {
       "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
-      "description": "Detailní informace o bonusech: Jak získat a vybírat bonusy v Ninecasino"
+      "description": "Informations détaillées sur les bonus: Comment recevoir et retirer des bonus sur Ninecasino?"
     },
     "responsible-gaming": {
       "title": "Responsible and Controlled Gambling At Ninecasino",
-      "description": "Zda si můžete přečíst o nástrojích pro odpovědné hraní, které u nás máte k dispozici pro kontrolu vašeho hraní"
+      "description": "Vous trouverez ici des informations sur les outils de jeu responsable à votre disposition pour mieux gérer votre expérience de jeu"
     },
     "risk-warnings": {
       "title": "Risk Warnings",
-      "description": "Informace o rizicích, která přijímáte účastí ve hrách v Ninecasino"
+      "description": "Informations sur les risques que vous encourez en participant à des jeux sur Ninecasino"
     },
     "privacy-policy": {
       "title": "Privacy Policy",
-      "description": "Zásady ochrany osobních údajů v Ninecasino: Vše, co potřebujete znát o bezpečnosti vašich finančních informací a osobního účtu"
+      "description": "Politique de confidentialité de Ninecasino: Tout ce que vous devez savoir sur la sécurité de vos informations financières et de votre compte personnel"
     },
     "bitcoins": {
       "title": "How To Play On Ninecasino With Bitcoins",
-      "description": "Detailní informace o tom, jak můžete hrát s Bitcoiny v Ninecasino"
+      "description": "Informations détaillées sur la façon dont vous pouvez jouer en utilisant Bitcoin à Ninecasino"
     },
     "aml-policy": {
       "title": "Incorporating Fraud and Anti Money Laundering Policy",
-      "description": "Detailní informace o tom, jak implementujeme zákony proti falšování a praní špinavých peněz"
-    }
-  },
-  "demigods": {
-    "title": "Demi God Tales Tournament<br/>Kolo I",
-    "prize": "€ 20 000",
-    "text": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales.",
-    "textMobile": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales.",
-    "terms": [
-      {
-        "title": "Kolo I proběhne od 24. srpna 2021 (0:00 UTC) do 30. srpna 2021 (23:00 UTC)."
-      },
-      {
-        "title": "Zapojené hry:<br/> Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II."
-      },
-      {
-        "title": "Prvních 150 hráčů ve výsledkové tabulce si rozdělí částku 20 000 eur."
-      },
-      {
-        "title": "Zahrajte si kteroukoliv ze zapojených her. S každou výhrou získáte skóre podle násobitele výhry (například, pokud jste vsadili 1 euro a vyhráli 10 eur, získáte 10 bodů)."
-      },
-      {
-        "title": "Získané body budou v průběhu turnaje sčítány. Čím více bodů získáte, tím výše se v tabulce umístíte."
-      },
-      {
-        "title": "Minimální sázka na jeden spin požadovaná pro účast v turnaji je 0,5 eur."
-      }
-    ],
-    "metaInfo": {
-      "title": "➤ Demi God Tales Turnaj s bohatým prize poolem 40 000 € – Hrajte své oblíbené hry a vyhrávejte skvělé ceny!",
-      "description": "✭ Zkuste štěstí v novém Demi God Tales od Spinomenal  ➔ Splňte misi – Vyhrajte ceny!"
+      "description": "Informations détaillées sur la manière dont nous traitons la fraude et la lutte contre le blanchiment d’argent"
     }
   }
 }

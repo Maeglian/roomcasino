@@ -150,7 +150,11 @@
     "card": "Card",
     "recent": "Last",
     "new": "New",
-    "buybonus": "Bonus Buy"
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "gameCategories": {
     "top": "Top games",
@@ -162,7 +166,11 @@
     "card": "Card games",
     "recent": "Last games",
     "new": "New games",
-    "buybonus": "Bonus Buy"
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "footer": {
     "text": {
@@ -177,7 +185,8 @@
     "search": "Search",
     "searchResults": "Search results",
     "nothingFound": "Sorry, nothing found",
-    "try": "Try searching for something else"
+    "try": "Try searching for something else",
+    "popular": "Popular searches"
   },
   "common": {
     "date": "Date",
@@ -1264,7 +1273,8 @@
         "Free spin activation duration is 3 days, free spin duration and free spin result duration are 7 days.",
         "To wager the bonus / free spin result, you need to make bets for an amount 40 times the bonus / free spin result amount.",
         "Maximum win resulting from first/second/third deposit free spins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
-        "Maximum win resulting from sign up freespins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC."
+        "Maximum win resulting from sign up freespins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "All Welcome Package bonuses are credited to the player's account automatically without any promo codes. If a player use any promo code for a Welcome package bonus, he won't get it."
       ],
       "title3": "weekend reload",
       "text3": [

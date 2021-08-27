@@ -24,7 +24,12 @@
           </template>
         </ul>
       </nav>
-      <GamePanel v-if="isGamePage" />
+      <NuxtLink class="MainNav-Search" :to="localePath('/search')">
+        <svg class="MainNav-SearchIcon">
+          <use xlink:href="@/assets/img/icons.svg#search"></use>
+        </svg>
+      </NuxtLink>
+      <GamePanel v-if="isGamePage" class="MainNav-GamePanel" />
       <AuthSection v-else class="MainNav-AuthSection" />
     </div>
     <transition v-if="width < 960" name="slide-right">
@@ -269,6 +274,7 @@ export default {
 
     @media (min-width: $screen-xs) {
       display: flex;
+      justify-content: flex-start;
       max-width: 1248px;
       margin-right: auto;
       margin-left: auto;
@@ -379,8 +385,39 @@ export default {
     }
   }
 
-  &-Authsection {
-    flex-grow: 1;
+  &-AuthSection {
+    margin-left: auto;
+
+    @media (min-width: $screen-l) {
+      margin-left: 30px;
+    }
+  }
+
+  &-Search {
+    display: none;
+
+    @media (min-width: $screen-xs) {
+      display: block;
+      margin-left: 20px;
+    }
+
+    @media (min-width: $screen-l) {
+      margin-left: 0;
+    }
+  }
+
+  &-SearchIcon {
+    width: 20px;
+    height: 20px;
+    fill: var(--color-main1);
+  }
+
+  &-GamePanel {
+    margin-left: auto;
+
+    @media (min-width: $screen-l) {
+      margin-left: 30px;
+    }
   }
 }
 

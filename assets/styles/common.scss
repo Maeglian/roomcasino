@@ -134,6 +134,14 @@ a {
 //}
 
 .Arrow {
+  cursor: pointer;
+
+  &--up {
+    transform: rotate(-180deg);
+  }
+}
+
+.ThickArrow {
   border: 6px solid transparent;
   border-top: 6px solid var(--color-text-main);
   cursor: pointer;
