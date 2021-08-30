@@ -330,20 +330,6 @@ export const TOURNAMENTS = {
     class: 'DropsWinsLive',
     slug: 'dropslive',
   },
-  'summer-desserts': {
-    url: 'summer-desserts',
-    name: 'Summer Desserts',
-    translates: 'sumdes',
-    class: 'SummerDesserts',
-    slug: 'sumdes',
-  },
-  'spirit-of-egypt': {
-    url: 'spirit-of-egypt',
-    name: 'Spirit of Egypt 60k',
-    translates: 'spiritOfEgypt',
-    class: 'SpiritOfEgypt',
-    slug: 'spirit',
-  },
   demigods: {
     url: 'demigods',
     name: 'Demi God Tales Tournament Round I',
