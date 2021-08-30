@@ -332,7 +332,7 @@ export const TOURNAMENTS = {
   },
   demigods: {
     url: 'demigods',
-    name: 'Demi God Tales Tournament Round I',
+    name: 'Demi God Tales Tournament Round II',
     translates: 'demigods',
     class: 'DemiGods',
     slug: 'demigods',

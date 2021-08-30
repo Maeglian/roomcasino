@@ -464,9 +464,9 @@
       "text": "Je čas na Weekly Derby a naše ceny vás donutí trochu trošku supět, abyste první dorazili na místo!<br/><br/>Turnaj probíhá 7 dnů od čtvrtka 00:01 UTC do středy 23:59 UTC. Chopte se své příležitosti rozdělit si cenný prize pool ve výši 2500 eur společně se 40 dalšími jezdci.<br/><br/>Stačí minimální sázka 0,5 eur a být připravený na soutěž.<br/><br/>Hodně štěstí a pojďme odstartovat Derby! "
     },
     "demigods": {
-      "title": "Demi God Tales <br/>Tournament<br/> Kolo I",
+      "title": "Demi Gods Tales Tournament",
       "upTo": "€ 20 000",
-      "name": "Staňte se hrdinou v Demi God Tales",
+      "name": "Vyprávějte příběh o Demi God Tales",
       "text": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales."
     },
     "twitterGiveaway": {
@@ -1468,25 +1468,25 @@
     }
   },
   "demigods": {
-    "title": "Demi God Tales Tournament<br/>Kolo I",
+    "title": "Demi Gods Tales Tournament<br/>Kolo II",
     "prize": "€ 20 000",
     "text": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales.",
     "textMobile": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales.",
     "terms": [
       {
-        "title": "Kolo I proběhne od 24. srpna 2021 (0:00 UTC) do 30. srpna 2021 (23:00 UTC)."
+        "title": "Kolo II proběhne od 30. srpna 2021 (0:00 UTC) do 30. září 2021 (23:00 UTC)"
       },
       {
-        "title": "Zapojené hry:<br/> Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II."
+        "title": "Zapojené hry: <br/>Demi Gods III, Demi Gods III – 15 Lines, Book Of Demi Gods III."
       },
       {
         "title": "Prvních 150 hráčů ve výsledkové tabulce si rozdělí částku 20 000 eur."
       },
       {
-        "title": "Zahrajte si kteroukoliv ze zapojených her. S každou výhrou získáte skóre podle násobitele výhry (například, pokud jste vsadili 1 euro a vyhráli 10 eur, získáte 10 bodů)."
+        "title": "Zahrajte si kteroukoliv ze zapojených her. Pokaždé, když vám na některém z válců přistane symbol „Odin“, získáte 1 bod (takže například, když budete mít na konci spinu na válcích 3 symboly Odina, získáte 3 body)."
       },
       {
-        "title": "Získané body budou v průběhu turnaje sčítány. Čím více bodů získáte, tím výše se v tabulce umístíte."
+        "title": "Body se v průběhu turnaje zaznamenávají. Čím více bodů získáte, tím výše se v tabulce umístíte."
       },
       {
         "title": "Minimální sázka na jeden spin požadovaná pro účast v turnaji je 0,5 eur."
