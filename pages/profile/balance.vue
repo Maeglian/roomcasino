@@ -95,13 +95,17 @@
         </div>
         <div
           class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns"
-          :class="{ 'BalancePage-Btns--gr': $i18n.locale === 'gr' }"
+          :class="[
+            { 'BalancePage-Btns--col': $i18n.locale === 'gr' },
+            { 'BalancePage-Btns--col': $i18n.locale === 'pl' },
+          ]"
         >
           <button
             class="Btn Btn--color CabinetPage-Btn BalancePage-Btn"
             :class="[
               { 'BalancePage-Btn--de': $i18n.locale === 'de' },
-              { 'BalancePage-Btn--gr': $i18n.locale === 'gr' },
+              { 'BalancePage-Btn--margin': $i18n.locale === 'gr' },
+              { 'BalancePage-Btn--margin': $i18n.locale === 'pl' },
             ]"
             @click="onClickDeposit(acc.currency)"
           >
@@ -111,7 +115,8 @@
             class="Btn Btn--outline2 CabinetPage-Btn BalancePage-Btn"
             :class="[
               { 'BalancePage-Btn--de': $i18n.locale === 'de' },
-              { 'BalancePage-Btn--gr': $i18n.locale === 'gr' },
+              { 'BalancePage-Btn--margin': $i18n.locale === 'gr' },
+              { 'BalancePage-Btn--margin': $i18n.locale === 'pl' },
             ]"
             @click="onClickCashout(acc.currency)"
           >
@@ -254,7 +259,7 @@ export default {
       padding-left: 2px !important;
     }
 
-    &--gr {
+    &--margin {
       &:first-child {
         margin-right: 0;
         margin-bottom: 4px;
@@ -282,7 +287,7 @@ export default {
   &-Btns {
     white-space: nowrap;
 
-    &--gr {
+    &--col {
       white-space: normal;
       @media (min-width: $screen-m) {
         white-space: nowrap;

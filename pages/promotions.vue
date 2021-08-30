@@ -63,7 +63,7 @@
             <a
               v-else-if="item.linkTo"
               :href="item.url"
-              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
+              class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
             >
               {{ $t('twitter.twitterBtn') }}
             </a>
@@ -376,8 +376,8 @@ export default {
   }
 
   &-Btn {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 4px;
+    padding-left: 4px;
   }
 
   &-Btn--small {
