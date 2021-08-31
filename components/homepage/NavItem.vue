@@ -79,8 +79,11 @@ export default {
 .Nav {
   &-Item {
     position: relative;
-    white-space: nowrap;
     cursor: pointer;
+
+    @media (min-width: $screen-xs) {
+      white-space: nowrap;
+    }
   }
 
   &-Item--gr {
