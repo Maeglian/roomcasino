@@ -7,11 +7,12 @@
       <h1 v-if="!isFullScreen" class="Title Title--type-h2 GamePage-Title">
         {{ game.gameName }}
       </h1>
-      <div v-if="gameHtml" v-append="gameHtml" class="GamePage-HtmlContainer"></div>
       <iframe
-        v-if="!gameHtml"
+        v-show="!gameHtml || showGame"
+        ref="iframe"
         :key="activeAccount.balance"
-        :src="gameUrl"
+        :src="gameHtml ? null : gameUrl"
+        :srcDoc="gameHtml ? gameHtml : null"
         class="GamePage-Iframe"
         :width="getIframeWidth.width"
         :height="getIframeWidth.height"
@@ -48,6 +49,7 @@ export default {
   data: () => ({
     clockIcon: require('@/assets/img/clock.svg'),
     isFullScreen: false,
+    showGame: false,
   }),
   head() {
     if (this.game) {
@@ -95,6 +97,18 @@ export default {
     },
     defaultGames() {
       this.onEnterPage();
+    },
+    gameHtml(val) {
+      if (val) {
+        const { iframe } = this.$refs;
+        iframe.addEventListener('load', () => {
+          this.showGame = true;
+          const style = document.createElement('style');
+          style.textContent = `html{width:100%;height:100%}body{width:100%;height:100%;margin:0;padding:0}body>div{width:100%;height:100%}iframe{width:100%;height:100%;border:none;border-radius:12px}`;
+
+          iframe.contentDocument.head.appendChild(style);
+        });
+      }
     },
   },
   mounted() {
@@ -163,27 +177,7 @@ export default {
     display: block;
     margin: 20px auto;
     border: none;
-    border-radius: 12px;
-
-    html {
-      width: 100%;
-      height: 100%;
-    }
-
-    body {
-      width: 100%;
-      height: 100%;
-    }
-
-    #game_wrapper {
-      width: 100%;
-      height: 100%;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-    }
+    border-radius: var(--border-radius-12);
   }
 }
 </style>
