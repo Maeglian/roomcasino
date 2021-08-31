@@ -64,11 +64,11 @@ export default {
     }
   },
   computed: {
-    ...mapState(['platform']),
+    ...mapState(['platform', 'width']),
     ...mapState('games', ['gameUrl', 'gameHtml', 'defaultGames']),
     ...mapGetters(['activeAccount']),
     getIframeWidth() {
-      return this.isFullScreen
+      return this.isFullScreen || this.width < 768
         ? {
             width: '100%',
             height: '100%',
@@ -112,6 +112,15 @@ export default {
     },
   },
   mounted() {
+    if (this.html) {
+      window.addEventListener(
+        'orientationchange',
+        function() {
+          window.location.reload();
+        },
+        false,
+      );
+    }
     this.onEnterPage();
   },
   methods: {
@@ -169,7 +178,7 @@ export default {
   }
 
   &-Title {
-    margin-bottom: auto;
+    margin: 0 16px auto;
   }
 
   &-Iframe {
