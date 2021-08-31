@@ -18,7 +18,11 @@
       @click="focusMenu('support', 'effect')"
     >
       <div class="MobileNav-IconWrapper">
-        <svg class="MobileNav-Icon MobileNav-Icon--stroke MobileNav-Icon--fill" width="22" height="22">
+        <svg
+          class="MobileNav-Icon MobileNav-Icon--stroke MobileNav-Icon--fill"
+          width="22"
+          height="22"
+        >
           <use xlink:href="@/assets/img/icons.svg#support"></use>
         </svg>
       </div>
@@ -41,9 +45,10 @@
       <div class="MobileNav-Name">{{ $t('pages.lobby') }}</div>
     </NuxtLink>
     <NuxtLink
-      @click.native="focusMenu('search', 'effect')"
+      ref="search"
       :class="['MobileNav-Item', { 'route-search': menuItems.search }]"
       :to="localePath('/search')"
+      @click.native="focusMenu('search', 'effect')"
     >
       <div class="MobileNav-IconWrapper">
         <svg class="MobileNav-Icon MobileNav-Icon--fill" width="17" height="16" fill="#F3B233">
@@ -53,9 +58,9 @@
       <div class="MobileNav-Name">{{ $t('pages.search') }}</div>
     </NuxtLink>
     <button
-            :class="['MobileNav-Item MobileNav-Item--burger', { 'route-toggle': menuItems.toggle }]"
-            @click="focusMenu('toggle', 'effect')"
-            >
+      :class="['MobileNav-Item MobileNav-Item--burger', { 'route-toggle': menuItems.toggle }]"
+      @click="focusMenu('toggle', 'effect')"
+    >
       <div class="MobileNav-IconWrapper">
         <svg class="MobileNav-Icon Toggle" width="25" height="20">
           <use xlink:href="@/assets/img/icons.svg#toggle"></use>
@@ -80,7 +85,7 @@ export default {
         home: false,
         search: false,
         support: false,
-        toggle: false
+        toggle: false,
       },
     };
   },
@@ -108,7 +113,7 @@ export default {
       this.menuItems[route] = true;
       setTimeout(() => {
         this.menuItems[route] = false;
-      }, 2000);
+      }, 120);
       if (route === 'support') {
         this.onClickSupport();
       }
@@ -137,6 +142,28 @@ export default {
 
   @media (min-width: $screen-xs) {
     display: none;
+  }
+
+  .nuxt-link-exact-active.MobileNav-Item {
+    .MobileNav-Name {
+      color: var(--color-main1);
+    }
+
+    .MobileNav-IconWrapper {
+      .MobileNav-Icon {
+        &--fill {
+          fill: var(--color-main1);
+        }
+
+        &--stroke {
+          stroke: var(--color-main1);
+        }
+      }
+    }
+
+    &-Name {
+      color: var(--color-main1);
+    }
   }
 
   &-Item {
@@ -219,6 +246,10 @@ export default {
     &--fill {
       fill: var(--color-text-main);
     }
+
+    &--stroke {
+      stroke: var(--color-text-main);
+    }
   }
 }
 
@@ -228,5 +259,9 @@ export default {
 .route-toggle,
 .route-support {
   @include touch-btn-1();
+}
+
+.toggle-btn-active {
+  border: 1px solid var(--color-main1);
 }
 </style>
