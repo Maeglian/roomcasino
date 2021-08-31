@@ -11,7 +11,7 @@
     "deposit": "Deposit",
     "depositNow": "Deposit now",
     "loadMoreGames": "Load more games",
-    "playForFun": "Play for fun",
+    "playForFun": "Demo",
     "playNow": "Play now",
     "showMore": "Show more",
     "saveChanges": "Save changes",
@@ -72,10 +72,10 @@
   "notifications": {
     "cancelBonusError": "Error on cancelling bonus",
     "cancelBonusSuccess": "Your bonus was cancelled",
-    "cancelFreeSpinError": "Error on cancelling free spin",
-    "cancelFreeSpinSuccess": "Your free spin was cancelled",
-    "activateFreeSpinError": "Error on activating free spin",
-    "activateFreeSpinSuccess": "Your free spin was activated"
+    "cancelFreeSpinError": "Error on cancelling free spins",
+    "cancelFreeSpinSuccess": "Your free spins were cancelled",
+    "activateFreeSpinError": "Error on activating free spins",
+    "activateFreeSpinSuccess": "Your free spins were activated"
   },
   "auth": {
     "loginTitle": "Welcome back",
@@ -139,6 +139,22 @@
     "dailyCashback": "Daily cashback",
     "search": "Search"
   },
+  "gameCategoriesTabs": {
+    "top": "Top",
+    "all": "All",
+    "live": "Live",
+    "slots": "Slots",
+    "roulette": "Roulette",
+    "table": "Table",
+    "card": "Card",
+    "recent": "Last",
+    "new": "New",
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
+  },
   "gameCategories": {
     "top": "Top games",
     "all": "All games",
@@ -149,11 +165,15 @@
     "card": "Card games",
     "recent": "Last games",
     "new": "New games",
-    "buybonus": "Bonus Buy"
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "footer": {
     "text": {
-      "p1": "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
+      "p1": "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com by your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
       "p2": "Copyright © 2020 www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorized to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
       "p3": "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
     }
@@ -164,7 +184,8 @@
     "search": "Search",
     "searchResults": "Search results",
     "nothingFound": "Sorry, nothing found",
-    "try": "Try searching for something else"
+    "try": "Try searching for something else",
+    "popular": "Popular searches"
   },
   "common": {
     "date": "Date",
@@ -189,7 +210,7 @@
     "seconds": "Seconds",
     "week": "Week",
     "name": "Name",
-    "points":  "Points",
+    "points": "Points",
     "prize": "Prize",
     "prizePool": "Prize pool",
     "freeSpins": "Free Spins",
@@ -438,7 +459,7 @@
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
-      "text": "Welcome to the new Stage 7 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 25-28 of Weekly Tournaments and Daily Prize Drops with some new games!"
+      "text": "Welcome to the new Stage 8 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! <br><br>They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 29-32 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!"
     },
     "dropsWinsLive": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
@@ -449,7 +470,35 @@
       "upTo": "prize pool €2,500",
       "name": "Saddle up for the Weekly Derby",
       "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
+    },
+    "sumdes": {
+      "title": "Summer Desserts<br/> Tournament",
+      "upTo": "€100,000",
+      "name": "Hunt down 100k with Summer Desserts",
+      "text": "The summer is in full swing, so what’s better than a Tournament Series from Booongo! Hurry up to enjoy the Summer Desserts Network Tournament Series at NineCasino! <br/>Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC).<br/><br/>nWhat are you waiting for? Don’t miss out on sharing the huge prize pool from Booongo! Play, enjoy, and win!"
+    },
+    "demigods": {
+      "title": "Demi God Tales <br>Tournament",
+      "upTo": "€20,000",
+      "name": "Become the hero of the Demi God Tales",
+      "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament."
+    },
+    "spiritOfEgypt": {
+      "upTo": "The prize pool is €60,000.",
+      "name": "Spirit of Egypt 60k",
+      "text": "Let the Spirit of Egypt guide you to 60k<br/><br/>New adventures are on the horizon and Playson is waiting with the Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021.<br/><br/>The total Prize pool is a whopping €60,000, and if you reach the peak of the pyramid the top prize is €10,000! Search for tombs, mummies and prizes with the Spirit of Egypt 60k!"
+    },
+    "twitterGiveaway": {
+      "title": "twitter<br/> Giveaway",
+      "upTo": "600 Free Spins",
+      "name": "600 Free Spins Giveaway on Twitter",
+      "text": "We’ve prepared a giveaway for you on our official {twitterAccount}.{br}{br} Follow us, like this {tweet}, and wait for the results on August 26th. We will randomly choose 3 winners and each of them will receive 200 Free Spins in the Wolf Gold slot.{br}{br}Good Luck!"
     }
+  },
+  "twitter": {
+    "twitterBtn": "Twitter",
+    "twitterAccount": "Twitter account",
+    "tweet": "tweet"
   },
   "tournaments": {
     "games": "Games in this tournament",
@@ -461,18 +510,18 @@
     "previousRound": "Previous round"
   },
   "dropsWinsSlots": {
-    "title": "Upgraded Drops & Wins Slots edition",
+    "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
     "prize": "€4,000,000",
-    "text": "Welcome to the new Stage 7 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 25-28 of Weekly Tournaments and Daily Prize Drops with some new games!",
-    "textMobile": "Welcome to the new Stage 7 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000!",
+    "text": "Welcome to the new Stage 8 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. To play with a multiplier is more fun.  Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 29-32 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!",
+    "textMobile": "Welcome to the new Stage 8 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000!",
     "terms": [
       {
-        "title": "Stage 7 runs between",
-        "text": "● Week 25: 28th July 2021 19:01 CEST – 4th August 2021 18:59 CEST<br/>● Week 26: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Week 27: 11th August 2021 19:01 CEST – 18th August 2021 18:59 CEST<br/>● Week 28: 18th August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
+        "title": "Stage 8 runs between",
+        "text": "● Week 29: 25th August 2021 19:01 CEST – 1st September 2021 18:59 CEST<br/>● Week 30: 1st September 2021 19:01 CEST – 8th September 2021 18:59 CEST<br/>● Week 31: 8th September 2021 19:01 CEST – 15th September 2021 18:59 CEST<br/>● Week 32: 15th September 2021 19:01 CEST – 22nd September 2021 18:59 CEST"
       },
       {
         "title": "Games in this tournament",
-        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Release the Kraken™, Empty the Bank™, Lucky Grace And Charm™, Book of Vikings™."
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House ™, The Dog House Megaways™, Chilli Heat ™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Book of Vikings™, Chicken Drop™, Fruit Party 2™, Rise of Giza PowerNudge™, Juicy Fruits™."
       },
       {
         "title": "Drops & Wins includes",
@@ -480,19 +529,23 @@
       },
       {
         "title": "How to win",
-        "text": "● Minimum bet requirement of €0.50.<br/>● In order to participate, players need to play with real money and make qualifying bets on any of the participating games.<br/>● In the Weekly tournaments - the highest single spin win amount adjusted for bet amount.<br/>● In the Daily tournaments - any real money spin in the participating games can trigger a random prize<br/>● There is no additional cost for players to participate."
+        "text": "● A player must place a real money bet on any of the participating games and must get at least one (1) in-game win to qualify for the Weekly Tournament.<br/>● No minimum real money bet is required for players to be eligible to participate in the Daily Prize\u2028Drops (Prize Multiplier Weeks)."
+      },
+      {
+        "title": "Additionally",
+        "text": "● Players participating during multiplier weeks may win prizes in the form of a multiplier r of the winning player’s bet amount as set out in the Weekly Tournament (Prize Multiplier Weeks) Prize Table – and the Daily Prize Drop (Prize Multiplier Weeks) Prize Table further below (hereinafter the “Prize Multiplier Weeks”).<br/>● If the winning spin exceeds ten Euros/British Pounds Sterling (€/£ 10), the prize will be paid out based on a bet of ten Euros/British Pounds Sterling (€/£ 10) or the equivalent amount in the Available Currency (as defined further below) X multiplier received.<br/>● The leaderboard is ranked in accordance with the score, which score is based on the highest single spin win amount on any participating game adjusted to the amount of the bet.<br/>● In the event of two (2) or more players finishing a Weekly Tournament on the same leaderboard position, the player who has achieved the score first will receive the higher prize."
       }
     ]
   },
   "dropsWinsLive": {
-    "title": "Drops & Wins for Live Casino",
-    "prize": "€3,000,000",
-    "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!",
-    "textMobile": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!",
+    "title": "DROPS <span class=\"Colored\">&</span> WINS FOR LIVE CASINO",
+    "prize": "3.000.000 €",
+    "text": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!<br/><br/>Magst du Live-Spiele? Diese Live-Ausgabe wird dir gefallen. Mach mit bei wöchentlichen Turnieren – Roulette, Blackjack, Mega Wheel, Baccarat!",
+    "textMobile": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!",
     "terms": [
       {
-        "title": "Stage 3 runs between",
-        "text": "● Week 9: 28th July 2021 19:01 CEST – 4th August 2021 18:59 CEST<br/>● Week 10: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Week 11: 11th August 2021 19:01 CEST – 18th August 2021 18:59 CEST<br/>● Week 12: 18th August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
+        "title": "Laufzeit der Phase 4",
+        "text": "● Woche 13: 28th Juli 2021 09:01 CEST – 4th August 2021 18:59 CEST<br/>● Woche 14: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Woche 15: 11th August 2021 19:01 CEST – 18st August 2021 18:59 CEST<br/>● Woche 16: 18st August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
       },
       {
         "title": "Participating Games/Tables",
@@ -637,7 +690,7 @@
           "We reserve the right to carry out verification procedures for each client at first withdrawal. Such verifications may for example include copies of a player’s passport, national Identity Card, copies of a player’s utility bills, and/or copies of the debit/credit cards used to deposit.",
           "It's the responsibility of the player to ensure that all documents as a part of the KYC process are genuine. Faked or fraudulent documents provided may result in a confiscation of deposits and potential winnings of the player.",
           "In order to make a withdrawal, a player must play through active deposited amounts at least once prior to withdrawal. This procedure is in line with anti money laundering practices. The player is fully responsible for paying all fees and taxes applied to their winnings according to the laws of the jurisdiction of the player’s residence.",
-          "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country.. For Visa, the following countries are not supported: USA, New Zealand, Australia, Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
+          "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country. For Visa, the following countries are not supported: Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
           "In the unlikely event of a player depositing crypto currency funds to another crypto currency network address (such as but not limited to: sending BTC to a BCH address). Ninecasino will not attempt to recover the amount unless it exceeds $5000. In such cases, a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to pursue the recovery, however it's not a guarantee to get the funds recovered.",
           "The internal operating currency of the Website is Euro. Due to this fact, in case you transact in other currencies, the amount deducted from your credit card may be insignificantly higher than displayed at the time of transaction due to currency conversions on the side of your bank and/or the Casino's payment processing system.",
           "All Bank Transfer payouts are processed within five (5) banking days. Please mind that you will not be able to request a Bank Transfer for USD payouts.",
@@ -786,7 +839,7 @@
       },
       "ourSoftware": {
         "title": "Our software",
-        "text": "The casino uses products that have been made by the best developers of casino software and games in the industry. Amatic, BetSoft, Endorphina, Ezugi, Microgaming, and SoftSwiss. Every gambler will be familiar with them firsthand and trust everything that these names stand for. We trust them too. We do not want our players to feel like experimental lab mice in an abortive experiment, so we offer a reliable solution that we would be delighted to use  ourselves as gamblers."
+        "text": "The casino uses products that have been made by the best developers of casino software and games in the industry. Amatic, BetSoft, Endorphina, Microgaming, and Bgaming. Every gambler will be familiar with them firsthand and trust everything that these names stand for. We trust them too. We do not want our players to feel like experimental lab mice in an abortive experiment, so we offer a reliable solution that we would be delighted to use  ourselves as gamblers."
       },
       "offers": {
         "title": "What do we offer",
@@ -970,7 +1023,7 @@
           "Gaming environments are often targeted by those wishing to launder money. The speed of       transactions and use of multiple payment processing options make gaming businesses especially       vulnerable to this activity.",
           "As a result, many of the initial trading and procedural decisions of the director are either       directly aimed at combatting this threat or protections are enhanced as a bi-product of the       overall commercial and trading approach/strategy taken by the business.",
           "ALL staff will be given training in Money Laundering indicators such as (but not limited to):"
-          ],
+        ],
         "list": [
           "Unusual Betting Patterns",
           "Suspicious deposit and withdrawal patterns (size and frequency)",
@@ -979,7 +1032,7 @@
           "Account linkage/multiple accounting"
         ],
         "text2": [
-          "All instances of suspected Money Laundering attempts must be reported to the MLRO but that       suspicion must not be conveyed to the customer and further actions must await consents. The       MLRO is then responsible for liaising with, submitting Suspicious Activity Reports and seeking       consents from the NCA/UKFIU where and when appropriate. He will also ensure that appropriate       registers are kept for all related reporting.",
+          "All instances of suspected Money Laundering attempts must be reported to the MLRO but that suspicion must not be conveyed to the customer and further actions must await consents. The MLRO is then responsible for liaising with, submitting Suspicious Activity Reports and seeking consents through the goAML system of the Financial Intelligence Unit (FIU) Curaçao where and when appropriate. He will also ensure that appropriate registers are kept for all related reporting.",
           "Company will implement a FULL ‘Know Your Customer’ policy. This will assist in tackling not       just Money Laundering threats but other fraud threats generally. Customers will be advised at       registration and generally on the supporting non-transactional website that Company will       utilise online verification tools and that in instances where we are not able to satisfy       criteria, ID and address verification documents will be requested.",
           "Other key decisions that will enhance these protections include setting period       thresholds/velocities for withdrawals to include at outset the requirement for checks and       director approval prior to processing card withdrawals and bank transfers of over 3000 EUR in       one single transaction, a maximum of 3 (three) daily withdrawals and an overall maximum daily       withdrawal of 9000 EUR.",
           "Industry accepted standards that will always lead to Enhanced Due Diligence (the requirement       for further proof of ID and Address) will be withdrawals in excess of 3000 EUR in a single       24hour period and 9000 EUR in a 90-day period. Simple online verification will NOT be       acceptable in these circumstances.",
@@ -1176,7 +1229,7 @@
     },
     "riskWarnings": {
       "title": "Risk Warnings",
-      "text":"You understand that by participating in the games, you risk losing the money deposited to your       account on www.ninecasino.com; In some jurisdictions, online gambling may be illegal. You       understand and agree that www.ninecasino.com is not able to provide you legal advice or       guarantees regarding the legality of your use of the services of the Website. The Company does       not affirm that the services of the Website comply with legal requirements in your       jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at       your sole discretion, as well, assuming the risk of liability, making a decision as to whether       the use of the services of the Website is legal in accordance with the current legislation of       your jurisdiction.You log in the Website and participate in the games at your own risk."
+      "text":"You understand that by participating in the games, you risk losing the money deposited to your       account on www.ninecasino.com; In some jurisdictions, online gambling may be illegal. You       understand and agree that www.ninecasino.com is not able to provide you legal advice or       guarantees regarding the legality of your use of the services of the Website. The Company does       not affirm that the services of the Website comply with legal requirements in your       jurisdiction. You use the services provided by www.ninecasino.com by your own choice and at       your sole discretion, as well, assuming the risk of liability, making a decision as to whether       the use of the services of the Website is legal in accordance with the current legislation of       your jurisdiction.You log in the Website and participate in the games at your own risk."
     },
     "bonusTermsPage": {
       "title1": "bonus terms & conditions",
@@ -1207,8 +1260,6 @@
         "When gambling with bonus funds, all the winnings requested for withdrawal pass a check prior to payment processing. The Casino reserves the right to request the user to confirm the personal data and payment method data as a result of the check.",
         "The Casino has the right to revoke any bonuses and winnings, as well as to confiscate all the money in the account if it has been obtained dishonestly or in violation of these rules.",
         "The Casino reserves the right to amend and supplement these terms at any time.",
-        "Bonus is automatically cancelled upon active balance reaching amount of 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC, or less.*",
-        "*This term only applies balance tied to bonus, i.e. deposit + bonus or only bonus in case of no deposit bonus, and doesn't apply funds on player's balance gained from other deposits or bonuses.",
         "The use of bonus funds purely to progress through the bonus stages is prohibited. For example when bonus or cash funds are used purely to progress through the bonus stages (e.g. collecting 9 out of 10 coins to reach that bonus feature) and then final stages (e.g. playing to collect the final coin to reach 10 out of 10 coins to reach the bonus feature) completed with cash bets when bonus funds have been forfeited, lost or wagering met and converted to cash. All the winnings gained during that play may be considered void.",
         "All bonuses are accrued at UTC time."
       ],
@@ -1221,7 +1272,8 @@
         "Free spin activation duration is 3 days, free spin duration and free spin result duration are 7 days.",
         "To wager the bonus / free spin result, you need to make bets for an amount 40 times the bonus / free spin result amount.",
         "Maximum win resulting from first/second/third deposit free spins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
-        "Maximum win resulting from sign up freespins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC."
+        "Maximum win resulting from sign up freespins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "All Welcome Package bonuses are credited to the player's account automatically without any promo codes. If a player use any promo code for a Welcome package bonus, he won't get it."
       ],
       "title3": "weekend reload",
       "text3": [
@@ -1359,5 +1411,169 @@
         "text": "For Free Spins, wagering is x5."
       }
     ]
+  },
+  "tesla_lottery": {
+    "metaTitle": "➤ Tesla Lottery With Tesla Model 3 - Play Your Favorite Games And Win Great Prize - Tesla Model 3!",
+    "metaDescription": "✭ Try Your Luck In New Tesla Lottery by NineCasino ➔ Take a ticket for a Tesla!",
+    "title": "The Tesla<br/> Lottery",
+    "name": "The Tesla Lottery",
+    "prize": "Tesla Model 3",
+    "text": "Join the Tesla Lottery at NineCasino between August 18th, 2021 and September 23rd, 2021 and get a chance to become the happy owner of a Tesla Model 3! <br/><br/>On the 24th of September we will announce the Tesla winner!",
+    "terms": [
+      {
+        "text": "The lottery runs between August 18th, 2021 and September 23rd, 2021."
+      },
+      {
+        "text": "A minimum deposit per ticket is €50. Each ticket can win."
+      },
+      {
+        "text": "The number of lottery tickets per player is not limited."
+      },
+      {
+        "text": "The more tickets you collect at the time of the draw, the higher your chances of winning a prize are."
+      },
+      {
+        "text": "At the time of the draw, the game account must not be blocked."
+      },
+      {
+        "text": "The winner of the lottery will be announced on the 24th of September."
+      }
+    ]
+  },
+  "sumdes": {
+    "title": "Summer Desserts <br>Tournament",
+    "prize": "€100,000",
+    "text": "The summer is in full swing, so what’s better than a Tournament Series from Booongo! Hurry up to enjoy the Summer Desserts Network Tournament Series at NineCasino! Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC). Don’t miss out on sharing the huge prize pool from Booongo!",
+    "textMobile": "The summer is in full swing, so what’s better than a Tournament Series from Booongo! Hurry up to enjoy the Summer Desserts Network Tournament Series at NineCasino! Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC). Don’t miss out on sharing the huge prize pool from Booongo!",
+    "terms": [
+      {
+        "title": "Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC)."
+      },
+      {
+        "title": "It’s a combo of regular tournaments with mixed terms (the duration of each tournament in the series can vary); the Scoring tournament (where players will get points for each win spin) and also a 2nd (EXTRA) Leaderboard reflecting the player’s overall progress."
+      },
+      {
+        "title": "Challenge for the Grand Total Prize Pool of €100,000 (or player’s currency equivalent):<br>- €80,000 in total for 10 regular tournaments (€8,000 EUR for each one); <br>- €20,000 for the Series Leaderboard ( prizes are paid out simultaneously with a closing Regular Tournament of the Series on 28.08.2021 23:00 UTC)."
+      },
+      {
+        "title": "Battle it out with these breathtaking games:<br>3 Coins Egypt; Pearl Diver; Wukong; Sun of Egypt 2; 15 Dragon Pearls; Hit the Gold!; 3 Coins; Magic Apple; Sun of Egypt; Dragon Pearls; Scarab Temple; Wolf Saga; Aztec Sun; Aztec Pyramid; Scarab Boost."
+      },
+      {
+        "title": "Make a minimum bet of €0,5"
+      },
+      {
+        "title": "The minimum number of spins is 100."
+      },
+      {
+        "title": "Players will get points for each win spin - €1=1 Point. Players will get 1 Point for each х1 multiplier in win Spin."
+      }
+    ],
+    "metaInfo": {
+      "title": "➤ Summer Desserts  Tournament With Solid Prize Pool €100,000 - Play Your Favorite Games And Win Great Prizes!",
+      "description": "✭ Try Your Luck In New Summer Desserts  by Booongo ➔ Complete Missions - Win Prizes!"
+    }
+  },
+  "spiritOfEgypt": {
+    "title": "Spirit of Egypt 60k",
+    "prize": "€60,000",
+    "text": "New adventures are on the horizon and Playson is waiting with the Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021.<br/><br/>The total Prize pool is a whopping €60,000, and if you reach the peak of the pyramid the top prize is €10,000! Make your own luck with the Spirit of Egypt 60k!",
+    "textMobile": "New adventures are on the horizon and Playson is waiting with the Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021.<br/><br/>The total Prize pool is a whopping €60,000, and if you reach the peak of the pyramid the top prize is €10,000! Make your own luck with the Spirit of Egypt 60k!",
+    "metaInfo": {
+      "title": "➤ Spirit of Egypt 60k Tournament With Solid Prize Pool €60,000 - Play Your Favorite Games And Win Great Prizes!",
+      "description": "✭ Try Your Luck In New Spirit of Egypt 60k by Playson ➔ Each Won Bet Brings You Points!"
+    },
+    "terms": [
+      {
+        "title": "The Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021."
+      },
+      {
+        "title": "The total Prize pool is €60,000."
+      },
+      {
+        "title": "The 20 participating games: <br/>● 5 Fortunator <br/>● 9 Happy Pharaohs <br/>● Book of Gold 2: Double HitTM <br/>● Book of Gold: Multichance <br/>● Buffalo Power MegawaysTM <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Divine Dragon: Hold and Win <br/>● Eagle Power: Hold and Win <br/>● Hot Burning Wins <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra <br/>● Legend of Cleopatra MegawaysTM <br/>● Rich Diamonds: Hold and Win <br/>● Rise of Egypt Deluxe <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Spirit of Egypt: Hold and Win <br/>● Wolf Power: Hold and Win."
+      },
+      {
+        "title": "No minimum bet is required to qualify."
+      },
+      {
+        "title": "Points are calculated round-by-round, with each 1 EUR (or currency equivalent) wagered equaling 100 points."
+      }
+    ]
+  },
+  "demigods": {
+    "title": "Demi God Tales Tournament<br>Round I",
+    "prize": "€20,000",
+    "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
+    "textMobile": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
+    "terms": [
+      {
+        "title": "Round I runs between August 24th 00:00 GMT and August 30th 23:59 GMT.<br><br>"
+      },
+      {
+        "title": "Participating games: <br>Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II.<br><br>"
+      },
+      {
+        "title": "The 150 first players on the leaderboard will share a prize of 20,000 EUR.<br><br>"
+      },
+      {
+        "title": "Play any of the participating games. Each win rewards you with a score based on the win multiplier (for example, if you waged 1 EUR and won 10 EUR, you will be rewarded with 10 points)."
+      },
+      {
+        "title": "Points received are summed up throughout the tournament period. The more points you collect, the higher your position on the leaderboard."
+      },
+      {
+        "title": "Minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
+      }
+    ],
+    "metaInfo": {
+      "title": "➤ Demi God Tales Tournament With Solid Prize Pool €40,000 - Play Your Favorite Games And Win Great Prizes!",
+      "description": "✭ Try Your Luck In New Demi God Tales by Spinomenal  ➔ Complete Missions - Win Prizes!"
+    }
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Here You Can Find Out About Our Welcome Bonus For New Players And Other Regular Promotions At Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Daily Cashback Up To 20% - If You Lose We Give You Cashback with x5 wagering."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Detailed Information About Us, Our Software, And What We Offer Our Clients ✓ Fast withdrawal ✓ Fully licensed"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Frequently Asked Questions - Here You Can Find Answers To The Most Popular Questions About Ninecasino"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "This Page Will Help You To Stay Informed About Ninecasino's Terms And Conditions While Interacting With Our Site"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Detailed Information About Bonuses: How To Receive And Withdraw Bonuses At Ninecasino"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Here You Can Find About Responsible Gaming Tools At Your Disposal To Control Your Gaming Experience"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Information About The Risks You Take Paticipating In Games At Ninecasino"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Privacy Policy Of Ninecasino: Everything You Need To Know About The Safety Of Your Financial Information And Personal Account"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Detailed Information How You Can Play With Bitcoin at Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Detailed Information About How We Handle Incorporating Fraud and Anti Money Laundering"
+    }
   }
 }

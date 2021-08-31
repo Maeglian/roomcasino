@@ -87,11 +87,8 @@ export const mutations = {
   setPageRowsCount: (state, payload) => {
     state.pageRowsCount = payload;
   },
-  setPageDataIsLoading: state => {
-    state.pageDataIsLoading = true;
-  },
-  setPageDataIsLoaded: state => {
-    state.pageDataIsLoading = false;
+  setPageDataIsLoading: (state, payload) => {
+    state.pageDataIsLoading = payload;
   },
   setTransactionHistoryList: (state, payload) => {
     state.transactionHistoryList = payload;
@@ -416,6 +413,17 @@ export const actions = {
     } catch (e) {
       commit('setDeleteLimitError', e);
       this.$sentry.captureException(new Error(e));
+    }
+  },
+
+  async addPromoCode({ commit }, payload) {
+    try {
+      const res = await http.post(`${API_HOST}/bonus/code`, payload);
+      if (res.code !== 0) throw Error(res.message);
+    } catch (e) {
+      commit('pushNotificationAlert', { type: 'error', text: e }, { root: true });
+      this.$sentry.captureException(new Error(e));
+      throw Error();
     }
   },
 };

@@ -24,7 +24,12 @@
           </template>
         </ul>
       </nav>
-      <GamePanel v-if="isGamePage" />
+      <NuxtLink class="MainNav-Search" :to="localePath('/search')">
+        <svg class="MainNav-SearchIcon">
+          <use xlink:href="@/assets/img/icons.svg#search"></use>
+        </svg>
+      </NuxtLink>
+      <GamePanel v-if="isGamePage" class="MainNav-GamePanel" />
       <AuthSection v-else class="MainNav-AuthSection" />
     </div>
     <transition v-if="width < 960" name="slide-right">
@@ -265,17 +270,18 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 14px 16px;
+    padding: 10px 16px;
 
     @media (min-width: $screen-xs) {
       display: flex;
+      justify-content: flex-start;
       max-width: 1248px;
       margin-right: auto;
       margin-left: auto;
     }
 
     @media (min-width: $screen-m) {
-      padding: 0 0 0 16px;
+      padding: 16px;
     }
 
     &--authenticated {
@@ -379,8 +385,39 @@ export default {
     }
   }
 
-  &-Authsection {
-    flex-grow: 1;
+  &-AuthSection {
+    margin-left: auto;
+
+    @media (min-width: $screen-l) {
+      margin-left: 30px;
+    }
+  }
+
+  &-Search {
+    display: none;
+
+    @media (min-width: $screen-xs) {
+      display: block;
+      margin-left: 20px;
+    }
+
+    @media (min-width: $screen-l) {
+      margin-left: 0;
+    }
+  }
+
+  &-SearchIcon {
+    width: 20px;
+    height: 20px;
+    fill: var(--color-main1);
+  }
+
+  &-GamePanel {
+    margin-left: auto;
+
+    @media (min-width: $screen-l) {
+      margin-left: 30px;
+    }
   }
 }
 
@@ -440,7 +477,7 @@ export default {
     align-items: center;
     font-size: 13px;
     font-weight: 700;
-    color: var(--color-hover3);
+    color: var(--color-main1);
     text-transform: uppercase;
   }
 
@@ -465,10 +502,6 @@ export default {
       .Nav-Name {
         justify-content: center;
       }
-    }
-
-    @media (min-width: $screen-m) {
-      font-size: 18px;
     }
 
     &--onlyDesktop {

@@ -8,19 +8,19 @@
     </div>
     <div class="AboutUsPage-Advantages Advantages">
       <div class="Advantages-Advantage">
-        <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
+        <BaseIcon class="AboutUsPage-AdvantageIcon Icon--fill Icon--stroke" name="star-circle" />
         <div class="Advantages-AdvantageText">
           {{ $t('supportPages.aboutUsPage.advantages.text1') }}
         </div>
       </div>
       <div class="Advantages-Advantage">
-        <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
+        <BaseIcon class="AboutUsPage-AdvantageIcon Icon--fill Icon--stroke" name="star-circle" />
         <div class="Advantages-AdvantageText">
           {{ $t('supportPages.aboutUsPage.advantages.text2') }}
         </div>
       </div>
       <div class="Advantages-Advantage">
-        <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
+        <BaseIcon class="AboutUsPage-AdvantageIcon Icon--fill Icon--stroke" name="star-circle" />
         <div class="Advantages-AdvantageText">
           {{ $t('supportPages.aboutUsPage.advantages.text3.p1') }}
           <span class="Colored">6,000</span>
@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="Advantages-Advantage">
-        <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
+        <BaseIcon class="AboutUsPage-AdvantageIcon Icon--fill Icon--stroke" name="star-circle" />
         <div class="Advantages-AdvantageText">
           <span class="Colored">24</span>/
           <span class="Colored">7</span>
@@ -107,16 +107,20 @@
 </template>
 
 <script>
+import BaseIcon from '@/components/base/BaseIcon';
+
 export default {
   name: 'AboutUsPage',
+  components: {
+    BaseIcon,
+  },
   layout: 'page',
   head() {
     return {
-      title: 'Information About Ninecasino',
+      title: this.$t('metaTags.about-us.title'),
       meta: [
         {
-          description:
-            'Detailed Information About Us, Our Software And What Do We Offer To Our Clients ✓ Fast withdrawal ✓ Fully licensed',
+          description: this.$t('metaTags.about-us.description'),
         },
       ],
     };

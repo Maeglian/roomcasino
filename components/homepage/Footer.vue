@@ -39,7 +39,9 @@
         <NuxtLink class="Link Footer-Link" :to="localePath('/faq')">
           {{ $t('pages.faq') }}
         </NuxtLink>
-
+        <a href="https://chillipartners.com/" class="Link Footer-Link" target="_blank">
+          Affiliates
+        </a>
         <!--        <NuxtLink class="Link Footer-Link" to="/payment-methods">-->
         <!--          Payment methods-->
         <!--        </NuxtLink>-->
@@ -84,6 +86,11 @@
         </div>
       </div>
       <div class="Footer-Icons">
+        <div class="Footer-License">
+          <a href="#" @click.prevent="openInfoSertificate()">
+            <img src="@/assets/img/license.png" alt="license" />
+          </a>
+        </div>
         <div
           id="apg-034906ca-0989-44fa-8bff-6a0fdffc45bb"
           data-apg-seal-id="034906ca-0989-44fa-8bff-6a0fdffc45bb"
@@ -118,6 +125,15 @@ export default {
   },
   mounted() {
     window.apg_034906ca_0989_44fa_8bff_6a0fdffc45bb.init();
+  },
+  methods: {
+    openInfoSertificate() {
+      window.open(
+        'https://certificates.gamingcommission.ca/KGCCertificates.aspx?id=b58a864d-54d2-4a91-8860-13a5980e5c5a',
+        'BrandNameCertificates',
+        'location=0,status=0,scrollbars=1',
+      );
+    },
   },
 };
 </script>
@@ -266,6 +282,10 @@ export default {
 
   &-Contact {
     color: var(--color-text-main);
+  }
+
+  &-License {
+    margin-bottom: 10px;
   }
 }
 </style>

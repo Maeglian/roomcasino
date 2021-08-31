@@ -41,7 +41,10 @@
               <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
               <div class="Advantages-AdvantageBlock">
                 <div class="Advantages-AdvantageTitle">
-                  {{ lottery.recurringShift }} {{ lottery.recurringUnit }}
+                  <template v-if="slug === 'tesla_lottery'"> 40 {{ $t('common.days') }}</template>
+                  <template v-else>
+                    {{ lottery.recurringShift }} {{ lottery.recurringUnit }}
+                  </template>
                 </div>
                 <div class="Advantages-AdvantageInfo">
                   {{ $t('tournaments.duration') }}
@@ -53,11 +56,16 @@
               <div class="Advantages-AdvantageBlock">
                 <div class="Advantages-AdvantageTitle">
                   <span class="Colored">
-                    <template v-if="lottery.budget">
-                      {{ lottery.budget }} {{ lottery.currency }}<br />
+                    <template v-if="slug === 'tesla_lottery'">
+                      {{ $t('tesla_lottery.prize') }}
                     </template>
-                    <template v-if="lottery.freeSpinBudget">
-                      {{ lottery.freeSpinBudget }} {{ $t('common.freeSpins') }}
+                    <template v-else>
+                      <template v-if="lottery.budget">
+                        {{ lottery.budget }} {{ lottery.currency }}<br />
+                      </template>
+                      <template v-if="lottery.freeSpinBudget">
+                        {{ lottery.freeSpinBudget }} {{ $t('common.freeSpins') }}
+                      </template>
                     </template>
                   </span>
                 </div>
@@ -260,6 +268,16 @@ export default {
     };
   },
   head() {
+    if (this.slug === 'tesla_lottery') {
+      return {
+        title: this.$t(`${this.slug}.metaTitle`),
+        meta: [
+          {
+            description: this.$t(`${this.slug}.metaDescription`),
+          },
+        ],
+      };
+    }
     return {
       title: 'Daily Tournament At Ninecasino And Other Similar Events',
       meta: [
@@ -284,15 +302,18 @@ export default {
       return this.$route.params.lottery;
     },
     lottery() {
-      return this.lotteryResultList[0];
+      return this.lotteryResultList.find(lottery => lottery.status === 'enabled');
     },
     winners() {
-      if (this.lotteryResultList[1]) {
-        if (this.lotteryResultList[1].awardList.some(award => award.status === 'noWinners'))
-          return [];
-        return this.lotteryResultList[1].awardList;
-      }
-      return [];
+      const finishedLotteries = this.lotteryResultList.filter(
+        lottery => lottery.status === 'finished',
+      );
+      if (!finishedLotteries.length) return [];
+      const lastLottery = finishedLotteries.sort(
+        (l1, l2) => l2.startDateTime - l1.startDateTime,
+      )[0];
+      if (lastLottery.awardList.some(award => award.status === 'noWinners')) return [];
+      return [...lastLottery.awardList].sort((winner1, winner2) => winner1.place - winner2.place);
     },
   },
   watch: {
@@ -544,6 +565,42 @@ export default {
     @media (min-width: $screen-xl) {
       background-image: url(~@/assets/img/sunshine-page_1248.png);
       background-position: center top;
+    }
+  }
+}
+
+.tesla_lottery {
+  &-Header {
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/tesla_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(100% - 32px) auto;
+
+    @media (min-width: $screen-s) {
+      background-image: url(~@/assets/img/tesla_600.png);
+    }
+
+    @media (min-width: $screen-m) {
+      padding-top: 50px / 768px * 100%;
+      background-image: url(~@/assets/img/tesla_900.png);
+      background-position: center 10%;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 20px / 1248px * 100%;
+      background-image: url(~@/assets/img/tesla_1248.png);
+      background-position: center top;
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-top: 100px / 1920px * 100%;
+      background-image: url(~@/assets/img/tesla_1920.png);
+      background-position: center top;
+    }
+
+    @media (min-width: $screen-xxxl) {
+      padding-top: 160px / 1920px * 100%;
     }
   }
 }

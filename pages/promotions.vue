@@ -31,27 +31,52 @@
               {{ item.announce }}
             </div>
             <div class="PromotionsCard-Text Text Text--additional">
-              <span v-html="item.text"> </span>
+              <i18n v-if="item.linkTo" path="promotions.twitterGiveaway.text">
+                <template #twitterAccount>
+                  <a class="Footer-Contact" href="https://twitter.com/casino_nine">{{
+                    $t('twitter.twitterAccount')
+                  }}</a>
+                </template>
+                <template #tweet>
+                  <a
+                    class="Footer-Contact"
+                    href="https://twitter.com/casino_nine/status/1427561698408505344?s=20"
+                  >
+                    {{ $t('twitter.tweet') }}
+                  </a>
+                </template>
+                <template #br>
+                  <br />
+                </template>
+              </i18n>
+              <span v-else v-html="item.text"> </span>
             </div>
           </div>
           <div class="PromotionsCard-Btns">
             <NuxtLink
               v-if="item.link"
-              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
+              class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
               :to="localePath(item.url)"
             >
               {{ $t('buttons.more') }}
             </NuxtLink>
+            <a
+              v-else-if="item.linkTo"
+              :href="item.url"
+              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
+            >
+              {{ $t('twitter.twitterBtn') }}
+            </a>
             <button
               v-else
-              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
+              class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
               @click="onClickBtn()"
             >
               {{ isLoggedIn ? $t('buttons.getBonus') : $t('buttons.signUp') }}
             </button>
             <NuxtLink
               :to="localePath('/bonus-terms')"
-              class="Btn Btn--common Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
+              class="Btn Btn--common Btn--rightCorner Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
             >
               {{ $t('buttons.terms') }}
             </NuxtLink>
@@ -125,21 +150,21 @@ export default {
         {
           title: this.$t('promotions.deposit1.title'),
           subtitle: this.$t('promotions.deposit1.upTo'),
-          image: 'promotion1.png',
+          image: 'banker-green-promotions.png',
           announce: this.$t('promotions.deposit1.name'),
           text: this.$t('promotions.deposit1.text'),
         },
         {
           title: this.$t('promotions.deposit2.title'),
           subtitle: this.$t('promotions.deposit2.upTo'),
-          image: 'promotion2.png',
+          image: 'banker-gold-promotions.png',
           announce: this.$t('promotions.deposit2.name'),
           text: this.$t('promotions.deposit2.text'),
         },
         {
           title: this.$t('promotions.deposit3.title'),
           subtitle: this.$t('promotions.deposit3.upTo'),
-          image: 'promotion3.png',
+          image: 'banker-purple-promotions.png',
           announce: this.$t('promotions.deposit3.name'),
           text: this.$t('promotions.deposit3.text'),
         },
@@ -194,6 +219,15 @@ export default {
           url: '/tournaments/weekly_derby',
         },
         {
+          title: this.$t('promotions.twitterGiveaway.title'),
+          prize: this.$t('promotions.twitterGiveaway.upTo'),
+          image: 'wolf_900.png',
+          announce: this.$t('promotions.twitterGiveaway.name'),
+          text: this.$t('promotions.twitterGiveaway.text'),
+          linkTo: 'Twitter',
+          url: 'https://twitter.com/casino_nine',
+        },
+        {
           title: this.$t('sunshine_spins_lottery.title'),
           prize: this.$t('sunshine_spins_lottery.prize'),
           image: 'sunshine-promo.png',
@@ -202,16 +236,51 @@ export default {
           link: 'More',
           url: '/lottery/sunshine_spins_lottery',
         },
+        {
+          title: this.$t('promotions.sumdes.title'),
+          prize: this.$t('sumdes.prize'),
+          image: 'sumdes-promotions.png',
+          announce: this.$t('promotions.sumdes.name'),
+          text: this.$t('promotions.sumdes.text'),
+          link: 'More',
+          url: '/tournaments/summer-desserts',
+        },
+        {
+          title: this.$t('spiritOfEgypt.title'),
+          prize: this.$t('spiritOfEgypt.prize'),
+          image: 'spirit-promotions.png',
+          announce: this.$t('promotions.spiritOfEgypt.name'),
+          text: this.$t('promotions.spiritOfEgypt.text'),
+          link: 'More',
+          url: '/tournaments/spirit-of-egypt',
+        },
+        {
+          title: this.$t('promotions.demigods.title'),
+          prize: this.$t('demigods.prize'),
+          image: 'demigods-promotions.png',
+          announce: this.$t('promotions.demigods.name'),
+          text: this.$t('promotions.demigods.text'),
+          link: 'More',
+          url: '/tournaments/demigods',
+        },
+        {
+          title: this.$t('tesla_lottery.title'),
+          prize: this.$t('tesla_lottery.prize'),
+          image: 'tesla-promotion.png',
+          announce: this.$t('tesla_lottery.name'),
+          text: this.$t('tesla_lottery.text'),
+          link: 'More',
+          url: '/lottery/tesla_lottery',
+        },
       ],
     };
   },
   head() {
     return {
-      title: 'Promotions | Ninecasino',
+      title: this.$t('metaTags.promotions.title'),
       meta: [
         {
-          description:
-            'Here You Can Find About Our Welcome Bonus For New Players And Other Regular Promotions At Ninecasino',
+          description: this.$t('metaTags.promotions.description'),
         },
       ],
     };
