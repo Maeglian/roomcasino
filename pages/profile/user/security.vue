@@ -23,7 +23,9 @@
       <!--        </form>-->
       <!--      </div>-->
       <form class="CabinetForm ProfilePage-Password" @submit.prevent="onSubmitPasswordForm">
-        <div class="CabinetPage-Header">{{ $t('profile.user.passwordChange') }}</div>
+        <div class="CabinetPage-Header CabinetPage-Header--transparent">
+          {{ $t('profile.user.passwordChange') }}
+        </div>
         <BaseInput
           v-model="oldPassword"
           class="ProfilePage-Row"
@@ -98,7 +100,7 @@
           {{ updateProfileError }}
         </div>
         <BaseButton
-          class="Btn Btn--full Btn--darkColor ProfilePage-Btn"
+          class="Btn Btn--full Btn--darkColor Btn--bottomCorners ProfilePage-Btn"
           :is-loading="profileIsUpdating"
         >
           {{ $t('buttons.update') }}
@@ -351,8 +353,9 @@ export default {
     padding-left: 16px;
     font-size: 16px;
     color: var(--color-text-main);
-    background: var(--color-bg);
-    border: none;
+    background: var(--color-bg-input);
+    border: 2px solid var(--color-border-input);
+    border-radius: var(--border-radius-default);
 
     @media (min-width: $screen-s) {
       font-size: 12px;

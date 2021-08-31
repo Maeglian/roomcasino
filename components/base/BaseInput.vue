@@ -293,6 +293,11 @@ export default {
       }
     }
 
+    &::placeholder {
+      color: var(--color-text-faded);
+      text-transform: uppercase;
+    }
+
     &.BaseInput-Input--error {
       border: 2px solid rgba(235, 28, 42, 0.3);
     }

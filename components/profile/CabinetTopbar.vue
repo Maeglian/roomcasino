@@ -62,18 +62,15 @@ export default {
   align-items: center;
   width: 100%;
   max-width: 100%;
-  padding-right: 16px;
-  padding-bottom: 8px;
-  padding-left: 16px;
+  padding: 8px 16px;
   font-size: 10px;
   font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
-  background: var(--color-bg);
+  background: var(--color-body);
 
   @media (min-width: $screen-l) {
-    padding: 0;
-    background: var(--color-body);
+    padding: 0 16px 0 0;
   }
 
   &-Logo {
@@ -84,7 +81,8 @@ export default {
     margin-right: 15px;
 
     @media (min-width: $screen-l) {
-      width: 274px / $screen-xl * 100%;
+      flex-grow: 0;
+      width: 274px;
       height: 66px;
       margin-right: 46px;
       padding-left: 37px;
@@ -146,13 +144,14 @@ export default {
 
     @media (min-width: $screen-m) {
       display: inline-flex;
-      align-self: stretch;
+      height: 30px;
       padding: 0 18px;
       font-size: 10px;
       text-transform: uppercase;
     }
 
     @media (min-width: $screen-l) {
+      height: 40px;
       padding: 22px 30px;
     }
   }

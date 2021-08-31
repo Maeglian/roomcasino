@@ -148,7 +148,11 @@
     "table": "Jeux de table",
     "card": "Jeux de cartes",
     "new": "Nouveaux jeux",
-    "buybonus": "Bonus Buy"
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "gameCategories": {
     "top": "Les meilleurs jeux",
@@ -159,7 +163,11 @@
     "table": "Jeux de table",
     "card": "Jeux de cartes",
     "new": "Nouveaux jeux",
-    "buybonus": "Bonus Buy"
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "footer": {
     "text": {
@@ -174,7 +182,8 @@
     "search": "Rechercher",
     "searchResults": "Résultats de la recherche",
     "nothingFound": "Désolé, aucun résultat",
-    "try": "Essayez une autre recherche"
+    "try": "Essayez une autre recherche",
+    "popular": "Recherches fréquentes"
   },
   "common": {
     "date": "Date",
@@ -1260,7 +1269,8 @@
         "La durée d’activation des tours gratuits est de 3 jours, la durée des tours gratuits et la durée des résultats des tours gratuits sont de 7 jours.",
         "Pour miser le résultat du bonus / tour gratuit, vous devez effectuer des mises pour un montant de 40 fois le montant du résultat du bonus / tour gratuit.",
         "Le gain maximum résultant des tours gratuits associés au premier, deuxième et troisième dépôt est de 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
-        "Le gain maximum résultant des tours gratuits associés à l’inscription est de 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC."
+        "Le gain maximum résultant des tours gratuits associés à l’inscription est de 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "Toutes les promotions sont uniquement disponibles pour ceux qui ont rempli leurs bonus du coffret de bienvenue, y compris les mises. Si vous avez reçu un bonus de bienvenue plus élevé, vous n’êtes pas tenu d’avoir effectué les mises avant de pouvoir accepter d’autres promotions."
       ],
       "title3": "Reprise de fin de semaine",
       "text3": [

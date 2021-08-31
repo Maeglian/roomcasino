@@ -18,21 +18,21 @@
         </div>
         <div class="AuthDialog-BannerFeatures">
           <div class="AuthDialog-BannerFeature">
-            <div class="AuthDialog-BannerFeatureIcon">
-              <img src="@/assets/img/bonus.svg" />
-            </div>
+            <svg class="AuthDialog-BannerFeatureIcon" width="30" height="30">
+              <use xlink:href="@/assets/img/icons.svg#promotions"></use>
+            </svg>
             <div class="AuthDialog-BannerFeatureName" v-html="$t('auth.features.first')"></div>
           </div>
           <div class="AuthDialog-BannerFeature">
-            <div class="AuthDialog-BannerFeatureIcon">
-              <img class="AuthDialog-BannerFeatureIcon" src="@/assets/img/auth-chat.svg" />
-            </div>
+            <svg class="AuthDialog-BannerFeatureIcon" width="33" height="30">
+              <use xlink:href="@/assets/img/icons.svg#chat"></use>
+            </svg>
             <div class="AuthDialog-BannerFeatureName" v-html="$t('auth.features.second')"></div>
           </div>
           <div class="AuthDialog-BannerFeature">
-            <div class="AuthDialog-BannerFeatureIcon">
-              <img class="AuthDialog-BannerFeatureIcon" src="@/assets/img/cashout.svg" />
-            </div>
+            <svg class="AuthDialog-BannerFeatureIcon" width="39" height="36">
+              <use xlink:href="@/assets/img/icons.svg#cashout"></use>
+            </svg>
             <div class="AuthDialog-BannerFeatureName" v-html="$t('auth.features.third')"></div>
           </div>
         </div>

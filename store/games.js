@@ -316,12 +316,12 @@ export const actions = {
     }
   },
 
-  async startGame({ state, commit }, { demo, gameId, returnUrl }) {
+  async startGame({ state, commit, rootState }, { demo, gameId, returnUrl }) {
     if (state.gameError) commit('setGameError', '');
     try {
       const res = await http.post(`${API_HOST}/startGame`, {
         gameId,
-        platform: state.platform,
+        platform: rootState.platform,
         returnUrl,
         demo,
       });

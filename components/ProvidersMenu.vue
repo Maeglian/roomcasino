@@ -1,29 +1,6 @@
 <template>
   <div v-click-outside="onClickOutside" class="ProvidersMenu">
-    <div v-if="insideFilters" class="CategoriesFilter ProvidersMenu-Filter">
-      <div class="CategoriesFilter-Title">Providers</div>
-      <div class="CategoriesFilter-Footer CategoriesFilter-Footer--full">
-        <button class="DefaultGames-ChosenTab CategoriesFilter-ChosenProvider" @click="onOpen">
-          <img
-            v-if="!providersWithoutIcons.includes(providerActive.name)"
-            class="ProvidersMenu-ProviderIcon"
-            :src="
-              require(`@/assets/img/${providerActive.name
-                .toLowerCase()
-                .split(' ')
-                .join('')}.svg`)
-            "
-            alt=""
-          />
-          <span class="CategoriesFilter-Default">
-            {{ providerActive.name }}
-          </span>
-          <i class="ThinArrow" :class="[isOpen ? 'ThinArrow--up' : 'ThinArrow--down']"></i>
-        </button>
-      </div>
-    </div>
     <button
-      v-else
       class="DefaultGames-ChosenTab"
       :class="{ 'DefaultGames-ChosenTab--opened': isOpen }"
       @click="onOpen"
@@ -37,7 +14,7 @@
       <span class="ProvidersMenu-ActiveProvider">
         {{ providerActive.name }}
       </span>
-      <i class="Arrow Tab-Arrow" :class="[isOpen ? 'Arrow--up' : 'Arrow--down']"></i>
+      <i class="ThickArrow Tab-Arrow" :class="[isOpen ? 'ThickArrow--up' : 'ThickArrow--down']"></i>
     </button>
     <div v-if="width > 767" class="ProvidersMenu-Providers">
       <button
@@ -45,9 +22,7 @@
         :key="gameProducerList[i].name"
         class="ProvidersMenu-Provider"
         :class="{
-          'ProvidersMenu-Provider--active':
-            $route.params.providerName === gameProducerList[i].name ||
-            ($route.params.providerName === 'all' && gameProducerList[i].name === 'All providers'),
+          'ProvidersMenu-Provider--active': providerActive.name === gameProducerList[i].name,
         }"
         @click="onChooseProvider(gameProducerList[i])"
       >
@@ -71,17 +46,13 @@
       </button>
     </div>
     <transition name="slide-up">
-      <div
-        v-show="isOpen"
-        class="ProvidersMenu-MoreProviders"
-        :class="{ 'ProvidersMenu-MoreProviders--top': insideFilters }"
-      >
+      <div v-show="isOpen" class="ProvidersMenu-MoreProviders">
         <button
           v-for="(item, i) in moreProviders"
           :key="i"
           class="ProvidersMenu-AddProvider"
           :class="{
-            'ProvidersMenu-Provider--active': $route.params.providerName === item.name,
+            'ProvidersMenu-Provider--active': providerActive.name === item.name,
             'ProvidersMenu-Provider--noIcon': !item.iconUrl,
           }"
           @click="onChooseProvider(item)"
@@ -97,20 +68,18 @@
 <script>
 import { mapState } from 'vuex';
 import toggleDropdown from '@/mixins/toggleDropdown';
-import gameProducer from '@/mixins/gameProducer';
 
 export default {
   name: 'ProvidersMenu',
-  mixins: [toggleDropdown, gameProducer],
+  mixins: [toggleDropdown],
   props: {
     providerActive: {
       type: Object,
       required: true,
     },
-    insideFilters: {
-      type: Boolean,
-      required: false,
-      default: false,
+    gameProducerList: {
+      type: Array,
+      required: true,
     },
   },
   computed: {
@@ -202,10 +171,6 @@ export default {
     @media (min-width: $screen-xl) {
       top: 50px;
     }
-
-    &--top {
-      top: 60px;
-    }
   }
 
   &-AddProvider {
@@ -232,7 +197,8 @@ export default {
     line-height: 1.18;
     color: var(--color-text-main);
     text-transform: uppercase;
-    border: 2px solid var(--color-border-ghost);
+    border: 2px solid var(--color-border-input);
+    border-radius: var(--border-radius-default);
     cursor: pointer;
 
     @media (min-width: $screen-l) {

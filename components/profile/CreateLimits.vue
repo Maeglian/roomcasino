@@ -84,7 +84,7 @@
         @set-dropdown-value="period = $event"
       />
       <button
-        class="Btn Btn--common Btn--full Btn--color CreateLimits-Btn"
+        class="Btn Btn--common Btn--full Btn--color Btn--bottomCorners CreateLimits-Btn"
         @click="onClickLimitBtn"
       >
         <template v-if="isEdit"> {{ $t('profile.limits.save') }} </template>
