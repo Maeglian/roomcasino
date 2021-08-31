@@ -68,7 +68,7 @@ export default {
     ...mapState('games', ['gameUrl', 'gameHtml', 'defaultGames']),
     ...mapGetters(['activeAccount']),
     getIframeWidth() {
-      return this.isFullScreen || this.gameHtml
+      return this.isFullScreen
         ? {
             width: '100%',
             height: '100%',
@@ -101,6 +101,7 @@ export default {
     gameHtml(val) {
       if (val) {
         const { iframe } = this.$refs;
+        if (this.platform === 'mobile') this.isFullScreen = true;
         iframe.addEventListener('load', () => {
           this.showGame = true;
           const style = document.createElement('style');
