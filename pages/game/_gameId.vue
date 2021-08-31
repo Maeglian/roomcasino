@@ -7,7 +7,7 @@
       <h1 v-if="!isFullScreen" class="Title Title--type-h2 GamePage-Title">
         {{ game.gameName }}
       </h1>
-      <div ref="container" class="GamePage-HtmlContainer"></div>
+      <div v-if="gameHtml" v-append="gameHtml" class="GamePage-HtmlContainer"></div>
       <iframe
         v-if="!gameHtml"
         :key="activeAccount.balance"
@@ -95,9 +95,6 @@ export default {
     },
     defaultGames() {
       this.onEnterPage();
-    },
-    gameHtml(val) {
-      if (val) this.$refs.container.innerHTML = val;
     },
   },
   mounted() {
