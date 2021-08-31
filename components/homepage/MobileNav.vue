@@ -1,49 +1,66 @@
 <template>
   <nav class="MobileNav">
-    <button
+    <NuxtLink
       :class="['MobileNav-Item', { 'route-promotions': menuItems.promotions }]"
-      @click="focusMenu('promotions', 'effect')"
+      :to="localePath('/promotions')"
+      @click.native="focusMenu('promotions', 'effect')"
     >
-      <svg class="MobileNav-Icon" width="17" height="16">
-        <use xlink:href="@/assets/img/icons.svg#promotions"></use>
-      </svg>
+      <div class="MobileNav-IconWrapper">
+        <svg class="MobileNav-Icon MobileNav-Icon--fill" width="22" height="23">
+          <use xlink:href="@/assets/img/icons.svg#promotions"></use>
+        </svg>
+      </div>
       <div class="MobileNav-Name">{{ $t('pages.promotion') }}</div>
-    </button>
+    </NuxtLink>
     <button
       v-if="chatIsLoaded"
       :class="['MobileNav-Item', { 'route-support': menuItems.support }]"
       @click="focusMenu('support', 'effect')"
     >
-      <svg class="MobileNav-Icon" width="18" height="15">
-        <use xlink:href="@/assets/img/icons.svg#support"></use>
-      </svg>
+      <div class="MobileNav-IconWrapper">
+        <svg class="MobileNav-Icon MobileNav-Icon--stroke MobileNav-Icon--fill" width="22" height="22">
+          <use xlink:href="@/assets/img/icons.svg#support"></use>
+        </svg>
+      </div>
       <div class="MobileNav-Name">{{ $t('menu.support') }}</div>
     </button>
-    <Button
+    <NuxtLink
+      :to="localePath('/')"
       :class="['MobileNav-Item', { 'route-home': menuItems.home }]"
-      @click="focusMenu('home', 'effect')"
+      @click.native="focusMenu('home', 'effect')"
     >
-      <svg class="MobileNav-Icon" width="17" height="16">
-        <use xlink:href="@/assets/img/icons.svg#dice"></use>
-      </svg>
+      <div class="MobileNav-IconWrapper">
+        <svg
+          class="MobileNav-Icon MobileNav-Icon--stroke MobileNav-Icon--fill"
+          width="36"
+          height="34"
+        >
+          <use xlink:href="@/assets/img/icons.svg#dice"></use>
+        </svg>
+      </div>
       <div class="MobileNav-Name">{{ $t('pages.lobby') }}</div>
-    </Button>
-    <Button
+    </NuxtLink>
+    <NuxtLink
+      @click.native="focusMenu('search', 'effect')"
       :class="['MobileNav-Item', { 'route-search': menuItems.search }]"
-      @click="focusMenu('search', 'effect')"
+      :to="localePath('/search')"
     >
-      <svg class="MobileNav-Icon" width="17" height="16" fill="#F3B233">
-        <use xlink:href="@/assets/img/icons.svg#search"></use>
-      </svg>
+      <div class="MobileNav-IconWrapper">
+        <svg class="MobileNav-Icon MobileNav-Icon--fill" width="17" height="16" fill="#F3B233">
+          <use xlink:href="@/assets/img/icons.svg#search"></use>
+        </svg>
+      </div>
       <div class="MobileNav-Name">{{ $t('pages.search') }}</div>
-    </Button>
+    </NuxtLink>
     <button
-      :class="['MobileNav-Item MobileNav-Item--burger', { 'route-burger': menuItems.burger }]"
-      @click="focusMenu('burger', 'effect')"
-    >
-      <svg class="MobileNav-Icon Toggle Toggle--colored">
-        <use xlink:href="@/assets/img/icons.svg#toggle"></use>
-      </svg>
+            :class="['MobileNav-Item MobileNav-Item--burger', { 'route-toggle': menuItems.toggle }]"
+            @click="focusMenu('toggle', 'effect')"
+            >
+      <div class="MobileNav-IconWrapper">
+        <svg class="MobileNav-Icon Toggle" width="25" height="20">
+          <use xlink:href="@/assets/img/icons.svg#toggle"></use>
+        </svg>
+      </div>
       <div class="MobileNav-Name">{{ $t('menu.menu') }}</div>
     </button>
   </nav>
@@ -61,9 +78,9 @@ export default {
       menuItems: {
         promotions: false,
         home: false,
-        burger: false,
         search: false,
         support: false,
+        toggle: false
       },
     };
   },
@@ -88,32 +105,17 @@ export default {
      * Touch menu
      * */
     focusMenu(route, effect) {
-      console.log(effect);
       this.menuItems[route] = true;
       setTimeout(() => {
         this.menuItems[route] = false;
       }, 2000);
-      this.changeRoute(route);
-    },
-    changeRoute(route) {
-      switch (route) {
-        case 'promotions':
-          break;
-        case 'home':
-          route = '';
-          break;
-        case 'burger':
-          this.toggleNav();
-          return;
-        case 'search':
-          break;
-        case 'support':
-          this.onClickSupport();
-          return;
-        default:
-          break;
+      if (route === 'support') {
+        this.onClickSupport();
       }
-      this.$router.push(this.localePath(`/${route}`));
+      if (route === 'toggle') {
+        this.toggleNav();
+      }
+      console.log(effect);
     },
   },
 };
@@ -203,19 +205,27 @@ export default {
     border-radius: 50%;
   }
 
+  &-IconWrapper {
+    display: flex;
+    align-items: center;
+    height: 34px;
+    overflow: hidden;
+  }
+
   &-Icon {
     flex-shrink: 0;
     align-items: center;
-    width: 17px;
-    height: 17px;
-    margin: 0 0 6px;
+
+    &--fill {
+      fill: var(--color-text-main);
+    }
   }
 }
 
 .route-home,
 .route-search,
 .route-promotions,
-.route-burger,
+.route-toggle,
 .route-support {
   @include touch-btn-1();
 }
