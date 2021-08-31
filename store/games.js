@@ -27,7 +27,8 @@ export const state = () => ({
   dropsWinsLiveGamesAreLoading: false,
   winnersAreLoading: false,
   gameProducers: [],
-  gameUrlForIframe: '',
+  gameUrl: '',
+  gameHtml: '',
   gameError: '',
   topWinnerList: [],
   lastWinnerList: [],
@@ -49,8 +50,9 @@ export const getters = {
 };
 
 export const mutations = {
-  setGameUrl: (state, gameUrl) => {
-    state.gameUrlForIframe = gameUrl;
+  setStartingGame: (state, { url, html }) => {
+    if (url) state.gameUrl = url;
+    if (html) state.gameHtml = html;
   },
   setGameError: (state, message) => {
     state.gameError = message;
@@ -326,8 +328,7 @@ export const actions = {
         demo,
       });
       if (res.code === 0) {
-        const { url } = res.data;
-        commit('setGameUrl', url);
+        commit('setStartingGame', res.data);
       } else commit('setGameError', res.message);
     } catch (e) {
       commit('setGameError', e);

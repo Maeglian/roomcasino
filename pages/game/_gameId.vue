@@ -7,11 +7,12 @@
       <h1 v-if="!isFullScreen" class="Title Title--type-h2 GamePage-Title">
         {{ game.gameName }}
       </h1>
+      <div ref="container" class="GamePage-HtmlContainer"></div>
       <iframe
-        v-if="gameUrlForIframe"
+        v-if="!gameHtml"
         :key="activeAccount.balance"
+        :src="gameUrl"
         class="GamePage-Iframe"
-        :src="gameUrlForIframe"
         :width="getIframeWidth.width"
         :height="getIframeWidth.height"
         allowFullScreen="true"
@@ -62,7 +63,7 @@ export default {
   },
   computed: {
     ...mapState(['platform']),
-    ...mapState('games', ['gameUrlForIframe', 'defaultGames']),
+    ...mapState('games', ['gameUrl', 'gameHtml', 'defaultGames']),
     ...mapGetters(['activeAccount']),
     getIframeWidth() {
       return this.isFullScreen
@@ -94,6 +95,9 @@ export default {
     },
     defaultGames() {
       this.onEnterPage();
+    },
+    gameHtml(val) {
+      if (val) this.$refs.container.innerHTML = val;
     },
   },
   mounted() {
@@ -163,6 +167,26 @@ export default {
     margin: 20px auto;
     border: none;
     border-radius: 12px;
+
+    html {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    #game_wrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 </style>

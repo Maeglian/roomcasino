@@ -3,7 +3,7 @@ import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 export default {
   computed: {
     ...mapState(['platform']),
-    ...mapState('games', ['gameUrlForIframe', 'gameError']),
+    ...mapState('games', ['gameUrl', 'gameHtml', 'gameError']),
     ...mapState('profile', ['freeSpinList']),
     ...mapGetters(['isLoggedIn', 'activeAccount', 'userInfo']),
   },
@@ -48,8 +48,8 @@ export default {
           demo,
         });
 
-        if (this.platform === 'mobile' && !this.gameError)
-          window.location.href = this.gameUrlForIframe;
+        if (this.platform === 'mobile' && !this.gameError && !this.gameHtml)
+          window.location.href = this.gameUrl;
       } else {
         const query = demo ? { demo } : null;
         await this.$router.push(
