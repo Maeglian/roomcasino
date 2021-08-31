@@ -68,7 +68,7 @@ export default {
     ...mapState('games', ['gameUrl', 'gameHtml', 'defaultGames']),
     ...mapGetters(['activeAccount']),
     getIframeWidth() {
-      return this.isFullScreen || this.html
+      return this.isFullScreen || this.gameHtml
         ? {
             width: '100%',
             height: '100%',
