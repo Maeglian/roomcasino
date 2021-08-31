@@ -29,7 +29,7 @@
         </ul>
       </nav>
       <NuxtLink class="MainNav-Search" :to="localePath('/search')">
-        <svg class="MainNav-SearchIcon" viewBox="0 0 18 17">
+        <svg class="MainNav-SearchIcon">
           <use xlink:href="@/assets/img/icons.svg#search"></use>
         </svg>
       </NuxtLink>
