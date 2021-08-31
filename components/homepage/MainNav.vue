@@ -12,7 +12,11 @@
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
         </NuxtLink>
       </div>
-      <nav v-if="width >= 960" class="Nav MainNav-Links">
+      <nav
+        v-if="width >= 960"
+        class="Nav MainNav-Links"
+        :class="{ 'MainNav-Links--mr': $i18n.locale === 'gr' || $i18n.locale === 'pl' }"
+      >
         <ul class="MainNav-List">
           <template v-for="item in navItemsFull">
             <NavItem
@@ -25,8 +29,12 @@
         </ul>
       </nav>
       <NuxtLink class="MainNav-Search" :to="localePath('/search')">
-        <svg class="MainNav-SearchIcon">
-          <use xlink:href="@/assets/img/icons.svg#search"></use>
+        <svg class="MainNav-SearchIcon" viewBox="0 0 18 17">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M13.6684 7.55393C13.6684 10.5532 11.1257 13.1079 7.83422 13.1079C4.54276 13.1079 2 10.5532 2 7.55393C2 4.55463 4.54276 2 7.83422 2C11.1257 2 13.6684 4.55463 13.6684 7.55393ZM14.1559 12.0165C15.1069 10.7661 15.6684 9.22326 15.6684 7.55393C15.6684 3.38201 12.1609 0 7.83422 0C3.5075 0 0 3.38201 0 7.55393C0 11.7258 3.5075 15.1079 7.83422 15.1079C9.63378 15.1079 11.2916 14.5228 12.6143 13.5392L16.0908 16.7201C16.4983 17.0929 17.1589 17.0929 17.5664 16.7201L17.6938 16.6035C18.1012 16.2307 18.1012 15.6263 17.6938 15.2535L14.1559 12.0165Z"
+          />
         </svg>
       </NuxtLink>
       <GamePanel v-if="isGamePage" class="MainNav-GamePanel" />
@@ -70,10 +78,10 @@
 </template>
 
 <script>
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
 import GamePanel from '@/components/homepage/GamePanel.vue';
-import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'MainNav',
@@ -347,6 +355,10 @@ export default {
     @media (min-width: $screen-l) {
       display: block;
       margin-right: auto;
+    }
+
+    &--mr {
+      margin-right: 20px;
     }
   }
 
