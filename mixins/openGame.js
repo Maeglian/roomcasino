@@ -41,6 +41,8 @@ export default {
     },
 
     async getGame({ gameId, demo }) {
+      const query = demo ? { demo } : null;
+
       if (this.platform === 'mobile' || this.getRouteBaseName() === 'game-gameId') {
         await this.startGame({
           gameId,
@@ -48,10 +50,13 @@ export default {
           demo,
         });
 
-        if (this.platform === 'mobile' && !this.gameError && !this.gameHtml)
+        if (this.gameHtml) {
+          await this.$router.push(
+            this.localePath({ name: 'game-gameId', params: { gameId }, query }),
+          );
+        } else if (this.platform === 'mobile' && !this.gameError)
           window.location.href = this.gameUrl;
       } else {
-        const query = demo ? { demo } : null;
         await this.$router.push(
           this.localePath({ name: 'game-gameId', params: { gameId }, query }),
         );
