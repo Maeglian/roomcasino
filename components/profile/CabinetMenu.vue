@@ -53,10 +53,7 @@
         height="20"
       />
       <div
-        :class="[
-          { 'CabinetMenu-NavLink--cuttext': $i18n.locale === 'pl' },
-          { 'CabinetMenu-NavLink--cuttext': $i18n.locale === 'gr' },
-        ]"
+        :class="{ 'CabinetMenu-NavLink--cuttext': $i18n.locale === 'pl' || $i18n.locale === 'gr' }"
       >
         {{ $t('profile.pages.limits') }}
       </div>
