@@ -258,7 +258,7 @@ export default {
 .route-promotions,
 .route-toggle,
 .route-support {
-  @include touch-btn-1();
+  @include touch-btn-2();
 }
 
 .toggle-btn-active {
