@@ -167,8 +167,8 @@
 </template>
 
 <script>
-import showAuthDialog from '@/mixins/showAuthDialog';
 import { mapState, mapActions, mapGetters } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'LotteryPage',

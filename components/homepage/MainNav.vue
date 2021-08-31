@@ -65,10 +65,10 @@
 </template>
 
 <script>
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
 import GamePanel from '@/components/homepage/GamePanel.vue';
-import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'MainNav',

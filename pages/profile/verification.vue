@@ -220,8 +220,8 @@
 </template>
 
 <script>
-import { API_HOST } from '@/config';
 import { mapActions, mapState, mapMutations } from 'vuex';
+import { API_HOST } from '@/config';
 import Loader from '@/components/Loader';
 
 const vue2Dropzone = () => import('vue2-dropzone');

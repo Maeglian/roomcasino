@@ -181,12 +181,12 @@
 </template>
 
 <script>
-import showAuthDialog from '@/mixins/showAuthDialog';
 import { mapState, mapActions, mapGetters } from 'vuex';
+import moment from 'moment';
+import showAuthDialog from '@/mixins/showAuthDialog';
 import Loader from '@/components/Loader';
 import PaginatedGames from '@/components/PaginatedGames';
 import GameModals from '@/components/GameModals';
-import moment from 'moment';
 
 export default {
   name: 'DailyTournamentPage',

@@ -124,9 +124,9 @@
 </template>
 
 <script>
-import CabinetTable from '@/components/profile/CabinetTable.vue';
 import { mapActions, mapMutations, mapState } from 'vuex';
 import { required, sameAs, not } from 'vuelidate/lib/validators';
+import CabinetTable from '@/components/profile/CabinetTable.vue';
 import BaseInput from '@/components/base/BaseInput';
 import BaseButton from '@/components/base/BaseButton';
 

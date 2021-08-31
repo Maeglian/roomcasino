@@ -28,9 +28,9 @@
 
 <script>
 import showAuthDialog from '@/mixins/showAuthDialog';
-import Card from '@/components/Card';
+import Card from '@/components/Card.vue';
 import openGame from '@/mixins/openGame';
-import GameModals from '@/components/GameModals';
+import GameModals from '@/components/GameModals.vue';
 
 export default {
   name: 'Games',

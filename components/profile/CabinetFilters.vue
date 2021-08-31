@@ -53,10 +53,10 @@
 </template>
 
 <script>
-import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapGetters, mapState } from 'vuex';
 import moment from 'moment';
 import { de, cs, fr, en } from 'vuejs-datepicker/dist/locale';
+import BaseDropdown from '@/components/base/BaseDropdown.vue';
 
 const Datepicker = () => import('vuejs-datepicker');
 

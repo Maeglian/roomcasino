@@ -1,6 +1,6 @@
 <template>
   <nav class="MobileNav">
-    <div
+    <button
       :class="['MobileNav-Item', { 'route-promotions': menuItems.promotions }]"
       @click="focusMenu('promotions', 'effect')"
     >
@@ -8,15 +8,18 @@
         <use xlink:href="@/assets/img/icons.svg#promotions"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('pages.promotion') }}</div>
-    </div>
-    <button :class="['MobileNav-Item', { 'route-promotions': menuItems.promotions }]"
-             v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
+    </button>
+    <button
+      v-if="chatIsLoaded"
+      :class="['MobileNav-Item', { 'route-support': menuItems.support }]"
+      @click="focusMenu('support', 'effect')"
+    >
       <svg class="MobileNav-Icon" width="18" height="15">
         <use xlink:href="@/assets/img/icons.svg#support"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('menu.support') }}</div>
     </button>
-    <div
+    <Button
       :class="['MobileNav-Item', { 'route-home': menuItems.home }]"
       @click="focusMenu('home', 'effect')"
     >
@@ -24,14 +27,20 @@
         <use xlink:href="@/assets/img/icons.svg#dice"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('pages.lobby') }}</div>
-    </div>
-    <div :class="['MobileNav-Item', { 'route-search': menuItems.search }]">
+    </Button>
+    <Button
+      :class="['MobileNav-Item', { 'route-search': menuItems.search }]"
+      @click="focusMenu('search', 'effect')"
+    >
       <svg class="MobileNav-Icon" width="17" height="16" fill="#F3B233">
         <use xlink:href="@/assets/img/icons.svg#search"></use>
       </svg>
       <div class="MobileNav-Name">{{ $t('pages.search') }}</div>
-    </div>
-    <button class="MobileNav-Item MobileNav-Item--burger" @click="toggleNav()">
+    </Button>
+    <button
+      :class="['MobileNav-Item MobileNav-Item--burger', { 'route-burger': menuItems.burger }]"
+      @click="focusMenu('burger', 'effect')"
+    >
       <svg class="MobileNav-Icon Toggle Toggle--colored">
         <use xlink:href="@/assets/img/icons.svg#toggle"></use>
       </svg>
@@ -50,9 +59,11 @@ export default {
   data() {
     return {
       menuItems: {
-        promotions: true,
+        promotions: false,
         home: false,
+        burger: false,
         search: false,
+        support: false,
       },
     };
   },
@@ -77,14 +88,30 @@ export default {
      * Touch menu
      * */
     focusMenu(route, effect) {
+      console.log(effect);
+      this.menuItems[route] = true;
       setTimeout(() => {
-        this.menuItems?.[route] === true; // !this.menuItems?.[route];
+        this.menuItems[route] = false;
       }, 2000);
-      // this.changeRoute(route);
+      this.changeRoute(route);
     },
     changeRoute(route) {
-      if (route === 'home') {
-        route = '';
+      switch (route) {
+        case 'promotions':
+          break;
+        case 'home':
+          route = '';
+          break;
+        case 'burger':
+          this.toggleNav();
+          return;
+        case 'search':
+          break;
+        case 'support':
+          this.onClickSupport();
+          return;
+        default:
+          break;
       }
       this.$router.push(this.localePath(`/${route}`));
     },
@@ -187,8 +214,9 @@ export default {
 
 .route-home,
 .route-search,
-.route-promotions {
-  // background-color: #0e152f !important;
+.route-promotions,
+.route-burger,
+.route-support {
   @include touch-btn-1();
 }
 </style>

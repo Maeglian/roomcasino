@@ -37,8 +37,8 @@
 
 <script>
 import { mapActions, mapMutations, mapState, mapGetters } from 'vuex';
-import Loader from '@/components/Loader';
-import BaseModal from '@/components/base/BaseModal';
+import Loader from '@/components/Loader.vue';
+import BaseModal from '@/components/base/BaseModal.vue';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import openGame from '@/mixins/openGame';
 
