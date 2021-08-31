@@ -64,11 +64,11 @@ export default {
     }
   },
   computed: {
-    ...mapState(['platform', 'width']),
+    ...mapState(['platform']),
     ...mapState('games', ['gameUrl', 'gameHtml', 'defaultGames']),
     ...mapGetters(['activeAccount']),
     getIframeWidth() {
-      return this.isFullScreen || this.width < 768
+      return this.isFullScreen || this.html
         ? {
             width: '100%',
             height: '100%',
@@ -112,15 +112,6 @@ export default {
     },
   },
   mounted() {
-    if (this.html) {
-      window.addEventListener(
-        'orientationchange',
-        function() {
-          window.location.reload();
-        },
-        false,
-      );
-    }
     this.onEnterPage();
   },
   methods: {
