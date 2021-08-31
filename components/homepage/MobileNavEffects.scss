@@ -19,3 +19,9 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+@mixin touch-btn-4 {
+  border-radius: 0;
+  transition: background-color 0.03s;
+  background-image: linear-gradient(top, var(--color-bg-darker), rgba(255, 255, 255, 0));
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
