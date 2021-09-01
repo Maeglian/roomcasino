@@ -51,8 +51,8 @@ export const getters = {
 
 export const mutations = {
   setStartingGame: (state, { url, html }) => {
-    if (url) state.gameUrl = url;
-    if (html) state.gameHtml = html;
+    if (url !== null) state.gameUrl = url;
+    if (html !== null) state.gameHtml = html;
   },
   setGameError: (state, message) => {
     state.gameError = message;
