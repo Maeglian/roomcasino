@@ -1,5 +1,5 @@
 <template>
-  <div v-if="needsCookiesPopup" class="CookiesPopup">
+  <div class="CookiesPopup">
     <div class="CookiesPopup-Content" :class="{ Wrapper: width >= 590 }">
       <template v-if="width >= 590">
         <div class="CookiesPopup-Text">
@@ -8,35 +8,26 @@
             >Cookie Policy</NuxtLink
           >.
         </div>
-        <button class="Btn CookiesPopup-Btn" @click="setCookiesPopupOkay">ОК</button>
+        <button class="Btn CookiesPopup-Btn" @click="$parent.closeHandler">ОК</button>
       </template>
       <template v-else>
         <div class="CookiesPopup-Text">
           We use
           <NuxtLink class="CookiesPopup-Link" :to="localePath('/privacy-policy')">cookies</NuxtLink>
         </div>
-        <button class="Close CookiesPopup-Close" @click="setCookiesPopupOkay"></button>
+        <button class="Close CookiesPopup-Close" @click="$parent.closeHandler"></button>
       </template>
     </div>
   </div>
 </template>
 
 <script>
-import { mapMutations, mapState } from 'vuex';
-
-const Cookie = require('js-cookie');
+import { mapState } from 'vuex';
 
 export default {
   name: 'CookiesPopup',
   computed: {
-    ...mapState(['needsCookiesPopup', 'width']),
-  },
-  methods: {
-    ...mapMutations(['setNeedsCookiesPopup']),
-    setCookiesPopupOkay() {
-      Cookie.set('seenCookiesPopup', true, { expires: 1500 });
-      this.setNeedsCookiesPopup(false);
-    },
+    ...mapState(['width']),
   },
 };
 </script>
