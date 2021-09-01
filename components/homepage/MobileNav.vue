@@ -113,7 +113,7 @@ export default {
       this.menuItems[route] = true;
       setTimeout(() => {
         this.menuItems[route] = false;
-      }, 150);
+      }, 160);
       if (route === 'support') {
         this.onClickSupport();
       }
@@ -258,7 +258,7 @@ export default {
 .route-promotions,
 .route-toggle,
 .route-support {
-  @include touch-btn-4();
+  @include touch-btn-5();
 }
 
 .toggle-btn-active {
