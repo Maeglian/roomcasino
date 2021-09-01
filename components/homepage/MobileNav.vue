@@ -136,8 +136,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 10px 3px 18px;
-  // padding: 6px 3px 8px; - smaller
+  padding: 6px 3px 8px;
   background: var(--color-bg-mobnav);
   transform: translateZ(0);
 
