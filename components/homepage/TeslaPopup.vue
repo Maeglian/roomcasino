@@ -8,9 +8,9 @@
       <Counter class="TeslaPopup-Counter" :enddate="new Date(1632430740 * 1000)">
         <template #upperText>Tournament ends in:</template>
       </Counter>
-      <NuxtLink to="/lottery/tesla_lottery" class="Btn Btn--color1 TeslaPopup-Btn"
-        >Join now</NuxtLink
-      >
+      <NuxtLink to="/lottery/tesla_lottery" class="Btn Btn--color1 TeslaPopup-Btn">{{
+        $t('buttons.joinNow')
+      }}</NuxtLink>
       <div class="TeslaPopup-Close Close" @click="$parent.closeHandler"></div>
     </div>
   </div>
