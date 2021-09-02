@@ -1,0 +1,1521 @@
+{
+  "title" : "Ninecasino",
+  "buttons" : {
+    "signUp" : "REKISTERÖIDY",
+    "register" : "REKISTERÖIDY",
+    "terms" : "BONUSEHDOT",
+    "registerNow" : "Rekisteröidy nyt",
+    "login" : "KIRJAUDU SISÄÄN ",
+    "logIn" : "KIRJAUDU SISÄÄN ",
+    "joinNow" : "tule mukaan ",
+    "deposit" : "TALLETA ",
+    "depositNow" : "Talleta nyt",
+    "loadMoreGames" : "LATAA LISÄÄ PELEJÄ",
+    "playForFun" : "Pelaa ja nauti",
+    "playNow" : "Pelaa nyt",
+    "showMore" : "Näytä lisää",
+    "saveChanges" : "TALLENNA MUUTOKSET ",
+    "update" : "PÄIVITYS",
+    "addLimits" : "LISÄÄ RAJAT",
+    "filter" : "Suodatin",
+    "cashout" : "NOSTA",
+    "cancel" : "Peruuta",
+    "loading" : "Ladataan",
+    "continue" : "Jatka",
+    "letsStart" : "Aloitetaan",
+    "goHomePage" : "Siirry aloitussivulle",
+    "save" : "Tallenna",
+    "edit" : "Muokkaa",
+    "getBonus" : "Saa bonus",
+    "more" : "Lisää",
+    "checkBonuses" : "Katso bonukset",
+    "cancelBonus" : "Peruuta bonus",
+    "goBack" : "Palaa",
+    "createAccount" : "LUO TILI"
+  },
+  "errors" : {
+    "required" : "Ei voi olla tyhjä",
+    "email" : "Sähköpostiosoite on virheellinen",
+    "confirmPassword" : "Salasana ja vahvistus eivät täsmää",
+    "oldAndNewPasswords" : "Vanha ja uusi salasana ovat identtiset",
+    "minLength" : "Täytyy olla vähintään {num} merkkiä",
+    "maxLength" : "Ei saa olla enempää kuin {num} merkkiä",
+    "phone" : "Täytyy sisältää + (10–14 symbolin joukosta)",
+    "numbers" : "Täytyy olla numero",
+    "day" : "Päivä on virheellinen",
+    "month" : "Kuukausi on virheellinen",
+    "year" : "Vuosi on virheellinen",
+    "postalCode" : "Täytyy koostua kirjaimista, numeroista ja välilyönneistä",
+    "positiveNum" : "Anna positiivinen luku",
+    "0andNum" : "Anna 0 tai positiivinen luku",
+    "invalidDate" : "Päivämäärä on virheellinen",
+    "minAge" : "Olet nuorempi kuin {vähIkä}",
+    "inputCorrectDate" : "Anna oikea päivämäärä"
+  },
+  "menu" : {
+    "menu" : "Menu",
+    "support" : "Tuki",
+    "yourAccount" : "Oma tilisi"
+  },
+  "modals" : {
+    "congratulations" : "Onneksi olkoon",
+    "playGame" : "Voit nyt pelata peliä",
+    "cantStart" : "Pelin aloittaminen ei onnistu",
+    "pleaseDeposit" : "Tee ensin talletus",
+    "pleaseDepositText" : "Ikävä kyllä saldosi on 0. Tee talletus, jotta voit pelata.",
+    "wait" : "odota!",
+    "lockedByBonus" : "Tililläsi on yhä aktiivisia bonuksia. Tässä tapauksessa nostoja ei voida tehdä. Tarkasta profiilisi ja peruuta ne kaikki tehdäksesi nostoja.",
+    "nullBalance" : "Valitettavasti et voi tehdä nostoja. Tililläsi ei ole varoja.",
+    "loseBonus" : "Sinulla on aktiivinen bonus. Jos peruutat bonuksen, menetät bonussumman {määrä}.",
+    "isSure" : "Oletko varma?"
+  },
+  "notifications" : {
+    "cancelBonusError" : "Virhe bonusta peruutettaessa",
+    "cancelBonusSuccess" : "Bonus on peruutettu",
+    "cancelFreeSpinError" : "Virhe ilmaiskierrosta peruutettaessa",
+    "cancelFreeSpinSuccess" : "Ilmaiskierroksesi peruutettiin",
+    "activateFreeSpinError" : "Virhe ilmaiskierrosta aktivoitaessa",
+    "activateFreeSpinSuccess" : "Ilmaiskierroksesi aktivoitiin"
+  },
+  "auth" : {
+    "loginTitle" : "TERVETULOA TAKAISIN",
+    "signUpTitle" : "REKISTERÖIDY<span class=\"Colored\">JA</span> NAPPAA<br />TERVETULIAISBONUS ",
+    "forgotPassword" : "Olen unohtanut salasanan",
+    "emails" : "Vastaanota sähköpostikampanjoita",
+    "terms" : "Olen täyttänyt {minAge} vuotta ja hyväksyn {br} {Palvelun käyttöehdot} sekä {tietosuojakäytännön}\n",
+    "step2Title" : "Täytä seuraavat tiedot.",
+    "thanksRegistration" : "KIITOS REKISTERÖITYMISESTÄ",
+    "registrationBonus" : "250 ILMAISKIERROSTA",
+    "registrationBonusText" : "asti ensitalletuksesta! Hyödynnä Ninecasinon tervetuliaisbonuksen etu.",
+    "getBonus" : "hanki bonuksesi",
+    "enterEmail" : "Anna sähköpostiosoitteesi",
+    "passwordRestoreText" : "Kiitos! Katso lisäohjeet sähköpostista",
+    "enterNewPassword" : "Kirjoita uusi salasana",
+    "updatePassword" : "Vaihda salasana",
+    "newPassword" : "uusi salasana",
+    "confirmPassword" : "salasanan vahvistus",
+    "tryingConfirmEmail" : "Yritämme vahvistaa sähköpostiosoitteesi",
+    "confirmEmailError" : "Sähköpostiosoitetta ei ole vahvistettu",
+    "confirmEmailSuccess" : "Hienoa! Sähköpostiosoitteen vahvistaminen onnistui",
+    "bonus" : "-",
+    "freeSpins" : "250 ILMAISKIERROSTA",
+    "placeholders" : {
+      "enterEmail" : "Anna sähköpostiosoitteesi",
+      "enterPassword" : "Anna salasanasi",
+      "email" : "Sähköpostiosoitteesi",
+      "password" : "Salasanasi",
+      "currency" : "VALUUTTA",
+      "country" : "MAA",
+      "firstName" : "ETUNIMI",
+      "lastName" : "SUKUNIMI",
+      "male" : "MIES",
+      "female" : "NAINEN",
+      "city" : "KAUPUNKI",
+      "address" : "OSOITE",
+      "postalCode" : "POSTINUMERO",
+      "phone" : "PUHELINNUMERO\n",
+      "year" : "YYYY"
+    },
+    "features" : {
+      "first" : "-",
+      "second" : "YSTÄVÄLLINEN<br/>24/7-CHAT-TUKI",
+      "third" : "SUPERNOPEAT<br/>NOSTOT"
+    }
+  },
+  "pages" : {
+    "lobby" : "AULA",
+    "myAccount" : "Oma tilisi",
+    "promotion" : "KAMPANJAT",
+    "aboutUs" : "TIETOA MEISTÄ",
+    "faq" : "USEIN KYSYTYT KYSYMYKSET (UKK)",
+    "btc" : "TIETOA BTC:STÄ",
+    "aml" : "Aml-kaytanto",
+    "terms" : "Käyttöehdot",
+    "bonusPolicy" : "Bonusehdot",
+    "privacyPolicy" : "Tietosuojakäytännöt",
+    "responsibleGaming" : "VASTUULLINEN PELAAMINEN",
+    "risk" : "RISKIVAROITUKSET",
+    "tournaments" : "Turnaukset",
+    "lottery" : "Arvonta",
+    "dailyCashback" : "-",
+    "search" : "Haku"
+  },
+  "gameCategoriesTabs" : {
+    "top" : "parhaat",
+    "all" : "kaikki",
+    "live" : "live",
+    "slots" : "kolikkopelit",
+    "roulette" : "ruletti",
+    "table" : "pöytäpelit",
+    "card" : "korttipelit",
+    "recent" : "Viimeinen",
+    "new" : "uusi",
+    "buybonus" : "bonusosto"
+  },
+  "gameCategories" : {
+    "top" : "parhaat pelit ",
+    "all" : "kaikki pelit",
+    "live" : "live-pelit",
+    "slots" : "kolikkopelit",
+    "roulette" : "ruletti",
+    "table" : "pöytäpelit",
+    "card" : "korttipelit",
+    "recent" : "Viimeiset pelit",
+    "new" : "Uudet pelit",
+    "buybonus" : "bonusosto"
+  },
+  "footer" : {
+    "text" : {
+      "p1" : "Ymmärrät, että osallistumalla peleihin voit menettää www.ninecasino.com-tilillesi tallettamasi rahat. Joissakin maissa ja joillakin alueilla uhkapelaaminen on laitonta. Ymmärrät ja hyväksyt, että www.ninecasino.com ei anna lakineuvoja tai takuita verkkosivuston palveluiden käytön laillisuutta koskien. Yritys ei vahvista, että verkkosivuston palvelut ovat laillisia lainkäyttöalueellasi. Käytät www.ninecasino.com-sivuston palveluita omasta tahdostasi ja oman harkintasi varassa, ja olet itse vastuussa sen selvittämisestä, onko verkkosivuston palveluiden käyttö laillista lainkäyttöalueesi voimassa olevan lain mukaan. Kirjaudut verkkosivustoon ja osallistut peleihin omalla vastuullasi.",
+      "p2" : "Copyright © 2020 www.ninecasino.com. Operaattori: Scartesu Ltd., Dux Group N.V:n maksuoperaattori, joka toimii Kyprokselle rekisteröidyn Dux Group N.V:n puolesta ja edustajana Kyproksen lakien mukaisesti. Rekisteröity osoite: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Kypros. Rekisteröintinumero: ΗΕ 410983. Verkkosivustossa noudatetaan Kyproksen lakeja. Verkkosivuston www.ninecasino.com omistaa Dux Group N.V., Curaçaoon rekisteröity ja sen lakien mukaisesti toimiva yritys, jonka rekisteröintinumero on 155114 ja rekisteröity osoite Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. toimii Curaçaon hallituksen myöntämällä luvalla tietopalvelujen tuottajana, jolla on laillinen oikeus tuottaa verkkopelitoimintoja Curaçaosta käsin lupanumerolla 8048/JAZ2020-075. Verkkopelien käyttöoikeuksista ja valvonnasta vastaa Antillephone N.V. Pelaaja on yksin vastuussa oman lainkäyttöalueensa voimassa olevan verkkopelaamisen ikärajoja koskevan lainsäädännön ja määräysten selvittämisestä.",
+      "p3" : "Jos sinulla on kysyttävää verkkosivustosta tai sitä koskevia ehdotuksia, ota yhteys {tukeen} tai puhelimitse {puhelin}."
+    }
+  },
+  "search" : {
+    "findGame" : "Hae pelejä",
+    "notFound" : "Tuloksia ei löytynyt",
+    "search" : "Haku",
+    "searchResults" : "Hakutulokset",
+    "nothingFound" : "VALITETTAVASTI MITÄÄN EI LÖYTYNYT",
+    "try" : "Kokeile hakea jotain muuta"
+  },
+  "common" : {
+    "date" : "PÄIVÄMÄÄRÄ",
+    "currency" : "VALUUTTA",
+    "amount" : "SUMMA",
+    "status" : "TILA",
+    "title" : "OTSIKKO",
+    "type" : "TYYPPI",
+    "active" : "AKTIIVINEN",
+    "disabled" : "Poistettu käytöstä",
+    "left" : "Jäljellä",
+    "yes" : "Kyllä ",
+    "no" : "Ei",
+    "email" : "Luotu",
+    "wager" : "KIERRÄTYS",
+    "created" : "Voimassaolo päättyy",
+    "expiresAt" : "Palkinto",
+    "noData" : "TIETOJA EI OLE SAATAVILLA",
+    "days" : "PÄIVÄÄ",
+    "hours" : "TUNTIA\n",
+    "minutes" : "MINUUTTIA",
+    "seconds" : "SEKUNTIA\n",
+    "week" : "VIIKKO",
+    "name" : "nimi",
+    "points" : "PISTEET",
+    "prize" : "Pisteet",
+    "prizePool" : "palkintopotti",
+    "freeSpins" : "Ilmaiskierrokset",
+    "winners" : "Voittajat"
+  },
+  "actions" : {
+    "addCurrency" : "LISÄÄ VALUUTTA"
+  },
+  "homepage" : {
+    "heroBanner" : {
+      "deposit1" : {
+        "title" : "ENSIMMÄISEN  <br/>  TALLETUKSEN<span class=\"Colored\">BONUS</span>",
+        "text" : "TEE ENSIMMÄINEN TALLETUS<br/> JA SAA <span class=\"Colored\">250 ILMAISKIERROSTA</span>"
+      },
+      "deposit2" : {
+        "title" : "-",
+        "text" : "-"
+      },
+      "deposit3" : {
+        "title" : "-",
+        "text" : "-"
+      },
+      "deposit4" : {
+        "title" : "VIIKONLOPUN <br/> RELOAD-BONUS",
+        "text" : "<span class=\"Colored\">40 % AINA 150 € ASTI</span>"
+      },
+      "highroller" : {
+        "title" : "High roller<br/> bonus",
+        "text" : "<span class=\"Colored\">aina 500 € asti</span>"
+      }
+    },
+    "advantages" : {
+      "first" : {
+        "highlighted" : "SUPERNOPEAT ",
+        "ghost" : "NOSTOT"
+      },
+      "second" : {
+        "highlighted" : "YSTÄVÄLLINEN",
+        "ghost" : "24/7-CHAT-TUKI"
+      },
+      "third" : {
+        "highlighted" : "YLI",
+        "ghost" : "2 000 PELIÄ"
+      },
+      "fourth" : {
+        "highlighted" : "LAAJIN VALIKOIMA ",
+        "ghost" : "PELINTARJOAJIA"
+      }
+    },
+    "allProviders" : "kaikki tarjoajat",
+    "tableIsOpen" : "Pöytä on auki",
+    "tableIsClosed" : "Pöytä on suljettu",
+    "topWinners" : "Suurimmat voittajat ",
+    "lastWinners" : "Viimeisimmät voittajat"
+  },
+  "filters" : {
+    "filteredBy" : "SUODATUSPERUSTE",
+    "allStatuses" : "KAIKKI TILAT",
+    "allCurrencies" : "KAIKKI VALUUTAT",
+    "until" : "MIHIN",
+    "dataPlaceholder" : "PP.KK.VVVV"
+  },
+  "profile" : {
+    "pages" : {
+      "balance" : "SALDO",
+      "bonuses" : "BONUKSET",
+      "history" : "Historia",
+      "verification" : "TODENTAMINEN",
+      "user" : "KÄYTTÄJÄPROFIILI",
+      "limits" : "PELIRAJAT\n",
+      "exit" : "POISTU"
+    },
+    "balance" : {
+      "table" : {
+        "locked" : "BONUKSEN LUKITSEMA        ",
+        "cashout" : "NOSTETTAVISSA        "
+      },
+      "addCurrency" : "LISÄÄ VALUUTTA",
+      "noMoreCurrency" : "Ei lisättävää valuuttaa",
+      "active" : "AKTIIVINEN",
+      "select" : "Valitse"
+    },
+    "bonuses" : {
+      "history" : "Bonushistoria",
+      "table" : {
+        "wagered" : "wagered",
+        "bonus" : "Bonus",
+        "min" : "MINIMITALLETUSSUMMA        ",
+        "max" : "MAKSIMIPALKINTO        "
+      },
+      "wagerAmountRequirement" : "Panostusvaatimus",
+      "wageredPercent" : "Panostusprosentti"
+    },
+    "history" : {
+      "tabs" : {
+        "transactions" : "Tapahtumahistoria",
+        "game" : "Pelihistoria ",
+        "bonus" : "Bonushistoria"
+      },
+      "table" : {
+        "date" : "PÄIVÄMÄÄRÄ",
+        "paymentSystem" : "MAKSUJÄRJESTELMÄ        ",
+        "action" : "TOIMINTO",
+        "gameName" : "PELIN NIMI        ",
+        "betSum" : "PANOSSUMMA",
+        "win" : "VOITTO",
+        "validUntil" : "VOIMASSAOLO"
+      }
+    },
+    "verification" : {
+      "documents" : "ASIAKIRJOJEN TODENTAMINEN",
+      "text" : "Passi, ajokortti tai muu vastaava virallinen asiakirja/talouslasku, puhelinlasku tai tiliote, jossa näkyy koko nimesi ja osoitteesi/kuvakaappaus tai valokuva verkkopankista, tiliotteesta, Skrill-sivusta jne., jossa näkyy talletus.",
+      "uploaded" : "Ladatut asiakirjat",
+      "waiting" : "Odottaa hyväksyntää",
+      "approved" : "Hyväksytty",
+      "disapproved" : "Hylätty",
+      "drop" : "Pudota tiedosto tähän tai selaa kuva- tai .pdf-tiedostoja. Maksimikoko "
+    },
+    "user" : {
+      "title" : "KÄYTTÄJÄPROFIILI",
+      "tabs" : {
+        "general" : "Yleistä ",
+        "security" : "Turvallisuus"
+      },
+      "generalInfo" : "Yleiset tiedot",
+      "subscriptions" : "Tilaukset",
+      "sms" : "LÄHETÄ KAMPANJOITA SÄHKÖPOSTILLA",
+      "email" : "LÄHETÄ KAMPANJOITA TEKSTIVIESTILLÄ",
+      "denyBonuses" : "En halua saada bonuksia",
+      "passwordChange" : "Salasanan vaihtaminen",
+      "oldPassword" : "vanha salasana",
+      "newPassword" : "uusi salasana",
+      "confirmPassword" : "salasanan vahvistus",
+      "sessionHistory" : "Istuntohistoria",
+      "labels" : {
+        "email" : "Email",
+        "country" : "Country",
+        "firstName" : "First name",
+        "lastName" : "Last name",
+        "gender" : "Gender",
+        "city" : "City",
+        "address" : "Address",
+        "postalCode" : "Postal Code",
+        "phoneNumber" : "Mobile phone",
+        "birthDate" : "Birth date"
+      },
+      "updateSuccess" : "Profiilin päivitys onnistui.",
+      "passwordUpdateSuccess" : "Salasanan vaihtaminen onnistui."
+    },
+    "limits" : {
+      "initialText" : "Haluatko seurata toimintaasi, tappiorajoja tai rajoittaa talletuksia? Tilillesi voi asettaa erilaisia rajoja. Se auttaa sinua saamaan yleiskuvan pelaamisestasi. Kaikki rajoitukset astuvat voimaan välittömästi.",
+      "createLimits" : "LUO RAJAT",
+      "addLimits" : "LISÄÄ RAJAT",
+      "limits" : {
+        "depositLimit" : {
+          "name" : "TALLETUSRAJAT",
+          "text" : "Tilillesi voidaan asettaa talletusraja. Tämä asetus rajoittaa summaa, jonka voit tallettaa päivää, viikkoa tai kuukautta kohden.",
+          "editRules" : "Voit pienentää rajaa milloin tahansa. Muutos tulee voimaan välittömästi. Voit myös nostaa rajaa, mutta muutos tulee voimaan vasta 24 tunnin kuluttua.",
+          "deleteRules" : "Tappiorajan poistaminen kestää 24 tuntia. Saat sähköposti-ilmoituksen, kun raja on ylitetty."
+        },
+        "wagerLimit" : {
+          "name" : "PANOSTUSRAJAT",
+          "text" : "Tilillesi voidaan asettaa panostusrajat. Tämä asetus valvoo summaa, jonka voit panostaa päivää, viikkoa tai kuukautta kohden.",
+          "editRules" : "Voit pienentää rajaa milloin tahansa. Muutos tulee voimaan välittömästi. Voit myös nostaa rajaa, mutta muutos tulee voimaan vasta 24 tunnin kuluttua.",
+          "deleteRules" : "Panostusrajan poistaminen kestää 24 tuntia. Saat sähköposti-ilmoituksen, kun raja on ylitetty."
+        },
+        "lossLimit" : {
+          "name" : "TAPPIORAJAT",
+          "text" : "Tilillesi voidaan asettaa tappiorajat. Tämä asetus rajoittaa summaa, jonka voit menettää päivää, viikkoa tai kuukautta kohden.",
+          "editRules" : "Voit pienentää rajaa milloin tahansa. Muutos tulee voimaan välittömästi. Voit myös nostaa rajaa, mutta muutos tulee voimaan vasta 24 tunnin kuluttua.",
+          "deleteRules" : "Tappiorajan poistaminen kestää 24 tuntia. Saat sähköposti-ilmoituksen, kun raja on ylitetty."
+        },
+        "sessionLimit" : {
+          "name" : "ISTUNTORAJAT",
+          "title" : "peleissä kulutettu aika",
+          "text" : "Rajoitus tulee voimaan välittömästi. Jos saavutat rajan, sinut kirjataan automaattisesti ulos tililtäsi.",
+          "editRules" : "",
+          "deleteRules" : ""
+        },
+        "coolingOffLimit" : {
+          "name" : "JÄÄHY",
+          "title" : "peleissä kulutettu aika",
+          "text" : "Tunnetko tarvetta pysyä poissa kasinolta vähän aikaa? Voit asettaa jäähyn tietyksi ajaksi. Rajoitus tulee voimaan välittömästi. Et pysty tekemään talletusta tai pelaamaan tietyn ajan kuluessa, ja sinut myös suljetaan pois kaikista mainostarjouksista. Kun asetettu aika päättyy, saat ilmoitussähköpostin, jossa kerrotaan tilisi olevan jälleen aktiivinen.",
+          "editRules" : "Pienempi raja tulee voimaan 24 tunnin kuluttua pelaajan pyynnöstä. Suurempi raja tulee voimaan välittömästi.",
+          "deleteRules" : "Rajoituksen poisto tulee voimaan 24 tunnin kuluttua pelaajan pyynnöstä."
+        }
+      },
+      "periods" : {
+        "daily" : "päivittäinen ",
+        "weekly" : "viikoittainen",
+        "monthly" : "kuukausittainen ",
+        "days" : "PÄIVÄÄ",
+        "weeks" : "Viikkoa",
+        "months" : "kuukautta",
+        "min" : "Min",
+        "day" : "Päivä"
+      },
+      "edit" : "Muokkaa rajaa",
+      "delete" : "Poista raja",
+      "save" : "Tallenna rajat",
+      "setLimit" : "Aseta raja",
+      "deleteText" : "Haluatko varmasti poistaa",
+      "sureSet" : "Haluatko varmasti asettaa",
+      "confirmUpdate" : "Vahvista rajan päivitys",
+      "untilReset" : "Aikaa nollaukseen"
+    }
+  },
+  "promotions" : {
+    "title" : "NYKYISET KAMPANJAT",
+    "text" : "Ninecasino tekee jatkuvasti töitä tarjotakseen parhaat kampanjat. Käytämme uusinta teknologiaa ja pelaajiltamme saamaamme palautetta parantaaksemme jatkuvasti kampanjoitamme. Nauti!\n",
+    "deposit1" : {
+      "title" : "ENSIMMÄISEN  <br/> TALLETUKSEN<br/> BONUS",
+      "upTo" : "250 ILMAISKIERROSTA",
+      "name" : "ENSIMMÄISEN TALLETUKSEN BONUS",
+      "text" : "Tee ensitalletuksesi NineCasinolla ja saat 250 ilmaiskierrosta. Ensimmäisen talletuksesi jälkeen saat 50 ilmaiskierrosta joka päivä seuraavien viiden päivän ajan.<br/><br/>Aktivoi bonus tekemällä vähintään 20 € suuruinen ensitalletus. Bonus lisätään tilillesi automaattisesti."
+    },
+    "deposit2" : {
+      "title" : "-",
+      "upTo" : "-",
+      "name" : "-",
+      "text" : "-"
+    },
+    "deposit3" : {
+      "title" : "-",
+      "upTo" : "-",
+      "name" : "-",
+      "text" : "-"
+    },
+    "deposit4" : {
+      "title" : "VIIKONLOPUN<br/> RELOAD-BONUS",
+      "upTo" : "40 % AINA 150 € ASTI",
+      "name" : "VIIKONLOPUN RELOAD-BONUS",
+      "text" : "Aloita enemmällä, voita enemmän. Talleta vähintään 20 € ja saat 40 % bonuksen aina 150 € saakka. Se auttaa sinua pyöräyttelemään kolikkopelejä aivan hulluna, kunnes jättipotti räjähtää!"
+    },
+    "cashback" : {
+      "title" : "-",
+      "upTo" : "-",
+      "name" : "-",
+      "text" : "-"
+    },
+    "highroller" : {
+      "upTo" : "aina 500 € asti",
+      "name" : "30 % HIGH ROLLER-BONUS",
+      "text" : "Tykkäätkö panostaa isosti? Sitten olet oikeassa paikassa. Nappaa kerran kuukaudessa erityinen 30 % high roller -bonus aina 500 € saakka talletuksella, alkaen 300 €:sta."
+    },
+    "dropsWinsSlots" : {
+      "title" : "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
+      "name" : "Drops & Wins Slots",
+      "text" : "Tervetuloa Daily Drops & Wins -kampanjan vaiheeseen 8.\nPragmatic Play on päättänyt tuplata Drops & Winsin kuukausittaisen Slots painoksen budjetin 500 000 €:een!\nHe ovat myös kasvattaneet kuukausittaisten käteispalkintojen määrää, antaen sinulle entistäkin enemmän mahdollisuuksia voittaa.<br/><br/>\nOsallistu jännittäviin Drops & Wins -peleihin ja saa mahdollisuus voittaa osuus massiivisista 4 000 000 € palkinnoista!\nSiksi tällä kertaa meillä on viikkojen 29–32 Viikkoturnaukset (palkintokerroinviikot) ja Daily Prize Drops (palkintokerroinviikot) muutamilla uusilla peleillä!"
+    },
+    "dropsWinsLive" : {
+      "title" : "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
+      "name" : "Drops & Wins Live",
+      "text" : "Pragmatic Play antaa sinulle enemmän ja enemmän mahdollisuuksia viihdyttää itseäsi seuraavalla tasolla sen uudessa Drops & Wins for Live Casino -tapahtumassa. Tartu mahdollisuuteen voittaa osuus vaikuttavista 3 000 000 € käteispalkinnoista!\n<br/><br/>\nJokainen turnaus kestää seitsemän päivää torstaista keskiviikkoon. Pidätkö Live-peleistä? Tämä Live-painos sopii sinulle varmasti. Osallistu Viikkoturnauksiin – Ruletti, Blackjack, Mega Wheel, Baccarat!"
+    },
+    "weekly_derby" : {
+      "upTo" : "2 500 € palkintopotti",
+      "name" : "TURVAVYÖ KIINNI VIIKKOKISAA VARTEN",
+      "text" : "On Viikkokisan aika, ja palkintomme saa sinut tavoittelemaan ykkössijaa!\n<br/><br/>Käynnissä 7 päivää joka viikko torstaista klo 00.01 UTC keskiviikkoon 23.59 UTC. Nappaa mahdollisuus jakaa palkintosijan veroinen 2 500 € palkintopotti 40 onnekkaan kuljettajan kanssa.<br/><br/>Panosta vähintään 0,5 € ja valmistaudu kisaan.<br/><br/>Onnea matkaan – aloitetaan kisa!"
+    },
+    "sumdes" : {
+      "title" : "Summer Desserts<br/> Tournament",
+      "upTo" : "€100,000",
+      "name" : "Hunt down 100k with Summer Desserts",
+      "text" : "The summer is in full swing, so what’s better than a Tournament Series from Booongo! Hurry up to enjoy the Summer Desserts Network Tournament Series at NineCasino! <br/>Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC).<br/><br/>nWhat are you waiting for? Don’t miss out on sharing the huge prize pool from Booongo! Play, enjoy, and win!"
+    },
+    "demigods" : {
+      "title" : "Demi God Tales <br>Tournament",
+      "upTo" : "€20,000",
+      "name" : "Become the hero of the Demi God Tales",
+      "text" : "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament."
+    },
+    "spiritOfEgypt" : {
+      "upTo" : "The prize pool is €60,000.",
+      "name" : "Spirit of Egypt 60k",
+      "text" : "Let the Spirit of Egypt guide you to 60k<br/><br/>New adventures are on the horizon and Playson is waiting with the Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021.<br/><br/>The total Prize pool is a whopping €60,000, and if you reach the peak of the pyramid the top prize is €10,000! Search for tombs, mummies and prizes with the Spirit of Egypt 60k!"
+    },
+    "twitterGiveaway" : {
+      "title" : "twitter<br/> Giveaway",
+      "upTo" : "600 Free Spins",
+      "name" : "600 Free Spins Giveaway on Twitter",
+      "text" : "We’ve prepared a giveaway for you on our official {twitterAccount}.{br}{br} Follow us, like this {tweet}, and wait for the results on August 26th. We will randomly choose 3 winners and each of them will receive 200 Free Spins in the Wolf Gold slot.{br}{br}Good Luck!"
+    }
+  },
+  "twitter" : {
+    "twitterBtn" : "Twitter",
+    "twitterAccount" : "Twitter account",
+    "tweet" : "tweet"
+  },
+  "tournaments" : {
+    "games" : "PELIT TÄSSÄ TURNAUKSESSA",
+    "terms" : "TURNAUKSEN KÄYTTÖEHDOT",
+    "timeLeft" : "JÄLJELLÄ OLEVA AIKA",
+    "duration" : "KESTO",
+    "betsPerPoint" : "PANOKSIA PER PISTE",
+    "currentWinners" : "tämänhetkiset voittajat ",
+    "previousRound" : "edellinen kierros "
+  },
+  "dropsWinsSlots" : {
+    "title" : "Upgraded Drops & Wins Slots edition",
+    "prize" : "€4,000,000",
+    "text" : "Welcome to the new Stage 7 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 25-28 of Weekly Tournaments and Daily Prize Drops with some new games!",
+    "textMobile" : "Welcome to the new Stage 7 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000!",
+    "terms" : [
+      {
+        "title" : "Stage 7 runs between",
+        "text" : "● Week 25: 28th July 2021 19:01 CEST – 4th August 2021 18:59 CEST<br/>● Week 26: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Week 27: 11th August 2021 19:01 CEST – 18th August 2021 18:59 CEST<br/>● Week 28: 18th August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
+      },
+      {
+        "title" : "Games in this tournament",
+        "text" : "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Release the Kraken™, Empty the Bank™, Lucky Grace And Charm™, Book of Vikings™."
+      },
+      {
+        "title" : "Drops & Wins includes",
+        "text" : "● Each Tournament runs for seven days from Thursday to Wednesday with daily Prize Drops in parallel.<br/>● Weekly prize pool of €62,000 in total across 1,200 cash prizes.<br/>● Players have an opportunity to win cash prizes in Daily prize drops with daily prize pool €9,000 across 500 cash prizes."
+      },
+      {
+        "title" : "How to win",
+        "text" : "● Minimum bet requirement of €0.50.<br/>● In order to participate, players need to play with real money and make qualifying bets on any of the participating games.<br/>● In the Weekly tournaments - the highest single spin win amount adjusted for bet amount.<br/>● In the Daily tournaments - any real money spin in the participating games can trigger a random prize<br/>● There is no additional cost for players to participate."
+      }
+    ]
+  },
+  "dropsWinsLive" : {
+    "title" : "Drops & Wins for Live Casino",
+    "prize" : "€3,000,000",
+    "text" : "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!",
+    "textMobile" : "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!",
+    "terms" : [
+      {
+        "title" : "Stage 3 runs between",
+        "text" : "● Week 9: 28th July 2021 19:01 CEST – 4th August 2021 18:59 CEST<br/>● Week 10: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Week 11: 11th August 2021 19:01 CEST – 18th August 2021 18:59 CEST<br/>● Week 12: 18th August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
+      },
+      {
+        "title" : "Participating Games/Tables",
+        "text" : "<strong>Weekly Baccarat Tournament:</strong><br/><br/>Baccarat A (ID – 401), Baccarat B (ID – 404), Baccarat C (ID – 405), Baccarat D (ID – 411), Baccarat E (ID – 413), Speed Baccarat A (ID – 402), Speed Baccarat B (ID – 403), Speed Baccarat C (ID – 412), Speed Baccarat D (ID – 414), Speed Baccarat E (ID – 415).<br/><br/><strong>Weekly Blackjack Tournament:</strong><br/><br/>Live Blackjack A (ID – 301), Live Blackjack B (ID – 302), Live Blackjack C (ID – 303), Live Blackjack D (ID – 304), Live Blackjack E (ID – 305), Blackjack Azure A (ID – 511), Blackjack Azure B (ID – 512), Blackjack Azure C (ID – 513), Blackjack Azure D (ID – 514), Blackjack Azure E (ID – 515), Blackjack Azure F (ID – 516), Blackjack Azure G (ID – 517), Blackjack Azure H (ID – 518), Blackjack Azure I (ID – 519), Blackjack Azure J (ID – 520), ONE Blackjack (ID – 901).<br/><br/><strong>Tables to be added on 3rd June:</strong><br/><br/>Blackjack 17 – Azure (ID – 521), Blackjack 18 – Azure (ID – 522), Blackjack 19 – Azure (ID – 523), Blackjack 20 – Azure (ID – 524), Blackjack 21 – Azure (ID – 525)<br/><br/><strong>Weekly Mega Wheel Tournament:</strong><br/><br/>Mega Wheel (ID – 801)<br/><br/><strong>Weekly Roulette Tournament:</strong><br/><br/>Auto-Roulette (ID – 225), Live Roulette A (ID – 201), Roulette Germany (ID – 222), Roulette Italy (ID – 223), Roulette Macao (ID – 206), Roulette Russia (ID – 221), Roulette Turkey (ID – 224), Speed Roulette (ID – 203), Roulette Azure (ID – 227), Mega Roulette (ID – 204) <strong>plus dedicated tables</strong>"
+      },
+      {
+        "title" : "Drops & Wins includes",
+        "text" : "Each Tournament runs for seven (7) days from Thursday to Wednesday.<br/><br/>Tournament Criteria: Highest total value total of all points received for consecutive wins."
+      },
+      {
+        "title" : "Minimum bet requirements:",
+        "text" : "● Weekly Roulette Tournament: € 0.5.<br/>● Weekly Blackjack Tournament: € 10<br/>● Weekly Mega Wheel Tournament: € 0.5<br/>● Weekly Baccarat Tournament: € 0.5"
+      },
+      {
+        "title" : "How to participate:",
+        "text" : "● A player must join or opt-in in any of the participating games/tables.<br/>● A player must place real money bets with a minimum stake required for any participating game/table of each Weekly Tournament and must get at least two (2) consecutive in-game wins with the required Win Qualifier.<br/>● The higher the total value of the points received by the player for the consecutive wins, the higher the player’s score would be.<br/>● The prizes will be distributed to players based on the final score showed on the in-game leaderboard by the end of each Weekly Tournament."
+      },
+      {
+        "title" : "Additionally:",
+        "text" : "<strong>How to win:<br/><br/>Weekly Roulette Tournament<br/>Prizes:</strong> €50,000 in total across 1,000 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0,50 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 2x of the total Qualifying Bet to qualify for the Weekly Roulette Tournament.<br/><br/>A Player may increase their Weekly Roulette Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Any stakes placed on 1:1 odds bets (Red/Black, Odd/Even, 1:18/19:36) shall not be counted towards the Weekly Roulette Tournament score.<br/><br/><strong>Weekly Blackjack Tournament<br/>Prizes:</strong> €25,000 in total across 300 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €10 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Blackjack Tournament.<br/><br/>A Player may increase their Weekly Blackjack Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets and/or Bets Behind may be considered for the Weekly Blackjack Tournament.<br/><br/><strong>Weekly Mega Wheel Tournament<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Mega Wheel Tournament.<br/><br/>A Player may increase their Weekly Mega Wheel Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>All Qualifying Bets may be considered for the Weekly Mega Wheel Tournament.<br/><br/><strong>Weekly Baccarat Tournaments<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Baccarat Tournament.<br/><br/>A Player may increase their Weekly Baccarat Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets (Player, Banker, and Tie) may be considered for the Weekly Baccarat Tournament score."
+      }
+    ]
+  },
+  "weekly_derby" : {
+    "title" : "NINECASINON<br/> VIIKKOKISA",
+    "prize" : "2 500 €",
+    "text" : "Käynnissä 7 päivää joka viikko torstaista klo 00.01 UTC keskiviikkoon 23.59 UTC. Nappaa mahdollisuus jakaa palkintosijan veroinen 2 500 € palkintopotti 40 onnekkaan kuljettajan kanssa.",
+    "textMobile" : "Käynnissä 7 päivää joka viikko torstaista klo 00.01 UTC keskiviikkoon 23.59 UTC. Nappaa mahdollisuus jakaa palkintosijan veroinen 2 500 € palkintopotti 40 onnekkaan kuljettajan kanssa.",
+    "terms" : [
+      {
+        "text" : "Se on käynnissä 7 päivää joka viikko torstaista klo 00.01 UTC keskiviikkoon 23.59 UTC."
+      },
+      {
+        "text" : "Palkintopotti on 2 500 €. Palkinnot tulee pelata läpi 5 kertaa (kierrätysvaatimus 5x)."
+      },
+      {
+        "text" : "Jos pelaaja asettaa panoksia muussa valuutassa kuin eurossa, palkinnot jaetaan siinä valuutassa, jolla pelaaja on asettanut suurimman osan panoksista."
+      },
+      {
+        "text" : "Pelaajat, jotka ovat tehneet vähintään yhden talletuksen, osallistuvat turnaukseen. Jokaisesta 1 € oikean rahan panoksesta pelaaja saa 1 turnauspisteen."
+      },
+      {
+        "text" : "Osallistumiseen vaadittava minimipanos on 0,5 €."
+      },
+      {
+        "text" : "Vain kolikkopelien panokset huomioidaan, pöytäpelien ja jakajapelien panoksia ei lasketa mukaan."
+      },
+      {
+        "text" : "Voittaja määritellään turnauspisteiden lukumäärän perusteella: mitä enemmän turnauspisteitä pelaajalla on, sitä lähempänä hän on voittoa. Palkinnot jaetaan automaattisesti turnauksen lopussa."
+      },
+      {
+        "text" : "Yleiset bonusehdot ovat voimassa."
+      }
+    ]
+  },
+  "supportPages" : {
+    "termsPage" : {
+      "title" : "Terms & Conditions",
+      "p1" : "The following terms and conditions will enter into force on 01/31/2021. Before you start the game please read the Terms and Conditions section carefully. Started using the site you automatically confirm your acceptance of the Terms and Conditions.",
+      "p2" : "Current Terms and Conditions are governed by and interpreted in accordance with the legislation of Curacao.",
+      "general" : {
+        "title" : "General",
+        "text" : [
+          "The website www.ninecasino.com (\"Casino\", \"Website\", “Company”, \"We\", \"Us\", \"Our\") is owned and operated by Dux Group N.V. the company registered at Curacao on the 09th day of September, 2020, registration number 155114, located at Perseusweg 27A, Willemstad, Curacao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorised to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
+          "These Terms and Conditions may be changed by the Casino when such need occurs. We will do our best to notify our players of any significant changes by email. However, we do recommend all players to revisit this page regularly and check for possible changes.",
+          "These Terms and Conditions constitute a binding agreement between you and Casino. Players must read these Terms and Conditions entirely before registering an account. If you do not agree with any provision of these Terms and Conditions you must not use or continue to use the Website.",
+          "You are able to opt out from receiving offers via emails from Casino. However, we still reserve the right to send you important information regarding your account, despite you being opted out from regular email send-outs."
+        ]
+      },
+      "availabilityOfGames" : {
+        "title" : "Availability of games",
+        "text" : [
+          "Please bear in mind some games may be unavailable in certain jurisdictions, as required by the policies of game providers, which may change from time to time.",
+          "Using VPN to bypass provider’s block is strictly prohibited and may lead to confiscation of winnings.",
+          "Fashion TV Video Slot is not available in the following countries: Cuba, Jordan, Turkey, Saudi Arabia.",
+          "Planet of the Apes Video Slot is not available in the following territories: Azerbaijan, China, India, Malaysia, Qatar, Russia, Thailand, Turkey, Ukraine.",
+          "Vikings Video Slot is not available in the additional jurisdictions: Azerbaijan, Cambodia, Canada, China, France, India, Indonesia, Laos, Malaysia, Myanmar, Papua New Guinea, Qatar Russia, South Korea, Thailand, Turkey, Ukraine, United States of America.",
+          "Narcos Video Slot is not available in the following territories: Indonesia, South Korea.",
+          "Additionally, Universal Monsters (Dracula, Creature from the Black Lagoon, Phantoms Curse and The Invisible Man), are only available in the following territories: Andorra, Armenia, Azerbaijan, Belarus, Bosnia and Herzegovina, Georgia, Iceland, Liechtenstein, Moldova, Monaco, Montenegro, Norway, Russia, San Marino, Serbia, Ukraine, North Macedonia, Turkey, Austria, Cyprus, Finland, Germany, Greece, Hungary, Ireland, Luxembourg, Malta, Netherlands, Poland, Slovakia and Slovenia.",
+          "Players from the following countries are not eligible to win any jackpots from jackpot games offered by NetEnt (such as but not limited to Mega Fortune and Arabian Nights): Australia, Azerbaijan, China, Denmark, India, Israel, Italy, Japan, Malaysia, Qatar, Russia, Spain, Thailand, Tunisia, Turkey, United Arab Emirates, Ukraine. The Casino will make reasonable efforts to prevent players from these countries to reach the games, but if players from any of the stated countries should win the jackpot, the jackpot win will be annulled.",
+          "Players from Australia are not eligible to play the games from Amatic.",
+          "Players from the following countries are not eligible to play the games from Microgaming: USA, Singapore, Italy, Denmark, South Africa, France, UK, Spain, Belgium, Australia, Taiwan, Philippines.",
+          "Players from Canada are not eligible to play the games from NYX (NextGen)."
+        ]
+      },
+      "acceptedCurrencies" : {
+        "title" : "Accepted currencies",
+        "text" : [
+          "The website allows playing with the following currencies: EUR, USD, CAD, AUD, NOK, PLN, NZD, JPY, CZK, ZAR."
+        ]
+      },
+      "whoCanPlay" : {
+        "title" : "Who can play",
+        "text" : [
+          "The Casino accepts players only from those countries and geographic regions where online gambling is allowed by law. It is the player’s sole responsibility to inquire about the existing gambling laws and regulations of the given jurisdiction before placing bets on the website.",
+          "The Casino accepts strictly adult players (the minimal age is 18) and players who have reached the age specified by the jurisdiction of player’s place of residence as eligible for online gaming. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction regarding age limitations for online gambling.",
+          "It is entirely and solely your responsibility to enquire and ensure that you do not breach laws applicable to you by participating in the games. Depositing real funds and playing for real money is subject to the laws of your country, and it is your sole responsibility to abide by your native regulations.",
+          "The Company reserves the right to ask for the proof of age from the player and limit access to the Website or suspend the account to those players who fail to meet this requirement.",
+          "Players from the following countries and their territories (“Restricted Countries”) are not allowed to deposit and play real money games: United States of America, United Kingdom, Spain, France and its overseas territories (Guadeloupe, Martinique, French Guiana, Réunion, Mayotte, St. Martin, French Polynesia, Wallis and Futuna, New Caledonia), Netherlands, Israel, Lithuania, Dutch West Indies and Curacao, Azerbaijan, Armenia, Gibraltar, Jersey, Belarus, Kazakhstan, Kyrgyzstan, Moldavia, Russia, Tajikistan, Uzbekistan, Ukraine. The Casino cannot guarantee successful processing of withdrawals or refunds in the event that player breaches this Restricted Countries policy."
+        ]
+      },
+      "useOfPlayerAccount" : {
+        "title" : "Use of player account",
+        "text" : [
+          "In order for you to be able to place wagers using any of the Website, you must first register with ninecasino.com and open an account.",
+          "You are allowed to have only one (1) account. Only one account for each household, IP, PC is allowed. If you attempt to open more than one account, all accounts you try to open may be blocked or closed and any bets may be voided. Also any returns, deposits, winnings or bonuses which you have gained or accrued during such time as the duplicate account was active will be forfeited by you and may be reclaimed by us, and you will return to us on demand any such funds which have been withdrawn from the duplicate account. If you wish to open another account, you may do so by contacting the support at support@ninecasino.com. If a new account is opened, the old account will be closed. If you notice that you have more than one registered account you must notify us immediately. Failure to do so may lead to your account being blocked for access.",
+          "You must enter all mandatory information requested into your registration form, including a valid e-mail address; if you do not enter a valid email address, we will be unable to help you recover any “forgotten passwords”. It is your sole responsibility to ensure that the information you provide is true, complete and correct.",
+          "As part of the registration process you will have to choose your username and password for your login into the Website. It is your exclusive responsibility to ensure that your login details are kept securely. You must not disclose your login details to anyone. Casino is not responsible for any abuse of your account by third parties due to your disclosure, whether intentional or accidental, whether active or passive, of your login details to any third party.",
+          "For transaction security, we use SSL encryption. All customer data will be treated as confidential and will not be sold to third parties.",
+          "Kindly note that withdrawals have to be made to the same method that you deposited with. If you for example deposited a Credit Card, the winnings from that deposit have to be sent back via Credit Card.",
+          "All information that you provide to Ninecasino.com during the term of validity of this agreement is true, complete, and correct, and that you shall immediately notify Ninecasino.com of any change of such information.",
+          "You are not allowed to transfer funds from your account to other players or to receive funds from other players into your account, or to transfer, sell and/or acquire, user accounts.",
+          "Some circumstances may arise where a wager is confirmed, or a payment is performed, by us in error. In all these cases Casino reserves the right to cancel all the wagers accepted containing such an error, or to correct the mistake made re-settling all the wagers at the correct prices/spreads/terms that should have been available at the time that the wager was placed in the absence of the error.",
+          "Should the user become aware of possible errors or incompleteness in the software, he/she agrees to refrain from taking advantage of them. Moreover, the user agrees to report any error or incompleteness immediately to Ninecasino.com. Should the user fail to fulfil the obligations stated in this clause, the Company has a right to full compensation for all costs related to the error or incompleteness, including any costs incurred in association with the respective error/incompleteness and the failed notification by the user.",
+          "Ninecasino.com reserves the right to retain payments, if suspicion or evidence exists of manipulation of the casino system. Criminal charges will be brought against any user or any other person(s), who has/have manipulated the casino system or attempted to do so. Ninecasino.com reserves the right to terminate and/or change any games or events being offered on the Website."
+        ]
+      },
+      "depositing" : {
+        "title" : "Depositing",
+        "text" : [
+          "You may only participate in Games if you have sufficient funds on account for such participation.",
+          "Please note that the minimal amount of deposit is 20€ or an equivalent. The maximum amount of deposit depends on the payment method you decide to use.",
+          "We can, under certain circumstances, credit a player’s account with a personal “bonus”. The conditions for the crediting of the bonus and the amount of the bonus is determined by Casino and set out on the website from time to time. If an account contains both the real funds and bonus funds, the bonus funds will only be available for wagering once the existing real funds have been used. Before fulfilling the bonus turnover conditions if you           transfer or withdraw the main deposit amount, bonus funds and all winnings from this bonus will be forfeited.",
+          "Kindly note that bonuses come with specific bonus terms and conditions (\"Bonus Terms and Conditions\"). These can be found on the Website.",
+          "Ninecasino.com is not a financial institution and thus should not be treated as such. Your account will not bear any interests.",
+          "Deposited amounts are available on the account within a reasonable amount of time after the confirmation of the deposit. Before a withdrawal can be made, all previous deposits need to be confirmed.",
+          "Casino is not an exchange and therefore does not execute any conversion between any currencies.",
+          "You may only use your own personal credit/debit card or other payment method to fund your account. The name appearing on the credit cards, or registered on the payment accounts used for deposits or payouts must correspond to the name registered on your account.",
+          "Kindly note that due to the nature of cryptocurrencies, deposit limits cannot be applied to the deposits made through CoinsPaid payment system. If you want to limit your gambling in the casino, please, use any other available option.",
+          "When depositing using cryptocurrencies, kindly ensure you're depositing an amount greater than or equal to, the minimum deposit limit for that particular currency, as displayed on the deposit page of your account. Deposits below this limit cannot be processed by our payment processor and will not reach your account and nor can it be returned back to you.",
+          "Internet gambling may be illegal in the jurisdiction in which you are located; if so, you are not authorized to use your payment card to complete this transaction.",
+          "Cardholder's responsibility to know the laws concerning online gambling in his or her country of domicile.",
+          "Participation of minors in offered on this website activities is prohibited."
+        ]
+      },
+      "withdrawalPolicy" : {
+        "title" : "Withdrawal policy",
+        "text" : [
+          "The minimal amount for withdrawal is 20€ or an equivalent. The maximum amount for withdrawal depends on the payment method you use. If the requested amount exceeds the limit of a particular payment system, the amount will be withdrawn in installments.",
+          "If we mistakenly credit your account with winnings that do not belong to you, whether due to a technical error in the pay-tables, or human error or otherwise, the amount will remain our property and will be deducted from your account. If you have withdrawn funds that do not belong to you prior to us becoming aware of the error, the mistakenly paid amount will (without prejudice to other remedies and actions that may be available at law) constitute a debt owed by you to us. In the event of an incorrect crediting, you are obliged to notify us immediately by email.",
+          "You acknowledge that the funds are consumed instantly and Casino does not provide for refunds or cancellation. Ninecasino.com reserves the right to payout substantial wins in monthly installments.",
+          "We reserve the right to carry out verification procedures for each client at first withdrawal. Such verifications may for example include copies of a player’s passport, national Identity Card, copies of a player’s utility bills, and/or copies of the debit/credit cards used to deposit.",
+          "It's the responsibility of the player to ensure that all documents as a part of the KYC process are genuine. Faked or fraudulent documents provided may result in a confiscation of deposits and potential winnings of the player.",
+          "In order to make a withdrawal, a player must play through active deposited amounts at least once prior to withdrawal. This procedure is in line with anti money laundering practices. The player is fully responsible for paying all fees and taxes applied to their winnings according to the laws of the jurisdiction of the player’s residence.",
+          "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country. For Visa, the following countries are not supported: Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
+          "In the unlikely event of a player depositing crypto currency funds to another crypto currency network address (such as but not limited to: sending BTC to a BCH address). Ninecasino will not attempt to recover the amount unless it exceeds $5000. In such cases, a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to pursue the recovery, however it's not a guarantee to get the funds recovered.",
+          "The internal operating currency of the Website is Euro. Due to this fact, in case you transact in other currencies, the amount deducted from your credit card may be insignificantly higher than displayed at the time of transaction due to currency conversions on the side of your bank and/or the Casino's payment processing system.",
+          "All Bank Transfer payouts are processed within five (5) banking days. Please mind that you will not be able to request a Bank Transfer for USD payouts.",
+          "You acknowledge that withdrawals via bank transfers can in exceptional cases be subject to additional charges by the intermediary banks. These charges remain outside the influence of The Casino and are limited to the equivalent of EUR 16.",
+          "The maximum withdrawal amount processed to a player is 2,500 €/$ per day, 7,500 €/$ per         week and 15,000 €/$ per month, unless otherwise specified in the Terms and Conditions of a          specific promotion. Exceptions may be made to players with a higher VIP level, if any, at        the Casino’s sole discretion.",
+          "If you win more than 15,000 €/$, the Casino reserves the right to divide the payout into         monthly instalments of maximum 15,000 €/$ until the full amount is paid out.",
+          "We reserve the right to use additional procedures and means to verify your identity (Know         Your Client) when effecting deposits into your account. This could include (but is not         limited to) a selfie with a document or form of identification. In order to verify         player`s account casino management require documents (ID, payment systems, utility bills         еtc) in Latin or Cyrillic alphabet. In case player doesn’t have an opportunity to provide         documents in above-mentioned alphabets casino reserves the right to demand video          verification where player shows his/her documents.",
+          "Players depositing in CAD can only withdraw money via EcoPayz, Interac, Instadebit and         iDebit (a minimum deposit via these payment options is required to activate them for         withdrawal).",
+          "We reserve the right to make a phone call to the number provided in your account, which at          our own discretion can be a necessary part of the KYC procedure. Until the account is         fully verified, no cashouts will be processed.",
+          "We are not a financial institution and thus should not be treated as such. Your account        will not bear any interests and no conversion or exchange services will be offered at any         time."
+        ]
+      },
+      "responsibleGaming" : {
+        "title" : "Responsible gaming",
+        "text" : [
+          "Upon requesting a self exclusion, Casino will immediately close that account and prevent        the player from playing on that particular account. We will make reasonable efforts to try         to prevent the opening of new accounts but it's the player's sole responsibility to make        sure no other accounts are created. The Casino cannot be held accountable for potential          losses on other accounts.",
+          "As a player, you have the opportunity to put a loss limit on your account (among other         limits)."
+        ]
+      },
+      "dormantAccounts" : {
+        "title" : "Dormant accounts",
+        "text" : [
+          "An inactive (dormant) account is an account which a player has not logged into or logged         out of for twelve (12) consecutive months. If your account is deemed to be inactive, the        Casino reserves the right to charge a monthly administrative fee of €10 or the equivalent         in another currency (or the current balance of your account, if less) as long as the      balance of your account remains positive.",
+          "You authorise the Casino to debit this fee from your account on the beginning of the month         following the day on which your account is deemed inactive, and on the beginning of every        subsequent month that your account remains inactive. The Casino will stop deducting the         fee if the account balance is zero or if the account is reactivated.",
+          "All costs that may occur upon refund procedure are on the player."
+        ]
+      },
+      "disclaimerOfLiabilities" : {
+        "title" : "Disclaimer of liabilities",
+        "text" : [
+          "You are solely responsible for reporting and accounting for any taxes applicable to you         under relevant laws for any winnings that You receive from Ninecasino.com.",
+          "You understand that by participating in the Games you take the risk of losing funds deposited into your account."
+        ]
+      },
+      "antiFraudPolicy" : {
+        "title" : "Anti-fraud policy",
+        "text" : [
+          "The Company has a strict anti-fraud policy and utilises various anti-fraud tools and           techniques. If the player is suspected of fraudulent actions including, but not limited           to: participating in any type of collusion with other players fraudulent actions against           other online casinos or payment providers chargeback transactions with a credit card or           denial of some payments made creating two or more accounts other types of cheating or           becomes a bankrupt in the country of their residence, the Company reserves the right to           terminate such account and suspend all payouts to the player. This decision is at sole           discretion of the Company and the player will not be notified or informed about the           reasons for such actions. The Company also reserves the right to inform applicable           regulatory bodies of the fraudulent actions performed by the player. delaying game rounds           in any game, including free spins and bonus features, to a later time when you have no           wagering requirements, leaving large bets on the table, for example in blackjack, and           returning to the game after bonus wagering has been completed, playing games with bonus           money to build up in-game value, lose the bonus funds, and then cash out on the built-up           value during real-money play, using strategies that take advantage of any software bug or           failure.",
+          "Should the Casino become aware of any user who has accepted the bonus or a promotion with           sole purpose of creating a positive expected value on bonus return by using known           practices aimed at securing a cash out of said bonus or at any way try to take advantage           of bonuses received by Casino, then We will enforce immediate confiscation of winnings and           closure of the account with the right to withhold any further withdrawals. An example of           advantage play would be delaying any game round in any game, including free spins features           and bonus features, to a later time when you have no more wagering requirement and/or           performing new deposit(s) while having free spins features or bonus features still           available in a game, the Casino reserves the right to withhold any withdrawals and/or           confiscate all winnings.",
+          "Ninecasino.com prohibits player collusion and does not allow any kind of robots and           programmed devices to participate in game play.",
+          "The Casino reserves the right to close your account and to refund to you the amount on           your account balance, subject to deduction of relevant withdrawal charges, at Casino’s           absolute discretion and without any obligation to state a reason or give prior notice."
+        ]
+      },
+      "refundPolicy" : {
+        "title" : "Refund policy",
+        "text" : {
+          "p1" : "If you would like to make a refund, please contact   {email}        ",
+          "p2" : "To check the refund, you must provide these documents: <br/>           1) photos of both sides of your passport, driver's license, or any other form of ID,<br/>           2) proof of address (proof of address would need to be a photo of a paper document posted           to you in the last 90 days, it could be eg a government-issued document, a bank document,           a bill, or similar.<br/>           3) Alternatively, you can upload the original PDF of a utility bill), bank statement           (showing your name and account number if you haven’t uploaded it as a proof of address)",
+          "p3" : "It may take up to 7 business days for a refund to be decided.",
+          "p4" : "If a refund is decided upon, the amount of the refund shall be returned to the Player’s           account, the Player shall be informed and the procedure shall be finalised within 48 hours           after the decision has been made.",
+          "p5" : "If you have funded your account with a Credit Card we reserve the right to pay all           withdrawal requests up to the total amount deposited as refunds against the purchases you           have made. If your withdrawals exceed the total amount deposited, any excess amount will           be paid to you via one of our alternative methods available.",
+          "p6" : "Before a refund is processed all bonuses and winnings in your balance will be deducted           prior to calculating the amount to be refunded.",
+          "p7" : "In case any Credit Card purchases are considered to carry an unacceptable risk for           security or legal reasons either by our Payment processors or by the Casino, we will           initiate refunds for all such transactions back to the Сredit Сard, and notify all the           appropriate authorities and parties."
+        }
+      },
+      "complaints" : {
+        "title" : "Complaints",
+        "text" : [
+          "You are free to contact our customer service team according to the instructions found on           the Website to give us any complaints regarding our services.",
+          "Complaints are handled in the support department and escalated in the organisation of the           Casino in the case that support personnel did not solve the case immediately. You shall be           informed about the state of the complaint to a reasonable level.",
+          "If the dispute is not resolved on the casino management level, you can contact any independent body, gaming authority or the licensing regulator listed on the Website.",
+          "In the event of any dispute, you agree that the server logs and records shall act as the           final authority in determining the outcome of any claim. You agree that in the unlikely           event of a disagreement between the result that appears on your screen and the game           server, the result that was logged on the game server will prevail, and you acknowledge           and agree that our records will be the final authority in determining the terms and           circumstances of your participation in the relevant online gaming activity and the results           of this participation.",
+          "When we wish to contact you regarding such a dispute, we will do so by using any of the contact details provided in your account."
+        ]
+      },
+      "penaltiesAndTermination" : {
+        "title" : "Penalties and termination",
+        "text" : [
+          "If you breach any provision of these Terms and Conditions or Ninecasino.com has a           reasonable ground to suspect that you have breached them, Casino reserves the right not to           open, suspend, close your account, withhold payment of your winnings and apply such funds           on account of any damages due by you.",
+          "You acknowledge that We shall be the final decision-maker of whether you have violated the rules, terms or conditions in a manner that results in your suspension or permanent barring from participation in our site."
+        ]
+      },
+      "netEnt" : {
+        "title" : "NetEnt T&C",
+        "restriction" : {
+          "title" : "Absolute Restriction",
+          "text" : "NetEnt will not permit NetEnt Casino Games to be supplied to any entity that operates in           any of the below jurisdictions (irrespective of whether or not NetEnt Casino Games are           being suppliedby the entity in that jurisdiction) without the appropriate           licenses.Belgium, Bulgaria, Colombia, Croatia, Czech Republic, Denmark, Estonia, France,           Italy, Latvia, Lithuania, Mexico, Portugal, Romania, Spain, Sweden, Switzerland, United           Kingdom, United States of America."
+        },
+        "blacklistedTerritories" : {
+          "title" : "Blacklisted Territories",
+          "text" : "All NetEnt Casino Games may not be offered in the following territories: Afghanistan,           Albania, Algeria, Angola, Australia, Bahamas, Botswana, Belgium, Bulgaria, Colombia,           Croatia, Czech Republic, Denmark, Estonia, Ecuador, Ethiopia, France, Ghana, Guyana, Hong           Kong, Italy, Iran, Iraq, Israel, Kuwait, Latvia, Lithuania, Mexico, Namibia, Nicaragua,           North Korea, Pakistan, Panama, Philippines, Portugal, Romania, Singapore, Spain, Sweden,           Switzerland, Sudan, Syria, Taiwan, Trinidad and Tobago, Tunisia, Uganda, United Kingdom,           United States of America, Yemen, Zimbabwe."
+        },
+        "blacklistedBrandedGamesTerritories" : {
+          "title" : "Blacklisted Branded Games Territories",
+          "text" : "The followed NetEnt Braded Games have some further restrictions in addition to the           Blacklisted Territories set out above:",
+          "list" : [
+            "In addition to the jurisdictions set out in paragraph 2, Planet of the Apes Video Slot               must not be offered in the following territories: Azerbaijan, China, India, Malaysia,               Qatar, Russia, Thailand, Turkey, Ukraine.",
+            "In addition to the jurisdictions set out in paragraph 2, Vikings Video Slot must not               be offered in the following jurisdictions: Azerbaijan, Cambodia, Canada, China,               France, India, Indonesia, Laos, Malaysia, Myanmar, Papua New Guinea, Qatar, Russia,               South Korea, Thailand, Turkey, Ukraine, United States of America.",
+            "In addition to the jurisdictions set out in paragraph 2, Narcos Video Slot must not be               offered in the following territories: Indonesia, South Korea.",
+            "In addition to the jurisdictions set out in paragraph 2, Street Fighter Video Slot               must not be offered in the following territories: Anguilla, Antigua & Barbuda,               Argentina, Aruba, Barbados, Bahamas, Belize, Bermuda, Bolivia, Bonaire, Brazil,               British Virgin Islands, Canada, Cayman Islands, China, Chile, Clipperton Island,               Columbia, Costa Rica, Cuba, Curacao, Dominica, Dominican Republic, El Salvador,               Greenland, Grenada, Guadeloupe, Guatemala, Guyana, Haiti, Honduras, Jamaica, Japan,               Martinique, Mexico, Montserrat, Navassa Island, Paraguay, Peru, Puerto Rico, Saba,               Saint Barthelemy, Saint Eustatius, Saint Kitts and Nevis, Saint Lucia, Saint Maarten,               Saint Martin, Saint Pierre and Miquelon, Saint Vincent and the Grenadines, South               Korea, Suriname, Turks and Caicos Islands, UnitedStates of America, Uruguay, US Virgin               Islands, Venezuela.",
+            "In addition to the jurisdictions set out in paragraph 2, Fashion TV Video Slot must               not be offered in the following territories: Cuba, Jordan, Turkey, Saudi Arabia."
+          ]
+        },
+        "text" : "Universal Monsters (Dracula, Creature from the Black Lagoon, Phantoms Curse and The           Invisible Man) may only be played in the following territories: Andorra, Austria, Armenia,           Azerbaijan, Belarus, Bosnia and Herzegovina, Cyprus, Finland, Georgia, Germany, Greece,           Hungary, Iceland, Ireland, Liechtenstein, Luxembourg, Malta, Moldova, Monaco, Montenegro,           Netherlands, North Macedonia, Norway, Poland, Russia, San Marino, Serbia, Slovakia,           Slovenia, Turkey and Ukraine."
+      }
+    },
+    "privacyPolicyPage" : {
+      "title" : "Privacy Policy",
+      "introduction" : {
+        "title" : "Introduction",
+        "text" : [
+          "This Privacy Policy, which was last updated on 04/06/2020, sets out the data processing           practices carried out by Ninecasino. Here at Ninecasino we like making things simple and           easy for our customers and that includes being clear, transparent and open about what we           collect, and how and why we use the data we collect, so this page goes into great detail.",
+          "Our Policy explains how we use your personal data, whether you are just visiting, making a           deposit or playing one of our games. This policy includes information you may not already           know about your data privacy rights, circumstances in which we share and obtain           information about you and how we use it to personalize the marketing you receive, so           please take time to read all the sections carefully.",
+          "If we make any material updates to this Policy, we will inform you.",
+          "Please note that all our employees undertake regular training on Information Security and           are required to comply with confidentially obligations as well as internal policies and           procedures whenever they handle your information.",
+          "We hope you will find this page helpful, but should you have any concerns or questions,   regarding Data Protection, please feel free to contact our Data Protection Officer at dpo@ninecasino.com."
+        ]
+      },
+      "policyPromise" : {
+        "title" : "Our Privacy Policy Promise",
+        "text" : [
+          "Our Privacy Policy Promise Ninecasino will always value and respect the privacy of each           and every one of its customers. Your privacy is important both to you and to us and we           make the following promise to you:",
+          "Ninecasino is committed to protecting your privacy. We believe in using your personal           information to make things simpler and better for you. We will always keep your personal           information safe. We’ll be clear and open with you about why we collect your personal           information and how we use it. Where you have choices or rights, we’ll explain them to you and respect your wishes."
+        ]
+      },
+      "useYourInformation" : {
+        "title" : "HOW WE USE YOUR INFORMATION",
+        "text" : "We process the Personal Information we collect from you in order to deliver our services.           In particular, we will use your data for the following purposes:",
+        "list" : {
+          "p1" : "Processing your bets and transactions. This includes your use of credit card and               online payment systems;",
+          "p2" : "Providing you with gaming and other ancillary services that you seek from our Website;",
+          "p3" : "Providing registered players with information about our promotional offers, or               providing promotional information from our selected business partners, associates and               affiliates (only if players specifically consented to receiving such marketing               material);",
+          "p4" : "Monitoring and investigating transactions for the purpose of preventing fraud, terms               abuse, money laundering and other illegal or irregular gaming activities;"
+        }
+      },
+      "personalInformation" : {
+        "title" : "OBTAINING PERSONAL INFORMATION",
+        "text" : [
+          "We shall not collect any Personal Information about you without your knowledge. We may,           however, automatically collect certain data about you where you would have provided such           information through the use of our services and through your interactions with us.",
+          "We may also lawfully receive certain Personal Information from online vendors and service           providers, such as fraud prevention companies. In addition, we retain the right to engage           the services of third-party providers to render technical support, so as to process your           online transactions and source gaming content.",
+          "Please understand that we may be granted access to any information you may provide to such           vendors, service providers and third-party e-commerce services. Rest assured that we will           use and safeguard any Personal Information so obtained, as set out in this Policy. Any           information that you provide will only be disclosed to third parties outside the Company           in accordance with this Privacy Policy, and we shall take any necessary steps to ensure           that our agreements with third-party service providers always protect your private      information."
+        ]
+      }
+    },
+    "aboutUsPage" : {
+      "title" : "TIETOA MEISTÄ",
+      "text" : "Ninecasino on seuraavan sukupolven huipputekninen kasino, jolta löytyy alan parhaiden asiantuntijoiden kehittämät uusimmat pelit. Olemme pelanneet eri nettikasinoilla useita vuosia. Meillä on valtavasti kokemusta uhkapelaamisesta. Tiedämme, mitä kunnon pelaaja tarvitsee.",
+      "advantages" : {
+        "text1" : "Nopeat maksut",
+        "text2" : "Lisensoitu nettikasino",
+        "text3" : {
+          "p1" : "Yli  ",
+          "p2" : "peliä"
+        },
+        "text4" : "tuki"
+      },
+      "ourSoftware" : {
+        "title" : "OHJELMISTOMME",
+        "text" : "Kasino käyttää alan parhaiden kasino-ohjelmistojen ja -pelien kehittäjien tuotteita. Amatic, BetSoft, Endorphina, Ezugi, Microgaming ja SoftSwiss. Kaikki pelaajat tuntevat nämä ja luottavat niihin. Mekin luotamme niihin. Emme halua, että pelaajamme tuntevat olevansa koe-eläimiä turhassa kokeessa, joten tarjoamme luotettavan ratkaisun, jota itsekin mieluusti käyttäisimme."
+      },
+      "offers" : {
+        "title" : "MITÄ TARJOAMME",
+        "bonuses" : {
+          "title" : "BONUKSET",
+          "text" : "Antelias tervetuliaisbonuksemme tuo lisäjännitystä ja innostaa jopa kylmäverisimpiä ja varovaisimpia pelaajiamme. Tee talletus ja saa tuplasti takaisin tilillesi. Eikä siinä vielä kaikki! Mene verkkosivustomme Bonukset-osioon."
+        },
+        "ourGames" : {
+          "title" : "PELIMME",
+          "text" : "Välitämme pelaajistamme, ja haluamme tarjota jotain kaikille. Tarjoamamme pelit on kehittänyt alan parhaat kehittäjät. Se tarkoittaa, että niissä on upeat grafiikat ja äänimaailma. Pelit myös toimivat ”todistettavasti reilu” -tekniikalla."
+        },
+        "jackpots" : {
+          "title" : "JÄTTIPOTIT",
+          "text" : "Kaikki unelmoivat hetkestä, jolloin taianomainen JACKPOT-teksti ilmestyy ruudulle ja ilmoittaa, että joku on saavuttanut unelmansa. Progressiivisen jättipotin peliemme ansiosta tämä taianomainen numero kasvaa hetki hetkeltä pelaajien unelmien kanssa."
+        },
+        "liveGames" : {
+          "title" : "LIVE-PELIT",
+          "text" : "Uppoudu aidon kasinon tunnelmaan poistumatta kotoasi. Live-peliemme parissa tunnet olevasi aidossa kasinopöydässä kotoa käsin."
+        },
+        "paymentAndSecurity" : {
+          "title" : "MAKSUJÄRJESTELMÄT JA TURVALLISUUS",
+          "text" : "Kukaan ei tykkää odottamisesta. Tarjoamme pelaajillemme välittömät talletukset ja nostot. Rahat ovat saapuneet kohteeseensa silmänräpäyksessä. Valitse valuuttasi, tee talletus, vedä syvään henkeä, ja olet valmis pelaamaan."
+        },
+        "support" : {
+          "title" : "24/7-TUKI",
+          "text" : "Vaikka saatat joskus törmätä ongelmiin, ammattilaistiimimme on aina valmiina auttamaan. Voit ottaa yhteyttä asiantuntijoihimme chatilla tai sähköpostilla ympäri vuorokauden, joten saat varmasti apua ongelmien ilmetessä."
+        }
+      }
+    },
+    "faqPage" : {
+      "title" : "ONKO SINULLA KYSYTTÄVÄÄ?",
+      "button" : "Takaisin",
+      "items" : {
+        "account" : {
+          "title" : "TILI",
+          "items" : [
+            {
+              "title" : "UNOHDIN SALASANANI. MITÄ MINUN PITÄISI TEHDÄ?",
+              "answer" : "Turvallisuussyistä salasanaasi ei ole tallennettu järjestelmiimme. Sinun tulee napsauttaa ”Unohditko salasanasi?” -vaihtoehtoa, joka sijaitsee salasanaruudun alapuolella. Sinua pyydetään sitten vastaamaan ”salaiseen kysymykseen”, jonka määritit rekisteröinnin yhteydessä. Sinun pitäisi nyt nähdä ilmoitus ”Salasanasi on vaihdettu. Voit nyt kirjautua kasinolle.” Rekisteröityyn sähköpostiosoitteeseesi lähetetään toinen sähköposti, jossa vahvistetaan uusi salasana."
+            },
+            {
+              "title" : "KUINKA VOIN VAHVISTAA TILINI?",
+              "answer" : "Kun rekisteröit tilisi, lähetämme sähköpostiisi tervetuloviestin. Tuosta sähköpostiviestistä löytyy linkki, jolla voit vahvistaa tilisi. Tilin vahvistamisella varmistat saavasi sähköpostimme ja pysyväsi ajan tasalla ja tietoisena uusista kampanjoistamme ja peleistämme!"
+            },
+            {
+              "title" : "PELINI ON JUMISSA. KUINKA VOIN SULKEA NINECASINON?",
+              "answer" : "Jos peli jumittuu kesken panostuksen, suosittelemme sulkemaan ohjelmiston Tehtävienhallinnasta (Mac-tietokoneilla Järjestelmän valvonta). Avaa toimintoluettelo painamalla CTRL + ALT + DEL ja valitse Käynnistä Tehtävienhallinta. Pelisi jatkuu, kun kirjaudut takaisin kasinolle."
+            },
+            {
+              "title" : "SAIN VIRHEVIESTIN ”PELAAJA ON JO YHDISTETTY”, KUN KIRJAUDUIN SISÄÄN",
+              "answer" : "Jos et pysty kirjautumaan Ninecasinon ladattavaan versioon, et ole välttämättä kirjautunut ulos oikein selainversiosta. Varmista, että kirjaudut ulos oikein selainversiosta napsauttamalla Kirjaudu ulos -painiketta."
+            },
+            {
+              "title" : "KUN YRITIN AVATA KASSATOIMINTOA, SAIN VIRHEVIESTIN ”SELAIMESI KÄYTTÄÄ PONNAHDUSIKKUNOIDEN ESTOA. JATKAAKSESI PELAAMISTA SALLI TÄMÄN SIVUSTON PONNAHDUSIKKUNAT”.",
+              "answer" : "Määritä Internet Explorerin ponnahdusikkunoiden esto näillä vaiheilla:<br/><br/><ol><li>Napsauta Aloitus, siirry kohtaan Kaikki ohjelmat ja napsauta Internet Explorer.</li><li>Napsauta Työkalut-valikossa Internet-asetukset.</li><li>Napsauta Yksityisyys-välilehteä ja valitse sitten Estä ponnahdusikkunat -ruutu ottaaksesi ponnahdusikkunoiden eston pois käytöstä.</li><li>Napsauta Käytä ja sitten OK.</li></ol>Määritä Google Chromen ponnahdusikkunoiden esto näillä vaiheilla:<br/><br/><ol><li>Napsauta Chrome-valikkoa selaimen työkalupalkissa.</li><li>Valitse Asetukset.</li><li>Napsauta Näytä lisäasetukset.</li><li>Napsauta Yksityisyys-osiossa Sisältöasetukset-painiketta.</li><li>Valitse Ponnahdusikkunat-osiossa Salli kaikkien sivustojen näyttää ponnahdusikkunoita.</li><li>Napsauta Käytä ja OK. Käynnistä sitten selain uudelleen.</li></ol>"
+            }
+          ]
+        },
+        "bonuses" : {
+          "title" : "BONUKSET",
+          "items" : [
+            {
+              "title" : "KUINKA LUNASTAN ILMAISBONUKSENI?",
+              "answer" : "Onnittelut! Jos olet saanut eksklusiivisen ilmaisbonuksen, pääset pian nauttimaan lahjastasi. Avaa Kassa, siirry Bonukset-osioon, kirjoita relevantti kuponkikoodi ja napsauta Lähetä-painiketta. Bonus on sinun!"
+            },
+            {
+              "title" : "MITÄ PELEJÄ VOIN PELATA BONUKSELLANI?",
+              "answer" : "Ellei toisin mainita, kaikissa bonuksissa on ”vakiokierrätysvaatimusehdot”, mikä tarkoittaa, että voit asettaa panoksia kolikkopeleihin ja raaputusarpoihin. On kuitenkin tärkeää huomioida, että kelpaavat pelit voivat vaihdella tarjouksittain, joten epäselvyyksien välttämiseksi suosittelemme tarkastamaan bonuskäytäntömme napsauttamalla tästä."
+            },
+            {
+              "title" : "MISTÄ NÄEN BONUKSEN KIERRÄTYSVAATIMUKSET?",
+              "answer" : "Voit seurata bonuksesi kierrätysvaatimusta avaamalla Kassan ja siirtymällä Bonukset-osioon. On tärkeää huomioida, että kierrätysvaatimukset voivat vaihdella tarjouksittain, joten epäselvyyksien välttämiseksi suosittelemme tarkastamaan bonuskäytäntömme{policy} napsauttamalla tästä. "
+            }
+          ]
+        },
+        "deposits" : {
+          "title" : "TALLETUKSET JA NOSTOT",
+          "items" : [
+            {
+              "title" : "MITÄ TALLETUSTAPOJA TARJOATTE?",
+              "answer" : "Kun olet valmis pelaamaan oikealla rahalla, huomaat, ettei tallettaminen Ninecasinolle voisi olla helpompaa. Hyväksymme yleisimmät maksutavat, kuten luotto-/pankkikortit, Neteller, Skrill ja monia muita sähköisiä maksutapoja. Voit katsoa kaikki maassasi käytössä olevat maksutavat Kassan Talletus-osiosta. Saatavuus riippuu maastasi."
+            },
+            {
+              "title" : "TEIN JUURI NOSTOPYYNNÖN. TARVITSEEKO MINUN LÄHETTÄÄ ASIAKIRJOJA?",
+              "answer" : "Osana turvallisuuskäytäntöjämme vaadimme tavalliset vahvistusasiakirjat asiakkaiden ensimmäisen nostopyynnön yhteydessä. Jos rahasi palautetaan tilisiirtona tai nostosi summa ylittää tallettamasi summan, pyydämme lähettämään meille seuraavat asiakirjat:<br/><br/><br/><br/><ol><li>Enintään 6 kuukautta vanha talouslasku</li><li>Kopio luottokorttisi etupuolesta (varmista turvallisuussyistä, että kortin etupuolella näkyvät 8 keskimmäistä numeroa on peitetty)</li><li>Henkilötodistus (passi/ajokortti jne.)</li><li>Jos teet noston e-lompakkoon, anna meille tilin numero/tiliin liitetty sähköpostiosoite.</li></ol><br/><br/>Tarkastamme asiakirjat mahdollisimman nopeasti, yleensä alle 12 tunnissa. Tässä voi mennä kauemmin, jos tarvitsemme lisävahvistuksia. Jos et ole kuullut meistä 48 tuntiin, ota yhteyttä asiakaspalveluun."
+            },
+            {
+              "title" : "KUINKA KAUAN NOSTON SAAMISESSA KESTÄÄ?",
+              "answer" : "Pikanostomme ansiosta saat rahasi 24 tunnin sisällä, kunhan olet antanut käyttöehdoissamme mainitut tiedot. <br/><br/>Katso Kassan Nosto-osiosta täydellinen aikataulu siitä, milloin voit odottaa näkeväsi varat tililläsi."
+            },
+            {
+              "title" : "SAIN VIRHEVIESTIN: ET VOI TEHDÄ NOSTOA, SILLÄ SINULLA ON AKTIIVISIA BONUKSIA. OTA YHTEYTTÄ TUKEEN ONGELMAN RATKAISEMISEKSI. MITÄ MINUN PITÄISI TEHDÄ?",
+              "answer" : "Jos tililläsi on aktiivinen bonus, sinun tulee ennen nostopyynnön tekemistä täyttää bonuksen vaatimukset. Voit seurata bonusvaatimusten edistymistä Kassan Bonukset-osiossa. Kun bonuksen vaatimukset on täytetty, voit tehdä nostopyyntösi."
+            },
+            {
+              "title" : "VOINKO ASETTAA PELIRAJOITUKSIA NINECASINOLLA?",
+              "answer" : "Kyllä voit. Tarjoamme ylpeänä turvallisen peliympäristön. Voit asettaa talletusrajasi kassan henkilökohtaisissa asetuksissa. Voit myös asettaa tilillesi muita rajoituksia, kuten rajoittaa tilin käyttöä tiettyinä ajanjaksoina. Nämä löytyvät Tilirajoitukset-osiosta. Katso lisätietoja Vastuullinen pelaaminen -sivulta."
+            },
+            {
+              "title" : "MISTÄ TIEDÄN, LIITTYYKÖ MAKSUJEN KÄSITTELYYN KULUJA NINECASINOLLA?",
+              "answer" : "Mikäli sovellettavissa, maksujen käsittelyyn liittyvät kulut esitetään selvästi talletus-/nostoprosessin aikana."
+            }
+          ]
+        },
+        "security" : {
+          "title" : "TURVALLISUUS ",
+          "items" : [
+            {
+              "title" : "ONKO NINECASINOLLA PELAAMINEN TURVALLISTA?",
+              "answer" : "Ninecasino on suosittu kasino – ei pelkästään suosittujen peliemme takia, vaan myös pelaajille tarjoamamme turvallisuuden vuoksi. Koko pelijärjestelmä ja sisäiset prosessit ovat täysin yhdenmukaisia lisenssiehtojemme kanssa."
+            },
+            {
+              "title" : "MITEN TURVASSA HENKILÖTIETONI OVAT NINECASINOLLA?",
+              "answer" : "Ninecasino tekee kaikkensa taatakseen, että henkilö- ja taloustietosi pysyvät täysin turvassa ja luottamuksellisina. Käytämme alan standarditurvaprotokollaa. Sivuston yhteys on salattu ja varmennettu TLS 1.2:lla (vahva protokolla), ECDHE_RSA:lla X25519:llä (vahva avaimenvaihto) ja AES_128_GCM:llä (vahva salakirjoitusjärjestelmä) sen varmistamiseksi, että kaikki tapahtumat talletukset ja nostot mukaan lukien suoritetaan täysin turvallisesti. Tämä teknologia suojaa sinua siltä, että joku Ninecasinon ulkopuolinen näkisi tietosi, kun niitä lähetetään sinun ja Ninecasinon välillä."
+            },
+            {
+              "title" : "MILLÄ ALUSTOILLA NINECASINO ON SAATAVILLA?",
+              "answer" : "Voit pelata suosikkipelejäsi monilla eri alustoilla. Ohjelmistomme on saatavilla PC:lle, tableteille ja älypuhelimille."
+            },
+            {
+              "title" : "MITÄ PELINTARJOAJIA NINECASINOLLA ON?",
+              "answer" : "Ninecasino tarjoaa muun muassa Amayan, NextGenin, NetEntin, WMS:n ja Evolutionin pelejä, joten löydät varmasti jotain, mistä pidät!"
+            }
+          ]
+        }
+      }
+    },
+    "bitcoinsPage" : {
+      "title" : "MIKSI TARVITSET BITCOINEJA?",
+      "text" : "Se on verkkomaksujen uusi sukupolvi. Nopeat tapahtumat alhaisin kustannuksin ympäri maailman. Kaikki kryptovaluuttojen konseptit voi olla vaikea ymmärtää, mutta niiden helppous tekee siitä kannattavaa.",
+      "reason1" : {
+        "title" : "TURVALLISUUS JA AINA JÄLJITETTÄVISSÄ OLEVA RAHA",
+        "text" : "Kaikki Bitcoin-tapahtumat perustuvat sen lohkoketjuun. Lohkoketju on kuin avoin tilikirja, josta jokainen voi tarkastaa koko tapahtumahistorian, muttei voi tehdä siihen muutoksia. Lohkoketjuteknologia kasvattaa nyt suosiotaan sen turvallisuuden vuoksi. Monien maiden hallitukset käyttävät sitä omiin tarpeisiinsa."
+      },
+      "reason2" : {
+        "title" : "TIETOJESI SUOJAAMINEN",
+        "text" : "Voit aloittaa Bitcoinin käyttämisen lähettämättä henkilötietojasi kenellekään. Jotkut kryptovaluuttapörssit voivat pyytää suorittamaan KYC (Know Your Client, tunnista asiakkaasi) -prosessin, mutta näin toimitaan vain, jos ostat/myyt merkittäviä määriä. KYC:n ehdot ovat aina luettavissa palveluiden UKK-sivulla – voit valita haluamasi pörssin."
+      },
+      "reason3" : {
+        "title" : "ALHAISET KULUT",
+        "text" : "Bitcoin on paras tapa lähettää rahaa toisessa maassa olevalle henkilölle. Maksu suoritetaan alle tunnissa Bitcoin-verkoston kuormituksesta riippuen. Toisin kuin perinteiset tilisiirrot, joissa voi kestää jopa yli viikko."
+      },
+      "reason4" : {
+        "title" : "KANSAINVÄLISET TAPAHTUMAT",
+        "text" : "Bitcoin on paras tapa lähettää rahaa toisessa maassa olevalle henkilölle. Maksu suoritetaan alle tunnissa Bitcoin-verkoston kuormituksesta riippuen. Toisin kuin perinteiset tilisiirrot, joissa voi kestää jopa yli viikko."
+      },
+      "reason5" : {
+        "title" : "DESENTRALISOINTI",
+        "text" : "Bitcoin on avoimen lähdekoodin tuote, jonka taustalla on suuri harrastajien yhteisö, joka auttaa kehityksessä ja muussa. Bitcoinin lohkoketjuverkostoa ei omista kukaan, joten kukaan ei voi estää tiliäsi tai lompakkoasi."
+      },
+      "offers" : {
+        "title" : "MITEN VOIN PELATA NINECASINOLLA BITCOINEILLA?",
+        "offer1" : {
+          "title" : "VALITSE LOMPAKKOSI",
+          "text" : "Ensinnäkin sinun tulee valita, missä haluat säilyttää Bitcoinejasi. Tähän on monta tapaa: nettilompakot, hardware-lompakot (fyysiset lompakot), tai voit säilyttää niitä lompakossasi pörssissä.      <br /><br />          Suosituimmat nettilompakot ovat Blockchain.com, Exodus ja Mycelium. Trezor ja Ledger ovat suosituimpia fyysisiä lompakoita."
+        },
+        "offer2" : {
+          "title" : "OSTA BITCOINEJA",
+          "text" : "Kryptovaluuttapörssejä on kahta päätyyppiä. Ensimmäinen tyyppi on tavalliset pörssit, kuten Binance, Huobi, Coinbase, Kraken jne.      <br /><br />           Toinen tyyppi on p2p-pörssit, joissa ostat/myyt Bitcoineja suoraan toisen henkilön kanssa, kuten LocalBitcoins.com."
+        },
+        "offer3" : {
+          "title" : "TEE TALLETUS JA NAUTI PELEISTÄ",
+          "text" : "Ostaessasi Bitcoineja voit tallettaa ne GetSlots-tilillesi ja aloittaa pelien pelaamisen.\n<br />          Tai voit pitää Bitcoineja sijoituksena. Se on tunnettu ja nopeasti kasvava sijoitusväline.   <br /><br />       Hyväksymme kasinollamme myös muita kryptovaluuttoja. Voit tehdä talletuksen myös Ethereumilla, Litecoinilla ja Bitcoin Cashilla."
+        }
+      }
+    },
+    "amlPolicyPage" : {
+      "title" : "KÄYTÄNTÖASIAKIRJA",
+      "subTitle" : "RIKOKSET JA EPÄJÄRJESTYS (PETOSTEN JA RAHANPESUN VASTAISET TOIMET)",
+      "section1" : {
+        "title" : "KAPPALE 1 – KOKEMUS",
+        "text" : [
+          "Dux Group N.V.:n (jäljempänä ”Yritys”) johtajalla on pitkä kokemus peliyritysten suojaamisesta rikolliselta väärinkäytöltä ja laajojen petosten ja rahanpesun vastaisten toimien ja prosessien käytöstä ja laajoista henkilöstön koulutusohjelmista.",
+          "Tuetuissa tulevissa koulutusohjelmissa huomioidaan rikoslain ja rahanpesun indikaattorit, joita yleensä havaitaan peliympäristössä, erityisesti ympäristössä, jossa maksuja tehdään etänä.",
+          "Johtaja on täysin tietoinen kaikista rikoslain pykälistä ja velvollisuuksistaan, ja hänellä on tietämystä rahanpesun vastaisista toimista ja vaatimuksista, sillä hän on turvannut suuria etänä ja ei-etänä toimivia peliyrityksiä alallaan."
+        ]
+      },
+      "section2" : {
+        "title" : "KAPPALE 2 – RAHANPESU JA MAKSUPETOKSET",
+        "text1" : [
+          "Peliympäristöt joutuvat yleensä sellaisten kohteeksi, jotka haluavat pestä rahaa. Maksutapahtumien nopeus ja useiden maksunkäsittelytapojen käyttö tekee peliyrityksistä erityisen alttiita tällaisille toimille.",
+          "Tämän tuloksena monet johtajan kaupankäyntiin ja prosesseihin liittyvät päätökset on kohdattu joko suoraan tällaisten uhkien ehkäisemiseen, tai suojakeinoja vahvistetaan sivussa yrityksen yleisen kaupallisen ja kaupankäynnillisen lähestymistavan/strategian puitteissa.",
+          "KOKO henkilökunnalle annetaan koulutusta rahanpesun indikaattoreista, kuten (näihin rajoittumatta):\n"
+        ],
+        "list" : [
+          "Epätavalliset panostuskaavat",
+          "Epäilyttävät talletus- ja nostokaavat (koko ja tiheys)",
+          "Korttitietojen luotettavuus",
+          "Asiakkaan vahvistusongelmat ja identiteettivarkaudet",
+          "Tilien linkitys/useat tilit"
+        ],
+        "text2" : [
+          "Kaikki epäillyt rahanpesuyritykset tulee raportoida MLRO:lle, mutta epäilystä ei saa kertoa asiakkaalle, ja jatkotoimiin tulee saada suostumus. MLRO on tästä eteenpäin vastuussa yhteistyössä olosta, epäilyttävien toimien raportoinnista ja suostumuksen saannista NCA:n/UKFIU:n kanssa, mikäli sovellettavissa. Hän myös varmistaa, että asiaan liittyvistä raporteista pidetään asianmukaisia rekisterejä.",
+          "Yritys ottaa käyttöön TÄYDEN ”Tunne asiakkaasi” eli KYC-käytännön. Tämä auttaa ehkäisemään rahanpesu-uhkien lisäksi muita petoksia yleisesti. Asiakkaille ilmoitetaan rekisteröinnin yhteydessä ja yleisesti muulla kuin maksutapahtumia käsittelevällä tukiverkkosivustolla, että yritys käyttää verkkovahvistustyökaluja ja että tapauksissa, joissa emme pysty täyttämään kriteerejä, pyydetään henkilötodistus- ja osoiteasiakirjoja.",
+          "Muita avainpäätöksiä, jotka vahvistavat näitä suojauksia, ovat mm. nostojen ajanjaksokohtaiset rajat/nopeudet, sisältäen tarkastusvaatimukset ja johtajan hyväksynnän ennen yli 3 000 euron kertanostoja maksukortille tai pankkitilille, enintään 3 (kolme) päivittäistä nostoa ja yleinen päivittäinen 9 000 euron nostoraja.",
+          "Alan hyväksyttyjä standardeja, jotka johtavat aina tarkempaan taustatietojen tarkastamiseen (eli vaaditaan lisätodisteita henkilöllisyydestä ja osoitteesta), käytetään, kun nostojen summa on yli 3 000 euroa 24 tunnin sisällä tai 9 000 euroa 90 päivän sisällä. Yksinkertainen verkkovahvistus EI OLE riittävä näissä olosuhteissa.",
+          "Yrityksessä ei myöskään käytetä käteistä, mikä vähentää väärennetyn rahan riskiä.",
+          "Järjestelmät tallentavat tilien kaikki maksutapahtumat. Näille tilihistorioille suoritetaan säännöllisesti ja jatkuvasti petosten ja sosiaalisen vastuullisuuden indikaattorien tarkastuksia. Jos epätavallisia panoskaavoja ja voittokaavoja havaitaan, näitä verrataan puheluhistoriaan sen varmistamiseksi, etteivät työntekijät tee yhteistyötä asiakkaiden kanssa tai toimi luvattomasti.",
+          "Yritys pitää myös rekisteriä niistä asiakkaista, joita pidetään korkean riskin asiakkaina tai jotka ovat mukana politiikassa. Näille tileille suoritetaan tarkempia ja tiheämpiä tarkastuksia.",
+          "Yleisesti ottaen, kun henkilökunta toimii laittomasti tai epäsopivasti, tutkimus- ja kurinpitotoimet vastaavat henkilöstön sopimuksissa ilmoitettuja palkkauslakien direktiivejä, ja kun esimerkiksi maksupetosta epäillään ja nämä toimet muodostavat tavallisen osan työntekijän työnkuvasta, voidaan työntekijä esimerkiksi pidättää virastaan."
+        ]
+      },
+      "section3" : {
+        "title" : "KAPPALE 3 – TURVALLISUUS JA VALVONTA",
+        "text1" : [
+          "On ehdottoman tärkeää käyttää riittäviä valvontatoimia kaikissa peliyrityksissä tilojen, laitteiden, ihmisten, viestinnän ja maksutapahtumien saralla. Yritys käyttää erilaisia toimia ja prosesseja varmistaakseen turvallisuuden näillä alueilla.",
+          "Yritys on asentanut puheluiden tallennusteknologian. Tämä tuo useita hyötyjä, kuten:"
+        ],
+        "list" : [
+          "Henkilöstön koulutus",
+          "Panostus- (ajoitus ja paikka) ja tapahtumatietojen tarkkuuden varmistaminen",
+          "Asiakkaan ja brändin maineen suojaaminen",
+          "Vankkojen ja toistuvien valvontaprosessien käyttö, jotka suojaavat henkilökunnan ja asiakkaiden väliseltä kolluusiolta ja estävät sitä"
+        ],
+        "text2" : [
+          "Tietojen turvaaminen ja ohjelmistojen ja laitteistojen tietosuoja on yleisesti kaikkien sellaisten yritysten tärkeä huolenaihe, joissa maksutapahtumia ja tietoja tallennetaan etäympäristössä. Lisäksi yritys ottaa käyttöön yleiskäytännön ”Salaa kaikki mitä voi salata”. Käyttöoikeutta jaettuihin asemiin rajoitetaan tiukasti ja valvotaan, ja mikäli mahdollista, ne suojataan salasanalla. Tietojen tallennus- ja varmuuskopioratkaisut/-toimet varmistavat, että asiakastiedot eivät ole ulkopuolisten saatavilla. Näin ehkäistään tehokkaasti myös tietojen menettämisen riski."
+        ]
+      },
+      "section4" : {
+        "title" : "KAPPALE 4 – VASTUULLINEN SUHDE ASIAKKAAN JA YRITYKSEN VÄLILLÄ",
+        "text" : [
+          "Yritys julkaisee yleiset säännöt ja käyttöehdot verkkosivustollaan. Näissä viitataan erityisesti petolliseen toimintaan, tuloksen tai tapahtuman todennäköisen tuloksen tietämiseen ennakkoon ja asioihin, jotka liittyvät ottelukorjauksiin ja epäilyttäviin tapahtumiin. Siinä kuvaillaan toimia, joita suoritamme epäillessämme tai havaitessamme huijauksen, ja selitetään tarkasti, missä laajuudessa teemme yhteistyötä viranomaisten ja urheilutapahtumia valvovien yritysten kanssa näiden asioiden käsittelemiseksi. Näin mahdollistetaan näissä tapauksissa yleisesti läpinäkyvä kommunikointiprosessi asiakkaiden kanssa.",
+          "Johtaja myös tiedosti ymmärtävänsä, että vakavan rikollisen toiminnan epäilyksen tai havaitsemisen tapauksessa se on hänen vastuullaan, ja ettei näistä toimista epäiltyjä työntekijöitä ilmianneta, sillä epäilyksiä tulee tutkia tarkemmin, ja joissain tapauksissa vaaditaan lisätutkimuksia. Asianmukaiset henkilöstön koulutus- ja eskalointikäytännöt ovat käytössä.",
+          "Yritys tekee kaiken tarvittavan varmistaakseen suhteensa soveliaisuuden muiden yritysten kanssa. Tämä sisältää standardoidun taustatietojen tarkastuksen, johon liittyy yleensä salassapitosopimus. Tämä vaatii tavanomaisen omistajuuden ja hallinnon rakenteen paljastamisen, yrityksen rekisteritiedot, osoitteen ja yhteystiedot. Näistä tutkimuksista tallennetaan mallit ja rekisterit."
+        ]
+      }
+    },
+    "bonusPolicyPage" : {
+      "title" : "Bonus Policy",
+      "text" : [
+        "This Bonus Policy is an integral part of the Terms and Conditions of Use and thus come into         effect with the Terms and Conditions of Use. Any general terms of the Terms and Conditions         of Use shall apply to the Bonus Policy, except where explicitly excluded.",
+        "This Bonus Policy is written in English. If this Bonus Policy is translated into another         language, the English version will prevail."
+      ],
+      "general" : {
+        "title" : "General Terms",
+        "text" : [
+          "First Deposit/Welcome Bonus can only be claimed once every 72 hours across all Casinos           operating under the same license. Failure to comply may result in any winnings to be           removed. To find out for which casinos this applies please contact support.",
+          "If, at any point in time, after reading this policy something is not clear, or you would           like to be blocked from receiving our bonuses and/or to have any bonuses removed from your           account, please contact our Customer Support Department team before you commence play.",
+          "If the bonus you were trying to claim does not appear automatically in your player’s           account, please contact our Customer Support team, prior to placing any bets, and the           bonus shall be credited for you.",
+          "We reserve the right to cancel any amount in excess of the player's original deposit from           a player's withdrawal if the wagering requirement has not been fulfilled or if the player           requested to remove the bonus before the wagering requirements were fulfilled.",
+          "Unless stated otherwise in the promotion offer bonuses are only available to players who           made at least one successful deposit in their accounts.",
+          "In the event that a technical misconfiguration or failure of any kind results in the           incorrect number of free spins or an incorrectly added Bonus being placed on your account,           we reserve the right to correct this by removing any winnings received and re-adding the           reward with the correct configuration.",
+          "A user is not allowed to register more than one account in the system. This means only one           account is allowed to be registered per person, household, family, household address,           email address, credit card number, e-wallet account or shared computer environment           (example: a library, workplace, fraternity, university or school). Any attempt to try to           deceive management by registering multiple accounts to gain bonus money will be deemed as           bonus abuse and will result in the account(s) being suspended and the removal of your           funds.",
+          "While making bets to wager any deposit bonus/offer (free or deposit) or bonus credited for           free spin winnings, the maximum bet permitted is 10% (min 0.10) of the bonus amount or 5           (eg, 5 EUR, 5 GBP, 500 INR) (the lower amount applies). Failure to comply with this rule           means you are in breach of the deposit bonus/offer terms and We reserve the right to void           and remove any winnings. A bet includes any special bet feature, any gamble function or           any other type of wagering activity (regardless of its name).",
+          "Individual promotions may have additional terms and conditions which will override or           contribute to the terms and conditions here stated. Please check carefully all terms and           conditions associated with a bonus before taking part. Should the terms and conditions of           the individual promotions conflict with the Bonus Policy, the individual promotions terms           shall apply.",
+          "Regardless of the currency that we advertise or display bonus amounts, the bonus will           always be credited according to the currency your account is configured to.",
+          "In accordance with the privacy policy, we regularly send promotional emails with bonus           offers. You are only eligible for the bonus if you received the email directly from us.           You may unsubscribe from receiving promotions by contacting customer support. If We           determine that a specific customer did not receive that particular promotion as an           intended exclusive targeted recipient that this promotion was sent out to, we will not           honour any payout requests from the customer, even if they have met the wagering criteria.",
+          "We reserve the right to cancel promotions or bonus offers, of any kind at any time,           without prior notice. Any such cancellation will not affect an award already redeemed.",
+          "All offers you see in your Daily Picks are available to you because of the current state           of your account. Offers can become unavailable before the time has expired due to changes           within the account caused by transactions made.",
+          "Unless otherwise specified, the minimum deposit to qualify for any deposit bonus is €20 or           the equivalent value in any other currency.",
+          "Unless stated otherwise if the last bonus received by a player was a free bonus, a deposit           needs to be made first before the player is eligible to use any further free bonuses, even           if it was marketed to the player. Any breach of this term can result in blocking from           future bonuses and/or removing any winnings that might have been the result of the use of           any free bonus.",
+          "If you receive free money (no deposit bonus/refer a friend bonus/registration bonus etc’)           or free spins winnings, unless stated otherwise the maximum amount that you can win or           withdraw from it is €100 or two times the bonus amount. The larger amount of the two will           be applied. Any winnings greater than the applied amount, including winnings subsequently           won from with that money even after any deposit, will be removed from your account. In           addition, no winnings accrued in connection with any Free Bonus may be withdrawn until the           wagering requirements have been met.",
+          "A bonus (including the bonus credited from a free spin bonus) is also considered free if           your real money balance at the time you were credited the bonus is lower than your most           recent deposit.",
+          "Any bonus which you redeem shall be subject to this Bonus Policy.",
+          "To receive a ‘Refer a Friend’ bonus the referrer must have deposited within the last 7           days.",
+          "Free spins are spins which take place that do not reduce funds from your bankroll. For the           avoidance of doubt, any mention of Free spins in this bonus policy refers to spins that do           not reduce money from your bankroll, regardless of what those free spins are marketed as.           This does not include free spins which are a triggered feature within a game.",
+          "Bonuses issued at the Casino will be reserved for gameplay on this product and cannot be           used for gameplay on any other product (for example betting and poker) we have to offer.           In addition, gameplay on any other products rather than the Casino will not be counted           towards bonus wagering requirements.",
+          "VIP Points redemption to cash is only available for users who have made at least one           successful deposit into to their player’s account.",
+          "VIP Points redemption to cash is only available for customers who have registered prior           19/03/2017.",
+          "Each time you place a wager at Ninecasino, you'll earn VIP Points. As your VIP Points           accumulate, you can redeem them for instant cash in your real money player account. If you           have not placed a wager with money in your real balance for a continuous period of thirty           (30) days, we will be entitled to remove all VIP Points from your player's account.",
+          "Customers from Ukraine, Belarus, Latvia, Russia and Lithuania are not permitted to claim           any no deposit offers/free money offers/registration bonus/refer a friend or any other           type of offer which can be deemed free",
+          "If you receive a Claimable Bonus/Free Spins in conjunction with a deposit offer or           purchase Free Spins using your Real Money balance you must claim the Bonus or play with           the free spins before playing with your available funds (Real Money and Bonus Balance           alike). Failure to comply with this may result in any winnings being removed.",
+          "In the case that you are found in breach of the bonus policy all VIP points accrued, and           any winnings from those VIP points will be voided. In case you managed to redeem them the           value you redeemed will be manually removed.",
+          "Unless otherwise stated, any no deposit bonus or no deposit free spins offers will only be           granted to players who have validated their email address. In the situation that no           deposit free spins or no deposit bonus offers which are mistakenly granted to players who           have not validated their email we reserve the right to remove any associated winnings.",
+          "Players are allowed to play in any game while having an active bonus. In certain games           bonus balance funds are not available to play with and when you open those games you will           only see your real balance. To check for the bonus availability, please refer to the           information card for each game in the client.",
+          "A Pending Bonus is a bonus which will be available for use only after any wagering has           been completed. You will see this bonus in your Pending Bonus balance.",
+          "A non-cashable bonus is a bonus which, once wagering is completed or the bonus is           consumed, will not be added to your real balance regardless of whether there was any bonus           amount left when it was consumed. Once the wagering is completed/bonus is consumed, any           amount left will be removed from your bonus balance.",
+          "A Network Tournament is a tournament which takes place on multiple Casinos during the same           days/hours, and has the same name and prizepool. A player is only allowed to participate           in a Network Tournament on one Casino. If the same person (which will be determined solely           by us) is playing on a Network Tournament on more than one Casino, only the first Casino           that was played on will count towards any tournament prize.",
+          "Any winnings accrued playing Free Spins offers will be added to your account as a Bonus.",
+          "If for any reason you do not manage to claim your bonus/free spins after it was added to           your account, please contact the customer support department."
+        ]
+      },
+      "requirements" : {
+        "title" : "Wagering Requirements",
+        "text1" : [
+          "Bonus wagering requirements are displayed as Points to Redeem in the Bonus page in the           Personal Area.",
+          "Unless stated otherwise in the promotion offer, Bonuses (including winnings from Free           Spins) given with a deposit offer carry a wagering requirement of thirty (30) times the           total amount, e.g. If you deposit €10 and obtain a €10 bonus, you would have to wager 30           times the aggregate amount, in this case being €20 (deposit + bonus). If a Bonus           (including winnings from Free Spins) is not awarded as a part of a deposit offer Or if the           total bonus amount (from bonuses and Free Spins winnings) is greater than the deposit           amount made to claim the offer, the offer will carry a wagering requirement of sixty (60)           times on the bonus amount only."
+        ],
+        "text2" : "We have 3 different types of wagering that we apply to our bonuses. Unless otherwise           stated the bonus has standard wagering terms. Games that are included within the below           wagering groups count towards the wagering requirements of a bonus:",
+        "list1" : [
+          "Standard wagering: bets placed in any game except Slots and Scratch games do not count               towards the wagering requirements.",
+          "Mixed wagering: 10% of bets placed in non-Slots or Scratch games count towards your               wagering requirements.",
+          "Special Mixed wagering: 50% of bets placed in non-Slots and Scratch games count               towards your wagering requirements. Special Mixed wagering is only available on               special occasions and to players of certain statuses."
+        ],
+        "text3" : "When the bonus is added to your account the amount of wagering required is converted to           bonus redeem points. The table below shows how much a player must wager in each currency           to earn one bonus point.",
+        "points" : "Points",
+        "text4" : "Wagering only counts for one bonus at a time according to the following rules:",
+        "list2" : [
+          "If there are bonuses restricted to a specific game or games, wagering will contribute               to these bonuses first if that specific game is played.",
+          "If multiple bonuses are active with different wagering conditions, the wagering will               be applied to the relevant bonus first in date order",
+          "If there are two active bonuses with identical conditions, wagering will contribute to               the bonuses in date order.",
+          "Please note that you will always first wager your real money funds and only when they               are fully wagered, you will then start wagering your Bonus Balance."
+        ],
+        "text5" : [
+          "If a bonus has not been used (turnover requirement met or lost) within 30 days, the bonus           amount will be cancelled and removed from your account unless you have a real money           balance.",
+          "Unless otherwise stated you have up to 24 hours to meet the wagering requirements for Free           Bonuses (non-deposit bonus, refer a friend, free spins received for free) before the bonus           and any winnings are removed.",
+          "In the case that bonus money is wagered and lost, but not all wager requirements were met,           the next deposit made to your account, providing you don't have any open games, will           automatically reset the bonus as Consumed and it will not be necessary to complete the           remaining wager requirements. If you want to continue your game session and make sure that           your bonus gets Consumed, please contact support after your deposit. Any abuse of this in           order to avoid completing bonus wagering will result in all winnings being removed, and           your deposit potentially being confiscated.",
+          "If you have a bonus consumed/cancelled/expired, either by the system or due to your own           request, and the wagering was not completed, all your winnings will be removed including           any pending/unclaimed winnings from games/promotions you played whilst you had the bonus."
+        ]
+      },
+      "irregularFairPlay" : {
+        "title" : "Irregular Play/Fair Play",
+        "text1" : [
+          "We reserve the right to review transaction records and logs from time to time, for any           reason whatsoever. If, upon such a review, it appears that a customer is participating in           irregular play that We, in our sole discretion deems to be abusive, We reserve the right           to revoke the entitlement of such a customer to any promotion.",
+          "We reserve the right to refuse or void a bonus and/or winnings in the event of funds being           cancelled or denied or disputed by any payment service or payment provider or by the user           himself."
+        ],
+        "text2" : "We reserve the right to withhold any withdrawals and/or confiscate all winnings and           bonuses for irregular play. The wording ‘Irregular play’ may include but is not wholly           restricted to any one or more of the following types of play: Low margin betting, equal           betting, zero risk bets or hedge betting are considered irregular gaming when done           purposely to exploit bonuses. In addition to this, the following are considered irregular           playing patterns:",
+        "list" : [
+          "Increasing the balance then changing the gaming pattern significantly (bet, game type,               bet structure, etc) in order to complete the wagering requirements for that bonus.",
+          "Using any betting system, or placing even money bets on Baccarat and Roulette.",
+          "Wagering to meet an award in one currency, and then changing currency to a stronger               currency before the award is added to your account."
+        ],
+        "text3" : [
+          "If We suspect a player has or is abusing a bonus offer/s, either on his own or in           association with partners, We reserve the right to rescind the bonus or bonuses, void any           winnings and close the relevant player/s accounts.",
+          "If you have a pending withdrawal at the time of claiming a free bonus the casino reserves           the right to void all subsequent winnings from that bonus including the bonus amount.",
+          "Promotions and bonuses are there to reward our valued players – We have zero tolerance           policy on bonus abuse and fraudulent activity. We reserve the right to block bonuses from           any player who is deemed to be abusing our promotions. If fraudulent activity or abuse is           suspected, We reserve the right to remove bonuses and winnings from the account.",
+          "Fair play means depositing with the intention of playing / risking the funds you deposited           with.",
+          "Bonuses/Free Spins Winnings with zero wagering are subject to Fair Play. Any player that           takes advantage of such offers, and attempts to withdraw without adhering to Fair Play,           will have all their winnings confiscated and be restricted from taking any future offers."
+        ]
+      }
+    },
+    "responsibleGaming" : {
+      "title" : "VASTUULLINEN PELAAMINEN",
+      "section1" : {
+        "title" : "MITEN SITOUDUMME VASTUULLISEEN PELAAMISEEN?",
+        "text" : {
+          "p1" : "Pelaamisen nettikasinolla on aina tarkoitus olla viihdettä. Mutta tietty osa ihmisistä menettää itsensä hallinnan pelatessaan uhkapelejä. Ennen pelaamisen aloittamista on tärkeää ymmärtää, että uhkapelejä ei saa koskaan pitää tulonlähteenä tai keinona selviytyä veloista. On hyödyllistä seurata päivittäin nettikasinolla käytettyä aikaa ja rahamäärää.",
+          "p2" : "Jos sinusta tuntuu, että olet alkanut kuluttaa enemmän rahaa kuin sinulla on varaa, tai jos pelaaminen alkaa häiritä normaaleja päivittäisiä rutiinejasi, niin suosittelemme harkitsemaan eri toimenpiteitä, jotka voivat auttaa, kuten henkilökohtaisten rajojen asettaminen pelitoiminnallesi, omaehtoinen pelikielto sekä avun ja tuen hakeminen luotettavilta, riippumattomilta tahoilta.",
+          "p3" : "Voit suorittaa  {peliriippuvuuskyselyn} selvittääksesi, osoitatko peliriippuvuuden merkkejä.",
+          "quiz" : "peliriippuvuuskyselyn "
+        }
+      },
+      "section2" : {
+        "title" : "MITEN VOIN RAJOITTAA KULUTUSTANI TAI TAPPIOITANI?",
+        "text1" : "To assist you in gambling responsibly we offer the Personal Limits feature. Auttaaksemme sinua pelaamaan vastuullisesti, tarjoamme henkilökohtaisten rajojen ominaisuutta. Voit asettaa rajoja talletuksille, tappioille, panostukselle, pelissä käytetylle ajalle tai tilisi yleiselle aktiivisuudelle. Tätä toimintoa voidaan käyttää tililtäsi Henkilökohtaiset rajat -osiosta.     {toLimits} {buttonLog}",
+        "here" : "here",
+        "text2" : [
+          "Rajoja voidaan muuttaa milloin tahansa. Rajan pienentäminen tulee voimaan välittömästi, mutta lisäys tapahtuu vasta sähköpostivahvistuksen jälkeen, ja vain kun aiempi samantyyppinen raja vanhentuu, jotta vältetään harkitsemattomat päätökset. Jos tarvitset lisätietoja tai apua henkilökohtaisiin rajoihin liittyen, ole hyvä ja ota yhteyttä tukitiimiimme osoitteessa contact@ninecasino.com.",
+          "Talletusraja. Raja talletuksille, joita voit tehdä päivässä, viikossa tai kuukaudessa.",
+          "Tappioraja. Raja tappioillesi kasinolla päivän, viikon tai kuukauden ajalla. Huomaa, että tappio perustuu alkuperäiseen talletukseen, ei talletettuun summaan kohdistuneisiin voittoihin. Jos esimerkiksi talletat 50 €, asetat tappiorajan 10 € ja voitat sitten 1 000 €, niin voit edelleen hävitä enemmän kuin 10 € saldostasi 1 000 €, koska raja perustuu alkuperäiseen talletukseen voittojen sijaan.",
+          "Panostusraja. Raja panoksille, joita voit asettaa päivässä, viikossa tai kuukaudessa.",
+          "Istunnon raja. Aikaraja minuutteina, jonka voit käyttää tietyn pelin pelaamiseen."
+        ]
+      },
+      "section3" : {
+        "title" : "TARVITSETKO HENGÄHDYSTAUON?",
+        "text" : [
+          "Jäähyraja. Voit asettaa jäähyajan 1 viikon, 1 kuukauden, 3 kuukauden tai 6 kuukauden ajalle. Rajoituksen ollessa aktiivinen et voi tehdä talletusta kasinolle, ja sinut suljetaan pois kaikista kampanjatarjouksista, mutta voit nostaa jäljellä olevat varat tänä aikana. Jäähyaika tulee välittömästi voimaan tililläsi. Kun se päättyy, tilisi aktivoidaan automaattisesti uudelleen.",
+          "Omaehtoisen pelikiellon raja. Voit asettaa omaehtoisen pelikiellon rajan 6 kuukauden, 9 kuukauden tai 1 vuoden ajaksi. Tällöin pelaajatilisi poistetaan välittömästi käytöstä ja sinut suljetaan kaikista kampanjatarjouksista asetetuksi ajaksi. Et pysty tallettamaan tai nostamaan varoja, kun raja on aktiivinen. Kun se päättyy, tiliäsi ei aktivoida automaattisesti uudelleen."
+        ]
+      },
+      "section4" : {
+        "title" : "MIKÄ ON OMAEHTOINEN PELIKIELTO?",
+        "text" : [
+          "Omaehtoisen pelikiellon asettaminen kertoo meille, että meidän on toteutettava kaikki toimenpiteet estämään pääsy tilillesi ja varmistamaan, että et saa mainosmateriaalia. Voit myös ottaa yhteyttä tukitiimiimme osoitteessa contact@ninecasino.com ja ilmoittaa meille päätöksestäsi lopettaa pelaaminen verkkosivustolla tietyn ajanjakson ajaksi.",
+          "Huomaathan, että jos asetat omaehtoisen pelikiellon määrittelemättömäksi ajaksi, saldosi jäljellä olevat varat maksetaan kasinorajoitusten mukaisesti. Jos asetat omaehtoisen pelikiellon joksikin tietyksi ajaksi, saldosi jäljellä olevat varat maksetaan kasinorajoitusten mukaisesti vasta, kun omaehtoisen pelikiellon aika päättyy."
+        ]
+      },
+      "section5" : {
+        "title" : "KATSOTAANPA VÄHÄN HENKILÖTODISTUSTA?",
+        "text" : [
+          "Kasino hyväksyy vain vähintään 18-vuotiaita pelaajia ja käyttää kaikkia käytettävissä olevia menetelmiä lopettaakseen alaikäisten yritykset rekisteröityä ja pelata verkkosivustollamme. Kasino pidättää oikeuden pyytää henkilötodistusta, ja jos pelaaja ei ole saavuttanut pelaamiseen vaadittavaa laillista ikää, pääsy verkkosivustolle estetään välittömästi.",
+          "Ymmärrämme kuitenkin, että internetin laajan saatavuuden ja luonteen vuoksi alaikäisillä ihmisillä on edelleen mahdollisuus rekisteröityä ja pelata nettikasinolla. Kannustamme siksi vahvasti vanhempia tekemään yhteistyötä suojellakseen lapsia vapaalta pääsyltä pelisivustoille. On olemassa erityisiä ohjelmistoja auttamaan tässä. Ole hyvä ja käy seuraavilla verkkosivustoilla saadaksesi lisätietoja:"
+        ],
+        "list" : {
+          "text1" : "CyberPatrol",
+          "text2" : "GamBlock®",
+          "text3" : "Solid Oak Software",
+          "text4" : "Net Nanny"
+        }
+      },
+      "section6" : {
+        "title" : "MIKÄ ON TILANNEKATSAUS?",
+        "text" : [
+          "Koukkuun jääminen on helppoa, kun pidät hauskaa, joten lähetämme sinulle pelien sisällä tunneittain ilmoituksen muistuttamaan sinua siitä, kuinka paljon olet kuluttanut kasinolla. Riippumatta siitä, kuinka montaa peliä pelaat samanaikaisesti, viestimme ilmoittaa, mikä tilanteesi on. Tämän on tarkoitus antaa aikaa miettiä panoksiasi ja ehkä harkita pelaamisen keskeyttämistä hetkeksi."
+        ]
+      },
+      "section7" : {
+        "title" : "ETSIMÄSSÄ ULKOPUOLISTA APUA?",
+        "text" : "Voit ottaa yhteyttä mihin tahansa seuraavista organisaatioista konsultointia ja tukea varten:\n",
+        "list" : {
+          "text1" : "Gamblers Anonymous",
+          "text2" : "GamCare",
+          "text3" : "Gambling Therapy"
+        }
+      }
+    },
+    "riskWarnings" : {
+      "title" : "RISKIVAROITUKSET",
+      "text" : "Ymmärrät, että osallistumalla peleihin riskinä on menettää www.ninecasino.com-tilillesi tallettamasi rahat. Joillain lainkäyttöalueilla uhkapelaaminen on laitonta. Ymmärrät ja hyväksyt, että www.ninecasino.com ei anna lakineuvoja tai takuita verkkosivuston palveluiden käytön laillisuutta koskien. Yritys ei vahvista, että verkkosivuston palvelut ovat laillisia lainkäyttöalueellasi. Käytät www.ninecasino.com-sivuston palveluita omasta tahdostasi ja oman harkintasi varassa, ja olet vastuussa sen selvittämisestä, onko verkkosivuston palveluiden käyttö laillista lainkäyttöalueesi voimassa olevan lain mukaan. Kirjaudut verkkosivustolle ja osallistut peleihin omalla riskilläsi."
+    },
+    "bonusTermsPage" : {
+      "title1" : "BONUSEHDOT",
+      "text1" : [
+        "Kaikki bonustarjoukset rajoitetaan tiukasti yksi per henkilö sekä hänen perheensä, kotiosoite, sähköpostiosoite, IP-osoite, puhelinnumero, tilinumero, luotto- tai maksukortin numero, e-lompakon numero, maksujärjestelmän tili (Neteller, Skrill, jne.) ja yksi elektroninen laite (tietokone, matkapuhelin, tabletti jne.).",
+        "Kaikki pelaajat voivat hyödyntää bonuksia, lukuun ottamatta tapauksia, joissa bonuksella on maakohtaisia rajoituksia ja pelaaja on jonkin kyseisen maan kansalainen. Pelaajat Ruotsista eivät saa vastaanottaa bonuksia. Ruotsalaisille pelaajille ei ole tarjolla bonuksia, mukaan lukien osallistuminen mihin tahansa kampanjaohjelmaan tai VIP-palkintojen saaminen ja turnauspisteiden vaihto.",
+        "Pelaaja ei saa väärinkäyttää bonustarjouksia. Jos havaitaan väärinkäyttöä, kasinolla on oikeus estää pelaajaa saamasta bonuksia ja peruuttaa kaikki bonusvaroilla saadut voitot sekä panostushetkellä että sen jälkeen.",
+        "Bonusvarojen käyttö pelkästään bonusvaiheiden läpi etenemiseen on kiellettyä, etenkin tapauksissa, joissa bonus- tai käteisvaroja käytetään puhtaasti bonusvaiheiden etenemiseen (esim. keräämällä 9 kymmenestä kolikosta bonusominaisuuden saavuttamiseksi) ja sitten viimeiset vaiheet (esim. pelaaminen viimeisen kolikon keräämiseksi, jotta saavutetaan 10/10 ja bonusominaisuus) suoritetaan käteispanoksella, kun bonusvarat on väärennetty, menetetty tai panostus on saavutettu, ja muunnetaan rahaksi. Kaikki kyseisen pelin aikana saadut voitot voidaan mitätöidä.",
+        "Pelaaja ei saa käyttää mitään strategioita pelatessaan aktiivisella bonuksella täyttääkseen bonuksen kierrätysvaatimukset. Jos pelaaja käyttää tällaisia strategioita ja jos kasinolla on riittävät perusteet uskoa, että pelaajan toimet on tarkoitettu vain taloudellisten hyötyjen saamiseen bonusetua käyttämällä, kasino pidättää oikeuden peruuttaa kaikki pelaajan voitot.",
+        "Kaikilla bonuksilla on vähimmäistalletusvaatimus bonuksen saamiseksi, enimmäissumma mahdollisen määrän rajoittamiseksi, panostusehdot, panoksen enimmäismäärän rajoitus panostuksessa sekä bonuksen keston aikaraja, ellei toisin mainita.",
+        "Kaikkia myönnettyjä bonuksia rajoittaa oletuksena maksimipanos panostuksen aikana: 5 EUR, 7,5 NZD, 10 CAD/AUD, 100 CZK, 90 ZAR, 10 BGN, 40 DKK, 40 HRK, 25 RON, 0,00019 BTC, ellei muuta määritetä. Suurin panos sisältää panoksen kaksinkertaistamisen pelikierroksen jälkeen sekä bonuskierrokset (ostettu pelin sisällä).",
+        "Bonusten avulla saadut voitot ovat käytettävissä nostettaviksi vasta, kun kaikki kierrätyssäännöt täyttyvät.",
+        "Kaikki bonukset (ellei muuta ilmoiteta) on panostettava 40 kertaa ennen kuin varat voidaan nostaa.",
+        "Kaikki bonukset ovat tarttuvia. Se tarkoittaa, että et voi pyytää nostoa ennen kuin panostusvaatimukset on täytetty kokonaan. Lisäksi aloitat pelaamisen ensin oikealla rahalla, sitten bonusrahalla, ja heti kun bonusraha menetetään, myös bonus menetetään.",
+        "Bonuksen voimassaoloaika on 14 vuorokautta sen saantihetkestä, ellei muuta ilmoiteta.",
+        "Jos bonusjakson lopussa bonus on voimassa ja panostuksen ehdot eivät täyty, kaikki bonusraha ja voitot mitätöidään.",
+        "Bonukset peruutetaan automaattisesti, jos aktiivinen saldo saavuttaa summan 0.05 EUR, 0.05 CAD/AUD/NZD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC tai vähemmän.*",
+        "*Tämä ehto koskee vain bonukseen sidottua saldoa, eli talletusta + bonusta, tai vain bonusta (jos talletusta ei ole), eikä se koske pelaajan saldon varoja, jotka on saatu muista talletuksista tai bonuksista.",
+        "Pelaaja voi pyytää talletuksensa nostoa ennen bonuksen panostusehtojen täyttymistä. Siinä tapauksessa bonuksen ja voittojen summat mitätöidään, ja jäljellä olevat varat, jos niitä on, maksetaan pelaajalle.",
+        "Pelaajalla on oikeus peruuttaa bonukset jatkamatta pelaamista ilman, että hän menettää omia varojaan.",
+        "Vain yksi bonus voidaan aktivoida kerrallaan. Talletusbonuksia ei voi yhdistää.",
+        "Pelaajalla on oikeus kieltäytyä kaikista kasinon bonuksista.",
+        "Minkä tahansa pelikierroksen viivästyttäminen missä tahansa pelissä, mukaan lukien ilmaiskierrosominaisuudet ja bonusominaisuudet, myöhempään ajankohtaan, jolloin sinulla ei enää ole kierrätysvaatimuksia ja/tai uusien talletusten tekeminen silloin, kun sinulla on ilmaiskierrosominaisuuksia tai bonusominaisuuksia, jotka ovat edelleen käytettävissä pelissä, on kielletty.",
+        "Huomaa, että panoksen määrää ei kaikissa peleissä oteta kokonaan huomioon bonusta kierrätettäessä. 100 % panoksesta huomioidaan kolikkopeleissä, paitsi alla mainituissa.",
+        "Bonuksilla pelaaminen ei ole käytettävissä seuraavissa kolikkopeleissä: Craps (1x2 Gaming), Scarab Treasure (Amatic), No such games (Belatra), Ninja (Endorphina), 1429 Uncharted Seas (Epic Media), Egyptian Dreams Deluxe, Knockout Football, London Hunter, Magic Oak, Pumpkin Patch, Santa’s Village (Habanero), Mega Boy, Roo Riches, Super Fast Hot Hot Respin, Tree of Fortune, Vegas High Roller (iSoftbet), Dead or Alive, Devil’s Delight, Lucky Angler, Reel Rush 2, Reel Steal, Robin Hood: Shifting Riches, Scudamore’s Super Stakes, Serengeti Kings, Single Deck Blackjack Professional Series, The French Roulette, The Wish Master, TXS Hold’em Professional Series (NetEnt), Baker’s Treat, Eye of the Kraken, Golden Legend, Happy Halloween, Hugo 2, MULTIFRUIT 81, Pearls of India, Pimped, Rage to Riches, Royal Masquerade, Sea Hunter, Tower Quest (Play’nGo), Queen of Gold, Jade Butterfly (Pragmatic), 300 Shields, African Quest, Agent Valkyrie, Astro Legends: Lyra and Erion, Art of the Heist, Beautiful Bones, Bikini Party, Book of Oz, Bookie of Odds, Break Da Bank Again Respin, Castle Builder, Castle Builder II, Cool Buck, Craps, Dragon Dance, Forsaken Kingdom, Gems Odyssey, Gems Odyssey 92, Hot Ink, Le Kaffee Bar, Magic of Sahara, Medusa, Peek-a-Boo – 5 Reel, Pets Go Wild, Reel Gems, Retro Reels, Retro Reels Diamond Glitz, Retro Reels Extreme Heat, Scrooge, Spectacular Wheel of Wealth, Stardust, Tomb Raider – Secret of the Sword, Tomb Raider, Untamed Bengal Tiger, Untamed Crowned Eagle, Untamed Giant Panda, Untamed Wolf Pack, Vampire: The Masquerade – Las Vegas, Village People Macho Moves, Wheel of Wealth Special Edition, Wheel of Wealth, Wild Orient, Zombie Hoard (Quickfire), Skulls Up! (Quickspin), Three Musketeers (Red Tiger), Kingmaker, Lil Devil (Relax), Cupids Strike 2, Divine Forest, Lemur Does Vegas, Summer Splash, Mines of Gold (Spinomenal), 1429 Uncharted Seas (Thunderkick), Alchymedes, Cazino Cosmos, Dark Vortex, Dwarf Mine, Double Dragons, Holmes and the Stolen Stones, Jackpot Raiders, Jokerizer, Ozwin’s Jackpots, Spina Colada, The Dark Joker Rizes, The Royal Family, Tut’s Twister, Vikings go to Hell, Vikings go Berzerk, Wicked Circus, Wolf Hunters (Yggdrasil), kaikki jackpot-kolikkopelit.",
+        "Kaikki korttipelit, ruletti, pokeri ja videopokerit – 5 % panoksesta.",
+        "Elävän jakajan pelit eivät ole mukana kierrätyksessä",
+        "Kun pelaat bonusvaroilla, kaikki nostettavaksi pyydetyt voitot läpäisevät tarkastuksen ennen maksun käsittelyä. Kasino pidättää oikeuden pyytää käyttäjää vahvistamaan henkilö- ja maksutapatiedot tarkastuksen perusteella.",
+        "Kasinolla on oikeus peruuttaa kaikki bonukset ja voitot sekä takavarikoida kaikki tilillä olevat rahat, jos ne on saatu vilpillisesti tai näiden sääntöjen vastaisesti.",
+        "Kasino pidättää oikeuden muuttaa näitä käyttöehtoja milloin tahansa.",
+        "Bonusvarojen käyttö vain etenemiseen bonusvaiheiden läpi on kielletty. Esimerkiksi jos bonus- tai käteisvaroja käytetään pelkästään bonusvaiheiden läpi etenemiseen (esim. keräämällä yhdeksän kymmenestä kolikosta bonusominaisuuden saavuttamiseksi) ja sitten viimeiset vaiheet (esim. pelaaminen viimeisen kolikon keräämiseksi, jotta saavutetaan 10/10 ja bonusominaisuus) suoritetaan käteispanoksilla, kun bonusvarat on väärennetty, menetetty tai panostus on saavutettu, ja muunnetaan rahaksi. Kaikki kyseisen pelin aikana saadut voitot voidaan mitätöidä.",
+        "Kaikki bonukset käsitellään UTC-aikoina."
+      ],
+      "title2" : "TERVETULIAISPAKETTI",
+      "text2" : [
+        "Kaikki kampanjat ovat saatavilla vain niille, jotka ovat suorittaneet tervetuliaispaketin bonukset, mukaan lukien kierrätyksen. Jos sait korotetun tervetuliaisbonuksen, sinun ei ole tarvinnut suorittaa kierrätystä, ennen kuin voit hyväksyä muita kampanjoita.",
+        "Ensimmäisen/toisen/kolmannen talletusbonuksen saamiseksi talletuksesi tulee olla vähintään 20 EUR, 20 CAD/AUD, 25 NZD,  500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
+        "Suurin ensimmäisen/toisen/kolmannen talletusbonuksen summa on 150 EUR, 225 CAD, 250 NZD, 225 AUD, 3330 CZK, 2600 ZAR, 290 BGN, 1150 DKK, 1130 HRK, 740 RON, 0,0055 BTC.",
+        "Pelaajat voivat käyttää 250 ilmaiskierrostaan BGamingin Aztec Magic-, Aztec Magic Delux-, Johnny Cash-, Platinum Lightning- ja Platinum Lightning Delux -kolikkopelissä.\n",
+        "Pelaajat saavat ensitalletuksellaan 50 ilmaiskierrosta joka päivä seuraavien viiden päivän ajan.\n",
+        "Ilmaiskierrosten aktivoinnin kesto on 3 päivää, ilmaiskierrosten kesto ja ilmaiskierrosten tuloksen kesto on 7 päivää.",
+        "Panostaaksesi bonuksen/ilmaiskierroksen tuloksen, sinun on asetettava panos summasta, joka on 40 kertaa bonus/ilmaiskierroksen tulos.",
+        "Maksimivoitto ensimmäisestä/toisesta/kolmannesta talletusten ilmaiskierroksesta on 50 EUR, 70 CAD, 75 NZD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "Maksimivoitto rekisteröinnin ilmaiskierroksista on 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC."
+      ],
+      "title3" : "VIIKONLOPUN UUDELLEENLATAUS",
+      "text3" : [
+        "Viikonlopun uudelleenlatausbonuksen saamiseksi talletuksesi tulee olla vähintään 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
+        "Viikonlopun uudelleenlatausbonuksen maksimisumma on 150 EUR, 220 CAD, 240 AUD, 3900 CZK, 2580 ZAR, 300 BGN, 1110 DKK, 1125 HRK, 735 RON, 0,0056 BTC.",
+        "Panostaaksesi bonuksen sinun on asetettava panos summasta, joka on 40 kertaa bonuksen summa.",
+        "Bonus on saatavana kerran perjantaina, lauantaina tai sunnuntaina pelaajille, jotka ovat jo käyttäneet kaikki tervetulopaketin bonukset."
+      ],
+      "title4" : "ILMAISKIERROKSIA USKOLLISUUDESTA",
+      "text4" : [
+        "Maksimimäärä, jonka pystyt nostamaan peleistä varoilla, jotka liittyvät muihin kuin talletusbonuksiin tai ilmaiskierroksiin on 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "Maksimivoiton rajoitus säilyy panostusvaatimusten täyttymisen jälkeen."
+      ]
+    }
+  },
+  "dailyCashback" : {
+    "cashback" : "Cashback",
+    "title" : "Daily cashback<br/>up to 20%",
+    "text1" : "Who doesn’t like free casino cashback when losing?<br/>Yes, you read right! We give you cashback with only 5x wagering when losing!",
+    "text2" : "If you lost some cash at Ninecasino today, tomorrow we pay you back in accordance with our table below:",
+    "terms" : "Cashback terms and conditions",
+    "termsList" : [
+      {
+        "text" : "Cashback is given on the loss amount (or equivalent) during the previous day from 00:01 AM to 23:59 (UTC) in slot games only."
+      },
+      {
+        "text" : "The cashback percentage depends on the loss sum (or equivalent) for the previous day:<br/><br/>€20 to €199 - 10% cashback<br/>€200 to €499 - 12% cashback<br/>€500 tо €999 - 14% cashback<br/>€1000 to 2499 - 16% cashback<br/>€2500 to €4999 - 18% cashback<br/>€5000 and more - 20% cashback."
+      },
+      {
+        "text" : "The total amount of received cashback cannot exceed 20% of the total amount of all Player's losses (or equivalent)."
+      },
+      {
+        "text" : "Cashback will not be credited if the real money loss for the previous day was less than 20 EUR / 20 USD / 25 CAD / 200 NOK / 85 PLN / 20 NZD / 1,500.00 RUB / 2500 JPY / 9,000.00 KZT. Real money loss here implies playing and losing without any bonuses."
+      },
+      {
+        "text" : "Cashback will be credited daily at 00:10 AM (UTC)."
+      },
+      {
+        "text" : "The wagering requirement for a cashback bonus is x5."
+      },
+      {
+        "text" : "Cashback is available for 24 hours after the crediting on the player’s account."
+      },
+      {
+        "text" : "The cashback lifetime is 24 hours after the activation."
+      }
+    ],
+    "items" : [
+      {
+        "cashbackNum" : "10%",
+        "cashbackSum" : "€20 to €199"
+      },
+      {
+        "cashbackNum" : "12%",
+        "cashbackSum" : "€200 to €499"
+      },
+      {
+        "cashbackNum" : "14%",
+        "cashbackSum" : "€500 to €999"
+      },
+      {
+        "cashbackNum" : "16%",
+        "cashbackSum" : "€1000 to €2499"
+      },
+      {
+        "cashbackNum" : "18%",
+        "cashbackSum" : "€2500 to €4999"
+      },
+      {
+        "cashbackNum" : "20%",
+        "cashbackSum" : "€5000 and more"
+      }
+    ]
+  },
+  "lottery" : {
+    "title" : "Weekend<br/> Playing Lottery ",
+    "prize" : "<span class=\"Colored\">€ 2,500</span> + <span class=\"Colored\">500 Free Spins</span>",
+    "text" : "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
+    "termsTitle" : "Lottery participation terms",
+    "terms" : [
+      {
+        "text" : "You begin to participate in the VIP program after making your first deposit."
+      },
+      {
+        "text" : "CP is credited at the rate of 1 CP for every $ 12.5, 12.5 EUR, 15 CAD, 15 AUD, 15 NZD, 125 NOK, 325 CZK."
+      },
+      {
+        "text" : "Exchange CP - 1 $, 1 EUR, 1.25 CAD, 1.25 AUD, 1.25 NZD, 10 NOK, 25 CZK, 17 ZAR, 4 PLN for 100 CP."
+      },
+      {
+        "text" : "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      },
+      {
+        "text" : "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text" : "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text" : "RoomCasino reserves the right to change the terms of the VIP program at any time."
+      },
+      {
+        "text" : "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      }
+    ],
+    "lastRoundWinners" : "Last round winners",
+    "ticket" : "Ticket",
+    "tickets" : "Tickets"
+  },
+  "sunshine_spins_lottery" : {
+    "title" : "Sunshine Spins<br/> lottery",
+    "name" : "Sunshine Spins lottery",
+    "prize" : "4,000 Free Spins",
+    "text" : "Happy summer people decked out in happy summer clothes, marching toward this month’s fun-stuffed festival: The Sunshine Spins lottery!<br/><br/>With the Sunshine Spins lottery, take yourself back to the time of Woodstock, Isle of Wight Festival, and San Francisco. To join in just run around barefoot and rock out to your favourite slots. Enjoy the vibe of the 4000 Free Spin prize pool with 50 lucky winners!<br/>So put your best summer clothes on and remember, “it’s all about the spins man!”",
+    "terms" : [
+      {
+        "text" : "The lottery will last 7 days starting at 00.01 (UTC) on Tuesday and ending at 23.59 (UTC) on Monday."
+      },
+      {
+        "text" : "The minimum deposit required for a lottery ticket is 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text" : "The number of lottery tickets per player is unlimited."
+      },
+      {
+        "text" : "Every ticket can be a winning ticket."
+      },
+      {
+        "text" : "At the time of the draw, the game account must not be blocked."
+      },
+      {
+        "text" : "Prizes of 4000 Free Spins will be awarded automatically at the end of the lottery every week on Monday."
+      },
+      {
+        "text" : "For Free Spins, wagering is x5."
+      }
+    ]
+  },
+  "tesla_lottery" : {
+    "metaTitle" : "➤ Tesla Lottery With Tesla Model 3 - Play Your Favorite Games And Win Great Prize - Tesla Model 3!",
+    "metaDescription" : "✭ Try Your Luck In New Tesla Lottery by NineCasino ➔ Take a ticket for a Tesla!",
+    "title" : "The Tesla<br/> Lottery",
+    "name" : "The Tesla Lottery",
+    "prize" : "Tesla Model 3",
+    "text" : "Join the Tesla Lottery at NineCasino between August 18th, 2021 and September 23rd, 2021 and get a chance to become the happy owner of a Tesla Model 3! <br/><br/>On the 24th of September we will announce the Tesla winner!",
+    "terms" : [
+      {
+        "text" : "The lottery runs between August 18th, 2021 and September 23rd, 2021."
+      },
+      {
+        "text" : "A minimum deposit per ticket is €50. Each ticket can win."
+      },
+      {
+        "text" : "The number of lottery tickets per player is not limited."
+      },
+      {
+        "text" : "The more tickets you collect at the time of the draw, the higher your chances of winning a prize are."
+      },
+      {
+        "text" : "At the time of the draw, the game account must not be blocked."
+      },
+      {
+        "text" : "The winner of the lottery will be announced on the 24th of September."
+      }
+    ]
+  },
+  "sumdes" : {
+    "title" : "Summer Desserts<br> Tournament",
+    "prize" : "€100,000",
+    "text" : "The summer is in full swing, so what’s better than a Tournament Series from Booongo! Hurry up to enjoy the Summer Desserts Network Tournament Series at NineCasino! Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC). Don’t miss out on sharing the huge prize pool from Booongo!",
+    "textMobile" : "The summer is in full swing, so what’s better than a Tournament Series from Booongo! Hurry up to enjoy the Summer Desserts Network Tournament Series at NineCasino! Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC). Don’t miss out on sharing the huge prize pool from Booongo!",
+    "terms" : [
+      {
+        "title" : "Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC)."
+      },
+      {
+        "title" : "It’s a combo of regular tournaments with mixed terms (the duration of each tournament in the series can vary); the Scoring tournament (where players will get points for each win spin) and also a 2nd (EXTRA) Leaderboard reflecting the player’s overall progress."
+      },
+      {
+        "title" : "Challenge for the Grand Total Prize Pool of €100,000 (or player’s currency equivalent):<br>- €80,000 in total for 10 regular tournaments (€8,000 EUR for each one); <br>- €20,000 for the Series Leaderboard ( prizes are paid out simultaneously with a closing Regular Tournament of the Series on 28.08.2021 23:00 UTC)."
+      },
+      {
+        "title" : "Battle it out with these breathtaking games:<br>3 Coins Egypt; Pearl Diver; Wukong; Sun of Egypt 2; 15 Dragon Pearls; Hit the Gold!; 3 Coins; Magic Apple; Sun of Egypt; Dragon Pearls; Scarab Temple; Wolf Saga; Aztec Sun; Aztec Pyramid; Scarab Boost."
+      },
+      {
+        "title" : "Make a minimum bet of €0,5"
+      },
+      {
+        "title" : "The minimum number of spins is 100."
+      },
+      {
+        "title" : "Players will get points for each win spin - €1=1 Point. Players will get 1 Point for each х1 multiplier in win Spin."
+      }
+    ],
+    "metaInfo" : {
+      "title" : "➤ Summer Desserts  Tournament With Solid Prize Pool €100,000 - Play Your Favorite Games And Win Great Prizes!",
+      "description" : "✭ Try Your Luck In New Summer Desserts  by Booongo ➔ Complete Missions - Win Prizes!"
+    }
+  },
+  "spiritOfEgypt" : {
+    "title" : "Spirit of Egypt 60k",
+    "prize" : "€60,000",
+    "text" : "New adventures are on the horizon and Playson is waiting with the Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021.<br/><br/>The total Prize pool is a whopping €60,000, and if you reach the peak of the pyramid the top prize is €10,000! Make your own luck with the Spirit of Egypt 60k!",
+    "textMobile" : "New adventures are on the horizon and Playson is waiting with the Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021.<br/><br/>The total Prize pool is a whopping €60,000, and if you reach the peak of the pyramid the top prize is €10,000! Make your own luck with the Spirit of Egypt 60k!",
+    "metaInfo" : {
+      "title" : "➤ Spirit of Egypt 60k Tournament With Solid Prize Pool €60,000 - Play Your Favorite Games And Win Great Prizes!",
+      "description" : "✭ Try Your Luck In New Spirit of Egypt 60k by Playson ➔ Each Won Bet Brings You Points!"
+    },
+    "terms" : [
+      {
+        "title" : "The Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021."
+      },
+      {
+        "title" : "The total Prize pool is €60,000."
+      },
+      {
+        "title" : "The 20 participating games: <br/>● 5 Fortunator <br/>● 9 Happy Pharaohs <br/>● Book of Gold 2: Double HitTM <br/>● Book of Gold: Multichance <br/>● Buffalo Power MegawaysTM <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Divine Dragon: Hold and Win <br/>● Eagle Power: Hold and Win <br/>● Hot Burning Wins <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra <br/>● Legend of Cleopatra MegawaysTM <br/>● Rich Diamonds: Hold and Win <br/>● Rise of Egypt Deluxe <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Spirit of Egypt: Hold and Win <br/>● Wolf Power: Hold and Win."
+      },
+      {
+        "title" : "No minimum bet is required to qualify."
+      },
+      {
+        "title" : "Points are calculated round-by-round, with each 1 EUR (or currency equivalent) wagered equaling 100 points."
+      }
+    ]
+  },
+  "demigods" : {
+    "title" : "Demi God Tales Tournament<br>Round I",
+    "prize" : "€20,000",
+    "text" : "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
+    "textMobile" : "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
+    "terms" : [
+      {
+        "title" : "Round I runs between August 24th 00:00 GMT and August 30th 23:59 GMT."
+      },
+      {
+        "title" : "Participating games: <br>Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II."
+      },
+      {
+        "title" : "The 150 first players on the leaderboard will share a prize of 20,000 EUR."
+      },
+      {
+        "title" : "Play any of the participating games. Each win rewards you with a score based on the win multiplier (for example, if you waged 1 EUR and won 10 EUR, you will be rewarded with 10 points)."
+      },
+      {
+        "title" : "Points received are summed up throughout the tournament period. The more points you collect, the higher your position on the leaderboard."
+      },
+      {
+        "title" : "Minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
+      }
+    ],
+    "metaInfo" : {
+      "title" : "➤ Demi God Tales Tournament With Solid Prize Pool €40,000 - Play Your Favorite Games And Win Great Prizes!",
+      "description" : "✭ Try Your Luck In New Demi God Tales by Spinomenal  ➔ Complete Missions - Win Prizes!"
+    }
+  }
+}
