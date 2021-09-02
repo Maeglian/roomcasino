@@ -136,6 +136,12 @@ export default {
         file: 'nz.json',
         icon: 'nz.svg',
       },
+      {
+        code: 'fi',
+        codeCountry: 'fi_FI',
+        file: 'fi.json',
+        icon: 'fi.svg',
+      },
     ],
     defaultLocale: 'en',
     lazy: true,

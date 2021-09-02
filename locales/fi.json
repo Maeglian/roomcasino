@@ -137,7 +137,7 @@
     "risk" : "RISKIVAROITUKSET",
     "tournaments" : "Turnaukset",
     "lottery" : "Arvonta",
-    "dailyCashback" : "-",
+    "dailyCashback" : "",
     "search" : "Haku"
   },
   "gameCategoriesTabs" : {

@@ -22,7 +22,7 @@
             <NavItem
               v-if="!item.onlyIfLoggedIn"
               :key="item.name"
-              :class-name="'MainNav-Link'"
+              :class-name="['MainNav-Link', { 'AsideMenu-Link--onlyDesktop': item.name === '' }]"
               :item="item"
             />
           </template>
@@ -107,6 +107,7 @@ export default {
           name: this.$t('pages.dailyCashback'),
           url: this.localePath('/daily-cashback'),
           icon: 'cashback.svg',
+          modificator: 'onlyLocale',
         },
         // {
         //   name: this.$t('pages.lottery'),

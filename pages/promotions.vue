@@ -14,6 +14,7 @@
           v-for="(item, i) in promotions"
           :key="`prom_${i}`"
           class="PromotionsCard Page-Card"
+          :class="$i18n.locale === 'fi' ? `${item.modificator}` : ''"
         >
           <Banner class="PromotionsCard-Banner" :image="item.image" :image460="item.image460">
             <template #title>
@@ -160,6 +161,7 @@ export default {
           image: 'banker-gold-promotions.png',
           announce: this.$t('promotions.deposit2.name'),
           text: this.$t('promotions.deposit2.text'),
+          modificator: 'PromotionsCard--onlyLocale',
         },
         {
           title: this.$t('promotions.deposit3.title'),
@@ -167,6 +169,7 @@ export default {
           image: 'banker-purple-promotions.png',
           announce: this.$t('promotions.deposit3.name'),
           text: this.$t('promotions.deposit3.text'),
+          modificator: 'PromotionsCard--onlyLocale',
         },
         {
           title: this.$t('promotions.cashback.title'),
@@ -176,6 +179,7 @@ export default {
           text: this.$t('promotions.cashback.text'),
           link: 'More',
           url: '/daily-cashback',
+          modificator: 'PromotionsCard--onlyLocale',
         },
         {
           title: this.$t('promotions.deposit4.title'),
@@ -386,6 +390,10 @@ export default {
     @media (min-width: $screen-l) {
       font-size: 16px;
     }
+  }
+
+  &--onlyLocale {
+    display: none;
   }
 }
 </style>
