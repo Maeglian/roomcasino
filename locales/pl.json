@@ -1517,5 +1517,38 @@
       "title": "➤ Demi God Tales Tournament With Solid Prize Pool €40,000 - Play Your Favorite Games And Win Great Prizes!",
       "description": "✭ Try Your Luck In New Demi God Tales by Spinomenal  ➔ Complete Missions - Win Prizes!"
     }
+  },
+  "happy_harvest_lotto": {
+    "title": "Happy Harvest<br/> Lotto",
+    "promoTitle": "Zbieraj na potęgę i odbierz 5000 darmowych spinów",
+    "name": "Happy Harvest Lotto",
+    "prize": "5000 darmowych spinów",
+    "text": "Nadeszła złota jesień i szykują się bogate zbiory darmowych spinów!<br/><br/>Happy Harvest Lotto będzie dostępne w dniach 1–28 września 2021 roku. Aby wziąć udział w loterii, wystarczy zdobyć bilet, wpłacając depozyt w wysokości minimum 20 EUR. Liczba biletów jest nieograniczona!",
+    "promoText": "Nadeszła złota jesień i szykują się bogate zbiory darmowych spinów!<br/><br/>Happy Harvest Lotto będzie dostępne w dniach 1–28 września 2021 roku. Aby wziąć udział w loterii, wystarczy zdobyć bilet, wpłacając depozyt w wysokości minimum 20 EUR. Liczba biletów jest nieograniczona!<br/><br/>Zgarnij swoje bilety, graj aktywnie i ciesz się z owoców swoich wysiłków!",
+    "terms": [
+      {
+        "text": "Loterie będą trwać 7 dni i odbędą się w dniach od 1 września, od godz. 00:01 (UTC) do 28 września, do godz. 23:59 (UTC)."
+      },
+      {
+        "text": "Minimalna kwota depozytu dla loteryjnego biletu wynosi 20 EUR, 30 CAD/AUDNZD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text": "Liczba loteryjnych biletów na gracza jest nieograniczona."
+      },
+      {
+        "text": "Każdy bilet może być biletem wygrywającym."
+      },
+      {
+        "text": "W chwili losowania konto gry nie może być zablokowane."
+      },
+      {
+        "text": "Nagrody będą przyznawane automatycznie co wtorek na koniec każdej loterii."
+      },
+      {
+        "text": " W przypadku darmowych spinów, wymagany obrót wynosi x5."
+      }
+    ],
+    "metaTitle": "➤ Happy Harvest Lotto With Solid Prize Pool 5,000 Free Spins - Play Your Favorite Games And Win Great Prizes!",
+    "metaDescription": "✭ Try Your Luck In New Happy Harvest Lotto by NineCasino ➔ Complete Missions - Win Prizes!"
   }
 }
