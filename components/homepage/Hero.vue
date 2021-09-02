@@ -256,10 +256,6 @@ export default {
     margin-bottom: 0;
   }
 
-  .OnlyLocale {
-    display: none;
-  }
-
   &-Slider {
     position: relative;
     margin-bottom: 12px;
