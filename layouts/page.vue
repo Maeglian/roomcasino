@@ -11,6 +11,7 @@
     <NotificationAlerts />
     <MainNav :key="$i18n.locale" />
     <Nuxt />
+    <Breadcrumbs v-if="$route.path !== '/'" />
     <Footer />
     <MobileNav />
     <NotificationsPanel />
@@ -31,6 +32,7 @@ import { mapGetters, mapState } from 'vuex';
 import InitialLoader from '@/components/InitialLoader';
 import CookiesPopup from '@/components/homepage/CookiesPopup';
 import CashierForm from '@/components/CashierForm';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import liveChat from '~/mixins/liveChat';
 
 export default {
@@ -44,6 +46,7 @@ export default {
     CashierForm,
     InitialLoader,
     CookiesPopup,
+    Breadcrumbs,
   },
   mixins: [liveChat],
   computed: {
