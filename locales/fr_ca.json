@@ -1426,6 +1426,39 @@
       }
     ]
   },
+  "happy_harvest_lotto": {
+    "title": "Happy Harvest<br/> Lotto",
+    "promoTitle": "Soyez le héros de la récolte avec 5k tours gratuits",
+    "name": "Happy Harvest Lotto",
+    "prize": "5 000 tours gratuits",
+    "text": "L’automne doré est ici et nos tours gratuits sont prêts à être récoltés!<br/><br/>La loterie Happy Harvest Lotto se déroule entre le 1er septembre 2021 au 28 septembre 2021. Il suffit de faire un dépôt de minimum 20 € pour obtenir un billet et participer. Le nombre de billets est illimité!",
+    "promoText": "L’automne doré est ici et nos tours gratuits sont prêts à être récoltés!<br/><br/>La loterie Happy Harvest Lotto se déroule entre le 1er septembre 2021 au 28 septembre 2021. Il suffit de faire un dépôt de minimum 20 € pour obtenir un billet et participer. Le nombre de billets est illimité!<br/><br/>Donc, achetez vos billets, soyez dans l’action et profitez des fruits de vos efforts!",
+    "terms": [
+      {
+        "text": "La loterie se déroulera sur sept jours commençant le 1er septembre à 00 h 01 UTC et se terminant le 28 septembre à 23 h 59 UTC."
+      },
+      {
+        "text": "Le dépôt minimal requis pour un billet de loterie est de 20 €, 30 CAD/AUD/NZD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text": "Le nombre de billets de loterie est illimité."
+      },
+      {
+        "text": "Chaque billet peut être gagnant."
+      },
+      {
+        "text": "Au moment du tirage au sort, le compte de jeu ne doit pas être bloqué."
+      },
+      {
+        "text": "Les prix seront attribués automatiquement à la fin de la loterie chaque mercredi."
+      },
+      {
+        "text": "Pour les tours gratuits, la mise est de x5."
+      }
+    ],
+    "metaTitle": "➤ La Happy Harvest Lotto avec une cagnotte impressionnante de 5,000 tours gratuits – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
+    "metaDescription": "✭ Tentez votre chance dans le nouveau Happy Harvest Lotto de NineCasino ➔ Accomplissez des missions et gagnez des prix!"
+  },
   "demigods": {
     "title": "Demi Gods Tales <br>Tournament <br>2er tour",
     "prize": "20 000 €",
