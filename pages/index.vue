@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import Hero from '@/components/homepage/Hero.vue';
 import BestGames from '@/components/homepage/BestGames.vue';
 // import Jackpots from '@/components/homepage/Jackpots.vue';
@@ -20,7 +21,6 @@ import Winners from '@/components/homepage/Winners.vue';
 // import Questions from '@/components/Questions.vue';
 // import Banner from '@/components/Banner.vue';
 import showAuthDialog from '@/mixins/showAuthDialog';
-import { mapState } from 'vuex';
 
 export default {
   name: 'HomePage',
