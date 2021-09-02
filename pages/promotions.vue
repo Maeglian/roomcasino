@@ -392,9 +392,5 @@ export default {
       font-size: 16px;
     }
   }
-
-  &--onlyLocale {
-    display: none;
-  }
 }
 </style>
