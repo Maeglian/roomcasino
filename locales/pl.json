@@ -434,13 +434,13 @@
     "deposit4": {
       "title": "Weekendowe <br/> doładowanie ",
       "upTo": "40% DO 150 EUR",
-      "name": "weekendowe <br/> doładowanie ",
+      "name": "weekendowe doładowanie ",
       "text": "Zacznij od więcej, wygraj więcej. Zdeponuj co najmniej 20 EUR, a otrzymasz 40% bonus aż do 150 EUR, który pomoże Ci obracać tymi automatami do gry, aż jackpot eksploduje!"
     },
     "cashback": {
       "title": "Codzienny<br/> cashback",
       "upTo": "do 20%",
-      "name": "Codzienny<br/> cashback",
+      "name": "Codzienny cashback",
       "text": "Kto nie lubi darmowego cashbacku z kasyna, gdy przegrywa? <br/>Tak, dobrze czytasz! Dajemy Ci cashback z tylko 5x zakładem, gdy przegrasz!"
     },
     "highroller": {
