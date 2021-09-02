@@ -10,79 +10,80 @@
     </div>
     <section class="Page-Content">
       <div class="Page-Cards PromotionsPage-Promotions">
-        <article
-          v-for="(item, i) in promotions"
-          :key="`prom_${i}`"
-          class="PromotionsCard Page-Card"
-          :class="$i18n.locale === 'fi' ? `${item.modificator}` : ''"
-        >
-          <Banner class="PromotionsCard-Banner" :image="item.image" :image460="item.image460">
-            <template #title>
-              <span v-html="item.title"></span>
-            </template>
-            <template v-if="item.prize" #prize>
-              <span v-html="item.prize"></span>
-            </template>
-            <template v-if="item.subtitle" #subtitle>
-              <span v-html="item.subtitle"></span>
-            </template>
-          </Banner>
-          <div class="PromotionsCard-Footer">
-            <div class="PromotionsCard-Title">
-              {{ item.announce }}
+        <template v-for="(item, i) in promotions">
+          <article
+            v-if="!item.excludedCountries || !item.excludedCountries.includes($i18n.locale)"
+            :key="`prom_${i}`"
+            class="PromotionsCard Page-Card"
+          >
+            <Banner class="PromotionsCard-Banner" :image="item.image" :image460="item.image460">
+              <template #title>
+                <span v-html="item.title"></span>
+              </template>
+              <template v-if="item.prize" #prize>
+                <span v-html="item.prize"></span>
+              </template>
+              <template v-if="item.subtitle" #subtitle>
+                <span v-html="item.subtitle"></span>
+              </template>
+            </Banner>
+            <div class="PromotionsCard-Footer">
+              <div class="PromotionsCard-Title">
+                {{ item.announce }}
+              </div>
+              <div class="PromotionsCard-Text Text Text--additional">
+                <i18n v-if="item.linkTo" path="promotions.twitterGiveaway.text">
+                  <template #twitterAccount>
+                    <a class="Footer-Contact" href="https://twitter.com/casino_nine">{{
+                      $t('twitter.twitterAccount')
+                    }}</a>
+                  </template>
+                  <template #tweet>
+                    <a
+                      class="Footer-Contact"
+                      href="https://twitter.com/casino_nine/status/1427561698408505344?s=20"
+                    >
+                      {{ $t('twitter.tweet') }}
+                    </a>
+                  </template>
+                  <template #br>
+                    <br />
+                  </template>
+                </i18n>
+                <span v-else v-html="item.text"> </span>
+              </div>
             </div>
-            <div class="PromotionsCard-Text Text Text--additional">
-              <i18n v-if="item.linkTo" path="promotions.twitterGiveaway.text">
-                <template #twitterAccount>
-                  <a class="Footer-Contact" href="https://twitter.com/casino_nine">{{
-                    $t('twitter.twitterAccount')
-                  }}</a>
-                </template>
-                <template #tweet>
-                  <a
-                    class="Footer-Contact"
-                    href="https://twitter.com/casino_nine/status/1427561698408505344?s=20"
-                  >
-                    {{ $t('twitter.tweet') }}
-                  </a>
-                </template>
-                <template #br>
-                  <br />
-                </template>
-              </i18n>
-              <span v-else v-html="item.text"> </span>
+            <div class="PromotionsCard-Btns">
+              <NuxtLink
+                v-if="item.link"
+                class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
+                :to="localePath(item.url)"
+              >
+                {{ $t('buttons.more') }}
+              </NuxtLink>
+              <a
+                v-else-if="item.linkTo"
+                :href="item.url"
+                class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
+              >
+                {{ $t('twitter.twitterBtn') }}
+              </a>
+              <button
+                v-else
+                class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
+                @click="onClickBtn()"
+              >
+                {{ isLoggedIn ? $t('buttons.getBonus') : $t('buttons.signUp') }}
+              </button>
+              <NuxtLink
+                :to="localePath('/bonus-terms')"
+                class="Btn Btn--common Btn--rightCorner Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
+              >
+                {{ $t('buttons.terms') }}
+              </NuxtLink>
             </div>
-          </div>
-          <div class="PromotionsCard-Btns">
-            <NuxtLink
-              v-if="item.link"
-              class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
-              :to="localePath(item.url)"
-            >
-              {{ $t('buttons.more') }}
-            </NuxtLink>
-            <a
-              v-else-if="item.linkTo"
-              :href="item.url"
-              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
-            >
-              {{ $t('twitter.twitterBtn') }}
-            </a>
-            <button
-              v-else
-              class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
-              @click="onClickBtn()"
-            >
-              {{ isLoggedIn ? $t('buttons.getBonus') : $t('buttons.signUp') }}
-            </button>
-            <NuxtLink
-              :to="localePath('/bonus-terms')"
-              class="Btn Btn--common Btn--rightCorner Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
-            >
-              {{ $t('buttons.terms') }}
-            </NuxtLink>
-          </div>
-        </article>
+          </article>
+        </template>
       </div>
       <!--      <h2 class="Title Title&#45;&#45;type-h2 Page-Subtitle PromotionsPage-Subtitle">-->
       <!--        Tournaments-->
@@ -161,7 +162,7 @@ export default {
           image: 'banker-gold-promotions.png',
           announce: this.$t('promotions.deposit2.name'),
           text: this.$t('promotions.deposit2.text'),
-          modificator: 'PromotionsCard--onlyLocale',
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.deposit3.title'),
@@ -169,7 +170,7 @@ export default {
           image: 'banker-purple-promotions.png',
           announce: this.$t('promotions.deposit3.name'),
           text: this.$t('promotions.deposit3.text'),
-          modificator: 'PromotionsCard--onlyLocale',
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.cashback.title'),
@@ -179,7 +180,7 @@ export default {
           text: this.$t('promotions.cashback.text'),
           link: 'More',
           url: '/daily-cashback',
-          modificator: 'PromotionsCard--onlyLocale',
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.deposit4.title'),
