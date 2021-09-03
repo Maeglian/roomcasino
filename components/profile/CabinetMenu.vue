@@ -72,7 +72,7 @@
 
 <script>
 import { mapActions } from 'vuex';
-import BaseIcon from '@/components/base/BaseIcon';
+import BaseIcon from '@/components/base/BaseIcon.vue';
 
 export default {
   name: 'CabinetMenu',

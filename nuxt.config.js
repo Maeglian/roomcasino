@@ -125,10 +125,10 @@ export default {
         icon: 'de.svg',
       },
       {
-        code: 'gr',
-        codeCountry: 'gr_GR',
-        file: 'gr.json',
-        icon: 'gr.svg',
+        code: 'el',
+        codeCountry: 'el_GR',
+        file: 'el.json',
+        icon: 'el.svg',
       },
       {
         code: 'nz',

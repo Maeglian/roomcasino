@@ -287,7 +287,6 @@
   &-Field {
     width: 100%;
     height: 55px;
-    background: var(--color-bg-input);
     border: 2px solid var(--color-border-input);
     border-radius: var(--border-radius-default);
 
@@ -328,7 +327,6 @@
     position: absolute;
     top: 0;
     left: 20px;
-    z-index: 10;
     font-weight: 700;
     line-height: 58px;
     text-transform: uppercase;

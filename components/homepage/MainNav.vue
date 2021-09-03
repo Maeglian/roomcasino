@@ -12,7 +12,11 @@
           <img class="MainNav-Logo" src="@/assets/img/logo.svg" />
         </NuxtLink>
       </div>
-      <nav v-if="width >= 960" class="Nav MainNav-Links">
+      <nav
+        v-if="width >= 960"
+        class="Nav MainNav-Links"
+        :class="{ 'MainNav-Links--mr': $i18n.locale === 'gr' || $i18n.locale === 'pl' }"
+      >
         <ul class="MainNav-List">
           <template v-for="item in navItemsFull">
             <NavItem
@@ -70,10 +74,10 @@
 </template>
 
 <script>
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 import NavItem from '@/components/homepage/NavItem.vue';
 import AuthSection from '@/components/homepage/AuthSection.vue';
 import GamePanel from '@/components/homepage/GamePanel.vue';
-import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 
 export default {
   name: 'MainNav',
@@ -347,6 +351,10 @@ export default {
     @media (min-width: $screen-l) {
       display: block;
       margin-right: auto;
+    }
+
+    &--mr {
+      margin-right: 20px;
     }
   }
 
