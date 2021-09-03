@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import Hero from '@/components/homepage/Hero.vue';
 import BestGames from '@/components/homepage/BestGames.vue';
 // import Jackpots from '@/components/homepage/Jackpots.vue';
@@ -20,7 +21,6 @@ import Winners from '@/components/homepage/Winners.vue';
 // import Questions from '@/components/Questions.vue';
 // import Banner from '@/components/Banner.vue';
 import showAuthDialog from '@/mixins/showAuthDialog';
-import { mapState } from 'vuex';
 
 export default {
   name: 'HomePage',
@@ -42,7 +42,9 @@ export default {
       title: 'ᐈ Casino Online and Mobile | Get Welcome Bonus $450 from Ninecasino!',
       meta: [
         {
-          description:
+          hid: 'description',
+          name: 'description',
+          content:
             '★ Play Your Favorite Games For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino',
         },
       ],

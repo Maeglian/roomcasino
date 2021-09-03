@@ -110,7 +110,9 @@ export default {
       title: this.$t('metaTags.bitcoins.title'),
       meta: [
         {
-          description: this.$t('metaTags.bitcoins.description'),
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.bitcoins.description'),
         },
       ],
     };

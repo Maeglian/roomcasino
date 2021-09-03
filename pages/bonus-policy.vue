@@ -172,7 +172,9 @@ export default {
       title: 'Bonus Policy Of The Ninecasino Gaming Platform',
       meta: [
         {
-          description: 'Detailed Information About Bonus Policy Of Ninecasino',
+          hid: 'description',
+          name: 'description',
+          content: 'Detailed Information About Bonus Policy Of Ninecasino',
         },
       ],
     };

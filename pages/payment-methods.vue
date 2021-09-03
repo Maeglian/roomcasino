@@ -94,8 +94,10 @@ export default {
       title: 'Available Payments On Multi-currency Online Platform Ninecasino',
       meta: [
         {
-          description:
-            'What are the conventional and digital currencies supported by the site for carrying financial transactions? Ways to make deposits and withdrawals',
+          hid: 'description',
+          name: 'description',
+          content:
+            'What are the conventional and digital currencies supported by the site for carrying financial transactions? Ways to make deposits and withdrawals',
         },
       ],
     };
