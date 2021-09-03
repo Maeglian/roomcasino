@@ -480,18 +480,7 @@
       "upTo": "20.000 €",
       "name": "Erzählen Sie die Geschichte der Demi God Tales",
       "text": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst."
-    },
-    "twitterGiveaway": {
-      "title": "twitter<br/> Giveaway",
-      "upTo": "600 Freispiele",
-      "name": "600 Freispiele geschenkt auf Twitter",
-      "text": "Wir haben ein Geschenk für Sie auf unserem Konto bei {twitterAccount}.{br}{br}Folgen Sie uns, befürworten Sie {tweet} und warten Sie bis zum 26. August auf die Ergebnisse. 3 glückliche Gewinnerinnen und Gewinner werden nach dem Zufallsprinzip ausgewählt und erhalten jeweils 200 Freispiele für das Automatenspiel Wolf Gold.{br}{br}Viel Glück!"
     }
-  },
-  "twitter": {
-    "twitterBtn": "Twitter",
-    "twitterAccount": "Twitter",
-    "tweet": "diesen Beitrag"
   },
   "tournaments": {
     "games": "Teilnehmende Spiele",
