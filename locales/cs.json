@@ -468,18 +468,7 @@
       "upTo": "€ 20 000",
       "name": "Vyprávějte příběh o Demi God Tales",
       "text": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales."
-    },
-    "twitterGiveaway": {
-      "title": "twitter<br/> Giveaway",
-      "upTo": "600 spinů zdarma",
-      "name": "Dar v podobě 600 spinů zdarma na Twitteru",
-      "text": "Připravili jsme pro vád dar na oficiálním {twitterAccount}.{br}{br}Sledujte nás, dejte lajk tomuto {tweet} a čekejte na výsledky 26. srpna. Náhodně vybereme 3 vítěze a každému z nich dáme 200 spinů zdarma v slotu Wolf Gold.{br}{br}Hodně štěstí!"
     }
-  },
-  "twitter": {
-    "twitterBtn": "Twitter",
-    "twitterAccount": "Twitterovém účtu",
-    "tweet": "tweetu"
   },
   "tournaments": {
     "games": "Hry zahrnuté do turnaje",
