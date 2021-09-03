@@ -194,15 +194,6 @@ export default {
           url: '/tournaments/weekly_derby',
         },
         {
-          title: this.$t('sunshine_spins_lottery.title'),
-          prize: this.$t('sunshine_spins_lottery.prize'),
-          image: 'sunshine-promo.png',
-          announce: this.$t('sunshine_spins_lottery.name'),
-          text: this.$t('sunshine_spins_lottery.text'),
-          link: 'More',
-          url: '/lottery/sunshine_spins_lottery',
-        },
-        {
           title: this.$t('promotions.demigods.title'),
           prize: this.$t('demigods.prize'),
           image: 'demigods-promotions.png',

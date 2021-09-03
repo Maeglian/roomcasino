@@ -1360,35 +1360,6 @@
     "ticket": "Billet",
     "tickets": "Billets"
   },
-  "sunshine_spins_lottery": {
-    "title": "La loterie<br/> Sunshine Spins",
-    "name": "La loterie Sunshine Spins",
-    "prize": "4 000 tours gratuits",
-    "text": "Des amateurs d’été heureux, équipés de vêtements décontractés d’été, marchant vers le festival de ce mois-ci : la loterie Sunshine Spins!<br/><br/>Grâce à la loterie Sunshine Spins, revivez l’époque de Woodstock, du festival de l’île de Wight et de San Francisco. Pour participer, il suffit de courir pieds nus, d’écouter vos chansons préférées et de faire tourner vos machines à sous préférées. Profitez de l’ambiance de la cagnotte de 4 000 tours gratuits avec 50 heureux gagnants!",
-    "terms": [
-      {
-        "text": "La loterie se déroulera sur 7 jours, du Mardi à 00 h 01 (UTC) au lundi à 23 h 59 (UTC). "
-      },
-      {
-        "text": "Le dépôt minimal requis pour un billet de loterie est de 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
-      },
-      {
-        "text": "Le nombre de billets de loterie par joueur est illimité."
-      },
-      {
-        "text": "Chaque billet peut être gagnant."
-      },
-      {
-        "text": "Au moment du tirage au sort, votre compte de jeu ne doit pas être bloqué."
-      },
-      {
-        "text": "Des 4000 tours gratuits seront attribués automatiquement à la fin de la loterie chaque semaine le lundi."
-      },
-      {
-        "text": "Pour les tours gratuits, votre mise est de x5."
-      }
-    ]
-  },
   "tesla_lottery": {
     "title": "La loterie<br/> Tesla",
     "name": "Tesla Model 3",
