@@ -83,7 +83,7 @@
     "forgotPassword" : "Olen unohtanut salasanan",
     "emails" : "Vastaanota sähköpostikampanjoita",
     "terms" : "Olen täyttänyt {minAge} vuotta ja hyväksyn {br} {Palvelun käyttöehdot} sekä {tietosuojakäytännön}\n",
-    "step2Title" : "Täytä seuraavat tiedot.",
+    "step2Title" : "Täytä seuraavat tiedot!",
     "thanksRegistration" : "KIITOS REKISTERÖITYMISESTÄ",
     "registrationBonus" : "250 ILMAISKIERROSTA",
     "registrationBonusText" : "asti ensitalletuksesta! Hyödynnä Ninecasinon tervetuliaisbonuksen etu.",
@@ -168,7 +168,7 @@
     "text" : {
       "p1" : "Ymmärrät, että osallistumalla peleihin voit menettää www.ninecasino.com-tilillesi tallettamasi rahat. Joissakin maissa ja joillakin alueilla uhkapelaaminen on laitonta. Ymmärrät ja hyväksyt, että www.ninecasino.com ei anna lakineuvoja tai takuita verkkosivuston palveluiden käytön laillisuutta koskien. Yritys ei vahvista, että verkkosivuston palvelut ovat laillisia lainkäyttöalueellasi. Käytät www.ninecasino.com-sivuston palveluita omasta tahdostasi ja oman harkintasi varassa, ja olet itse vastuussa sen selvittämisestä, onko verkkosivuston palveluiden käyttö laillista lainkäyttöalueesi voimassa olevan lain mukaan. Kirjaudut verkkosivustoon ja osallistut peleihin omalla vastuullasi.",
       "p2" : "Copyright © 2020 www.ninecasino.com. Operaattori: Scartesu Ltd., Dux Group N.V:n maksuoperaattori, joka toimii Kyprokselle rekisteröidyn Dux Group N.V:n puolesta ja edustajana Kyproksen lakien mukaisesti. Rekisteröity osoite: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Kypros. Rekisteröintinumero: ΗΕ 410983. Verkkosivustossa noudatetaan Kyproksen lakeja. Verkkosivuston www.ninecasino.com omistaa Dux Group N.V., Curaçaoon rekisteröity ja sen lakien mukaisesti toimiva yritys, jonka rekisteröintinumero on 155114 ja rekisteröity osoite Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. toimii Curaçaon hallituksen myöntämällä luvalla tietopalvelujen tuottajana, jolla on laillinen oikeus tuottaa verkkopelitoimintoja Curaçaosta käsin lupanumerolla 8048/JAZ2020-075. Verkkopelien käyttöoikeuksista ja valvonnasta vastaa Antillephone N.V. Pelaaja on yksin vastuussa oman lainkäyttöalueensa voimassa olevan verkkopelaamisen ikärajoja koskevan lainsäädännön ja määräysten selvittämisestä.",
-      "p3" : "Jos sinulla on kysyttävää verkkosivustosta tai sitä koskevia ehdotuksia, ota yhteys {tukeen} tai puhelimitse {puhelin}."
+      "p3" : "Jos sinulla on kysyttävää verkkosivustosta tai sitä koskevia ehdotuksia, ota yhteys {support} tai puhelimitse {phone}."
     }
   },
   "search" : {
@@ -1489,28 +1489,28 @@
     ]
   },
   "demigods" : {
-    "title" : "Demi God Tales Tournament<br>Round I",
+    "title" : "Demi God Tales Tournament<br>Round II",
     "prize" : "€20,000",
     "text" : "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
     "textMobile" : "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
-    "terms" : [
+    "terms": [
       {
-        "title" : "Round I runs between August 24th 00:00 GMT and August 30th 23:59 GMT."
+        "title": "Round II runs between August 30th 00:00 GMT and September 5th 23:59 GMT.<br><br>"
       },
       {
-        "title" : "Participating games: <br>Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II."
+        "title": "Participating games: <br>Demi Gods III, Demi Gods III – 15 Lines, Book Of Demi Gods III.<br><br>"
       },
       {
-        "title" : "The 150 first players on the leaderboard will share a prize of 20,000 EUR."
+        "title": "The 150 first players on the leaderboard will share a prize of 20,000 EUR.<br><br>"
       },
       {
-        "title" : "Play any of the participating games. Each win rewards you with a score based on the win multiplier (for example, if you waged 1 EUR and won 10 EUR, you will be rewarded with 10 points)."
+        "title": "Play any of the participating games. Each time the “Odin” symbol lands on one of the reels, you will be rewarded with 1 point (for example, if at the end of a spin 3 Odin symbols appear on the reels, you will be rewarded with 3 points)."
       },
       {
-        "title" : "Points received are summed up throughout the tournament period. The more points you collect, the higher your position on the leaderboard."
+        "title": "5. Points received are tallied throughout the tournament period. The more points you collect, the higher your position on the leaderboard."
       },
       {
-        "title" : "Minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
+        "title": "Minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
       }
     ],
     "metaInfo" : {
