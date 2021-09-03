@@ -324,8 +324,8 @@ export default {
   }
 
   &-Btn {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 4px;
+    padding-left: 4px;
   }
 
   &-Btn--small {

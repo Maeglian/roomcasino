@@ -167,8 +167,8 @@
 </template>
 
 <script>
-import showAuthDialog from '@/mixins/showAuthDialog';
 import { mapState, mapActions, mapGetters } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'LotteryPage',
@@ -588,7 +588,7 @@ export default {
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 20px / 1248px * 100%;
+      padding-top: 70px / 1248px * 100%;
       background-image: url(~@/assets/img/tesla_1248.png);
       background-position: center top;
     }
