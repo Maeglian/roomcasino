@@ -220,6 +220,15 @@ export default {
           link: 'More',
           url: '/lottery/tesla_lottery',
         },
+        {
+          title: this.$t('happy_harvest_lotto.title'),
+          prize: this.$t('happy_harvest_lotto.prize'),
+          image: 'harvest-promo.png',
+          announce: this.$t('happy_harvest_lotto.promoTitle'),
+          text: this.$t('happy_harvest_lotto.promoText'),
+          link: 'More',
+          url: '/lottery/happy_harvest_lotto',
+        },
       ],
     };
   },

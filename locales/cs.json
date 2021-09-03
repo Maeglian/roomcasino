@@ -1410,6 +1410,39 @@
       }
     ]
   },
+  "happy_harvest_lotto": {
+    "title": "Happy Harvest<br/> Lotto",
+    "promoTitle": "Stańte se hrdiny sklizně s 5 000 spiny zdarma",
+    "name": "Happy Harvest Lotto",
+    "prize": "5 000 spinů zdarma",
+    "text": "Zlatý podzim je tady a naše spiny zdarma dozrály pro sklizeň!<br/><br/>Happy Harvest Lotto probíhá od 1. září 2021 do 28. září 2021. Jednoduše proveďte minimální vklad ve výši 20 eur, abyste získali los a mohli se zúčastnit. Počet losů, které můžete mít, je neomezený!",
+    "promoText": "Zlatý podzim je tady a naše spiny zdarma dozrály pro sklizeň!<br/><br/>Happy Harvest Lotto probíhá od 1. září 2021 do 28. září 2021. Jednoduše proveďte minimální vklad ve výši 20 eur, abyste získali los a mohli se zúčastnit. Počet losů, které můžete mít, je neomezený!<br/><br/>Tak si vezměte svůj los, buďte aktivní a užijte si plody svého úsilí!",
+    "terms": [
+      {
+        "text": "Loterie bude probíhat 7 dnů od 1. září 00:01 (UTC) do 28. září 23:59 (UTC)."
+      },
+      {
+        "text": "Minimální vklad pro získání losu je 20 EUR, 30 CAD/AUD/NZD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text": "Počet losů na hráče není nijak omezený."
+      },
+      {
+        "text": "Každý los může být výherní."
+      },
+      {
+        "text": "V době slosování nesmí být herní účet zablokovaný."
+      },
+      {
+        "text": "Odměny budou uděleny automaticky na konci loterie každý týden v úterý."
+      },
+      {
+        "text": "Pro bezplatné spiny je protočení x5."
+      }
+    ],
+    "metaTitle": "➤ Happy Harvest Lotto s bohatým prize poolem 5,000 spinů zdarma – Hrajte své oblíbené hry a vyhrávejte skvělé ceny!",
+    "metaDescription": "✭ Zkuste štěstí v novém Happy Harvest Lotto od NineCasino ➔ Splňte misi – Vyhrajte ceny!"
+  },
   "metaTags": {
     "promotions": {
       "title": "Promotions",

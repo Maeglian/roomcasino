@@ -1406,6 +1406,39 @@
       }
     ]
   },
+  "happy_harvest_lotto": {
+    "title": "Happy Harvest<br/> Lotto",
+    "promoTitle": "Be a harvest hero with 5,000 Free Spins",
+    "name": "Happy Harvest Lotto",
+    "prize": "5,000 Free Spins",
+    "text": "The golden autumn is here and our Free Spins are ripe for harvest!<br/><br/>The Happy Harvest Lotto runs between September 1st, 2021 and September 28th, 2021. Just make a minimum deposit of €20 to get a ticket and take part. The number of tickets you can have is unlimited!",
+    "promoText": "The golden autumn is here and our Free Spins are ripe for harvest!<br/><br/>The Happy Harvest Lotto runs between September 1st, 2021 and September 28th, 2021. Just make a minimum deposit of €20 to get a ticket and take part. The number of tickets you can have is unlimited!<br/><br/>So grab your tickets, be active, and enjoy the fruits of your efforts!",
+    "terms": [
+      {
+        "text": "The lottery will last for a month starting on September 1st at 00:01 (UTC) and ending on September 28th at 23:59 (UTC)."
+      },
+      {
+        "text": "The minimum deposit required for a lottery ticket is 20 EUR, 30 CAD/AUD/NZD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text": "The number of lottery tickets per player is unlimited."
+      },
+      {
+        "text": "Every ticket can be a winning ticket."
+      },
+      {
+        "text": "At the time of the draw, the game account must not be blocked."
+      },
+      {
+        "text": "The prizes will be awarded automatically at the end of the lottery every week on Tuesday."
+      },
+      {
+        "text": "For the Free Spins, the wagering is x5."
+      }
+    ],
+    "metaTitle": "➤ Happy Harvest Lotto With Solid Prize Pool 5,000 Free Spins - Play Your Favorite Games And Win Great Prizes!",
+    "metaDescription": "✭ Try Your Luck In New Happy Harvest Lotto by NineCasino ➔ Complete Missions - Win Prizes!"
+  },
   "demigods": {
     "title": "Demi Gods Tales <br/>Tournament <br/>Round II",
     "prize": "€20,000",
