@@ -216,6 +216,13 @@ export default {
           url: '/lottery/tesla_lottery',
           linkText: this.$t('buttons.more'),
         },
+        {
+          bg: 'harvest',
+          title: this.$t('happy_harvest_lotto.title'),
+          text: `<span class="Colored">${this.$t('happy_harvest_lotto.prize')}</span>`,
+          url: '/lottery/happy_harvest_lotto',
+          linkText: this.$t('buttons.more'),
+        },
       ];
       if (!this.isLoggedIn) {
         slides.splice(1, 1);
