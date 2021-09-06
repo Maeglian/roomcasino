@@ -17,9 +17,9 @@
 <script>
 import { mapGetters } from 'vuex';
 import InitialLoader from '@/components/InitialLoader';
-import CookiesPopup from '@/components/homepage/CookiesPopup';
+import CookiesPopup from '@/components/popups/CookiesPopup';
 import CashierForm from '@/components/CashierForm';
-import TeslaPopup from '@/components/homepage/TeslaPopup';
+import TeslaPopup from '@/components/popups/TeslaPopup';
 import BannerPopup from '@/components/popups/BannerPopup';
 import liveChat from '~/mixins/liveChat';
 

@@ -3,10 +3,10 @@
     <div class="TeslaPopup-Content">
       <img class="TeslaPopup-Image" src="@/assets/img/tesla-banner.png" />
       <div class="TeslaPopup-Title">
-        Win a Tesla car
+        {{ $t('tesla_lottery.winTesla') }}
       </div>
       <Counter class="TeslaPopup-Counter" :enddate="new Date(1632430740 * 1000)">
-        <template #upperText>Tournament ends in:</template>
+        <template #upperText>{{ $t('tournaments.endsIn') }}:</template>
       </Counter>
       <NuxtLink to="/lottery/tesla_lottery" class="Btn Btn--color1 TeslaPopup-Btn">{{
         $t('buttons.joinNow')
