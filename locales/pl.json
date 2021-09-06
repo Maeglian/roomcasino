@@ -499,7 +499,8 @@
     "duration": "Czas trwania",
     "betsPerPoint": "Zakłady na jeden punkt",
     "currentWinners": "Obecni zwycięzcy",
-    "previousRound": "Poprzednia runda"
+    "previousRound": "Poprzednia runda",
+    "endsIn": "Turniej kończy się za"
   },
   "dropsWinsSlots": {
     "title": "Ulepszona edycja slotów Drops & Wins",
@@ -1406,27 +1407,28 @@
     "title": "The Tesla<br/> Lottery",
     "name": "The Tesla Lottery",
     "prize": "Tesla Model 3",
-    "text": "Join the Tesla Lottery at NineCasino between August 18th, 2021 and September 23rd, 2021 and get a chance to become the happy owner of a Tesla Model 3! <br/><br/>On the 24th of September we will announce the Tesla winner!",
+    "text": "Participez à la loterie Tesla sur NineCasino entre le 18 août 2021 et le 23 septembre 2021 et courez la chance de devenir l’heureux propriétaire d’une Tesla Model 3!<br/><br/>Nous annoncerons le gagnant de la Tesla le 24 septembre!",
     "terms": [
       {
-        "text": "The lottery runs between August 18th, 2021 and September 23rd, 2021."
+        "text": "La loterie se déroule du 18 août 2021 au 23 septembre 2021."
       },
       {
-        "text": "A minimum deposit per ticket is €50. Each ticket can win."
+        "text": "Le dépôt minimal par billet est de 50 €. Chaque billet peut être gagnant."
       },
       {
-        "text": "The number of lottery tickets per player is not limited."
+        "text": "Le nombre de billets de loterie par joueur n’est pas limité."
       },
       {
-        "text": "The more tickets you collect at the time of the draw, the higher your chances of winning a prize are."
+        "text": "Plus vous collectez de billets au moment du tirage, plus vos chances de gagner un prix sont élevées."
       },
       {
-        "text": "At the time of the draw, the game account must not be blocked."
+        "text": "Au moment du tirage au sort, le compte de jeu ne doit pas être bloqué."
       },
       {
-        "text": "The winner of the lottery will be announced on the 24th of September."
+        "text": "Le gagnant de la loterie sera annoncé le 24 septembre."
       }
-    ]
+    ],
+    "winTesla": "Wygraj samochód marki Tesla"
   },
   "sumdes": {
     "title": "Summer Desserts<br> Tournament",
