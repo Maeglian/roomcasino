@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { mapActions, mapState, mapGetters } from 'vuex';
+import { mapActions, mapState, mapGetters, mapMutations } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import openGame from '@/mixins/openGame';
 import MainNav from '@/components/homepage/MainNav';
@@ -43,6 +43,7 @@ export default {
   },
   mixins: [showAuthDialog, openGame],
   beforeRouteLeave(to, from, next) {
+    this.setStartingGame({ html: '', url: '' });
     if (this.isLoggedIn) this.getProfile();
     next();
   },
@@ -116,6 +117,7 @@ export default {
     this.onEnterPage();
   },
   methods: {
+    ...mapMutations('games', ['setStartingGame']),
     ...mapActions(['getProfile']),
     ...mapActions('games', ['startGame']),
     toggleFullScreenMode() {

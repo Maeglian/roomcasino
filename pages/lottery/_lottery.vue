@@ -167,8 +167,8 @@
 </template>
 
 <script>
-import showAuthDialog from '@/mixins/showAuthDialog';
 import { mapState, mapActions, mapGetters } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'LotteryPage',
@@ -588,7 +588,7 @@ export default {
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 20px / 1248px * 100%;
+      padding-top: 70px / 1248px * 100%;
       background-image: url(~@/assets/img/tesla_1248.png);
       background-position: center top;
     }
@@ -597,6 +597,41 @@ export default {
       padding-top: 100px / 1920px * 100%;
       background-image: url(~@/assets/img/tesla_1920.png);
       background-position: center top;
+    }
+
+    @media (min-width: $screen-xxxl) {
+      padding-top: 160px / 1920px * 100%;
+    }
+  }
+}
+
+.happy_harvest_lotto {
+  &-Header {
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/harvest_460.png);
+
+    @media (min-width: $screen-s) {
+      padding-top: 300px / 320px * 100%;
+      background-image: url(~@/assets/img/harvest_600.png);
+    }
+
+    @media (min-width: $screen-m) {
+      padding-top: 50px / 768px * 100%;
+      background-image: url(~@/assets/img/harvest_900.png);
+
+      .DailyTournamentPage-MainText {
+        max-width: 35%;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 120px / 768px * 100%;
+      background-image: url(~@/assets/img/harvest_1248.png);
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-top: 80px;
+      background-image: url(~@/assets/img/harvest_1920.png);
     }
 
     @media (min-width: $screen-xxxl) {

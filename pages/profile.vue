@@ -6,6 +6,7 @@
       <CabinetMenu />
       <div v-if="Object.keys(user).length" class="CabinetPage-Content">
         <Nuxt />
+        <Breadcrumbs v-if="$route.path !== '/'" />
       </div>
       <Loader v-else class="CabinetPage-Loader" />
     </div>
@@ -18,6 +19,7 @@ import CabinetTopbar from '@/components/profile/CabinetTopbar.vue';
 import { mapState } from 'vuex';
 import Loader from '@/components/Loader';
 import NotificationAlerts from '@/components/NotificationAlerts';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default {
   name: 'CabinetPage',
@@ -26,6 +28,7 @@ export default {
     CabinetTopbar,
     Loader,
     NotificationAlerts,
+    Breadcrumbs,
   },
   middleware: 'auth',
   computed: {
