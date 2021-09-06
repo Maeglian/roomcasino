@@ -500,7 +500,8 @@
     "duration": "Dauer",
     "betsPerPoint": "Wetten pro Punkt",
     "currentWinners": "Aktuelle Gewinner",
-    "previousRound": "Letzte Runde"
+    "previousRound": "Letzte Runde",
+    "endsIn": "Das Turnier endet in"
   },
   "dropsWinsSlots": {
     "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
@@ -1431,7 +1432,8 @@
       {
         "text": "Die Bekanntgabe der Gewinnerin bzw. des Gewinners erfolgt am 24. September."
       }
-    ]
+    ],
+    "winTesla": "Ein Tesla zu gewinnen"
   },
   "demigods": {
     "title": "Demi Gods Tales <br/>Tournament<br/> Runde II",

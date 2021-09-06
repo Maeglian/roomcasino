@@ -484,7 +484,8 @@
     "duration": "Durée",
     "betsPerPoint": "Pari par point",
     "currentWinners": "Les gagnants actuels",
-    "previousRound": "Tour précédent"
+    "previousRound": "Tour précédent",
+    "endsIn": "Le tournoi se termine dans"
   },
   "dropsWinsSlots": {
     "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
@@ -1414,7 +1415,8 @@
       {
         "text": "Le gagnant de la loterie sera annoncé le 24 septembre."
       }
-    ]
+    ],
+    "winTesla": "Gagnez une voiture Tesla"
   },
   "demigods": {
     "title": "Demi Gods Tales <br>Tournament <br>2er tour",

@@ -487,8 +487,9 @@
     "timeLeft" : "ΕΝΑΠΟΜΕΝΩΝ ΧΡΟΝΟΣ ΜΕΧΡΙ ΤΕΛΟΣ",
     "duration" : "ΔΙΑΡΚΕΙΑ",
     "betsPerPoint" : "ΣΤΟΙΧΗΜΑΤΑ ΑΝΑ ΣΗΜΕΙΟ",
-    "currentWinners" : "τρέχοντες νικητές ",
-    "previousRound" : "προηγούμενος γύρος "
+    "currentWinners" : "τρέχοντες νικητές",
+    "previousRound" : "προηγούμενος γύρος",
+    "endsIn": "Το τουρνουά τελειώνει σε"
   },
   "dropsWinsSlots" : {
     "title" : "Upgraded Drops & Wins Slots edition",
@@ -1415,7 +1416,8 @@
       {
         "text" : "The winner of the lottery will be announced on the 24th of September."
       }
-    ]
+    ],
+    "winTesla": "Κερδίστε ένα αυτοκίνητο Telsa"
   },
   "demigods": {
     "title": "Demi Gods Tales <br/>Tournament <br/>Round II",

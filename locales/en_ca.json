@@ -496,7 +496,8 @@
     "duration": "Duration",
     "betsPerPoint": "Bets per point",
     "currentWinners": "Current winners",
-    "previousRound": "Previous round"
+    "previousRound": "Previous round",
+    "endsIn": "Tournament ends in"
   },
   "dropsWinsSlots": {
     "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
