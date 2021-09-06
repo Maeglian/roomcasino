@@ -468,18 +468,7 @@
       "upTo": "€ 20 000",
       "name": "Vyprávějte příběh o Demi God Tales",
       "text": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales."
-    },
-    "twitterGiveaway": {
-      "title": "twitter<br/> Giveaway",
-      "upTo": "600 spinů zdarma",
-      "name": "Dar v podobě 600 spinů zdarma na Twitteru",
-      "text": "Připravili jsme pro vád dar na oficiálním {twitterAccount}.{br}{br}Sledujte nás, dejte lajk tomuto {tweet} a čekejte na výsledky 26. srpna. Náhodně vybereme 3 vítěze a každému z nich dáme 200 spinů zdarma v slotu Wolf Gold.{br}{br}Hodně štěstí!"
     }
-  },
-  "twitter": {
-    "twitterBtn": "Twitter",
-    "twitterAccount": "Twitterovém účtu",
-    "tweet": "tweetu"
   },
   "tournaments": {
     "games": "Hry zahrnuté do turnaje",
@@ -1420,6 +1409,39 @@
         "text": "Výherce loterie bude oznámený 24. září."
       }
     ]
+  },
+  "happy_harvest_lotto": {
+    "title": "Happy Harvest<br/> Lotto",
+    "promoTitle": "Stańte se hrdiny sklizně s 5 000 spiny zdarma",
+    "name": "Happy Harvest Lotto",
+    "prize": "5 000 spinů zdarma",
+    "text": "Zlatý podzim je tady a naše spiny zdarma dozrály pro sklizeň!<br/><br/>Happy Harvest Lotto probíhá od 1. září 2021 do 28. září 2021. Jednoduše proveďte minimální vklad ve výši 20 eur, abyste získali los a mohli se zúčastnit. Počet losů, které můžete mít, je neomezený!",
+    "promoText": "Zlatý podzim je tady a naše spiny zdarma dozrály pro sklizeň!<br/><br/>Happy Harvest Lotto probíhá od 1. září 2021 do 28. září 2021. Jednoduše proveďte minimální vklad ve výši 20 eur, abyste získali los a mohli se zúčastnit. Počet losů, které můžete mít, je neomezený!<br/><br/>Tak si vezměte svůj los, buďte aktivní a užijte si plody svého úsilí!",
+    "terms": [
+      {
+        "text": "Loterie bude probíhat 7 dnů od 1. září 00:01 (UTC) do 28. září 23:59 (UTC)."
+      },
+      {
+        "text": "Minimální vklad pro získání losu je 20 EUR, 30 CAD/AUD/NZD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text": "Počet losů na hráče není nijak omezený."
+      },
+      {
+        "text": "Každý los může být výherní."
+      },
+      {
+        "text": "V době slosování nesmí být herní účet zablokovaný."
+      },
+      {
+        "text": "Odměny budou uděleny automaticky na konci loterie každý týden v úterý."
+      },
+      {
+        "text": "Pro bezplatné spiny je protočení x5."
+      }
+    ],
+    "metaTitle": "➤ Happy Harvest Lotto s bohatým prize poolem 5,000 spinů zdarma – Hrajte své oblíbené hry a vyhrávejte skvělé ceny!",
+    "metaDescription": "✭ Zkuste štěstí v novém Happy Harvest Lotto od NineCasino ➔ Splňte misi – Vyhrajte ceny!"
   },
   "metaTags": {
     "promotions": {

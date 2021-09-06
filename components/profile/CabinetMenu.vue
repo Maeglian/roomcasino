@@ -52,7 +52,11 @@
         width="20"
         height="20"
       />
-      {{ $t('profile.pages.limits') }}
+      <div
+        :class="{ 'CabinetMenu-NavLink--cuttext': $i18n.locale === 'pl' || $i18n.locale === 'gr' }"
+      >
+        {{ $t('profile.pages.limits') }}
+      </div>
     </NuxtLink>
     <div class="CabinetMenu-NavLink" @click="onClickExitBtn()">
       <BaseIcon
@@ -136,6 +140,14 @@ export default {
       margin-right: 0;
     }
 
+    &--cuttext {
+      display: block;
+      width: 150px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
     &.nuxt-link-active {
       color: var(--color-text-main);
       background-color: var(--color-main1);
@@ -178,6 +190,7 @@ export default {
   }
 
   &-NavIcon {
+    flex-shrink: 0;
     max-width: 14px;
     margin-right: 7px;
 

@@ -102,7 +102,11 @@
       </template>
     </div>
     <div v-if="showFooter" class="Card-Footer">
-      <div class="Card-Name" v-html="linebreak(gameInfo.gameName)"></div>
+      <NuxtLink
+        :to="localePath(`/game/${gameInfo.gameId}`)"
+        class="Card-Name"
+        v-html="linebreak(gameInfo.gameName)"
+      />
       <div v-if="showProvider" class="Card-Provider">{{ gameInfo.gameProducer }}</div>
     </div>
   </div>

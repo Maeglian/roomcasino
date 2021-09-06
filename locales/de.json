@@ -480,18 +480,7 @@
       "upTo": "20.000 €",
       "name": "Erzählen Sie die Geschichte der Demi God Tales",
       "text": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst."
-    },
-    "twitterGiveaway": {
-      "title": "twitter<br/> Giveaway",
-      "upTo": "600 Freispiele",
-      "name": "600 Freispiele geschenkt auf Twitter",
-      "text": "Wir haben ein Geschenk für Sie auf unserem Konto bei {twitterAccount}.{br}{br}Folgen Sie uns, befürworten Sie {tweet} und warten Sie bis zum 26. August auf die Ergebnisse. 3 glückliche Gewinnerinnen und Gewinner werden nach dem Zufallsprinzip ausgewählt und erhalten jeweils 200 Freispiele für das Automatenspiel Wolf Gold.{br}{br}Viel Glück!"
     }
-  },
-  "twitter": {
-    "twitterBtn": "Twitter",
-    "twitterAccount": "Twitter",
-    "tweet": "diesen Beitrag"
   },
   "tournaments": {
     "games": "Teilnehmende Spiele",
@@ -1432,6 +1421,39 @@
         "text": "Die Bekanntgabe der Gewinnerin bzw. des Gewinners erfolgt am 24. September."
       }
     ]
+  },
+  "happy_harvest_lotto": {
+    "title": "Happy Harvest<br/> Lotto",
+    "promoTitle": "Ernteheld werden mit 5.000 Freispielen",
+    "name": "Happy Harvest Lotto",
+    "prize": "5.000 Freispiele",
+    "text": "Der goldene Herbst ist da und unsere Freispiel sind reif für die Ernte!<br/><br/>Das Happy Harvest Lotto läuft vom 1. bis 28. September 2021. Einfach mindestens 20 Euro einzahlen, um ein Los zu erhalten und dabei zu sein.  Die Anzahl der Lose je Person ist nicht begrenzt!",
+    "promoText": "Der goldene Herbst ist da und unsere Freispiel sind reif für die Ernte!<br/><br/>Das Happy Harvest Lotto läuft vom 1. bis 28. September 2021. Einfach mindestens 20 Euro einzahlen, um ein Los zu erhalten und dabei zu sein. Die Anzahl der Lose je Person ist nicht begrenzt!<br/><br/>Lose sichern, aktiv sein und die Früchte des eigenen Handelns ernten!",
+    "terms": [
+      {
+        "text": "Die Verlosung läuft jeweils 7 Tage ab 00:01 Uhr UTC am 1. bis 23:59 Uhr UTC am 28. September."
+      },
+      {
+        "text": "Die Mindesteinzahlung für ein Los beträgt 20 Euro bzw. 30 CAD/AUD/NZD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text": "Die Anzahl der Lose pro Person ist unbegrenzt."
+      },
+      {
+        "text": "Jedes Los kann gewinnen."
+      },
+      {
+        "text": "Zum Zeitpunkt der Ziehung darf das Spielkonto nicht gesperrt sein."
+      },
+      {
+        "text": "Die Gewinne werden am Ende der jeweiligen Verlosungswoche jeweils dienstags automatisch zugewiesen."
+      },
+      {
+        "text": "Bei den Freispielen beträgt die Umsatzanforderung x5."
+      }
+    ],
+    "metaTitle": "➤ Happy Harvest Lotto mit massivem Preisgeld von 5,000 Freispielen – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
+    "metaDescription": "✭ Versuch dein Glück beim neuen Happy Harvest Lotto von NineCasino ➔ Schließe Missionen ab – gewinne Preise!"
   },
   "demigods": {
     "title": "Demi Gods Tales <br/>Tournament<br/> Runde II",
