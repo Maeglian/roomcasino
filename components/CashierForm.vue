@@ -104,7 +104,11 @@ export default {
       this.cashierIsLoading = true;
 
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
-      const locale = this.$i18n.locale === 'en-ca' ? 'en' : this.$i18n.locale;
+      let locale;
+      if (this.$i18n.locale === 'en-ca') locale = 'en';
+      else if (this.$i18n.locale === 'fr-ca') locale = 'fr';
+      // eslint-disable-next-line prefer-destructuring
+      else locale = this.$i18n.locale;
 
       // eslint-disable-next-line no-unused-vars
       const CashierInstance = new this.$_Cashier(
