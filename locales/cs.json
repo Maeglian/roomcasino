@@ -477,7 +477,8 @@
     "duration": "Trvání",
     "betsPerPoint": "Sázky na bod",
     "currentWinners": "Aktuální vítězové",
-    "previousRound": "Předcházející kolo"
+    "previousRound": "Předcházející kolo",
+    "endsIn": "Turnaj skončí za"
   },
   "dropsWinsSlots": {
     "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
@@ -1408,7 +1409,8 @@
       {
         "text": "Výherce loterie bude oznámený 24. září."
       }
-    ]
+    ],
+    "winTesla": "Vyhrajte vůz Tesla"
   },
   "happy_harvest_lotto": {
     "title": "Happy Harvest<br/> Lotto",

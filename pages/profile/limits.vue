@@ -29,9 +29,9 @@
   </div>
 </template>
 <script>
+import { mapState, mapGetters } from 'vuex';
 import CreateLimits from '@/components/profile/CreateLimits.vue';
 import GamblingLimit from '@/components/profile/GamblingLimit.vue';
-import { mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'LimitsPage',

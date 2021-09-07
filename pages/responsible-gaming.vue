@@ -137,7 +137,9 @@ export default {
       title: this.$t('metaTags.responsible-gaming.title'),
       meta: [
         {
-          description: this.$t('metaTags.responsible-gaming.description'),
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.responsible-gaming.description'),
         },
       ],
     };

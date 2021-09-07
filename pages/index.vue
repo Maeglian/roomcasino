@@ -42,7 +42,9 @@ export default {
       title: 'ᐈ Casino Online and Mobile | Get Welcome Bonus $450 from Ninecasino!',
       meta: [
         {
-          description:
+          hid: 'description',
+          name: 'description',
+          content:
             '★ Play Your Favorite Games For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino',
         },
       ],

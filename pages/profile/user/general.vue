@@ -119,12 +119,12 @@
 
 <script>
 import { mapGetters, mapActions, mapState, mapMutations } from 'vuex';
+import { maxLength, minLength, required } from 'vuelidate/lib/validators';
+import moment from 'moment';
 import BaseButton from '@/components/base/BaseButton.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import Loader from '@/components/Loader';
-import { maxLength, minLength, required } from 'vuelidate/lib/validators';
 import { dateCheck, phoneWithPlusCheck, postalCodeCheck } from '@/utils/formCheckers';
-import moment from 'moment';
 import { transformAustriaPhone, dateInputMask } from '@/utils/helpers';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';

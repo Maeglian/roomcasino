@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import showAuthDialog from '@/mixins/showAuthDialog';
 import { mapState } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'GamePanel',

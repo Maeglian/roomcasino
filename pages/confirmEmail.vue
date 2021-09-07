@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import Loader from '@/components/Loader';
 import { mapActions, mapMutations, mapState } from 'vuex';
+import Loader from '@/components/Loader';
 
 export default {
   name: 'ConfirmEmail',

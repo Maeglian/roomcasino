@@ -72,7 +72,9 @@ export default {
       title: this.$t('metaTags.privacy-policy.title'),
       meta: [
         {
-          description: this.$t('metaTags.privacy-policy.description'),
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.privacy-policy.description'),
         },
       ],
     };

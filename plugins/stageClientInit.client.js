@@ -8,6 +8,4 @@ export default async context => {
     context.store.commit('setAuthSuccess');
     http.defaults.headers.common['X-Auth-Token'] = token;
   }
-  const cookiesPopup = Cookie.get('seenCookiesPopup');
-  context.store.commit('setNeedsCookiesPopup', !cookiesPopup);
 };
