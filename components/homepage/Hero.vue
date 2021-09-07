@@ -196,13 +196,6 @@ export default {
           linkText: this.$t('buttons.more'),
         },
         {
-          bg: 'sunshine',
-          title: this.$t('sunshine_spins_lottery.title'),
-          text: `<span class="Colored">${this.$t('sunshine_spins_lottery.prize')}</span>`,
-          url: '/lottery/sunshine_spins_lottery',
-          linkText: this.$t('buttons.more'),
-        },
-        {
           bg: 'demigods',
           title: this.$t('demigods.title'),
           text: `<span class="Colored">${this.$t('demigods.prize')}</span>`,

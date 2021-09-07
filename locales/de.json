@@ -1366,35 +1366,6 @@
     "ticket": "Los",
     "tickets": "Lose"
   },
-  "sunshine_spins_lottery": {
-    "title": "Sunshine<br/> Spins-Verlosung",
-    "name": "Sunshine Spins-Verlosung",
-    "prize": "4 000 Freispiele",
-    "text": "Fröhliche Sommerfrischler in fröhlichen Sommerklamotten auf dem Weg zum Spaßfestival dieses Monats: Der Sunshine Spins-Verlosung!<br/><br/>Lassen Sie sich bei der Sunshine Spins-Verlosung zurückversetzen in die Zeit der Festivals von Woodstock und der Isle of Wight und nach San Francisco. Um mitzumachen, Schuhe ausziehen und abrocken zu Ihren Lieblingsautomatenspielen. Gehören Sie zu den 50 Glücklichen, die sich den Gesamtgewinn von 4 000 Freispielen teilen!",
-    "terms": [
-      {
-        "text": "Das Verlosung läuft über 7 Tage, es beginnt jeweils Dienstag um 00:01 Uhr UTC und endet Montag um 23:59 Uhr UTC."
-      },
-      {
-        "text": "Die Mindesteinzahlung für ein Los beträgt 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
-      },
-      {
-        "text": "Die Anzahl der Lose pro Spieler ist unbegrenzt."
-      },
-      {
-        "text": "Jedes Los kann gewinnen."
-      },
-      {
-        "text": "Zum Zeitpunkt der Ziehung darf das Spielkonto nicht gesperrt sein."
-      },
-      {
-        "text": "Die Gewinne im Gesamtwert von 4 000 Freispiele werden nach Ablauf jeder Verlosungswoche jeweils Montags automatisch zugewiesen."
-      },
-      {
-        "text": "Für Freispiele besteht eine Umsatzanforderung von x5."
-      }
-    ]
-  },
   "tesla_lottery": {
     "metaTitle": "➤ Tesla-Verlosung mit Tesla Modell 3  – Spiele deine Lieblingsspiele und gewinne tolle Preis - Tesla Modell 3!",
     "metaDescription": "✭ Versuch dein Glück beim neuen Tesla Lottery von NineCasino ➔ Holen Sie sich ein Los, um einen Tesla zu gewinnen!",
