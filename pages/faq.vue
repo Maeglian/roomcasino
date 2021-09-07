@@ -55,7 +55,9 @@ export default {
       title: this.$t('metaTags.faq.title'),
       meta: [
         {
-          description: this.$t('metaTags.faq.description'),
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.faq.description'),
         },
       ],
     };

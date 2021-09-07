@@ -58,7 +58,9 @@ export default {
         title: `ᐈ Play ${this.game.gameName} Game Now For Free Or Real Money | $450 Welcome Bonus At Ninecasino`,
         meta: [
           {
-            description: `★ Play ${this.game.gameName} Game For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino`,
+            hid: 'description',
+            name: 'description',
+            content: `★ Play ${this.game.gameName} Game For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino`,
           },
         ],
       };

@@ -64,7 +64,9 @@ export default {
       title: this.$t('metaTags.daily-cashback.title'),
       meta: [
         {
-          description: this.$t('metaTags.daily-cashback.description'),
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.daily-cashback.description'),
         },
       ],
     };

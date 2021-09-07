@@ -273,7 +273,9 @@ export default {
         title: this.$t(`${this.slug}.metaTitle`),
         meta: [
           {
-            description: this.$t(`${this.slug}.metaDescription`),
+            hid: 'description',
+            name: 'description',
+            content: this.$t(`${this.slug}.metaDescription`),
           },
         ],
       };
@@ -282,7 +284,9 @@ export default {
       title: 'Daily Tournament At Ninecasino And Other Similar Events',
       meta: [
         {
-          description:
+          hid: 'description',
+          name: 'description',
+          content:
             'On this page, you will find detailed information about the tournaments held by the gaming website. List of winners and terms and conditions of the events',
         },
       ],
