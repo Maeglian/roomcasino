@@ -30,7 +30,7 @@ export default {
 <style lang="scss">
 .TeslaPopup {
   position: fixed;
-  top: 100px;
+  top: 0;
   left: 0;
   z-index: 100;
   width: 100%;
