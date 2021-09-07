@@ -29,7 +29,7 @@
 
 <script>
 import { mapGetters, mapMutations, mapState } from 'vuex';
-import BaseModal from '@/components/base/BaseModal';
+import BaseModal from '@/components/base/BaseModal.vue';
 
 export default {
   name: 'GameModals',

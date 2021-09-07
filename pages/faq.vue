@@ -33,9 +33,9 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import BaseTabs from '@/components/base/BaseTabs.vue';
 import Accordion from '@/components/Accordion.vue';
-import { mapState } from 'vuex';
 
 export default {
   name: 'FaqPage',

@@ -136,16 +136,16 @@ export default {
       border: none;
     }
 
+    &:last-child {
+      margin-right: 0;
+    }
+
     &--cuttext {
       display: block;
       width: 150px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
       overflow: hidden;
-    }
-
-    &:last-child {
-      margin-right: 0;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     &.nuxt-link-active {
@@ -190,9 +190,9 @@ export default {
   }
 
   &-NavIcon {
+    flex-shrink: 0;
     max-width: 14px;
     margin-right: 7px;
-    flex-shrink: 0;
 
     @media (min-width: $screen-l) {
       max-width: 18px;

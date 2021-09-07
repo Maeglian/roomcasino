@@ -14,9 +14,9 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import CabinetMenu from '@/components/profile/CabinetMenu.vue';
 import CabinetTopbar from '@/components/profile/CabinetTopbar.vue';
-import { mapState } from 'vuex';
 import Loader from '@/components/Loader';
 import NotificationAlerts from '@/components/NotificationAlerts';
 import Breadcrumbs from '@/components/Breadcrumbs';

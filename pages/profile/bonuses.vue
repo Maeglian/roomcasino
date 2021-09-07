@@ -181,13 +181,13 @@
 
 <script>
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
+import { alphaNum } from 'vuelidate/lib/validators';
 import Counter from '@/components/Counter';
 import BonusDetails from '@/components/profile/BonusDetails';
 import Loader from '@/components/Loader';
 import CancelBonusPopup from '@/components/CancelBonusPopup';
 import FreeSpin from '@/components/profile/FreeSpin';
 import BaseInput from '@/components/base/BaseInput';
-import { alphaNum } from 'vuelidate/lib/validators';
 
 export default {
   name: 'BonusesPage',

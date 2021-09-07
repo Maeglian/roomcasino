@@ -39,9 +39,9 @@
 </template>
 
 <script>
-import BaseInput from '@/components/base/BaseInput.vue';
 import { email, required } from 'vuelidate/lib/validators';
 import { mapActions, mapState } from 'vuex';
+import BaseInput from '@/components/base/BaseInput.vue';
 
 export default {
   name: 'LoginForm',
