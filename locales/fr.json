@@ -473,7 +473,8 @@
     "duration": "Durée",
     "betsPerPoint": "Pari par point",
     "currentWinners": "Les gagnants actuels",
-    "previousRound": "Tour précédent"
+    "previousRound": "Tour précédent",
+    "endsIn": "Le tournoi se termine dans"
   },
   "dropsWinsSlots": {
     "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
@@ -1403,7 +1404,8 @@
       {
         "text": "Le gagnant de la loterie sera annoncé le 24 septembre."
       }
-    ]
+    ],
+    "winTesla": "Gagnez une voiture Tesla"
   },
   "happy_harvest_lotto": {
     "title": "Happy Harvest<br/> Lotto",

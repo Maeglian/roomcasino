@@ -1,6 +1,11 @@
 <template>
   <div class="Counter" :class="{ 'Counter--min': minFormat }">
-    <div v-if="!minFormat" class="Counter-Text">{{ $t('tournaments.timeLeft') }}</div>
+    <div v-if="!minFormat" class="Counter-Text">
+      <template v-if="!$slots.upperText">
+        {{ $t('tournaments.timeLeft') }}
+      </template>
+      <slot v-else name="upperText" />
+    </div>
     <div class="Counter-Content">
       <div class="Counter-Item Counter-Days">
         <div class="Counter-Count">
