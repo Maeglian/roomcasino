@@ -122,10 +122,12 @@ export default {
           method,
           locale: `${locale}_${this.user.country}`,
           tabs: false,
-          ...(this.isDesktop() && {
-            singlePageFlow: false,
-            containerWidth: '900px',
-          }),
+          ...(this.isDesktop()
+            ? {
+                singlePageFlow: false,
+                containerWidth: '900px',
+              }
+            : { containerMinHeight: '700px' }),
         },
         api => {
           api.on({
