@@ -176,11 +176,13 @@ export default {
           title: this.$t('homepage.heroBanner.deposit4.title'),
           text: this.$t('homepage.heroBanner.deposit4.text'),
           btnText: 'Deposit now',
+          excludedCountries: ['fi'],
         },
         {
           bg: 'highroller',
           title: this.$t('homepage.heroBanner.highroller.title'),
           text: this.$t('homepage.heroBanner.highroller.text'),
+          excludedCountries: ['fi'],
         },
         {
           bg: 'dropsSlots',
@@ -204,18 +206,12 @@ export default {
           linkText: this.$t('buttons.more'),
         },
         {
-          bg: 'sunshine',
-          title: this.$t('sunshine_spins_lottery.title'),
-          text: `<span class="Colored">${this.$t('sunshine_spins_lottery.prize')}</span>`,
-          url: '/lottery/sunshine_spins_lottery',
-          linkText: this.$t('buttons.more'),
-        },
-        {
           bg: 'demigods',
           title: this.$t('demigods.title'),
           text: `<span class="Colored">${this.$t('demigods.prize')}</span>`,
           url: '/tournaments/demigods',
           linkText: this.$t('buttons.more'),
+          excludedCountries: ['fi'],
         },
         {
           bg: 'tesla',

@@ -14,7 +14,8 @@
       >
         <div class="AuthDialog-BannerTitle" v-html="$t('auth.signUpTitle')"></div>
         <div class="AuthDialog-Subtitle">
-          {{ $t('auth.bonus') }} <span class="Colored">+</span> {{ $t('auth.freeSpins') }}
+          {{ $t('auth.bonus') }} <span v-if="$i18n.locale !== 'fi'" class="Colored">+</span>
+          {{ $t('auth.freeSpins') }}
         </div>
         <div class="AuthDialog-BannerFeatures">
           <div class="AuthDialog-BannerFeature">

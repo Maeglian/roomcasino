@@ -188,6 +188,7 @@ export default {
           image: 'promotion7.png',
           announce: this.$t('promotions.deposit4.name'),
           text: this.$t('promotions.deposit4.text'),
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('homepage.heroBanner.highroller.title'),
@@ -195,6 +196,7 @@ export default {
           image: 'promotions-highroller.png',
           announce: this.$t('promotions.highroller.name'),
           text: this.$t('promotions.highroller.text'),
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.dropsWinsSlots.title'),
@@ -231,6 +233,7 @@ export default {
           text: this.$t('promotions.twitterGiveaway.text'),
           linkTo: 'Twitter',
           url: 'https://twitter.com/casino_nine',
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('sunshine_spins_lottery.title'),
@@ -240,6 +243,7 @@ export default {
           text: this.$t('sunshine_spins_lottery.text'),
           link: 'More',
           url: '/lottery/sunshine_spins_lottery',
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.demigods.title'),
@@ -249,6 +253,7 @@ export default {
           text: this.$t('promotions.demigods.text'),
           link: 'More',
           url: '/tournaments/demigods',
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('tesla_lottery.title'),

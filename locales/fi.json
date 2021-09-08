@@ -79,13 +79,13 @@
   },
   "auth" : {
     "loginTitle" : "TERVETULOA TAKAISIN",
-    "signUpTitle" : "REKISTERÖIDY<span class=\"Colored\">JA</span> NAPPAA<br />TERVETULIAISBONUS ",
+    "signUpTitle" : "REKISTERÖIDY<span class=\"Colored\"> JA </span> NAPPAA<br />TERVETULIAISBONUS",
     "forgotPassword" : "Olen unohtanut salasanan",
     "emails" : "Vastaanota sähköpostikampanjoita",
     "terms" : "Olen täyttänyt {minAge} vuotta ja hyväksyn {br} {Palvelun käyttöehdot} sekä {tietosuojakäytännön}\n",
     "step2Title" : "Täytä seuraavat tiedot!",
     "thanksRegistration" : "KIITOS REKISTERÖITYMISESTÄ",
-    "registrationBonus" : "250 ILMAISKIERROSTA",
+    "registrationBonus" : "250 IK:TA",
     "registrationBonusText" : "asti ensitalletuksesta! Hyödynnä Ninecasinon tervetuliaisbonuksen etu.",
     "getBonus" : "hanki bonuksesi",
     "enterEmail" : "Anna sähköpostiosoitteesi",
@@ -97,7 +97,7 @@
     "tryingConfirmEmail" : "Yritämme vahvistaa sähköpostiosoitteesi",
     "confirmEmailError" : "Sähköpostiosoitetta ei ole vahvistettu",
     "confirmEmailSuccess" : "Hienoa! Sähköpostiosoitteen vahvistaminen onnistui",
-    "bonus" : "-",
+    "bonus" : "",
     "freeSpins" : "250 ILMAISKIERROSTA",
     "placeholders" : {
       "enterEmail" : "Anna sähköpostiosoitteesi",
@@ -117,7 +117,7 @@
       "year" : "YYYY"
     },
     "features" : {
-      "first" : "-",
+      "first" : "UUSI<br/> TURNAUS",
       "second" : "YSTÄVÄLLINEN<br/>24/7-CHAT-TUKI",
       "third" : "SUPERNOPEAT<br/>NOSTOT"
     }
@@ -214,7 +214,7 @@
   "homepage" : {
     "heroBanner" : {
       "deposit1" : {
-        "title" : "ENSIMMÄISEN  <br/>  TALLETUKSEN<span class=\"Colored\">BONUS</span>",
+        "title" : "ENSIMMÄISEN  <br/> TALLETUKSEN <span class=\"Colored\">BONUS</span>",
         "text" : "TEE ENSIMMÄINEN TALLETUS<br/> JA SAA <span class=\"Colored\">250 ILMAISKIERROSTA</span>"
       },
       "deposit2" : {
@@ -502,58 +502,62 @@
     "previousRound" : "edellinen kierros "
   },
   "dropsWinsSlots" : {
-    "title" : "Upgraded Drops & Wins Slots edition",
-    "prize" : "€4,000,000",
-    "text" : "Welcome to the new Stage 7 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 25-28 of Weekly Tournaments and Daily Prize Drops with some new games!",
-    "textMobile" : "Welcome to the new Stage 7 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000!",
+    "title" : "Drops & Wins Slots",
+    "prize" : "4 000 000 €",
+    "text" : "Tervetuloa Daily Drops & Wins -kampanjan vaiheeseen 8. Pragmatic Play on päättänyt tuplata Drops & Winsin kuukausittaisen Slots painoksen budjetin 500 000 €:een! He ovat myös kasvattaneet kuukausittaisten käteispalkintojen määrää, antaen sinulle entistäkin enemmän mahdollisuuksia voittaa. Pelaaminen kertoimella on hauskempaa. <br>Osallistu jännittäviin Drops & Wins -peleihin ja saa mahdollisuus voittaa osuus massiivisista 4 000 000 € palkinnoista! Siksi tällä kertaa meillä on viikkojen 29–32 Viikkoturnaukset (palkintokerroinviikot) ja Daily Prize Drops (palkintokerroinviikot) muutamilla uusilla peleillä!",
+    "textMobile" : "Tervetuloa Daily Drops & Wins -kampanjan vaiheeseen 8. Pragmatic Play on päättänyt tuplata Drops & Winsin kuukausittaisen Slots painoksen budjetin 500 000 €:een!",
     "terms" : [
       {
-        "title" : "Stage 7 runs between",
-        "text" : "● Week 25: 28th July 2021 19:01 CEST – 4th August 2021 18:59 CEST<br/>● Week 26: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Week 27: 11th August 2021 19:01 CEST – 18th August 2021 18:59 CEST<br/>● Week 28: 18th August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
+        "title" : "Laufzeit der Phase 8",
+        "text" : "● Viikko 29: 28 Heinäkuu 2021 09:01 CEST – 4 Elokuuta 2021 18:59 CEST<br/>● Viikko 30: 4 Elokuuta 2021 19:01 CEST – 11 Elokuuta 2021 18:59 CEST<br/>● Viikko 31: 11 Elokuuta 2021 19:01 CEST – 18 Elokuuta 2021 18:59 CEST<br/>● Viikko 32: 18 Elokuuta 2021 19:01 CEST – 25 Elokuuta 2021 18:59 CEST"
       },
       {
-        "title" : "Games in this tournament",
-        "text" : "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Release the Kraken™, Empty the Bank™, Lucky Grace And Charm™, Book of Vikings™."
+        "title" : "Osallistuvat pelit",
+        "text" : "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House ™, The Dog House Megaways™, Chilli Heat ™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Book of Vikings™, Chicken Drop™, Fruit Party 2™, Rise of Giza PowerNudge™, Juicy Fruits™."
       },
       {
-        "title" : "Drops & Wins includes",
-        "text" : "● Each Tournament runs for seven days from Thursday to Wednesday with daily Prize Drops in parallel.<br/>● Weekly prize pool of €62,000 in total across 1,200 cash prizes.<br/>● Players have an opportunity to win cash prizes in Daily prize drops with daily prize pool €9,000 across 500 cash prizes."
+        "title" : "Miten voittaa",
+        "text" : "● Pelaajan on asetettava oikean rahan panos jossakin osallistuvissa peleissä, ja hänen on saatava ainakin yksi (1) pelin sisäinen voitto ollakseen kelpoinen Viikkoturnaukseen. <br/>● Oikean rahan minimipanosta ei vaadita pelaajien kelpoisuuteen osallistua Daily Prize Dropsiin (palkintokerroinviikot)."
       },
       {
-        "title" : "How to win",
-        "text" : "● Minimum bet requirement of €0.50.<br/>● In order to participate, players need to play with real money and make qualifying bets on any of the participating games.<br/>● In the Weekly tournaments - the highest single spin win amount adjusted for bet amount.<br/>● In the Daily tournaments - any real money spin in the participating games can trigger a random prize<br/>● There is no additional cost for players to participate."
+        "title" : "Drops & Wins sisältää",
+        "text" : "● Jokainen turnaus kestää seitsemän päivää torstaista keskiviikkoon, ja se sisältää päivittäisiä, rinnakkaisia Prize Dropseja.<br>● Viikoittainen palkintopotti yhteensä 62 000 € jaettuna 1 200:lle palkinnolle.<br>● Pelaajilla on mahdollisuus voittaa käteispalkintoja Daily prize dropseissa, joissa päivittäinen palkintopotti on 9 000 €, joka jaetaan 500 palkinnon kesken."
+      },
+      {
+        "title" : "Lisäksi",
+        "text" : "● Kerroinviikkojen aikana osallistuvat pelaajat voivat voittaa palkintoja kertoimellar voittavan pelaajan panoksen määrästä, kuten Viikkoturnauksen (palkintokerroinviikot) palkintotaulukossa määritellään – tai kuten Daily Prize Dropin (palkintokerroinviikot) palkintotaulukossa on alla (jäljempänä ”Palkintokerroinviikot”). <br><br> ● Jos voittava pyöräytys ylittää 10 € (10 €), palkinto maksetaan perustuen panokseen 10 euron (10 €) panokseen tai vastaavaan käytetyn valuutan määrään (kuten jäljempänä on määritelty) X saatu kerroin.<br><br> ● Tulostaulujärjestys määräytyy pisteillä, jotka perustuvat korkeimpaan yhden kierroksen voittosummaan missä tahansa osallistuvassa pelissä suhteutettuna panoksen kokoon.<br><br> ● Jos kaksi (2) tai useampia pelaajia päätyy Viikkoturnauksessa samalle tulostaulun sijalle, niin pelaaja, joka saavutti tuloksen ensimmäisenä, saa suuremman palkinnon."
       }
     ]
   },
   "dropsWinsLive" : {
-    "title" : "Drops & Wins for Live Casino",
-    "prize" : "€3,000,000",
-    "text" : "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!",
-    "textMobile" : "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!",
+    "title" : "Drops & Wins <br/>for Live casino",
+    "prize" : "3 000 000 €",
+    "text" : "Pragmatic Play antaa sinulle enemmän ja enemmän mahdollisuuksia viihdyttää itseäsi seuraavalla tasolla sen uudessa Drops & Wins for Live Casino -tapahtumassa. Tartu mahdollisuuteen voittaa osuus vaikuttavista 3 000 000 € käteispalkinnoista! <br>Pidätkö Live-peleistä? Tämä Live-painos sopii sinulle varmasti. Osallistu Viikkoturnauksiin – Ruletti, Blackjack, Mega Wheel, Baccarat!",
+    "textMobile" : "Pragmatic Play antaa sinulle enemmän ja enemmän mahdollisuuksia viihdyttää itseäsi seuraavalla tasolla sen uudessa Drops & Wins for Live Casino -tapahtumassa. Tartu mahdollisuuteen voittaa osuus vaikuttavista 3 000 000 € käteispalkinnoista!",
     "terms" : [
       {
-        "title" : "Stage 3 runs between",
-        "text" : "● Week 9: 28th July 2021 19:01 CEST – 4th August 2021 18:59 CEST<br/>● Week 10: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Week 11: 11th August 2021 19:01 CEST – 18th August 2021 18:59 CEST<br/>● Week 12: 18th August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
+        "title" : "Vaiheen 4 toteutusaika<br/><br/>",
+        "text" : "● Viikko 13: 25 Elokuuta 2021 09:01 CEST – 1 Syyskuuta 2021 18:59 CEST<br/>● Viikko 14: 1 Syyskuuta 2021 19:01 CEST – 8 Syyskuuta 2021 18:59 CEST<br/>● Viikko 15: 8 Syyskuuta 2021 19:01 CEST – 15 Syyskuuta 2021 18:59 CEST<br/>● Viikko 16: 15 Syyskuuta 2021 19:01 CEST – 22 Syyskuuta 2021 18:59 CEST<br/><br/>"
       },
       {
-        "title" : "Participating Games/Tables",
-        "text" : "<strong>Weekly Baccarat Tournament:</strong><br/><br/>Baccarat A (ID – 401), Baccarat B (ID – 404), Baccarat C (ID – 405), Baccarat D (ID – 411), Baccarat E (ID – 413), Speed Baccarat A (ID – 402), Speed Baccarat B (ID – 403), Speed Baccarat C (ID – 412), Speed Baccarat D (ID – 414), Speed Baccarat E (ID – 415).<br/><br/><strong>Weekly Blackjack Tournament:</strong><br/><br/>Live Blackjack A (ID – 301), Live Blackjack B (ID – 302), Live Blackjack C (ID – 303), Live Blackjack D (ID – 304), Live Blackjack E (ID – 305), Blackjack Azure A (ID – 511), Blackjack Azure B (ID – 512), Blackjack Azure C (ID – 513), Blackjack Azure D (ID – 514), Blackjack Azure E (ID – 515), Blackjack Azure F (ID – 516), Blackjack Azure G (ID – 517), Blackjack Azure H (ID – 518), Blackjack Azure I (ID – 519), Blackjack Azure J (ID – 520), ONE Blackjack (ID – 901).<br/><br/><strong>Tables to be added on 3rd June:</strong><br/><br/>Blackjack 17 – Azure (ID – 521), Blackjack 18 – Azure (ID – 522), Blackjack 19 – Azure (ID – 523), Blackjack 20 – Azure (ID – 524), Blackjack 21 – Azure (ID – 525)<br/><br/><strong>Weekly Mega Wheel Tournament:</strong><br/><br/>Mega Wheel (ID – 801)<br/><br/><strong>Weekly Roulette Tournament:</strong><br/><br/>Auto-Roulette (ID – 225), Live Roulette A (ID – 201), Roulette Germany (ID – 222), Roulette Italy (ID – 223), Roulette Macao (ID – 206), Roulette Russia (ID – 221), Roulette Turkey (ID – 224), Speed Roulette (ID – 203), Roulette Azure (ID – 227), Mega Roulette (ID – 204) <strong>plus dedicated tables</strong>"
+        "title" : "Minimipanosvaatimukset<br/><br/>",
+        "text" : "Viikoittainen Rulettiturnaus: 0,50 €<br/>Viikoittainen Blackjack-turnaus: 10 €<br/>Viikoittainen Mega Wheel-turnaus: 0,50 €<br/> Viikoittainen Baccarat-turnaus: 0,50 €<br/><br/>"
       },
       {
-        "title" : "Drops & Wins includes",
-        "text" : "Each Tournament runs for seven (7) days from Thursday to Wednesday.<br/><br/>Tournament Criteria: Highest total value total of all points received for consecutive wins."
+        "title" : "Osallistuvat pelit/pöydät<br/><br/>",
+        "text" : "Viikoittainen Baccarat-turnaus:<br/> Baccarat A (ID – 401), Baccarat B (ID – 404), Baccarat C (ID – 405), Baccarat D (ID – 411), Baccarat E (ID – 413), Speed Baccarat A (ID – 402), Speed Baccarat B (ID – 403), Speed Baccarat C (ID – 412), Speed Baccarat D (ID – 414), Speed Baccarat E (ID – 415) plus dedicated tables. <br>Viikoittainen Blackjack-turnaus:<br>Live Blackjack A (ID – 301), Live Blackjack B (ID – 302), Live Blackjack C (ID – 303), Live Blackjack D (ID – 304), Live Blackjack E (ID – 305), Blackjack Azure A (ID – 511), Blackjack Azure B (ID – 512), Blackjack Azure C (ID – 513), Blackjack Azure D (ID – 514), Blackjack Azure E (ID – 515), Blackjack Azure F (ID – 516), Blackjack Azure G (ID – 517), Blackjack Azure H (ID – 518), Blackjack Azure I (ID – 519), Blackjack Azure J (ID – 520), ONE Blackjack (ID – 901), Blackjack 17 – Azure (ID – 521), Blackjack 18 – Azure (ID – 522), Blackjack 19 – Azure (ID – 523), Blackjack 20 – Azure (ID – 524), Blackjack 21 – Azure (ID – 525), Blackjack 22 – Azure (ID – 526), Blackjack 23 – Azure (ID – 527), Blackjack 24 – Azure (ID – 528), Blackjack 25 – Azure (ID – 529), Blackjack 26 – Azure (ID – 530) <br>Viikoittainen Mega Wheel-turnaus:<br> Mega Wheel (ID – 801). <b>Viikoittainen Ruletti-turnaus</b>:Auto-Roulette (ID – 225), Live Roulette A (ID – 201), Roulette Germany (ID – 222), Roulette Italy (ID – 223), Roulette Macao (ID – 206), Roulette Russia (ID – 221), Roulette Turkey (ID – 224), Speed Roulette (ID – 203), Roulette Azure (ID – 227), Mega Roulette (ID – 204) plus dedicated tables.<br/><br/>"
       },
       {
-        "title" : "Minimum bet requirements:",
-        "text" : "● Weekly Roulette Tournament: € 0.5.<br/>● Weekly Blackjack Tournament: € 10<br/>● Weekly Mega Wheel Tournament: € 0.5<br/>● Weekly Baccarat Tournament: € 0.5"
+        "title" : "Drops & Wins sisältää<br/><br/>",
+        "text" : "Jokainen turnaus kestää seitsemän (7) päivää torstaista keskiviikkoon. <br> Turnauksen kriteerit: Suurin kokonaisarvo kaikista saaduista pisteistä peräkkäisillä voitoilla.<br/><br/>"
       },
       {
-        "title" : "How to participate:",
-        "text" : "● A player must join or opt-in in any of the participating games/tables.<br/>● A player must place real money bets with a minimum stake required for any participating game/table of each Weekly Tournament and must get at least two (2) consecutive in-game wins with the required Win Qualifier.<br/>● The higher the total value of the points received by the player for the consecutive wins, the higher the player’s score would be.<br/>● The prizes will be distributed to players based on the final score showed on the in-game leaderboard by the end of each Weekly Tournament."
+        "title" : "Miten osallistua<br/><br/>",
+        "text" : "Pelaajan on liityttävä mukaan tai jättäydyttävä pois kaikista osallistuvista peleistä/pöydistä.<br> Pelaajan on asetettava oikean rahan panoksia vaadittavan minimipanoksen verran jokaiselle viikoittaiseen turnaukseen osallistuvalle pelille/pöydälle, ja hänen on saatava vähintään kaksi (2) peräkkäistä pelin sisäistä voittoa vaaditulla Voittokertoimella. <br>Mitä suurempi on niiden pisteiden kokonaisarvo, jonka pelaaja saa peräkkäisistä voitoista, sitä suuremmat pelaajan pisteet olisivat. <br>Palkinnot jaetaan pelaajille pelin sisäisen tulostaulukon lopputuloksen perusteella jokaisen viikkoturnauksen loppuun lopussa.<br/><br/>"
       },
       {
-        "title" : "Additionally:",
-        "text" : "<strong>How to win:<br/><br/>Weekly Roulette Tournament<br/>Prizes:</strong> €50,000 in total across 1,000 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0,50 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 2x of the total Qualifying Bet to qualify for the Weekly Roulette Tournament.<br/><br/>A Player may increase their Weekly Roulette Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Any stakes placed on 1:1 odds bets (Red/Black, Odd/Even, 1:18/19:36) shall not be counted towards the Weekly Roulette Tournament score.<br/><br/><strong>Weekly Blackjack Tournament<br/>Prizes:</strong> €25,000 in total across 300 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €10 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Blackjack Tournament.<br/><br/>A Player may increase their Weekly Blackjack Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets and/or Bets Behind may be considered for the Weekly Blackjack Tournament.<br/><br/><strong>Weekly Mega Wheel Tournament<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Mega Wheel Tournament.<br/><br/>A Player may increase their Weekly Mega Wheel Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>All Qualifying Bets may be considered for the Weekly Mega Wheel Tournament.<br/><br/><strong>Weekly Baccarat Tournaments<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Baccarat Tournament.<br/><br/>A Player may increase their Weekly Baccarat Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets (Player, Banker, and Tie) may be considered for the Weekly Baccarat Tournament score."
+        "title" : "Lisäksi",
+        "text" : "<b>Viikoittainen Rulettiturnaus Palkinnot:</b> Yhteensä 50 000 € jaettuna 1 000 palkinnolle:<br> Pelaajan on kampanjan aikana pelattava oikealla rahalla missä tahansa osallistuvassa pelissä 0,50 € vähimmäispanosvaatimuksella. Osallistumisesta ei aiheudu pelaajille lisäkustannuksia.<br/>Pelaajan on saatava vähintään 2 peräkkäistä kelpoista voittoa, joissa kukin peräkkäinen kelpoinen voitto on suurempi kuin 2x kelpuuttava kokonaispanos, jotta hän on kelpoinen Viikoittaiseen rulettiturnaukseen.<br>Pelaaja voi kasvattaa Viikoittaisen rulettiturnauksen tulostaan jokaisella peräkkäisellä kelpuuttavalla lisävoitolla.<br>Mitään panoksia, jotka asetetaan 1:1-kertoimella (Punainen/Musta, Pariton/Parillinen, 1:18/19:36) ei lasketa Viikoittaisen rulettiturnauksen tulokseen.<br><br><b>Viikoittainen Blackjack-turnaus</b> <b>Palkinnot:</b> Yhteensä 25 000 € jaettuna 300 palkinnolle:<br><b>Viikoittainen Blackjack-turnaus</b> <b>Palkinnot:</b> Yhteensä 25 000 € jaettuna 300 palkinnolle: <br>Pelaajan on kampanjan aikana pelattava oikealla rahalla missä tahansa osallistuvassa pelissä 10 € vähimmäispanosvaatimuksella. Osallistumisesta ei aiheudu pelaajille lisäkustannuksia.<br>Pelaajan on saatava vähintään 2 peräkkäistä kelpoista voittoa, joissa kukin peräkkäinen kelpoinen voitto on suurempi kuin 1x kelpuuttava kokonaispanos, jotta hän on kelpoinen Viikoittaiseen Blackjack-turnaus.<br>Pelaaja voi kasvattaa Viikoittaisen Blackjack-turnaus tulostaan jokaisella peräkkäisellä kelpuuttavalla lisävoitolla.<br>Vain pääpanokset ja/tai takapanokset voidaan ottaa mukaan Viikoittaiseen Blackjack-turnaukseen.<br><br><b>Viikoittainen Mega Wheel-turnaus</b> <b>Palkinnot:</b> Yhteensä 25 000 € jaettuna 600 palkinnolle:<br>Pelaajan on kampanjan aikana pelattava oikealla rahalla missä tahansa osallistuvassa pelissä 0,50 € vähimmäispanosvaatimuksella. Osallistumisesta ei aiheudu pelaajille lisäkustannuksia.<br>Pelaajan on saatava vähintään 2 peräkkäistä kelpoista voittoa, joissa kukin peräkkäinen kelpoinen voitto on suurempi kuin 1x kelpuuttava kokonaispanos, jotta hän on kelpoinen Viikoittaiseen Mega Wheel-turnaus.<br>Pelaaja voi kasvattaa Viikoittaisen Mega Wheel-turnaus tulostaan jokaisella peräkkäisellä kelpuuttavalla lisävoitolla.<br>Kaikki kelpuuttavat panokset voidaan ottaa huomioon Viikoittaisessa Mega Wheel -turnauksessa.<br><br><b>Viikoittaiset Baccarat-turnaus</b> <b>Palkinnot:</b> Yhteensä 25 000 € jaettuna 600 palkinnolle:<br>Pelaajan on kampanjan aikana pelattava oikealla rahalla missä tahansa osallistuvassa pelissä 0,50 € vähimmäispanosvaatimuksella. Osallistumisesta ei aiheudu pelaajille lisäkustannuksia.<br>Pelaajan on saatava vähintään 2 peräkkäistä kelpoista voittoa, joissa kukin peräkkäinen kelpoinen voitto on suurempi kuin 1x kelpuuttava kokonaispanos, jotta hän on kelpoinen Viikoittaiseen Baccarat-turnaus.<br>Pelaaja voi kasvattaa Viikoittaisen Baccarat-turnaus tulostaan jokaisella peräkkäisellä kelpuuttavalla lisävoitolla.<br>Vain pääpanokset (pelaaja, pankki ja tasapeli) voidaan ottaa mukaan Viikoittaisen Baccarat-turnauksen tulokseen."
       }
     ]
   },
@@ -1254,21 +1258,13 @@
       "title2" : "TERVETULIAISPAKETTI",
       "text2" : [
         "Kaikki kampanjat ovat saatavilla vain niille, jotka ovat suorittaneet tervetuliaispaketin bonukset, mukaan lukien kierrätyksen. Jos sait korotetun tervetuliaisbonuksen, sinun ei ole tarvinnut suorittaa kierrätystä, ennen kuin voit hyväksyä muita kampanjoita.",
-        "Ensimmäisen/toisen/kolmannen talletusbonuksen saamiseksi talletuksesi tulee olla vähintään 20 EUR, 20 CAD/AUD, 25 NZD,  500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
-        "Suurin ensimmäisen/toisen/kolmannen talletusbonuksen summa on 150 EUR, 225 CAD, 250 NZD, 225 AUD, 3330 CZK, 2600 ZAR, 290 BGN, 1150 DKK, 1130 HRK, 740 RON, 0,0055 BTC.",
+        "Ensimmäisen talletusbonuksen saamiseksi talletuksesi tulee olla vähintään 20 EUR, 20 CAD/AUD, 25 NZD,  500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
         "Pelaajat voivat käyttää 250 ilmaiskierrostaan BGamingin Aztec Magic-, Aztec Magic Delux-, Johnny Cash-, Platinum Lightning- ja Platinum Lightning Delux -kolikkopelissä.\n",
         "Pelaajat saavat ensitalletuksellaan 50 ilmaiskierrosta joka päivä seuraavien viiden päivän ajan.\n",
         "Ilmaiskierrosten aktivoinnin kesto on 3 päivää, ilmaiskierrosten kesto ja ilmaiskierrosten tuloksen kesto on 7 päivää.",
-        "Panostaaksesi bonuksen/ilmaiskierroksen tuloksen, sinun on asetettava panos summasta, joka on 40 kertaa bonus/ilmaiskierroksen tulos.",
-        "Maksimivoitto ensimmäisestä/toisesta/kolmannesta talletusten ilmaiskierroksesta on 50 EUR, 70 CAD, 75 NZD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "Panostaaksesi ilmaiskierroksen tuloksen, sinun on asetettava panos summasta, joka on 40 kertaa bonus/ilmaiskierroksen tulos.",
+        "Maksimivoitto ensimmäisestä talletusten ilmaiskierroksesta on 50 EUR, 70 CAD, 75 NZD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
         "Maksimivoitto rekisteröinnin ilmaiskierroksista on 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC."
-      ],
-      "title3" : "VIIKONLOPUN UUDELLEENLATAUS",
-      "text3" : [
-        "Viikonlopun uudelleenlatausbonuksen saamiseksi talletuksesi tulee olla vähintään 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
-        "Viikonlopun uudelleenlatausbonuksen maksimisumma on 150 EUR, 220 CAD, 240 AUD, 3900 CZK, 2580 ZAR, 300 BGN, 1110 DKK, 1125 HRK, 735 RON, 0,0056 BTC.",
-        "Panostaaksesi bonuksen sinun on asetettava panos summasta, joka on 40 kertaa bonuksen summa.",
-        "Bonus on saatavana kerran perjantaina, lauantaina tai sunnuntaina pelaajille, jotka ovat jo käyttäneet kaikki tervetulopaketin bonukset."
       ],
       "title4" : "ILMAISKIERROKSIA USKOLLISUUDESTA",
       "text4" : [

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API_HOST, TOURNAMENTS } from './config';
 
-const locales = ['en-ca', 'fr', 'cs', 'de'];
+const locales = ['en-ca', 'fr', 'cs', 'de', 'fr-ca', 'gr', 'nz', 'fi', 'pl'];
 
 const target =
   process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
