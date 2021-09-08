@@ -20,9 +20,12 @@
         <ul class="MainNav-List">
           <template v-for="item in navItemsFull">
             <NavItem
-              v-if="!item.onlyIfLoggedIn"
+              v-if="
+                !item.onlyIfLoggedIn &&
+                  (!item.excludedCountries || !item.excludedCountries.includes($i18n.locale))
+              "
               :key="item.name"
-              :class-name="'MainNav-Link'"
+              class-name="MainNav-Link"
               :item="item"
             />
           </template>
@@ -107,6 +110,7 @@ export default {
           name: this.$t('pages.dailyCashback'),
           url: this.localePath('/daily-cashback'),
           icon: 'cashback.svg',
+          excludedCountries: ['fi'],
         },
         // {
         //   name: this.$t('pages.lottery'),
