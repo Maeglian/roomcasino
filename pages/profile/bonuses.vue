@@ -161,7 +161,7 @@
     <!--    </div>-->
 
     <div class="CabinetPage-Subtitle BonusesPage-Subtitle">
-      I have a bonus code
+      {{ $t('profile.bonuses.promoCode.title') }}
     </div>
     <form class="BonusesPage-Form CabinetPage-Form" @submit.prevent="onAddPromoCode">
       <BaseInput
@@ -169,11 +169,11 @@
         class="BonusesPage-AddPromoCode"
         error-class="BonusesPage-InputError"
         input-class="BonusesPage-Input CabinetPage-Input"
-        placeholder="Promo code"
+        :placeholder="$t('profile.bonuses.promoCode.placeholder')"
         :v="$v.code"
       />
       <button class="BonusesPage-Submit CabinetPage-Submit" type="submit">
-        Redeem
+        {{ $t('profile.bonuses.promoCode.button') }}
       </button>
     </form>
   </div>

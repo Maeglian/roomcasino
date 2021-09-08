@@ -296,7 +296,12 @@
         "max": "Maximální cena"
       },
       "wagerAmountRequirement": "Požadavek na sázkové množství",
-      "wageredPercent": "Sázené procento"
+      "wageredPercent": "Sázené procento",
+      "promoCode": {
+        "title": "I have a bonus code",
+        "placeholder": "Promo code",
+        "button": "Redeem"
+      }
     },
     "history": {
       "tabs": {

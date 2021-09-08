@@ -294,7 +294,12 @@
         "max": "Maksymalna nagroda"
       },
       "wagerAmountRequirement": "Wymagana kwota zakładu",
-      "wageredPercent": "Obstawiony procent"
+      "wageredPercent": "Obstawiony procent",
+      "promoCode": {
+        "title": "I have a bonus code",
+        "placeholder": "Promo code",
+        "button": "Redeem"
+      }
     },
     "history": {
       "tabs": {

@@ -302,7 +302,12 @@
         "max": "Max prize"
       },
       "wagerAmountRequirement": "Wager Amount requirement",
-      "wageredPercent": "Wagered percent"
+      "wageredPercent": "Wagered percent",
+      "promoCode": {
+        "title": "I have a bonus code",
+        "placeholder": "Promo code",
+        "button": "Redeem"
+      }
     },
     "history": {
       "tabs": {
