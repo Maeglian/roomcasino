@@ -142,6 +142,12 @@ export default {
         file: 'pl.json',
         icon: 'pl.svg',
       },
+      {
+        code: 'za',
+        codeCountry: 'za_ZA',
+        file: 'za.json',
+        icon: 'za.svg',
+      },
     ],
     defaultLocale: 'en',
     lazy: true,
