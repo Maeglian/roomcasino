@@ -458,12 +458,6 @@
       "upTo": "une cagnotte de 2.500 €",
       "name": "À vos marques pour le Weekly Derby",
       "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
-    },
-    "demigods": {
-      "title": "Demi Gods Tales <br/>Tournament",
-      "upTo": "20 000 €",
-      "name": "Racontez l’histoire de Demi God Tales",
-      "text": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales."
     }
   },
   "tournaments": {
@@ -1351,35 +1345,6 @@
     "ticket": "Billet",
     "tickets": "Billets"
   },
-  "sunshine_spins_lottery": {
-    "title": "La loterie<br/> Sunshine Spins",
-    "name": "La loterie Sunshine Spins",
-    "prize": "4 000 tours gratuits",
-    "text": "Des amateurs d’été heureux, équipés de vêtements décontractés d’été, marchant vers le festival de ce mois-ci : la loterie Sunshine Spins!<br/><br/>Grâce à la loterie Sunshine Spins, revivez l’époque de Woodstock, du festival de l’île de Wight et de San Francisco. Pour participer, il suffit de courir pieds nus, d’écouter vos chansons préférées et de faire tourner vos machines à sous préférées. Profitez de l’ambiance de la cagnotte de 4 000 tours gratuits avec 50 heureux gagnants!",
-    "terms": [
-      {
-        "text": "La loterie se déroulera sur 7 jours, du Mardi à 00 h 01 (UTC) au lundi à 23 h 59 (UTC). "
-      },
-      {
-        "text": "Le dépôt minimal requis pour un billet de loterie est de 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
-      },
-      {
-        "text": "Le nombre de billets de loterie par joueur est illimité."
-      },
-      {
-        "text": "Chaque billet peut être gagnant."
-      },
-      {
-        "text": "Au moment du tirage au sort, votre compte de jeu ne doit pas être bloqué."
-      },
-      {
-        "text": "Des 4000 tours gratuits seront attribués automatiquement à la fin de la loterie chaque semaine le lundi."
-      },
-      {
-        "text": "Pour les tours gratuits, votre mise est de x5."
-      }
-    ]
-  },
   "tesla_lottery": {
     "title": "La loterie<br/> Tesla",
     "name": "Tesla Model 3",
@@ -1439,36 +1404,6 @@
     ],
     "metaTitle": "➤ La Happy Harvest Lotto avec une cagnotte impressionnante de 5,000 tours gratuits – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
     "metaDescription": "✭ Tentez votre chance dans le nouveau Happy Harvest Lotto de NineCasino ➔ Accomplissez des missions et gagnez des prix!"
-  },
-  "demigods": {
-    "title": "Demi Gods Tales <br>Tournament <br>2er tour",
-    "prize": "20 000 €",
-    "text": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales.",
-    "textMobile": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales.",
-    "terms": [
-      {
-        "title": "El 2er tour se déroule du 30 août 2021 (0 h 00 UTC) au 5 septembre 2021 (23 h 00 UTC).<br><br>"
-      },
-      {
-        "title": "Jeux participants:<br>Demi Gods III, Demi Gods III – 15 Lines, Book Of Demi Gods III.<br><br>"
-      },
-      {
-        "title": "Les 150 premiers joueurs du classement se partageront un prix de 20 000 EUR.<br><br>"
-      },
-      {
-        "title": "Jouez à l’un des jeux participants. Chaque fois que le symbole « Odin » apparaît sur l’un des rouleaux, vous serez récompensé par 1 point (par exemple, si à la fin d’un tour) 3 symboles « Odin » apparaissent sur les rouleaux, vous serez récompensé par 3 points). "
-      },
-      {
-        "title": "Les points reçus sont comptabilisés pendant toute la durée du tournoi. Plus vous accumulez de points, plus vous êtes bien placé dans le classement."
-      },
-      {
-        "title": "La mise minimale de qualification par tour pour participer au tournoi est de 0,5 EUR."
-      }
-    ],
-    "metaInfo": {
-      "title": "➤ Le tournoi Demi God Tales avec une cagnotte impressionnante de 40 000 € – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
-      "description": "✭ Tentez votre chance dans le nouveau Demi God Tales de Spinomenal  ➔ Accomplissez des missions et gagnez des prix!"
-    }
   },
   "metaTags": {
     "promotions": {

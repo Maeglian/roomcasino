@@ -474,12 +474,6 @@
       "upTo": "Preispool 2.500 €",
       "name": "Aufsatteln fürs Weekly Derby",
       "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
-    },
-    "demigods": {
-      "title": "Demi Gods Tales <br/>Tournament",
-      "upTo": "20.000 €",
-      "name": "Erzählen Sie die Geschichte der Demi God Tales",
-      "text": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst."
     }
   },
   "tournaments": {
@@ -1366,35 +1360,6 @@
     "ticket": "Los",
     "tickets": "Lose"
   },
-  "sunshine_spins_lottery": {
-    "title": "Sunshine<br/> Spins-Verlosung",
-    "name": "Sunshine Spins-Verlosung",
-    "prize": "4 000 Freispiele",
-    "text": "Fröhliche Sommerfrischler in fröhlichen Sommerklamotten auf dem Weg zum Spaßfestival dieses Monats: Der Sunshine Spins-Verlosung!<br/><br/>Lassen Sie sich bei der Sunshine Spins-Verlosung zurückversetzen in die Zeit der Festivals von Woodstock und der Isle of Wight und nach San Francisco. Um mitzumachen, Schuhe ausziehen und abrocken zu Ihren Lieblingsautomatenspielen. Gehören Sie zu den 50 Glücklichen, die sich den Gesamtgewinn von 4 000 Freispielen teilen!",
-    "terms": [
-      {
-        "text": "Das Verlosung läuft über 7 Tage, es beginnt jeweils Dienstag um 00:01 Uhr UTC und endet Montag um 23:59 Uhr UTC."
-      },
-      {
-        "text": "Die Mindesteinzahlung für ein Los beträgt 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
-      },
-      {
-        "text": "Die Anzahl der Lose pro Spieler ist unbegrenzt."
-      },
-      {
-        "text": "Jedes Los kann gewinnen."
-      },
-      {
-        "text": "Zum Zeitpunkt der Ziehung darf das Spielkonto nicht gesperrt sein."
-      },
-      {
-        "text": "Die Gewinne im Gesamtwert von 4 000 Freispiele werden nach Ablauf jeder Verlosungswoche jeweils Montags automatisch zugewiesen."
-      },
-      {
-        "text": "Für Freispiele besteht eine Umsatzanforderung von x5."
-      }
-    ]
-  },
   "tesla_lottery": {
     "metaTitle": "➤ Tesla-Verlosung mit Tesla Modell 3  – Spiele deine Lieblingsspiele und gewinne tolle Preis - Tesla Modell 3!",
     "metaDescription": "✭ Versuch dein Glück beim neuen Tesla Lottery von NineCasino ➔ Holen Sie sich ein Los, um einen Tesla zu gewinnen!",
@@ -1456,36 +1421,6 @@
     ],
     "metaTitle": "➤ Happy Harvest Lotto mit massivem Preisgeld von 5,000 Freispielen – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
     "metaDescription": "✭ Versuch dein Glück beim neuen Happy Harvest Lotto von NineCasino ➔ Schließe Missionen ab – gewinne Preise!"
-  },
-  "demigods": {
-    "title": "Demi Gods Tales <br/>Tournament<br/> Runde II",
-    "prize": "20.000 €",
-    "text": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst.",
-    "textMobile": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst.",
-    "terms": [
-      {
-        "title": "Runde II beginnt am 30. August um 00:00 Uhr UTC und endet am 5. September 2021 um 23:00 Uhr UTC.<br><br>"
-      },
-      {
-        "title": "Teilnehmende Spiele:<br>Demi Gods III, Demi Gods III – 15 Lines, Book Of Demi Gods III.<br><br>"
-      },
-      {
-        "title": "Die 150 Bestplatzierten teilen sich den Gesamtgewinn von 20.000 Euro.<br><br>"
-      },
-      {
-        "title": "Spielen Sie eines oder mehrere der teilnehmenden Spiele. Jedes Mal, wenn das Symbol „Odin“ auf einer der Walzen erscheint, erhalten Sie 1 Wertungspunkt (wenn beispielsweise am Ende einer Ausspielung 3 Odinsymbole auf den Walzen angezeigt werden, erhalten Sie 3 Punkte)."
-      },
-      {
-        "title": "Die erhaltenen Punkte werden über den gesamten Turnierverlauf summiert. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
-      },
-      {
-        "title": "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 Euro."
-      }
-    ],
-    "metaInfo": {
-      "title": "➤ Demi God Tales-Turnier mit massivem Preisgeld von 40.000 € – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
-      "description": "✭ Versuch dein Glück beim neuen Demi God Tales von Spinomenal  ➔ Schließe Missionen ab – gewinne Preise!"
-    }
   },
   "metaTags": {
     "promotions": {

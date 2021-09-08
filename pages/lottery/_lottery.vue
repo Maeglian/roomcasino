@@ -550,29 +550,6 @@ export default {
   }
 }
 
-.sunshine_spins_lottery {
-  &-Header {
-    background-image: url(~@/assets/img/sunshine-page_460.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: calc(100% - 32px) auto;
-
-    @media (min-width: $screen-s) {
-      background-image: url(~@/assets/img/sunshine-page_600.png);
-    }
-
-    @media (min-width: $screen-m) {
-      background-image: url(~@/assets/img/sunshine-page_900.png);
-      background-position: center 20%;
-    }
-
-    @media (min-width: $screen-xl) {
-      background-image: url(~@/assets/img/sunshine-page_1248.png);
-      background-position: center top;
-    }
-  }
-}
-
 .tesla_lottery {
   &-Header {
     padding-top: 270px / 320px * 100%;

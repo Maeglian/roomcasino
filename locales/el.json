@@ -462,12 +462,6 @@
       "upTo" : "σύνολο επάθλου 2.500 €",
       "name" : "ΑΝΑΙΒΕΙΤΕ ΣΤΟ ΑΛΛΟΓΟ ΓΙΑ ΤΟ Weekly Derby",
       "text" : "Είναι η ώρα του Weekly Derby  και τα βραβεία μας θα σας κάνουν να περιμένετε με ανυπομονησία! <br/><br/>Λειτουργεί για 7 ημέρες κάθε εβδομάδα από Πέμπτη 00:01 Συντονισμένη Παγκόσμια Ώρα (UTC) έως Τετάρτη 23:59 Συντονισμένη Παγκόσμια Ώρα (UTC). Πάρτε την ευκαιρία για να μοιραστείτε ένα σύνολο επάθλου 2.500 € με 40 τυχερούς αναβάτες. <br/><br/>Απλά κάντε ένα ελάχιστο στοίχημα 0,5 € και ετοιμαστείτε για τον αγώνα. <br/><br/>Καλή επιτυχία και ξεκινάμε το Ντέρμπι!"
-    },
-    "demigods": {
-      "title": "Demi God Tales <br>Tournament",
-      "upTo": "€20,000",
-      "name": "Tell the story of Demi God tales",
-      "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament."
     }
   },
   "tournaments" : {
@@ -1350,35 +1344,6 @@
     "ticket" : "Ticket",
     "tickets" : "Tickets"
   },
-  "sunshine_spins_lottery" : {
-    "title" : "Sunshine Spins<br/> λοταρία",
-    "name" : "Sunshine Spins λοταρία",
-    "prize" : "4.000 Δωρεάν Περιστροφές",
-    "text" : "Ευτυχισμένοι καλοκαιρινοί άνθρωποι ντυμένοι με χαρούμενα καλοκαιρινά ρούχα, βαδίζοντας προς το διασκεδαστικό φεστιβάλ αυτού του μήνα: Η λοταρία Sunshine Spins!<br/><br/>Με τη λοταρία Sunshine Spins, επιστρέψτε στην εποχή του Woodstock, του Φεστιβάλ της νήσου του Γουάιντ και του San Francisco. Για να συμμετάσχετε απλά τρέξτε ξυπόλητοι και ροκάρετε στους αγαπημένους σας κουλοχέρηδες. Απολαύστε την ατμόσφαιρα του συνόλου έπαθλου 4.000 Δωρεάν Περιστροφών με 50 τυχερούς νικητές! <br/>Φόρεσε, λοιπόν, τα καλύτερα καλοκαιρινά σας ρούχα και θυμηθείτε, «όλα είναι για τον άνθρωπο που περιστρέφει!»",
-    "terms" : [
-      {
-        "text" : " Η λοταρία θα διαρκεί 7 ημέρες από τις 00:01 (Συντονισμένη Παγκόσμια Ώρα (UTC)) την Τρίτη και θα λήξει στις 23:59 (Συντονισμένη Παγκόσμια Ώρα (UTC)) τη Δευτέρα."
-      },
-      {
-        "text" : "Η ελάχιστη προκαταβολή που απαιτείται για ένα λαχείο είναι 20 EUR, 30 CAD/AUD/NZD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
-      },
-      {
-        "text" : "Ο αριθμός των λαχείων ανά παίκτη είναι απεριόριστος."
-      },
-      {
-        "text" : "Κάθε λαχείο μπορεί να είναι ένα εισιτήριο που κερδίζει."
-      },
-      {
-        "text" : "Κατά την κλήρωση, ο λογαριασμός παιχνιδιού δεν πρέπει να είναι μπλοκαρισμένος."
-      },
-      {
-        "text" : "Τα έπαθλα των 4.000 Δωρεάν Περιστροφών θα απονέμονται αυτόματα στο τέλος της κλήρωσης κάθε εβδομάδα τη Δευτέρα."
-      },
-      {
-        "text" : "Για δωρεάν περιστροφές, το στοίχημα είναι x5."
-      }
-    ]
-  },
   "tesla_lottery" : {
     "metaTitle" : "➤ Tesla Lottery With Tesla Model 3 - Play Your Favorite Games And Win Great Prize - Tesla Model 3!",
     "metaDescription" : "✭ Try Your Luck In New Tesla Lottery by NineCasino ➔ Take a ticket for a Tesla!",
@@ -1438,35 +1403,5 @@
         "text": "Για τα Free Spins, το ποντάρισμα είναι x5."
       }
     ]
-  },
-  "demigods": {
-    "title": "Demi Gods Tales <br/>Tournament <br/>Round II",
-    "prize": "€20,000",
-    "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
-    "textMobile": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
-    "terms": [
-      {
-        "title": "Round II runs between August 30th 00:00 GMT and September 5th 23:59 GMT.<br><br>"
-      },
-      {
-        "title": "Participating games: <br>Demi Gods III, Demi Gods III – 15 Lines, Book Of Demi Gods III.<br><br>"
-      },
-      {
-        "title": "The 150 first players on the leaderboard will share a prize of 20,000 EUR.<br><br>"
-      },
-      {
-        "title": "Play any of the participating games. Each time the “Odin” symbol lands on one of the reels, you will be rewarded with 1 point (for example, if at the end of a spin 3 Odin symbols appear on the reels, you will be rewarded with 3 points)."
-      },
-      {
-        "title": "5. Points received are tallied throughout the tournament period. The more points you collect, the higher your position on the leaderboard."
-      },
-      {
-        "title": "Minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
-      }
-    ],
-    "metaInfo": {
-      "title": "➤ Demi God Tales Tournament With Solid Prize Pool €40,000 - Play Your Favorite Games And Win Great Prizes!",
-      "description": "✭ Try Your Luck In New Demi God Tales by Spinomenal  ➔ Complete Missions - Win Prizes!"
-    }
   }
 }

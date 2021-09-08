@@ -10,53 +10,55 @@
     </div>
     <section class="Page-Content">
       <div class="Page-Cards PromotionsPage-Promotions">
-        <article
-          v-for="(item, i) in promotions"
-          :key="`prom_${i}`"
-          class="PromotionsCard Page-Card"
-        >
-          <Banner class="PromotionsCard-Banner" :image="item.image" :image460="item.image460">
-            <template #title>
-              <span v-html="item.title"></span>
-            </template>
-            <template v-if="item.prize" #prize>
-              <span v-html="item.prize"></span>
-            </template>
-            <template v-if="item.subtitle" #subtitle>
-              <span v-html="item.subtitle"></span>
-            </template>
-          </Banner>
-          <div class="PromotionsCard-Footer">
-            <div class="PromotionsCard-Title">
-              {{ item.announce }}
+        <template v-for="(item, i) in promotions">
+          <article
+            v-if="!item.excludedCountries || !item.excludedCountries.includes($i18n.locale)"
+            :key="`prom_${i}`"
+            class="PromotionsCard Page-Card"
+          >
+            <Banner class="PromotionsCard-Banner" :image="item.image" :image460="item.image460">
+              <template #title>
+                <span v-html="item.title"></span>
+              </template>
+              <template v-if="item.prize" #prize>
+                <span v-html="item.prize"></span>
+              </template>
+              <template v-if="item.subtitle" #subtitle>
+                <span v-html="item.subtitle"></span>
+              </template>
+            </Banner>
+            <div class="PromotionsCard-Footer">
+              <div class="PromotionsCard-Title">
+                {{ item.announce }}
+              </div>
+              <div class="PromotionsCard-Text Text Text--additional">
+                <span v-html="item.text"> </span>
+              </div>
             </div>
-            <div class="PromotionsCard-Text Text Text--additional">
-              <span v-html="item.text"> </span>
+            <div class="PromotionsCard-Btns">
+              <NuxtLink
+                v-if="item.link"
+                class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
+                :to="localePath(item.url)"
+              >
+                {{ $t('buttons.more') }}
+              </NuxtLink>
+              <button
+                v-else
+                class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
+                @click="onClickBtn()"
+              >
+                {{ isLoggedIn ? $t('buttons.getBonus') : $t('buttons.signUp') }}
+              </button>
+              <NuxtLink
+                :to="localePath('/bonus-terms')"
+                class="Btn Btn--common Btn--rightCorner Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
+              >
+                {{ $t('buttons.terms') }}
+              </NuxtLink>
             </div>
-          </div>
-          <div class="PromotionsCard-Btns">
-            <NuxtLink
-              v-if="item.link"
-              class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
-              :to="localePath(item.url)"
-            >
-              {{ $t('buttons.more') }}
-            </NuxtLink>
-            <button
-              v-else
-              class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
-              @click="onClickBtn()"
-            >
-              {{ isLoggedIn ? $t('buttons.getBonus') : $t('buttons.signUp') }}
-            </button>
-            <NuxtLink
-              :to="localePath('/bonus-terms')"
-              class="Btn Btn--common Btn--rightCorner Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
-            >
-              {{ $t('buttons.terms') }}
-            </NuxtLink>
-          </div>
-        </article>
+          </article>
+        </template>
       </div>
       <!--      <h2 class="Title Title&#45;&#45;type-h2 Page-Subtitle PromotionsPage-Subtitle">-->
       <!--        Tournaments-->
@@ -135,6 +137,7 @@ export default {
           image: 'banker-gold-promotions.png',
           announce: this.$t('promotions.deposit2.name'),
           text: this.$t('promotions.deposit2.text'),
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.deposit3.title'),
@@ -142,6 +145,7 @@ export default {
           image: 'banker-purple-promotions.png',
           announce: this.$t('promotions.deposit3.name'),
           text: this.$t('promotions.deposit3.text'),
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.cashback.title'),
@@ -151,6 +155,7 @@ export default {
           text: this.$t('promotions.cashback.text'),
           link: 'More',
           url: '/daily-cashback',
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.deposit4.title'),
@@ -158,6 +163,7 @@ export default {
           image: 'promotion7.png',
           announce: this.$t('promotions.deposit4.name'),
           text: this.$t('promotions.deposit4.text'),
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('homepage.heroBanner.highroller.title'),
@@ -165,6 +171,7 @@ export default {
           image: 'promotions-highroller.png',
           announce: this.$t('promotions.highroller.name'),
           text: this.$t('promotions.highroller.text'),
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.dropsWinsSlots.title'),
@@ -192,24 +199,6 @@ export default {
           text: this.$t('promotions.weekly_derby.text'),
           link: 'More',
           url: '/tournaments/weekly_derby',
-        },
-        {
-          title: this.$t('sunshine_spins_lottery.title'),
-          prize: this.$t('sunshine_spins_lottery.prize'),
-          image: 'sunshine-promo.png',
-          announce: this.$t('sunshine_spins_lottery.name'),
-          text: this.$t('sunshine_spins_lottery.text'),
-          link: 'More',
-          url: '/lottery/sunshine_spins_lottery',
-        },
-        {
-          title: this.$t('promotions.demigods.title'),
-          prize: this.$t('demigods.prize'),
-          image: 'demigods-promotions.png',
-          announce: this.$t('promotions.demigods.name'),
-          text: this.$t('promotions.demigods.text'),
-          link: 'More',
-          url: '/tournaments/demigods',
         },
         {
           title: this.$t('tesla_lottery.title'),

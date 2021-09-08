@@ -462,12 +462,6 @@
       "upTo": "prize pool 2500 eur",
       "name": "Vyrazte na Weekly Derby",
       "text": "Je čas na Weekly Derby a naše ceny vás donutí trochu trošku supět, abyste první dorazili na místo!<br/><br/>Turnaj probíhá 7 dnů od čtvrtka 00:01 UTC do středy 23:59 UTC. Chopte se své příležitosti rozdělit si cenný prize pool ve výši 2500 eur společně se 40 dalšími jezdci.<br/><br/>Stačí minimální sázka 0,5 eur a být připravený na soutěž.<br/><br/>Hodně štěstí a pojďme odstartovat Derby! "
-    },
-    "demigods": {
-      "title": "Demi Gods Tales Tournament",
-      "upTo": "€ 20 000",
-      "name": "Vyprávějte příběh o Demi God Tales",
-      "text": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales."
     }
   },
   "tournaments": {
@@ -1356,35 +1350,6 @@
     "ticket": "Los",
     "tickets": "Losy"
   },
-  "sunshine_spins_lottery": {
-    "title": "Loterie<br/> Sunshine Spins",
-    "name": "Loterie Sunshine Spins",
-    "prize": " 4 000 spinů zdarma",
-    "text": "Šťastní letní lidé vyparádění ve veselém letním oblečení společně kráčejí vstříc festivalu nabitému zábavou, který se koná tenhle měsíc: Loterii Sunshine Spins!<br/><br/>S loterií Sunshine Spins si můžete připomenout časy Woodstocku, festivalu na ostrově Wight a atmosféru San Francisca. Pokud se chcete přidat, shoďte boty a bosky to rozjeďte u svých nejoblíbenějších slotů. Užívejte si pohodu se 4 000 spiny zdarma a cenami pro 50 šťastných výherců!",
-    "terms": [
-      {
-        "text": "Loterie poběží 7 dnů. Začíná vždy v úterý v 00:01 (UTC) a končí v pondělí v 23:59 (UTC). "
-      },
-      {
-        "text": "Minimální vklad pro získání losu je 20 EUR, 30 CAD/AUD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
-      },
-      {
-        "text": "Počet losů na hráče není nijak omezený."
-      },
-      {
-        "text": "Každý losu může být výherní."
-      },
-      {
-        "text": "V době slosování nesmí být herní účet zablokovaný."
-      },
-      {
-        "text": "4 000 spinů zdarma budou uděleny automaticky na konci loterie každé pondělí."
-      },
-      {
-        "text": "Pro spiny zdarma ceny dostanete je protočení x5."
-      }
-    ]
-  },
   "tesla_lottery": {
     "title": "Loterie<br/> Tesla",
     "name": "Loterie Tesla",
@@ -1489,36 +1454,6 @@
     "aml-policy": {
       "title": "Incorporating Fraud and Anti Money Laundering Policy",
       "description": "Detailní informace o tom, jak implementujeme zákony proti falšování a praní špinavých peněz"
-    }
-  },
-  "demigods": {
-    "title": "Demi Gods Tales Tournament<br/>Kolo II",
-    "prize": "€ 20 000",
-    "text": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales.",
-    "textMobile": "Řecké báje o bozích, polobozích, hrdinech a lidech jsou zachyceny v tisících fascinujících příbězích, které si lidstvo vypráví již celá staletí. Spinomenal použil tyto příběhy jako předlohul a přetvořil je do nezapomenutelné řady slotových her v turnaji pojmenovaném Demi Gods Tales.",
-    "terms": [
-      {
-        "title": "Kolo II proběhne od 30. srpna 2021 (0:00 UTC) do 30. září 2021 (23:00 UTC)"
-      },
-      {
-        "title": "Zapojené hry: <br/>Demi Gods III, Demi Gods III – 15 Lines, Book Of Demi Gods III."
-      },
-      {
-        "title": "Prvních 150 hráčů ve výsledkové tabulce si rozdělí částku 20 000 eur."
-      },
-      {
-        "title": "Zahrajte si kteroukoliv ze zapojených her. Pokaždé, když vám na některém z válců přistane symbol „Odin“, získáte 1 bod (takže například, když budete mít na konci spinu na válcích 3 symboly Odina, získáte 3 body)."
-      },
-      {
-        "title": "Body se v průběhu turnaje zaznamenávají. Čím více bodů získáte, tím výše se v tabulce umístíte."
-      },
-      {
-        "title": "Minimální sázka na jeden spin požadovaná pro účast v turnaji je 0,5 eur."
-      }
-    ],
-    "metaInfo": {
-      "title": "➤ Demi God Tales Turnaj s bohatým prize poolem 40 000 € – Hrajte své oblíbené hry a vyhrávejte skvělé ceny!",
-      "description": "✭ Zkuste štěstí v novém Demi God Tales od Spinomenal  ➔ Splňte misi – Vyhrajte ceny!"
     }
   }
 }
