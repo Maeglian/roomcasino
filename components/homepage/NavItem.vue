@@ -53,7 +53,7 @@ export default {
       required: true,
     },
     className: {
-      type: [String, Boolean, Array],
+      type: [String, Boolean],
       required: false,
       default: false,
     },
