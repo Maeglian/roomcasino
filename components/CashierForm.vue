@@ -55,7 +55,6 @@ export default {
     return {
       cashierIsLoading: false,
       depositIsDone: false,
-      gameStartingAfterDeposit: null,
     };
   },
   computed: {
@@ -68,6 +67,7 @@ export default {
       'platform',
     ]),
     ...mapState('profile', ['availableBonusList']),
+    ...mapState('games', ['gameToStart']),
     ...mapGetters(['activeAccount']),
   },
   methods: {
@@ -83,22 +83,14 @@ export default {
     isDesktop() {
       return this.platform === 'desktop';
     },
-    async beforeInitializeCashier(event) {
-      if (event.params && event.params.gameParams)
-        this.gameStartingAfterDeposit = event.params.gameParams;
+    async beforeInitializeCashier() {
       try {
         await this.getBillingSession();
         if (this.getBillingSessionError)
           this.pushNotificationAlert({ type: 'error', text: this.getBillingSessionError });
 
         if (this.billingSession.needPlayerProfileData) {
-          const gameId = this.gameStartingAfterDeposit
-            ? this.gameStartingAfterDeposit.gameId
-            : undefined;
-          const demo = this.gameStartingAfterDeposit
-            ? this.gameStartingAfterDeposit.demo
-            : undefined;
-          this.showRegistrationDialog('registration', true, true, gameId, demo);
+          this.showRegistrationDialog('registration', true, true);
           this.$modal.hide('cashier');
         }
       } catch {
@@ -144,7 +136,8 @@ export default {
             success: data => {
               console.log('Transaction was completed successfully', data);
               this.getProfile();
-              if (this.$route.name !== 'game' && method !== 'withdrawal') this.depositIsDone = true;
+              if (this.$route.name !== 'game-gameName' && method !== 'withdrawal')
+                this.depositIsDone = true;
 
               if (this.availableBonusList.length) {
                 this.getBonusList();
@@ -177,9 +170,8 @@ export default {
     },
     onCloseCashierForm() {
       if (this.depositIsDone) {
-        if (this.gameStartingAfterDeposit) {
-          const { gameId, demo } = this.gameStartingAfterDeposit;
-          this.getGame({ gameId, demo });
+        if (this.gameToStart) {
+          this.getGame({ game: this.gameToStart });
         } else this.$modal.show('goPlay');
 
         this.depositIsDone = false;

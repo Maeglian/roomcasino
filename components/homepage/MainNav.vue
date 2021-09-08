@@ -222,7 +222,7 @@ export default {
       return menu;
     },
     isGamePage() {
-      return this.getRouteBaseName() === 'game-gameId';
+      return this.getRouteBaseName() === 'game-gameName';
     },
   },
   mounted() {

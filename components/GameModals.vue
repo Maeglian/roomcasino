@@ -14,7 +14,7 @@
       </div>
     </BaseModal>
     <BaseModal
-      v-if="depositModalParams"
+      v-if="showPleaseDepositModal"
       name="pleaseDeposit"
       :width="300"
       :height="'auto'"
@@ -37,18 +37,17 @@ export default {
     BaseModal,
   },
   computed: {
-    ...mapState(['depositModalParams']),
-    ...mapState('games', ['gameError']),
+    ...mapState(['showPleaseDepositModal']),
+    ...mapState('games', ['gameError', 'gameToStart']),
     ...mapState('profile', ['freeSpinList']),
     ...mapGetters(['isLoggedIn', 'activeAccount', 'userInfo']),
   },
   methods: {
     ...mapMutations('games', ['setGameError']),
-    ...mapMutations(['setDepositModalParams']),
+    ...mapMutations(['setShowPleaseDepositModal']),
     onCloseDepositModal() {
-      const gameParams = this.depositModalParams;
-      this.setDepositModalParams(null);
-      this.$modal.show('cashier', { gameParams });
+      this.setShowPleaseDepositModal(false);
+      this.$modal.show('cashier');
     },
   },
 };

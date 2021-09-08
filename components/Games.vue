@@ -14,7 +14,7 @@
           :overlay="!startGameOnClickCard"
           :show-provider="startGameOnClickCard"
           :start-game-on-click="startGameOnClickCard"
-          @open-gamepage="openGamePage($event, game.gameProducer)"
+          @open-gamepage="openGamePage($event)"
         />
       </template>
     </div>

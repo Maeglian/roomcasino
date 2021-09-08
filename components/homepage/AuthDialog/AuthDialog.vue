@@ -59,15 +59,15 @@
             :before-start-game="beforeStartGame"
             @close="$emit('close')"
             @redirect-login="activeTab = 'login'"
-            @open-cashier="$modal.show('cashier', { gameId: id, demo })"
-            @start-game="getGame({ gameId: id, demo })"
+            @open-cashier="$modal.show('cashier')"
+            @start-game="getGame({ game: gameToStart })"
           />
         </template>
         <template v-else>
           <LoginForm
             :before-start-game="beforeStartGame"
             @close="$emit('close')"
-            @start-game="openGamePage({ id, demo }, gameProducer)"
+            @start-game="openGamePage({ game: gameToStart })"
           />
         </template>
       </div>
@@ -107,26 +107,6 @@ export default {
       required: false,
       default: false,
     },
-    id: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    demo: {
-      type: Boolean,
-      required: false,
-      default: true,
-    },
-    bg: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    gameProducer: {
-      type: String,
-      required: false,
-      default: '',
-    },
   },
   data() {
     return {
@@ -145,6 +125,7 @@ export default {
   },
   computed: {
     ...mapState(['authStatus']),
+    ...mapState('games', ['gameToStart']),
   },
   mounted() {
     this.activeTab = this.authType;
