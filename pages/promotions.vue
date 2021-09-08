@@ -194,15 +194,6 @@ export default {
           url: '/tournaments/weekly_derby',
         },
         {
-          title: this.$t('promotions.demigods.title'),
-          prize: this.$t('demigods.prize'),
-          image: 'demigods-promotions.png',
-          announce: this.$t('promotions.demigods.name'),
-          text: this.$t('promotions.demigods.text'),
-          link: 'More',
-          url: '/tournaments/demigods',
-        },
-        {
           title: this.$t('tesla_lottery.title'),
           prize: this.$t('tesla_lottery.prize'),
           image: 'tesla-promotion.png',
