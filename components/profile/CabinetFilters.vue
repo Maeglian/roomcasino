@@ -81,6 +81,7 @@ export default {
       fi,
       pl,
       el,
+      nz: en,
       'en-ca': en,
       'fr-ca': fr,
     };
