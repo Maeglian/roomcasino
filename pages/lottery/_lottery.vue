@@ -167,8 +167,8 @@
 </template>
 
 <script>
-import showAuthDialog from '@/mixins/showAuthDialog';
 import { mapState, mapActions, mapGetters } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'LotteryPage',
@@ -273,7 +273,9 @@ export default {
         title: this.$t(`${this.slug}.metaTitle`),
         meta: [
           {
-            description: this.$t(`${this.slug}.metaDescription`),
+            hid: 'description',
+            name: 'description',
+            content: this.$t(`${this.slug}.metaDescription`),
           },
         ],
       };
@@ -282,7 +284,9 @@ export default {
       title: 'Daily Tournament At Ninecasino And Other Similar Events',
       meta: [
         {
-          description:
+          hid: 'description',
+          name: 'description',
+          content:
             'On this page, you will find detailed information about the tournaments held by the gaming website. List of winners and terms and conditions of the events',
         },
       ],
@@ -546,29 +550,6 @@ export default {
   }
 }
 
-.sunshine_spins_lottery {
-  &-Header {
-    background-image: url(~@/assets/img/sunshine-page_460.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: calc(100% - 32px) auto;
-
-    @media (min-width: $screen-s) {
-      background-image: url(~@/assets/img/sunshine-page_600.png);
-    }
-
-    @media (min-width: $screen-m) {
-      background-image: url(~@/assets/img/sunshine-page_900.png);
-      background-position: center 20%;
-    }
-
-    @media (min-width: $screen-xl) {
-      background-image: url(~@/assets/img/sunshine-page_1248.png);
-      background-position: center top;
-    }
-  }
-}
-
 .tesla_lottery {
   &-Header {
     padding-top: 270px / 320px * 100%;
@@ -588,7 +569,7 @@ export default {
     }
 
     @media (min-width: $screen-xl) {
-      padding-top: 20px / 1248px * 100%;
+      padding-top: 70px / 1248px * 100%;
       background-image: url(~@/assets/img/tesla_1248.png);
       background-position: center top;
     }
@@ -597,6 +578,41 @@ export default {
       padding-top: 100px / 1920px * 100%;
       background-image: url(~@/assets/img/tesla_1920.png);
       background-position: center top;
+    }
+
+    @media (min-width: $screen-xxxl) {
+      padding-top: 160px / 1920px * 100%;
+    }
+  }
+}
+
+.happy_harvest_lotto {
+  &-Header {
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/harvest_460.png);
+
+    @media (min-width: $screen-s) {
+      padding-top: 300px / 320px * 100%;
+      background-image: url(~@/assets/img/harvest_600.png);
+    }
+
+    @media (min-width: $screen-m) {
+      padding-top: 50px / 768px * 100%;
+      background-image: url(~@/assets/img/harvest_900.png);
+
+      .DailyTournamentPage-MainText {
+        max-width: 35%;
+      }
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 120px / 768px * 100%;
+      background-image: url(~@/assets/img/harvest_1248.png);
+    }
+
+    @media (min-width: $screen-xxl) {
+      padding-top: 80px;
+      background-image: url(~@/assets/img/harvest_1920.png);
     }
 
     @media (min-width: $screen-xxxl) {

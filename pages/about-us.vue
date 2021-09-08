@@ -120,7 +120,9 @@ export default {
       title: this.$t('metaTags.about-us.title'),
       meta: [
         {
-          description: this.$t('metaTags.about-us.description'),
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.about-us.description'),
         },
       ],
     };

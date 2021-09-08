@@ -227,7 +227,9 @@ export default {
       title: this.$t('metaTags.terms.title'),
       meta: [
         {
-          description: this.$t('metaTags.terms.description'),
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.terms.description'),
         },
       ],
     };

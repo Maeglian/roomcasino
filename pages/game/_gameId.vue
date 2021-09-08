@@ -8,10 +8,12 @@
         {{ game.gameName }}
       </h1>
       <iframe
-        v-if="gameUrlForIframe"
+        v-show="!gameHtml || showGame"
+        ref="iframe"
         :key="activeAccount.balance"
+        :src="gameHtml ? null : gameUrl"
+        :srcDoc="gameHtml ? gameHtml : null"
         class="GamePage-Iframe"
-        :src="gameUrlForIframe"
         :width="getIframeWidth.width"
         :height="getIframeWidth.height"
         allowFullScreen="true"
@@ -25,7 +27,7 @@
 </template>
 
 <script>
-import { mapActions, mapState, mapGetters } from 'vuex';
+import { mapActions, mapState, mapGetters, mapMutations } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import openGame from '@/mixins/openGame';
 import MainNav from '@/components/homepage/MainNav';
@@ -41,12 +43,14 @@ export default {
   },
   mixins: [showAuthDialog, openGame],
   beforeRouteLeave(to, from, next) {
+    this.setStartingGame({ html: '', url: '' });
     if (this.isLoggedIn) this.getProfile();
     next();
   },
   data: () => ({
     clockIcon: require('@/assets/img/clock.svg'),
     isFullScreen: false,
+    showGame: false,
   }),
   head() {
     if (this.game) {
@@ -54,7 +58,9 @@ export default {
         title: `ᐈ Play ${this.game.gameName} Game Now For Free Or Real Money | $450 Welcome Bonus At Ninecasino`,
         meta: [
           {
-            description: `★ Play ${this.game.gameName} Game For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino`,
+            hid: 'description',
+            name: 'description',
+            content: `★ Play ${this.game.gameName} Game For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino`,
           },
         ],
       };
@@ -62,7 +68,7 @@ export default {
   },
   computed: {
     ...mapState(['platform']),
-    ...mapState('games', ['gameUrlForIframe', 'defaultGames']),
+    ...mapState('games', ['gameUrl', 'gameHtml', 'defaultGames']),
     ...mapGetters(['activeAccount']),
     getIframeWidth() {
       return this.isFullScreen
@@ -95,11 +101,25 @@ export default {
     defaultGames() {
       this.onEnterPage();
     },
+    gameHtml(val) {
+      if (val) {
+        const { iframe } = this.$refs;
+        if (this.platform === 'mobile') this.isFullScreen = true;
+        iframe.addEventListener('load', () => {
+          this.showGame = true;
+          const style = document.createElement('style');
+          style.textContent = `html{width:100%;height:100%}body{width:100%;height:100%;margin:0;padding:0}body>div{width:100%;height:100%}iframe{width:100%;height:100%;border:none;border-radius:12px}`;
+
+          iframe.contentDocument.head.appendChild(style);
+        });
+      }
+    },
   },
   mounted() {
     this.onEnterPage();
   },
   methods: {
+    ...mapMutations('games', ['setStartingGame']),
     ...mapActions(['getProfile']),
     ...mapActions('games', ['startGame']),
     toggleFullScreenMode() {
@@ -154,7 +174,7 @@ export default {
   }
 
   &-Title {
-    margin-bottom: auto;
+    margin: 0 16px auto;
   }
 
   &-Iframe {
@@ -162,7 +182,7 @@ export default {
     display: block;
     margin: 20px auto;
     border: none;
-    border-radius: 12px;
+    border-radius: var(--border-radius-12);
   }
 }
 </style>

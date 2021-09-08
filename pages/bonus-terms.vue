@@ -44,7 +44,9 @@ export default {
       title: this.$t('metaTags.bonus-terms.title'),
       meta: [
         {
-          description: this.$t('metaTags.bonus-terms.description'),
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.bonus-terms.description'),
         },
       ],
     };

@@ -80,7 +80,7 @@ export default {
       fr,
       fi,
       pl,
-      gr: el,
+      el,
       'en-ca': en,
       'fr-ca': fr,
     };

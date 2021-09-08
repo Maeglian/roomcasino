@@ -46,7 +46,6 @@ export const state = () => ({
   defaultCountry: '',
   defaultCurrency: '',
   chatIsLoaded: false,
-  needsCookiesPopup: true,
   showOverlay: false,
   initialLoadingIsDone: {
     geoInfo: false,
@@ -280,9 +279,6 @@ export const mutations = {
   setRegistrationWindowWasOpened: (state, payload) => {
     state.registrationWindowWasOpened = payload;
   },
-  setNeedsCookiesPopup: (state, payload) => {
-    state.needsCookiesPopup = payload;
-  },
   setChatIsLoaded: state => {
     state.chatIsLoaded = true;
   },
@@ -430,14 +426,11 @@ export const actions = {
   async nuxtServerInit({ commit }, { req }) {
     if (process.env.NUXT_ENV_MODE !== 'sandbox' && process.env.NUXT_ENV_MODE !== 'stage') {
       let token = null;
-      let cookiesPopup;
       if (req.headers.cookie) {
         const parsed = cookieparser.parse(req.headers.cookie);
         try {
           // eslint-disable-next-line prefer-destructuring
           token = parsed.token;
-          // eslint-disable-next-line prefer-destructuring
-          cookiesPopup = parsed.seenCookiesPopup;
           // eslint-disable-next-line no-empty
         } catch (e) {}
         if (token) {
@@ -445,7 +438,6 @@ export const actions = {
           commit('setToken', token);
           commit('setAuthSuccess');
         }
-        commit('setNeedsCookiesPopup', !cookiesPopup);
       }
     }
     // await dispatch('games/getDefaultGames').then(() => commit('setInitialLoading', 'defaultGames'));

@@ -32,25 +32,7 @@
                 {{ item.announce }}
               </div>
               <div class="PromotionsCard-Text Text Text--additional">
-                <i18n v-if="item.linkTo" path="promotions.twitterGiveaway.text">
-                  <template #twitterAccount>
-                    <a class="Footer-Contact" href="https://twitter.com/casino_nine">{{
-                      $t('twitter.twitterAccount')
-                    }}</a>
-                  </template>
-                  <template #tweet>
-                    <a
-                      class="Footer-Contact"
-                      href="https://twitter.com/casino_nine/status/1427561698408505344?s=20"
-                    >
-                      {{ $t('twitter.tweet') }}
-                    </a>
-                  </template>
-                  <template #br>
-                    <br />
-                  </template>
-                </i18n>
-                <span v-else v-html="item.text"> </span>
+                <span v-html="item.text"> </span>
               </div>
             </div>
             <div class="PromotionsCard-Btns">
@@ -61,13 +43,6 @@
               >
                 {{ $t('buttons.more') }}
               </NuxtLink>
-              <a
-                v-else-if="item.linkTo"
-                :href="item.url"
-                class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
-              >
-                {{ $t('twitter.twitterBtn') }}
-              </a>
               <button
                 v-else
                 class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
@@ -134,7 +109,7 @@
 </template>
 
 <script>
-import Banner from '@/components/Banner';
+import Banner from '@/components/Banner.vue';
 // import Counter from '@/components/Counter';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
@@ -264,6 +239,15 @@ export default {
           link: 'More',
           url: '/lottery/tesla_lottery',
         },
+        {
+          title: this.$t('happy_harvest_lotto.title'),
+          prize: this.$t('happy_harvest_lotto.prize'),
+          image: 'harvest-promo.png',
+          announce: this.$t('happy_harvest_lotto.promoTitle'),
+          text: this.$t('happy_harvest_lotto.promoText'),
+          link: 'More',
+          url: '/lottery/happy_harvest_lotto',
+        },
       ],
     };
   },
@@ -272,7 +256,9 @@ export default {
       title: this.$t('metaTags.promotions.title'),
       meta: [
         {
-          description: this.$t('metaTags.promotions.description'),
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.promotions.description'),
         },
       ],
     };
@@ -368,8 +354,8 @@ export default {
   }
 
   &-Btn {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 4px;
+    padding-left: 4px;
   }
 
   &-Btn--small {

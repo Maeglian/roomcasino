@@ -19,7 +19,9 @@ export default {
       title: this.$t('metaTags.risk-warnings.title'),
       meta: [
         {
-          description: this.$t('metaTags.risk-warnings.description'),
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.risk-warnings.description'),
         },
       ],
     };

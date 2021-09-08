@@ -1,5 +1,5 @@
-import AuthDialog from '@/components/homepage/AuthDialog/AuthDialog.vue';
 import { mapState, mapGetters, mapMutations } from 'vuex';
+import AuthDialog from '@/components/homepage/AuthDialog/AuthDialog.vue';
 
 export default {
   computed: {

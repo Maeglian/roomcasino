@@ -106,8 +106,8 @@
 
 <script>
 import moment from 'moment';
-import VueSlider from '@/components/Slider';
 import { mapState } from 'vuex';
+import VueSlider from '@/components/Slider';
 
 export default {
   name: 'BonusDetails',

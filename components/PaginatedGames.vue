@@ -19,10 +19,10 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import Card from '@/components/Card';
 import openGame from '@/mixins/openGame';
 import showAuthDialog from '@/mixins/showAuthDialog';
-import { mapState } from 'vuex';
 
 export default {
   name: 'PaginatedSlider',
