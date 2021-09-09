@@ -3,7 +3,7 @@
     <modal
       name="cashier"
       :height="'auto'"
-      :width="isDesktop() ? '900px' : '400px'"
+      width="400px"
       adaptive
       scrollable
       @before-open="beforeInitializeCashier($event)"
@@ -65,7 +65,6 @@ export default {
       'getBillingSessionError',
       'shouldCashout',
       'user',
-      'platform',
     ]),
     ...mapState('profile', ['availableBonusList']),
     ...mapGetters(['activeAccount']),
@@ -80,9 +79,6 @@ export default {
       'getTransactionHistoryList',
       'getFreeSpinList',
     ]),
-    isDesktop() {
-      return this.platform === 'desktop';
-    },
     async beforeInitializeCashier(event) {
       if (event.params && event.params.gameParams)
         this.gameStartingAfterDeposit = event.params.gameParams;
@@ -125,11 +121,7 @@ export default {
           fetchConfig: true,
           method,
           locale: `${locale}_${this.user.country}`,
-          tabs: false,
-          ...(this.isDesktop() && {
-            singlePageFlow: false,
-            containerWidth: '900px',
-          }),
+          containerMinHeight: '700px',
         },
         api => {
           api.on({
