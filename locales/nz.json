@@ -31,7 +31,8 @@
     "checkBonuses": "Check bonuses",
     "cancelBonus": "Cancel bonus",
     "goBack": "Go back",
-    "createAccount": "Create account"
+    "createAccount": "Create account",
+    "redeem": "Redeem"
   },
   "errors": {
     "required": "Can't be blank",
@@ -294,7 +295,11 @@
         "max": "Max prize"
       },
       "wagerAmountRequirement": "Wager Amount requirement",
-      "wageredPercent": "Wagered percent"
+      "wageredPercent": "Wagered percent",
+      "promoCode": {
+        "title": "I have a bonus code",
+        "placeholder": "Promo code"
+      }
     },
     "history": {
       "tabs": {
