@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API_HOST, TOURNAMENTS } from './config';
 
-const locales = ['en-ca', 'fr', 'cs', 'de', 'fr-ca', 'el', 'nz', 'fi', 'pl'];
+const locales = ['en-CA', 'fr', 'cs', 'de', 'fr-CA', 'el', 'nz', 'fi', 'pl'];
 
 const target =
   process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
@@ -51,6 +51,10 @@ export default {
         media: 'print',
         onload: "this.media='all'",
       },
+      {
+        rel: 'canonical',
+        href: 'https://ninecasino.com',
+      },
     ],
     script: [
       {
@@ -85,7 +89,20 @@ export default {
   buildModules: [],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/style-resources', '@nuxtjs/gtm', 'nuxt-i18n', '@nuxtjs/sentry'],
+  modules: [
+    '@nuxtjs/style-resources',
+    '@nuxtjs/gtm',
+    'nuxt-i18n',
+    '@nuxtjs/sentry',
+    '@nuxtjs/sitemap',
+  ],
+  sitemap: {
+    hostname: 'https://ninecasino.com',
+    i18n: {
+      locales,
+    },
+    routes: [],
+  },
   i18n: {
     locales: [
       {
@@ -93,18 +110,21 @@ export default {
         codeCountry: 'en_GB',
         file: 'en.json',
         icon: 'en.svg',
+        iso: 'en_GB',
       },
       {
-        code: 'en-ca',
+        code: 'en-CA',
         codeCountry: 'en_CA',
         file: 'en_ca.json',
         icon: 'en-ca.svg',
+        iso: 'en_CA',
       },
       {
-        code: 'fr-ca',
-        codeCountry: 'fr_CA',
+        code: 'fr-CA',
+        codeCountry: 'fr-CA',
         file: 'fr_ca.json',
         icon: 'fr_ca.svg',
+        iso: 'fr_CA',
       },
       {
         code: 'fr',
@@ -117,12 +137,14 @@ export default {
         codeCountry: 'cs_CZ',
         file: 'cs.json',
         icon: 'cs.svg',
+        iso: 'cs',
       },
       {
         code: 'de',
         codeCountry: 'de_DE',
         file: 'de.json',
         icon: 'de.svg',
+        iso: 'de',
       },
       {
         code: 'el',
@@ -159,6 +181,8 @@ export default {
       alwaysRedirect: true,
       onlyOnRoot: true,
     },
+    baseUrl: 'https://ninecasino.com',
+    seo: true,
   },
 
   gtm: {

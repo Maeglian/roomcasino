@@ -109,8 +109,8 @@ export default {
 
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
       let locale;
-      if (this.$i18n.locale === 'en-ca') locale = 'en';
-      else if (this.$i18n.locale === 'fr-ca') locale = 'fr';
+      if (this.$i18n.locale === 'en-CA') locale = 'en';
+      else if (this.$i18n.locale === 'fr-CA') locale = 'fr';
       // eslint-disable-next-line prefer-destructuring
       else locale = this.$i18n.locale;
 
