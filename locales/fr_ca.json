@@ -85,7 +85,7 @@
     "terms": "J’ai  {minAge} ans et j’accepte les {br} {terms} et {policy}",
     "step2Title": "Veuillez remplir les informations ci-dessous !",
     "thanksRegistration": "Merci pour l'inscription",
-    "registrationBonus": "$225",
+    "registrationBonus": "CA$225",
     "registrationBonusText": "Pour votre premier dépôt! Profitez du bonus de Bienvenue de Ninecasino",
     "pleaseDepositText": "Obtenez votre bonus",
     "enterEmail": "Entrez l'email",
@@ -97,7 +97,7 @@
     "tryingConfirmEmail": "Nous essayons de vérifier votre email",
     "confirmEmailError": "Désolé, votre e-mail n'a pas été confirmé",
     "confirmEmailSuccess": "Félicitations ! Votre e-mail a été confirmé avec succès",
-    "bonus": "$450",
+    "bonus": "CA$450",
     "freeSpins": "250 tours gratuit",
     "placeholders": {
       "enterEmail": "Entrez votre email",
@@ -220,23 +220,23 @@
     "heroBanner": {
       "deposit1": {
         "title": "Remise quotidienne <br> en espèces jusqu'à  <span class=\"Colored\">20%</span>",
-        "text": "BONUS DE PREMIER<br/> DÉPÔT <span class = \"Colored\"> 100% </span> jusqu’à <br/><span class = \"Colored\">$225</span> + <span class=\"Colored\">250 tours gratuites</span>"
+        "text": "BONUS DE PREMIER<br/> DÉPÔT <span class = \"Colored\"> 100% </span> jusqu’à <br/><span class = \"Colored\">CA$225</span> + <span class=\"Colored\">250 tours gratuites</span>"
       },
       "deposit2": {
         "title": "Bonus de deuxième<br/> dépôt",
-        "text": "55% de bonus<br/> jusqu'à <span class=\"Colored\">$225</span><br/> sur votre deuxième dépôt"
+        "text": "55% de bonus<br/> jusqu'à <span class=\"Colored\">CA$225</span><br/> sur votre deuxième dépôt"
       },
       "deposit3": {
         "title": "Bonus de troisième<br/> dépôt",
-        "text": "100% de bonus<br/> jusqu'à <span class=\"Colored\">$225</span><br/> sur votre troisième dépôt"
+        "text": "100% de bonus<br/> jusqu'à <span class=\"Colored\">CA$225</span><br/> sur votre troisième dépôt"
       },
       "deposit4": {
         "title": "REPRISE DE FIN<br/> DE SEMAINE",
-        "text": "<span class=\"Colored\">40 % JUSQU’À $230</span>"
+        "text": "<span class=\"Colored\">40 % JUSQU’À CA$230</span>"
       },
       "highroller": {
         "title": "Bonus<br/> des grands<br/> joueurs",
-        "text": "<span class=\"Colored\">jusqu’à $800</span>"
+        "text": "<span class=\"Colored\">jusqu’à CA$800</span>"
       }
     },
     "advantages": {
@@ -420,27 +420,27 @@
     "text": "Ninecasino cherche constamment à offrir les meilleures promotions. Nous utilisons les dernières technologies et les commentaires de nos joueurs pour repenser nos promotions. Profitez-en!",
     "deposit1": {
       "title": "100%<br/> du montant du<br/> dépôt",
-      "upTo": "jusqu’à  $225 + 250 tours gratuit",
+      "upTo": "jusqu’à  CA$225 + 250 tours gratuit",
       "name": "Bonus de premier dépôt",
-      "text": "Effectuez votre premier dépôt sur Ninecasino et recevez jusqu’à $225 + 250 tours gratuit. Après votre premier dépôt, vous recevrez 50 tours gratuits chaque jour au cours des 5 jours suivants.<br/><br/>Pour activer le bonus, il suffit d’effectuer un premier dépôt de $30 ou plus. Le bonus sera versé automatiquement. "
+      "text": "Effectuez votre premier dépôt sur Ninecasino et recevez jusqu’à CA$225 + 250 tours gratuit. Après votre premier dépôt, vous recevrez 50 tours gratuits chaque jour au cours des 5 jours suivants.<br/><br/>Pour activer le bonus, il suffit d’effectuer un premier dépôt de CA$30 ou plus. Le bonus sera versé automatiquement. "
     },
     "deposit2": {
       "title": "55%<br/> du montant du<br/> dépôt",
-      "upTo": "jusqu’à  $225",
+      "upTo": "jusqu’à  CA$225",
       "name": "Bonus de deuxième dépôt ",
-      "text": "Effectuez votre deuxième dépôt sur Ninecasino et recevez jusqu’à $225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un deuxième dépôt de $30 ou plus. Le bonus sera versé automatiquement."
+      "text": "Effectuez votre deuxième dépôt sur Ninecasino et recevez jusqu’à CA$225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un deuxième dépôt de CA$30 ou plus. Le bonus sera versé automatiquement."
     },
     "deposit3": {
       "title": "100%<br/> du montant du<br/> dépôt",
-      "upTo": "jusqu’à  $225",
+      "upTo": "jusqu’à  CA$225",
       "name": "Bonus de troisième dépôt",
-      "text": "Effectuez votre troisième dépôt sur Ninecasino et recevez jusqu’à $225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un troisième dépôt de $30 ou plus. Le bonus sera versé automatiquement."
+      "text": "Effectuez votre troisième dépôt sur Ninecasino et recevez jusqu’à CA$225.<br/><br/>Pour activer le bonus, il suffit d’effectuer un troisième dépôt de CA$30 ou plus. Le bonus sera versé automatiquement."
     },
     "deposit4": {
       "title": "reprise de fin<br/> de semaine",
-      "upTo": "40 % JUSQU’À $230",
+      "upTo": "40 % JUSQU’À CA$230",
       "name": "reprise de fin de semaine",
-      "text": "Commencez avec plus pour gagner plus. Faites un dépôt d’au moins $20 et recevez un bonus de 40 % jusqu’à $230 qui vous permettra de faire tourner ces machines à sous jusqu’à ce que le jackpot explose!"
+      "text": "Commencez avec plus pour gagner plus. Faites un dépôt d’au moins CA$20 et recevez un bonus de 40 % jusqu’à CA$230 qui vous permettra de faire tourner ces machines à sous jusqu’à ce que le jackpot explose!"
     },
     "cashback": {
       "title": "REMISE <br/> QUOTIDIENNE",
@@ -449,9 +449,9 @@
       "text": "Qui n’aime pas les remises en espèces gratuites dans les casinos? Même si vous avez perdu!<br/> Oui, vous avez bien lu: nous vous offrons une remise en espèces avec un pari de 5 fois en cas de perte."
     },
     "highroller": {
-      "upTo": "up to $800",
+      "upTo": "up to CA$800",
       "name": "Bonus des grands joueurs",
-      "text": "Vous aimez miser gros? Dans ce cas, nous savons ce dont vous avez besoin. Une fois par mois, bénéficiez d’un bonus spécial pour les grands joueurs de 30% jusqu’à $800 sur votre dépôt à partir de $450."
+      "text": "Vous aimez miser gros? Dans ce cas, nous savons ce dont vous avez besoin. Une fois par mois, bénéficiez d’un bonus spécial pour les grands joueurs de 30% jusqu’à CA$800 sur votre dépôt à partir de CA$450."
     },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins <br/>Slots",
@@ -467,12 +467,6 @@
       "upTo": "une cagnotte de 2500 €",
       "name": "À vos marques pour le Weekly Derby",
       "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
-    },
-    "demigods": {
-      "title": "Demi Gods Tales <br/>Tournament",
-      "upTo": "20 000 €",
-      "name": "Racontez l’histoire de Demi God Tales",
-      "text": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales."
     }
   },
   "tournaments": {
@@ -667,7 +661,7 @@
           "It's the responsibility of the player to ensure that all documents as a part of the KYC process are genuine. Faked or fraudulent documents provided may result in a confiscation of deposits and potential winnings of the player.",
           "In order to make a withdrawal, a player must play through active deposited amounts at least once prior to withdrawal. This procedure is in line with anti money laundering practices. The player is fully responsible for paying all fees and taxes applied to their winnings according to the laws of the jurisdiction of the player’s residence.",
           "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country. For Visa, the following countries are not supported: Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
-          "In the unlikely event of a player depositing crypto currency funds to another crypto currency network address (such as but not limited to: sending BTC to a BCH address). Ninecasino will not attempt to recover the amount unless it exceeds $5000. In such cases, a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to pursue the recovery, however it's not a guarantee to get the funds recovered.",
+          "In the unlikely event of a player depositing crypto currency funds to another crypto currency network address (such as but not limited to: sending BTC to a BCH address). Ninecasino will not attempt to recover the amount unless it exceeds CA$5000. In such cases, a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to pursue the recovery, however it's not a guarantee to get the funds recovered.",
           "The internal operating currency of the Website is Euro. Due to this fact, in case you transact in other currencies, the amount deducted from your credit card may be insignificantly higher than displayed at the time of transaction due to currency conversions on the side of your bank and/or the Casino's payment processing system.",
           "All Bank Transfer payouts are processed within five (5) banking days. Please mind that you will not be able to request a Bank Transfer for USD payouts.",
           "You acknowledge that withdrawals via bank transfers can in exceptional cases be subject to additional charges by the intermediary banks. These charges remain outside the influence of The Casino and are limited to the equivalent of EUR 16.",
@@ -1336,10 +1330,10 @@
         "text": "You begin to participate in the VIP program after making your first deposit."
       },
       {
-        "text": "CP is credited at the rate of 1 CP for every $ 12.5, 12.5 EUR, 15 CAD, 15 AUD, 15 NZD, 125 NOK, 325 CZK."
+        "text": "CP is credited at the rate of 1 CP for every CA$ 12.5, 12.5 EUR, 15 CAD, 15 AUD, 15 NZD, 125 NOK, 325 CZK."
       },
       {
-        "text": "Exchange CP - 1 $, 1 EUR, 1.25 CAD, 1.25 AUD, 1.25 NZD, 10 NOK, 25 CZK, 17 ZAR, 4 PLN for 100 CP."
+        "text": "Exchange CP - 1 CA$, 1 EUR, 1.25 CAD, 1.25 AUD, 1.25 NZD, 10 NOK, 25 CZK, 17 ZAR, 4 PLN for 100 CP."
       },
       {
         "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
@@ -1420,36 +1414,6 @@
     ],
     "metaTitle": "➤ La Happy Harvest Lotto avec une cagnotte impressionnante de 5,000 tours gratuits – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
     "metaDescription": "✭ Tentez votre chance dans le nouveau Happy Harvest Lotto de NineCasino ➔ Accomplissez des missions et gagnez des prix!"
-  },
-  "demigods": {
-    "title": "Demi Gods Tales <br>Tournament <br>2er tour",
-    "prize": "20 000 €",
-    "text": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales.",
-    "textMobile": "Les mythes grecs sur les dieux, les demi-dieux, les héros et les humains comptent un millier d’histoires fascinantes racontées à l’humanité depuis des siècles. Spinomenal a pris ces contes grandioses et les a transformés en une série inoubliable de jeux de machines à sous dans le tournoi Demi Gods Tales.",
-    "terms": [
-      {
-        "title": "El 2er tour se déroule du 30 août 2021 (0 h 00 UTC) au 5 septembre 2021 (23 h 00 UTC).<br><br>"
-      },
-      {
-        "title": "Jeux participants:<br>Demi Gods III, Demi Gods III – 15 Lines, Book Of Demi Gods III.<br><br>"
-      },
-      {
-        "title": "Les 150 premiers joueurs du classement se partageront un prix de 20 000 EUR.<br><br>"
-      },
-      {
-        "title": "Jouez à l’un des jeux participants. Chaque fois que le symbole « Odin » apparaît sur l’un des rouleaux, vous serez récompensé par 1 point (par exemple, si à la fin d’un tour) 3 symboles « Odin » apparaissent sur les rouleaux, vous serez récompensé par 3 points). "
-      },
-      {
-        "title": "Les points reçus sont comptabilisés pendant toute la durée du tournoi. Plus vous accumulez de points, plus vous êtes bien placé dans le classement."
-      },
-      {
-        "title": "La mise minimale de qualification par tour pour participer au tournoi est de 0,5 EUR."
-      }
-    ],
-    "metaInfo": {
-      "title": "➤ Le tournoi Demi God Tales avec une cagnotte impressionnante de 40 000 € – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
-      "description": "✭ Tentez votre chance dans le nouveau Demi God Tales de Spinomenal  ➔ Accomplissez des missions et gagnez des prix!"
-    }
   },
   "metaTags": {
     "promotions": {
