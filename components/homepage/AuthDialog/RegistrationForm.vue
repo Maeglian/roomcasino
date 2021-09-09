@@ -669,7 +669,7 @@ export default {
         }
         if (localStorage.getItem('cxd')) regData.cxd = localStorage.getItem('cxd');
         regData.locale = navigator.language || navigator.userLanguage;
-        regData.language = this.$i18n.locale === 'en-ca' ? 'en' : this.$i18n.locale;
+        regData.language = this.$i18n.locale === 'en-CA' ? 'en' : this.$i18n.locale;
         this.registerUser(regData).then(() => {
           if (!this.authError) {
             deleteObjValuesFromLocalStorage(this.fieldsStep1);

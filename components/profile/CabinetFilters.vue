@@ -82,8 +82,8 @@ export default {
       pl,
       el,
       nz: en,
-      'en-ca': en,
-      'fr-ca': fr,
+      'en-CA': en,
+      'fr-CA': fr,
     };
   },
   computed: {
