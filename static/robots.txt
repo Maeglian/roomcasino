@@ -1,10 +1,2 @@
 User-agent: *
-Disallow: /_nuxt/
-Disallow: *?
-Allow: /_nuxt/*.svg
-Allow: /_nuxt/*.png
-Allow: /_nuxt/*.jpg
-Allow: /_nuxt/*.js
-Allow: /_nuxt/*.css
-
-Sitemap: https://ninecasino.com/sitemap.xml
+Disallow: /
