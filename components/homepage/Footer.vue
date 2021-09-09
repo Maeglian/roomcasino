@@ -10,36 +10,38 @@
           {{ $t('pages.promotion') }}
         </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/about-us')">
-          {{ $t('pages.aboutUs') }}</NuxtLink
-        >
+          {{ $t('pages.aboutUs') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/bitcoins')">
-          {{ $t('pages.btc') }}</NuxtLink
-        >
+          {{ $t('pages.btc') }}
+        </NuxtLink>
         <!--        <NuxtLink class="Link Footer-Link" to="localePath('/vip')">-->
         <!--          VIP rewards-->
         <!--        </NuxtLink>-->
         <NuxtLink class="Link Footer-Link" :to="localePath('/aml-policy')">
-          {{ $t('pages.aml') }}</NuxtLink
-        >
+          {{ $t('pages.aml') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/terms')">
-          {{ $t('pages.terms') }}</NuxtLink
-        >
+          {{ $t('pages.terms') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/bonus-terms')">
-          {{ $t('pages.bonusPolicy') }}</NuxtLink
-        >
+          {{ $t('pages.bonusPolicy') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/responsible-gaming')">
-          {{ $t('pages.responsibleGaming') }}</NuxtLink
-        >
+          {{ $t('pages.responsibleGaming') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/risk-warnings')">
-          {{ $t('pages.risk') }}</NuxtLink
-        >
+          {{ $t('pages.risk') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/privacy-policy')">
-          {{ $t('pages.privacyPolicy') }}</NuxtLink
-        >
+          {{ $t('pages.privacyPolicy') }}
+        </NuxtLink>
         <NuxtLink class="Link Footer-Link" :to="localePath('/faq')">
-          {{ $t('pages.faq') }}</NuxtLink
-        >
-
+          {{ $t('pages.faq') }}
+        </NuxtLink>
+        <a href="https://chillipartners.com/" class="Link Footer-Link" target="_blank">
+          Affiliates
+        </a>
         <!--        <NuxtLink class="Link Footer-Link" to="/payment-methods">-->
         <!--          Payment methods-->
         <!--        </NuxtLink>-->
@@ -54,9 +56,22 @@
         <div class="Footer-Text">
           {{ $t('footer.text.p1') }}
         </div>
-        <div class="Footer-Text">
-          {{ $t('footer.text.p2') }}
-        </div>
+
+        <!--        &lt;!&ndash;noindex&ndash;&gt;&lt;!&ndash;googleoff: index&ndash;&gt;-->
+        <!--        <div class="Footer-Text Footer-Text&#45;&#45;nocopy">-->
+        <!--          {{ $t('footer.text.p2') }}-->
+        <!--        </div>-->
+        <!--        &lt;!&ndash;googleon: index&ndash;&gt;&lt;!&ndash;/noindex&ndash;&gt;-->
+
+        <picture class="Footer-TextImg">
+          <source media="(max-width: 340px)" srcset="@/assets/img/footer-text_320.png" />
+          <source media="(max-width: 459px)" srcset="@/assets/img/footer-text_460.png" />
+          <source media="(max-width: 589px)" srcset="@/assets/img/footer-text_600.png" />
+          <source media="(max-width: 767px)" srcset="@/assets/img/footer-text_767.png" />
+          <source media="(max-width: 900px)" srcset="@/assets/img/footer-text_900.png" />
+          <source media="(max-width: 1400px)" srcset="@/assets/img/footer-text_1400.png" />
+          <img src="@/assets/img/footer-text.png" alt="" />
+        </picture>
         <div class="Footer-Text">
           <i18n path="footer.text.p3">
             <template #support>
@@ -71,6 +86,11 @@
         </div>
       </div>
       <div class="Footer-Icons">
+        <div class="Footer-License">
+          <a href="#" @click.prevent="openInfoSertificate()">
+            <img src="@/assets/img/license.png" alt="license" />
+          </a>
+        </div>
         <div
           id="apg-034906ca-0989-44fa-8bff-6a0fdffc45bb"
           data-apg-seal-id="034906ca-0989-44fa-8bff-6a0fdffc45bb"
@@ -85,6 +105,9 @@
             <use xlink:href="@/assets/img/icons.svg#ssl"></use>
           </svg>
         </div>
+        <a class="Footer-MoreIcons" href="https://duxgroup.com/" target="_blank">
+          <img src="@/assets/img/logo-footer.svg" width="120" />
+        </a>
       </div>
     </div>
   </section>
@@ -102,6 +125,15 @@ export default {
   },
   mounted() {
     window.apg_034906ca_0989_44fa_8bff_6a0fdffc45bb.init();
+  },
+  methods: {
+    openInfoSertificate() {
+      window.open(
+        'https://certificates.gamingcommission.ca/KGCCertificates.aspx?id=b58a864d-54d2-4a91-8860-13a5980e5c5a',
+        'BrandNameCertificates',
+        'location=0,status=0,scrollbars=1',
+      );
+    },
   },
 };
 </script>
@@ -190,6 +222,12 @@ export default {
     }
   }
 
+  &-DisclaimerText {
+    @media (min-width: $screen-l) {
+      padding-right: 25px;
+    }
+  }
+
   &-Text {
     margin-right: 20px;
     margin-bottom: 17px;
@@ -200,6 +238,7 @@ export default {
 
   &-Icons {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
 
     @media (min-width: $screen-l) {
@@ -209,8 +248,9 @@ export default {
 
   &-MoreIcons {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-left: 0;
+    margin-left: 20px;
 
     @media (min-width: $screen-l) {
       margin-top: 15px;
@@ -242,6 +282,10 @@ export default {
 
   &-Contact {
     color: var(--color-text-main);
+  }
+
+  &-License {
+    margin-bottom: 10px;
   }
 }
 </style>

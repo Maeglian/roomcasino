@@ -61,6 +61,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  font-weight: 600;
   font-family: 'Montserrat', 'Verdana', sans-serif;
   background-color: var(--color-body);
   -webkit-text-size-adjust: none;
@@ -133,6 +134,14 @@ a {
 //}
 
 .Arrow {
+  cursor: pointer;
+
+  &--up {
+    transform: rotate(-180deg);
+  }
+}
+
+.ThickArrow {
   border: 6px solid transparent;
   border-top: 6px solid var(--color-text-main);
   cursor: pointer;
@@ -231,13 +240,28 @@ a {
 }
 
 .Toggle {
-  width: 17px;
-  height: 12px;
-  stroke: var(--color-text-main);
+  width: 25px;
+  height: 20px;
+  fill: var(--color-text-main);
+
+  @media (min-width: $screen-xs) {
+    width: 17px;
+    height: 12px;
+  }
 
   &--colored {
-    stroke: var(--color-main1);
+    fill: var(--color-main1);
   }
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(6, 8, 30, 0.9);
 }
 
 .Euro {
@@ -312,6 +336,101 @@ a {
 
 .Error {
   color: var(--color-error);
+}
+
+.Advantages {
+  width: 100%;
+
+  @media (min-width: $screen-m) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-Advantage {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 24px 26px;
+    background: var(--color-bg);
+
+    @media (min-width: $screen-m) {
+      flex-grow: 1;
+      flex-basis: 25%;
+      margin-right: 12px;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-l) {
+      margin-right: 13px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-right: 15px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &-AdvantageText {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    text-transform: capitalize;
+
+    @media (min-width: $screen-l) {
+      margin-right: 16px;
+    }
+  }
+
+  &-AdvantageBlock {
+    @media (min-width: $screen-l) {
+      margin-left: 14px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-left: 18px;
+    }
+  }
+
+  &-AdvantageTitle {
+    font-size: 12px;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+
+    @media (min-width: $screen-m) {
+      font-size: 14px;
+    }
+
+    @media (min-width: $screen-l) {
+      font-size: 20px;
+    }
+  }
+
+  &-AdvantageInfo {
+    font-size: 9px;
+    color: var(--color-text-faded);
+    text-transform: uppercase;
+
+    @media (min-width: $screen-l) {
+      font-size: 12px;
+    }
+  }
+}
+
+.Advantages--min {
+  .Advantages-Advantage {
+    padding: 24px 14px;
+
+    @media (min-width: $screen-l) {
+      padding: 24px 21px;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding: 33px 54px;
+    }
+  }
 }
 
 .v_slider__list {

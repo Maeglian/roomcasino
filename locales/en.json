@@ -11,7 +11,7 @@
     "deposit": "Deposit",
     "depositNow": "Deposit now",
     "loadMoreGames": "Load more games",
-    "playForFun": "Play for fun",
+    "playForFun": "Demo",
     "playNow": "Play now",
     "showMore": "Show more",
     "saveChanges": "Save changes",
@@ -72,10 +72,10 @@
   "notifications": {
     "cancelBonusError": "Error on cancelling bonus",
     "cancelBonusSuccess": "Your bonus was cancelled",
-    "cancelFreeSpinError": "Error on cancelling free spin",
-    "cancelFreeSpinSuccess": "Your free spin was cancelled",
-    "activateFreeSpinError": "Error on activating free spin",
-    "activateFreeSpinSuccess": "Your free spin was activated"
+    "cancelFreeSpinError": "Error on cancelling free spins",
+    "cancelFreeSpinSuccess": "Your free spins were cancelled",
+    "activateFreeSpinError": "Error on activating free spins",
+    "activateFreeSpinSuccess": "Your free spins were activated"
   },
   "auth": {
     "loginTitle": "Welcome back",
@@ -98,7 +98,7 @@
     "confirmEmailError": "Sorry, you email was not confirmed",
     "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed",
     "bonus": "$450",
-    "freeSpins": "150 free spins",
+    "freeSpins": "250 free spins",
     "placeholders": {
       "enterEmail": "Enter your email",
       "enterPassword": "Enter your password",
@@ -131,12 +131,30 @@
     "btc": "About BTC",
     "aml": "AML policy",
     "terms": "Terms and conditions",
-    "bonusPolicy": "Bonus policy",
+    "bonusPolicy": "Bonus terms",
     "privacyPolicy": "Privacy policy",
     "responsibleGaming": "Responsible Gaming",
     "risk": "Risk warnings",
     "tournaments": "Tournaments",
-    "dailyCashback": "Daily cashback"
+    "lottery": "Lottery",
+    "dailyCashback": "Daily cashback",
+    "search": "Search"
+  },
+  "gameCategoriesTabs": {
+    "top": "Top",
+    "all": "All",
+    "live": "Live",
+    "slots": "Slots",
+    "roulette": "Roulette",
+    "table": "Table",
+    "card": "Card",
+    "recent": "Last",
+    "new": "New",
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "gameCategories": {
     "top": "Top games",
@@ -146,19 +164,29 @@
     "roulette": "Roulette",
     "table": "Table Games",
     "card": "Card games",
-    "recent": "Recent games",
-    "new": "New games"
+    "recent": "Last games",
+    "new": "New games",
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "footer": {
     "text": {
-      "p1": "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
-      "p2": "Copyright © 2020 www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorized to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
+      "p1": "You understand that by participating in the games, you risk losing the money deposited to your account on www.ninecasino.com. In some jurisdictions, online gambling may be illegal. You understand and agree that www.ninecasino.com is not able to provide you legal advice or guarantees regarding the legality of your use of the services of the Website. The Company does not affirm that the services of the Website comply with legal requirements in your jurisdiction. You use the services provided by www.ninecasino.com by your own choice and at your sole discretion, as well, assuming the risk of liability, making a decision as to whether the use of the services of the Website is legal in accordance with the current legislation of your jurisdiction.You log in the Website and participate in the games at your own risk.",
+      "p2": "Copyright © 2020 www.ninecasino.com is operated by Scartesu Ltd., payment operator of Dux Group N.V., by the laws of Cyprus acting as an agent on behalf of Dux Group N.V., registered in Cyprus with registered address: Boumpoulinas 1, 3rd floor, flat/office 31, 1060, Nicosia, Cyprus, and registration No. ΗΕ 410983. The governing law of the website is Cyprus law. The website www.ninecasino.com is owned by Dux Group N.V., a company registered and established under the laws of Curaçao, with registration No. 155114 and registered address at Perseusweg 27A, Willemstad, Curaçao. Dux Group N.V. is licensed by the Government of Curaçao as an Information Provider legally authorized to conduct online gaming operations from Curaçao under license No. 8048/JAZ2020-075. Remote gaming licensing and supervision is provided by Antillephone N.V. It is the player’s sole responsibility to inquire about the existing laws and regulations of the given jurisdiction for online gambling.",
       "p3": "If you have any questions or suggestions about our site, please contact us {support} or {phone}"
     }
   },
   "search": {
-    "findGame": "Find game",
-    "notFound": "Nothing was found"
+    "findGame": "Search games",
+    "notFound": "Nothing was found",
+    "search": "Search",
+    "searchResults": "Search results",
+    "nothingFound": "Sorry, nothing found",
+    "try": "Try searching for something else",
+    "popular": "Popular searches"
   },
   "common": {
     "date": "Date",
@@ -176,7 +204,18 @@
     "wager": "Wager",
     "created": "Created",
     "expiresAt": "Expires at",
-    "noData": "No data available"
+    "noData": "No data available",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "week": "Week",
+    "name": "Name",
+    "points": "Points",
+    "prize": "Prize",
+    "prizePool": "Prize pool",
+    "freeSpins": "Free Spins",
+    "winners": "Winners"
   },
   "actions": {
     "addCurrency": "Add currency"
@@ -185,7 +224,7 @@
     "heroBanner": {
       "deposit1": {
         "title": "Daily cashback  <br/>  up to <span class=\"Colored\">20%!</span>",
-        "text": "Make your first deposit<br/> and get <span class=\"Colored\">100%</span><br/> up to <span class=\"Colored\">$150</span> + <span class=\"Colored\">150 free spins</span>"
+        "text": "Make your first deposit<br/> and get <span class=\"Colored\">100%</span><br/> up to <span class=\"Colored\">$150</span> + <span class=\"Colored\">250 free spins</span>"
       },
       "deposit2": {
         "title": "Second deposit<br/> bonus",
@@ -301,6 +340,7 @@
       "subscriptions": "Subscriptions",
       "sms": "Send promos by e-mail",
       "email": "Send promos by sms",
+      "denyBonuses": "I don’t want to receive any Bonuses",
       "passwordChange": "Password change",
       "oldPassword": "Old password",
       "newPassword": "New password",
@@ -381,157 +421,81 @@
   },
   "promotions": {
     "title": "Current promotions",
-    "text": "Ninecasino is constantly working to deliver the best promotions. We use the latest         technology and the feedback from our players to re-design our promotions. Enjoy!",
+    "text": "Ninecasino is constantly working to deliver the best promotions. We use the latest technology and feedback from our players to improve our promos all the time. Enjoy!",
     "deposit1": {
       "title": "100%<br/> of the deposit<br/> amount",
-      "upTo": "up to $150 + 150 FREE SPINS",
+      "upTo": "up to €150 + 250 FREE SPINS",
       "name": "First deposit bonus",
-      "text": "Make your first deposit at Ninecasino and get up to $150 + 150 free spins.<br/><br/>To activate the bonus - just make first deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your first deposit at NineCasino and get up to €150 + 250 free spins. After your first deposit, you'll get 50 Free Spins every day for the next 5 days.<br/><br/>To activate the bonus just make a first deposit of €20 or more. The bonus will be credited automatically."
     },
     "deposit2": {
       "title": "55%<br/> of the deposit<br/> amount",
-      "upTo": "up to $150",
+      "upTo": "up to €150",
       "name": "Second deposit bonus",
-      "text": "Make your second deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make second deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your second deposit at Ninecasino and get up to €150.<br/><br/>To activate the bonus just make a third deposit of €20 or more. The bonus will be credited automatically."
     },
     "deposit3": {
       "title": "100%<br/> of the deposit<br/> amount",
-      "upTo": "up to $150",
+      "upTo": "up to €150",
       "name": "Third deposit bonus",
-      "text": "Make your third deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your third deposit at Ninecasino and get up to €150.<br/><br/>To activate the bonus - just make third deposit of €20 or more. The bonus will be credited automatically."
     },
     "deposit4": {
       "title": "Weekend<br/> reload",
-      "upTo": "40% UP TO $150",
+      "upTo": "40% UP TO €150",
       "name": "weekend reload",
-      "text": "Start with more, win more. Deposit at least $20 and get a 40% bonus up to $150 that will help to spin those slots silly, until the jackpot explodes!"
+      "text": "Start with more, win more. Deposit at least $20 and get a 40% bonus up to $150 to help spin those slots silly, until the jackpot explodes!"
     },
     "cashback": {
       "title": "Daily<br/> cashback",
       "upTo": "up to 20%",
       "name": "Daily cashback",
-      "text": "Who doesn’t like free casino cashback? Even if you lost!<br/> Yes, you read right - we give you cashback with wager x5 in case of losing."
-    },
-    "playsonMay": {
-      "title": "Playson may<br/> cashdays",
-      "name": "Playson May CashDays",
-      "text": "Welcome another month and another CashDays 60k tournamentby the well-known provider.<br/><br/>The prize pool of 60,000 EUR is waiting for their winners."
-    },
-    "mayMadness": {
-      "title": "May<br/> madness<br/> by spinomenal",
-      "name": "May madness by spinomenal",
-      "text": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!<br/><br/>Let’s start with Round III! It runs between May 25, 2021, 00:00 GMT, and June 1, 2021, 23:59 GMT."
+      "text": "Who doesn’t like free casino cashback when losing?<br/> Yes, you read right! We give you cashback with only 5x wagering when losing!"
     },
     "highroller": {
-      "upTo": "up to $500",
+      "upTo": "up to €500",
       "name": "High roller bonus",
-      "text": "Are you fond of making high bets? Then we know what you need. Once a month get a special 30% high roller bonus up to $500 on your deposit starting from $300."
-    },
-    "knockoutFootball": {
-      "title": "Let’s play<br/> with Habanero <br/>Round 2!",
-      "name": "Let’s play with Habanero Round 2!",
-      "text": "Join the Knockout Football Rush campaign by Habanero with 30,000 EUR from 26th June to 17th July 2021.<br/><br/>The Jackpot Race Knockout Football Rush will continue between 26th June 00:01 and 17th July 23:59, GMT+2. With 22 daily races and a total prize amount of 30,000 EUR distributed randomly to 2,200 players.<br/><br/>Ready, set, go with NineCasino and Habanero! Log in every day to find a new total daily prize, varying from 1,000 to 2,500 EUR. Just choose your favourite Habanero slot games, make a minimum stake of 0.10 EUR, and let’s kick off this campaign!"
+      "text": "Are you fond of making big bets? Then we’ve got what you need. Once a month get a special 30% high roller bonus up to €500 on your deposit, starting from €300."
     },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
-      "text": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! To play with a multiplier is more fun. That’s why this time there are Weeks 21-24 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!"
+      "text": "Welcome to the new Stage 8 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! <br><br>They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 29-32 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!"
     },
     "dropsWinsLive": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!"
+    },
+    "weekly_derby": {
+      "upTo": "prize pool €2,500",
+      "name": "Saddle up for the Weekly Derby",
+      "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
     }
   },
   "tournaments": {
     "games": "Games in this tournament",
-    "terms": "Tournament terms and conditions"
-  },
-  "playsonMay": {
-    "prize": "€ 60 000",
-    "text": "Welcome another month and another CashDays 60k tournamentby the well-known provider. Playson knows how to treat its beloved players. The prize pool of 60,000 EUR is waiting for their winners.<br/>The tournament runs between 0:01 UTC on the 1st of May 2021 and 8th of May 2021 until 23:59 UTC.",
-    "textMobile": "Welcome another month and another CashDays 60k tournamentby the well-known provider.",
-    "terms": [
-      {
-        "text": "The tournament runs between 0:01 UTC on the 1st of May 2021 and 8th of May 2021 until 23:59 UTC."
-      },
-      {
-        "text": "There are 10 participating games:<br/>●  Book of Gold: Double Chance<br/>●  Book of Gold: Multichance<br/>●  Buffalo Power: Hold and Win<br/>●  Burning Wins: classic 5 lines<br/>●  Diamond Wins: Hold and Win<br/>●  Divine Dragon: Hold and Win<br/>●  Legend of Cleopatra MegawaysTM<br/>●  Solar Queen<br/>●  Solar Temple<br/>●  Wolf Power: Hold and Win"
-      },
-      {
-        "text": "Points are calculated round-by-round, with each 1 EUR (or currency equivalent) won equaling 10 points."
-      },
-      {
-        "text": "The minimum bet required to qualify is 0.50 EUR."
-      },
-      {
-        "text": "The munificent prize pool of 60,000 EUR will be shared between 350 lucky players."
-      },
-      {
-        "text": "The more points you earn, the higher your chances of winning are."
-      }
-    ]
-  },
-  "mayMadness": {
-    "prize": "€ 60 000",
-    "text": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!<br/><br/>Let’s start with Round III! It runs between May 25, 2021, 00:00 GMT, and June 1, 2021, 23:59 GMT.",
-    "textMobile": "Again the well-known Spinomenal will drive you nuts with the exciting May Madness tournament. During the three weeks in May, you can enjoy its cool slots and tear a piece of the lavish prize pool of 60,000 EUR!",
-    "terms": [
-      {
-        "text": "Round III runs between between May 25, 2021, 00:00 GMT, and June 1, 2021, 23:59 GMT."
-      },
-      {
-        "text": "Participating games in Round III:<br/><br/>●  Book Of Rebirth<br/>●  Origins Of Lilith<br/>●  4 Horsemen II"
-      },
-      {
-        "text": "The minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
-      },
-      {
-        "text": "Each win rewards you with a score based on the win multiplier. The more points you collect, the higher your position on the leaderboard."
-      }
-    ]
-  },
-  "knockoutFootball": {
-    "title": "Let’s play<br/> with Habanero <br/>Round 2!",
-    "prize": "EUR 30,000",
-    "text": "Join the Knockout Football Rush campaign by Habanero with 30,000 EUR from 26th June to 17th July 2021.<br/><br/>The Jackpot Race Knockout Football Rush will continue between 26th June 00:01 and 17th July 23:59, GMT+2. With 22 daily races and a total prize amount of 30,000 EUR distributed randomly to 2,200 players.<br/><br/>Ready, set, go with NineCasino and Habanero! Log in every day to find a new total daily prize, varying from 1,000 to 2,500 EUR. Just choose your favourite Habanero slot games, make a minimum stake of 0.10 EUR, and let’s kick off this campaign!",
-    "textMobile": "Join the Knockout Football Rush campaign by Habanero with 30,000 EUR from 26th June to 17th July 2021.",
-    "terms": [
-      {
-        "title": "Campaign duration: ",
-        "text": "26th June – 17th July 2021, GMT+2"
-      },
-      {
-        "title": "Campaign structure:",
-        "text": "22 races, each 2h long "
-      },
-      {
-        "title": "Prize pool information:",
-        "text": "2,200 winners, 100 per race"
-      },
-      {
-        "title": "Minimum bet requirements:",
-        "text": "EUR 0.10"
-      },
-      {
-        "title": "Additional terms and conditions:",
-        "text": "• Qualifying content: all Habanero slots games <br/>• Qualifying criteria: at a random moment during the race a player will trigger the first win, all consecutive bets received by the server will then contribute to your position<br/>• Habanero has the right to change, suspend or cancel the promotion at any time"
-      }
-    ]
+    "terms": "Tournament terms and conditions",
+    "timeLeft": "Time left until finish",
+    "duration": "Duration",
+    "betsPerPoint": "Bets per point",
+    "currentWinners": "Current winners",
+    "previousRound": "Previous round",
+    "endsIn": "Tournament ends in"
   },
   "dropsWinsSlots": {
-    "title": "Upgraded Drops & Wins Slots edition",
+    "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
     "prize": "€4,000,000",
-    "text": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! To play with a multiplier is more fun. That’s why this time there are Weeks 21-24 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!",
-    "textMobile": "Welcome to the new Stage 6 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops and Wins’ budget to €500,000!",
+    "text": "Welcome to the new Stage 8 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000! They are also increasing the number of monthly cash prizes and giving you even more chances to win. To play with a multiplier is more fun.  Take part in the exciting Drops & Wins and get a chance to win a share of the massive €4,000,000 in prizes! That’s why this time there are Weeks 29-32 of Weekly Tournaments (Prize Multiplier Weeks), and Daily Prize Drops (Prize Multiplier Weeks) with some new games!",
+    "textMobile": "Welcome to the new Stage 8 of the Daily Drops & Wins Promotion. Pragmatic Play has decided to double a monthly Slots edition of Drops & Wins’ budget to €500,000!",
     "terms": [
       {
-        "title": "Stage 6 runs between",
-        "text": "● Week 21: 30th June 2021 09:01 CEST – 7th July 2021 18:59 CEST<br/>● Week 22: 7th June 2021 19:01 CEST – 14th July 2021 18:59 CEST<br/>● Week 23: 14th July 2021 19:01 CEST – 21st July 2021 18:59 CEST<br/>● Week 24: 21st July 2021 19:01 CEST – 28th July 2021 18:59 CEST"
+        "title": "Stage 8 runs between",
+        "text": "● Week 29: 25th August 2021 19:01 CEST – 1st September 2021 18:59 CEST<br/>● Week 30: 1st September 2021 19:01 CEST – 8th September 2021 18:59 CEST<br/>● Week 31: 8th September 2021 19:01 CEST – 15th September 2021 18:59 CEST<br/>● Week 32: 15th September 2021 19:01 CEST – 22nd September 2021 18:59 CEST"
       },
       {
         "title": "Games in this tournament",
-        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Buffalo King Megaways™, The Hand of Midas™, Floating Dragon Hold & Spin™, The Magic Cauldron – Enchanted Brew™, Heart of Rio™, Dragon Hot Hold and Spin™, Lucky Lightning™, 5 Lions Megaways™."
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House ™, The Dog House Megaways™, Chilli Heat ™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Book of Vikings™, Chicken Drop™, Fruit Party 2™, Rise of Giza PowerNudge™, Juicy Fruits™."
       },
       {
         "title": "Drops & Wins includes",
@@ -539,27 +503,27 @@
       },
       {
         "title": "How to win",
-        "text": "● Highest single spin win amount adjusted for bet amount.<br/>● Any real money spin in the participating games may trigger a random cash prize.<br/>● Players need to choose to play with real money in any of the participating games with NO minimum bet requirement. There is no additional cost for players to participate."
+        "text": "● A player must place a real money bet on any of the participating games and must get at least one (1) in-game win to qualify for the Weekly Tournament.<br/>● No minimum real money bet is required for players to be eligible to participate in the Daily Prize\u2028Drops (Prize Multiplier Weeks)."
       },
       {
         "title": "Additionally",
-        "text": "● Players participating during multiplier weeks may win prizes in the form of a multiplier of the winning player’s bet amount as set out in the Weekly Tournament (Prize Multiplier Weeks) Prize Table – and the Daily Prize Drop (Prize Multiplier Weeks) Prize Table further below (hereinafter the “Prize Multiplier Weeks”).<br/>● If the winning spin exceeds ten Euros (€ 10), the prize will be paid out based on a bet of ten Euros (€ 10) or the equivalent amount in the Available Currency (as defined further below) X multiplier received.<br/>● The leaderboard is ranked in accordance with the score, which score is based on the highest single spin win amount on any participating game adjusted to the amount of the bet.<br/>● In the event of two (2) or more players finishing a Weekly Tournament on the same leaderboard position, the player who has achieved the score first will receive the higher prize."
+        "text": "● Players participating during multiplier weeks may win prizes in the form of a multiplier r of the winning player’s bet amount as set out in the Weekly Tournament (Prize Multiplier Weeks) Prize Table – and the Daily Prize Drop (Prize Multiplier Weeks) Prize Table further below (hereinafter the “Prize Multiplier Weeks”).<br/>● If the winning spin exceeds ten Euros/British Pounds Sterling (€/£ 10), the prize will be paid out based on a bet of ten Euros/British Pounds Sterling (€/£ 10) or the equivalent amount in the Available Currency (as defined further below) X multiplier received.<br/>● The leaderboard is ranked in accordance with the score, which score is based on the highest single spin win amount on any participating game adjusted to the amount of the bet.<br/>● In the event of two (2) or more players finishing a Weekly Tournament on the same leaderboard position, the player who has achieved the score first will receive the higher prize."
       }
     ]
   },
   "dropsWinsLive": {
-    "title": "Drops and Wins for Live Casino",
+    "title": "DROPS <span class=\"Colored\">&</span> WINS FOR LIVE CASINO",
     "prize": "€3,000,000",
     "text": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!<br/><br/>Do you like Live games? This Live edition suits you for sure. Take part in the Weekly Tournaments - Roulette, Blackjack, Mega Wheel, Baccarat!",
     "textMobile": "Pragmatic Play gives you more and more opportunities to entertain yourself with the next level with its new Drops and Wins for Live Casino. Grab the chance to win a share of the impressive €3,000,000 in cash prizes!",
     "terms": [
       {
-        "title": "Stage 2 runs between",
-        "text": "● Week 5: 30th June 2021 09:01 CEST – 7th July 2021 18:59 CEST<br/>● Week 6: 7th July 2021 19:01 CEST – 14th July 2021 18:59 CEST<br/>● Week 7: 14th July 2021 19:01 CEST – 21st July 2021 18:59 CEST<br/>● Week 8: 21st July 2021 19:01 CEST – 28th July 2021 18:59 CEST"
+        "title": "Stage 4 runs between",
+        "text": "● Week 13: 25th August 2021 19:01 CEST – 1st September 2021 18:59 CEST<br/>● Week 14: 1st September 2021 19:01 CEST – 8th September 2021 18:59 CEST<br/>● Week 15: 8th September 2021 19:01 CEST – 15th September 2021 18:59 CEST<br/>● Week 16: 15th September 2021 19:01 CEST – 22nd September 2021 18:59 CEST"
       },
       {
         "title": "Participating Games/Tables",
-        "text": "<strong>Weekly Baccarat Tournament:</strong><br/>Baccarat A (ID – 401), Baccarat B (ID – 404), Baccarat C (ID – 405), Baccarat D (ID – 411), Baccarat E (ID – 413), Speed Baccarat A (ID – 402), Speed Baccarat B (ID – 403), Speed Baccarat C (ID – 412), Speed Baccarat D (ID – 414), Speed Baccarat E (ID – 415).<br/><br/><strong>Weekly Blackjack Tournament:</strong><br/>Live Blackjack A (ID – 301), Live Blackjack B (ID – 302), Live Blackjack C (ID – 303), Live Blackjack D (ID – 304), Live Blackjack E (ID – 305), Blackjack Azure A (ID – 511), Blackjack Azure B (ID – 512), Blackjack Azure C (ID – 513), Blackjack Azure D (ID – 514), Blackjack Azure E (ID – 515), Blackjack Azure F (ID – 516), Blackjack Azure G (ID – 517), Blackjack Azure H (ID – 518), Blackjack Azure I (ID – 519), Blackjack Azure J (ID – 520), ONE Blackjack (ID – 901).<br/><br/><strong>Tables to be added on 3rd June:</strong><br/>Blackjack 17 – Azure (ID – 521), Blackjack 18 – Azure (ID – 522), Blackjack 19 – Azure (ID – 523), Blackjack 20 – Azure (ID – 524), Blackjack 21 – Azure (ID – 525)<br/><br/><strong>Weekly Mega Wheel Tournament:</strong><br/>Mega Wheel (ID – 801)<br/><br/><strong>Weekly Roulette Tournament:</strong><br/>Auto-Roulette (ID – 225), Live Roulette A (ID – 201), Roulette Germany (ID – 222), Roulette Italy (ID – 223), Roulette Macao (ID – 206), Roulette Russia (ID – 221), Roulette Turkey (ID – 224), Speed Roulette (ID – 203), Roulette Azure (ID – 227), Mega Roulette (ID – 204) <strong>plus dedicated tables</strong>"
+        "text": "<strong>Weekly Baccarat Tournament:</strong><br/><br/>Baccarat A (ID – 401), Baccarat B (ID – 404), Baccarat C (ID – 405), Baccarat D (ID – 411), Baccarat E (ID – 413), Speed Baccarat A (ID – 402), Speed Baccarat B (ID – 403), Speed Baccarat C (ID – 412), Speed Baccarat D (ID – 414), Speed Baccarat E (ID – 415).<br/><br/><strong>Weekly Blackjack Tournament:</strong><br/><br/>Live Blackjack A (ID – 301), Live Blackjack B (ID – 302), Live Blackjack C (ID – 303), Live Blackjack D (ID – 304), Live Blackjack E (ID – 305), Blackjack Azure A (ID – 511), Blackjack Azure B (ID – 512), Blackjack Azure C (ID – 513), Blackjack Azure D (ID – 514), Blackjack Azure E (ID – 515), Blackjack Azure F (ID – 516), Blackjack Azure G (ID – 517), Blackjack Azure H (ID – 518), Blackjack Azure I (ID – 519), Blackjack Azure J (ID – 520), ONE Blackjack (ID – 901).<br/><br/><strong>Tables to be added on 3rd June:</strong><br/><br/>Blackjack 17 – Azure (ID – 521), Blackjack 18 – Azure (ID – 522), Blackjack 19 – Azure (ID – 523), Blackjack 20 – Azure (ID – 524), Blackjack 21 – Azure (ID – 525)<br/><br/><strong>Weekly Mega Wheel Tournament:</strong><br/><br/>Mega Wheel (ID – 801)<br/><br/><strong>Weekly Roulette Tournament:</strong><br/><br/>Auto-Roulette (ID – 225), Live Roulette A (ID – 201), Roulette Germany (ID – 222), Roulette Italy (ID – 223), Roulette Macao (ID – 206), Roulette Russia (ID – 221), Roulette Turkey (ID – 224), Speed Roulette (ID – 203), Roulette Azure (ID – 227), Mega Roulette (ID – 204) <strong>plus dedicated tables</strong>"
       },
       {
         "title": "Drops & Wins includes",
@@ -576,6 +540,38 @@
       {
         "title": "Additionally:",
         "text": "<strong>How to win:<br/><br/>Weekly Roulette Tournament<br/>Prizes:</strong> €50,000 in total across 1,000 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0,50 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 2x of the total Qualifying Bet to qualify for the Weekly Roulette Tournament.<br/><br/>A Player may increase their Weekly Roulette Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Any stakes placed on 1:1 odds bets (Red/Black, Odd/Even, 1:18/19:36) shall not be counted towards the Weekly Roulette Tournament score.<br/><br/><strong>Weekly Blackjack Tournament<br/>Prizes:</strong> €25,000 in total across 300 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €10 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Blackjack Tournament.<br/><br/>A Player may increase their Weekly Blackjack Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets and/or Bets Behind may be considered for the Weekly Blackjack Tournament.<br/><br/><strong>Weekly Mega Wheel Tournament<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Mega Wheel Tournament.<br/><br/>A Player may increase their Weekly Mega Wheel Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>All Qualifying Bets may be considered for the Weekly Mega Wheel Tournament.<br/><br/><strong>Weekly Baccarat Tournaments<br/>Prizes:</strong> €25,000 in total across 600 prizes:<br/>Players need to choose to play with real money in any of the participating games with a minimum bet requirement of €0.5 during the promo period. There is no additional cost for players to participate.<br/><br/>A player must receive a minimum of 2 Consecutive Qualifying Wins, where each Consecutive Qualifying Win is greater than 1x of the total Qualifying Bet to qualify for the Weekly Baccarat Tournament.<br/><br/>A Player may increase their Weekly Baccarat Tournament score upon every additional Consecutive Qualifying Win.<br/><br/>Only Main Bets (Player, Banker, and Tie) may be considered for the Weekly Baccarat Tournament score."
+      }
+    ]
+  },
+  "weekly_derby": {
+    "title": "The Ninecasino<br/> Weekly Derby",
+    "prize": "€2,500",
+    "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
+    "textMobile": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
+    "terms": [
+      {
+        "text": "It runs for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC."
+      },
+      {
+        "text": "The prize fund is €2,500. The prizes must be played through x5 (wager x5)."
+      },
+      {
+        "text": "If a player places bets in a currency other than euro, the prizes will be issued in the currency in which the player made the most of the bets."
+      },
+      {
+        "text": "Players with at least one deposit will participate in the tournament. For each real money bet of €1 the player will receive 1 tournament point."
+      },
+      {
+        "text": "The minimum bet to start participating is €0.5."
+      },
+      {
+        "text": "Only bets in slots will be taken into account; no bets in board games and games with dealers will be taken into account."
+      },
+      {
+        "text": "The winner will be determined by the number of tournament points: the more tournament points the player has, the closer the player is to victory. Prizes will be awarded automatically at the end of the tournament."
+      },
+      {
+        "text": "General Bonus Terms and Conditions must be observed."
       }
     ]
   },
@@ -668,7 +664,7 @@
           "We reserve the right to carry out verification procedures for each client at first withdrawal. Such verifications may for example include copies of a player’s passport, national Identity Card, copies of a player’s utility bills, and/or copies of the debit/credit cards used to deposit.",
           "It's the responsibility of the player to ensure that all documents as a part of the KYC process are genuine. Faked or fraudulent documents provided may result in a confiscation of deposits and potential winnings of the player.",
           "In order to make a withdrawal, a player must play through active deposited amounts at least once prior to withdrawal. This procedure is in line with anti money laundering practices. The player is fully responsible for paying all fees and taxes applied to their winnings according to the laws of the jurisdiction of the player’s residence.",
-          "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country.. For Visa, the following countries are not supported: USA, New Zealand, Australia, Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
+          "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country. For Visa, the following countries are not supported: Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
           "In the unlikely event of a player depositing crypto currency funds to another crypto currency network address (such as but not limited to: sending BTC to a BCH address). Ninecasino will not attempt to recover the amount unless it exceeds $5000. In such cases, a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to pursue the recovery, however it's not a guarantee to get the funds recovered.",
           "The internal operating currency of the Website is Euro. Due to this fact, in case you transact in other currencies, the amount deducted from your credit card may be insignificantly higher than displayed at the time of transaction due to currency conversions on the side of your bank and/or the Casino's payment processing system.",
           "All Bank Transfer payouts are processed within five (5) banking days. Please mind that you will not be able to request a Bank Transfer for USD payouts.",
@@ -817,7 +813,7 @@
       },
       "ourSoftware": {
         "title": "Our software",
-        "text": "The casino uses products that have been made by the best developers of casino software and games in the industry. Amatic, BetSoft, Endorphina, Ezugi, Microgaming, and SoftSwiss. Every gambler will be familiar with them firsthand and trust everything that these names stand for. We trust them too. We do not want our players to feel like experimental lab mice in an abortive experiment, so we offer a reliable solution that we would be delighted to use  ourselves as gamblers."
+        "text": "The casino uses products that have been made by the best developers of casino software and games in the industry. Amatic, BetSoft, Endorphina, Microgaming, and Bgaming. Every gambler will be familiar with them firsthand and trust everything that these names stand for. We trust them too. We do not want our players to feel like experimental lab mice in an abortive experiment, so we offer a reliable solution that we would be delighted to use  ourselves as gamblers."
       },
       "offers": {
         "title": "What do we offer",
@@ -903,10 +899,6 @@
             {
               "title": "I’ve just requested a withdrawal. Do I need to send any documentation?",
               "answer": "As part of our security procedure, we require standard verification documents upon customers' first withdrawal request. If your funds are being returned by Wire Transfer or your withdrawal is general winnings above the amount you have deposited, we kindly ask you to provide us with the following:<br/><br/><br/><br/><ol><li>Utility bill no older than 6 months</li><li>Copy of the front of your credit card (for security reasons, please ensure that the middle 8 digits on the front of your credit card are hidden)</li><li>Proof of ID (Passport/Driving Licence etc.)</li><li>If you are withdrawing to an E-Wallet account, please provide us with your account number/email address attached to the account.</li></ol><br/><br/>We check documents as quickly as possible, usually less than 12 hours. It could take longer if extra verification is needed, so if you haven’t heard from us within 48 hours, please contact customer support."
-            },
-            {
-              "title": "How long will it take to receive my withdrawal?",
-              "answer": "Our Lightning Withdrawals means you'll get your cash within 24 hours, subject to providing any information we require in accordance with our terms and conditions.For a complete timetable of when you should expect to see your funds in your account, please visit the Withdraw section of the Cashier."
             },
             {
               "title": "How long will it take to receive my withdrawal?",
@@ -1014,7 +1006,7 @@
           "Account linkage/multiple accounting"
         ],
         "text2": [
-          "All instances of suspected Money Laundering attempts must be reported to the MLRO but that       suspicion must not be conveyed to the customer and further actions must await consents. The       MLRO is then responsible for liaising with, submitting Suspicious Activity Reports and seeking       consents from the NCA/UKFIU where and when appropriate. He will also ensure that appropriate       registers are kept for all related reporting.",
+          "All instances of suspected Money Laundering attempts must be reported to the MLRO but that suspicion must not be conveyed to the customer and further actions must await consents. The MLRO is then responsible for liaising with, submitting Suspicious Activity Reports and seeking consents through the goAML system of the Financial Intelligence Unit (FIU) Curaçao where and when appropriate. He will also ensure that appropriate registers are kept for all related reporting.",
           "Company will implement a FULL ‘Know Your Customer’ policy. This will assist in tackling not       just Money Laundering threats but other fraud threats generally. Customers will be advised at       registration and generally on the supporting non-transactional website that Company will       utilise online verification tools and that in instances where we are not able to satisfy       criteria, ID and address verification documents will be requested.",
           "Other key decisions that will enhance these protections include setting period       thresholds/velocities for withdrawals to include at outset the requirement for checks and       director approval prior to processing card withdrawals and bank transfers of over 3000 EUR in       one single transaction, a maximum of 3 (three) daily withdrawals and an overall maximum daily       withdrawal of 9000 EUR.",
           "Industry accepted standards that will always lead to Enhanced Due Diligence (the requirement       for further proof of ID and Address) will be withdrawals in excess of 3000 EUR in a single       24hour period and 9000 EUR in a 90-day period. Simple online verification will NOT be       acceptable in these circumstances.",
@@ -1211,7 +1203,7 @@
     },
     "riskWarnings": {
       "title": "Risk Warnings",
-      "text": "You understand that by participating in the games, you risk losing the money deposited to your       account on www.ninecasino.com; In some jurisdictions, online gambling may be illegal. You       understand and agree that www.ninecasino.com is not able to provide you legal advice or       guarantees regarding the legality of your use of the services of the Website. The Company does       not affirm that the services of the Website comply with legal requirements in your       jurisdiction. You use the services provided by www.ninecasino.com of your own choice and at       your sole discretion, as well, assuming the risk of liability, making a decision as to whether       the use of the services of the Website is legal in accordance with the current legislation of       your jurisdiction.You log in the Website and participate in the games at your own risk."
+      "text": "You understand that by participating in the games, you risk losing the money deposited to your       account on www.ninecasino.com; In some jurisdictions, online gambling may be illegal. You       understand and agree that www.ninecasino.com is not able to provide you legal advice or       guarantees regarding the legality of your use of the services of the Website. The Company does       not affirm that the services of the Website comply with legal requirements in your       jurisdiction. You use the services provided by www.ninecasino.com by your own choice and at       your sole discretion, as well, assuming the risk of liability, making a decision as to whether       the use of the services of the Website is legal in accordance with the current legislation of       your jurisdiction.You log in the Website and participate in the games at your own risk."
     },
     "bonusTermsPage": {
       "title1": "bonus terms & conditions",
@@ -1220,15 +1212,15 @@
         "All the players can take advantage of the bonuses, except for the cases when the bonus has country restrictions and the player is a citizen of one of these countries. Players from Sweden are not allowed to receive bonuses. Any bonuses are not available to players from Sweden, including participation in any kind of promotional programs, receiving VIP rewards, as well as exchange of comp points.",
         "The player is not allowed to abuse the bonus offers. In case of such abuse the Casino has the right to prohibit the Player to receive any bonuses and to cancel any winnings received using bonus funds, both at the moment of wagering and after it.",
         "The use of bonus funds purely to progress through the bonus stages is prohibited, particularly in the cases when bonus or cash funds are used purely to progress through the bonus stages (e.g. collecting 9 out of 10 coins to reach the bonus feature), and then final stages (e.g. playing to collect the final coin to reach 10 out of 10 and the bonus feature) are completed with cash bets when bonus funds have been forfeited, lost or wagering has been met, and converted to cash. All the winnings gained during that play may be considered void.",
-        "The Player is not allowed to use any strategies while playing with an active bonus in order to fulfil the requirements to wager the bonus. If the Player uses such strategies, and if the Casino has sufficient grounds to believe that the Player's actions are aimed solely to obtain financial benefits using the bonus advantage, then the Casino reserves the right to cancel all Player's winnings.",
+        "The Player is not allowed to perform any fraudulent actions while playing with an active bonus in order to fulfil the requirements to wager the bonus, the Casino reserves the right to cancel all Player’s winnings.",
         "All the bonuses have a minimum deposit requirement for obtaining the bonus, limitation of the maximum possible bonus amount, wagering terms, limitation of the maximum amount of bets while wagering, time limitation of bonus life, unless otherwise indicated.",
-        "Any issued bonuses are by default limited to a maximum bet during wagering: 5 EUR/USD, 10 CAD/AUD/NZD, 50 NOK, 350 RUB, 20 PLN, 600 JPY, 2,100 KZT, 140 CZK, 0.0005 BTC, 0.014 BCH, 0.02 ETH, 0.07 LTC, 2,100 DOG, 5.5 USDT, unless otherwise specified. Max bet limit includes bets doubling after a game round has been completed as well as bonus rounds (purchased within the game).",
+        "Any issued bonuses are by default limited to a maximum bet during wagering: 5 EUR, 10 CAD/AUD, 100 CZK, 90 ZAR, 10 BGN, 40 DKK, 40 HRK, 25 RON, 0,00019 BTC, unless otherwise specified. Max bet limit includes bets doubling after a game round has been completed as well as bonus rounds (purchased within the game).",
         "The winnings obtained by using bonuses become available for withdrawal only after meeting the requirements of all wagering rules.",
         "All bonuses (unless otherwise specified) need to be wagered 40 times before the funds can be withdrawn.",
         "All the bonuses are sticky. It means, you cannot request your withdrawal until wagering requirements are fully fulfilled. Also, you start playing for real money first, then for bonus money, and as soon as bonus money is lost, the bonus also gets lost.",
         "Validity of the bonus is 14 days from the moment it was received, unless otherwise indicated.",
         "At the end of the bonus period, if the bonus remains valid and the conditions of wagering are not met, all bonus money and winnings are void.",
-        "Bonuses are automatically cancelled upon active balance reaching the amount of 0.05 USD, 0.05 EUR, 0.05 RUB, 0.05 NOK, 0.05 AUD, 0.05 JPY, 0.05 NZD, 0.05 CAD, 0.05 PLN, 0.000001 BTC, 0.00001 BCH, 0.00001 ETH, 0.0005 LTC, 10 DOG, 0.05 USDT, or less.*",
+        "Bonuses are automatically cancelled upon active balance reaching the amount of 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC, or less.*",
         "*This term only applies to balance tied to a bonus, i.e. deposit + bonus, or a bonus only (in case of a no deposit bonus), and doesn't apply to funds on player's balance gained from other deposits or bonuses.",
         "A player can request a withdrawal of their deposit before meeting the requirements for bonus wagering. In this case, the amount of the bonus and winnings are void, and the remaining funds, if any, are paid to the player.",
         "A player has the right to cancel any bonuses without proceeding to their wagering, without any loss of their own funds.",
@@ -1242,30 +1234,31 @@
         "When gambling with bonus funds, all the winnings requested for withdrawal pass a check prior to payment processing. The Casino reserves the right to request the user to confirm the personal data and payment method data as a result of the check.",
         "The Casino has the right to revoke any bonuses and winnings, as well as to confiscate all the money in the account if it has been obtained dishonestly or in violation of these rules.",
         "The Casino reserves the right to amend and supplement these terms at any time.",
-        "Bonus is automatically cancelled upon active balance reaching amount of 0.05 USD, 0.05 EUR, 0.05 RUB, 0.05 NOK, 0.05 AUD, 0.05 JPY, 0.05 NZD, 0.05 CAD, 0.05 PLN, 0.000001 BTC, 0.00001 BCH, 0.00001 ETH, 0.0005 LTC, 10 DOG, 0.05 USDT or less.*",
-        "*This term only applies balance tied to bonus, i.e. deposit + bonus or only bonus in case of no deposit bonus, and doesn't apply funds on player's balance gained from other deposits or bonuses.",
         "The use of bonus funds purely to progress through the bonus stages is prohibited. For example when bonus or cash funds are used purely to progress through the bonus stages (e.g. collecting 9 out of 10 coins to reach that bonus feature) and then final stages (e.g. playing to collect the final coin to reach 10 out of 10 coins to reach the bonus feature) completed with cash bets when bonus funds have been forfeited, lost or wagering met and converted to cash. All the winnings gained during that play may be considered void.",
         "All bonuses are accrued at UTC time."
       ],
       "title2": "welcome package",
       "text2": [
-        "To get the first/second/third deposit bonuses, your deposit shall be at least 20 EUR/ USD, 20 CAD/AUD/NZD, 200 NOK, 1,500 RUB, 85 PLN, 2,500 JPY, 9,000 KZT, 0.0036 BTC, 0.12 BCH, 0.16 ETH, 0.6 LTC, 13,000 DOG, 22.5 USDT.",
-        "Maximum first/second/third deposit bonus amount is 100 EUR/USD, 150 CAD/AUD/NZD, 1,000 NOK, 7,000 RUB, 430 PLN, 12,000 JPY, 42,000 KZT, 0.011 BTC, 0.28 BCH, 0.4 ETH, 1.4 LTC, 42,000 DOG, 110 USDT.",
+        "To get the first/second/third deposit bonuses, your deposit shall be at least 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
+        "Maximum first/second/third deposit bonus amount is 150 EUR, 225 CAD, 225 AUD, 3330 CZK, 2600 ZAR, 290 BGN, 1150 DKK, 1130 HRK, 740 RON, 0,0055 BTC.",
+        "Players can use their Free Spins in Aztec Magic, Aztec Magic Delux, Johnny Cash, Platinum Lightning, and Platinum Lightning Delux slot games by BGaming.",
+        "After the first deposit, players will get 50 Free Spins every day for the next 5 days.",
         "Free spin activation duration is 3 days, free spin duration and free spin result duration are 7 days.",
         "To wager the bonus / free spin result, you need to make bets for an amount 40 times the bonus / free spin result amount.",
-        "Maximum win resulting from first/second/third deposit free spins is 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3,500 RUB, 210 PLN, 6,000 JPY, 21,000 KZT, 0.005 BTC, 0.14 BCH, 0.2 ETH, 0.7 LTC, 21,000 DOG, 55 USDT.",
-        "Maximum win resulting from sign up freespins is 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3,500 RUB, 210 PLN, 6,000 JPY, 21,000 KZT, 0.005 BTC, 0.14 BCH, 0.2 ETH, 0.7 LTC, 21,000 DOG, 55 USDT."
+        "Maximum win resulting from first/second/third deposit free spins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "Maximum win resulting from sign up freespins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "All Welcome Package bonuses are credited to the player's account automatically without any promo codes. If a player use any promo code for a Welcome package bonus, he won't get it."
       ],
       "title3": "weekend reload",
       "text3": [
-        "To get the weekend reload, your deposit shall be at least 20 EUR/ USD, 20 CAD/AUD/NZD, 200 NOK, 1,500 RUB, 85 PLN, 2,500 JPY, 9,000 KZT, 0.0036 BTC, 0.12 BCH, 0.16 ETH, 0.6 LTC, 13,000 DOG, 22.5 USDT.",
-        "Maximum weekend reload amount is 150 EUR/USD, 230 CAD/AUD/NZD, 1,500 NOK, 10,000 RUB, 640 PLN, 18,000 JPY, 65,000 KZT, 0.017 BTC, 0.4 BCH, 0.6 ETH, 2.1 LTC, 65,000 DOG, 170 USDT.",
+        "To get the weekend reload, your deposit shall be at least 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC.",
+        "Maximum weekend reload amount is 150 EUR, 220 CAD, 240 AUD, 3900 CZK, 2580 ZAR, 300 BGN, 1110 DKK, 1125 HRK, 735 RON, 0,0056 BTC.",
         "To wager the bonus, you need to make bets for an amount 40 times the bonus amount.",
         "The bonus is available once on Friday, Saturday, or Sunday for players who have already used all the welcome package bonuses."
       ],
       "title4": "loyalty free spins",
       "text4": [
-        "The maximum you will ever be able to withdraw from play with funds associated with a no-deposit bonus or free spins is 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3,500 RUB, 210 PLN, 6,000 JPY, 21,000 KZT, 0.005 BTC, 0.14 BCH, 0.2 ETH, 0.7 LTC, 21,000 DOG, 55 USDT.",
+        "The maximum you will ever be able to withdraw from play with funds associated with a no-deposit bonus or free spins is 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
         "The maximum win restriction persists after the completion of the wagering requirement."
       ]
     }
@@ -1273,8 +1266,8 @@
   "dailyCashback": {
     "cashback": "Cashback",
     "title": "Daily cashback<br/>up to 20%",
-    "text1": "Who doesn’t like free casino cashback?<br/> Even if you lost! Yes, you read right - we give you cashback with wager&nbsp;x5 in case of losing.",
-    "text2": "If it happened and you lost a sum of money at Ninecasino today, tomorrow we pay you back in accordance with the scheme below:",
+    "text1": "Who doesn’t like free casino cashback when losing?<br/>Yes, you read right! We give you cashback with only 5x wagering when losing!",
+    "text2": "If you lost some cash at Ninecasino today, tomorrow we pay you back in accordance with our table below:",
     "terms": "Cashback terms and conditions",
     "termsList": [
       {
@@ -1296,7 +1289,7 @@
         "text": "The wagering requirement for a cashback bonus is x5."
       },
       {
-        "text": "The wagering requirement for a cashback bonus is x5."
+        "text": "Cashback is available for 24 hours after the crediting on the player’s account."
       },
       {
         "text": "The cashback lifetime is 24 hours after the activation."
@@ -1328,5 +1321,148 @@
         "cashbackSum": "€5000 and more"
       }
     ]
+  },
+  "lottery": {
+    "title": "Weekend<br/> Playing Lottery ",
+    "prize": "<span class=\"Colored\">€ 2,500</span> + <span class=\"Colored\">500 Free Spins</span>",
+    "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.",
+    "termsTitle": "Lottery participation terms",
+    "terms": [
+      {
+        "text": "You begin to participate in the VIP program after making your first deposit."
+      },
+      {
+        "text": "CP is credited at the rate of 1 CP for every $ 12.5, 12.5 EUR, 15 CAD, 15 AUD, 15 NZD, 125 NOK, 325 CZK."
+      },
+      {
+        "text": "Exchange CP - 1 $, 1 EUR, 1.25 CAD, 1.25 AUD, 1.25 NZD, 10 NOK, 25 CZK, 17 ZAR, 4 PLN for 100 CP."
+      },
+      {
+        "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      },
+      {
+        "text": "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text": "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text": "RoomCasino reserves the right to change the terms of the VIP program at any time."
+      },
+      {
+        "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      }
+    ],
+    "lastRoundWinners": "Last round winners",
+    "ticket": "Ticket",
+    "tickets": "Tickets"
+  },
+  "tesla_lottery": {
+    "metaTitle": "➤ Tesla Lottery With Tesla Model 3 - Play Your Favorite Games And Win Great Prize - Tesla Model 3!",
+    "metaDescription": "✭ Try Your Luck In New Tesla Lottery by NineCasino ➔ Take a ticket for a Tesla!",
+    "title": "The Tesla<br/> Lottery",
+    "name": "The Tesla Lottery",
+    "prize": "Tesla Model 3",
+    "text": "Join the Tesla Lottery at NineCasino between August 18th, 2021 and September 23rd, 2021 and get a chance to become the happy owner of a Tesla Model 3! <br/><br/>On the 24th of September we will announce the Tesla winner!",
+    "terms": [
+      {
+        "text": "The lottery runs between August 18th, 2021 and September 23rd, 2021."
+      },
+      {
+        "text": "A minimum deposit per ticket is €50. Each ticket can win."
+      },
+      {
+        "text": "The number of lottery tickets per player is not limited."
+      },
+      {
+        "text": "The more tickets you collect at the time of the draw, the higher your chances of winning a prize are."
+      },
+      {
+        "text": "At the time of the draw, the game account must not be blocked."
+      },
+      {
+        "text": "The winner of the lottery will be announced on the 24th of September."
+      }
+    ],
+    "winTesla": "Win a Tesla car"
+  },
+  "happy_harvest_lotto": {
+    "title": "Happy Harvest<br/> Lotto",
+    "promoTitle": "Be a harvest hero with 5,000 Free Spins",
+    "name": "Happy Harvest Lotto",
+    "prize": "5,000 Free Spins",
+    "text": "The golden autumn is here and our Free Spins are ripe for harvest!<br/><br/>The Happy Harvest Lotto runs between September 1st, 2021 and September 28th, 2021. Just make a minimum deposit of €20 to get a ticket and take part. The number of tickets you can have is unlimited!",
+    "promoText": "The golden autumn is here and our Free Spins are ripe for harvest!<br/><br/>The Happy Harvest Lotto runs between September 1st, 2021 and September 28th, 2021. Just make a minimum deposit of €20 to get a ticket and take part. The number of tickets you can have is unlimited!<br/><br/>So grab your tickets, be active, and enjoy the fruits of your efforts!",
+    "terms": [
+      {
+        "text": "The lottery will last for a month starting on September 1st at 00:01 (UTC) and ending on September 28th at 23:59 (UTC)."
+      },
+      {
+        "text": "The minimum deposit required for a lottery ticket is 20 EUR, 30 CAD/AUD/NZD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text": "The number of lottery tickets per player is unlimited."
+      },
+      {
+        "text": "Every ticket can be a winning ticket."
+      },
+      {
+        "text": "At the time of the draw, the game account must not be blocked."
+      },
+      {
+        "text": "The prizes will be awarded automatically at the end of the lottery every week on Tuesday."
+      },
+      {
+        "text": "For the Free Spins, the wagering is x5."
+      }
+    ],
+    "metaTitle": "➤ Happy Harvest Lotto With Solid Prize Pool 5,000 Free Spins - Play Your Favorite Games And Win Great Prizes!",
+    "metaDescription": "✭ Try Your Luck In New Happy Harvest Lotto by NineCasino ➔ Complete Missions - Win Prizes!"
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Here You Can Find Out About Our Welcome Bonus For New Players And Other Regular Promotions At Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Daily Cashback Up To 20% - If You Lose We Give You Cashback with x5 wagering."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Detailed Information About Us, Our Software, And What We Offer Our Clients ✓ Fast withdrawal ✓ Fully licensed"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Frequently Asked Questions - Here You Can Find Answers To The Most Popular Questions About Ninecasino"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "This Page Will Help You To Stay Informed About Ninecasino's Terms And Conditions While Interacting With Our Site"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Detailed Information About Bonuses: How To Receive And Withdraw Bonuses At Ninecasino"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Here You Can Find About Responsible Gaming Tools At Your Disposal To Control Your Gaming Experience"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Information About The Risks You Take Paticipating In Games At Ninecasino"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Privacy Policy Of Ninecasino: Everything You Need To Know About The Safety Of Your Financial Information And Personal Account"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Detailed Information How You Can Play With Bitcoin at Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Detailed Information About How We Handle Incorporating Fraud and Anti Money Laundering"
+    }
   }
 }

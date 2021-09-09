@@ -1,5 +1,7 @@
 import moment from 'moment';
 
+export const DOMAIN = 'ninecasino.com';
+
 const PRAGMATIC_WS_SERVER_PROD_DOMAIN = 'dga.pragmaticplaylive.net';
 const PRAGMATIC_WS_SERVER_DEV_DOMAIN = 'prelive-dga.pragmaticplaylive.net';
 
@@ -25,6 +27,11 @@ export const API_HOST =
     : process.env.NUXT_ENV_MODE === 'sandbox'
     ? API_HOST_SANDBOX
     : API_HOST_STAGE;
+
+export const PIXEL_HOST =
+  process.env.NUXT_ENV_MODE === 'production'
+    ? 'https://pixel.ninecasino.com'
+    : 'http://dev.pixel.ninecasino.com';
 
 export const LIMIT_DETAILS = {
   lossLimit: {
@@ -315,7 +322,6 @@ export const TOURNAMENTS = {
     translates: 'dropsWinsSlots',
     class: 'DropsWinsSlots',
     slug: 'DROP&WINS',
-    textLeft: true,
   },
   'drops-wins-live': {
     url: 'drops-wins-live',
@@ -323,14 +329,5 @@ export const TOURNAMENTS = {
     translates: 'dropsWinsLive',
     class: 'DropsWinsLive',
     slug: 'dropslive',
-    textLeft: true,
-  },
-  'knockout-football': {
-    url: 'knockout-football',
-    name: 'Knockout Football Rush',
-    translates: 'knockoutFootball',
-    class: 'KnockoutFootball',
-    slug: 'footrush',
-    textLeft: true,
   },
 };

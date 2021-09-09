@@ -34,10 +34,10 @@
 </template>
 
 <script>
-import CabinetFilters from '@/components/profile/CabinetFilters.vue';
-import CabinetTable from '@/components/profile/CabinetTable.vue';
 import { mapActions, mapMutations, mapState } from 'vuex';
 import moment from 'moment';
+import CabinetFilters from '@/components/profile/CabinetFilters.vue';
+import CabinetTable from '@/components/profile/CabinetTable.vue';
 
 export default {
   name: 'HistoryContent',

@@ -84,7 +84,7 @@
         @set-dropdown-value="period = $event"
       />
       <button
-        class="Btn Btn--common Btn--full Btn--color CreateLimits-Btn"
+        class="Btn Btn--common Btn--full Btn--color Btn--bottomCorners CreateLimits-Btn"
         @click="onClickLimitBtn"
       >
         <template v-if="isEdit"> {{ $t('profile.limits.save') }} </template>
@@ -108,13 +108,13 @@
 </template>
 
 <script>
+import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
+import moment from 'moment';
 import BaseDropdown from '@/components/base/BaseDropdown';
 import BaseInput from '@/components/base/BaseInput';
 import ConfirmDialog from '@/components/profile/ConfirmDialog';
 import { LIMIT_DETAILS } from '@/config';
 import { findValInArr } from '@/utils/helpers';
-import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
-import moment from 'moment';
 import { checkIfNullOrPositiveNumbers, checkIfPositiveNumbers } from '@/utils/formCheckers';
 import limits from '@/mixins/limits';
 

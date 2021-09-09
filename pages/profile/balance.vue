@@ -93,17 +93,26 @@
         <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Cash">
           {{ acc.withdrawable }}
         </div>
-        <div class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns">
+        <div
+          class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns"
+          :class="{ 'BalancePage-Btns--col': $i18n.locale === 'gr' || $i18n.locale === 'pl' }"
+        >
           <button
             class="Btn Btn--color CabinetPage-Btn BalancePage-Btn"
-            :class="{ 'BalancePage-Btn--de': $i18n.locale === 'de' }"
+            :class="[
+              { 'BalancePage-Btn--de': $i18n.locale === 'de' },
+              { 'BalancePage-Btn--margin': $i18n.locale === 'gr' || $i18n.locale === 'pl' },
+            ]"
             @click="onClickDeposit(acc.currency)"
           >
             {{ $t('buttons.deposit') }}
           </button>
           <button
             class="Btn Btn--outline2 CabinetPage-Btn BalancePage-Btn"
-            :class="{ 'BalancePage-Btn--de': $i18n.locale === 'de' }"
+            :class="[
+              { 'BalancePage-Btn--de': $i18n.locale === 'de' },
+              { 'BalancePage-Btn--margin': $i18n.locale === 'gr' || $i18n.locale === 'pl' },
+            ]"
             @click="onClickCashout(acc.currency)"
           >
             {{ $t('buttons.cashout') }}
@@ -244,6 +253,17 @@ export default {
       padding-right: 2px !important;
       padding-left: 2px !important;
     }
+
+    &--margin {
+      &:first-child {
+        margin-right: 0;
+        margin-bottom: 4px;
+        @media (min-width: $screen-m) {
+          margin-right: 8px;
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   &-Table {
@@ -261,6 +281,13 @@ export default {
 
   &-Btns {
     white-space: nowrap;
+
+    &--col {
+      white-space: normal;
+      @media (min-width: $screen-m) {
+        white-space: nowrap;
+      }
+    }
   }
 
   &-Active,
@@ -341,6 +368,7 @@ export default {
     color: var(--color-text-main);
     text-transform: uppercase;
     background: var(--color-bg-lighter);
+    border-radius: var(--border-radius-4);
     cursor: pointer;
 
     &:hover {

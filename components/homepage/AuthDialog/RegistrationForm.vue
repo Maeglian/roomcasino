@@ -252,11 +252,12 @@
 </template>
 
 <script>
+import { mapActions, mapGetters, mapState } from 'vuex';
+import { email, maxLength, minLength, numeric, required } from 'vuelidate/lib/validators';
+import moment from 'moment';
 import BaseInput from '@/components/base/BaseInput.vue';
 import BaseCheckbox from '@/components/base/BaseCheckbox.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
-import { mapActions, mapGetters, mapState } from 'vuex';
-import { email, maxLength, minLength, numeric, required } from 'vuelidate/lib/validators';
 import {
   deleteObjValuesFromLocalStorage,
   getObjValuesFromLocalStorage,
@@ -274,7 +275,6 @@ import {
 } from '@/utils/formCheckers';
 import RegistrationBonus from '@/components/homepage/RegistrationBonus';
 import BaseButton from '@/components/base/BaseButton';
-import moment from 'moment';
 
 export default {
   name: 'RegistrationForm',

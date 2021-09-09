@@ -5,7 +5,11 @@
       <div class="CabinetPage-Header">{{ $t('profile.user.generalInfo') }}</div>
       <div class="ProfileInfo-Fields">
         <template v-for="(val, name) in fields">
-          <template v-if="name !== 'receiveEmailPromos' && name !== 'receiveSmsPromos'">
+          <template
+            v-if="
+              name !== 'receiveEmailPromos' && name !== 'receiveSmsPromos' && name !== 'denyBonuses'
+            "
+          >
             <div v-if="name === 'country' && !user[name]" :key="name" class="CabinetForm-Row">
               <label :for="name | formatLabel" class="CabinetForm-Field CabinetForm-Label">
                 {{ $t(`profile.user.labels.${name}`) }}
@@ -38,6 +42,7 @@
               error-class="ProfileInfo-Error"
               :input-id="name | formatLabel"
               input-class="CabinetForm-Input"
+              :input-mask="name === 'birthDate' ? dateInputMask : false"
               wrapper-class="CabinetForm-Wrapper"
               :v="$v.fields[name] ? $v.fields[name] : false"
             >
@@ -84,11 +89,14 @@
       <div class="ProfileInfo-Subscriptions">
         <template v-for="(item, name) in fields">
           <BaseCheckbox
-            v-if="name === 'receiveEmailPromos' || name === 'receiveSmsPromos'"
+            v-if="
+              name === 'receiveEmailPromos' || name === 'receiveSmsPromos' || name === 'denyBonuses'
+            "
             :key="name"
             v-model="fields[name]"
             type="checkbox"
             class="CabinetForm-Row"
+            :class="{ 'CabinetForm-Row--marginTop': name === 'denyBonuses' }"
             input-class="CabinetForm-Checkbox"
             label-class="CabinetForm-CheckboxLabel CabinetForm-Label"
             @change="item = $event"
@@ -111,13 +119,13 @@
 
 <script>
 import { mapGetters, mapActions, mapState, mapMutations } from 'vuex';
+import { maxLength, minLength, required } from 'vuelidate/lib/validators';
+import moment from 'moment';
 import BaseButton from '@/components/base/BaseButton.vue';
 import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import Loader from '@/components/Loader';
-import { maxLength, minLength, required } from 'vuelidate/lib/validators';
 import { dateCheck, phoneWithPlusCheck, postalCodeCheck } from '@/utils/formCheckers';
-import moment from 'moment';
-import { transformAustriaPhone } from '@/utils/helpers';
+import { transformAustriaPhone, dateInputMask } from '@/utils/helpers';
 import BaseInput from '../../../components/base/BaseInput.vue';
 import BaseCheckbox from '../../../components/base/BaseCheckbox.vue';
 
@@ -147,6 +155,7 @@ export default {
   data() {
     return {
       fields: {},
+      dateInputMask,
       promosFields: {},
       genders: [
         { name: this.$t('auth.placeholders.male'), value: 'male' },
@@ -155,18 +164,7 @@ export default {
       profileLabels: {
         receiveEmailPromos: this.$t('profile.user.email'),
         receiveSmsPromos: this.$t('profile.user.sms'),
-      },
-      fakeFields: {
-        email: 'fillypkfillypk@gmail.com',
-        firstName: 'Fillyp',
-        lastName: 'Fillypkin',
-        birthDate: '1979-01-04',
-        gender: 'male',
-        country: 'RUS',
-        city: 'Moscow',
-        address: '-',
-        postalCode: '864520',
-        mobile: '+3588****89',
+        denyBonuses: this.$t('profile.user.denyBonuses'),
       },
     };
   },
@@ -309,6 +307,10 @@ export default {
     &--right {
       justify-content: flex-end;
     }
+
+    &--marginTop {
+      margin-top: 25px;
+    }
   }
 
   &-Wrapper {
@@ -341,6 +343,7 @@ export default {
   &-CheckboxLabel {
     position: relative;
     flex-grow: 1;
+    width: auto;
     margin-right: 0;
     margin-left: 59px;
     padding-left: 20px;

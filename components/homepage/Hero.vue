@@ -2,58 +2,64 @@
   <section class="Hero">
     <div class="Hero-Slider">
       <Slider :key="`${slides.length}_${width}`" v-bind="options">
-        <div v-for="(slide, i) in slides" :key="i" class="Hero-Item">
-          <picture class="Hero-Image">
-            <source
-              media="(max-width: 340px)"
-              :srcset="require(`@/assets/img/${slide.bg}_320.png`)"
-            />
-            <source
-              media="(max-width: 459px)"
-              :srcset="require(`@/assets/img/${slide.bg}_460.png`)"
-            />
-            <source
-              media="(max-width: 589px)"
-              :srcset="require(`@/assets/img/${slide.bg}_600.png`)"
-            />
-            <source
-              media="(max-width: 900px)"
-              :srcset="require(`@/assets/img/${slide.bg}_900.png`)"
-            />
-            <source
-              media="(max-width: 1400px)"
-              :srcset="require(`@/assets/img/${slide.bg}_1248.png`)"
-            />
-            <img
-              :src="require(`@/assets/img/${slide.bg}_1920.png`)"
-              alt=""
-              @load="setHeroBannerIsLoaded"
-            />
-          </picture>
-          <div class="Hero-Content Hero-Content--centered">
-            <div class="Hero-Description">
-              <div class="Title Title--type-h1 Hero-Title" v-html="slide.title"></div>
-              <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
-              <div class="Hero-Text" v-html="slide.text"></div>
+        <template v-for="(slide, i) in slides">
+          <div
+            v-if="!slide.excludedCountries || !slide.excludedCountries.includes($i18n.locale)"
+            :key="i"
+            class="Hero-Item"
+          >
+            <picture class="Hero-Image">
+              <source
+                media="(max-width: 340px)"
+                :srcset="require(`@/assets/img/${slide.bg}_320.png`)"
+              />
+              <source
+                media="(max-width: 459px)"
+                :srcset="require(`@/assets/img/${slide.bg}_460.png`)"
+              />
+              <source
+                media="(max-width: 589px)"
+                :srcset="require(`@/assets/img/${slide.bg}_600.png`)"
+              />
+              <source
+                media="(max-width: 900px)"
+                :srcset="require(`@/assets/img/${slide.bg}_900.png`)"
+              />
+              <source
+                media="(max-width: 1400px)"
+                :srcset="require(`@/assets/img/${slide.bg}_1248.png`)"
+              />
+              <img
+                :src="require(`@/assets/img/${slide.bg}_1920.png`)"
+                alt=""
+                @load="setHeroBannerIsLoaded"
+              />
+            </picture>
+            <div class="Hero-Content Hero-Content--centered">
+              <div class="Hero-Description">
+                <div class="Title Title--type-h1 Hero-Title" v-html="slide.title"></div>
+                <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
+                <div class="Hero-Text" v-html="slide.text"></div>
+              </div>
+              <NuxtLink
+                v-if="slide.url"
+                :class="`Hero-Btn--${$i18n.locale}`"
+                class="Btn Btn--common Hero-Btn"
+                :to="localePath(slide.url)"
+              >
+                {{ slide.linkText }}
+              </NuxtLink>
+              <button
+                v-else
+                class="Btn Btn--common Hero-Btn"
+                :class="`Hero-Btn--${$i18n.locale}`"
+                @click="onClickBtn()"
+              >
+                {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.signUp') }}
+              </button>
             </div>
-            <NuxtLink
-              v-if="slide.url"
-              :class="`Hero-Btn--${$i18n.locale}`"
-              class="Btn Btn--common Hero-Btn"
-              :to="localePath(slide.url)"
-            >
-              {{ slide.linkText }}
-            </NuxtLink>
-            <button
-              v-else
-              class="Btn Btn--common Hero-Btn"
-              :class="`Hero-Btn--${$i18n.locale}`"
-              @click="onClickBtn()"
-            >
-              {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.signUp') }}
-            </button>
           </div>
-        </div>
+        </template>
       </Slider>
     </div>
     <div class="Hero-Footer">
@@ -140,46 +146,43 @@ export default {
     slides() {
       const slides = [
         {
-          bg: 'wolf',
+          bg: 'banker-green',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'joker',
+          bg: 'banker-green',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'caishen',
+          bg: 'banker-gold',
           title: this.$t('homepage.heroBanner.deposit2.title'),
           text: this.$t('homepage.heroBanner.deposit2.text'),
           btnText: 'Deposit now',
+          excludedCountries: ['fi'],
         },
         {
-          bg: 'book',
+          bg: 'banker-purple',
           title: this.$t('homepage.heroBanner.deposit3.title'),
           text: this.$t('homepage.heroBanner.deposit3.text'),
           btnText: 'Deposit now',
+          excludedCountries: ['fi'],
         },
         {
           bg: 'tournaments',
           title: this.$t('homepage.heroBanner.deposit4.title'),
           text: this.$t('homepage.heroBanner.deposit4.text'),
           btnText: 'Deposit now',
+          excludedCountries: ['fi'],
         },
         {
           bg: 'highroller',
           title: this.$t('homepage.heroBanner.highroller.title'),
           text: this.$t('homepage.heroBanner.highroller.text'),
-        },
-        {
-          bg: 'footballBanner',
-          title: this.$t('promotions.knockoutFootball.title'),
-          text: `<span class="Colored">${this.$t('knockoutFootball.prize')}</span>`,
-          url: '/tournaments/knockout-football',
-          linkText: this.$t('buttons.more'),
+          excludedCountries: ['fi'],
         },
         {
           bg: 'dropsSlots',
@@ -193,6 +196,27 @@ export default {
           title: this.$t('promotions.dropsWinsLive.title'),
           text: `<span class="Colored">${this.$t('dropsWinsLive.prize')}</span>`,
           url: '/tournaments/drops-wins-live',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'derby',
+          title: this.$t('weekly_derby.title'),
+          text: `<span class="Colored">${this.$t('weekly_derby.prize')}</span>`,
+          url: '/tournaments/weekly_derby',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'tesla',
+          title: this.$t('tesla_lottery.title'),
+          text: `<span class="Colored">${this.$t('tesla_lottery.prize')}</span>`,
+          url: '/lottery/tesla_lottery',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'harvest',
+          title: this.$t('happy_harvest_lotto.title'),
+          text: `<span class="Colored">${this.$t('happy_harvest_lotto.prize')}</span>`,
+          url: '/lottery/happy_harvest_lotto',
           linkText: this.$t('buttons.more'),
         },
       ];
@@ -236,16 +260,16 @@ export default {
     }
 
     .v_slider__dots li {
-      padding: 7px;
+      padding: 5px;
 
-      @media (min-width: $screen-xs) {
+      @media (min-width: $screen-s) {
         padding: 9px;
       }
     }
 
     .v_slider__dots li span {
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
 
       @media (min-width: $screen-xs) {
         width: 8px;
@@ -265,14 +289,14 @@ export default {
       }
 
       @media (min-width: $screen-s) {
-        top: 190px;
+        top: 250px;
         bottom: initial;
-        left: 180px;
+        left: 16px;
         transform: none;
       }
 
       @media (min-width: $screen-m) {
-        top: 240px;
+        top: 300px;
       }
 
       @media (min-width: $screen-l) {

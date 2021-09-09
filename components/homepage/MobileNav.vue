@@ -1,67 +1,94 @@
 <template>
-  <nav class="MobileNav" :class="{ 'MobileNav--notLoggedIn': !isLoggedIn }">
-    <template v-if="isLoggedIn">
-      <button class="MobileNav-Item" @click="toggleNav()">
-        <svg class="MobileNav-Toggle Toggle Toggle--colored">
-          <use xlink:href="@/assets/img/icons.svg#toggle"></use>
-        </svg>
-        <div class="MobileNav-Name">{{ $t('menu.menu') }}</div>
-      </button>
-      <NuxtLink class="MobileNav-Item" :to="localePath('/promotions')">
-        <svg width="17" height="16">
+  <nav class="MobileNav">
+    <NuxtLink
+      :class="['MobileNav-Item', { 'route-promotions': menuItems.promotions }]"
+      :to="localePath('/promotions')"
+      @click.native="focusMenu('promotions', 'effect')"
+    >
+      <div class="MobileNav-IconWrapper">
+        <svg class="MobileNav-Icon MobileNav-Icon--fill" width="22" height="23">
           <use xlink:href="@/assets/img/icons.svg#promotions"></use>
         </svg>
-        <div class="MobileNav-Name">{{ $t('pages.promotion') }}</div>
-      </NuxtLink>
-      <button class="MobileNav-Item" @click="onClickBtn()">
-        <svg width="18" height="15">
-          <use xlink:href="@/assets/img/icons.svg#deposit"></use>
-        </svg>
-        <div class="MobileNav-Name">{{ $t('buttons.deposit') }}</div>
-      </button>
-      <button v-if="chatIsLoaded" class="MobileNav-Item" @click="onClickSupport">
-        <svg width="18" height="15">
+      </div>
+      <div class="MobileNav-Name">{{ $t('pages.promotion') }}</div>
+    </NuxtLink>
+    <button
+      v-if="chatIsLoaded"
+      :class="['MobileNav-Item', { 'route-support': menuItems.support }]"
+      @click="focusMenu('support', 'effect')"
+    >
+      <div class="MobileNav-IconWrapper">
+        <svg
+          class="MobileNav-Icon MobileNav-Icon--stroke MobileNav-Icon--fill"
+          width="22"
+          height="22"
+        >
           <use xlink:href="@/assets/img/icons.svg#support"></use>
         </svg>
-        <div class="MobileNav-Name">{{ $t('menu.support') }}</div>
-      </button>
-      <!--    <div class="MobileNav-Item" @click="toggleNotificationsPanel">-->
-      <!--      <div class="MobileNav-Messages">-->
-      <!--        <svg width="12" height="14">-->
-      <!--          <use xlink:href="@/assets/img/icons.svg#messages"></use>-->
-      <!--        </svg>-->
-      <!--        <div v-show="isNewNotifications" class="MobileNav-MessagesNew"></div>-->
-      <!--      </div>-->
-      <!--      <div class="MobileNav-Name">-->
-      <!--        Notification-->
-      <!--      </div>-->
-      <!--    </div>-->
-    </template>
-    <template v-else>
-      <button class="MobileNav-Item--row" @click="showRegistrationDialog('login')">
-        <img class="MobileNav-Icon2" src="@/assets/img/user.svg" width="15" />
-        <div class="MobileNav-Name MobileNav-Name--large">{{ $t('buttons.logIn') }}</div>
-      </button>
-      <button class="MobileNav-Item--row" @click="showRegistrationDialog('registration')">
-        <img class="MobileNav-Icon2" src="@/assets/img/arrow.svg" width="15" />
-        <div class="MobileNav-Name MobileNav-Name--large">{{ $t('buttons.joinNow') }}</div>
-      </button>
-      <button class="MobileNav-Item MobileNav-Item--burger" @click="toggleNav()">
-        <svg class="MobileNav-Toggle2 Toggle Toggle--colored">
+      </div>
+      <div class="MobileNav-Name">{{ $t('menu.support') }}</div>
+    </button>
+    <NuxtLink
+      :to="localePath('/')"
+      :class="['MobileNav-Item', { 'route-home': menuItems.home }]"
+      @click.native="focusMenu('home', 'effect')"
+    >
+      <div class="MobileNav-IconWrapper">
+        <svg
+          class="MobileNav-Icon MobileNav-Icon--stroke MobileNav-Icon--fill"
+          width="36"
+          height="34"
+        >
+          <use xlink:href="@/assets/img/icons.svg#dice"></use>
+        </svg>
+      </div>
+      <div class="MobileNav-Name">{{ $t('pages.lobby') }}</div>
+    </NuxtLink>
+    <NuxtLink
+      ref="search"
+      :class="['MobileNav-Item', { 'route-search': menuItems.search }]"
+      :to="localePath('/search')"
+      @click.native="focusMenu('search', 'effect')"
+    >
+      <div class="MobileNav-IconWrapper">
+        <svg class="MobileNav-Icon MobileNav-Icon--fill" width="17" height="16" fill="#F3B233">
+          <use xlink:href="@/assets/img/icons.svg#search"></use>
+        </svg>
+      </div>
+      <div class="MobileNav-Name">{{ $t('pages.search') }}</div>
+    </NuxtLink>
+    <button
+      :class="['MobileNav-Item MobileNav-Item--burger', { 'route-toggle': menuItems.toggle }]"
+      @click="focusMenu('toggle', 'effect')"
+    >
+      <div class="MobileNav-IconWrapper">
+        <svg class="MobileNav-Icon Toggle" width="25" height="20">
           <use xlink:href="@/assets/img/icons.svg#toggle"></use>
         </svg>
-      </button>
-    </template>
+      </div>
+      <div class="MobileNav-Name">{{ $t('menu.menu') }}</div>
+    </button>
   </nav>
 </template>
 
 <script>
-import showAuthDialog from '@/mixins/showAuthDialog';
 import { mapGetters, mapMutations, mapState } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'MobileNav',
   mixins: [showAuthDialog],
+  data() {
+    return {
+      menuItems: {
+        promotions: false,
+        home: false,
+        search: false,
+        support: false,
+        toggle: false,
+      },
+    };
+  },
   computed: {
     ...mapState(['navIsOpen', 'notificationsPanelIsOpen', 'chatIsLoaded']),
     ...mapGetters(['isLoggedIn', 'activeAccount', 'isNewNotifications']),
@@ -79,11 +106,29 @@ export default {
     onClickSupport() {
       window.LC_API.open_chat_window();
     },
+    /**
+     * Touch menu
+     * */
+    focusMenu(route, effect) {
+      this.menuItems[route] = true;
+      setTimeout(() => {
+        this.menuItems[route] = false;
+      }, 160);
+      if (route === 'support') {
+        this.onClickSupport();
+      }
+      if (route === 'toggle') {
+        this.toggleNav();
+      }
+      console.log(effect);
+    },
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import './MobileNavEffects.scss';
+
 .MobileNav {
   position: fixed;
   bottom: 0;
@@ -91,24 +136,60 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 18px 24px 20px;
-  background: var(--color-body);
+  padding: 6px 3px 8px;
+  background: var(--color-bg-mobnav);
   transform: translateZ(0);
 
   @media (min-width: $screen-xs) {
     display: none;
   }
 
-  &--notLoggedIn {
-    align-items: center;
-    padding: 16px 0;
+  .nuxt-link-exact-active.MobileNav-Item {
+    .MobileNav-Name {
+      color: var(--color-main1);
+    }
+
+    .MobileNav-IconWrapper {
+      .MobileNav-Icon {
+        &--fill {
+          fill: var(--color-main1);
+        }
+
+        &--stroke {
+          stroke: var(--color-main1);
+        }
+      }
+    }
+
+    &-Name {
+      color: var(--color-main1);
+    }
   }
 
   &-Item {
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    width: 61px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -11px;
+      width: 1px;
+      height: 25px;
+      background-color: var(--color-bg-mobnav-lighter);
+      transform: translate(0, -50%);
+    }
+
+    &:last-child {
+      &:before {
+        display: none;
+      }
+    }
 
     &--row {
       display: flex;
@@ -125,21 +206,14 @@ export default {
     position: relative;
   }
 
-  &-Icon {
-    width: 12px;
-    height: 14px;
-  }
-
-  &-Icon2 {
-    margin-right: 10px;
-  }
-
   &-Name {
     font-size: 7px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.66;
+    text-align: center;
     color: var(--color-text-main);
     text-transform: uppercase;
+    word-break: break-word;
 
     &--large {
       font-size: 12px;
@@ -158,15 +232,36 @@ export default {
     border-radius: 50%;
   }
 
-  &-Toggle {
-    width: 17px;
-    height: 17px;
+  &-IconWrapper {
+    display: flex;
+    align-items: center;
+    height: 34px;
+    overflow: hidden;
   }
 
-  &-Toggle2 {
+  &-Icon {
+    flex-shrink: 0;
     align-items: center;
-    width: 20px;
-    margin: 0 24px;
+
+    &--fill {
+      fill: var(--color-text-main);
+    }
+
+    &--stroke {
+      stroke: var(--color-text-main);
+    }
   }
+}
+
+.route-home,
+.route-search,
+.route-promotions,
+.route-toggle,
+.route-support {
+  @include touch-btn-5();
+}
+
+.toggle-btn-active {
+  border: 1px solid var(--color-main1);
 }
 </style>

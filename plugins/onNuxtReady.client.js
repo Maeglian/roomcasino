@@ -41,6 +41,7 @@ window.onNuxtReady(({ context }) => {
   context.store
     .dispatch('games/getDefaultGames')
     .then(() => context.store.commit('setInitialLoading', 'defaultGames'));
+  context.store.dispatch('games/getTopGames');
   context.store.dispatch('games/getNewGames');
   context.store.dispatch('games/getLiveGames');
   context.store.dispatch('games/getJackpotGames');
@@ -48,7 +49,22 @@ window.onNuxtReady(({ context }) => {
   context.store.dispatch('games/getMegawaysGames');
   context.store.dispatch('games/getLuckychoiceGames');
   context.store.dispatch('games/getDropsWinsSlotsGames');
-  // context.store.dispatch('games/getDropsWinsLiveGames');
+  // if (process.env.NUXT_ENV_MODE === 'stage') {
+  //   context.store
+  //     .dispatch('games/getDefaultGames')
+  //     .then(() => context.store.commit('setInitialLoading', 'defaultGames'));
+  //   context.store
+  //     .dispatch('games/getGameProducerList')
+  //     .then(() => context.store.commit('setInitialLoading', 'producers'));
+  //   context.store.dispatch('games/getTopGames');
+  //   context.store.dispatch('games/getNewGames');
+  //   context.store.dispatch('games/getLiveGames');
+  //   context.store.dispatch('games/getJackpotGames');
+  //   context.store.dispatch('games/getBuybonusGames');
+  //   context.store.dispatch('games/getMegawaysGames');
+  //   context.store.dispatch('games/getLuckychoiceGames');
+  //   context.store.dispatch('games/getDropsWinsSlotsGames');
+  // }
   context.store
     .dispatch('dictionary/getCountriesList')
     .then(() => context.store.commit('setInitialLoading', 'countries'));
@@ -64,4 +80,6 @@ window.onNuxtReady(({ context }) => {
     .then(() => context.store.commit('setInitialLoading', 'producers'));
   context.store.dispatch('games/getTopWinnerList', { limit: 5 });
   context.store.dispatch('games/getLastWinnerList', { limit: 5 });
+  context.store.dispatch('tournaments/getTournamentList');
+  context.store.dispatch('tournaments/getLotteryList');
 });

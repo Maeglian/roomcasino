@@ -174,6 +174,11 @@ export default {
       required: false,
       default: false,
     },
+    inputMask: {
+      type: [Function, Boolean],
+      isRequired: false,
+      default: false,
+    },
     wrapperClass: {
       type: [String, Boolean],
       required: false,
@@ -242,6 +247,9 @@ export default {
       },
       set(value) {
         if (this.v) this.v.$touch();
+        if (this.inputMask) {
+          value = this.inputMask(value);
+        }
         this.$emit('input', value);
       },
     },
@@ -283,6 +291,11 @@ export default {
       + .BaseInput-Placeholder {
         display: none;
       }
+    }
+
+    &::placeholder {
+      color: var(--color-text-faded);
+      text-transform: uppercase;
     }
 
     &.BaseInput-Input--error {

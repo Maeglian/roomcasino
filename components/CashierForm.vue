@@ -3,7 +3,7 @@
     <modal
       name="cashier"
       :height="'auto'"
-      width="400px"
+      :width="isDesktop() ? '900px' : '400px'"
       adaptive
       scrollable
       @before-open="beforeInitializeCashier($event)"
@@ -37,8 +37,8 @@
 
 <script>
 import { mapActions, mapMutations, mapState, mapGetters } from 'vuex';
-import Loader from '@/components/Loader';
-import BaseModal from '@/components/base/BaseModal';
+import Loader from '@/components/Loader.vue';
+import BaseModal from '@/components/base/BaseModal.vue';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import openGame from '@/mixins/openGame';
 
@@ -65,6 +65,7 @@ export default {
       'getBillingSessionError',
       'shouldCashout',
       'user',
+      'platform',
     ]),
     ...mapState('profile', ['availableBonusList']),
     ...mapGetters(['activeAccount']),
@@ -77,7 +78,11 @@ export default {
       'getAvailableBonusList',
       'getBonusHistoryList',
       'getTransactionHistoryList',
+      'getFreeSpinList',
     ]),
+    isDesktop() {
+      return this.platform === 'desktop';
+    },
     async beforeInitializeCashier(event) {
       if (event.params && event.params.gameParams)
         this.gameStartingAfterDeposit = event.params.gameParams;
@@ -103,7 +108,11 @@ export default {
       this.cashierIsLoading = true;
 
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
-      const locale = this.$i18n.locale === 'en-ca' ? 'en' : this.$i18n.locale;
+      let locale;
+      if (this.$i18n.locale === 'en-ca') locale = 'en';
+      else if (this.$i18n.locale === 'fr-ca') locale = 'fr';
+      // eslint-disable-next-line prefer-destructuring
+      else locale = this.$i18n.locale;
 
       // eslint-disable-next-line no-unused-vars
       const CashierInstance = new this.$_Cashier(
@@ -116,7 +125,13 @@ export default {
           fetchConfig: true,
           method,
           locale: `${locale}_${this.user.country}`,
-          containerMinHeight: '700px',
+          tabs: false,
+          ...(this.isDesktop()
+            ? {
+                singlePageFlow: false,
+                containerWidth: '900px',
+              }
+            : { containerMinHeight: '700px' }),
         },
         api => {
           api.on({
@@ -135,6 +150,7 @@ export default {
                 this.getBonusList();
                 this.getAvailableBonusList();
               }
+              this.getFreeSpinList();
             },
             failure: data => console.log('Transaction failed', data),
             isLoading: data => console.log('Data is loading', data),
@@ -148,6 +164,11 @@ export default {
               console.log('New payment method page was opened', data),
             navigate: data => console.log('Path navigation triggered', data),
             cancelledPendingWD: () => this.getTransactionHistoryList(),
+          });
+          api.set({
+            attributes: {
+              affiliateId: this.user.affiliateId,
+            },
           });
         },
       );

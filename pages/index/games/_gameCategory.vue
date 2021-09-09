@@ -1,17 +1,5 @@
 <template>
   <div>
-    <template v-if="recentGames.length">
-      <div class="Title Title--type-h2 Cards-Title">
-        {{ $t('gameCategories.recent') }}
-      </div>
-      <Games
-        :key="isLoggedIn"
-        class="DefaultGames-Cards"
-        :games="recentGames"
-        :games-to-show="recentGamesNum"
-        btn-class="Btn--common Btn--dark"
-      />
-    </template>
     <h1 class="Title Title--type-h2 Cards-Title">
       {{ $t(`gameCategories.${$route.params.gameCategory}`) }}
     </h1>
@@ -37,6 +25,11 @@ export default {
     Loader,
     Games,
   },
+  async asyncData({ store, params }) {
+    const gameParams = {};
+    if (params.gameCategory !== 'all') gameParams.category = params.gameCategory;
+    await store.dispatch('games/getGames', gameParams);
+  },
   head() {
     return {
       title: `ᐈ Play ${this.$route.params.gameCategory.charAt(0).toUpperCase() +
@@ -45,7 +38,9 @@ export default {
         )} Games Now For Free Or Real Money | $450 Welcome Bonus At Ninecasino`,
       meta: [
         {
-          description: `★ Play ${this.$route.params.gameCategory.charAt(0).toUpperCase() +
+          hid: 'description',
+          name: 'description',
+          content: `★ Play ${this.$route.params.gameCategory.charAt(0).toUpperCase() +
             this.$route.params.gameCategory.slice(
               1,
             )} Games For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino`,
@@ -57,28 +52,9 @@ export default {
     ...mapState(['width']),
     ...mapState('games', ['games', 'gamesAreLoading', 'recentGames']),
     ...mapGetters(['isLoggedIn']),
-    recentGamesNum() {
-      return this.width > 590 ? (this.width > 960 ? 6 : 4) : 2;
-    },
-    gamesParams() {
-      const params = {};
-      if (this.$route.params.gameCategory !== 'all')
-        params.category = this.$route.params.gameCategory;
-      if (this.$route.params.producer) params.gameProducer = this.$route.params.producer;
-      return params;
-    },
-  },
-  watch: {
-    $route: {
-      immediate: true,
-      handler() {
-        this.getGames(this.gamesParams);
-        if (this.isLoggedIn) this.getRecentGames(this.gamesParams);
-      },
-    },
   },
   methods: {
-    ...mapActions('games', ['getGames', 'getRecentGames']),
+    ...mapActions('games', ['getGames']),
   },
 };
 </script>

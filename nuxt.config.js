@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API_HOST, TOURNAMENTS } from './config';
 
-const locales = ['en-ca', 'fr', 'cs', 'de'];
+const locales = ['en-ca', 'fr', 'cs', 'de', 'fr-ca', 'el', 'nz', 'fi', 'pl'];
 
 const target =
   process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
@@ -41,7 +41,6 @@ export default {
         content:
           'width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1',
       },
-      { hid: 'description', name: 'description', content: '' },
     ],
     link: [
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
@@ -208,11 +207,17 @@ export default {
         iso: 'en_CA',
       },
       {
-        code: 'fr',
-        codeCountry: 'fr_FR',
+        code: 'fr-ca',
+        codeCountry: 'fr_CA',
         file: 'fr_ca.json',
         icon: 'fr_ca.svg',
         iso: 'fr_CA',
+      },
+      {
+        code: 'fr',
+        codeCountry: 'fr_FR',
+        file: 'fr.json',
+        icon: 'fr.svg',
       },
       {
         code: 'cs',
@@ -228,6 +233,30 @@ export default {
         icon: 'de.svg',
         iso: 'de',
       },
+      {
+        code: 'el',
+        codeCountry: 'el_GR',
+        file: 'el.json',
+        icon: 'el.svg',
+      },
+      {
+        code: 'nz',
+        codeCountry: 'nz_NZ',
+        file: 'nz.json',
+        icon: 'nz.svg',
+      },
+      {
+        code: 'fi',
+        codeCountry: 'fi_FI',
+        file: 'fi.json',
+        icon: 'fi.svg',
+      },
+      {
+        code: 'pl',
+        codeCountry: 'pl_PL',
+        file: 'pl.json',
+        icon: 'pl.svg',
+      },
     ],
     defaultLocale: 'en',
     lazy: true,
@@ -237,6 +266,7 @@ export default {
     },
     detectBrowserLanguage: {
       alwaysRedirect: true,
+      onlyOnRoot: true,
     },
     baseUrl: 'https://ninecasino.com',
     seo: true,

@@ -6,6 +6,7 @@
       <CabinetMenu />
       <div v-if="Object.keys(user).length" class="CabinetPage-Content">
         <Nuxt />
+        <Breadcrumbs v-if="$route.path !== '/'" />
       </div>
       <Loader v-else class="CabinetPage-Loader" />
     </div>
@@ -13,11 +14,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import CabinetMenu from '@/components/profile/CabinetMenu.vue';
 import CabinetTopbar from '@/components/profile/CabinetTopbar.vue';
-import { mapState } from 'vuex';
 import Loader from '@/components/Loader';
 import NotificationAlerts from '@/components/NotificationAlerts';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default {
   name: 'CabinetPage',
@@ -26,6 +28,7 @@ export default {
     CabinetTopbar,
     Loader,
     NotificationAlerts,
+    Breadcrumbs,
   },
   middleware: 'auth',
   computed: {
@@ -62,6 +65,10 @@ export default {
     color: var(--color-text-main);
     text-transform: capitalize;
     background: var(--color-bg);
+
+    &--transparent {
+      background: transparent;
+    }
   }
 
   &-Wrapper {
@@ -265,7 +272,8 @@ export default {
     font-weight: 400;
     line-height: 40px;
     color: var(--color-main1);
-    background: var(--color-bg);
+    background: var(--color-bg-lighter);
+    border-radius: 0 0 0 8px;
     cursor: pointer;
 
     @media (min-width: $screen-m) {

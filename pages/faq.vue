@@ -33,9 +33,9 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import BaseTabs from '@/components/base/BaseTabs.vue';
 import Accordion from '@/components/Accordion.vue';
-import { mapState } from 'vuex';
 
 export default {
   name: 'FaqPage',
@@ -52,11 +52,12 @@ export default {
   },
   head() {
     return {
-      title: 'FAQ | Ninecasino',
+      title: this.$t('metaTags.faq.title'),
       meta: [
         {
-          description:
-            'Frequently Asked Questions - Here You Can Find Answers To The Most Popular Questions About Ninecasino',
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.faq.description'),
         },
       ],
     };

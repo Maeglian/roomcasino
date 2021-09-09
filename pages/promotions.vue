@@ -10,53 +10,55 @@
     </div>
     <section class="Page-Content">
       <div class="Page-Cards PromotionsPage-Promotions">
-        <article
-          v-for="(item, i) in promotions"
-          :key="`prom_${i}`"
-          class="PromotionsCard Page-Card"
-        >
-          <Banner class="PromotionsCard-Banner" :image="item.image" :image460="item.image460">
-            <template #title>
-              <span v-html="item.title"></span>
-            </template>
-            <template v-if="item.prize" #prize>
-              <span v-html="item.prize"></span>
-            </template>
-            <template v-if="item.subtitle" #subtitle>
-              <span v-html="item.subtitle"></span>
-            </template>
-          </Banner>
-          <div class="PromotionsCard-Footer">
-            <div class="PromotionsCard-Title">
-              {{ item.announce }}
+        <template v-for="(item, i) in promotions">
+          <article
+            v-if="!item.excludedCountries || !item.excludedCountries.includes($i18n.locale)"
+            :key="`prom_${i}`"
+            class="PromotionsCard Page-Card"
+          >
+            <Banner class="PromotionsCard-Banner" :image="item.image" :image460="item.image460">
+              <template #title>
+                <span v-html="item.title"></span>
+              </template>
+              <template v-if="item.prize" #prize>
+                <span v-html="item.prize"></span>
+              </template>
+              <template v-if="item.subtitle" #subtitle>
+                <span v-html="item.subtitle"></span>
+              </template>
+            </Banner>
+            <div class="PromotionsCard-Footer">
+              <div class="PromotionsCard-Title">
+                {{ item.announce }}
+              </div>
+              <div class="PromotionsCard-Text Text Text--additional">
+                <span v-html="item.text"> </span>
+              </div>
             </div>
-            <div class="PromotionsCard-Text Text Text--additional">
-              <span v-html="item.text"> </span>
+            <div class="PromotionsCard-Btns">
+              <NuxtLink
+                v-if="item.link"
+                class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
+                :to="localePath(item.url)"
+              >
+                {{ $t('buttons.more') }}
+              </NuxtLink>
+              <button
+                v-else
+                class="Btn Btn--common Btn--leftCorner PromotionsCard-Btn PromotionsCard-Btn--small"
+                @click="onClickBtn()"
+              >
+                {{ isLoggedIn ? $t('buttons.getBonus') : $t('buttons.signUp') }}
+              </button>
+              <NuxtLink
+                :to="localePath('/bonus-terms')"
+                class="Btn Btn--common Btn--rightCorner Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
+              >
+                {{ $t('buttons.terms') }}
+              </NuxtLink>
             </div>
-          </div>
-          <div class="PromotionsCard-Btns">
-            <NuxtLink
-              v-if="item.link"
-              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
-              :to="localePath(item.url)"
-            >
-              {{ $t('buttons.more') }}
-            </NuxtLink>
-            <button
-              v-else
-              class="Btn Btn--common PromotionsCard-Btn PromotionsCard-Btn--small"
-              @click="onClickBtn()"
-            >
-              {{ isLoggedIn ? $t('buttons.getBonus') : $t('buttons.signUp') }}
-            </button>
-            <NuxtLink
-              :to="localePath('/bonus-terms')"
-              class="Btn Btn--common Btn--dark PromotionsCard-Btn PromotionsCard-Btn--large"
-            >
-              {{ $t('buttons.terms') }}
-            </NuxtLink>
-          </div>
-        </article>
+          </article>
+        </template>
       </div>
       <!--      <h2 class="Title Title&#45;&#45;type-h2 Page-Subtitle PromotionsPage-Subtitle">-->
       <!--        Tournaments-->
@@ -107,7 +109,7 @@
 </template>
 
 <script>
-import Banner from '@/components/Banner';
+import Banner from '@/components/Banner.vue';
 // import Counter from '@/components/Counter';
 import showAuthDialog from '@/mixins/showAuthDialog';
 
@@ -125,23 +127,25 @@ export default {
         {
           title: this.$t('promotions.deposit1.title'),
           subtitle: this.$t('promotions.deposit1.upTo'),
-          image: 'promotion1.png',
+          image: 'banker-green-promotions.png',
           announce: this.$t('promotions.deposit1.name'),
           text: this.$t('promotions.deposit1.text'),
         },
         {
           title: this.$t('promotions.deposit2.title'),
           subtitle: this.$t('promotions.deposit2.upTo'),
-          image: 'promotion2.png',
+          image: 'banker-gold-promotions.png',
           announce: this.$t('promotions.deposit2.name'),
           text: this.$t('promotions.deposit2.text'),
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.deposit3.title'),
           subtitle: this.$t('promotions.deposit3.upTo'),
-          image: 'promotion3.png',
+          image: 'banker-purple-promotions.png',
           announce: this.$t('promotions.deposit3.name'),
           text: this.$t('promotions.deposit3.text'),
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.cashback.title'),
@@ -151,6 +155,7 @@ export default {
           text: this.$t('promotions.cashback.text'),
           link: 'More',
           url: '/daily-cashback',
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.deposit4.title'),
@@ -158,6 +163,7 @@ export default {
           image: 'promotion7.png',
           announce: this.$t('promotions.deposit4.name'),
           text: this.$t('promotions.deposit4.text'),
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('homepage.heroBanner.highroller.title'),
@@ -165,15 +171,7 @@ export default {
           image: 'promotions-highroller.png',
           announce: this.$t('promotions.highroller.name'),
           text: this.$t('promotions.highroller.text'),
-        },
-        {
-          title: this.$t('promotions.knockoutFootball.title'),
-          prize: this.$t('knockoutFootball.prize'),
-          image: 'football-promotions.png',
-          announce: this.$t('promotions.knockoutFootball.name'),
-          text: this.$t('promotions.knockoutFootball.text'),
-          link: 'More',
-          url: '/tournaments/knockout-football',
+          excludedCountries: ['fi'],
         },
         {
           title: this.$t('promotions.dropsWinsSlots.title'),
@@ -193,16 +191,44 @@ export default {
           link: 'More',
           url: '/tournaments/drops-wins-live',
         },
+        {
+          title: this.$t('weekly_derby.title'),
+          prize: this.$t('promotions.weekly_derby.upTo'),
+          image: 'derby-promotions.png',
+          announce: this.$t('promotions.weekly_derby.name'),
+          text: this.$t('promotions.weekly_derby.text'),
+          link: 'More',
+          url: '/tournaments/weekly_derby',
+        },
+        {
+          title: this.$t('tesla_lottery.title'),
+          prize: this.$t('tesla_lottery.prize'),
+          image: 'tesla-promotion.png',
+          announce: this.$t('tesla_lottery.name'),
+          text: this.$t('tesla_lottery.text'),
+          link: 'More',
+          url: '/lottery/tesla_lottery',
+        },
+        {
+          title: this.$t('happy_harvest_lotto.title'),
+          prize: this.$t('happy_harvest_lotto.prize'),
+          image: 'harvest-promo.png',
+          announce: this.$t('happy_harvest_lotto.promoTitle'),
+          text: this.$t('happy_harvest_lotto.promoText'),
+          link: 'More',
+          url: '/lottery/happy_harvest_lotto',
+        },
       ],
     };
   },
   head() {
     return {
-      title: 'Promotions | Ninecasino',
+      title: this.$t('metaTags.promotions.title'),
       meta: [
         {
-          description:
-            'Here You Can Find About Our Welcome Bonus For New Players And Other Regular Promotions At Ninecasino',
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.promotions.description'),
         },
       ],
     };
@@ -298,8 +324,8 @@ export default {
   }
 
   &-Btn {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 4px;
+    padding-left: 4px;
   }
 
   &-Btn--small {

@@ -97,8 +97,8 @@
     "tryingConfirmEmail": "Wir versuchen, Ihre E-Mail zu verifizieren",
     "confirmEmailError": "Entschuldigung, Ihre E-Mail wurde nicht bestätigt",
     "confirmEmailSuccess": "Herzlichen Glückwunsch! Ihre E-Mail wurde erfolgreich bestätigt",
-    "bonus": "150 €",
-    "freeSpins": "150 Freispiele",
+    "bonus": "450 €",
+    "freeSpins": "250 Freispiele",
     "placeholders": {
       "enterEmail": "Ihre E-Mail eingeben",
       "enterPassword": "Ihr Passwort eingeben",
@@ -129,14 +129,31 @@
     "aboutUs": "Über uns",
     "faq": "Häufig Gestellte Fragen (FAQ)",
     "btc": "Über BTC",
-    "aml": "Anti-geldwähler-Politik",
+    "aml": "Anti-Geldwäsche-Policy",
     "terms": "Geschäftsbedingungen",
-    "bonusPolicy": "Bonusrichtlinien ",
+    "bonusPolicy": "Bonusbedingungen",
     "privacyPolicy": "Datenschutz-Bestimmungen",
     "responsibleGaming": "Verantwortungsbewusst Spielen",
     "risk": "Risikowarnungen",
     "tournaments": "Turniere",
-    "dailyCashback": "Tägliche rückzahlung"
+    "dailyCashback": "Tägliche rückzahlung",
+    "search": "Suche"
+  },
+  "gameCategoriesTabs": {
+    "top": "Top-Spiele ",
+    "all": "alle Spiele",
+    "live": "Live-Spiele",
+    "slots": "Spielautomaten",
+    "roulette": "Roulette",
+    "table": "Tischspiele",
+    "card": "Kartenspiele",
+    "recent": "Letzte Spiele",
+    "new": "Neue Spiele",
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "gameCategories": {
     "top": "Top-Spiele ",
@@ -147,7 +164,12 @@
     "table": "Tischspiele",
     "card": "Kartenspiele",
     "recent": "Letzte Spiele",
-    "new": "Neue Spiele"
+    "new": "Neue Spiele",
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   },
   "footer": {
     "text": {
@@ -158,7 +180,12 @@
   },
   "search": {
     "findGame": "Spiel finden",
-    "notFound": "Keine funde"
+    "notFound": "Keine funde",
+    "search": "Suchen",
+    "searchResults": "Suchergebnisse",
+    "nothingFound": "Entschuldigung, nichts gefunden",
+    "try": "Versuche, nach etwas anderem zu suchen",
+    "popular": "Beliebte Treffer"
   },
   "common": {
     "date": "Datum",
@@ -176,7 +203,18 @@
     "wager": "Umsatzanforderung",
     "created": "geschaffen",
     "expiresAt": "Läuft ab bei",
-    "noData": "Keine Daten verfügbar"
+    "noData": "Keine Daten verfügbar",
+    "days": "Tage",
+    "hours": "Stunden",
+    "minutes": "Minuten",
+    "seconds": "Sekunden",
+    "week": "Woche",
+    "name": "Name",
+    "points": "Punkte",
+    "prize": "Preis",
+    "prizePool": "Preisgeld",
+    "freeSpins": "Freispiele",
+    "winners": "Gewinner"
   },
   "actions": {
     "addCurrency": "Währung hinzufügen"
@@ -185,7 +223,7 @@
     "heroBanner": {
       "deposit1": {
         "title": "Tägliche rückzahlung<br/> bis zu <span class=\"Colored\"> 20%</span>",
-        "text": "BONUS AUF DIE ERSTE<br/> EINZAHLUNG <span class=\"Colored\"> 100% </span> <br/>bis zu <span class=\"Colored\"> € 150 + <span class=\"Colored\">150 freispiele</span>"
+        "text": "BONUS AUF DIE ERSTE<br/> EINZAHLUNG <span class=\"Colored\"> 100% </span> <br/>bis zu <span class=\"Colored\"> 150 € + <span class=\"Colored\">250 freispiele</span>"
       },
       "deposit2": {
         "title": "Bonus für zweite<br/>  Einzahlung",
@@ -197,11 +235,11 @@
       },
       "deposit4": {
         "title": "Wochenend<br/> bonus",
-        "text": "<span class=\"Colored\">40% BIS ZU €150</span>"
+        "text": "<span class=\"Colored\">40% BIS ZU 150 €</span>"
       },
       "highroller": {
         "title": "HIGH ROLLER-BONUS<br/> FÜR BESONDERE<br/> EINSATZFREUDE",
-        "text": "<span class=\"Colored\">bis zu €500</span>"
+        "text": "<span class=\"Colored\">bis zu 500 €</span>"
       }
     },
     "advantages": {
@@ -301,6 +339,7 @@
       "subscriptions": "Abonnements",
       "sms": "Information zu aktionen per E-MAIL",
       "email": "Information zu aktionen per SMS",
+      "denyBonuses": "Ich möchte keine Boni erhalten",
       "passwordChange": "Passwortänderung",
       "oldPassword": "Altes Passwort",
       "newPassword": "Neues Passwort",
@@ -383,27 +422,27 @@
     "text": "Ninecasino arbeitet ständig daran, die besten Aktionen zu liefern. Wir verwenden die neueste Technologie und das Feedback unserer Spieler, um unsere Aktionen zu gestalten. Viel Spaß!",
     "deposit1": {
       "title": "100%<br/> des<br/> Einzahlungsbetrags <br/> ",
-      "upTo": "bis zu € 150 + 150 FREISPIELE",
+      "upTo": "bis zu 150 € + 250 FREISPIELE",
       "name": "Bonus für die erste Einzahlung",
-      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 € + 150 freispiele. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 € + 250 freispiele. Nach Ihrer ersten Einzahlung erhalten Sie an jedem der darauffolgenden 5 Tage jeweils 50 Freispiele.<br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit2": {
       "title": "55%<br/> des<br/> Einzahlungsbetrags <br/> ",
-      "upTo": "bis zu € 150",
+      "upTo": "bis zu 150 €",
       "name": "Bonus für zweite Einzahlung",
-      "text": "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150  €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach eine zweite Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "text": "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach eine zweite Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit3": {
       "title": "100%<br/> des<br/> Einzahlungsbetrags<br/>",
-      "upTo": "bis zu € 150",
+      "upTo": "bis zu 150 €",
       "name": "Bonus für dritte Einzahlung ",
       "text": "Machen Sie Ihre dritte Einzahlung bei Ninecasino und erhalten Sie bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine dritte Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit4": {
       "title": "Wochenend<br/> bonus",
-      "upTo": "40% BIS ZU €150",
+      "upTo": "40% BIS ZU 150 €",
       "name": "Wochenend bonus",
-      "text": "Mit mehr beginnen, um mehr zu gewinnen. Zahlen Sie mindestens €20 ein und erhalten Sie eine Gutschrift in Höhe von 40% bis zu €150, um diese Automaten schwindlig zu spielen, bis die Jackpots explodieren!"
+      "text": "Mit mehr beginnen, um mehr zu gewinnen. Zahlen Sie mindestens 20 € ein und erhalten Sie eine Gutschrift in Höhe von 40% bis zu 150 €, um diese Automaten schwindlig zu spielen, bis die Jackpots explodieren!"
     },
     "cashback": {
       "title": "Tägliche<br/>rückzahlung",
@@ -411,123 +450,55 @@
       "name": "Tägliche rückzahlung",
       "text": "Wer bekommt im Casino nicht gerne Geld zurück? Selbst wenn Sie verloren haben!<br/>Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von x5 zurück, wenn Sie verlieren."
     },
-    "playsonMay": {
-      "title": "Playson may<br/> cashdays",
-      "name": "Playson May CashDays",
-      "text": "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt."
-    },
-    "mayMadness": {
-      "title": "May<br/> madness<br/> von spinomenal",
-      "name": "May madness von spinomenal",
-      "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde III! Sie läuft ab dem 25. Mai um 00:00 Uhr GMT und endet am 1. Juni 2021 um 23:59 Uhr GMT."
-    },
     "highroller": {
-      "upTo": "up to €500",
+      "upTo": "up to 500 €",
       "name": "High roller-bonus für besondere einsatzfreude",
-      "text": "Sie stehen auf hohe Einsätze? Dann haben wir das Richtige für Sie. Erhalten Sie einmal im Monat einen Highroller-Bonus für besondere Einsatzfreude von 30% bis zu einem Höchstbetrag von €500 auf eine Einzahlung ab mindestens €300."
-    },
-    "knockoutFootball": {
-      "title": "Spiele <br/>mit Habanero – <br/>Runde 2!",
-      "name": "Spiele mit Habanero – Runde 2!",
-      "text": "Das Jackpot-Wettrennen Knockout Football Rush wird vom 26. Juni um 00:01 Uhr bis zum 17. Juli um 23:59 Uhr (GMT+2) fortgesetzt. Mit 22 täglichen Rennen und einer Gesamtpreissumme von 30.000 EUR, die nach dem Zufallsprinzip an 2.200 Spieler verteilt wird.<br/><br/>Auf die Plätze, fertig, los mit Nineсasino und Habanero!<br/><br/>Logge dich jeden Tag ein, um einen neuen Tagesgesamtpreis zu entdecken, der zwischen 1.000 und 2.500 EUR liegt. Wähle einfach deine Lieblings-Automatenspiele von Habanero, mache einen Mindesteinsatz von 0,10 EUR und leg los!"
+      "text": "Sie stehen auf hohe Einsätze? Dann haben wir das Richtige für Sie. Erhalten Sie einmal im Monat einen Highroller-Bonus für besondere Einsatzfreude von 30% bis zu einem Höchstbetrag von 500 € auf eine Einzahlung ab mindestens 300 €."
     },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
       "name": "Drops & Wins Slots",
-      "text": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Mit einem Multiplikator zu spielen, macht noch mehr Spaß. Darum gibt es diesmal in den Wochen 21–24 Wochenturniere (Gewinnmultiplikatorwochen) sowie Tagesausspielungen (Gewinnmultiplikatorwochen) mit einigen neuen Spielen!"
+      "text": "Willkommen zu Phase 8 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops & Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. <br/><br/>Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 29–32 der Wochenturniere (Gewinnmultiplikatorwochen) sowie Tagesausspielungen (Gewinnmultiplikatorwochen) mit einigen neuen Spielen!"
     },
     "dropsWinsLive": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Live",
       "name": "Drops & Wins Live",
       "text": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!<br/><br/>Magst du Live-Spiele? Diese Live-Ausgabe wird dir gefallen. Mach mit bei wöchentlichen Turnieren – Roulette, Blackjack, Mega Wheel, Baccarat!"
+    },
+    "augustCashdays": {
+      "title": "August CashDays<br/> 60k",
+      "name": "August CashDays 60k",
+      "text": "Willkommen bei dem August CashDays 60k-Turnier mit sagenhaften Einsätzen und satten Gewinnen aus dem Hause Playson. Das Turnier läuft ab dem 01.08.2021 um 0:01 Uhr UTC und endet am 08.08.2021 um 23:59 Uhr UTC. Bei NineCasino können Sie alle angesagten Spiele des Turniers spielen. Also, fahren Sie die Scheuer ein, solange die Sonne lacht!"
+    },
+    "weekly_derby": {
+      "upTo": "Preispool 2.500 €",
+      "name": "Aufsatteln fürs Weekly Derby",
+      "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
     }
   },
   "tournaments": {
     "games": "Teilnehmende Spiele",
-    "terms": "Teilnahmebedingungen"
-  },
-  "playsonMay": {
-    "prize": "€ 60 000",
-    "text": "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt.",
-    "textMobile": "Begrüßen wir einen neuen Monat und ein neues CashDays 60k -Turnier des bekannten Spieleanbieters um 60.000 Euro. <br/><br/>Playson weiß, was seinen geschätzten Spielern gefällt.",
-    "terms": [
-      {
-        "text": "Das Turnier läuft ab 0:01 Uhr UTC am 1. Mai 2021 bis zum 8. Mai 2021 um 23:59 Uhr UTC. "
-      },
-      {
-        "text": "Diese 10 Spiele nehmen teil: <br/>●  Book of Gold: Double Chance<br/>●  Book of Gold: Multichance<br/>●  Buffalo Power: Hold and Win<br/>●  Burning Wins: classic 5 lines<br/>●  Diamond Wins: Hold and Win<br/>●  Divine Dragon: Hold and Win<br/>●  Legend of Cleopatra MegawaysTM<br/>●  Solar Queen<br/>●  Solar Temple<br/>●  Wolf Power: Hold and Win"
-      },
-      {
-        "text": "Der Mindesteinsatz für die Teilnahme beträgt wie gewohnt 0,50 Euro. Die Punkte werden Runde für Runde berechnet, dabei entspricht jeder gewonnene Euro (oder sein Gegenwert in anderen Währungen) jeweils 10 Punkten. "
-      },
-      {
-        "text": "Das großzügige Preisgeld von 60.000 Euro wird unter 350 Mitspielenden aufgeteilt: <br/>Platz 1 – €10.000<br/>Platz 2 – €5.000<br/>Platz 3 – €3.000<br/>Platz 4 – €1.500<br/>Platz 5 – €1.000<br/>Platz 6 – €900<br/>Platz 7 – €800<br/>Platz 8 – €700<br/>Platz 9 – €600<br/>Platz 10 – €500<br/>Platz 11 – 25 je €400<br/>Platz 26 – 50 je €200<br/>Platz 51 – 100 je €150<br/>Platz 101 – 200 je €100<br/>Platz 201 – 350 je €50 "
-      },
-      {
-        "text": "Achten Sie während des Turniers auf die Rangliste. Je mehr Punkte Sie sammeln, desto höher Ihre Siegchance! Ergreifen Sie sie und viel Glück dabei! "
-      }
-    ]
-  },
-  "mayMadness": {
-    "prize": "€ 60 000",
-    "text": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!<br/><br/>Fangen wir an mit Runde III! Sie läuft ab dem 25. Mai um 00:00 Uhr GMT und endet am 1. Juni 2021 um 23:59 Uhr GMT.",
-    "textMobile": "Wieder einmal lässt der bekannte Spieleanbieter Spinomenal Sie bei seinem spannenden Wahnsinnsturnier im Mai verrückt spielen. Während drei Wochen im Mai können Sie sich bei seinen coolen Automatenspielen erfreuen und sich ein Stück von dem üppigen Preisgeld in Höhe von 60.000 Euro sichern!",
-    "terms": [
-      {
-        "text": "Sie läuft ab dem 25. Mai um 00:00 Uhr GMT und endet am 1. Juni 2021 um 23:59 Uhr GMT."
-      },
-      {
-        "text": "Teilnehmende Spiele in Runde III sind:<br/><br/>●  Book Of Rebirt<br/>●  Origins Of Lilith<br/>●  4 Horsemen II"
-      },
-      {
-        "text": "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 Euro."
-      },
-      {
-        "text": "Jeder Gewinn bringt Ihnen Wertungspunkte entsprechend dem Gewinnmultiplikator. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
-      }
-    ]
-  },
-  "knockoutFootball": {
-    "title": "Spiele <br/>mit Habanero – <br/>Runde 2!",
-    "prize": "30.000 EUR",
-    "text": "Das Jackpot-Wettrennen Knockout Football Rush wird vom 26. Juni um 00:01 Uhr bis zum 17. Juli um 23:59 Uhr (GMT+2) fortgesetzt. Mit 22 täglichen Rennen und einer Gesamtpreissumme von 30.000 EUR, die nach dem Zufallsprinzip an 2.200 Spieler verteilt wird.<br/><br/>Auf die Plätze, fertig, los mit Nineсasino und Habanero!<br/><br/>Logge dich jeden Tag ein, um einen neuen Tagesgesamtpreis zu entdecken, der zwischen 1.000 und 2.500 EUR liegt. Wähle einfach deine Lieblings-Automatenspiele von Habanero, mache einen Mindesteinsatz von 0,10 EUR und leg los!",
-    "textMobile": "Das Jackpot-Wettrennen Knockout Football Rush wird vom 26. Juni um 00:01 Uhr bis zum 17. Juli um 23:59 Uhr (GMT+2) fortgesetzt.",
-    "terms": [
-      {
-        "title": "Dauer der Aktion: ",
-        "text": "26. Juni – 17. Juli 2021 (GMT+2)"
-      },
-      {
-        "title": "Aufbau der Aktion: ",
-        "text": "22 Rennen, jeweils 2 h lang"
-      },
-      {
-        "title": "Gewinnstrukturierung::",
-        "text": " 2.200 Sieger, 100 pro Rennen"
-      },
-      {
-        "title": "Mindesteinsatz:",
-        "text": "0,10 EUR"
-      },
-      {
-        "title": "Teilnahmebedingungen der Aktion:",
-        "text": "• Teilnahmeberechtigte Inhalte: alle Habanero-Automatenspiele <br/>• Qualifikationskriterien: Während des Rennens löst ein Spieler zu einem zufälligen Zeitpunkt den ersten Gewinn aus. Alle aufeinanderfolgenden Einsätze, die auf dem Server eingehen, tragen dann zu deiner Position bei<br/>• Habanero hat das Recht, die Aktion jederzeit zu ändern, auszusetzen oder abzubrechen"
-      }
-    ]
+    "terms": "Teilnahmebedingungen",
+    "timeLeft": "Noch Zeit bis zum Ende",
+    "duration": "Dauer",
+    "betsPerPoint": "Wetten pro Punkt",
+    "currentWinners": "Aktuelle Gewinner",
+    "previousRound": "Letzte Runde",
+    "endsIn": "Das Turnier endet in"
   },
   "dropsWinsSlots": {
-    "title": "Aufgewertete Ausgabe von Drops & Wins Slots",
+    "title": "Drops <span class=\"Colored\">&</span> Wins Slots",
     "prize": "4.000.000 €",
-    "text": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Mit einem Multiplikator zu spielen, macht noch mehr Spaß. Darum gibt es diesmal in den Wochen 21–24 Wochenturniere (Gewinnmultiplikatorwochen) sowie Tagesausspielungen (Gewinnmultiplikatorwochen) mit einigen neuen Spielen!",
-    "textMobile": "Willkommen zu Phase 6 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops And Wins auf 500.000 €!",
+    "text": "Willkommen zu Phase 8 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops & Wins auf 500.000 €! Außerdem wird die Anzahl der monatlichen Geldpreise erhöht und es gibt mehr Gelegenheiten auf Gewinne. Mit einem Multiplikator zu spielen, macht noch mehr Spaß. Mach mit beim aufregenden Drops & Wins und erhalte die Chance, einen Anteil an dem massiven 4.000.000 € Preisgeld zu gewinnen! Deshalb gibt es diesmal in den Wochen 29–32 der Wochenturniere (Gewinnmultiplikatorwochen) sowie Tagesausspielungen (Gewinnmultiplikatorwochen) mit einigen neuen Spielen!",
+    "textMobile": "Willkommen zu Phase 8 der täglichen Drops & Wins Werbeaktion. Pragmatic Play verdoppelt die monatliche Slots-Ausgabe des Budgets von Drops & Wins auf 500.000 €!",
     "terms": [
       {
-        "title": "Laufzeit der Phase 6",
-        "text": "● Woche 21: 30th Juni 2021 09:01 CEST – 7th Juli 2021 18:59 CEST<br/>● Woche 22: 7th Juli 2021 19:01 CEST – 14th Juli 2021 18:59 CEST<br/>● Woche 23: 14th Juli 2021 19:01 CEST – 21st Juli 2021 18:59 CEST<br/>● Woche 24: 21st Juli 2021 19:01 CEST – 28th Juli 2021 18:59 CEST"
+        "title": "Laufzeit der Phase 8",
+        "text": "● Woche 29: 25. August 2021 19:01 CEST – 1. September 2021 18:59 CEST<br/>● Woche 30: 1. September 2021 19:01 CEST – 8. August 2021 18:59 CEST<br/>● Woche 31: 8. September 2021 19:01 CEST – 15. September 2021 18:59 CEST<br/>● Woche 32: 15. September 2021 19:01 CEST – 22. September 2021 18:59 CEST"
       },
       {
-        "title": "Teilnehmende Spiele der Wochen 17 – 20",
-        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House™, The Dog House Megaways™, Chilli Heat™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Buffalo King Megaways™, The Hand of Midas™, Floating Dragon Hold & Spin™, The Magic Cauldron – Enchanted Brew™, Heart of Rio™, Dragon Hot Hold and Spin™, Lucky Lightning™, 5 Lions Megaways™."
+        "title": "Teilnehmende Spiele",
+        "text": "Wolf Gold™, Mustang Gold™, Sweet Bonanza™, John Hunter and the Tomb of the Scarab Queen™, Great Rhino Megaways™, John Hunter and the Book of Tut™, The Dog House ™, The Dog House Megaways™, Chilli Heat ™, Fruit Party™, Big Bass Bonanza™, Madame Destiny Megaways™, Gems Bonanza™, Wild Wild Riches™, Wild West Gold™, Gates of Olympus™, Power of Thor Megaways™, Floating Dragon Hold&Spin™, The Hand of Midas™, 5 Lions Megaways™, Buffalo King Megaways™, Book of Vikings™, Chicken Drop™, Fruit Party 2™, Rise of Giza PowerNudge™, Juicy Fruits™."
       },
       {
         "title": "Drops & Wins beinhaltet",
@@ -535,23 +506,23 @@
       },
       {
         "title": "Wie man gewinnt",
-        "text": "● Höchster Gewinnbetrag für eine einzelne Ausspielung, angepasst an die Höhe des Einsatzes.<br/>● Jede Echtgeld-Ausspielung kann in den teilnehmenden Spielen einen zufälligen Geldpreis hervorbringen.<br/>● Spieler müssen sich dafür entscheiden, echtes Geld in den teilnehmenden Spielen einzusetzen, OHNE dass ein Mindesteinsatz erforderlich ist. Für die Teilnahme entstehen den Spielern keine zusätzlichen Kosten."
+        "text": "● Zur Teilnahme an dem Wochenturnier berechtigt ist, wer einen Echtgeldeinsatz in einem der teilnehmenden Spiele getätigt und mindestens einen (1) Gewinn in diesem Spiel erzielt hat. <br/>● Für die Teilnahme an der täglichen Gewinnausschüttung besteht kein Mindesteinsatz in echtem Geld. Drops (Ausschüttungen in Gewinnmultiplikatorenwochen)."
       },
       {
         "title": "Zusätzlich",
-        "text": "● Während der Multiplikatorenwochen können Gewinne in Form eines in der Wochenturniergewinnübersicht (Gewinnmultiplikatorenwochen) und der Tagesausschüttungsübersicht weiter unten (im weiteren Textverlauf die „Gewinnmultiplikatorenwochen“) ausgewiesenen Vielfachen r des Einsatzes der erfolgreichen Spielerin bzw. des erfolgreichen Spielers erzielt werden.<br/>● Wenn der Gewinn in der erfolgreichen Ausspielung zehn Euro (10 €) übersteigt, erfolgt die Auszahlung des Gewinns auf der Grundlage eines Einsatzes von 10 Euro (10 €) oder umgerechnet in die jeweils geltende Währung (s. unten) multipliziert mit dem erworbenen Multiplikator x.<br/>● Die Ermittlung der Ranglistenposition erfolgt entsprechend der Punktzahl für den höchsten Einzelgewinn in einer einzelnen Ausspielung in einem der teilnehmenden Spiele umgerechnet auf den jeweiligen Einsatz.<br/>● Sollten zwei (2) oder mehr Mitspielende ein Wochenturnier auf demselben Ranglistenplatz beenden, entfällt der höhere Gewinn auf die Spielerin bzw. den Spieler, die/der die erfolgreiche Punktzahl zuerst erreicht hat."
+        "text": "● Während der Multiplikatorenwochen können Gewinne in Form eines in der Wochenturniergewinnübersicht (Gewinnmultiplikatorenwochen) und der Tagesausschüttungsübersicht weiter unten (im weiteren Textverlauf die „Gewinnmultiplikatorenwochen“) ausgewiesenen Vielfachen r des Einsatzes der erfolgreichen Spielerin bzw. des erfolgreichen Spielers erzielt werden.<br/>● Wenn der Gewinn in der erfolgreichen Ausspielung zehn Euro/Pfund Sterling (10 €/£) übersteigt, erfolgt die Auszahlung des Gewinns auf der Grundlage eines Einsatzes von 10 Euro/Pfund Sterling (10 €/£) oder umgerechnet in die jeweils geltende Währung (s. unten) multipliziert mit dem erworbenen Multiplikator x.<br>● Die Ermittlung der Ranglistenposition erfolgt entsprechend der Punktzahl für den höchsten Einzelgewinn in einer einzelnen Ausspielung in einem der teilnehmenden Spiele umgerechnet auf den jeweiligen Einsatz.<br>● Sollten zwei (2) oder mehr Mitspielende ein Wochenturnier auf demselben Ranglistenplatz beenden, entfällt der höhere Gewinn auf die Spielerin bzw. den Spieler, die/der die erfolgreiche Punktzahl zuerst erreicht hat."
       }
     ]
   },
   "dropsWinsLive": {
-    "title": "Drops and Wins for Live Casino",
+    "title": "DROPS <span class=\"Colored\">&</span> WINS FOR LIVE CASINO",
     "prize": "3.000.000 €",
     "text": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!<br/><br/>Magst du Live-Spiele? Diese Live-Ausgabe wird dir gefallen. Mach mit bei wöchentlichen Turnieren – Roulette, Blackjack, Mega Wheel, Baccarat!",
     "textMobile": "Pragmatic Play bietet mehr und mehr Unterhaltung der nächsten Stufe mit seinem neuen Drops and Wins for Live Casino. Ergreife die Chance, einen Anteil am unglaublichen 3.000.000 € Preisgeld zu gewinnen!",
     "terms": [
       {
-        "title": "Laufzeit der Phase 1",
-        "text": "● Woche 1: 3 Juni 2021 09:01 CEST – 9 Juni 2021 18:59 CEST<br/>● Woche 2: 9 Juni 2021 19:01 CEST – 16 Juni 2021 18:59 CEST<br/>● Woche 3: 16 Juni 2021 19:01 CEST – 23 Juni 2021 18:59 CEST<br/>● Woche 4: 23 Juni 2021 19:01 CEST – 30 Juni 2021 18:59 CEST"
+        "title": "Laufzeit der Phase 4",
+        "text": "● Woche 13: 28th Juli 2021 09:01 CEST – 4th August 2021 18:59 CEST<br/>● Woche 14: 4th August 2021 19:01 CEST – 11th August 2021 18:59 CEST<br/>● Woche 15: 11th August 2021 19:01 CEST – 18st August 2021 18:59 CEST<br/>● Woche 16: 18st August 2021 19:01 CEST – 25th August 2021 18:59 CEST"
       },
       {
         "title": "Teilnehmende Spiele",
@@ -571,7 +542,39 @@
       },
       {
         "title": "Zusätzlich:",
-        "text": "<strong>How to win:<br/><br/>Wöchentliches Roulette-Turnier<br/>Gewinne:</strong> Insgesamt 50.000 € verteilt auf 1.000 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 2x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Roulette-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Roulette-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Wetteinsätze, die auf Wetten mit Chance 1:1 getätigt werden (Rot/Schwarz, Gerade/Ungerade, 1:18/19:36) werden nicht auf die Punktzahl des Wöchentlichen Roulette-Turniers angerechnet.<br/><br/><strong>Wöchentliches Blackjack-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 300 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 10 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliches Blackjack-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Blackjack-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets und/oder Bets Behind werden für das Wöchentliche Blackjack-Turnier berücksichtigt.<br/><br/><strong>Wöchentliches Mega Wheel-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Mega Wheel-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Mega Wheel-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Alle Qualifizierenden Wetten werden für das Wöchentliche Mega Wheel-Turnier berücksichtigt.<br/><br/><strong>Wöchentliche Baccarat-Turniere<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Baccarat-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Baccarat-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets (Player, Banker und Tie) werden für das Wöchentliche Baccarat-Turnier berücksichtigt."
+        "text": "Wöchentliches Roulette-Turnier<br/>Gewinne:</strong> Insgesamt 50.000 € verteilt auf 1.000 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 2x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Roulette-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Roulette-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Wetteinsätze, die auf Wetten mit Chance 1:1 getätigt werden (Rot/Schwarz, Gerade/Ungerade, 1:18/19:36) werden nicht auf die Punktzahl des Wöchentlichen Roulette-Turniers angerechnet.<br/><br/><strong>Wöchentliches Blackjack-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 300 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 10 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliches Blackjack-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Blackjack-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets und/oder Bets Behind werden für das Wöchentliche Blackjack-Turnier berücksichtigt.<br/><br/><strong>Wöchentliches Mega Wheel-Turnier:<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Mega Wheel-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Mega Wheel-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Alle Qualifizierenden Wetten werden für das Wöchentliche Mega Wheel-Turnier berücksichtigt.<br/><br/><strong>Wöchentliche Baccarat-Turniere<br/>Gewinne:</strong> Insgesamt 25.000 € verteilt auf 600 Preise:<br/>Spieler müssen im Angebotszeitraum mit Echtgeld eines der teilnehmenden Spiele mit einem Mindesteinsatz von 0,50 € spielen. Die Teilnahme hat keine weiteren Kosten.<br/><br/>Ein Spieler muss mindestens 2 Aufeinanderfolgende Qualifizierende Siege erzielen, wobei jeder Aufeinanderfolgende Qualifizierende Sieg höher als 1x der gesamte Qualifizierende Wetteinsatz ist, um sich für das Wöchentliche Baccarat-Turnier zu qualifizieren.<br/><br/>Ein Spieler kann seine Punktzahl im Wöchentlichen Baccarat-Turnier mit jedem weiteren Aufeinanderfolgenden Qualifizierenden Sieg erhöhen.<br/><br/>Nur Main Bets (Player, Banker und Tie) werden für das Wöchentliche Baccarat-Turnier berücksichtigt."
+      }
+    ]
+  },
+  "weekly_derby": {
+    "title": "Das Weekly Derby<br/> von Ninecasino",
+    "prize": "2.500 €",
+    "text": "Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.",
+    "textMobile": "Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.",
+    "terms": [
+      {
+        "text": "Jedes Turnier läuft über sieben Tage, von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC)."
+      },
+      {
+        "text": "Das Preisgeld beträgt 2.500 Euro. Für die Gewinne gilt eine Umsatzanforderung von x5."
+      },
+      {
+        "text": "Setzt ein Mitspieler Geldbeträge in einer anderen Währung als Euro, so wird der Gewinn in der von diesem Mitspieler am häufigsten gesetzten Währung ausgewiesen."
+      },
+      {
+        "text": "Teilnahmeberechtigt ist, wer mindestens eine Einzahlung vornimmt. Jeder Einsatz von 1 Euro in echtem Geld bringt dem Spieler 1 Turnierpunkt."
+      },
+      {
+        "text": "Mach einfach einen Mindesteinsatz von 0,5 €."
+      },
+      {
+        "text": "Es zählen nur Einsätze in Automatenspielen; Brettspiele und Spiele mit Kartengebern werden nicht berücksichtigt."
+      },
+      {
+        "text": "Die Ermittlung der Gewinner erfolgt anhand der Turnierpunkte: je mehr Turnierpunkte desto größer die Gewinnchance. Die Gewinne werden nach Abschluss der Ziehung automatisch zugestellt."
+      },
+      {
+        "text": "Es gelten die allgemeinen Bedingungen für Boni."
       }
     ]
   },
@@ -664,7 +667,7 @@
           "Wir behalten uns vor, bei der ersten Abhebung die Identität der betreffenden Kundin/des betreffenden Kunden zu prüfen. Dazu kann beispielsweise eine Kopie des Reisepasses oder Personalausweises, von Rechnungen von Versorgungsunternehmen und/oder Kopien der bei der Einzahlung verwendeten Kredit-/Girokarte angefordert werden.",
           "Es obliegt der Spielerin/dem Spieler, die Echtheit aller im Zuge der Kundenidentifikation (KYC) verwendeten Unterlagen sicherzustellen. Die Vorlage gefälschter oder trügerischer Unterlagen kann zu einer Einziehung des Guthabens und der möglichen Gewinne der betreffenden Spielerin/des betreffenden Spielers führen.",
           "Um eine Abhebung tätigen zu können, muss der eingezahlte Betrag vor der Abhebung mindestens einmal verspielt worden sein. Dieses Vorgehen dient der Verhinderung von Geldwäsche. Den Spielenden obliegt die alleinige Verantwortung für die Zahlung aller in Bezug auf Ihre Gewinne nach an Ihrem Aufenthaltsort anfallenden Steuern und Abgaben.",
-          "Die Webseite unterstützt Auszahlungen mittels Original Credit Transfer (OCT) von Visa sowie mittels Payment Transfer von Mastercard. Weitere Voraussetzungen sind, dass es sich bei der verwendeten Kreditkarte nicht um eine Unternehmenskreditkarte handelt, und dass diese Karte in einem der zugelassenen Staaten ausgegeben wurde. Visa kann in folgenden Staaten nicht genutzt werden: USA, Neuseeland, Australien, Hongkong, Indien, Indonesien, Japan, Korea, Malaysia, Singapur. Mastercard kann in folgenden Staaten verwendet werden: Andorra, Belgien, Dänemark, Deutschland, Estland, Frankreich, Gibraltar, Griechenland, Großbritannien, Irland, Island, Italien, Lettland, Luxemburg, Malta, Monaco, Niederlande, Norwegen, Österreich, San Marino, Slowakei, Slowenien, Spanien, Schweden, Schweiz, Tschechische Republik, Türkei, Ungarn und Zypern. Beachten Sie bitte, dass das Casino auch in zugelassenen Staaten die erfolgreiche Zahlungsabwicklung per Kreditkarte nicht in allen Fällen gewährleisten kann, da die Banken, die diese Kreditkarten ausgeben, derartige Überweisungen in eigenem Ermessen sperren oder ablehnen können.",
+          "Die Webseite unterstützt Auszahlungen mittels Original Credit Transfer (OCT) von Visa sowie mittels Payment Transfer von Mastercard. Weitere Voraussetzungen sind, dass es sich bei der verwendeten Kreditkarte nicht um eine Unternehmenskreditkarte handelt, und dass diese Karte in einem der zugelassenen Staaten ausgegeben wurde. Visa kann in folgenden Staaten nicht genutzt werden: Hongkong, Indien, Indonesien, Japan, Korea, Malaysia, Singapur. Mastercard kann in folgenden Staaten verwendet werden: Andorra, Belgien, Dänemark, Deutschland, Estland, Frankreich, Gibraltar, Griechenland, Großbritannien, Irland, Island, Italien, Lettland, Luxemburg, Malta, Monaco, Niederlande, Norwegen, Österreich, San Marino, Slowakei, Slowenien, Spanien, Schweden, Schweiz, Tschechische Republik, Türkei, Ungarn und Zypern. Beachten Sie bitte, dass das Casino auch in zugelassenen Staaten die erfolgreiche Zahlungsabwicklung per Kreditkarte nicht in allen Fällen gewährleisten kann, da die Banken, die diese Kreditkarten ausgeben, derartige Überweisungen in eigenem Ermessen sperren oder ablehnen können.",
           "In dem unwahrscheinlichen Fall, dass Zahlungsmittel in einer Kryptowährung auf die Netzwerkadresse einer anderen Kryptowährung eingezahlt werden (z.B. BTC auf eine BCH-Adresse), unternimmt Ninecasino bis zu einem Betrag von 5.000 USD keinen Versuch, diese zurückzubuchen. In einem solchen Fall wird für die Rückbuchung der eingebüßten Zahlungsmittel eine Gebühr von 0,1 BTC zur Deckung der Kosten für die Rückbuchung berechnet. Das ist jedoch keine Garantie dafür, dass die Mittel tatsächlich zurückgebucht werden.",
           "Die interne Verrechnungswährung der Webseite ist der Euro. Deshalb kann bei Überweisungen in anderen Währungen der von Ihrer Kreditkarte abgebuchte Betrag aufgrund von des Wechselkurses Ihrer Bank und/oder des Zahlungsabwicklungssystems des Casinos unwesentlich höher sein als zum Zeitpunkt der Überweisung angezeigt.",
           "Alle Auszahlungen per Banküberweisung werden innerhalb von fünf (5) Werktagen bearbeitet. Beachten Sie bitte, das eine Banküberweisung für Auszahlungen in US-Dollar nicht verfügbar ist.",
@@ -813,7 +816,7 @@
       },
       "ourSoftware": {
         "title": "UNSERE SOFTWARE",
-        "text": "Das Casino verwendet Produkte von den besten Entwicklern von Casinosoftware und Spielen der Industrie. Amatic, BetSoft, Endorphina, Ezugi, Microgaming und SoftSwiss. Jeder Spieler kennt diese Namen aus eigener Erfahrung und vertraut ihnen. Wir vertrauen ihnen ebenfalls. Wir wollen nicht, dass unsere Spieler sich fühlen wie eine Laborratte in einem Experiment, also bieten wir eine verlässliche Lösung, die wir mit Vergnügen selbst benutzen würden."
+        "text": "Das Casino verwendet Produkte von den besten Entwicklern von Casinosoftware und Spielen der Industrie. Amatic, BetSoft, Endorphina, Microgaming und Bgaming. Jeder Spieler kennt diese Namen aus eigener Erfahrung und vertraut ihnen. Wir vertrauen ihnen ebenfalls. Wir wollen nicht, dass unsere Spieler sich fühlen wie eine Laborratte in einem Experiment, also bieten wir eine verlässliche Lösung, die wir mit Vergnügen selbst benutzen würden."
       },
       "offers": {
         "title": "WAS WIR ANBIETEN",
@@ -899,10 +902,6 @@
             {
               "title": "ICH HABE SOEBEN EINE ABHEBUNG ANGEFORDERT. MUSS ICH IRGENDWELCHE DOKUMENTATION SENDEN?",
               "answer": "Als Teil unserer Sicherheitsprozeduren verlangen wir standardmäßige Dokumente zur Bestätigung bei der ersten Anforderung einer Abhebung durch den Kunden. Wenn deine Mittel durch Wire Transfer zurückgezahlt werden oder wenn es sich bei deiner Abhebung um allgemeine Gewinne über dem eingezahlten Betrag handelt, bitten wir dich darum, uns folgendes zu übermitteln:<br/><br/><ol><li>Eine Gas-, Wasser- oder Stromrechnung aus den letzten 6 Monaten</li><li>Kopie der Vorderseite deiner Kreditkarte (stelle aus Sicherheitsgründen bitte sicher, dass die mittleren 8 Ziffern der Vorderseite deiner Kreditkarte verborgen sind)</li><li>Identitätsnachweis (Ausweis, Führerschein o.Ä.)</li><li>Wenn du auf ein E-Wallet-Konto überweisen möchtest, übermittle uns bitte die Kontonummer/E-Mail-Adresse, die mit dem Konto verknüpft ist.</li></ol><br/><br/>Wir überprüfen die Dokumente so schnell wie möglich, üblicherweise in weniger als 12 Stunden. Falls Bestätigung notwendig ist, kann es länger dauern; wenn du also länger als 48 Stunden nichts von uns gehört hast, wende dich bitte an die Kundenbetreuung."
-            },
-            {
-              "title": "WIE LANGE DAUERT ES, BIS ICH MEINE ABHEBUNG ERHALTE?",
-              "answer": "Unsere Blitzabhebung bedeutet, dass du dein Geld innerhalb von 24 Stunden erhältst, sobald wir alle Informationen besitzen, die wir laut unseren Geschäftsbedingungen benötigen. Begib dich bitte zum Abschnitt Abhebung der Kasse, um eine vollständige Aufstellung der zu erwartenden Überweisungen zu sehen."
             },
             {
               "title": "WIE LANGE DAUERT ES, BIS ICH MEINE ABHEBUNG ERHALTE?",
@@ -1013,7 +1012,7 @@
           "Alle Vorfälle von Verdacht auf Geldwäsche müssen dem MLRO gemeldet werden, doch dieser Verdacht darf dem Kunden nicht mitgeteilt werden; weitere Aktionen erfordern Zustimmung. Der MLRO ist dann dafür verantwortlich dafür, mit NCA/UKFIU Kontakt aufzunehmen und gegebenenfalls Berichte abzuliefern, falls erforderlich. Er wird auch dafür sorgen, dass die erforderlichen Daten für alle damit zusammenhängenden Reporte gesammelt werden.",
           "Die Gesellschaft wird eine VOLLE „Kenne deinen Kunden“-Politik implementieren. Dies wird nicht nur Bedrohungen durch Geldwäsche verringern, sondern auch Betrug im Allgemeinen. Kunden werden während der Registrierung und allgemein auf der unterstützenden nicht-transaktionalen Webseite darauf hingewiesen, dass Online-Verifizierungstools verwendet werden, und dass wir in Fällen, in denen wird gewissen Kriterien nicht gerecht werden können, Identitätsnachweise und Dokumente zur Adressenverifizierung anfordern werden.",
           "Weiter Schlüsselentscheidungen, die diesen Schutz erhöhen, sind Schwellenwerte/-geschwindigkeiten für Abhebungen, um anfangs Überprüfungen und Zustimmung durch den Direktor für Abhebungen und Banktransfers über €3.000 in einer Transaktion erforderlich zu machen, ein Maximum von 3 (drei) täglichen Abhebungen und ein globales tägliches Maximum für Abhebungen von €9.000.",
-          "Industriestandards, die stets zu Enhanced Due Diligence führen (die Anforderung für weitere Bestätigung von Identität und Adresse), sind Abhebungen über €3.000 in einem 24-Stunden-Intervall, und €9.000 in einer 90-Tage-Periode. Simple Online-Verifikation ist unter diesen Umständen NICHT akzeptabel.",
+          "Industriestandards, die stets zu Enhanced Due Diligence führen (die Anforderung für weitere Bestätigung von Identität und Adresse), sind Abhebungen über 3.000 € in einem 24-Stunden-Intervall, und 9.000 € in einer 90-Tage-Periode. Simple Online-Verifikation ist unter diesen Umständen NICHT akzeptabel.",
           "Dieses Geschäft wird außerdem kein Bargeld involvieren, so dass Risiken im Zusammenhang mit Falschgeld vermieden werden.",
           "Die Systeme werden alle Transaktionen eines Kontos aufzeichnen. Diese Kontenhistorien werden regelmäßigen Prüfungen in Bezug auf Betrug und Indikatoren sozialer Verantwortung unterzogen. Wenn ungewöhnliche Muster von Wetten und Gewinnen festgestellt werden, werden diese außerdem mit der Kommunikationshistorie verglichen, um sicherzustellen, dass das Personal nicht mit Kunden zusammenarbeitet oder unrechtmäßig handelt.",
           "Die Gesellschaft wird außerdem Aufzeichnungen der Kunden bevorraten, die als riskant oder politisch exponiert identifiziert wurden. Diese Konten werden strengeren und häufigeren Prüfungen unterzogen.",
@@ -1061,7 +1060,7 @@
           "Sofern nicht anders angegeben, sind Boni nur für Spieler verfügbar, die wenigstens eine erfolgreiche Einzahlung auf ihr Konto getätigt haben.",
           "Falls eine technische Fehlkonfiguration oder ein Fehler irgendeiner Art darin resultiert, dass eine falsche Anzahl von Freispielen oder ein fehlerhafter Bonus deinem Konto gutgeschrieben werden, behalten wir uns das Recht vor, alle resultierenden Gewinne zu entfernen und die mit der korrekten Konfiguration berechneten Werte gutzuschreiben.",
           "Ein Benutzer ist nicht berechtigt, mehr als ein Konto im System zu registrieren. Das bedeutet, dass nur ein Konto pro Person, Haushalt, Familie, Haushaltsadresse, E-Mail-Adresse, Kreditkartennummer, E-Wallet-Konto oder geteilter Computerumgebung (z.B. Bibliothek, Arbeitsplatz, Wohnheim, Universität oder Schule) registriert werden darf. Jeglicher Täuschungsversuch durch Registrierung mehrerer Konten Bonusgeld zu erlangen, wird als Bonusmissbrauch ausgelegt und resultiert in der Einfrierung des Kontos/der Konten und der Entfernung der Gelder.",
-          "Beim Wetteinsatz jegliches Bonus/Angebots (gratis oder Einzahlung) oder Einstreichen eines Bonus für Freispielgewinne ist die maximale Einsatzhöhe 10 % (mindestens 0,10) der Bonushöhe oder 5 Währungseinheiten (z.B. €5, £5, 500 INR). Zuwiderhandlung bedeutet Bruch der Bonus-/Angebotsbedingungen, und wir behalten uns das Recht vor, jegliche Gewinne zu stornieren und zu entfernen. Eine Wette beinhaltet jegliche Wettfunktion, jede Glücksspielfunktion und jede andere Art von Wettaktivität (ungeachtet ihres Namens).",
+          "Beim Wetteinsatz jegliches Bonus/Angebots (gratis oder Einzahlung) oder Einstreichen eines Bonus für Freispielgewinne ist die maximale Einsatzhöhe 10 % (mindestens 0,10) der Bonushöhe oder 5 Währungseinheiten (z.B. €5, £5, 500 INR). Zuwiderhandlung bedeutet Bruch der Bonus-/Angebotsbedingungen, und wir behalten uns das Recht vor, jegliche Gewinne zu stornieren und zu entfernen. Eine Wette beinhaltet jegliche Wettfunktion, jede Glücksspielfunktion und jede andere Art von Wettaktivität (ungeachtet ihres Namens).",
           "Individuelle Werbeaktionen können eigene Bedingungen beinhalten, die die hier genannten Bedingungen außer Kraft setzen oder erweitern. Bitte lies sorgfältig alle Bedingungen, die mit einem Bonus zusammenhängen, bevor du teilnimmst. Sollten die Bedingungen der individuellen Werbeaktionen mit den Bonusrichtlinien in Konflikt stehen, so kommen die Bedingungen der individuellen Werbeaktion zur Anwendung.",
           "Unabhängig von der Währung, in der wir Bonusbeträge bewerben oder anzeigen, wird der Bonus immer in der dem Konto zugeordneten Währung gutgeschrieben.",
           "Übereinstimmend mit der Datenschutzerklärung senden wir regelmäßig E-Mails mit Bonusangeboten. Du bist nur dann für den Bonus berechtigt, wenn du die E-Mail direkt von uns erhalten hast. Du kannst dein Abonnement von Werbeaktionen beenden, indem du dich an die Kundenbetreuung wendest. Falls wir entscheiden, dass ein Kunde nicht der beabsichtigte Empfänger einer bestimmten Werbeaktion war, sind wir nicht zur Auszahlung verpflichtet, auch wenn der Kunde die Wettbedingungen erfüllt hat.",
@@ -1218,13 +1217,13 @@
         "Die Verwendung von Bonusbeträgen zum alleinigen Zweck des Fortschritts durch die Bonuslevel ist verboten, insbesondere in Fällen, wenn Bonus- oder Barbeträge alleine dazu verwendet werden, durch die Bonuslevel fortzuschreiten (e.g. Sammeln von 9 von 10 Münzen, um das Bonusfeature zu erlangen), und die finalen Level (z.B. Spielen, um die letzte Münze zu sammeln und 10 von 10 und das Bonusfeature zu erlangen) werden mit Barwetten vervollständigt, wenn Bonusbeträge verwirkt oder verloren wurden, oder die Umsatzbedingung erreicht wurde, und zu Bargeld umgewandelt werden. Alle durch derartiges Spiel erzielten Gewinne werden als nichtig betrachtet.",
         "Während er mit einem aktiven Bonus spielt, darf der Spieler keine Strategien anwenden, die darauf abzielen, die Wettbedingungen des Bonus zu erfüllen. Falls der Spieler solche Strategien einsetzt, und falls das Casino ausreichend Grund zu der Vermutung hat, dass das Verhalten des Spielers ausschließlich darauf abzielt, finanziellen Vorteil aus dem Bonus zu ziehen, dann behält sich das Casino das Recht vor, alle Gewinne des Spielers zu stornieren.",
         "Alle Boni setzen, sofern nicht anders angegeben eine Mindesteinzahlung für ihren Erhalt voraus und weisen eine Obergrenze für den möglichen Bonusbetrag, Umsatzanforderungen, eine Obergrenze für die Anzahl der Einsätze während der Erfüllung der Umsatzanforderungen sowie eine Laufzeitbegrenzung für den Bonus auf.",
-        "Alle Boni sind standardmäßig auf einen Höchsteinsatz beschränkt: 5 EUR/USD, 10 CAD/AUD/NZD, 50 NOK, 350 RUB, 20 PLN, 600 JPY, 2.100 KZT, 140 CZK, 0,0005 BTC, 0,014 BCH, 0,02 ETH, 0,07 LTC, 2.100 DOG, 5,5 USDT, sofern nicht anders angegeben. Der Höchsteinsatz schließt die Einsatzverdopplung nach Abschluss einer Spielrunde ebenso ein wie (in einem Spiel erworbene) Bonusrunden.",
+        "Alle Boni sind standardmäßig auf einen Höchsteinsatz beschränkt: 5 EUR, 10 CAD/AUD, 100 CZK, 90 ZAR, 10 BGN, 40 DKK, 40 HRK, 25 RON, 0,00019 BTC, sofern nicht anders angegeben. Der Höchsteinsatz schließt die Einsatzverdopplung nach Abschluss einer Spielrunde ebenso ein wie (in einem Spiel erworbene) Bonusrunden.",
         "Die mithilfe von Boni erzielten Gewinne können erst abgehoben werden, wenn alle Umsatzanforderungen erfüllt wurden.",
         "Alle Boni müssen (sofern nicht anders angegeben) 40 mal gesetzt worden sein, bevor sie abgehoben werden können.",
         "Alle Boni unterliegen einem Auszahlungsvorbehalt. Das bedeutet, dass ihre Abhebung erst beantragt werden kann, wenn alle Umsatzanforderungen vollständig erfüllt sind. Außerdem müssen Sie zuerst echtes Geld setzen und anschließend das Bonusgeld. Sobald Letzteres verspielt ist, verfällt auch der Bonus.",
         "Sofern nicht anders angegeben, gilt ein Bonus 14 Tage ab Erhalt.",
         "Ist der Bonus am Ende seiner Laufzeit noch gültig, ohne dass die Umsatzanforderungen erfüllt wurden, verfallen das gesamte Bonusgeld sowie die daraus erzielten Gewinne.",
-        "Sinkt das Spielguthaben auf einem Konto auf höchstens 0,05 USD, 0,05 EUR, 0,05 RUB, 0,05 NOK, 0,05 AUD, 0,05 JPY, 0,05 NZD, 0,05 CAD, 0,05 PLN, 0,000001 BTC, 0,00001 BCH, 0,00001 ETH, 0,0005 LTC, 10 DOG, 0,05 USDT, so verfallen die Boni automatisch.*",
+        "Sinkt das Spielguthaben auf einem Konto auf höchstens 0.05 EUR, 0.05 CAD/AUD, 0.05 CZK, 0.05 ZAR, 0.05 BGN, 0.05 DKK, 0.05 HRK, 0.05 RON, 0.000001 BTC, so verfallen die Boni automatisch.*",
         "* Das gilt nur für das an einen Bonus gebundene Guthaben, zum Beispiel Einzahlung + Bonus, oder einen reinen Bonus im Fall von Boni ohne Einzahlungsverpflichtung, nicht jedoch für aus anderen Einzahlungen oder Boni erzielte Geldmittel auf einem Spielerkonto.",
         "Die Abhebung von Guthaben kann beantragt werden, bevor die Umsatzanforderungen für einen Bonus erfüllt wurden. In diesem Fall verfällt der Bonusbetrag nebst der mit ihm erzielten Gewinne und die vorhandenen verbleibenden Mittel werden ausgezahlt.",
         "Ein Spieler ist berechtigt, vor Erfüllung der entsprechenden Umsatzanforderungen auf Boni zu verzichten, ohne Auswirkung auf das vorhandene Guthaben.",
@@ -1238,30 +1237,31 @@
         "Beim Spielen mit Bonusgeld werden alle Gewinne, die abgehoben werden sollen, vor der Bearbeitung der Auszahlung einer Überprüfung unterzogen. Das Casino behält sich vor, die betreffende Benutzerin/den betreffenden Benutzer infolge dieser Überprüfung um eine Bestätigung ihrer/seiner personenbezogenen Daten und der Daten für die Zahlungsabwicklung zu bitten.",
         "Das Casino ist berechtigt, unrechtmäßig oder unter Verletzung der hier niedergelegten Bestimmungen erzielten Boni und Gewinne zu widerrufen und das gesamte Guthaben des betroffenen Kontos einzuziehen.",
         "Das Casino behält sich vor, diese Bedingungen jederzeit zu ändern und zu ergänzen.",
-        "Sinkt das Spielguthaben auf einem Konto auf höchstens 0,05 USD, 0,05 EUR, 0,05 RUB, 0,05 NOK, 0,05 AUD, 0,05 JPY, 0,05 NZD, 0,05 CAD, 0,05 PLN, 0,000001 BTC, 0,00001 BCH, 0,00001 ETH, 0,0005 LTC, 10 DOG, 0,05 USDT, so verfällt der Bonus automatisch.*",
-        "* Das gilt nur für das an einen Bonus gebundene Guthaben, zum Beispiel Einzahlung + Bonus, oder einen reinen Bonus im Fall von Boni ohne Einzahlungsverpflichtung, nicht jedoch für aus anderen Einzahlungen oder Boni erzielte Geldmittel auf einem Spielerkonto.",
         "Die Verwendung von Bonusgeld zum alleinigen Zweck des Fortschritts durch die Bonusstufen ist verboten. Wenn beispielsweise Bonus- oder Barmittel ausschließlich zum Aufstieg durch die Bonusstufen (etwa zum Sammeln von 9 der 10 für das Erreichen der Bonusfunktion erforderlichen Münzen) genutzt werden, und die letzten Stufen (z.B. das Spielen zum Erwerb der letzten der 10 Münzen und damit das Erreichen der Bonusfunktion) mit Bargeldeinsätzen abgeschlossen werden, wenn die Bonusmittel verfallen sind oder verloren wurden oder die Umsatzanforderung erfüllt und in Bargeld umgetauscht wurde. Alle durch derartiges Spiel erzielten Gewinne werden als nichtig betrachtet.",
         "Alle Boni nach UTC-Zeit abgerechnet."
       ],
       "title2": "begrüssungsspaket",
       "text2": [
-        "Um die Boni für die erste/zweite/dritte Einzahlung zu erhalten, muss Ihr Kontostand mindestens 20 EUR/USD, 20 CAD/AUD/NZD, 200 NOK, 1.500 RUB, 85 PLN, 2.500 JPY, 9.000 KZT, 0,0036 BTC, 0,12 BCH, 0,16 ETH, 0,6 LTC, 13.000 DOG, 22,5 USDT betragen.",
-        "Der höchste Bonusbetrag für erste/zweite/dritte Einzahlung ist 100 EUR/USD, 150 CAD/AUD/NZD, 1.000 NOK, 7.000 RUB, 430 PLN, 12.000 JPY, 42.000 KZT, 0,011 BTC, 0,28 BCH, 0,4 ETH, 1,4 LTC, 42.000 DOG, 110 USDT.",
+        "Um die Boni für die erste/zweite/dritte Einzahlung zu erhalten, muss Ihr Kontostand mindestens 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC betragen.",
+        "Der höchste Bonusbetrag für erste/zweite/dritte Einzahlung ist 150 EUR, 225 CAD, 225 AUD, 3330 CZK, 2600 ZAR, 290 BGN, 1150 DKK, 1130 HRK, 740 RON, 0,0055 BTC.",
+        "Spieler können ihre 250 Freispiele in den Spielautomaten Aztec Magic, Aztec Magic Delux, Johnny Cash, Platinum Lightning, und Platinum Lightning Delux von BGaming nutzen.",
+        "Nach der  ersten Einzahlung erhalten Spieler die nächsten 5 Tage lang jeden Tag 50 Freispiele.",
         "Freispiele müssen innerhalb von 3 Tagen aktiviert werden, die Laufzeit der Freispiele und der aus diesen erzielten Gewinne beträgt 7 Tage.",
         "Zur Erfüllung der Umsatzanforderungen für einen Gewinn aus Boni/Freispielen müssen Einsätze in Höhe des 40-fachen des Bonus-/Freispielgewinns getätigt werden.",
-        "Der größtmögliche Gewinn aus Freispielen für die erste/zweite/dritte Einzahlung ist 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3.500 RUB, 210 PLN, 6.000 JPY, 21.000 KZT, 0,005 BTC, 0,14 BCH, 0,2 ETH, 0,7 LTC, 21.000 DOG, 55 USDT.",
-        "Der größtmögliche Gewinn aus Freispielen für die Registrierung ist 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3.500 RUB, 210 PLN, 6.000 JPY, 21.000 KZT, 0,005 BTC, 0,14 BCH, 0,2 ETH, 0,7 LTC, 21.000 DOG, 55 USDT."
+        "Der größtmögliche Gewinn aus Freispielen für die erste/zweite/dritte Einzahlung ist 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "Der größtmögliche Gewinn aus Freispielen für die Registrierung ist 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
+        "Alle Angebote sind nur für Personen verfügbar, die ihre Begrüßungspaket-Boni abgeschlossen haben, inklusive Umsatzbedingungen. Falls Sie einen erhöhten Begrüßungsbonus erhalten haben, müssen Sie die Umsatzbedingungen nicht abschließen, bevor Sie andere Angebote annehmen können."
       ],
       "title3": "wochenendaufstockung",
       "text3": [
-        "Um die Wochenendaufstockung zu erhalten, muss Ihr Kontostand mindestens 20 EUR/USD, 20 CAD/AUD/NZD, 200 NOK, 1.500 RUB, 85 PLN, 2.500 JPY, 9.000 KZT, 0,0036 BTC, 0,12 BCH, 0,16 ETH, 0,6 LTC, 13.000 DOG, 22,5 USDT betragen.",
-        "Der höchste Betrag für die Wochenendaufstockung ist 150 EUR/USD, 230 CAD/AUD/NZD, 1.500 NOK, 10.000 RUB, 640 PLN, 18.000 JPY, 65.000 KZT, 0,017 BTC, 0,4 BCH, 0,6 ETH, 2,1 LTC, 65.000 DOG, 170 USDT.",
+        "Um die Wochenendaufstockung zu erhalten, muss Ihr Kontostand mindestens 20 EUR, 20 CAD/AUD, 500 CZK, 350 ZAR, 40 BGN, 150 DKK, 150 HRK, 100 RON, 0,00075 BTC betragen.",
+        "Der höchste Betrag für die Wochenendaufstockung ist 150 EUR, 220 CAD, 240 AUD, 3900 CZK, 2580 ZAR, 300 BGN, 1110 DKK, 1125 HRK, 735 RON, 0,0056 BTC.",
         "Zur Erfüllung der Umsatzanforderungen für den Bonus müssen Sie Einsätze in Höhe des 40-fachen des Bonusbetrages tätigen.",
         "Der Bonus ist Freitags, Samstags oder Sonntags für Spieler verfügbar, die bereits all ihre Begrüßungspaket-Boni aufgebraucht haben."
       ],
       "title4": "freispiele für besondere treue",
       "text4": [
-        "Der Höchstbetrag für Abhebungen beim Spielen mit Mitteln aus einem einzahlungsfreien Bonus oder aus Freispielen liegt bei 50 EUR/USD, 80 CAD/AUD/NZD, 500 NOK, 3.500 RUB, 210 PLN, 6.000 JPY, 21.000 KZT, 0,005 BTC, 0,14 BCH, 0,2 ETH, 0,7 LTC, 21.000 DOG, 55 USDT.",
+        "Der Höchstbetrag für Abhebungen beim Spielen mit Mitteln aus einem einzahlungsfreien Bonus oder aus Freispielen liegt bei 50 EUR, 70 CAD, 80 AUD, 1300 CZK, 860 ZAR, 100 BGN, 370 DKK, 375 HRK, 245 RON, 0,0019 BTC.",
         "Diese Gewinnbegrenzung bleibt auch nach Erfüllung der Umsatzanforderung bestehen."
       ]
     }
@@ -1269,7 +1269,7 @@
   "dailyCashback": {
     "cashback": "Rückzahlung",
     "title": "Tägliche rückzahlung<br/>bis zu 20%",
-    "text1": "Wer bekommt im Casino nicht gerne Geld zurück?<br/>  Selbst wenn Sie verloren haben! Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von&nbsp;x5 urück, wenn Sie verlieren.",
+    "text1": "Wer bekommt im Casino nicht gerne Geld zurück?<br/>  Selbst wenn Sie verloren haben! Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von&nbsp;x5 zurück, wenn Sie verlieren.",
     "text2": "Wenn Ihnen das passiert ist und Sie heute im Ninecasino Geld verloren haben, erhalten Sie es von uns morgen nach folgendem Muster zurück:",
     "terms": "Rückerstattungsbedingungen",
     "termsList": [
@@ -1324,5 +1324,148 @@
         "cashbackSum": "ab €5000"
       }
     ]
+  },
+  "lottery": {
+    "title": "Weekend<br/> Playing Lottery ",
+    "prize": "<span class=\"Colored\">2.500 €</span> + <span class=\"Colored\">500 Free Spins</span>",
+    "text": "Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of 2.500 € with 40 lucky riders.",
+    "termsTitle": "Teilnahmebedingungen für die verlosung",
+    "terms": [
+      {
+        "text": "You begin to participate in the VIP program after making your first deposit."
+      },
+      {
+        "text": "CP is credited at the rate of 1 CP for every $ 12.5, 12.5 EUR, 15 CAD, 15 AUD, 15 NZD, 125 NOK, 325 CZK."
+      },
+      {
+        "text": "Exchange CP - 1 $, 1 EUR, 1.25 CAD, 1.25 AUD, 1.25 NZD, 10 NOK, 25 CZK, 17 ZAR, 4 PLN for 100 CP."
+      },
+      {
+        "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      },
+      {
+        "text": "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text": "All prizes and free spins will be issued within 24 hours after the player has reached the VIP level."
+      },
+      {
+        "text": "RoomCasino reserves the right to change the terms of the VIP program at any time."
+      },
+      {
+        "text": "All free spins are issued with a wager x10. All cash prizes are issued with wagering x1."
+      }
+    ],
+    "lastRoundWinners": "Gewinner der letzten runde",
+    "ticket": "Los",
+    "tickets": "Lose"
+  },
+  "tesla_lottery": {
+    "metaTitle": "➤ Tesla-Verlosung mit Tesla Modell 3  – Spiele deine Lieblingsspiele und gewinne tolle Preis - Tesla Modell 3!",
+    "metaDescription": "✭ Versuch dein Glück beim neuen Tesla Lottery von NineCasino ➔ Holen Sie sich ein Los, um einen Tesla zu gewinnen!",
+    "title": "Tesla-Verlosung",
+    "name": "Tesla-Verlosung",
+    "prize": "Tesla Modell 3",
+    "text": "Mitgemacht bei der Tesla-Verlosung im NineCasino vom 18. August bis zum 23. September 2021 mit der Chance, einen Tesla Modell 3 Ihr eigen nennen zu können!<br/><br/>Die Bekanntgabe der Gewinnerin bzw. des Gewinners erfolgt am 24. September!",
+    "terms": [
+      {
+        "text": "Die Verlosung läuft ab dem 18. August bis zum 23. September 2021."
+      },
+      {
+        "text": "Die Mindesteinzahlung je Los beträgt 50 Euro. Jedes Los kann gewinnen."
+      },
+      {
+        "text": "Die Anzahl der Lose je Mitspielerin/Mitspieler ist nicht begrenzt."
+      },
+      {
+        "text": "Je mehr Lose bis zum Zeitpunkt der Ziehung gesammelt wurden, desto größer ist die Gewinnchance."
+      },
+      {
+        "text": "Zum Zeitpunkt der Ziehung darf das Spielkonto nicht gesperrt sein."
+      },
+      {
+        "text": "Die Bekanntgabe der Gewinnerin bzw. des Gewinners erfolgt am 24. September."
+      }
+    ],
+    "winTesla": "Ein Tesla zu gewinnen"
+  },
+  "happy_harvest_lotto": {
+    "title": "Happy Harvest<br/> Lotto",
+    "promoTitle": "Ernteheld werden mit 5.000 Freispielen",
+    "name": "Happy Harvest Lotto",
+    "prize": "5.000 Freispiele",
+    "text": "Der goldene Herbst ist da und unsere Freispiel sind reif für die Ernte!<br/><br/>Das Happy Harvest Lotto läuft vom 1. bis 28. September 2021. Einfach mindestens 20 Euro einzahlen, um ein Los zu erhalten und dabei zu sein.  Die Anzahl der Lose je Person ist nicht begrenzt!",
+    "promoText": "Der goldene Herbst ist da und unsere Freispiel sind reif für die Ernte!<br/><br/>Das Happy Harvest Lotto läuft vom 1. bis 28. September 2021. Einfach mindestens 20 Euro einzahlen, um ein Los zu erhalten und dabei zu sein. Die Anzahl der Lose je Person ist nicht begrenzt!<br/><br/>Lose sichern, aktiv sein und die Früchte des eigenen Handelns ernten!",
+    "terms": [
+      {
+        "text": "Die Verlosung läuft jeweils 7 Tage ab 00:01 Uhr UTC am 1. bis 23:59 Uhr UTC am 28. September."
+      },
+      {
+        "text": "Die Mindesteinzahlung für ein Los beträgt 20 Euro bzw. 30 CAD/AUD/NZD, 500 CZK, 350 ZAR, 40 BNG, 150 DKK/HRK, 100 RON."
+      },
+      {
+        "text": "Die Anzahl der Lose pro Person ist unbegrenzt."
+      },
+      {
+        "text": "Jedes Los kann gewinnen."
+      },
+      {
+        "text": "Zum Zeitpunkt der Ziehung darf das Spielkonto nicht gesperrt sein."
+      },
+      {
+        "text": "Die Gewinne werden am Ende der jeweiligen Verlosungswoche jeweils dienstags automatisch zugewiesen."
+      },
+      {
+        "text": "Bei den Freispielen beträgt die Umsatzanforderung x5."
+      }
+    ],
+    "metaTitle": "➤ Happy Harvest Lotto mit massivem Preisgeld von 5,000 Freispielen – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
+    "metaDescription": "✭ Versuch dein Glück beim neuen Happy Harvest Lotto von NineCasino ➔ Schließe Missionen ab – gewinne Preise!"
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Hier finden Sie Informationen zu unserem Begrüßungsbonus für neue Mitspielerinnen und Mitspieler sowie weitere regelmäßige Aktionen im Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Tägliche Rükzahlung von bis zu 20 % – Bei Verlusten geähren wir Ihnen eine Rückzahlung mit einer Umsatzanforderung von x5."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Ausführliche Informationen zu uns, unsere Software und zu dem, was wir unseren Kunden bieten ✓ Schnelle Abhebung ✓ Alle Zulassungen"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Häufig gestellte Fragen – Hier sind die Antworten auf die beliebtesten Fragen zu Ninecasino"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "Hier erhalten Sie aktuelle Informationen zu den Geschäftsbedingungen von Ninecasino für den Besuch unserer Webseite"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Ausführliche Informationen zu unseren Boni: Erhalten und Abheben von Boni im Ninecasino"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Hier erfahren Sie mehr über die verfügbaren Hilfen für verantwortungsbewusstes Glücksspiel, damit Sie Ihr Spielverhalten im Griff haben"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Informationen zu den Gefahren, denen Sie sich aussetzen, wenn Sie an Glücksspielen im Ninecasino teilnehmen"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Datenschutz im Ninecasino: Alles, was Sie in Bezug auf die Sicherheit Ihrer finanziellen und personenbezogenen Angaben wissen sollten"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Ausführliche Informationen über die Verwendung von Bitcoins im Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Ausführliche Informationen zu unserem Umgang mit Betrugsversuchen und Geldwäsche"
+    }
   }
 }

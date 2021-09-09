@@ -124,9 +124,9 @@
 
 <script>
 import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
+import moment from 'moment';
 import { LIMIT_DETAILS } from '@/config';
 import limits from '@/mixins/limits';
-import moment from 'moment';
 import Counter from '@/components/Counter';
 import CreateLimits from '@/components/profile/CreateLimits';
 import ConfirmDialog from '@/components/profile/ConfirmDialog';

@@ -69,11 +69,12 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Privacy Policy | Ninecasino',
+      title: this.$t('metaTags.privacy-policy.title'),
       meta: [
         {
-          description:
-            'Privacy Policy Of Ninecasin: Here is Everything You Need To Know About The Safety Of Your Financial Information And Personal Account',
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.privacy-policy.description'),
         },
       ],
     };

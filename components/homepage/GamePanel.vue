@@ -4,7 +4,10 @@
       <NuxtLink :to="localePath('/profile/balance')" class="GamePanel-UserFullname">
         {{ getFullUserName }}
       </NuxtLink>
-      <button class="Btn AuthSection-Btn AuthSection-Btn--deposit" @click="$modal.show('cashier')">
+      <button
+        class="Btn AuthSection-Btn AuthSection-Btn--mobile AuthSection-Btn--deposit"
+        @click="$modal.show('cashier')"
+      >
         {{ $t('buttons.deposit') }}
       </button>
     </template>
@@ -23,8 +26,8 @@
 </template>
 
 <script>
-import showAuthDialog from '@/mixins/showAuthDialog';
 import { mapState } from 'vuex';
+import showAuthDialog from '@/mixins/showAuthDialog';
 
 export default {
   name: 'GamePanel',

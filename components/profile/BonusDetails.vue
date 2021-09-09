@@ -1,8 +1,8 @@
 <template>
-  <div class="Modal">
+  <div class="Modal BonusDetails">
     <div class="Close Modal-Close" @click="$emit('close')"></div>
-    <div class="CabinetPage-Header">{{ bonus.name }}</div>
-    <div class="BonusDetails">
+    <div class="BonusDetails-Header">{{ bonus.name }}</div>
+    <div class="BonusDetails-Content">
       <div v-if="type === 'bonus'" class="BonusDetails-Row">
         <div class="BonusDetails-Label">
           <template v-if="$i18n.locale === 'de'">
@@ -106,8 +106,8 @@
 
 <script>
 import moment from 'moment';
-import VueSlider from '@/components/Slider';
 import { mapState } from 'vuex';
+import VueSlider from '@/components/Slider';
 
 export default {
   name: 'BonusDetails',
@@ -188,9 +188,20 @@ export default {
 
 <style lang="scss">
 .BonusDetails {
-  margin-top: 4px;
-  padding: 14px 16px;
-  background: var(--color-bg);
+  &-Header {
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    text-transform: capitalize;
+    background: var(--color-bg);
+  }
+
+  &-Content {
+    margin-top: 4px;
+    padding: 14px 16px;
+    background: var(--color-bg);
+  }
 
   &-Row {
     display: flex;

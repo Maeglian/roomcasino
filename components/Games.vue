@@ -2,19 +2,28 @@
   <div class="Games">
     <GameModals />
     <div class="Games-Items">
-      <Card
-        v-for="(game, i) in gamesLimited"
-        :key="i"
-        :game-info="game"
-        :img-url="game.imageUrl"
-        :show-demo="true"
-        overlay
-        show-footer
-        @open-gamepage="openGamePage($event, game.gameProducer)"
-      />
+      <template v-for="(game, i) in games">
+        <Card
+          v-show="i < gamesShowed"
+          :key="i"
+          :game-info="game"
+          :img-url="game.imageUrl"
+          :show-demo="true"
+          :show-dga="showDga"
+          show-footer
+          :overlay="!startGameOnClickCard"
+          :show-provider="startGameOnClickCard"
+          :start-game-on-click="startGameOnClickCard"
+          @open-gamepage="openGamePage($event, game.gameProducer)"
+        />
+      </template>
     </div>
-    <p v-if="!games.length" class="Text Text--center">{{ $t('search.notFound') }}</p>
-    <div v-if="games.length > gamesShowed" class="Games-Btn">
+    <template v-if="!games.length">
+      <slot name="notFound"></slot>
+      <p v-if="!$slots.notFound" class="Text Text--center">{{ $t('search.notFound') }}</p>
+    </template>
+    <slot name="btn"></slot>
+    <div v-if="!$slots.btn && games.length > gamesShowed" class="Games-Btn">
       <button class="Btn" :class="btnClass" @click="showMoreGames()">
         {{ $t('buttons.loadMoreGames') }}
       </button>
@@ -24,9 +33,9 @@
 
 <script>
 import showAuthDialog from '@/mixins/showAuthDialog';
-import Card from '@/components/Card';
+import Card from '@/components/Card.vue';
 import openGame from '@/mixins/openGame';
-import GameModals from '@/components/GameModals';
+import GameModals from '@/components/GameModals.vue';
 
 export default {
   name: 'Games',
@@ -55,16 +64,21 @@ export default {
       required: false,
       default: '',
     },
+    startGameOnClickCard: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    showDga: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
   data() {
     return {
       gamesShowed: 0,
     };
-  },
-  computed: {
-    gamesLimited() {
-      return this.games.slice(0, this.gamesShowed);
-    },
   },
   created() {
     this.gamesShowed = this.gamesToShow;
@@ -85,7 +99,6 @@ export default {
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     justify-items: center;
-    margin-bottom: 20px;
 
     @media (min-width: $screen-s) {
       grid-template-columns: repeat(4, 1fr);
@@ -93,16 +106,20 @@ export default {
 
     @media (min-width: $screen-l) {
       grid-template-columns: repeat(6, 1fr);
-      margin-bottom: 24px;
-    }
-
-    @media (min-width: $screen-xl) {
-      margin-bottom: 32px;
     }
   }
 
   &-Btn {
+    margin-top: 20px;
     text-align: center;
+
+    @media (min-width: $screen-l) {
+      margin-top: 24px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-top: 32px;
+    }
   }
 }
 </style>

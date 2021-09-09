@@ -41,11 +41,12 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino',
+      title: this.$t('metaTags.bonus-terms.title'),
       meta: [
         {
-          description:
-            'Detailed Information About Bonuses: How To Receive And Withdraw Bonuses In Ninecasino',
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.bonus-terms.description'),
         },
       ],
     };

@@ -59,6 +59,18 @@ export default {
   name: 'DailyCashback',
   mixins: [showAuthDialog],
   layout: 'page',
+  head() {
+    return {
+      title: this.$t('metaTags.daily-cashback.title'),
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.daily-cashback.description'),
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -125,6 +137,7 @@ export default {
     width: 40px;
     height: 40px;
     margin-bottom: 12px;
+    fill: var(--color-main1);
 
     @media (min-width: $screen-m) {
       width: 45px;

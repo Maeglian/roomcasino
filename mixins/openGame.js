@@ -3,7 +3,7 @@ import { mapActions, mapGetters, mapMutations, mapState } from 'vuex';
 export default {
   computed: {
     ...mapState(['platform']),
-    ...mapState('games', ['gameUrlForIframe', 'gameError']),
+    ...mapState('games', ['gameUrl', 'gameHtml', 'gameError']),
     ...mapState('profile', ['freeSpinList']),
     ...mapGetters(['isLoggedIn', 'activeAccount', 'userInfo']),
   },
@@ -16,7 +16,7 @@ export default {
         return;
       }
 
-      if (!demo && !this.activeAccount.balance) {
+      if (!demo && this.activeAccount.balance === 0) {
         const hasFreeSpins = this.freeSpinList.some(spin => {
           return spin.gameList.some(game => game.id === id && spin.status === 'active');
         });
@@ -41,6 +41,8 @@ export default {
     },
 
     async getGame({ gameId, demo }) {
+      const query = demo ? { demo } : null;
+
       if (this.platform === 'mobile' || this.getRouteBaseName() === 'game-gameId') {
         await this.startGame({
           gameId,
@@ -48,10 +50,13 @@ export default {
           demo,
         });
 
-        if (this.platform === 'mobile' && !this.gameError)
-          window.location.href = this.gameUrlForIframe;
+        if (this.gameHtml) {
+          await this.$router.push(
+            this.localePath({ name: 'game-gameId', params: { gameId }, query }),
+          );
+        } else if (this.platform === 'mobile' && !this.gameError)
+          window.location.href = this.gameUrl;
       } else {
-        const query = demo ? { demo } : null;
         await this.$router.push(
           this.localePath({ name: 'game-gameId', params: { gameId }, query }),
         );

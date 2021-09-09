@@ -16,10 +16,11 @@ button {
   color: var(--color-text-main);
   text-decoration: none;
   border: none;
+  border-radius: 60px;
   cursor: pointer;
 
   &--common {
-    padding: 20px 15px;
+    padding: 15px;
     font-size: 16px;
     font-weight: 700;
     color: var(--color-text-main);
@@ -35,11 +36,11 @@ button {
     }
 
     @media(min-width: $screen-l) {
-      padding: 22px 30px;
+      padding: 15px 30px;
     }
 
     @media(min-width: $screen-xl) {
-      padding: 25px 45px;
+      padding: 20px 45px;
       font-size: 16px;
     }
   }
@@ -48,11 +49,19 @@ button {
     background: none;
   }
 
+  &--color1 {
+    background: var(--color-main1);
+
+    &:hover {
+      background: var(--color-hover2);
+    }
+  }
+
   &--color {
     background: var(--color-main2);
 
     &:hover {
-      background: var(--color-hover);
+      background: var(--color-hover2);
     }
   }
 
@@ -65,7 +74,7 @@ button {
   }
 
   &--darkColor {
-    background: rgba(235, 28, 42, 0.4);
+    background: rgba(228, 88, 9, 0.4);
   }
 
   &--outline {
@@ -73,8 +82,24 @@ button {
     border: 2px solid var(--color-main1);
 
     &:hover {
-      background: var(--color-hover3);
+      background: var(--color-main1);
     }
+  }
+
+  &--square {
+    border-radius: 0;
+  }
+
+  &--leftCorner {
+    border-radius: 0 0 0 20px;
+  }
+
+  &--rightCorner {
+    border-radius: 0 0 20px 0;
+  }
+
+  &--bottomCorners {
+    border-radius: 0 0 20px 20px;
   }
 
   &--outline2 {

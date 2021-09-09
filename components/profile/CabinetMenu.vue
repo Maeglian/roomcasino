@@ -1,126 +1,70 @@
 <template>
   <nav class="CabinetMenu">
     <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/balance')">
-      <svg
-        class="CabinetMenu-NavIcon NavIcon--stroke NavIcon--fill"
-        width="20"
-        height="16"
-        viewBox="0 0 18 15"
-        fill="#6e7382"
-        stroke="#1B2138"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M1.40039 2C1.40039 1.17157 2.07196 0.5 2.90039 0.5H15.1004C15.9288 0.5 16.6004 1.17157 16.6004 2V10.3529C16.6004 11.1814 15.9288 11.8529 15.1004 11.8529H2.90039C2.07196 11.8529 1.40039 11.1814 1.40039 10.3529V2Z"
-        />
-        <path
-          d="M0.5 3.76465C0.5 2.93622 1.17157 2.26465 2 2.26465H16C16.8284 2.26465 17.5 2.93622 17.5 3.76465V12.9999C17.5 13.8284 16.8284 14.4999 16 14.4999H2C1.17157 14.4999 0.5 13.8284 0.5 12.9999V3.76465Z"
-        />
-        <path
-          d="M10.3984 8.17627C10.3984 7.34784 11.07 6.67627 11.8984 6.67627H16.9984C17.2746 6.67627 17.4984 6.90013 17.4984 7.17627V9.58803C17.4984 9.86418 17.2746 10.088 16.9984 10.088H11.8984C11.07 10.088 10.3984 9.41646 10.3984 8.58803V8.17627Z"
-        />
-        <ellipse cx="12.1492" cy="8.38209" rx="0.45" ry="0.441176" />
-      </svg>
+      <BaseIcon
+        name="balance"
+        class="CabinetMenu-NavIcon CabinetMenu-NavIcon--fill"
+        width="18"
+        height="17"
+      />
       {{ $t('profile.pages.balance') }}
     </NuxtLink>
     <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/bonuses')">
-      <svg
-        class="CabinetMenu-NavIcon NavIcon--fill"
-        width="20"
+      <BaseIcon
+        name="promotions"
+        class="CabinetMenu-NavIcon CabinetMenu-NavIcon--fill"
+        width="18"
         height="18"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 17 16"
-        fill="#6e7382"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M7.22479 2.50179C6.85114 1.92604 6.35882 1.45102 6.1187 1.30371C5.83553 1.12998 5.40045 1.20395 5.18257 1.60498C4.96468 2.00601 5.12193 2.44338 5.4051 2.6171C5.64522 2.76442 6.27852 2.97997 6.93457 3.03595C7.16982 3.05603 7.36312 3.05107 7.50769 3.03146C7.45139 2.88861 7.35878 2.70824 7.22479 2.50179ZM7.57194 3.26044C7.5718 3.26035 7.57156 3.25782 7.57164 3.25311C7.57212 3.25817 7.57208 3.26053 7.57194 3.26044ZM7.72031 2.97948C7.72411 2.97706 7.72629 2.97601 7.72643 2.9761C7.72657 2.97618 7.72467 2.9774 7.72031 2.97948ZM8.58221 2.60123C8.21775 1.67793 7.28767 0.633172 6.68418 0.262928C5.80194 -0.278333 4.67383 0.0428755 4.16447 0.980366C3.65511 1.91786 3.95738 3.11662 4.83962 3.65788C4.95306 3.72748 5.09169 3.79577 5.24824 3.85996H1C0.447715 3.85996 0 4.30022 0 4.8433V7.07204C0 7.61463 0.446903 8.13233 0.998497 8.13327L0.998465 8.12575L7.99971 8.12558V4.1982L9.00029 4.20246V8.12555L15.9961 8.12537L16 9.04391V8.13327C16.5523 8.13327 17 7.61512 17 7.07204V4.84331C17 4.30022 16.5523 3.85996 16 3.85996H11.918C12.0737 3.79603 12.2115 3.72805 12.3244 3.65878C13.2067 3.11752 13.509 1.91875 12.9996 0.981263C12.4902 0.0437727 11.3621 -0.277435 10.4799 0.263825C9.87659 0.633949 8.94692 1.67815 8.58221 2.60123ZM8.5817 3.81152C8.56933 3.82819 8.55628 3.84433 8.54255 3.85996H8.62072C8.60704 3.84433 8.59403 3.82819 8.5817 3.81152ZM1 13.9969V8.48329L1.00276 9.12517L7.99971 9.12499V15.9969H3C1.89543 15.9969 1 15.1015 1 13.9969ZM9.00029 15.9971V9.12497L16 9.12479V13.9992C16 15.1041 15.1041 15.9996 13.9992 15.9992L9.00029 15.9971ZM11.0454 1.3046C10.8052 1.45192 10.3129 1.92694 9.93927 2.50269C9.80528 2.70914 9.71268 2.8895 9.65637 3.03236C9.80095 3.05197 9.99424 3.05693 10.2295 3.03685C10.8855 2.98087 11.5188 2.76531 11.759 2.618C12.0421 2.44427 12.1994 2.0069 11.9815 1.60588C11.7636 1.20485 11.3285 1.13088 11.0454 1.3046Z"
-        />
-      </svg>
+      />
       {{ $t('profile.pages.bonuses') }}
     </NuxtLink>
     <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/history/transaction')">
-      <svg
-        class="CabinetMenu-NavIcon NavIcon--fill NavIcon--stroke"
-        width="22"
-        height="20"
-        viewBox="0 0 22 20"
-        fill="#6e7382"
-        stroke="#1B2138"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M17.3961 19.0304C17.347 19.0917 17.2951 19.1509 17.2405 19.2079C16.7541 19.7151 16.0945 20 15.4068 20H2.59322C1.90546 20 1.24586 19.7151 0.759537 19.2079C0.273213 18.7007 0 18.0127 0 17.2955V17.2954C0 18.0127 0.273213 18.7006 0.759537 19.2078C1.24586 19.715 1.90546 20 2.59322 20H15.4068C16.0945 20 16.7541 19.715 17.2405 19.2078C17.2951 19.1509 17.347 19.0917 17.3961 19.0304ZM2.59322 0C2.18456 0 1.78368 0.168919 1.48134 0.484237C1.17763 0.800985 1 1.23922 1 1.70454V17.2954C1 17.7607 1.17763 18.199 1.48134 18.5157C1.78368 18.831 2.18456 19 2.59322 19H15.4068C15.8154 19 16.2163 18.831 16.5187 18.5157C16.8224 18.199 17 17.7607 17 17.2954V1.70454C17 1.23922 16.8224 0.800984 16.5187 0.484238C16.2163 0.168919 15.8154 0 15.4068 0H2.59322ZM4.5 11C4.22386 11 4 11.2239 4 11.5C4 11.7761 4.22386 12 4.5 12H8.5C8.77614 12 9 11.7761 9 11.5C9 11.2239 8.77614 11 8.5 11H4.5ZM4 8.5C4 8.22386 4.11193 8 4.25 8H8.75C8.88807 8 9 8.22386 9 8.5C9 8.77614 8.88807 9 8.75 9H4.25C4.11193 9 4 8.77614 4 8.5ZM4.5 5C4.22386 5 4 5.22386 4 5.5C4 5.77614 4.22386 6 4.5 6H13.5C13.7761 6 14 5.77614 14 5.5C14 5.22386 13.7761 5 13.5 5H4.5Z"
-        />
-        <circle cx="16" cy="14" r="5.5" />
-        <path d="M15.5 12V14.5L18 15" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
+      <BaseIcon
+        name="history"
+        class="CabinetMenu-NavIcon CabinetMenu-NavIcon--fill"
+        width="20"
+        height="21"
+      />
       {{ $t('profile.pages.history') }}
     </NuxtLink>
     <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/verification')">
-      <svg
-        class="CabinetMenu-NavIcon NavIcon--fill NavIcon--stroke"
-        width="20"
-        height="23"
-        viewBox="0 0 20 23"
-        fill="#6e7382"
-        stroke="#1B2138"
-      >
-        <path
-          d="M0.570881 3.72429L9.64495 0.06868C9.87227 -0.0228709 10.1278 -0.0229158 10.355 0.06868L19.4291 3.72429C19.7747 3.86355 20 4.19094 20 4.55404V8.99794C20 15.1169 16.1885 20.621 10.3499 22.9334C10.1256 23.0222 9.8744 23.0222 9.65009 22.9334C3.81162 20.6211 0 15.1169 0 8.99794V4.55404C0 4.19094 0.225233 3.86355 0.570881 3.72429Z"
-        />
-        <path
-          d="M2.4567 5.07659L9.71596 2.05674C9.89781 1.98111 10.1022 1.98107 10.284 2.05674L17.5433 5.07659C17.8198 5.19163 18 5.46208 18 5.76204V9.43308C18 14.4879 14.9508 19.0348 10.2799 20.945C10.1005 21.0183 9.89952 21.0183 9.72007 20.945C5.0493 19.0348 2 14.4879 2 9.43308V5.76204C2 5.46208 2.18018 5.19163 2.4567 5.07659Z"
-        />
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M10.284 2.05674L17.5433 5.07659C17.8198 5.19163 18 5.46208 18 5.76204V9.43308C18 14.4879 14.9508 19.0348 10.2799 20.945C10.1005 21.0183 9.89952 21.0183 9.72007 20.945C5.0493 19.0348 2 14.4879 2 9.43308V5.76204C2 5.46208 2.18018 5.19163 2.4567 5.07659L9.71596 2.05674C9.89781 1.98111 10.1022 1.98107 10.284 2.05674ZM10 19.9785C5.76165 18.1991 3 14.047 3 9.43308V5.93365L10 3.02165L17 5.93365V9.43308C17 14.047 14.2384 18.199 10 19.9785Z"
-        />
-        <path
-          d="M11.9548 9.16724L9.5 12.5L8.04517 10.4295C7.80609 10.2065 7.41845 10.2065 7.17933 10.4295C6.94022 10.6524 6.94022 11.014 7.17933 11.237L9.06708 13.7113C9.30613 13.9342 9.69378 13.9343 9.93292 13.7113L12.8207 9.97475C13.0598 9.75178 13.0598 9.39025 12.8207 9.16724C12.5816 8.94424 12.1939 8.94427 11.9548 9.16724Z"
-        />
-      </svg>
+      <BaseIcon
+        name="verification"
+        class="CabinetMenu-NavIcon CabinetMenu-NavIcon--fill"
+        width="18"
+        height="21"
+      />
       {{ $t('profile.pages.verification') }}
     </NuxtLink>
     <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/user/general')">
-      <svg
-        class="CabinetMenu-NavIcon NavIcon--fill"
-        width="20"
-        height="23"
-        viewBox="0 0 20 23"
-        fill="#6e7382"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M13.9281 9.38853C12.8482 10.4579 11.5264 10.9999 10 10.9999C8.47394 10.9999 7.15236 10.4577 6.07222 9.38871C4.99208 8.31952 4.44444 7.01113 4.44444 5.49977C4.44444 3.98876 4.99208 2.68037 6.07204 1.61118C7.15201 0.541998 8.47341 0 10 0C11.5262 0 12.8478 0.541998 13.928 1.61101C15.0081 2.68055 15.5556 3.98894 15.5556 5.49977C15.5556 7.01113 15.0081 8.31935 13.9281 9.38853ZM19.7908 15.7966C19.8876 16.28 19.9533 16.7377 19.9857 17.1574C20.0063 17.4203 20.0005 17.6003 19.9937 17.8115C19.9898 17.9298 19.9857 18.0578 19.9857 18.2156C19.8597 19.1945 19.275 20.6491 18.8613 21.0016C18.0837 21.6641 17.0555 21.9999 15.8047 21.9999H4.22288C2.97207 21.9999 2.17159 21.7735 1.16612 21.0016C1.00822 20.8803 0.0146676 19.1945 0.0143223 18.2156C0.0142538 18.0216 0.00965852 17.8833 0.00569182 17.764C-0.000887567 17.5661 -0.0057375 17.4203 0.0146676 17.1579C0.0471492 16.7372 0.112846 16.2793 0.209557 15.7966C0.307186 15.3096 0.432891 14.8494 0.583188 14.4286C0.738806 13.9933 0.950212 13.564 1.21135 13.1524C1.48221 12.7254 1.80097 12.3536 2.15827 12.0473C2.53245 11.7267 2.99031 11.4693 3.5192 11.2818C4.04643 11.0948 4.63073 11 5.25614 11C5.50168 11 5.73933 11.0902 6.19737 11.3575C6.48383 11.5246 6.81415 11.7152 7.17916 11.9241C7.49388 12.1038 7.92073 12.2722 8.44741 12.4245C8.96235 12.5736 9.48444 12.6491 9.99992 12.6491C10.5154 12.6491 11.0377 12.5736 11.5521 12.4245C12.0793 12.2721 12.5061 12.1036 12.8212 11.9239C13.1897 11.7131 13.5199 11.5225 13.8021 11.3577C14.2607 11.0904 14.4982 11.0002 14.7437 11.0002C15.3689 11.0002 15.9534 11.0948 16.4808 11.2816C17.0101 11.4694 17.4678 11.7269 17.8416 12.0471C18.1991 12.3532 18.5176 12.7252 18.7889 13.1524C19.0502 13.564 19.2616 13.9935 19.417 14.4284C19.5675 14.8492 19.6932 15.3096 19.7908 15.7966Z"
-        />
-      </svg>
+      <BaseIcon
+        name="user2"
+        class="CabinetMenu-NavIcon CabinetMenu-NavIcon--stroke"
+        width="18"
+        height="20"
+      />
       {{ $t('profile.pages.user') }}
     </NuxtLink>
     <NuxtLink class="CabinetMenu-NavLink" :to="localePath('/profile/limits')">
-      <svg
-        class="CabinetMenu-NavIcon NavIcon--fill"
+      <BaseIcon
+        name="settings"
+        class="CabinetMenu-NavIcon CabinetMenu-NavIcon--fill"
         width="20"
         height="20"
-        viewBox="0 0 20 20"
-        fill="#6e7382"
-        xmlns="http://www.w3.org/2000/svg"
+      />
+      <div
+        :class="{ 'CabinetMenu-NavLink--cuttext': $i18n.locale === 'pl' || $i18n.locale === 'gr' }"
       >
-        <path
-          d="M19.5547 8.30469L17.2148 7.73047C17.0859 7.32031 16.9219 6.92188 16.7227 6.53516L17.918 4.54297C18.0586 4.30859 18.0234 4.01562 17.8359 3.82812L16.1719 2.16406C15.9844 1.97656 15.6914 1.94141 15.457 2.08203L13.4648 3.27734C13.0781 3.07812 12.6797 2.91406 12.2695 2.78516L11.707 0.445312C11.6367 0.1875 11.4023 0 11.1328 0H8.78906C8.51953 0 8.28516 0.1875 8.21484 0.445312L7.65234 2.78516C7.24219 2.91406 6.84375 3.07812 6.45703 3.27734L4.46484 2.08203C4.23047 1.94141 3.9375 1.97656 3.75 2.16406L2.08594 3.82812C1.89844 4.01562 1.86328 4.30859 2.00391 4.54297L3.19922 6.53516C3 6.92188 2.83594 7.32031 2.70703 7.73047L0.445312 8.30469C0.1875 8.36328 0 8.59766 0 8.86719V11.2109C0 11.4805 0.1875 11.7148 0.445312 11.7734L2.70703 12.3477C2.83594 12.7578 3 13.1563 3.19922 13.543L2.00391 15.5352C1.86328 15.7695 1.89844 16.0625 2.08594 16.25L3.75 17.9141C3.9375 18.1016 4.23047 18.1367 4.46484 17.9961L6.45703 16.8008C6.84375 17 7.24219 17.1641 7.65234 17.293L8.21484 19.5547C8.28516 19.8125 8.51953 20 8.78906 20H11.1328C11.4023 20 11.6367 19.8125 11.707 19.5547L12.2695 17.293C12.6797 17.1641 13.0781 17 13.4648 16.8008L15.457 17.9961C15.6914 18.1367 15.9844 18.1016 16.1719 17.9141L17.8359 16.25C18.0234 16.0625 18.0586 15.7695 17.918 15.5352L16.7227 13.543C16.9219 13.1563 17.0859 12.7578 17.2148 12.3477L19.5547 11.7734C19.8125 11.7148 20 11.4805 20 11.2109V8.86719C20 8.59766 19.8125 8.36328 19.5547 8.30469ZM9.96094 12.9688C8.34375 12.9688 7.03125 11.6562 7.03125 10.0391C7.03125 8.42188 8.34375 7.10938 9.96094 7.10938C11.5781 7.10938 12.8906 8.42188 12.8906 10.0391C12.8906 11.6562 11.5781 12.9688 9.96094 12.9688Z"
-        />
-      </svg>
-      {{ $t('profile.pages.limits') }}
+        {{ $t('profile.pages.limits') }}
+      </div>
     </NuxtLink>
     <div class="CabinetMenu-NavLink" @click="onClickExitBtn()">
-      <svg class="CabinetMenu-NavIcon" width="22" height="18">
-        <use xlink:href="@/assets/img/icons.svg#exit"></use>
-      </svg>
+      <BaseIcon
+        name="exit"
+        class="CabinetMenu-NavIcon CabinetMenu-NavIcon--fill"
+        width="21"
+        height="18"
+      />
       {{ $t('profile.pages.exit') }}
     </div>
   </nav>
@@ -128,9 +72,13 @@
 
 <script>
 import { mapActions } from 'vuex';
+import BaseIcon from '@/components/base/BaseIcon.vue';
 
 export default {
   name: 'CabinetMenu',
+  components: {
+    BaseIcon,
+  },
   methods: {
     ...mapActions(['logout']),
     onClickExitBtn() {
@@ -152,10 +100,12 @@ export default {
 
   @media (min-width: $screen-l) {
     display: block;
+    flex-grow: 0;
     flex-shrink: 0;
-    width: 274px / $screen-xl * 100%;
+    width: 274px;
     min-width: auto;
-    height: 100vh;
+    min-height: 100vh;
+    margin-bottom: 0;
     padding: 0;
   }
 
@@ -169,10 +119,11 @@ export default {
     padding: 5px 25px;
     font-size: 10px;
     font-weight: 700;
-    color: var(--color-text-ghost-lighter);
+    color: var(--color-text-main);
     text-transform: uppercase;
     white-space: nowrap;
-    background-color: var(--color-bg-lighter);
+    border: 2px solid var(--color-border-input);
+    border-radius: var(--border-radius-default);
     cursor: pointer;
 
     @media (min-width: $screen-l) {
@@ -182,34 +133,55 @@ export default {
       padding: 10px 0 10px 37px;
       font-size: 12px;
       color: var(--color-text-main);
-      background-color: transparent;
+      border: none;
     }
 
     &:last-child {
       margin-right: 0;
     }
 
+    &--cuttext {
+      display: block;
+      width: 150px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
     &.nuxt-link-active {
-      color: var(--color-bg);
+      color: var(--color-text-main);
       background-color: var(--color-main1);
+      border: none;
 
       @media (min-width: $screen-l) {
-        padding: 10px 5px 10px 29px;
-        color: var(--color-text-main);
-        background-color: var(--color-bg);
-        border-bottom: none;
-        border-left: 8px solid var(--color-main1);
-      }
+        position: relative;
+        padding: 10px 5px 10px 37px;
+        color: var(--color-main1);
+        background-color: transparent;
 
-      .NavIcon--stroke {
-        stroke: var(--color-main1);
-        @media (min-width: $screen-l) {
-          stroke: var(--color-bg);
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 8px;
+          height: 100%;
+          background-color: var(--color-main1);
+          border-radius: 0 8px 8px 0;
         }
       }
 
-      .NavIcon--fill {
-        fill: var(--color-bg);
+      .CabinetMenu-NavIcon--stroke {
+        stroke: var(--color-text-main);
+
+        @media (min-width: $screen-l) {
+          stroke: var(--color-main1);
+        }
+      }
+
+      .CabinetMenu-NavIcon--fill {
+        fill: var(--color-text-main);
+
         @media (min-width: $screen-l) {
           fill: var(--color-main1);
         }
@@ -218,6 +190,7 @@ export default {
   }
 
   &-NavIcon {
+    flex-shrink: 0;
     max-width: 14px;
     margin-right: 7px;
 
@@ -225,7 +198,14 @@ export default {
       max-width: 18px;
       margin-right: 22px;
       margin-bottom: 0;
-      fill: var(--color-main1);
+    }
+
+    &--fill {
+      fill: var(--color-text-main);
+    }
+
+    &--stroke {
+      stroke: var(--color-text-main);
     }
   }
 }

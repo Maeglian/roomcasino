@@ -6,8 +6,8 @@ export const state = () => ({
   recentGames: [],
   defaultGames: [],
   newGames: [],
+  topGames: [],
   liveGames: [],
-  tournamentGames: [],
   jackpotGames: [],
   buybonusGames: [],
   megawaysGames: [],
@@ -16,8 +16,8 @@ export const state = () => ({
   dropsWinsLiveGames: [],
   gamesAreLoading: false,
   defaultGamesAreLoading: false,
-  tournamentGamesAreLoading: false,
   newGamesAreLoading: false,
+  topGamesAreLoading: false,
   liveGamesAreLoading: false,
   jackpotGamesAreLoading: false,
   buybonusGamesAreLoading: false,
@@ -27,7 +27,8 @@ export const state = () => ({
   dropsWinsLiveGamesAreLoading: false,
   winnersAreLoading: false,
   gameProducers: [],
-  gameUrlForIframe: '',
+  gameUrl: '',
+  gameHtml: '',
   gameError: '',
   topWinnerList: [],
   lastWinnerList: [],
@@ -49,8 +50,9 @@ export const getters = {
 };
 
 export const mutations = {
-  setGameUrl: (state, gameUrl) => {
-    state.gameUrlForIframe = gameUrl;
+  setStartingGame: (state, { url, html }) => {
+    if (url !== null) state.gameUrl = url;
+    if (html !== null) state.gameHtml = html;
   },
   setGameError: (state, message) => {
     state.gameError = message;
@@ -67,11 +69,11 @@ export const mutations = {
   setLiveGamesAreLoading: (state, payload) => {
     state.liveGamesAreLoading = payload;
   },
+  setTopGamesAreLoading: (state, payload) => {
+    state.topGamesAreLoading = payload;
+  },
   setNewGamesAreLoading: (state, payload) => {
     state.newGamesAreLoading = payload;
-  },
-  setTournamentGamesAreLoading: (state, payload) => {
-    state.tournamentGamesAreLoading = payload;
   },
   setJackpotGamesAreLoading: (state, payload) => {
     state.jackpotGamesAreLoading = payload;
@@ -100,11 +102,11 @@ export const mutations = {
   setNewGames: (state, payload) => {
     state.newGames = payload;
   },
+  setTopGames: (state, payload) => {
+    state.topGames = payload;
+  },
   setLiveGames: (state, payload) => {
     state.liveGames = payload;
-  },
-  setTournamentGames: (state, payload) => {
-    state.tournamentGames = payload;
   },
   setJackpotGames: (state, payload) => {
     state.jackpotGames = payload;
@@ -162,6 +164,20 @@ export const actions = {
     }
   },
 
+  async getTopGames({ commit, rootState }) {
+    commit('setTopGamesAreLoading', true);
+    try {
+      const res = await http.get(`${API_HOST}/gameList`, {
+        params: { category: 'top', platform: rootState.platform },
+      });
+      commit('setTopGames', res.data);
+    } catch (e) {
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      commit('setTopGamesAreLoading', false);
+    }
+  },
+
   async getNewGames({ commit, rootState }) {
     commit('setNewGamesAreLoading', true);
     try {
@@ -187,18 +203,6 @@ export const actions = {
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setLiveGamesAreLoading', false);
-    }
-  },
-
-  async getTournamentGames({ commit, rootState }, params) {
-    commit('setTournamentGamesAreLoading', true);
-    try {
-      const res = await http.get(`${API_HOST}/gameList`, { params, platform: rootState.platform });
-      commit('setTournamentGames', res.data);
-    } catch (e) {
-      this.$sentry.captureException(new Error(e));
-    } finally {
-      commit('setTournamentGamesAreLoading', false);
     }
   },
 
@@ -314,18 +318,17 @@ export const actions = {
     }
   },
 
-  async startGame({ state, commit }, { demo, gameId, returnUrl }) {
+  async startGame({ state, commit, rootState }, { demo, gameId, returnUrl }) {
     if (state.gameError) commit('setGameError', '');
     try {
       const res = await http.post(`${API_HOST}/startGame`, {
         gameId,
-        platform: state.platform,
+        platform: rootState.platform,
         returnUrl,
         demo,
       });
       if (res.code === 0) {
-        const { url } = res.data;
-        commit('setGameUrl', url);
+        commit('setStartingGame', res.data);
       } else commit('setGameError', res.message);
     } catch (e) {
       commit('setGameError', e);

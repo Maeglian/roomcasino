@@ -15,12 +15,7 @@
         <img :src="getZoomIcon" />
       </div>
 
-      <NuxtLink
-        v-if="!isFullScreen"
-        :to="localePath('/')"
-        class="ControlsPanel-Action"
-        @click.native="onCloseGame"
-      >
+      <NuxtLink v-if="!isFullScreen" :to="localePath('/')" class="ControlsPanel-Action">
         <img :src="closeIcon" />
       </NuxtLink>
     </div>
@@ -28,7 +23,7 @@
 </template>
 
 <script>
-import { mapMutations, mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   props: {
@@ -65,7 +60,6 @@ export default {
     window.clearInterval(this.timer);
   },
   methods: {
-    ...mapMutations('games', ['setGameUrl']),
     ...mapActions(['getProfile']),
     updateDateTime() {
       const today = new Date();
@@ -73,9 +67,6 @@ export default {
       this.hours = today.getHours();
       this.minutes = today.getMinutes();
       this.seconds = today.getSeconds();
-    },
-    onCloseGame() {
-      this.setGameUrl('');
     },
   },
 };

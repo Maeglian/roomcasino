@@ -5,9 +5,10 @@
     :class="{ 'Search--open': isOpen }"
     @click="openSearch"
   >
-    <svg class="Icon Search-Icon">
+    <svg class="Icon Search-Icon" :class="{ 'Search-Icon--invisible': value }">
       <use xlink:href="@/assets/img/icons.svg#search"></use>
     </svg>
+    <div v-if="value" class="Close Search-Icon Search-Close" @click="$emit('input', '')"></div>
     <input
       type="text"
       class="Search-Input"
@@ -15,19 +16,32 @@
       :value="value"
       @input="$emit('input', $event.target.value)"
     />
+    <div
+      v-if="isOpen && withDropdown"
+      class="Search-Dropdown"
+      :class="{ 'Search-Dropdown--opened': value }"
+    >
+      <slot name="dropdown"></slot>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
   name: 'Search',
+
   props: {
     value: {
       type: String,
       required: false,
       default: '',
+    },
+    withDropdown: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   data() {
@@ -38,12 +52,20 @@ export default {
   computed: {
     ...mapState(['width']),
   },
+  beforeDestroy() {
+    this.onClickOutside();
+  },
   methods: {
+    ...mapMutations(['toggleOverlay']),
     openSearch() {
-      if (this.width >= 768) this.isOpen = true;
+      if (this.width >= 768) {
+        this.isOpen = true;
+        if (this.withDropdown) this.toggleOverlay(true);
+      }
     },
     onClickOutside() {
       this.isOpen = false;
+      if (this.withDropdown) this.toggleOverlay(false);
     },
   },
 };
@@ -52,7 +74,6 @@ export default {
 <style lang="scss">
 .Search {
   display: flex;
-  border: 2px solid var(--color-border);
   cursor: pointer;
 
   &-Icon {
@@ -61,29 +82,29 @@ export default {
     right: 18px;
     width: 15px;
     height: 15px;
-    fill: var(--color-main2);
+    fill: var(--color-main1);
 
     @media (min-width: $screen-m) {
-      top: 10px;
+      top: calc(50% - 9px);
       right: auto;
-      left: 6px;
-      width: 9px;
-      height: 9px;
-    }
-
-    @media (min-width: $screen-l) {
-      top: 12px;
-      right: initial;
-      width: 15px;
-      height: 15px;
-    }
-
-    @media (min-width: $screen-xl) {
-      top: 15px;
       left: 12px;
       width: 18px;
       height: 18px;
     }
+
+    &--invisible {
+      display: none;
+
+      @media (min-width: $screen-m) {
+        display: block;
+      }
+    }
+  }
+
+  &-Close {
+    top: calc(50% - 11px);
+    width: 22px;
+    height: 22px;
   }
 
   &-Input {
@@ -97,14 +118,6 @@ export default {
     border: none;
 
     @media (min-width: $screen-m) {
-      padding: 0 5px 0 20px;
-    }
-
-    @media (min-width: $screen-l) {
-      padding-left: 32px;
-    }
-
-    @media (min-width: $screen-xl) {
       padding-left: 40px;
     }
 
@@ -114,28 +127,19 @@ export default {
       line-height: 1.242;
       color: var(--color-text-main);
       text-transform: uppercase;
-
-      @media (min-width: $screen-m) {
-        font-size: 9px;
-      }
-
-      @media (min-width: $screen-l) {
-        font-size: 10px;
-      }
-
-      @media (min-width: $screen-xl) {
-        font-size: 12px;
-      }
     }
   }
 
-  &--open {
+  &-Dropdown {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    top: 50px;
+    z-index: 1001;
     width: 100%;
-    background: var(--color-body);
-    cursor: initial;
+    background: var(--color-bg);
+
+    &--opened {
+      padding: 15px;
+    }
   }
 }
 </style>

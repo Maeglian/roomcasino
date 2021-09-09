@@ -53,10 +53,10 @@
 </template>
 
 <script>
-import BaseDropdown from '@/components/base/BaseDropdown.vue';
 import { mapGetters, mapState } from 'vuex';
 import moment from 'moment';
-import { de, cs, fr, en } from 'vuejs-datepicker/dist/locale';
+import { de, cs, fr, en, el, fi, pl } from 'vuejs-datepicker/dist/locale';
+import BaseDropdown from '@/components/base/BaseDropdown.vue';
 
 const Datepicker = () => import('vuejs-datepicker');
 
@@ -78,7 +78,12 @@ export default {
       de,
       cs,
       fr,
+      fi,
+      pl,
+      el,
+      nz: en,
       'en-ca': en,
+      'fr-ca': fr,
     };
   },
   computed: {
@@ -141,6 +146,7 @@ export default {
 
   &-Icon {
     margin-right: 16px;
+    fill: var(--color-main1);
   }
 
   &-Filters {

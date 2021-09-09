@@ -224,11 +224,12 @@ export default {
   layout: 'page',
   head() {
     return {
-      title: 'Terms & Conditions | Ninecasino',
+      title: this.$t('metaTags.terms.title'),
       meta: [
         {
-          description:
-            "This Page Will Help You To Stay Informed About Ninecasino's Terms And Conditions While Interacting With Our Site",
+          hid: 'description',
+          name: 'description',
+          content: this.$t('metaTags.terms.description'),
         },
       ],
     };
