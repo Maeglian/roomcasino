@@ -33,6 +33,7 @@
     "paymentiq-cashier-bootstrapper": "^1.3.8",
     "v-click-outside": "^3.1.1",
     "vue-append": "^2.0.1",
+    "vue-gtag": "^1.16.1",
     "vue-js-modal": "^2.0.0-rc.6",
     "vue-marquee-text-component": "^1.1.1",
     "vue-slider-component": "^3.2.10",
