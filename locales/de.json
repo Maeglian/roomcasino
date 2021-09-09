@@ -31,7 +31,8 @@
     "checkBonuses": "Boni prüfen",
     "cancelBonus": "Bonus ablehnen",
     "goBack": "Zurück",
-    "createAccount": "Registrieren"
+    "createAccount": "Registrieren",
+    "redeem": "Einlösen"
   },
   "errors": {
     "required": "Pflichtangabe",
@@ -305,8 +306,7 @@
       "wageredPercent": "Eingesetzte Prozent",
       "promoCode": {
         "title": "Ich habe einen Bonus-Code",
-        "placeholder": "Gutschein",
-        "button": "Einlösen"
+        "placeholder": "Gutschein"
       }
     },
     "history": {

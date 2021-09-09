@@ -173,7 +173,7 @@
         :v="$v.code"
       />
       <button class="BonusesPage-Submit CabinetPage-Submit" type="submit">
-        {{ $t('profile.bonuses.promoCode.button') }}
+        {{ $t('buttons.redeem') }}
       </button>
     </form>
   </div>
