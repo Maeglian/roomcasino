@@ -58,7 +58,7 @@ export default {
           await this.$router.push(
             this.localePath({
               name: 'game-gameName',
-              params: { gameName: encodeURIComponent(game.gameName) },
+              params: { gameName: game.gameName },
               query,
             }),
           );
@@ -68,7 +68,7 @@ export default {
         await this.$router.push(
           this.localePath({
             name: 'game-gameName',
-            params: { gameName: encodeURIComponent(game.gameName) },
+            params: { gameName: game.gameName },
             query,
           }),
         );
