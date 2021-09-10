@@ -265,6 +265,11 @@ export default {
             icon: 'crown',
           },
           {
+            name: this.$t('gameCategoriesTabs.jackpots'),
+            type: 'jackpots',
+            icon: 'jackpots',
+          },
+          {
             name: this.$t('gameCategoriesTabs.table'),
             type: 'table',
             icon: 'table',
@@ -298,14 +303,14 @@ export default {
           icon: 'roulette',
         },
         {
-          name: this.$t('gameCategoriesTabs.table'),
-          type: 'table',
-          icon: 'table',
-        },
-        {
           name: this.$t('gameCategoriesTabs.jackpots'),
           type: 'jackpots',
           icon: 'jackpots',
+        },
+        {
+          name: this.$t('gameCategoriesTabs.table'),
+          type: 'table',
+          icon: 'table',
         },
       ];
     },
