@@ -74,6 +74,11 @@ export default {
       required: false,
       default: true,
     },
+    categoryName: {
+      type: String,
+      required: false,
+      default: '',
+    },
   },
   data() {
     return {
@@ -87,6 +92,7 @@ export default {
     showMoreGames() {
       const numberOfGames = this.gamesToLoadMore ? this.gamesToLoadMore : this.gamesToShow;
       this.gamesShowed += numberOfGames;
+      this.$gtag.event('load_more_games_pressed', { front_category: this.categoryName });
     },
   },
 };

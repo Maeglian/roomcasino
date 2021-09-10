@@ -32,7 +32,7 @@
       </button>
       <button
         class="Btn Btn--color1 AuthSection-Btn AuthSection-Btn--registration"
-        @click="showRegistrationDialog('registration')"
+        @click="onClickBtnGtagEvent('signup')"
       >
         {{ $t('buttons.signUp') }}
       </button>
@@ -40,7 +40,7 @@
     <button
       v-if="isLoggedIn"
       class="AuthSection-Btn AuthSection-Btn--mobile AuthSection-Btn--deposit"
-      @click="$modal.show('cashier')"
+      @click="onClickBtnGtagEvent('login')"
     >
       {{ $t('buttons.deposit') }}
     </button>
@@ -73,6 +73,23 @@ export default {
     toggleNotificationsPanel() {
       if (this.notificationsPanelIsOpen) this.closeNotificationsPanel();
       else this.openNotificationsPanel();
+    },
+    onClickBtnGtagEvent(typeAuth) {
+      switch (typeAuth) {
+        case 'signup': {
+          this.$gtag.event('signup_button_pressed', { position: 'top' });
+          this.$gtag.event('registration_form_shown', { source: 'click' });
+          this.showRegistrationDialog('registration');
+          break;
+        }
+        case 'login': {
+          this.$gtag.event('deposit_button_pressed', { position: 'top' });
+          this.$modal.show('cashier');
+          break;
+        }
+        default:
+          break;
+      }
     },
   },
 };

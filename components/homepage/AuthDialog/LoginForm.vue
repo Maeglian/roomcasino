@@ -91,6 +91,7 @@ export default {
       }
       this.authorize(payload).then(() => {
         if (!this.authError) {
+          this.$gtag.event('login');
           this.$emit('close');
           if (this.beforeStartGame) this.$emit('start-game');
           else {

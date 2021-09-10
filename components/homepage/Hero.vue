@@ -53,7 +53,7 @@
                 v-else
                 class="Btn Btn--common Hero-Btn"
                 :class="`Hero-Btn--${$i18n.locale}`"
-                @click="onClickBtn()"
+                @click="onClickBtnGtagEvent()"
               >
                 {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.signUp') }}
               </button>
@@ -232,6 +232,17 @@ export default {
     toggleNav() {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
+    },
+    onClickBtnGtagEvent() {
+      let action = false;
+      if (this.isLoggedIn) {
+        action = 'deposit_button_pressed';
+      } else {
+        action = 'signup_button_pressed';
+        this.$gtag.event('registration_form_shown', { source: 'click' });
+      }
+      this.$gtag.event(action, { position: 'banner' });
+      this.onClickBtn();
     },
   },
 };

@@ -672,6 +672,7 @@ export default {
         regData.language = this.$i18n.locale === 'en-ca' ? 'en' : this.$i18n.locale;
         this.registerUser(regData).then(() => {
           if (!this.authError) {
+            this.$gtag.event('registration_first_step_passed');
             deleteObjValuesFromLocalStorage(this.fieldsStep1);
             this.step = 2;
           }
@@ -693,6 +694,7 @@ export default {
 
         this.updateProfile(profileData).then(() => {
           if (!this.updateProfileError) {
+            this.$gtag.event('registration_second_step_passed');
             deleteObjValuesFromLocalStorage(this.fieldsStep2);
             this.$emit('close');
             scrollTo({

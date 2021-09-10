@@ -50,6 +50,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
+          category-name="top"
           :games="topGames"
           :games-to-show="24"
           btn-class="Btn--common Btn--outline"
@@ -62,6 +63,7 @@
         <Games
           :key="isLoggedIn"
           class="DefaultGames-Cards"
+          category-name="last"
           :games="recentGames"
           :games-to-show="recentGamesNum"
           btn-class="Btn--common Btn--outline"
@@ -75,6 +77,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
+          category-name="new"
           :games="newGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -88,6 +91,7 @@
       <Games
         v-else
         class="DefaultGames-Cards"
+        category-name="live"
         :games="liveGames"
         :games-to-show="6"
         :games-to-load-more="12"
@@ -101,6 +105,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
+          category-name="jackpots"
           :games="jackpotGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -115,6 +120,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
+          category-name="bonus buy"
           :games="buybonusGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -129,6 +135,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
+          category-name="megaways"
           :games="megawaysGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -143,6 +150,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
+          category-name="lucky choice"
           :games="luckychoiceGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -157,6 +165,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
+          category-name="drops & wins slots"
           :games="dropsWinsSlotsGames"
           :games-to-show="6"
           :games-to-load-more="12"

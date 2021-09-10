@@ -7,6 +7,7 @@
       adaptive
       scrollable
       @before-open="beforeInitializeCashier($event)"
+      @opened="onAfterOpenCashier()"
       @closed="onCloseCashierForm()"
     >
       <div class="Modal">
@@ -185,6 +186,9 @@ export default {
         this.depositIsDone = false;
       }
       if (this.shouldCashout) this.setCashoutFalse();
+    },
+    onAfterOpenCashier() {
+      this.$gtag.event('deposit_screen_shown');
     },
   },
 };

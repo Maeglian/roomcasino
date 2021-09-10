@@ -62,7 +62,10 @@ export default {
     if (this.siteIsAllowedForUser) {
       const timeout = this.$route.query.open === 'registration' ? 1000 : 20000;
       this.timer = setTimeout(() => {
-        if (!this.isLoggedIn) this.showRegistrationDialog('registration');
+        if (!this.isLoggedIn) {
+          this.showRegistrationDialog('registration');
+          this.$gtag.event('registration_form_shown', { source: 'auto' });
+        }
       }, timeout);
     }
   },
