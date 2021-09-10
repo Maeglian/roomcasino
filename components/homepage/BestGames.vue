@@ -18,14 +18,16 @@
           @click.native="onChooseTab(i)"
         >
           <div class="DefaultGames-Icon">
-            <img
-              v-if="tab.icon === 'table'"
-              class="DefaultGames-Icon--table"
-              src="@/assets/img/table.svg"
-            />
-            <svg v-else :class="`DefaultGames-Icon--${tab.icon}`">
-              <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
-            </svg>
+            <div class="DefaultGames-IconWrapper">
+              <img
+                v-if="tab.icon === 'table'"
+                class="DefaultGames-Icon--table"
+                src="@/assets/img/table.svg"
+              />
+              <svg v-else :class="`DefaultGames-Icon--${tab.icon}`">
+                <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
+              </svg>
+            </div>
           </div>
           <div class="DefaultGames-Name">
             {{ tab.name }}
@@ -303,7 +305,7 @@ export default {
         {
           name: this.$t('gameCategoriesTabs.jackpots'),
           type: 'jackpots',
-          icon: 'cards',
+          icon: 'jackpots',
         },
       ];
     },
@@ -414,7 +416,7 @@ export default {
   &-Tab {
     position: relative;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     width: 100%;
     margin-right: 8px;
@@ -480,6 +482,13 @@ export default {
     }
   }
 
+  &-IconWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+  }
+
   &-Icon {
     display: none;
     width: 55px;
@@ -506,6 +515,12 @@ export default {
     &--live {
       width: 23px;
       height: 23px;
+      fill: var(--color-main1);
+    }
+
+    &--jackpots {
+      width: 26px;
+      height: 24px;
       fill: var(--color-main1);
     }
 
