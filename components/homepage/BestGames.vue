@@ -301,8 +301,8 @@ export default {
           icon: 'table',
         },
         {
-          name: this.$t('gameCategoriesTabs.card'),
-          type: 'card',
+          name: this.$t('gameCategoriesTabs.jackpots'),
+          type: 'jackpots',
           icon: 'cards',
         },
       ];
