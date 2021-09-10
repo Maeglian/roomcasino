@@ -133,8 +133,8 @@ export default {
   position: fixed;
   bottom: 0;
   z-index: 100;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   width: 100%;
   padding: 6px 3px 8px;
   background: var(--color-bg-mobnav);
@@ -172,13 +172,13 @@ export default {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 61px;
+    padding: 0 10px;
 
     &:before {
       content: '';
       position: absolute;
       top: 50%;
-      right: -11px;
+      right: 0;
       width: 1px;
       height: 25px;
       background-color: var(--color-bg-mobnav-lighter);
