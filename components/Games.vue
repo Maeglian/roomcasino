@@ -36,6 +36,7 @@ import showAuthDialog from '@/mixins/showAuthDialog';
 import Card from '@/components/Card.vue';
 import openGame from '@/mixins/openGame';
 import GameModals from '@/components/GameModals.vue';
+import gtagEvents from '@/mixins/gtagEvents';
 
 export default {
   name: 'Games',
@@ -43,7 +44,7 @@ export default {
     Card,
     GameModals,
   },
-  mixins: [showAuthDialog, openGame],
+  mixins: [showAuthDialog, openGame, gtagEvents],
   props: {
     games: {
       type: Array,
@@ -92,7 +93,7 @@ export default {
     showMoreGames() {
       const numberOfGames = this.gamesToLoadMore ? this.gamesToLoadMore : this.gamesToShow;
       this.gamesShowed += numberOfGames;
-      this.$gtag.event('load_more_games_pressed', { front_category: this.categoryName });
+      this.gtagSendEvent('load_more_games_pressed', { front_category: this.categoryName });
     },
   },
 };

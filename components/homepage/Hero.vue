@@ -78,6 +78,7 @@
 import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import Slider from '@/components/Slider';
+import gtagEvents from '@/mixins/gtagEvents';
 
 export default {
   name: 'Hero',
@@ -85,7 +86,7 @@ export default {
     // GamesSlider,
     Slider,
   },
-  mixins: [showAuthDialog],
+  mixins: [showAuthDialog, gtagEvents],
   data() {
     return {
       options: {
@@ -239,9 +240,9 @@ export default {
         action = 'deposit_button_pressed';
       } else {
         action = 'signup_button_pressed';
-        this.$gtag.event('registration_form_shown', { source: 'click' });
+        this.gtagSendEvent('registration_form_shown', { source: 'click' });
       }
-      this.$gtag.event(action, { position: 'banner' });
+      this.gtagSendEvent(action, { position: 'banner' });
       this.onClickBtn();
     },
   },

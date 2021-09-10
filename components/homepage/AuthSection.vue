@@ -51,13 +51,14 @@
 import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import BaseIcon from '@/components/base/BaseIcon';
+import gtagEvents from '@/mixins/gtagEvents';
 
 export default {
   name: 'AuthSection',
   components: {
     BaseIcon,
   },
-  mixins: [showAuthDialog],
+  mixins: [showAuthDialog, gtagEvents],
   props: {
     myAccount: {
       type: Boolean,
@@ -77,13 +78,13 @@ export default {
     onClickBtnGtagEvent(typeAuth) {
       switch (typeAuth) {
         case 'signup': {
-          this.$gtag.event('signup_button_pressed', { position: 'top' });
-          this.$gtag.event('registration_form_shown', { source: 'click' });
+          this.gtagSendEvent('signup_button_pressed', { position: 'top' });
+          this.gtagSendEvent('registration_form_shown', { source: 'click' });
           this.showRegistrationDialog('registration');
           break;
         }
         case 'login': {
-          this.$gtag.event('deposit_button_pressed', { position: 'top' });
+          this.gtagSendEvent('deposit_button_pressed', { position: 'top' });
           this.$modal.show('cashier');
           break;
         }

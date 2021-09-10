@@ -275,6 +275,7 @@ import {
 } from '@/utils/formCheckers';
 import RegistrationBonus from '@/components/homepage/RegistrationBonus';
 import BaseButton from '@/components/base/BaseButton';
+import gtagEvents from '@/mixins/gtagEvents';
 
 export default {
   name: 'RegistrationForm',
@@ -284,6 +285,7 @@ export default {
     BaseCheckbox,
     BaseButton,
   },
+  mixins: [gtagEvents],
   props: {
     beforeDeposit: {
       type: Boolean,
@@ -672,7 +674,7 @@ export default {
         regData.language = this.$i18n.locale === 'en-ca' ? 'en' : this.$i18n.locale;
         this.registerUser(regData).then(() => {
           if (!this.authError) {
-            this.$gtag.event('registration_first_step_passed');
+            this.gtagSendEvent('registration_first_step_passed', {});
             deleteObjValuesFromLocalStorage(this.fieldsStep1);
             this.step = 2;
           }
@@ -694,7 +696,7 @@ export default {
 
         this.updateProfile(profileData).then(() => {
           if (!this.updateProfileError) {
-            this.$gtag.event('registration_second_step_passed');
+            this.gtagSendEvent('registration_second_step_passed', {});
             deleteObjValuesFromLocalStorage(this.fieldsStep2);
             this.$emit('close');
             scrollTo({

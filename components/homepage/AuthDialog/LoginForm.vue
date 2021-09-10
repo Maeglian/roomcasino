@@ -42,12 +42,14 @@
 import { email, required } from 'vuelidate/lib/validators';
 import { mapActions, mapState } from 'vuex';
 import BaseInput from '@/components/base/BaseInput.vue';
+import gtagEvents from '@/mixins/gtagEvents';
 
 export default {
   name: 'LoginForm',
   components: {
     BaseInput,
   },
+  mixins: [gtagEvents],
   props: {
     beforeStartGame: {
       type: Boolean,
@@ -91,7 +93,7 @@ export default {
       }
       this.authorize(payload).then(() => {
         if (!this.authError) {
-          this.$gtag.event('login');
+          this.gtagSendEvent('login', {});
           this.$emit('close');
           if (this.beforeStartGame) this.$emit('start-game');
           else {

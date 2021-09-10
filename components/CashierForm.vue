@@ -42,6 +42,7 @@ import Loader from '@/components/Loader.vue';
 import BaseModal from '@/components/base/BaseModal.vue';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import openGame from '@/mixins/openGame';
+import gtagEvents from '@/mixins/gtagEvents';
 
 const environment = process.env.NUXT_ENV_MODE === 'production' ? 'production' : 'test';
 
@@ -51,7 +52,7 @@ export default {
     Loader,
     BaseModal,
   },
-  mixins: [showAuthDialog, openGame],
+  mixins: [showAuthDialog, openGame, gtagEvents],
   data() {
     return {
       cashierIsLoading: false,
@@ -188,7 +189,7 @@ export default {
       if (this.shouldCashout) this.setCashoutFalse();
     },
     onAfterOpenCashier() {
-      this.$gtag.event('deposit_screen_shown');
+      this.gtagSendEvent('deposit_screen_shown', {});
     },
   },
 };
