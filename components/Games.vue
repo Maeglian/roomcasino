@@ -93,7 +93,9 @@ export default {
     showMoreGames() {
       const numberOfGames = this.gamesToLoadMore ? this.gamesToLoadMore : this.gamesToShow;
       this.gamesShowed += numberOfGames;
-      this.gtagSendEvent('load_more_games_pressed', { front_category: this.categoryName });
+      if (this.categoryName.length > 0) {
+        this.gtagSendEvent('load_more_games_pressed', { front_category: this.categoryName });
+      }
     },
   },
 };

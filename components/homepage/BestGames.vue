@@ -52,7 +52,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
-          category-name="top"
+          :category-namecategory-name="$t('gameCategories.top')"
           :games="topGames"
           :games-to-show="24"
           btn-class="Btn--common Btn--outline"
@@ -65,7 +65,7 @@
         <Games
           :key="isLoggedIn"
           class="DefaultGames-Cards"
-          category-name="last"
+          :category-name="$t('gameCategories.recent')"
           :games="recentGames"
           :games-to-show="recentGamesNum"
           btn-class="Btn--common Btn--outline"
@@ -79,7 +79,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
-          category-name="new"
+          :category-name="$t('gameCategories.new')"
           :games="newGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -93,7 +93,7 @@
       <Games
         v-else
         class="DefaultGames-Cards"
-        category-name="live"
+        :category-name="$t('gameCategories.live')"
         :games="liveGames"
         :games-to-show="6"
         :games-to-load-more="12"
@@ -101,13 +101,13 @@
       />
       <template v-if="jackpotGames.length">
         <div class="Title Title--type-h2 Cards-Title">
-          Jackpots
+          {{ $t('gameCategories.jackpots') }}
         </div>
         <Loader v-if="jackpotGamesAreLoading" />
         <Games
           v-else
           class="DefaultGames-Cards"
-          category-name="jackpots"
+          :category-name="$t('gameCategories.jackpots')"
           :games="jackpotGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -122,7 +122,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
-          category-name="bonus buy"
+          :category-name="$t('gameCategories.buybonus')"
           :games="buybonusGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -131,13 +131,13 @@
       </template>
       <template v-if="megawaysGames.length">
         <div class="Title Title--type-h2 Cards-Title">
-          Megaways
+          {{ $t('gameCategories.megaways') }}
         </div>
         <Loader v-if="megawaysGamesAreLoading" />
         <Games
           v-else
           class="DefaultGames-Cards"
-          category-name="megaways"
+          :category-name="$t('gameCategories.megaways')"
           :games="megawaysGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -146,13 +146,13 @@
       </template>
       <template v-if="luckychoiceGames.length">
         <div class="Title Title--type-h2 Cards-Title">
-          Lucky Choice
+          {{ $t('gameCategories.luckychoice') }}
         </div>
         <Loader v-if="luckychoiceGamesAreLoading" />
         <Games
           v-else
           class="DefaultGames-Cards"
-          category-name="lucky choice"
+          :category-name="$t('gameCategories.luckychoice')"
           :games="luckychoiceGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -161,13 +161,13 @@
       </template>
       <template v-if="dropsWinsSlotsGames.length">
         <div class="Title Title--type-h2 Cards-Title">
-          Drops & Wins - slots
+          {{ $t('gameCategories.DROP&WINS') }}
         </div>
         <Loader v-if="dropsWinsSlotsGamesAreLoading" />
         <Games
           v-else
           class="DefaultGames-Cards"
-          category-name="drops & wins slots"
+          :category-name="$t('gameCategories.DROP&WINS')"
           :games="dropsWinsSlotsGames"
           :games-to-show="6"
           :games-to-load-more="12"

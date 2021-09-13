@@ -7,6 +7,7 @@
     <Games
       v-else
       class="DefaultGames-Cards"
+      :category-name="$t(`gameCategories.${$route.params.gameCategory}`)"
       :games="games"
       :games-to-show="24"
       btn-class="Btn--common Btn--outline"
@@ -19,6 +20,7 @@
       <Games
         v-else
         class="DefaultGames-Cards"
+        :category-name="$t('gameCategories.card')"
         :games="cardGames"
         :games-to-show="24"
         btn-class="Btn--common Btn--outline"
