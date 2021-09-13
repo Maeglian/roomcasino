@@ -479,6 +479,12 @@
       "upTo": "Preispool 2.500 €",
       "name": "Aufsatteln fürs Weekly Derby",
       "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
+    },
+    "letItBeer": {
+      "title": "Let it BEER-Turnier<br> Runde I",
+      "prize": "20.000 €",
+      "name": "Prosit beim „Let it BEER“-Turnier",
+      "text": "Das Oktoberfest steht kurz bevor, deshalb haben wir gemeinsam mit Spinomenal ein nettes kleines Turnier vorbereitet: „Let it BEER“. Aber bleiben Sie beim Spielen nüchtern und nutzen Sie die Chance auf einen Schluck aus dem erfrischenden Gewinnpokal mit insgesamt 20.000 €! Runde I beginnt um 00:00 Uhr am 14. und endet um 23:59 Uhr (GMT) am 22. September. <br/><br/>Spielen Sie eines oder mehrere der teilnehmenden Spiele, um in Runde I dabei zu sein. Das Oktoberbierfest ist da!"
     }
   },
   "tournaments": {
@@ -1426,6 +1432,36 @@
     ],
     "metaTitle": "➤ Happy Harvest Lotto mit massivem Preisgeld von 5,000 Freispielen – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
     "metaDescription": "✭ Versuch dein Glück beim neuen Happy Harvest Lotto von NineCasino ➔ Schließe Missionen ab – gewinne Preise!"
+  },
+  "letItBeer": {
+    "title": "Let it BEER-Turnier<br> Runde I",
+    "prize": "20.000 €",
+    "text": "Das Oktoberfest steht kurz bevor, deshalb haben wir gemeinsam mit Spinomenal ein nettes kleines Turnier vorbereitet: „Let it BEER“. Aber bleiben Sie beim Spielen nüchtern und nutzen Sie die Chance auf einen Schluck aus dem erfrischenden Gewinnpokal mit insgesamt 20.000 €! <br/><br/>Nicht mopsig sein, hopfig sein beim „Let it BEER“-Turnier!",
+    "textMobile": "Das Oktoberfest steht kurz bevor, deshalb haben wir gemeinsam mit Spinomenal ein nettes kleines Turnier vorbereitet: „Let it BEER“. Aber bleiben Sie beim Spielen nüchtern und nutzen Sie die Chance auf einen Schluck aus dem erfrischenden Gewinnpokal mit insgesamt 20.000 €!",
+    "terms": [
+      {
+        "title": "Runde I beginnt um 00:00 Uhr am 14. und endet um 23:59 Uhr (GMT) am 22. September."
+      },
+      {
+        "title": "2. Die 150 Bestplatzierten teilen sich den Gesamtgewinn von 20.000 €."
+      },
+      {
+        "title": "An Runde I von Let it Beer nehmen 3 Spiele teil: OktoberSpinFest, Beer Collection 10 Lines und Beer Collection 40 Lines."
+      },
+      {
+        "title": "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 €."
+      },
+      {
+        "title": "Jeder Gewinn bringt Ihnen Wertungspunkte entsprechend dem Gewinnmultiplikator (wird zum Beispiel mit einem gesetzten Euro ein Gewinn von 10 Euro erzielt, ergibt das 10 Punkte für Sie)."
+      },
+      {
+        "title": "Die gesammelten Punkte werden während des gesamten Turnierverlaufs aufaddiert. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
+      }
+    ],
+    "metaTags": {
+      "title": "➤ Let it BEER -Turnier mit massivem Preisgeld von 40.000 € – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
+      "description": "✭ Versuch dein Glück beim neuen Let it BEER  von Spinomenal  ➔ Jeder gewonnene Einsatz bringt dir Punkte!"
+    }
   },
   "metaTags": {
     "promotions": {

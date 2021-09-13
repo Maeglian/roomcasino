@@ -467,6 +467,12 @@
       "upTo": "prize pool 2500 eur",
       "name": "Vyrazte na Weekly Derby",
       "text": "Je čas na Weekly Derby a naše ceny vás donutí trochu trošku supět, abyste první dorazili na místo!<br/><br/>Turnaj probíhá 7 dnů od čtvrtka 00:01 UTC do středy 23:59 UTC. Chopte se své příležitosti rozdělit si cenný prize pool ve výši 2500 eur společně se 40 dalšími jezdci.<br/><br/>Stačí minimální sázka 0,5 eur a být připravený na soutěž.<br/><br/>Hodně štěstí a pojďme odstartovat Derby! "
+    },
+    "letItBeer": {
+      "title": "Turnaj Let it BEER kola I",
+      "prize": "20 000 eur",
+      "name": "Připijte si na zdraví s turnajem „Let it BEER“",
+      "text": "Oktoberfest se nezadržitelně blíží, a proto jsme se spojili se Spinomenal a připravili jsme pro vás báječný turnaj: „Let it BEER“. Ale při hře raději buďte střízliví a nepropásněte příležitost získat podíl na osvěžujícím prize poolu obnášejícím 20 000 eur! Kolo I probíhá od 14. září 00:00 do 22. září 23:59 (GMT).<br/><br/> Pro účast v kole I stačí hrát kteroukoliv ze zapojených her. Říjnový pivní festival je tady!"
     }
   },
   "tournaments": {
@@ -1414,6 +1420,36 @@
     ],
     "metaTitle": "➤ Happy Harvest Lotto s bohatým prize poolem 5,000 spinů zdarma – Hrajte své oblíbené hry a vyhrávejte skvělé ceny!",
     "metaDescription": "✭ Zkuste štěstí v novém Happy Harvest Lotto od NineCasino ➔ Splňte misi – Vyhrajte ceny!"
+  },
+  "letItBeer": {
+    "title": "Turnaj<br> Let it BEER <br>kola I",
+    "prize": "20 000 eur",
+    "text": "Oktoberfest se nezadržitelně blíží, a proto jsme se spojili se Spinomenal a připravili jsme pro vás báječný turnaj: „Let it BEER“. Ale při hře raději buďte střízliví a nepropásněte příležitost získat podíl na osvěžujícím prize poolu obnášejícím 20 000 eur! <br/><br/>Nedělejte si starosti a buďte chvíli nachmelení s turnajem „Let it BEER“!",
+    "textMobile": "Oktoberfest se nezadržitelně blíží, a proto jsme se spojili se Spinomenal a připravili jsme pro vás báječný turnaj: „Let it BEER“. Ale při hře raději buďte střízliví a nepropásněte příležitost získat podíl na osvěžujícím prize poolu obnášejícím 20 000 eur!",
+    "terms": [
+      {
+        "title": "Kolo I probíhá od 14. září 00:00 do 22. září 23:59 (GMT)."
+      },
+      {
+        "title": "Prvních 150 hráčů ve výsledkové tabulce si rozdělí částku 20 000 eur."
+      },
+      {
+        "title": "Do kola I turnaje Let it Beer jsou zapojeny 3 následující hry: OktoberSpinFest, Beer Collection 10 Lines a Beer Collection 40 Lines."
+      },
+      {
+        "title": "Minimální sázka na jeden spin požadovaná pro účast v turnaji je 0,5 eur."
+      },
+      {
+        "title": "S každou výhrou získáte skóre podle násobitele výhry (například, pokud jste vsadili 1 euro a vyhráli 10 eur, získáte 10 bodů)."
+      },
+      {
+        "title": "Získané body budou v průběhu turnaje sčítány. Že čím více bodů získáte, tím výše se umístíte ve výsledkové tabulce."
+      }
+    ],
+    "metaTags": {
+      "title": "➤ Let it BEER  Turnaj s bohatým prize poolem 40 000 € – Hrajte své oblíbené hry a vyhrávejte skvělé ceny!",
+      "description": "✭ Zkuste štěstí v novém Let it BEER  od Spinomenal  ➔ Každá vítězná sázka vám přinese body!"
+    }
   },
   "metaTags": {
     "promotions": {
