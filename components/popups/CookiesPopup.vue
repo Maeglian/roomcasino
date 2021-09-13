@@ -3,9 +3,10 @@
     <div class="CookiesPopup-Content" :class="{ Wrapper: width >= 590 }">
       <template v-if="width >= 590">
         <div class="CookiesPopup-Text">
-          We use cookies to improve your experience. By using our website you are accepting our
-          <NuxtLink class="CookiesPopup-Link" :to="localePath('/privacy-policy')"
-            >Cookie Policy</NuxtLink
+          {{ $t('cookiePolicy.text') }}
+          <NuxtLink class="CookiesPopup-Link" :to="localePath('/privacy-policy')">{{
+            $t('cookiePolicy.linkName')
+          }}</NuxtLink
           >.
         </div>
         <button class="Btn CookiesPopup-Btn" @click="$parent.closeHandler">ОК</button>
