@@ -52,7 +52,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
-          :category-namecategory-name="$t('gameCategories.top')"
+          :category-name="$t('gtagCategories.top')"
           :games="topGames"
           :games-to-show="24"
           btn-class="Btn--common Btn--outline"
@@ -65,7 +65,7 @@
         <Games
           :key="isLoggedIn"
           class="DefaultGames-Cards"
-          :category-name="$t('gameCategories.recent')"
+          :category-name="$t('gtagCategories.recent')"
           :games="recentGames"
           :games-to-show="recentGamesNum"
           btn-class="Btn--common Btn--outline"
@@ -79,7 +79,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
-          :category-name="$t('gameCategories.new')"
+          :category-name="$t('gtagCategories.new')"
           :games="newGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -93,7 +93,7 @@
       <Games
         v-else
         class="DefaultGames-Cards"
-        :category-name="$t('gameCategories.live')"
+        :category-name="$t('gtagCategories.live')"
         :games="liveGames"
         :games-to-show="6"
         :games-to-load-more="12"
@@ -107,7 +107,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
-          :category-name="$t('gameCategories.jackpots')"
+          :category-name="$t('gtagCategories.jackpots')"
           :games="jackpotGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -122,7 +122,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
-          :category-name="$t('gameCategories.buybonus')"
+          :category-name="$t('gtagCategories.buybonus')"
           :games="buybonusGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -137,7 +137,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
-          :category-name="$t('gameCategories.megaways')"
+          :category-name="$t('gtagCategories.megaways')"
           :games="megawaysGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -152,7 +152,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
-          :category-name="$t('gameCategories.luckychoice')"
+          :category-name="$t('gtagCategories.luckychoice')"
           :games="luckychoiceGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -167,7 +167,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
-          :category-name="$t('gameCategories.DROP&WINS')"
+          :category-name="$t('gtagCategories.DROP&WINS')"
           :games="dropsWinsSlotsGames"
           :games-to-show="6"
           :games-to-load-more="12"
