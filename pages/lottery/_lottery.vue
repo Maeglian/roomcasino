@@ -27,7 +27,7 @@
         <template v-if="lottery">
           <div class="Advantages Advantages--min LotteryPage-Advantages">
             <div class="Advantages-Advantage">
-              <BaseIcon class="AboutUsPage-AdvantageIcon Icon--fill" name="advantage-cup" />
+              <BaseIcon class="Advantages-AdvantageIcon Icon--fill" name="advantage-cup" />
               <div class="Advantages-AdvantageBlock">
                 <div class="Advantages-AdvantageTitle">
                   {{ lottery.awardList.length }}
@@ -38,7 +38,7 @@
               </div>
             </div>
             <div class="Advantages-Advantage">
-              <BaseIcon class="AboutUsPage-AdvantageIcon Icon--fill" name="advantage-calendar" />
+              <BaseIcon class="Advantages-AdvantageIcon Icon--fill" name="advantage-calendar" />
               <div class="Advantages-AdvantageBlock">
                 <div class="Advantages-AdvantageTitle">
                   <template v-if="slug === 'tesla_lottery'"> 40 {{ $t('common.days') }}</template>
@@ -53,7 +53,7 @@
             </div>
             <div class="Advantages-Advantage">
               <BaseIcon
-                class="AboutUsPage-AdvantageIcon Icon--stroke Icon--fill"
+                class="Advantages-AdvantageIcon Icon--stroke Icon--fill"
                 name="advantage-star"
               />
               <div class="Advantages-AdvantageBlock">
@@ -78,7 +78,7 @@
               </div>
             </div>
             <div class="Advantages-Advantage">
-              <BaseIcon class="AboutUsPage-AdvantageIcon Icon--fill" name="advantage-ticket" />
+              <BaseIcon class="Advantages-AdvantageIcon Icon--fill" name="advantage-ticket" />
               <div class="Advantages-AdvantageBlock">
                 <div class="Advantages-AdvantageTitle">
                   {{ lottery.ticketCost }} {{ lottery.currency }}
@@ -550,6 +550,15 @@ export default {
 
   .Table--scrollable {
     max-height: 430px;
+  }
+
+  .Advantages-AdvantageIcon {
+    width: 34px;
+    flex-shrink: 0;
+
+    @media (min-width: $screen-m) {
+      width: 44px;
+    }
   }
 }
 
