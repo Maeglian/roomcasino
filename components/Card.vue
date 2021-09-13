@@ -116,7 +116,7 @@
         :to="
           localePath({
             name: 'game-gameName',
-            params: { gameName: encodeURIComponent(gameInfo.gameName) },
+            params: { gameName: gameInfo.gameName },
           })
         "
         class="Card-Name"
@@ -223,7 +223,7 @@ export default {
       // if (this.platform !== 'mobile' || !this.isLoggedIn) return;
       if (!this.startGameOnClick) return;
       this.$emit('open-gamepage', {
-        id: this.gameInfo.gameId,
+        game: this.gameInfo,
         demo: this.gameInfo.demoOnly || !this.isLoggedIn,
       });
     },
