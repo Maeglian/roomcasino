@@ -40,7 +40,7 @@
     <button
       v-if="isLoggedIn"
       class="AuthSection-Btn AuthSection-Btn--mobile AuthSection-Btn--deposit"
-      @click="onClickBtnGtagEvent('login')"
+      @click="onClickBtnGtagEvent('deposit')"
     >
       {{ $t('buttons.deposit') }}
     </button>
@@ -75,15 +75,15 @@ export default {
       if (this.notificationsPanelIsOpen) this.closeNotificationsPanel();
       else this.openNotificationsPanel();
     },
-    onClickBtnGtagEvent(typeAuth) {
-      switch (typeAuth) {
+    onClickBtnGtagEvent(param) {
+      switch (param) {
         case 'signup': {
           this.gtagSendEvent('signup_button_pressed', { position: 'top' });
           this.gtagSendEvent('registration_form_shown', { source: 'click' });
           this.showRegistrationDialog('registration');
           break;
         }
-        case 'login': {
+        case 'deposit': {
           this.gtagSendEvent('deposit_button_pressed', { position: 'top' });
           this.$modal.show('cashier');
           break;
