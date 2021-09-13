@@ -205,14 +205,14 @@ export default {
     };
   },
   head() {
-    if (this.$route.params.tournament === 'demigods') {
+    if (this.$route.params.tournament === 'let-it-beer') {
       return {
-        title: this.$t('demigods.metaInfo.title'),
+        title: this.$t('letItBeer.metaTags.title'),
         meta: [
           {
             hid: 'description',
             name: 'description',
-            content: this.$t('demigods.metaInfo.description'),
+            content: this.$t('letItBeer.metaTags.description'),
           },
         ],
       };
@@ -410,6 +410,49 @@ export default {
 
       @media (min-width: $screen-m) {
         max-width: 35%;
+      }
+    }
+  }
+}
+
+.LetItBeer {
+  &-Header {
+    width: 100%;
+    margin-top: -70px;
+    margin-bottom: 22px;
+    padding-top: 270px / 320px * 100%;
+    background-image: url(~@/assets/img/beer_460.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: calc(100% - 32px) auto;
+
+    @media (min-width: $screen-s) {
+      margin-top: 0;
+      padding-top: 80px / 1248px * 100%;
+      background-image: url(~@/assets/img/beer_900.png);
+    }
+
+    @media (min-width: $screen-m) {
+      padding-top: 50px / 1248px * 100%;
+      background-position: center center;
+    }
+
+    @media (min-width: $screen-xl) {
+      padding-top: 100px;
+      background-image: url(~@/assets/img/beer_1248.png);
+    }
+
+    @media (min-width: $screen-xxl) {
+      background-image: url(~@/assets/img/beer_1920.png);
+    }
+
+    .DailyTournamentPage-MainText {
+      @media (min-width: $screen-s) {
+        max-width: 50%;
+      }
+
+      @media (min-width: $screen-m) {
+        max-width: 37%;
       }
     }
   }

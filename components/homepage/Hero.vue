@@ -219,6 +219,13 @@ export default {
           url: '/lottery/happy_harvest_lotto',
           linkText: this.$t('buttons.more'),
         },
+        {
+          bg: 'beer',
+          title: this.$t('letItBeer.title'),
+          text: `<span class="Colored">${this.$t('letItBeer.prize')}</span>`,
+          url: '/tournaments/let-it-beer',
+          linkText: this.$t('buttons.more'),
+        },
       ];
       if (!this.isLoggedIn) {
         slides.splice(1, 1);

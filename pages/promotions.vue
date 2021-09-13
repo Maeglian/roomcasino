@@ -201,6 +201,15 @@ export default {
           url: '/tournaments/weekly_derby',
         },
         {
+          title: this.$t('letItBeer.title'),
+          prize: this.$t('promotions.letItBeer.prize'),
+          image: 'beer-promotions.png',
+          announce: this.$t('promotions.letItBeer.name'),
+          text: this.$t('promotions.letItBeer.text'),
+          link: 'More',
+          url: '/tournaments/let-it-beer',
+        },
+        {
           title: this.$t('tesla_lottery.title'),
           prize: this.$t('tesla_lottery.prize'),
           image: 'tesla-promotion.png',

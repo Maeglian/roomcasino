@@ -330,4 +330,11 @@ export const TOURNAMENTS = {
     class: 'DropsWinsLive',
     slug: 'dropslive',
   },
+  'let-it-beer': {
+    url: 'let-it-beer',
+    name: 'Let it BEER Tournament Round I',
+    translates: 'letItBeer',
+    class: 'LetItBeer',
+    slug: 'letitbeer',
+  },
 };
