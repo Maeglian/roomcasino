@@ -1,5 +1,11 @@
 {
   "title" : "Ninecasino",
+  "cookiePolicy": {
+    "text": "We use cookies to improve your experience. By using our website you are accepting our",
+    "linkName": "Cookie Policy",
+    "textMobile": "Χρησιμοποιούμε",
+    "linkNameMobile": "cookies"
+  },
   "buttons" : {
     "signUp" : "Εγγραφείτε",
     "register" : "ΕΓΓΡΑΦΗ",

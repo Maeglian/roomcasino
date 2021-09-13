@@ -2,7 +2,9 @@
   "title": "Ninecasino",
   "cookiePolicy": {
     "text": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Durch die Verwendung unserer Webseite stimmen Sie unserer",
-    "linkName": "Cookie-Richtline zu"
+    "linkName": "Cookie-Richtline zu",
+    "textMobile": "Wir verwenden",
+    "linkNameMobile": "Cookies"
   },
   "buttons": {
     "signUp": "Erstanmeldung",

@@ -13,8 +13,10 @@
       </template>
       <template v-else>
         <div class="CookiesPopup-Text">
-          We use
-          <NuxtLink class="CookiesPopup-Link" :to="localePath('/privacy-policy')">cookies</NuxtLink>
+          {{ $t('cookiePolicy.textMobile') }}
+          <NuxtLink class="CookiesPopup-Link" :to="localePath('/privacy-policy')">{{
+            $t('cookiePolicy.linkNameMobile')
+          }}</NuxtLink>
         </div>
         <button class="Close CookiesPopup-Close" @click="$parent.closeHandler"></button>
       </template>
