@@ -11,6 +11,19 @@
       :games-to-show="24"
       btn-class="Btn--common Btn--outline"
     />
+    <template v-if="$route.params.gameCategory === 'table'">
+      <div class="Title Title--type-h2 Cards-Title">
+        {{ $t('gameCategories.card') }}
+      </div>
+      <Loader v-if="cardGamesAreLoading" />
+      <Games
+        v-else
+        class="DefaultGames-Cards"
+        :games="cardGames"
+        :games-to-show="24"
+        btn-class="Btn--common Btn--outline"
+      />
+    </template>
   </div>
 </template>
 
@@ -29,6 +42,7 @@ export default {
     const gameParams = {};
     if (params.gameCategory !== 'all') gameParams.category = params.gameCategory;
     await store.dispatch('games/getGames', gameParams);
+    if (params.gameCategory === 'table') await store.dispatch('games/getCardGames');
   },
   head() {
     return {
@@ -50,11 +64,17 @@ export default {
   },
   computed: {
     ...mapState(['width']),
-    ...mapState('games', ['games', 'gamesAreLoading', 'recentGames']),
+    ...mapState('games', [
+      'games',
+      'gamesAreLoading',
+      'recentGames',
+      'cardGamesAreLoading',
+      'cardGames',
+    ]),
     ...mapGetters(['isLoggedIn']),
   },
   methods: {
-    ...mapActions('games', ['getGames']),
+    ...mapActions('games', ['getGames', 'getCardGames']),
   },
 };
 </script>

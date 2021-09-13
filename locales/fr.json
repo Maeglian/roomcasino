@@ -31,7 +31,8 @@
     "checkBonuses": "Vérifiez les bonus",
     "cancelBonus": "Annuler le bonus",
     "goBack": "Retour",
-    "createAccount": "Enregistrer"
+    "createAccount": "Enregistrer",
+    "redeem": "Redeem"
   },
   "errors": {
     "required": "Ne peut pas être vide",
@@ -290,7 +291,11 @@
         "max": "Prix maximum"
       },
       "wagerAmountRequirement": "Montant requis pour la mise",
-      "wageredPercent": "Pourcentage de mise"
+      "wageredPercent": "Pourcentage de mise",
+      "promoCode": {
+        "title": "I have a bonus code",
+        "placeholder": "Promo code"
+      }
     },
     "history": {
       "tabs": {
