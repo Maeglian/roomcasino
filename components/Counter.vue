@@ -112,7 +112,6 @@ export default {
     font-size: 8px;
     font-weight: 300;
     line-height: 1.66;
-    text-align: right;
     color: var(--color-text-ghost);
     text-transform: uppercase;
 
