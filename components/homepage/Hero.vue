@@ -1,7 +1,7 @@
 <template>
   <section class="Hero">
     <div class="Hero-Slider">
-      <Slider :key="`${slides.length}_${width}`" v-bind="options">
+      <Slider :key="`${slides.length}_${width}`" :auto-plain-slider="true" v-bind="options">
         <template v-for="(slide, i) in slides">
           <div
             v-if="!slide.excludedCountries || !slide.excludedCountries.includes($i18n.locale)"

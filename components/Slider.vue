@@ -81,6 +81,15 @@ export default {
     responsive: {
       type: Object,
     },
+    // Включение автопереключения слайдеров
+    autoPlainSlider: {
+      type: Boolean,
+      default: false,
+    },
+    timeSwitchSlider: {
+      type: Number,
+      default: 5000,
+    }
   },
   data() {
     return {
@@ -133,6 +142,8 @@ export default {
   },
   mounted() {
     this.$nextTick(function () {
+      // Автопереключение слайдера
+      this.AutoMoveSlide();
       // Объект контейнера
       this.el.list = this.$refs.list;
       // Объект трека
@@ -196,6 +207,12 @@ export default {
     }
   },
   methods: {
+    // Автоматическое переключение слайдера
+    AutoMoveSlide() {
+      if (this.autoPlainSlider) {
+        setInterval(() => this.nextSlide(), this.timeSwitchSlider);
+      }
+    },
     // Размер окна браузера
     getWidthDocument() {
       this.width.document = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
