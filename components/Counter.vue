@@ -112,6 +112,7 @@ export default {
     font-size: 8px;
     font-weight: 300;
     line-height: 1.66;
+    text-align: right;
     color: var(--color-text-ghost);
     text-transform: uppercase;
 
@@ -163,9 +164,11 @@ export default {
   &-Count {
     position: relative;
     z-index: 1;
+    min-width: 45px;
     font-size: 24px;
     font-weight: 700;
     line-height: 1.18;
+    text-align: right;
     color: var(--color-text-main);
 
     @media (min-width: $screen-l) {
