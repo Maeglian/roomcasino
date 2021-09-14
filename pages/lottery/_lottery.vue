@@ -553,12 +553,18 @@ export default {
   }
 
   .Advantages-AdvantageIcon {
-    width: 34px;
     flex-shrink: 0;
+    width: 34px;
+    height: 34px;
 
     @media (min-width: $screen-m) {
       width: 44px;
+      height: 44px;
     }
+  }
+
+  .Advantages-AdvantageBlock {
+    margin-left: 14px;
   }
 }
 
