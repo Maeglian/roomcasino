@@ -1,129 +1,15 @@
 <template>
   <div class="BaseInput">
-    <div
-      v-if="shouldDisplayValidation && v && v.required === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.required') }}
-    </div>
-
-    <div
-      v-if="shouldDisplayValidation && v && v.email === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.email') }}
-    </div>
-    <div
-      v-if="
-        shouldDisplayValidation &&
-          v &&
-          v.sameAsPassword === false &&
-          v.$dirty &&
-          v.$params.sameAsPassword.type !== 'not'
-      "
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.confirmPassword') }}
-    </div>
-    <div
-      v-if="
-        shouldDisplayValidation &&
-          v &&
-          v.sameAsPassword === false &&
-          v.$dirty &&
-          v.$params.sameAsPassword.type === 'not'
-      "
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.oldAndNewPasswords') }}
-    </div>
-    <div
-      v-if="shouldDisplayValidation && v && v.minLength === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.minLength', { num: v.$params.minLength.min }) }}
-    </div>
-    <div
-      v-if="shouldDisplayValidation && v && v.maxLength === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.maxLength', { num: v.$params.maxLength.max }) }}
-    </div>
-    <div
-      v-if="shouldDisplayValidation && v && v.passwordCheck === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      Must be 8+ chars with 1 number, 1 small and 1 capital letter
-    </div>
-    <div
-      v-if="shouldDisplayValidation && v && v.phoneWithPlusCheck === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.phone') }}
-    </div>
-    <div
-      v-if="shouldDisplayValidation && v && v.numeric === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.numbers') }}
-    </div>
-    <div
-      v-if="shouldDisplayValidation && v && v.dayCheck === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.day') }}
-    </div>
-    <div
-      v-if="shouldDisplayValidation && v && v.monthCheck === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.month') }}
-    </div>
-    <div
-      v-if="shouldDisplayValidation && v && v.yearCheck === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.year') }}
-    </div>
-    <div
-      v-if="shouldDisplayValidation && v && v.alphaNum === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      Must be numbers or letters
-    </div>
-    <div
-      v-if="shouldDisplayValidation && v && v.checkIfNullOrPositiveNumbers === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.0andNum') }}
-    </div>
-    <div
-      v-if="shouldDisplayValidation && v && v.postalCodeCheck === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.postalCode') }}
-    </div>
-    <div
-      v-if="shouldDisplayValidation && v && v.checkIfPositiveNumbers === false && v.$dirty"
-      class="BaseInput-Error"
-      :class="errorClass"
-    >
-      {{ $t('errors.positiveNum') }}
+    <div v-if="errors.length > 0" class="BaseInput-Wrap-Errors">
+      <div
+        v-for="(error, index) in errors"
+        :key="index"
+        class="BaseInput-Error"
+        :class="errorClass"
+        :style="{ top: index * 11 + 2 + 'px' }"
+      >
+        {{ error.errorText }}
+      </div>
     </div>
     <slot name="beforeInput-relative"></slot>
     <div
@@ -240,6 +126,11 @@ export default {
       default: false,
     },
   },
+  data() {
+    return {
+      errors: [],
+    };
+  },
   computed: {
     val: {
       get() {
@@ -251,7 +142,184 @@ export default {
           value = this.inputMask(value);
         }
         this.$emit('input', value);
+        this.errors = this.checkErrors();
       },
+    },
+    requiredValue() {
+      return this.shouldDisplayValidation && this.v && this.v.required === false && this.v.$dirty;
+    },
+    email() {
+      return this.shouldDisplayValidation && this.v && this.v.email === false && this.v.$dirty;
+    },
+    sameAsPassword() {
+      return (
+        this.shouldDisplayValidation &&
+        this.v &&
+        this.v.sameAsPassword === false &&
+        this.v.$dirty &&
+        this.v.$params.sameAsPassword.type !== 'not'
+      );
+    },
+    sameAsPasswordTypeNot() {
+      return (
+        this.shouldDisplayValidation &&
+        this.v &&
+        this.v.sameAsPassword === false &&
+        this.v.$dirty &&
+        this.v.$params.sameAsPassword.type === 'not'
+      );
+    },
+    minLength() {
+      return this.shouldDisplayValidation && this.v && this.v.minLength === false && this.v.$dirty;
+    },
+    maxLength() {
+      return this.shouldDisplayValidation && this.v && this.v.maxLength === false && this.v.$dirty;
+    },
+    passwordCheck() {
+      return (
+        this.shouldDisplayValidation && this.v && this.v.passwordCheck === false && this.v.$dirty
+      );
+    },
+    phoneWithPlusCheck() {
+      return (
+        this.shouldDisplayValidation &&
+        this.v &&
+        this.v.phoneWithPlusCheck === false &&
+        this.v.$dirty
+      );
+    },
+    numeric() {
+      return this.shouldDisplayValidation && this.v && this.v.numeric === false && this.v.$dirty;
+    },
+    dayCheck() {
+      return this.shouldDisplayValidation && this.v && this.v.dayCheck === false && this.v.$dirty;
+    },
+    monthCheck() {
+      return this.shouldDisplayValidation && this.v && this.v.monthCheck === false && this.v.$dirty;
+    },
+    yearCheck() {
+      return this.shouldDisplayValidation && this.v && this.v.yearCheck === false && this.v.$dirty;
+    },
+    alphaNum() {
+      return this.shouldDisplayValidation && this.v && this.v.alphaNum === false && this.v.$dirty;
+    },
+    checkIfNullOrPositiveNumbers() {
+      return (
+        this.shouldDisplayValidation &&
+        this.v &&
+        this.v.checkIfNullOrPositiveNumbers === false &&
+        this.v.$dirty
+      );
+    },
+    postalCodeCheck() {
+      return (
+        this.shouldDisplayValidation && this.v && this.v.postalCodeCheck === false && this.v.$dirty
+      );
+    },
+    checkIfPositiveNumbers() {
+      return (
+        this.shouldDisplayValidation &&
+        this.v &&
+        this.v.checkIfPositiveNumbers === false &&
+        this.v.$dirty
+      );
+    },
+  },
+  methods: {
+    checkErrors() {
+      return [
+        {
+          name: 'requiredValue',
+          error: this.requiredValue,
+          errorText: this.requiredValue ? this.$t('errors.required') : '',
+        },
+        {
+          name: 'email',
+          error: this.email,
+          errorText: this.email ? this.$t('errors.email') : '',
+        },
+        {
+          name: 'sameAsPassword',
+          error: this.sameAsPassword,
+          errorText: this.sameAsPassword ? this.$t('errors.confirmPassword') : '',
+        },
+        {
+          name: 'sameAsPasswordTypeNot',
+          error: this.sameAsPasswordTypeNot,
+          errorText: this.sameAsPasswordTypeNot ? this.$t('errors.oldAndNewPasswords') : '',
+        },
+        {
+          name: 'minLength',
+          error: this.minLength,
+          errorText: this.minLength
+            ? this.$t('errors.minLength', { num: this.v.$params.minLength.min })
+            : '',
+        },
+        {
+          name: 'maxLength',
+          error: this.maxLength,
+          errorText: this.maxLength
+            ? this.$t('errors.maxLength', { num: this.v.$params.maxLength.max })
+            : '',
+        },
+        {
+          name: 'passwordCheck',
+          error: this.passwordCheck,
+          errorText: this.passwordCheck
+            ? 'Must be 8+ chars with 1 number, 1 small and 1 capital letter'
+            : '',
+        },
+        {
+          name: 'phoneWithPlusCheck',
+          error: this.phoneWithPlusCheck,
+          errorText: this.phoneWithPlusCheck ? this.$t('errors.phone') : '',
+        },
+        {
+          name: 'numeric',
+          error: this.numeric,
+          errorText: this.numeric ? this.$t('errors.numbers') : '',
+        },
+        {
+          name: 'dayCheck',
+          error: this.dayCheck,
+          errorText: this.dayCheck ? this.$t('errors.day') : '',
+        },
+        {
+          name: 'dayCheck',
+          error: this.dayCheck,
+          errorText: this.dayCheck ? this.$t('errors.day') : '',
+        },
+        {
+          name: 'monthCheck',
+          error: this.monthCheck,
+          errorText: this.monthCheck ? this.$t('errors.month') : '',
+        },
+        {
+          name: 'yearCheck',
+          error: this.yearCheck,
+          errorText: this.yearCheck ? this.$t('errors.year') : '',
+        },
+        {
+          name: 'alphaNum',
+          error: this.alphaNum,
+          errorText: this.alphaNum ? 'Must be numbers or letters' : '',
+        },
+        {
+          name: 'checkIfNullOrPositiveNumbers',
+          error: this.checkIfNullOrPositiveNumbers,
+          errorText: this.checkIfNullOrPositiveNumbers ? this.$t('errors.0andNum') : '',
+        },
+        {
+          name: 'postalCodeCheck',
+          error: this.postalCodeCheck,
+          errorText: this.postalCodeCheck ? this.$t('errors.postalCode') : '',
+        },
+        {
+          name: 'checkIfPositiveNumbers',
+          error: this.checkIfPositiveNumbers,
+          errorText: this.checkIfPositiveNumbers ? this.$t('errors.positiveNum') : '',
+        },
+      ].filter(item => item.error);
     },
   },
 };
