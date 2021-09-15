@@ -8,6 +8,41 @@ const target =
     ? 'static'
     : 'server';
 
+const robotsDev = {
+  UserAgent: '*',
+  Disallow: '/',
+};
+
+const robotsProd = [
+  {
+    UserAgent: '*',
+    Disallow: '/_nuxt/',
+  },
+  {
+    Disallow: '*?',
+  },
+  {
+    Allow: '/_nuxt/*.svg',
+  },
+  {
+    Allow: '/_nuxt/*.png',
+  },
+  {
+    Allow: '/_nuxt/*.jpg',
+  },
+  {
+    Allow: '/_nuxt/*.js',
+  },
+  {
+    Allow: '/_nuxt/*.css',
+  },
+];
+
+const robots =
+  process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
+    ? robotsDev
+    : robotsProd;
+
 const ssr = !(process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage');
 
 const plugins =
@@ -95,6 +130,7 @@ export default {
     'nuxt-i18n',
     '@nuxtjs/sentry',
     '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
   ],
   sitemap: {
     hostname: 'https://ninecasino.com',
@@ -103,6 +139,7 @@ export default {
     },
     routes: [],
   },
+  robots,
   i18n: {
     locales: [
       {
