@@ -39,6 +39,9 @@
         <NuxtLink class="Link Footer-Link" :to="localePath('/faq')">
           {{ $t('pages.faq') }}
         </NuxtLink>
+        <a href="https://app.ninecasino.com" class="Link Footer-Link" target="_blank">
+          {{ $t('pages.app') }}
+        </a>
         <a href="https://chillipartners.com/" class="Link Footer-Link" target="_blank">
           Affiliates
         </a>
