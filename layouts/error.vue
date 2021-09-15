@@ -66,7 +66,7 @@ export default {
       background-image: url(../assets/img/notfound_bg.png);
       background-repeat: no-repeat;
       background-position: center 23px;
-      background-size: contain;
+      background-size: cover;
     }
   }
 

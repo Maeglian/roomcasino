@@ -27,7 +27,7 @@
         <template v-if="lottery">
           <div class="Advantages Advantages--min LotteryPage-Advantages">
             <div class="Advantages-Advantage">
-              <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
+              <BaseIcon class="Advantages-AdvantageIcon Icon--fill" name="advantage-cup" />
               <div class="Advantages-AdvantageBlock">
                 <div class="Advantages-AdvantageTitle">
                   {{ lottery.awardList.length }}
@@ -38,7 +38,7 @@
               </div>
             </div>
             <div class="Advantages-Advantage">
-              <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
+              <BaseIcon class="Advantages-AdvantageIcon Icon--fill" name="advantage-calendar" />
               <div class="Advantages-AdvantageBlock">
                 <div class="Advantages-AdvantageTitle">
                   <template v-if="slug === 'tesla_lottery'"> 40 {{ $t('common.days') }}</template>
@@ -52,7 +52,10 @@
               </div>
             </div>
             <div class="Advantages-Advantage">
-              <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
+              <BaseIcon
+                class="Advantages-AdvantageIcon Icon--stroke Icon--fill"
+                name="advantage-star"
+              />
               <div class="Advantages-AdvantageBlock">
                 <div class="Advantages-AdvantageTitle">
                   <span class="Colored">
@@ -75,7 +78,7 @@
               </div>
             </div>
             <div class="Advantages-Advantage">
-              <img src="@/assets/img/star-circle.svg" alt="" class="AboutUsPage-AdvantageIcon" />
+              <BaseIcon class="Advantages-AdvantageIcon Icon--fill" name="advantage-ticket" />
               <div class="Advantages-AdvantageBlock">
                 <div class="Advantages-AdvantageTitle">
                   {{ lottery.ticketCost }} {{ lottery.currency }}
@@ -547,6 +550,21 @@ export default {
 
   .Table--scrollable {
     max-height: 430px;
+  }
+
+  .Advantages-AdvantageIcon {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+
+    @media (min-width: $screen-m) {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  .Advantages-AdvantageBlock {
+    margin-left: 14px;
   }
 }
 

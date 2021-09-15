@@ -169,6 +169,7 @@ export default {
   }
 
   &-AdvantageIcon {
+    flex-shrink: 0;
     width: 34px;
     height: 34px;
     margin-right: 12px;
