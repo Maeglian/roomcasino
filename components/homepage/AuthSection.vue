@@ -32,7 +32,7 @@
       </button>
       <button
         class="Btn Btn--color1 AuthSection-Btn AuthSection-Btn--registration"
-        @click="showRegistrationDialog('registration')"
+        @click="onClickBtnGtagEvent('signup')"
       >
         {{ $t('buttons.signUp') }}
       </button>
@@ -40,7 +40,7 @@
     <button
       v-if="isLoggedIn"
       class="AuthSection-Btn AuthSection-Btn--mobile AuthSection-Btn--deposit"
-      @click="$modal.show('cashier')"
+      @click="onClickBtnGtagEvent('deposit')"
     >
       {{ $t('buttons.deposit') }}
     </button>
@@ -51,13 +51,14 @@
 import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import BaseIcon from '@/components/base/BaseIcon';
+import gtagEvents from '@/mixins/gtagEvents';
 
 export default {
   name: 'AuthSection',
   components: {
     BaseIcon,
   },
-  mixins: [showAuthDialog],
+  mixins: [showAuthDialog, gtagEvents],
   props: {
     myAccount: {
       type: Boolean,
@@ -73,6 +74,23 @@ export default {
     toggleNotificationsPanel() {
       if (this.notificationsPanelIsOpen) this.closeNotificationsPanel();
       else this.openNotificationsPanel();
+    },
+    onClickBtnGtagEvent(param) {
+      switch (param) {
+        case 'signup': {
+          this.gtagSendEvent('signup_button_pressed', { position: 'top' });
+          this.gtagSendEvent('registration_form_shown', { source: 'click' });
+          this.showRegistrationDialog('registration');
+          break;
+        }
+        case 'deposit': {
+          this.gtagSendEvent('deposit_button_pressed', { position: 'top' });
+          this.$modal.show('cashier');
+          break;
+        }
+        default:
+          break;
+      }
     },
   },
 };

@@ -1511,5 +1511,21 @@
       "title": "Incorporating Fraud and Anti Money Laundering Policy",
       "description": "Detailed Information About How We Handle Incorporating Fraud and Anti Money Laundering"
     }
+  },
+  "gtagCategories": {
+    "top": "Top games",
+    "all": "All games",
+    "live": "Live games",
+    "slots": "Slots games",
+    "roulette": "Roulette",
+    "table": "Table Games",
+    "card": "Card games",
+    "recent": "Last games",
+    "new": "New games",
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   }
 }

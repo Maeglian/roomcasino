@@ -53,7 +53,7 @@
                 v-else
                 class="Btn Btn--common Hero-Btn"
                 :class="`Hero-Btn--${$i18n.locale}`"
-                @click="onClickBtn()"
+                @click="onClickBtnGtagEvent()"
               >
                 {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.signUp') }}
               </button>
@@ -78,6 +78,7 @@
 import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import Slider from '@/components/Slider';
+import gtagEvents from '@/mixins/gtagEvents';
 
 export default {
   name: 'Hero',
@@ -85,7 +86,7 @@ export default {
     // GamesSlider,
     Slider,
   },
-  mixins: [showAuthDialog],
+  mixins: [showAuthDialog, gtagEvents],
   data() {
     return {
       options: {
@@ -239,6 +240,17 @@ export default {
     toggleNav() {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
+    },
+    onClickBtnGtagEvent() {
+      let action = false;
+      if (this.isLoggedIn) {
+        action = 'deposit_button_pressed';
+      } else {
+        action = 'signup_button_pressed';
+        this.gtagSendEvent('registration_form_shown', { source: 'click' });
+      }
+      this.gtagSendEvent(action, { position: 'banner' });
+      this.onClickBtn();
     },
   },
 };
