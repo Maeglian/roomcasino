@@ -1,5 +1,11 @@
 {
   "title": "Ninecasino",
+  "cookiePolicy": {
+    "text": "We use cookies to improve your experience. By using our website you are accepting our",
+    "linkName": "Cookie Policy",
+    "textMobile": "Wykorzystujemy",
+    "linkNameMobile": "pliki cookie"
+  },
   "buttons": {
     "signUp": "Zarejestruj się",
     "register": "Zarejestruj się",
