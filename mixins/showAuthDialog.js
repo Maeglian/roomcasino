@@ -10,18 +10,11 @@ export default {
   methods: {
     ...mapMutations(['removeAuthError', 'setRegistrationWindowWasOpened']),
     ...mapMutations('profile', ['setUpdateProfileError']),
-    showRegistrationDialog(
-      authType,
-      beforeDeposit = false,
-      beforeStartGame = false,
-      id,
-      demo,
-      gameProducer,
-    ) {
+    showRegistrationDialog(authType, beforeDeposit = false, beforeStartGame = false) {
       this.removeAuthError();
       this.$modal.show(
         AuthDialog,
-        { authType, beforeDeposit, beforeStartGame, id, demo, gameProducer },
+        { authType, beforeDeposit, beforeStartGame },
         { width: this.width >= 1248 ? 845 : 418, height: 'auto', adaptive: true, scrollable: true },
         {
           'before-close': this.afterCloseAuthDialog,

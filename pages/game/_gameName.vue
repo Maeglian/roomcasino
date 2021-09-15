@@ -66,6 +66,7 @@ export default {
   beforeRouteLeave(to, from, next) {
     this.setStartingGame({ html: '', url: '' });
     if (this.isLoggedIn) this.getProfile();
+    if (this.gameToStart) this.setGameToStart(null);
     next();
   },
   data: () => ({
@@ -79,12 +80,12 @@ export default {
   head() {
     if (this.game) {
       return {
-        title: `ᐈ Play ${this.game.gameName} Game Now For Free Or Real Money | $450 Welcome Bonus At Ninecasino`,
+        title: `ᐈ Play ${this.gameName} Game Now For Free Or Real Money | $450 Welcome Bonus At Ninecasino`,
         meta: [
           {
             hid: 'description',
             name: 'description',
-            content: `★ Play ${this.game.gameName} Game For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino`,
+            content: `★ Play ${this.gameName} Game For Free Or Real Money At Online Casino ✓ Fast withdrawal ✓ Fully licensed Ninecasino`,
           },
         ],
       };
@@ -92,13 +93,16 @@ export default {
   },
   computed: {
     ...mapState(['platform']),
-    ...mapState('games', ['gameUrl', 'gameHtml', 'defaultGames']),
+    ...mapState('games', ['gameUrl', 'gameHtml', 'defaultGames', 'gameToStart']),
     ...mapGetters(['activeAccount']),
-    gameId() {
-      return this.$route.params.gameId;
+    gameName() {
+      return decodeURIComponent(this.$route.params.gameName);
+    },
+    gameIdParam() {
+      return this.defaultGames.find(g => g.gameId === this.gameName);
     },
     game() {
-      return this.defaultGames.find(g => g.gameId === this.gameId);
+      return this.defaultGames.find(g => g.gameName === this.gameName);
     },
     getZoomIcon() {
       return this.isFullScreen ? this.zoomOutIcon : this.zoomInIcon;
@@ -135,7 +139,7 @@ export default {
     this.onEnterPage();
   },
   methods: {
-    ...mapMutations('games', ['setStartingGame']),
+    ...mapMutations('games', ['setStartingGame', 'setGameToStart']),
     ...mapActions(['getProfile']),
     ...mapActions('games', ['startGame']),
     toggleFullScreenMode() {
@@ -149,10 +153,17 @@ export default {
     },
     onEnterPage() {
       if (this.defaultGames.length) {
-        if (!this.game) this.$router.push(this.localePath('/404'));
+        if (this.gameIdParam) {
+          this.$router.replace(
+            this.localePath({
+              name: 'game-gameName',
+              params: { gameName: decodeURIComponent(this.gameIdParam.gameName) },
+            }),
+          );
+        } else if (!this.game) this.$router.push(this.localePath('/404'));
         else {
           this.openGamePage(
-            { id: this.gameId, demo: !!this.$route.query.demo },
+            { game: this.game, demo: !!this.$route.query.demo },
             this.game.gameProducer,
           );
         }

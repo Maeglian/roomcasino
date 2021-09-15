@@ -11,14 +11,24 @@
         <button
           v-if="!gameInfo.demoOnly"
           class="Card-PlayBtn"
-          @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: false })"
+          @click="
+            $emit('open-gamepage', {
+              game: gameInfo,
+              demo: false,
+            })
+          "
         >
           {{ $t('buttons.playNow') }}
         </button>
         <button
           v-if="showDemo && gameInfo.type !== 'live'"
           class="Card-PlayFun"
-          @click="$emit('open-gamepage', { id: gameInfo.gameId, demo: true })"
+          @click="
+            $emit('open-gamepage', {
+              game: gameInfo,
+              demo: true,
+            })
+          "
         >
           {{ $t('buttons.playForFun') }}
         </button>
@@ -103,7 +113,12 @@
     </div>
     <div v-if="showFooter" class="Card-Footer">
       <NuxtLink
-        :to="localePath(`/game/${gameInfo.gameId}`)"
+        :to="
+          localePath({
+            name: 'game-gameName',
+            params: { gameName: gameInfo.gameName },
+          })
+        "
         class="Card-Name"
         v-html="linebreak(gameInfo.gameName)"
       />
@@ -208,7 +223,7 @@ export default {
       // if (this.platform !== 'mobile' || !this.isLoggedIn) return;
       if (!this.startGameOnClick) return;
       this.$emit('open-gamepage', {
-        id: this.gameInfo.gameId,
+        game: this.gameInfo,
         demo: this.gameInfo.demoOnly || !this.isLoggedIn,
       });
     },

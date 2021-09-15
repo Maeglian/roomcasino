@@ -75,7 +75,7 @@ export const state = () => ({
   navIsOpen: false,
   notificationsPanelIsOpen: false,
   notificationAlerts: [],
-  depositModalParams: null,
+  showPleaseDepositModal: false,
   width: 0,
   errors: {},
   billingSession: {},
@@ -325,8 +325,8 @@ export const mutations = {
   clearEmailConfirmError: state => {
     state.emailConfirmError = '';
   },
-  setDepositModalParams: (state, payload) => {
-    state.depositModalParams = payload;
+  setShowPleaseDepositModal: (state, payload) => {
+    state.showPleaseDepositModal = payload;
   },
   setSiteIsAllowedForUser: (state, payload) => {
     state.siteIsAllowedForUser = payload;
