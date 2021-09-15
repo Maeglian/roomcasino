@@ -2,6 +2,7 @@ import { API_HOST } from '@/config';
 import { http } from './index';
 
 export const state = () => ({
+  gameToStart: null,
   games: [],
   recentGames: [],
   defaultGames: [],
@@ -55,6 +56,9 @@ export const mutations = {
   setStartingGame: (state, { url, html }) => {
     if (url !== null) state.gameUrl = url;
     if (html !== null) state.gameHtml = html;
+  },
+  setGameToStart: (state, payload) => {
+    state.gameToStart = payload;
   },
   setGameError: (state, message) => {
     state.gameError = message;
