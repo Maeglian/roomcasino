@@ -138,6 +138,8 @@ export default {
       swipeDistance: 50,
       // Дистанция перемещения курсора
       dragDistance: 0,
+      // Таймер переключения
+      timer: '',
     };
   },
   mounted() {
@@ -195,6 +197,7 @@ export default {
     });
   },
   beforeDestroy() {
+    clearInterval(this.timer);
     window.removeEventListener('resize', this.getWidthDocument);
     if ('ontouchstart' in window) {
       this.el.track.removeEventListener('touchstart', this.handleMouseDown);
@@ -210,7 +213,7 @@ export default {
     // Автоматическое переключение слайдера
     AutoMoveSlide() {
       if (this.autoPlainSlider) {
-        setInterval(() => this.nextSlide(), this.timeSwitchSlider);
+        this.timer = setInterval(() => this.nextSlide(), this.timeSwitchSlider);
       }
     },
     // Размер окна браузера
