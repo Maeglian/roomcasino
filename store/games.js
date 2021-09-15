@@ -8,6 +8,7 @@ export const state = () => ({
   defaultGames: [],
   newGames: [],
   topGames: [],
+  cardGames: [],
   liveGames: [],
   jackpotGames: [],
   buybonusGames: [],
@@ -19,6 +20,7 @@ export const state = () => ({
   defaultGamesAreLoading: false,
   newGamesAreLoading: false,
   topGamesAreLoading: false,
+  cardGamesAreLoading: false,
   liveGamesAreLoading: false,
   jackpotGamesAreLoading: false,
   buybonusGamesAreLoading: false,
@@ -70,6 +72,9 @@ export const mutations = {
   setDefaultGamesAreLoading: (state, payload) => {
     state.defaultGamesAreLoading = payload;
   },
+  setCardGamesAreLoading: (state, payload) => {
+    state.cardGamesAreLoading = payload;
+  },
   setLiveGamesAreLoading: (state, payload) => {
     state.liveGamesAreLoading = payload;
   },
@@ -111,6 +116,9 @@ export const mutations = {
   },
   setLiveGames: (state, payload) => {
     state.liveGames = payload;
+  },
+  setCardGames: (state, payload) => {
+    state.cardGames = payload;
   },
   setJackpotGames: (state, payload) => {
     state.jackpotGames = payload;
@@ -235,6 +243,20 @@ export const actions = {
       this.$sentry.captureException(new Error(e));
     } finally {
       commit('setJackpotGamesAreLoading', false);
+    }
+  },
+
+  async getCardGames({ commit, rootState }) {
+    commit('setCardGamesAreLoading', true);
+    try {
+      const res = await http.get(`${API_HOST}/gameList`, {
+        params: { category: 'card', platform: rootState.platform },
+      });
+      commit('setCardGames', res.data);
+    } catch (e) {
+      this.$sentry.captureException(new Error(e));
+    } finally {
+      commit('setCardGamesAreLoading', false);
     }
   },
 

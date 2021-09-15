@@ -31,7 +31,8 @@
     "checkBonuses": "Vérifiez les bonus",
     "cancelBonus": "Annuler le bonus",
     "goBack": "Retour",
-    "createAccount": "Enregistrer"
+    "createAccount": "Enregistrer",
+    "redeem": "Redeem"
   },
   "errors": {
     "required": "Ne peut pas être vide",
@@ -299,7 +300,11 @@
         "max": "Prix maximum"
       },
       "wagerAmountRequirement": "Montant requis pour la mise",
-      "wageredPercent": "Pourcentage de mise"
+      "wageredPercent": "Pourcentage de mise",
+      "promoCode": {
+        "title": "I have a bonus code",
+        "placeholder": "Promo code"
+      }
     },
     "history": {
       "tabs": {
@@ -467,6 +472,12 @@
       "upTo": "une cagnotte de 2500 €",
       "name": "À vos marques pour le Weekly Derby",
       "text": "C’est l’heure du Weekly Derby et nos prix vous feront trépigner d’impatience pour arriver en premier!<br/><br/>En cours pendant 7 jours chaque semaine du jeudi 00 h 01 UTC au mercredi 23 h 59 UTC. Saisissez votre chance de partager une cagnotte de 2 500 € avec 40 coureurs chanceux.<br/><br/>Vous n’avez qu’à faire une mise de 0,5 € et être prêt(e) pour la course.<br/><br/>Bonne chance et que le Derby commence!"
+    },
+    "letItBeer": {
+      "title": "Le tournoi Let it BEER  Le premier tour",
+      "prize": "20 000 €",
+      "name": "À la santé du tournoi « Let it BEER »",
+      "text": "L’Oktoberfest arrive à grands pas, nous nous sommes donc associés à Spinomenal pour vous préparer un tournoi très intéressant : « Let it BEER ». Mais restez zen en jouant et ne manquez pas une chance de plonger dans la rafraîchissante cagnotte de 20 000 €! Le premier tour se déroule entre le 14 septembre, 00 h 00, et le 22 septembre, 23 h 59 (GMT).<br/><br/> Pour participer au premier tour, il suffit de jouer à l’un des jeux participants. La fête de la bière d’octobre est arrivée!"
     }
   },
   "tournaments": {
@@ -1414,6 +1425,36 @@
     ],
     "metaTitle": "➤ La Happy Harvest Lotto avec une cagnotte impressionnante de 5,000 tours gratuits – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
     "metaDescription": "✭ Tentez votre chance dans le nouveau Happy Harvest Lotto de NineCasino ➔ Accomplissez des missions et gagnez des prix!"
+  },
+  "letItBeer": {
+    "title": "Le tournoi<br> Let it BEER <br>Le premier tour",
+    "prize": "20 000 €",
+    "text": "L’Oktoberfest arrive à grands pas, nous nous sommes donc associés à Spinomenal pour vous préparer un tournoi très intéressant: « Let it BEER ». Mais restez zen en jouant et ne manquez pas une chance de plonger dans la rafraîchissante cagnotte de 20 000 €!<br/><br/> Brassez la vie au tournoi « Let it BEER »!",
+    "textMobile": "L’Oktoberfest arrive à grands pas, nous nous sommes donc associés à Spinomenal pour vous préparer un tournoi très intéressant: « Let it BEER ». Mais restez zen en jouant et ne manquez pas une chance de plonger dans la rafraîchissante cagnotte de 20 000 €!",
+    "terms": [
+      {
+        "title": "Le premier tour se déroule entre le 14 septembre, 00 h 00, et le 22 septembre, 23 h 59 (GMT)."
+      },
+      {
+        "title": "Les 150 premiers joueurs du classement se partageront un prix de 20 000 €."
+      },
+      {
+        "title": "Le premier tour de Let it Beer compte 3 jeux participants : OktoberSpinFest, Beer Collection 10 Lines et Beer Collection 40 Lines."
+      },
+      {
+        "title": "La mise minimale de qualification par tour pour participer au tournoi est de 0,5 €."
+      },
+      {
+        "title": "Chaque gain vous récompense avec un score basé sur le multiplicateur du gain (par exemple, si vous avez misé 1 € et gagné 10 €, vous recevrez 10 points)."
+      },
+      {
+        "title": "Les points reçus sont cumulés pendant toute la durée du tournoi. Plus vous accumulez de points, plus vous êtes bien placé dans le classement."
+      }
+    ],
+    "metaTags": {
+      "title": "➤ Le tournoi Let it BEER  avec une cagnotte impressionnante de 40 000 € – Jouez à vos jeux préférés et gagnez des prix exceptionnels!",
+      "description": "✭ Tentez votre chance dans le nouveau Let it BEER  de Spinomenal  ➔ Chaque mise gagnée vous rapporte des points!"
+    }
   },
   "metaTags": {
     "promotions": {

@@ -127,14 +127,14 @@ export default {
         {
           title: this.$t('promotions.deposit1.title'),
           subtitle: this.$t('promotions.deposit1.upTo'),
-          image: 'banker-green-promotions.png',
+          image: 'banker-green-second-promotions.png',
           announce: this.$t('promotions.deposit1.name'),
           text: this.$t('promotions.deposit1.text'),
         },
         {
           title: this.$t('promotions.deposit2.title'),
           subtitle: this.$t('promotions.deposit2.upTo'),
-          image: 'banker-gold-promotions.png',
+          image: 'banker-gold-second-promotions.png',
           announce: this.$t('promotions.deposit2.name'),
           text: this.$t('promotions.deposit2.text'),
           excludedCountries: ['fi'],
@@ -142,7 +142,7 @@ export default {
         {
           title: this.$t('promotions.deposit3.title'),
           subtitle: this.$t('promotions.deposit3.upTo'),
-          image: 'banker-purple-promotions.png',
+          image: 'banker-purple-second-promotions.png',
           announce: this.$t('promotions.deposit3.name'),
           text: this.$t('promotions.deposit3.text'),
           excludedCountries: ['fi'],
@@ -199,6 +199,15 @@ export default {
           text: this.$t('promotions.weekly_derby.text'),
           link: 'More',
           url: '/tournaments/weekly_derby',
+        },
+        {
+          title: this.$t('letItBeer.title'),
+          prize: this.$t('promotions.letItBeer.prize'),
+          image: 'beer-promotions.png',
+          announce: this.$t('promotions.letItBeer.name'),
+          text: this.$t('promotions.letItBeer.text'),
+          link: 'More',
+          url: '/tournaments/let-it-beer',
         },
         {
           title: this.$t('tesla_lottery.title'),

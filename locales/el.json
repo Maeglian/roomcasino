@@ -31,7 +31,8 @@
     "checkBonuses" : "Έλεγχος μπόνους",
     "cancelBonus" : "Aκύρωσης μπόνους ",
     "goBack" : "Πήγαινε πίσω",
-    "createAccount" : "ΔΗΜΙΟΥΡΓΗΣΤΕ ΛΟΓΑΡΙΑΣΜΟ"
+    "createAccount" : "ΔΗΜΙΟΥΡΓΗΣΤΕ ΛΟΓΑΡΙΑΣΜΟ",
+    "redeem": "Redeem"
   },
   "errors" : {
     "required" : "Δεν μπορεί να είναι κενό",
@@ -294,7 +295,11 @@
         "max" : "Max prize"
       },
       "wagerAmountRequirement" : "Απαίτηση ποσού στοιχήματος",
-      "wageredPercent" : "Ποσοστό πονταρίσματος"
+      "wageredPercent" : "Ποσοστό πονταρίσματος",
+      "promoCode": {
+        "title": "I have a bonus code",
+        "placeholder": "Promo code"
+      }
     },
     "history" : {
       "tabs" : {
@@ -462,6 +467,12 @@
       "upTo" : "σύνολο επάθλου 2.500 €",
       "name" : "ΑΝΑΙΒΕΙΤΕ ΣΤΟ ΑΛΛΟΓΟ ΓΙΑ ΤΟ Weekly Derby",
       "text" : "Είναι η ώρα του Weekly Derby  και τα βραβεία μας θα σας κάνουν να περιμένετε με ανυπομονησία! <br/><br/>Λειτουργεί για 7 ημέρες κάθε εβδομάδα από Πέμπτη 00:01 Συντονισμένη Παγκόσμια Ώρα (UTC) έως Τετάρτη 23:59 Συντονισμένη Παγκόσμια Ώρα (UTC). Πάρτε την ευκαιρία για να μοιραστείτε ένα σύνολο επάθλου 2.500 € με 40 τυχερούς αναβάτες. <br/><br/>Απλά κάντε ένα ελάχιστο στοίχημα 0,5 € και ετοιμαστείτε για τον αγώνα. <br/><br/>Καλή επιτυχία και ξεκινάμε το Ντέρμπι!"
+    },
+    "letItBeer": {
+      "title": "τουρνουά Let it BEER Πρώτος Γύρος",
+      "prize": "20.000 €",
+      "name": "Πιείτε στην υγειά σας στο τουρνουά «Let it BEER»",
+      "text": "Το Oktoberfest πλησιάζει και έτσι συνεργαστήκαμε με τη Spinomenal για να προετοιμάσουμε ένα ωραίο και δροσιστικό τουρνουά: «Let it BEER». Απολαύστε υπεύθυνα ενώ παίζετε και μη χάσετε την ευκαιρία να κερδίσετε το δροσιστικό έπαθλο των 20.000 €! Ο Πρώτος Γύρος θα διεξαχθεί από τις 14 Σεπτεμβρίου στις 00:00 μέχρι τις 22 Σεπτεμβρίου στις 23:59 (GMT).<br/><br/> Για να πάρετε μέρος στον Πρώτο Γύρο, χρειάζεται απλώς να παίξετε σε ένα από τα παιχνίδια.Η γιορτή της μπύρας είναι εδώ!"
     }
   },
   "tournaments" : {
@@ -1403,5 +1414,81 @@
         "text": "Για τα Free Spins, το ποντάρισμα είναι x5."
       }
     ]
+  },
+  "letItBeer": {
+    "title": "τουρνουά<br> Let it BEER<br> Πρώτος Γύρος",
+    "prize": "20.000 €",
+    "text": "Το Oktoberfest πλησιάζει και έτσι συνεργαστήκαμε με τη Spinomenal για να προετοιμάσουμε ένα ωραίο και δροσιστικό τουρνουά: «Let it BEER». Απολαύστε υπεύθυνα ενώ παίζετε και μη χάσετε την ευκαιρία να κερδίσετε το δροσιστικό έπαθλο των 20.000 €!",
+    "textMobile": "Το Oktoberfest πλησιάζει και έτσι συνεργαστήκαμε με τη Spinomenal για να προετοιμάσουμε ένα ωραίο και δροσιστικό τουρνουά: «Let it BEER». Απολαύστε υπεύθυνα ενώ παίζετε και μη χάσετε την ευκαιρία να κερδίσετε το δροσιστικό έπαθλο των 20.000 €!",
+    "terms": [
+      {
+        "title": "Ο Πρώτος Γύρος θα διεξαχθεί από τις 14 Σεπτεμβρίου στις 00:00 μέχρι τις 22 Σεπτεμβρίου στις 23:59 (GMT)."
+      },
+      {
+        "title": "Οι πρώτοι 150 παίκτες στην κατάταξη θα μοιραστούν το έπαθλο των 20.000 €."
+      },
+      {
+        "title": "Ο Πρώτος Γύρος του Let it Beer έχει 3 παιχνίδια: OktoberSpinFest, Beer Collection 10 Lines και Beer Collection 40 Lines."
+      },
+      {
+        "title": "Για να συμμετάσχετε στο τουρνουά, πρέπει να ποντάρετε τουλάχιστον 0,5 € ανά περιστροφή."
+      },
+      {
+        "title": "Κάθε νίκη σάς ανταμείβει με ένα σκορ που βασίζεται στον πολλαπλασιαστή νίκης (για παράδειγμα, αν ποντάρατε 1 € και κερδίζατε 10 €, θα λαμβάνατε 10 πόντους)."
+      },
+      {
+        "title": "Οι πόντοι που λαμβάνετε συνυπολογίζονται καθόλη τη διάρκεια του τουρνουά. Όσο περισσότερους πόντους συγκεντρώνετε τόσο πιο υψηλή θα είναι η θέση σας στην κατάταξη!"
+      }
+    ],
+    "metaTags": {
+      "title": "➤  Για να πάρετε μέρος στον Let it BEER από το Spinomenal δίνεται έπαθλο ύψους 40.000 € – Παίξτε τα αγαπημένα σας παιχνίδια και κερδίστε μεγάλα βραβεία!",
+      "description": "✭ Δοκιμάστε την τύχη σας στο νέο Let it BEER της Spinomenal ➔ Κάθε κερδισμένο στοίχημα σας φέρνει πόντους!"
+    }
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Here You Can Find Out About Our Welcome Bonus For New Players And Other Regular Promotions At Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Daily Cashback Up To 20% - If You Lose We Give You Cashback with x5 wagering."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Detailed Information About Us, Our Software, And What We Offer Our Clients ✓ Fast withdrawal ✓ Fully licensed"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Frequently Asked Questions - Here You Can Find Answers To The Most Popular Questions About Ninecasino"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "This Page Will Help You To Stay Informed About Ninecasino's Terms And Conditions While Interacting With Our Site"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Detailed Information About Bonuses: How To Receive And Withdraw Bonuses At Ninecasino"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Here You Can Find About Responsible Gaming Tools At Your Disposal To Control Your Gaming Experience"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Information About The Risks You Take Paticipating In Games At Ninecasino"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Privacy Policy Of Ninecasino: Everything You Need To Know About The Safety Of Your Financial Information And Personal Account"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Detailed Information How You Can Play With Bitcoin at Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Detailed Information About How We Handle Incorporating Fraud and Anti Money Laundering"
+    }
   }
 }

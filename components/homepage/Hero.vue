@@ -146,26 +146,26 @@ export default {
     slides() {
       const slides = [
         {
-          bg: 'banker-green',
+          bg: 'banker-green-second',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'banker-green',
+          bg: 'banker-green-second',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'banker-gold',
+          bg: 'banker-gold-second',
           title: this.$t('homepage.heroBanner.deposit2.title'),
           text: this.$t('homepage.heroBanner.deposit2.text'),
           btnText: 'Deposit now',
           excludedCountries: ['fi'],
         },
         {
-          bg: 'banker-purple',
+          bg: 'banker-purple-second',
           title: this.$t('homepage.heroBanner.deposit3.title'),
           text: this.$t('homepage.heroBanner.deposit3.text'),
           btnText: 'Deposit now',
@@ -217,6 +217,13 @@ export default {
           title: this.$t('happy_harvest_lotto.title'),
           text: `<span class="Colored">${this.$t('happy_harvest_lotto.prize')}</span>`,
           url: '/lottery/happy_harvest_lotto',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'beer',
+          title: this.$t('letItBeer.title'),
+          text: `<span class="Colored">${this.$t('letItBeer.prize')}</span>`,
+          url: '/tournaments/let-it-beer',
           linkText: this.$t('buttons.more'),
         },
       ];

@@ -275,7 +275,8 @@ export default {
       formData.append('name', file.name);
     },
     onSuccessUpload() {
-      this.getUserDocumentList().then(() => this.$refs.myVueDropzone.removeAllFiles());
+      if (this.$refs.myVueDropzone.getQueuedFiles().length === 0)
+        this.getUserDocumentList().then(() => this.$refs.myVueDropzone.removeAllFiles());
     },
     onErrorUpload({ xhr }) {
       if (xhr && xhr.status === 401) this.logout(true);

@@ -175,7 +175,7 @@ export default {
       const lotteries = this.lotteryList.map(lottery => {
         return {
           name: lottery.name,
-          url: `/lottery/${lottery.slug}`,
+          url: this.localePath(`/lottery/${lottery.slug}`),
           icon: 'tournament_nav.svg',
           onlyIfLoggedIn: false,
         };

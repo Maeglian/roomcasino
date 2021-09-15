@@ -31,7 +31,8 @@
     "checkBonuses": "Sprawdź bonusy",
     "cancelBonus": "Anuluj bonus",
     "goBack": "Cofnij się",
-    "createAccount": "Utwórz konto"
+    "createAccount": "Utwórz konto",
+    "redeem": "Redeem"
   },
   "errors": {
     "required": "Nie może być puste",
@@ -294,7 +295,11 @@
         "max": "Maksymalna nagroda"
       },
       "wagerAmountRequirement": "Wymagana kwota zakładu",
-      "wageredPercent": "Obstawiony procent"
+      "wageredPercent": "Obstawiony procent",
+      "promoCode": {
+        "title": "I have a bonus code",
+        "placeholder": "Promo code"
+      }
     },
     "history": {
       "tabs": {
@@ -461,13 +466,14 @@
     "weekly_derby": {
       "upTo": "pula nagród wynosi 2500 EUR",
       "name": "PRZYGOTUJ SIĘ NA TYGODNIOWE DERBY",
-      "text": "Nadszedł czas Tygodniowych Derbów i czekają wspaniałe nagrody dla pierwszego na mecie!\n<br/><br/>Derby będą rozgrywane co tydzień przez 7 dni, od godz. 00:01 UTC w czwartek do godz. 23:59 UTC we środę. Wykorzystaj szansę i znajdź się w grupie 40 szczęśliwców, by uszczknąć coś dla siebie z puli nagród 2500 EUR.\n<br/><br/>Obstaw zakład o minimalnej wartości 0,5 EUR i szykuj się do rywalizacji.\n <br/><br/>Powodzenia i zaczynajmy Derby!"
+      "text": "Nadszedł czas Tygodniowych Derbów i czekają wspaniałe nagrody dla pierwszego na mecie!\n<br/><br/>Derby będą rozgrywane co tydzień przez 7 dni, od godz. 00:01 UTC w czwartek do godz. 23:59 UTC we środę. Wykorzystaj szansę i znajdź się w grupie 40 szczęśliwców, by uszczknąć coś dla siebie z puli nagród 2500 EUR. <br/><br/>Obstaw zakład o minimalnej wartości 0,5 EUR i szykuj się do rywalizacji.\n <br/><br/>Powodzenia i zaczynajmy Derby!"
+    },
+    "letItBeer": {
+      "title": " Turniej „Let it BEER” Runda I",
+      "prize": "20 000 EUR",
+      "name": "Powiedz „zdrówko” w turnieju „Let it BEER”",
+      "text": "Oktoberfest jest tuż za rogiem, więc wspólnie z firmą Spinomenal przygotowaliśmy pyszny, orzeźwiający turniej: „Let it BEER”. Pamiętaj tylko, aby grać na trzeźwo, i nie przegap okazji na wygranie nagród ze wspaniałej puli 20 000 EUR! Runda I trwa od 14 września, godz. 00:00, do 22 września, godz. 23:59 (GMT).<br/><br/> Aby wziąć udział w rundzie I, wystarczy grać w dowolną z uczestniczących w turnieju gier. Nadszedł październikowy festiwal piwa!"
     }
-  },
-  "twitter": {
-    "twitterBtn": "Twitter",
-    "twitterAccount": "Konto Twitter ",
-    "tweet": "tweet"
   },
   "tournaments": {
     "games": "Gry w tym turnieju",
@@ -1410,5 +1416,81 @@
     ],
     "metaTitle": "➤ Happy Harvest Lotto With Solid Prize Pool 5,000 Free Spins - Play Your Favorite Games And Win Great Prizes!",
     "metaDescription": "✭ Try Your Luck In New Happy Harvest Lotto by NineCasino ➔ Complete Missions - Win Prizes!"
+  },
+  "letItBeer": {
+    "title": "Turniej<br> „Let it BEER”<br> Runda I",
+    "prize": "20 000 EUR",
+    "text": "Oktoberfest jest tuż za rogiem, więc wspólnie z firmą Spinomenal przygotowaliśmy pyszny, orzeźwiający turniej: „Let it BEER”. Pamiętaj tylko, aby grać na trzeźwo, i nie przegap okazji na wygranie nagród ze wspaniałej puli 20 000 EUR!<br/><br/> Czas na piwną zabawę w turnieju „Let it BEER”!",
+    "textMobile": "Oktoberfest jest tuż za rogiem, więc wspólnie z firmą Spinomenal przygotowaliśmy pyszny, orzeźwiający turniej: „Let it BEER”. Pamiętaj tylko, aby grać na trzeźwo, i nie przegap okazji na wygranie nagród ze wspaniałej puli 20 000 EUR!",
+    "terms": [
+      {
+        "title": "Runda I trwa od 14 września, godz. 00:00, do 22 września, godz. 23:59 (GMT)."
+      },
+      {
+        "title": "Pierwszych 150 graczy w rankingu podzieli się nagrodami w wysokości 20 000 EUR."
+      },
+      {
+        "title": "Runda I turnieju Let it Beer obejmuje 3 gry: OktoberSpinFest, Beer Collection 10 Lines i Beer Collection 40 Lines."
+      },
+      {
+        "title": "Minimalny kwalifikujący się zakład na spin wymagany do udziału w turnieju wynosi 0,5 EUR."
+      },
+      {
+        "title": "Każda wygrana daje liczbę punktów uzależnioną od mnożnika wygranej (przykładowo jeśli obstawiono 1 EUR i wygrano 10 EUR, zostanie przyznanych 10 punktów)."
+      },
+      {
+        "title": "Otrzymane punkty są sumowane przez cały okres turnieju. Im więcej punktów zbierzesz, tym wyższa Twoja pozycja w rankingu."
+      }
+    ],
+    "metaTags": {
+      "title": "➤ Nowa Turniej Let it BEER firmy Spinomenal z pulą nagród €40,000  — weź udział w turnieju, graj w ulubione gry i wygrywaj wspaniałe nagrody!",
+      "description": "✭  Turniej Let it BEER firmy Spinomenal  ➤ Każdy wygrany zakład daje punkty!"
+    }
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Here You Can Find Out About Our Welcome Bonus For New Players And Other Regular Promotions At Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Daily Cashback Up To 20% - If You Lose We Give You Cashback with x5 wagering."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Detailed Information About Us, Our Software, And What We Offer Our Clients ✓ Fast withdrawal ✓ Fully licensed"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Frequently Asked Questions - Here You Can Find Answers To The Most Popular Questions About Ninecasino"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "This Page Will Help You To Stay Informed About Ninecasino's Terms And Conditions While Interacting With Our Site"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Detailed Information About Bonuses: How To Receive And Withdraw Bonuses At Ninecasino"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Here You Can Find About Responsible Gaming Tools At Your Disposal To Control Your Gaming Experience"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Information About The Risks You Take Paticipating In Games At Ninecasino"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Privacy Policy Of Ninecasino: Everything You Need To Know About The Safety Of Your Financial Information And Personal Account"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Detailed Information How You Can Play With Bitcoin at Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Detailed Information About How We Handle Incorporating Fraud and Anti Money Laundering"
+    }
   }
 }
