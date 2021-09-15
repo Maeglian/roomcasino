@@ -1,5 +1,5 @@
 <template>
-  <div class="TeslaPopup">
+  <div v-if="$route.path !== '/not-allowed'" class="TeslaPopup">
     <div class="TeslaPopup-Content">
       <img class="TeslaPopup-Image" src="@/assets/img/tesla-banner.png" />
       <div class="TeslaPopup-Title">
