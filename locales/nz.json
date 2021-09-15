@@ -210,7 +210,8 @@
     "winners": "Winners"
   },
   "actions": {
-    "addCurrency": "Add currency"
+    "addCurrency": "Add currency",
+    "playReal": "Play for real money"
   },
   "homepage": {
     "heroBanner": {

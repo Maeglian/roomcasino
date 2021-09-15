@@ -218,7 +218,8 @@
     "winners": "Gewinner"
   },
   "actions": {
-    "addCurrency": "Währung hinzufügen"
+    "addCurrency": "Währung hinzufügen",
+    "playReal": "Stattdessen um echtes Geld spielen"
   },
   "homepage": {
     "heroBanner": {

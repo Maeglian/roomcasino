@@ -206,7 +206,8 @@
     "winners": "Les gagnants"
   },
   "actions": {
-    "addCurrency": "Ajouter une devise"
+    "addCurrency": "Ajouter une devise",
+    "playReal": "Jouez plutôt pour de l'argent réel"
   },
   "homepage": {
     "heroBanner": {
