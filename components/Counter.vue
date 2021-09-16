@@ -163,7 +163,6 @@ export default {
   &-Count {
     position: relative;
     z-index: 1;
-    min-width: 45px;
     font-size: 24px;
     font-weight: 700;
     line-height: 1.18;

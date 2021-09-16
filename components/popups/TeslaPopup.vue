@@ -127,6 +127,7 @@ export default {
   }
 
   .Counter-Count {
+    min-width: 45px;
     margin-right: 4px;
   }
 
