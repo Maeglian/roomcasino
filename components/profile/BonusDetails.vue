@@ -88,19 +88,19 @@
         <VueSlider v-if="games.length > 1" v-bind="sliderOptions">
           <div
             v-for="game in games"
-            :key="game.id"
+            :key="game.gameId"
             class="BonusDetails-Image"
-            :class="{ 'BonusDetails-Image--active': game.id === chosenGame }"
-            @click="onChooseGame(game.id)"
+            :class="{ 'BonusDetails-Image--active': game.gameId === chosenGame }"
+            @click="onChooseGame(game.gameId)"
           >
             <div @click="onOpenGamePage(game)">
-              <img :src="game.img" />
+              <img :src="game.imageUrl" />
             </div>
           </div>
         </VueSlider>
         <div v-else class="BonusDetails-Image BonusDetails-ActivetedGameImage">
           <div @click="onOpenGamePage(games[0])">
-            <img :src="games[0].img" />
+            <img :src="games[0].imageUrl" />
           </div>
         </div>
       </div>
@@ -171,11 +171,8 @@ export default {
     games() {
       if (this.bonus.gameList) {
         return this.bonus.gameList.map(game => {
-          const item = game;
-          const findedGame = this.defaultGames.find(g => g.gameId === item.id);
-          item.img = findedGame ? findedGame.imageUrl : '';
-          item.gameProducer = findedGame.gameProducer;
-          return { ...item };
+          const findedGame = this.defaultGames.find(g => g.gameId === game.id);
+          return { ...findedGame };
         });
       }
 
@@ -190,9 +187,9 @@ export default {
       this.chosenGame = id;
       this.chooseGame(id);
     },
-    onOpenGamePage(item) {
+    onOpenGamePage(game) {
       this.$emit('close');
-      this.openGamePage({ id: item.id, demo: false }, item.gameProducer);
+      this.openGamePage({ game, demo: false });
     },
   },
 };
