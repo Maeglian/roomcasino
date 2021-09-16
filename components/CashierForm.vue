@@ -7,6 +7,7 @@
       adaptive
       scrollable
       @before-open="beforeInitializeCashier($event)"
+      @opened="onAfterOpenCashier()"
       @closed="onCloseCashierForm()"
     >
       <div class="Modal">
@@ -41,6 +42,7 @@ import Loader from '@/components/Loader.vue';
 import BaseModal from '@/components/base/BaseModal.vue';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import openGame from '@/mixins/openGame';
+import gtagEvents from '@/mixins/gtagEvents';
 
 const environment = process.env.NUXT_ENV_MODE === 'production' ? 'production' : 'test';
 
@@ -50,12 +52,11 @@ export default {
     Loader,
     BaseModal,
   },
-  mixins: [showAuthDialog, openGame],
+  mixins: [showAuthDialog, openGame, gtagEvents],
   data() {
     return {
       cashierIsLoading: false,
       depositIsDone: false,
-      gameStartingAfterDeposit: null,
     };
   },
   computed: {
@@ -67,6 +68,7 @@ export default {
       'user',
     ]),
     ...mapState('profile', ['availableBonusList']),
+    ...mapState('games', ['gameToStart']),
     ...mapGetters(['activeAccount']),
   },
   methods: {
@@ -79,22 +81,14 @@ export default {
       'getTransactionHistoryList',
       'getFreeSpinList',
     ]),
-    async beforeInitializeCashier(event) {
-      if (event.params && event.params.gameParams)
-        this.gameStartingAfterDeposit = event.params.gameParams;
+    async beforeInitializeCashier() {
       try {
         await this.getBillingSession();
         if (this.getBillingSessionError)
           this.pushNotificationAlert({ type: 'error', text: this.getBillingSessionError });
 
         if (this.billingSession.needPlayerProfileData) {
-          const gameId = this.gameStartingAfterDeposit
-            ? this.gameStartingAfterDeposit.gameId
-            : undefined;
-          const demo = this.gameStartingAfterDeposit
-            ? this.gameStartingAfterDeposit.demo
-            : undefined;
-          this.showRegistrationDialog('registration', true, true, gameId, demo);
+          this.showRegistrationDialog('registration', true, true);
           this.$modal.hide('cashier');
         }
       } catch {
@@ -105,8 +99,8 @@ export default {
 
       const method = this.shouldCashout ? 'withdrawal' : 'deposit';
       let locale;
-      if (this.$i18n.locale === 'en-ca') locale = 'en';
-      else if (this.$i18n.locale === 'fr-ca') locale = 'fr';
+      if (this.$i18n.locale === 'en-CA') locale = 'en';
+      else if (this.$i18n.locale === 'fr-CA') locale = 'fr';
       // eslint-disable-next-line prefer-destructuring
       else locale = this.$i18n.locale;
 
@@ -134,7 +128,8 @@ export default {
             success: data => {
               console.log('Transaction was completed successfully', data);
               this.getProfile();
-              if (this.$route.name !== 'game' && method !== 'withdrawal') this.depositIsDone = true;
+              if (this.$route.name !== 'game-gameName' && method !== 'withdrawal')
+                this.depositIsDone = true;
 
               if (this.availableBonusList.length) {
                 this.getBonusList();
@@ -167,14 +162,16 @@ export default {
     },
     onCloseCashierForm() {
       if (this.depositIsDone) {
-        if (this.gameStartingAfterDeposit) {
-          const { gameId, demo } = this.gameStartingAfterDeposit;
-          this.getGame({ gameId, demo });
+        if (this.gameToStart) {
+          this.getGame({ game: this.gameToStart });
         } else this.$modal.show('goPlay');
 
         this.depositIsDone = false;
       }
       if (this.shouldCashout) this.setCashoutFalse();
+    },
+    onAfterOpenCashier() {
+      this.gtagSendEvent('deposit_screen_shown', {});
     },
   },
 };

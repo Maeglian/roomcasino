@@ -18,14 +18,16 @@
           @click.native="onChooseTab(i)"
         >
           <div class="DefaultGames-Icon">
-            <img
-              v-if="tab.icon === 'table'"
-              class="DefaultGames-Icon--table"
-              src="@/assets/img/table.svg"
-            />
-            <svg v-else :class="`DefaultGames-Icon--${tab.icon}`">
-              <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
-            </svg>
+            <div class="DefaultGames-IconWrapper">
+              <img
+                v-if="tab.icon === 'table'"
+                class="DefaultGames-Icon--table"
+                src="@/assets/img/table.svg"
+              />
+              <svg v-else :class="`DefaultGames-Icon--${tab.icon}`">
+                <use :xlink:href="require('@/assets/img/icons.svg') + `#${tab.icon}`"></use>
+              </svg>
+            </div>
           </div>
           <div class="DefaultGames-Name">
             {{ tab.name }}
@@ -50,6 +52,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
+          :category-name="$t('gtagCategories.top')"
           :games="topGames"
           :games-to-show="24"
           btn-class="Btn--common Btn--outline"
@@ -62,6 +65,7 @@
         <Games
           :key="isLoggedIn"
           class="DefaultGames-Cards"
+          :category-name="$t('gtagCategories.recent')"
           :games="recentGames"
           :games-to-show="recentGamesNum"
           btn-class="Btn--common Btn--outline"
@@ -75,6 +79,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
+          :category-name="$t('gtagCategories.new')"
           :games="newGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -88,6 +93,7 @@
       <Games
         v-else
         class="DefaultGames-Cards"
+        :category-name="$t('gtagCategories.live')"
         :games="liveGames"
         :games-to-show="6"
         :games-to-load-more="12"
@@ -95,12 +101,13 @@
       />
       <template v-if="jackpotGames.length">
         <div class="Title Title--type-h2 Cards-Title">
-          Jackpots
+          {{ $t('gameCategories.jackpots') }}
         </div>
         <Loader v-if="jackpotGamesAreLoading" />
         <Games
           v-else
           class="DefaultGames-Cards"
+          :category-name="$t('gtagCategories.jackpots')"
           :games="jackpotGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -115,6 +122,7 @@
         <Games
           v-else
           class="DefaultGames-Cards"
+          :category-name="$t('gtagCategories.buybonus')"
           :games="buybonusGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -123,12 +131,13 @@
       </template>
       <template v-if="megawaysGames.length">
         <div class="Title Title--type-h2 Cards-Title">
-          Megaways
+          {{ $t('gameCategories.megaways') }}
         </div>
         <Loader v-if="megawaysGamesAreLoading" />
         <Games
           v-else
           class="DefaultGames-Cards"
+          :category-name="$t('gtagCategories.megaways')"
           :games="megawaysGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -137,12 +146,13 @@
       </template>
       <template v-if="luckychoiceGames.length">
         <div class="Title Title--type-h2 Cards-Title">
-          Lucky Choice
+          {{ $t('gameCategories.luckychoice') }}
         </div>
         <Loader v-if="luckychoiceGamesAreLoading" />
         <Games
           v-else
           class="DefaultGames-Cards"
+          :category-name="$t('gtagCategories.luckychoice')"
           :games="luckychoiceGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -151,12 +161,13 @@
       </template>
       <template v-if="dropsWinsSlotsGames.length">
         <div class="Title Title--type-h2 Cards-Title">
-          Drops & Wins - slots
+          {{ $t('gameCategories.DROP&WINS') }}
         </div>
         <Loader v-if="dropsWinsSlotsGamesAreLoading" />
         <Games
           v-else
           class="DefaultGames-Cards"
+          :category-name="$t('gtagCategories.DROP&WINS')"
           :games="dropsWinsSlotsGames"
           :games-to-show="6"
           :games-to-load-more="12"
@@ -263,6 +274,11 @@ export default {
             icon: 'crown',
           },
           {
+            name: this.$t('gameCategoriesTabs.jackpots'),
+            type: 'jackpots',
+            icon: 'jackpots',
+          },
+          {
             name: this.$t('gameCategoriesTabs.table'),
             type: 'table',
             icon: 'table',
@@ -296,14 +312,14 @@ export default {
           icon: 'roulette',
         },
         {
+          name: this.$t('gameCategoriesTabs.jackpots'),
+          type: 'jackpots',
+          icon: 'jackpots',
+        },
+        {
           name: this.$t('gameCategoriesTabs.table'),
           type: 'table',
           icon: 'table',
-        },
-        {
-          name: this.$t('gameCategoriesTabs.card'),
-          type: 'card',
-          icon: 'cards',
         },
       ];
     },
@@ -414,7 +430,7 @@ export default {
   &-Tab {
     position: relative;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     width: 100%;
     margin-right: 8px;
@@ -480,6 +496,13 @@ export default {
     }
   }
 
+  &-IconWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+  }
+
   &-Icon {
     display: none;
     width: 55px;
@@ -506,6 +529,12 @@ export default {
     &--live {
       width: 23px;
       height: 23px;
+      fill: var(--color-main1);
+    }
+
+    &--jackpots {
+      width: 26px;
+      height: 24px;
       fill: var(--color-main1);
     }
 

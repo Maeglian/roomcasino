@@ -1,5 +1,11 @@
 {
   "title": "Ninecasino",
+  "cookiePolicy": {
+    "text": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Durch die Verwendung unserer Webseite stimmen Sie unserer",
+    "linkName": "Cookie-Richtline zu",
+    "textMobile": "Wir verwenden",
+    "linkNameMobile": "Cookies"
+  },
   "buttons": {
     "signUp": "Erstanmeldung",
     "register": "Registrieren",
@@ -31,7 +37,8 @@
     "checkBonuses": "Boni prüfen",
     "cancelBonus": "Bonus ablehnen",
     "goBack": "Zurück",
-    "createAccount": "Registrieren"
+    "createAccount": "Registrieren",
+    "redeem": "Einlösen"
   },
   "errors": {
     "required": "Pflichtangabe",
@@ -238,7 +245,7 @@
         "text": "<span class=\"Colored\">40% BIS ZU 150 €</span>"
       },
       "highroller": {
-        "title": "HIGH ROLLER-BONUS<br/> FÜR BESONDERE<br/> EINSATZFREUDE",
+        "title": "HIGHROLLER-BONUS<br/> FÜR BESONDERE<br/> EINSATZFREUDE",
         "text": "<span class=\"Colored\">bis zu 500 €</span>"
       }
     },
@@ -280,7 +287,7 @@
       "history": "historie",
       "verification": "Überprüfung",
       "user": "Profil",
-      "limits": "Verlustlimits",
+      "limits": "Spiellimits",
       "exit": "Beenden"
     },
     "balance": {
@@ -302,7 +309,11 @@
         "max": "Maximaler Preis"
       },
       "wagerAmountRequirement": "Wetteinsatz-Anforderung",
-      "wageredPercent": "Eingesetzte Prozent"
+      "wageredPercent": "Eingesetzte Prozent",
+      "promoCode": {
+        "title": "Ich habe einen Bonus-Code",
+        "placeholder": "Gutschein"
+      }
     },
     "history": {
       "tabs": {
@@ -348,7 +359,7 @@
       "labels": {
         "email": "Email",
         "country": "Staat",
-        "firstName": "Vornamen",
+        "firstName": "Vorname",
         "lastName": "Nachname",
         "gender": "Geschlecht",
         "city": "Stadt ",
@@ -419,27 +430,27 @@
   },
   "promotions": {
     "title": "Aktuelle Aktionen",
-    "text": "Ninecasino arbeitet ständig daran, die besten Aktionen zu liefern. Wir verwenden die neueste Technologie und das Feedback unserer Spieler, um unsere Aktionen zu gestalten. Viel Spaß!",
+    "text": "Ninecasino arbeitet ständig daran, die besten Aktionen zu liefern. Wir verwenden die neuesten Technologien und das Feedback unserer Spieler, um unsere Aktionen zu verbessern. Viel Spaß!",
     "deposit1": {
       "title": "100%<br/> des<br/> Einzahlungsbetrags <br/> ",
       "upTo": "bis zu 150 € + 250 FREISPIELE",
       "name": "Bonus für die erste Einzahlung",
-      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 € + 250 freispiele. Nach Ihrer ersten Einzahlung erhalten Sie an jedem der darauffolgenden 5 Tage jeweils 50 Freispiele.<br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "text": "Mach deine erste Einzahlung bei Ninecasino und erhalte bis zu 150 € + 250 freispiele. Nach Ihrer ersten Einzahlung erhalten Sie an jedem der darauffolgenden 5 Tage jeweils 50 Freispiele.<br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach erste Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit2": {
       "title": "55%<br/> des<br/> Einzahlungsbetrags <br/> ",
       "upTo": "bis zu 150 €",
-      "name": "Bonus für zweite Einzahlung",
-      "text": "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach eine zweite Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "name": "Bonus für die zweite Einzahlung",
+      "text": "Mach deine zweite Einzahlung bei Ninecasino und erhalte bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, tätigen Sie einfach zweite Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit3": {
       "title": "100%<br/> des<br/> Einzahlungsbetrags<br/>",
       "upTo": "bis zu 150 €",
       "name": "Bonus für dritte Einzahlung ",
-      "text": "Machen Sie Ihre dritte Einzahlung bei Ninecasino und erhalten Sie bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach eine dritte Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
+      "text": "Machen Sie Ihre dritte Einzahlung bei Ninecasino und erhalten Sie bis zu 150 €. <br/> <br/> Um den Bonus zu aktivieren, machen Sie einfach dritte Einzahlung von 20 € oder mehr. Der Bonus wird automatisch gutgeschrieben."
     },
     "deposit4": {
-      "title": "Wochenend<br/> bonus",
+      "title": "Wöchentlicher<br/> bonus",
       "upTo": "40% BIS ZU 150 €",
       "name": "Wochenend bonus",
       "text": "Mit mehr beginnen, um mehr zu gewinnen. Zahlen Sie mindestens 20 € ein und erhalten Sie eine Gutschrift in Höhe von 40% bis zu 150 €, um diese Automaten schwindlig zu spielen, bis die Jackpots explodieren!"
@@ -451,8 +462,8 @@
       "text": "Wer bekommt im Casino nicht gerne Geld zurück? Selbst wenn Sie verloren haben!<br/>Wirklich, Sie haben sich nicht verlesen – wir erstatten Ihnen Geld mit einer Umsatzanforderung von x5 zurück, wenn Sie verlieren."
     },
     "highroller": {
-      "upTo": "up to 500 €",
-      "name": "High roller-bonus für besondere einsatzfreude",
+      "upTo": "BIS ZU 500 €",
+      "name": "Highroller-bonus für besondere einsatzfreude",
       "text": "Sie stehen auf hohe Einsätze? Dann haben wir das Richtige für Sie. Erhalten Sie einmal im Monat einen Highroller-Bonus für besondere Einsatzfreude von 30% bis zu einem Höchstbetrag von 500 € auf eine Einzahlung ab mindestens 300 €."
     },
     "dropsWinsSlots": {
@@ -475,11 +486,11 @@
       "name": "Aufsatteln fürs Weekly Derby",
       "text": "Es ist Zeit fürs Weekly Derby und unsere Preise lassen dich mit den Hufen scharren, um als Erster die Ziellinie zu überqueren!<br/><br/>Das Derby läuft jede Woche 7 Tage lang, und zwar von Donnerstag um 00:01 Uhr (UTC) bis Mittwoch um 23:59 Uhr (UTC). Sichere dir die Chance, dir mit 40 glücklichen Reitern den podiumswürdigen Preispool von 2.500 € zu teilen.<br/><br/>Mach einfach einen Mindesteinsatz von 0,5 € und sei startklar für das Rennen.<br/><br/>Viel Glück und lass uns das Derby beginnen! "
     },
-    "demigods": {
-      "title": "Demi Gods Tales <br/>Tournament",
-      "upTo": "20.000 €",
-      "name": "Erzählen Sie die Geschichte der Demi God Tales",
-      "text": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst."
+    "letItBeer": {
+      "title": "Let it BEER-Turnier<br> Runde I",
+      "prize": "20.000 €",
+      "name": "Prosit beim „Let it BEER“-Turnier",
+      "text": "Das Oktoberfest steht kurz bevor, deshalb haben wir gemeinsam mit Spinomenal ein nettes kleines Turnier vorbereitet: „Let it BEER“. Aber bleiben Sie beim Spielen nüchtern und nutzen Sie die Chance auf einen Schluck aus dem erfrischenden Gewinnpokal mit insgesamt 20.000 €! Runde I beginnt um 00:00 Uhr am 14. und endet um 23:59 Uhr (GMT) am 22. September. <br/><br/>Spielen Sie eines oder mehrere der teilnehmenden Spiele, um in Runde I dabei zu sein. Das Oktoberbierfest ist da!"
     }
   },
   "tournaments": {
@@ -1215,7 +1226,7 @@
       "text": "Du hast verstanden, dass du durch Teilnahme in den Spielen den Verlust des Geldes riskierst, das du auf dein Konto bei www.ninecasino.com eingezahlt hast. Glücksspiel ist in manchen Gerichtsbarkeiten gesetzeswidrig. Du verstehst und stimmst zu, dass www.ninecasino.com nicht in der Lage ist, Rechtsberatung zu leisten oder die Legalität der Verwendung der Dienste unserer Webseite durch dich zu garantieren. Die Gesellschaft versichert nicht, dass die Dienste der Webseite mit den rechtlichen Anforderungen in deiner Gerichtsbarkeit übereinstimmen. Du verwendest die Dienste auf www.ninecasino.com aus freien Stücken und aus eigenem Ermessen und übernimmst dadurch das Risiko der Haftbarkeit, wenn du entscheidest, dass die Verwendung der Dienste der Webseite mit den gesetzlichen Vorgaben deiner Gerichtsbarkeit übereinstimmt. Anmeldung und Spiel auf der Webseite erfolgt auf eigenes Risiko. Bei Fragen oder Vorschlägen in Bezug auf unsere Webseite setz dich bitte unter support@ninecasino.com oder telefonisch mit uns in Verbindung."
     },
     "bonusTermsPage": {
-      "title1": "bonus-bedingungen",
+      "title1": "bonusbedingungen",
       "text1": [
         "Alle Bonusangebote sind streng begrenzt auf je eine: Person und deren Angehörige, Wohnanschrift, E-Mail-Adresse, IP-Adresse, Telefonnummer, Kontonummer, Kredit- oder EC-Kartennummer, digitale Brieftaschennummer, ein Konto bei einem Zahlungsabwickler (Neteller, Skrill u.a.) und ein Endgerät (Computer, Mobiltelefon, Tablet-PC usw.).",
         "Alle Mitspielenden können die Boni in Anspruch nehmen, es sei denn, die Boni unterliegen Länderbeschränkungen und die Mitspielenden sind in einem der ausgeschlossenen Staaten wohnhaft. Mitspielende aus Schweden dürfen keine Boni erhalten. Boni sind nicht verfügbar für Mitspielende aus Schweden, das schließt die Teilnahme an Werbeaktionen jeglicher Art, den Erhalt von VIP-Prämien sowie den Umtausch von Comppoints ein.",
@@ -1428,34 +1439,34 @@
     "metaTitle": "➤ Happy Harvest Lotto mit massivem Preisgeld von 5,000 Freispielen – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
     "metaDescription": "✭ Versuch dein Glück beim neuen Happy Harvest Lotto von NineCasino ➔ Schließe Missionen ab – gewinne Preise!"
   },
-  "demigods": {
-    "title": "Demi Gods Tales <br/>Tournament<br/> Runde II",
+  "letItBeer": {
+    "title": "Let it BEER-Turnier<br> Runde I",
     "prize": "20.000 €",
-    "text": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst.",
-    "textMobile": "Griechische Sagen über Götter, Halbgötter, Helden und einfache Menschen boten Nahrung für abertausende faszinierender Geschichten, die sich die Menschen seit Jahrhunderten erzählen. Spinomenal hat diese enorme Fülle an Sagen in dem Demi Gods Tales-Turnier zu einer unvergessliche Reihe von Automatenspielen zusammengefasst.",
+    "text": "Das Oktoberfest steht kurz bevor, deshalb haben wir gemeinsam mit Spinomenal ein nettes kleines Turnier vorbereitet: „Let it BEER“. Aber bleiben Sie beim Spielen nüchtern und nutzen Sie die Chance auf einen Schluck aus dem erfrischenden Gewinnpokal mit insgesamt 20.000 €! <br/><br/>Nicht mopsig sein, hopfig sein beim „Let it BEER“-Turnier!",
+    "textMobile": "Das Oktoberfest steht kurz bevor, deshalb haben wir gemeinsam mit Spinomenal ein nettes kleines Turnier vorbereitet: „Let it BEER“. Aber bleiben Sie beim Spielen nüchtern und nutzen Sie die Chance auf einen Schluck aus dem erfrischenden Gewinnpokal mit insgesamt 20.000 €!",
     "terms": [
       {
-        "title": "Runde II beginnt am 30. August um 00:00 Uhr UTC und endet am 5. September 2021 um 23:00 Uhr UTC.<br><br>"
+        "title": "Runde I beginnt um 00:00 Uhr am 14. und endet um 23:59 Uhr (GMT) am 22. September."
       },
       {
-        "title": "Teilnehmende Spiele:<br>Demi Gods III, Demi Gods III – 15 Lines, Book Of Demi Gods III.<br><br>"
+        "title": "2. Die 150 Bestplatzierten teilen sich den Gesamtgewinn von 20.000 €."
       },
       {
-        "title": "Die 150 Bestplatzierten teilen sich den Gesamtgewinn von 20.000 Euro.<br><br>"
+        "title": "An Runde I von Let it Beer nehmen 3 Spiele teil: OktoberSpinFest, Beer Collection 10 Lines und Beer Collection 40 Lines."
       },
       {
-        "title": "Spielen Sie eines oder mehrere der teilnehmenden Spiele. Jedes Mal, wenn das Symbol „Odin“ auf einer der Walzen erscheint, erhalten Sie 1 Wertungspunkt (wenn beispielsweise am Ende einer Ausspielung 3 Odinsymbole auf den Walzen angezeigt werden, erhalten Sie 3 Punkte)."
+        "title": "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 €."
       },
       {
-        "title": "Die erhaltenen Punkte werden über den gesamten Turnierverlauf summiert. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
+        "title": "Jeder Gewinn bringt Ihnen Wertungspunkte entsprechend dem Gewinnmultiplikator (wird zum Beispiel mit einem gesetzten Euro ein Gewinn von 10 Euro erzielt, ergibt das 10 Punkte für Sie)."
       },
       {
-        "title": "Der zur Teilnahme an dem Turnier berechtigende Mindesteinsatz je Ausspielung beträgt 0,5 Euro."
+        "title": "Die gesammelten Punkte werden während des gesamten Turnierverlaufs aufaddiert. Je mehr Punkte Sie sammeln, desto besser Ihre Platzierung in der Rangliste."
       }
     ],
-    "metaInfo": {
-      "title": "➤ Demi God Tales-Turnier mit massivem Preisgeld von 40.000 € – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
-      "description": "✭ Versuch dein Glück beim neuen Demi God Tales von Spinomenal  ➔ Schließe Missionen ab – gewinne Preise!"
+    "metaTags": {
+      "title": "➤ Let it BEER -Turnier mit massivem Preisgeld von 40.000 € – Spiele deine Lieblingsspiele und gewinne tolle Preise!",
+      "description": "✭ Versuch dein Glück beim neuen Let it BEER  von Spinomenal  ➔ Jeder gewonnene Einsatz bringt dir Punkte!"
     }
   },
   "metaTags": {

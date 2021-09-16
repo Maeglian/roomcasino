@@ -1,5 +1,11 @@
 {
   "title": "Ninecasino",
+  "cookiePolicy": {
+    "text": "We use cookies to improve your experience. By using our website you are accepting our",
+    "linkName": "Cookie Policy",
+    "textMobile": "Wykorzystujemy",
+    "linkNameMobile": "pliki cookie"
+  },
   "buttons": {
     "signUp": "Zarejestruj się",
     "register": "Zarejestruj się",
@@ -31,7 +37,8 @@
     "checkBonuses": "Sprawdź bonusy",
     "cancelBonus": "Anuluj bonus",
     "goBack": "Cofnij się",
-    "createAccount": "Utwórz konto"
+    "createAccount": "Utwórz konto",
+    "redeem": "Redeem"
   },
   "errors": {
     "required": "Nie może być puste",
@@ -294,7 +301,11 @@
         "max": "Maksymalna nagroda"
       },
       "wagerAmountRequirement": "Wymagana kwota zakładu",
-      "wageredPercent": "Obstawiony procent"
+      "wageredPercent": "Obstawiony procent",
+      "promoCode": {
+        "title": "I have a bonus code",
+        "placeholder": "Promo code"
+      }
     },
     "history": {
       "tabs": {
@@ -461,36 +472,14 @@
     "weekly_derby": {
       "upTo": "pula nagród wynosi 2500 EUR",
       "name": "PRZYGOTUJ SIĘ NA TYGODNIOWE DERBY",
-      "text": "Nadszedł czas Tygodniowych Derbów i czekają wspaniałe nagrody dla pierwszego na mecie!\n<br/><br/>Derby będą rozgrywane co tydzień przez 7 dni, od godz. 00:01 UTC w czwartek do godz. 23:59 UTC we środę. Wykorzystaj szansę i znajdź się w grupie 40 szczęśliwców, by uszczknąć coś dla siebie z puli nagród 2500 EUR.\n<br/><br/>Obstaw zakład o minimalnej wartości 0,5 EUR i szykuj się do rywalizacji.\n <br/><br/>Powodzenia i zaczynajmy Derby!"
+      "text": "Nadszedł czas Tygodniowych Derbów i czekają wspaniałe nagrody dla pierwszego na mecie!\n<br/><br/>Derby będą rozgrywane co tydzień przez 7 dni, od godz. 00:01 UTC w czwartek do godz. 23:59 UTC we środę. Wykorzystaj szansę i znajdź się w grupie 40 szczęśliwców, by uszczknąć coś dla siebie z puli nagród 2500 EUR. <br/><br/>Obstaw zakład o minimalnej wartości 0,5 EUR i szykuj się do rywalizacji.\n <br/><br/>Powodzenia i zaczynajmy Derby!"
     },
-    "sumdes": {
-      "title": "Summer Desserts<br/> Tournament",
-      "upTo": "€100,000",
-      "name": "Hunt down 100k with Summer Desserts",
-      "text": "The summer is in full swing, so what’s better than a Tournament Series from Booongo! Hurry up to enjoy the Summer Desserts Network Tournament Series at NineCasino! <br/>Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC).<br/><br/>nWhat are you waiting for? Don’t miss out on sharing the huge prize pool from Booongo! Play, enjoy, and win!"
-    },
-    "demigods": {
-      "title": "Demi God Tales <br>Tournament",
-      "upTo": "€20,000",
-      "name": "Become the hero of the Demi God Tales",
-      "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament."
-    },
-    "spiritOfEgypt": {
-      "upTo": "The prize pool is €60,000.",
-      "name": "Spirit of Egypt 60k",
-      "text": "Let the Spirit of Egypt guide you to 60k<br/><br/>New adventures are on the horizon and Playson is waiting with the Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021.<br/><br/>The total Prize pool is a whopping €60,000, and if you reach the peak of the pyramid the top prize is €10,000! Search for tombs, mummies and prizes with the Spirit of Egypt 60k!"
-    },
-    "twitterGiveaway": {
-      "title": "twitter<br/> Giveaway",
-      "upTo": "600 darmowych spinów",
-      "name": "600 Free Spins Giveaway on Twitter",
-      "text": "Przygotowaliśmy dla Was giveaway na naszym oficjalnym koncie {twitterAccount}.{br}{br} Śledź nas, polub ten {tweet} i czekaj na wyniki 26 sierpnia. Wybierzemy losowo 3 zwycięzców i każdy z nich otrzyma 200 darmowych spinów na slocie Wolf Gold.{br}{br}Powodzenia!"
+    "letItBeer": {
+      "title": " Turniej „Let it BEER” Runda I",
+      "prize": "20 000 EUR",
+      "name": "Powiedz „zdrówko” w turnieju „Let it BEER”",
+      "text": "Oktoberfest jest tuż za rogiem, więc wspólnie z firmą Spinomenal przygotowaliśmy pyszny, orzeźwiający turniej: „Let it BEER”. Pamiętaj tylko, aby grać na trzeźwo, i nie przegap okazji na wygranie nagród ze wspaniałej puli 20 000 EUR! Runda I trwa od 14 września, godz. 00:00, do 22 września, godz. 23:59 (GMT).<br/><br/> Aby wziąć udział w rundzie I, wystarczy grać w dowolną z uczestniczących w turnieju gier. Nadszedł październikowy festiwal piwa!"
     }
-  },
-  "twitter": {
-    "twitterBtn": "Twitter",
-    "twitterAccount": "Konto Twitter ",
-    "tweet": "tweet"
   },
   "tournaments": {
     "games": "Gry w tym turnieju",
@@ -1401,96 +1390,6 @@
     ],
     "winTesla": "Wygraj samochód marki Tesla"
   },
-  "sumdes": {
-    "title": "Summer Desserts<br> Tournament",
-    "prize": "€100,000",
-    "text": "The summer is in full swing, so what’s better than a Tournament Series from Booongo! Hurry up to enjoy the Summer Desserts Network Tournament Series at NineCasino! Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC). Don’t miss out on sharing the huge prize pool from Booongo!",
-    "textMobile": "The summer is in full swing, so what’s better than a Tournament Series from Booongo! Hurry up to enjoy the Summer Desserts Network Tournament Series at NineCasino! Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC). Don’t miss out on sharing the huge prize pool from Booongo!",
-    "terms": [
-      {
-        "title": "Summer Desserts Network Tournament Series runs between August 19th, 2021 (0:00 UTC) and August 28th, 2021 (23:00 UTC)."
-      },
-      {
-        "title": "It’s a combo of regular tournaments with mixed terms (the duration of each tournament in the series can vary); the Scoring tournament (where players will get points for each win spin) and also a 2nd (EXTRA) Leaderboard reflecting the player’s overall progress."
-      },
-      {
-        "title": "Challenge for the Grand Total Prize Pool of €100,000 (or player’s currency equivalent):<br>- €80,000 in total for 10 regular tournaments (€8,000 EUR for each one); <br>- €20,000 for the Series Leaderboard ( prizes are paid out simultaneously with a closing Regular Tournament of the Series on 28.08.2021 23:00 UTC)."
-      },
-      {
-        "title": "Battle it out with these breathtaking games:<br>3 Coins Egypt; Pearl Diver; Wukong; Sun of Egypt 2; 15 Dragon Pearls; Hit the Gold!; 3 Coins; Magic Apple; Sun of Egypt; Dragon Pearls; Scarab Temple; Wolf Saga; Aztec Sun; Aztec Pyramid; Scarab Boost."
-      },
-      {
-        "title": "Make a minimum bet of €0,5"
-      },
-      {
-        "title": "The minimum number of spins is 100."
-      },
-      {
-        "title": "Players will get points for each win spin - €1=1 Point. Players will get 1 Point for each х1 multiplier in win Spin."
-      }
-    ],
-    "metaInfo": {
-      "title": "➤ Summer Desserts  Tournament With Solid Prize Pool €100,000 - Play Your Favorite Games And Win Great Prizes!",
-      "description": "✭ Try Your Luck In New Summer Desserts  by Booongo ➔ Complete Missions - Win Prizes!"
-    }
-  },
-  "spiritOfEgypt": {
-    "title": "Spirit of Egypt 60k",
-    "prize": "€60,000",
-    "text": "New adventures are on the horizon and Playson is waiting with the Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021.<br/><br/>The total Prize pool is a whopping €60,000, and if you reach the peak of the pyramid the top prize is €10,000! Make your own luck with the Spirit of Egypt 60k!",
-    "textMobile": "New adventures are on the horizon and Playson is waiting with the Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021.<br/><br/>The total Prize pool is a whopping €60,000, and if you reach the peak of the pyramid the top prize is €10,000! Make your own luck with the Spirit of Egypt 60k!",
-    "metaInfo": {
-      "title": "➤ Spirit of Egypt 60k Tournament With Solid Prize Pool €60,000 - Play Your Favorite Games And Win Great Prizes!",
-      "description": "✭ Try Your Luck In New Spirit of Egypt 60k by Playson ➔ Each Won Bet Brings You Points!"
-    },
-    "terms": [
-      {
-        "title": "The Spirit of Egypt 60k tournament, running between 0:01 UTC on the 20th of August 2021 and 23:59 UTC 29th of August 2021."
-      },
-      {
-        "title": "The total Prize pool is €60,000."
-      },
-      {
-        "title": "The 20 participating games: <br/>● 5 Fortunator <br/>● 9 Happy Pharaohs <br/>● Book of Gold 2: Double HitTM <br/>● Book of Gold: Multichance <br/>● Buffalo Power MegawaysTM <br/>● Buffalo Power: Hold and Win <br/>● Burning Wins: classic 5 lines <br/>● Divine Dragon: Hold and Win <br/>● Eagle Power: Hold and Win <br/>● Hot Burning Wins <br/>● Hot Coins: Hold and Win <br/>● Legend of Cleopatra <br/>● Legend of Cleopatra MegawaysTM <br/>● Rich Diamonds: Hold and Win <br/>● Rise of Egypt Deluxe <br/>● Sevens n Fruits <br/>● Solar Queen <br/>● Solar Temple <br/>● Spirit of Egypt: Hold and Win <br/>● Wolf Power: Hold and Win."
-      },
-      {
-        "title": "No minimum bet is required to qualify."
-      },
-      {
-        "title": "Points are calculated round-by-round, with each 1 EUR (or currency equivalent) wagered equaling 100 points."
-      }
-    ]
-  },
-  "demigods": {
-    "title": "Demi God Tales Tournament<br>Round I",
-    "prize": "€20,000",
-    "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
-    "textMobile": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
-    "terms": [
-      {
-        "title": "Round I runs between August 24th 00:00 GMT and August 30th 23:59 GMT."
-      },
-      {
-        "title": "Participating games: <br>Demi Gods II, Demi Gods II – 15 Lines, Book Of Demi Gods II."
-      },
-      {
-        "title": "The 150 first players on the leaderboard will share a prize of 20,000 EUR."
-      },
-      {
-        "title": "Play any of the participating games. Each win rewards you with a score based on the win multiplier (for example, if you waged 1 EUR and won 10 EUR, you will be rewarded with 10 points)."
-      },
-      {
-        "title": "Points received are summed up throughout the tournament period. The more points you collect, the higher your position on the leaderboard."
-      },
-      {
-        "title": "Minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
-      }
-    ],
-    "metaInfo": {
-      "title": "➤ Demi God Tales Tournament With Solid Prize Pool €40,000 - Play Your Favorite Games And Win Great Prizes!",
-      "description": "✭ Try Your Luck In New Demi God Tales by Spinomenal  ➔ Complete Missions - Win Prizes!"
-    }
-  },
   "happy_harvest_lotto": {
     "title": "Happy Harvest<br/> Lotto",
     "promoTitle": "Zbieraj na potęgę i odbierz 5000 darmowych spinów",
@@ -1523,5 +1422,81 @@
     ],
     "metaTitle": "➤ Happy Harvest Lotto With Solid Prize Pool 5,000 Free Spins - Play Your Favorite Games And Win Great Prizes!",
     "metaDescription": "✭ Try Your Luck In New Happy Harvest Lotto by NineCasino ➔ Complete Missions - Win Prizes!"
+  },
+  "letItBeer": {
+    "title": "Turniej<br> „Let it BEER”<br> Runda I",
+    "prize": "20 000 EUR",
+    "text": "Oktoberfest jest tuż za rogiem, więc wspólnie z firmą Spinomenal przygotowaliśmy pyszny, orzeźwiający turniej: „Let it BEER”. Pamiętaj tylko, aby grać na trzeźwo, i nie przegap okazji na wygranie nagród ze wspaniałej puli 20 000 EUR!<br/><br/> Czas na piwną zabawę w turnieju „Let it BEER”!",
+    "textMobile": "Oktoberfest jest tuż za rogiem, więc wspólnie z firmą Spinomenal przygotowaliśmy pyszny, orzeźwiający turniej: „Let it BEER”. Pamiętaj tylko, aby grać na trzeźwo, i nie przegap okazji na wygranie nagród ze wspaniałej puli 20 000 EUR!",
+    "terms": [
+      {
+        "title": "Runda I trwa od 14 września, godz. 00:00, do 22 września, godz. 23:59 (GMT)."
+      },
+      {
+        "title": "Pierwszych 150 graczy w rankingu podzieli się nagrodami w wysokości 20 000 EUR."
+      },
+      {
+        "title": "Runda I turnieju Let it Beer obejmuje 3 gry: OktoberSpinFest, Beer Collection 10 Lines i Beer Collection 40 Lines."
+      },
+      {
+        "title": "Minimalny kwalifikujący się zakład na spin wymagany do udziału w turnieju wynosi 0,5 EUR."
+      },
+      {
+        "title": "Każda wygrana daje liczbę punktów uzależnioną od mnożnika wygranej (przykładowo jeśli obstawiono 1 EUR i wygrano 10 EUR, zostanie przyznanych 10 punktów)."
+      },
+      {
+        "title": "Otrzymane punkty są sumowane przez cały okres turnieju. Im więcej punktów zbierzesz, tym wyższa Twoja pozycja w rankingu."
+      }
+    ],
+    "metaTags": {
+      "title": "➤ Nowa Turniej Let it BEER firmy Spinomenal z pulą nagród €40,000  — weź udział w turnieju, graj w ulubione gry i wygrywaj wspaniałe nagrody!",
+      "description": "✭  Turniej Let it BEER firmy Spinomenal  ➤ Każdy wygrany zakład daje punkty!"
+    }
+  },
+  "metaTags": {
+    "promotions": {
+      "title": "Promotions",
+      "description": "Here You Can Find Out About Our Welcome Bonus For New Players And Other Regular Promotions At Ninecasino"
+    },
+    "daily-cashback": {
+      "title": "Daily Cashback Up To 20%",
+      "description": "Daily Cashback Up To 20% - If You Lose We Give You Cashback with x5 wagering."
+    },
+    "about-us": {
+      "title": "Information About Ninecasino",
+      "description": "Detailed Information About Us, Our Software, And What We Offer Our Clients ✓ Fast withdrawal ✓ Fully licensed"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Frequently Asked Questions - Here You Can Find Answers To The Most Popular Questions About Ninecasino"
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "description": "This Page Will Help You To Stay Informed About Ninecasino's Terms And Conditions While Interacting With Our Site"
+    },
+    "bonus-terms": {
+      "title": "Information About Bonuses – How To Receive And Withdraw Your Bonuses In Ninecasino",
+      "description": "Detailed Information About Bonuses: How To Receive And Withdraw Bonuses At Ninecasino"
+    },
+    "responsible-gaming": {
+      "title": "Responsible and Controlled Gambling At Ninecasino",
+      "description": "Here You Can Find About Responsible Gaming Tools At Your Disposal To Control Your Gaming Experience"
+    },
+    "risk-warnings": {
+      "title": "Risk Warnings",
+      "description": "Information About The Risks You Take Paticipating In Games At Ninecasino"
+    },
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "description": "Privacy Policy Of Ninecasino: Everything You Need To Know About The Safety Of Your Financial Information And Personal Account"
+    },
+    "bitcoins": {
+      "title": "How To Play On Ninecasino With Bitcoins",
+      "description": "Detailed Information How You Can Play With Bitcoin at Ninecasino"
+    },
+    "aml-policy": {
+      "title": "Incorporating Fraud and Anti Money Laundering Policy",
+      "description": "Detailed Information About How We Handle Incorporating Fraud and Anti Money Laundering"
+    }
   }
 }

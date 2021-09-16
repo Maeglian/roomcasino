@@ -330,11 +330,11 @@ export const TOURNAMENTS = {
     class: 'DropsWinsLive',
     slug: 'dropslive',
   },
-  demigods: {
-    url: 'demigods',
-    name: 'Demi God Tales Tournament Round II',
-    translates: 'demigods',
-    class: 'DemiGods',
-    slug: 'demigods',
+  'let-it-beer': {
+    url: 'let-it-beer',
+    name: 'Let it BEER Tournament Round I',
+    translates: 'letItBeer',
+    class: 'LetItBeer',
+    slug: 'letitbeer',
   },
 };

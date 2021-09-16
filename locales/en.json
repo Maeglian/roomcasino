@@ -1,5 +1,11 @@
 {
   "title": "Ninecasino",
+  "cookiePolicy": {
+    "text": "We use cookies to improve your experience. By using our website you are accepting our",
+    "linkName": "Cookie Policy",
+    "textMobile": "We use",
+    "linkNameMobile": "cookies"
+  },
   "buttons": {
     "signUp": "Sign up",
     "register": "Register",
@@ -85,7 +91,7 @@
     "terms": "I am {minAge} years old and I accept the{br} {terms} and {policy}",
     "step2Title": "Please, fill the information below!",
     "thanksRegistration": "Thank you for registration",
-    "registrationBonus": "$150",
+    "registrationBonus": "€150",
     "registrationBonusText": "For your first deposit! Use advantage of Ninecasino Welcome Bonus",
     "getBonus": "Get your bonus",
     "enterEmail": "Enter email",
@@ -97,7 +103,7 @@
     "tryingConfirmEmail": "We're trying to verify your email",
     "confirmEmailError": "Sorry, you email was not confirmed",
     "confirmEmailSuccess": "Congratulations! Your email was successfully confirmed",
-    "bonus": "$450",
+    "bonus": "€450",
     "freeSpins": "250 free spins",
     "placeholders": {
       "enterEmail": "Enter your email",
@@ -224,23 +230,23 @@
     "heroBanner": {
       "deposit1": {
         "title": "Daily cashback  <br/>  up to <span class=\"Colored\">20%!</span>",
-        "text": "Make your first deposit<br/> and get <span class=\"Colored\">100%</span><br/> up to <span class=\"Colored\">$150</span> + <span class=\"Colored\">250 free spins</span>"
+        "text": "Make your first deposit<br/> and get <span class=\"Colored\">100%</span><br/> up to <span class=\"Colored\">€150</span> + <span class=\"Colored\">250 free spins</span>"
       },
       "deposit2": {
         "title": "Second deposit<br/> bonus",
-        "text": "55% bonus<br/> up to <span class=\"Colored\">$150</span><br/> on your second deposit"
+        "text": "55% bonus<br/> up to <span class=\"Colored\">€150</span><br/> on your second deposit"
       },
       "deposit3": {
         "title": "Third deposit<br/> bonus",
-        "text": "100% bonus<br/> up to <span class=\"Colored\">$150</span><br/> on your third deposit"
+        "text": "100% bonus<br/> up to <span class=\"Colored\">€150</span><br/> on your third deposit"
       },
       "deposit4": {
         "title": "weekend<br/> reload",
-        "text": "<span class=\"Colored\">40% up to $150</span>"
+        "text": "<span class=\"Colored\">40% up to €150</span>"
       },
       "highroller": {
         "title": "High roller<br/> bonus",
-        "text": "<span class=\"Colored\">up to $500</span>"
+        "text": "<span class=\"Colored\">up to €500</span>"
       }
     },
     "advantages": {
@@ -303,7 +309,12 @@
         "max": "Max prize"
       },
       "wagerAmountRequirement": "Wager Amount requirement",
-      "wageredPercent": "Wagered percent"
+      "wageredPercent": "Wagered percent",
+      "promoCode": {
+        "title": "I have a bonus code",
+        "placeholder": "Promo code",
+        "button": "Redeem"
+      }
     },
     "history": {
       "tabs": {
@@ -424,27 +435,27 @@
     "text": "Ninecasino is constantly working to deliver the best promotions. We use the latest technology and feedback from our players to improve our promos all the time. Enjoy!",
     "deposit1": {
       "title": "100%<br/> of the deposit<br/> amount",
-      "upTo": "up to $150 + 250 FREE SPINS",
+      "upTo": "up to €150 + 250 FREE SPINS",
       "name": "First deposit bonus",
-      "text": "Make your first deposit at NineCasino and get up to $150 + 250 free spins. After your first deposit, you'll get 50 Free Spins every day for the next 5 days.<br/><br/>To activate the bonus just make a first deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your first deposit at NineCasino and get up to €150 + 250 free spins. After your first deposit, you'll get 50 Free Spins every day for the next 5 days.<br/><br/>To activate the bonus just make a first deposit of €20 or more. The bonus will be credited automatically."
     },
     "deposit2": {
       "title": "55%<br/> of the deposit<br/> amount",
-      "upTo": "up to $150",
+      "upTo": "up to €150",
       "name": "Second deposit bonus",
-      "text": "Make your second deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus just make a third deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your second deposit at Ninecasino and get up to €150.<br/><br/>To activate the bonus just make a third deposit of €20 or more. The bonus will be credited automatically."
     },
     "deposit3": {
       "title": "100%<br/> of the deposit<br/> amount",
-      "upTo": "up to $150",
+      "upTo": "up to €150",
       "name": "Third deposit bonus",
-      "text": "Make your third deposit at Ninecasino and get up to $150.<br/><br/>To activate the bonus - just make third deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your third deposit at Ninecasino and get up to €150.<br/><br/>To activate the bonus - just make third deposit of €20 or more. The bonus will be credited automatically."
     },
     "deposit4": {
       "title": "Weekend<br/> reload",
-      "upTo": "40% UP TO $150",
+      "upTo": "40% UP TO €150",
       "name": "weekend reload",
-      "text": "Start with more, win more. Deposit at least $20 and get a 40% bonus up to $150 to help spin those slots silly, until the jackpot explodes!"
+      "text": "Start with more, win more. Deposit at least €20 and get a 40% bonus up to €150 to help spin those slots silly, until the jackpot explodes!"
     },
     "cashback": {
       "title": "Daily<br/> cashback",
@@ -453,9 +464,9 @@
       "text": "Who doesn’t like free casino cashback when losing?<br/> Yes, you read right! We give you cashback with only 5x wagering when losing!"
     },
     "highroller": {
-      "upTo": "up to $500",
+      "upTo": "up to €500",
       "name": "High roller bonus",
-      "text": "Are you fond of making big bets? Then we’ve got what you need. Once a month get a special 30% high roller bonus up to $500 on your deposit, starting from $300."
+      "text": "Are you fond of making big bets? Then we’ve got what you need. Once a month get a special 30% high roller bonus up to €500 on your deposit, starting from €300."
     },
     "dropsWinsSlots": {
       "title": "Drops<span class=\"Colored\"> & </span>Wins<br/> Slots",
@@ -472,11 +483,11 @@
       "name": "Saddle up for the Weekly Derby",
       "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
     },
-    "demigods": {
-      "title": "Demi God Tales <br>Tournament",
-      "upTo": "€20,000",
-      "name": "Tell the story of Demi God tales",
-      "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament."
+    "letItBeer": {
+      "title": "Let it BEER Tournament Round I",
+      "prize": "€20,000",
+      "name": "Say cheers with the “Let it BEER” Tournament",
+      "text": "Oktoberfest is just around the corner, so we have teamed up with Spinomenal and prepared a nice cool tournament: “Let it BEER”. But stay sober whilst playing and don’t miss a chance to hop into the refreshing €20,000 prize pool! Round I runs between September 14th, 00:00 and September 22nd, 23:59 (GMT).<br/><br/>To take part in Round I just play any of the participating games. October’s beer fest is here!"
     }
   },
   "tournaments": {
@@ -671,7 +682,7 @@
           "It's the responsibility of the player to ensure that all documents as a part of the KYC process are genuine. Faked or fraudulent documents provided may result in a confiscation of deposits and potential winnings of the player.",
           "In order to make a withdrawal, a player must play through active deposited amounts at least once prior to withdrawal. This procedure is in line with anti money laundering practices. The player is fully responsible for paying all fees and taxes applied to their winnings according to the laws of the jurisdiction of the player’s residence.",
           "The Website supports payouts via Original Credit Transfer (OCT) from Visa and via Payment Transfer from Mastercard. Additional requirements are that the respective credit card is not a corporate credit card and the card is issued in a supported country. For Visa, the following countries are not supported: Hong Kong, India, Indonesia, Japan, Korea, Malaysia, Singapore. For Mastercard, the following countries are supported: Andorra, Austria, Belgium, Cyprus, Czech Republic, Denmark, Estonia, France,  Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Luxembourg, Malta, Monaco, Netherlands, Norway, San Marino, Slovakia, Slovenia, Spain, Switzerland, Turkey, and United Kingdom. Please note that even for supported countries the Website is not able to guarantee successful credit card payment processing in all cases, since banks issuing credit cards may block or reject such transactions at their own discretion.",
-          "In the unlikely event of a player depositing crypto currency funds to another crypto currency network address (such as but not limited to: sending BTC to a BCH address). Ninecasino will not attempt to recover the amount unless it exceeds $5000. In such cases, a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to pursue the recovery, however it's not a guarantee to get the funds recovered.",
+          "In the unlikely event of a player depositing crypto currency funds to another crypto currency network address (such as but not limited to: sending BTC to a BCH address). Ninecasino will not attempt to recover the amount unless it exceeds €5000. In such cases, a fee of 0.1 BTC will be charged in order to recover the lost funds to cover expenses to pursue the recovery, however it's not a guarantee to get the funds recovered.",
           "The internal operating currency of the Website is Euro. Due to this fact, in case you transact in other currencies, the amount deducted from your credit card may be insignificantly higher than displayed at the time of transaction due to currency conversions on the side of your bank and/or the Casino's payment processing system.",
           "All Bank Transfer payouts are processed within five (5) banking days. Please mind that you will not be able to request a Bank Transfer for USD payouts.",
           "You acknowledge that withdrawals via bank transfers can in exceptional cases be subject to additional charges by the intermediary banks. These charges remain outside the influence of The Casino and are limited to the equivalent of EUR 16.",
@@ -1392,36 +1403,6 @@
     ],
     "winTesla": "Win a Tesla car"
   },
-  "demigods": {
-    "title": "Demi Gods Tales <br/>Tournament <br/>Round II",
-    "prize": "€20,000",
-    "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
-    "textMobile": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
-    "terms": [
-      {
-        "title": "Round II runs between August 30th 00:00 GMT and September 5th 23:59 GMT.<br><br>"
-      },
-      {
-        "title": "Participating games: <br>Demi Gods III, Demi Gods III – 15 Lines, Book Of Demi Gods III.<br><br>"
-      },
-      {
-        "title": "The 150 first players on the leaderboard will share a prize of 20,000 EUR.<br><br>"
-      },
-      {
-        "title": "Play any of the participating games. Each time the “Odin” symbol lands on one of the reels, you will be rewarded with 1 point (for example, if at the end of a spin 3 Odin symbols appear on the reels, you will be rewarded with 3 points)."
-      },
-      {
-        "title": "5. Points received are tallied throughout the tournament period. The more points you collect, the higher your position on the leaderboard."
-      },
-      {
-        "title": "Minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
-      }
-    ],
-    "metaInfo": {
-      "title": "➤ Demi God Tales Tournament With Solid Prize Pool €40,000 - Play Your Favorite Games And Win Great Prizes!",
-      "description": "✭ Try Your Luck In New Demi God Tales by Spinomenal  ➔ Complete Missions - Win Prizes!"
-    }
-  },
   "happy_harvest_lotto": {
     "title": "Happy Harvest<br/> Lotto",
     "promoTitle": "Be a harvest hero with 5,000 Free Spins",
@@ -1455,6 +1436,36 @@
     "metaTitle": "➤ Happy Harvest Lotto With Solid Prize Pool 5,000 Free Spins - Play Your Favorite Games And Win Great Prizes!",
     "metaDescription": "✭ Try Your Luck In New Happy Harvest Lotto by NineCasino ➔ Complete Missions - Win Prizes!"
   },
+  "letItBeer": {
+    "title": "Let it BEER<br> Tournament<br> Round I",
+    "prize": "€20,000",
+    "text": "Oktoberfest is just around the corner, so we have teamed up with Spinomenal and prepared a nice cool tournament: “Let it BEER”. But stay sober whilst playing and don’t miss a chance to hop into the refreshing €20,000 prize pool!<br/><br/>Don’t worry be hoppy with the “Let it BEER” Tournament!",
+    "textMobile": "Oktoberfest is just around the corner, so we have teamed up with Spinomenal and prepared a nice cool tournament: “Let it BEER”. But stay sober whilst playing and don’t miss a chance to hop into the refreshing €20,000 prize pool!",
+    "terms": [
+      {
+        "title": "Round I runs between September 14th, 00:00 and September 22nd, 23:59 (GMT)"
+      },
+      {
+        "title": "The 150 first players on the leaderboard will share a prize of €20,000."
+      },
+      {
+        "title": "Round I has 3 participating games: OktoberSpinFest, Beer Collection 10 Lines, and Beer Collection 40 Lines. "
+      },
+      {
+        "title": "The minimum qualifying bet per spin to participate in the tournament is €0.5."
+      },
+      {
+        "title": "Each win rewards you with a score based on the win multiplier (for example if you wagered 1 EUR and won 10 EUR, you would receive 10 points)."
+      },
+      {
+        "title": "Points received are summed up throughout the tournament period.  The more points you collect, the higher your position on the leaderboard."
+      }
+    ],
+    "metaTags": {
+        "title": "➤ Let it BEER  Tournament With Solid Prize Pool €40,000 - Play Your Favorite Games And Win Great Prizes!",
+        "description": "✭ Try Your Luck In New Let it BEER  by Spinomenal  ➔ Each Won Bet Brings You Points!"
+      }
+    },
   "metaTags": {
     "promotions": {
       "title": "Promotions",
@@ -1500,5 +1511,21 @@
       "title": "Incorporating Fraud and Anti Money Laundering Policy",
       "description": "Detailed Information About How We Handle Incorporating Fraud and Anti Money Laundering"
     }
+  },
+  "gtagCategories": {
+    "top": "Top games",
+    "all": "All games",
+    "live": "Live games",
+    "slots": "Slots games",
+    "roulette": "Roulette",
+    "table": "Table Games",
+    "card": "Card games",
+    "recent": "Last games",
+    "new": "New games",
+    "buybonus": "Bonus Buy",
+    "megaways": "Megaways",
+    "luckychoice": "Lucky choice",
+    "DROP&WINS": "Drops & Wins Slots",
+    "jackpots": "Jackpots"
   }
 }

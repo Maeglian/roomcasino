@@ -21,6 +21,7 @@ import Winners from '@/components/homepage/Winners.vue';
 // import Questions from '@/components/Questions.vue';
 // import Banner from '@/components/Banner.vue';
 import showAuthDialog from '@/mixins/showAuthDialog';
+import gtagEvents from '@/mixins/gtagEvents';
 
 export default {
   name: 'HomePage',
@@ -35,7 +36,7 @@ export default {
     // Questions,
     // Banner,
   },
-  mixins: [showAuthDialog],
+  mixins: [showAuthDialog, gtagEvents],
   layout: 'page',
   head() {
     return {
@@ -62,7 +63,10 @@ export default {
     if (this.siteIsAllowedForUser) {
       const timeout = this.$route.query.open === 'registration' ? 1000 : 20000;
       this.timer = setTimeout(() => {
-        if (!this.isLoggedIn) this.showRegistrationDialog('registration');
+        if (!this.isLoggedIn) {
+          this.showRegistrationDialog('registration');
+          this.gtagSendEvent('registration_form_shown', { source: 'auto' });
+        }
       }, timeout);
     }
   },

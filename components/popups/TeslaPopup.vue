@@ -1,5 +1,5 @@
 <template>
-  <div class="TeslaPopup">
+  <div v-if="$route.path !== '/not-allowed'" class="TeslaPopup">
     <div class="TeslaPopup-Content">
       <img class="TeslaPopup-Image" src="@/assets/img/tesla-banner.png" />
       <div class="TeslaPopup-Title">
@@ -30,11 +30,19 @@ export default {
 <style lang="scss">
 .TeslaPopup {
   position: fixed;
-  top: 0;
+  top: 45px;
   left: 0;
   z-index: 100;
   width: 100%;
   background: var(--color-body);
+
+  @media (min-width: $screen-m) {
+    top: 62px;
+  }
+
+  @media (min-width: $screen-xl) {
+    top: 79px;
+  }
 
   &-Content {
     display: flex;

@@ -1,5 +1,11 @@
 {
   "title": "Ninecasino",
+  "cookiePolicy": {
+    "text": "We use cookies to improve your experience. By using our website you are accepting our",
+    "linkName": "Cookie Policy",
+    "textMobile": "We use",
+    "linkNameMobile": "cookies"
+  },
   "buttons": {
     "signUp": "Sign up",
     "register": "Register",
@@ -31,7 +37,8 @@
     "checkBonuses": "Check bonuses",
     "cancelBonus": "Cancel bonus",
     "goBack": "Go back",
-    "createAccount": "Create account"
+    "createAccount": "Create account",
+    "redeem": "Redeem"
   },
   "errors": {
     "required": "Can't be blank",
@@ -302,7 +309,11 @@
         "max": "Max prize"
       },
       "wagerAmountRequirement": "Wager Amount requirement",
-      "wageredPercent": "Wagered percent"
+      "wageredPercent": "Wagered percent",
+      "promoCode": {
+        "title": "I have a bonus code",
+        "placeholder": "Promo code"
+      }
     },
     "history": {
       "tabs": {
@@ -425,7 +436,7 @@
       "title": "100%<br/> of the deposit<br/> amount",
       "upTo": "up to $225 + 250 free spins",
       "name": "First deposit bonus",
-      "text": "Make your first deposit at NineCasino and get up to $150 + 250 free spins. After your first deposit, you'll get 50 Free Spins every day for the next 5 days.<br/><br/>To activate the bonus just make a first deposit of $20 or more. The bonus will be credited automatically."
+      "text": "Make your first deposit at NineCasino and get up to $225 + 250 free spins. After your first deposit, you'll get 50 Free Spins every day for the next 5 days.<br/><br/>To activate the bonus just make a first deposit of $20 or more. The bonus will be credited automatically."
     },
     "deposit2": {
       "title": "55%<br/> of the deposit<br/> amount",
@@ -471,11 +482,11 @@
       "name": "Saddle up for the Weekly Derby",
       "text": "It’s Weekly Derby time, and our prizes will have you chomping at the bit to be first past the post!<br/><br/>Running for 7 days every week from Thursday 00:01 UTC to Wednesday 23:59 UTC. Grab your chance to share a podium worthy prize pool of €2,500 with 40 lucky riders.<br/><br/>Just make a minimum bet of €0.5 and be ready for the race. <br/><br/>Good luck and let’s begin the Derby!"
     },
-    "demigods": {
-      "title": "Demi God Tales <br>Tournament",
-      "upTo": "€20,000",
-      "name": "Tell the story of Demi God tales",
-      "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament."
+    "letItBeer": {
+      "title": "Let it BEER Tournament Round I",
+      "prize": "€20,000",
+      "name": "Say cheers with the “Let it BEER” Tournament",
+      "text": "Oktoberfest is just around the corner, so we have teamed up with Spinomenal and prepared a nice cool tournament: “Let it BEER”. But stay sober whilst playing and don’t miss a chance to hop into the refreshing €20,000 prize pool! Round I runs between September 14th, 00:00 and September 22nd, 23:59 (GMT).<br/><br/>To take part in Round I just play any of the participating games. October’s beer fest is here!"
     }
   },
   "tournaments": {
@@ -1423,34 +1434,34 @@
     "metaTitle": "➤ Happy Harvest Lotto With Solid Prize Pool 5,000 Free Spins - Play Your Favorite Games And Win Great Prizes!",
     "metaDescription": "✭ Try Your Luck In New Happy Harvest Lotto by NineCasino ➔ Complete Missions - Win Prizes!"
   },
-  "demigods": {
-    "title": "Demi Gods Tales <br/>Tournament <br/>Round II",
+  "letItBeer": {
+    "title": "Let it BEER<br> Tournament<br> Round I",
     "prize": "€20,000",
-    "text": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
-    "textMobile": "Greek myths about gods, demigods, heroes and humans make up a thousand fascinating stories told to mankind for centuries. Spinomenal took these immense tales and turned them into an unforgettable series of slot games in the Demi Gods Tales Tournament.",
+    "text": "Oktoberfest is just around the corner, so we have teamed up with Spinomenal and prepared a nice cool tournament: “Let it BEER”. But stay sober whilst playing and don’t miss a chance to hop into the refreshing €20,000 prize pool!<br/><br/>Don’t worry be hoppy with the “Let it BEER” Tournament!",
+    "textMobile": "Oktoberfest is just around the corner, so we have teamed up with Spinomenal and prepared a nice cool tournament: “Let it BEER”. But stay sober whilst playing and don’t miss a chance to hop into the refreshing €20,000 prize pool!",
     "terms": [
       {
-        "title": "Round II runs between August 30th 00:00 GMT and September 5th 23:59 GMT.<br><br>"
+        "title": "Round I runs between September 14th, 00:00 and September 22nd, 23:59 (GMT)"
       },
       {
-        "title": "Participating games: <br>Demi Gods III, Demi Gods III – 15 Lines, Book Of Demi Gods III.<br><br>"
+        "title": "The 150 first players on the leaderboard will share a prize of €20,000."
       },
       {
-        "title": "The 150 first players on the leaderboard will share a prize of 20,000 EUR.<br><br>"
+        "title": "Round I has 3 participating games: OktoberSpinFest, Beer Collection 10 Lines, and Beer Collection 40 Lines. "
       },
       {
-        "title": "Play any of the participating games. Each time the “Odin” symbol lands on one of the reels, you will be rewarded with 1 point (for example, if at the end of a spin 3 Odin symbols appear on the reels, you will be rewarded with 3 points)."
+        "title": "The minimum qualifying bet per spin to participate in the tournament is €0.5."
       },
       {
-        "title": "5. Points received are tallied throughout the tournament period. The more points you collect, the higher your position on the leaderboard."
+        "title": "Each win rewards you with a score based on the win multiplier (for example if you wagered 1 EUR and won 10 EUR, you would receive 10 points)."
       },
       {
-        "title": "Minimum qualifying bet per spin to participate in the tournament is 0.5 EUR."
+        "title": "Points received are summed up throughout the tournament period.  The more points you collect, the higher your position on the leaderboard."
       }
     ],
-    "metaInfo": {
-      "title": "➤ Demi God Tales Tournament With Solid Prize Pool €40,000 - Play Your Favorite Games And Win Great Prizes!",
-      "description": "✭ Try Your Luck In New Demi God Tales by Spinomenal  ➔ Complete Missions - Win Prizes!"
+    "metaTags": {
+      "title": "➤ Let it BEER  Tournament With Solid Prize Pool €40,000 - Play Your Favorite Games And Win Great Prizes!",
+      "description": "✭ Try Your Luck In New Let it BEER  by Spinomenal  ➔ Each Won Bet Brings You Points!"
     }
   },
   "metaTags": {

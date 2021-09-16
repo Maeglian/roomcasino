@@ -20,9 +20,12 @@
         <ul class="MainNav-List">
           <template v-for="item in navItemsFull">
             <NavItem
-              v-if="!item.onlyIfLoggedIn"
+              v-if="
+                !item.onlyIfLoggedIn &&
+                  (!item.excludedCountries || !item.excludedCountries.includes($i18n.locale))
+              "
               :key="item.name"
-              :class-name="'MainNav-Link'"
+              class-name="MainNav-Link"
               :item="item"
             />
           </template>
@@ -107,6 +110,7 @@ export default {
           name: this.$t('pages.dailyCashback'),
           url: this.localePath('/daily-cashback'),
           icon: 'cashback.svg',
+          excludedCountries: ['fi'],
         },
         // {
         //   name: this.$t('pages.lottery'),
@@ -171,7 +175,7 @@ export default {
       const lotteries = this.lotteryList.map(lottery => {
         return {
           name: lottery.name,
-          url: `/lottery/${lottery.slug}`,
+          url: this.localePath(`/lottery/${lottery.slug}`),
           icon: 'tournament_nav.svg',
           onlyIfLoggedIn: false,
         };
@@ -218,7 +222,7 @@ export default {
       return menu;
     },
     isGamePage() {
-      return this.getRouteBaseName() === 'game-gameId';
+      return this.getRouteBaseName() === 'game-gameName';
     },
   },
   mounted() {

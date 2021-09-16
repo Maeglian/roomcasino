@@ -1,12 +1,47 @@
 import axios from 'axios';
 import { API_HOST, TOURNAMENTS } from './config';
 
-const locales = ['en-ca', 'fr', 'cs', 'de'];
+const locales = ['en-CA', 'fr', 'cs', 'de', 'fr-CA', 'el', 'nz', 'fi', 'pl', 'za'];
 
 const target =
   process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
     ? 'static'
     : 'server';
+
+const robotsDev = {
+  UserAgent: '*',
+  Disallow: '/',
+};
+
+const robotsProd = [
+  {
+    UserAgent: '*',
+    Disallow: '/_nuxt/',
+  },
+  {
+    Disallow: '*?',
+  },
+  {
+    Allow: '/_nuxt/*.svg',
+  },
+  {
+    Allow: '/_nuxt/*.png',
+  },
+  {
+    Allow: '/_nuxt/*.jpg',
+  },
+  {
+    Allow: '/_nuxt/*.js',
+  },
+  {
+    Allow: '/_nuxt/*.css',
+  },
+];
+
+const robots =
+  process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage'
+    ? robotsDev
+    : robotsProd;
 
 const ssr = !(process.env.NUXT_ENV_MODE === 'sandbox' || process.env.NUXT_ENV_MODE === 'stage');
 
@@ -51,6 +86,10 @@ export default {
         media: 'print',
         onload: "this.media='all'",
       },
+      {
+        rel: 'canonical',
+        href: 'https://ninecasino.com',
+      },
     ],
     script: [
       {
@@ -85,7 +124,22 @@ export default {
   buildModules: [],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ['@nuxtjs/style-resources', '@nuxtjs/gtm', 'nuxt-i18n', '@nuxtjs/sentry'],
+  modules: [
+    '@nuxtjs/style-resources',
+    '@nuxtjs/gtm',
+    'nuxt-i18n',
+    '@nuxtjs/sentry',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
+  ],
+  sitemap: {
+    hostname: 'https://ninecasino.com',
+    i18n: {
+      locales,
+    },
+    routes: [],
+  },
+  robots,
   i18n: {
     locales: [
       {
@@ -93,54 +147,77 @@ export default {
         codeCountry: 'en_GB',
         file: 'en.json',
         icon: 'en.svg',
+        iso: 'en',
       },
       {
-        code: 'en-ca',
+        code: 'en-CA',
         codeCountry: 'en_CA',
         file: 'en_ca.json',
         icon: 'en-ca.svg',
+        iso: 'en-CA',
       },
       {
-        code: 'fr-ca',
-        codeCountry: 'fr_CA',
+        code: 'fr-CA',
+        codeCountry: 'fr-CA',
         file: 'fr_ca.json',
         icon: 'fr_ca.svg',
+        iso: 'fr-CA',
       },
       {
         code: 'fr',
         codeCountry: 'fr_FR',
         file: 'fr.json',
         icon: 'fr.svg',
+        iso: 'fr',
       },
       {
         code: 'cs',
         codeCountry: 'cs_CZ',
         file: 'cs.json',
         icon: 'cs.svg',
+        iso: 'cs',
       },
       {
         code: 'de',
         codeCountry: 'de_DE',
         file: 'de.json',
         icon: 'de.svg',
+        iso: 'de',
       },
       {
         code: 'el',
         codeCountry: 'el_GR',
         file: 'el.json',
         icon: 'el.svg',
+        iso: 'el',
       },
       {
         code: 'nz',
         codeCountry: 'nz_NZ',
         file: 'nz.json',
         icon: 'nz.svg',
+        iso: 'nz',
+      },
+      {
+        code: 'fi',
+        codeCountry: 'fi_FI',
+        file: 'fi.json',
+        icon: 'fi.svg',
+        iso: 'fi',
       },
       {
         code: 'pl',
         codeCountry: 'pl_PL',
         file: 'pl.json',
         icon: 'pl.svg',
+        iso: 'pl',
+      },
+      {
+        code: 'za',
+        codeCountry: 'za_ZA',
+        file: 'za.json',
+        icon: 'za.svg',
+        iso: 'za',
       },
     ],
     defaultLocale: 'en',
@@ -153,6 +230,8 @@ export default {
       alwaysRedirect: true,
       onlyOnRoot: true,
     },
+    baseUrl: 'https://ninecasino.com',
+    seo: true,
   },
 
   gtm: {

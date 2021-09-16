@@ -13,7 +13,7 @@
         <svg class="BonusesPage-Icon" width="16" height="16">
           <use xlink:href="@/assets/img/icons.svg#promotions"></use>
         </svg>
-        {{ spin.amount }} Free Spins
+        {{ spin.amount }} {{ $t('common.freeSpins') }}
       </div>
       <button
         v-if="spin.status !== 'active'"
@@ -32,7 +32,7 @@
         class="Btn Btn--dark FreeSpin-Btn"
         @click="$modal.show(`confirmDeleteFreeSpin_${spin.id}`)"
       >
-        Cancel
+        {{ $t('buttons.cancel') }}
       </button>
       <div class="FreeSpin-Expires">
         <div class="FreeSpin-Label">

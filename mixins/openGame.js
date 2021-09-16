@@ -8,57 +8,69 @@ export default {
     ...mapGetters(['isLoggedIn', 'activeAccount', 'userInfo']),
   },
   methods: {
-    ...mapMutations(['setDepositModalParams']),
+    ...mapMutations(['setShowPleaseDepositModal']),
+    ...mapMutations('games', ['setGameToStart']),
     ...mapActions('games', ['startGame']),
-    async openGamePage({ id, demo }, gameProducer) {
+    async openGamePage({ game, demo }) {
       if (!demo && !this.isLoggedIn) {
-        this.showRegistrationDialog('login', false, true, id, demo, gameProducer);
+        this.setGameToStart(game);
+        this.showRegistrationDialog('login', false, true);
         return;
       }
 
       if (!demo && this.activeAccount.balance === 0) {
         const hasFreeSpins = this.freeSpinList.some(spin => {
-          return spin.gameList.some(game => game.id === id && spin.status === 'active');
+          return spin.gameList.some(g => g.id === game.gameId && spin.status === 'active');
         });
 
         if (!hasFreeSpins) {
-          this.setDepositModalParams({ gameId: id, demo });
+          this.setShowPleaseDepositModal(true);
+          this.setGameToStart(game);
           return;
         }
       }
 
-      if (!demo && gameProducer === 'bgaming') {
+      if (!demo && game.gameProducer === 'bgaming') {
         const notFullProfileData = Object.values(this.userInfo).some(
           item => item === null || item === '',
         );
         if (notFullProfileData) {
-          this.showRegistrationDialog('registration', false, true, id, demo, gameProducer);
+          this.setGameToStart(game);
+          this.showRegistrationDialog('registration', false, true);
           return;
         }
       }
 
-      await this.getGame({ gameId: id, demo });
+      await this.getGame({ game, demo });
     },
 
-    async getGame({ gameId, demo }) {
+    async getGame({ game, demo }) {
       const query = demo ? { demo } : null;
 
-      if (this.platform === 'mobile' || this.getRouteBaseName() === 'game-gameId') {
+      if (this.platform === 'mobile' || this.getRouteBaseName() === 'game-gameName') {
         await this.startGame({
-          gameId,
+          gameId: game.gameId,
           returnUrl: window.location.origin,
           demo,
         });
 
         if (this.gameHtml) {
           await this.$router.push(
-            this.localePath({ name: 'game-gameId', params: { gameId }, query }),
+            this.localePath({
+              name: 'game-gameName',
+              params: { gameName: game.gameName },
+              query,
+            }),
           );
         } else if (this.platform === 'mobile' && !this.gameError)
           window.location.href = this.gameUrl;
       } else {
         await this.$router.push(
-          this.localePath({ name: 'game-gameId', params: { gameId }, query }),
+          this.localePath({
+            name: 'game-gameName',
+            params: { gameName: game.gameName },
+            query,
+          }),
         );
       }
     },

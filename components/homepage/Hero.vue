@@ -2,58 +2,64 @@
   <section class="Hero">
     <div class="Hero-Slider">
       <Slider :key="`${slides.length}_${width}`" v-bind="options">
-        <div v-for="(slide, i) in slides" :key="i" class="Hero-Item">
-          <picture class="Hero-Image">
-            <source
-              media="(max-width: 340px)"
-              :srcset="require(`@/assets/img/${slide.bg}_320.png`)"
-            />
-            <source
-              media="(max-width: 459px)"
-              :srcset="require(`@/assets/img/${slide.bg}_460.png`)"
-            />
-            <source
-              media="(max-width: 589px)"
-              :srcset="require(`@/assets/img/${slide.bg}_600.png`)"
-            />
-            <source
-              media="(max-width: 900px)"
-              :srcset="require(`@/assets/img/${slide.bg}_900.png`)"
-            />
-            <source
-              media="(max-width: 1400px)"
-              :srcset="require(`@/assets/img/${slide.bg}_1248.png`)"
-            />
-            <img
-              :src="require(`@/assets/img/${slide.bg}_1920.png`)"
-              alt=""
-              @load="setHeroBannerIsLoaded"
-            />
-          </picture>
-          <div class="Hero-Content Hero-Content--centered">
-            <div class="Hero-Description">
-              <div class="Title Title--type-h1 Hero-Title" v-html="slide.title"></div>
-              <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
-              <div class="Hero-Text" v-html="slide.text"></div>
+        <template v-for="(slide, i) in slides">
+          <div
+            v-if="!slide.excludedCountries || !slide.excludedCountries.includes($i18n.locale)"
+            :key="i"
+            class="Hero-Item"
+          >
+            <picture class="Hero-Image">
+              <source
+                media="(max-width: 340px)"
+                :srcset="require(`@/assets/img/${slide.bg}_320.png`)"
+              />
+              <source
+                media="(max-width: 459px)"
+                :srcset="require(`@/assets/img/${slide.bg}_460.png`)"
+              />
+              <source
+                media="(max-width: 589px)"
+                :srcset="require(`@/assets/img/${slide.bg}_600.png`)"
+              />
+              <source
+                media="(max-width: 900px)"
+                :srcset="require(`@/assets/img/${slide.bg}_900.png`)"
+              />
+              <source
+                media="(max-width: 1400px)"
+                :srcset="require(`@/assets/img/${slide.bg}_1248.png`)"
+              />
+              <img
+                :src="require(`@/assets/img/${slide.bg}_1920.png`)"
+                alt=""
+                @load="setHeroBannerIsLoaded"
+              />
+            </picture>
+            <div class="Hero-Content Hero-Content--centered">
+              <div class="Hero-Description">
+                <div class="Title Title--type-h1 Hero-Title" v-html="slide.title"></div>
+                <!--          <div class="Hero-Text">€100 <span class="Colored">+</span> 55 Free Spins</div>-->
+                <div class="Hero-Text" v-html="slide.text"></div>
+              </div>
+              <NuxtLink
+                v-if="slide.url"
+                :class="`Hero-Btn--${$i18n.locale}`"
+                class="Btn Btn--common Hero-Btn"
+                :to="localePath(slide.url)"
+              >
+                {{ slide.linkText }}
+              </NuxtLink>
+              <button
+                v-else
+                class="Btn Btn--common Hero-Btn"
+                :class="`Hero-Btn--${$i18n.locale}`"
+                @click="onClickBtnGtagEvent()"
+              >
+                {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.signUp') }}
+              </button>
             </div>
-            <NuxtLink
-              v-if="slide.url"
-              :class="`Hero-Btn--${$i18n.locale}`"
-              class="Btn Btn--common Hero-Btn"
-              :to="localePath(slide.url)"
-            >
-              {{ slide.linkText }}
-            </NuxtLink>
-            <button
-              v-else
-              class="Btn Btn--common Hero-Btn"
-              :class="`Hero-Btn--${$i18n.locale}`"
-              @click="onClickBtn()"
-            >
-              {{ isLoggedIn ? $t('buttons.depositNow') : $t('buttons.signUp') }}
-            </button>
           </div>
-        </div>
+        </template>
       </Slider>
     </div>
     <div class="Hero-Footer">
@@ -72,6 +78,7 @@
 import { mapGetters, mapMutations, mapState } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import Slider from '@/components/Slider';
+import gtagEvents from '@/mixins/gtagEvents';
 
 export default {
   name: 'Hero',
@@ -79,7 +86,7 @@ export default {
     // GamesSlider,
     Slider,
   },
-  mixins: [showAuthDialog],
+  mixins: [showAuthDialog, gtagEvents],
   data() {
     return {
       options: {
@@ -140,39 +147,43 @@ export default {
     slides() {
       const slides = [
         {
-          bg: 'banker-green',
+          bg: 'banker-green-second',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'banker-green',
+          bg: 'banker-green-second',
           title: this.$t('homepage.heroBanner.deposit1.title'),
           text: this.$t('homepage.heroBanner.deposit1.text'),
           btnText: 'Deposit now',
         },
         {
-          bg: 'banker-gold',
+          bg: 'banker-gold-second',
           title: this.$t('homepage.heroBanner.deposit2.title'),
           text: this.$t('homepage.heroBanner.deposit2.text'),
           btnText: 'Deposit now',
+          excludedCountries: ['fi'],
         },
         {
-          bg: 'banker-purple',
+          bg: 'banker-purple-second',
           title: this.$t('homepage.heroBanner.deposit3.title'),
           text: this.$t('homepage.heroBanner.deposit3.text'),
           btnText: 'Deposit now',
+          excludedCountries: ['fi'],
         },
         {
           bg: 'tournaments',
           title: this.$t('homepage.heroBanner.deposit4.title'),
           text: this.$t('homepage.heroBanner.deposit4.text'),
           btnText: 'Deposit now',
+          excludedCountries: ['fi'],
         },
         {
           bg: 'highroller',
           title: this.$t('homepage.heroBanner.highroller.title'),
           text: this.$t('homepage.heroBanner.highroller.text'),
+          excludedCountries: ['fi'],
         },
         {
           bg: 'dropsSlots',
@@ -196,13 +207,6 @@ export default {
           linkText: this.$t('buttons.more'),
         },
         {
-          bg: 'demigods',
-          title: this.$t('demigods.title'),
-          text: `<span class="Colored">${this.$t('demigods.prize')}</span>`,
-          url: '/tournaments/demigods',
-          linkText: this.$t('buttons.more'),
-        },
-        {
           bg: 'tesla',
           title: this.$t('tesla_lottery.title'),
           text: `<span class="Colored">${this.$t('tesla_lottery.prize')}</span>`,
@@ -214,6 +218,13 @@ export default {
           title: this.$t('happy_harvest_lotto.title'),
           text: `<span class="Colored">${this.$t('happy_harvest_lotto.prize')}</span>`,
           url: '/lottery/happy_harvest_lotto',
+          linkText: this.$t('buttons.more'),
+        },
+        {
+          bg: 'beer',
+          title: this.$t('letItBeer.title'),
+          text: `<span class="Colored">${this.$t('letItBeer.prize')}</span>`,
+          url: '/tournaments/let-it-beer',
           linkText: this.$t('buttons.more'),
         },
       ];
@@ -229,6 +240,17 @@ export default {
     toggleNav() {
       if (this.navIsOpen) this.closeNav();
       else this.openNav();
+    },
+    onClickBtnGtagEvent() {
+      let action = false;
+      if (this.isLoggedIn) {
+        action = 'deposit_button_pressed';
+      } else {
+        action = 'signup_button_pressed';
+        this.gtagSendEvent('registration_form_shown', { source: 'click' });
+      }
+      this.gtagSendEvent(action, { position: 'banner' });
+      this.onClickBtn();
     },
   },
 };
