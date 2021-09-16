@@ -450,7 +450,8 @@ export default {
   &-Error {
     position: absolute;
     top: -13px;
-    left: 0;
+    left: 7px;
+    z-index: 10;
   }
 
   &-Dropdown {
