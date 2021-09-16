@@ -225,6 +225,11 @@ export default {
       );
     },
   },
+  watch: {
+    'v.$error': function(err) {
+      if (err) this.errors = this.checkErrors();
+    },
+  },
   methods: {
     checkErrors() {
       return [
