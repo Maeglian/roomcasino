@@ -71,7 +71,7 @@ export default {
   },
   data: () => ({
     isFullScreen: false,
-    showGame: false,
+    showGame: true,
     clockIcon: require('@/assets/img/clock.svg'),
     closeIcon: require('@/assets/img/ic_close.svg'),
     zoomInIcon: require('@/assets/img/zoomIn.svg'),
@@ -112,9 +112,9 @@ export default {
     isFullScreen() {
       const liveChat = document.getElementById('chat-widget-container');
 
-      if (this.isFullScreen) {
+      if (liveChat && this.isFullScreen) {
         liveChat.style.display = 'none';
-      } else {
+      } else if (liveChat) {
         liveChat.style.display = '';
       }
     },
@@ -125,16 +125,25 @@ export default {
       if (val) {
         const { iframe } = this.$refs;
         if (this.platform === 'mobile') this.isFullScreen = true;
-        iframe.addEventListener('load', () => {
-          console.log('LOAD');
-          this.showGame = true;
-          const style = document.createElement('style');
-          style.textContent = `html{width:100%;height:100%}body{width:100%;height:100%;margin:0;padding:0}body>div{width:100%;height:100%}iframe{width:100%;height:100%;border:none;border-radius:12px}`;
+        iframe.addEventListener(
+          'load',
+          () => {
+            this.showGame = true;
+            const style = document.createElement('style');
+            style.textContent = `html{width:100%;height:100%}body{width:100%;height:100%;margin:0;padding:0}body>div{width:100%;height:100%}iframe{width:100%;height:100%;border:none;border-radius:12px}`;
 
-          iframe.contentDocument.head.appendChild(style);
-        });
+            iframe.contentDocument.head.appendChild(style);
+          },
+          false,
+        );
+        this.gameTimer = setTimeout(() => {
+          this.showGame = true;
+        }, 2000);
       }
     },
+  },
+  beforeDestroy() {
+    clearTimeout(this.gameTimer);
   },
   mounted() {
     this.onEnterPage();
