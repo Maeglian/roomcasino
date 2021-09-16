@@ -25,7 +25,7 @@
         class="CreateLimits-Row"
       >
         <BaseInput
-          v-model.number="currencyLimitList[0].value"
+          v-model="currencyLimitList[0].value"
           class="CreateLimits-Amount"
           input-type="text"
           error-class="CreateLimits-Error"
@@ -110,6 +110,7 @@
 <script>
 import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
 import moment from 'moment';
+import { maxLength } from 'vuelidate/lib/validators';
 import BaseDropdown from '@/components/base/BaseDropdown';
 import BaseInput from '@/components/base/BaseInput';
 import ConfirmDialog from '@/components/profile/ConfirmDialog';
@@ -186,7 +187,7 @@ export default {
   validations: {
     currencyLimitList: {
       $each: {
-        value: { checkIfNullOrPositiveNumbers },
+        value: { checkIfNullOrPositiveNumbers, maxLength: maxLength(10), numeric: true },
       },
     },
     value: { checkIfPositiveNumbers },

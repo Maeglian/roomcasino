@@ -46,6 +46,8 @@
     "oldAndNewPasswords": "Old and new passwords are the same",
     "minLength": "Must have at least {num} characters",
     "maxLength": "Must not be more than {num} characters",
+    "passwordCheck": "Must be 8+ chars with 1 number, 1 small and 1 capital letter",
+    "alphaNum": "Must be numbers or letters",
     "phone": "Must be with '+', from 10 to 14 symbols",
     "numbers": "Must be numeric",
     "day": "Day is invalid",
