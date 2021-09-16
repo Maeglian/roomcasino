@@ -171,6 +171,7 @@ export default {
   },
   methods: {
     ...mapMutations(['setServerError']),
+    ...mapMutations(['pushNotificationAlert']),
     ...mapMutations('profile', ['setUpdateProfileError']),
     ...mapActions('profile', ['restorePassword', 'confirmRestorePassword']),
     toggleVisibility(el) {
@@ -194,16 +195,19 @@ export default {
         code: this.$route.query.code,
         newPassword: this.password.newPassword.value,
         confirmPassword: this.password.confirmPassword.value,
-      }).then(() => {
-        if (!this.serverError) {
-          this.pushNotificationAlert({
-            type: 'success',
-            text: 'Your password was successfully updated!',
-          });
+      })
+        .then(() => {
+          if (!this.serverError) {
+            this.pushNotificationAlert({
+              type: 'success',
+              text: 'Your password was successfully updated!',
+            });
+          }
+        })
+        .finally(() => {
           this.$router.push(this.localePath('/'));
           this.showRegistrationDialog('login');
-        }
-      });
+        });
     },
   },
 };
