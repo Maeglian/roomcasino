@@ -1,14 +1,8 @@
 <template>
   <div class="BaseInput">
-    <div v-if="errors.length > 0" class="BaseInput-Wrap-Errors">
-      <div
-        v-for="(error, index) in errors"
-        :key="index"
-        class="BaseInput-Error"
-        :class="errorClass"
-        :style="{ top: index * 11 + 2 + 'px' }"
-      >
-        {{ error.errorText }}
+    <div v-if="errors.length" :class="errorClass">
+      <div v-for="(error, index) in errors" :key="index" class="BaseInput-Error">
+        {{ $t(`errors.${error.errorInfo.name}`, error.errorInfo.params) }}
       </div>
     </div>
     <slot name="beforeInput-relative"></slot>
@@ -235,96 +229,133 @@ export default {
       return [
         {
           name: 'requiredValue',
-          error: this.requiredValue,
-          errorText: this.requiredValue ? this.$t('errors.required') : '',
+          isError: this.requiredValue,
+          errorInfo: {
+            name: 'required',
+            params: {},
+          },
         },
         {
           name: 'email',
-          error: this.email,
-          errorText: this.email ? this.$t('errors.email') : '',
+          isError: this.email,
+          errorInfo: {
+            name: 'email',
+            params: {},
+          },
         },
         {
           name: 'sameAsPassword',
-          error: this.sameAsPassword,
-          errorText: this.sameAsPassword ? this.$t('errors.confirmPassword') : '',
+          isError: this.sameAsPassword,
+          errorInfo: {
+            name: 'confirmPassword',
+            params: {},
+          },
         },
         {
           name: 'sameAsPasswordTypeNot',
-          error: this.sameAsPasswordTypeNot,
-          errorText: this.sameAsPasswordTypeNot ? this.$t('errors.oldAndNewPasswords') : '',
+          isError: this.sameAsPasswordTypeNot,
+          errorInfo: {
+            name: 'oldAndNewPasswords',
+            params: {},
+          },
         },
         {
           name: 'minLength',
-          error: this.minLength,
-          errorText: this.minLength
-            ? this.$t('errors.minLength', { num: this.v.$params.minLength.min })
-            : '',
+          isError: this.minLength,
+          errorInfo: {
+            name: 'minLength',
+            params: this.minLength ? { num: this.v.$params.minLength.min } : {},
+          },
         },
         {
           name: 'maxLength',
-          error: this.maxLength,
-          errorText: this.maxLength
-            ? this.$t('errors.maxLength', { num: this.v.$params.maxLength.max })
-            : '',
+          isError: this.maxLength,
+          errorInfo: {
+            name: 'maxLength',
+            params: this.maxLength ? { num: this.v.$params.maxLength.max } : {},
+          },
         },
         {
           name: 'passwordCheck',
-          error: this.passwordCheck,
-          errorText: this.passwordCheck
-            ? 'Must be 8+ chars with 1 number, 1 small and 1 capital letter'
-            : '',
+          isError: this.passwordCheck,
+          errorInfo: {
+            name: 'passwordCheck',
+            params: {},
+          },
         },
         {
           name: 'phoneWithPlusCheck',
-          error: this.phoneWithPlusCheck,
-          errorText: this.phoneWithPlusCheck ? this.$t('errors.phone') : '',
+          isError: this.phoneWithPlusCheck,
+          errorInfo: {
+            name: 'phone',
+            params: {},
+          },
         },
         {
           name: 'numeric',
-          error: this.numeric,
-          errorText: this.numeric ? this.$t('errors.numbers') : '',
+          isError: this.numeric,
+          errorInfo: {
+            name: 'numbers',
+            params: {},
+          },
         },
         {
           name: 'dayCheck',
-          error: this.dayCheck,
-          errorText: this.dayCheck ? this.$t('errors.day') : '',
-        },
-        {
-          name: 'dayCheck',
-          error: this.dayCheck,
-          errorText: this.dayCheck ? this.$t('errors.day') : '',
+          isError: this.dayCheck,
+          errorInfo: {
+            name: 'day',
+            params: {},
+          },
         },
         {
           name: 'monthCheck',
-          error: this.monthCheck,
-          errorText: this.monthCheck ? this.$t('errors.month') : '',
+          isError: this.monthCheck,
+          errorInfo: {
+            name: 'month',
+            params: {},
+          },
         },
         {
           name: 'yearCheck',
-          error: this.yearCheck,
-          errorText: this.yearCheck ? this.$t('errors.year') : '',
+          isError: this.yearCheck,
+          errorInfo: {
+            name: 'year',
+            params: {},
+          },
         },
         {
           name: 'alphaNum',
-          error: this.alphaNum,
-          errorText: this.alphaNum ? 'Must be numbers or letters' : '',
+          isError: this.alphaNum,
+          errorInfo: {
+            name: 'alphaNum',
+            params: {},
+          },
         },
         {
           name: 'checkIfNullOrPositiveNumbers',
-          error: this.checkIfNullOrPositiveNumbers,
-          errorText: this.checkIfNullOrPositiveNumbers ? this.$t('errors.0andNum') : '',
+          isError: this.checkIfNullOrPositiveNumbers,
+          errorInfo: {
+            name: '0andNum',
+            params: {},
+          },
         },
         {
           name: 'postalCodeCheck',
-          error: this.postalCodeCheck,
-          errorText: this.postalCodeCheck ? this.$t('errors.postalCode') : '',
+          isError: this.postalCodeCheck,
+          errorInfo: {
+            name: 'postalCode',
+            params: {},
+          },
         },
         {
           name: 'checkIfPositiveNumbers',
-          error: this.checkIfPositiveNumbers,
-          errorText: this.checkIfPositiveNumbers ? this.$t('errors.positiveNum') : '',
+          isError: this.checkIfPositiveNumbers,
+          errorInfo: {
+            name: 'positiveNum',
+            params: {},
+          },
         },
-      ].filter(item => item.error);
+      ].filter(item => item.isError);
     },
   },
 };
