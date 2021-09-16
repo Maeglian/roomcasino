@@ -147,9 +147,8 @@ export default {
     },
     onClickPlayReal() {
       this.setStartingGame({ html: '', url: '' });
-      this.$router
-        .push({ name: this.$route.name, params: this.$route.params })
-        .then(() => this.onEnterPage());
+      this.$router.push({ name: this.$route.name, params: this.$route.params });
+      this.onEnterPage();
     },
     onEnterPage() {
       if (this.defaultGames.length) {
@@ -162,10 +161,7 @@ export default {
           );
         } else if (!this.game) this.$router.push(this.localePath('/404'));
         else {
-          this.openGamePage(
-            { game: this.game, demo: !!this.$route.query.demo },
-            this.game.gameProducer,
-          );
+          this.openGamePage({ game: this.game, demo: !!this.$route.query.demo });
         }
       }
     },
