@@ -126,6 +126,7 @@ export default {
         const { iframe } = this.$refs;
         if (this.platform === 'mobile') this.isFullScreen = true;
         iframe.addEventListener('load', () => {
+          console.log('LOAD');
           this.showGame = true;
           const style = document.createElement('style');
           style.textContent = `html{width:100%;height:100%}body{width:100%;height:100%;margin:0;padding:0}body>div{width:100%;height:100%}iframe{width:100%;height:100%;border:none;border-radius:12px}`;
