@@ -60,21 +60,19 @@
           {{ $t('footer.text.p1') }}
         </div>
 
-        <!--        &lt;!&ndash;noindex&ndash;&gt;&lt;!&ndash;googleoff: index&ndash;&gt;-->
-        <!--        <div class="Footer-Text Footer-Text&#45;&#45;nocopy">-->
-        <!--          {{ $t('footer.text.p2') }}-->
-        <!--        </div>-->
-        <!--        &lt;!&ndash;googleon: index&ndash;&gt;&lt;!&ndash;/noindex&ndash;&gt;-->
+        <div class="Footer-Text Footer-Text--nocopy">
+          {{ $t('footer.text.p2') }}
+        </div>
 
-        <picture class="Footer-TextImg">
-          <source media="(max-width: 340px)" srcset="@/assets/img/footer-text_320.png" />
-          <source media="(max-width: 459px)" srcset="@/assets/img/footer-text_460.png" />
-          <source media="(max-width: 589px)" srcset="@/assets/img/footer-text_600.png" />
-          <source media="(max-width: 767px)" srcset="@/assets/img/footer-text_767.png" />
-          <source media="(max-width: 900px)" srcset="@/assets/img/footer-text_900.png" />
-          <source media="(max-width: 1400px)" srcset="@/assets/img/footer-text_1400.png" />
-          <img src="@/assets/img/footer-text.png" alt="" />
-        </picture>
+        <!--        <picture class="Footer-TextImg">
+                  <source media="(max-width: 340px)" srcset="@/assets/img/footer-text_320.png" />
+                  <source media="(max-width: 459px)" srcset="@/assets/img/footer-text_460.png" />
+                  <source media="(max-width: 589px)" srcset="@/assets/img/footer-text_600.png" />
+                  <source media="(max-width: 767px)" srcset="@/assets/img/footer-text_767.png" />
+                  <source media="(max-width: 900px)" srcset="@/assets/img/footer-text_900.png" />
+                  <source media="(max-width: 1400px)" srcset="@/assets/img/footer-text_1400.png" />
+                  <img src="@/assets/img/footer-text.png" alt="" />
+                </picture>-->
         <div class="Footer-Text">
           <i18n path="footer.text.p3">
             <template #support>
