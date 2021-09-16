@@ -145,9 +145,9 @@ export default {
     toggleFullScreenMode() {
       this.isFullScreen = !this.isFullScreen;
     },
-    onClickPlayReal() {
+    async onClickPlayReal() {
       this.setStartingGame({ html: '', url: '' });
-      this.$router.push({ name: this.$route.name, params: this.$route.params });
+      await this.$router.push({ name: this.$route.name, params: this.$route.params });
       this.onEnterPage();
     },
     onEnterPage() {
