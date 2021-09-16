@@ -218,7 +218,8 @@
     "winners": "Vítězové"
   },
   "actions": {
-    "addCurrency": "Add currency"
+    "addCurrency": "Add currency",
+    "playReal": "Místo toho hrajte za skutečné peníze"
   },
   "homepage": {
     "heroBanner": {

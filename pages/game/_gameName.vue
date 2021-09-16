@@ -4,24 +4,45 @@
     <div class="GamePage-Bg" :style="{ backgroundImage: `url(${game.backgroundUrl})` }"></div>
     <div class="GamePage-Wrapper" :class="{ 'GamePage-Wrapper--Hide': isFullScreen }">
       <MainNav v-if="!isFullScreen" />
-      <h1 v-if="!isFullScreen" class="Title Title--type-h2 GamePage-Title">
-        {{ gameName }}
-      </h1>
-      <iframe
-        v-show="!gameHtml || showGame"
-        ref="iframe"
-        :key="activeAccount.balance"
-        :src="gameHtml ? null : gameUrl"
-        :srcDoc="gameHtml ? gameHtml : null"
-        class="GamePage-Iframe"
-        :width="getIframeWidth.width"
-        :height="getIframeWidth.height"
-        allowFullScreen="true"
-      />
-      <ControlsPanel
-        :is-full-screen="isFullScreen"
-        @toggle-fullscreen-mode="toggleFullScreenMode"
-      />
+      <div class="GamePage-Content">
+        <div
+          class="GamePage-IframeWrapper"
+          :class="{ 'GamePage-IframeWrapper--fullScreenMode': isFullScreen }"
+        >
+          <iframe
+            v-show="!gameHtml || showGame"
+            ref="iframe"
+            :key="activeAccount.balance"
+            :src="gameHtml ? null : gameUrl"
+            :srcDoc="gameHtml ? gameHtml : null"
+            class="GamePage-Iframe"
+            allowFullScreen="true"
+          />
+          <div class="GamePage-ControlGroup">
+            <NuxtLink v-if="!isFullScreen" :to="localePath('/')" class="GamePage-Action">
+              <img :src="closeIcon" />
+            </NuxtLink>
+            <div
+              class="GamePage-Action"
+              :class="{ 'GamePage-Action--fullScreenMode': isFullScreen }"
+              @click="toggleFullScreenMode"
+            >
+              <img :src="getZoomIcon" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-if="!isFullScreen" class="GamePage-Footer Wrapper">
+        <div class="GamePage-FooterContent">
+          <h1 class="Title Title--type-h2 GamePage-Title">
+            {{ game.gameName }}
+          </h1>
+          <button v-if="$route.query.demo" class="GamePage-PlayReal" @click="onClickPlayReal">
+            {{ $t('actions.playReal') }}
+          </button>
+        </div>
+        <TimePanel class="Wrapper" />
+      </div>
     </div>
   </div>
 </template>
@@ -31,14 +52,14 @@ import { mapActions, mapState, mapGetters, mapMutations } from 'vuex';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import openGame from '@/mixins/openGame';
 import MainNav from '@/components/homepage/MainNav';
-import ControlsPanel from '@/components/GamePage/ControlsPanel';
+import TimePanel from '@/components/GamePage/TimePanel';
 import GameModals from '@/components/GameModals';
 
 export default {
   name: 'GamePage',
   components: {
     MainNav,
-    ControlsPanel,
+    TimePanel,
     GameModals,
   },
   mixins: [showAuthDialog, openGame],
@@ -49,9 +70,12 @@ export default {
     next();
   },
   data: () => ({
-    clockIcon: require('@/assets/img/clock.svg'),
     isFullScreen: false,
     showGame: false,
+    clockIcon: require('@/assets/img/clock.svg'),
+    closeIcon: require('@/assets/img/ic_close.svg'),
+    zoomInIcon: require('@/assets/img/zoomIn.svg'),
+    zoomOutIcon: require('@/assets/img/zoomOut.svg'),
   }),
   head() {
     if (this.game) {
@@ -71,17 +95,6 @@ export default {
     ...mapState(['platform']),
     ...mapState('games', ['gameUrl', 'gameHtml', 'defaultGames', 'gameToStart']),
     ...mapGetters(['activeAccount']),
-    getIframeWidth() {
-      return this.isFullScreen
-        ? {
-            width: '100%',
-            height: '100%',
-          }
-        : {
-            width: '80%',
-            height: '80%',
-          };
-    },
     gameName() {
       return decodeURIComponent(this.$route.params.gameName);
     },
@@ -90,6 +103,9 @@ export default {
     },
     game() {
       return this.defaultGames.find(g => g.gameName === this.gameName);
+    },
+    getZoomIcon() {
+      return this.isFullScreen ? this.zoomOutIcon : this.zoomInIcon;
     },
   },
   watch: {
@@ -128,6 +144,12 @@ export default {
     ...mapActions('games', ['startGame']),
     toggleFullScreenMode() {
       this.isFullScreen = !this.isFullScreen;
+    },
+    onClickPlayReal() {
+      this.setStartingGame({ html: '', url: '' });
+      this.$router
+        .push({ name: this.$route.name, params: this.$route.params })
+        .then(() => this.onEnterPage());
     },
     onEnterPage() {
       if (this.defaultGames.length) {
@@ -174,9 +196,8 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    max-width: 1248px;
+    max-width: 1920px;
     height: 100vh;
-    margin: 0 auto;
 
     &--Hide {
       width: 100%;
@@ -184,16 +205,95 @@ export default {
     }
   }
 
-  &-Title {
-    margin: 0 16px auto;
+  &-Content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  &-IframeWrapper {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    margin: 15px auto;
+
+    @media (min-width: $screen-xl) {
+      width: 80%;
+    }
+
+    @media (min-width: $screen-xxl) {
+      width: 65%;
+    }
+
+    @media (min-width: $screen-xxxl) {
+      width: 100%;
+      height: 70%;
+    }
+
+    &--fullScreenMode {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &-Iframe {
     position: relative;
     display: block;
-    margin: 20px auto;
+    flex-grow: 1;
+    height: 100%;
     border: none;
     border-radius: var(--border-radius-12);
+  }
+
+  &-ControlGroup {
+    margin-left: 10px;
+  }
+
+  &-Action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: #1b2138;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    &--fullScreenMode {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &-Title {
+    margin: 0 16px 10px;
+  }
+
+  &-Footer {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  &-FooterContent {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-PlayReal {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    text-transform: uppercase;
+    cursor: pointer;
   }
 }
 </style>
