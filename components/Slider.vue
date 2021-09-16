@@ -81,6 +81,15 @@ export default {
     responsive: {
       type: Object,
     },
+    // Включение автопереключения слайдеров
+    autoPlainSlider: {
+      type: Boolean,
+      default: false,
+    },
+    timeSwitchSlider: {
+      type: Number,
+      default: 5000,
+    }
   },
   data() {
     return {
@@ -129,10 +138,14 @@ export default {
       swipeDistance: 50,
       // Дистанция перемещения курсора
       dragDistance: 0,
+      // Таймер переключения
+      timer: '',
     };
   },
   mounted() {
     this.$nextTick(function () {
+      // Автопереключение слайдера
+      this.AutoMoveSlide();
       // Объект контейнера
       this.el.list = this.$refs.list;
       // Объект трека
@@ -184,6 +197,7 @@ export default {
     });
   },
   beforeDestroy() {
+    clearInterval(this.timer);
     window.removeEventListener('resize', this.getWidthDocument);
     if ('ontouchstart' in window) {
       this.el.track.removeEventListener('touchstart', this.handleMouseDown);
@@ -196,6 +210,12 @@ export default {
     }
   },
   methods: {
+    // Автоматическое переключение слайдера
+    AutoMoveSlide() {
+      if (this.autoPlainSlider) {
+        this.timer = setInterval(() => this.nextSlide(), this.timeSwitchSlider);
+      }
+    },
     // Размер окна браузера
     getWidthDocument() {
       this.width.document = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
