@@ -54,7 +54,7 @@ export default {
           demo,
         });
 
-        if (this.gameHtml && this.game.gameProducer !== 'playngo') {
+        if (this.gameHtml && game.gameProducer !== 'playngo') {
           await this.$router.push(
             this.localePath({
               name: 'game-gameName',
