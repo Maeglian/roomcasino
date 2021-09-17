@@ -371,13 +371,33 @@ export default {
     display: none;
     align-self: center;
     margin-top: auto;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     font-size: 14px;
     font-weight: 700;
     line-height: 1.242;
     color: var(--color-text-main);
     cursor: pointer;
     opacity: 0.6;
+
+    @media (min-width: $screen-xs) {
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: $screen-s) {
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: $screen-m) {
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: $screen-l) {
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 32px;
+    }
   }
 
   &-PlayBtn {
