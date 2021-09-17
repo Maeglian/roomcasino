@@ -13,8 +13,8 @@
             v-show="!gameHtml || showGame"
             ref="iframe"
             :key="activeAccount.balance"
-            :src="gameHtml ? null : gameUrl"
-            :srcDoc="gameHtml ? gameHtml : null"
+            :src="gameHtml && game.gameProducer !== 'Playngo' ? null : gameUrl"
+            :srcDoc="gameHtml && game.gameProducer !== 'Playngo' ? gameHtml : null"
             class="GamePage-Iframe"
             allowFullScreen="true"
           />
@@ -71,7 +71,7 @@ export default {
   },
   data: () => ({
     isFullScreen: false,
-    showGame: true,
+    showGame: false,
     clockIcon: require('@/assets/img/clock.svg'),
     closeIcon: require('@/assets/img/ic_close.svg'),
     zoomInIcon: require('@/assets/img/zoomIn.svg'),
