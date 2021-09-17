@@ -1156,7 +1156,7 @@
         "text1": "To assist you in gambling responsibly we offer the Personal Limits feature. You can set         limits on the amount you deposit, lose, wager, spend in one game, or on your account         activity on the whole. This functionality can be accessed within your account in the         “Personal Limits” section         {toLimits} {buttonLog}",
         "here": "here",
         "text2": [
-          "Limits can be amended at any time. A decrease in the limit will take effect immediately,         however an increase may only occur after email confirmation and only after the previous         limit of the same type expires, in order to avoid rash decisions. If you require further         information or assistance regarding Personal Limits, please contact our support team at         contact@ninecasino.com.",
+          "Limits can be amended at any time. A decrease in the limit will take effect immediately,         however an increase may only occur after email confirmation and only after the previous         limit of the same type expires, in order to avoid rash decisions. If you require further         information or assistance regarding Personal Limits, please contact our support team at         support@ninecasino.com.",
           "Deposit Limit. A limit on your deposits for a day, a week, or a month.",
           "Loss Limit. A limit on your losses in the casino for a day, a week, or a month. Please note         the loss is based on the initial deposit and not winnings attributed to the deposited         amount. If for example you deposit €50, put a Loss Limit of €10 and then go on to win         €1,000, you can still lose more than €10 of the €1,000 balance as it is based on the initial         deposit instead of the winnings.",
           "Wager Limit. A limit on the wagered amount for a day, a week, or a month.",
@@ -1173,7 +1173,7 @@
       "section4": {
         "title": "WHAT IS SELF-EXCLUSION?",
         "text": [
-          "Setting Self-exclusion lets us know that we need to take all measures to block your access         to your account and make sure that you receive no promotional materials. You may also         contact our support team at contact@ninecasino.com and inform us about your decision to stop         gambling at the Website for a certain period of time or forever.",
+          "Setting Self-exclusion lets us know that we need to take all measures to block your access         to your account and make sure that you receive no promotional materials. You may also         contact our support team at support@ninecasino.com and inform us about your decision to stop         gambling at the Website for a certain period of time or forever.",
           "Please note that if you are self excluded from the casino for indefinite period of time, the         funds remaining on balance will be paid according to the casino limits. If you are self         excluded for a definite period of time, the funds remaining on balance will be paid         according to the casino limits only when a period of self exclusion expires."
         ]
       },

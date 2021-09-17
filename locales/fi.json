@@ -1153,7 +1153,7 @@
         "text1" : "To assist you in gambling responsibly we offer the Personal Limits feature. Auttaaksemme sinua pelaamaan vastuullisesti, tarjoamme henkilökohtaisten rajojen ominaisuutta. Voit asettaa rajoja talletuksille, tappioille, panostukselle, pelissä käytetylle ajalle tai tilisi yleiselle aktiivisuudelle. Tätä toimintoa voidaan käyttää tililtäsi Henkilökohtaiset rajat -osiosta.     {toLimits} {buttonLog}",
         "here" : "here",
         "text2" : [
-          "Rajoja voidaan muuttaa milloin tahansa. Rajan pienentäminen tulee voimaan välittömästi, mutta lisäys tapahtuu vasta sähköpostivahvistuksen jälkeen, ja vain kun aiempi samantyyppinen raja vanhentuu, jotta vältetään harkitsemattomat päätökset. Jos tarvitset lisätietoja tai apua henkilökohtaisiin rajoihin liittyen, ole hyvä ja ota yhteyttä tukitiimiimme osoitteessa contact@ninecasino.com.",
+          "Rajoja voidaan muuttaa milloin tahansa. Rajan pienentäminen tulee voimaan välittömästi, mutta lisäys tapahtuu vasta sähköpostivahvistuksen jälkeen, ja vain kun aiempi samantyyppinen raja vanhentuu, jotta vältetään harkitsemattomat päätökset. Jos tarvitset lisätietoja tai apua henkilökohtaisiin rajoihin liittyen, ole hyvä ja ota yhteyttä tukitiimiimme osoitteessa support@ninecasino.com.",
           "Talletusraja. Raja talletuksille, joita voit tehdä päivässä, viikossa tai kuukaudessa.",
           "Tappioraja. Raja tappioillesi kasinolla päivän, viikon tai kuukauden ajalla. Huomaa, että tappio perustuu alkuperäiseen talletukseen, ei talletettuun summaan kohdistuneisiin voittoihin. Jos esimerkiksi talletat 50 €, asetat tappiorajan 10 € ja voitat sitten 1 000 €, niin voit edelleen hävitä enemmän kuin 10 € saldostasi 1 000 €, koska raja perustuu alkuperäiseen talletukseen voittojen sijaan.",
           "Panostusraja. Raja panoksille, joita voit asettaa päivässä, viikossa tai kuukaudessa.",
@@ -1170,7 +1170,7 @@
       "section4" : {
         "title" : "MIKÄ ON OMAEHTOINEN PELIKIELTO?",
         "text" : [
-          "Omaehtoisen pelikiellon asettaminen kertoo meille, että meidän on toteutettava kaikki toimenpiteet estämään pääsy tilillesi ja varmistamaan, että et saa mainosmateriaalia. Voit myös ottaa yhteyttä tukitiimiimme osoitteessa contact@ninecasino.com ja ilmoittaa meille päätöksestäsi lopettaa pelaaminen verkkosivustolla tietyn ajanjakson ajaksi.",
+          "Omaehtoisen pelikiellon asettaminen kertoo meille, että meidän on toteutettava kaikki toimenpiteet estämään pääsy tilillesi ja varmistamaan, että et saa mainosmateriaalia. Voit myös ottaa yhteyttä tukitiimiimme osoitteessa support@ninecasino.com ja ilmoittaa meille päätöksestäsi lopettaa pelaaminen verkkosivustolla tietyn ajanjakson ajaksi.",
           "Huomaathan, että jos asetat omaehtoisen pelikiellon määrittelemättömäksi ajaksi, saldosi jäljellä olevat varat maksetaan kasinorajoitusten mukaisesti. Jos asetat omaehtoisen pelikiellon joksikin tietyksi ajaksi, saldosi jäljellä olevat varat maksetaan kasinorajoitusten mukaisesti vasta, kun omaehtoisen pelikiellon aika päättyy."
         ]
       },
