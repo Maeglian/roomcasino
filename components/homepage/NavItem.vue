@@ -1,5 +1,5 @@
 <template>
-  <li class="Nav-Item" :class="[className, { 'Nav-Item--gr': $i18n.locale === 'gr' }]">
+  <li class="Nav-Item" :class="[className, { 'Nav-Item--gr': $i18n.locale === 'el' }]">
     <NuxtLink v-if="!item.children" :to="item.url" class="Nav-Name" @click.native="$emit('close')">
       <img v-if="item.icon" class="Icon Nav-Icon" :src="require(`@/assets/img/${item.icon}`)" />
       {{ item.name }}

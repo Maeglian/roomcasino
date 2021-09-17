@@ -15,7 +15,7 @@
       <nav
         v-if="width >= 960"
         class="Nav MainNav-Links"
-        :class="{ 'MainNav-Links--mr': $i18n.locale === 'gr' || $i18n.locale === 'pl' }"
+        :class="{ 'MainNav-Links--mr': $i18n.locale === 'el' || $i18n.locale === 'pl' }"
       >
         <ul class="MainNav-List">
           <template v-for="item in navItemsFull">
@@ -368,8 +368,8 @@ export default {
 
   &-Link {
     position: relative;
-    margin-right: 14px;
-    padding-right: 16px;
+    margin-right: 11px;
+    padding-right: 11px;
     font-size: 10px;
     font-weight: 700;
     color: var(--color-text-main);
@@ -400,7 +400,7 @@ export default {
   &-AuthSection {
     margin-left: auto;
 
-    @media (min-width: $screen-l) {
+    @media (min-width: $screen-xl) {
       margin-left: 30px;
     }
   }
@@ -495,6 +495,13 @@ export default {
 
   &-UserIcon {
     margin-right: 17px;
+  }
+
+  &-UserName {
+    display: block;
+    width: 240px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &-List {

@@ -2,7 +2,10 @@
   <div class="AuthSection" :class="{ 'AuthSection--authenticated': isLoggedIn }">
     <div v-if="isLoggedIn" class="AuthSection-UserSection">
       <NuxtLink class="AuthSection-UserInfo" :to="localePath('/profile/balance')">
-        <div class="AuthSection-User">
+        <div
+          class="AuthSection-User"
+          :class="{ 'AuthSection-User--shorttext': $i18n.locale === 'el' || $i18n.locale === 'de' }"
+        >
           <span class="AuthSection-UserName">
             {{ user.firstName || user.email }}
           </span>
@@ -214,9 +217,27 @@ export default {
   &-User {
     font-size: 10px;
     font-weight: 700;
+    color: var(--color-main1);
 
     @media (min-width: $screen-s) {
       font-size: 12px;
+    }
+
+    &--shorttext {
+      width: 60px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @media (min-width: $screen-s) {
+        width: 70px;
+      }
+
+      @media (min-width: $screen-l) {
+        width: 50px;
+      }
+
+      @media (min-width: $screen-xl) {
+        width: 70px;
+      }
     }
   }
 
