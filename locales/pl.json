@@ -1155,7 +1155,7 @@
         "text1": "Aby pomóc Ci w odpowiedzialnym uprawianiu hazardu, oferujemy funkcję Limitów Osobistych. Możesz ustawić limity na kwotę, którą wpłacasz, przegrywasz, stawiasz, wydajesz w jednej grze lub na całą aktywność Twojego konta. Ta funkcja może być dostępna na Twoim koncie w sekcji \"Limity osobiste\" {toLimits} {buttonLog}",
         "here": "tutaj",
         "text2": [
-          "Limity można w dowolnej chwili zmienić. Obniżenie limitu zostanie zastosowane natychmiast, jednak podwyższenie może zostać zastosowane dopiero po potwierdzeniu mailowym i wygaśnięciu poprzedniego limitu tego samego typu — ma to na celu zapobieganie pochopnym decyzjom. Jeśli potrzebujesz dodatkowych informacji lub pomocy w sprawie osobistych limitów, skontaktuj się z naszym zespołem obsługi pod adresem contact@ninecasino.com.",
+          "Limity można w dowolnej chwili zmienić. Obniżenie limitu zostanie zastosowane natychmiast, jednak podwyższenie może zostać zastosowane dopiero po potwierdzeniu mailowym i wygaśnięciu poprzedniego limitu tego samego typu — ma to na celu zapobieganie pochopnym decyzjom. Jeśli potrzebujesz dodatkowych informacji lub pomocy w sprawie osobistych limitów, skontaktuj się z naszym zespołem obsługi pod adresem support@ninecasino.com.",
           "Limit depozytu. Limit dziennych, tygodniowych lub miesięcznych depozytów.",
           "Limit przegranych. Limit dziennych, tygodniowych lub miesięcznych przegranych w kasynie. Uwaga: przegrana jest obliczana na podstawie wstępnego depozytu, a nie wygranych przypisanych do wpłaconej kwoty. Przykładowo jeśli wpłacisz 50 EUR, ustawisz limit przegranych na poziomie 10 EUR, a następnie wygrasz 1000 EUR, wciąż możesz przegrać więcej niż 10 EUR z salda 1000 EUR, ponieważ kwota ta jest oparta na wstępnym depozycie, a nie wygranych.",
           "Limit dotyczący obrotu. Limit kwoty obstawionej w ciągu dnia, tygodnia lub miesiąca.",
@@ -1172,7 +1172,7 @@
       "section4": {
         "title": "CZYM JEST SAMOWYKLUCZENIE?",
         "text": [
-          "Aktywując okres samowykluczenia, informujesz nas, że musimy zastosować wszelkie możliwe środki, aby zablokować Ci dostęp do konta, i wstrzymać przesyłanie Ci materiałów promocyjnych. Możesz również skontaktować się z zespołem obsługi pod adresem contact@ninecasino.com i poinformować nas o decyzji o wstrzymaniu uprawiania hazardu w Witrynie na określony czas lub na zawsze.",
+          "Aktywując okres samowykluczenia, informujesz nas, że musimy zastosować wszelkie możliwe środki, aby zablokować Ci dostęp do konta, i wstrzymać przesyłanie Ci materiałów promocyjnych. Możesz również skontaktować się z zespołem obsługi pod adresem support@ninecasino.com i poinformować nas o decyzji o wstrzymaniu uprawiania hazardu w Witrynie na określony czas lub na zawsze.",
           "Uwaga: jeśli gracz samowykluczy się z kasyna na czas nieokreślony, środki pozostałe na jego saldzie zostaną wypłacone zgodnie z limitami kasyna. W przypadku graczy samowykluczonych na określony czas, środki pozostałe na saldzie zostaną wypłacone zgodnie z limitami kasyna tylko po upływie okresu samowykluczenia."
         ]
       },
