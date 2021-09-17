@@ -58,7 +58,9 @@
           @click="onChooseProvider(item)"
         >
           <img v-if="item.iconUrl" class="ProvidersMenu-ProviderIcon" :src="item.iconUrl" alt="" />
-          {{ item.name }}
+          <span class="ProvidersMenu-ProviderName">
+            {{ item.name }}
+          </span>
         </button>
       </div>
     </transition>
@@ -145,23 +147,26 @@ export default {
     top: 38px;
     left: 0;
     z-index: 10;
+    display: grid;
     width: 100%;
     max-height: 2000px;
     padding: 10px 10px 16px;
-    column-count: 2;
+    overflow: hidden;
     background-color: var(--color-bg-lighter);
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
 
     @media (min-width: $screen-xs) {
       padding: 10px 16px 16px;
     }
 
     @media (min-width: $screen-s) {
-      column-count: 3;
+      grid-template-columns: 1fr 1fr 1fr;
     }
 
     @media (min-width: $screen-m) {
       top: 32px;
-      column-count: 5;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 
     @media (min-width: $screen-l) {
@@ -177,6 +182,7 @@ export default {
     display: flex;
     align-items: center;
     height: 30px;
+    overflow: hidden;
     font-size: 12px;
     font-weight: 700;
     line-height: 1.18;
@@ -184,7 +190,6 @@ export default {
     color: var(--color-text-ghost);
     text-transform: uppercase;
     cursor: pointer;
-    break-inside: avoid;
   }
 
   &-Provider {
