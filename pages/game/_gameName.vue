@@ -136,17 +136,17 @@ export default {
           },
           false,
         );
-        this.gameTimer = setTimeout(() => {
-          this.showGame = true;
-        }, 2000);
       }
     },
   },
-  beforeDestroy() {
-    clearTimeout(this.gameTimer);
-  },
   mounted() {
     this.onEnterPage();
+    this.gameTimer = setTimeout(() => {
+      this.showGame = true;
+    }, 2000);
+  },
+  beforeDestroy() {
+    clearTimeout(this.gameTimer);
   },
   methods: {
     ...mapMutations('games', ['setStartingGame', 'setGameToStart']),
