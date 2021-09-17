@@ -9,12 +9,13 @@
           class="GamePage-IframeWrapper"
           :class="{ 'GamePage-IframeWrapper--fullScreenMode': isFullScreen }"
         >
+          {{ game.gameProducer }}
           <iframe
             v-show="!gameHtml || showGame"
             ref="iframe"
             :key="activeAccount.balance"
-            :src="gameHtml && game.gameProducer !== 'Playngo' ? null : gameUrl"
-            :srcDoc="gameHtml && game.gameProducer !== 'Playngo' ? gameHtml : null"
+            :src="gameHtml && game.gameProducer !== 'playngo' ? null : gameUrl"
+            :srcDoc="gameHtml && game.gameProducer !== 'playngo' ? gameHtml : null"
             class="GamePage-Iframe"
             allowFullScreen="true"
           />
