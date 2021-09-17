@@ -138,6 +138,9 @@ export default {
         );
       }
     },
+    '$route.query.demo': function() {
+      this.onEnterPage();
+    },
   },
   mounted() {
     this.onEnterPage();
@@ -155,10 +158,13 @@ export default {
     toggleFullScreenMode() {
       this.isFullScreen = !this.isFullScreen;
     },
-    async onClickPlayReal() {
+    onClickPlayReal() {
       this.setStartingGame({ html: '', url: '' });
-      await this.$router.push({ name: this.$route.name, params: this.$route.params });
-      this.onEnterPage();
+      this.$router.push({
+        name: this.$route.name,
+        params: this.$route.params,
+        query: {},
+      });
     },
     onEnterPage() {
       if (this.defaultGames.length) {
