@@ -9,7 +9,6 @@
           class="GamePage-IframeWrapper"
           :class="{ 'GamePage-IframeWrapper--fullScreenMode': isFullScreen }"
         >
-          {{ game.gameProducer }}
           <iframe
             v-show="!gameHtml || showGame"
             ref="iframe"
