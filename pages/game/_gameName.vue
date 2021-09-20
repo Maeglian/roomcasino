@@ -122,21 +122,7 @@ export default {
       this.onEnterPage();
     },
     gameHtml(val) {
-      if (val) {
-        const { iframe } = this.$refs;
-        if (this.platform === 'mobile') this.isFullScreen = true;
-        iframe.addEventListener(
-          'load',
-          () => {
-            this.showGame = true;
-            const style = document.createElement('style');
-            style.textContent = `html{width:100%;height:100%}body{width:100%;height:100%;margin:0;padding:0}body>div{width:100%;height:100%}iframe{width:100%;height:100%;border:none;border-radius:12px}`;
-
-            iframe.contentDocument.head.appendChild(style);
-          },
-          false,
-        );
-      }
+      if (val) this.addIframeOnLoadEvent();
     },
     '$route.query.demo': function() {
       this.onEnterPage();
@@ -144,6 +130,7 @@ export default {
   },
   mounted() {
     this.onEnterPage();
+    if (this.gameHtml) this.addIframeOnLoadEvent();
     this.gameTimer = setTimeout(() => {
       this.showGame = true;
     }, 2000);
@@ -180,6 +167,21 @@ export default {
           this.openGamePage({ game: this.game, demo: !!this.$route.query.demo });
         }
       }
+    },
+    addIframeOnLoadEvent() {
+      const { iframe } = this.$refs;
+      if (this.platform === 'mobile') this.isFullScreen = true;
+      iframe.addEventListener(
+        'load',
+        () => {
+          this.showGame = true;
+          const style = document.createElement('style');
+          style.textContent = `html{width:100%;height:100%}body{width:100%;height:100%;margin:0;padding:0}body>div{width:100%;height:100%}iframe{width:100%;height:100%;border:none;border-radius:12px}`;
+
+          iframe.contentDocument.head.appendChild(style);
+        },
+        false,
+      );
     },
   },
 };
