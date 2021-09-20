@@ -88,16 +88,20 @@
         <VueSlider v-if="games.length > 1" v-bind="sliderOptions">
           <div
             v-for="game in games"
-            :key="game.id"
+            :key="game.gameId"
             class="BonusDetails-Image"
-            :class="{ 'BonusDetails-Image--active': game.id === chosenGame }"
-            @click="onChooseGame(game.id)"
+            :class="{ 'BonusDetails-Image--active': game.gameId === chosenGame }"
+            @click="onChooseGame(game.gameId)"
           >
-            <img :src="game.img" />
+            <div @click="onOpenGamePage(game)">
+              <img :src="game.imageUrl" />
+            </div>
           </div>
         </VueSlider>
         <div v-else class="BonusDetails-Image BonusDetails-ActivetedGameImage">
-          <img :src="games[0].img" />
+          <div @click="onOpenGamePage(games[0])">
+            <img :src="games[0].imageUrl" />
+          </div>
         </div>
       </div>
     </div>
@@ -107,6 +111,7 @@
 <script>
 import moment from 'moment';
 import { mapState } from 'vuex';
+import openGame from '@/mixins/openGame';
 import VueSlider from '@/components/Slider';
 
 export default {
@@ -114,6 +119,7 @@ export default {
   components: {
     VueSlider,
   },
+  mixins: [openGame],
   props: {
     bonus: {
       type: Object,
@@ -166,8 +172,7 @@ export default {
       if (this.bonus.gameList) {
         return this.bonus.gameList.map(game => {
           const findedGame = this.defaultGames.find(g => g.gameId === game.id);
-          const img = findedGame ? findedGame.imageUrl : '';
-          return { ...game, img };
+          return { ...findedGame };
         });
       }
 
@@ -181,6 +186,10 @@ export default {
     onChooseGame(id) {
       this.chosenGame = id;
       this.chooseGame(id);
+    },
+    onOpenGamePage(game) {
+      this.$emit('close');
+      this.openGamePage({ game, demo: false });
     },
   },
 };
