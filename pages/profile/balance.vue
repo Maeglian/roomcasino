@@ -95,13 +95,19 @@
         </div>
         <div
           class="Table-Cell BalancePage-Cell CabinetPage-Cell BalancePage-Btns"
-          :class="{ 'BalancePage-Btns--col': $i18n.locale === 'gr' || $i18n.locale === 'pl' }"
+          :class="{
+            'BalancePage-Btns--col':
+              $i18n.locale === 'el' || $i18n.locale === 'pl' || $i18n.locale === 'el',
+          }"
         >
           <button
             class="Btn Btn--color CabinetPage-Btn BalancePage-Btn"
             :class="[
               { 'BalancePage-Btn--de': $i18n.locale === 'de' },
-              { 'BalancePage-Btn--margin': $i18n.locale === 'gr' || $i18n.locale === 'pl' },
+              {
+                'BalancePage-Btn--margin':
+                  $i18n.locale === 'el' || $i18n.locale === 'pl' || $i18n.locale === 'el',
+              },
             ]"
             @click="onClickDeposit(acc.currency)"
           >
@@ -111,7 +117,10 @@
             class="Btn Btn--outline2 CabinetPage-Btn BalancePage-Btn"
             :class="[
               { 'BalancePage-Btn--de': $i18n.locale === 'de' },
-              { 'BalancePage-Btn--margin': $i18n.locale === 'gr' || $i18n.locale === 'pl' },
+              {
+                'BalancePage-Btn--margin':
+                  $i18n.locale === 'el' || $i18n.locale === 'pl' || $i18n.locale === 'el',
+              },
             ]"
             @click="onClickCashout(acc.currency)"
           >

@@ -85,9 +85,16 @@ export default {
 <style lang="scss">
 .UserAccounts {
   &-UserFullname {
+    width: 150px;
+    overflow: hidden;
     font-size: 10px;
     text-align: right;
     color: var(--color-text-main);
+    text-overflow: ellipsis;
+
+    @media (min-width: $screen-xl) {
+      width: 100%;
+    }
   }
 
   &-Popup {
