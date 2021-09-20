@@ -166,7 +166,6 @@ export default {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.18;
-    text-align: right;
     color: var(--color-text-main);
 
     @media (min-width: $screen-l) {
