@@ -104,7 +104,7 @@ export default {
       // eslint-disable-next-line prefer-destructuring
       else locale = this.$i18n.locale;
 
-      // eslint-disable-next-line no-deleted-vars
+      // eslint-disable-next-line no-unused-vars
       const CashierInstance = new this.$_Cashier(
         '#cashier',
         {
@@ -158,7 +158,7 @@ export default {
         },
       );
 
-      // eslint-disable-next-line no-deleted-vars,no-undef
+      // eslint-disable-next-line no-unused-vars,no-undef
     },
     onCloseCashierForm() {
       if (this.depositIsDone) {
