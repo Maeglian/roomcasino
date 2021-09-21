@@ -172,11 +172,16 @@ export default {
     color: var(--color-text-main);
     text-transform: capitalize;
     white-space: nowrap;
+    cursor: pointer;
 
     &:before {
       top: 0;
       left: 0;
       border-radius: var(--border-radius-4);
+    }
+
+    &:hover {
+      color: var(--color-main1);
     }
   }
 

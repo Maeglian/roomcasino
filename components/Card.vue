@@ -1,5 +1,5 @@
 <template>
-  <div class="Card" :class="{ 'Card--clickable': startGameOnClick }" @click="onClickCard">
+  <div class="Card">
     <div class="Card-Main">
       <div v-if="overlay" class="Card-Overlay">
         <div class="Card-Provider">
@@ -117,6 +117,12 @@
           localePath({
             name: 'game-gameName',
             params: { gameName: gameInfo.gameName },
+            query:
+              gameInfo.demoOnly || !isLoggedIn
+                ? {
+                    demo: true,
+                  }
+                : null,
           })
         "
         class="Card-Name"
@@ -124,6 +130,18 @@
       />
       <div v-if="showProvider" class="Card-Provider">{{ gameInfo.gameProducer }}</div>
     </div>
+    <button
+      v-if="playBtnShowed"
+      class="Card-PlayBtn"
+      @click="
+        $emit('open-gamepage', {
+          game: gameInfo,
+          demo: gameInfo.demoOnly || !isLoggedIn,
+        })
+      "
+    >
+      {{ $t('buttons.playNow') }}
+    </button>
   </div>
 </template>
 
@@ -192,7 +210,7 @@ export default {
       type: Object,
       required: true,
     },
-    startGameOnClick: {
+    playBtnShowed: {
       type: Boolean,
       required: false,
       default: false,
@@ -219,14 +237,6 @@ export default {
     },
   },
   methods: {
-    onClickCard() {
-      // if (this.platform !== 'mobile' || !this.isLoggedIn) return;
-      if (!this.startGameOnClick) return;
-      this.$emit('open-gamepage', {
-        game: this.gameInfo,
-        demo: this.gameInfo.demoOnly || !this.isLoggedIn,
-      });
-    },
     linebreak(value) {
       return value.replace(': ', ': <br/>');
     },

@@ -11,9 +11,9 @@
           :show-demo="true"
           :show-dga="showDga"
           show-footer
-          :overlay="!startGameOnClickCard"
-          :show-provider="startGameOnClickCard"
-          :start-game-on-click="startGameOnClickCard"
+          :overlay="!playBtnShowed"
+          :show-provider="playBtnShowed"
+          :play-btn-showed="playBtnShowed"
           @open-gamepage="openGamePage($event)"
         />
       </template>
@@ -65,7 +65,7 @@ export default {
       required: false,
       default: '',
     },
-    startGameOnClickCard: {
+    playBtnShowed: {
       type: Boolean,
       required: false,
       default: false,
