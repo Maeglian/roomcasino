@@ -16,30 +16,12 @@
         <div id="cashier" class="CashierForm-Content"></div>
       </div>
     </modal>
-    <BaseModal name="goPlay" class="CashierForm-GoPlay" :ok-btn="false" :width="300">
-      <div class="Modal-Title">{{ $t('modals.congratulations') }}!</div>
-      <div class="Modal-Text">{{ $t('modals.playGame') }}.</div>
-      <NuxtLink
-        class="Btn Btn--common CashierForm-Btn"
-        :to="
-          localePath({
-            name: 'index-games-gameCategory',
-            params: { gameCategory: 'top' },
-            hash: '#games',
-          })
-        "
-        @click.native="$modal.hide('goPlay')"
-      >
-        {{ $t('buttons.playNow') }}
-      </NuxtLink>
-    </BaseModal>
   </div>
 </template>
 
 <script>
 import { mapActions, mapMutations, mapState, mapGetters } from 'vuex';
 import Loader from '@/components/Loader.vue';
-import BaseModal from '@/components/base/BaseModal.vue';
 import showAuthDialog from '@/mixins/showAuthDialog';
 import openGame from '@/mixins/openGame';
 import gtagEvents from '@/mixins/gtagEvents';
@@ -50,7 +32,6 @@ export default {
   name: 'CashierForm',
   components: {
     Loader,
-    BaseModal,
   },
   mixins: [showAuthDialog, openGame, gtagEvents],
   data() {
@@ -164,7 +145,7 @@ export default {
       if (this.depositIsDone) {
         if (this.gameToStart) {
           this.getGame({ game: this.gameToStart });
-        } else this.$modal.show('goPlay');
+        }
 
         this.depositIsDone = false;
       }
