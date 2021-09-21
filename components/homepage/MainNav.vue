@@ -31,11 +31,11 @@
           </template>
         </ul>
       </nav>
-      <NuxtLink class="MainNav-Search" :to="localePath('/search')">
+      <button class="MainNav-Search" @click="$modal.show('search')">
         <svg class="MainNav-SearchIcon">
           <use xlink:href="@/assets/img/icons.svg#search"></use>
         </svg>
-      </NuxtLink>
+      </button>
       <GamePanel v-if="isGamePage" class="MainNav-GamePanel" />
       <AuthSection v-else class="MainNav-AuthSection" />
     </div>
@@ -411,6 +411,7 @@ export default {
     @media (min-width: $screen-xs) {
       display: block;
       margin-left: 20px;
+      cursor: pointer;
     }
 
     @media (min-width: $screen-l) {

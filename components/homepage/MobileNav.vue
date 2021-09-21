@@ -44,11 +44,9 @@
       </div>
       <div class="MobileNav-Name">{{ $t('pages.lobby') }}</div>
     </NuxtLink>
-    <NuxtLink
-      ref="search"
+    <button
       :class="['MobileNav-Item', { 'route-search': menuItems.search }]"
-      :to="localePath('/search')"
-      @click.native="focusMenu('search', 'effect')"
+      @click="focusMenu('search', 'effect')"
     >
       <div class="MobileNav-IconWrapper">
         <svg class="MobileNav-Icon MobileNav-Icon--fill" width="17" height="16" fill="#F3B233">
@@ -56,7 +54,7 @@
         </svg>
       </div>
       <div class="MobileNav-Name">{{ $t('pages.search') }}</div>
-    </NuxtLink>
+    </button>
     <button
       :class="['MobileNav-Item MobileNav-Item--burger', { 'route-toggle': menuItems.toggle }]"
       @click="focusMenu('toggle', 'effect')"
@@ -109,7 +107,7 @@ export default {
     /**
      * Touch menu
      * */
-    focusMenu(route, effect) {
+    focusMenu(route) {
       this.menuItems[route] = true;
       setTimeout(() => {
         this.menuItems[route] = false;
@@ -117,10 +115,12 @@ export default {
       if (route === 'support') {
         this.onClickSupport();
       }
+      if (route === 'search') {
+        this.$modal.show('search');
+      }
       if (route === 'toggle') {
         this.toggleNav();
       }
-      console.log(effect);
     },
   },
 };
