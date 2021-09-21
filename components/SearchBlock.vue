@@ -1,19 +1,18 @@
 <template>
-  <div class="SearchPage Wrapper">
-    <h1 class="Title Title--center SearchPage-Title">{{ $t('search.findGame') }}</h1>
-    <div v-click-outside="onClickOutsideFiltersBtn" class="SearchPage-Header">
-      <Search v-model="searched" class="SearchPage-Search" />
-      <div class="SearchPage-Filters">
-        <div class="SearchPage-FiltersIconWrapper" @click="filtersAreOpen = !filtersAreOpen">
-          <svg class="SearchPage-FiltersIcon" width="13" height="15">
+  <div class="SearchBlock">
+    <div v-click-outside="onClickOutsideFiltersBtn" class="SearchBlock-Header">
+      <Search v-model="searched" class="SearchBlock-Search" />
+      <div class="SearchBlock-Filters">
+        <div class="SearchBlock-FiltersIconWrapper" @click="filtersAreOpen = !filtersAreOpen">
+          <svg class="SearchBlock-FiltersIcon" width="13" height="15">
             <use xlink:href="@/assets/img/icons.svg#filters"></use>
           </svg>
         </div>
-        <div v-if="filtersAreOpen || width >= 768" class="SearchPage-FiltersInner">
+        <div v-if="filtersAreOpen || width >= 768" class="SearchBlock-FiltersInner">
           <CheckboxFilter
             v-for="(filter, name) in filters"
             :key="name"
-            class="SearchPage-Filter"
+            class="SearchBlock-Filter"
             :title="filter.title"
             :default-value="filter.defaultValue"
             :name-key="filter.nameKey"
@@ -30,21 +29,21 @@
       v-if="
         searched || filters.gameProducerList.value.length || filters.categoriesList.value.length
       "
-      class="SearchPage-Games"
+      class="SearchBlock-Games"
     >
       <div v-if="filteredGames.length" class="Title Title--type-h4 Cards-Title">
         {{ $t('search.searchResults') }} ({{ filteredGames.length }})
       </div>
       <Games
-        class="SearchPage-Cards"
+        class="SearchBlock-Cards"
         :games="filteredGames"
         :games-to-show="7"
         :show-dga="false"
-        start-game-on-click-card
-        btn-class="SearchPage-Btn"
+        play-btn-showed
+        btn-class="SearchBlock-Btn"
       >
         <template #notFound>
-          <div class="SearchPage-NotFound ">
+          <div class="SearchBlock-NotFound ">
             {{ $t('search.nothingFound') }}.
             <br />
             {{ $t('search.try') }}
@@ -53,14 +52,14 @@
         <template v-if="selectedOneFilter" #btn>
           <NuxtLink
             :to="localePath({ path: pathToSelectedFilter, hash: '#games' })"
-            class="SearchPage-Btn Games-Btn"
+            class="SearchBlock-Btn Games-Btn"
           >
             {{ $t('buttons.loadMoreGames') }}
           </NuxtLink>
         </template>
       </Games>
     </div>
-    <div class="SearchPage-Popular">
+    <div class="SearchBlock-Popular">
       <div class="Title Title--type-h4 Cards-Title">
         {{ $t('search.popular') }}
       </div>
@@ -69,8 +68,8 @@
         :games="popularGames"
         :games-to-show="7"
         :show-dga="false"
-        start-game-on-click-card
-        btn-class="SearchPage-Btn"
+        play-btn-showed
+        btn-class="SearchBlock-Btn"
       />
     </div>
   </div>
@@ -255,7 +254,7 @@ const gamesForCountries = {
 };
 
 export default {
-  name: 'SearchPage',
+  name: 'SearchBlock',
   components: {
     Search,
     Games,
@@ -408,14 +407,10 @@ export default {
 </script>
 
 <style lang="scss">
-.SearchPage {
-  max-width: 600px;
-  padding-bottom: 100px;
-
-  &-Title {
-    margin: 18px 0;
-    font-size: 20px;
-  }
+.SearchBlock {
+  margin-top: 20px;
+  padding-bottom: 1px;
+  background: var(--color-body);
 
   &-Header {
     position: relative;
@@ -546,16 +541,42 @@ export default {
   .Games-Items {
     grid-template-columns: 1fr;
     justify-items: flex-start;
-    grid-row-gap: 12px;
+    grid-row-gap: 0;
+    padding: 0 16px;
   }
 
   .Games-Btn {
+    margin-left: 16px;
     text-align: left;
+  }
+
+  .Cards-Title {
+    margin-left: 16px;
   }
 
   .Card {
     flex-direction: row;
-    width: auto;
+    align-items: center;
+    width: 100%;
+    padding: 6px;
+
+    &:hover {
+      background: var(--color-card-hover);
+
+      .Card-PlayBtn {
+        display: flex;
+      }
+    }
+  }
+
+  .Card-PlayBtn {
+    position: relative;
+    top: initial;
+    height: 40px;
+    margin-left: auto;
+    padding: 0 27px;
+    font-size: 10px;
+    transform: none;
   }
 
   .Card-Main {

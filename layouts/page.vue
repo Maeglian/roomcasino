@@ -18,6 +18,7 @@
     <client-only>
       <CashierForm />
     </client-only>
+    <SearchModal />
     <BannerPopup name-for-cookies="seenCookiesPopup" :expire-time="1500">
       <CookiesPopup />
     </BannerPopup>
@@ -40,6 +41,7 @@ import CashierForm from '@/components/CashierForm';
 import Breadcrumbs from '@/components/Breadcrumbs';
 // import TeslaPopup from '@/components/popups/TeslaPopup';
 import BannerPopup from '@/components/popups/BannerPopup';
+import SearchModal from '@/components/SearchModal';
 import liveChat from '~/mixins/liveChat';
 
 export default {
@@ -56,6 +58,7 @@ export default {
     // TeslaPopup,
     BannerPopup,
     Breadcrumbs,
+    SearchModal,
   },
   mixins: [liveChat],
   computed: {
