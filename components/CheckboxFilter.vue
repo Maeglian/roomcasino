@@ -12,7 +12,7 @@
       </div>
       <div ref="arrow">
         <svg
-          class="Arrow SearchPage-Arrow"
+          class="Arrow SearchBlock-Arrow"
           :class="[isOpen ? 'Arrow--up' : 'Arrow--down']"
           width="6"
           height="5"
@@ -167,21 +167,21 @@ export default {
   &-Label {
     padding-left: 30px;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 17px;
     color: var(--color-text-main);
     text-transform: capitalize;
     white-space: nowrap;
     cursor: pointer;
 
+    @media (min-width: $screen-m) {
+      font-weight: 700;
+    }
+
     &:before {
       top: 0;
       left: 0;
       border-radius: var(--border-radius-4);
-    }
-
-    &:hover {
-      color: var(--color-main1);
     }
   }
 
@@ -190,10 +190,13 @@ export default {
     margin-right: 8px;
     padding-left: 0;
     overflow: hidden;
+    font-weight: 700;
     text-align: left;
     text-overflow: ellipsis;
 
-    &--active {
+    &:hover,
+    &--active,
+    &--active:hover {
       color: var(--color-text-faded);
     }
   }

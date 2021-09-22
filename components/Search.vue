@@ -125,7 +125,7 @@ export default {
       font-size: 12px;
       font-weight: 700;
       line-height: 1.242;
-      color: var(--color-text-main);
+      color: var(--color-text-faded);
       text-transform: uppercase;
     }
   }

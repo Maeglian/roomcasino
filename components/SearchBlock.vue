@@ -410,7 +410,7 @@ export default {
 .SearchBlock {
   margin-top: 20px;
   padding-bottom: 1px;
-  background: var(--color-body);
+  background: rgba(5, 12, 36, 0.96);
 
   &-Header {
     position: relative;
